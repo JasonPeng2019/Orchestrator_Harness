@@ -1,0 +1,60 @@
+{
+  "description": "Development safeguards and verification for Orchestrator Harness.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --project \"$(git rev-parse --show-toplevel)/.codex/dev\" --locked python \"$(git rev-parse --show-toplevel)/.codex/scripts/hook_runner.py\" session-start",
+            "commandWindows": "powershell -NoProfile -Command \"$r=(git rev-parse --show-toplevel); $input | uv run --project (Join-Path $r '.codex/dev') --locked python (Join-Path $r '.codex/scripts/hook_runner.py') session-start\"",
+            "timeout": 30,
+            "additionalContextLimit": 3000,
+            "statusMessage": "Loading harness development context"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "^Bash$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --project \"$(git rev-parse --show-toplevel)/.codex/dev\" --locked python \"$(git rev-parse --show-toplevel)/.codex/scripts/hook_runner.py\" guard-dangerous",
+            "commandWindows": "powershell -NoProfile -Command \"$r=(git rev-parse --show-toplevel); $input | uv run --project (Join-Path $r '.codex/dev') --locked python (Join-Path $r '.codex/scripts/hook_runner.py') guard-dangerous\"",
+            "timeout": 30,
+            "statusMessage": "Checking destructive command policy"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --project \"$(git rev-parse --show-toplevel)/.codex/dev\" --locked python \"$(git rev-parse --show-toplevel)/.codex/scripts/hook_runner.py\" pre-compact",
+            "commandWindows": "powershell -NoProfile -Command \"$r=(git rev-parse --show-toplevel); $input | uv run --project (Join-Path $r '.codex/dev') --locked python (Join-Path $r '.codex/scripts/hook_runner.py') pre-compact\"",
+            "timeout": 30,
+            "statusMessage": "Checking handoff state"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --project \"$(git rev-parse --show-toplevel)/.codex/dev\" --locked python \"$(git rev-parse --show-toplevel)/.codex/scripts/hook_runner.py\" verify-on-stop",
+            "commandWindows": "powershell -NoProfile -Command \"$r=(git rev-parse --show-toplevel); $input | uv run --project (Join-Path $r '.codex/dev') --locked python (Join-Path $r '.codex/scripts/hook_runner.py') verify-on-stop\"",
+            "timeout": 120,
+            "statusMessage": "Verifying changed harness code"
+          }
+        ]
+      }
+    ]
+  }
+}

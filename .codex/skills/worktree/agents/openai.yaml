@@ -1,0 +1,5 @@
+interface:
+  display_name: Harness Worktree
+  short_description: Manage isolated task worktrees for parallel work.
+policy:
+  allow_implicit_invocation: true

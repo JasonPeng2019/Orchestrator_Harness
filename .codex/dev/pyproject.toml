@@ -1,0 +1,34 @@
+[project]
+name = "orchestrator-harness-development"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "basedpyright>=1.31.0",
+  "pytest>=8.4.0",
+  "ruff>=0.12.0",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+extend-exclude = ["references"]
+
+[tool.ruff.lint]
+select = ["E9", "F", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+"harness-in-progress/harness_watcher_implementation/attention.py" = ["B904", "B905"]
+"harness-in-progress/harness_watcher_implementation/poller.py" = ["B905"]
+"harness-in-progress/harness_watcher_implementation/tests/run_canary.py" = ["F401"]
+"harness-in-progress/orchestrator_harness/events.py" = ["B007"]
+"harness-in-progress/orchestrator_harness/reconcile.py" = ["B905"]
+"harness-in-progress/orchestrator_harness/tests/test_lane_controller.py" = ["F401"]
+"harness-in-progress/orchestrator_harness/tests/test_active_manager_watch_smoke.py" = ["F401"]
+"harness-in-progress/orchestrator_harness/tests/test_manager_notifications.py" = ["B023"]
+"harness-in-progress/orchestrator_harness/tests/test_real_manager_notification.py" = ["F401"]
+
+[tool.ruff.format]
+line-ending = "native"

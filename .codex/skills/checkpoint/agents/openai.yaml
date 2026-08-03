@@ -1,0 +1,5 @@
+interface:
+  display_name: Harness Checkpoint
+  short_description: Save concise state for resume or compaction.
+policy:
+  allow_implicit_invocation: true

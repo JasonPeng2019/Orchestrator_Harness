@@ -1,0 +1,26 @@
+[features]
+hooks = true
+
+[[skills.config]]
+path = "skills/verify"
+enabled = true
+
+[[skills.config]]
+path = "skills/checkpoint"
+enabled = true
+
+[[skills.config]]
+path = "skills/test-first"
+enabled = true
+
+[[skills.config]]
+path = "skills/api-design"
+enabled = true
+
+[[skills.config]]
+path = "skills/worktree"
+enabled = true
+
+[[skills.config]]
+path = "skills/plan-harness-workflow"
+enabled = true

@@ -1,0 +1,27 @@
+{
+  "include": [
+    "harness-in-progress/orchestrator_harness",
+    "harness-in-progress/harness_common",
+    "harness-in-progress/harness_watcher_implementation",
+    ".codex/scripts",
+    ".codex/tests"
+  ],
+  "exclude": [
+    "**/__pycache__",
+    "**/.pytest_cache",
+    "**/.ruff_cache",
+    "**/.venv",
+    "references"
+  ],
+  "extraPaths": [
+    "harness-in-progress",
+    "harness-in-progress/orchestrator_harness/tests/support",
+    ".codex/scripts"
+  ],
+  "typeCheckingMode": "standard",
+  "reportImplicitRelativeImport": "none",
+  "reportMissingTypeStubs": false,
+  "pythonVersion": "3.11",
+  "pythonPlatform": "Windows",
+  "baselineFile": ".codex/dev/basedpyright-baseline.json"
+}
