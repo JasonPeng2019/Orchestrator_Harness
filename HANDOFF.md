@@ -4,7 +4,7 @@
 
 This repository is being developed into a Codex-native multi-agent orchestration protocol for ordinary software work in Python or any other language. It is not intended to become a generic file watcher, and the development-only `.codex/` tooling must not be confused with the product being built.
 
-The product code being changed is the `harness-in-progress/` submodule on `progress/v1.1`. The known-good harness used to coordinate that development is the `frozen-harness-to-use/` submodule on `frozen-v1`. Both began from the same portable firmware/HIL orchestration baseline, so its reliable coordination machinery is worth keeping, but many schemas, paths, states, policies, docs, and tests still encode the original firmware experiment.
+The product code being changed is the `harness-in-progress/` submodule checkout of `harness-single` on `progress/v1.1`. The known-good harness used to coordinate that development is the `frozen-harness-to-use/` submodule checkout of the same repository on `frozen-v1`. Both branches began from the same portable firmware/HIL orchestration baseline, so its reliable coordination machinery is worth keeping, but many schemas, paths, states, policies, docs, and tests still encode the original firmware experiment.
 
 ## Current Status
 
@@ -115,7 +115,7 @@ The following root tooling exists only to help develop this codebase. It must no
 
 Hooks and project skills are loaded when a new Codex session starts in this repository. Because the hook configuration changed while creating this file, Codex may request one-time trust confirmation at the next session start. The SessionStart hook now injects `HANDOFF.md` on both fresh startup and resume.
 
-The worktree helper operates against committed history. The outer repository tracks both harness repositories as submodules; product branches and worktrees belong in `harness-in-progress`, not in the frozen submodule.
+The worktree helper operates against committed history. The outer repository tracks two branch-specific submodule checkouts of `harness-single`; product branches and worktrees belong in `harness-in-progress`, not in the frozen checkout.
 
 ## Verification And Next Step
 

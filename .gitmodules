@@ -1,8 +1,8 @@
 [submodule "frozen-harness-to-use"]
 	path = frozen-harness-to-use
-	url = https://github.com/JasonPeng2019/frozen-harness-to-use.git
+	url = https://github.com/JasonPeng2019/harness-single.git
 	branch = frozen-v1
 [submodule "harness-in-progress"]
 	path = harness-in-progress
-	url = https://github.com/JasonPeng2019/harness-in-progress.git
+	url = https://github.com/JasonPeng2019/harness-single.git
 	branch = progress/v1.1
