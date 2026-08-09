@@ -1,0 +1,37 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "attempt": "0003",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-003",
+  "reviewer_thread_id": "019fcc39-177e-79a2-9b32-55111c6aa9ab",
+  "candidate_commit": "1c9d16de9e56d1f5340777a81bf09c448dfe9f5c",
+  "review_result": "FAIL",
+  "root_decision": "ACCEPT_FINDINGS_AND_ROUTE_TO_S2.P",
+  "accepted_findings": [
+    {
+      "id": "C0-FR1-003-001",
+      "classification": "CODEBASE_BREAKING",
+      "reason": "The candidate advertises a confined MCP stderr log but retains only an in-memory digest. This breaks the explicit server-log evidence boundary on real success and failure paths. Persisting the already-drained bounded bytes is a localized change whose evidence benefit outweighs its low complexity and regression risk."
+    },
+    {
+      "id": "C0-FR1-003-002",
+      "classification": "CODEBASE_BREAKING",
+      "reason": "The pinned server loads .env from the same checkout used as its working directory, while Git cleanliness does not exclude ignored files. A fail-closed exact-root .env rejection is a small prelaunch check that closes an otherwise unreviewed physical-routing configuration channel."
+    }
+  ],
+  "reopened_dependencies": [
+    "firmware_acceptance/controller.py",
+    "firmware_acceptance/kit.py controller_config/validate_pinned_server boundary",
+    "orchestrator_harness.tests.test_firmware_acceptance_controller",
+    "orchestrator_harness.tests.test_firmware_acceptance_kit",
+    "orchestrator_harness.tests.test_firmware_acceptance_host"
+  ],
+  "preserved_green_scope": "The original protected 19 general-harness IDs and the three target-materialization IDs have no dependency on the stderr sink or server .env prelaunch check and remain credited. No hardware or MCP operation occurred.",
+  "next_action": "Resume the persistent singleton S2.P coder, repair both accepted findings without adding a broader configuration framework, then run targeted independent review and only dependency-invalidated author/executor gates before a fresh C0 attempt.",
+  "review_artifacts": {
+    "findings_sha256": "29bd41b306c61f2f54550dd7c23dfee28e3af4274cab2b444c417105a8145e92",
+    "result_sha256": "b82d6b9f2c991f5c45de44da5d04d9af4f8473342e1ba0e4763bd2151152f61d",
+    "controller_status_sha256": "3cd463136c7856e4126eb2e6f5c5343e9599be4becfb0851a0d9c9d17fcb731b"
+  },
+  "triaged_at_utc": "2026-08-04T10:05:16Z"
+}

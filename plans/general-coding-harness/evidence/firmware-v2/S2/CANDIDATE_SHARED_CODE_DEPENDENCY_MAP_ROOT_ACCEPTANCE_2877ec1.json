@@ -1,0 +1,63 @@
+{
+  "schema": "firmware-v2-candidate-shared-code-dependency-map-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+  "candidate_branch": "firmware/v2-s24-a1-c3-policy-0001",
+  "candidate_clean": true,
+  "map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_2877ec1.json",
+    "sha256": "7efac0d0852609516a9a9caeecb3f99ad7d040d0f40671bb7dea52a25d8cc450"
+  },
+  "audit": {
+    "base_commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+    "git_changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py"
+    ],
+    "declared_changed_paths_match_git": true,
+    "declared_reference_count": 11,
+    "declared_reference_hashes_valid": 11,
+    "protected_baseline_ids": 248,
+    "deleted_protected_ids": [],
+    "modified_protected_test_paths": [],
+    "weakened_oracles": [],
+    "prior_green_ids": 145,
+    "new_green_ids": [
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_startup_distinguishes_operative_and_source_policy_bindings"
+    ],
+    "current_green_ids": 146,
+    "invalidated_groups": 0,
+    "uncovered_changed_behavior": [],
+    "selected_for_additional_execution": []
+  },
+  "fresh_execution": {
+    "test_id": "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_startup_distinguishes_operative_and_source_policy_bindings",
+    "commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+    "report_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.D1-C3-POLICY-0002/.agent-workspace/TEST_REPORT.json",
+    "report_sha256": "00fc5a97ffaf85f89776f5b232b2889189e1fbbaa04b087a3129ea5cf25d2bf6",
+    "outcome": "PASS",
+    "tests_run": 1,
+    "skips": 0,
+    "xfails": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "fresh_c0": {
+    "attempt": "0015",
+    "findings_path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0015/FINDINGS.json",
+    "findings_sha256": "1cb01587130a29eb92c3c39f1705d92767e4a7f58bb1a5612af20af2c3696601",
+    "result_path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0015/RESULT.json",
+    "result_sha256": "d7f53ac05f939cc7e0f4259822d72c102f23e802474bcace5a0010f425b56ada",
+    "summary": "NO CANDIDATE GAP / READY"
+  },
+  "classification": {
+    "product_gap_F_PRE_C3_002": "CLOSED",
+    "reviewer_gap_F_S24_R1_001": "CLOSED_BY_NEW_REGRESSION",
+    "first_executor_failure": "TEST_FIXTURE_DEFECT_PRESERVED_AND_SUPERSEDED",
+    "candidate_harness_gap_remaining": false,
+    "pinned_mcp_server_defect": false,
+    "hardware_or_rf_operation": false
+  },
+  "decision": "ACCEPT_MAP_AND_EXACT_JOINED_TIP",
+  "outcome": "PASS"
+}

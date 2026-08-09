@@ -1,0 +1,20 @@
+{
+  "schema": "root-preserved-green-test-credit/v1",
+  "owner": "ROOT-IM",
+  "lane_id": "S2.D2",
+  "worker_invocation_id": "s2-d2-pre-c1-executor-002",
+  "commit": "40b4039b3ecb3021dc545901419416b278226f7e",
+  "source_test_report_sha256": "bc051de3596343199cdaa6356c6f2d4878b841f39635c9a181be8d9b6ae8b3de",
+  "source_result_sha256": "3e11d8bbfe88c25e2a19a6001cf0aafe9b66bf5602e6f7a8f6103e568e03efd0",
+  "module": "orchestrator_harness.tests.test_firmware_acceptance_target",
+  "collected": 3,
+  "executed": 3,
+  "passed": 3,
+  "failed": 0,
+  "skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "preserved_at_next_tip": "228024d7d51f3a185cbf88f5e5a159c9049b3e38",
+  "dependency_decision": "Only orchestrator_harness/tests/test_firmware_acceptance_kit.py changed from 40b4039 to 228024d; the target module and its production/seed dependencies are byte-identical, so its green result must not be rerun.",
+  "hardware_or_mcp_accessed": false
+}

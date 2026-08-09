@@ -1,0 +1,26 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-011",
+  "branch": "firmware/v2-c0-final-review-0011",
+  "commit": "cb2a66aa7d4036b08ab8964327fa6836be0f0d97",
+  "outcome": "FAIL",
+  "summary": "Complete frozen-tip C0 review found one admissible retained-session identity-binding gap.",
+  "checks": [
+    {
+      "name": "governing document hashes",
+      "outcome": "PASS",
+      "summary": "All five supplied SHA-256 locks matched."
+    },
+    {
+      "name": "frozen tip and protected evidence audit",
+      "outcome": "PASS",
+      "summary": "Exact branch/tip, pinned-server boundary, CP04 attempt-0003 evidence, baseline manifest, accepted dependency map, and current registry were inspected read-only."
+    },
+    {
+      "name": "complete C0 affected-surface sweep",
+      "outcome": "FAIL",
+      "summary": "One FUNCTIONALITY_BREAKING C3 session-open identity mismatch is recorded in FINDINGS.json."
+    }
+  ]
+}

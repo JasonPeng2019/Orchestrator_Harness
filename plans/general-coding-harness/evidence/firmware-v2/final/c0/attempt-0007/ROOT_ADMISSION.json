@@ -1,0 +1,60 @@
+{
+  "schema": "firmware-v2-root-pre-c1-admission/v1",
+  "owner": "ROOT-IM",
+  "checked_at_utc": "2026-08-04T18:17:00Z",
+  "attempt": "0007",
+  "candidate": {
+    "commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+    "branch": "firmware/v2-candidate",
+    "clean": true
+  },
+  "fresh_c0": {
+    "lane_id": "F.C0.FR1",
+    "worker_invocation_id": "c0-fr1-007",
+    "thread_id": "019fcdf9-3405-7ff3-a9e3-7c24637e2b14",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority",
+    "prior_attempt_context_reused": false,
+    "findings_path": "FINDINGS.json",
+    "findings_sha256": "b9b767e62b1b23811c5c3863249c65ff34816f23a7c98f2f84b285b03c3350b2",
+    "result_path": "RESULT.json",
+    "result_sha256": "9df12a13c19e72f92610ab50119358862e09a519e8dd867b00b2a83529ed6766",
+    "triage_path": "ROOT_TRIAGE.json",
+    "triage_sha256": "bf93229ad0db821a0db649f82f8776784a35711807299eb5c9286a94eecfca54",
+    "candidate_findings_validator_count": 0,
+    "outcome": "NO CANDIDATE GAP / READY"
+  },
+  "independent_root_checks": {
+    "c0_controller_result_valid": true,
+    "stable_runner_launch_proof_sha256": "7ac7e86aa5d608bd5425adeb31aa21e42ee42658eba704678a2d663f6e9de389",
+    "stable_runner_commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "stable_runner_clean_detached": true,
+    "pinned_mcp_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "pinned_mcp_clean": true,
+    "pinned_mcp_immutable": true,
+    "mcp_launched_for_c0": false,
+    "hardware_accessed": false,
+    "active_resource_claims": 0,
+    "surviving_managed_test_or_agent_processes": 0,
+    "registry_sha256": "db58fc51a8c6b2e4e09815b92e9ecdd217aff503c54ab22449c74286104e740a",
+    "registry_declared_hashes_valid": true,
+    "registry_unique_green_ids": 123,
+    "registry_invalidations": 0,
+    "user_scope_sha256": "571d7d36cd7242762f0bbea0f2c55b095c2b381c6270538285190097a6e50013",
+    "user_scope_hash_recomputed_equal": true,
+    "method_policy_sha256": "35bc68b6ec79a8e9680c42dd32c32be228ee956ee7b53d68908b8dec13d19b78",
+    "method_policy_default": "deny",
+    "method_policy_exact_decision_methods": "21/21",
+    "accepted_s2_join": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_PRE_C1_JOIN_ROOT_ACCEPTANCE_e524feb.json"
+  },
+  "governing_hashes": {
+    "goal.md": "0815f54b6f8767fe1e7abbe4c43d307c34562e63203917c9582afa3122b0696f",
+    "active_docs/GENERALIZATION_SPEC_2.md": "e1dddca123779203814e978bb2bd3c5a2aa909546d52795d4cb5ad495a5a30b3",
+    "active_docs/IMPLEMENTATION_ROADMAP_2.md": "161cbe266804cc710a722a8ca06989c77d58e9a7acfc9db0437fc165855d3fe6",
+    "plans/general-coding-harness/EXECUTION_PLAN_2.md": "3775ae7ca694951362223cea3c3571fce6d1c6cd9e3bcc3dfd0435e4d87015b7",
+    "active_docs/EXECUTION_READINESS_2.md": "c56af934fbe87ffbf98049d3a0565874e6fb04d4caefe1e6e81b289ca71cd05b"
+  },
+  "decision": "C1_UNLOCKED",
+  "next_gate": "Create the exact five-key delegated authorization, hash it, then create and hash the acyclic C1 lock."
+}

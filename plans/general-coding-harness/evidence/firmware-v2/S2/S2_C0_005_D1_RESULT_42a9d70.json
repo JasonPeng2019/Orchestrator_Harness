@@ -1,0 +1,16 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-005-canonical",
+  "branch": "firmware/v2-s2-d1-c0-005-canonical",
+  "commit": "42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+  "outcome": "PASS",
+  "summary": "C0 attempt-0005 dependency-invalidated host shard passed all 32 controller, kit, and host tests; the four requested modules compiled, the five sealed seed files matched committed content, findings are empty, and no MCP or hardware access occurred.",
+  "checks": [
+    {"name": "controller/kit/host dependency-invalidated shard", "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_controller orchestrator_harness.tests.test_firmware_acceptance_kit orchestrator_harness.tests.test_firmware_acceptance_host -v", "outcome": "PASS", "summary": "32 passed, 0 failed, 0 skipped, 0 expected failures, 0 unexpected successes."},
+    {"name": "requested compilation", "command": "python -m py_compile firmware_acceptance/controller.py orchestrator_harness/tests/test_firmware_acceptance_controller.py orchestrator_harness/tests/test_firmware_acceptance_kit.py orchestrator_harness/tests/test_firmware_acceptance_host.py", "outcome": "PASS"},
+    {"name": "ROOT sealed-seed verification", "command": "ROOT-provided five-file committed-content SHA-256 verification", "outcome": "PASS", "summary": "All five sealed seed files match their committed content in the prepared checkout."},
+    {"name": "persistent tip and disposable registration", "command": "git rev-parse HEAD; git worktree list --porcelain; git status --short", "outcome": "PASS", "summary": "The disposable remains at the exact clean commit and is intentionally left registered for ROOT cleanup."},
+    {"name": "finding gate and host-only boundary", "command": "validate FINDINGS.json; inspect process/resource/MCP/hardware state", "outcome": "PASS", "summary": "Zero findings; no disposable process/resource claim, MCP server, or hardware access occurred."}
+  ]
+}

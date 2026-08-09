@@ -1,0 +1,125 @@
+{
+  "schema": "firmware-v2-test-report/v1",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-pre-c1-executor-006",
+  "commit": "40b4039b3ecb3021dc545901419416b278226f7e",
+  "command": "python -m unittest <discovered stable ID> -v; one fresh Python process per ID, no reruns",
+  "discovery": {
+    "method": "unittest.defaultTestLoader.loadTestsFromNames(controller_module, host_module), IDs enumerated without unittest execution",
+    "executed": false,
+    "ids_path": ".agent-workspace/bounded-batch-40b4039/discovered-ids.json",
+    "controller_ids": 24,
+    "host_ids": 2
+  },
+  "expected": {
+    "total": 26,
+    "per_module": {
+      "orchestrator_harness.tests.test_firmware_acceptance_controller": 24,
+      "orchestrator_harness.tests.test_firmware_acceptance_host": 2
+    }
+  },
+  "observed": {
+    "collected": 26,
+    "executed": 26,
+    "passed": 23,
+    "failed": 3,
+    "timed_out": 2,
+    "skipped": 0,
+    "expected_failures": 0,
+    "unexpected_successes": 0,
+    "processes_exited_zero": 23,
+    "processes_terminated_after_timeout": 2,
+    "surviving_exact_test_pids": [],
+    "per_module": {
+      "orchestrator_harness.tests.test_firmware_acceptance_controller": {
+        "collected": 24,
+        "executed": 24,
+        "passed": 22,
+        "failed": 2,
+        "timed_out": 2,
+        "skipped": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      },
+      "orchestrator_harness.tests.test_firmware_acceptance_host": {
+        "collected": 2,
+        "executed": 2,
+        "passed": 1,
+        "failed": 1,
+        "timed_out": 0,
+        "skipped": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0
+      }
+    },
+    "per_test": [
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_authorization_launch_or_identity_mutation_rejects_before_launch","pid":177508,"exit_code":0,"outcome":"PASS","elapsed_seconds":0.773,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_begin_sign_derive_authorize_and_dispatch","pid":183088,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.483,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_default_identity_provider_proves_tiny_subprocess_reaped","pid":173896,"exit_code":0,"outcome":"PASS","elapsed_seconds":4.162,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_existing_result_and_incomplete_authority_reject_before_claim","pid":167776,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.002,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_failed_transport_commits_raw_failure_and_cleanup_before_claim_release","pid":176196,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.241,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_lane_template_binding_mutation_matrix_rejects_before_claim","pid":160580,"exit_code":0,"outcome":"PASS","elapsed_seconds":0.978,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_launcher_failure_writes_failure_cleanup_and_releases_claim","pid":187176,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.119,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_path_hash_owner_claim_and_replay_mismatch_deny_before_launch","pid":175588,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.739,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_record_config_result_and_admit_errors_release_retained_claim","pid":189764,"exit_code":0,"outcome":"PASS","elapsed_seconds":2.279,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_authorization_raw_rewrite_rejects_before_launch","pid":195320,"exit_code":0,"outcome":"PASS","elapsed_seconds":0.83,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_bootstraps_once_executes_and_aborts_terminally","pid":181932,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.274,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_signed_close_requires_returned_disconnect","pid":195964,"exit_code":null,"outcome":"TIMEOUT","elapsed_seconds":30.657,"native_summary":"FAILED","termination":"STOPPED_EXACT_VERIFIED_PID"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_continuation_responses_are_closed_and_fresh_per_call","pid":21452,"exit_code":0,"outcome":"PASS","elapsed_seconds":0.548,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_dynamic_route_plan_validation_ready_uart_and_terminal_contract","pid":174776,"exit_code":null,"outcome":"TIMEOUT","elapsed_seconds":30.476,"native_summary":"FAILED","termination":"STOPPED_EXACT_VERIFIED_PID"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_pre_result_route_and_continuation_rejections_leave_no_successor","pid":42156,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.439,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_same_identity_after_wait_is_cleanup_ambiguity","pid":189376,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.665,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_single_lifecycle_retains_the_publishing_controller_until_dispatch","pid":185380,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.977,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_stderr_persistence_failure_is_incomplete_and_fails_closed","pid":17416,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.663,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_terminate_timeout_escalates_to_kill_and_reaps_captured_handle","pid":176696,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.958,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_transport_drains_pipe_sized_stderr_without_blocking_and_serializes_writes","pid":183500,"exit_code":0,"outcome":"PASS","elapsed_seconds":0.808,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_transport_forced_close_of_blocked_stderr_is_incomplete_with_partial_digest","pid":185540,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.048,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_transport_post_reap_stderr_drain_reaches_eof_before_join_budget","pid":189532,"exit_code":0,"outcome":"PASS","elapsed_seconds":0.831,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_transport_rejects_malformed_wrong_id_error_and_eof_and_joins_helpers","pid":188116,"exit_code":0,"outcome":"PASS","elapsed_seconds":0.8,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_unretained_execution_and_retained_authority_drift_reject_before_launch","pid":158756,"exit_code":0,"outcome":"PASS","elapsed_seconds":2.167,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_host.FirmwareAcceptanceHostTests.test_S2_A1_001_clean_pinned_server_launch_is_confined_to_controller_roots","pid":177048,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.676,"native_summary":"OK"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_host.FirmwareAcceptanceHostTests.test_S2_A1_002_admission_rejects_immutable_operation_drift","pid":186724,"exit_code":0,"outcome":"FAIL","elapsed_seconds":0.741,"native_summary":"FAILED"}
+    ]
+  },
+  "outcome": "FAIL",
+  "elapsed_seconds": 98.8,
+  "unittest_reported_elapsed_seconds": null,
+  "batch_results_path": ".agent-workspace/bounded-batch-40b4039/batch-results.json",
+  "evidence_directory": ".agent-workspace/bounded-batch-40b4039/",
+  "no_hardware_no_mcp": {
+    "statement": "Host-only synthetic unittest batch; no MCP, server, pyOCD, serial, probe, flash, reset, debug, RF, lease, or physical hardware operation occurred.",
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "dependency_scope": {
+    "kind": "dependency-invalidated-only-bounded-per-test-batch",
+    "included_modules": [
+      "orchestrator_harness.tests.test_firmware_acceptance_controller",
+      "orchestrator_harness.tests.test_firmware_acceptance_host"
+    ],
+    "included_change_domains": [
+      "retained-session controller",
+      "authorization/limitation kit boundary",
+      "host immutable-operation admission contract"
+    ],
+    "excluded_shards": [
+      "kit/target S2.D2",
+      "protected original general-harness suite",
+      "static analysis",
+      "full gates",
+      "compilation",
+      "MCP",
+      "pyOCD",
+      "serial",
+      "probe",
+      "flash",
+      "reset",
+      "debug",
+      "RF",
+      "physical hardware"
+    ]
+  },
+  "failure_classification": "DEMONSTRATED_CODEBASE_FUNCTIONALITY_BREAKAGE",
+  "findings_count": 2,
+  "tracked_status_clean": true
+}

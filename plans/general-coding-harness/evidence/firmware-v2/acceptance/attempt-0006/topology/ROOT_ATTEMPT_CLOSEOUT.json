@@ -1,0 +1,36 @@
+{
+  "schema": "firmware-c3-root-attempt-closeout/v1",
+  "attempt_id": "attempt-0006",
+  "owner": "ROOT-IM",
+  "outcome": "FAILED_ROOT_ALLOCATION_PROCEDURE_PRE_IDENTITY_GATE",
+  "procedure_abort": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0006\\topology\\ROOT_PROCEDURE_ABORT_REQUIRED.json",
+    "sha256": "0f8d5c00f1a863e281bf57d9f01d4ce6e82e7e86b427783a6c53cea97cb967bd"
+  },
+  "candidate_and_server": [
+    {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+      "branch": "firmware/v2-candidate",
+      "head": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+      "clean": true
+    },
+    {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\mcp-candidate",
+      "branch": "firmware/v2-mcp-candidate",
+      "head": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+      "clean": true
+    }
+  ],
+  "related_processes_remaining": [],
+  "orchestrator_launched": false,
+  "watcher_launched": false,
+  "candidate_service_launched": false,
+  "target_materialized": false,
+  "mcp_launched": false,
+  "hardware_accessed": false,
+  "manifest_created": false,
+  "result_created": false,
+  "fresh_attempt_required": true,
+  "c0_c1_c2_remain_valid": true,
+  "closed_utc": "2026-08-05T16:52:58.5304653Z"
+}

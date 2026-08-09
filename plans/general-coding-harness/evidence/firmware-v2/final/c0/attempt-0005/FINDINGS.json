@@ -1,0 +1,33 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-005",
+  "role": "reviewer",
+  "commit": "24a1ae7c08e559e606231543e1bbff0da0fd3a5a",
+  "findings": [
+    {
+      "id": "F-C0-FR1-005-001",
+      "category": "WORTH_FIXING",
+      "affected_ids": ["C30", "C33", "C49", "C67"],
+      "evidence": [
+        "firmware_acceptance/controller.py:170-177 sets self.stop before closing streams and joining the stderr helper.",
+        "firmware_acceptance/controller.py:221-231 makes the stderr helper's loop conditional on not self.stop.is_set(), reads at most 4096 bytes per iteration, and records no EOF/drain-completion state.",
+        "firmware_acceptance/controller.py:179-196 labels stderr_log_complete true whenever no write/flush/close/digest exception was observed; it does not establish that the child stderr pipe reached EOF or that every byte was persisted.",
+        "firmware_acceptance/controller.py:449-466 waits for the child to exit, then invokes close_and_join; therefore ordinary multi-chunk diagnostic output remaining in the pipe at teardown is within the controller's normal success and failure lifecycle.",
+        "EXECUTION_READINESS_2.md:128-131 and EXECUTION_PLAN_2.md:281-285 require stderr to be captured separately as the server log; C30/C33/C49 require fail-closed lifecycle evidence, a per-controller log root, and retained MCP evidence."
+      ],
+      "observed": "The transport can stop the stderr reader between chunks. If the process has exited with more than one 4096-byte chunk buffered and the teardown thread runs after one successful read but before the reader's next loop condition, close_and_join sets stop; the reader exits without reading the remaining bytes. No persistence operation fails, so the cleanup record reports stderr_log_complete: true and hashes only the truncated log.",
+      "expected": "A call-bound MCP stderr log must be drained through EOF before it is declared complete, or the controller must record incomplete stderr persistence and fail closed. A normal teardown signal must not convert unread child stderr into a successful complete log.",
+      "reproduction": "Read-only deterministic interleaving: use a fake stderr stream containing two or more 4096-byte chunks and coordinate its first read so close_and_join executes after that first chunk has been written but before _stderr evaluates its next while-not-stop condition. The next condition observes stop and returns without a second read. close_and_join then closes and hashes the already-written prefix, sees no stderr_error, and emits stderr_log_complete: true. No MCP, target process, hardware, test, or safeguard is needed to establish the control-flow defect.",
+      "impact": "A real MCP warning, traceback, or failure diagnostic larger than one read chunk can be silently truncated while the immutable cleanup evidence attests a complete server log. This leaves C3/C4 unable to distinguish a full diagnostic record from an incomplete one and undermines the retained MCP-evidence and failure-classification boundary.",
+      "no_fix_consequence": "Later physical acceptance can retain a falsely complete lane log on either successful or failed calls. Operators may make a repair/classification decision from an incomplete server-side record, with no evidence signal requiring the attempt to fail closed or be repeated.",
+      "smallest_fix": "Separate writer cancellation from reader draining: after the child is reaped, allow stdout/stderr readers to consume their pipes to EOF within the existing cleanup budget, record explicit EOF completion for stderr, and set stderr_log_complete only when that completion plus write/flush/close/digest checks succeeds. Treat timeout, forced stream close before EOF, or any persistence error as incomplete cleanup and fail closed. Add one controlled multi-chunk teardown regression asserting either the entire log is retained or the cleanup record is incomplete and execution fails.",
+      "complexity": "Low to moderate: a confined transport-teardown change and one host-only coordinated-stream test; no policy, topology, worker, server, or hardware changes are needed.",
+      "regression_risk": "Low and bounded: the change affects only post-reap stdio draining under the existing cleanup deadline. The existing exact-reap, cancellation, stdout framing, and legacy/coding routes remain unchanged.",
+      "verification_cost": "Low: run the focused controller test and the existing controller/kit/host shard; no MCP launch, hardware access, claim, or safeguard is required.",
+      "alternatives": "Keeping the current bounded in-memory digest or accepting a successful file close is insufficient because neither proves pipe EOF. Treating all logs as inherently best-effort would contradict the explicitly required retained server-log and fail-closed lifecycle evidence; an operator-side log collector would violate controller ownership.",
+      "cost_benefit": "The fix is localized and host-testable, while the unfixed behavior can falsely certify incomplete diagnostics during the exact failure paths the log exists to audit. That evidence-integrity harm outweighs the limited teardown regression surface and verification cost.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

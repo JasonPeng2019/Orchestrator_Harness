@@ -1,0 +1,44 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-pre-c1-executor-006",
+  "branch": "firmware/v2-s2-d1",
+  "commit": "184a869d0f49ae9ef6b222ae90dc3488f7229f60",
+  "outcome": "FAIL",
+  "summary": "The exact three invalidated IDs were each executed once in fresh bounded Python processes. Signed-close and host immutable-drift passed naturally; dynamic-route timed out after its test body rejected a valid null plan board_id at controller.py:543 and its retained stderr helper kept the process alive. Joined with ROOT's SHA-256-verified 23-test credit, D1 is 25/26 with one timeout. No tests were rerun and tracked Git state remains clean.",
+  "checks": [
+    {
+      "name": "selective invalidated-ID rerun",
+      "command": "python -m unittest <one of the three invalidated stable IDs> -v; one fresh Python process per ID, no reruns",
+      "outcome": "FAIL",
+      "summary": "3/3 IDs were executed exactly once: 2 natural zero-exit PASS results and 1 exact-PID-cleaned 30-second TIMEOUT; 0 skips, 0 expected failures, and 0 unexpected successes."
+    },
+    {
+      "name": "joined D1 credit",
+      "outcome": "FAIL",
+      "summary": "ROOT credit is SHA-256 verified for 23 preserved green IDs; joined D1 is 25/26 with one dynamic-route timeout, so joined PASS is not established."
+    },
+    {
+      "name": "findings gate",
+      "outcome": "FAIL",
+      "summary": "FINDINGS.json records one demonstrated production route-validation defect with preserved timeout/error evidence and a localized fix tradeoff."
+    },
+    {
+      "name": "per-test process cleanup",
+      "outcome": "PASS",
+      "summary": "The timed-out dynamic-route PID was verified by exact creation identity and command line, terminated only by that PID, and confirmed absent; no target test PID remains."
+    },
+    {
+      "name": "exact current tip and tracked-worktree cleanliness",
+      "command": "git branch --show-current; git rev-parse HEAD; git status --porcelain",
+      "outcome": "PASS",
+      "summary": "Branch firmware/v2-s2-d1 and HEAD match 184a869d0f49ae9ef6b222ae90dc3488f7229f60; tracked Git state is clean."
+    },
+    {
+      "name": "no-MCP/no-hardware boundary",
+      "command": "selective host-only rerun and post-run boundary review",
+      "outcome": "PASS",
+      "summary": "No MCP/server, pyOCD, serial, probe, flash, reset, debug, RF, lease, or physical hardware operation occurred."
+    }
+  ]
+}

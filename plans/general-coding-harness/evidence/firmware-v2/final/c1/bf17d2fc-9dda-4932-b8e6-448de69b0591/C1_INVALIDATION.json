@@ -1,0 +1,22 @@
+{
+  "schema": "firmware-v2-c1-invalidation/v1",
+  "owner": "ROOT-IM",
+  "recorded_at_utc": "2026-08-04T22:18:33Z",
+  "lock_id": "bf17d2fc-9dda-4932-b8e6-448de69b0591",
+  "lock": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c1/bf17d2fc-9dda-4932-b8e6-448de69b0591/C1_LOCK.json",
+    "sha256": "73cd9542ad2d360c94476a3531291ca09d242dd7245a2018a5998abe3a910f39"
+  },
+  "trigger": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c2/attempt-0002/ROOT_PRE_C3_ADMISSION_GAP.json",
+    "finding_id": "F-PRE-C3-001"
+  },
+  "reason": "The locked candidate lacks the executable C3-HARNESS target-assignment and lifecycle boundary required by the operative goal and planning documents. Repair changes a C1-locked candidate input.",
+  "status": "INVALIDATED_BEFORE_C3",
+  "hardware_or_mcp_accessed": false,
+  "replacement_requirements": [
+    "fresh C0 on the repaired exact candidate",
+    "fresh opaque C1 lock",
+    "dependency-invalidated C2 before C3"
+  ]
+}

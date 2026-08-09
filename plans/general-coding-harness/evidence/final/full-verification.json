@@ -1,0 +1,18 @@
+{
+  "schema": "general-coding-harness-full-verification/v1",
+  "candidate_commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+  "command": "uv run --project .codex/dev --locked python .codex/scripts/verify.py --full",
+  "attempts_on_final_candidate": 1,
+  "exit_code": 0,
+  "duration_seconds": 164.5,
+  "outcome": "PASS",
+  "ruff": "PASS",
+  "format": "PASS (8 files already formatted)",
+  "basedpyright": "PASS (0 errors, 0 warnings, 0 notes)",
+  "compile": "PASS",
+  "orchestrator_tests": "PASS (248 tests, 1 skipped)",
+  "watcher_tests": "PASS (100 tests)",
+  "codex_integration_tests": "PASS (49 tests)",
+  "attention_retention": "PASS",
+  "synthetic_firmware_regressions": "PASS as part of the orchestrator suite"
+}

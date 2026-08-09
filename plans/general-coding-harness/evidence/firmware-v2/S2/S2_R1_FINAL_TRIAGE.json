@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_R1_FINDINGS_66.json",
+  "findings_sha256": "1001b1c2520d5adcf82ec05c54d270624c09fff5dc4ac43c0627c6cb88867e45",
+  "decisions": [
+    {
+      "id": "S2R1-RAW-RESULT-001",
+      "decision": "ACCEPT",
+      "rationale": "The accepted-operation record claims a SHA-256 identity for the physical raw result, but admission currently checks neither retained raw-result bytes nor their digest. That makes the provenance assertion false at the physical-operation trust boundary. The correction is one canonical retained payload/hash equality plus one mismatch rejection test; its low complexity, regression risk, and verification cost are materially outweighed by preventing acceptance of substituted hardware results.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Define the retained raw-result canonical payload, compute its SHA-256 from actual bytes when recording/admitting it, require exact equality with canonical_bound_operation.raw_result_sha256, and add one focused mismatch rejection test."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-004",
+  "reviewer_thread_id": "019fcc02-2294-76f1-be18-b2c507f29854",
+  "candidate_commit": "ea659be5d32a3eb24c6fe6e0c765f15209727dff",
+  "root_decision": "ACCEPT_FINDING_AND_APPLY_MINIMAL_ROOT_CORRECTION",
+  "accepted_finding": "S2R1-C0-ATTEMPT0003-STDERR-001",
+  "reason": "A silently truncated stderr log can be presented as complete physical-boundary evidence. The synchronized error-state correction is localized and its direct correctness benefit outweighs the small implementation and verification cost.",
+  "execution_note": "The assigned persistent Terra coder resume hit the account headless-agent usage limit before performing any work. ROOT-IM applied only the reviewer-specified minimal correction, preserving the failed launch evidence; this operator-capacity event is not a harness/watcher defect and does not reset unaffected green tests.",
+  "findings_sha256": "78f2028743db6ef750aa44b201248ca2a044c1f19c42138b98f8f356ca533103",
+  "result_sha256": "434e8da2fc82d2f3f003332ea60e48b966853ce6c5848996fb9ccb1b9ec28a4d",
+  "corrected_commit": "8ed3a025b3f19a2b4b9c9ecca09c9e2edba23683",
+  "root_focused_check": "27 controller/kit/host tests plus changed-module compilation and diff hygiene passed; no MCP or hardware access occurred.",
+  "triaged_at_utc": "2026-08-04T10:14:50Z"
+}

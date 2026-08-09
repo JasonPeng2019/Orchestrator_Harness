@@ -1,0 +1,17 @@
+{
+  "frozen": {
+    "suite": "plans/general-coding-harness/runtime/frozen-development-v1/observed-runs",
+    "output": "frozen-harness-to-use/orchestrator_harness/.state/frozen-development-v1",
+    "events": "frozen-harness-to-use/orchestrator_harness/.state/frozen-development-v1/events.jsonl",
+    "acknowledgements": "frozen-harness-to-use/orchestrator_harness/.state/frozen-development-v1/notification-state.json",
+    "locks": "frozen-harness-to-use/orchestrator_harness/.state/frozen-development-v1/locks"
+  },
+  "candidate_acceptance": {
+    "suite": "plans/general-coding-harness/runtime/candidate-acceptance-v1/observed-runs",
+    "output": "harness-in-progress/orchestrator_harness/.state/candidate-acceptance-v1",
+    "events": "harness-in-progress/orchestrator_harness/.state/candidate-acceptance-v1/events.jsonl",
+    "acknowledgements": "harness-in-progress/orchestrator_harness/.state/candidate-acceptance-v1/notification-state.json",
+    "locks": "harness-in-progress/orchestrator_harness/.state/candidate-acceptance-v1/locks"
+  },
+  "assertion": "All canonical roots differ between frozen development and candidate acceptance."
+}

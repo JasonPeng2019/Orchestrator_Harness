@@ -1,0 +1,36 @@
+{
+  "schema": "firmware-v2-c2-root-path-hash-audit/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0005",
+  "observed_at_utc": "2026-08-05T10:30:00Z",
+  "candidate_commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+  "test_report_sha256": "6b1ab9cfc3ee5428055c7a182e3aa375c5e7ea19d86f6a2c36e7c42e081fc9c6",
+  "path_hash_references_checked": 34,
+  "valid_references": 31,
+  "invalid_references": [
+    {
+      "json_path": "$.tests[3].stdout",
+      "artifact": "F-C2-CREDIT-001.stdout.log",
+      "recorded_sha256": "eee32917ba500a67c3c5ced096a40340eb0e9089e034980ea887dce8cca8b94c",
+      "classification": "STALE_REPORT_PATH"
+    },
+    {
+      "json_path": "$.tests[3].stderr",
+      "artifact": "F-C2-CREDIT-001.stderr.log",
+      "recorded_sha256": "79ec9ab56f587f1dabf732f5164dde43eb3f7f7f34ba8357bbfeeec91abb0f33",
+      "classification": "STALE_REPORT_PATH"
+    },
+    {
+      "json_path": "$.tests[4].stderr",
+      "artifact": "F-C2-STATE-001.stderr.log",
+      "recorded_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "classification": "STALE_REPORT_PATH"
+    }
+  ],
+  "common_cause": "The three report paths omitted the runtime/firmware-v2 directory segment; the canonical files exist and match the recorded hashes.",
+  "candidate_finding": false,
+  "locked_input_change": false,
+  "test_rerun_authorized": false,
+  "same_thread_report_only_correction_required": true,
+  "c2_admitted": false
+}

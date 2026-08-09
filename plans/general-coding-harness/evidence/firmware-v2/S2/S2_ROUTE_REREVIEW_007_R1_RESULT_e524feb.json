@@ -1,0 +1,35 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-route-review-001",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+  "outcome": "PASS",
+  "summary": "The one-line route correction admits only the pinned all-null board_setup-plan initialization while preserving exact non-null route identity and full retained-route comparison.",
+  "checks": [
+    {
+      "name": "exact-tip-and-one-line-production-delta",
+      "command": "git rev-parse HEAD; git branch --show-current; git diff --name-status 184a869d0f49ae9ef6b222ae90dc3488f7229f60..e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+      "outcome": "PASS",
+      "summary": "Reviewed exact e524feb production correction: one controller route-pre-dispatch conditional."
+    },
+    {
+      "name": "accepted-finding-triage-and-pinned-shape",
+      "command": "Static read of S2_PRE_C1_D1_RERUN_FINDINGS_184a869.json, triage, executable decision, exact controller blob, and mcp-candidate@f003f84a7df51cd8595a3203c62e225b21da2a22",
+      "outcome": "PASS",
+      "summary": "The accepted finding is closed: the pinned setup initialization is all-null, including board_id, and the exception is restricted to that retained exact call."
+    },
+    {
+      "name": "adjacent-route-state-preservation",
+      "command": "Static review of _validate_route_pre_dispatch and _validate_route_result surrounding the changed conditional",
+      "outcome": "PASS",
+      "summary": "Non-null board_id still must equal the retained route; loaders and validation retain exact route-call checks; all-null plan initialization retains full exact arguments comparison before dispatch."
+    },
+    {
+      "name": "host-only-integrity-and-cleanliness",
+      "command": "git diff --check 184a869d0f49ae9ef6b222ae90dc3488f7229f60..e524feb14ef8a84b31a613a6ddc5bd1fc2491df7; git diff --quiet; git diff --cached --quiet; git status --porcelain",
+      "outcome": "PASS",
+      "summary": "No committed-delta whitespace defects or tracked worktree changes observed; tests, MCP/server, and hardware were not invoked."
+    }
+  ]
+}

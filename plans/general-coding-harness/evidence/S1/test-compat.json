@@ -1,0 +1,10 @@
+{
+  "candidate_commit": "79345bc9a8541468d604eb2cd2ca908b73a91c2b",
+  "result": "pass",
+  "source": "S1.A1 exact-commit test execution; no redundant D2 rerun",
+  "tests": {
+    "watcher_smoke": "51 passed",
+    "legacy_firmware_lane_controller": "6 passed"
+  },
+  "combined_s1_tests": "62 passed"
+}

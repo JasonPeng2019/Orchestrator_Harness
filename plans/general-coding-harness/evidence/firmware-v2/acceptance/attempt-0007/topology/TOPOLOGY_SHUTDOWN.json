@@ -1,0 +1,43 @@
+{
+  "schema": "firmware-c3-topology-shutdown/v1",
+  "attempt_id": "attempt-0007",
+  "owner": "ROOT-IM",
+  "acceptance_pass": false,
+  "inventory_excludes_self": true,
+  "files": [
+    {"path":"GOVERNING_INPUT_WATCHER_LAUNCH.json","bytes":1261,"sha256":"588bdaa57e379264556c7a173081f80427374a868465b4e7ee63af3d02dee7e0"},
+    {"path":"ORCHESTRATOR_HEARTBEATS.jsonl","bytes":124699,"sha256":"83dd3706981d78f4e36ca24922966cbe046195851e6f293d0087f99f1a2422c7"},
+    {"path":"ORCHESTRATOR_IDENTITY.json","bytes":778,"sha256":"0d5a2cbf8085150db83a5dcb4410733d480445d6c0a03f1233e4ee40b1880875"},
+    {"path":"ORCHESTRATOR_KEY_RELEASE.json","bytes":457,"sha256":"62d1c6171a557e603817f990f2a2d5785e267282a4407bd26dff9e63bc9cf85f"},
+    {"path":"ORCHESTRATOR_LAUNCH_INTENT.json","bytes":310,"sha256":"8a149430289551d3d81daf2ffe3246668a98823a4f6cb4b30501a863293c0c8b"},
+    {"path":"ORCHESTRATOR_PROCESS_LAUNCH.json","bytes":2176,"sha256":"eb5f011d79c18dcec834d49710399aa0b570f4e02a7de397c8aeb97058b5112d"},
+    {"path":"ORCHESTRATOR_SIGNER_LAUNCH.json","bytes":1213,"sha256":"4c164c9565122c5e0bcc8e28bfec7b645735c7a462ccc675bd3e27924e8a4c7c"},
+    {"path":"ROOT_ATTEMPT_ALLOCATION.json","bytes":779,"sha256":"937c739560d2f4f0e5521d35518317953cbcd314f7f24573b04d4a9a258c521f"},
+    {"path":"ROOT_ATTEMPT_CLOSEOUT.json","bytes":1668,"sha256":"82181650443dcf5ce08b16e9a3c4eb6c8bcb5831829016ab937c50885b4d76c8"},
+    {"path":"ROOT_IDENTITY_GATE_VALIDATION.json","bytes":1631,"sha256":"a14be75d9e5166f33bb6806d57f75770e9649a8836832ea36e34ddcc554621de"},
+    {"path":"ROOT_LAUNCH_STATUS.json","bytes":975,"sha256":"8ae3b4ae12a814a04988389592440428ec95c667c025d688c16181ec7e63d8f6"},
+    {"path":"ROOT_LAUNCHER_INTENT.json","bytes":1097,"sha256":"f8b7b088a825a3cc87eb726e12020086d3e365c846dbbea0929de6fed365b617"},
+    {"path":"ROOT_PRELAUNCH_VALIDATION.json","bytes":8660,"sha256":"411c3281c311b4aea47793793ee19c51d019c03f0e601d365f42891fea3e121f"},
+    {"path":"ROOT_PROCEDURE_ABORT_REQUIRED.json","bytes":4113,"sha256":"48af8ac38d6feeadd716a598678d348e6460bbec2ad63dcea66d0162a4b2760c"},
+    {"path":"ROOT_SUPERVISOR_FAILURE.json","bytes":913,"sha256":"8a43276bd1bbf8b78f0039defde07998910d06597c1dd0f88ca5b15b7b4b92b5"},
+    {"path":"WATCHER_LAUNCH.json","bytes":2120,"sha256":"2f5fa6fd1fd97bc12af15f1bb94acc2aa6cc5e72877b6e5c76920dde29ea73e6"},
+    {"path":"WATCHER_STOP_REQUEST.json","bytes":1297,"sha256":"c1fbf070fde2f5d670535d1741772449ce1daf514d4ba001671d0a0a7a246a65"}
+  ],
+  "closure": {
+    "inventory_count": 17,
+    "identity_gate_complete": true,
+    "candidate_normal_shutdown_complete": true,
+    "watcher_service_terminal_present": true,
+    "watcher_agent_terminal_report_missing": true,
+    "registered_processes_remaining": 0,
+    "candidate_harness_processes_remaining": 0,
+    "target_worker_processes_remaining": 0,
+    "mcp_processes_remaining": 0,
+    "resource_claims_remaining": 0,
+    "candidate_clean": true,
+    "mcp_server_clean": true,
+    "hardware_calls_dispatched": 0,
+    "manifest_integrity": "NOT_CREATED_FAILED_ATTEMPT"
+  },
+  "closed_at_utc": "2026-08-05T17:20:41.5684814Z"
+}

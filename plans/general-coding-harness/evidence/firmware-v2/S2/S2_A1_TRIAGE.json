@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_A1_FINDINGS_62ff.json",
+  "findings_sha256": "5fdbb3e3dfd00fc3cbf44193af22b031f83a69960768bbf4b95c9d6f32d6e59d",
+  "decisions": [
+    {
+      "id": "S2-A1-F1",
+      "decision": "ACCEPT",
+      "rationale": "ROOT-IM reproduced this in fresh candidate and A1/A2 Windows worktrees: Git's CRLF checkout conversion changes all four sealed seed-file bytes while the manifest correctly names canonical LF bytes. AcceptanceBroker therefore cannot materialize any target. The smallest robust repair is a seed-only Git EOL rule that preserves exact LF bytes in every fresh worktree; changing hashes to one platform's converted bytes or weakening validation would break portability/provenance. The product impact is total S2/C3 target-entrypoint failure, while the fix is one scoped attribute rule plus the already-authored focused test rerun.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Add a repository attribute limited to firmware_acceptance/seed/* that enforces LF working-tree bytes, preserve the existing canonical manifest digests, verify a fresh worktree materializes those exact bytes, and rerun only the affected A1/A2 seed/broker tests."
+    }
+  ]
+}

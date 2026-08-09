@@ -1,6 +1,6 @@
 {
     "files": {
-        "./harness-in-progress/harness_watcher_implementation/tests/run_attention_practical.py": [
+        "./stable-general-harness-runner/harness_watcher_implementation/tests/run_attention_practical.py": [
             {
                 "code": "reportOperatorIssue",
                 "range": {
@@ -98,7 +98,7 @@
                 }
             }
         ],
-        "./harness-in-progress/harness_watcher_implementation/tests/run_canary.py": [
+        "./stable-general-harness-runner/harness_watcher_implementation/tests/run_canary.py": [
             {
                 "code": "reportCallIssue",
                 "range": {
@@ -108,7 +108,7 @@
                 }
             }
         ],
-        "./harness-in-progress/harness_watcher_implementation/tests/run_lifecycle_canary.py": [
+        "./stable-general-harness-runner/harness_watcher_implementation/tests/run_lifecycle_canary.py": [
             {
                 "code": "reportAttributeAccessIssue",
                 "range": {
@@ -166,7 +166,7 @@
                 }
             }
         ],
-        "./harness-in-progress/harness_watcher_implementation/tests/test_watcher_smoke.py": [
+        "./stable-general-harness-runner/harness_watcher_implementation/tests/test_watcher_smoke.py": [
             {
                 "code": "reportPossiblyUnboundVariable",
                 "range": {
@@ -344,7 +344,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/active_management.py": [
+        "./stable-general-harness-runner/orchestrator_harness/active_management.py": [
             {
                 "code": "reportCallIssue",
                 "range": {
@@ -378,7 +378,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/discovery.py": [
+        "./stable-general-harness-runner/orchestrator_harness/discovery.py": [
             {
                 "code": "reportOperatorIssue",
                 "range": {
@@ -388,7 +388,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/notifications.py": [
+        "./stable-general-harness-runner/orchestrator_harness/notifications.py": [
             {
                 "code": "reportArgumentType",
                 "range": {
@@ -398,7 +398,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/processes.py": [
+        "./stable-general-harness-runner/orchestrator_harness/processes.py": [
             {
                 "code": "reportAttributeAccessIssue",
                 "range": {
@@ -408,7 +408,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/reconcile.py": [
+        "./stable-general-harness-runner/orchestrator_harness/reconcile.py": [
             {
                 "code": "reportArgumentType",
                 "range": {
@@ -426,7 +426,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/tests/support/cgroup_exec.py": [
+        "./stable-general-harness-runner/orchestrator_harness/tests/support/cgroup_exec.py": [
             {
                 "code": "reportAttributeAccessIssue",
                 "range": {
@@ -436,7 +436,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/tests/support/wsl_real_agent_driver.py": [
+        "./stable-general-harness-runner/orchestrator_harness/tests/support/wsl_real_agent_driver.py": [
             {
                 "code": "reportAttributeAccessIssue",
                 "range": {
@@ -502,7 +502,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/tests/test_active_manager_watch_smoke.py": [
+        "./stable-general-harness-runner/orchestrator_harness/tests/test_active_manager_watch_smoke.py": [
             {
                 "code": "reportOptionalSubscript",
                 "range": {
@@ -592,7 +592,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/tests/test_clean_m_handoffs.py": [
+        "./stable-general-harness-runner/orchestrator_harness/tests/test_clean_m_handoffs.py": [
             {
                 "code": "reportArgumentType",
                 "range": {
@@ -698,7 +698,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/tests/test_clean_n.py": [
+        "./stable-general-harness-runner/orchestrator_harness/tests/test_clean_n.py": [
             {
                 "code": "reportOptionalSubscript",
                 "range": {
@@ -788,7 +788,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/tests/test_lane_controller.py": [
+        "./stable-general-harness-runner/orchestrator_harness/tests/test_lane_controller.py": [
             {
                 "code": "reportAttributeAccessIssue",
                 "range": {
@@ -822,7 +822,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/tests/test_manager_notifications.py": [
+        "./stable-general-harness-runner/orchestrator_harness/tests/test_manager_notifications.py": [
             {
                 "code": "reportArgumentType",
                 "range": {
@@ -992,7 +992,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/tests/test_operator_launch.py": [
+        "./stable-general-harness-runner/orchestrator_harness/tests/test_operator_launch.py": [
             {
                 "code": "reportOptionalMemberAccess",
                 "range": {
@@ -1002,7 +1002,7 @@
                 }
             }
         ],
-        "./harness-in-progress/orchestrator_harness/tests/test_reconcile.py": [
+        "./stable-general-harness-runner/orchestrator_harness/tests/test_reconcile.py": [
             {
                 "code": "reportOptionalSubscript",
                 "range": {

@@ -1,0 +1,36 @@
+{
+  "schema": "firmware-c3-root-supervision-observation/v1",
+  "attempt_id": "attempt-0002",
+  "owner": "ROOT-IM",
+  "classification_pending_watcher": true,
+  "invariant": "C3_ATTEMPT_TARGET_LAYOUT",
+  "governing_requirement": {
+    "goal_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\goal.md",
+    "goal_sha256": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "goal_line": 747,
+    "required_runtime_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\target",
+    "execution_plan_lines": [947, 950, 1098]
+  },
+  "observed": {
+    "materialize_response_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\manager-signals\\c3-responses\\p0-materialize-0001.json",
+    "materialize_response_sha256": "ba08f3f2a91429061e80b4f635f4c2c04ce4b72d19740e5ad2c81f89634753b4",
+    "returned_target_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\targets\\target",
+    "returned_target_commit": "7dec3eb89d351a590dfe53ec7cfc106b198bb00b",
+    "required_singular_target_root_empty": true,
+    "unexpected_plural_target_root_present": true,
+    "candidate_source_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\firmware_acceptance\\c3_harness.py",
+    "candidate_source_sha256": "8379fbc6deccebb56e812adf32c07539ed08edb1eb4517bc368be17c7b733326",
+    "candidate_source_lines": [267, 285, 403]
+  },
+  "state_at_observation": {
+    "candidate_commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+    "candidate_clean": true,
+    "mcp_server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "mcp_server_clean": true,
+    "target_workers_launched": 0,
+    "mutating_hardware_calls_dispatched": 0,
+    "open_sessions_are_bootstrap_only": true
+  },
+  "root_request": "STOP_NEW_WORK_AND_CLASSIFY_THE_REPRODUCIBLE_LAYOUT_MISMATCH_BEFORE_ANY_MUTATING_HARDWARE_CALL",
+  "recorded_at_utc": "2026-08-05T06:44:37.4057222Z"
+}

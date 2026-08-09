@@ -1,0 +1,6 @@
+interface:
+  display_name: "Design Project Topology"
+  short_description: "Design lean multi-agent project workflows."
+  default_prompt: "Use $design-project-topology to design a fast, reliable, proportionate multi-agent project execution plan."
+policy:
+  allow_implicit_invocation: false

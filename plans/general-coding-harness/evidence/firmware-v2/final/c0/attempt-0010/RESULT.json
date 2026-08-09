@@ -1,0 +1,31 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-010",
+  "branch": "firmware/v2-c0-final-review-0010",
+  "commit": "659dd03e2aa7159090c8e0e20123b1fec1749f90",
+  "outcome": "PASS",
+  "summary": "NO CANDIDATE GAP / READY",
+  "checks": [
+    {
+      "name": "candidate, pinned MCP, and authoritative artifact identity audit",
+      "outcome": "PASS",
+      "summary": "Candidate is clean at 659dd03e2aa7159090c8e0e20123b1fec1749f90; mcp-candidate is clean at f003f84a7df51cd8595a3203c62e225b21da2a22; the executable decision, ROOT join, dependency map, map acceptance, and registry hashes exactly match their required values."
+    },
+    {
+      "name": "C1-C73 containment and product-source audit",
+      "outcome": "PASS",
+      "summary": "Static inspection found closed legacy/coding route isolation, default-deny policy and call schemas, retained-session and dynamic-route bindings, signed authorization/cleanup handling, limitation attribution, and BLE/LoRa effect bounds including valid lower-bound narrowing and non-inverted LoRa intervals."
+    },
+    {
+      "name": "protected baseline, dependency map, and registry-credit audit",
+      "outcome": "PASS",
+      "summary": "The 248-ID protected baseline, full diff, and accepted map show no deleted or renamed protected IDs, skip/expected-failure substitution, weakened assertion, stale hash, missing dependency, or unjustified credit. The registry has 21 groups, 140 unique IDs, zero invalidations, and 56 credits; only the mapped LoRa scope-effect ID ran after 9606444 and every other green ID retains valid credit."
+    },
+    {
+      "name": "execution boundary",
+      "outcome": "NOT_RUN",
+      "summary": "Per assignment, this lane performed read-only inspection only and did not run tests or gates, launch MCP, access hardware/RF/serial, or alter outer evidence."
+    }
+  ]
+}

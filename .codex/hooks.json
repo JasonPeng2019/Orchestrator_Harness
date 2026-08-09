@@ -7,9 +7,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run --project \"$(git rev-parse --show-toplevel)/.codex/dev\" --locked python \"$(git rev-parse --show-toplevel)/.codex/scripts/hook_runner.py\" session-start",
-            "commandWindows": "powershell -NoProfile -Command \"$r=(git rev-parse --show-toplevel); $input | uv run --project (Join-Path $r '.codex/dev') --locked python (Join-Path $r '.codex/scripts/hook_runner.py') session-start\"",
-            "timeout": 30,
+            "command": "r=\"$PWD\"; while [ \"$r\" != / ] && [ ! -f \"$r/.codex/scripts/hook_runner.py\" ]; do r=$(dirname \"$r\"); done; [ -f \"$r/.codex/scripts/hook_runner.py\" ] || { echo 'Unable to locate project hook runner' >&2; exit 1; }; uv run --project \"$r/.codex/dev\" --locked python \"$r/.codex/scripts/hook_runner.py\" session-start",
+            "commandWindows": "$payload=[Console]::In.ReadToEnd(); $j=$null; try { $j=$payload | ConvertFrom-Json } catch {}; $starts=@($j.cwd,$j.tool_input.workdir,$env:CODEX_PROJECT_ROOT,$env:CODEX_WORKSPACE_ROOT,$env:CLAUDE_PROJECT_DIR,(Get-Location).Path); $r=$null; foreach ($s in $starts) { if ([string]::IsNullOrWhiteSpace([string]$s)) { continue }; try { $c=[IO.Path]::GetFullPath([string]$s) } catch { continue }; if (Test-Path -LiteralPath $c -PathType Leaf) { $c=Split-Path -Parent $c }; while ($c) { if (Test-Path -LiteralPath (Join-Path $c '.codex/scripts/hook_runner.py')) { $r=$c; break }; $p=Split-Path -Parent $c; if ($p -eq $c) { break }; $c=$p }; if ($r) { break } }; if (-not $r) { Write-Error 'Unable to locate project hook runner from hook cwd, environment, or process directory'; exit 1 }; $payload | uv run --project (Join-Path $r '.codex/dev') --locked python (Join-Path $r '.codex/scripts/hook_runner.py') session-start; exit $LASTEXITCODE",
+            "timeout": 60,
             "additionalContextLimit": 3000,
             "statusMessage": "Loading harness development context"
           }
@@ -22,9 +22,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run --project \"$(git rev-parse --show-toplevel)/.codex/dev\" --locked python \"$(git rev-parse --show-toplevel)/.codex/scripts/hook_runner.py\" guard-dangerous",
-            "commandWindows": "powershell -NoProfile -Command \"$r=(git rev-parse --show-toplevel); $input | uv run --project (Join-Path $r '.codex/dev') --locked python (Join-Path $r '.codex/scripts/hook_runner.py') guard-dangerous\"",
-            "timeout": 30,
+            "command": "r=\"$PWD\"; while [ \"$r\" != / ] && [ ! -f \"$r/.codex/scripts/hook_runner.py\" ]; do r=$(dirname \"$r\"); done; [ -f \"$r/.codex/scripts/hook_runner.py\" ] || { echo 'Unable to locate project hook runner' >&2; exit 1; }; uv run --project \"$r/.codex/dev\" --locked python \"$r/.codex/scripts/hook_runner.py\" guard-dangerous",
+            "commandWindows": "$payload=[Console]::In.ReadToEnd(); $j=$null; try { $j=$payload | ConvertFrom-Json } catch {}; $starts=@($j.cwd,$j.tool_input.workdir,$env:CODEX_PROJECT_ROOT,$env:CODEX_WORKSPACE_ROOT,$env:CLAUDE_PROJECT_DIR,(Get-Location).Path); $r=$null; foreach ($s in $starts) { if ([string]::IsNullOrWhiteSpace([string]$s)) { continue }; try { $c=[IO.Path]::GetFullPath([string]$s) } catch { continue }; if (Test-Path -LiteralPath $c -PathType Leaf) { $c=Split-Path -Parent $c }; while ($c) { if (Test-Path -LiteralPath (Join-Path $c '.codex/scripts/hook_runner.py')) { $r=$c; break }; $p=Split-Path -Parent $c; if ($p -eq $c) { break }; $c=$p }; if ($r) { break } }; if (-not $r) { Write-Error 'Unable to locate project hook runner from hook cwd, environment, or process directory'; exit 1 }; $payload | uv run --project (Join-Path $r '.codex/dev') --locked python (Join-Path $r '.codex/scripts/hook_runner.py') guard-dangerous; exit $LASTEXITCODE",
+            "timeout": 60,
             "statusMessage": "Checking destructive command policy"
           }
         ]
@@ -35,9 +35,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run --project \"$(git rev-parse --show-toplevel)/.codex/dev\" --locked python \"$(git rev-parse --show-toplevel)/.codex/scripts/hook_runner.py\" pre-compact",
-            "commandWindows": "powershell -NoProfile -Command \"$r=(git rev-parse --show-toplevel); $input | uv run --project (Join-Path $r '.codex/dev') --locked python (Join-Path $r '.codex/scripts/hook_runner.py') pre-compact\"",
-            "timeout": 30,
+            "command": "r=\"$PWD\"; while [ \"$r\" != / ] && [ ! -f \"$r/.codex/scripts/hook_runner.py\" ]; do r=$(dirname \"$r\"); done; [ -f \"$r/.codex/scripts/hook_runner.py\" ] || { echo 'Unable to locate project hook runner' >&2; exit 1; }; uv run --project \"$r/.codex/dev\" --locked python \"$r/.codex/scripts/hook_runner.py\" pre-compact",
+            "commandWindows": "$payload=[Console]::In.ReadToEnd(); $j=$null; try { $j=$payload | ConvertFrom-Json } catch {}; $starts=@($j.cwd,$j.tool_input.workdir,$env:CODEX_PROJECT_ROOT,$env:CODEX_WORKSPACE_ROOT,$env:CLAUDE_PROJECT_DIR,(Get-Location).Path); $r=$null; foreach ($s in $starts) { if ([string]::IsNullOrWhiteSpace([string]$s)) { continue }; try { $c=[IO.Path]::GetFullPath([string]$s) } catch { continue }; if (Test-Path -LiteralPath $c -PathType Leaf) { $c=Split-Path -Parent $c }; while ($c) { if (Test-Path -LiteralPath (Join-Path $c '.codex/scripts/hook_runner.py')) { $r=$c; break }; $p=Split-Path -Parent $c; if ($p -eq $c) { break }; $c=$p }; if ($r) { break } }; if (-not $r) { Write-Error 'Unable to locate project hook runner from hook cwd, environment, or process directory'; exit 1 }; $payload | uv run --project (Join-Path $r '.codex/dev') --locked python (Join-Path $r '.codex/scripts/hook_runner.py') pre-compact; exit $LASTEXITCODE",
+            "timeout": 60,
             "statusMessage": "Checking handoff state"
           }
         ]
@@ -48,9 +48,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run --project \"$(git rev-parse --show-toplevel)/.codex/dev\" --locked python \"$(git rev-parse --show-toplevel)/.codex/scripts/hook_runner.py\" verify-on-stop",
-            "commandWindows": "powershell -NoProfile -Command \"$r=(git rev-parse --show-toplevel); $input | uv run --project (Join-Path $r '.codex/dev') --locked python (Join-Path $r '.codex/scripts/hook_runner.py') verify-on-stop\"",
-            "timeout": 120,
+            "command": "r=\"$PWD\"; while [ \"$r\" != / ] && [ ! -f \"$r/.codex/scripts/hook_runner.py\" ]; do r=$(dirname \"$r\"); done; [ -f \"$r/.codex/scripts/hook_runner.py\" ] || { echo 'Unable to locate project hook runner' >&2; exit 1; }; uv run --project \"$r/.codex/dev\" --locked python \"$r/.codex/scripts/hook_runner.py\" verify-on-stop",
+            "commandWindows": "$payload=[Console]::In.ReadToEnd(); $j=$null; try { $j=$payload | ConvertFrom-Json } catch {}; $starts=@($j.cwd,$j.tool_input.workdir,$env:CODEX_PROJECT_ROOT,$env:CODEX_WORKSPACE_ROOT,$env:CLAUDE_PROJECT_DIR,(Get-Location).Path); $r=$null; foreach ($s in $starts) { if ([string]::IsNullOrWhiteSpace([string]$s)) { continue }; try { $c=[IO.Path]::GetFullPath([string]$s) } catch { continue }; if (Test-Path -LiteralPath $c -PathType Leaf) { $c=Split-Path -Parent $c }; while ($c) { if (Test-Path -LiteralPath (Join-Path $c '.codex/scripts/hook_runner.py')) { $r=$c; break }; $p=Split-Path -Parent $c; if ($p -eq $c) { break }; $c=$p }; if ($r) { break } }; if (-not $r) { Write-Error 'Unable to locate project hook runner from hook cwd, environment, or process directory'; exit 1 }; $payload | uv run --project (Join-Path $r '.codex/dev') --locked python (Join-Path $r '.codex/scripts/hook_runner.py') verify-on-stop; exit $LASTEXITCODE",
+            "timeout": 300,
             "statusMessage": "Verifying changed harness code"
           }
         ]

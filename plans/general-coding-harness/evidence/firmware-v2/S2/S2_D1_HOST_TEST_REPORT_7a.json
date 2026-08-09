@@ -1,0 +1,94 @@
+{
+  "schema": "firmware-v2-test-report/v1",
+  "lane": "S2.D1",
+  "worker_invocation_id": "s2-d1-001",
+  "revision": "7a28b186e91f2945ea9c59869a216fa8caf8407e",
+  "commit": "7a28b186e91f2945ea9c59869a216fa8caf8407e",
+  "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_host -v",
+  "stable_ids": [
+    {
+      "id": "S2_A1_001",
+      "test": "FirmwareAcceptanceHostTests.test_S2_A1_001_clean_pinned_server_launch_is_confined_to_controller_roots",
+      "outcome": "PASS"
+    },
+    {
+      "id": "S2_A1_002",
+      "test": "FirmwareAcceptanceHostTests.test_S2_A1_002_admission_rejects_immutable_operation_drift",
+      "outcome": "PASS"
+    }
+  ],
+  "counts": {
+    "collected": 2,
+    "executed": 2,
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0,
+    "expected_failures": 0,
+    "unexpected_successes": 0
+  },
+  "dependency_fingerprint_algorithm": "sha256-canonical-json over sorted path/sha256 records",
+  "dependency_inputs": {
+    "S2_A1_001": {
+      "fingerprint": "6d1e5317aaefe73a1c25ad28b1365985015061f7957b87aee622daa2d3c9ee90",
+      "inputs": [
+        {"path": "firmware_acceptance/ACCEPTANCE_MANIFEST.json", "sha256": "ffde1fd5aec3f515f1f5c0ec1b7f657b196fed7c008a4650fc6c2d0bc3a81800"},
+        {"path": "firmware_acceptance/LANE_TEMPLATES.json", "sha256": "af7cebbc5e3910c32f0ef183fcad401234ea8cd6afe466fdb6990e75016d83f4"},
+        {"path": "firmware_acceptance/kit.py", "sha256": "e1981aed2026369b9e9885d6fc2115d83a0de339bbe81d8ef9443ffe01dbafb9"},
+        {"path": "firmware_acceptance/seed/EVIDENCE_SCHEMA.json", "sha256": "e4670ca5901421813d30476630a5347ff1e286f60634651b1cd284c66f201114"},
+        {"path": "firmware_acceptance/seed/PINNED_INPUTS.json", "sha256": "67fbc2adc499f11c32c99d4484f2ff8ae14a3ca6ee4b899acf35d7897c4623f6"},
+        {"path": "firmware_acceptance/seed/TARGET_CHARTER.md", "sha256": "5aea61dec6babcc2dd09abecc41349139f1e5fc01c2ec6f10df9af18beeb8a78"},
+        {"path": "firmware_acceptance/seed/TARGET_SEED_MANIFEST.json", "sha256": "35c9f530e268216116d26b6585860ee8545e76b5ff30ea787a8ac27ea2bf59fc"},
+        {"path": "firmware_acceptance/seed/TEST_CONTRACT.json", "sha256": "3154e0c102b5379de03d57161da2f9ea4d2d0f083a411e577aa7431541e5736a"},
+        {"path": "orchestrator_harness/tests/test_firmware_acceptance_host.py", "sha256": "c7fd7c61f3e6150e562aa311f314f5b6cf1b34184a5a5d11e9b51672e57a0365"}
+      ]
+    },
+    "S2_A1_002": {
+      "fingerprint": "589507738e7423c3666e4c96e00a629b7c654486f8c75696e44b02a0a53b427c",
+      "inputs": [
+        {"path": "firmware_acceptance/ACCEPTANCE_MANIFEST.json", "sha256": "ffde1fd5aec3f515f1f5c0ec1b7f657b196fed7c008a4650fc6c2d0bc3a81800"},
+        {"path": "firmware_acceptance/LANE_TEMPLATES.json", "sha256": "af7cebbc5e3910c32f0ef183fcad401234ea8cd6afe466fdb6990e75016d83f4"},
+        {"path": "firmware_acceptance/MCP_METHOD_POLICY.json", "sha256": "f8cc679590b2e87bd70c4455ea2810c56dd0ecfb1a1134c1a64b8bacbfcba769"},
+        {"path": "firmware_acceptance/kit.py", "sha256": "e1981aed2026369b9e9885d6fc2115d83a0de339bbe81d8ef9443ffe01dbafb9"},
+        {"path": "firmware_acceptance/seed/EVIDENCE_SCHEMA.json", "sha256": "e4670ca5901421813d30476630a5347ff1e286f60634651b1cd284c66f201114"},
+        {"path": "firmware_acceptance/seed/PINNED_INPUTS.json", "sha256": "67fbc2adc499f11c32c99d4484f2ff8ae14a3ca6ee4b899acf35d7897c4623f6"},
+        {"path": "firmware_acceptance/seed/TARGET_CHARTER.md", "sha256": "5aea61dec6babcc2dd09abecc41349139f1e5fc01c2ec6f10df9af18beeb8a78"},
+        {"path": "firmware_acceptance/seed/TARGET_SEED_MANIFEST.json", "sha256": "35c9f530e268216116d26b6585860ee8545e76b5ff30ea787a8ac27ea2bf59fc"},
+        {"path": "firmware_acceptance/seed/TEST_CONTRACT.json", "sha256": "3154e0c102b5379de03d57161da2f9ea4d2d0f083a411e577aa7431541e5736a"},
+        {"path": "orchestrator_harness/tests/test_firmware_acceptance_host.py", "sha256": "c7fd7c61f3e6150e562aa311f314f5b6cf1b34184a5a5d11e9b51672e57a0365"}
+      ]
+    }
+  },
+  "seed_validation": {
+    "command": "python -c \"from pathlib import Path; from firmware_acceptance.kit import validate_seed_manifest; validate_seed_manifest(Path('firmware_acceptance/seed'))\"",
+    "outcome": "PASS",
+    "duration_seconds": 0.201,
+    "canonical_hashes": {
+      "TARGET_CHARTER.md": "5aea61dec6babcc2dd09abecc41349139f1e5fc01c2ec6f10df9af18beeb8a78",
+      "PINNED_INPUTS.json": "67fbc2adc499f11c32c99d4484f2ff8ae14a3ca6ee4b899acf35d7897c4623f6",
+      "TEST_CONTRACT.json": "3154e0c102b5379de03d57161da2f9ea4d2d0f083a411e577aa7431541e5736a",
+      "EVIDENCE_SCHEMA.json": "e4670ca5901421813d30476630a5347ff1e286f60634651b1cd284c66f201114"
+    }
+  },
+  "duration_seconds": 2.14,
+  "unittest_reported_duration_seconds": 1.407,
+  "process_hardware_boundary": {
+    "mcp_launched": false,
+    "mcp_servers": [],
+    "hardware_access": false,
+    "forbidden_operations_attempted": [],
+    "managed_processes": {
+      "unexpected": [],
+      "observed_expected": [
+        {"kind": "lane_controller", "pid": 168544, "creation_identity": "windows-filetime:134302873670006238"},
+        {"kind": "codex_worker", "pid": 17756, "created_utc": "2026-08-04T03:22:51.503053Z"}
+      ]
+    },
+    "resource_claims": {
+      "observed": ["test-shard:S2.D1", "test-shard:S2.D2"],
+      "unexpected": [],
+      "hardware_leases": []
+    }
+  },
+  "failure_classification": null,
+  "outcome": "PASS"
+}

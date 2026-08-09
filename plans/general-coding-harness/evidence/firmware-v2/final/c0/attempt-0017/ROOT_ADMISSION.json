@@ -1,0 +1,49 @@
+{
+  "schema": "firmware-v2-c0-root-admission/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0017",
+  "candidate": {
+    "commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "joined_branch": "firmware/v2-s26-p-c3-identity-0001",
+    "reserved_branch": "firmware/v2-candidate",
+    "joined_clean": true,
+    "reserved_clean": true
+  },
+  "review": {
+    "lane_id": "F.C0.FR1",
+    "worker_invocation_id": "c0-fr1-017",
+    "thread_id": "019fd1f0-74df-7d12-912e-1fab7263c8d8",
+    "findings_sha256": "345a918fb7cfec09c2b109d6d2c2772fac833b52ff27f0bb549f5ea01297f71e",
+    "result_sha256": "bcb4ff508b2251e00f343b26f4eed58e644ac071a0d3cded4e354f9efc28a858",
+    "status_sha256": "64a07e349a8786b6dde3889628bc049aaf8db22ef35573dd842081568e0b2e16",
+    "findings_count": 0,
+    "outcome": "PASS",
+    "summary": "NO CANDIDATE GAP / READY",
+    "controller_result_valid": true,
+    "tracked_state_clean": true
+  },
+  "envelope_correction": {
+    "audit_path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0017/ROOT_ENVELOPE_AUDIT.json",
+    "original_invalid_result_sha256": "f9c40b8eccb915fc968d00e7ff2c46bf0d773f2fa23aa9bf739c3bc41b707126",
+    "defect": "wrong result schema string only",
+    "same_thread": true,
+    "review_repeated": false,
+    "tests_or_imports_run": false,
+    "semantic_content_changed": false
+  },
+  "coverage": {
+    "criteria": "C1-C73",
+    "changed_paths": 5,
+    "dependency_references_valid": "13/13",
+    "focused_ids": 23,
+    "registry_green_groups": 25,
+    "registry_unique_ids": 163,
+    "registry_invalidations": 0,
+    "registry_evidence_credits": 81,
+    "remaining_actionable_findings": 0
+  },
+  "decision": "ACCEPT_C0_AND_UNLOCK_NEW_OPAQUE_C1",
+  "hardware_execution_admitted": false,
+  "mcp_server_launched": false,
+  "created_at": "2026-08-05T12:45:00Z"
+}

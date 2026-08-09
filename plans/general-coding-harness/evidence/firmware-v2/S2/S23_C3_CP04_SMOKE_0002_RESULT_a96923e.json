@@ -1,0 +1,29 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S23.D1",
+  "worker_invocation_id": "s23-d1-c3-smoke-002",
+  "branch": "firmware/v2-s23-d1-c3-smoke-0002",
+  "commit": "a96923e95ecb1e8648f737b3d35efb21d9924c0b",
+  "outcome": "FAIL",
+  "summary": "CP04 exact stable selection ran once and errored during protected seed validation; tracked Git state is clean and no test-owned process, disposable assignment worktree, or test-owned resource claim remains.",
+  "checks": [
+    {
+      "name": "CP04 exact stable selection",
+      "command": "python -m unittest orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_04_disposable_target_assignment_and_fail_closed_acceptance -v",
+      "outcome": "FAIL",
+      "summary": "1 test ran; 0 passed, 0 failed, 1 error, 0 skipped, 0 expected failures, 0 unexpected successes."
+    },
+    {
+      "name": "tracked Git state",
+      "command": "git status --porcelain=v1",
+      "outcome": "PASS",
+      "summary": "No tracked changes; HEAD remains the requested frozen commit."
+    },
+    {
+      "name": "test-owned cleanup",
+      "command": "git worktree list --porcelain; exact owned-process query; disposable-root and resource-claim inspection",
+      "outcome": "PASS",
+      "summary": "The error occurred before controller launch; no CP04 process, assignment worktree, disposable root, or test-owned claim remains. The executor's own controller/Codex process and invocation claim are lane infrastructure, not test residue."
+    }
+  ]
+}

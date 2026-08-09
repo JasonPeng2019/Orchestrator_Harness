@@ -1,0 +1,87 @@
+{
+  "schema": "firmware-v2-registry-reconciliation/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+  "prior_candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+  "registry": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+    "sha256": "acbf6659a11011fb3bb81dcdd936566000fccdb50e0d18921a100485eb6454e7",
+    "green_groups": 26,
+    "unique_green_ids": 166,
+    "invalidated_groups": 0,
+    "evidence_credits": 86,
+    "hash_valid_evidence_credits": 80,
+    "explicit_inheritance_only_credits": 6
+  },
+  "prior_registry": {
+    "sha256": "4439ffb1b83fd6d5c7a524d3ba249c141237a1058ef9aeab9ea6e063d3cf9db5",
+    "green_groups": 25,
+    "unique_green_ids": 163,
+    "invalidated_groups": 0,
+    "evidence_credits": 81
+  },
+  "delta": {
+    "added_green_group": "S2::c3-launch-recovery-idempotence-joined-tip-reconciliation",
+    "added_green_ids": [
+      "orchestrator_harness.tests.test_coding_lane_controller.CodingLaneControllerTests.test_resource_acquisition_publishes_running_only_after_child_launch_and_popen_failure_releases_claim",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s27_a1_inauthentic_direct_controller_observation_retains_exact_identity_for_cleanup",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s27_a1_recovery_retries_stay_artifact_free_until_terminal_reconciliation"
+    ],
+    "removed_superseded_green_ids": [],
+    "freshly_revalidated_existing_ids": 0,
+    "retained_prior_green_ids": 163,
+    "added_evidence_credits": 5,
+    "new_invalidations": [],
+    "duplicate_green_groups": [],
+    "duplicate_green_ids": []
+  },
+  "dependency_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_eb3bbab.json",
+    "sha256": "27e9556c72b300b5d1c6420a40c4a50b1b56ab37e8b927d9148fdea5c5734f5b",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_eb3bbab.json",
+    "root_acceptance_sha256": "ba9695375de80c22463042e2c0ba52a4a220a7b12727d8d284333ebd657f7700"
+  },
+  "fresh_green_evidence": {
+    "execution_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S27.D2-C3-RECOVERY-0001/.agent-workspace/TEST_EXECUTION.json",
+    "execution_sha256": "b126fb631c09e7cf48c3c9398342904cd310136a873cf955126f9b75cf4e7be7",
+    "output_sha256": "2b982aecafc9a11de05e26a23a6892ddbec02cda682399a890e1240d9ed3499e",
+    "result_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S27.D2-C3-RECOVERY-0001/.agent-workspace/RESULT.json",
+    "result_sha256": "ca4d2e52ce3895f2e9c1563393e53fc78bcd4cfabf2109fe6d0ebc6b5e547aaf",
+    "tests_covered": 3,
+    "skips": 0,
+    "xfails": 0,
+    "failures_remaining": 0,
+    "errors": 0,
+    "resource_warnings": 0,
+    "outcome": "PASS"
+  },
+  "audit": {
+    "all_declared_evidence_paths_exist": true,
+    "all_80_declared_evidence_hashes_match": true,
+    "six_hashless_entries_are_prior_explicit_inheritance_edges": true,
+    "all_3_new_test_ids_covered_at_current_tip": true,
+    "all_163_prior_green_ids_dependency_valid": true,
+    "unaffected_green_ids_rerun": false,
+    "reviewer_and_tester_criticisms_preserved_and_dispositioned": true,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "criticism_disposition": {
+    "accepted": [
+      "S27.D1's two Popen fixture-scope defects were repaired test-only and proven by fresh review and execution."
+    ],
+    "preserved": [
+      "The initial one-pass, one-failure, one-error D1 execution remains immutable FAIL evidence."
+    ],
+    "rejected": [
+      "Candidate bytecode cleanup for a ROOT executor environment-projection error.",
+      "A production subprocess seam for local test doubles.",
+      "PowerShell stderr presentation suppression.",
+      "A broad or duplicate rerun after the exact invalidated IDs passed."
+    ],
+    "remaining_actionable_findings": []
+  },
+  "decision": "REGISTRY_RECONCILED_ONCE_FOR_ACCEPTED_S27_BATCH",
+  "outcome": "PASS",
+  "created_at": "2026-08-05T15:54:00Z"
+}

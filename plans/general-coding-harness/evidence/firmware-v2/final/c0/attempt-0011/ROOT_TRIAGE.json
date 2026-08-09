@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c0\\attempt-0011\\FINDINGS.json",
+  "findings_sha256": "79f6dafe86bfa60ba7c91457367ea4f91d5aa51dfb3e5569ccc308442c7334d0",
+  "decisions": [
+    {
+      "id": "F-C0-FR1-001",
+      "decision": "ACCEPT",
+      "rationale": "ROOT independently confirmed that C3Harness._open validates the outer session_id only as a dictionary key, while FirmwareAcceptanceController.open_session derives the retained process, claim, and immutable artifacts from the request file's different session_id. A signed but mismatched request is credibly reachable through an orchestrator input error and produces contradictory lifecycle, cleanup, recovery, and acceptance evidence. A pre-open equality check and one focused regression are localized and materially cheaper and safer than accepting ambiguous retained-session identity.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Parse and validate the closed request before opening the controller, require its session_id to equal the outer payload session_id, reject before process launch, claim acquisition, controller registration, or lifecycle publication on mismatch, and add a focused no-side-effect mismatch regression."
+    }
+  ]
+}

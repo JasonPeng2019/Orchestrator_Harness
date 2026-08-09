@@ -1,0 +1,21 @@
+{
+  "schema": "firmware-c3-root-launch-dispatch-failure/v1",
+  "attempt_id": "attempt-0003",
+  "owner": "ROOT-IM",
+  "classification": "PRE_TOPOLOGY_INTERPRETER_DEPENDENCY_ERROR",
+  "launcher_pid": 178388,
+  "interpreter": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe",
+  "reason": "root_launch.py imports cryptography before main; the selected development virtualenv does not contain that package.",
+  "stderr_sha256": "e85f0608c46c69e7f5fb3351c0e235502c82fb39032ae1eddb710d4bd80d50c1",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "orchestrator_launched": false,
+  "watcher_launched": false,
+  "signer_launched": false,
+  "candidate_harness_launched": false,
+  "resource_claims": 0,
+  "candidate_or_server_changed": false,
+  "mcp_launched": false,
+  "hardware_accessed": false,
+  "correction": "Retry the unchanged launcher with host Python 3.14, where cryptography 46.0.5 was verified importable in isolated mode.",
+  "recorded_utc": "2026-08-05T10:42:30Z"
+}

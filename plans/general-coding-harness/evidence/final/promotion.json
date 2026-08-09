@@ -1,0 +1,25 @@
+{
+  "schema": "general-coding-harness-promotion/v1",
+  "status": "COMPLETE",
+  "promoted_branch": "progress/v1.1",
+  "promoted_commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+  "remote": "https://github.com/JasonPeng2019/harness-single.git",
+  "remote_ref": "refs/heads/progress/v1.1",
+  "remote_commit_verified": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+  "rollback_branch": "frozen-v1",
+  "rollback_commit": "287ea53793e3963062882012ff80c3b0e8c41587",
+  "rollback_checkout_clean": true,
+  "candidate_checkout_clean": true,
+  "practical_acceptance": "PASS_V2",
+  "accepted_target_commit": "86daa9901f46b41c14e26b45135fa553503021ef",
+  "final_review": "NO_GAP_READY",
+  "criteria_audit": "C1-C128_COMPLETE",
+  "final_full_verification": "PASS",
+  "acceptance_runtime_reusable": false,
+  "next_runtime": "plans/general-coding-harness/runtime/promoted-v1",
+  "next_runtime_state": "FRESH_INACTIVE",
+  "physical_firmware_acceptance": "NOT_TRIGGERED",
+  "physical_firmware_reason": "This is not a public firmware-supporting release and contains no hardware-specific change. Required synthetic firmware regressions passed.",
+  "diagnostic_v1_target_commit": "a3f15d6679b0963e40f4136f7f535441ec4d59d5"
+}
+

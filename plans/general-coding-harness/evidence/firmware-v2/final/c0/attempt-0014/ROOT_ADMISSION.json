@@ -1,0 +1,73 @@
+{
+  "schema": "firmware-v2-root-pre-c1-admission/v1",
+  "owner": "ROOT-IM",
+  "checked_at_utc": "2026-08-05T04:51:00Z",
+  "attempt": "0014",
+  "joined_candidate": {
+    "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+    "branch": "firmware/v2-s23-a2-c3-final",
+    "clean": true,
+    "reserved_candidate_before_advance": {
+      "commit": "659dd03e2aa7159090c8e0e20123b1fec1749f90",
+      "branch": "firmware/v2-candidate",
+      "clean": true,
+      "fast_forward_ancestor_check": true
+    }
+  },
+  "fresh_c0": {
+    "lane_id": "F.C0.FR1",
+    "worker_invocation_id": "c0-fr1-014",
+    "thread_id": "019fcfc7-84c5-7022-866a-45621be22e25",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority",
+    "prior_attempt_context_reused": false,
+    "findings_path": "FINDINGS.json",
+    "findings_sha256": "3948a12db018cba0a52588a906f587fcd7e37dac7993e86fc1e2ece5cefa6bcd",
+    "result_path": "RESULT.json",
+    "result_sha256": "dccb75738ace96837706566824c75e01ea1a31a24b89403035f20c3c4a947f30",
+    "triage_path": "ROOT_TRIAGE.json",
+    "triage_sha256": "e7008986bd33909d20f6923790d7e61c7928a1e9c899516f3ceaf537d63fe923",
+    "candidate_findings_validator_count": 0,
+    "outcome": "NO CANDIDATE GAP / READY"
+  },
+  "independent_root_checks": {
+    "findings_exact_six_key_shape": true,
+    "result_exact_eight_key_shape": true,
+    "c0_controller_result_valid": true,
+    "controller_status_sha256": "7853136f20ddce7022dba6b022eee008b280e6635de9eaa115ad039904decd82",
+    "stable_projection_record_sha256": "0595564dfe3eb0e4597996c47e8b0dc38dc63a8a5747a3419f29c76960f8ce02",
+    "stable_projected_invocation_sha256": "4c6cded8c3ca33338762ee8d49725d6989268b4a95c51fcbde62dd5eca25d498",
+    "stable_runner_positional_launch_stderr_sha256": "ce353f97ff6250ad0559950b7f2ab80c9c5baa1c075f66c0714f49a32e5b9c81",
+    "last_message_sha256": "bc79e2210f6fabb0e8d14a9c920cabde5731fa03d4cab0b5c2ab93eb83981c2d",
+    "stable_runner_commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "stable_runner_clean_detached": true,
+    "pinned_mcp_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "pinned_mcp_clean": true,
+    "pinned_mcp_immutable": true,
+    "resource_manifest_entries_hash_valid": "47/47",
+    "mcp_launched_for_c0": false,
+    "hardware_accessed": false,
+    "active_resource_claims": 0,
+    "surviving_managed_test_or_agent_processes": 0,
+    "dependency_map_sha256": "d257d7ae8bb4037da309ea7efad8afd94e755dc5f41dd595738e59cf2fa18ecb",
+    "dependency_map_root_acceptance_sha256": "bfedc55e0b54087300472de2b57617f13f452edd925eadb8cf2cc1d9a0644dc3",
+    "registry_sha256": "d3542a5e2b927fbc941268c5995dda27a595866a0063781b9bff1231c593664c",
+    "registry_green_groups": 22,
+    "registry_unique_green_ids": 145,
+    "registry_invalidations": 0,
+    "registry_evidence_credits": 64,
+    "registry_reconciliation_sha256": "26ece80073e9febec4b6c13ea8a8412c5592453d475518c6f824b119c6fc2f98",
+    "joined_root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C3_FINAL_JOIN_ROOT_ACCEPTANCE_b5753eb.json",
+    "joined_root_acceptance_sha256": "c63b8a185372b201a0d4e9f045463c3c7020923782f8df8fbf3af44995b68b3a"
+  },
+  "governing_hashes": {
+    "goal.md": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "active_docs/GENERALIZATION_SPEC_2.md": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "active_docs/IMPLEMENTATION_ROADMAP_2.md": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "plans/general-coding-harness/EXECUTION_PLAN_2.md": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261",
+    "active_docs/EXECUTION_READINESS_2.md": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66"
+  },
+  "decision": "RESERVED_CANDIDATE_FAST_FORWARD_UNLOCKED",
+  "next_gate": "Fast-forward firmware/v2-candidate to b5753eb, verify exact clean topology, then allocate a fresh opaque C1 lock ID and serialize authorization before the lock."
+}

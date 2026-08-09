@@ -1,0 +1,52 @@
+{
+  "schema": "firmware-v2-candidate-wide-protected-dependency-reconciliation/v1",
+  "owner": "ROOT-IM",
+  "recorded_utc": "2026-08-04T19:21:20.9016282Z",
+  "candidate_commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+  "accepted_finding": "F-C2-FINDING-001",
+  "dependency_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_e524feb.json",
+    "sha256": "fdcefc1a511d8d452238a66a3daa5f6833e8698b69d4c4051ffd2b9c87fe2798",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_e524feb.json",
+    "root_acceptance_sha256": "b496bec32ca8d7130c69d0b2b3924f6d075b070f9e0b983d1ed0fb777d2e0b22"
+  },
+  "executor": {
+    "lane_id": "F.C2.D2",
+    "worker_invocation_id": "c2-d2-001",
+    "thread_id": "019fce2f-4d41-7362-ac61-aacf9ffdde50",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "default",
+    "test_report_path": "plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C2.D2-0001/.agent-workspace/TEST_REPORT.json",
+    "test_report_sha256": "27fed6a966b86cc350f8dedddd79be71f8a6b939e9b7db74ae33222b4a942bca",
+    "findings_sha256": "f60fd23f92b5db1a6ae4e220f0974b1d159cb10e08ebc0788ed308ff41c8e0f2",
+    "corrected_result_sha256": "2e744c22815b292ee82b9a8af3504cacaa77b9460d9508bea2c8e1e9997b5856",
+    "original_invalid_result_sha256": "78800a20f63ac182f241310e0c2367351ac18dfb79c81cffc35352966b44d836",
+    "same_thread_envelope_correction_only": true,
+    "test_command_rerun_during_correction": false
+  },
+  "test_outcome": {
+    "assigned_ids": 14,
+    "passed_ids": 14,
+    "failed_ids": 0,
+    "skipped_ids": 0,
+    "elapsed_seconds": 15.5667972,
+    "findings": 0,
+    "worktree_clean": true,
+    "claims_released": true,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "registry_after_reconciliation": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+    "sha256": "5cd55cc32a1f56f583a6947e04b5ebfd9d83205c35231974483de45c0504ab71",
+    "green_groups": 19,
+    "unique_green_ids": 137,
+    "invalidations": 0,
+    "evidence_credits": 46,
+    "all_declared_paths_exist": true,
+    "all_declared_hashes_match": true
+  },
+  "decision": "FINDING_CLOSED_FRESH_C0_REQUIRED",
+  "lock_effect": "The first C1 remains invalid because its locked registry omitted this accepted map and executor evidence. Candidate code and every unrelated green test remain unchanged."
+}

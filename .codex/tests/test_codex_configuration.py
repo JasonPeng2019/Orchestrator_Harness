@@ -43,7 +43,15 @@ def test_skill_commands_point_to_the_consolidated_environment() -> None:
     assert (ROOT / ".codex" / "dev" / "pyproject.toml").is_file()
     assert (ROOT / ".codex" / "dev" / "uv.lock").is_file()
     assert (ROOT / ".codex" / "scripts" / "verify.py").is_file()
+    assert (ROOT / ".codex" / "scripts" / "verify_changed.py").is_file()
     assert (ROOT / ".codex" / "scripts" / "worktree_task.py").is_file()
+
+
+def test_verify_skill_keeps_full_gate_separate_from_stop_gate() -> None:
+    skill = (ROOT / ".codex" / "skills" / "verify" / "SKILL.md").read_text(encoding="utf-8")
+    assert ".codex/scripts/verify.py" in skill
+    assert ".codex/scripts/verify_changed.py" in skill
+    assert "never replaces this skill" in skill
 
 
 def test_hook_catalog_contains_every_installed_action() -> None:

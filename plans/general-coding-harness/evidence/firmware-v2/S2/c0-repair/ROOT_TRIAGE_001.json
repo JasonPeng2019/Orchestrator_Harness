@@ -1,0 +1,81 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "gate": "S2-C0-repair-review",
+  "candidate_base": "bbc8ad94c32f3ddad4a54afd4c1a2d51ac4bb11e",
+  "reviewed_repair_commit": "c4160cd5185fd04ed05753be790163c65745c0c6",
+  "root_independent_source_trace_confirmed": true,
+  "review_artifacts": [
+    {
+      "lane_id": "S2.R1",
+      "thread_id": "019fca7b-173d-7072-aa90-185a73320f24",
+      "finding_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R1/.agent-workspace/FINDINGS.json",
+      "finding_sha256": "f11b3e156979719d0534e790882236efa62dbfbe23a80fb15a579def1f7b9761",
+      "result_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R1/.agent-workspace/RESULT.json",
+      "result_sha256": "4f60446dec4e02f551a520534ab569bfcdfbdb5a0739862b98f5d9f563138388",
+      "controller_status_sha256": "10bf3849be31694abfd0c614d8c0b8132ef502596168c3b52c5bdac99bff8cf5",
+      "result_valid": true,
+      "tracked_worktree_clean": true
+    },
+    {
+      "lane_id": "S2.R2",
+      "thread_id": "019fca7b-1739-7e70-bffb-a6d36202f6b8",
+      "finding_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R2/.agent-workspace/FINDINGS.json",
+      "finding_sha256": "878546a3e87b50667ce090b9a983ade89c664c3a76c9256e3a287455e2c61c03",
+      "result_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R2/.agent-workspace/RESULT.json",
+      "result_sha256": "fb02fdc602266a2a64c8a44279923858d2e2e7fc6e206ae20fef7398a0af27c2",
+      "controller_status_sha256": "df9b8bb243cf0df01bbc3c12b256349f52868437dde7fa2fd760970baa2f3bbe",
+      "result_valid": true,
+      "tracked_worktree_clean": true
+    }
+  ],
+  "decisions": [
+    {
+      "finding_id": "S2R1-C0-BOUNDARY-001",
+      "decision": "ACCEPT_CONSOLIDATED",
+      "category": "CODEBASE_BREAKING",
+      "root_trace": [
+        "FirmwareAcceptanceController is exported and tested but has no operator/controller entry point consumed by C3-HARNESS.",
+        "The production launcher replaces the environment with a four-variable physical environment that does not establish the executable/runtime allowlist needed to resolve the pinned uv command.",
+        "stdout.readline and writes are unbounded, stderr is never drained, and only the post-terminate wait has a deadline.",
+        "The proposal claim is a copied string; no ResourceClaims object acquires, owns, retains, or releases it.",
+        "Process creation identity is sampled once and not revalidated before termination, exit, reap, or claim release."
+      ],
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "finding_id": "S2R2-C0-001",
+      "decision": "ACCEPT_CONSOLIDATED",
+      "category": "CODEBASE_BREAKING",
+      "root_trace": [
+        "create_proposal retains the caller's mutable request by reference and execute never recomputes/canonicalizes it before using the call, allowing post-signature substitution.",
+        "The decision verifier is only injected and authorization accepts any truthy delegated_authority string instead of durable exact-path O/C1 artifacts.",
+        "The controller writes a parallel controller-calls chain and bypasses AcceptanceBroker.record/admit, so the existing bound-operation, identity, raw-result, ordered-chain, expiry, and cleanup validations do not protect dispatch."
+      ],
+      "problem_outweighs_fix_risk": true
+    }
+  ],
+  "consolidated_smallest_sufficient_repair": {
+    "route": "S2.P",
+    "required": [
+      "Provide one isolated firmware-acceptance controller entry point that C3-HARNESS can invoke without exposing the MCP command, environment, endpoint, or process handle to O or target workers.",
+      "Freeze proposal bytes at create-once publication; load and hash-validate a separately authored signed O decision and derived delegated/C1 authorization; reject mutation, substitution, replay, expiry, revocation, or mismatched call identity before launch.",
+      "Reuse and, only where necessary, minimally extend AcceptanceBroker.record/admit and canonical bound-operation validation instead of maintaining a weaker parallel evidence chain.",
+      "Use a viable scrubbed inherited environment for the exact pinned MCP command while clearing ambient physical capability and preserving only the reviewed lane routing/cache variables.",
+      "Use bounded MCP initialization, initialized notification, call/result/error framing, stdout read/write deadlines, concurrent bounded stderr capture, safe cancellation/termination, and exact exit/reap evidence.",
+      "Acquire an exact ResourceClaims claim owned by the controller identity before process launch, retain it through verified child exit/reap and cleanup recording, and fail closed on acquisition, identity, cleanup, or release ambiguity.",
+      "Add focused host-only regressions for post-signature mutation, durable-artifact mismatch/replay/expiry, no-launch rejection, silent stdout, stderr pressure, crash/timeout/cancel cleanup, identity mismatch, and claim retention/release."
+    ],
+    "explicit_nonrequirements": [
+      "Do not add a scheduler, workflow framework, database, broad hardware abstraction, or final target project implementation.",
+      "Do not expose physical MCP capability to F.C3.O or target workers.",
+      "Do not change coding V1 or legacy schema-less firmware parsing/lifecycle behavior.",
+      "Do not modify the generic Codex lane controller if a dedicated firmware control entry point satisfies the boundary with less regression risk.",
+      "Do not launch the real MCP server or touch hardware during this repair."
+    ],
+    "cost_benefit": "Without these two consolidated boundaries C3 is either blocked or uncertifying and can dispatch a substituted call, hang, or race a board without enforceable ownership. The repair is moderate but isolated and reuses accepted broker, process-identity, and resource-claim primitives; its benefit decisively outweighs its contained complexity and test cost."
+  },
+  "root_decision": "RESUME_S2_P_SAME_THREAD_FOR_MINIMAL_REPAIR_THEN_TARGETED_REREVIEW",
+  "c1_created": false,
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false
+}

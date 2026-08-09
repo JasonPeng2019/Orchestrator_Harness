@@ -1,0 +1,41 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S23.D1",
+  "worker_invocation_id": "s23-d1-c3-smoke-004",
+  "branch": "firmware/v2-s23-d1-c3-smoke-0004",
+  "commit": "3c862b9ef3e79ab010eabd990aac3745ac2013ee",
+  "outcome": "PASS",
+  "summary": "The exact C3-CP-05 stable selection ran once and passed 1/1 with no skips, expected failures, or unexpected successes; findings are empty, tracked Git state is clean, and no test-owned process, temporary state, or resource claim remains.",
+  "checks": [
+    {
+      "name": "C3-CP-05 exact stable selection",
+      "command": "python -m unittest orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_05_sessions_overlap_and_p1_channel_is_token_bound -v",
+      "outcome": "PASS",
+      "summary": "1 test ran exactly once; 1 passed, 0 failed, 0 errors, 0 skipped, 0 expected failures, and 0 unexpected successes."
+    },
+    {
+      "name": "findings gate",
+      "command": "validate .agent-workspace/FINDINGS.json",
+      "outcome": "PASS",
+      "summary": "Closed orchestrator-review-findings/v1 has the exact S23.D1, worker, role, and commit identity with an empty findings array."
+    },
+    {
+      "name": "exact tip and tracked-worktree cleanliness",
+      "command": "git rev-parse HEAD; git branch --show-current; git diff --quiet; git status --short --untracked-files=all",
+      "outcome": "PASS",
+      "summary": "Branch firmware/v2-s23-d1-c3-smoke-0004 and HEAD match 3c862b9ef3e79ab010eabd990aac3745ac2013ee; tracked Git state is clean."
+    },
+    {
+      "name": "test process, temporary state, worktree, and claim cleanup",
+      "command": "inspect exact selected-test process, synthetic temporary-directory residue, assignment worktrees, and test-owned resource claims after teardown",
+      "outcome": "PASS",
+      "summary": "No Python process references the selected test, no recent synthetic tmp* directory remains, no test-created assignment worktree or resource claim remains, and the active invocation claim is lane infrastructure."
+    },
+    {
+      "name": "no-MCP/no-hardware boundary",
+      "command": "selected host-only unittest and post-run boundary review",
+      "outcome": "PASS",
+      "summary": "The selected test used only synthetic local TemporaryDirectory state; no firmware MCP fixture, server, pyOCD, serial, probe, flash, reset, debug, RF, or hardware operation occurred."
+    }
+  ]
+}

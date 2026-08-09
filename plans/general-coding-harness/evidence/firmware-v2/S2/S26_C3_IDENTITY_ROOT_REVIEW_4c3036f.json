@@ -1,0 +1,70 @@
+{
+  "schema": "firmware-v2-root-production-review/v1",
+  "owner": "ROOT-IM",
+  "commit": "4c3036f12406b446b1fb4796191504895788ea7d",
+  "result_sha256": "c58cae2a616fb70411a405ff96557ce730f5738e369653a58851a5b539d2a5f8",
+  "accepted_corrections": [
+    "controller cleanup ownership now begins only after observation authentication",
+    "controller exact identity reads now bracket the complete process snapshot",
+    "the create-once observation embeds initial status and is written before command authentication",
+    "the oracle correlates response through the immutable signed request rather than equating request and assignment IDs",
+    "the mutable current status is supplementary rather than required for historical authenticity",
+    "raw and recovery-prefixed response forms are closed alternatives",
+    "completion retains legacy exit_code beside launcher_exit_code",
+    "the undeclared process_identity_unresolved cleanup field is removed and validation is restored before recovery persistence"
+  ],
+  "findings": [
+    {
+      "id": "ROOT-4C3036F-001",
+      "category": "FUNCTIONALITY_BREAKING",
+      "observed": "The new recovery validator requires launcher_identity to be present and requires observed_launcher_identity to equal it. Recovery is needed precisely when initial exact identity could not be established or the same PID now has a different creation token.",
+      "impact": "_require_recovery rejects its own legitimate unresolved record and persists nothing, so a live launcher can survive without durable restart closure.",
+      "smallest_fix": "Retain an explicit positive launcher_pid; allow captured and observed launcher identities to be null or different while requiring every present identity to use that PID. Keep only the captured identity as signal authority.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "ROOT-4C3036F-002",
+      "category": "FUNCTIONALITY_BREAKING",
+      "observed": "Cleanup marks launcher_reaped only when a captured launcher identity exists, even when the retained Popen handle has a terminal exit code.",
+      "impact": "An identity-unknown child that naturally exits remains permanently RECOVERY_REQUIRED and owned state is never reconciled, although the exact Popen handle proves termination.",
+      "smallest_fix": "When poll/wait proves the retained Popen exited, mark launcher reaped if the captured identity is null or the current exact identity differs from it.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "ROOT-4C3036F-003",
+      "category": "FUNCTIONALITY_BREAKING",
+      "observed": "The Windows argv helper configures CommandLineToArgvW but calls LocalFree without a pointer-width-safe prototype/cast and accepts any nonempty executable token. It also parses the lossy POSIX joined command line for same-process launches, which cannot preserve an invocation path containing spaces.",
+      "impact": "The new authentication helper can leak or free an invalid pointer on 64-bit Windows, can admit a non-Python executable, and can reject a valid POSIX same-process launch solely because process_snapshot discarded argv boundaries.",
+      "smallest_fix": "Use pointer-width-safe LocalFree arg/restype and an exact Python executable-name predicate for direct Windows redirectors; treat exact same-process identity as sufficient without reparsing the lossy command string. Reject direct-redirector shape outside Windows unless a lossless argv source is added later.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "ROOT-4C3036F-004",
+      "category": "WORTH_FIXING",
+      "observed": "A C3-specific lane-controller argv predicate was added to harness_common/process_identity.py, changing a protected shared-code dependency even though only firmware acceptance imports the new symbol.",
+      "impact": "The additive helper needlessly invalidates the broader original general-harness dependency set and increases C0/C2 proof cost.",
+      "smallest_fix": "Move the predicate to one narrow firmware_acceptance helper imported by the harness and oracle, leaving harness_common/process_identity.py byte-identical to the accepted 202ecb baseline.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "ROOT-4C3036F-005",
+      "category": "FUNCTIONALITY_BREAKING",
+      "observed": "The RECOVERY_REQUIRED oracle branch checks only recovery.schema; it does not require recovery.assignment_id to equal the signed request and controller observation assignment.",
+      "impact": "A response can pair another assignment's recovery payload with an authentic observation and still trigger ABORT_REQUIRED, leaving the decision-critical correlation incomplete.",
+      "smallest_fix": "Require the recovery object's exact assignment_id to match the already-correlated request/observation assignment and validate its closed root shape sufficiently for this correlation.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "ROOT-4C3036F-006",
+      "category": "WORTH_FIXING",
+      "observed": "The immutable observation embeds the entire mutable lane status object as an unconstrained dict even though authentication consumes only schema, state, controller_pid, and controller_created_utc.",
+      "impact": "The supposedly closed evidence contract inherits unrelated/dynamic status fields and permits bool/equality ambiguities or arbitrary payload expansion.",
+      "smallest_fix": "Embed exactly the four consumed initial-status fields, validate PID as a non-bool positive int and the creation timestamp as nonempty, and keep the source byte hash separately for provenance.",
+      "problem_outweighs_fix_risk": true
+    }
+  ],
+  "root_decision": "REJECT_4C3036F; RESUME_SAME_SOURCE_OWNER_FOR_ONE_BOUNDED_CLOSEOUT",
+  "tests_run": false,
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false
+}

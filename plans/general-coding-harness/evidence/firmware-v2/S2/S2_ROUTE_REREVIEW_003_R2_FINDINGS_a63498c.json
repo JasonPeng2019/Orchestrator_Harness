@@ -1,0 +1,63 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.R2",
+  "worker_invocation_id": "s2-r2-route-review-001",
+  "role": "reviewer",
+  "commit": "a63498cccd83d17499e113116ec90670c7c56265",
+  "findings": [
+    {
+      "id": "S2-R2-CAUSAL-005",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["PINNED_SERVER_SOURCE", "AUTHORIZED_SERVER_LIMITATION", "_verify_pinned_source_attribution"],
+      "evidence": ["firmware_acceptance/kit.py:504-534", "firmware_acceptance/kit.py:410-442"],
+      "observed": "The attribution now hashes the retained raw result, bound input, and git-show source bytes, but its causal diagnostic is still an arbitrary hash-valid JSON object. The verifier requires only that it repeats those values and self-reports target_independent: true, a locked_environment object, and outcome: PASS. It neither validates an actual C3-HARNESS launch/controller record nor requires an executable diagnostic invocation/result tied to the candidate controller identity.",
+      "expected": "Pinned-component reproduction must be represented by exact C3-HARNESS diagnostic launch, execution, and result provenance that binds the computed raw/source/input hashes and current controller identity, rather than a custom object that declares PASS and independence.",
+      "reproduction": "Construct a closed firmware-pinned-component-diagnostic/v1 file under broker.root with the required copied hashes, controller_owner copied from the raw call, target_independent true, matching locked_environment, and outcome PASS, without any controller launch, worker, or diagnostic execution. _verify_pinned_source_attribution accepts it because lines 523-534 inspect only that self-reported object and do not consult an orchestrator-lane-controller/v1 status or a validated worker result.",
+      "impact": "A valid dispatched server failure can be labelled as a causal pinned-component reproduction without demonstrating that the candidate executed the diagnostic under C3-HARNESS. The exceptional limitation route therefore remains self-attested at its decisive causal step.",
+      "no_fix_consequence": "AUTHORIZED_SERVER_LIMITATION cannot distinguish a proved target-independent pinned-component reproduction from an invented diagnostic record, so an unsupported fallback may receive credit.",
+      "smallest_fix": "Bind the diagnostic to an attempt-confined C3 launch/status record and an executed, validated candidate worker result, requiring the real controller identity and the computed raw/source/input signatures in the launch-to-result chain.",
+      "complexity": "Medium: reuse existing controller-status and result validation rather than create another generic provenance system.",
+      "regression_risk": "Low: this tightens only the exceptional limitation path and preserves the existing computed hash checks.",
+      "verification_cost": "Low: host-only synthetic controller/status/result records can cover valid linkage and forged diagnostic rejection.",
+      "alternatives": "Copied hashes plus a custom PASS field do not prove execution; they merely make a self-declared record internally consistent.",
+      "cost_benefit": "The bounded linkage closes the decisive attribution bypass with less risk than allowing a server-defect fallback on an unexecuted diagnostic.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "S2-R2-ATTEMPT-PATH-006",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["AUTHORIZED_SERVER_LIMITATION", "_limitation_c3_path", "substitute_rule"],
+      "evidence": ["firmware_acceptance/kit.py:501-502", "firmware_acceptance/kit.py:550-564", "firmware_acceptance/kit.py:578-586"],
+      "observed": "The exact C3 subtree is hil/{lane_id}/server-limitations/{limitation_id}/c3-harness/*. It contains no attempt_id segment, even though every decision, assignment, launch, execution, and worker result carries attempt_id. The diagnostic path is checked only as a descendant of broker.root.",
+      "expected": "Every limitation diagnostic and substitute reference must be confined to a path that distinguishes the exact attempt as well as the lane and limitation ID.",
+      "reproduction": "Use the same lane_id and limitation_id in two decisions with different attempt_id values. _limitation_c3_path returns the identical ASSIGNMENT.json, LAUNCH.json, EXECUTION.json, WORKER_RESULT.json, and RESULT.json locations for both; create-once publication therefore collides or a retained artifact has no path-level attempt separation. A diagnostic can be placed anywhere below broker.root.",
+      "impact": "Attempt provenance is not path-confined. Cross-attempt collisions and substituted same-lane limitation artifacts are not ruled out by the required exact locations, despite matching self-reported attempt fields.",
+      "no_fix_consequence": "The limitation boundary cannot provide the requested attempt-distinguishing artifact confinement, which weakens replay and predecessor provenance for both diagnosis and substitute credit.",
+      "smallest_fix": "Include a validated attempt_id path component beneath the broker limitation root for diagnostic and C3 artifacts, and require every reference to its exact attempt-derived location.",
+      "complexity": "Low: a localized path derivation and focused same-lane/different-attempt rejection tests.",
+      "regression_risk": "Low: it only partitions exceptional create-once evidence that already carries attempt_id.",
+      "verification_cost": "Low: host-only path and hash-reference tests suffice.",
+      "alternatives": "Relying solely on attempt_id fields inside JSON does not meet exact path confinement and leaves create-once paths indistinguishable across attempts.",
+      "cost_benefit": "A small path correction removes a direct replay/collision ambiguity in the exceptional-credit boundary.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "S2-R2-C3-RESULT-007",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["substitute_rule", "firmware-limitation-c3-launch/v1", "firmware-limitation-c3-worker-result/v1"],
+      "evidence": ["firmware_acceptance/kit.py:536-587", "orchestrator_harness/git_safety.py:249-273", "orchestrator_harness/git_safety.py:318-371"],
+      "observed": "The substitute chain uses new firmware-limitation-c3-launch/v1 and firmware-limitation-c3-worker-result/v1 objects. Their controller_identity, worker_invocation_id, and PASS outcome are only mutually compared strings. The verifier never reads an actual orchestrator-lane-controller/v1 status, checks its PID/creation identity, or calls validate_coding_result on an orchestrator-lane-result/v1 bound to the declared repository/worktree and current tip.",
+      "expected": "Substitute credit must be based on the real candidate controller/status/result schemas: the exact controller launch identity must be live/proven and the exact worker invocation's current result must pass existing result validation before a limitation record can claim PASS.",
+      "reproduction": "At the required C3 filenames, create mutually consistent custom launch, assignment, execution, result, and worker-result JSON objects with arbitrary controller_identity and worker_invocation_id strings and PASS outcomes. _verify_substitute_identity accepts them without any controller status or real coding result. In contrast, the existing candidate checks in git_safety.py require orchestrator-lane-controller/v1 process identity and validate_coding_result requires orchestrator-lane-result/v1 lane, worker, branch-tip, outcome, checks, and clean repository bindings.",
+      "impact": "The limitation record can grant a substitute PASS without evidence that C3-HARNESS actually launched the worker or that its result passed the candidate's normal controller/result gate.",
+      "no_fix_consequence": "The strongest-safe fallback order and NOT_CERTIFIED status remain textual, but substitute credit remains unearned and cannot be trusted as C3-HARNESS execution evidence.",
+      "smallest_fix": "Reference the actual C3 controller status and worker RESULT.json, validate the status's exact controller/worker identity and validate the result through the existing candidate result validator; make the limitation execution record a hash-bound adapter to those records instead of a replacement schema.",
+      "complexity": "Medium: narrow integration with existing validation helpers and focused host-only fixtures.",
+      "regression_risk": "Low to medium: it affects only substitute-credit admission and reuses already tested candidate contracts.",
+      "verification_cost": "Low: focused synthetic status/result fixtures can prove correct admission and reject invented, stale, wrong-worker, wrong-tip, or non-PASS records.",
+      "alternatives": "Custom artifacts that merely agree with one another cannot establish candidate-controller ownership or current result validity.",
+      "cost_benefit": "Reusing the real controller/result gate prevents unearned substitute credit with a bounded change that directly satisfies the stated ownership requirement.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

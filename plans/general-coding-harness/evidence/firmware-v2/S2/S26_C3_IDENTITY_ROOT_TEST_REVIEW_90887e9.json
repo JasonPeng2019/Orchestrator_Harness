@@ -1,0 +1,35 @@
+{
+  "schema": "firmware-v2-root-test-review/v1",
+  "owner": "ROOT-IM",
+  "commit": "90887e9de43b66d4a40683f60dba4cc5a3df2afc",
+  "parent": "27d0c94eeeb0c07115615ed41d9540aff0da1e96",
+  "executor_finding": "S26.D1-F001",
+  "source_result_sha256_before_correction": "5fffdc02339b89109822307293bb59f1c14fc7267d23b9f5e803c21a654fa0e2",
+  "source_findings_sha256": "e46e40b96316f51f5b7c1bb886d81f3a81a69f53a8146c36918d043849050ee7",
+  "diff_review": {
+    "files_changed": [
+      "orchestrator_harness/tests/test_firmware_c3_harness.py"
+    ],
+    "insertions": 2,
+    "deletions": 2,
+    "production_changed": false,
+    "negative_cases_preserved": true,
+    "five_token_case_preserved": true,
+    "actual_argc_reported": true,
+    "scope_matches_root_triage": true
+  },
+  "decision": "ACCEPT_TEST_DIFF; REQUIRE_RESULT_ARTIFACT_CORRECTION_BEFORE_JOIN",
+  "artifact_correction": "Remove undeclared command keys from every RESULT.json check. The exact orchestrator-lane-result/v1 check root is name, outcome, and summary only. Preserve PASS, commit, findings, and the NOT_RUN test-execution fact; run nothing and change no commit.",
+  "test_invalidation": {
+    "invalidated": [
+      "orchestrator_harness.tests.test_firmware_c3_harness"
+    ],
+    "still_credited_from_failed_non_fail_fast_run": [
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle"
+    ],
+    "reason": "The failed selection completed all 23 tests without fail-fast. Only the harness test module changed afterward, so the watcher-oracle module remains green at identical source bytes and must not be rerun."
+  },
+  "tests_run_by_root": false,
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false
+}

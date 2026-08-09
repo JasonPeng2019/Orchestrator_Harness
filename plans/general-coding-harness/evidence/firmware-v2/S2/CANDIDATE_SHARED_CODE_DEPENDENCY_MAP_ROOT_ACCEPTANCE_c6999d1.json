@@ -1,0 +1,29 @@
+{
+  "schema": "firmware-v2-candidate-shared-code-dependency-map-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "c6999d173c344b317a918df91619308fd9f93f63",
+  "dependency_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_c6999d1.json",
+    "sha256": "d4fe04d15a525b70282726ac84be7f734b7fb92ae2e520df0242d994925674be"
+  },
+  "audit": {
+    "changed_paths_exact": true,
+    "deleted_tests": 0,
+    "weakened_oracles": 0,
+    "mapped_test_ids": 6,
+    "new_test_ids": 2,
+    "freshly_revalidated_prior_ids": 4,
+    "mapped_ids_executed_once_at_exact_tip": true,
+    "unaffected_prior_ids_rerun": false,
+    "final_review_findings": 0,
+    "remaining_invalidations": 0,
+    "candidate_clean": true,
+    "server_clean": true,
+    "active_resource_claims": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "ACCEPT_EXACT_S29_DEPENDENCY_MAP; RETAIN_166_PRIOR_IDS; ADD_2_TARGET_IDS; REVALIDATE_4_PRIOR_IDS; SELECT_NOTHING_FOR_FURTHER_EXECUTION",
+  "outcome": "PASS",
+  "created_at": "2026-08-05T22:20:56.4401649Z"
+}

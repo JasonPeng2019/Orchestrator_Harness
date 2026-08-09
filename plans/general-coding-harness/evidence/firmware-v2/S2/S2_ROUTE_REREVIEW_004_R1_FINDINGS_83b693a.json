@@ -1,0 +1,27 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-route-review-001",
+  "role": "reviewer",
+  "commit": "83b693aa9845f2816fd15a36b249bcfad8516db0",
+  "findings": [
+    {
+      "id": "S2-R1-007",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["setup_needs_user_input", "setup_research_required", "continue_setup", "SETUP_CONTINUATION"],
+      "evidence": ["83b693aa9845f2816fd15a36b249bcfad8516db0:firmware_acceptance/controller.py:458-463,518-538", "S2_PRE_C1_EXECUTABLE_CONTRACT_DECISION.json:53-55,138-144", "mcp-candidate@f003f84a7df51cd8595a3203c62e225b21da2a22:src/pyocd_debug_mcp/setup_flow/setup.py:181-230", "mcp-candidate@f003f84a7df51cd8595a3203c62e225b21da2a22:src/pyocd_debug_mcp/server.py:5247-5272,5429-5443"],
+      "observed": "The new pre-result helper runs before result publication, but it accepts malformed predecessor continuation output. For choice continuations it silently drops non-dictionary entries before validating the remaining choice_id set; a choices list containing one valid row plus an invalid row is admitted. For research continuations it accepts every nonempty response-template key set, although the immutable server accepts only the exact target, target-plus-attachment, pack, or pack-plus-attachment field sets. Both malformed payloads can therefore pass _continuation_from_payload and then produce a durable firmware-session-result/v1 with resulting_state SETUP_CONTINUATION.",
+      "expected": "Before a normal SETUP_CONTINUATION result is durable, every returned choice row must be structurally valid and every research template key set must equal the pinned server's requested response schema. Validation must preserve legitimate pinned example/default values, including official_sha256:null, rather than validate template values as concrete facts.",
+      "reproduction": "A server result with status setup_needs_user_input, accepted_response.response={choice_id: placeholder}, and choices=[{choice_id: valid}, 7] passes because controller.py derives IDs only from dictionary rows. A setup_research_required result with accepted_response.response={unexpected: any_nonempty_value} passes because controller.py checks only that template is nonempty. In either case the helper precedes _write_new of the session result, so the malformed predecessor creates the nominal successor result.",
+      "impact": "A malformed or incompatible pinned response shape can durably advance the retained session to SETUP_CONTINUATION. The next continuation is either blocked by the server or operates from an unverified predecessor schema, violating the closed predecessor/result-before-successor contract.",
+      "no_fix_consequence": "The new ordering does not actually establish the promised malformed-output barrier: invalid continuation payloads remain capable of becoming durable nominal successor evidence and causing retained-session route failure later.",
+      "smallest_fix": "In _continuation_from_payload, reject any non-dictionary choice entry or missing/nonempty-string choice_id, and require research template keys to equal the exact pinned target/pack response field sets (including their permitted attachment variants), without constraining the corresponding placeholder values. Keep this validation before _validate_route_result and result creation.",
+      "complexity": "Low: narrow shape predicates in the newly introduced helper.",
+      "regression_risk": "Low: the predicates mirror immutable server schemas and retain official_sha256:null plus all pinned placeholder/default values.",
+      "verification_cost": "Low: host-only unit fixtures for malformed mixed choice rows, unexpected research keys, all four allowed research key sets, and official_sha256:null before asserting no result file is created on rejection.",
+      "alternatives": "Deferring malformed-shape rejection to continue_setup leaves a durable nominal successor first; filtering placeholder values would reintroduce the closed null/default regression and is not needed to close the key/choice schema.",
+      "cost_benefit": "A small pre-result schema check closes a direct durable-state integrity gap while preserving the valid continuation forms that this delta intended to restore.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

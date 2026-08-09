@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-001",
+  "branch": "firmware/v2-s2-d1",
+  "commit": "24a1ae7c08e559e606231543e1bbff0da0fd3a5a",
+  "outcome": "PASS",
+  "summary": "C0 attempt-0004 invalidated host shard passed all 30 controller, kit, and host tests at the exact joined tip from ROOT's fresh clean detached checkout; seed proof is ROOT-verified, checkout remains registered for ROOT, findings are empty, and no MCP or hardware access occurred.",
+  "checks": [
+    {"name": "controller/kit/host invalidated shard", "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_controller orchestrator_harness.tests.test_firmware_acceptance_kit orchestrator_harness.tests.test_firmware_acceptance_host -v", "outcome": "PASS", "summary": "30 passed, 0 failed, 0 skipped."},
+    {"name": "ROOT sealed-seed verification", "command": "ROOT-provided five-file committed-blob verification", "outcome": "PASS", "summary": "All five sealed seed files match their committed blobs in the prepared checkout."},
+    {"name": "persistent tip and disposable registration", "command": "git rev-parse HEAD; git worktree list --porcelain; git status --short", "outcome": "PASS", "summary": "Persistent branch is exact and clean; disposable checkout is exact, clean, and intentionally left registered for ROOT."},
+    {"name": "finding gate and host-only boundary", "command": "validate FINDINGS.json; inspect process/resource/MCP/hardware state", "outcome": "PASS", "summary": "Zero findings; no disposable process/resource claim, MCP server, or hardware access."}
+  ]
+}

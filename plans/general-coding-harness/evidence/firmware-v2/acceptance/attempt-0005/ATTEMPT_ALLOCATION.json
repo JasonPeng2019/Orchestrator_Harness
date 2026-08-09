@@ -1,0 +1,72 @@
+{
+  "schema": "firmware-v2-c3-attempt-allocation/v1",
+  "owner": "ROOT-IM",
+  "attempt_id": "attempt-0005",
+  "allocated_at_utc": "2026-08-05T14:46:55.7195200Z",
+  "allocation_rule": {
+    "largest_prior_runtime_attempt": "attempt-0004",
+    "largest_prior_evidence_attempt": "attempt-0004",
+    "largest_prior_control_attempt": "attempt-0004",
+    "all_selected_paths_absent_before_allocation": true,
+    "monotonic_selection": "attempt-0005"
+  },
+  "roots": {
+    "runtime": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0005",
+    "evidence": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0005",
+    "external_control": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance-control\\attempt-0005"
+  },
+  "prior_attempt": {
+    "attempt_id": "attempt-0004",
+    "closeout_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0004\\topology\\ROOT_ATTEMPT_CLOSEOUT.json",
+    "closeout_sha256": "f5d1ad09765caaac5bd404d9a42a20ec09c7b7fba642d81f3469312ac7479615",
+    "topology_shutdown_sha256": "894af2a315042491547d4512e84f89be6841a8ca0ceeffd0df8371fa126cab4c",
+    "procedure_abort_sha256": "0d0459dc00dad0bb1adea122d6f9b7db2b5faf5ab1d2da210d8cffa487a4e1a3",
+    "outcome": "FAILED_ROOT_PROCEDURE_PRE_CANDIDATE_READINESS",
+    "candidate_behavior": "CORRECT_FAIL_CLOSED",
+    "reused_mutable_state": false,
+    "correction": "Candidate-consumed ORCHESTRATOR_IDENTITY and ORCHESTRATOR_KEY_RELEASE use the exact closed schemas; native Windows creation identity remains only in separate ROOT launch/supervision records and the signer anonymous-pipe delivery."
+  },
+  "operative_c1": {
+    "lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\721b6351-0fdd-448d-8d89-0cee20acf8b0\\C1_LOCK.json",
+    "sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "validation_sha256": "10b361ecbfa448790b0c2d9045c29459cc4af96b33d9be51faf20a233a7bb678",
+    "delegated_sha256": "1c379ea4732e87985b06c48b9723e5f5572415eb59d1293d8d82512f53b7ba12"
+  },
+  "operative_c2": {
+    "attempt": "attempt-0006",
+    "root_acceptance_sha256": "2e84b8df58fe5fdd3afaf759c5f9422ef5623b13a10f2833b1c7fd8e05227838",
+    "decision": "C3_UNLOCKED"
+  },
+  "candidate": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "branch": "firmware/v2-candidate",
+    "commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "clean": true
+  },
+  "mcp_server": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\mcp-candidate",
+    "branch": "firmware/v2-mcp-candidate",
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "clean": true,
+    "immutable": true
+  },
+  "governing_hashes": {
+    "goal": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "generalization_spec_2": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "implementation_roadmap_2": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "execution_readiness_2": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66",
+    "execution_plan_2": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"
+  },
+  "initial_state": {
+    "fresh_attempt_registry": true,
+    "registry_entries": 0,
+    "target_source_reconstruction": null,
+    "target_root_absent_until_candidate_materialization": true,
+    "external_control_root_excluded_from_manifest": true,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "target_workers_launched": 0,
+    "resource_claims": 0
+  }
+}

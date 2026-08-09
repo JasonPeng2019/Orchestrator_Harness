@@ -1,0 +1,114 @@
+{
+  "schema": "firmware-v2-test-report/v1",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-pre-c1-executor-006",
+  "commit": "184a869d0f49ae9ef6b222ae90dc3488f7229f60",
+  "command": "python -m unittest <one of the three invalidated stable IDs> -v; one fresh Python process per ID, no reruns",
+  "credit": {
+    "schema": "root-preserved-green-test-credit/v1",
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_D1_UNAFFECTED_CREDIT_40b4039.json",
+    "sha256": "5bee2c75f3c2863b06e108e894af46d7ef047608ffee601706fd424ba524ef13",
+    "source_commit": "40b4039b3ecb3021dc545901419416b278226f7e",
+    "preserved_at_commit": "184a869d0f49ae9ef6b222ae90dc3488f7229f60",
+    "preserved_passed": 23,
+    "rerun_prohibited": true,
+    "hardware_or_mcp_accessed": false,
+    "invalidated_ids": [
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_signed_close_requires_returned_disconnect",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_dynamic_route_plan_validation_ready_uart_and_terminal_contract",
+      "orchestrator_harness.tests.test_firmware_acceptance_host.FirmwareAcceptanceHostTests.test_S2_A1_002_admission_rejects_immutable_operation_drift"
+    ]
+  },
+  "expected": {
+    "fresh_total": 3,
+    "joined_total": 26,
+    "preserved_green": 23,
+    "per_module_joined": {
+      "orchestrator_harness.tests.test_firmware_acceptance_controller": 24,
+      "orchestrator_harness.tests.test_firmware_acceptance_host": 2
+    }
+  },
+  "observed": {
+    "fresh_collected": 3,
+    "fresh_executed": 3,
+    "fresh_passed": 2,
+    "fresh_failed": 1,
+    "fresh_timed_out": 1,
+    "fresh_skipped": 0,
+    "fresh_expected_failures": 0,
+    "fresh_unexpected_successes": 0,
+    "joined_collected": 26,
+    "joined_executed": 26,
+    "joined_passed": 25,
+    "joined_failed": 1,
+    "joined_timed_out": 1,
+    "joined_skipped": 0,
+    "joined_expected_failures": 0,
+    "joined_unexpected_successes": 0,
+    "fresh_processes_exited_zero": 2,
+    "fresh_processes_terminated_after_timeout": 1,
+    "surviving_exact_test_pids": [],
+    "per_module_joined": {
+      "orchestrator_harness.tests.test_firmware_acceptance_controller": {
+        "credited_passed": 22,
+        "fresh_executed": 2,
+        "fresh_passed": 1,
+        "fresh_failed": 1,
+        "fresh_timed_out": 1,
+        "joined_passed": 23
+      },
+      "orchestrator_harness.tests.test_firmware_acceptance_host": {
+        "credited_passed": 1,
+        "fresh_executed": 1,
+        "fresh_passed": 1,
+        "fresh_failed": 0,
+        "fresh_timed_out": 0,
+        "joined_passed": 2
+      }
+    },
+    "fresh_per_test": [
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_signed_close_requires_returned_disconnect","pid":5592,"exit_code":0,"outcome":"PASS","elapsed_seconds":1.617,"native_summary":"OK","native_elapsed_seconds":0.851},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_dynamic_route_plan_validation_ready_uart_and_terminal_contract","pid":147180,"exit_code":null,"outcome":"TIMEOUT","elapsed_seconds":30.599,"native_summary":"FAILED","native_elapsed_seconds":0.836,"termination":"STOPPED_EXACT_VERIFIED_PID"},
+      {"stable_id":"orchestrator_harness.tests.test_firmware_acceptance_host.FirmwareAcceptanceHostTests.test_S2_A1_002_admission_rejects_immutable_operation_drift","pid":149988,"exit_code":0,"outcome":"PASS","elapsed_seconds":0.895,"native_summary":"OK","native_elapsed_seconds":0.347}
+    ]
+  },
+  "outcome": "FAIL",
+  "elapsed_seconds": 35.1,
+  "unittest_reported_elapsed_seconds": null,
+  "rerun_results_path": ".agent-workspace/bounded-rerun-184a869/rerun-results.json",
+  "evidence_directory": ".agent-workspace/bounded-rerun-184a869/",
+  "no_hardware_no_mcp": {
+    "statement": "Host-only synthetic selective rerun; no MCP, server, pyOCD, serial, probe, flash, reset, debug, RF, lease, or physical hardware operation occurred.",
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "dependency_scope": {
+    "kind": "selective-rerun-of-three-invalidated-IDs-plus-root-preserved-credit",
+    "included_modules": [
+      "orchestrator_harness.tests.test_firmware_acceptance_controller",
+      "orchestrator_harness.tests.test_firmware_acceptance_host"
+    ],
+    "executed_ids": 3,
+    "credited_ids": 23,
+    "excluded_shards": [
+      "all other 23 stable IDs (ROOT credit; rerun prohibited)",
+      "kit/target S2.D2",
+      "protected original general-harness suite",
+      "static analysis",
+      "full gates",
+      "compilation",
+      "MCP",
+      "pyOCD",
+      "serial",
+      "probe",
+      "flash",
+      "reset",
+      "debug",
+      "RF",
+      "physical hardware"
+    ]
+  },
+  "failure_classification": "DEMONSTRATED_CODEBASE_FUNCTIONALITY_BREAKAGE",
+  "findings_count": 1,
+  "tracked_status_clean": true
+}

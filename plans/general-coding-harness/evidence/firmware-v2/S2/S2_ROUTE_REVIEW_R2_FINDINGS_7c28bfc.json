@@ -1,0 +1,45 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.R2",
+  "worker_invocation_id": "s2-r2-route-review-001",
+  "role": "reviewer",
+  "commit": "7c28bfc5d223323065515694514baefb47e864ad",
+  "findings": [
+    {
+      "id": "S2-R2-ROUTE-001",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["board_setup", "continue_setup", "board_fix_setup", "SETUP_CONTINUATION"],
+      "evidence": ["firmware_acceptance/controller.py:469-474", "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/worktrees/mcp-candidate/src/pyocd_debug_mcp/setup_flow/setup.py:182-230", "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/worktrees/mcp-candidate/src/pyocd_debug_mcp/tools/setup.py:502-524"],
+      "observed": "After board_setup or board_fix_setup returns setup_needs_user_input or setup_research_required, the controller stores the entire server accepted_response object as continuation.response. The pinned server shape is {tool: 'continue_setup', response: {...}}, but continue_setup requires only its inner response object. The next authorized call is therefore sent with a wrapper under response and is rejected by the pinned server.",
+      "expected": "The retained session must bind continuation_id and the exact inner response field set requested by the predecessor, then allow continue_setup followed by its one paired board_fix_setup route.",
+      "reproduction": "Use the pinned setup response with status setup_needs_user_input, a nonempty continuation_id, and accepted_response {tool: 'continue_setup', response: {choice_id: '...'}}. controller.py stores accepted_response verbatim at lines 469-474; session_publish_proposal then permits only arguments whose response equals that wrapper, so session_execute_artifacts dispatches {response: {tool: 'continue_setup', response: {...}}}. The pinned continue_setup handler accepts a response object of requested fields such as {choice_id: '...'}, not the wrapper.",
+      "impact": "A valid pinned-server setup continuation route cannot complete, so fixtures requiring user input or official-source setup research cannot reach repair, validation, or READY through the supported session machine.",
+      "no_fix_consequence": "C3-HARNESS cannot claim executable setup/repair compatibility for all valid pinned routes; such sessions abort after a valid server continuation response.",
+      "smallest_fix": "When retaining a setup continuation, validate accepted_response is the closed continue_setup wrapper and store only accepted_response['response']; add one synthetic retained-session test that exercises setup continuation through board_fix_setup.",
+      "complexity": "Low: a localized extraction/shape check and one focused host-only state-machine test.",
+      "regression_risk": "Low: successful setup has no continuation, and the changed branch only corrects the documented pinned response shape.",
+      "verification_cost": "Low: run the focused controller session test with injected FastMCP frames; no MCP launch or hardware is required.",
+      "alternatives": "Leaving the wrapper in place and relying on server rejection is not viable because the contract requires valid server routes to execute and invalid/replay inputs to fail before an unsafe or unintended dispatch.",
+      "cost_benefit": "The fix restores a required supported route with a small, directly testable change and negligible effect on other session transitions.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "S2-R2-EVIDENCE-002",
+      "category": "WORTH_FIXING",
+      "affected_ids": ["AUTHORIZED_SERVER_LIMITATION", "record_server_limitation", "test_server_limitation_is_create_once_and_fail_closed"],
+      "evidence": ["firmware_acceptance/kit.py:410-481", "orchestrator_harness/tests/test_firmware_acceptance_kit.py:126-136"],
+      "observed": "The newly changed positive limitation test builds only dispatch and raw-result records, omits the five required predecessor stages, terminal/process reference files, protected-suite binding, and substitute assignment/result artifacts, yet expects record_server_limitation to succeed. The implementation necessarily rejects it at the closed seven-stage call-chain check before it can exercise create-once behavior.",
+      "expected": "The dependency-invalidated test must construct one complete dispatched pinned-server failure chain and all closed limitation references, then prove successful create-once publication and the relevant rejection cases.",
+      "reproduction": "Read the test fixture at lines 126-132: call_chain has two entries (dispatch and raw-result). kit.py requires exactly proposal, policy-evaluation, signed-decision, authorization, dispatch-admission, dispatch, and raw-result in that order, so the asserted success cannot be reached. The same fixture also supplies inline terminal/process/substitute values where kit.py requires path/hash references to closed artifacts.",
+      "impact": "The focused acceptance regression test is red by construction and supplies no positive evidence that the new AUTHORIZED_SERVER_LIMITATION record format, ordered alternatives, substitute bindings, or create-once output can execute.",
+      "no_fix_consequence": "S2 cannot rely on its changed limitation evidence test as a regression gate; future changes can retain a broken or unexercised limitation path without a meaningful host-only proof.",
+      "smallest_fix": "Replace the fixture with a minimal complete immutable call chain, terminal cleanup record, protected-suite artifact, and matching substitute assignment/result artifacts; retain the create-once and malformed-attribution assertions.",
+      "complexity": "Low to medium: test-fixture assembly only, reusing the existing broker record helpers where practical.",
+      "regression_risk": "Low: production code need not change; the test becomes aligned with its already closed implementation contract.",
+      "verification_cost": "Low: run only test_server_limitation_is_create_once_and_fail_closed and its immediate kit shard.",
+      "alternatives": "Deleting the positive assertion or weakening record_server_limitation would remove required limitation evidence rather than establish compatibility with the exact contract.",
+      "cost_benefit": "A bounded host-only fixture repair restores a required regression signal for the newly introduced limitation API, outweighing its modest setup cost.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

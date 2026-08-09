@@ -1,0 +1,37 @@
+{
+  "schema": "firmware-c3-watcher-exit/v1",
+  "attempt_id": "attempt-0002",
+  "owner": "ROOT-IM",
+  "normal_p4_exit": false,
+  "exit_reason": "ORDERED_ABORT_AFTER_CANDIDATE_AND_WATCHER_DEFECTS",
+  "watcher_identity": {
+    "pid": 164208,
+    "created_utc": "2026-08-05T06:35:27.019590Z",
+    "thread_id": "019fd0a2-54eb-70b3-96eb-2abb9bccdb7e",
+    "reaped": true,
+    "exit_code": null,
+    "exit_code_note": "The detached ROOT launcher did not retain an exit-code handle; JSONL ended in turn.completed and the exact PID was absent at ROOT observation."
+  },
+  "launch": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\topology\\WATCHER_LAUNCH.json",
+    "sha256": "f9b8b9c290327bb667fa5a3471a73702201b0a8ebbda702768cc3664f89f938b"
+  },
+  "terminal": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\watcher\\WATCHER_TERMINAL.json",
+    "sha256": "3cf518d23cbc8f4b46c1d04b202066abd5882f2fd06178713dc9fd4df5a7d155"
+  },
+  "report": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\watcher\\WATCHER_REPORT.md",
+    "sha256": "3f9bdc47f05a508094a553bf37d5191b56f26620a8ac525aaf6e3ef058ef4da7"
+  },
+  "captured_final_message": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\.agent-workspace\\watcher\\watcher.last-message.txt",
+    "sha256": "5c00c3d960af29e21ca5a3effa236c11b7ab43425aeaab6e02f721446627ea0d"
+  },
+  "captured_jsonl": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\.agent-workspace\\watcher\\watcher.jsonl",
+    "sha256": "cc394aecdd72582d5d7e55bd3f4f6eee0dd5e4e79198d617a55dc1a78d733307",
+    "terminal_event": "turn.completed"
+  },
+  "observed_reaped_at_utc": "2026-08-05T06:51:53.4916295Z"
+}

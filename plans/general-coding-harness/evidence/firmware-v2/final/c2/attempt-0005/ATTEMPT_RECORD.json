@@ -1,0 +1,49 @@
+{
+  "schema": "firmware-v2-c2-attempt-record/v1",
+  "attempt": "attempt-0005",
+  "recorded_at_utc": "2026-08-05T10:37:00Z",
+  "c1_lock": {
+    "id": "d5aac12a-5486-4046-bafc-9fcdac544b10",
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\d5aac12a-5486-4046-bafc-9fcdac544b10\\C1_LOCK.json",
+    "sha256": "97add36a20457bc555852e501acd592663152dafe90b4b35fb51803e042ebb0c",
+    "validation_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\d5aac12a-5486-4046-bafc-9fcdac544b10\\C1_VALIDATION.json",
+    "validation_sha256": "4ca00e1c99f31eae136bca55e17d2e0e12f0ed13a01ab840e8454385089d9297"
+  },
+  "candidate_commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+  "mcp_server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+  "executor": {
+    "lane_id": "F.C2.D1",
+    "worker_invocation_id": "c2-d1-005",
+    "thread_id": "019fd15f-b7b0-7aa2-a483-30d0cd14dded",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority"
+  },
+  "stable_runner": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "clean_detached": true,
+    "initial_projection_sha256": "905541340a9e987b1d126caf0bce381f2923b8f968fe5bfbb287467c3195610a",
+    "retry_projection_sha256": "7b590fe069695a77b7751fb28b32cadb6342185a61c8dfb32d040aadf8d6bd24",
+    "report_fix_projection_sha256": "6ff11972ec6f2da5c78dee495889c3740ccf9ff9831ed3e205eeceeff99d9bc2",
+    "report_fix_dispatch_proof_sha256": "f18dbf22818e95478738b211491d78f058a04ea3fb9b1a7339156d0ba0d31124"
+  },
+  "artifacts": {
+    "findings": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0005\\.agent-workspace\\FINDINGS.json", "sha256": "dcb1ab8353eeeec02e3a9cc4608c602ec3386b2eab26d38b9c164ca332f6fca0"},
+    "result": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0005\\.agent-workspace\\RESULT.json", "sha256": "be2e71cc2ae37d715fb68d06fa09cbd52e21b631a4cc33b910fa40a2a843bef1"},
+    "test_report": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0005\\.agent-workspace\\TEST_REPORT.json", "sha256": "ab52a6051be15846103078a5a7ab562fece65939e944b27a55fcf56dbdb90a19"},
+    "controller_status": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0005\\.agent-workspace\\status.json", "sha256": "9ec338fc52d20179f7c9f3a0f0faf08dfd69d1afb0cefc3710c886c9b24623ff"},
+    "initial_jsonl_sha256": "4715e440c9ee0f8792dbdb06943bf596fbde3f828a0e80447dcf810c6eab6ba3",
+    "retry_jsonl_sha256": "a66a8d592fbf857908148d2221516797598dd5170d1c1e8c757f1f0bc79e33c7",
+    "report_fix_jsonl_sha256": "b58a4359498a312eacb4da3ea4525575c5d839dae1d61e83b8f3406d9638c285",
+    "verifier_sha256": "65711e669af9505022271459dfe60b07c92590ffadb27a0610339653b0ed5f10"
+  },
+  "passed_ids": ["F-C2-LOCK-001", "F-C2-AUTH-001", "F-C2-DISPOSABLE-001", "F-C2-CREDIT-001", "F-C2-STATE-001"],
+  "failed_ids": [],
+  "skips_or_xfails": 0,
+  "green_ids_rerun_after_pass": [],
+  "hardware_or_mcp_accessed": false,
+  "candidate_changed": false,
+  "mcp_server_changed": false,
+  "c3_admitted": false,
+  "outcome": "PASS_PENDING_ROOT_ACCEPTANCE"
+}

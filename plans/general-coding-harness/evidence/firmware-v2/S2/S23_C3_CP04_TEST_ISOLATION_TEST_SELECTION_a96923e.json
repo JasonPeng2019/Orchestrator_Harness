@@ -1,0 +1,20 @@
+{
+  "schema": "orchestrator-test-selection/v1",
+  "lane_id": "S23.A2",
+  "worker_invocation_id": "s23-a2-c3-final-001",
+  "commit": "a96923e95ecb1e8648f737b3d35efb21d9924c0b",
+  "state": "CLOSED",
+  "selected_ids": [
+    "C3HarnessTests.test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier",
+    "C3HarnessTests.test_c3_cp_04_disposable_target_assignment_and_fail_closed_acceptance",
+    "C3HarnessTests.test_c3_cp_05_sessions_overlap_and_p1_channel_is_token_bound",
+    "C3HarnessTests.test_c3_cp_06_limitation_shapes_roles_and_broker_gate",
+    "C3HarnessTests.test_c3_cp_07_shutdown_blocks_then_reaps_and_refuses_unreconciled_restart",
+    "FirmwareAcceptanceKitTests.test_server_limitation_create_once_has_causal_and_c3_evidence",
+    "FirmwareAcceptanceKitTests.test_server_limitation_rejects_closed_evidence_mutations"
+  ],
+  "dependency_invalidated_ids": [
+    "C3HarnessTests.test_c3_cp_04_disposable_target_assignment_and_fail_closed_acceptance"
+  ],
+  "retained_credit": "All other 140 existing green IDs retain credit because their dependencies are unchanged; the source audit found no other invalidation."
+}

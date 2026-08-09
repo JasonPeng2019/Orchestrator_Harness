@@ -1,0 +1,26 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-004",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "7fee836149eae1fa6144dc4ec9497e085535496d",
+  "outcome": "PASS",
+  "summary": "F-C0-FR1-004-001 is closed: write_serial now fails closed on absent/non-string text and locked-rule-invalid or over-limit UTF-8 byte payloads before policy ALLOW and MCP dispatch.",
+  "checks": [
+    {
+      "name": "candidate identity and tracked-worktree cleanliness",
+      "command": "git rev-parse HEAD; git status --porcelain",
+      "outcome": "PASS"
+    },
+    {
+      "name": "attempt-0004 finding/ROOT triage and requested production-delta audit",
+      "command": "read-only evidence review; git diff b8d3d7917921d3bf7ef06e69b6af23bb4e50df50..7fee836149eae1fa6144dc4ec9497e085535496d",
+      "outcome": "PASS"
+    },
+    {
+      "name": "automated tests",
+      "command": "not run (requested read-only review)",
+      "outcome": "NOT_RUN"
+    }
+  ]
+}

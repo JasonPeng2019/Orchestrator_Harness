@@ -1,0 +1,18 @@
+{
+  "schema": "root-preserved-green-test-credit/v1",
+  "owner": "ROOT-IM",
+  "lane_id": "S2.D2",
+  "worker_invocation_id": "s2-d2-pre-c1-executor-002",
+  "source_commit": "228024d7d51f3a185cbf88f5e5a159c9049b3e38",
+  "source_findings_path": "S2_PRE_C1_D2_GREEN_FINDINGS_228024d.json",
+  "source_findings_sha256": "c04d64c568c22ae1541c60d1602ff6d7009de6244677dfc085ee04ccaadea2d8",
+  "source_result_path": "S2_PRE_C1_D2_GREEN_RESULT_228024d.json",
+  "source_result_sha256": "81b3b3cacb6510d1793edb8312e17458158c8f341e7c53fe6ae42a7bbf57ef8f",
+  "source_test_report_path": "S2_PRE_C1_D2_GREEN_TEST_REPORT_228024d.json",
+  "source_test_report_sha256": "81478b6247749328c4f1eff3a2dca058d577d388e4aed3552da19e341e864233",
+  "preserved_passed": 20,
+  "preserved_at_commit": "184a869d0f49ae9ef6b222ae90dc3488f7229f60",
+  "dependency_decision": "Only controller and host test fixtures changed from 228024d; D2 kit/target source, tests, seed, and production dependencies are byte-identical, so its 20/20 green result must not be rerun.",
+  "rerun_prohibited": true,
+  "hardware_or_mcp_accessed": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.P",
+  "worker_invocation_id": "s23-p2-c3-control-plane-013",
+  "branch": "firmware/v2-s2-product",
+  "commit": "f06498a227d7d13cef628534f316e876dfdb0073",
+  "outcome": "PASS",
+  "summary": "Configured each disposable target repository locally for byte-stable protected-seed checkout. Runtime tests NOT_RUN; no MCP, hardware, or Codex child ran.",
+  "checks": [
+    {
+      "name": "C3 author compile",
+      "command": "python -m py_compile firmware_acceptance/kit.py firmware_acceptance/c3_harness.py",
+      "outcome": "PASS"
+    },
+    {
+      "name": "CP04 runtime test",
+      "command": "NOT_RUN (not authorized in coder lane)",
+      "outcome": "NOT_RUN"
+    }
+  ]
+}

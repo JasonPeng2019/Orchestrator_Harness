@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe",
+    "-I",
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\scripts\\stable_runner.py",
+    "--module",
+    "orchestrator_harness.lane_controller",
+    "--",
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\runner-migration\\C0_FR1_STABLE_INVOCATION_ATTEMPT_2.json"
+  ],
+  "created_utc": "2026-08-04T06:25:48.797954Z",
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C0.FR1",
+  "expected_state_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C0.FR1\\.agent-workspace\\worker_controller.status.json",
+  "label": "F.C0.FR1-attempt-2",
+  "launched_utc": "2026-08-04T06:25:48.796157Z",
+  "pid": 177600,
+  "platform": "windows",
+  "role": "controller",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "launched"
+}

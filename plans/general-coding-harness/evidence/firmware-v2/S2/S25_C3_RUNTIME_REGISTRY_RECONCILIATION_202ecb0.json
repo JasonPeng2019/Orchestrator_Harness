@@ -1,0 +1,80 @@
+{
+  "schema": "firmware-v2-registry-reconciliation/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+  "prior_candidate_commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+  "registry": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+    "sha256": "fd6e2e238e1404cd8fc39a84ca40b10b14da520366641fe5cbccf568ff9cd899",
+    "green_groups": 24,
+    "unique_green_ids": 157,
+    "invalidated_groups": 0,
+    "evidence_credits": 76,
+    "hash_valid_evidence_credits": 70,
+    "explicit_inheritance_only_credits": 6
+  },
+  "prior_registry": {
+    "sha256": "e9988a886fb8b541ea8c648ad94c1a35ce0180b4c0d694fec79b618ea33373a5",
+    "green_groups": 23,
+    "unique_green_ids": 146,
+    "invalidated_groups": 0,
+    "evidence_credits": 70
+  },
+  "delta": {
+    "added_green_group": "S2::c3-runtime-recovery-ownership-joined-tip-reconciliation",
+    "added_green_ids": [
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_initial_status_rejects_malformed_wrong_identity_exit_and_timeout",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_prestart_branch_only_and_setup_launch_failures_cleanup_exactly",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_reconciled_restart_emits_closed_status_and_allows_signed_shutdown_only",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_record_is_closed_and_restart_remains_shutdown_only",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_required_response_and_reap_reconciliation_are_exact",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_restart_rejects_closed_evidence_mutation_matrix",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_session_roots_are_single_hil_lane_and_generic_defaults_remain",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_singular_target_preserves_generic_broker_default",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_started_publication_ambiguity_gets_bound_terminal",
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s25_a1_oracle_closed_authentic_contradiction_and_hash_evidence",
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s25_a1_oracle_contains_malformed_wrong_identity_and_noncontradictions"
+    ],
+    "freshly_revalidated_existing_ids": 50,
+    "removed_green_ids": [],
+    "added_evidence_credits": 6,
+    "new_invalidations": [],
+    "duplicate_green_groups": [],
+    "duplicate_green_ids": []
+  },
+  "dependency_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_202ecb0.json",
+    "sha256": "d0d3691e3703d8cc5262a2bacbf96adbb05c910b60b376248403643da9efff23",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_202ecb0.json",
+    "root_acceptance_sha256": "ca679460c44a56e50632d535db0f12e566026075a8bf7606461a067e29eb2b3d"
+  },
+  "fresh_green_evidence": {
+    "execution_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.D5-C3-RUNTIME-0001/.agent-workspace/TEST_EXECUTION.json",
+    "execution_sha256": "ef8e64447e95df9576692d04ba6b3737d83c29daac8f2ab10059c2ecc94675c2",
+    "output_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.D5-C3-RUNTIME-0001/.agent-workspace/TEST_OUTPUT.txt",
+    "output_sha256": "823f27ee73001afeed47212c1fd54eeef2679c598556d4896c9c73ad44e7a3e9",
+    "root_admission_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.D5-C3-RUNTIME-0001/.agent-workspace/ROOT_ADMISSION.json",
+    "root_admission_sha256": "60e1669f9df0fb8ea0c56be2ca87887dd47b9983b0f0b6ee2b4813e6db3ad5d4",
+    "tests_run": 61,
+    "skips": 0,
+    "xfails": 0,
+    "failures": 0,
+    "errors": 0,
+    "resource_warnings": 0,
+    "outcome": "PASS"
+  },
+  "audit": {
+    "all_declared_evidence_paths_exist": true,
+    "all_70_declared_evidence_hashes_match": true,
+    "six_hashless_entries_are_prior_explicit_inheritance_edges": true,
+    "all_11_new_test_ids_executed_exactly_once_at_current_tip": true,
+    "all_50_affected_prior_green_ids_freshly_revalidated_at_current_tip": true,
+    "unaffected_green_ids_rerun": false,
+    "reviewer_and_tester_criticisms_preserved_and_dispositioned": true,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "REGISTRY_RECONCILED_ONCE_FOR_ACCEPTED_S25_BATCH",
+  "outcome": "PASS",
+  "created_at": "2026-08-05T09:45:56Z"
+}

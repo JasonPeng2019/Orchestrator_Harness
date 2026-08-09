@@ -1,0 +1,53 @@
+{
+  "schema": "firmware-v2-root-pre-c3-admission-gap/v1",
+  "owner": "ROOT-IM",
+  "recorded_at_utc": "2026-08-05T05:08:00Z",
+  "candidate_commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+  "admission_point": "after C2 root acceptance and before allocation of any C3 attempt",
+  "reproduction": {
+    "candidate_clean": true,
+    "hardware_or_mcp_accessed": false,
+    "c3_attempt_allocated": false,
+    "method": "Construct C3Harness in a disposable TemporaryDirectory with a valid synthetic ROOT topology chain and the exact operative C1, delegated authorization, candidate seed/templates/manifest, and candidate-source MCP policy.",
+    "observed_exception": "AdmissionError: delegated pin or policy binding drifted",
+    "source_observations": [
+      {
+        "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/harness-candidate/firmware_acceptance/c3_harness.py",
+        "sha256": "09d0abd0f4c667b82d2b16fe17bcc41a398c274af94a534ac45320aa466f4307",
+        "observation": "C3Harness validates delegated authorization using self.policy and then requires candidate_acceptance_inputs.mcp_method_policy_source to equal the same self.policy path."
+      },
+      {
+        "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/harness-candidate/firmware_acceptance/kit.py",
+        "observation": "validate_delegated_authorization correctly requires the operative policy path to equal the delegated authorization's C1-local mcp_method_policy path/hash."
+      },
+      {
+        "path": "plans/general-coding-harness/evidence/firmware-v2/final/c1/d31d847b-ab7a-4abf-9b06-823a8d09146d/C1_LOCK.json",
+        "sha256": "d403facd1bdddbe98c58aca15bef683f309cf300ab41a9d3054eea65a704db23",
+        "observation": "The lock correctly distinguishes C1-local candidate_acceptance_inputs.mcp_method_policy from the immutable candidate-source mcp_method_policy_source."
+      }
+    ]
+  },
+  "finding": {
+    "id": "F-PRE-C3-002",
+    "classification": "FUNCTIONALITY_BREAKING",
+    "title": "C3 startup conflates the C1-local operative MCP policy with its candidate-source provenance copy",
+    "impact": "The candidate rejects every correctly serialized C1 before publishing C3 readiness, so F.C3.O and F.C3.W cannot be launched against an operative candidate and no practical or hardware acceptance can begin.",
+    "cost_risk_decision": "ACCEPTED_WORTH_FIXING",
+    "cost_risk_rationale": "The fix is localized to startup binding: use the C1-local policy as the operative broker/authorization input and independently hash/compare the locked candidate-source policy provenance. This preserves default deny and avoids weakening either binding."
+  },
+  "classification_boundaries": {
+    "candidate_harness_gap": true,
+    "watcher_failure": false,
+    "orchestrator_or_worker_mistake": false,
+    "pinned_mcp_server_defect_or_incompatibility": false,
+    "authorized_server_limitation_applicable": false
+  },
+  "decision": "REOPEN_MINIMAL_C3_STARTUP_BINDING_PRODUCT_SLICE",
+  "required_route": [
+    "preserve and supersede the current C1 and C2 records",
+    "repair the C1-local policy versus candidate-source provenance binding through the stable implementation runner",
+    "add and execute the dependency-invalidated constructor regression without rerunning unrelated green IDs",
+    "run a fresh C0, create a fresh opaque C1, and run dependency-invalidated C2",
+    "allocate C3 only after those gates are green"
+  ]
+}

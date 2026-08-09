@@ -1,0 +1,66 @@
+{
+  "schema": "firmware-v2-joined-tip-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "candidate": {
+    "base_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "source_commit": "f83e1da86062d2a39c54385db639b5ceb6b04c68",
+    "test_commit": "c6999d173c344b317a918df91619308fd9f93f63",
+    "joined_commit": "c6999d173c344b317a918df91619308fd9f93f63",
+    "joined_branch": "firmware/v2-s29-a1-c3-target-tests-0001",
+    "reserved_branch": "firmware/v2-candidate",
+    "joined_clean": true,
+    "reserved_clean": true,
+    "changed_paths": [
+      "firmware_acceptance/kit.py",
+      "orchestrator_harness/tests/test_firmware_acceptance_target.py"
+    ]
+  },
+  "accepted_batch": {
+    "root_admission_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S29_C3_EVOLVED_TARGET_ROOT_ADMISSION_c6999d1.json",
+    "root_admission_sha256": "59626c2d7b30e0a7f40750d223681e2a8c786b1c31e63581eaf84b6610c64bc6",
+    "final_review_result_sha256": "89bbdf4811750473037f12a776bcb006ce1aab4329f612fe463ed1aa111ff614",
+    "final_review_findings_sha256": "ce6968c33fcfe9b93c960541b6e50255c1922efa1a57e83a60351875ecfe6ec2",
+    "remaining_actionable_findings": []
+  },
+  "focused_execution": {
+    "regression_execution_sha256": "6f67142d114c010c2537ac25df2b9a23312b0787be153d1ff9c919743122925e",
+    "remaining_dependency_execution_sha256": "205e133d7bc8cdd90463ce1f617157d78e0f6a0a26b908b8da632c710afa9a38",
+    "tests_covered": 6,
+    "failures_remaining": 0,
+    "errors": 0,
+    "skips": 0,
+    "resource_warnings": 0,
+    "outcome": "PASS"
+  },
+  "reconciliation": {
+    "dependency_map_sha256": "d4fe04d15a525b70282726ac84be7f734b7fb92ae2e520df0242d994925674be",
+    "dependency_map_root_acceptance_sha256": "907aa4a3e5ffd0b51a35b0ad2a7cd85d309b1384add4fe8c031ab532932b48e9",
+    "registry_reconciliation_sha256": "6254a14fba7d78ffd909e81be65b37f6b484666c89a1135edc0fcc729f9de834",
+    "registry_sha256": "82f809ce6b0d7f6d4e967d649da4eb61b33769be86dafb6ce459f5d9d9e5cef5",
+    "green_groups": 28,
+    "unique_green_ids": 168,
+    "invalidated_groups": 0,
+    "evidence_credits": 96
+  },
+  "criticism_disposition": {
+    "accepted": [
+      "The physical rejection proves a functionality-breaking evolved-target validation defect.",
+      "The exact root .gitignore fixture is valuable because nested-file coverage did not exercise the rejected top-level extra-file check."
+    ],
+    "rejected": [
+      "New validation modes, generalized seed abstractions, duplicate hash guards, broader test execution, and candidate changes for the separate watcher procedure."
+    ],
+    "remaining_actionable_findings": []
+  },
+  "cleanup": {
+    "active_resource_claims": 0,
+    "surviving_managed_processes": 0,
+    "executor_owned_residue": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "server_edited": false
+  },
+  "decision": "ACCEPT_RECONCILED_S29_BATCH_AND_UNLOCK_FRESH_C0",
+  "outcome": "PASS",
+  "created_at": "2026-08-05T22:20:56.4401649Z"
+}

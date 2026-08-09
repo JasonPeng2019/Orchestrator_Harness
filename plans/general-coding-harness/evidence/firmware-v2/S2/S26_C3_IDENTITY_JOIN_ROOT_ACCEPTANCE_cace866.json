@@ -1,0 +1,97 @@
+{
+  "schema": "firmware-v2-joined-tip-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "candidate": {
+    "base_commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+    "accepted_source_commit": "e4128b8680d6f746ec0a16b6b1e05082be6670db",
+    "accepted_test_consumer_commit": "712d3682404ee6643facfebe09c86cc854da00d9",
+    "accepted_quick_exit_test_commit": "27d0c94eeeb0c07115615ed41d9540aff0da1e96",
+    "accepted_fixture_test_commit": "90887e9de43b66d4a40683f60dba4cc5a3df2afc",
+    "joined_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "joined_branch": "firmware/v2-s26-p-c3-identity-0001",
+    "reserved_branch": "firmware/v2-candidate",
+    "joined_clean": true,
+    "reserved_clean": true,
+    "changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "firmware_acceptance/c3_process_identity.py",
+      "firmware_acceptance/c3_watcher_oracle.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py",
+      "orchestrator_harness/tests/test_firmware_c3_watcher_oracle.py"
+    ]
+  },
+  "accepted_batch": {
+    "source_and_static_consumer_admission_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S26_C3_IDENTITY_ROOT_ADMISSION_ac70c3d.json",
+    "source_and_static_consumer_admission_sha256": "3469d1b9a2042910b5357656a9449599b8559f5982e870f775cc5ee1edf825d4",
+    "fixture_admission_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S26_C3_IDENTITY_ROOT_FIXTURE_ADMISSION_cace866.json",
+    "fixture_admission_sha256": "f4e2f0c0dbfa780a5bceefd3c1459cf31d4da89247f8a23673ea173fa615c8a6",
+    "fresh_final_review_lane": "S26.R4",
+    "fresh_final_review_result_sha256": "f39c703028565adaa386a3f247444f04f6c6d9a2da52b0dbd4cb1155796afd47",
+    "fresh_final_review_findings_sha256": "1638269e1a7b15b72f001fbbf835c3012ec4719361c22368aae0ed278ab90e17"
+  },
+  "focused_execution": {
+    "initial_failed_lane": "S26.D1",
+    "initial_failed_execution_sha256": "078d00a00e6c97a1b8a329fec86550a97284f5f58cdd5bce478667662c91313a",
+    "initial_failed_output_sha256": "18c133fb1edf1b7f0b1cd96c32863b88bbff1f92ff42cd106163ce9c72fd9804",
+    "accepted_finding": "S26.D1-F001",
+    "repair_triage_sha256": "fd29221bad4b9201586f2acddfc2db003dad305c290df608bff90ef1fd7826da",
+    "final_lane": "S26.D2",
+    "final_execution_sha256": "aef66a06b326b08f4fc7f811e30760ee6c1086c128e28d4bca1d4ef925290a2d",
+    "final_output_sha256": "6e0c528e0f9d334c8a0f355bd08885c998bf7149f002198125ff441d706e54ca",
+    "final_result_sha256": "06aa3de7b3d084c9a20e48312a1d99aecf45689b64040ae1bf76592040f95697",
+    "root_admission_sha256": "eccacdbef7dc27a9241d6481e42ef46b32c0343e810339cabee19dd1158cc5d9",
+    "tests_covered": 23,
+    "failures_remaining": 0,
+    "errors": 0,
+    "resource_warnings": 0,
+    "outcome": "PASS"
+  },
+  "reconciliation": {
+    "dependency_map_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_cace866.json",
+    "dependency_map_sha256": "f12aa53dcd063bda4f4db20260b5e8c93ea6c076343eb301867ef4254bfd1037",
+    "dependency_map_root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_cace866.json",
+    "dependency_map_root_acceptance_sha256": "9065fe2d1952f351149772ef5e541e5efac6943f8cfc8dee169269c1b50db186",
+    "registry_reconciliation_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S26_C3_IDENTITY_REGISTRY_RECONCILIATION_cace866.json",
+    "registry_reconciliation_sha256": "95526582ad665deab35d2099fd6b8ba8d96d0fe6785f335bc9fae94282797d05",
+    "registry_path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+    "registry_sha256": "4439ffb1b83fd6d5c7a524d3ba249c141237a1058ef9aeab9ea6e063d3cf9db5",
+    "green_groups": 25,
+    "unique_green_ids": 163,
+    "added_green_ids": 8,
+    "removed_superseded_ids": 2,
+    "freshly_revalidated_existing_ids": 15,
+    "invalidated_groups": 0,
+    "evidence_credits": 81
+  },
+  "criticism_disposition": {
+    "accepted": [
+      "Six ROOT source findings covering recovery identity, terminal reap, Windows argv parsing, helper scope, assignment correlation, and closed initial status.",
+      "R2's stale cleanup/recovery test-consumer finding.",
+      "ROOT's quick-exit null launcher-identity test criticism.",
+      "D1's truthful argc test-fixture criticism."
+    ],
+    "artifact_only_corrections": [
+      "R2's invalid lane result was retained as advisory rather than accepted evidence.",
+      "D1's lane_id and cost-benefit boolean envelope was corrected without rerunning.",
+      "A1's result check objects were closed without editing the accepted commit."
+    ],
+    "rejected": [
+      "Production changes in response to the fixed-argc test double.",
+      "Expansion into a general process identity framework.",
+      "Redundant reruns of the exact-byte watcher module or unrelated shared-code tests.",
+      "Speculative recovery parser hardening without a demonstrated authorization, cleanup, or containment escape."
+    ],
+    "remaining_actionable_findings": []
+  },
+  "cleanup": {
+    "active_resource_claims": 0,
+    "surviving_managed_processes": 0,
+    "executor_owned_residue": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "server_edited": false
+  },
+  "decision": "ACCEPT_RECONCILED_S26_BATCH_AND_UNLOCK_FRESH_C0",
+  "outcome": "PASS",
+  "created_at": "2026-08-05T12:36:00Z"
+}

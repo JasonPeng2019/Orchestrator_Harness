@@ -1,0 +1,42 @@
+{
+  "schema": "firmware-v2-c2-root-retry-result-triage/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "retry_suffix": "retry-002",
+  "triaged_at_utc": "2026-08-05T13:18:13Z",
+  "artifacts": {
+    "result_sha256": "7557a25d9ef449624f69d244a9ec1a24217ca2bfd75c4697d4a2706df7a89b52",
+    "test_report_sha256": "fa8b19bdf72e1ee2459a0577380df3e0045fd05128a7338e9d98a32fa0e5d3cf",
+    "closed_retry_jsonl_sha256": "02c2d4d7e4eea246aaaf06461f09ce5a7f5d75aad61c042a2b0acba52402530d",
+    "process_metadata_sha256": "8b1c2b67bb18f9e2c1e58821afda60ad47a3aad7b371b59c9713cdff819a4e71",
+    "stderr_sha256": "aab24d22499eea40e9c5c1ceface5ff8424546a9b6e2832344e9ffe7b94bb2f5",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "facts": {
+    "process_started": true,
+    "pid": 174196,
+    "creation_identity": "windows-filetime:134304093674586824",
+    "exit_observed": true,
+    "exit_code": 2,
+    "metadata_initialized_before_spawn": true,
+    "lock_assertions_began": false,
+    "failure_stage": "ARGUMENT_PARSING"
+  },
+  "accepted_criticism": {
+    "id": "C2-R2-CLI-001",
+    "description": "The verifier's retry suffix choices still admitted only retry-001, so the authorized retry-002 was rejected by argparse before preflight. The new Python supervisor correctly preserved exact red process evidence.",
+    "candidate_finding": false,
+    "locked_input_change": false,
+    "bounded_correction": "Extend only the lane-local verifier suffix choices to retry-003 before executing the next authorized process; retain the identity-bound predicate and proven supervisor unchanged."
+  },
+  "root_checks": {
+    "prior_failures_preserved": 3,
+    "green_ids_rerun": 0,
+    "candidate_and_server_clean": true,
+    "claims_released": true,
+    "surviving_test_processes": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "PRESERVE_ARGPARSE_FAIL_AND_ALLOW_ONE_SUFFIX_ONLY_CORRECTION"
+}

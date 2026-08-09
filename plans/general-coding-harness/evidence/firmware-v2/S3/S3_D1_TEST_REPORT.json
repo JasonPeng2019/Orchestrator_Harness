@@ -1,0 +1,33 @@
+{
+  "schema": "firmware-v2-test-report/v1",
+  "lane_id": "S3.D1",
+  "worker_invocation_id": "s3-d1-001",
+  "commit": "bbc8ad94c32f3ddad4a54afd4c1a2d51ac4bb11e",
+  "command": "python -m unittest orchestrator_harness.tests.test_s3_operator_journey -v",
+  "totals": {
+    "collected": 3,
+    "executed": 3,
+    "passed": 3,
+    "failed": 0
+  },
+  "skips": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "stable_ids": [
+    {
+      "id": "S3-DUAL-001",
+      "test": "S3OperatorJourneyTests.test_S3_DUAL_001_legacy_example_is_schema_less_and_coding_v1_is_separate",
+      "outcome": "PASS"
+    },
+    {
+      "id": "S3-DUAL-002",
+      "test": "S3OperatorJourneyTests.test_S3_DUAL_002_disposable_dual_routes_keep_events_and_resources_isolated",
+      "outcome": "PASS"
+    },
+    {
+      "id": "S3-DUAL-003",
+      "test": "S3OperatorJourneyTests.test_S3_DUAL_003_docs_roles_cleanup_registry_templates_and_safeguard_are_bound",
+      "outcome": "PASS"
+    }
+  ]
+}

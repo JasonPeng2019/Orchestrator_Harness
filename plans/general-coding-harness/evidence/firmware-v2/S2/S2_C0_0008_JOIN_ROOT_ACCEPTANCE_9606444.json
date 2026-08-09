@@ -1,0 +1,95 @@
+{
+  "schema": "firmware-v2-root-join-acceptance/v1",
+  "owner": "ROOT-IM",
+  "accepted_utc": "2026-08-04T20:40:05.8708760Z",
+  "candidate": {
+    "branch": "firmware/v2-candidate",
+    "commit": "9606444ccf64216a44e448e88f6a824f2012ae60",
+    "clean": true
+  },
+  "accepted_failure_chain": {
+    "d3_findings_sha256": "92b3fcc3f2b4b6ac34bb42af786f745457e83fd69eb736c43af6b377b16acc57",
+    "d3_report_sha256": "8421ad430f6cea179bdcc1591c8428ba16ccd1f0cd4c4976b6cbb76909a69984",
+    "d3_result_sha256": "ce5eb42b487f6e3ae7aa982f458733e5dcbb627e4c9f432eae0a20a6a1bdb0aa",
+    "root_triage_sha256": "83469e7920be7520f2a8e03567fd3956b2bdbea024ae26cdacc8624ae3b53bad",
+    "supersession_sha256": "05f2302d85fac96c7454e9f8c5d7da24ea548da98964922c8d3fbb62e6b3a87b",
+    "classification": "A protected pre-existing unit test caught a product-regression interpretation error. This was neither a harness/watcher reset nor an MCP-fixture failure."
+  },
+  "production": {
+    "commit": "67efc0d154403a0d59cafa434cfc05b613d227e8",
+    "findings_sha256": "03393adbb588050f4d251d51c61fdbde324f5876d5d0278d342e8305c9c42c81",
+    "result_sha256": "e883f41478e7ea2a14418514bba962e2139c87557d1aefdc584b17b5fdaf6e30",
+    "thread_id": "019fcd5f-176c-7221-bc37-0ce1f5a0b4a4",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "default",
+    "result_valid": true,
+    "claims_released": true
+  },
+  "fresh_review": {
+    "lane_id": "S2.R4",
+    "commit": "67efc0d154403a0d59cafa434cfc05b613d227e8",
+    "findings_sha256": "82085e1dbacbc8f6267ea95b96dd06e412ff0ff0651c63e5abe4d7007cc3f7ba",
+    "result_sha256": "5d6e52135399ce83d5e0b12d364eb16df6fa4eb46d41b9fc9e9ccda8eb6c17b0",
+    "thread_id": "019fce70-48df-7d92-850d-f98dbb55e328",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority",
+    "findings_empty": true,
+    "result_valid": true,
+    "claims_released": true
+  },
+  "test_author": {
+    "lane_id": "S2.A4",
+    "commit": "9606444ccf64216a44e448e88f6a824f2012ae60",
+    "findings_sha256": "bb1c3135eb57c95e62a04942dea6498bc7fdac9e2198ea5f8071cc578fa2a7db",
+    "plan_sha256": "16dfcb5911bad060cb015536906008c3ee77f45faf32ba4219a445e17956591d",
+    "result_sha256": "e9fe7095074994f1e5a0ec0550ec4ba8153865f5bccc1c5e67e3a5efedbf8574",
+    "thread_id": "019fce54-557a-7070-9ca9-8c97fb508814",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority",
+    "selected_exact_ids": 2,
+    "findings_empty": true,
+    "result_valid": true,
+    "claims_released": true
+  },
+  "test_executor": {
+    "lane_id": "S2.D4",
+    "commit": "9606444ccf64216a44e448e88f6a824f2012ae60",
+    "findings_sha256": "858c9e998090bf4553018e81676cf2516b657ba4bc0dc3e557a7c3d10fc80957",
+    "report_sha256": "c9e35e05806b62344e35a20c8e3c471cd19ef5572161c4f2007cab535dc79975",
+    "result_sha256": "26ce6f937207a8fc807d70540999e2594007f8d3f072d79ac9759788d9708a14",
+    "thread_id": "019fce75-830d-7b11-afa1-c8901ba39ffd",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "default",
+    "executed": 2,
+    "passed": 2,
+    "skipped": 0,
+    "findings_empty": true,
+    "result_valid": true,
+    "claims_released": true
+  },
+  "dependency_and_registry": {
+    "map_sha256": "57f41acb5c5fc3d506c694d28abca39885326adc2b04540ff3e8fdd18e514d47",
+    "map_root_acceptance_sha256": "586fdd6f101da8f66561cd266bdff9026f9946762eab5a70db8ce04c505c2c3c",
+    "registry_path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+    "registry_sha256": "87dd3f6f786cff107fe29601fc0e3404b90f11d9d428472596373e722c0dd2a6",
+    "green_groups": 20,
+    "unique_green_ids": 140,
+    "invalidated_groups": 0,
+    "evidence_credits": 51,
+    "all_declared_hashes_valid": true
+  },
+  "protected_state": {
+    "original_general_harness_tests_substituted": false,
+    "unaffected_green_tests_rerun": false,
+    "mcp_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "mcp_clean": true,
+    "mcp_launched": false,
+    "mcp_edited": false,
+    "hardware_accessed": false
+  },
+  "decision": "ACCEPT_JOIN_AND_REQUIRE_FRESH_C0"
+}

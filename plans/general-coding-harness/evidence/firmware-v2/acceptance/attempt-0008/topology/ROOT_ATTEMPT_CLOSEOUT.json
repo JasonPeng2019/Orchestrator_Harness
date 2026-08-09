@@ -1,0 +1,28 @@
+{
+  "schema": "firmware-c3-root-attempt-closeout/v1",
+  "attempt_id": "attempt-0008",
+  "owner": "ROOT-IM",
+  "outcome": "USER_PAUSED_NON_ACCEPTABLE_ATTEMPT",
+  "procedure_abort": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0008\\topology\\ROOT_PROCEDURE_ABORT_REQUIRED.json",
+    "sha256": "1028c3a6225694583cc0ba9368d1f077293d92698aa3de5d4f4832bcdfd61e3f"
+  },
+  "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+  "target_materialized": true,
+  "target_seed_commit": "d3f109fb9d497c91673683ecef95dfd5f41f9aad",
+  "target_assignments_launched": 1,
+  "target_results_accepted": 0,
+  "mcp_server_launched": false,
+  "hardware_call_dispatched": false,
+  "candidate_shutdown_complete": true,
+  "candidate_workers_reaped": true,
+  "resource_claims_remaining": 0,
+  "related_processes_remaining": 0,
+  "watcher_terminal_report_missing_due_forced_pause": true,
+  "manifest_created": false,
+  "acceptance_result_created": false,
+  "fresh_c3_attempt_required_on_resume": true,
+  "candidate_or_server_change_required": false,
+  "closed_utc": "2026-08-05T19:06:11.7204392Z"
+}

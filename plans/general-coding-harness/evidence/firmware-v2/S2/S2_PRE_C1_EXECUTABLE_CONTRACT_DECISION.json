@@ -1,0 +1,379 @@
+{
+  "schema": "firmware-v2-root-pre-c1-executable-contract/v1",
+  "decision_id": "S2-PRE-C1-EXECUTABLE-CONTRACT-001",
+  "candidate_base": "42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+  "mcp_server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+  "server_source_policy": "immutable-read-only",
+  "hardware_authorized": false,
+  "review_inputs": [
+    "/root/s2_method_inventory",
+    "/root/s2_auth_schema",
+    "/root/s2_limitation_schema"
+  ],
+  "supersedes_audit_verdict": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_SESSION_CONTRACT_ADVERSARIAL_AUDIT.json",
+    "prior_verdict": "GREEN",
+    "reason": "The audit closed lifecycle ownership but did not require the exact pinned-method inventory, executable transition graph, final delegated-artifact schema, or limitation-record API subsequently identified by the persistent coder."
+  },
+  "scope": {
+    "gating_only": true,
+    "supported_intent": "P0-P4 four-board setup/validation, application image operation, reset, debugger read observation, UART protocol evidence, returning state, and exact cleanup",
+    "not_supported": [
+      "bootloader flash",
+      "target unlock",
+      "mass erase",
+      "protection or provisioning change",
+      "destructive recovery",
+      "connect override or under-reset recovery",
+      "memory/register writes",
+      "breakpoints or execution-state writes",
+      "try-last or extended qualification",
+      "action_batch",
+      "direct pyOCD, serial, or MCP bypass"
+    ]
+  },
+  "session_machine": {
+    "states": [
+      "BOOTSTRAPPED",
+      "ROUTED",
+      "SETUP_LOADED",
+      "SETUP_PLAN_DISCLOSED",
+      "SETUP_ACTION_READY",
+      "SETUP_CONTINUATION",
+      "SETUP_FIX_READY",
+      "VALIDATION_LOADED",
+      "READY",
+      "OP_PLAN_DISCLOSED",
+      "OP_ACTION_READY",
+      "RETURNED",
+      "ABORTED",
+      "CLOSED"
+    ],
+    "initialization": "initialize, notifications/initialized, and empty initialization_handshake are the fixed candidate-generated bootstrap; the handshake result supplies the Server Run ID and no hardware authority",
+    "sequence_rule": "Every later tools/call has a fresh call ID, consecutive sequence number, exact prior result path/hash or first-call null, same session/open/claim/C1/pin/policy/identity bindings, and a separately signed O decision.",
+    "plan_rule": "A guarded plan NULL call moves READY or SETUP_LOADED to a disclosed state while binding the exact plan method. Only the same populated plan method may follow; only its exact paired action with arguments equal to board_id plus the accepted action_parameters may follow. Every stage has its own call authorization. Server-returned plan IDs, continuations, routes, paths, and actions are runtime values, never schemas; they are accepted only when predecessor-bound and independently signed.",
+    "direct_method_rule": "For a pinned always-visible method with no server *-plan, the candidate proposal plus canonical policy evaluation is the create-once live control plan. Evidence must say candidate plan, never falsely claim an MCP-native plan.",
+    "normal_close": "Only signed O close intent from READY after the separately authorized returning-state calls permits disconnect, exact drain/exit/reap/claim release, SESSION_CLOSED, and CLOSED.",
+    "abort": "Any invalid sequence/result, expiry, revocation, governing change, watcher abort, O loss, or process ambiguity moves to ABORTED; transport/process cleanup may run but no invented hardware returning-state call or clean-success claim is permitted.",
+    "terminal": "RETURNED may only proceed to normal close; ABORTED and CLOSED accept no calls and no session ID is resumed or reused."
+  },
+  "plan_protocol": {
+    "exact_top_level_keys": [
+      "board_id",
+      "hypothesis",
+      "strategy",
+      "hypothesis_made",
+      "strategy_evaluated",
+      "expected_fail_return",
+      "expected_success_return",
+      "max_calls",
+      "max_calls_buffer",
+      "action_parameters",
+      "user_permission"
+    ],
+    "null_call": "all eleven keys present and null",
+    "populated_permission_none": "all keys except user_permission; board_id/nonempty hypothesis/strategy/expected strings, both booleans true, positive bounded integer budgets, and exact closed action_parameters",
+    "populated_permission_required": "same closed populated shape with exact structured permission value returned by the pinned server and within delegated user scope",
+    "unknown_keys": "deny",
+    "plan_action_binding": "paired action arguments exactly equal {board_id} plus the populated plan action_parameters"
+  },
+  "method_inventory": [
+    {
+      "method": "setup_overview",
+      "version": 1,
+      "action_class": "probe_discovery_read",
+      "session_role": "route",
+      "mutating": false,
+      "allowed_from": ["BOOTSTRAPPED", "ROUTED"],
+      "next": "ROUTED",
+      "parameters": {
+        "required_exact": ["board_names", "connection_assignments"],
+        "constraints": "board_names is exactly [the one delegated fixture familiar name] or null for inventory; connection_assignments is null or the exact server-returned board-name-to-connection map; no unknown fixture or guessed connection"
+      }
+    },
+    {
+      "method": "load_setup_tool",
+      "version": 1,
+      "action_class": "connect_setup",
+      "session_role": "setup_loader",
+      "mutating": false,
+      "allowed_from": ["ROUTED"],
+      "next_by_tool_name": {"board_setup-plan": "SETUP_LOADED", "board_validate": "VALIDATION_LOADED"},
+      "parameters": {
+        "required_exact": ["board_id", "tool_name"],
+        "constraints": "board_id is exact setup_overview output for this fixture; tool_name is exactly board_setup-plan or board_validate and must equal the server-returned route"
+      }
+    },
+    {
+      "method": "board_setup-plan",
+      "version": 1,
+      "action_class": "connect_setup",
+      "session_role": "setup_plan",
+      "mutating": false,
+      "allowed_from": ["SETUP_LOADED", "SETUP_PLAN_DISCLOSED"],
+      "next_by_mode": {"all_null": "SETUP_PLAN_DISCLOSED", "populated": "SETUP_ACTION_READY"},
+      "plan_action": "board_setup",
+      "action_parameters": {
+        "required_exact": ["mode", "connection_id", "display_name", "mcu_part_number", "requires_uart", "serial_baudrate", "serial_id", "datasheet_path"],
+        "constraints": "mode setup or repair; identities/connection/datasheet are exact locked or server-returned values; positive baud and nonempty serial_id iff requires_uart, otherwise both null; datasheet is a locked local PDF"
+      }
+    },
+    {
+      "method": "board_setup",
+      "version": 1,
+      "action_class": "connect_setup",
+      "session_role": "setup_action",
+      "mutating": false,
+      "allowed_from": ["SETUP_ACTION_READY"],
+      "next_by_server_status": {"setup_completed": "ROUTED", "setup_needs_user_input": "SETUP_CONTINUATION", "setup_research_required": "SETUP_CONTINUATION"},
+      "parameters": {
+        "required_exact": ["board_id", "mode", "connection_id", "display_name", "mcu_part_number", "requires_uart", "serial_baudrate", "serial_id", "datasheet_path"],
+        "constraints": "exactly board_id plus the immediately accepted board_setup-plan action_parameters"
+      }
+    },
+    {
+      "method": "continue_setup",
+      "version": 1,
+      "action_class": "connect_setup",
+      "session_role": "setup_continuation",
+      "mutating": false,
+      "allowed_from": ["SETUP_CONTINUATION"],
+      "next": "SETUP_FIX_READY",
+      "parameters": {
+        "required_exact": ["board_id", "continuation_id", "response"],
+        "constraints": "continuation_id and response key set exactly equal the immediately preceding server-returned continuation and exact_response_fields; values come only from locked local authority or the server-requested automated official-source result; every value is separately O-signed"
+      }
+    },
+    {
+      "method": "board_fix_setup",
+      "version": 1,
+      "action_class": "connect_setup",
+      "session_role": "setup_fix",
+      "mutating": false,
+      "allowed_from": ["SETUP_FIX_READY"],
+      "next_by_server_status": {"setup_completed": "ROUTED", "setup_needs_user_input": "SETUP_CONTINUATION", "setup_research_required": "SETUP_CONTINUATION"},
+      "parameters": {
+        "required_exact": ["board_id", "mode", "connection_id", "display_name", "mcu_part_number", "requires_uart", "serial_baudrate", "serial_id", "datasheet_path"],
+        "constraints": "same exact values as the active board_setup plan; server permits only its one paired repair allowance"
+      }
+    },
+    {
+      "method": "board_validate",
+      "version": 1,
+      "action_class": "connect_setup",
+      "session_role": "validate",
+      "mutating": false,
+      "allowed_from": ["VALIDATION_LOADED"],
+      "next": "READY",
+      "parameters": {
+        "required_exact": ["board_id", "probe_id"],
+        "constraints": "both equal this run's exact setup_overview assignment; a refusal or non-ready validation aborts rather than advances"
+      }
+    },
+    {
+      "method": "get_setup_status",
+      "version": 1,
+      "action_class": "connect_setup",
+      "session_role": "ready_barrier",
+      "mutating": false,
+      "allowed_from": ["READY"],
+      "next": "READY",
+      "parameters": {"required_exact": ["board_id"], "constraints": "ready_for_code true and, for UART tests, ready_for_uart_work true"}
+    },
+    {
+      "method": "get_board_info",
+      "version": 1,
+      "action_class": "probe_discovery_read",
+      "session_role": "observe",
+      "mutating": false,
+      "allowed_from": ["READY"],
+      "next": "READY",
+      "parameters": {"required_exact": ["board_id"], "constraints": "exact delegated fixture board_id"}
+    },
+    {
+      "method": "get_state",
+      "version": 1,
+      "action_class": "memory_register_read",
+      "session_role": "observe",
+      "mutating": false,
+      "allowed_from": ["READY"],
+      "next": "READY",
+      "parameters": {"required_exact": ["board_id"], "constraints": "exact delegated fixture board_id"}
+    },
+    {
+      "method": "flash_application-plan",
+      "version": 1,
+      "action_class": "application_flash",
+      "session_role": "operation_plan",
+      "mutating": false,
+      "allowed_from": ["READY", "OP_PLAN_DISCLOSED"],
+      "next_by_mode": {"all_null": "OP_PLAN_DISCLOSED", "populated": "OP_ACTION_READY"},
+      "plan_action": "flash_application",
+      "maximum_duration_seconds": 30,
+      "action_parameters": {"required_exact": ["artifact"], "constraints": "canonical ELF or HEX inside attempt artifact root; existing regular nonlink file; exact hash-bound build provenance"}
+    },
+    {
+      "method": "flash_application",
+      "version": 1,
+      "action_class": "application_flash",
+      "session_role": "operation_action",
+      "mutating": true,
+      "allowed_from": ["OP_ACTION_READY"],
+      "next": "READY",
+      "maximum_duration_seconds": 120,
+      "parameters": {"required_exact": ["board_id", "artifact"], "constraints": "exact accepted plan values; application partition only; no address/range/erase/protection/unlock argument"}
+    },
+    {
+      "method": "reset_and_run",
+      "version": 1,
+      "action_class": "reset",
+      "session_role": "direct_control_action",
+      "mutating": true,
+      "allowed_from": ["READY"],
+      "next": "READY",
+      "server_plan": false,
+      "candidate_control_plan": true,
+      "maximum_duration_seconds": 30,
+      "parameters": {"required_exact": ["board_id"], "constraints": "exact delegated fixture; no unlock/recovery/override"}
+    },
+    {
+      "method": "read_memory_symbol",
+      "version": 1,
+      "action_class": "memory_register_read",
+      "session_role": "direct_observe",
+      "mutating": false,
+      "allowed_from": ["READY"],
+      "next": "READY",
+      "server_plan": false,
+      "candidate_control_plan": true,
+      "maximum_duration_seconds": 30,
+      "parameters": {"required_exact": ["board_id", "symbol", "width", "elf_artifact"], "constraints": "nonempty symbol; width 8,16,32; ELF is null or current exact target artifact; server coherent halt/read/restore only"}
+    },
+    {
+      "method": "read_serial-plan",
+      "version": 1,
+      "action_class": "uart_session_io",
+      "session_role": "operation_plan",
+      "mutating": false,
+      "allowed_from": ["READY", "OP_PLAN_DISCLOSED"],
+      "next_by_mode": {"all_null": "OP_PLAN_DISCLOSED", "populated": "OP_ACTION_READY"},
+      "plan_action": "read_serial",
+      "maximum_duration_seconds": 30,
+      "action_parameters": {"required_exact": ["expected_text", "read_seconds", "baudrate", "port", "reset_on_open", "on_exit"], "constraints": "read_seconds finite >0 <=30; baud positive or null; route equals live rediscovered route or null; reset_on_open false; on_exit null"}
+    },
+    {
+      "method": "read_serial",
+      "version": 1,
+      "action_class": "uart_session_io",
+      "session_role": "operation_action",
+      "mutating": false,
+      "allowed_from": ["OP_ACTION_READY"],
+      "next": "READY",
+      "maximum_duration_seconds": 30,
+      "parameters": {"required_exact": ["board_id", "expected_text", "read_seconds", "baudrate", "port", "reset_on_open", "on_exit"], "constraints": "exact accepted plan values; on_exit null and reset_on_open false prevent hidden mutation"}
+    },
+    {
+      "method": "write_serial-plan",
+      "version": 1,
+      "action_class": "uart_session_io",
+      "session_role": "operation_plan",
+      "mutating": false,
+      "allowed_from": ["READY", "OP_PLAN_DISCLOSED"],
+      "next_by_mode": {"all_null": "OP_PLAN_DISCLOSED", "populated": "OP_ACTION_READY"},
+      "plan_action": "write_serial",
+      "maximum_duration_seconds": 30,
+      "action_parameters": {"required_exact": ["text", "baudrate", "port", "append_newline", "timeout_seconds", "on_exit"], "constraints": "text UTF-8 length 1..256; timeout finite >0 <=30; baud positive or null; route exact or null; on_exit null"}
+    },
+    {
+      "method": "write_serial",
+      "version": 1,
+      "action_class": "uart_session_io",
+      "session_role": "operation_action",
+      "mutating": true,
+      "allowed_from": ["OP_ACTION_READY"],
+      "next": "READY",
+      "maximum_duration_seconds": 30,
+      "parameters": {"required_exact": ["board_id", "text", "baudrate", "port", "append_newline", "timeout_seconds", "on_exit"], "constraints": "exact accepted plan values and UTF-8 byte limit; on_exit null"}
+    },
+    {
+      "method": "serial_exchange-plan",
+      "version": 1,
+      "action_class": "uart_session_io",
+      "session_role": "operation_plan",
+      "mutating": false,
+      "allowed_from": ["READY", "OP_PLAN_DISCLOSED"],
+      "next_by_mode": {"all_null": "OP_PLAN_DISCLOSED", "populated": "OP_ACTION_READY"},
+      "plan_action": "serial_exchange",
+      "maximum_duration_seconds": 30,
+      "action_parameters": {"required_exact": ["steps", "read_seconds", "baudrate", "port", "ready_text", "ready_seconds", "ready_probe_text", "ready_probe_line_ending", "ready_probe_delay_seconds", "clear_input"], "constraints": "steps length >=1; each row exact nonempty text, nonempty expected_text, line_ending none|lf|cr|crlf; read_seconds finite >0; baud positive or null; port exact or null; readiness fields obey pinned uart_exchange_schema cross-field rules; every transmitted row <=256 UTF-8 bytes"}
+    },
+    {
+      "method": "serial_exchange",
+      "version": 1,
+      "action_class": "uart_session_io",
+      "session_role": "operation_action",
+      "mutating": true,
+      "allowed_from": ["OP_ACTION_READY"],
+      "next": "READY",
+      "maximum_duration_seconds": 30,
+      "parameters": {"required_exact": ["board_id", "steps", "read_seconds", "baudrate", "port", "ready_text", "ready_seconds", "ready_probe_text", "ready_probe_line_ending", "ready_probe_delay_seconds", "clear_input"], "constraints": "exact accepted plan values and closed nested schema"}
+    },
+    {
+      "method": "disconnect",
+      "version": 1,
+      "action_class": "connect_setup",
+      "session_role": "return_state",
+      "mutating": true,
+      "allowed_from": ["READY"],
+      "next": "RETURNED",
+      "server_plan": false,
+      "candidate_control_plan": true,
+      "maximum_duration_seconds": 30,
+      "parameters": {"required_exact": ["board_id"], "constraints": "exact session board; last MCP call before signed normal close"}
+    }
+  ],
+  "call_scope_binding": {
+    "required_call_fields": ["delegated_user_scope_sha256", "action_class", "scope_effect"],
+    "action_class_rule": "exactly one action_class per method rule and it must equal the per-call value and be allowed by user_issued_scope",
+    "scope_effect_schema": {
+      "exact_keys": ["schema", "effect_action_class", "target_operation_manifest", "electronic_admission", "limits"],
+      "normal": {"schema": "firmware-call-effect/v1", "effect_action_class": null, "target_operation_manifest": null, "electronic_admission": null, "limits": null},
+      "ble_or_lora": "effect_action_class is exactly ble_gatt_test or lora_ping_pong_test, the manifest and electronic admission are exact path/hash refs, limits exactly equal or narrow the delegated BLE/LoRa maxima, DIO2 dependency is false for LoRa, and the manifest binds exact target artifact plus transmitted serial argument hash"
+    },
+    "rule": "Both the method action class and any non-null effect action class must be separately present in allowed_action_classes and absent from prohibited_action_classes; scope_effect is outside MCP arguments and never forwarded to the server."
+  },
+  "delegated_authorization_schema": {
+    "exact_top_level_keys": ["schema_version", "issuance_source", "canonical_user_scope_sha256", "user_issued_scope", "derived_bindings"],
+    "schema_version": "delegated-hardware-authorization-v1",
+    "issuance_source": "goal.md Section 11 USER_HARDWARE_AUTHORIZATION_V1",
+    "user_scope_rule": "verbatim parsed Section 11 object; SHA-256 of sorted-key compact UTF-8 JSON with ensure_ascii=false; no normalization or expansion",
+    "derived_bindings_exact_keys": ["c1_lock_id", "operative_goal_sha256", "stable_fixtures", "destructive_exclusions", "rf_limits", "mcp_server_pin", "mcp_method_policy", "governing_documents"],
+    "stable_fixture_keys": ["STM-A", "STM-B", "NRF-A", "NRF-B"],
+    "stable_fixture_value_keys": ["probe_uid", "target", "profile"],
+    "reference_keys": ["path", "sha256"],
+    "cycle_rule": "The authorization includes c1_lock_id but no C1_LOCK path/hash. ROOT writes authorization, hashes it, then writes C1_LOCK with its path/hash and finally C1_LOCK.sha256.",
+    "forbidden_extra_authority": ["computed expiry", "new action class", "new fixture", "authority boolean", "C1 lock hash", "issuance timestamp invented by an agent"]
+  },
+  "server_limitation_api": {
+    "o_owned_signed_request": "server-limitation-decisions/{LIMITATION_ID}.json",
+    "candidate_entry_point": "AcceptanceBroker.record_server_limitation(o_decision_path, limitation_id) or a semantically identical narrow controller method",
+    "candidate_owned_output": "hil/{lane-id}/server-limitations/{LIMITATION_ID}.json",
+    "create_once": true,
+    "required_exact_fields": ["schema", "limitation_id", "attempt_id", "lane_id", "session_id", "original_test", "classification", "call_chain", "session_terminal", "process_evidence", "pinned_source", "attribution", "alternatives", "substitute", "physical_certification", "o_decision", "created_utc"],
+    "classification": "AUTHORIZED_SERVER_LIMITATION",
+    "precondition": "A complete dispatched physical call chain, raw server failure, terminal cleanup/session evidence, and signed O classification already exist; pre-dispatch harness rejection, invalid/unsafe call, target/fixture/operator/environment error, hardware absence, or unknown attribution is rejected.",
+    "alternatives_order": ["PARTIAL_MCP", "PINNED_COMPONENT_INTEGRATION", "CANDIDATE_BOUNDARY_UNIT"],
+    "selection_rule": "Select the first available and safe alternative; every earlier rejection has an exact evidence-linked technical or safety reason, never convenience or cost alone.",
+    "substitute_rule": "Unique stable substitute ID, normal C3-HARNESS assignment/result refs, preserved useful semantics, no server edit/repin/direct hardware bypass, and never physical certification.",
+    "physical_certification": {"status": "NOT_CERTIFIED"},
+    "protected_suite_rule": "Reject if the original or substitute ID is in, replaces, skips, xfails, weakens, or satisfies any C1-locked protected original general-harness test ID.",
+    "ownership": "O writes/signs only its decision; C3-HARNESS validates/derives the limitation record and alone launches the substitute; neither rewrites the other's artifact."
+  },
+  "target_seed_required_corrections": [
+    "Replace every PINNED_SERVER_REPAIR failure route with AUTHORIZED_SERVER_LIMITATION.",
+    "Add AUTHORIZED_SERVER_LIMITATION and substitute evidence to the closed evidence schema without treating it as PASS.",
+    "Keep H/S/A/D target-local and harness/watcher routes distinct; no target seed may authorize server repair or repin."
+  ],
+  "root_merit_decision": "These schemas and inventory are required to avoid an authorization bypass and to make the pinned stateful server executable. Their bounded complexity is lower than the security and functionality failures they close; methods outside the exact gating inventory remain denied.",
+  "next_action": "Resume the same persistent S2.P coder for this exact closed contract, then run only dependency-invalidated review/test lanes and a brand-new C0."
+}

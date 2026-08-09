@@ -1,0 +1,14 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.P",
+  "worker_invocation_id": "s2-p-001",
+  "branch": "firmware/v2-s2-product",
+  "commit": "196d68660f934154248c9400f03a937a792fcb68",
+  "outcome": "PASS",
+  "summary": "Closed the accepted raw-result provenance gap: canonical retained raw payload bytes are hashed at immutable recording and verified again during admission against the bound operation.",
+  "checks": [
+    {"name": "focused raw-result identity tests", "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_admission_accepts_hash_bound_retained_raw_result orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_admission_rejects_raw_result_digest_mismatch -v", "outcome": "PASS", "summary": "Two focused tests passed: matching retained payload admits; substituted payload digest is rejected."},
+    {"name": "pinned MCP server", "command": "git -C runtime/firmware-v2/worktrees/mcp-candidate status --short; git rev-parse HEAD", "outcome": "PASS", "summary": "Pinned server remains clean at f003f84a7df51cd8595a3203c62e225b21da2a22; no server change."},
+    {"name": "hardware boundary", "command": "static-only synthetic unit tests", "outcome": "PASS", "summary": "No physical MCP, pyOCD, serial, probe, flash, reset, debug, or RF activity occurred."}
+  ]
+}

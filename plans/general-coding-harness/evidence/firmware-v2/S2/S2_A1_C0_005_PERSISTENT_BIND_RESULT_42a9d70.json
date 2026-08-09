@@ -1,0 +1,21 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.A1",
+  "worker_invocation_id": "s2-a1-bind-005",
+  "branch": "firmware/v2-s2-a1",
+  "commit": "42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+  "outcome": "PASS",
+  "summary": "Bound the canonical A1 zero-findings/result evidence and independent D1 joined-tip test report to commit 42a9d7082ac0193cf7cd1685b5eb95baafff41ac; committed deterministic natural-EOF drain and bounded forced-close fail-closed tests reconcile without an admissible gap.",
+  "checks": [
+    {
+      "name": "immutable artifact SHA-256 reconciliation",
+      "command": "read-only SHA-256 verification of S2_C0_005_A1_FINDINGS_42a9d70.json, S2_C0_005_A1_RESULT_42a9d70.json, and S2_C0_005_D1_TEST_REPORT_42a9d70.json",
+      "outcome": "PASS"
+    },
+    {
+      "name": "committed-test and D1 joined-tip evidence reconciliation",
+      "command": "read-only Git/evidence inspection at 42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+      "outcome": "PASS"
+    }
+  ]
+}

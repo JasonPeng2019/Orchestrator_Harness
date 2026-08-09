@@ -1,0 +1,12 @@
+{
+  "schema": "firmware-c3-governing-input-watcher-stop/v1",
+  "attempt_id": "attempt-0003",
+  "owner": "ROOT-IM",
+  "reason": "Acceptance orchestrator exited after durable FAIL result; close the final registered non-agent topology helper before topology inventory.",
+  "acceptance_result": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\ACCEPTANCE_RESULT.json",
+    "sha256": "5da030a6e6102e6233c63ee7767b75d3f12b94afec8ce23c4f6276ac217a0334",
+    "decision": "FAIL"
+  },
+  "requested_at_utc": "2026-08-05T11:14:17.9349301Z"
+}

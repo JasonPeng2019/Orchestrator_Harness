@@ -1,0 +1,85 @@
+{
+  "schema": "firmware-v2-registry-reconciliation/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "prior_candidate_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+  "registry": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+    "sha256": "47a9793901cb84f7d973e0c8f27446823e94e658901d84ca091d0df253cb84fb",
+    "green_groups": 27,
+    "unique_green_ids": 166,
+    "invalidated_groups": 0,
+    "evidence_credits": 91,
+    "hash_valid_evidence_credits": 85,
+    "explicit_inheritance_only_credits": 6
+  },
+  "prior_registry": {
+    "sha256": "acbf6659a11011fb3bb81dcdd936566000fccdb50e0d18921a100485eb6454e7",
+    "green_groups": 26,
+    "unique_green_ids": 166,
+    "invalidated_groups": 0,
+    "evidence_credits": 86
+  },
+  "delta": {
+    "added_green_group": "S2::c3-session-authorization-joined-tip-reconciliation",
+    "added_green_ids": [],
+    "removed_superseded_green_ids": [],
+    "freshly_revalidated_existing_ids": 5,
+    "retained_prior_green_ids": 166,
+    "added_evidence_credits": 5,
+    "new_invalidations": [],
+    "duplicate_green_groups": [],
+    "duplicate_green_ids": []
+  },
+  "dependency_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_542f48c.json",
+    "sha256": "85ca5d7a68f59e2b06f2eb9428166d4cac3e1af43df3ed67312ed846c1464c04",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_542f48c.json",
+    "root_acceptance_sha256": "bac63a36feae55f74901000996b19a69c1ab16c64a9d844168a2744138899fa1"
+  },
+  "fresh_green_evidence": {
+    "execution_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S28.D2-C3-AUTH-0001/.agent-workspace/TEST_EXECUTION.json",
+    "execution_sha256": "5b53a16cf5566dbf292ab34f932dbfc0ab95f52c00b68abf2fd785e93590bee4",
+    "output_sha256": "ae084d5098df48edfc0a46d0c0cb1abaa9b295e18a5f373106379d3d6687ff6b",
+    "result_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S28.D2-C3-AUTH-0001/.agent-workspace/RESULT.json",
+    "result_sha256": "fca9ed3af036eea139d57b9824b08af15eea26fd4424f5f5df70623e6fdfd85f",
+    "tests_covered": 5,
+    "skips": 0,
+    "xfails": 0,
+    "failures_remaining": 0,
+    "errors": 0,
+    "resource_warnings": 0,
+    "outcome": "PASS"
+  },
+  "audit": {
+    "all_declared_evidence_paths_exist": true,
+    "all_85_declared_evidence_hashes_match": true,
+    "six_hashless_entries_are_prior_explicit_inheritance_edges": true,
+    "all_5_affected_test_ids_covered_at_current_tip": true,
+    "all_166_prior_green_ids_dependency_valid": true,
+    "unaffected_green_ids_rerun": false,
+    "reviewer_and_tester_criticisms_preserved_and_dispositioned": true,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "criticism_disposition": {
+    "accepted": [
+      "R1's session/generic proposal incompatibility was repaired with an explicit session-only derivation and proven by fresh review and execution.",
+      "D1's missing inherited bytecode variable was a ROOT launch-procedure failure; the fresh D2 controller launch supplied it and left no bytecode."
+    ],
+    "preserved": [
+      "The D1 run remains immutable FAIL evidence even though all five product tests passed.",
+      "R1's valid finding remains evidence despite its invalid review-result envelope.",
+      "D2's first invalid result schema remains in its original worker stream; the same thread corrected only RESULT.schema without rerunning tests."
+    ],
+    "rejected": [
+      "Generic authorization branching or an adapter framework.",
+      "Helper extraction merely to eliminate localized validation duplication.",
+      "Extra path guards, candidate bytecode cleanup, stable-runner changes, duplicate execution, or unrelated hardening."
+    ],
+    "remaining_actionable_findings": []
+  },
+  "decision": "REGISTRY_RECONCILED_ONCE_FOR_ACCEPTED_S28_BATCH",
+  "outcome": "PASS",
+  "created_at": "2026-08-05T18:02:00Z"
+}

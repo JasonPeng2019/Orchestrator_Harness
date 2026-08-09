@@ -1,0 +1,104 @@
+{
+  "schema_version": "firmware-v2-fast-tier-resume-admission-v1",
+  "recorded_at_utc": "2026-08-05T00:36:01.3361110Z",
+  "owner": "ROOT-IM",
+  "decision": "PASS",
+  "governing_change_classification": {
+    "kind": "execution-layout-finding-admissibility-and-child-service-tier",
+    "product_contract_changed": false,
+    "hardware_authority_changed": false,
+    "immutable_mcp_fixture_changed": false,
+    "accepted_c3_control_plane_repair_contract_changed": false,
+    "c1_status": "prior lock already superseded by F-PRE-C3-001; no operative C1 exists",
+    "required_reexecution": [
+      "new Luna-high-priority no-op availability proof",
+      "all future child launches use explicit service_tier=priority"
+    ]
+  },
+  "governing_documents": {
+    "goal.md": "858435ee32efea45b27ffc9cf991e1eb86d607b5e414ff6f6e31ae7c03b07c82",
+    "active_docs/GENERALIZATION_SPEC_2.md": "8b18006c1faa2718434d6bc2bd45f66fdc434ede24a4abc1a44eea509ab2df10",
+    "active_docs/IMPLEMENTATION_ROADMAP_2.md": "5ec120af193086244cdb72c5ba1a450c51a7ae591692dbda3878d4f2dff34554",
+    "active_docs/EXECUTION_READINESS_2.md": "c1c1ca55af7d6e8e5f2ed5fe39ce995ba5855d114d3a58b4958f6ea18212c4e4",
+    "plans/general-coding-harness/EXECUTION_PLAN_2.md": "9d2f0ea7536ce5009275826853c4110bd92f8a7a14277284a6748499ce7f3fdf"
+  },
+  "preserved_identities": {
+    "stable_runner": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "rollback": "287ea53793e3963062882012ff80c3b0e8c41587",
+    "candidate": "659dd03e2aa7159090c8e0e20123b1fec1749f90",
+    "mcp_fixture": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "product_lane": "e5ced2724464043b7cdc32c749b92bbe8dad90f1",
+    "test_author_lane": "b2949d434136670846ac807c638cd446303dcb5c"
+  },
+  "codex_cli": "codex-cli 0.146.0",
+  "required_flags": [
+    "--dangerously-bypass-approvals-and-sandbox",
+    "--dangerously-bypass-hook-trust",
+    "--ignore-user-config",
+    "--json",
+    "-C",
+    "--model",
+    "model_reasoning_effort",
+    "service_tier=priority"
+  ],
+  "prior_triplet_evidence": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/preflight/MODEL_AVAILABILITY.json",
+    "sha256": "5f077283e0b5460ab936c5414a53aad092794885b6bdbdb602075d39adeee89d"
+  },
+  "fast_combinations": [
+    {
+      "role": "sol-high-priority",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "high",
+      "service_tier": "priority",
+      "thread_id": "019fca16-c636-7e60-8055-05860c789c89",
+      "stdout_path": "plans/general-coding-harness/runtime/firmware-v2/preflight/model-smokes/sol-high-priority-attempt-0002/stdout.jsonl",
+      "stdout_sha256": "6f831511802a2ebdcadcffefdb39e12de8befa64ebcbd073ad5055a2a60c013d",
+      "final_message_sha256": "1e97cb5bf1b8d8fb4e5ab252284e08edad6b606521934b1ef69d69d1f3c5393b",
+      "result": "PASS",
+      "credit": "preserved; dependency unchanged"
+    },
+    {
+      "role": "terra-medium-priority",
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "service_tier": "priority",
+      "thread_id": "019fca17-60b0-7672-9762-3671b00c5720",
+      "stdout_path": "plans/general-coding-harness/runtime/firmware-v2/preflight/model-smokes/terra-medium-priority/stdout.jsonl",
+      "stdout_sha256": "9fbc72af99a3a2dfc84623d30fce7a105b1901300fb83fbc3f85d75bf973261b",
+      "final_message_sha256": "11113e59a233bb0a5438516fa684779cf854d384a43fba746b5fc59d575fcc00",
+      "result": "PASS",
+      "credit": "preserved; dependency unchanged and now applies to coder launches"
+    },
+    {
+      "role": "luna-high-priority",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "high",
+      "service_tier": "priority",
+      "thread_id": "019fcf58-ac33-7773-829c-d1605feb0567",
+      "pid": 156156,
+      "creation_time_utc": "2026-08-05T00:35:22.0934220Z",
+      "exit_time_utc": "2026-08-05T00:35:33.4606770Z",
+      "exit_code": 0,
+      "exact_process_absent_after_exit": true,
+      "stdout_path": "plans/general-coding-harness/runtime/firmware-v2/preflight/model-smokes/luna-high-priority-attempt-0002/stdout.jsonl",
+      "stdout_sha256": "4dfe2456e3643f70370273af0966e905bb114e570b88795efbe024c266373609",
+      "stderr_path": "plans/general-coding-harness/runtime/firmware-v2/preflight/model-smokes/luna-high-priority-attempt-0002/stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "final_message_path": "plans/general-coding-harness/runtime/firmware-v2/preflight/model-smokes/luna-high-priority-attempt-0002/final-message.txt",
+      "final_message_sha256": "ca4d1087b67d219ee8b00b2617503dbbbb022276a58bc7b171d46c237d843788",
+      "final_message": "MODEL_SMOKE_OK luna-high-priority",
+      "result": "PASS",
+      "credit": "fresh required proof"
+    }
+  ],
+  "preserved_prelaunch_failure": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/preflight/model-smokes/luna-high-priority/LAUNCH_FAILURE.json",
+    "sha256": "20efe3623d255075586349a56466575b82513415e605537ade5d80ef2d5afccc",
+    "classification": "host invocation construction error before intended model launch; no test credit or reset"
+  },
+  "all_required_fast_combinations_green": true,
+  "model_substitution_used": false,
+  "mcp_or_hardware_access": false,
+  "next_action": "Cherry-pick e5ced272 into S23.A2-C3-FINAL and resume the same Terra-medium-priority test-writer thread to adapt CP04."
+}

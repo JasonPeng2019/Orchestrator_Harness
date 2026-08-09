@@ -1,0 +1,177 @@
+{
+  "schema": "firmware-v2-c2-attempt-record/v1",
+  "attempt": "attempt-0013",
+  "label": "current-C1 five-mode C2 with executor recordability preflight and pooled verifier-only correction",
+  "recorded_at_utc": "2026-08-05T23:11:12Z",
+  "candidate_commit": "c6999d173c344b317a918df91619308fd9f93f63",
+  "c1_lock": {
+    "id": "fd4aa79b-d081-4a7b-b232-9ba963ddbc92",
+    "sha256": "a08d01f855a314ee0d113b71af9ad2ffe6f1718cddbaa7fcda1bd0d5f3d429e0",
+    "validation_sha256": "b626bfffb83e8c41ef9d913e34c96fad069e0a9d56acc360c9c6820c32d9f2f3",
+    "authorization_sha256": "b6577b616bc5295b2c6390222d2086b2839152ad7dec7485afab892f9233a0f1",
+    "fresh_c0_root_admission_sha256": "3ccf41b52631e8bca15fa7e1fe371adcf3e0c86152d66f037e0c0ed0b9a6096b"
+  },
+  "executor": {
+    "lane_id": "F.C2.D1",
+    "worker_invocation_id": "c2-d1-013",
+    "thread_id": "019fd41e-f24b-7f00-ac26-9c843d604e35",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority",
+    "same_thread_administrative_correction": true
+  },
+  "stable_runner": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "source_invocation_sha256": "45c8844ecf0e60895560f3948e5ee1735e557cf167f97fc8932044a834ef3b57",
+    "projected_invocation_sha256": "4ba32d55d96b26ea9aef8f8754c8621fb2abb984ac14d37df121fa6468923bd1",
+    "projection_record_sha256": "ff4cdf1c08f59fe224d1e88a2e9970120e537f1a04aec7d329bc85b5802c7587",
+    "projection_proof_sha256": "98e44b834a3b6e93dbc2a17fcc8d49bb6e25ef6d1ffa192d55fa4b29937b57a1",
+    "dispatch_proof_sha256": "5b744d3540ee9db7d4823a5fb2e72cfaf225fc73376b0141656fa0443b6afc35",
+    "correction_source_invocation_sha256": "320191c8172aafdad506c6a95be5d6ec990d8cee8f2220309952052605b02b52",
+    "correction_projected_invocation_sha256": "2c527bbf07fcf4edba217f1afc4f46ec8a8d109ea8621310d5ec2d2f6a437dac",
+    "correction_projection_record_sha256": "676e7758b3420915656200f969556d43ac8b6b174f0a338f44a7d675ff9d2ee5",
+    "correction_projection_proof_sha256": "a74c510148ef1939ce3ac1ecbc0ec14ad10e36ab1969d3f1d070cd83994b5aef",
+    "correction_dispatch_proof_sha256": "28642fffcb49c5d3f20928fc74868b87a4a4642c6a1c6941575859633f94826b"
+  },
+  "artifacts": {
+    "findings_sha256": "4294354a520251aaa5d2210babe725f13c98a281349dadc1bc9a5f3882700a16",
+    "test_report_sha256": "3ac02842cfe9a7b704e31b86e4040eed07a0287c47015f82cf6422df4b1b9f9c",
+    "result_sha256": "0268dd493feda652355211d9f24a9d0e22317f47c5a8028225c69b5713eabbc5",
+    "controller_status_sha256": "95d36743b250cd96947577c793455413a24b3646be340cb17383e084b95a12a0",
+    "initial_worker_jsonl_sha256": "b66ca52a80bec0adf516b5307c3ad8a8328b2f783d8af6812dc938812843ed6b",
+    "correction_worker_jsonl_sha256": "6089514f2c537ae03042e664ce4492b398ff3b465e6a29b0f36d1c887d67e536",
+    "prompt_sha256": "72b69d11dbde1c82b373c3bf1820b8acc3b8ab9bf631bcaf2246787ed034e11e",
+    "correction_prompt_sha256": "49172b12358c73c8b75a43df0597a126a96e5083700b69f9c58dcad3552220d9",
+    "verifier_sha256": "4e03d62b7e89ecf204c3e867d2beaca28db48d132aa0f65537ec59b1dfd4129a",
+    "corrected_verifier_copy_sha256": "80ba0e681193fcb9644ba68c02838686b383dfa2c3e2ef22027e310411502c73"
+  },
+  "recordability_preflight": {
+    "stable_id": "F-C2-EXECUTOR-PREFLIGHT-001",
+    "original_final_record_sha256": "d23a62412875d9622ca0460fc070481f1cef21ee40b0b28e5bf04bfe9ead1288",
+    "complete_final_record_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0013\\.agent-workspace\\c2-evidence\\preflight.final.record.json",
+    "complete_final_record_sha256": "5687d30923c81246bd422dc226202a3f0d17876b94b4f3835e7be126de09537d",
+    "final_pid": 193720,
+    "final_creation_identity": "windows-filetime:134304439406806673",
+    "outcome": "PASS",
+    "initial_failed_record_sha256": "cac7954f5cd5e52dc911f0474944f083d96b6465866fc12377180714145bc428",
+    "candidate_or_test_credit_affected": false,
+    "product_mcp_hardware_or_external_action": false
+  },
+  "selected_execution": {
+    "executed_ids": [
+      "F-C2-LOCK-001",
+      "F-C2-AUTH-001",
+      "F-C2-DISPOSABLE-001",
+      "F-C2-CREDIT-001",
+      "F-C2-STATE-001"
+    ],
+    "execution_count": 5,
+    "complete_initial_set_before_classification": true,
+    "initial_outcomes": {
+      "F-C2-LOCK-001": "PASS",
+      "F-C2-AUTH-001": "PASS",
+      "F-C2-DISPOSABLE-001": "FAIL",
+      "F-C2-CREDIT-001": "PASS",
+      "F-C2-STATE-001": "PASS"
+    },
+    "complete_set_classification": "one exclusive verifier fixture-schema defect; no candidate/contract/oracle/coverage defect",
+    "pooled_correction_performed": true,
+    "pooled_correction_count": 1,
+    "rerun_ids": [
+      "F-C2-DISPOSABLE-001"
+    ],
+    "rerun_count": 1,
+    "unrelated_ids_rerun": false,
+    "post_execution_record_shape_correction": true,
+    "post_execution_test_reruns": 0
+  },
+  "tests": [
+    {
+      "stable_id": "F-C2-LOCK-001",
+      "pid": 195052,
+      "creation_identity": "windows-filetime:134304439573058425",
+      "process_record_sha256": "bda487b3dba29f082b1a0f6525e5d90e6e4e10cc511e4ad70215c81daa620206",
+      "stdout_sha256": "4afb39daada3d9bfa46e70b2a74fc21efac70df3b1b816399ca719b56f8b43e1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "outcome": "PASS"
+    },
+    {
+      "stable_id": "F-C2-AUTH-001",
+      "pid": 187220,
+      "creation_identity": "windows-filetime:134304439608232687",
+      "process_record_sha256": "a1bd7926cd94577b7eb613824d8368ec8dd3dcefa8093c751fd09027fcb7eec9",
+      "stdout_sha256": "80ddac702c1c562a8054758f2090ec2ef2e3602eae7a7bac523976b792efd57d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "outcome": "PASS"
+    },
+    {
+      "stable_id": "F-C2-DISPOSABLE-001",
+      "pid": 192456,
+      "creation_identity": "windows-filetime:134304440297548838",
+      "process_record_sha256": "55ddaa9868b6addca71ca5893daf59ded801492bd79bf414b726ce8c28a94567",
+      "stdout_sha256": "0b58638cdbda2135dbe5d65b698ce69db10683da7ccec8ec51f189ae7fa7b32b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "outcome": "PASS",
+      "initial_record_sha256": "e5545a77e44437b115228540ab3c6340252ce2dd336377752c153f039f801b34"
+    },
+    {
+      "stable_id": "F-C2-CREDIT-001",
+      "pid": 196780,
+      "creation_identity": "windows-filetime:134304439656353393",
+      "process_record_sha256": "c4f6eda172046ec602a8ff457b19f7683dacf669fe2c648e49746140efdf4fb1",
+      "stdout_sha256": "56b37afaa0c15fd1d3fb8337ba65bc8d7a6b458f654d6545b591d92f32baef00",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "outcome": "PASS"
+    },
+    {
+      "stable_id": "F-C2-STATE-001",
+      "pid": 14364,
+      "creation_identity": "windows-filetime:134304439682667030",
+      "process_record_sha256": "f3949e6600d252e3ad160e25c3f1d19066b3bebb16b3d48635df160344891231",
+      "stdout_sha256": "054d6472476eeb6f959f1ad29f462bcc9d68f392c506977ddd0e8b7905363924",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "outcome": "PASS"
+    }
+  ],
+  "post_execution_evidence_correction": {
+    "classification": "administrative_record_shape_only",
+    "same_lane_same_thread": true,
+    "raw_process_identity_and_outputs_complete": true,
+    "preflight_original_sha256": "d23a62412875d9622ca0460fc070481f1cef21ee40b0b28e5bf04bfe9ead1288",
+    "preflight_final_sha256": "5687d30923c81246bd422dc226202a3f0d17876b94b4f3835e7be126de09537d",
+    "disposable_original_sha256": "a0210d45b044ccec434268abd0f247e6ec17ec4928ddd8748bd133b21cc941d9",
+    "disposable_final_sha256": "55ddaa9868b6addca71ca5893daf59ded801492bd79bf414b726ce8c28a94567",
+    "candidate_validator": "PASS",
+    "test_execution_commands_in_correction_continuation": 0,
+    "candidate_or_test_credit_changed": false
+  },
+  "aggregate_credit_counts": {
+    "green_groups": 28,
+    "unique_green_ids": 168,
+    "invalidated_groups": 0,
+    "evidence_credits": 96
+  },
+  "root_independent_validation": {
+    "candidate_validators": "PASS",
+    "report_direct_references_valid": 9,
+    "effective_process_records_valid": 5,
+    "correction_command_records_audited": 21,
+    "correction_test_executions": 0
+  },
+  "findings_count": 0,
+  "candidate_changed": false,
+  "mcp_server_changed": false,
+  "hardware_or_mcp_accessed": false,
+  "post_controller_claim_files": 0,
+  "post_controller_surviving_test_processes": 0,
+  "candidate_findings_gate_valid": true,
+  "result_gate_valid": true,
+  "c3_rehearsal_admitted": false,
+  "physical_c3_admitted": false,
+  "outcome": "PASS_PENDING_ROOT_ACCEPTANCE"
+}

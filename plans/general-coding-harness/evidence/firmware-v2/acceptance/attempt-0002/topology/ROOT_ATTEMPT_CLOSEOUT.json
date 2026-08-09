@@ -1,0 +1,70 @@
+{
+  "schema": "firmware-c3-root-attempt-closeout/v1",
+  "attempt_id": "attempt-0002",
+  "owner": "ROOT-IM",
+  "outcome": "FAILED_DURING_P0_CANDIDATE_FINDINGS",
+  "classification": "MATERIAL_CANDIDATE_C3_HARNESS_AND_WATCHER_FINDINGS",
+  "retry_decision": "REOPEN_S3_REPAIR_THEN_FRESH_C0_C1_DEPENDENCY_INVALIDATED_C2_AND_C3_ATTEMPT_0003",
+  "acceptance_result": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\ACCEPTANCE_RESULT.json",
+    "sha256": "a56e50156b5f5801aece131564a50cd7d5608d6ed0fc22468b0f758a9fb19727",
+    "decision": "FAIL"
+  },
+  "evidence_manifest": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\EVIDENCE_MANIFEST.json",
+    "sha256": "807a65692d9d8310b6ac04dd6077a4f3ac04b7f71b9a8c259dc8d21442d4a9e4"
+  },
+  "candidate_findings": [
+    {
+      "id": "F-C3-P0-001",
+      "summary": "C3-HARNESS materialized the fixed target repository at targets/target instead of the required attempt-local target root."
+    },
+    {
+      "id": "F-C3-P0-002",
+      "summary": "C3-HARNESS rejected two fresh controllers after each had published an authentic initial RUNNING_CODEX status bound to its expected controller identity."
+    },
+    {
+      "id": "F-C3-W-001",
+      "summary": "The watcher treated both authentic-status contradictions as expected containment and did not independently require abort."
+    }
+  ],
+  "root_abort_override": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\watcher\\ABORT_REQUIRED.json",
+    "sha256": "638cf7a750c238f2407cf0ad7d6d1c3aaacd6ee75f157f10e110e2219f60d52e",
+    "watcher_authored": false
+  },
+  "terminal_evidence": {
+    "c3_harness_shutdown_sha256": "4d3d9e60d3521fec22025c5280587144a819cf898865876e1c086282c2357144",
+    "watcher_report_sha256": "3f9bdc47f05a508094a553bf37d5191b56f26620a8ac525aaf6e3ef058ef4da7",
+    "orchestrator_exit_sha256": "2ffbaaba0db6ccb656fc32d55cc41bc76eebd7561e7419a0e292492a837c7a62",
+    "watcher_exit_sha256": "d87e3117504f6f8793c582c404b6d6a2619cdf2f7debc1238cd9d6958510db4e",
+    "topology_shutdown_sha256": "6563365a890cfa0ac05a64386e6f6c398ab8e8f0de8f88dc31c368a7db25096e"
+  },
+  "registered_processes_at_closeout": {
+    "orchestrator_pid_155904_absent": true,
+    "watcher_pid_164208_absent": true,
+    "signer_pid_164256_absent": true,
+    "c3_harness_pid_186880_absent": true,
+    "watcher_helper_pid_159352_absent": true
+  },
+  "attempt_state": {
+    "candidate_harness_started": true,
+    "target_repository_materialized_at_wrong_root": true,
+    "target_workers_successfully_admitted": 0,
+    "controller_admission_attempts": 2,
+    "mcp_server_sessions_started": 4,
+    "mutating_hardware_calls_dispatched": 0,
+    "resource_claims_remaining": 0,
+    "hardware_accessed": false,
+    "acceptance_manifest_created": true,
+    "acceptance_result_created": true
+  },
+  "immutability": {
+    "runtime_root_retained": true,
+    "evidence_root_retained": true,
+    "attempt_reuse_prohibited": true,
+    "operative_c1_reuse_prohibited_after_material_candidate_repair": true,
+    "operative_c2_reuse_prohibited_after_material_candidate_repair": true
+  },
+  "observed_quiescent_at_utc": "2026-08-05T06:59:54.4596859Z"
+}

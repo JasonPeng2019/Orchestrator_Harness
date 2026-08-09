@@ -1,0 +1,8 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/F.C2.D1-0005/.agent-workspace/FINDINGS.json",
+  "findings_sha256": "dcb1ab8353eeeec02e3a9cc4608c602ec3386b2eab26d38b9c164ca332f6fca0",
+  "candidate_validator_passed": true,
+  "decisions": []
+}

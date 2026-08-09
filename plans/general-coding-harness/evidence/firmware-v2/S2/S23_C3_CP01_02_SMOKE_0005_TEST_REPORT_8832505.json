@@ -1,0 +1,23 @@
+{
+  "schema": "firmware-v2-test-report/v1",
+  "lane_id": "S23.D1",
+  "worker_invocation_id": "s23-d1-c3-smoke-005",
+  "commit": "88325059f8ae74993b85a9ab989d98de298a5bb2",
+  "exact_command": "python -m unittest orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier -v",
+  "totals": {
+    "run": 1,
+    "passed": 1,
+    "failed": 0,
+    "errors": 0
+  },
+  "skips": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "stable_ids": [
+    {
+      "id": "C3-CP-01-02",
+      "test": "C3HarnessTests.test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier",
+      "outcome": "PASS"
+    }
+  ]
+}

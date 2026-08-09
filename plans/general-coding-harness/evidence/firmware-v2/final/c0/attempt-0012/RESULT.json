@@ -1,0 +1,36 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-012",
+  "branch": "firmware/v2-c0-final-review-0012",
+  "commit": "3c862b9ef3e79ab010eabd990aac3745ac2013ee",
+  "outcome": "PASS",
+  "summary": "Complete read-only C0 review at the frozen joined tip found no admissible release-blocking findings.",
+  "checks": [
+    {
+      "name": "governing document hashes",
+      "outcome": "PASS",
+      "summary": "All five supplied SHA-256 locks matched."
+    },
+    {
+      "name": "frozen candidate identity and delta",
+      "outcome": "PASS",
+      "summary": "Requested branch and exact tip matched; the cb2a66a..3c862b9 product and regression delta was inspected read-only."
+    },
+    {
+      "name": "C3 control-plane affected-surface review",
+      "outcome": "PASS",
+      "summary": "Reviewed candidate-owned ingress, authorization/policy, retained sessions, worker lifecycle, limitation handling, cleanup, evidence, and dual-route safeguards."
+    },
+    {
+      "name": "F-C0-FR1-001 repair and evidence",
+      "outcome": "PASS",
+      "summary": "Outer and immutable session identities are compared before request publication, claim acquisition, process launch, registration, or lifecycle publication; focused one-run CP05 smoke evidence at this tip is green."
+    },
+    {
+      "name": "findings gate",
+      "outcome": "PASS",
+      "summary": "Closed exact-identity reviewer findings artifact validates with an empty finding set."
+    }
+  ]
+}

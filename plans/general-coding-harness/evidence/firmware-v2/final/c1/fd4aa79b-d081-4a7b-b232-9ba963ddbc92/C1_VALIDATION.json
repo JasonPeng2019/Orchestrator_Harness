@@ -1,0 +1,84 @@
+{
+  "schema": "firmware-v2-c1-validation/v1",
+  "c1_lock_id": "fd4aa79b-d081-4a7b-b232-9ba963ddbc92",
+  "validated_at_utc": "2026-08-05T22:41:58Z",
+  "c1_lock": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\fd4aa79b-d081-4a7b-b232-9ba963ddbc92\\C1_LOCK.json",
+    "sha256": "a08d01f855a314ee0d113b71af9ad2ffe6f1718cddbaa7fcda1bd0d5f3d429e0",
+    "checksum_file": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\fd4aa79b-d081-4a7b-b232-9ba963ddbc92\\C1_LOCK.sha256",
+    "checksum_matches": true
+  },
+  "candidate": {
+    "commit": "c6999d173c344b317a918df91619308fd9f93f63",
+    "branch": "firmware/v2-candidate",
+    "clean": true
+  },
+  "mcp_server_fixture": {
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "branch": "firmware/v2-mcp-candidate",
+    "clean": true,
+    "immutable": true
+  },
+  "checks": {
+    "locked_path_hash_references": 42,
+    "all_locked_path_hash_references_valid": true,
+    "governing_hashes_current": true,
+    "authorization_closed_schema_valid": true,
+    "authorization_candidate_validator_passed": true,
+    "canonical_user_scope_sha256": "571d7d36cd7242762f0bbea0f2c55b095c2b381c6270538285190097a6e50013",
+    "delegated_authorization_sha256": "b6577b616bc5295b2c6390222d2086b2839152ad7dec7485afab892f9233a0f1",
+    "mcp_server_pin_sha256": "dce15a2f7971678d561a789ed3f042328f4442bcb456995a7e62cb0810bcafa4",
+    "allowed_schema_digest_sha256": "c7fb3173c513a58eff9e21fde5d592810c6c8e9bbd00f646cd86c33a76497e6a",
+    "c1_policy_sha256": "f2fa03fbaf41f602121249f8709537040cfd3792369492ceeaf5ffc4f7c029a4",
+    "candidate_policy_source_sha256": "35bc68b6ec79a8e9680c42dd32c32be228ee956ee7b53d68908b8dec13d19b78",
+    "policy_semantic_equality": true,
+    "policy_default_deny": true,
+    "policy_exact_method_count": 21,
+    "target_seed_exact_file_count": 4,
+    "target_seed_manifest_hashes_match": true,
+    "c3_harness_sha256": "d8d2e0d71c4d2d93bfde15f719709186c3c7944418f83089718634a209c77f08",
+    "c3_process_identity_sha256": "e446b8a7add9cdbc749097c6f1d6fbf24ec1b20bf4e40109d8c5788ce1b0202c",
+    "c3_watcher_oracle_sha256": "991faddea7b8fdb21b7a488082f39f964109d7446d992c9b7be43e6f68a371de",
+    "acceptance_controller_sha256": "2b9af1ea5e093e7502cd277a0bfc7a51e3c7500805f7764a4780fc0aacfaa85f",
+    "acceptance_kit_sha256": "897184d338d0f2f5048161fdc5580f81502c3e56a4e10de3d3001af976a49dbf",
+    "implementation_registry_green_groups": 28,
+    "implementation_registry_green_ids": 168,
+    "implementation_registry_invalidations": 0,
+    "implementation_registry_evidence_credits": 96,
+    "resource_manifest_hashes_valid": "47/47",
+    "active_resource_claims": 0,
+    "surviving_managed_processes": 0
+  },
+  "repair_chain": {
+    "physical_attempts_superseded": [
+      "attempt-0001",
+      "attempt-0002",
+      "attempt-0003",
+      "attempt-0004",
+      "attempt-0005",
+      "attempt-0006",
+      "attempt-0007",
+      "attempt-0008",
+      "attempt-0009"
+    ],
+    "joined_candidate_commit": "c6999d173c344b317a918df91619308fd9f93f63",
+    "joined_root_acceptance_sha256": "b2544e293e6757e0bfca8fb9960cb52804cdbedbde9f0377eff1dcce0c8b839c",
+    "dependency_map_sha256": "d4fe04d15a525b70282726ac84be7f734b7fb92ae2e520df0242d994925674be",
+    "dependency_map_root_acceptance_sha256": "907aa4a3e5ffd0b51a35b0ad2a7cd85d309b1384add4fe8c031ab532932b48e9",
+    "registry_reconciliation_sha256": "6254a14fba7d78ffd909e81be65b37f6b484666c89a1135edc0fcc729f9de834",
+    "fresh_c0_root_admission_sha256": "3ccf41b52631e8bca15fa7e1fe371adcf3e0c86152d66f037e0c0ed0b9a6096b",
+    "status": "CLOSED"
+  },
+  "serialization": {
+    "opaque_id_allocated_before_artifacts": true,
+    "authorization_created_and_hashed_before_lock": true,
+    "lock_hash_not_used_as_authorization_input": true,
+    "checksum_written_after_lock": true,
+    "c1_replacement_of_prior_lock": true
+  },
+  "delegated_scope_attested": true,
+  "hardware_execution_admitted": false,
+  "mcp_server_launched": false,
+  "c2_unlocked": true,
+  "status": "PASS"
+}

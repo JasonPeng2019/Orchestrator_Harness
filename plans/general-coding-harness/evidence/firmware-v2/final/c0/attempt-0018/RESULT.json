@@ -1,0 +1,36 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-018",
+  "branch": "firmware/v2-c0-final-review-0018",
+  "commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+  "outcome": "PASS",
+  "summary": "NO CANDIDATE GAP / READY",
+  "checks": [
+    {
+      "name": "governing-and-evidence-hashes",
+      "outcome": "PASS",
+      "summary": "All prescribed governing, checkpoint, S27 evidence, and registry SHA-256 values matched."
+    },
+    {
+      "name": "baseline-to-tip-and-s27-static-audit",
+      "outcome": "PASS",
+      "summary": "Completed affected-surface and critical-control-path review, including the exact four-path S27 delta."
+    },
+    {
+      "name": "dependency-and-registry-reconciliation",
+      "outcome": "PASS",
+      "summary": "Verified four changed paths, 8/8 map references, 248 protected nodes, 166 unique green IDs, 26 groups, zero invalidations or duplicates, and 86 credits."
+    },
+    {
+      "name": "execution",
+      "outcome": "NOT_RUN",
+      "summary": "No candidate tests, gates, compilation, product imports, MCP, hardware, or live-process probes ran; two standard-library json imports validated only the output envelopes."
+    },
+    {
+      "name": "tracked-state",
+      "outcome": "PASS",
+      "summary": "Candidate HEAD and branch matched the requested tip; tracked worktree state remained clean."
+    }
+  ]
+}

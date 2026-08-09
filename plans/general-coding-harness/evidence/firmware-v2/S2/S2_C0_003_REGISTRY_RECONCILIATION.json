@@ -1,0 +1,56 @@
+{
+  "schema": "firmware-v2-passed-registry-reconciliation/v1",
+  "candidate_commit": "b8d3d7917921d3bf7ef06e69b6af23bb4e50df50",
+  "decision": "REMOVE_REDUNDANT_STALE_LIVE_PATH_POINTERS_AND_RETAIN_GREEN_IDS",
+  "reason": "Eight historical credits referenced mutable lane-workspace files that later valid resumes overwrote. Their recorded hashes no longer matched those paths. Each credited behavior is proven by a newer immutable exact-tip artifact, so retaining the stale pointer would weaken evidence integrity while rerunning unchanged tests would violate selective-rerun policy.",
+  "removed_stale_pointers": [
+    {
+      "candidate_commit": "7a28b186e91f2945ea9c59869a216fa8caf8407e",
+      "expected_sha256": "a16e9051b5fb0e0c50e319c8daba11677a26b1be9e23d4f9d6628123b611a79a",
+      "superseded_by": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_D2_TARGET_TEST_REPORT_64199127.json"
+    },
+    {
+      "candidate_commit": "7a28b186e91f2945ea9c59869a216fa8caf8407e",
+      "expected_sha256": "ef6afec76d93e769908ebc4523ff2fb1144b139bfcada9c21c372488ec2b19c6",
+      "superseded_by": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_003_PRODUCT_CHAIN_RESULT_b8d3d79.json"
+    },
+    {
+      "candidate_commit": "64199127ac787eeaaf6863726ff0a3bcb79798ed",
+      "expected_sha256": "51ffd288b02f694baf118933bfb1e395d5fc5dec0b51ef7c22536a156717294e",
+      "superseded_by": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_003_D1_TEST_REPORT_b8d3d79.json"
+    },
+    {
+      "candidate_commit": "64199127ac787eeaaf6863726ff0a3bcb79798ed",
+      "expected_sha256": "bfea6649ff1ef24d7388227e9e66dd0d25e743b085cb525d096a6ee11e1c0e24",
+      "superseded_by": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_003_D1_TEST_REPORT_b8d3d79.json"
+    },
+    {
+      "candidate_commit": "665ccbdd26b5a4cad0debb3c50b0cb06bd9b382c",
+      "expected_sha256": "ea708b908294fe5501aa49b335f76715774504c69b582743089747894ca63b5c",
+      "superseded_by": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_003_PRODUCT_CHAIN_RESULT_b8d3d79.json"
+    },
+    {
+      "candidate_commit": "665ccbdd26b5a4cad0debb3c50b0cb06bd9b382c",
+      "expected_sha256": "5187e24c20d757dd229c3c3bb0daf8165d3e80c68c80d701be6ec26161ee2450",
+      "superseded_by": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_003_REPAIR_CLOSURE_RESULT_8ed3a02.json"
+    },
+    {
+      "candidate_commit": "1c9d16de9e56d1f5340777a81bf09c448dfe9f5c",
+      "expected_sha256": "3390081d8c60098b4b0723a8e68fb63036d6ef8a7beb7eabee581303a092ede8",
+      "superseded_by": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_003_D1_TEST_REPORT_b8d3d79.json"
+    },
+    {
+      "candidate_commit": "1c9d16de9e56d1f5340777a81bf09c448dfe9f5c",
+      "expected_sha256": "42cf9469d7730f4d2ed30219f10e058e3957ae04b6280d053988837f58f3b8e6",
+      "superseded_by": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_003_D1_TEST_REPORT_b8d3d79.json"
+    }
+  ],
+  "retained_green_evidence": {
+    "controller_kit_host_29_tests_sha256": "be3fb02fac9a2d72ddc28a96e2c3ba063f1546756de4edde93201852de035f1f",
+    "target_materialization_3_tests_sha256": "688281ca4782c35e5fd0b6b7efc2d36791e1bb7f0c65494e9c4e0c149e4ac336",
+    "product_chain_sha256": "fdb8cb5ccf09eef79cc0a8c1924987894160c94afad796e9382bf5973c571895"
+  },
+  "green_ids_removed": [],
+  "tests_rerun_for_reconciliation": [],
+  "reconciled_at_utc": "2026-08-04T10:52:00Z"
+}

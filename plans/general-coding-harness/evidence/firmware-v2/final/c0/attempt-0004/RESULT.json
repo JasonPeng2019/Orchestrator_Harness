@@ -1,0 +1,21 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-004",
+  "branch": "firmware/v2-c0-final-review",
+  "commit": "b8d3d7917921d3bf7ef06e69b6af23bb4e50df50",
+  "outcome": "FAIL",
+  "summary": "F-C0-FR1-004-001",
+  "checks": [
+    {
+      "name": "independent-read-only-source-and-evidence-review",
+      "outcome": "FAIL",
+      "summary": "Found F-C0-FR1-004-001: write_serial admits text exceeding the locked 256-byte UART limit."
+    },
+    {
+      "name": "tests-and-safeguard",
+      "outcome": "NOT_RUN",
+      "summary": "Not run by reviewer instruction."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_ROUTE_REREVIEW_R2_FINDINGS_e268377.json",
+  "findings_sha256": "5d35193d0cdfb6d9ae785b7ba60e5cb62e060852d2721d7070060a4882cda0f8",
+  "decisions": [
+    {
+      "id": "S2-R2-ATTRIBUTION-003",
+      "decision": "ACCEPT",
+      "rationale": "This independently reproduces the accepted R1 attribution gap: source-path existence, an arbitrary behavior string, and assertion-only exclusion files are not causal or falsifiable evidence. The fallback must remain unavailable unless a computed raw-failure/source witness and concrete alternative-cause observations validate.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Implement one bounded closed attribution witness whose source digest and raw failure signature are computed from retained bytes and whose reviewed match and category-specific exclusion predicates are validated."
+    },
+    {
+      "id": "S2-R2-SUBSTITUTE-004",
+      "decision": "ACCEPT",
+      "rationale": "This independently reproduces the accepted R1 substitute gap: broad-root, self-reported matching IDs and PASS do not establish an exact C3-HARNESS attempt execution. Attempt confinement plus existing exact launch/controller/worker-result predecessor bindings is a bounded correction with lower risk than granting fabricated substitute credit.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Confine assignment, execution, and result to the same attempt-specific C3-HARNESS subtree and verify hash-bound exact controller launch, assignment, worker invocation, and current-tip PASS result identities."
+    }
+  ]
+}

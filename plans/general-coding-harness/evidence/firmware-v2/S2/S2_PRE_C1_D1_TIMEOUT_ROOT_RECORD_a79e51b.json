@@ -1,0 +1,20 @@
+{
+  "schema": "root-test-execution-incident/v1",
+  "owner": "ROOT-IM",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-pre-c1-executor-006",
+  "commit": "a79e51b9d89b917d537abef0f7cd18ccd61afcf7",
+  "result_sha256": "4c5aa454d53b97051114a982a778c45015dd4c11c979b9af29bc304999551e9c",
+  "test_report_sha256": "342f85584e8010789dddb855550f3e0de13a0a61b895d3afe5b2b1bfdaee5496",
+  "findings_sha256": "515cc76ca350281c5d4d8e4c26c7f646a19425e64ae4c619166b6256a6bd7b3d",
+  "outcome": "FAIL",
+  "classification": "UNISOLATED_TEST_EXECUTION_TIMEOUT",
+  "whole_shard_rerun_allowed": false,
+  "next_action": "Run only bounded per-test diagnostics for the retained-session tests, capturing exact completion or terminating the exact diagnostic PID on timeout.",
+  "stale_process_cleanup": {
+    "verified_orphaned_test_pids": [6276, 198124, 159992, 177396],
+    "identity_predicate": "python command line contains test_firmware_acceptance_controller and recorded parent PID is absent",
+    "exact_cleanup_confirmed": true
+  },
+  "hardware_or_mcp_accessed": false
+}

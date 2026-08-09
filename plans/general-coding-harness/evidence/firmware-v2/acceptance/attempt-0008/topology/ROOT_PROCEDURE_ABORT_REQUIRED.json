@@ -1,0 +1,54 @@
+{
+  "schema": "firmware-c3-root-procedure-abort-required/v1",
+  "attempt_id": "attempt-0008",
+  "owner": "ROOT-IM",
+  "classification": "USER_REQUESTED_PAUSE_WITH_ROOT_ABORT_NOTICE_CREATE_ONCE_COLLISION",
+  "user_pause": {
+    "new_assignments_forbidden": true,
+    "acceptance_must_not_be_claimed": true,
+    "fresh_attempt_required_on_resume": true
+  },
+  "root_procedure_failure": {
+    "description": "ROOT created the user-pause notice before the supervisor's failure path attempted the same create-once path; the resulting FileExistsError is an orchestration procedure failure, not a candidate or watcher defect.",
+    "pause_notice_sha256": "01e4196aded2e8e167e00562bcdd377e70c3858311a7c48b5863ba98294bcb04",
+    "supervisor_failure_sha256": "290dd26e9e3f1f8f27378c4691c7a961c570002def65524191896f4531be9679",
+    "root_abort_required_sha256": "43690caf08f164e6ba960b5344f2d71e1ce8c41a0fb8b39659ac8f097d263a37",
+    "candidate_or_server_defect": false
+  },
+  "containment": {
+    "initial_shutdown_blocked_while_worker_active_sha256": "05fcbd6969c3c7eb0daf19de50c524aef847ec69923387a253e4e9c5cf75d090",
+    "accepted_shutdown_response_sha256": "438b26314c4a6af5daa115bd202cc5bcc63cec7fb627d1587ac73a1df2eaad0c",
+    "candidate_shutdown_sha256": "6c34c3bb7abd8fd3d56b8fefd5c67a8072bbba3e1e86ee2c41dbb2cd9ac7553e",
+    "candidate_service_exit_sha256": "9112c19e901895cab3273231af42587d5ce0a0edaab6b2bfe7b36f6d71696c20",
+    "worker_terminal_status_sha256": "229cef043189f409b1bc548b54f5379d89977ab4e930f0d4813bd52939ade88f",
+    "worker_exit_code": 0,
+    "worker_result": "MISSING_DUE_USER_PAUSE",
+    "worker_claims_remaining": 0,
+    "candidate_workers_reaped": true,
+    "candidate_service_reaped": true,
+    "orchestrator_reaped": true,
+    "watcher_agent_reaped": true,
+    "signer_reaped": true,
+    "governing_watcher_reaped": true
+  },
+  "watcher_helper_forced_stop": {
+    "launch_sha256": "df6653b4cfcc6f72cf3b496700e13e2ea107a428b95e6c4bb0154b3bcaa474ae",
+    "pid": 180024,
+    "created_native": "windows-filetime:134304296499002757",
+    "identity_verified_before_stop": true,
+    "reason": "The blocking helper survived W's forced reap because its generic command line omitted the attempt path; ROOT stopped the exact recorded identity to satisfy the user pause.",
+    "terminal_report_created": false
+  },
+  "final_state": {
+    "related_processes_remaining": 0,
+    "resource_claims_remaining": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "candidate_clean": true,
+    "server_clean": true,
+    "target_result_accepted": false,
+    "manifest_created": false,
+    "acceptance_result_created": false
+  },
+  "recorded_utc": "2026-08-05T19:06:11.7204392Z"
+}

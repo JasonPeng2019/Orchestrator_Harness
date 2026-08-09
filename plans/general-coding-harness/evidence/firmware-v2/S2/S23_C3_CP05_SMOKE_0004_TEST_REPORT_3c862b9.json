@@ -1,0 +1,23 @@
+{
+  "schema": "firmware-v2-test-report/v1",
+  "lane_id": "S23.D1",
+  "worker_invocation_id": "s23-d1-c3-smoke-004",
+  "commit": "3c862b9ef3e79ab010eabd990aac3745ac2013ee",
+  "exact_command": "python -m unittest orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_05_sessions_overlap_and_p1_channel_is_token_bound -v",
+  "totals": {
+    "run": 1,
+    "passed": 1,
+    "failed": 0,
+    "errors": 0
+  },
+  "skips": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "stable_ids": [
+    {
+      "id": "C3-CP-05",
+      "test": "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_05_sessions_overlap_and_p1_channel_is_token_bound",
+      "outcome": "PASS"
+    }
+  ]
+}

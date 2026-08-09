@@ -1,0 +1,79 @@
+{
+  "schema": "firmware-v2-c3-attempt-allocation/v1",
+  "owner": "ROOT-IM",
+  "attempt_id": "attempt-0007",
+  "allocated_at_utc": "2026-08-05T16:53:45.2888601Z",
+  "allocation_rule": {
+    "largest_prior_runtime_attempt": "attempt-0006",
+    "largest_prior_evidence_attempt": "attempt-0006",
+    "largest_prior_control_attempt": "attempt-0006",
+    "all_selected_paths_absent_before_allocation": true,
+    "monotonic_selection": "attempt-0007"
+  },
+  "roots": {
+    "runtime": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0007",
+    "evidence": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0007",
+    "external_control": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance-control\\attempt-0007"
+  },
+  "prior_attempt": {
+    "attempt_id": "attempt-0006",
+    "closeout_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0006\\topology\\ROOT_ATTEMPT_CLOSEOUT.json",
+    "closeout_sha256": "1a484957209908b27313816a53396cc6a9ee4785cd7e180579be2640601e8bae",
+    "topology_shutdown_sha256": "faccbb394b7a1e6e54494ffdf3632f27a09a3a97ad57bd4cbdd2cc9b15a16a1a",
+    "procedure_abort_sha256": "0f8d5c00f1a863e281bf57d9f01d4ce6e82e7e86b427783a6c53cea97cb967bd",
+    "outcome": "FAILED_ROOT_ALLOCATION_PROCEDURE_PRE_IDENTITY_GATE",
+    "reused_mutable_state": false,
+    "correction": "Leave external governing-watcher absent until the inherited create-new helper initializes it.",
+    "candidate_or_server_change": false
+  },
+  "earlier_repair_lineage": {
+    "failed_attempt": "attempt-0005",
+    "candidate_repair_root_acceptance_sha256": "8d0dbac1f34268b5f5ffdcb0e9897ccafae635a8e32b28c5c4798cd0eb980839",
+    "watcher_abort_procedure_correction_retained": true,
+    "target_source_reconstruction": null
+  },
+  "operative_c1": {
+    "lock_id": "40419d28-e343-44c1-bf5b-399709b771ba",
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\40419d28-e343-44c1-bf5b-399709b771ba\\C1_LOCK.json",
+    "sha256": "2140cf26b49174a48d097c192cc7c2012f853b77b5fa43e510b69ad744cf2626",
+    "validation_sha256": "aa54182d58c72d0de0ec5bd9e305409d757da1209e65e3d8bf2063293f1d590f",
+    "delegated_sha256": "5c3bd11e076dd1c72104499bd1e8266f5799528e2626c279fd461869f7952409"
+  },
+  "operative_c2": {
+    "attempt": "attempt-0008",
+    "root_acceptance_sha256": "0728aae4b6edb772ef4beeacd849edb99b9709a8ad55e3c0774bfbc01a611fba",
+    "decision": "ACCEPT_C2_AND_UNLOCK_FRESH_C3_ATTEMPT"
+  },
+  "candidate": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "branch": "firmware/v2-candidate",
+    "commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "clean": true
+  },
+  "mcp_server": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\mcp-candidate",
+    "branch": "firmware/v2-mcp-candidate",
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "clean": true,
+    "immutable": true
+  },
+  "governing_hashes": {
+    "goal": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "generalization_spec_2": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "implementation_roadmap_2": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "execution_readiness_2": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66",
+    "execution_plan_2": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"
+  },
+  "initial_state": {
+    "fresh_attempt_registry": true,
+    "registry_entries": 0,
+    "target_source_reconstruction": null,
+    "target_root_absent_until_candidate_materialization": true,
+    "governing_watcher_root_absent_until_helper_initialization": true,
+    "external_control_root_excluded_from_manifest": true,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "target_workers_launched": 0,
+    "resource_claims": 0
+  }
+}

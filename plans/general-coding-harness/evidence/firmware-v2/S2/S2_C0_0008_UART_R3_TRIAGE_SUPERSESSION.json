@@ -1,0 +1,12 @@
+{
+  "schema": "firmware-v2-root-triage-supersession/v1",
+  "owner": "ROOT-IM",
+  "superseded_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_0008_UART_REPAIR_R3_TRIAGE.json",
+  "superseded_sha256": "d1d8e8b0e4e2792dc7403350d24cc1aec4861f4164dd9edbf89b7f3e0f556176",
+  "scope": "S2-R3-C0-0008-001 only",
+  "status": "SUPERSEDED_BY_EXECUTED_PROTECTED_CONTRACT",
+  "reason": "The prior acceptance inferred that append_newline changed the user-scope byte accounting. The subsequent exact executor run proved that inference breaks a protected pre-existing test, while the immutable method contract explicitly says text UTF-8 length 1..256. The finding was a reviewer interpretation error, not a harness, watcher, or MCP-fixture failure.",
+  "replacement_triage_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_0008_D3_PROTECTED_CONTRACT_TRIAGE.json",
+  "preserved_decision": "S2-R3-C0-0008-002 remains accepted; total finite-number validation is unchanged.",
+  "rerun_policy": "Only tests whose dependencies change after the localized correction may run. The eight passing D3 results remain green unless mapped to the changed predicate or corrected test expectation."
+}

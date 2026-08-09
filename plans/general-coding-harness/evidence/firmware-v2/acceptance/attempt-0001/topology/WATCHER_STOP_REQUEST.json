@@ -1,0 +1,8 @@
+{
+  "schema": "firmware-c3-watcher-stop-request/v1",
+  "attempt_id": "attempt-0001",
+  "owner": "ROOT-IM",
+  "reason": "ORCHESTRATOR_LOST before candidate work after signing-key loss",
+  "orchestrator_lost_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0001\\topology\\ORCHESTRATOR_LOST.json",
+  "requested_at_utc": "2026-08-05T06:28:00Z"
+}

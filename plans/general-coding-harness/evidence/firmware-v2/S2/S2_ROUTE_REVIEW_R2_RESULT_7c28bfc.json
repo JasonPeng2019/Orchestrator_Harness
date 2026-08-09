@@ -1,0 +1,31 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R2",
+  "worker_invocation_id": "s2-r2-route-review-001",
+  "branch": "firmware/v2-s2-r2",
+  "commit": "7c28bfc5d223323065515694514baefb47e864ad",
+  "outcome": "FAIL",
+  "summary": "FAIL: one valid pinned setup-continuation route is incorrectly encoded and the new server-limitation positive regression fixture cannot satisfy the implemented closed contract.",
+  "checks": [
+    {
+      "name": "Pinned inputs and delta",
+      "outcome": "PASS",
+      "summary": "Confirmed clean firmware/v2-s2-r2 at 7c28bfc5d223323065515694514baefb47e864ad; reviewed 42a9d7082ac0193cf7cd1685b5eb95baafff41ac..7c28bfc5d223323065515694514baefb47e864ad and clean fixture f003f84a7df51cd8595a3203c62e225b21da2a22 only."
+    },
+    {
+      "name": "Executable route compatibility",
+      "outcome": "FAIL",
+      "summary": "Pinned setup accepted_response uses a continue_setup wrapper, while the controller retains and forwards that wrapper as response instead of its exact inner response object."
+    },
+    {
+      "name": "Dependency-invalidated evidence coverage",
+      "outcome": "FAIL",
+      "summary": "The new server-limitation positive test fixture omits mandatory closed-chain and reference artifacts, so its asserted successful publication is unreachable."
+    },
+    {
+      "name": "Read-only validation",
+      "outcome": "PASS",
+      "summary": "Parsed changed controller and kit sources with AST and policy JSON successfully; no test suite, MCP, hardware, or tracked-file modification was performed."
+    }
+  ]
+}

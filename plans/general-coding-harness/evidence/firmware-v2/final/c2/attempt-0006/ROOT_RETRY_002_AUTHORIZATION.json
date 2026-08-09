@@ -1,0 +1,40 @@
+{
+  "schema": "firmware-v2-c2-root-retry-authorization/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "authorized_at_utc": "2026-08-05T13:12:05Z",
+  "same_lock": {
+    "c1_lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "c1_lock_sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "thread_id": "019fd1fd-83a3-7ad0-8370-a544c08c7c6e",
+    "worker_invocation_id": "c2-d1-006"
+  },
+  "authorized_retry": {
+    "stable_id": "F-C2-LOCK-001",
+    "retry_suffix": "retry-002",
+    "maximum_fresh_processes": 1,
+    "predicate_contract": [
+      "Read the current persisted controller status and exact resource claim.",
+      "Require their controller PID/creation ownership to agree.",
+      "Build the live process parent chain from that exact controller identity.",
+      "Exclude only those exact PIDs from the relevant-process scan.",
+      "Fail on every relevant process outside that identity-bound chain."
+    ],
+    "evidence_contract": [
+      "Use a Python supervisor distinct from the verifier.",
+      "Initialize start time and metadata before spawn.",
+      "Capture Popen PID and observed creation identity before waiting.",
+      "Capture the actual wait return code and end time.",
+      "Publish process metadata in a finally path with stdout/stderr hashes.",
+      "Never infer the exit code from verifier stdout."
+    ]
+  },
+  "forbidden": {
+    "rerun_green_ids": true,
+    "source_or_locked_input_edits": true,
+    "mcp_or_hardware_access": true,
+    "third_name_pattern_exemption": true
+  },
+  "decision": "AUTHORIZE_EXACTLY_ONE_RETRY_002_PROCESS"
+}

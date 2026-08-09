@@ -1,0 +1,12 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S23.A2",
+  "worker_invocation_id": "s23-a2-c3-final-001",
+  "branch": "firmware/v2-s23-a2-c3-final",
+  "commit": "ca0d33a4d222627e141c8a1d47e444a5ff2e65c2",
+  "outcome": "PASS",
+  "summary": "Focused C3 Fast-tier regression authoring completed; runtime tests were not run.",
+  "checks": [
+    {"name":"runtime execution","outcome":"NOT_RUN","summary":"No tests, MCP, Codex child, pyOCD, serial, probe, RF, or hardware activity was run."}
+  ]
+}

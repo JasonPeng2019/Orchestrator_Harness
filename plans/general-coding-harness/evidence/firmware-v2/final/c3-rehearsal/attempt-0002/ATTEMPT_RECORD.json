@@ -1,0 +1,155 @@
+{
+  "schema": "firmware-v2-c3-host-rehearsal-attempt-record/v1",
+  "attempt": "attempt-0002",
+  "recorded_at_utc": "2026-08-05T21:05:07Z",
+  "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "c1": {
+    "id": "ad244788-9890-420f-a491-fa82601ca46f",
+    "lock_sha256": "a8a368c4b04905ae37c5ccf7757bc3d87247c5feff3e3dc5bae974738745cdc0",
+    "validation_sha256": "58200436fee0ee7751f425f699fb895570b9b6635783838a04db2132decf0ff7",
+    "authorization_sha256": "832153a346482bdaf06e9eff3c324f8c89713bcf504d71e30a816f9d350a0f4d"
+  },
+  "c2": {
+    "attempt": "attempt-0012",
+    "attempt_record_sha256": "2f973b24988d9d0eb22512f124ea6bb5a04add65576b90d93e6316764e9ed552",
+    "root_acceptance_sha256": "6f2cf06403e5489a1f2bd309c5ae8c3a56dde20bc01a9e33a1bb8a9e9888d974"
+  },
+  "executor": {
+    "lane_id": "F.C3.RH.D1",
+    "worker_invocation_id": "c3-rh-d1-002",
+    "thread_id": "019fd3ae-0e93-7101-ac6e-f7d315a40c05",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority",
+    "same_thread_report_correction": true
+  },
+  "stable_runner": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "initial_source_invocation_sha256": "51f8942ce45bf7ed46377faa2d64935ab2a6f587df47dd3c2b7b69b5a567e1ba",
+    "initial_projected_invocation_sha256": "4c3b33f3b85ff9982a56df8d9869cf87e7f64a1285c52a5f49a7294d6c9e3807",
+    "initial_projection_record_sha256": "e5f33399618525e6892c686b3f8fd30b95f9061811433d003dd6f9f1285ccc35",
+    "initial_projection_proof_sha256": "37e063c507ebddfd4d2bc0629e0c6bafd4c3d5c3ac1c7abd2ff58f0e1ca936e2",
+    "initial_dispatch_proof_sha256": "b14a106d09dcfb32b807b75a09b35e0b154a15d7ef089b01ed132a77203422e6",
+    "correction_source_invocation_sha256": "626cb4879a1dcfc09cfe61120063df6d444782519492a6c5cd3f2a5b50571875",
+    "correction_projected_invocation_sha256": "212bf4902005709aa40351fd23d220992025fd39fd0d8d8071744ae3732b62d7",
+    "correction_projection_record_sha256": "630be101df44fe4a039efea220363ae74a51a0ffe3173606bb4ed34d12a1ba98",
+    "correction_projection_proof_sha256": "187881ab01e1fb8894b2efc8de21c2167934219c3bef9a7d341fcbe90e656226",
+    "correction_dispatch_proof_sha256": "845c9c3f704710aa2b95b1db11c3a8a01879799e40a1fb0211c5c6a650fd86b5"
+  },
+  "artifacts": {
+    "selection_sha256": "54095819ad4d205517ba8216374bfe0a1b496df6e08ccd2267a9b3b0bc2ed5e1",
+    "prompt_sha256": "2e6eb9aea597eba24912a1bfaa0749808fe07407140b3d705e4160b235d962bd",
+    "correction_prompt_sha256": "a3f9de13cd2d5a0b5606471cf4ac75ca6f7dec27cef30ab43f71b0925fa09ddf",
+    "runner_sha256": "2e5bd2ed37b61ecc05acc7950926ae56e733e727cd1333d7064378f73245f7ca",
+    "recorder_sha256": "1e282890a6043550dfaf068bb34495bd24ad7e6100f96da732e7b041ca221383",
+    "findings_sha256": "d5473ee8d83f3a1d72dc15c557d50696f21073064dfc8b4b7e1e97d435da72a4",
+    "test_report_sha256": "ea4dff20d3f729934f6d4230f32e0bb5ea43a300e57721268b20d5e07eaf2a32",
+    "result_sha256": "6cfa3a573af000438cb9f53f53a0dd16af68f8256205614d1885bb8f2e437388",
+    "controller_status_sha256": "7dc54dbfb661a21f4fd057fbc1bab14d3e8d5984438bd404af8704933fb79048",
+    "initial_worker_jsonl_sha256": "b8fdfd9fdb4a3467ea5eb14b4df1eaa276d052e13e75d5c585007f3f90dba8d9",
+    "initial_worker_stderr_sha256": "6b08339aabfcfe6e2426b9f7edc8715d09ac79f0eb3b75153c6214d303e4021e",
+    "initial_worker_last_message_sha256": "8e23c9ec3c271cf0f799ec0fd4601957b0f53491db9988aa89aa1b0c8bf34f52",
+    "correction_worker_jsonl_sha256": "b9cb41525f14cb717e89825c1d9ad5d9f297175e7b826ae28c6748f958b72d7e",
+    "correction_worker_stderr_sha256": "ea96b0ff7c340302eb55623986184e9109d91dea86afbf526da337a19052fe09",
+    "correction_worker_last_message_sha256": "3cbb159005d96810b0056536505f010de7482e21a488f4bd28dcba5cd85b38be"
+  },
+  "recordability_preflight": {
+    "stable_id": "F-C3-RH-EXECUTOR-PREFLIGHT-001",
+    "record_sha256": "dcc0cf724ff9d52b2fd527c071282bb84e1ca22abdb052aaa9a0ead7c23225af",
+    "pid": 191748,
+    "creation_time_utc": "2026-08-05T20:51:19.0231671Z",
+    "duration_ms": 145.701,
+    "runner_sha256": "2e5bd2ed37b61ecc05acc7950926ae56e733e727cd1333d7064378f73245f7ca",
+    "recorder_sha256": "1e282890a6043550dfaf068bb34495bd24ad7e6100f96da732e7b041ca221383",
+    "terminal_native_absence": true,
+    "outcome": "PASS"
+  },
+  "selected_execution": {
+    "complete_initial_set_before_classification": true,
+    "execution_count": 6,
+    "test_count": 10,
+    "pooled_correction_performed": false,
+    "rerun_ids": [],
+    "all_green": true
+  },
+  "tests": [
+    {
+      "stable_id": "F-C3-RH-ADMISSION-001",
+      "pid": 508,
+      "creation_time_utc": "2026-08-05T20:52:15.9717874Z",
+      "process_record_sha256": "6ea6f5925d8ebaa0e9860b91d1994c1da0731ed8af02f30fea543a6ac7183391",
+      "stdout_sha256": "0be20549606e6d6c6f493c90f37459220c7d76ddd312168991da0f3c478f5dd5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stable_id": "F-C3-RH-SESSION-001",
+      "pid": 177792,
+      "creation_time_utc": "2026-08-05T20:52:25.1175373Z",
+      "process_record_sha256": "9daf4618e97fe6a04cf41f1870c6d4d628aee2136660515c05dec0e787231a2f",
+      "stdout_sha256": "76b8c09ede3fa433ec64630dae5d83b0a593b142fa0a14616ff1540890cc99ea",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stable_id": "F-C3-RH-IDENTITY-001",
+      "pid": 172376,
+      "creation_time_utc": "2026-08-05T20:52:34.5120508Z",
+      "process_record_sha256": "bc876ed9279379bb832fdce9e451f77ab52b1fb402290657fce014f18e0ff483",
+      "stdout_sha256": "6b59753bcc6c9abdd5f2a40cacb79152ba296cec96ae2fc47dc895b3fc1926c8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stable_id": "F-C3-RH-WATCHER-001",
+      "pid": 194644,
+      "creation_time_utc": "2026-08-05T20:52:45.0309350Z",
+      "process_record_sha256": "a59e1873a9b3f40dfe32818883705297d05e768670a3808ed861f9c27d88b344",
+      "stdout_sha256": "580fda63f8c49cf72b2252aa5fe8349c4ffcca66700fba720f53ca50f32c3cc3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stable_id": "F-C3-RH-RECOVERY-001",
+      "pid": 194532,
+      "creation_time_utc": "2026-08-05T20:52:53.2010420Z",
+      "process_record_sha256": "749f4c61c02a92029a81b828d50a606b06cb50a50dbcb4dbaee5797d93fb11b2",
+      "stdout_sha256": "7d5457e78bbae4b96c40ab7e16b7f55258dfb2d2b67682106ffcb3a6e8b63e8d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stable_id": "F-C3-RH-CLOSURE-001",
+      "pid": 10996,
+      "creation_time_utc": "2026-08-05T20:53:05.5848150Z",
+      "process_record_sha256": "bb072a631288bd40822d715a503654068c2272dcfddf128440ba86d34be89564",
+      "stdout_sha256": "b392afaf384ea0dbe518de9dbe57b68bd16ddb2e7242f3b144b53570813d8bc8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "obligations": {
+    "launch_admission": "PASS",
+    "retained_session_authorization": "PASS",
+    "exact_identity_binding": "PASS",
+    "duplicate_refusal": "PASS",
+    "watcher_correlation": "PASS",
+    "recovery": "PASS",
+    "idempotence": "PASS",
+    "cleanup": "PASS",
+    "terminal_closure": "PASS"
+  },
+  "administrative_correction": {
+    "initial_report_sha256": "3a746064bb099206825642808dcb37940d1f7354fb9c574729961b612478d9ef",
+    "classification": "single_reconstructable_dependency_digest_typo",
+    "same_lane_same_thread": true,
+    "tests_rerun": false,
+    "findings_preserved": true,
+    "result_preserved": true,
+    "candidate_or_test_credit_changed": false
+  },
+  "candidate_findings_validator": "PASS",
+  "candidate_result_validator": "PASS",
+  "candidate_changed": false,
+  "mcp_server_changed": false,
+  "mcp_or_hardware_accessed": false,
+  "physical_certification": false,
+  "physical_attempt_0009_absent": true,
+  "post_controller_claim_files": 0,
+  "surviving_exact_process_identities": 0,
+  "outcome": "PASS_PENDING_ROOT_ACCEPTANCE"
+}

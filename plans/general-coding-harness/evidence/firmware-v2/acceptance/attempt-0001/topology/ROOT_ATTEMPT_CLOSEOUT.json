@@ -1,0 +1,42 @@
+{
+  "schema": "firmware-c3-root-attempt-closeout/v1",
+  "attempt_id": "attempt-0001",
+  "owner": "ROOT-IM",
+  "outcome": "FAILED_BEFORE_P0_ENVIRONMENT_ONLY",
+  "classification": "ENVIRONMENT_ONLY_TOPOLOGY_HELPER_LIVENESS_DEFECT",
+  "retry_decision": "ALLOCATE_FRESH_ATTEMPT_0002_WITH_NO_C1_LOCK_CHANGE",
+  "orchestrator_loss": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0001\\topology\\ORCHESTRATOR_LOST.json",
+    "sha256": "88e30e693c879f195d3917fc9d4de25b621aa7a2a2f4017d102436c0f6d8491b",
+    "normal_exit_claimed": false,
+    "host_terminated_registered_tree_pids": [10152, 160188, 159020, 17188]
+  },
+  "watcher_abort_exit": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0001\\topology\\WATCHER_ABORT_EXIT.json",
+    "sha256": "abb11a71939497ff4b7519c04d19cb03cbf9f362179adb4c4f36a214011b0810",
+    "normal_p4_exit_claimed": false
+  },
+  "registered_processes_at_closeout": {
+    "orchestrator_pid_10152_absent": true,
+    "watcher_pid_196176_absent": true,
+    "signer_pid_186152_absent": true,
+    "watcher_helper_pid_14444_absent": true
+  },
+  "attempt_state": {
+    "candidate_harness_started": false,
+    "signed_c3_requests": 0,
+    "target_repository_materialized": false,
+    "target_workers_launched": 0,
+    "mcp_processes_launched": 0,
+    "resource_claims": 0,
+    "hardware_accessed": false,
+    "acceptance_manifest_created": false,
+    "acceptance_result_created": false
+  },
+  "immutability": {
+    "runtime_root_retained": true,
+    "evidence_root_retained": true,
+    "attempt_reuse_prohibited": true
+  },
+  "observed_quiescent_at_utc": "2026-08-05T06:31:05.3845068Z"
+}

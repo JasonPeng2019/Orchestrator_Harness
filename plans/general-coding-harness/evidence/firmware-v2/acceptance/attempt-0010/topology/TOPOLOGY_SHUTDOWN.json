@@ -1,0 +1,29 @@
+{
+  "schema": "firmware-c3-topology-shutdown/v1",
+  "attempt_id": "attempt-0010",
+  "owner": "ROOT-IM",
+  "acceptance_pass": false,
+  "acceptance_decision": "NOT_CREATED_FAILED_ATTEMPT",
+  "closeout_sha256": "cf4bce53014e4c9f0e0234a82efb297303ce9e89eb6d143de1da02834ae8cfc6",
+  "failure_classification_sha256": "6d2b7de9717524216372ba69fe815ea57f105fccfe14516e25f44ad1eb5ccbe7",
+  "closure": {
+    "registered_processes_remaining": 0,
+    "candidate_harness_processes_remaining": 0,
+    "target_worker_processes_remaining": 0,
+    "mcp_processes_remaining": 0,
+    "watcher_processes_remaining": 0,
+    "governing_watcher_processes_remaining": 0,
+    "resource_claims_remaining": 0,
+    "candidate_clean": true,
+    "mcp_server_clean": true,
+    "target_clean": true,
+    "hardware_calls_dispatched": 0,
+    "candidate_normal_shutdown_complete": true,
+    "retained_session_terminal_and_reaped": true,
+    "all_known_exact_identities_absent": true,
+    "manifest_integrity": "NOT_CREATED_FAILED_ATTEMPT",
+    "external_control_root_excluded": true
+  },
+  "resume_rule": "Do not reuse mutable attempt-0010 state. Apply only the narrow external-decision consumption repair to the candidate, repair the watcher and ROOT procedures outside the product, complete focused evidence and fresh C0/C1/C2, prove both topology corrections in a fresh host-only rehearsal, and allocate fresh monotonic C3 attempt-0011.",
+  "closed_at_utc": "2026-08-06T00:36:11.5414381Z"
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "firmware-v2-c2-root-triage/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "triaged_at_utc": "2026-08-05T13:06:01Z",
+  "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+  "c1_lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+  "c1_lock_sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+  "executor": {
+    "lane_id": "F.C2.D1",
+    "worker_invocation_id": "c2-d1-006",
+    "thread_id": "019fd1fd-83a3-7ad0-8370-a544c08c7c6e",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority"
+  },
+  "initial_artifacts": {
+    "findings_sha256": "0a1b2390547dfc8d05413e266285c99c6db2482234f38fcac17ac7baba277214",
+    "result_sha256": "9d5109054ad88c1cd4093fba031cf4d1dd3bba95c22c64e662f7bb1620e9465e",
+    "test_report_sha256": "c7281856ce75b13fcc03e4c34beb01f63165ccbd1b0fbd566cc8f4b42f82aec9",
+    "closed_worker_jsonl_sha256": "6d9e1c2741c91befbe0ea34a8f0f021ebb27a9917ddb2f3416eb619cdab4ad4a",
+    "controller_status_sha256": "9be9acbcf2398ea5947a63d7c9dd779b737d1f806b4aad3ade489c248cd96757"
+  },
+  "failed_id": {
+    "stable_id": "F-C2-LOCK-001",
+    "stdout_sha256": "1557c21f3be09f7ef50b893b8fc30ece49006ac77d6668c3be364abe9e1ba30f",
+    "stderr_sha256": "10aaff8fb52b45cbe71a0917ef5f9dbd848ed4a626030e7ac1c0f90a1b6f452e",
+    "final_process_metadata_sha256": "cce1e78a27d2cf24941cd096b3f18f6b10655dc4a60b2c96c7ece926d93a45fd",
+    "assigned_assertions_began": false,
+    "classification": "EXECUTOR_VERIFIER_PREFLIGHT_FALSE_POSITIVE",
+    "exact_cause": "The stale preflight predicate treated the current attempt's own pinned stable-runner and F.C2.D1 controller ancestry as an external C2-relevant process. The matched commands bind C2_D1_006_STABLE.json and the exact current controller PID; no MCP, C3, target-worker, or unrelated lane process was present.",
+    "candidate_finding": false,
+    "test_author_finding": false,
+    "locked_input_change": false
+  },
+  "passed_ids_not_authorized_for_rerun": [
+    "F-C2-AUTH-001",
+    "F-C2-DISPOSABLE-001",
+    "F-C2-CREDIT-001",
+    "F-C2-STATE-001"
+  ],
+  "metadata_criticism": {
+    "classification": "EXECUTOR_REPORT_PUBLICATION_CORRECTION",
+    "description": "Three completed process records initially serialized a null ExitCode before the PowerShell process object exposed it. Their stdout/stderr bytes and outer command outcomes were preserved in the closed worker JSONL; the executor corrected only the metadata field and disclosed the rewrite in TEST_REPORT.json.",
+    "candidate_finding": false,
+    "requires_test_rerun": false,
+    "must_remain_disclosed_in_final_report": true
+  },
+  "root_audit": {
+    "test_report_path_hash_references_valid": "41/41",
+    "finding_gate_valid": true,
+    "result_gate_valid": true,
+    "candidate_clean": true,
+    "mcp_server_clean": true,
+    "claims_released": true,
+    "surviving_test_processes": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "PRESERVE_FAIL_AND_AUTHORIZE_ONE_SAME_LOCK_LOCK_ID_RETRY"
+}

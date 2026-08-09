@@ -1,0 +1,39 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-008",
+  "role": "reviewer",
+  "commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+  "findings": [
+    {
+      "id": "F-C0-FR1-001",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": [
+        "C1",
+        "C3",
+        "firmware_acceptance/kit.py::evaluate_call",
+        "firmware_acceptance/MCP_METHOD_POLICY.json::read_serial-plan",
+        "firmware_acceptance/MCP_METHOD_POLICY.json::write_serial-plan",
+        "firmware_acceptance/MCP_METHOD_POLICY.json::serial_exchange-plan"
+      ],
+      "evidence": [
+        "firmware_acceptance/kit.py:717-786",
+        "firmware_acceptance/MCP_METHOD_POLICY.json: read_serial-plan, write_serial-plan, serial_exchange-plan, and serial_exchange rules",
+        "plans/general-coding-harness/evidence/firmware-v2/S2/S2_PRE_C1_EXECUTABLE_CONTRACT_DECISION.json: read_serial/write_serial/serial_exchange method constraints",
+        "active_docs/GENERALIZATION_SPEC_2.md: issued-scope and default-deny executable-policy requirements"
+      ],
+      "observed": "evaluate_call checks only key sets for plan action_parameters. For UART it enforces only write text UTF-8 length and action on_exit=null. It does not enforce declared finite positive <=30 read_seconds or timeout_seconds, positive-or-null baudrate, reset_on_open=false, boolean append_newline, exact/null route, or any serial_exchange nested row/readiness schema and <=256-byte per-row transmission limit. A serial_exchange-plan proposal with all required top-level and action-parameter keys but steps=[], read_seconds=-1, arbitrary readiness fields, or oversized row text reaches the unconditional ALLOW return; analogous malformed read/write values also pass unless they hit the two partial checks.",
+      "expected": "The candidate must default-deny every parameter value and side effect outside the C1-locked method policy and executable contract before forwarding any plan or action. UART plan/action validation must enforce the complete declared scalar and nested schemas, bounds, safe flags, and exact accepted-plan equivalence.",
+      "reproduction": "Static trace only: evaluate_call loads the policy, verifies the populated plan envelope and action_parameters key set, then has special branches only for write text length, read_memory_symbol, flash, and action on_exit. serial_exchange has no branch after its required-key test, so malformed values fall through to ALLOW. No test, MCP, serial, or hardware operation was run.",
+      "impact": "An O-signed artifact can cause C3-HARNESS to forward UART operations beyond the locked user scope and policy, including arbitrary exchange payload shapes and unbounded/invalid timing or route-affecting settings. This defeats the required independent default-deny boundary at the physical-MCP dispatch path.",
+      "no_fix_consequence": "C1 cannot honestly lock the advertised executable policy, and C3 physical UART work would have an unenforced safety contract even if the pinned server happens to reject some malformed inputs.",
+      "smallest_fix": "Add a narrow policy-driven UART validator in evaluate_call for read_serial, write_serial, serial_exchange, and their populated plan forms; validate scalar types/ranges/safe flags and the closed serial_exchange nested schema before ALLOW, then add focused negative unit tests for each omitted constraint.",
+      "complexity": "Localized to the acceptance-kit admission validator and focused tests; no harness topology, MCP server, fixture, or protected original test changes are needed.",
+      "regression_risk": "Low: the fix rejects only inputs already declared invalid by the locked policy and contract, while preserving valid exact plan/action flows.",
+      "verification_cost": "Focused host-only kit/controller tests can prove rejection of each malformed UART case and acceptance of the existing valid fixtures; no MCP launch or hardware access is required.",
+      "alternatives": "Relying on O decisions, server-side validation, or later C4 evidence does not satisfy the candidate's independent default-deny obligation and leaves the physical dispatch boundary permissive.",
+      "cost_benefit": "The concrete out-of-scope forwarding risk at a physical UART boundary outweighs the small, isolated validator and test addition.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "firmware-v2-root-triage/v1",
+  "attempt": "c0-attempt-0002",
+  "recorded_at_utc": "2026-08-04T09:41:16Z",
+  "candidate_commit": "64199127ac787eeaaf6863726ff0a3bcb79798ed",
+  "reviewer": {
+    "lane_id": "F.C0.FR1",
+    "worker_invocation_id": "c0-fr1-002",
+    "thread_id": "019fcc23-5755-7831-8b36-77f1d8971c8a",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority"
+  },
+  "artifacts": {
+    "prompt_sha256": "62dbd19783f7f72e10c9f955b6e3ad9a7ff60c0e7a8149fd701fbb2b5254f383",
+    "source_invocation_sha256": "614a77a78fcb08f5a9a00d842fe336a578bcba59010d643e296d7b8ca2f89541",
+    "launch_receipt_sha256": "bf512efe8f4769addbf644b9d5db61db01a7810a4a9d8e0629754229d9ce4bf1",
+    "controller_status_sha256": "687c9de4f44153849faf8ab8ec5ce4173086441b0f0e330dd1ba1549b8f9a53c",
+    "findings_sha256": "9958ef181007c83f9ffdcb565d12a380a1bbf57037c438ca32d936af81d8925c",
+    "result_sha256": "76f0da3f4d15fa52235600929fee865cbdd94b013b41e090fd6b1e50a63ac76d",
+    "stable_projection_sha256": "aab5392751f2a656d5c338e3b6d14112b895e2f1be0ee00aac7c2ee7270f4724",
+    "stable_proof_sha256": "77abeeaab50f376f97e306811eb5c79469bbfcd39614efaf60869628b3a4e849"
+  },
+  "decision": "ACCEPTED",
+  "accepted_findings": ["C0-FR1-001"],
+  "cost_benefit": "The exact method/version pair is a required safety and authorization boundary. A single fail-closed integer equality check plus one focused regression has low complexity and regression risk, while leaving the gap permits a physically dispatched call whose recorded version was never admitted by the locked policy.",
+  "route": {
+    "owner": "S2.P",
+    "review_dependency": "S2.R1",
+    "test_author_dependency": "S2.A1",
+    "test_executor_dependency": "S2.D1",
+    "preserved_green": ["S2.R2", "S2.A2", "S2.D2", "protected-19-general-harness-ids", "all-unrelated-S1-S3-ids"]
+  },
+  "hardware_mutation": false,
+  "c1_state": "LOCKED_OUT_PENDING_REPAIR_AND_FRESH_C0"
+}

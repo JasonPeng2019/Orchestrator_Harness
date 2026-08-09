@@ -1,0 +1,27 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-001",
+  "role": "reviewer",
+  "commit": "66e053a3822a7769590266f977c266f33a520ed5",
+  "findings": [
+    {
+      "id": "S2R1-RAW-RESULT-001",
+      "category": "CODEBASE_BREAKING",
+      "affected_ids": ["C39", "C49", "canonical_bound_operation.raw_result_sha256"],
+      "evidence": ["firmware_acceptance/kit.py:47-66", "firmware_acceptance/kit.py:256-296", "orchestrator_harness/tests/test_firmware_acceptance_kit.py:45-52"],
+      "observed": "The canonical operation requires a nonempty raw_result_sha256, but admit never hashes the raw-result artifact or compares that hash to the bound field. The focused test uses the arbitrary value r without a raw result artifact.",
+      "expected": "The raw-result record must carry/create the actual raw-result bytes or canonical payload and admit must verify its SHA-256 equals the hash bound before dispatch/result acceptance.",
+      "reproduction": "Supply any nonempty raw_result_sha256 in the bound operation and a raw-result stage whose bytes differ; lines 256-296 validate path/stage continuity and outcome but perform no comparison to bound.raw_result_sha256.",
+      "impact": "A complete signed evidence chain can attest a raw physical result different from the bound result identity, defeating result provenance.",
+      "no_fix_consequence": "C3 cannot prove the MCP-mediated raw result retained under C49 is the result authorized by the immutable C39 operation.",
+      "smallest_fix": "Define the raw-result canonical payload, hash its actual stored bytes at raw-result recording, and require exact equality with bound_operation.raw_result_sha256 in admit; add one mismatch rejection test.",
+      "complexity": "Low: one equality check plus a focused artifact-construction adjustment and negative test.",
+      "regression_risk": "Low: it rejects only chains whose claimed raw-result identity does not equal their retained raw-result evidence.",
+      "verification_cost": "Low: static unit coverage for matching and mismatching raw-result bytes; no MCP or hardware.",
+      "alternatives": "Dropping the field would avoid the false claim but would weaken the required raw-result identity binding.",
+      "cost_benefit": "This is a concrete unverified security/provenance field at the physical-operation boundary, and the smallest fix is localized with minimal regression risk.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

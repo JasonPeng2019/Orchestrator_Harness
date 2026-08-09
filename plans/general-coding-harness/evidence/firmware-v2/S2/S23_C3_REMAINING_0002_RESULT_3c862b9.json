@@ -1,0 +1,38 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S23.D2",
+  "worker_invocation_id": "s23-d2-c3-remaining-002",
+  "branch": "firmware/v2-s23-d2-c3-remaining-0002",
+  "commit": "3c862b9ef3e79ab010eabd990aac3745ac2013ee",
+  "outcome": "FAIL",
+  "summary": "The exact five-test command ran once: 3 PASS and 2 ERROR; errors are not credited green. Findings record the stale synthetic fixture contract gap and distinguish it from a production defect.",
+  "checks": [
+    {
+      "name": "C3-CP-01-02",
+      "command": "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier",
+      "outcome": "FAIL",
+      "summary": "ERROR: synthetic topology omitted required public_key."
+    },
+    {
+      "name": "C3-CP-06",
+      "command": "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_06_limitation_shapes_roles_and_broker_gate",
+      "outcome": "PASS"
+    },
+    {
+      "name": "C3-CP-07",
+      "command": "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_07_shutdown_blocks_then_reaps_and_refuses_unreconciled_restart",
+      "outcome": "PASS"
+    },
+    {
+      "name": "C3-SERVER-LIMITATION-CREATE-ONCE",
+      "command": "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_server_limitation_create_once_has_causal_and_c3_evidence",
+      "outcome": "FAIL",
+      "summary": "ERROR: synthetic C3 status/result lane identity did not match worker role."
+    },
+    {
+      "name": "C3-SERVER-LIMITATION-CLOSED-EVIDENCE",
+      "command": "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_server_limitation_rejects_closed_evidence_mutations",
+      "outcome": "PASS"
+    }
+  ]
+}

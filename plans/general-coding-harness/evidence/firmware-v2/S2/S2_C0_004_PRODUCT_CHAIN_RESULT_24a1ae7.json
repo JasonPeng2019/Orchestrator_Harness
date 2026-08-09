@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.P",
+  "worker_invocation_id": "s2-p-006",
+  "branch": "firmware/v2-s2-product",
+  "commit": "24a1ae7c08e559e606231543e1bbff0da0fd3a5a",
+  "outcome": "PASS",
+  "summary": "Bound completed attempt-0004 production, Terra review, A1, and D1 evidence to the clean joined tip; this turn made no source change and reran no tests.",
+  "checks": [
+    {"name": "preserved C0 triage", "command": "preserved C0 attempt-0004 triage", "outcome": "PASS", "summary": "Accepted triage SHA-256 04997731b81dcff063b8513924a8d80e316d88b9ff1632c74980ecf06700ac8a."},
+    {"name": "preserved production and Terra review", "command": "preserved production repair at 7fee836149eae1fa6144dc4ec9497e085535496d", "outcome": "PASS", "summary": "Production result SHA-256 b9f663e8b3dfa51e983b3be19a56eff3896d647df67e5151532293d502ad6fee; Terra zero-findings SHA-256 5257eeda31e7b9538de0c6d726dae46bd2d6680ec4811f0924caa2bddc761916 and result SHA-256 3c67329aa45efbe9bdba7bb833f42d8909de5b553969186754cb2937e4af1033."},
+    {"name": "preserved A1 and D1 results", "command": "preserved final joined-tip A1 and D1 evidence at 24a1ae7c08e559e606231543e1bbff0da0fd3a5a", "outcome": "PASS", "summary": "A1 zero-findings SHA-256 389f26cbcc45f98aaf6ac54c1b35b904747761cb685ac756d8d4b5c4a681cba4 and result SHA-256 89302c468db074fb69c3021f55b8eab0e28fa721878e86912cf3e8c2bb8eb6ac; D1 30/30 zero-findings SHA-256 d5c6eb194899cdc09e6f6040db7f08bb822e4a5e83ec7b8a64d84fecd5a30ca4, result SHA-256 e017b4b835f09d90aeb43cfdaaec709fdcd646ca5ac725ccf7747a712acb3259, report SHA-256 2fa7993ae128e1cc9a93d45d7cf313cab044a15ef611f0f48ca4288e1751af43."},
+    {"name": "this evidence-binding turn", "command": "git branch --show-current; git rev-parse HEAD; git status --short", "outcome": "PASS", "summary": "Matched firmware/v2-s2-product at the exact joined tip with clean tracked status; no test, MCP, or hardware action occurred."}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.P",
+  "worker_invocation_id": "s2-p-006",
+  "branch": "firmware/v2-s2-product",
+  "commit": "42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+  "outcome": "PASS",
+  "summary": "Bound completed attempt-0005 natural-EOF and forced-close repairs, closure review, A1, and D1 evidence to the clean joined tip; this turn made no source change and reran no tests.",
+  "checks": [
+    {"name": "preserved attempt-0005 and repair evidence", "command": "preserved attempt-0005 artifacts", "outcome": "PASS", "summary": "ROOT triage SHA-256 4cdedf76c12399e1d00a18243da52667f1eeb3f440972633449ca0ec23f6b1f3; natural-EOF repair result SHA-256 27d1683ab25ff1e02e866b4e919a60292def15157b5ad9e9a1414b7e16ef7683; forced-close correction result SHA-256 eaf3d85da5ff7356562ff4aca84a186814ac45013c08e543cf3dfe3d2d7cd395."},
+    {"name": "preserved targeted closure", "command": "preserved targeted review at d7ffe7d461adcfa7bc9652422b52df3e7660252a", "outcome": "PASS", "summary": "Findings/result/ROOT triage SHA-256 467cd592ae1a20241272196302c14631a446a41d73c78ba1141cd92197937b02, c19930bf68eeb72c0a1d8f46c06aef756ab24ef14ad64b146219949b18ea87e7, 0b928ab6368dedbf1a820d887b808ddf637cb513cbd0d6fef55371be3e0158d9; same-reviewer zero findings/result SHA-256 085b2a7e547d106699ab21e89e66b1a6800319563be42cfebea40fdad1caf8c0, d109dc91b311fdd9feea232b1c8970bf6863ac468027d88473d968f29f88da8a."},
+    {"name": "preserved A1 and D1 joined-tip evidence", "command": "preserved canonical A1 and D1 evidence at 42a9d7082ac0193cf7cd1685b5eb95baafff41ac", "outcome": "PASS", "summary": "A1 zero findings/result SHA-256 7b2960f22d00856fd91ff3c8c32e2ff919e24189a696c8fe794cd94e7d3f7826, e188d56adcfbd95821835a6ec0f747da6893b41f07763d2efc2ffc993467ce25; D1 32/32 zero findings/result/report SHA-256 9b285ac42e03435ebd64eaf5bfb0b9d909f6bd603bbe0e3b2f3c455d7f242369, ef011df9394736e3ed069040e185b8884a08c59c19b74452fa7e4f9c3c89b8ea, 690798181d82b718b198a2517bead1878884fc627df1a93f6ed57dfae7a4738b."},
+    {"name": "this evidence-binding turn", "command": "git branch --show-current; git rev-parse HEAD; git status --short", "outcome": "PASS", "summary": "Matched firmware/v2-s2-product at the exact joined tip with clean tracked status; no test, MCP, or hardware action occurred."}
+  ]
+}

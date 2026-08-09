@@ -1,0 +1,60 @@
+{
+  "schema": "firmware-v2-c2-root-triage/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0010",
+  "triaged_at_utc": "2026-08-05T18:34:53Z",
+  "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "c1_lock_id": "d96f270b-bb92-4b3e-aac0-29321e2ea44a",
+  "c1_lock_sha256": "d9bc07a1eb812775e046f8b87f19955dcac65dae3ecb59994d84613e293a60c7",
+  "attempt_record": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0010\\ATTEMPT_RECORD.json",
+    "sha256": "881b0450526acb4f43f1a183421357072846c72208db3e85513c6bb7df3c5e68"
+  },
+  "executor": {
+    "lane_id": "F.C2.D1",
+    "worker_invocation_id": "c2-d1-010",
+    "thread_id": "019fd32d-af55-7e62-bd62-fed6ab6431ec",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority"
+  },
+  "criticism": {
+    "id": "F-C2-EXECUTOR-REPORT-001",
+    "classification": "EXECUTOR_PROCESS_RECORD_SERIALIZATION_DEFECT",
+    "accepted": true,
+    "candidate_finding": false,
+    "exact_cause": "The auth verifier process ran once, exited zero, and wrote a PASS stdout result. After Start-Process returned, the executor used outcome=(if ...) inside a Windows PowerShell hashtable; PowerShell treated if as a command and stopped before writing PID, native creation identity, and timing. Those values cannot be safely reconstructed after process exit.",
+    "minimal_correction": "In a fresh attempt, execute only F-C2-AUTH-001 under the same C1 and candidate. Assign the outcome to a variable before constructing the hashtable, as the four correctly recorded processes did."
+  },
+  "reviewer_tester_criticism_disposition": {
+    "accepted": [
+      "The missing auth process envelope is blocking evidence even though its verifier body passed."
+    ],
+    "vetoed": [
+      "The executor suggested a fresh five-mode execution. The governing C2 rule requires rerunning only failed IDs for an environment/test-execution issue with no locked-input change; four exact green IDs remain valid.",
+      "No candidate, verifier, C1, registry, map, test, MCP-server, or stable-runner change is justified.",
+      "No process-identity reconstruction, extra wrapper framework, duplicate guard, or same-attempt auth retry is admissible."
+    ]
+  },
+  "root_audit": {
+    "five_verifier_modes_executed_once_in_order": true,
+    "verifier_body_passes": 5,
+    "complete_process_envelopes": 4,
+    "missing_process_envelope_ids": [
+      "F-C2-AUTH-001"
+    ],
+    "credit_counts_current": true,
+    "four_green_ids_preserved_for_selective_rerun": true,
+    "result_gate_valid": true,
+    "result_outcome": "FAIL",
+    "candidate_clean": true,
+    "mcp_server_clean": true,
+    "stable_runner_clean": true,
+    "lane_clean": true,
+    "claims_released": true,
+    "surviving_test_processes": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "PRESERVE_ATTEMPT_AND_RUN_ONLY_F_C2_AUTH_001_IN_FRESH_ATTEMPT_0011_UNDER_SAME_C1_LOCK"
+}

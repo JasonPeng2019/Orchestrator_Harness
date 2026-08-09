@@ -1,0 +1,29 @@
+{
+  "schema": "firmware-v2-root-test-review/v1",
+  "owner": "ROOT-IM",
+  "commit": "712d3682404ee6643facfebe09c86cc854da00d9",
+  "result_sha256": "fbba2b96ce35b336972e8589fc275879157ac096c31a1e03799cccd1887f470e",
+  "accepted_corrections": [
+    "all removed recovery root aliases were migrated to launcher_pid, launcher_identity, and observed_launcher_identity",
+    "all retained cleanup fixtures and exact-key assertions use the final thirteen-key shape",
+    "reconciliation fixtures set every terminal cleanup boolean true",
+    "the _require_recovery caller uses the final explicit controller_identity argument",
+    "negative cases no longer reject valid equal captured and observed launcher identities",
+    "the CP04 exact-identity observation count and PID-reuse evidence match the final producer"
+  ],
+  "findings": [
+    {
+      "id": "ROOT-712D368-001",
+      "category": "CODEBASE_BREAKING",
+      "observed": "test_s25_a1_initial_status_rejects_malformed_wrong_identity_exit_and_timeout now unconditionally asserts that cleanup.launcher_identity equals the synthetic live identity. In the quick-exit subcase, exact_process_identity deliberately returns null because the retained Popen is already terminal before the first identity capture.",
+      "expected": "The quick-exit cleanup must assert null launcher identity while every non-quick-exit case retains and asserts the captured identity.",
+      "impact": "The focused harness module will deterministically fail its quick-exit subtest even though production correctly treats the terminal Popen as reaped without inventing signal authority.",
+      "smallest_fix": "Make the expected launcher identity conditional on quick-exit and explicitly assert the terminal Popen was not signaled in that case.",
+      "problem_outweighs_fix_risk": true
+    }
+  ],
+  "root_decision": "REJECT_TEST_COMMIT_FOR_ONE_FIXTURE_EXPECTATION; RESUME_SAME_S26.A1_OWNER",
+  "tests_run": false,
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false
+}

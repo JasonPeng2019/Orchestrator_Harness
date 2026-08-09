@@ -1,0 +1,16 @@
+{
+  "schema": "firmware-c3-root-attempt-allocation/v1",
+  "attempt_id": "attempt-0008",
+  "owner": "ROOT-IM",
+  "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "c1_lock_sha256": "d9bc07a1eb812775e046f8b87f19955dcac65dae3ecb59994d84613e293a60c7",
+  "c2_root_acceptance_sha256": "f8e2d328f085f5ce6b5ccbe3b735d287ec9e348da6321a615e55ba4bbd72204e",
+  "prior_attempt_closeout_sha256": "82181650443dcf5ce08b16e9a3c4eb6c8bcb5831829016ab937c50885b4d76c8",
+  "repair_root_admission_sha256": "c936376942e39fa65dd3cf60636c457930401887ec210a45770cd8c6b016a23e",
+  "fresh_runtime_evidence_and_external_control_roots": true,
+  "external_control_root_outside_manifest_domains": true,
+  "governing_watcher_root_absent_for_create_new_initialization": true,
+  "prior_mutable_runtime_reused": false,
+  "target_root_absent": true,
+  "allocated_utc": "2026-08-05T18:49:42.8618576Z"
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-pre-c1-executor-006",
+  "branch": "firmware/v2-s2-d1",
+  "commit": "40b4039b3ecb3021dc545901419416b278226f7e",
+  "outcome": "FAIL",
+  "summary": "The exact 24-controller plus 2-host IDs were discovered without execution, then each ran exactly once in a fresh bounded Python process. Results: 23 PASS, 1 FAIL, and 2 TIMEOUT; the two timeout PIDs were individually verified and terminated, with zero recorded test PIDs surviving. Exact output is preserved under .agent-workspace/bounded-batch-40b4039/. Two demonstrated low-cost test-contract/functionality findings are recorded; no tracked files were edited.",
+  "checks": [
+    {
+      "name": "bounded complete controller and host batch",
+      "command": "python -m unittest <discovered stable ID> -v; one fresh Python process per ID, no reruns",
+      "outcome": "FAIL",
+      "summary": "26/26 IDs were started exactly once: 23 passed, 1 failed, and 2 timed out at 30 seconds; 0 skips, 0 expected failures, and 0 unexpected successes."
+    },
+    {
+      "name": "findings gate",
+      "outcome": "FAIL",
+      "summary": "FINDINGS.json records two demonstrated retained-session/host fixture contract defects with preserved per-test output and bounded-fix tradeoffs."
+    },
+    {
+      "name": "per-test process cleanup",
+      "outcome": "PASS",
+      "summary": "Both timed-out processes were stopped only after exact PID, creation identity, and command-line verification; all 26 recorded PIDs are absent and no exact unittest process remains."
+    },
+    {
+      "name": "exact current tip and tracked-worktree cleanliness",
+      "command": "git branch --show-current; git rev-parse HEAD; git status --porcelain",
+      "outcome": "PASS",
+      "summary": "Branch firmware/v2-s2-d1 and HEAD match 40b4039b3ecb3021dc545901419416b278226f7e; tracked Git state is clean."
+    },
+    {
+      "name": "no-MCP/no-hardware boundary",
+      "command": "bounded host-only per-test batch and post-run boundary review",
+      "outcome": "PASS",
+      "summary": "No MCP/server, pyOCD, serial, probe, flash, reset, debug, RF, lease, or physical hardware operation occurred."
+    }
+  ]
+}

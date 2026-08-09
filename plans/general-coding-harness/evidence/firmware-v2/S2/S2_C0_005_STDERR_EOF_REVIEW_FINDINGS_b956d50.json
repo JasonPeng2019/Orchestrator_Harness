@@ -1,0 +1,31 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-004",
+  "role": "reviewer",
+  "commit": "b956d502c6332d106005cb6e03826939bf594f9a",
+  "findings": [
+    {
+      "id": "S2R1-C0-ATTEMPT0005-STDERR-FORCED-CLOSE-001",
+      "category": "CODEBASE_BREAKING",
+      "affected_ids": ["C30", "C33", "C49", "C67"],
+      "evidence": [
+        "firmware_acceptance/controller.py:170-198",
+        "firmware_acceptance/controller.py:228-238",
+        "firmware_acceptance/controller.py:475-479"
+      ],
+      "observed": "When a helper remains alive after the initial bounded joins, close_and_join forcibly closes process.stderr but records no forced-close state. _stderr treats any subsequent empty read as natural EOF. Thus a reader unblocked by that forced close can set stderr_eof, stop, and allow stderr_log_complete true with no cleanup_error.",
+      "expected": "A stderr stream force-closed to unblock teardown must be classified as incomplete regardless of how the stream API presents the closure; only natural post-reap EOF may support stderr_log_complete.",
+      "reproduction": "Use a stderr reader blocked before consuming a remaining buffered suffix until close_and_join reaches its forced stream-close branch. The branch closes stderr; a realistic stream may then return b'' rather than raise. _stderr sets stderr_eof at controller.py:232-233, the second join observes no live helper, and controller.py:194-197 can mark the prefix log complete even though the closure—not proved natural EOF—ended reading.",
+      "impact": "The final cleanup artifact can once again certify a truncated MCP stderr log as complete in the exact forced-closure timeout path the repair was required to fail closed.",
+      "no_fix_consequence": "C3/C4 may accept misleading diagnostics and successful completion after a bounded teardown cut off unread stderr bytes, defeating the retained server-log evidence boundary.",
+      "smallest_fix": "Record an explicit stderr-forced-close flag before closing process.stderr in the fallback branch and require that flag to be false for stderr_log_complete; otherwise retain an incomplete-log error and cleanup_error. Add this state to the already planned coordinated regression rather than adding a separate framework.",
+      "complexity": "Low and confined to the existing transport teardown state.",
+      "regression_risk": "Low: only forced stderr closure becomes conservatively fail-closed; natural EOF, stdout framing, cancellation, exact reap, and unrelated routes remain unchanged.",
+      "verification_cost": "Low: extend the planned deterministic coordinated transport regression with a stream that returns EOF after forced close; no MCP process or hardware is required.",
+      "alternatives": "Treating empty read as sufficient cannot distinguish natural EOF from controller-forced closure. Waiting unboundedly would violate the existing cleanup deadline.",
+      "cost_benefit": "The demonstrated false-complete cleanup record outweighs the localized flag/check and its focused verification cost.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

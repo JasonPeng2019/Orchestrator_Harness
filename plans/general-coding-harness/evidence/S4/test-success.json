@@ -1,0 +1,7 @@
+{
+  "candidate_commit": "d907e0d2ad24e7e58e810f3498f1a62c5f6ed3b9",
+  "result": "pass",
+  "documentation_smoke": "4 passed",
+  "disposable_integration": "1 passed in 29 seconds",
+  "duplicate_reruns": "skipped"
+}

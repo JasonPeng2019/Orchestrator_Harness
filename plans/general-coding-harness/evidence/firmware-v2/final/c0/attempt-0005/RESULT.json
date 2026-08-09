@@ -1,0 +1,21 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-005",
+  "branch": "firmware/v2-c0-final-review",
+  "commit": "24a1ae7c08e559e606231543e1bbff0da0fd3a5a",
+  "outcome": "FAIL",
+  "summary": "F-C0-FR1-005-001",
+  "checks": [
+    {
+      "name": "independent-read-only-source-docs-tests-and-evidence-review",
+      "outcome": "FAIL",
+      "summary": "Found F-C0-FR1-005-001: teardown can certify a truncated multi-chunk MCP stderr log as complete."
+    },
+    {
+      "name": "tests-and-candidate-safeguard",
+      "outcome": "NOT_RUN",
+      "summary": "Not run by reviewer instruction."
+    }
+  ]
+}

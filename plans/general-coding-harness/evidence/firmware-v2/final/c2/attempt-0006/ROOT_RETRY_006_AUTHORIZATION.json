@@ -1,0 +1,53 @@
+{
+  "schema": "firmware-v2-c2-root-retry-authorization/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "authorized_at_utc": "2026-08-05T13:41:58Z",
+  "same_lock": {
+    "c1_lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "c1_lock_sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "thread_id": "019fd1fd-83a3-7ad0-8370-a544c08c7c6e",
+    "worker_invocation_id": "c2-d1-006"
+  },
+  "authorized_retry": {
+    "stable_id": "F-C2-LOCK-001",
+    "retry_suffix": "retry-006",
+    "maximum_fresh_processes": 1,
+    "required_launch": "python.exe .agent-workspace/supervise_retry006.py",
+    "only_verifier_changes": [
+      "Add retry-006 to the argparse retry-suffix choices.",
+      "Import ctypes and add a native_creation_identity(pid) helper structurally identical to the proven supervisor creation_identity helper.",
+      "Stop deriving CreationIdentity from CIM CreationDate; retain CIM only for ProcessId, ParentProcessId, Name, and CommandLine.",
+      "In identity_binding, populate and compare only the current controller row's CreationIdentity using native_creation_identity(controller_pid)."
+    ],
+    "bounded_supervisor_change": "Create supervise_retry006.py as a structural copy of supervise_retry005.py with only retry-005 constants changed to retry-006.",
+    "required_unchanged_mechanisms": [
+      "Exact, unrounded PID-plus-native-FILETIME equality.",
+      "Fail-closed process-enumeration subprocess return-code check.",
+      "Persisted status and exact current resource-claim ownership checks.",
+      "Exact current controller parent-chain exclusion.",
+      "Relevant-process and foreign-claim predicates.",
+      "All C1/LOCK/candidate/server/stable-runner assertions.",
+      "Supervisor initialized-before-spawn evidence, PID-plus-creation capture, wait, timeout, and finally behavior."
+    ],
+    "pre_spawn_static_checks": [
+      "Use a standalone prove_retry006.py file; do not construct nested PowerShell command strings inline.",
+      "Prove retry-006 is admitted, CIM CreationDate is absent, and the native helper has the exact OpenProcess/GetProcessTimes/finally-close shape.",
+      "Run process_rows without a stable ID and require exit success.",
+      "Require native_creation_identity(current controller PID) to exactly equal the current claim owner with no rounding or tolerance.",
+      "Prove all parent-chain, relevant-process, foreign-claim, and LOCK markers remain intact.",
+      "Prove retry-005/006 supervisors normalize identically and all retry-006 evidence paths are absent."
+    ]
+  },
+  "forbidden": {
+    "rerun_green_ids": true,
+    "source_or_locked_input_edits": true,
+    "mcp_or_hardware_access": true,
+    "identity_rounding_or_tolerance": true,
+    "process_or_claim_predicate_weakening": true,
+    "second_retry_006_spawn": true,
+    "volatile_live_status_path_sha_reference": true
+  },
+  "decision": "AUTHORIZE_EXACTLY_ONE_RETRY_006_WITH_NATIVE_CONTROLLER_IDENTITY"
+}

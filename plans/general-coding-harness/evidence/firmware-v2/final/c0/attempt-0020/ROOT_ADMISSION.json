@@ -1,0 +1,107 @@
+{
+  "schema": "firmware-v2-c0-root-admission/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0020",
+  "created_at_utc": "2026-08-05T19:40:00Z",
+  "relock_trigger": {
+    "classification_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\relock\\attempt-0001\\GOVERNING_CHANGE_CLASSIFICATION.json",
+    "classification_sha256": "c84230b4b00578b1872ef65586944ab60e9f371ea0a9224f1fb55a92045b37ad",
+    "prior_c1_invalidated": "d96f270b-bb92-4b3e-aac0-29321e2ea44a",
+    "candidate_bytes_changed": false,
+    "server_or_hardware_authority_changed": false
+  },
+  "candidate": {
+    "commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "reserved_branch": "firmware/v2-candidate",
+    "review_branch": "firmware/v2-c0-final-review-0020",
+    "focused_execution_branch": "firmware/v2-c0-topology-doer-0001",
+    "reserved_clean": true,
+    "review_clean": true,
+    "focused_execution_clean": true
+  },
+  "governing_documents": {
+    "goal": "9ef9bdb24b913f1ed2b15b7c80f28139705da823296ccd6f341a562a9948f547",
+    "generalization_spec": "70ba5e876e120466f03899fd826d439c1d0cc0dc01c5235e5950dc54a1d27cc6",
+    "implementation_roadmap": "fb8d60d76c8217f75d6a6a9d69965c7817e8c2bf0c560bac18c8a0ed3ab3af49",
+    "execution_plan": "79ebc3de0d6506ce8ec5ab242db9810be527a6c07b1e9bb100f3c73827520af7",
+    "execution_readiness": "e357862e985d61efcf9f38727fe4ca8a718961b4e02bd404dac56d99cb88455c"
+  },
+  "review": {
+    "lane_id": "F.C0.FR1",
+    "worker_invocation_id": "c0-fr1-020",
+    "thread_id": "019fd36c-e25a-7111-a007-e571bd5b0e46",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority",
+    "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c0\\attempt-0020\\REVIEW_FINDINGS.json",
+    "findings_sha256": "ac12c5b07db5f37aed7f8b94d6b07dc520c9f7f11af44a556a1df9727622ffde",
+    "result_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c0\\attempt-0020\\REVIEW_RESULT.json",
+    "result_sha256": "d131da6c00afd28dca88c557fd73225ad196d0e3a3b6acccbca2ce083342d912",
+    "controller_status_sha256": "f0f1d754bb3a1b414616f9f620c7ef45e070d7c76e5cedbb4fb789e8e91e7f53",
+    "findings_count": 0,
+    "outcome": "PASS",
+    "summary": "NO CANDIDATE GAP / READY",
+    "controller_result_valid": true,
+    "candidate_findings_validator_passed": true,
+    "complete_sweep_required_and_reported": true
+  },
+  "same_tip_focused_execution": {
+    "lane_id": "F.C0.D1",
+    "worker_invocation_id": "c0-d1-001",
+    "thread_id": "019fd36c-e25a-7c62-9046-e52f35ea1ca2",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority",
+    "stable_id": "F-C0-TOPOLOGY-DOC-001",
+    "test_report_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c0\\attempt-0020\\TOPOLOGY_TEST_REPORT.json",
+    "test_report_sha256": "a64417480d7e61ac1655911afebd1e78734d57262505830f5533da5782d22c32",
+    "findings_sha256": "c178e37000a616fdfac93489b52dbfc8ce6840210819aa020ca0e4d7f62a859f",
+    "result_sha256": "975a71123d4e814fab3dcdd7fe154ceaeb53841926e59d5a68069aeed8af4602",
+    "controller_status_sha256": "c5e70a7f275e9a772d8e43e46067e4b3e17ee6907893ae85245c12b131ea8c17",
+    "execution_count": 1,
+    "recordability_preflight": {
+      "outcome": "NOT_APPLICABLE",
+      "reason": "The selected check used no custom runner or custom per-check child-process evidence."
+    },
+    "plan_validator_exit_code": 0,
+    "plan_validator_stdout": "execution plan validation: PASS",
+    "findings_count": 0,
+    "outcome": "PASS"
+  },
+  "stable_runner": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "detached_and_clean": true,
+    "review_source_invocation_sha256": "fa1f5779cf302f1b359bd211a60842e6e613d9c07ec68041e531137d2f1e790a",
+    "review_projected_invocation_sha256": "90baf9e30a34421c8a214e130c271d2315c23b091006ac9780bd7d5f60bc6234",
+    "review_projection_record_sha256": "8b7fd679be6837a930b1eee85334a109553031ada3166fffb8b2ebd9ebc887fe",
+    "review_projection_proof_sha256": "f56114f9dab7801e4adaec8144e67ea1b6d076d96d60da7a92f787db20b0ab56",
+    "review_dispatch_proof_sha256": "270d6b0fea087c9cd1f2fd6d2990252646f90f8f381f959933ebc48d321a336b",
+    "doer_source_invocation_sha256": "9be84fc530a52276846c900ff648ec65f2c81c41052fda608e3dc2302c5fafd3",
+    "doer_projected_invocation_sha256": "0e205b9b84473a5b08366ff38ad0ac4d4dcf9e6732265fb4fb8ceb2741e2c4b6",
+    "doer_projection_record_sha256": "29b565557c8da283448a87a69437c5070fe4f34267ba45ecb619ac6c8d96f745",
+    "doer_projection_proof_sha256": "ba02c89b47e765d1dc4be764731221e04bd2bc3015d8e618acd7af75a729865d",
+    "doer_dispatch_proof_sha256": "da81ddad45dffa1216c495117b6ef3390a98241c9bece63a89e18503e5f8576b"
+  },
+  "criticism_disposition": {
+    "accepted": [
+      "The governing change is semantic and therefore requires the fresh C0/C1/C2 relock route.",
+      "The host-only rehearsal must run after the new exact C1/C2 pair and before physical C3 allocation."
+    ],
+    "vetoed": [
+      "Adding a candidate rehearsal framework merely to encode an outside execution procedure.",
+      "Changing candidate or server bytes without an evidence-backed product defect.",
+      "Rerunning dependency-valid original product tests or the full safeguard before physical acceptance and C4.",
+      "Adding duplicate guards or speculative hardening around already-green C3 seams."
+    ]
+  },
+  "cleanup": {
+    "review_and_doer_controller_processes_reaped": true,
+    "review_and_doer_codex_processes_reaped": true,
+    "active_resource_claims": 0,
+    "candidate_clean": true,
+    "mcp_server_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "ACCEPT_FRESH_C0_AND_UNLOCK_NEW_OPAQUE_C1",
+  "outcome": "PASS"
+}

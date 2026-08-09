@@ -1,0 +1,89 @@
+{
+  "schema": "firmware-v2-c2-root-retry-acceptance/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "accepted_at_utc": "2026-08-05T14:13:25Z",
+  "same_lock": {
+    "c1_lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "c1_lock_sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "thread_id": "019fd1fd-83a3-7ad0-8370-a544c08c7c6e",
+    "worker_invocation_id": "c2-d1-006"
+  },
+  "preserved_history": {
+    "ordered_record_count": 13,
+    "historical_failure_count": 8,
+    "historical_failure_ids": [
+      "F-C2-LOCK-001",
+      "F-C2-LOCK-001.retry-001",
+      "F-C2-LOCK-001.retry-002",
+      "F-C2-LOCK-001.retry-003",
+      "F-C2-LOCK-001.retry-004",
+      "F-C2-LOCK-001.retry-005",
+      "F-C2-LOCK-001.retry-006",
+      "F-C2-LOCK-001.retry-007"
+    ],
+    "historical_failures_removed_or_rewritten": false,
+    "already_green_ids_rerun": 0,
+    "findings_sha256_unchanged": "0a1b2390547dfc8d05413e266285c99c6db2482234f38fcac17ac7baba277214"
+  },
+  "criticism_chain": [
+    {"record": "ROOT_TRIAGE.json", "sha256": "002321abd89122179bf13228e902352d4ed3025d8f060204819260573251e649"},
+    {"record": "ROOT_RETRY_TRIAGE.json", "sha256": "b8d88d826891515629a8d5da295aef5158cd73ed6e3d8869504022e12cf1dccc"},
+    {"record": "ROOT_RETRY_DISPATCH_001_FAILURE.json", "sha256": "ad7d58ec9dcfd480c944332d0f65a694ff883fb082fdf6e9efa064c90180d7e0"},
+    {"record": "ROOT_RETRY_001_TRIAGE.json", "sha256": "1097f150942ca8cc3dc92ceb99e000ee1c76fe5140b09ac6cce703ae37e26b4d"},
+    {"record": "ROOT_RETRY_002_TRIAGE.json", "sha256": "8d34beb2d1c60d1925d1d10a9f467ec05f70bf2b50ab55233c8f5b06568d22e5"},
+    {"record": "ROOT_RETRY_003_TRIAGE.json", "sha256": "52519e03c968f558d50d879a367cad227c33eeb85d1d6b2e25031fdb5274ccf4"},
+    {"record": "ROOT_RETRY_004_TRIAGE.json", "sha256": "be217f6e1c84ab407b0b4aea4cb65baf71048d240fc2e7d73136bd084d9049f6"},
+    {"record": "ROOT_RETRY_005_TRIAGE.json", "sha256": "99fa794679fad823052c5a2efbf02141668719f8547edf2a6db48801e208958b"},
+    {"record": "ROOT_RETRY_006_TRIAGE.json", "sha256": "f6394ef4b0a0986d7bc2e507e0ee377c3af663a8863d4b7ef033c8729e007b75"},
+    {"record": "ROOT_RETRY_007_TRIAGE.json", "sha256": "12b1f647939c95e983b8f0482df0705235194628c37ae58f5b7cf8fc62fa0cc3"},
+    {"record": "ROOT_LOCK_BODY_DIAGNOSTIC_AFTER_RETRY_007.json", "sha256": "d756dc1715727f85ce9ac4e932ffa60b817cb8dafb4ead02161220fb2837923b"},
+    {"record": "ROOT_RETRY_008_AUTHORIZATION.json", "sha256": "69e7c275731940522b347959f66c6c5228d058afa6c334c7754543b77ea0af79"}
+  ],
+  "authorized_retry_008": {
+    "stable_id": "F-C2-LOCK-001.retry-008",
+    "standalone_proof_passed": true,
+    "lock_check_ast_unchanged": true,
+    "lock_body_reference_count": 42,
+    "authoritative_claim_roots": 4,
+    "foreign_direct_json_during_execution": 0,
+    "schema_fixture_false_positives_eliminated": 85,
+    "process_pid": 174752,
+    "process_sha256": "b91cf38df997636f056cba26c375f55fc7ca1d7b0fb0f0c0b3a51b6989a3614f",
+    "stdout_sha256": "3a83627b807237da8982eb02570b7aeb5982b6344ee4a668bf53c1430121ff8b",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exit_code": 0,
+    "exit_observed": true,
+    "timeout": false,
+    "fresh_processes": 1,
+    "second_spawn": false
+  },
+  "root_mechanical_checks": {
+    "test_report_sha256": "58dbed8183462454cb51c25083510ee4d9301b0a39ca9758261f9bb4c86ddad2",
+    "result_sha256": "0764c758c46a2f5a4ec2382358ebc61ee08840ebe13eab911737ff6877b994c3",
+    "findings_sha256": "0a1b2390547dfc8d05413e266285c99c6db2482234f38fcac17ac7baba277214",
+    "report_path_hash_references_valid": "77/77",
+    "stable_id_order_exact": true,
+    "result_check_exact_three_key_shapes": "5/5",
+    "effective_passed_ids": 5,
+    "candidate_findings": 0,
+    "post_controller_resource_claim_files": 0,
+    "post_controller_surviving_test_processes": 0,
+    "candidate_clean": true,
+    "server_clean": true,
+    "lane_clean": true,
+    "stable_runner_clean_detached": true,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "criticism_disposition": {
+    "all_failures_reproduced_or_evidence-traced": true,
+    "candidate_harness_failure": false,
+    "watcher_failure": false,
+    "locked_input_change": false,
+    "classification": "ORDINARY_EXECUTOR_VERIFIER_PROCEDURE_CORRECTIONS_ON_SAME_C1_LOCK",
+    "reason": "Every failed LOCK record occurred before or around executor-owned admission, process, ancestry, or claim-discovery procedure. The unchanged LOCK body independently passed all 42 references before retry-008, and retry-008 then passed that same body after the narrowly authorized authoritative-root correction."
+  },
+  "accepted": true
+}

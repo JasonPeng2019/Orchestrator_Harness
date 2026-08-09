@@ -1,0 +1,14 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-004",
+  "reviewer_thread_id": "019fcc02-2294-76f1-be18-b2c507f29854",
+  "candidate_commit": "8ed3a025b3f19a2b4b9c9ecca09c9e2edba23683",
+  "root_decision": "ACCEPT_GREEN_CLOSURE",
+  "findings_count": 0,
+  "reason": "The exact current-tip review confirms that the accepted stderr persistence failure-path gap is closed without changing successful logging, cleanup, framing, or dotenv rejection. The result is current-tip valid and the tracked worktree is clean.",
+  "findings_sha256": "b722c573cda553ebb8a89ef71b3259694e2084d93022d99349a355e61c7ee726",
+  "result_sha256": "28f32f54f9d7df29e544da252374b207da1f1752053fc5dd2aee3b6d714f70aa",
+  "root_focused_check": "The previously recorded 27 controller/kit/host tests plus changed-module compilation and diff hygiene passed at the same commit; this reviewer was correctly read-only and ran no MCP or hardware operation.",
+  "triaged_at_utc": "2026-08-04T10:28:52Z"
+}

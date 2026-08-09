@@ -1,0 +1,26 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "lane_id": "S3.R1",
+  "worker_invocation_id": "s3-r1-001",
+  "commit": "f14e4e54e6f29d755312932345f89985437a6341",
+  "finding_artifact_sha256": "80974061eec9b5626c185db0e413034298d3f6b33749d55f455d5bbdeddffa2d",
+  "result_artifact_sha256": "efb1bbded3915cec67e9149e1343187a3dd13161ccadfc803bd6cb979e6d09f6",
+  "stable_projection_sha256": "5b4702bef0a446ab9e107720c3952f7d82de4b8effb0fca3117682921d154678",
+  "stable_runner_consumed_finding_gate": false,
+  "root_independently_validated_artifact": true,
+  "decisions": [
+    {
+      "finding_id": "S3.R1-001",
+      "decision": "ACCEPT",
+      "category": "FUNCTIONALITY_BREAKING",
+      "reason": "The suffix-only check can certify a different clone instead of the reserved candidate. That defeats the final safeguard's candidate-binding purpose on a realistic promotion path.",
+      "smallest_fix": "Replace suffix acceptance with exact canonical equality to the fixed reserved candidate root and add one focused same-suffix rejection regression.",
+      "complexity_and_risk": "Low; one narrow admission predicate and one focused negative test.",
+      "problem_outweighs_fix_risk": true,
+      "route": "S3.P"
+    }
+  ],
+  "root_decision": "ROUTE_ONE_ACCEPTED_GAP_TO_S3.P",
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false
+}

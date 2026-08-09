@@ -1,0 +1,63 @@
+{
+  "schema_version": "firmware-v2-rf-admission-v1",
+  "status": "PROVISIONALLY_CLOSED_UNTIL_C1_FIXTURE_BINDING",
+  "transmit_admitted_now": false,
+  "reason": "Preflight validates the technical source chain and conservative limits but does not itself issue a mutating authorization or perform RF. C1 must bind the final fixture/policy hashes before C3 can admit a transmit call.",
+  "technical_sources": {
+    "fixture_attestation": {
+      "path": "Firmware/Firmware resources/fixture-and-toolchain/CONNECTED_HARDWARE.md",
+      "sha256": "c736183cadf325c50d61f2620ec4d48c086003cf62dccd580d33f7a939b91e71",
+      "facts": [
+        "two attached Waveshare CoreSX1262 endpoints",
+        "suitable antennas already connected",
+        "RXEN tied to 3.3 V and DIO2 tied to TX_EN"
+      ]
+    },
+    "test_medium_declaration": {
+      "path": "Firmware/Firmware resources/test-program/BYO_FIRMWARE_MCP_END_TO_END_EXPERIMENTS.md",
+      "facts": [
+        "attached radios are declared 915 MHz Waveshare CoreSX1262 modules",
+        "fixed fixture and autonomous electronic oracles are supplied inputs"
+      ]
+    },
+    "module_guide": {
+      "path": "Firmware/Firmware resources/datasheets/waveshare-lora-module.pdf",
+      "sha256": "3a26f2e62a6717000f921826408aeb2e9b9d5e766289e432bddb0241aa9361eb",
+      "facts": [
+        "Core1262-HF supports 850-930 MHz",
+        "3.3 V operating voltage",
+        "45 mA transmitting current at 14 dBm",
+        "5.3 mA receiving current at 125 kHz"
+      ]
+    },
+    "radio_datasheet": {
+      "path": "Firmware/Firmware resources/datasheets/60852689.DS_SX1261_2 V2-2.pdf",
+      "sha256": "6d783125dbef567954ce53095ad068d0950b2a8de52f95bb2cfde4146c4306c2",
+      "facts": [
+        "SX1262 covers 150-960 MHz",
+        "915 MHz electrical conditions are specified",
+        "DIO2 RF-switch control is radio-internal"
+      ]
+    },
+    "primary_current_online_sources_checked_at_utc": "2026-08-04T00:13:00Z"
+  },
+  "c1_policy_ceiling": {
+    "center_frequency_hz": 915000000,
+    "bandwidth_hz": 125000,
+    "max_tx_power_dbm": 10,
+    "preferred_initial_tx_power_dbm": -9,
+    "max_payload_bytes": 64,
+    "max_tx_airtime_ms_per_60s": 6000,
+    "max_campaign_minutes": 30,
+    "spreading_factor_min": 7,
+    "spreading_factor_max": 10,
+    "coding_rate_denominator": 5
+  },
+  "fail_closed_conditions": [
+    "module or antenna identity contradicts the fixture record",
+    "supply is not the recorded 3.3 V path or cannot satisfy the bounded current plan",
+    "configured frequency, bandwidth, power, payload, airtime, or duration exceeds the locked ceiling",
+    "applicable local operation cannot be reconciled with the final C1 policy",
+    "live MCP plan, signed decision, derived authorization, or immutable dispatch admission is absent or mismatched"
+  ]
+}

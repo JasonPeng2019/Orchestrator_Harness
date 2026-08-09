@@ -1,0 +1,77 @@
+{
+  "schema": "firmware-v2-c2-root-triage/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0007",
+  "triaged_at_utc": "2026-08-05T16:25:40Z",
+  "candidate_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+  "c1_lock_id": "40419d28-e343-44c1-bf5b-399709b771ba",
+  "c1_lock_sha256": "2140cf26b49174a48d097c192cc7c2012f853b77b5fa43e510b69ad744cf2626",
+  "executor": {
+    "lane_id": "F.C2.D1",
+    "worker_invocation_id": "c2-d1-007",
+    "thread_id": "019fd2b5-c4f5-7512-81b6-9b40e4ad7ac6",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority"
+  },
+  "artifacts": {
+    "findings_sha256": "13b10424d8f439c0e4d6274c460f40376c7d88141f9ab3a78639fe8a5cee4e4c",
+    "test_report_sha256": "be70103b08e3d5a88dcf649da7ae9a4bf84860a4c9321f5e67473063e0e8569a",
+    "result_sha256": "1ca112cff6308368d638f29dffdae0fbcff750ca3c279a0576de96353d938a78",
+    "controller_status_sha256": "54990b1f229d3d0c7458b353cd7aaa3b3af14769664f0300a64624bdf0753869",
+    "closed_worker_jsonl_sha256": "450d0fcaf500f941c14fbc27cfa4a32d8cc7a105236eb1fd471ad542295371ed",
+    "worker_stderr_sha256": "0acaa38e70ec2f74b8ba6055a2a08f3e75c7438d65798a13358dad92aee48c45",
+    "worker_last_message_sha256": "d6be06796dbf3cdb1dd0cdd987a3ed81755ea63e70622e43b0d5232eaf52d1a1",
+    "verifier_sha256": "f82c0dd55f4953d527dfc1828dcef5cc86b36c01caeecb1d9f6c69d2c9e8aa50"
+  },
+  "criticisms": [
+    {
+      "id": "F-C2-PROC-001",
+      "classification": "EXECUTOR_VERIFIER_PREFLIGHT_FALSE_NEGATIVE",
+      "accepted": true,
+      "candidate_finding": false,
+      "exact_cause": "The verifier proved the exact claimed controller PID and native creation identity, then required native identity access for every ancestor through the OS root. OpenProcess could not expose ancestor PID 1228, so the verifier failed before every mode body instead of recording an explicit inaccessible-parent boundary.",
+      "minimal_correction": "In the fresh attempt-local verifier, retain exact controller and accessible-prefix identity checks but stop the prefix at an explicit parent_identity_unavailable boundary. Do not change candidate source or weaken scans of processes outside the recorded prefix."
+    },
+    {
+      "id": "F-C2-REPORT-001",
+      "classification": "EXECUTOR_PROCESS_RECORD_CAPTURE_DEFECT",
+      "accepted": true,
+      "candidate_finding": false,
+      "exact_cause": "The first wrapper applied ManagementDateTimeConverter.ToDateTime to a CIM CreationDate value already materialized as DateTime, terminating metadata capture after the process had run.",
+      "minimal_correction": "Use the Start-Process object's StartTime converted to UTC and Start-Process -Wait -PassThru exit metadata; do not query event logs or invent missing identity."
+    },
+    {
+      "id": "ROOT-C2-ENVELOPE-001",
+      "classification": "RESULT_ENVELOPE_ROOT_SHAPE_DEFECT",
+      "accepted": true,
+      "candidate_finding": false,
+      "exact_cause": "The executor validated the three-key check objects but added findings and test_report objects at the RESULT.json root. The stable controller correctly rejected the non-exact root shape.",
+      "minimal_correction": "Use exactly schema, lane_id, worker_invocation_id, branch, commit, outcome, summary, and checks at the result root. Keep evidence references in TEST_REPORT.json."
+    }
+  ],
+  "vetoed_changes": [
+    "No candidate or MCP-server change: no mode-specific candidate assertion ran.",
+    "No additional ancestry fallback framework: one explicit inaccessible-parent boundary is sufficient.",
+    "No retry suffix or same-thread salvage: attempt-0007 remains an immutable failed fresh attempt.",
+    "No rerun of already-green candidate unit tests."
+  ],
+  "root_audit": {
+    "five_modes_executed_once_in_order": true,
+    "mode_bodies_reached": 0,
+    "common_preflight_failures": 5,
+    "process_records_present": 5,
+    "findings_gate_semantically_truthful": true,
+    "result_gate_valid": false,
+    "result_validation_code": "CODING_RESULT_INVALID",
+    "result_validation_detail": "coding result has an invalid root shape",
+    "candidate_clean": true,
+    "mcp_server_clean": true,
+    "stable_runner_clean": true,
+    "claims_released": true,
+    "surviving_test_processes": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "PRESERVE_ATTEMPT_AND_START_FRESH_C2_ATTEMPT_0008_UNDER_SAME_C1_LOCK"
+}

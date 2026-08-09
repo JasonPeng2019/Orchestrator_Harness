@@ -1,0 +1,22 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_ROUTE_REVIEW_R2_FINDINGS_7c28bfc.json",
+  "findings_sha256": "5635cc38eaf749b213ede62217c57a3fd91a7beef772ec50961b3d9fe6eee6ad",
+  "decisions": [
+    {
+      "id": "S2-R2-ROUTE-001",
+      "decision": "ACCEPT",
+      "rationale": "The immutable pinned server returns accepted_response as a continue_setup wrapper but accepts only its inner response object on the next call. Retaining the wrapper makes a valid setup continuation undispatchable. Exact wrapper validation plus inner extraction is a localized compatibility correction with negligible regression surface.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Require the exact accepted_response wrapper with tool continue_setup and a mapping response, then retain only the inner response for the authorized continuation call."
+    },
+    {
+      "id": "S2-R2-EVIDENCE-002",
+      "decision": "ACCEPT",
+      "rationale": "The changed positive limitation test still constructs the obsolete two-stage chain and inline artifacts, so it is red before reaching create-once behavior and proves none of the current closed limitation API. Updating only the test fixture to the implemented seven-stage, hash-referenced contract restores required regression value without weakening production validation.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "In the test-author lane, replace the legacy fixture with a minimal complete seven-stage immutable chain plus hash-bound terminal, process, protected-suite, assignment, execution, and successful substitute-result artifacts; retain create-once and rejection assertions."
+    }
+  ]
+}

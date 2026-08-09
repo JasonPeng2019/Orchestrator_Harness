@@ -1,0 +1,36 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-014",
+  "branch": "firmware/v2-c0-final-review-0014",
+  "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+  "outcome": "PASS",
+  "summary": "NO CANDIDATE GAP / READY",
+  "checks": [
+    {
+      "name": "frozen governing inputs and candidate identity",
+      "outcome": "PASS",
+      "summary": "All five governing SHA-256 locks, required branch, and exact frozen tip matched."
+    },
+    {
+      "name": "complete affected-surface and critical-control-path review",
+      "outcome": "PASS",
+      "summary": "Reviewed the baseline-to-tip diff, dual-route compatibility, C3 admission/session/replay/cleanup paths, policy and limitation containment, role tier enforcement, operator docs, and protected-test continuity; no admissible candidate gap found."
+    },
+    {
+      "name": "retained focused evidence",
+      "outcome": "PASS",
+      "summary": "CP01-02 at 8832505 and CP04 at b5753eb passed with zero skips or expected failures; retained CP05 and limitation credits were inspected at their recorded commits."
+    },
+    {
+      "name": "runtime execution",
+      "outcome": "NOT_RUN",
+      "summary": "Not run by assignment; this lane performed only read-only inspection and did not launch tests, MCP, Codex children, or hardware."
+    },
+    {
+      "name": "findings gate",
+      "outcome": "PASS",
+      "summary": "Closed exact-identity reviewer findings artifact contains an empty finding set."
+    }
+  ]
+}

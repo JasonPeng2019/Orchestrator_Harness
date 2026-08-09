@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S23_C3_REMAINING_0003_FINDINGS_30ff0c6.json",
+  "findings_sha256": "457049109de994aa8c28ef884b413e30647290ff0e78d770342b0f434ea41b1b",
+  "decisions": [
+    {
+      "id": "S23.D2-C3-REMAINING-003-REPLAY-FIXTURE-001",
+      "decision": "ACCEPT",
+      "rationale": "ROOT accepts the blocking gap but rejects the submitted fixture-only causal diagnosis. Exact reproduction proves the malformed first request is rejected inside _load before any admission claim; a corrected request reusing that ID then reaches _dispatch once and returns the old immutable REJECTED response. The supported sequential retry path can therefore perform a hidden side effect while reporting rejection, breaking request/response correlation. A small fail-closed response check plus a precise regression is worth its bounded cost and risk.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Before creating a new admission claim or dispatching, return an already-published immutable response for the loaded request ID. Update CP01/02 to assert that rejected-ID reuse cannot dispatch, then use a fresh request ID for the accepted-and-identical-replay case. Do not weaken admission claims or replay validation."
+    }
+  ]
+}

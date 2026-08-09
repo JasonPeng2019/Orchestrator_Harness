@@ -1,0 +1,54 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "lane_id": "S26.ROOT",
+  "worker_invocation_id": "s26-root-c3-identity-triage-d1-0001",
+  "commit": "ac70c3d278849fd1c0355173d548ef2a4f3b5268",
+  "executor_artifact": {
+    "lane_id": "S26.D1",
+    "thread_id": "019fd1d7-2c34-7b00-995c-30cad58e6a54",
+    "test_execution_sha256": "078d00a00e6c97a1b8a329fec86550a97284f5f58cdd5bce478667662c91313a",
+    "test_output_sha256": "18c133fb1edf1b7f0b1cd96c32863b88bbff1f92ff42cd106163ce9c72fd9804",
+    "findings_sha256_before_correction": "997c86823f695f1a2b77ff519ef19614a2fa446edb4aba0fcac4ad91cdaf78b7",
+    "result_sha256_before_correction": "e4762e011ed20c4d771031599d8ca87f3454f334d5a2ba3d43af5bd4a3c9d355",
+    "native_exit_code": 1,
+    "tests_run": 23,
+    "failures": 1,
+    "errors": 0,
+    "resource_warnings": 0,
+    "owned_residue": 0,
+    "invocation_count": 1
+  },
+  "decisions": [
+    {
+      "finding_id": "S26.D1-F001",
+      "decision": "ACCEPT_TEST_AUTHOR_GAP",
+      "category": "CODEBASE_BREAKING",
+      "reason": "The Windows CommandLineToArgvW test double returns the supplied argv array but hard-codes argc.value to four. Its five-token negative case is therefore truncated to four tokens before production evaluates it. The real API supplies the actual parsed count, and production already predicates acceptance on len(argv) == 4. The failed assertion is deterministic fixture misinformation, not evidence of a production authorization or containment gap.",
+      "expanded_evidence": [
+        "orchestrator_harness/tests/test_firmware_c3_harness.py:491-495 fixes Count.value at 4 for every supplied argv",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py:499-500 supplies a five-token negative case through that fixed-count fake",
+        "firmware_acceptance/c3_process_identity.py:28 reads exactly argc.value entries",
+        "firmware_acceptance/c3_process_identity.py:33-35 requires exactly four parsed entries and the exact remaining module argv"
+      ],
+      "smallest_fix": "In the test-only fake, report len(argv) through the Count constructor used by that matches call; preserve all positive and negative cases and change no production source.",
+      "complexity_and_risk": "Very low; a local test double becomes faithful to the operating-system API contract.",
+      "problem_outweighs_fix_risk": true,
+      "route": "S26.A1"
+    }
+  ],
+  "artifact_corrections_required": [
+    "FINDINGS.json must use lane_id rather than lane in the closed orchestrator-review-findings/v1 root.",
+    "The accepted low-risk fixture repair must set problem_outweighs_fix_risk true; false contradicts the finding's own cost-benefit, smallest-fix, and verification analysis.",
+    "TEST_EXECUTION.json and TEST_OUTPUT.txt are create-once and must remain byte-identical; no test may be rerun during artifact correction."
+  ],
+  "vetoed_scope": [
+    "Do not change firmware_acceptance/c3_process_identity.py; the failure does not reproduce against a truthful argc.",
+    "Do not weaken or remove the five-token negative case.",
+    "Do not rerun the focused selection until the fixture-only repair is reviewed and rejoined.",
+    "Do not repair stable-runner environment propagation merely because PYTHONDONTWRITEBYTECODE was unset at lane entry; the executor set it effectively before the only run and confirmed zero bytecode residue."
+  ],
+  "root_decision": "ACCEPT_S26.D1-F001_AS_TEST_ONLY; REQUIRE_SAME_THREAD_ARTIFACT_CORRECTION; RESUME_S26.A1_FOR_MINIMAL_FIXTURE_REPAIR",
+  "tests_run_by_root": false,
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false
+}

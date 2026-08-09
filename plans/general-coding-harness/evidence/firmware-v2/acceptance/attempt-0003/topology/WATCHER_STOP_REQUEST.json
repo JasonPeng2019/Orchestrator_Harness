@@ -1,0 +1,27 @@
+{
+  "schema": "firmware-c3-watcher-stop-request/v1",
+  "attempt_id": "attempt-0003",
+  "owner": "ROOT-IM",
+  "reason": "ROOT fail-close after two reproducible controller identity admission failures, two deterministic oracle misclassifications, and continuous-observation loss by F.C3.W",
+  "root_abort": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\topology\\ROOT_ABORT_REQUIRED.json",
+    "sha256": "8ec3d3f39522dd0d8e12c5d27d90ba84f7786f0af5c55dc5491bf8b2cfdf2c56"
+  },
+  "root_supervision": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\topology\\ROOT_SUPERVISION_OBSERVATION.json",
+    "sha256": "210abd4e026813cd95f0df7ae52e21175cf5f64566fc9fbc6b229e389a77a054"
+  },
+  "orchestrator_stop_signal": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0003\\manager-signals\\ROOT_WATCHER_STOP_REQUEST.json",
+    "sha256": "2b09e36443df06dbc4d816f185f55dd5c269a527712efd358276c4961b0db869"
+  },
+  "candidate_shutdown": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0003\\c3-harness\\C3_HARNESS_SHUTDOWN.json",
+    "sha256": "6701943310e2453509e5008bad07dbb0dae3e1f647740a7c1a575c0157563f0d",
+    "all_sessions_exact_reaped": true,
+    "claims_remaining": 0,
+    "candidate_service_chain_reaped": true
+  },
+  "watcher_authored_abort_present": false,
+  "requested_at_utc": "2026-08-05T11:07:48.5847279Z"
+}

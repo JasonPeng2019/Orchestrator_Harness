@@ -1,0 +1,74 @@
+{
+  "schema": "firmware-v2-candidate-shared-code-dependency-map-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+  "candidate_branch": "firmware/v2-s27-a1-c3-recovery-tests-0001",
+  "reserved_candidate_branch": "firmware/v2-candidate",
+  "candidate_clean": true,
+  "reserved_candidate_clean": true,
+  "map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_eb3bbab.json",
+    "sha256": "27e9556c72b300b5d1c6420a40c4a50b1b56ab37e8b927d9148fdea5c5734f5b"
+  },
+  "audit": {
+    "base_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "git_changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "orchestrator_harness/lane_controller.py",
+      "orchestrator_harness/tests/test_coding_lane_controller.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py"
+    ],
+    "declared_changed_paths_match_git": true,
+    "declared_reference_count": 8,
+    "declared_reference_hashes_valid": 8,
+    "protected_baseline_ids": 248,
+    "deleted_protected_ids": [],
+    "modified_protected_test_paths": [],
+    "shared_process_identity_changed": false,
+    "watcher_oracle_changed": false,
+    "weakened_oracles": [],
+    "prior_green_ids": 163,
+    "new_green_ids": [
+      "orchestrator_harness.tests.test_coding_lane_controller.CodingLaneControllerTests.test_resource_acquisition_publishes_running_only_after_child_launch_and_popen_failure_releases_claim",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s27_a1_inauthentic_direct_controller_observation_retains_exact_identity_for_cleanup",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s27_a1_recovery_retries_stay_artifact_free_until_terminal_reconciliation"
+    ],
+    "removed_superseded_green_ids": [],
+    "freshly_revalidated_prior_green_ids": 0,
+    "current_green_ids": 166,
+    "invalidated_groups": 0,
+    "uncovered_changed_behavior": [],
+    "selected_for_additional_execution": []
+  },
+  "fresh_execution": {
+    "lane": "S27.D2",
+    "commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "execution_sha256": "b126fb631c09e7cf48c3c9398342904cd310136a873cf955126f9b75cf4e7be7",
+    "output_sha256": "2b982aecafc9a11de05e26a23a6892ddbec02cda682399a890e1240d9ed3499e",
+    "result_sha256": "ca4d2e52ce3895f2e9c1563393e53fc78bcd4cfabf2109fe6d0ebc6b5e547aaf",
+    "tests_covered": 3,
+    "failures_remaining": 0,
+    "errors": 0,
+    "resource_warnings": 0,
+    "outcome": "PASS",
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "criticism_audit": {
+    "accepted": "The first executor correctly identified two Popen fixture-scope defects. Both were repaired test-only, independently reviewed at the final tip, and exercised by the fresh one-shot pass.",
+    "failed_run_preserved": true,
+    "environment_finding_veto": "PYTHONDONTWRITEBYTECODE loss was an executor-orchestration projection issue, not a candidate defect; D2 normalized the environment.",
+    "presentation_finding_veto": "PowerShell NativeCommandError decoration around normal unittest stderr did not alter native exit or test semantics.",
+    "scope_veto": "No production test seam, bytecode cleanup, subprocess framework, duplicate test execution, or unrelated hardening was admitted."
+  },
+  "classification": {
+    "candidate_harness_gap_remaining": false,
+    "test_gap_remaining": false,
+    "environment_gap_remaining": false,
+    "pinned_mcp_server_defect": false,
+    "hardware_or_rf_operation": false
+  },
+  "decision": "ACCEPT_MAP_AND_UNLOCK_SINGLE_REGISTRY_RECONCILIATION",
+  "outcome": "PASS",
+  "created_at": "2026-08-05T15:52:00Z"
+}

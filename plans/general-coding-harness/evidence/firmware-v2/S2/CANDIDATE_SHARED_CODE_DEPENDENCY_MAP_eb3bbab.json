@@ -1,0 +1,173 @@
+{
+  "schema": "firmware-v2-candidate-shared-code-dependency-map/v1",
+  "owner": "ROOT-IM",
+  "candidate": {
+    "commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "joined_branch": "firmware/v2-s27-a1-c3-recovery-tests-0001",
+    "reserved_branch": "firmware/v2-candidate",
+    "clean_at_audit": true,
+    "prior_accepted_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d"
+  },
+  "protected_baseline": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "manifest_path": "plans/general-coding-harness/evidence/firmware-v2/preflight/BASELINE_UNIT_MANIFEST.json",
+    "manifest_sha256": "e0113dd1f0f6ab2d6fd8e450caef5d407ad8aa3b6b28c7eb234ecd04bd51a120",
+    "node_count": 248
+  },
+  "prior_complete_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_cace866.json",
+    "sha256": "f12aa53dcd063bda4f4db20260b5e8c93ea6c076343eb301867ef4254bfd1037",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_cace866.json",
+    "root_acceptance_sha256": "9065fe2d1952f351149772ef5e541e5efac6943f8cfc8dee169269c1b50db186",
+    "preserved_without_rewrite": true
+  },
+  "delta_inventory": {
+    "base_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "candidate_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "changed_path_count": 4,
+    "changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "orchestrator_harness/lane_controller.py",
+      "orchestrator_harness/tests/test_coding_lane_controller.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py"
+    ],
+    "deleted_test_paths": [],
+    "modified_protected_baseline_test_paths": [],
+    "shared_process_identity_changed": false,
+    "watcher_oracle_changed": false,
+    "weakened_oracles": []
+  },
+  "delta_mappings": [
+    {
+      "paths": [
+        "orchestrator_harness/lane_controller.py",
+        "orchestrator_harness/tests/test_coding_lane_controller.py"
+      ],
+      "behavior": "After a named-resource claim is acquired, a coding controller publishes RUNNING_CODEX only after the child exists; a genuine Popen failure still publishes LAUNCH_FAILED and releases the exact claim.",
+      "stable_ids": [
+        "CODING-RESOURCE-LAUNCH-STATE-TRUTHFULNESS"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_coding_lane_controller.CodingLaneControllerTests.test_resource_acquisition_publishes_running_only_after_child_launch_and_popen_failure_releases_claim"
+      ]
+    },
+    {
+      "paths": [
+        "firmware_acceptance/c3_harness.py",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py"
+      ],
+      "behavior": "C3 retains a structurally complete but unauthenticated direct-controller identity only for exact cleanup, and treats a retained terminal Popen as proof that its exact launcher has reaped while independent controller absence remains identity-bound.",
+      "stable_ids": [
+        "C3-REJECTED-CONTROLLER-RECOVERY-IDENTITY",
+        "C3-RETAINED-LAUNCHER-TERMINAL-REAP"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s27_a1_inauthentic_direct_controller_observation_retains_exact_identity_for_cleanup"
+      ]
+    },
+    {
+      "paths": [
+        "firmware_acceptance/c3_harness.py",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py"
+      ],
+      "behavior": "Prestart recovery retries perform cleanup without reserving reconciliation artifacts; only terminal reconciliation writes the create-once recovery evidence, so repeated nonterminal polling remains idempotent.",
+      "stable_ids": [
+        "C3-PRESTART-RECOVERY-IDEMPOTENT-RECONCILIATION"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s27_a1_recovery_retries_stay_artifact_free_until_terminal_reconciliation"
+      ]
+    }
+  ],
+  "focused_execution": {
+    "lane": "S27.D2",
+    "commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "command_modules": [
+      "orchestrator_harness.tests.test_coding_lane_controller",
+      "orchestrator_harness.tests.test_firmware_c3_harness"
+    ],
+    "test_ids": [
+      "orchestrator_harness.tests.test_coding_lane_controller.CodingLaneControllerTests.test_resource_acquisition_publishes_running_only_after_child_launch_and_popen_failure_releases_claim",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s27_a1_inauthentic_direct_controller_observation_retains_exact_identity_for_cleanup",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s27_a1_recovery_retries_stay_artifact_free_until_terminal_reconciliation"
+    ],
+    "tests_covered": 3,
+    "new_green_ids": 3,
+    "removed_superseded_ids": 0,
+    "freshly_revalidated_existing_ids": 0,
+    "failures_remaining": 0,
+    "errors": 0,
+    "resource_warnings": 0,
+    "invocations": 1,
+    "outcome": "PASS"
+  },
+  "retained_prior_mappings": {
+    "prior_map_preserved": true,
+    "prior_unique_green_ids_retained": 163,
+    "reason": "The two production edits are narrow corrections to the exact launch-state and recovery branches covered by the three new S27 tests. The two test-module edits add those tests and correct their local Popen fixtures without weakening an existing assertion. No protected baseline test, shared process-identity helper, watcher oracle, public schema, or unrelated runtime path changed, so all 163 prior green IDs remain dependency-valid."
+  },
+  "evidence": [
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_cace866.json",
+      "sha256": "f12aa53dcd063bda4f4db20260b5e8c93ea6c076343eb301867ef4254bfd1037"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_cace866.json",
+      "sha256": "9065fe2d1952f351149772ef5e541e5efac6943f8cfc8dee169269c1b50db186"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S27_C3_RECOVERY_ROOT_ADMISSION_eb3bbab.json",
+      "sha256": "be4a9a69ac5af282017932ee55892c2b8683b45eb175787f74436098ad213bc8"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S27.R2-C3-RECOVERY-0001/.agent-workspace/RESULT.json",
+      "sha256": "3dc17f8ae2e5e191ed51e49e690ec38696bfc32c25e24a9627ca631689defe1a"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S27.R2-C3-RECOVERY-0001/.agent-workspace/FINDINGS.json",
+      "sha256": "9bbdb61987f2022c3580b053bc657dcb0841d769fdbd46d7696fc8edce639cac"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S27.D2-C3-RECOVERY-0001/.agent-workspace/TEST_EXECUTION.json",
+      "sha256": "b126fb631c09e7cf48c3c9398342904cd310136a873cf955126f9b75cf4e7be7"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S27.D2-C3-RECOVERY-0001/.agent-workspace/RESULT.json",
+      "sha256": "ca4d2e52ce3895f2e9c1563393e53fc78bcd4cfabf2109fe6d0ebc6b5e547aaf"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S27.D2-C3-RECOVERY-0001/.agent-workspace/FINDINGS.json",
+      "sha256": "72bd537df1d2bc01efd7063a9a128c6d56fffc146bb1d0571033a4a6c6cb40aa"
+    }
+  ],
+  "registry_reconciliation": {
+    "prior_unique_green_ids": 163,
+    "added_green_ids": 3,
+    "removed_superseded_green_ids": 0,
+    "current_unique_green_ids": 166,
+    "freshly_revalidated_existing_ids": 0,
+    "invalidated_groups": 0,
+    "selected_for_additional_execution": []
+  },
+  "non_regression_proof": {
+    "baseline_collection_recollected": false,
+    "deleted_protected_baseline_ids": [],
+    "baseline_assertion_modifications": [],
+    "oracle_weakened": false,
+    "unaffected_green_tests_rerun": false,
+    "conclusion": "The four-path S27 delta closes the two defects demonstrated by C3 attempt-0005. The three direct tests cover every changed production branch at the joined tip, the failed fixture run is preserved, the corrected tests passed once, and no additional unit execution is dependency-justified before fresh C0."
+  },
+  "reviewer_and_tester_criticism_disposition": {
+    "accepted": "S27.D1 correctly found that both new Popen fixtures intercepted prerequisite Git subprocesses. The same test-author thread scoped each double to its intended child command, and fresh R2 plus D2 proved the correction.",
+    "preserved_failed_evidence": "S27.D1 remains FAIL with one pass, one failure, and one error; it is not relabeled or consumed as green evidence.",
+    "rejected_scope": "The bytecode observation came from ROOT's stable-runner environment projection rather than candidate behavior. The fresh executor normalized PYTHONDONTWRITEBYTECODE, and ROOT rejected product cleanup code, a production subprocess seam, duplicate execution, and PowerShell stderr-transport work as net-negative engineering.",
+    "remaining_actionable_findings": []
+  },
+  "no_hardware_boundary": {
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "server_edited": false,
+    "statement": "This reconciliation uses static evidence and host-only focused unit execution. No board, probe, serial, flash, reset, debug, BLE, LoRa, RF, pinned-server, or physical operation ran."
+  },
+  "created_at": "2026-08-05T15:51:00Z"
+}

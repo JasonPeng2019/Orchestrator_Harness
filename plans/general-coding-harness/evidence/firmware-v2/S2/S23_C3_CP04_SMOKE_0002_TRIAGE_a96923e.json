@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S23_C3_CP04_SMOKE_0002_FINDINGS_a96923e.json",
+  "findings_sha256": "8afd855064347bf09bf1242e7bc118585246bc35a43f76f803ac768f3d44affb",
+  "decisions": [
+    {
+      "id": "CP04-PROTECTED-SEED-DRIFT",
+      "decision": "ACCEPT",
+      "rationale": "ROOT reproduced the failure at the exact frozen tip on the supported Windows host: the ambient core.autocrlf=true setting is inherited by the freshly initialized target repository, its linked assignment worktree rewrites the locked LF seed, and the candidate correctly detects drift but therefore cannot launch any target assignment. Repository-local normalization avoids changing the five-file seed contract or weakening integrity checks. The concrete acceptance blocker outweighs the small localized repair and one-test verification cost.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Configure the freshly initialized disposable target repository locally for byte-stable checkout before staging/committing the seed; preserve the exact five tracked seed files and all existing byte-hash/mode validation, then rerun only CP04 in a fresh attempt."
+    }
+  ]
+}

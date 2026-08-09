@@ -1,0 +1,57 @@
+{
+  "schema": "firmware-v2-c2-root-retry-authorization/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "authorized_at_utc": "2026-08-05T13:51:06Z",
+  "same_lock": {
+    "c1_lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "c1_lock_sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "thread_id": "019fd1fd-83a3-7ad0-8370-a544c08c7c6e",
+    "worker_invocation_id": "c2-d1-006"
+  },
+  "authorized_retry": {
+    "stable_id": "F-C2-LOCK-001",
+    "retry_suffix": "retry-007",
+    "maximum_fresh_processes": 1,
+    "required_launch": "python.exe .agent-workspace/supervise_retry007.py",
+    "only_verifier_changes": [
+      "Add retry-007 to the argparse retry-suffix choices.",
+      "Keep the controller PID and native FILETIME equality against the exact live claim unchanged.",
+      "Replace the all-ancestors-must-remain-live loop with an identity-qualified live ancestor prefix. Each included row receives native CreationIdentity. PID loops still fail closed.",
+      "When a recorded parent PID is absent from the same complete snapshot, terminate the prefix with parent_absent_from_snapshot and record the boundary PID instead of failing the exact controller binding.",
+      "When a present parent has a native creation FILETIME newer than its child, treat the parent PID as reused, record a pid_reused boundary, and do not include or exclude it.",
+      "Change process_scan exclusion from PID-only to exact PID-plus-native-CreationIdentity matching against the recorded live prefix. A native-identity query error still fails closed; an identity mismatch is scanned normally."
+    ],
+    "bounded_supervisor_change": "Create supervise_retry007.py as a structural copy of supervise_retry006.py with only retry-006 constants changed to retry-007.",
+    "required_unchanged_mechanisms": [
+      "Exact, unrounded native FILETIME equality with no tolerance.",
+      "Fail-closed complete process-enumeration subprocess return-code check.",
+      "Persisted status and exact current resource-claim ownership checks.",
+      "Relevant-process and foreign-claim predicates.",
+      "All C1/LOCK/candidate/server/stable-runner assertions.",
+      "Supervisor initialized-before-spawn evidence, PID-plus-creation capture, wait, timeout, and finally behavior."
+    ],
+    "pre_spawn_static_and_dynamic_checks": [
+      "Use a standalone prove_retry007.py file; do not construct nested PowerShell command strings inline.",
+      "Prove retry-007 is admitted and retry-006/007 supervisors normalize identically.",
+      "Prove the current controller still binds exactly to the persisted claim through native FILETIME.",
+      "Prove every included live prefix PID has a native creation identity and the controller entry equals the claim.",
+      "Prove an absent-parent fixture terminates at a recorded boundary without being added to the exclusion map.",
+      "Prove a PID-reuse fixture terminates at a recorded boundary without excluding the reused PID.",
+      "Prove process_scan excludes only exact PID-plus-identity matches and scans an identity-mismatched PID normally.",
+      "Prove all relevant-process, foreign-claim, and LOCK markers remain intact and all retry-007 evidence paths are absent."
+    ]
+  },
+  "forbidden": {
+    "rerun_green_ids": true,
+    "source_or_locked_input_edits": true,
+    "mcp_or_hardware_access": true,
+    "identity_rounding_or_tolerance": true,
+    "controller_or_claim_predicate_weakening": true,
+    "pid_only_ancestor_exclusion": true,
+    "second_retry_007_spawn": true,
+    "volatile_live_status_path_sha_reference": true
+  },
+  "decision": "AUTHORIZE_EXACTLY_ONE_RETRY_007_WITH_IDENTITY_QUALIFIED_LIVE_ANCESTRY"
+}

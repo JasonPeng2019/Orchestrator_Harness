@@ -1,0 +1,27 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "gate": "C0",
+  "attempt": "attempt-0001",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-001",
+  "candidate_commit": "bbc8ad94c32f3ddad4a54afd4c1a2d51ac4bb11e",
+  "finding_artifact_sha256": "0aed04c98a41d3ce39748f10999cce05d4850dec7d85625b0f942fd11461ab58",
+  "result_artifact_sha256": "acf11085f92139707cb611e083c05731578f22064317457f51dae54a2a9e5565",
+  "root_independent_source_trace_confirmed": true,
+  "decisions": [
+    {
+      "finding_id": "F-C0-FR1-001",
+      "decision": "ACCEPT",
+      "category": "CODEBASE_BREAKING",
+      "reason": "The candidate has static policy/evidence validators but no executable candidate-owned controller path that launches and owns the pinned MCP stdio process, admits a structured request, forwards it, captures the real response, and proves exact cleanup. C3 therefore cannot exercise the required broker boundary without an uncertifiable bypass.",
+      "smallest_fix": "Add one bounded S2 firmware acceptance controller entry point using the existing broker/policy/process/claim primitives, plus fake-stdio lifecycle and direct-capability-denial coverage.",
+      "complexity_and_risk": "Moderate and contained behind the physical acceptance route; lower than the certain C3 block or topology violation without it.",
+      "problem_outweighs_fix_risk": true,
+      "route": "S2.P"
+    }
+  ],
+  "root_decision": "RETURN_TO_S2_P_THEN_FRESH_C0",
+  "c1_created": false,
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false
+}

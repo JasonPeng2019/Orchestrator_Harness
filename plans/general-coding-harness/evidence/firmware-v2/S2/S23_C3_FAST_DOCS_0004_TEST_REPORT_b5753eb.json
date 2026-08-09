@@ -1,0 +1,67 @@
+{
+  "schema": "firmware-v2-test-report/v1",
+  "lane_id": "S23.D2",
+  "worker_invocation_id": "s23-d2-c3-remaining-004",
+  "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+  "exact_command": "python -m unittest orchestrator_harness.tests.test_general_coding_docs.GeneralCodingDocumentationTests.test_coding_examples_and_documented_commands_are_present orchestrator_harness.tests.test_s3_operator_journey.S3OperatorJourneyTests.test_S3_DUAL_003_docs_roles_cleanup_registry_templates_and_safeguard_are_bound -v",
+  "totals": {
+    "run": 2,
+    "passed": 2,
+    "failed": 0,
+    "errors": 0
+  },
+  "skips": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "stable_ids": [
+    {
+      "id": "tests/test_general_coding_docs.py::GeneralCodingDocumentationTests::test_coding_examples_and_documented_commands_are_present",
+      "test": "orchestrator_harness.tests.test_general_coding_docs.GeneralCodingDocumentationTests.test_coding_examples_and_documented_commands_are_present",
+      "outcome": "PASS"
+    },
+    {
+      "id": "tests/test_s3_operator_journey.py::S3OperatorJourneyTests::test_S3_DUAL_003_docs_roles_cleanup_registry_templates_and_safeguard_are_bound",
+      "test": "orchestrator_harness.tests.test_s3_operator_journey.S3OperatorJourneyTests.test_S3_DUAL_003_docs_roles_cleanup_registry_templates_and_safeguard_are_bound",
+      "outcome": "PASS"
+    }
+  ],
+  "post_run_state": {
+    "tracked_clean": true,
+    "branch": "firmware/v2-s23-d2-c3-remaining-0004",
+    "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+    "test_child_processes": [],
+    "candidate_worktree": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\implementation\\lanes\\S23.D2-C3-REMAINING-0004",
+      "present": true,
+      "residual_test_worktrees": []
+    },
+    "residual_temp_directories": [],
+    "residual_processes": [
+      {
+        "pid": 15148,
+        "role": "outer lane controller",
+        "present": true,
+        "start_utc": "2026-08-05T02:36:21.507012Z",
+        "creation_identity": "windows-filetime:134303709815070126"
+      },
+      {
+        "pid": 198184,
+        "role": "outer Codex executor",
+        "present": true,
+        "start_utc": "2026-08-05T02:36:26.021380Z"
+      }
+    ],
+    "residual_resource_claims": [
+      {
+        "resource": "candidate:test-execution:fast-docs",
+        "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\resource-locks\\6d7c3fd255663e55afbad7f4adc2310978a14df20333c137cea2039811386916.json",
+        "owner_pid": 15148,
+        "owner_creation_identity": "windows-filetime:134303709815070126",
+        "owner_worker_invocation_id": "s23-d2-c3-remaining-004",
+        "ownership": "active lane infrastructure; not test-owned residue"
+      }
+    ],
+    "hardware_accessed": false,
+    "firmware_mcp_accessed": false
+  }
+}

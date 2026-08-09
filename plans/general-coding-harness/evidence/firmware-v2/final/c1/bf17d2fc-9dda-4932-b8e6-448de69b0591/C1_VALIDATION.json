@@ -1,0 +1,47 @@
+{
+  "schema": "firmware-v2-c1-validation/v1",
+  "c1_lock_id": "bf17d2fc-9dda-4932-b8e6-448de69b0591",
+  "validated_at_utc": "2026-08-04T21:42:00Z",
+  "c1_lock": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\bf17d2fc-9dda-4932-b8e6-448de69b0591\\C1_LOCK.json",
+    "sha256": "73cd9542ad2d360c94476a3531291ca09d242dd7245a2018a5998abe3a910f39",
+    "checksum_file": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\bf17d2fc-9dda-4932-b8e6-448de69b0591\\C1_LOCK.sha256"
+  },
+  "candidate": {
+    "commit": "659dd03e2aa7159090c8e0e20123b1fec1749f90",
+    "branch": "firmware/v2-candidate",
+    "clean": true
+  },
+  "mcp_server_fixture": {
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "branch": "firmware/v2-mcp-candidate",
+    "clean": true,
+    "immutable": true
+  },
+  "checks": {
+    "locked_path_hash_references": 42,
+    "all_locked_path_hash_references_valid": true,
+    "authorization_closed_schema_valid": true,
+    "authorization_candidate_validator_passed": true,
+    "canonical_user_scope_sha256": "571d7d36cd7242762f0bbea0f2c55b095c2b381c6270538285190097a6e50013",
+    "delegated_authorization_sha256": "c623dff0b8564324607c0df798ce5323d4ba2977d6ab78a1684fbecbbef0974b",
+    "c1_policy_sha256": "f2fa03fbaf41f602121249f8709537040cfd3792369492ceeaf5ffc4f7c029a4",
+    "candidate_policy_source_sha256": "35bc68b6ec79a8e9680c42dd32c32be228ee956ee7b53d68908b8dec13d19b78",
+    "policy_semantic_equality": true,
+    "policy_default_deny": true,
+    "policy_exact_method_count": 21,
+    "target_seed_exact_file_count": 4,
+    "target_seed_manifest_hashes_match": true,
+    "registry_green_groups": 21,
+    "registry_unique_green_ids": 140,
+    "registry_invalidations": 0,
+    "registry_evidence_credits": 56,
+    "registry_all_declared_hashes_valid": true,
+    "active_resource_claims": 0,
+    "surviving_managed_processes": 0
+  },
+  "delegated_scope_attested": true,
+  "hardware_execution_admitted": false,
+  "c2_unlocked": true,
+  "status": "PASS"
+}

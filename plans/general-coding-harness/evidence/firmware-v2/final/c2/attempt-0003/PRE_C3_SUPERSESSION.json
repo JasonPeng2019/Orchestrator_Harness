@@ -1,0 +1,24 @@
+{
+  "schema": "firmware-v2-c2-pre-c3-supersession/v1",
+  "owner": "ROOT-IM",
+  "recorded_at_utc": "2026-08-05T05:09:00Z",
+  "attempt": "attempt-0003",
+  "attempt_record": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c2/attempt-0003/ATTEMPT_RECORD.json",
+    "sha256": "66c8d521e3bdde034597556bf33fa8a32233c47990b003e1bf9095b0c0c18037"
+  },
+  "root_acceptance": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c2/attempt-0003/ROOT_ACCEPTANCE.json",
+    "sha256": "174248dc6553727b2fa05dc8927d9c4be7add3ac6cb476605d28f1a96e993dd4"
+  },
+  "superseding_gap": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c2/attempt-0003/ROOT_PRE_C3_ADMISSION_GAP.json",
+    "sha256": "8780b633afeb62021db53c81022b193f922742eda675e05595c58969535ca7e2",
+    "finding_id": "F-PRE-C3-002"
+  },
+  "c1_invalidation_sha256": "22cee3dc97e410e0a986917c97570e425aca81c3b40598be970471a57c29f3e0",
+  "preserved_result": "C2's five lock-dependent checks remain historically green for candidate b5753eb and were not rerun after PASS.",
+  "supersession_effect": "The prior C3_UNLOCKED decision is no longer operative. No C3 attempt was allocated, and this C1/C2 pair cannot authorize C3 because the required startup-binding repair changes a locked candidate input.",
+  "classification": "PRE_C3_ADMISSION_SUPERSESSION",
+  "hardware_or_mcp_accessed": false
+}

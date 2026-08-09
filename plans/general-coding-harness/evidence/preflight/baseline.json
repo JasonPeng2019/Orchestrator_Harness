@@ -1,0 +1,16 @@
+{
+  "candidate_commit": "287ea53793e3963062882012ff80c3b0e8c41587",
+  "command": "uv run --project .codex/dev --locked python .codex/scripts/verify.py",
+  "result": "pass",
+  "duration_seconds": 71.9,
+  "checks": {
+    "ruff": "pass",
+    "format": "pass",
+    "basedpyright": "pass: 0 errors, 0 warnings, 0 notes",
+    "compile": "pass",
+    "orchestrator": "pass: 208 tests, 1 skipped",
+    "watcher": "pass: 99 tests",
+    "codex_integration": "pass: 49 tests"
+  },
+  "policy": "These groups stay green and are not rerun during ordinary step loops unless changed behavior implicates them."
+}

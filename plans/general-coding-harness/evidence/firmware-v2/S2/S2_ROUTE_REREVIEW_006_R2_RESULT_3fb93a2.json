@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R2",
+  "worker_invocation_id": "s2-r2-route-review-001",
+  "branch": "firmware/v2-s2-r2",
+  "commit": "3fb93a249454669fe1a370307a06f7b1ee04bc90",
+  "outcome": "PASS",
+  "summary": "Acyclic real-C3 limitation evidence graph review passed with no admissible findings.",
+  "checks": [
+    {"name": "exact-current-tip", "outcome": "PASS", "summary": "Reviewed ecc3757..3fb93a2 at the requested clean tip."},
+    {"name": "substitute-artifact-dag", "outcome": "PASS", "summary": "Pre-run assignment is the sole worker-credit dependency; all substitute adapters reference completed predecessors."},
+    {"name": "diagnostic-artifact-dag", "outcome": "PASS", "summary": "Diagnostic assignment precedes the credited actual result; diagnostic and attribution adapters are post-run."},
+    {"name": "real-c3-binding", "outcome": "PASS", "summary": "Invocation-configured status path, repository declaration, real result path, current clean PASS, and controller identity are exact."}
+  ]
+}

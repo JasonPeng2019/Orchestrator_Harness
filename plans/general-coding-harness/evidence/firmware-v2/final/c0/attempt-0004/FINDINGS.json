@@ -1,0 +1,35 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-004",
+  "role": "reviewer",
+  "commit": "b8d3d7917921d3bf7ef06e69b6af23bb4e50df50",
+  "findings": [
+    {
+      "id": "F-C0-FR1-004-001",
+      "category": "CODEBASE_BREAKING",
+      "affected_ids": [
+        "C39",
+        "C49"
+      ],
+      "evidence": [
+        "firmware_acceptance/MCP_METHOD_POLICY.json:12 defines write_serial with allowed arguments board_id/text/timeout_seconds and maximum_bytes: 256.",
+        "firmware_acceptance/kit.py:424-425 checks only arguments.get('bytes', []), although bytes is not an allowed write_serial parameter; kit.py:426-428 otherwise accepts the allowed text parameter without a size or UTF-8-byte check.",
+        "firmware_acceptance/kit.py:443 returns ALLOW after that incomplete evaluation, and firmware_acceptance/controller.py:374 and 417 use the allowed evaluation to submit call['arguments'] unchanged to tools/call.",
+        "GENERALIZATION_SPEC_2.md:192-201 requires the C1-locked policy to enforce UART write maximum 256 bytes/call and to deny ambiguous or out-of-range parameters; EXECUTION_PLAN_2.md C39 requires every mutation to enforce the locked policy before dispatch."
+      ],
+      "observed": "The write_serial size gate reads a non-policy bytes field instead of the allowed text field. Consequently an otherwise valid call with arguments {'board_id': 'STM-A', 'text': <257 ASCII characters>, 'timeout_seconds': 1} passes the parameter-key check and the erroneous length check, receives ALLOW, and can reach the controller's MCP tools/call dispatch.",
+      "expected": "write_serial must reject before launch or MCP submission whenever the UTF-8 encoded text exceeds the locked rule's maximum_bytes value of 256, while accepting only the reviewed parameter shape.",
+      "reproduction": "Read-only static reproduction: start from the valid evaluate_call shape in orchestrator_harness/tests/test_firmware_acceptance_kit.py::test_controller_admission_is_bounded_and_fail_closed; change method to write_serial, retain method_version 1 and a valid deadline/permission, and use arguments {'board_id': 'STM-A', 'text': 'a' * 257, 'timeout_seconds': 1}. At kit.py:424, get('bytes', []) yields [], so the only length comparison is false; at lines 426-428 text is allowed by the pinned rule; evaluate_call returns ALLOW and controller.py:417 forwards those arguments. No test was run for this review.",
+      "impact": "A signed and otherwise fully bound physical UART mutation can exceed the user-issued 256-byte-per-call limit. The immutable evidence chain would then attest an admitted operation whose actual request violates the locked hardware scope, defeating the required policy boundary before it reaches the MCP server.",
+      "no_fix_consequence": "C3 cannot honestly certify C39/C49 UART authorization and retained MCP evidence: a target worker or orchestrator can request an oversized serial write through the candidate-owned controller, and the controller will classify the policy as ALLOW rather than fail closed.",
+      "smallest_fix": "In evaluate_call, for write_serial require text to be a string, obtain maximum_bytes from the matched rule as a positive non-boolean integer, and reject when len(text.encode('utf-8')) exceeds it. Add focused boundary tests for a 256-byte accepted ASCII value, a 257-byte rejected value, and a multibyte UTF-8 value whose character count is within but byte count exceeds the limit.",
+      "complexity": "Low: a localized validation branch plus three host-only unit assertions in the existing kit/controller shard.",
+      "regression_risk": "Low: valid reviewed UART writes at or below the existing policy limit remain unchanged; the change only denies malformed or out-of-scope requests before launch.",
+      "verification_cost": "Low: run the focused kit test and the already-defined 29-test controller/kit/host dependency shard; no MCP process, hardware, claim, or target worker is needed.",
+      "alternatives": "Relying on the server, the signed decision, or a later result check is insufficient: the contract requires candidate policy admission before dispatch, and those layers do not make kit.py compare the transmitted text's byte length with maximum_bytes.",
+      "cost_benefit": "The defect permits a concrete out-of-scope physical mutation at the candidate's authorization boundary. A small, deterministic pre-dispatch check and focused tests have materially lower cost and risk than accepting that scope violation.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

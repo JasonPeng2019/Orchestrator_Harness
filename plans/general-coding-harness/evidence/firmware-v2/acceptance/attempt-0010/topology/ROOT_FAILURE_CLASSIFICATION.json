@@ -1,0 +1,65 @@
+{
+  "schema": "firmware-c3-root-failure-classification/v1",
+  "attempt_id": "attempt-0010",
+  "owner": "ROOT-IM",
+  "acceptance_outcome": "FAIL",
+  "candidate_finding": {
+    "classification": "FUNCTIONALITY_BREAKING",
+    "summary": "The candidate reads the valid O-owned signed decision with the runtime-only artifact loader during both retained-session authorization derivation and execution, so every contract-compliant physical call is rejected before dispatch.",
+    "reproduction": {
+      "call_id": "bea05e8e-8cfe-4cc7-84e1-9356439efdaf",
+      "proposal_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0010\\hil\\STM-A\\sessions\\fc6cdfac-3fb5-40b8-a9c5-fdb271677c53\\call-proposals\\bea05e8e-8cfe-4cc7-84e1-9356439efdaf.json",
+      "proposal_sha256": "6fe0925f4a094f09d9dc976b70725536331ada5fe8df989f4cc76519015aa74d",
+      "decision_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0010\\authorization-decisions\\bea05e8e-8cfe-4cc7-84e1-9356439efdaf.json",
+      "decision_sha256": "f5517285b0cec4b5c3577e9b22883e42abdb91173ad10efcdcef166c23a837a4",
+      "execute_request_sha256": "0f6ef3ad800e2f11475b01a8b374cccfa0166e249472b51c3813b50adbe8f957",
+      "execute_response_sha256": "c6aba81de19df67eb227bfdc99e28ef74d2d546231e2c75f987b648eb28eb34a",
+      "exact_error": "authorization artifact path is unsafe",
+      "mcp_tool_dispatched": false,
+      "hardware_mutated": false
+    },
+    "contract": "O independently creates authorization-decisions/{CALL_ID}.json in the attempt-evidence root; C3-HARNESS consumes it read-only and creates the derived authorization under runtime hil/{lane-id}/authorizations/.",
+    "source_scope": [
+      "firmware_acceptance.controller.FirmwareAcceptanceController.derive_authorization",
+      "firmware_acceptance.controller.FirmwareAcceptanceController.execute_artifacts"
+    ],
+    "smallest_sufficient_repair": "Load and hash the decision as a closed external read-only artifact at the two decision-consumption sites while retaining runtime-only loading for candidate-authored proposal and authorization artifacts.",
+    "repair_route": "Return to the owning candidate implementation step for one narrow repair, focused regression tests, independent complete review, fresh C0/C1/C2, a fresh host-only rehearsal, and a fresh C3 attempt."
+  },
+  "watcher_procedure_finding": {
+    "classification": "ROOT_EXECUTION_TOPOLOGY_FAILURE",
+    "summary": "The W reasoning turn completed before target work while its helper kept the process identity live; consequently W did not classify the later candidate defect, emit ABORT_REQUIRED, or write a terminal report.",
+    "watcher_jsonl_sha256": "c2bf01490b382ef00e33035f7464261fce1a00aba9e6664868f8c2b217c002d2",
+    "watcher_last_message_sha256": "2370f4abac2028f310b5f2020beb9db0ede814433752382ac5b7ce5956f52d03",
+    "helper_launch_sha256": "68a3c973f427ca18fabf891747ab8b9f1f70e7c323682beda42cf11a3c7f286e",
+    "helper_terminal_sha256": "07573059c0f9ac3aac6965568a26be92b190f18050eee627ea2030f55f2d1190",
+    "watcher_service_terminal_sha256": "5dedb1fb6ecdf9d47432c590f710a0a82ac16ce71929283a6dd56628a4e54c02",
+    "candidate_or_mcp_defect": false,
+    "repair_route": "Keep the correction prompt-only and prove in a fresh host-only rehearsal that W remains semantically active through a delayed injected candidate violation, emits its own abort record, and writes a terminal report without a second watcher framework."
+  },
+  "root_supervisor_procedure_finding": {
+    "classification": "ROOT_EXECUTION_TOPOLOGY_FAILURE",
+    "summary": "Failure cleanup treated the already-exited signer as an inexact live termination target and raised before requesting the governing watcher stop.",
+    "root_supervisor_failure_sha256": "ea71b10a85869cf6cd1e3b14ee1db3cad75009a7b86c4a1319eae0126b90e9d4",
+    "root_supervisor_stderr_sha256": "0c35746bdc99cc406b2f92139a42668b6d74ed6db8a030c4d934718b02765bb7",
+    "root_abort_notice_sha256": "ae1b82213684810e3476036e37d930777e39eed116d96e12c26bd85d7b9969a3",
+    "governing_stop_request_sha256": "88efbae11e93582628d485ea55e574606a8c502722ae464b76d9b37b40122139",
+    "governing_stopped_sha256": "177628d7b7975f88621d19c7b41c324559ff48cd5c8fbbcb753f4bf80eb74d1e",
+    "candidate_or_mcp_defect": false,
+    "repair_route": "Correct only the external supervisor cleanup procedure so an already-exited registered process is an idempotent cleanup success, then cover that ordering in the host-only rehearsal."
+  },
+  "triage": {
+    "candidate_fix_worth_cost": true,
+    "candidate_fix_reason": "Without it no correctly separated signed decision can reach candidate authorization derivation, so all required physical calls are impossible.",
+    "candidate_fix_scope_limited_to_external_decision_consumption": true,
+    "watcher_fix_worth_cost": true,
+    "watcher_fix_reason": "A mechanically live but semantically finished watcher cannot independently detect or report an acceptance defect.",
+    "root_supervisor_fix_worth_cost": true,
+    "root_supervisor_fix_reason": "Cleanup must finish when an already-registered child exits naturally before the supervisor reaches it.",
+    "speculative_hardening_authorized": false,
+    "duplicate_guards_authorized": false,
+    "mcp_server_change_authorized": false,
+    "broad_rerun_authorized": false
+  },
+  "recorded_utc": "2026-08-06T00:36:11.5414381Z"
+}

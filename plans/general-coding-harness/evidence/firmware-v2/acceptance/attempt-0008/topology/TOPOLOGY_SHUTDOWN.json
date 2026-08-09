@@ -1,0 +1,26 @@
+{
+  "schema": "firmware-c3-topology-shutdown/v1",
+  "attempt_id": "attempt-0008",
+  "owner": "ROOT-IM",
+  "acceptance_pass": false,
+  "acceptance_decision": "NOT_CREATED_USER_PAUSE",
+  "closeout_sha256": "0e89596341272255b2080248a2de64ff0ad2da5b55382f3596df7f3185f99cb0",
+  "procedure_abort_sha256": "1028c3a6225694583cc0ba9368d1f077293d92698aa3de5d4f4832bcdfd61e3f",
+  "closure": {
+    "registered_processes_remaining": 0,
+    "candidate_harness_processes_remaining": 0,
+    "target_worker_processes_remaining": 0,
+    "mcp_processes_remaining": 0,
+    "watcher_processes_remaining": 0,
+    "resource_claims_remaining": 0,
+    "candidate_clean": true,
+    "mcp_server_clean": true,
+    "hardware_calls_dispatched": 0,
+    "candidate_normal_shutdown_complete": true,
+    "all_known_exact_identities_reaped_or_stopped": true,
+    "manifest_integrity": "NOT_CREATED_USER_PAUSE",
+    "external_control_root_excluded": true
+  },
+  "resume_rule": "Do not reuse mutable attempt-0008 state; allocate a fresh monotonic C3 attempt after explicit user resume.",
+  "closed_at_utc": "2026-08-05T19:06:11.7204392Z"
+}

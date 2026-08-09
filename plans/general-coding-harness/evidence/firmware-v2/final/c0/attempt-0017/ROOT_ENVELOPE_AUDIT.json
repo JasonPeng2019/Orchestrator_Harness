@@ -1,0 +1,24 @@
+{
+  "schema": "firmware-v2-c0-root-envelope-audit/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0017",
+  "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+  "findings_sha256": "345a918fb7cfec09c2b109d6d2c2772fac833b52ff27f0bb549f5ea01297f71e",
+  "result_sha256_before_correction": "f9c40b8eccb915fc968d00e7ff2c46bf0d773f2fa23aa9bf739c3bc41b707126",
+  "controller_status_sha256_before_correction": "d2752a56495dd57f96dac644e88a634246103648b9805bc732ac74ef23c543b3",
+  "review_content": {
+    "complete_c1_c73_sweep": true,
+    "findings_count": 0,
+    "verdict": "NO CANDIDATE GAP / READY",
+    "tests_run": false,
+    "hardware_accessed": false,
+    "tracked_state_clean": true
+  },
+  "envelope_defect": "RESULT.json used orchestrator-review-result/v1 instead of the required orchestrator-lane-result/v1. The stable controller correctly rejected it.",
+  "decision": "CONTENT_NOT_YET_ADMITTED; RESUME_SAME_REVIEWER_FOR_SCHEMA-STRING-ONLY_CORRECTION",
+  "constraints": [
+    "Do not repeat or expand the completed review.",
+    "Do not change findings, outcome, summary, checks, commit, or NOT_RUN facts.",
+    "Do not run tests, imports, MCP, or hardware."
+  ]
+}

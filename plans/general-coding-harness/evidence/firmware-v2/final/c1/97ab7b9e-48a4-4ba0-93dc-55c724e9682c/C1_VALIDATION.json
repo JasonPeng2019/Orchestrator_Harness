@@ -1,0 +1,59 @@
+{
+  "schema": "firmware-v2-c1-validation/v1",
+  "c1_lock_id": "97ab7b9e-48a4-4ba0-93dc-55c724e9682c",
+  "validated_at_utc": "2026-08-05T05:42:00Z",
+  "c1_lock": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\97ab7b9e-48a4-4ba0-93dc-55c724e9682c\\C1_LOCK.json",
+    "sha256": "a72d30f6f6788edbc639fd90f8174ee78a84d006ab70f9a5712bf64ec3302eb1",
+    "checksum_file": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\97ab7b9e-48a4-4ba0-93dc-55c724e9682c\\C1_LOCK.sha256",
+    "checksum_matches": true
+  },
+  "candidate": {
+    "commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+    "branch": "firmware/v2-candidate",
+    "clean": true
+  },
+  "mcp_server_fixture": {
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "branch": "firmware/v2-mcp-candidate",
+    "clean": true,
+    "immutable": true
+  },
+  "checks": {
+    "locked_path_hash_references": 38,
+    "all_locked_path_hash_references_valid": true,
+    "governing_hashes_current": true,
+    "authorization_closed_schema_valid": true,
+    "authorization_candidate_validator_passed": true,
+    "canonical_user_scope_sha256": "571d7d36cd7242762f0bbea0f2c55b095c2b381c6270538285190097a6e50013",
+    "delegated_authorization_sha256": "c6ea8f8b2ca7a1278e6da5589b8b1fafbd1c240868811a9cc6ecbd5a5578a61b",
+    "c1_policy_sha256": "f2fa03fbaf41f602121249f8709537040cfd3792369492ceeaf5ffc4f7c029a4",
+    "candidate_policy_source_sha256": "35bc68b6ec79a8e9680c42dd32c32be228ee956ee7b53d68908b8dec13d19b78",
+    "policy_semantic_equality": true,
+    "policy_default_deny": true,
+    "policy_exact_method_count": 21,
+    "target_seed_exact_file_count": 4,
+    "target_seed_manifest_hashes_match": true,
+    "c3_harness_sha256": "8379fbc6deccebb56e812adf32c07539ed08edb1eb4517bc368be17c7b733326",
+    "c3_limitation_sha256": "6fbdd847740170d5c2ab0f3e729e3e242b493ac714cfe9deb2557475d416c299",
+    "implementation_registry_green_groups": 23,
+    "implementation_registry_green_ids": 146,
+    "implementation_registry_invalidations": 0,
+    "implementation_registry_evidence_credits": 70,
+    "resource_manifest_hashes_valid": "47/47",
+    "active_resource_claims": 0,
+    "surviving_managed_processes": 0
+  },
+  "repair_chain": {
+    "accepted_gap": "F-PRE-C3-002",
+    "joined_root_acceptance_sha256": "f006fdb8670279bca1cdec60897dca97a18d3d9db488cb8788d1ebee837f32a8",
+    "dependency_map_sha256": "7efac0d0852609516a9a9caeecb3f99ad7d040d0f40671bb7dea52a25d8cc450",
+    "fresh_c0_root_admission_sha256": "a6b819d326b60ed150486aae91b93bd1136e0a924fed6656a066ce5cdd02100f",
+    "status": "CLOSED"
+  },
+  "delegated_scope_attested": true,
+  "hardware_execution_admitted": false,
+  "mcp_server_launched": false,
+  "c2_unlocked": true,
+  "status": "PASS"
+}

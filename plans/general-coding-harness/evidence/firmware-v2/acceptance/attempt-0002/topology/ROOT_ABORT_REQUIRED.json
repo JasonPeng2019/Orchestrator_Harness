@@ -1,0 +1,49 @@
+{
+  "schema": "firmware-c3-root-abort-required/v1",
+  "attempt_id": "attempt-0002",
+  "owner": "ROOT-IM",
+  "classification": "REPRODUCIBLE_CANDIDATE_AND_WATCHER_DEFECTS",
+  "reason_for_root_authorship": "F.C3.W repeatedly classified two authentic-status rejection reproductions as expected containment and did not emit watcher/ABORT_REQUIRED.json; that misclassification is itself inside the abort boundary.",
+  "findings": [
+    {
+      "invariant": "C3_ATTEMPT_TARGET_LAYOUT",
+      "evidence_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\topology\\ROOT_SUPERVISION_OBSERVATION.json",
+      "evidence_sha256": "83eb9996ae943f9c34bb4fa30fb21f8a60fe7edc127643125c2e04e1baa19692",
+      "earliest_invalidated_step": "S3.C3_CONTROL_PLANE"
+    },
+    {
+      "invariant": "C3_AUTHENTIC_CONTROLLER_INITIAL_STATUS",
+      "reproductions": [
+        {
+          "response_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\manager-signals\\c3-responses\\p0-assignment-p1-0001.json",
+          "response_sha256": "55616a1dbd6200f8aa857f83de371484277b3ad48497800750b9de901d847a0a",
+          "authentic_status_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\assignment-worktrees\\p0-p1-0001\\.agent-workspace\\p0-p1-0001.status.json",
+          "authentic_status_sha256": "7afa6fac43e18f554e1a076cda5a2536ad03aa9944cb4c549ba1ae5385a20cb7"
+        },
+        {
+          "response_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\manager-signals\\c3-responses\\p0-assignment-p1-0002.json",
+          "response_sha256": "e6aaf8fdb009178a4c68176651f9c49405559751451df2804e6b991df1d65079",
+          "authentic_status_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\assignment-worktrees\\p0-p1-0002\\.agent-workspace\\p0-p1-0002.status.json",
+          "authentic_status_sha256": "1351f83de1815750a7e766b4b9e6b4c7367b1de8ca5d2433ea80c58e0a736b92"
+        }
+      ],
+      "candidate_source_lines": [333, 349],
+      "earliest_invalidated_step": "S3.C3_CONTROL_PLANE"
+    },
+    {
+      "invariant": "WATCHER_MISCLASSIFICATION",
+      "observed_classification": "Both authentic RUNNING_CODEX status files existed, but F.C3.W reported that the controllers lacked authentic status and declared no abort condition after both reproductions.",
+      "earliest_invalidated_step": "S3.WATCHER_INTEGRATION"
+    }
+  ],
+  "state_at_abort": {
+    "new_assignments_stopped_by_orchestrator": true,
+    "active_target_workers": 0,
+    "mutating_hardware_calls_dispatched": 0,
+    "open_bootstrap_sessions": 4,
+    "candidate_owned_claims": 4,
+    "board_state_mutated": false
+  },
+  "required_action": "F.C3.O MUST ISSUE SIGNED CANDIDATE SHUTDOWN; F.C3.W MUST TERMINATE AFTER ROOT WATCHER STOP; ROOT THEN PRESERVES ATTEMPT AND REOPENS IMPLEMENTATION WITH FRESH C0_C1_C2_BEFORE_C3.",
+  "recorded_at_utc": "2026-08-05T06:48:35.0238997Z"
+}

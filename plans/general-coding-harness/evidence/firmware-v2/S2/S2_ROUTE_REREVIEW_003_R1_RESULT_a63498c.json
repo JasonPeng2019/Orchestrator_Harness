@@ -1,0 +1,29 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-route-review-001",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "a63498cccd83d17499e113116ec90670c7c56265",
+  "outcome": "FAIL",
+  "summary": "One admissible finding remains: the research continuation rejects the pinned nullable official_sha256 template and blocks fresh per-call plan/permission authority; its rejection occurs after normal successor-result publication.",
+  "checks": [
+    {
+      "name": "exact-tip-and-production-delta",
+      "command": "git rev-parse HEAD; git branch --show-current; git diff --name-only e26837785745bae3f5102e79305ade677b68cdac..a63498cccd83d17499e113116ec90670c7c56265",
+      "outcome": "PASS",
+      "summary": "Reviewed exact a63498c on firmware/v2-s2-r1; only controller.py and kit.py changed."
+    },
+    {
+      "name": "pinned-continuation-and-terminal-contracts",
+      "command": "Static read of contract, preserved e268377 R1 findings/triage, current policy/controller/kit, and immutable mcp-candidate@f003f84a7df51cd8595a3203c62e225b21da2a22",
+      "outcome": "FAIL",
+      "summary": "Choice continuation, terminal producer/consumer schema, pinned-source diagnostic binding, and C3 substitute launch/execution/worker PASS chain are closed; the research continuation remains contract-incompatible."
+    },
+    {
+      "name": "host-only-static-integrity",
+      "command": "git diff --check e26837785745bae3f5102e79305ade677b68cdac..a63498cccd83d17499e113116ec90670c7c56265; python -m json.tool firmware_acceptance/MCP_METHOD_POLICY.json; python -m py_compile firmware_acceptance/controller.py firmware_acceptance/kit.py",
+      "outcome": "PASS",
+      "summary": "No whitespace, JSON-parse, or Python-compile defects found; no MCP server or hardware was invoked."
+    }
+  ]
+}

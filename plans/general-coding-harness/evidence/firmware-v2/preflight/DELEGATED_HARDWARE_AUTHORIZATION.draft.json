@@ -1,0 +1,52 @@
+{
+  "schema_version": "delegated-hardware-authorization-draft-v1",
+  "authorizing": false,
+  "issuance_source": "goal.md Section 11 USER_HARDWARE_AUTHORIZATION_V1",
+  "canonical_user_scope_sha256": "571d7d36cd7242762f0bbea0f2c55b095c2b381c6270538285190097a6e50013",
+  "user_issued_scope": {
+    "allowed_action_classes": [
+      "probe_discovery_read",
+      "connect_setup",
+      "application_flash",
+      "reset",
+      "debug_halt_resume",
+      "memory_register_read",
+      "uart_session_io",
+      "ble_gatt_test",
+      "lora_ping_pong_test"
+    ],
+    "expires_at_utc": null,
+    "fixtures": ["STM-A", "STM-B", "NRF-A", "NRF-B"],
+    "limits": {
+      "application_flash": {
+        "application_regions_only": true,
+        "allow_bootloader_replace": false,
+        "allow_mass_erase": false,
+        "allow_protection_change": false,
+        "allow_target_unlock": false
+      },
+      "ble": {"max_tx_power_dbm": 0},
+      "lora": {
+        "bandwidth_hz": 125000,
+        "center_frequency_hz": 915000000,
+        "coding_rate_denominator": 5,
+        "max_campaign_minutes": 30,
+        "max_payload_bytes": 64,
+        "max_tx_airtime_ms_per_60s": 6000,
+        "max_tx_power_dbm": 10,
+        "spreading_factor_max": 10,
+        "spreading_factor_min": 7
+      },
+      "uart": {"max_write_bytes_per_call": 256}
+    },
+    "prohibited_action_classes": [
+      "bootloader_replace",
+      "mass_erase",
+      "protection_change",
+      "target_unlock",
+      "destructive_recovery"
+    ],
+    "schema_version": "user-hardware-authorization-v1"
+  },
+  "preflight_note": "This file records the user-issued scope without issuing, expanding, relaying, or implementing a hardware authorization. C1 alone may mechanically create the bound final artifact after S2 policy implementation and validation."
+}

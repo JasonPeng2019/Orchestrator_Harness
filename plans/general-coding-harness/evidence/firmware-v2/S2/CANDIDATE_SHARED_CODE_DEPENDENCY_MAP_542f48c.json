@@ -1,0 +1,170 @@
+{
+  "schema": "firmware-v2-candidate-shared-code-dependency-map/v1",
+  "owner": "ROOT-IM",
+  "candidate": {
+    "commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "joined_branch": "firmware/v2-s28-a1-c3-auth-tests-0001",
+    "reserved_branch": "firmware/v2-candidate",
+    "clean_at_audit": true,
+    "prior_accepted_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f"
+  },
+  "protected_baseline": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "manifest_path": "plans/general-coding-harness/evidence/firmware-v2/preflight/BASELINE_UNIT_MANIFEST.json",
+    "manifest_sha256": "e0113dd1f0f6ab2d6fd8e450caef5d407ad8aa3b6b28c7eb234ecd04bd51a120",
+    "node_count": 248
+  },
+  "prior_complete_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_eb3bbab.json",
+    "sha256": "27e9556c72b300b5d1c6420a40c4a50b1b56ab37e8b927d9148fdea5c5734f5b",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_eb3bbab.json",
+    "root_acceptance_sha256": "ba9695375de80c22463042e2c0ba52a4a220a7b12727d8d284333ebd657f7700",
+    "preserved_without_rewrite": true
+  },
+  "delta_inventory": {
+    "base_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "changed_path_count": 4,
+    "changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "firmware_acceptance/controller.py",
+      "orchestrator_harness/tests/test_firmware_acceptance_controller.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py"
+    ],
+    "deleted_test_paths": [],
+    "modified_protected_baseline_test_paths": [],
+    "shared_process_identity_changed": false,
+    "watcher_oracle_changed": false,
+    "generic_authorization_path_changed": false,
+    "weakened_oracles": []
+  },
+  "delta_mappings": [
+    {
+      "paths": [
+        "firmware_acceptance/c3_harness.py",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py"
+      ],
+      "behavior": "C3 derives retained-session authorization synchronously before creating a pending record or submitting a Future; derivation failure leaves no pending file and no active operation, while distinct lanes may still overlap after successful derivation.",
+      "stable_ids": [
+        "C3-SESSION-AUTHORIZATION-DERIVATION-ORDER"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_05_sessions_overlap_and_p1_channel_is_token_bound"
+      ]
+    },
+    {
+      "paths": [
+        "firmware_acceptance/controller.py",
+        "orchestrator_harness/tests/test_firmware_acceptance_controller.py"
+      ],
+      "behavior": "The retained-session controller derives the standard closed authorization artifact from the exact pending session proposal, signed O decision, live session claim, expiry, topology bindings, and existing signature verifier, after which existing retained execution validates and consumes it.",
+      "stable_ids": [
+        "C3-SESSION-DERIVED-AUTHORIZATION"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_dynamic_route_plan_validation_ready_uart_and_terminal_contract",
+        "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_pre_result_route_and_continuation_rejections_leave_no_successor",
+        "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_bootstraps_once_executes_and_aborts_terminally",
+        "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_signed_close_requires_returned_disconnect"
+      ]
+    }
+  ],
+  "focused_execution": {
+    "lane": "S28.D2",
+    "commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "command_modules": [
+      "orchestrator_harness.tests.test_firmware_c3_harness",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller"
+    ],
+    "test_ids": [
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_05_sessions_overlap_and_p1_channel_is_token_bound",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_dynamic_route_plan_validation_ready_uart_and_terminal_contract",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_pre_result_route_and_continuation_rejections_leave_no_successor",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_bootstraps_once_executes_and_aborts_terminally",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_signed_close_requires_returned_disconnect"
+    ],
+    "tests_covered": 5,
+    "new_green_ids": 0,
+    "removed_superseded_ids": 0,
+    "freshly_revalidated_existing_ids": 5,
+    "failures_remaining": 0,
+    "errors": 0,
+    "skips": 0,
+    "resource_warnings": 0,
+    "invocations": 1,
+    "outcome": "PASS"
+  },
+  "retained_prior_mappings": {
+    "prior_map_preserved": true,
+    "prior_unique_green_ids_retained": 166,
+    "reason": "The two production edits add one explicit session-only derivation and one synchronous call at the exact C3 execute boundary. The two test edits exercise that path and replace a hand-fabricated session authorization fixture with the production derivation. The generic authorization path, shared process identity, watcher oracle, public schemas, protected baseline tests, and unrelated runtime paths did not change. All 166 prior green IDs remain dependency-valid, and the five affected existing IDs were freshly revalidated."
+  },
+  "evidence": [
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_eb3bbab.json",
+      "sha256": "27e9556c72b300b5d1c6420a40c4a50b1b56ab37e8b927d9148fdea5c5734f5b"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_eb3bbab.json",
+      "sha256": "ba9695375de80c22463042e2c0ba52a4a220a7b12727d8d284333ebd657f7700"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S28_C3_SESSION_AUTH_ROOT_ADMISSION_542f48c.json",
+      "sha256": "c936376942e39fa65dd3cf60636c457930401887ec210a45770cd8c6b016a23e"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S28.R1-C3-AUTH-0001/.agent-workspace/FINDINGS.json",
+      "sha256": "641c0e54f51f588b9b04f0b201751e13482b9ae2a42c0f6a386b1557a43014ce"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S28.R2-C3-AUTH-0001/.agent-workspace/RESULT.json",
+      "sha256": "03608c2250fb31b0b675c29215fcc986adee1ae189d2566be86c1bddce976bb5"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S28.R2-C3-AUTH-0001/.agent-workspace/FINDINGS.json",
+      "sha256": "cee20ba55bb79725ba5f933dfa8a13ed61a0710740d14da0ffac1977781d4c40"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S28.D2-C3-AUTH-0001/.agent-workspace/TEST_EXECUTION.json",
+      "sha256": "5b53a16cf5566dbf292ab34f932dbfc0ab95f52c00b68abf2fd785e93590bee4"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S28.D2-C3-AUTH-0001/.agent-workspace/RESULT.json",
+      "sha256": "fca9ed3af036eea139d57b9824b08af15eea26fd4424f5f5df70623e6fdfd85f"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S28.D2-C3-AUTH-0001/.agent-workspace/FINDINGS.json",
+      "sha256": "18fbb347f7f11e473646e381eb9012300a87482e8a9c766612a34eeeefd91137"
+    }
+  ],
+  "registry_reconciliation": {
+    "prior_unique_green_ids": 166,
+    "added_green_ids": 0,
+    "removed_superseded_green_ids": 0,
+    "current_unique_green_ids": 166,
+    "freshly_revalidated_existing_ids": 5,
+    "invalidated_groups": 0,
+    "selected_for_additional_execution": []
+  },
+  "non_regression_proof": {
+    "baseline_collection_recollected": false,
+    "deleted_protected_baseline_ids": [],
+    "baseline_assertion_modifications": [],
+    "oracle_weakened": false,
+    "unaffected_green_tests_rerun": false,
+    "conclusion": "The four-path S28 delta closes the authorization-derivation defect demonstrated by C3 attempt-0007. Fresh R2 found no final-tip gap; D2 exercised all five dependency-invalidated existing IDs once with exact environment isolation and no residue. No additional unit execution is dependency-justified before fresh C0."
+  },
+  "reviewer_and_tester_criticism_disposition": {
+    "accepted": "R1 correctly proved that routing the session proposal through generic derivation would reject every valid retained call. The repair uses a narrow session-specific derivation and R2 found zero remaining issues.",
+    "preserved_failed_evidence": "D1 remains FAIL because ROOT omitted PYTHONDONTWRITEBYTECODE; D2's first invalid result envelope remains controller-invalid in its status history even though the same thread corrected only the schema without rerunning tests.",
+    "rejected_scope": "ROOT rejected generic branching, an authorization adapter framework, helper extraction for localized duplication, extra path guards, candidate bytecode cleanup, duplicate execution, and unrelated hardening as net-negative engineering.",
+    "remaining_actionable_findings": []
+  },
+  "no_hardware_boundary": {
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "server_edited": false,
+    "statement": "This reconciliation uses preserved static attempt evidence and host-only focused unit execution. No board, probe, serial, flash, reset, debug, BLE, LoRa, RF, pinned-server, or physical operation ran."
+  },
+  "created_at": "2026-08-05T17:59:00Z"
+}

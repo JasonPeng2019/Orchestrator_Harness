@@ -1,0 +1,33 @@
+{
+  "schema": "firmware-v2-root-candidate-gap-reproduction/v1",
+  "owner": "ROOT-IM",
+  "recorded_utc": "2026-08-04T19:28:19.0851596Z",
+  "candidate_commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+  "finding_id": "F-C0-FR1-001",
+  "method": "read-only direct invocation of firmware_acceptance.kit.evaluate_call in an isolated Python process",
+  "cases": [
+    {
+      "name": "write_negative_timeout_and_wrong_types",
+      "method": "write_serial",
+      "violations": ["baudrate negative", "port non-string", "append_newline non-boolean", "timeout_seconds negative"],
+      "observed": "ALLOW"
+    },
+    {
+      "name": "read_negative_duration_and_unsafe_reset",
+      "method": "read_serial",
+      "violations": ["expected_text non-string", "read_seconds negative", "baudrate negative", "port non-string", "reset_on_open true"],
+      "observed": "ALLOW"
+    },
+    {
+      "name": "exchange_empty_steps_and_wrong_types",
+      "method": "serial_exchange",
+      "violations": ["steps empty", "durations negative", "baudrate negative", "port non-string", "readiness fields wrong types", "clear_input non-boolean"],
+      "observed": "ALLOW"
+    }
+  ],
+  "expected": "AdmissionError before any dispatch",
+  "tests_run": false,
+  "mcp_launched": false,
+  "hardware_accessed": false,
+  "decision": "REPRODUCED_ACCEPTED"
+}

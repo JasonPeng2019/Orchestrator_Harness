@@ -1,0 +1,7 @@
+{
+  "candidate_commit": "d907e0d2ad24e7e58e810f3498f1a62c5f6ed3b9",
+  "result": "pass",
+  "coverage": "wrong branch, stale result, contention, cleanup, docs paths, and firmware labels are covered by the author runs",
+  "ruff": "pass",
+  "basedpyright": "pass"
+}

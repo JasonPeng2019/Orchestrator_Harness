@@ -1,0 +1,16 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.P",
+  "worker_invocation_id": "s2-p-009",
+  "branch": "firmware/v2-s2-product",
+  "commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+  "outcome": "PASS",
+  "summary": "Repaired the null board_setup-plan route binding; ready for production-repair re-review only.",
+  "checks": [
+    {
+      "name": "exact one-file diff inspection",
+      "command": "git diff -- firmware_acceptance/controller.py",
+      "outcome": "PASS"
+    }
+  ]
+}

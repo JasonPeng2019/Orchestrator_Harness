@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_PRE_C1_D1_RERUN_FINDINGS_184a869.json",
+  "findings_sha256": "db537f966d71742d08ad2fa36b9d34fbbec5666876f97ccad6203d6ca6da2bb1",
+  "decisions": [
+    {
+      "id": "S2.D1-001",
+      "decision": "ACCEPT",
+      "rationale": "The pinned server source independently confirms that its setup route emits board_setup-plan plan_initialization_call arguments with every field, including board_id, set to null. The candidate rejects that exact server-returned call before its existing full route comparison. This blocks the retained setup workflow, while the proposed one-condition repair preserves exact non-null board identity and the stricter all-null route comparison. The demonstrated functionality impact materially outweighs the small implementation and regression risk.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "In FirmwareAcceptanceController._validate_route_pre_dispatch, apply the generic retained board_id equality check only to non-null board_id arguments. Preserve the existing exact board_setup-plan all-null route comparison and every non-null route check."
+    }
+  ]
+}

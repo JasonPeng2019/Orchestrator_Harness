@@ -1,0 +1,81 @@
+{
+  "schema": "firmware-v2-c2-root-retry-triage/v1",
+  "owner": "ROOT-IM",
+  "recorded_at_utc": "2026-08-05T10:17:05.5298929Z",
+  "attempt": "attempt-0005",
+  "candidate_commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+  "c1": {
+    "lock_id": "d5aac12a-5486-4046-bafc-9fcdac544b10",
+    "lock_sha256": "97add36a20457bc555852e501acd592663152dafe90b4b35fb51803e042ebb0c",
+    "validation_sha256": "4ca00e1c99f31eae136bca55e17d2e0e12f0ed13a01ab840e8454385089d9297",
+    "locked_inputs_changed_during_attempt": false
+  },
+  "retry_authority": {
+    "execution_plan_sha256": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261",
+    "lines": "728-736",
+    "rule": "Environment or test-execution failures may rerun only their failed IDs against the same C1 when no locked input changes.",
+    "applies": true
+  },
+  "initial_result": {
+    "findings_sha256": "dcb1ab8353eeeec02e3a9cc4608c602ec3386b2eab26d38b9c164ca332f6fca0",
+    "test_report_sha256": "277977366011ff12b2a5aa332dba05d5d8dfd850da7a963f673c5ce7d907f033",
+    "result_sha256": "8adb910c8f7c722b543a02d3e71a8a5485ad13f5fb9868f3448fbaba2a8bfb0d",
+    "status_sha256": "4f2b445495cbdff16987c4b644b9046a63a2e4564a992bd294ec721026663fc9",
+    "controller_exit_code": 0,
+    "result_valid": true,
+    "outcome": "FAIL",
+    "passed_ids": ["F-C2-LOCK-001", "F-C2-DISPOSABLE-001", "F-C2-STATE-001"],
+    "failed_ids": ["F-C2-AUTH-001", "F-C2-CREDIT-001"],
+    "candidate_findings": 0,
+    "claim_released": true
+  },
+  "finding_gate_audit": {
+    "closed_schema_and_identity_exact": true,
+    "findings_empty": true,
+    "candidate_gate_not_admissible_for_initial_fail_outcome": true,
+    "reason": "The candidate gate intentionally requires a candidate finding for a FAIL outcome. Both failures are executor procedure failures, so ROOT preserves them outside candidate-finding triage and requires a final PASS envelope before admission."
+  },
+  "diagnostics": [
+    {
+      "stable_id": "F-C2-AUTH-001",
+      "classification": "VERIFIER_TEST_EXECUTION_ERROR",
+      "observed_issue": "The verifier assigned PYTHONDONTWRITEBYTECODE only in os.environ after interpreter startup; sys.dont_write_bytecode remained false and the verifier's own import created two cache files.",
+      "substantive_candidate_checks_completed_before_failure": true,
+      "correction": "Set sys.dont_write_bytecode before candidate import, require pre-existing bytecode hash equality, and rerun only AUTH.",
+      "candidate_finding": false,
+      "locked_input_changed": false,
+      "stdout_sha256": "9e6b9ef1ad7b5c881ab98c9bd5e7b963b673abad0338f5467b53c3e3aaa0fc12",
+      "stderr_sha256": "3f54707a77ff2ca1a3d7f5844079019bd727741725c42ab550a6386ba7439dd1",
+      "process_sha256": "4e16ecaf6cf108706a7021328dda5159c53183c72c634c7a454ee0c0627d9c6b"
+    },
+    {
+      "stable_id": "F-C2-CREDIT-001",
+      "classification": "VERIFIER_REPORT_SHAPE_ERROR",
+      "observed_issue": "After the registry, baseline, hash, dependency, and delta checks succeeded, report construction iterated a descriptive protected-baseline string as though it were an ID array.",
+      "substantive_candidate_checks_completed_before_failure": true,
+      "correction": "Validate only list-valued ID fields; retain the separately proven 248-ID protected-baseline count and rerun only CREDIT.",
+      "candidate_finding": false,
+      "locked_input_changed": false,
+      "stdout_sha256": "eee32917ba500a67c3c5ced096a40340eb0e9089e034980ea887dce8cca8b94c",
+      "stderr_sha256": "79ec9ab56f587f1dabf732f5164dde43eb3f7f7f34ba8357bbfeeec91abb0f33",
+      "process_sha256": "f3cf63ed4dc0346c4dafe5eafca7bfef757a17a24f1c1d940dae4912096b6c89"
+    }
+  ],
+  "root_independent_state": {
+    "candidate_clean_exact_commit": true,
+    "server_clean_exact_commit": true,
+    "execution_lane_clean_exact_commit": true,
+    "active_resource_claims": 0,
+    "surviving_c2_test_processes": 0,
+    "hardware_or_mcp_accessed": false
+  },
+  "retry_scope": {
+    "same_thread_id": "019fd15f-b7b0-7aa2-a483-30d0cd14dded",
+    "same_worker_invocation_id": "c2-d1-005",
+    "only_failed_ids": ["F-C2-AUTH-001", "F-C2-CREDIT-001"],
+    "final_state_recheck_required": true,
+    "already_green_ids_rerun": [],
+    "candidate_or_policy_repair": false
+  },
+  "decision": "AUTHORIZE_SAME_LOCK_SAME_THREAD_FAILED_ID_RETRY_ONLY"
+}

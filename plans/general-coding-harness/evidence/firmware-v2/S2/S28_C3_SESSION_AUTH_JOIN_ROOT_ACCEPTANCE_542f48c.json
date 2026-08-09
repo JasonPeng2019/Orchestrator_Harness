@@ -1,0 +1,94 @@
+{
+  "schema": "firmware-v2-joined-tip-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "candidate": {
+    "base_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "initial_source_commit": "e797fbc9fa01efedf8500de0ff375b28c8a08c8a",
+    "accepted_source_commit": "6c8b81a361ff734037552e332d362db691d0e92e",
+    "initial_test_commit": "4fff7e73359192a5a2431e54d9d9784b1ec358c3",
+    "accepted_test_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "joined_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "joined_branch": "firmware/v2-s28-a1-c3-auth-tests-0001",
+    "reserved_branch": "firmware/v2-candidate",
+    "joined_clean": true,
+    "reserved_clean": true,
+    "changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "firmware_acceptance/controller.py",
+      "orchestrator_harness/tests/test_firmware_acceptance_controller.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py"
+    ]
+  },
+  "accepted_batch": {
+    "root_admission_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S28_C3_SESSION_AUTH_ROOT_ADMISSION_542f48c.json",
+    "root_admission_sha256": "c936376942e39fa65dd3cf60636c457930401887ec210a45770cd8c6b016a23e",
+    "initial_review_finding": "C3-AUTH-SESSION-DERIVATION-001",
+    "initial_review_findings_sha256": "641c0e54f51f588b9b04f0b201751e13482b9ae2a42c0f6a386b1557a43014ce",
+    "fresh_final_review_lane": "S28.R2",
+    "fresh_final_review_result_sha256": "03608c2250fb31b0b675c29215fcc986adee1ae189d2566be86c1bddce976bb5",
+    "fresh_final_review_findings_sha256": "cee20ba55bb79725ba5f933dfa8a13ed61a0710740d14da0ffac1977781d4c40"
+  },
+  "focused_execution": {
+    "root_environment_failure_lane": "S28.D1",
+    "root_environment_failure_execution_sha256": "9a8358f999ca8625807dcca2cd23488488a4b2b3b34b7109452178d299e78aca",
+    "root_environment_failure_findings_sha256": "7f5bdd6095aecbc1cf134733ee6b91191f7312a037f557764f86dad1eb17ca7e",
+    "procedure_finding": "S28.D1-C3-ENV-PYTHONDONTWRITEBYTECODE-001",
+    "final_lane": "S28.D2",
+    "final_execution_sha256": "5b53a16cf5566dbf292ab34f932dbfc0ab95f52c00b68abf2fd785e93590bee4",
+    "final_output_sha256": "ae084d5098df48edfc0a46d0c0cb1abaa9b295e18a5f373106379d3d6687ff6b",
+    "final_result_sha256": "fca9ed3af036eea139d57b9824b08af15eea26fd4424f5f5df70623e6fdfd85f",
+    "tests_covered": 5,
+    "failures_remaining": 0,
+    "errors": 0,
+    "skips": 0,
+    "resource_warnings": 0,
+    "report_envelope_corrected_without_rerun": true,
+    "outcome": "PASS"
+  },
+  "reconciliation": {
+    "dependency_map_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_542f48c.json",
+    "dependency_map_sha256": "85ca5d7a68f59e2b06f2eb9428166d4cac3e1af43df3ed67312ed846c1464c04",
+    "dependency_map_root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_542f48c.json",
+    "dependency_map_root_acceptance_sha256": "bac63a36feae55f74901000996b19a69c1ab16c64a9d844168a2744138899fa1",
+    "registry_reconciliation_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S28_C3_SESSION_AUTH_REGISTRY_RECONCILIATION_542f48c.json",
+    "registry_reconciliation_sha256": "6df2627090501e588947072e53536cc9ad1d1bee5408218edac74219164ca7f0",
+    "registry_path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+    "registry_sha256": "47a9793901cb84f7d973e0c8f27446823e94e658901d84ca091d0df253cb84fb",
+    "green_groups": 27,
+    "unique_green_ids": 166,
+    "added_green_ids": 0,
+    "removed_superseded_ids": 0,
+    "freshly_revalidated_existing_ids": 5,
+    "invalidated_groups": 0,
+    "evidence_credits": 91
+  },
+  "criticism_disposition": {
+    "accepted": [
+      "R1's evidence that generic derivation rejects the session proposal shape and lacks the session-owned claim.",
+      "D1's evidence that ROOT omitted the promised bytecode environment value."
+    ],
+    "preserved": [
+      "Attempt-0007's candidate authorization failure and separate watcher terminal-report procedure failure.",
+      "R1's valid finding and invalid result envelope as distinct facts.",
+      "D1's green product tests but failed environment gate.",
+      "D2's original invalid result schema and same-thread schema-only correction."
+    ],
+    "rejected": [
+      "A generic derivation branch, authorization adapter framework, or generalized schema layer.",
+      "Helper extraction merely for local duplication, extra path guards, or double validation beyond the existing execution boundary.",
+      "Candidate bytecode cleanup, stable-runner changes, duplicate unit execution, or unrelated hardening."
+    ],
+    "remaining_actionable_findings": []
+  },
+  "cleanup": {
+    "active_resource_claims": 0,
+    "surviving_managed_processes": 0,
+    "executor_owned_residue": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "server_edited": false
+  },
+  "decision": "ACCEPT_RECONCILED_S28_BATCH_AND_UNLOCK_FRESH_C0",
+  "outcome": "PASS",
+  "created_at": "2026-08-05T18:03:00Z"
+}

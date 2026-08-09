@@ -1,0 +1,79 @@
+{
+  "schema": "firmware-v2-c1-validation/v1",
+  "c1_lock_id": "40419d28-e343-44c1-bf5b-399709b771ba",
+  "validated_at_utc": "2026-08-05T16:09:00Z",
+  "c1_lock": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\40419d28-e343-44c1-bf5b-399709b771ba\\C1_LOCK.json",
+    "sha256": "2140cf26b49174a48d097c192cc7c2012f853b77b5fa43e510b69ad744cf2626",
+    "checksum_file": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\40419d28-e343-44c1-bf5b-399709b771ba\\C1_LOCK.sha256",
+    "checksum_matches": true
+  },
+  "candidate": {
+    "commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "branch": "firmware/v2-candidate",
+    "clean": true
+  },
+  "mcp_server_fixture": {
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "branch": "firmware/v2-mcp-candidate",
+    "clean": true,
+    "immutable": true
+  },
+  "checks": {
+    "locked_path_hash_references": 42,
+    "all_locked_path_hash_references_valid": true,
+    "governing_hashes_current": true,
+    "authorization_closed_schema_valid": true,
+    "authorization_candidate_validator_passed": true,
+    "canonical_user_scope_sha256": "571d7d36cd7242762f0bbea0f2c55b095c2b381c6270538285190097a6e50013",
+    "delegated_authorization_sha256": "5c3bd11e076dd1c72104499bd1e8266f5799528e2626c279fd461869f7952409",
+    "mcp_server_pin_sha256": "161c342c20d4797ed0fe728e575acbcb0ad3a0daa1fa8a9136fdc3d8c7c0ac3a",
+    "c1_policy_sha256": "f2fa03fbaf41f602121249f8709537040cfd3792369492ceeaf5ffc4f7c029a4",
+    "candidate_policy_source_sha256": "35bc68b6ec79a8e9680c42dd32c32be228ee956ee7b53d68908b8dec13d19b78",
+    "policy_semantic_equality": true,
+    "policy_default_deny": true,
+    "policy_exact_method_count": 21,
+    "target_seed_exact_file_count": 4,
+    "target_seed_manifest_hashes_match": true,
+    "c3_harness_sha256": "a29acf188b28bde2207c885a7beb2fd42b6f95b92a9657db4179b7498e6577f9",
+    "c3_process_identity_sha256": "e446b8a7add9cdbc749097c6f1d6fbf24ec1b20bf4e40109d8c5788ce1b0202c",
+    "c3_watcher_oracle_sha256": "991faddea7b8fdb21b7a488082f39f964109d7446d992c9b7be43e6f68a371de",
+    "acceptance_controller_sha256": "1f0a04dee4eed80b7e870385a21d9a47358a18db2dadd2738e560f430ff89ae9",
+    "acceptance_kit_sha256": "5c07f09dfe73034d888d863dc674b0fbea53c3e95eea7c1be55a873131d311ab",
+    "implementation_registry_green_groups": 26,
+    "implementation_registry_green_ids": 166,
+    "implementation_registry_invalidations": 0,
+    "implementation_registry_evidence_credits": 86,
+    "resource_manifest_hashes_valid": "47/47",
+    "active_resource_claims": 0,
+    "surviving_managed_processes": 0
+  },
+  "repair_chain": {
+    "physical_attempts_superseded": [
+      "attempt-0001",
+      "attempt-0002",
+      "attempt-0003",
+      "attempt-0004",
+      "attempt-0005"
+    ],
+    "joined_candidate_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "joined_root_acceptance_sha256": "8d0dbac1f34268b5f5ffdcb0e9897ccafae635a8e32b28c5c4798cd0eb980839",
+    "dependency_map_sha256": "27e9556c72b300b5d1c6420a40c4a50b1b56ab37e8b927d9148fdea5c5734f5b",
+    "dependency_map_root_acceptance_sha256": "ba9695375de80c22463042e2c0ba52a4a220a7b12727d8d284333ebd657f7700",
+    "registry_reconciliation_sha256": "2860fb3cb7b90a5d505c435a9ff75eefc6e516dd1b696bf53f747bb38e587612",
+    "fresh_c0_root_admission_sha256": "37842bf32110e591475f3f827dfc5e5c9db904069fd1ece0c627ecfd1219f556",
+    "status": "CLOSED"
+  },
+  "serialization": {
+    "opaque_id_allocated_before_artifacts": true,
+    "authorization_created_and_hashed_before_lock": true,
+    "lock_hash_not_used_as_authorization_input": true,
+    "checksum_written_after_lock": true,
+    "c1_replacement_of_prior_lock": true
+  },
+  "delegated_scope_attested": true,
+  "hardware_execution_admitted": false,
+  "mcp_server_launched": false,
+  "c2_unlocked": true,
+  "status": "PASS"
+}

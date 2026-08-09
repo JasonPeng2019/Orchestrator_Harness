@@ -1,0 +1,31 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-011",
+  "role": "reviewer",
+  "commit": "cb2a66aa7d4036b08ab8964327fa6836be0f0d97",
+  "findings": [
+    {
+      "id": "F-C0-FR1-001",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["C19", "C31", "C39", "C54", "C55", "C67"],
+      "evidence": [
+        "firmware_acceptance/c3_harness.py:400-407 accepts payload.session_id only as the C3Harness dictionary key and never compares it with the opened request.",
+        "firmware_acceptance/controller.py:328-368 opens and records the immutable session using request['session_id'] from request_path.",
+        "firmware_acceptance/c3_harness.py:409-425 subsequently routes actions and lifecycle registry entries using the unbound payload session_id key."
+      ],
+      "observed": "A valid signed session-open request may supply session_id A and a request_path whose closed request has session_id B. C3Harness stores the controller under A and writes its OPEN registry record as A, while the controller creates SESSION_REQUEST.json and SESSION_OPEN.json under B and binds all proposals/results/terminal evidence to B.",
+      "expected": "C3-HARNESS must reject a session-open request unless its payload session_id exactly equals the immutable request's opaque UUID, so every control-plane key, registry lifecycle entry, claim, and session artifact has one exact identity.",
+      "reproduction": "Create two otherwise valid fresh session identifiers, place B in the candidate-owned closed session request, then submit a signed C3 session-open payload with session_id A and that request_path. _open accepts A, calls controller.open_session for B, and records OPEN for A because no equality check occurs before self.controllers[sid] assignment.",
+      "impact": "A realistic signed orchestration typo or malformed-but-authenticated request produces contradictory session identity evidence and lets subsequent signed requests address the B controller through A. This defeats exact lifecycle correlation required for audit, cleanup/recovery, and C3 acceptance evidence.",
+      "no_fix_consequence": "C3 can certify or recover a retained MCP session whose C3 registry/control identity differs from the immutable session and claim/artifact identity, making evidence integrity and exact-resource reconciliation untrustworthy.",
+      "smallest_fix": "In C3Harness._open, parse and validate the closed request before opening it, require its session_id to equal p['session_id'], and reject before controller.open_session or registry publication on mismatch; add a focused mismatch regression.",
+      "complexity": "A small pre-open closed-request identity check plus one focused host test.",
+      "regression_risk": "Low: valid requests already use the same session ID in their immutable request and subsequent controller protocol.",
+      "verification_cost": "Run the focused C3 harness host regression and the dependency-invalidated C3 controller/kit selection.",
+      "alternatives": "Relying on later proposal validation is insufficient because the incorrect C3 registry entry and retained process have already been created.",
+      "cost_benefit": "The localized fail-closed identity check prevents a concrete retained-session evidence and recovery ambiguity at substantially lower cost than allowing mismatched lifecycle records into C3.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "firmware-v2-c0-root-admission/v1",
+  "owner": "ROOT-IM",
+  "attempt": "0015",
+  "candidate": {
+    "commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+    "branch": "firmware/v2-c0-final-review-0015",
+    "clean": true
+  },
+  "governing_hashes": {
+    "goal": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "generalization_spec_2": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "implementation_roadmap_2": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "execution_readiness_2": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66",
+    "execution_plan_2": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"
+  },
+  "lane": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority",
+    "thread_id": "019fd068-7bb0-7e93-b1f3-2b721f022cd0",
+    "findings_path": "plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C0.FR1-0015/.agent-workspace/FINDINGS.json",
+    "findings_sha256": "1cb01587130a29eb92c3c39f1705d92767e4a7f58bb1a5612af20af2c3696601",
+    "result_path": "plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C0.FR1-0015/.agent-workspace/RESULT.json",
+    "result_sha256": "d7f53ac05f939cc7e0f4259822d72c102f23e802474bcace5a0010f425b56ada",
+    "status_path": "plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C0.FR1-0015/.agent-workspace/status.json",
+    "status_sha256": "f9a5119612081e6bf086b147cd73017955a5e16621571e8c0f680b999b3c701b"
+  },
+  "archived": {
+    "findings_path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0015/FINDINGS.json",
+    "findings_sha256": "1cb01587130a29eb92c3c39f1705d92767e4a7f58bb1a5612af20af2c3696601",
+    "result_path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0015/RESULT.json",
+    "result_sha256": "d7f53ac05f939cc7e0f4259822d72c102f23e802474bcace5a0010f425b56ada",
+    "byte_identical_to_lane": true
+  },
+  "reconciliation": {
+    "dependency_map_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_2877ec1.json",
+    "dependency_map_sha256": "7efac0d0852609516a9a9caeecb3f99ad7d040d0f40671bb7dea52a25d8cc450",
+    "dependency_map_root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_2877ec1.json",
+    "dependency_map_root_acceptance_sha256": "1fc90573d9ea507fd7ae15add1d71b26eee8c572a94d6d4678fdd5516d9adcd0",
+    "registry_path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+    "registry_sha256": "e9988a886fb8b541ea8c648ad94c1a35ce0180b4c0d694fec79b618ea33373a5",
+    "green_groups": 23,
+    "unique_green_ids": 146,
+    "invalidated_groups": 0,
+    "evidence_credits": 70
+  },
+  "validation": {
+    "findings_schema_and_identity": "PASS",
+    "findings_count": 0,
+    "result_schema_and_identity": "PASS",
+    "result_outcome": "PASS",
+    "result_summary": "NO CANDIDATE GAP / READY",
+    "controller_result_valid": true,
+    "controller_exit_code": 0,
+    "held_resource_claims": [],
+    "source_or_test_files_changed_by_review": false,
+    "tests_run_by_review": false,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "ADMIT_EXACT_TIP_FOR_FRESH_C1",
+  "outcome": "PASS"
+}

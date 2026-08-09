@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S23_C3_REMAINING_0002_FINDINGS_3c862b9.json",
+  "findings_sha256": "ee8c7574aff886e27fb1033b8dcb7cef9a0efdd3d224845e6f2d1705ed9f37c6",
+  "decisions": [
+    {
+      "id": "S23.D2-C3-REMAINING-002-FIXTURE-CONTRACT-001",
+      "decision": "ACCEPT",
+      "rationale": "ROOT confirmed both failures are localized synthetic-fixture drift with no production or pinned-server defect: the bare C3 topology omits its required signing public key, and the diagnostic controller/result identity uses physical lane STM-A where the exact worker completion contract requires F.C3.A1. Two small test-only identity corrections restore the intended acceptance evidence without weakening fail-closed production checks. Their value exceeds their minimal complexity and regression risk.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Add the required public_key to the bare C3 topology and consistently bind the synthetic diagnostic invocation/status/result lane identity to F.C3.A1 while retaining STM-A only in the physical lane fields; rerun only the two errored IDs."
+    }
+  ]
+}

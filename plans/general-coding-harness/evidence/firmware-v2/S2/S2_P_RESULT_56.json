@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.P",
+  "worker_invocation_id": "s2-p-001",
+  "branch": "firmware/v2-s2-product",
+  "commit": "56e2d461438a826ea26653e840e6276cd2713e7b",
+  "outcome": "PASS",
+  "summary": "Added the seed-scoped LF Git attribute and proved exact manifest validation plus broker construction from a fresh core.autocrlf=true disposable worktree.",
+  "checks": [
+    {"name": "fresh-worktree seed proof", "command": "git -c core.autocrlf=true worktree add --detach <disposable> 56e2d46; python -c packaged validate_seed_manifest and AcceptanceBroker construction; git worktree remove <disposable>", "outcome": "PASS", "summary": "All canonical seed payload hashes validated and broker construction passed from the fresh Windows-style checkout; the exact proof worktree was removed."},
+    {"name": "diff hygiene", "command": "git diff --check", "outcome": "PASS", "summary": "The scoped .gitattributes change is whitespace-clean."},
+    {"name": "pinned MCP server", "command": "git -C runtime/firmware-v2/worktrees/mcp-candidate status --short; git rev-parse HEAD", "outcome": "PASS", "summary": "Pinned server remains clean at f003f84a7df51cd8595a3203c62e225b21da2a22; no server change."},
+    {"name": "hardware boundary", "command": "static checkout and packaged validator only", "outcome": "PASS", "summary": "No physical MCP, pyOCD, serial, probe, flash, reset, debug, or RF activity occurred."}
+  ]
+}

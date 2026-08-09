@@ -1,0 +1,10 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-bind-005",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+  "outcome": "PASS",
+  "summary": "PASS: bound the green d7ffe7d natural-EOF/forced-close closure, its test-only joined-tip delta, canonical A1 and D1 evidence, and fresh empty C0 review findings to 42a9d7082ac0193cf7cd1685b5eb95baafff41ac.",
+  "checks": []
+}

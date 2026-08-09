@@ -1,0 +1,17 @@
+{
+  "schema": "firmware-v2-c2-root-retry-dispatch-failure/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "dispatch": 1,
+  "failed_at_utc": "2026-08-05T13:07:00Z",
+  "reason": "The stable controller rejected the resume invocation before launch because its status output path did not equal the persisted initial controller status path.",
+  "stable_runner_commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+  "proof_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\runner-migration\\C2_D1_006_RETRY_DISPATCH_PROOF.json",
+  "stderr_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\runner-migration\\C2_D1_006_RETRY_DISPATCH.stderr.log",
+  "controller_or_codex_started": false,
+  "test_process_started": false,
+  "resource_claim_acquired": false,
+  "authorized_retry_consumed": false,
+  "locked_inputs_changed": false,
+  "correction": "Reuse the original persisted status.json while retaining distinct retry JSONL, stderr, and last-message paths."
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "firmware-v2-c1-invalidation/v1",
+  "c1_lock_id": "cbc1ec54-5523-428e-9bd8-23c0d0cf1420",
+  "c1_lock_sha256": "a902d6c07c1cca19cc04b2ae9077efd24604f91cac77ebc60a8143f759e5837d",
+  "invalidated_at_utc": "2026-08-04T18:54:45.517758Z",
+  "cause": "Accepted C2 finding F-C2-FINDING-001 requires a new candidate-wide dependency-map input and focused protected-test evidence.",
+  "earliest_route": "C2 dependency mapping and selective protected-test execution, then fresh C0 and a new C1 lock",
+  "candidate_revision_changed": false,
+  "mcp_server_revision_changed": false,
+  "hardware_was_admitted_or_accessed": false,
+  "status": "INVALID_FOR_C3"
+}

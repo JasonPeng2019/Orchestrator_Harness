@@ -1,0 +1,131 @@
+{
+  "schema": "firmware-v2-candidate-shared-code-dependency-map/v1",
+  "owner": "ROOT-IM",
+  "candidate": {
+    "commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+    "joined_branch": "firmware/v2-s24-a1-c3-policy-0001",
+    "clean_at_audit": true,
+    "prior_accepted_commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96"
+  },
+  "protected_baseline": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "manifest_path": "plans/general-coding-harness/evidence/firmware-v2/preflight/BASELINE_UNIT_MANIFEST.json",
+    "manifest_sha256": "e0113dd1f0f6ab2d6fd8e450caef5d407ad8aa3b6b28c7eb234ecd04bd51a120",
+    "node_count": 248
+  },
+  "prior_complete_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_b5753eb.json",
+    "sha256": "d257d7ae8bb4037da309ea7efad8afd94e755dc5f41dd595738e59cf2fa18ecb",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_b5753eb.json",
+    "root_acceptance_sha256": "bfedc55e0b54087300472de2b57617f13f452edd925eadb8cf2cc1d9a0644dc3",
+    "preserved_without_rewrite": true
+  },
+  "delta_inventory": {
+    "base_commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+    "candidate_commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+    "changed_path_count": 2,
+    "changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py"
+    ],
+    "deleted_test_paths": [],
+    "modified_protected_baseline_test_paths": [],
+    "weakened_oracles": []
+  },
+  "delta_mappings": [
+    {
+      "paths": [
+        "firmware_acceptance/c3_harness.py",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py"
+      ],
+      "behavior": "C3 startup independently binds the C1-local operative MCP policy and the exact candidate-source provenance policy, requires semantic JSON equality, and rejects path/hash/link/malformed/semantic drift before readiness",
+      "stable_ids": [
+        "C3-STARTUP-POLICY-BINDING"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_startup_distinguishes_operative_and_source_policy_bindings"
+      ],
+      "credit": "The new constructor regression passed once at exact joined tip 2877ec1 after the independently observed test-fixture argument defect was routed to the same author and corrected. It covers the distinct-path semantically equal success case plus source path substitution, hash drift, a Windows junction/reparse source, malformed JSON, and semantic mismatch."
+    }
+  ],
+  "retained_prior_mappings": {
+    "prior_map_preserved": true,
+    "retained_c3_ids": [
+      "C3-CP-01-02",
+      "C3-CP-04",
+      "C3-CP-05",
+      "C3-CP-06",
+      "C3-CP-07",
+      "C3-SERVER-LIMITATION-CREATE-ONCE",
+      "C3-SERVER-LIMITATION-CLOSED-EVIDENCE"
+    ],
+    "reason": "The product delta is confined to C3Harness.__init__ policy provenance validation. The retained C3 methods use object.__new__ fixtures and cover request/replay, target assignment, retained sessions, limitation brokerage, and shutdown paths outside the changed constructor region; none of their assertions or mapped production behaviors changed. The new constructor ID is the sole dependency-invalidated execution selected and it passed."
+  },
+  "evidence": [
+    {
+      "ids": ["F-PRE-C3-002"],
+      "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+      "path": "plans/general-coding-harness/evidence/firmware-v2/final/c2/attempt-0003/ROOT_PRE_C3_ADMISSION_GAP.json",
+      "sha256": "8780b633afeb62021db53c81022b193f922742eda675e05595c58969535ca7e2"
+    },
+    {
+      "ids": ["C3-STARTUP-POLICY-BINDING-PRODUCT"],
+      "commit": "af6cbfb7dc7c0a148afcf9c1341e8099c73de034",
+      "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.P-C3-POLICY-0001/.agent-workspace/RESULT.json",
+      "sha256": "d177b5439f97cb5e2f9b80ec39331c91625aecd36db708a3e62b1573fb50675a"
+    },
+    {
+      "ids": ["F-S24-R1-001"],
+      "commit": "af6cbfb7dc7c0a148afcf9c1341e8099c73de034",
+      "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.R1-C3-POLICY-0001/.agent-workspace/FINDINGS.json",
+      "sha256": "366b635cacaa31b18a6583ee583c56f186530a4ad203394369a22c76887ac19f",
+      "root_triage_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.R1-C3-POLICY-0001/.agent-workspace/ROOT_TRIAGE.json",
+      "root_triage_sha256": "0b10fc5674180f9d9ca3872f5d1057cc8575f2558683b5e6de5ec92c86e20623"
+    },
+    {
+      "ids": ["S24-D1-C3-POLICY-TEST-FIXTURE-CONSTRUCTOR-001"],
+      "commit": "3b2bf7f665c12b1726a08a7ebea147fe22dd71ec",
+      "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.D1-C3-POLICY-0001/.agent-workspace/TEST_REPORT.json",
+      "sha256": "4d9bf350cad5c46d41bb9944eb13bce496c4be03f5e54e37e46a96e78a6be695",
+      "outcome": "FAIL",
+      "root_triage_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.D1-C3-POLICY-0001/.agent-workspace/ROOT_TRIAGE.json",
+      "root_triage_sha256": "613c5fb4fc799e5e99eb14b195bbe02a52266c5df25ad58bc07f67820298e691"
+    },
+    {
+      "ids": ["C3-STARTUP-POLICY-BINDING"],
+      "commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+      "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.D1-C3-POLICY-0002/.agent-workspace/TEST_REPORT.json",
+      "sha256": "00fc5a97ffaf85f89776f5b232b2889189e1fbbaa04b087a3129ea5cf25d2bf6",
+      "outcome": "PASS"
+    },
+    {
+      "ids": ["F.C0.FR1-0015"],
+      "commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+      "path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0015/RESULT.json",
+      "sha256": "d7f53ac05f939cc7e0f4259822d72c102f23e802474bcace5a0010f425b56ada",
+      "outcome": "PASS"
+    }
+  ],
+  "registry_reconciliation": {
+    "prior_unique_green_ids": 145,
+    "new_unit_test_ids": 1,
+    "current_unique_green_ids": 146,
+    "freshly_revalidated_existing_ids": 0,
+    "invalidated_groups": 0,
+    "selected_for_additional_execution": []
+  },
+  "non_regression_proof": {
+    "baseline_collection_recollected": false,
+    "deleted_protected_baseline_ids": [],
+    "baseline_assertion_modifications": [],
+    "oracle_weakened": false,
+    "unaffected_green_tests_rerun": false,
+    "conclusion": "The two-path delta changes only C3 constructor policy binding and adds its focused host regression. No protected baseline test was deleted or changed, no retained C3 oracle was weakened, the sole new dependency-invalidated ID passed once, and fresh C0 returned NO CANDIDATE GAP / READY."
+  },
+  "no_hardware_boundary": {
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "server_edited": false,
+    "statement": "This map reconciles static review and one host-only constructor unit execution. No MCP, board, probe, serial, flash, reset, debug, BLE, LoRa, RF, or hardware operation was run."
+  }
+}

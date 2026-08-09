@@ -1,0 +1,43 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-001",
+  "role": "test_executor",
+  "commit": "7a28b186e91f2945ea9c59869a216fa8caf8407e",
+  "root_decision": "ACCEPT_EMPTY_FINDINGS_AND_PROTECTED_PASS",
+  "findings_count": 0,
+  "admissible_findings": [],
+  "rejected_findings": [],
+  "cost_benefit_rule": "Only codebase-breaking, functionality-breaking, or demonstrably worth-the-effort findings may route a repair; no finding was submitted.",
+  "independent_validation": {
+    "dependency_map_sha256": "dbe652b34b7e61710de98784878b2fc9fe77089f2a2d4f8c3c33021fa6cbfa52",
+    "expected_id_count": 19,
+    "actual_id_count": 19,
+    "exact_order_match": true,
+    "symmetric_difference_count": 0,
+    "all_outcomes": "PASS",
+    "skipped": 0,
+    "expected_failures": 0,
+    "unexpected_successes": 0,
+    "lane_clean": true,
+    "resource_locks_empty_after_exit": true,
+    "controller_state": "CODEX_EXITED",
+    "controller_result_state": "VALID",
+    "controller_result_valid": true
+  },
+  "artifact_hashes": {
+    "findings_sha256": "1129c40634460358770700be1cc44140f6dbf95cba56ca3131a759bbdcc7093b",
+    "result_sha256": "e367e2feed36f2f39321e7aa547a663e4c090decc6146c557e1e3bd3874c973c",
+    "test_report_sha256": "4206af8f3e76c0827f86533e14f436c423ce8b4ad527d09a68be212fb24b5340",
+    "controller_status_sha256": "ded639362c6a8ee4fc67743365accde25eaef472f38d2e81e8166f7910ad842a",
+    "launch_receipt_sha256": "fa935b414012c86689124fd03bfd210f57a75be4b302fb4693709ac9fb9078da"
+  },
+  "retained_green_work": {
+    "prior_host_ids_rerun": false,
+    "prior_host_id_count": 2,
+    "reason": "Only the 19 IDs invalidated by the shared lane_controller dependency map were rerun."
+  },
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false,
+  "accepted": true
+}

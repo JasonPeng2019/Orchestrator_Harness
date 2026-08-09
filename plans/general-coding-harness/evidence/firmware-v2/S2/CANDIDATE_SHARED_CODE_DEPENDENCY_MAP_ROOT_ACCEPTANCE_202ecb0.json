@@ -1,0 +1,84 @@
+{
+  "schema": "firmware-v2-candidate-shared-code-dependency-map-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+  "candidate_branch": "firmware/v2-s25-p-c3-runtime-0001",
+  "reserved_candidate_branch": "firmware/v2-candidate",
+  "candidate_clean": true,
+  "map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_202ecb0.json",
+    "sha256": "d0d3691e3703d8cc5262a2bacbf96adbb05c910b60b376248403643da9efff23"
+  },
+  "audit": {
+    "base_commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+    "git_changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "firmware_acceptance/c3_watcher_oracle.py",
+      "firmware_acceptance/controller.py",
+      "firmware_acceptance/kit.py",
+      "orchestrator_harness/tests/test_firmware_acceptance_controller.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py",
+      "orchestrator_harness/tests/test_firmware_c3_watcher_oracle.py"
+    ],
+    "declared_changed_paths_match_git": true,
+    "declared_reference_count": 12,
+    "declared_reference_hashes_valid": 12,
+    "protected_baseline_ids": 248,
+    "deleted_protected_ids": [],
+    "modified_protected_test_paths": [],
+    "weakened_oracles": [],
+    "prior_green_ids": 146,
+    "new_green_ids": [
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_initial_status_rejects_malformed_wrong_identity_exit_and_timeout",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_prestart_branch_only_and_setup_launch_failures_cleanup_exactly",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_reconciled_restart_emits_closed_status_and_allows_signed_shutdown_only",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_record_is_closed_and_restart_remains_shutdown_only",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_required_response_and_reap_reconciliation_are_exact",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_restart_rejects_closed_evidence_mutation_matrix",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_session_roots_are_single_hil_lane_and_generic_defaults_remain",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_singular_target_preserves_generic_broker_default",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_started_publication_ambiguity_gets_bound_terminal",
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s25_a1_oracle_closed_authentic_contradiction_and_hash_evidence",
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s25_a1_oracle_contains_malformed_wrong_identity_and_noncontradictions"
+    ],
+    "freshly_revalidated_prior_green_ids": 50,
+    "current_green_ids": 157,
+    "invalidated_groups": 0,
+    "uncovered_changed_behavior": [],
+    "selected_for_additional_execution": []
+  },
+  "fresh_execution": {
+    "lane": "S25.D5",
+    "commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+    "execution_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.D5-C3-RUNTIME-0001/.agent-workspace/TEST_EXECUTION.json",
+    "execution_sha256": "ef8e64447e95df9576692d04ba6b3737d83c29daac8f2ab10059c2ecc94675c2",
+    "output_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.D5-C3-RUNTIME-0001/.agent-workspace/TEST_OUTPUT.txt",
+    "output_sha256": "823f27ee73001afeed47212c1fd54eeef2679c598556d4896c9c73ad44e7a3e9",
+    "root_admission_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.D5-C3-RUNTIME-0001/.agent-workspace/ROOT_ADMISSION.json",
+    "root_admission_sha256": "60e1669f9df0fb8ea0c56be2ca87887dd47b9983b0f0b6ee2b4813e6db3ad5d4",
+    "tests_run": 61,
+    "skips": 0,
+    "xfails": 0,
+    "failures": 0,
+    "errors": 0,
+    "resource_warnings": 0,
+    "outcome": "PASS",
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "criticism_audit": {
+    "source_reviewer": "Accepted stream-handle ownership defect was repaired; the persistent reviewer returned an exact empty finding set and ROOT accepted it.",
+    "test_author": "Intermediate type-unsafe assertions were rejected twice; the final assertions preserve oracle strength and introduce no BasedPyright differential.",
+    "executor": "The preserved PowerShell NativeCommandError criticism was rejected as normal native-stderr presentation, not hidden diagnostics or a candidate defect."
+  },
+  "classification": {
+    "candidate_harness_gap_remaining": false,
+    "test_gap_remaining": false,
+    "environment_gap_remaining": false,
+    "pinned_mcp_server_defect": false,
+    "hardware_or_rf_operation": false
+  },
+  "decision": "ACCEPT_MAP_AND_UNLOCK_SINGLE_REGISTRY_RECONCILIATION",
+  "outcome": "PASS",
+  "created_at": "2026-08-05T09:45:56Z"
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-pre-c1-executor-006",
+  "role": "test_executor",
+  "commit": "40b4039b3ecb3021dc545901419416b278226f7e",
+  "findings": [
+    {
+      "id": "S2.D1-001",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": [
+        "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_signed_close_requires_returned_disconnect",
+        "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_dynamic_route_plan_validation_ready_uart_and_terminal_contract"
+      ],
+      "evidence": [
+        ".agent-workspace/bounded-batch-40b4039/12-orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_signed_close_requires_returned_disconnect.stderr.log",
+        ".agent-workspace/bounded-batch-40b4039/14-orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_dynamic_route_plan_validation_ready_uart_and_terminal_contract.stderr.log",
+        "orchestrator_harness/tests/test_firmware_acceptance_controller.py:91-93",
+        "orchestrator_harness/tests/test_firmware_acceptance_controller.py:236-241",
+        "firmware_acceptance/controller.py:527-540"
+      ],
+      "observed": "The signed-close test directly forces READY without an accepted setup route and deterministically raises AdmissionError: a fresh accepted setup overview route is required. The dynamic-route test's helper always publishes proposal-1.json, so its second call deterministically raises AdmissionError: immutable artifact already exists. In both cases the opened retained transport remains live after the uncaught fixture error; the unittest body reports FAILED in under 0.5s, but the Python process remains live until the 30-second bound because its stderr log helper still holds the temporary log open.",
+      "expected": "The signed-close fixture must establish the current predecessor-bound setup route before issuing disconnect. Each dynamic retained-session call must publish to a fresh immutable proposal path, such as a sequence-derived filename, while preserving the locked route and predecessor checks.",
+      "reproduction": "The one-pass bounded batch ran each affected stable ID exactly once. Test 12's preserved stderr records the route AdmissionError followed by TemporaryDirectory WinError 32 on the retained stderr log. Test 14's preserved stderr records the immutable artifact AdmissionError followed by the same locked-log cleanup error; both exact PIDs were verified and terminated after 30 seconds.",
+      "impact": "Two of 24 controller IDs remain red and recreate the prior opaque whole-shard timeout pattern: the test assertion fails quickly, but the orphaned retained-session helper prevents the Python process from exiting and blocks temporary-root cleanup.",
+      "no_fix_consequence": "The retained-session close and dynamic-route coverage cannot complete, and the controller/host acceptance evidence cannot reach 26/26 bounded exits even though the stale fixture failures are deterministic and localizable.",
+      "smallest_fix": "Update the signed-close fixture to establish a valid accepted route instead of mutating READY in isolation, and change _session_artifacts to derive proposal filenames from the request sequence. Add no controller relaxation; the current route and immutable-artifact checks are the intended contract.",
+      "complexity": "Low: two localized synthetic-fixture corrections; no production contract change.",
+      "regression_risk": "Low: the corrections align tests with the existing predecessor-bound route and create-once artifact invariants and preserve their rejection checks.",
+      "verification_cost": "Low: rerun only the two affected stable IDs after fixture correction; the bounded batch evidence already covers the other 24 IDs.",
+      "alternatives": "Relaxing route admission, allowing proposal overwrites, or making the helper thread daemon-only would hide invalid retained-session evidence and weaken cleanup guarantees. Keeping the stale fixtures leaves the red tests and timeout side effect intact.",
+      "cost_benefit": "The failures and timeout mechanism are directly reproduced with preserved output, while the smallest correction is confined to test setup and removes two blockers to the intended retained-session coverage. The value clearly exceeds its complexity, regression risk, and verification cost.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "S2.D1-002",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": [
+        "orchestrator_harness.tests.test_firmware_acceptance_host.FirmwareAcceptanceHostTests.test_S2_A1_002_admission_rejects_immutable_operation_drift",
+        "firmware_acceptance.kit.canonical_bound_operation"
+      ],
+      "evidence": [
+        ".agent-workspace/bounded-batch-40b4039/26-orchestrator_harness.tests.test_firmware_acceptance_host.FirmwareAcceptanceHostTests.test_S2_A1_002_admission_rejects_immutable_operation_drift.stderr.log",
+        "orchestrator_harness/tests/test_firmware_acceptance_host.py:38-49",
+        "firmware_acceptance/kit.py:179-189"
+      ],
+      "observed": "The host test's _complete_chain fixture calls canonical_bound_operation before it can build the immutable chain, and the closed-key check raises AdmissionError: bound operation must be a closed complete authority object. The fixture omits current required authority fields including delegated_user_scope_sha256, action_class, and scope_effect, so the intended immutable-operation drift assertion is never reached.",
+      "expected": "The host chain fixture must construct the current complete bound-operation authority object before hashing and recording its immutable stages, then mutate only the operation method in the later drift assertion.",
+      "reproduction": "The one-pass bounded batch ran the exact stable ID once. Its preserved stderr records the error at test_firmware_acceptance_host.py:54, raised by firmware_acceptance/kit.py:189; the process exited with no skip, expected failure, or unexpected success.",
+      "impact": "One of two host IDs is red before broker admission, so immutable-operation drift protection is not exercised by the assigned host shard and the complete 26-test acceptance evidence remains red.",
+      "no_fix_consequence": "The host regression test continues to fail during fixture construction and cannot certify that immutable operation drift is rejected at the intended admission stage.",
+      "smallest_fix": "Extend _complete_chain's synthetic bound operation with the current required delegated scope, action class, and scope-effect fields and their valid bindings, keeping the later method mutation unchanged.",
+      "complexity": "Low: localized host-test fixture update to the already-closed authority shape.",
+      "regression_risk": "Low: canonical_bound_operation remains strict; the correction only lets the fixture reach the existing drift-rejection assertion.",
+      "verification_cost": "Low: rerun only the affected host stable ID after the fixture correction.",
+      "alternatives": "Weakening canonical_bound_operation's closed-key requirement would reduce immutable authority integrity and would conceal the stale fixture rather than repair the test contract.",
+      "cost_benefit": "The failure is directly reproduced, the missing shape is explicit in the production closed-key set, and a small fixture correction restores the intended host admission coverage with materially lower risk than weakening the authority validator.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

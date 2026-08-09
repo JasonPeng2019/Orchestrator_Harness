@@ -1,0 +1,43 @@
+{
+  "schema": "firmware-v2-c2-root-retry-triage/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "authorized_at_utc": "2026-08-05T13:06:01Z",
+  "authority": {
+    "execution_plan_rule": "C2 environment/test-execution correction with no locked-input change reruns only the failed ID against the same lock",
+    "root_triage_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0006\\ROOT_TRIAGE.json",
+    "same_c1_lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "same_c1_lock_sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "same_candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "same_thread_id": "019fd1fd-83a3-7ad0-8370-a544c08c7c6e",
+    "same_worker_invocation_id": "c2-d1-006"
+  },
+  "authorized_retry": {
+    "stable_ids": [
+      "F-C2-LOCK-001"
+    ],
+    "retry_suffix": "retry-001",
+    "maximum_fresh_processes": 1,
+    "required_predicate_correction": "Exclude only the exact current C2_D1_006 stable-runner/controller process ancestry; continue to fail on any other relevant controller, C3, MCP, or hardware process.",
+    "process_evidence_rule": "Publish a distinct retry process record with a non-null observed exit code. If exact exit cannot be captured, preserve another FAIL rather than deriving success from desired outcome.",
+    "report_correction": "After the retry, update TEST_REPORT.json and RESULT.json without changing the four prior PASS logs or hiding the initial LOCK failure and metadata criticism. RESULT.json remains last."
+  },
+  "forbidden": {
+    "rerun_green_ids": [
+      "F-C2-AUTH-001",
+      "F-C2-DISPOSABLE-001",
+      "F-C2-CREDIT-001",
+      "F-C2-STATE-001"
+    ],
+    "candidate_or_test_source_edits": true,
+    "c1_or_registry_edits": true,
+    "mcp_or_hardware_access": true
+  },
+  "classification": {
+    "candidate_harness_failure": false,
+    "watcher_failure": false,
+    "c1_invalidation": false,
+    "ordinary_executor_correction": true
+  },
+  "decision": "RETRY_EXACTLY_ONE_FAILED_ID_ON_SAME_THREAD"
+}

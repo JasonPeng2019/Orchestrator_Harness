@@ -1,0 +1,50 @@
+{
+  "schema": "firmware-v2-c1-validation/v1",
+  "c1_lock_id": "d31d847b-ab7a-4abf-9b06-823a8d09146d",
+  "validated_at_utc": "2026-08-05T04:59:00Z",
+  "c1_lock": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\d31d847b-ab7a-4abf-9b06-823a8d09146d\\C1_LOCK.json",
+    "sha256": "d403facd1bdddbe98c58aca15bef683f309cf300ab41a9d3054eea65a704db23",
+    "checksum_file": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\d31d847b-ab7a-4abf-9b06-823a8d09146d\\C1_LOCK.sha256",
+    "checksum_matches": true
+  },
+  "candidate": {
+    "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+    "branch": "firmware/v2-candidate",
+    "clean": true
+  },
+  "mcp_server_fixture": {
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "branch": "firmware/v2-mcp-candidate",
+    "clean": true,
+    "immutable": true
+  },
+  "checks": {
+    "locked_path_hash_references": 38,
+    "all_locked_path_hash_references_valid": true,
+    "governing_hashes_current": true,
+    "authorization_closed_schema_valid": true,
+    "authorization_candidate_validator_passed": true,
+    "canonical_user_scope_sha256": "571d7d36cd7242762f0bbea0f2c55b095c2b381c6270538285190097a6e50013",
+    "delegated_authorization_sha256": "4a9dec426b0b32bedfa9ac2a90f851e84cd4dd442f5700193c45caa319595ee6",
+    "c1_policy_sha256": "f2fa03fbaf41f602121249f8709537040cfd3792369492ceeaf5ffc4f7c029a4",
+    "candidate_policy_source_sha256": "35bc68b6ec79a8e9680c42dd32c32be228ee956ee7b53d68908b8dec13d19b78",
+    "policy_semantic_equality": true,
+    "policy_default_deny": true,
+    "policy_exact_method_count": 21,
+    "target_seed_exact_file_count": 4,
+    "target_seed_manifest_hashes_match": true,
+    "c3_harness_sha256": "09d0abd0f4c667b82d2b16fe17bcc41a398c274af94a534ac45320aa466f4307",
+    "c3_limitation_sha256": "6fbdd847740170d5c2ab0f3e729e3e242b493ac714cfe9deb2557475d416c299",
+    "implementation_registry_green_ids": 145,
+    "implementation_registry_invalidations": 0,
+    "resource_manifest_hashes_valid": "47/47",
+    "active_resource_claims": 0,
+    "surviving_managed_processes": 0
+  },
+  "delegated_scope_attested": true,
+  "hardware_execution_admitted": false,
+  "mcp_server_launched": false,
+  "c2_unlocked": true,
+  "status": "PASS"
+}

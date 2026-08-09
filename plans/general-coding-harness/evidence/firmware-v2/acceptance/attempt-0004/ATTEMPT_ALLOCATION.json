@@ -1,0 +1,83 @@
+{
+  "schema": "firmware-v2-c3-attempt-allocation/v1",
+  "owner": "ROOT-IM",
+  "attempt_id": "attempt-0004",
+  "allocated_at_utc": "2026-08-05T14:20:37.624Z",
+  "allocation_rule": {
+    "largest_prior_runtime_attempt": "attempt-0003",
+    "largest_prior_evidence_attempt": "attempt-0003",
+    "largest_prior_control_attempt": null,
+    "all_selected_paths_absent_before_allocation": true,
+    "monotonic_selection": "attempt-0004"
+  },
+  "roots": {
+    "runtime": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0004",
+    "evidence": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0004",
+    "external_control": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance-control\\attempt-0004"
+  },
+  "prior_attempt": {
+    "attempt_id": "attempt-0003",
+    "result_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\ACCEPTANCE_RESULT.json",
+    "result_sha256": "5da030a6e6102e6233c63ee7767b75d3f12b94afec8ce23c4f6276ac217a0334",
+    "topology_shutdown_sha256": "7f5931fee19162a4023a080d5bd3b68d4d5ad7d57f6a528b1bdbaf15a7916e9a",
+    "root_abort_sha256": "8ec3d3f39522dd0d8e12c5d27d90ba84f7786f0af5c55dc5491bf8b2cfdf2c56",
+    "post_seal_audit_sha256": "5c1a2077744a7a4e048ad57d9d32e25bac906c52543c85dad334c9d3e4b1ff4a",
+    "outcome": "FAILED_DURING_P0_CANDIDATE_AND_WATCHER_FINDINGS_WITH_POST_SEAL_DRIFT",
+    "reused_mutable_state": false,
+    "required_regressions": [
+      "authentic controller initial RUNNING_CODEX status is accepted against exact wrapper/controller identity",
+      "an authentic status rejection is classified ABORT_REQUIRED by the deterministic watcher oracle",
+      "watcher continuously observes both rejected assignment lifecycles and all four correlated session claims",
+      "all O/W/signer/helper mutable outputs remain outside both manifest-covered roots",
+      "ROOT retains O/W/signer/governing-helper process handles through ordered exit and reap"
+    ]
+  },
+  "operative_c1": {
+    "lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\721b6351-0fdd-448d-8d89-0cee20acf8b0\\C1_LOCK.json",
+    "sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "validation_sha256": "10b361ecbfa448790b0c2d9045c29459cc4af96b33d9be51faf20a233a7bb678",
+    "delegated_sha256": "1c379ea4732e87985b06c48b9723e5f5572415eb59d1293d8d82512f53b7ba12"
+  },
+  "operative_c2": {
+    "attempt": "attempt-0006",
+    "root_acceptance_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0006\\ROOT_ACCEPTANCE.json",
+    "root_acceptance_sha256": "2e84b8df58fe5fdd3afaf759c5f9422ef5623b13a10f2833b1c7fd8e05227838",
+    "decision": "C3_UNLOCKED"
+  },
+  "candidate": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "branch": "firmware/v2-candidate",
+    "commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "clean": true
+  },
+  "mcp_server": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\mcp-candidate",
+    "branch": "firmware/v2-mcp-candidate",
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "clean": true,
+    "immutable": true
+  },
+  "governing_hashes": {
+    "goal": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "generalization_spec_2": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "implementation_roadmap_2": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "execution_readiness_2": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66",
+    "execution_plan_2": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"
+  },
+  "implementation_checkpoint": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\PARALLEL_CHECKPOINT.md",
+    "sha256_at_allocation": "43e974e5aec4555556662007a96f39321a1a237bf19ab8700adcff3047660c86"
+  },
+  "initial_state": {
+    "fresh_attempt_registry": true,
+    "registry_entries": 0,
+    "target_source_reconstruction": null,
+    "target_root_absent_until_candidate_materialization": true,
+    "external_control_root_excluded_from_manifest": true,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "target_workers_launched": 0,
+    "resource_claims": 0
+  }
+}

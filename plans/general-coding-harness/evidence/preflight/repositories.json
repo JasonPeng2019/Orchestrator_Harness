@@ -1,0 +1,24 @@
+{
+  "recorded_at": "2026-08-03T00:00:00-07:00",
+  "outer": {
+    "path": ".",
+    "branch": "main",
+    "head": "7e5fc910c06593222a55dafb225443d6729d0b19",
+    "clean": false,
+    "note": "Existing planning, skill, and documentation changes were preserved and are outside product work."
+  },
+  "frozen": {
+    "path": "frozen-harness-to-use",
+    "branch": "frozen-v1",
+    "head": "287ea53793e3963062882012ff80c3b0e8c41587",
+    "porcelain_status": "",
+    "binary_diff": ""
+  },
+  "candidate": {
+    "path": "harness-in-progress",
+    "branch": "progress/v1.1",
+    "head": "287ea53793e3963062882012ff80c3b0e8c41587",
+    "porcelain_status": "",
+    "binary_diff": ""
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R2",
+  "worker_invocation_id": "s2-r2-route-review-001",
+  "branch": "firmware/v2-s2-r2",
+  "commit": "a63498cccd83d17499e113116ec90670c7c56265",
+  "outcome": "FAIL",
+  "summary": "FAIL: computed limitation hashes and fixed filenames are present, but causal diagnostics and substitute PASS remain custom self-reports rather than real C3-HARNESS controller/result provenance, and paths do not distinguish attempts.",
+  "checks": [
+    {"name":"Delta identity","outcome":"PASS","summary":"Reviewed only e26837785745bae3f5102e79305ade677b68cdac..a63498cccd83d17499e113116ec90670c7c56265 at the clean current tip."},
+    {"name":"Causal pin bindings","outcome":"FAIL","summary":"Raw-result, bound-input, and git-show source hashes are computed, but the diagnostic is still accepted as a self-reported PASS without C3 launch/execution/result provenance."},
+    {"name":"Attempt path confinement","outcome":"FAIL","summary":"C3 evidence paths include lane and limitation ID but omit attempt ID; diagnostic evidence is only confined to the broad broker root."},
+    {"name":"Actual C3 status/result validation","outcome":"FAIL","summary":"Substitute artifacts do not consume orchestrator-lane-controller/v1 or validate an orchestrator-lane-result/v1 via the candidate's existing gate."},
+    {"name":"Host-only validation","outcome":"PASS","summary":"Parsed current kit source successfully and inspected the existing controller-status and result validators. No MCP, hardware, probe, serial, or RF operation was invoked."}
+  ]
+}

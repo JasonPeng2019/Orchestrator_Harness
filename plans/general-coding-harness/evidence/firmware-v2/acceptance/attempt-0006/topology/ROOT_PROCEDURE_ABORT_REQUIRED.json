@@ -1,0 +1,32 @@
+{
+  "schema": "firmware-c3-root-procedure-abort-required/v1",
+  "attempt_id": "attempt-0006",
+  "owner": "ROOT-IM",
+  "reason": "external governing-watcher root was precreated even though its create-new helper owns initialization",
+  "classification": "ROOT_ALLOCATION_PROCEDURE_ERROR",
+  "candidate_defect": false,
+  "watcher_defect": false,
+  "identity_gate_complete": false,
+  "orchestrator_launched": false,
+  "watcher_launched": false,
+  "candidate_service_launched": false,
+  "target_materialized": false,
+  "mcp_launched": false,
+  "hardware_accessed": false,
+  "evidence": {
+    "prelaunch_validation": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0006\\topology\\ROOT_PRELAUNCH_VALIDATION.json",
+      "sha256": "eeb5239aa08e7e95d9221231908127a27924b67d92bc3e079e382c0260839227"
+    },
+    "launcher_intent": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0006\\topology\\ROOT_LAUNCHER_INTENT.json",
+      "sha256": "f784d3ff8eb67e8311a61de98a756f4200761e1ac2949ed18e53740626ed3b0f"
+    },
+    "supervisor_failure": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0006\\topology\\ROOT_SUPERVISOR_FAILURE.json",
+      "sha256": "d0f290df0e42943f5df1b5b85bd1e582b30a8dd49d2e4412061a31a569efde1e"
+    }
+  },
+  "correction": "The next attempt allocates the external control parent and root/orchestrator/watcher subdirectories only; governing-watcher remains absent for its inherited create-new helper.",
+  "recorded_utc": "2026-08-05T16:52:38.8313914Z"
+}

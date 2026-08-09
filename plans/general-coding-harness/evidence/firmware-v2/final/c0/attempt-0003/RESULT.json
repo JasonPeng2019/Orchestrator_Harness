@@ -1,0 +1,35 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-003",
+  "branch": "firmware/v2-c0-final-review",
+  "commit": "1c9d16de9e56d1f5340777a81bf09c448dfe9f5c",
+  "outcome": "FAIL",
+  "summary": "C0-FR1-003-001; C0-FR1-003-002",
+  "checks": [
+    {
+      "name": "sealed revision and committed-diff audit",
+      "command": "git rev-parse HEAD; git diff --name-status 4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f 1c9d16de9e56d1f5340777a81bf09c448dfe9f5c; git diff --check 4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f 1c9d16de9e56d1f5340777a81bf09c448dfe9f5c",
+      "outcome": "PASS",
+      "summary": "Reviewed the requested clean commit and committed LF diff; no whitespace defect was reported."
+    },
+    {
+      "name": "method-version repair static audit",
+      "command": "git diff 64199127ac787eeaaf6863726ff0a3bcb79798ed 1c9d16de9e56d1f5340777a81bf09c448dfe9f5c -- firmware_acceptance/kit.py orchestrator_harness/tests/test_firmware_acceptance_kit.py",
+      "outcome": "PASS",
+      "summary": "The committed evaluator now requires a positive non-boolean call method_version exactly equal to the locked rule version before dispatch admission."
+    },
+    {
+      "name": "controller MCP-log and environment boundary audit",
+      "command": "rg -n 'stderr_path|stderr_bytes|stderr_sha256|\\.env|validate_pinned_server|working_directory' firmware_acceptance; Get-Content firmware_acceptance/controller.py; Get-Content firmware_acceptance/kit.py",
+      "outcome": "FAIL",
+      "summary": "The declared per-lane server stderr log is never written, and no executable rejection path exists for server-loaded unreviewed .env configuration."
+    },
+    {
+      "name": "registry, protected-credit, and repair-evidence audit",
+      "command": "Get-Content C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/passed-tests.json; Get-Content C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/passed-tests.json; Get-Content C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.D1/.agent-workspace/TEST_REPORT.json",
+      "outcome": "PASS",
+      "summary": "The baseline manifest, protected 19-test credit, three target-materialization credits, and exact 27-test method-version-invalidated shard were accounted for; no test was run in this review."
+    }
+  ]
+}

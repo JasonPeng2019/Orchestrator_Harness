@@ -1,0 +1,19 @@
+{
+  "schema": "firmware-v2-mcp-server-pin/v1",
+  "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+  "worktree": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\mcp-candidate",
+  "clean_required": true,
+  "immutable_fixture": true,
+  "schema_sha256": "3c5500fc7b7b33b0a84140f9b3db516a0b7010d8ec1ba94d67cb7268cae56672",
+  "schema_digest": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\bf17d2fc-9dda-4932-b8e6-448de69b0591\\MCP_ALLOWED_SCHEMA_DIGEST.json",
+    "sha256": "c7fb3173c513a58eff9e21fde5d592810c6c8e9bbd00f646cd86c33a76497e6a"
+  },
+  "launch": {
+    "argv": ["uv", "run", "--project", "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\mcp-candidate", "--locked", "pyocd-debug-mcp"],
+    "pyproject_sha256": "a2443b3670f5fdadd232c84e4ac0a6a8560765752a4b2d3182b327e053f9c587",
+    "uv_lock_sha256": "803e95210429854ca9e92c1c26a16d1a60a5a795e3eae946b2bc5d5c366bff36",
+    "global_user_configuration": false,
+    "dotenv_forbidden": true
+  }
+}

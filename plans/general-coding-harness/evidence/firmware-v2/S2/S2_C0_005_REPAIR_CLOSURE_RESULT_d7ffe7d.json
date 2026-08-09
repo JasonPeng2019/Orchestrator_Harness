@@ -1,0 +1,26 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-004",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "d7ffe7d461adcfa7bc9652422b52df3e7660252a",
+  "outcome": "PASS",
+  "summary": "F-C0-FR1-005-001 and S2R1-C0-ATTEMPT0005-STDERR-FORCED-CLOSE-001 are closed: only natural EOF with complete persistence is certifiable, and bounded forced teardown is incomplete/fail-closed.",
+  "checks": [
+    {
+      "name": "candidate identity and tracked-worktree cleanliness",
+      "command": "git rev-parse HEAD; git status --porcelain",
+      "outcome": "PASS"
+    },
+    {
+      "name": "attempt-0005 and S2 triage evidence plus complete production repair-chain audit",
+      "command": "read-only evidence review; git diff 24a1ae7c08e559e606231543e1bbff0da0fd3a5a..d7ffe7d461adcfa7bc9652422b52df3e7660252a",
+      "outcome": "PASS"
+    },
+    {
+      "name": "automated tests",
+      "command": "not run (requested read-only review)",
+      "outcome": "NOT_RUN"
+    }
+  ]
+}

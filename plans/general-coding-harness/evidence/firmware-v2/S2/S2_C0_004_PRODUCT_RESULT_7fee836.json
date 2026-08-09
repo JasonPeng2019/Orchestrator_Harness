@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.P",
+  "worker_invocation_id": "s2-p-006",
+  "branch": "firmware/v2-s2-product",
+  "commit": "7fee836149eae1fa6144dc4ec9497e085535496d",
+  "outcome": "PASS",
+  "summary": "Production-only repair enforcing the locked write_serial UTF-8 byte bound before policy ALLOW.",
+  "checks": [
+    {"name": "kit compilation", "command": "python -m py_compile firmware_acceptance/kit.py", "outcome": "PASS", "summary": "Changed production module compiles."},
+    {"name": "focused kit tests", "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_kit -q", "outcome": "PASS", "summary": "10 focused host-only tests passed."},
+    {"name": "diff hygiene", "command": "git diff --check", "outcome": "PASS", "summary": "No whitespace errors."},
+    {"name": "hardware boundary", "command": "no MCP or physical interfaces accessed", "outcome": "PASS", "summary": "No MCP, serial, probe, flash, reset, debug, RF, or hardware access occurred."}
+  ]
+}

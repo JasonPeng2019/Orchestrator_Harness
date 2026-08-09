@@ -1,0 +1,107 @@
+{
+  "schema": "firmware-v2-root-review-admission/v1",
+  "owner": "ROOT-IM",
+  "created_utc": "2026-08-05T15:45:00Z",
+  "commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+  "reserved_branch": "firmware/v2-candidate",
+  "reserved_branch_fast_forwarded": true,
+  "incident": {
+    "attempt_id": "attempt-0005",
+    "classification": "FAILED_CANDIDATE_RECOVERY_AND_WATCHER_EVIDENCE",
+    "root_closeout_sha256": "340bc843e814c944655616da3b49408d2048423652e617bca5595ac75ad0f6f0",
+    "topology_shutdown_sha256": "4075af64614a1ffcc2c040760764973671de300b9d49548d6b3d7ca303671505",
+    "emergency_termination_sha256": "99725df8a0e5392725f79c0f2b1f548c1630cf0f0ba7188d4f88260db692f42d",
+    "root_procedure_abort_required_sha256": "2959037e317c9b330f783f49d32fb998b1303e6354ac98f3cd6196ea475840bb",
+    "candidate_defect": "A resource-bearing controller published transitional LAUNCH_FAILED before child launch, and repeated nonterminal C3 recovery collided with a create-once reconciliation artifact while a retained Windows Popen handle kept exact identity queryable.",
+    "watcher_defect_kept_separate": "The watcher later reserved a zero-byte ABORT_REQUIRED artifact after using an incomplete evidence reference; this did not invalidate the candidate recovery diagnosis and is not repaired by this product commit."
+  },
+  "repair": {
+    "base_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "source_commit": "cd61a4e8925aeb9eee81778b0d9bec902da05c55",
+    "initial_test_commit": "9943352f70b31d7d4190cf95480811b5bab47ef5",
+    "final_test_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "orchestrator_harness/lane_controller.py",
+      "orchestrator_harness/tests/test_coding_lane_controller.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py"
+    ],
+    "source_status_sha256": "ef959f4d0d48703325e550ed5f7d4ef1b412a6c4748985cf2fd803020dbb35be",
+    "source_result_sha256": "ebfeb13c222bb531eb0a47a879d56371117b18afffabe866b987c6afe1085ddf",
+    "test_author_status_sha256": "925428407d881f931484e411e1717d5c6c64d5cf0236e58efd4e78191378494b",
+    "test_author_result_sha256": "5686018716084d4b30ed0d8075ee9b69223fda2b56d705f8e74131ad060f94e3"
+  },
+  "review": {
+    "initial_source_and_test_review": {
+      "lane_id": "S27.R1",
+      "commit": "9943352f70b31d7d4190cf95480811b5bab47ef5",
+      "findings_sha256": "8ae71adddf07516b5776548523ba6e43c3a7873637a0f6fb6cedc474df827785",
+      "result_sha256": "2e759aa78818a26f44d25275393c81b291714514bec3ed253d53d00876f09a26",
+      "findings_count": 0,
+      "outcome": "PASS"
+    },
+    "final_exact_tip_review": {
+      "lane_id": "S27.R2",
+      "commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+      "status_sha256": "a0b3319cea2eec86c7883c8d5c1bf870c519e45bac10037798b88384da33c759",
+      "findings_sha256": "9bbdb61987f2022c3580b053bc657dcb0841d769fdbd46d7696fc8edce639cac",
+      "result_sha256": "3dc17f8ae2e5e191ed51e49e690ec38696bfc32c25e24a9627ca631689defe1a",
+      "findings_count": 0,
+      "outcome": "PASS"
+    }
+  },
+  "test_execution": {
+    "preserved_failed_run": {
+      "lane_id": "S27.D1",
+      "commit": "9943352f70b31d7d4190cf95480811b5bab47ef5",
+      "test_execution_sha256": "8ac8a2f68a480cba808952a1af7e9fc61749d37e360d0fb8b54315029944ede7",
+      "findings_sha256": "46ebebefcd0947dd4503d251cd9b487922b0a087b0b762c958307b0cbc4d47a2",
+      "result_sha256": "5a51b8324b074544bc28417d6aecfb2ed68d6cfd75240ddcca5fb91e9f8f5c7f",
+      "outcome": "FAIL",
+      "accepted_findings": [
+        "S27.D1-C3-TESTFIXTURE-POpen-GIT-001",
+        "S27.D1-C3-TESTFIXTURE-POpen-GIT-002"
+      ],
+      "vetoed_candidate_change": {
+        "finding_id": "S27.D1-C3-ENV-PYTHONDONTWRITEBYTECODE-001",
+        "decision": "EXECUTOR_ORCHESTRATION_PROMPT_GAP",
+        "reason": "The pinned stable projection removes the candidate-only isolation field and the ROOT prompt incorrectly assumed the variable was inherited; the fresh executor normalized its environment. Product code and cleanup machinery would be net-negative."
+      }
+    },
+    "fresh_passing_run": {
+      "lane_id": "S27.D2",
+      "commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+      "status_sha256": "d0789855b3b022fc4a07bb59de119075c08011ae5535c623e5b416800c020529",
+      "test_execution_sha256": "b126fb631c09e7cf48c3c9398342904cd310136a873cf955126f9b75cf4e7be7",
+      "findings_sha256": "72bd537df1d2bc01efd7063a9a128c6d56fffc146bb1d0571033a4a6c6cb40aa",
+      "result_sha256": "ca4d2e52ce3895f2e9c1563393e53fc78bcd4cfabf2109fe6d0ebc6b5e547aaf",
+      "tests_run": 3,
+      "tests_passed": 3,
+      "failures": 0,
+      "errors": 0,
+      "resource_warnings": 0,
+      "bytecode_files": 0,
+      "findings_count": 0,
+      "outcome": "PASS"
+    }
+  },
+  "root_decision": {
+    "accepted_behavior": [
+      "No transitional LAUNCH_FAILED publication after successful named-resource acquisition.",
+      "Genuine child launch failures remain LAUNCH_FAILED and release exact claims.",
+      "Structurally complete rejected direct-controller identity is retained only for safe cleanup.",
+      "A terminal retained Popen proves that exact launcher reaped while independent controller absence remains exact-identity based.",
+      "Nonterminal recovery polling is artifact-free and terminal reconciliation is create-once and idempotent."
+    ],
+    "rejected_extra_engineering": [
+      "No production subprocess seam was added for tests.",
+      "No bytecode cleanup or stable-runner compatibility behavior was added to the candidate.",
+      "No duplicate test execution was consumed after the fresh exact-tip pass."
+    ],
+    "candidate_clean": true,
+    "resource_claims_remaining": 0,
+    "hardware_accessed": false,
+    "firmware_mcp_accessed": false
+  },
+  "admission": "ACCEPT_S27_RECOVERY_REPAIR; INVALIDATE_C0_C1_C2; AUTHORIZE_FRESH_C0_AT_EB3BBAB"
+}

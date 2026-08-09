@@ -1,0 +1,73 @@
+{
+  "schema": "firmware-v2-c3-attempt-allocation/v1",
+  "owner": "ROOT-IM",
+  "attempt_id": "attempt-0003",
+  "allocated_at_utc": "2026-08-05T10:40:00Z",
+  "allocation_rule": {
+    "largest_prior_runtime_attempt": "attempt-0002",
+    "largest_prior_evidence_attempt": "attempt-0002",
+    "both_selected_paths_absent_before_allocation": true,
+    "monotonic_selection": "attempt-0003"
+  },
+  "roots": {
+    "runtime": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0003",
+    "evidence": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003"
+  },
+  "prior_attempt": {
+    "attempt_id": "attempt-0002",
+    "closeout_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\topology\\ROOT_ATTEMPT_CLOSEOUT.json",
+    "closeout_sha256": "0b11b348898185eb5111adf7baa9c6d133a7d2237a129950ff23f1162c5c2a61",
+    "outcome": "FAILED_DURING_P0_CANDIDATE_FINDINGS",
+    "reused_mutable_state": false,
+    "repaired_findings": ["F-C3-P0-001", "F-C3-P0-002", "F-C3-W-001"]
+  },
+  "operative_c1": {
+    "lock_id": "d5aac12a-5486-4046-bafc-9fcdac544b10",
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\d5aac12a-5486-4046-bafc-9fcdac544b10\\C1_LOCK.json",
+    "sha256": "97add36a20457bc555852e501acd592663152dafe90b4b35fb51803e042ebb0c",
+    "validation_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\d5aac12a-5486-4046-bafc-9fcdac544b10\\C1_VALIDATION.json",
+    "validation_sha256": "4ca00e1c99f31eae136bca55e17d2e0e12f0ed13a01ab840e8454385089d9297",
+    "delegated_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\d5aac12a-5486-4046-bafc-9fcdac544b10\\DELEGATED_HARDWARE_AUTHORIZATION.json",
+    "delegated_sha256": "72c0d671d695e96f3c7b785f4245edc9ca91399d0c4a27a0e29e37d9481f08f0"
+  },
+  "operative_c2": {
+    "attempt": "attempt-0005",
+    "root_acceptance_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0005\\ROOT_ACCEPTANCE.json",
+    "root_acceptance_sha256": "bb86bda91284046fcd6d978019a310e3deb801cb968ceb74be158fbd71b2f8ac",
+    "decision": "C3_UNLOCKED"
+  },
+  "candidate": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "branch": "firmware/v2-candidate",
+    "commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+    "clean": true
+  },
+  "mcp_server": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\mcp-candidate",
+    "branch": "firmware/v2-mcp-candidate",
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "clean": true,
+    "immutable": true
+  },
+  "governing_hashes": {
+    "goal": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "generalization_spec_2": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "implementation_roadmap_2": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "execution_readiness_2": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66",
+    "execution_plan_2": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"
+  },
+  "implementation_checkpoint": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\PARALLEL_CHECKPOINT.md",
+    "sha256_at_allocation": "5a91030f85028bb2b185dc98527e863c2a03b8254b42a8f4f7a9aa883c0a977a"
+  },
+  "initial_state": {
+    "fresh_attempt_registry": true,
+    "registry_entries": 0,
+    "target_source_reconstruction": null,
+    "target_root_absent_until_candidate_materialization": true,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "target_workers_launched": 0,
+    "resource_claims": 0
+  }
+}

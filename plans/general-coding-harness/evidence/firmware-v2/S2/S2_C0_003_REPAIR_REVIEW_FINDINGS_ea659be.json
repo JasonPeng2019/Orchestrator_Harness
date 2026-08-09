@@ -1,0 +1,31 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-004",
+  "role": "reviewer",
+  "commit": "ea659be5d32a3eb24c6fe6e0c765f15209727dff",
+  "findings": [
+    {
+      "id": "S2R1-C0-ATTEMPT0003-STDERR-001",
+      "category": "CODEBASE_BREAKING",
+      "affected_ids": ["C8", "C31", "C33", "C49", "C67"],
+      "evidence": [
+        "firmware_acceptance/controller.py:208-217",
+        "firmware_acceptance/controller.py:169-184",
+        "firmware_acceptance/controller.py:450-463"
+      ],
+      "observed": "The stderr helper writes and flushes the retained log inside a broad `except BaseException: return`. A write or flush error therefore terminates the helper silently. `close_and_join()` subsequently hashes the possibly partial file and reports its path/digest without an error; normal process cleanup can then retain `helpers_stopped: true` and return a successful outcome.",
+      "expected": "A write/flush failure in the required MCP stderr sink must be retained as a log failure and prevent a success/complete-log claim; retained path/digest evidence is valid only after every captured stderr byte has been persisted and the sink closes successfully.",
+      "reproduction": "Use a file-like stderr log whose write or flush raises after accepting an initial chunk. `_stderr()` catches and discards that exception at controller.py:208-217. On teardown, controller.py:169-184 closes and hashes the truncated file, and controller.py:450-463 sees no `cleanup_error` from the transport, allowing the normal success path to continue.",
+      "impact": "A physical MCP call can be marked successful with a retained, hash-bound but incomplete server log, defeating the accepted C0 requirement that server stderr diagnostics and log-completeness failures remain auditable and fail closed.",
+      "no_fix_consequence": "C3/C4 may accept misleading server-log evidence precisely when filesystem failure drops MCP diagnostics, leaving no durable signal that the declared log boundary was incomplete.",
+      "smallest_fix": "Record stderr writer/flush exceptions in synchronized transport state; have `close_and_join()` expose that state as a cleanup error and refuse a complete digest claim, so existing controller cleanup releases the exact claim and raises. Add one focused fake-sink write/flush-failure assertion.",
+      "complexity": "Low and local to the new stderr transport state.",
+      "regression_risk": "Low: it changes only failed log persistence into a fail-closed controller result; stdout framing, launch arguments, lane binding, and cleanup ownership remain unchanged.",
+      "verification_cost": "Low host-only transport/controller coverage; no MCP server or hardware is required.",
+      "alternatives": "Treating a digest of the truncated file as sufficient leaves the precise evidence boundary untrustworthy; external log handling would violate controller-only ownership.",
+      "cost_benefit": "The direct false-completeness risk outweighs this contained error-propagation change and its focused verification cost.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

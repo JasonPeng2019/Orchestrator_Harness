@@ -1,0 +1,13 @@
+{
+  "schema": "root-agent-artifact-correction/v1",
+  "owner": "ROOT-IM",
+  "lane_id": "S2.D2",
+  "worker_invocation_id": "s2-d2-pre-c1-executor-002",
+  "commit": "a79e51b9d89b917d537abef0f7cd18ccd61afcf7",
+  "invalid_findings_path": "S2_PRE_C1_D2_FINDINGS_INVALID_SCHEMA_a79e51b.json",
+  "invalid_findings_sha256": "62b70094391c5d4c4538692f8e9cdd94d6d7202c40c37ca517d31c26f897e189",
+  "classification": "AGENT_ARTIFACT_FORMAT_ERROR",
+  "test_or_product_invalidated": false,
+  "green_check_rerun_allowed": false,
+  "root_substantive_decision": "The underlying failure is reproducible and functionality-breaking; only the finding object's field shape is invalid and must be corrected on the same thread."
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "firmware-v2-c2-root-retry-result-triage/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "retry_suffix": "retry-001",
+  "triaged_at_utc": "2026-08-05T13:12:05Z",
+  "artifacts": {
+    "result_sha256": "f8516ae0cdff7f25a0d0a11c7b9bb944bf498da01d56074b42b1a41edd6db275",
+    "test_report_sha256": "05ccd934ccc4412e994b9ea208762ad7894112a3f433dc4dffcbe1b9142c4615",
+    "closed_retry_jsonl_sha256": "6f64293373c5f9904b60eb7a2878d4947b39aade4a41cecaf16ef1b6628c6af7",
+    "retry_stdout_sha256": "5643d5d2fc8e62dfd55f573217830175143794bd7bec31b2aae719d808dd5a1b",
+    "retry_stderr_sha256": "bfcfc3276c5d79f2d374e032ec353cf935969a973ee78c5aeb71073dd84a1d7a",
+    "retry_process_metadata_sha256": "8ededb1d76b55f42133d348a44672f39398b9fd78eb7b8f6c4c69d460d699c68",
+    "controller_status_sha256": "b422d7379308afedaaef441bcd1f41d040c4663ffb105a61f162396c1738ac76"
+  },
+  "classification": {
+    "candidate_harness_failure": false,
+    "test_author_failure": false,
+    "c1_invalidation": false,
+    "executor_verifier_failure": true,
+    "executor_evidence_wrapper_failure": true
+  },
+  "criticisms": [
+    {
+      "id": "C2-R1-PREDICATE-001",
+      "description": "The filename-based self-controller exemption recognized the initial C2_D1_006 projection but not the legitimate resumed C2_D1_006_RETRY2 projection. LOCK again failed before its assertions.",
+      "accepted": true,
+      "repair_boundary": "Bind the exemption to the persisted current controller/resource-claim PID-plus-creation identity and its exact live parent chain, never to an invocation-name substring."
+    },
+    {
+      "id": "C2-R1-EVIDENCE-001",
+      "description": "The retry wrapper failed before serializing PID/timing/exit metadata because its start-time variable was not initialized. The incomplete retry envelope correctly refused to infer PASS.",
+      "accepted": true,
+      "repair_boundary": "Use a small Python supervisor with initialization before spawn and unconditional finally-path metadata publication. A missing observed exit remains FAIL."
+    }
+  ],
+  "green_ids_preserved_without_rerun": [
+    "F-C2-AUTH-001",
+    "F-C2-DISPOSABLE-001",
+    "F-C2-CREDIT-001",
+    "F-C2-STATE-001"
+  ],
+  "root_checks": {
+    "retry_assertions_began": false,
+    "retry_process_count": 1,
+    "candidate_and_server_clean": true,
+    "claims_released": true,
+    "surviving_test_processes": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "locked_inputs_changed": false
+  },
+  "decision": "PRESERVE_SECOND_FAIL_AND_ALLOW_ONE_IDENTITY_BOUND_EXECUTOR_CORRECTION"
+}

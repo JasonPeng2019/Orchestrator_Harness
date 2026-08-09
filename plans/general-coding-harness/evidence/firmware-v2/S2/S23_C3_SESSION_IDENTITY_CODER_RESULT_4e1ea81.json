@@ -1,0 +1,13 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.P",
+  "worker_invocation_id": "s23-p2-c3-control-plane-013",
+  "branch": "firmware/v2-s2-product",
+  "commit": "4e1ea81ea1d050949e3e5587815c280e5c911b0c",
+  "outcome": "PASS",
+  "summary": "C3 session-open now binds the signed outer session ID to the controller's immutable request load before retained-session side effects. Runtime tests NOT_RUN.",
+  "checks": [
+    {"name": "C3 static compile", "command": "python -m py_compile firmware_acceptance/c3_harness.py firmware_acceptance/controller.py", "outcome": "PASS"},
+    {"name": "Runtime tests", "command": "NOT_RUN (not authorized in coder lane)", "outcome": "NOT_RUN"}
+  ]
+}

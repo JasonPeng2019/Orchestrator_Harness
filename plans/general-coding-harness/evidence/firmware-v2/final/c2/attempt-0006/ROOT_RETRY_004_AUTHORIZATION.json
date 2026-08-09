@@ -1,0 +1,43 @@
+{
+  "schema": "firmware-v2-c2-root-retry-authorization/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "authorized_at_utc": "2026-08-05T13:23:35Z",
+  "same_lock": {
+    "c1_lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "c1_lock_sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "thread_id": "019fd1fd-83a3-7ad0-8370-a544c08c7c6e",
+    "worker_invocation_id": "c2-d1-006"
+  },
+  "authorized_retry": {
+    "stable_id": "F-C2-LOCK-001",
+    "retry_suffix": "retry-004",
+    "maximum_fresh_processes": 1,
+    "required_launch": "python.exe .agent-workspace/supervise_retry004.py",
+    "bounded_file_correction": "Create supervise_retry004.py as a structural copy of the proven retry-002 supervisor with only the stable ID, output paths, verifier argv, and command-line constants changed to retry-004.",
+    "required_unchanged_mechanisms": [
+      "Persisted-status/resource-claim PID-plus-creation identity binding.",
+      "Exact current controller parent-chain exclusion.",
+      "Supervisor metadata publication before spawn.",
+      "PID-plus-creation capture before wait.",
+      "Timeout termination and finally-path output hashes.",
+      "Actual observed child return code."
+    ],
+    "pre_spawn_static_checks": [
+      "Parse c2_verify.py and prove retry-004 is an allowed retry suffix.",
+      "Prove the identity-binding predicate markers are unchanged.",
+      "Compare supervise_retry004.py structurally with supervise_retry002.py after normalizing the four retry-bound constants.",
+      "Prove no F-C2-LOCK-001.retry-004 process/stdout/stderr artifact exists before the sole spawn."
+    ]
+  },
+  "forbidden": {
+    "rerun_green_ids": true,
+    "source_or_locked_input_edits": true,
+    "mcp_or_hardware_access": true,
+    "identity_predicate_change": true,
+    "inline_python_c_bootstrap": true,
+    "second_retry_004_spawn": true
+  },
+  "decision": "AUTHORIZE_EXACTLY_ONE_FILE_BASED_RETRY_004_PROCESS"
+}

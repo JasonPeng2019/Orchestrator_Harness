@@ -1,0 +1,224 @@
+{
+  "schema": "firmware-v2-candidate-shared-code-dependency-map/v1",
+  "owner": "ROOT-IM",
+  "candidate": {
+    "commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "joined_branch": "firmware/v2-s26-p-c3-identity-0001",
+    "reserved_branch": "firmware/v2-candidate",
+    "clean_at_audit": true,
+    "prior_accepted_commit": "202ecb09549f47550e94c5bbfc89d68b09f40130"
+  },
+  "protected_baseline": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "manifest_path": "plans/general-coding-harness/evidence/firmware-v2/preflight/BASELINE_UNIT_MANIFEST.json",
+    "manifest_sha256": "e0113dd1f0f6ab2d6fd8e450caef5d407ad8aa3b6b28c7eb234ecd04bd51a120",
+    "node_count": 248
+  },
+  "prior_complete_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_202ecb0.json",
+    "sha256": "d0d3691e3703d8cc5262a2bacbf96adbb05c910b60b376248403643da9efff23",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_202ecb0.json",
+    "root_acceptance_sha256": "ca679460c44a56e50632d535db0f12e566026075a8bf7606461a067e29eb2b3d",
+    "preserved_without_rewrite": true
+  },
+  "delta_inventory": {
+    "base_commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+    "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "changed_path_count": 5,
+    "changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "firmware_acceptance/c3_process_identity.py",
+      "firmware_acceptance/c3_watcher_oracle.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py",
+      "orchestrator_harness/tests/test_firmware_c3_watcher_oracle.py"
+    ],
+    "deleted_test_paths": [],
+    "modified_protected_baseline_test_paths": [],
+    "shared_process_identity_changed": false,
+    "weakened_oracles": []
+  },
+  "delta_mappings": [
+    {
+      "paths": [
+        "firmware_acceptance/c3_harness.py",
+        "firmware_acceptance/c3_process_identity.py",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py"
+      ],
+      "behavior": "C3 authenticates either an exact same-process controller or the exact direct Windows virtual-environment controller child using lossless argv, records launcher and controller identities separately, and brackets observation with exact identity reads before admission.",
+      "stable_ids": [
+        "C3-CONTROLLER-DIRECT-CHILD-AUTHENTICATION",
+        "C3-CONTROLLER-OBSERVATION-BRACKETING"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_observation_brackets_opaque_identity_and_accepts_same_or_direct_shape",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_windows_redirector_requires_exact_python_module_argv",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_observation_rejects_incomplete_non_direct_and_invalid_initial_projection"
+      ]
+    },
+    {
+      "paths": [
+        "firmware_acceptance/c3_harness.py",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py"
+      ],
+      "behavior": "C3 persists a closed launcher/controller recovery record before cleanup, permits null or changed launcher identity without authorizing an unknown process, reaps a terminal retained Popen, preserves legacy exit_code, and retains worktree/channels when the authentic controller survives a redirector exit.",
+      "stable_ids": [
+        "C3-CONTROLLER-RECOVERY-IDENTITY-CLOSURE",
+        "C3-CONTROLLER-TERMINAL-REAP",
+        "C3-CONTROLLER-SURVIVOR-OWNERSHIP"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_recovery_validates_before_persisting_and_allows_null_or_changed_launcher_identity",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_rejection_keeps_worktree_and_channels_when_launcher_exits_but_controller_survives",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_terminal_popen_without_captured_identity_reaps_and_completion_keeps_legacy_exit_code"
+      ]
+    },
+    {
+      "paths": [
+        "firmware_acceptance/c3_watcher_oracle.py",
+        "orchestrator_harness/tests/test_firmware_c3_watcher_oracle.py"
+      ],
+      "behavior": "The deterministic watcher oracle correlates the immutable signed request, assignment, initial controller observation, response, and optional recovery payload; it aborts authentic raw or recovery rejection contradictions after status mutation while containing unrelated or mutated evidence.",
+      "stable_ids": [
+        "C3-WATCHER-REJECTION-CORRELATION",
+        "C3-WATCHER-HISTORICAL-OBSERVATION"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s26_a1_oracle_aborts_for_correlated_raw_and_recovery_rejections_after_status_mutation",
+        "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s26_a1_oracle_contains_unrelated_or_mutated_evidence"
+      ]
+    }
+  ],
+  "focused_execution": {
+    "current_tip_harness_lane": "S26.D2",
+    "current_tip_harness_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "exact_byte_watcher_lane": "S26.D1",
+    "exact_byte_watcher_commit": "ac70c3d278849fd1c0355173d548ef2a4f3b5268",
+    "command_modules": [
+      "orchestrator_harness.tests.test_firmware_c3_harness",
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle"
+    ],
+    "test_ids": [
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_04_disposable_target_assignment_and_fail_closed_acceptance",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_05_sessions_overlap_and_p1_channel_is_token_bound",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_06_limitation_shapes_roles_and_broker_gate",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_07_shutdown_blocks_then_reaps_and_refuses_unreconciled_restart",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_startup_distinguishes_operative_and_source_policy_bindings",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_singular_target_preserves_generic_broker_default",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_record_is_closed_and_restart_remains_shutdown_only",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_required_response_and_reap_reconciliation_are_exact",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_restart_rejects_closed_evidence_mutation_matrix",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_session_roots_are_single_hil_lane_and_generic_defaults_remain",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_initial_status_rejects_malformed_wrong_identity_exit_and_timeout",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_prestart_branch_only_and_setup_launch_failures_cleanup_exactly",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_started_publication_ambiguity_gets_bound_terminal",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_reconciled_restart_emits_closed_status_and_allows_signed_shutdown_only",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_observation_brackets_opaque_identity_and_accepts_same_or_direct_shape",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_windows_redirector_requires_exact_python_module_argv",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_observation_rejects_incomplete_non_direct_and_invalid_initial_projection",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_recovery_validates_before_persisting_and_allows_null_or_changed_launcher_identity",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_rejection_keeps_worktree_and_channels_when_launcher_exits_but_controller_survives",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_terminal_popen_without_captured_identity_reaps_and_completion_keeps_legacy_exit_code",
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s26_a1_oracle_aborts_for_correlated_raw_and_recovery_rejections_after_status_mutation",
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s26_a1_oracle_contains_unrelated_or_mutated_evidence"
+    ],
+    "tests_covered": 23,
+    "new_green_ids": 8,
+    "removed_superseded_ids": 2,
+    "freshly_revalidated_existing_ids": 15,
+    "failures_remaining": 0,
+    "errors": 0,
+    "resource_warnings": 0,
+    "current_tip_test_invocations": 1,
+    "exact_byte_inherited_module_invocations": 1,
+    "outcome": "PASS"
+  },
+  "retained_prior_mappings": {
+    "prior_map_preserved": true,
+    "reason": "Only the C3 firmware acceptance harness, its new private identity helper, its watcher oracle, and their two focused test modules changed. harness_common/process_identity.py is byte-identical to 202ecb, no protected baseline test changed, the current 21-test harness module passed at cace866, and the two-test watcher module passed at byte-identical ac70c3d. All unrelated green credits remain dependency-valid."
+  },
+  "evidence": [
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_202ecb0.json",
+      "sha256": "d0d3691e3703d8cc5262a2bacbf96adbb05c910b60b376248403643da9efff23"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_202ecb0.json",
+      "sha256": "ca679460c44a56e50632d535db0f12e566026075a8bf7606461a067e29eb2b3d"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S26_C3_IDENTITY_ROOT_ADMISSION_ac70c3d.json",
+      "sha256": "3469d1b9a2042910b5357656a9449599b8559f5982e870f775cc5ee1edf825d4"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S26_C3_IDENTITY_ROOT_TRIAGE_D1_ac70c3d.json",
+      "sha256": "fd29221bad4b9201586f2acddfc2db003dad305c290df608bff90ef1fd7826da"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S26_C3_IDENTITY_ROOT_TEST_REVIEW_90887e9.json",
+      "sha256": "a454daf1789f9443ff2a8ce9a5a00e20f61ebe6858433223c9cd95017399f6e0"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S26_C3_IDENTITY_ROOT_FIXTURE_ADMISSION_cace866.json",
+      "sha256": "f4e2f0c0dbfa780a5bceefd3c1459cf31d4da89247f8a23673ea173fa615c8a6"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S26.D1-C3-IDENTITY-0001/.agent-workspace/TEST_EXECUTION.json",
+      "sha256": "078d00a00e6c97a1b8a329fec86550a97284f5f58cdd5bce478667662c91313a"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S26.D1-C3-IDENTITY-0001/.agent-workspace/TEST_OUTPUT.txt",
+      "sha256": "18c133fb1edf1b7f0b1cd96c32863b88bbff1f92ff42cd106163ce9c72fd9804"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S26.D2-C3-IDENTITY-0001/.agent-workspace/TEST_EXECUTION.json",
+      "sha256": "aef66a06b326b08f4fc7f811e30760ee6c1086c128e28d4bca1d4ef925290a2d"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S26.D2-C3-IDENTITY-0001/.agent-workspace/TEST_OUTPUT.txt",
+      "sha256": "6e0c528e0f9d334c8a0f355bd08885c998bf7149f002198125ff441d706e54ca"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S26.D2-C3-IDENTITY-0001/.agent-workspace/FINDINGS.json",
+      "sha256": "cf0b76559b684cc62255db424b9eeabe441221dc340668f4bde9ffaa23c27de5"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S26.D2-C3-IDENTITY-0001/.agent-workspace/RESULT.json",
+      "sha256": "06aa3de7b3d084c9a20e48312a1d99aecf45689b64040ae1bf76592040f95697"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S26.D2-C3-IDENTITY-0001/.agent-workspace/ROOT_ADMISSION.json",
+      "sha256": "eccacdbef7dc27a9241d6481e42ef46b32c0343e810339cabee19dd1158cc5d9"
+    }
+  ],
+  "registry_reconciliation": {
+    "prior_unique_green_ids": 157,
+    "added_green_ids": 8,
+    "removed_superseded_green_ids": 2,
+    "current_unique_green_ids": 163,
+    "freshly_revalidated_existing_ids": 15,
+    "invalidated_groups": 0,
+    "selected_for_additional_execution": []
+  },
+  "non_regression_proof": {
+    "baseline_collection_recollected": false,
+    "deleted_protected_baseline_ids": [],
+    "baseline_assertion_modifications": [],
+    "oracle_weakened": false,
+    "unaffected_green_tests_rerun": false,
+    "conclusion": "The five-path C3-only delta closes the authentic Windows launcher/controller relationship, cleanup/recovery ownership, and watcher correlation defects from attempt-0003. All 23 affected focused tests are covered at current or exact-byte-equivalent source, the two superseded watcher IDs are replaced by stronger S26 IDs, no shared protected helper changed, and no further execution is dependency-justified before fresh C0."
+  },
+  "reviewer_and_tester_criticism_disposition": {
+    "accepted_source_criticisms": "ROOT accepted and closed six concrete identity/recovery/oracle findings, including null or changed launcher identity, terminal Popen reaping, pointer-safe lossless Windows parsing, C3-private helper scope, recovery assignment correlation, and closed initial status.",
+    "accepted_reviewer_criticism": "R2 correctly found stale retained cleanup/recovery test consumers; the complete consumer migration and quick-exit identity correction were independently reviewed at ac70c3d.",
+    "accepted_executor_criticism": "D1 exposed a fixed-argc Windows test double. ROOT accepted only the test-author gap, preserved the failed one-shot evidence, repaired the fixture, and D2 proved all 21 current harness tests green.",
+    "rejected_scope": "No production change was made for the fixture failure, no broad process framework was added, the fail-closed malformed recovery-object TypeError was not expanded without evidence of an authorization or cleanup escape, and no unaffected module was rerun."
+  },
+  "no_hardware_boundary": {
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "server_edited": false,
+    "statement": "This reconciliation uses static evidence and host-only unittest executions. No board, probe, serial, flash, reset, debug, BLE, LoRa, RF, pinned-server, or physical operation ran."
+  },
+  "created_at": "2026-08-05T12:33:00Z"
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-004",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "b956d502c6332d106005cb6e03826939bf594f9a",
+  "outcome": "FAIL",
+  "summary": "The normal EOF drain repair is present, but forced stderr closure can be misclassified as natural EOF and falsely mark a partial log complete; see S2R1-C0-ATTEMPT0005-STDERR-FORCED-CLOSE-001.",
+  "checks": [
+    {
+      "name": "candidate identity and tracked-worktree cleanliness",
+      "command": "git rev-parse HEAD; git status --porcelain",
+      "outcome": "PASS"
+    },
+    {
+      "name": "attempt-0005 finding/ROOT triage and requested production-delta teardown-race audit",
+      "command": "read-only evidence review; git diff 24a1ae7c08e559e606231543e1bbff0da0fd3a5a..b956d502c6332d106005cb6e03826939bf594f9a",
+      "outcome": "FAIL"
+    },
+    {
+      "name": "automated tests",
+      "command": "not run (requested read-only review)",
+      "outcome": "NOT_RUN"
+    }
+  ]
+}

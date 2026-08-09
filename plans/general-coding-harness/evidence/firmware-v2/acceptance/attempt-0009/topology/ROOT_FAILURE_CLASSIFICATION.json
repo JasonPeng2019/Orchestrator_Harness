@@ -1,0 +1,42 @@
+{
+  "schema": "firmware-c3-root-failure-classification/v1",
+  "attempt_id": "attempt-0009",
+  "owner": "ROOT-IM",
+  "acceptance_outcome": "FAIL",
+  "candidate_finding": {
+    "classification": "FUNCTIONALITY_BREAKING",
+    "summary": "The candidate re-applies fresh-seed directory validation to an evolved target, so the first legitimate target-created file makes every later serial target assignment inadmissible.",
+    "reproduction": {
+      "first_assignment_accepted_commit": "9a44b5b073e8add3b4c7e12753a7f760a4487faf",
+      "second_assignment_response_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0009\\manager-signals\\c3-responses\\p0-c1-assignment-0001.json",
+      "second_assignment_response_sha256": "e56e72b838de85e97015bcec9942f1a52dfcd275a0fc5e346aeba37063497f7f",
+      "exact_error": "seed contains unmanifested files: ['.gitignore']"
+    },
+    "scope": "firmware_acceptance.kit.AcceptanceBroker.validate_target",
+    "required_behavior": "The immutable five-file seed must remain exact and read-only while ordinary target-created files and commits remain admissible between serial assignments.",
+    "repair_route": "Return to the owning candidate implementation step for the smallest sufficient correction, independent complete review, focused regression proof, fresh C0/C1/C2, and a fresh C3 attempt.",
+    "mcp_or_hardware_required_to_reproduce": false
+  },
+  "watcher_procedure_finding": {
+    "classification": "ROOT_EXECUTION_TOPOLOGY_FAILURE",
+    "summary": "The required blocking watcher-helper command exceeded the headless Codex command limit after about 64 seconds, causing W to exit before ROOT's later stop order and without a watcher terminal report.",
+    "candidate_or_mcp_defect": false,
+    "helper_launch_sha256": "90a39df7b5a97e83f6f167fc663dc5396bd2b8fe3eb962743472249c251d4940",
+    "helper_terminal_sha256": "6a73d7cf7154d65b51b9614f7a29f82711a21df62825f064412e24a267b24dd4",
+    "watcher_service_terminal_sha256": "bd4cbdc1531f3e9cca2c8c61134bb2b69f51712198d620cfa83d309d9a6d011a",
+    "watcher_last_message_sha256": "278d46a1b56e2f70845df3d7ec26e2b2e8f7edb45f8e661b070af1882c5a1233",
+    "watcher_stderr_sha256": "39ef79e84b1910174b79f6f71852ae5f54c84c11965e8c0b7404f42d8ba0f262",
+    "root_supervisor_failure_sha256": "9edc82b179528a351b1d3824fcc1649e56b6d68e3db0a0805541f26c212a01b7",
+    "repair_route": "Review the smallest topology change that keeps W alive for the whole observation interval without adding a second watcher framework; prove it in the mandatory host-only rehearsal before another physical attempt."
+  },
+  "triage": {
+    "candidate_fix_worth_cost": true,
+    "candidate_fix_reason": "Without it the required serial C3 target workflow cannot advance beyond its first accepted assignment.",
+    "watcher_fix_worth_cost": true,
+    "watcher_fix_reason": "The current procedure deterministically loses its observer before a normal acceptance interval can end.",
+    "speculative_hardening_authorized": false,
+    "duplicate_guards_authorized": false,
+    "mcp_server_change_authorized": false
+  },
+  "recorded_utc": "2026-08-05T21:48:12.8239106Z"
+}

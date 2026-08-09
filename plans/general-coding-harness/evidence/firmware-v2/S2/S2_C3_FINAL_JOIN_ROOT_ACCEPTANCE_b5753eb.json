@@ -1,0 +1,88 @@
+{
+  "schema": "firmware-v2-root-join-acceptance/v1",
+  "owner": "ROOT-IM",
+  "accepted_utc": "2026-08-05T04:49:00Z",
+  "candidate": {
+    "joined_branch": "firmware/v2-s23-a2-c3-final",
+    "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+    "clean": true,
+    "fast_forward_descends_from_reserved_tip": "659dd03e2aa7159090c8e0e20123b1fec1749f90"
+  },
+  "joined_product_evidence": {
+    "findings_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S23_ALL_CHILD_FAST_JOINED_FINDINGS_b5753eb.json",
+    "findings_sha256": "2a53ae94f5e9d120a803e57f0900a337becc5fec9bec60fbca8b36bc022ee927",
+    "result_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S23_ALL_CHILD_FAST_JOINED_RESULT_b5753eb.json",
+    "result_sha256": "f4b7418e8d188ab29f200802704a45c11e965c70a458bcbb4beff6b4c56d2d20",
+    "triage_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S23_ALL_CHILD_FAST_JOINED_TRIAGE_b5753eb.json",
+    "triage_sha256": "fb23e2fee2280b58b250cdf644247b92d804de9e07610ce58dbf14f79faee237"
+  },
+  "focused_execution": {
+    "cp04": {
+      "findings_sha256": "4c54dfd61e466f3c6b156982c554607c36e7c98cdc02b61e023623d86d651e8c",
+      "result_sha256": "0bac9fbdd055cca2a587189382b0af5d737555cca8e663fb20f2d0bff791a5e7",
+      "test_report_sha256": "3674ee1423f34fc0b3282229855902697d99d877d9a3e1b8493053a8d44e8fbf",
+      "triage_sha256": "2ede711fbe9460ba50650043218393e5ea1f65e2f8a14f6479105b5886f19374",
+      "executed": 1,
+      "passed": 1,
+      "skips_or_xfails": 0
+    },
+    "documentation": {
+      "findings_sha256": "5c7d343cdc1cf560c5da0429f3b1583cac663eba1bd7198c1ee08aed519eaa14",
+      "result_sha256": "05454d7d9eb40e8b9f47663de8eea646e691a263be251106e74749c18c1bf726",
+      "test_report_sha256": "eadf9c26c8a041e175f2dc5c4fe99cd31bf6a370dee9dab0954a9b1103c0a192",
+      "triage_sha256": "442a71760d93199939a65cc65fe678a15a338f49a29fd698eb7c36e41f77b799",
+      "executed": 2,
+      "passed": 2,
+      "skips_or_xfails": 0
+    }
+  },
+  "fresh_c0": {
+    "attempt": "0014",
+    "lane_id": "F.C0.FR1",
+    "worker_invocation_id": "c0-fr1-014",
+    "thread_id": "019fcfc7-84c5-7022-866a-45621be22e25",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority",
+    "findings_sha256": "3948a12db018cba0a52588a906f587fcd7e37dac7993e86fc1e2ece5cefa6bcd",
+    "result_sha256": "dccb75738ace96837706566824c75e01ea1a31a24b89403035f20c3c4a947f30",
+    "triage_sha256": "e7008986bd33909d20f6923790d7e61c7928a1e9c899516f3ceaf537d63fe923",
+    "controller_result_valid": true,
+    "outcome": "NO CANDIDATE GAP / READY"
+  },
+  "dependency_and_registry": {
+    "map_sha256": "d257d7ae8bb4037da309ea7efad8afd94e755dc5f41dd595738e59cf2fa18ecb",
+    "map_root_acceptance_sha256": "bfedc55e0b54087300472de2b57617f13f452edd925eadb8cf2cc1d9a0644dc3",
+    "registry_reconciliation_sha256": "26ece80073e9febec4b6c13ea8a8412c5592453d475518c6f824b119c6fc2f98",
+    "registry_sha256": "d3542a5e2b927fbc941268c5995dda27a595866a0063781b9bff1231c593664c",
+    "green_groups": 22,
+    "unique_green_ids": 145,
+    "invalidated_groups": 0,
+    "evidence_credits": 64,
+    "selected_for_additional_execution": 0
+  },
+  "governing_hashes": {
+    "goal.md": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "active_docs/GENERALIZATION_SPEC_2.md": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "active_docs/IMPLEMENTATION_ROADMAP_2.md": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "plans/general-coding-harness/EXECUTION_PLAN_2.md": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261",
+    "active_docs/EXECUTION_READINESS_2.md": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66"
+  },
+  "checkpoint_precedence_resolution": {
+    "stale_checkpoint_tip": "e5ced272 historical pre-join narrative",
+    "newer_direct_evidence_tip": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+    "resolution": "Preserve the historical narrative, accept the newer exact lane/status/result/test artifacts, and prepend a superseding checkpoint state."
+  },
+  "protected_state": {
+    "original_general_harness_tests_substituted": false,
+    "unaffected_green_tests_rerun": false,
+    "mcp_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "mcp_clean": true,
+    "mcp_launched": false,
+    "mcp_edited": false,
+    "hardware_accessed": false,
+    "active_resource_claims": 0,
+    "surviving_managed_processes": 0
+  },
+  "decision": "ACCEPT_JOIN_FOR_RESERVED_CANDIDATE_FAST_FORWARD_AND_FRESH_C1_C2"
+}

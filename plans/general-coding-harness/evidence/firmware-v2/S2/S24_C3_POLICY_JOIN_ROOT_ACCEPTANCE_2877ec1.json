@@ -1,0 +1,97 @@
+{
+  "schema": "firmware-v2-joined-tip-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "candidate": {
+    "base_commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+    "product_commit": "af6cbfb7dc7c0a148afcf9c1341e8099c73de034",
+    "first_test_commit": "3b2bf7f665c12b1726a08a7ebea147fe22dd71ec",
+    "joined_commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+    "branch": "firmware/v2-s24-a1-c3-policy-0001",
+    "clean": true,
+    "changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py"
+    ]
+  },
+  "accepted_gap": {
+    "id": "F-PRE-C3-002",
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c2/attempt-0003/ROOT_PRE_C3_ADMISSION_GAP.json",
+    "sha256": "8780b633afeb62021db53c81022b193f922742eda675e05595c58969535ca7e2",
+    "closure": "C3 startup now separately validates the exact C1-local operative MCP policy and the candidate-source provenance policy while requiring semantic equality before readiness."
+  },
+  "product_lane": {
+    "result_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.P-C3-POLICY-0001/.agent-workspace/RESULT.json",
+    "result_sha256": "d177b5439f97cb5e2f9b80ec39331c91625aecd36db708a3e62b1573fb50675a",
+    "status_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.P-C3-POLICY-0001/.agent-workspace/status.json",
+    "status_sha256": "73d573978f36790f83ccd6695457169b255c3219e61cf5f51cc4568cbf9bd794",
+    "outcome": "PASS"
+  },
+  "review_lane": {
+    "findings_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.R1-C3-POLICY-0001/.agent-workspace/FINDINGS.json",
+    "findings_sha256": "366b635cacaa31b18a6583ee583c56f186530a4ad203394369a22c76887ac19f",
+    "result_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.R1-C3-POLICY-0001/.agent-workspace/RESULT.json",
+    "result_sha256": "345b82e70957cd87f6eb685a213868d3d4b88a574798d640168888690b7d8599",
+    "triage_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.R1-C3-POLICY-0001/.agent-workspace/ROOT_TRIAGE.json",
+    "triage_sha256": "0b10fc5674180f9d9ca3872f5d1057cc8575f2558683b5e6de5ec92c86e20623",
+    "production_findings": 0,
+    "accepted_test_gap": "F-S24-R1-001",
+    "closure": "focused constructor regression added and independently executed"
+  },
+  "test_author_lane": {
+    "findings_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.A1-C3-POLICY-0001/.agent-workspace/FINDINGS.json",
+    "findings_sha256": "c8479da075fe4a22d1e766b799502d5632f1fe09c0b4fbc4cad87b564c9974e4",
+    "result_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.A1-C3-POLICY-0001/.agent-workspace/RESULT.json",
+    "result_sha256": "36db5bee9e51d3a4b9f2b7ffc8c6d1e42e8edcf0473ab49ccc8e4f9de2c9a269",
+    "thread_reused_for_fixture_correction": true,
+    "history_rewritten": false,
+    "outcome": "PASS"
+  },
+  "first_executor_attempt": {
+    "findings_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.D1-C3-POLICY-0001/.agent-workspace/FINDINGS.json",
+    "findings_sha256": "7f3b08d274f1559f1d943cf0db9bd6e33fcbe409aceee85103bd1453fe565a77",
+    "report_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.D1-C3-POLICY-0001/.agent-workspace/TEST_REPORT.json",
+    "report_sha256": "4d9bf350cad5c46d41bb9944eb13bce496c4be03f5e54e37e46a96e78a6be695",
+    "triage_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.D1-C3-POLICY-0001/.agent-workspace/ROOT_TRIAGE.json",
+    "triage_sha256": "613c5fb4fc799e5e99eb14b195bbe02a52266c5df25ad58bc07f67820298e691",
+    "outcome": "FAIL",
+    "classification": "TEST_FIXTURE_ARGUMENT_DEFECT",
+    "product_implicated": false,
+    "preserved_as_red_evidence": true
+  },
+  "fresh_executor_attempt": {
+    "findings_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.D1-C3-POLICY-0002/.agent-workspace/FINDINGS.json",
+    "findings_sha256": "fd18a3c495a31a9e469074e5920c9ec57f111689313327bdea7044bf295bcb57",
+    "report_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.D1-C3-POLICY-0002/.agent-workspace/TEST_REPORT.json",
+    "report_sha256": "00fc5a97ffaf85f89776f5b232b2889189e1fbbaa04b087a3129ea5cf25d2bf6",
+    "result_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.D1-C3-POLICY-0002/.agent-workspace/RESULT.json",
+    "result_sha256": "4c777e50dbca25f592734f9fec3c308ca0ba9c37d3a90279258f15735d0f165f",
+    "tests_run": 1,
+    "skips": 0,
+    "xfails": 0,
+    "outcome": "PASS"
+  },
+  "reconciliation": {
+    "dependency_map_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_2877ec1.json",
+    "dependency_map_sha256": "7efac0d0852609516a9a9caeecb3f99ad7d040d0f40671bb7dea52a25d8cc450",
+    "dependency_map_root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_2877ec1.json",
+    "dependency_map_root_acceptance_sha256": "1fc90573d9ea507fd7ae15add1d71b26eee8c572a94d6d4678fdd5516d9adcd0",
+    "registry_reconciliation_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S24_C3_POLICY_REGISTRY_RECONCILIATION_2877ec1.json",
+    "registry_reconciliation_sha256": "941bb97687ccbd2524928d276ef52ff4170b4eae1cb98f3e47437901200d2939",
+    "registry_path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+    "registry_sha256": "e9988a886fb8b541ea8c648ad94c1a35ce0180b4c0d694fec79b618ea33373a5"
+  },
+  "fresh_c0": {
+    "root_admission_path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0015/ROOT_ADMISSION.json",
+    "root_admission_sha256": "a6b819d326b60ed150486aae91b93bd1136e0a924fed6656a066ce5cdd02100f",
+    "summary": "NO CANDIDATE GAP / READY"
+  },
+  "cleanup": {
+    "active_resource_claims": 0,
+    "surviving_managed_processes": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "server_edited": false
+  },
+  "decision": "ACCEPT_AND_ADVANCE_RESERVED_CANDIDATE",
+  "outcome": "PASS"
+}

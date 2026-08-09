@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0001\\.agent-workspace\\FINDINGS.json",
+  "findings_sha256": "d566030cc934ada97b1195e14f59ebc9cbb0e3216b085e26f4fe0b516110b2c3",
+  "decisions": [
+    {
+      "id": "F-C2-FINDING-001",
+      "decision": "ACCEPT",
+      "rationale": "ROOT independently reproduced that git_safety.py changed from the protected baseline while the sole C1-locked shared-code dependency map lists only lane_controller.py and README.md. The map therefore cannot justify inheriting every protected baseline ID affected by importing git_safety.py. This is release-blocking evidence incompleteness under C73, and the bounded correction is materially cheaper and safer than accepting an unproved regression boundary.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Preserve the historical S1 map; add a candidate-wide exact-tip dependency-map supplement covering git_safety.py and its nine protected test_git_results.py IDs, run only those nine IDs, reconcile the registry, then follow the required fresh C0/C1 and dependency-invalidated C2 route without changing candidate or MCP source."
+    }
+  ]
+}

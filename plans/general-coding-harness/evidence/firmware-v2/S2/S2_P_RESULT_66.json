@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.P",
+  "worker_invocation_id": "s2-p-001",
+  "branch": "firmware/v2-s2-product",
+  "commit": "66e053a3822a7769590266f977c266f33a520ed5",
+  "outcome": "PASS",
+  "summary": "Completed accepted gated rereview repairs: exact read-memory signature/bounds, clean-pin canonical operation binding, executable five-file campaign contract, and opt-in child environment isolation.",
+  "checks": [
+    {"name": "focused S2 acceptance and finding-gate tests", "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_kit orchestrator_harness.tests.test_finding_gate orchestrator_harness.tests.test_lane_controller.LaneControllerTests.test_schema_less_firmware_rejects_every_coding_only_alias orchestrator_harness.tests.test_lane_controller.LaneControllerTests.test_schema_less_firmware_rejects_coding_model_settings_aliases -v", "outcome": "PASS", "summary": "14 focused tests passed; includes pinned read_memory_address signature/bounds, canonical seed/contract, seed rewrite, and isolated child environment checks."},
+    {"name": "seed and disposable Git validation", "command": "validate_seed_manifest plus AcceptanceBroker materialize_seed/validate_target synthetic tests", "outcome": "PASS", "summary": "Exact five-file seed hashes and closed H00/H01/H02/H05, S10-S13, A21/A23/A24, D30-D36 contract were validated; rewrite rejection passed."},
+    {"name": "pinned MCP server", "command": "git -C runtime/firmware-v2/worktrees/mcp-candidate status --short; git rev-parse HEAD", "outcome": "PASS", "summary": "Server remains clean at f003f84a7df51cd8595a3203c62e225b21da2a22; no server source change."},
+    {"name": "hardware boundary", "command": "static-only synthetic tests", "outcome": "PASS", "summary": "No physical MCP, pyOCD, serial, probe, flash, reset, debug, or RF activity occurred."}
+  ]
+}

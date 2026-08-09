@@ -1,0 +1,42 @@
+{
+  "schema": "firmware-v2-c2-attempt-record/v1",
+  "attempt": "attempt-0002",
+  "recorded_at_utc": "2026-08-04T22:11:00Z",
+  "c1_lock": {
+    "id": "bf17d2fc-9dda-4932-b8e6-448de69b0591",
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\bf17d2fc-9dda-4932-b8e6-448de69b0591\\C1_LOCK.json",
+    "sha256": "73cd9542ad2d360c94476a3531291ca09d242dd7245a2018a5998abe3a910f39"
+  },
+  "candidate_commit": "659dd03e2aa7159090c8e0e20123b1fec1749f90",
+  "mcp_server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+  "executor": {
+    "lane_id": "F.C2.D1",
+    "worker_invocation_id": "c2-d1-002",
+    "thread_id": "019fcebd-9167-75b0-906f-f1442492a3be",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "default"
+  },
+  "artifacts": {
+    "findings": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0002\\.agent-workspace\\FINDINGS.json", "sha256": "210eeeec862cc94554c5bf294b09e9a7aea63babb7802db14a08041da8ad5ffa"},
+    "result": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0002\\.agent-workspace\\RESULT.json", "sha256": "71f0096d5138a3fdb307fdf196d3aa4ef261cf18f579d27ba8224250a1dd0c77"},
+    "test_report": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0002\\.agent-workspace\\TEST_REPORT.json", "sha256": "d9b1a3b08b584e388f7395e1c2b3f4ec3684b9a66dfd84d7163b5601d62a5299"},
+    "controller_status": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0002\\.agent-workspace\\worker-c2-d1-002.status.json", "sha256": "c167b3d830b600e909f780ce610ae830c3635391bf5527eaab7b549b853f090b"},
+    "execution_jsonl": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0002\\.agent-workspace\\worker-c2-d1-002.jsonl", "sha256": "b13d1f834ad79b2f8108ad7e637f9c3decee0a07ac7e3ff8c1db4b1b08f2ba78"},
+    "correction_jsonl": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0002\\.agent-workspace\\worker-c2-d1-002-result-correction.jsonl", "sha256": "ec29e32146412b0ecffff32f4dd3e113ee18eaa7b4a3867cb6505f765afde103"},
+    "invalid_result_structural_copy": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0002\\.agent-workspace\\RESULT.invalid-check-shape.json", "sha256": "f7cb980abfb3b8f5b4220a7aaf45fb1fa4bc6c32f212185d84b6c89e736cbbbd"},
+    "controller_reported_invalid_result_sha256": "123f764ad224884a95bb741f89a49bc906477cc625ffb9499c1d8fa63b78fdf5"
+  },
+  "passed_ids": ["F-C2-LOCK-001", "F-C2-AUTH-001", "F-C2-DISPOSABLE-001", "F-C2-CREDIT-001", "F-C2-STATE-001"],
+  "failed_ids": [],
+  "ordinary_executor_corrections": [
+    "F-C2-DISPOSABLE-001 initially hit a Windows read-only temporary-seed cleanup error; only that failed ID was rerun after a lane-local cleanup correction.",
+    "The first PASS result used over-wide check objects; the same thread rewrote only RESULT.json to the exact controller schema and reran no check."
+  ],
+  "green_ids_rerun_after_pass": [],
+  "hardware_or_mcp_accessed": false,
+  "candidate_changed": false,
+  "mcp_server_changed": false,
+  "c3_admitted": false,
+  "outcome": "PASS_PENDING_ROOT_ACCEPTANCE"
+}

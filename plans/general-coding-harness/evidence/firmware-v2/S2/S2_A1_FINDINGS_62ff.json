@@ -1,0 +1,27 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.A1",
+  "worker_invocation_id": "s2-a1-001",
+  "role": "test_writer",
+  "commit": "62ff09624b06e418c1f767e0985e019c776e46ce",
+  "findings": [
+    {
+      "id": "S2-A1-F1",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["C43", "C49", "C63", "C65"],
+      "evidence": ["firmware_acceptance/seed/TARGET_SEED_MANIFEST.json", "firmware_acceptance/seed/TARGET_CHARTER.md", "firmware_acceptance/seed/PINNED_INPUTS.json", "firmware_acceptance/seed/TEST_CONTRACT.json", "firmware_acceptance/seed/EVIDENCE_SCHEMA.json", "firmware_acceptance/kit.py::validate_seed_manifest"],
+      "observed": "All four manifest hashes differ from the checked-in seed bytes: TARGET_CHARTER.md declares 5aea61dec6babcc2dd09abecc41349139f1e5fc01c2ec6f10df9af18beeb8a78 but is 43a43f2f6a494e1b5e9b2eb118e6a43765304d2630d379e607e56d4e725a3a63; the validator rejects at the first mismatch before broker construction.",
+      "expected": "The sealed five-file target seed validates against its manifest so AcceptanceBroker can materialize a fresh disposable target repository.",
+      "reproduction": "At commit 62ff09624b06e418c1f767e0985e019c776e46ce run: python -c \"from pathlib import Path; from firmware_acceptance.kit import validate_seed_manifest; validate_seed_manifest(Path('firmware_acceptance/seed'))\". It raises AdmissionError: seed hash mismatch: TARGET_CHARTER.md. Hashing each manifest entry shows all four declared hashes are stale.",
+      "impact": "The public acceptance-kit constructor rejects the shipped target seed, blocking target materialization and every dependent S2/C3 acceptance flow.",
+      "no_fix_consequence": "The acceptance campaign cannot begin normally; C43, C49, C63, and C65 remain unprovable regardless of MCP or host correctness.",
+      "smallest_fix": "Update the four TARGET_SEED_MANIFEST.json hashes to the accepted sealed-file bytes, or restore the four files to the exact bytes named by the manifest, then rerun affected seed and broker tests.",
+      "complexity": "A four-value manifest correction or restoration of the intended sealed bytes, plus focused validation.",
+      "regression_risk": "Low and bounded: validate_seed_manifest immediately verifies the exact chosen seed identity.",
+      "verification_cost": "Run the affected seed/broker test modules after the correction; no hardware or MCP process is required.",
+      "alternatives": "Bypassing or weakening the validator would violate the exact hash-bound seed contract and creates higher provenance risk.",
+      "cost_benefit": "The small, deterministic identity correction restores the mandatory target-materialization entrypoint, while leaving it unresolved blocks the whole downstream campaign.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

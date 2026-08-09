@@ -1,0 +1,44 @@
+{
+  "schema": "firmware-v2-root-join-acceptance/v1",
+  "root_role": "ROOT-IM",
+  "candidate_commit": "24a1ae7c08e559e606231543e1bbff0da0fd3a5a",
+  "decision": "ACCEPT_JOIN_AND_OPEN_FRESH_C0",
+  "accepted_repair": "write_serial admission now derives and enforces the matched locked rule's positive non-boolean maximum_bytes against UTF-8 encoded text before policy ALLOW and MCP dispatch",
+  "evidence": [
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0004/ROOT_TRIAGE.json",
+      "sha256": "04997731b81dcff063b8513924a8d80e316d88b9ff1632c74980ecf06700ac8a"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_004_PRODUCT_RESULT_7fee836.json",
+      "sha256": "b9f663e8b3dfa51e983b3be19a56eff3896d647df67e5151532293d502ad6fee"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_004_WRITE_SERIAL_REVIEW_FINDINGS_7fee836.json",
+      "sha256": "5257eeda31e7b9538de0c6d726dae46bd2d6680ec4811f0924caa2bddc761916"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_004_WRITE_SERIAL_REVIEW_RESULT_7fee836.json",
+      "sha256": "3c67329aa45efbe9bdba7bb833f42d8909de5b553969186754cb2937e4af1033"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_004_A1_RESULT_24a1ae7.json",
+      "sha256": "89302c468db074fb69c3021f55b8eab0e28fa721878e86912cf3e8c2bb8eb6ac",
+      "findings_sha256": "389f26cbcc45f98aaf6ac54c1b35b904747761cb685ac756d8d4b5c4a681cba4"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_004_D1_RESULT_24a1ae7.json",
+      "sha256": "e017b4b835f09d90aeb43cfdaaec709fdcd646ca5ac725ccf7747a712acb3259",
+      "findings_sha256": "d5c6eb194899cdc09e6f6040db7f08bb822e4a5e83ec7b8a64d84fecd5a30ca4",
+      "test_report_sha256": "2fa7993ae128e1cc9a93d45d7cf313cab044a15ef611f0f48ca4288e1751af43"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_004_PRODUCT_CHAIN_RESULT_24a1ae7.json",
+      "sha256": "8716f4b48aa853a3858ef9c3d27fe3b2ce80a874a6fa7c62cc927bc98b4256ec"
+    }
+  ],
+  "test_summary": "A1 retained original memory-policy assertions after ROOT caught an initial placement mistake; independent Luna-high D1 then passed all 30 controller, kit, and host tests with zero findings.",
+  "credit_summary": "Only firmware_acceptance/kit.py write_serial admission and one focused kit regression changed. Every unrelated green ID remains dependency-valid and was not rerun.",
+  "boundary": "No MCP server, serial interface, probe, flash, reset, debug, RF, or physical hardware operation occurred; disposable checkouts and claims are absent.",
+  "accepted_at_utc": "2026-08-04T11:20:05Z"
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.D2",
+  "worker_invocation_id": "s2-d2-pre-c1-executor-002",
+  "role": "test_executor",
+  "commit": "a79e51b9d89b917d537abef0f7cd18ccd61afcf7",
+  "findings": [
+    {
+      "id": "S2.D2-001",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["S2.D2-001", "AUTHORIZED_SERVER_LIMITATION"],
+      "evidence": [
+        "firmware_acceptance/kit.py:429-434",
+        "firmware_acceptance/kit.py:494-496",
+        "orchestrator_harness/tests/test_firmware_acceptance_kit.py:183-187"
+      ],
+      "observed": "record_server_limitation() requires each call_chain item to have {path,sha256,stage}, then passes the full item to _verify_limitation_reference(). The generic verifier rejects any keys beyond {path,sha256}, so the valid call-chain item is deterministically rejected as not closed.",
+      "expected": "A structurally valid, hash-bound limitation call chain with the required path, sha256, stage fields and exact stage/order sequence must pass generic reference validation and proceed to the remaining causal and create-once checks.",
+      "reproduction": "Run the already-preserved exact command and observe FirmwareAcceptanceKitTests.test_server_limitation_create_once_has_causal_and_c3_evidence error with AdmissionError: limitation call chain reference is not closed. The fixture at orchestrator_harness/tests/test_firmware_acceptance_kit.py:135 constructs {path,sha256,stage}; firmware_acceptance/kit.py:434 sends that full object to the exact-key verifier at lines 494-496.",
+      "impact": "Every valid server-limitation evidence graph is blocked at call-chain admission, so the assigned limitation path cannot create its immutable limitation record or prove its causal pinned-server failure evidence.",
+      "no_fix_consequence": "The reopened acceptance kit cannot admit an authorized server limitation even when all required evidence is present, preventing reliable certification of the limitation route and keeping the current 20-test shard red.",
+      "smallest_fix": "Pass a path/sha256-only projection of each call_chain item to the generic verifier while preserving the preceding exact call_chain key, stage, length, and order checks.",
+      "complexity": "Low: one localized projection at the call-chain verification call.",
+      "regression_risk": "Low: the exact chain-shape, stage/order, hash, path, identity, predecessor, and downstream evidence checks remain unchanged.",
+      "verification_cost": "Low: rerun the same two authorized host-only unittest modules after repair; no MCP, server, hardware, or physical resource is required.",
+      "alternatives": "Changing the call-chain contract to omit stage would weaken the closed ordered evidence graph; weakening the generic verifier would reduce reference integrity for other evidence. A projection preserves both contracts with the smallest surface change.",
+      "cost_benefit": "The defect is directly demonstrated and blocks every valid limitation admission, while the projection is a narrow code change with low regression and verification cost. Closing this mismatch therefore provides substantially more value than its repair risk and effort.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

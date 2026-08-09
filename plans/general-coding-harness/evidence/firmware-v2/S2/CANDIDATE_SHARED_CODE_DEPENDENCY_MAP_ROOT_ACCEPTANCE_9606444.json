@@ -1,0 +1,61 @@
+{
+  "schema": "firmware-v2-root-dependency-map-acceptance/v1",
+  "owner": "ROOT-IM",
+  "accepted_utc": "2026-08-04T20:38:18.6556271Z",
+  "candidate": {
+    "branch": "firmware/v2-candidate",
+    "commit": "9606444ccf64216a44e448e88f6a824f2012ae60",
+    "clean": true
+  },
+  "map": {
+    "source_path": "plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C2.A1-0001/.agent-workspace/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP.json",
+    "immutable_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_9606444.json",
+    "sha256": "57f41acb5c5fc3d506c694d28abca39885326adc2b04540ff3e8fdd18e514d47"
+  },
+  "author_identity": {
+    "lane_id": "F.C2.A1",
+    "worker_invocation_id": "c2-a1-001",
+    "thread_id": "019fce23-8b6b-7e50-bec1-5aca2f627511",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority",
+    "findings_sha256": "347b4f9fc7c2b5d16946d316c34fb1656e048045ea261838c3cd7f8e79ced0d5",
+    "result_sha256": "b83ed77aa98d542247a37fb527fca6cfa68e1983d2f293c50be10d194243d6e1"
+  },
+  "root_checks": {
+    "exact_diff": {
+      "base": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+      "paths": [
+        "firmware_acceptance/kit.py",
+        "orchestrator_harness/tests/test_firmware_acceptance_kit.py"
+      ],
+      "matches_map": true
+    },
+    "mapped_uart_ids": 9,
+    "unique_mapped_uart_ids": 9,
+    "inherited_d3_passes": 7,
+    "dependency_invalidated_d4_passes": 2,
+    "new_registry_ids": 3,
+    "selected_for_additional_execution": 0,
+    "deleted_protected_ids": 0,
+    "weakened_oracles": 0,
+    "all_declared_evidence_paths_exist_and_hash_match": true,
+    "author_findings_empty_and_current_tip": true,
+    "author_result_current_tip_and_controller_valid": true,
+    "author_worktree_clean_and_claims_released": true
+  },
+  "joined_evidence": {
+    "production_result_sha256": "e883f41478e7ea2a14418514bba962e2139c87557d1aefdc584b17b5fdaf6e30",
+    "review_result_sha256": "5d6e52135399ce83d5e0b12d364eb16df6fa4eb46d41b9fc9e9ccda8eb6c17b0",
+    "test_author_result_sha256": "e9fe7095074994f1e5a0ec0550ec4ba8153865f5bccc1c5e67e3a5efedbf8574",
+    "executor_report_sha256": "c9e35e05806b62344e35a20c8e3c471cd19ef5572161c4f2007cab535dc79975"
+  },
+  "immutable_mcp_fixture": {
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "clean": true,
+    "launched": false,
+    "edited": false
+  },
+  "decision": "ACCEPT_CURRENT_TIP_MAP",
+  "rerun_policy": "No green ID is rerun unless a mapped production, test, configuration, or oracle dependency changes."
+}

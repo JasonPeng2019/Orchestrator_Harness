@@ -1,0 +1,18 @@
+{
+  "schema": "firmware-v2-root-reproduction/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "9606444ccf64216a44e448e88f6a824f2012ae60",
+  "surface": "firmware_acceptance.kit._validate_scope_effect",
+  "method": "host-only direct validator call with temporary hash-valid empty manifest and electronic-admission files",
+  "observations": [
+    {"spreading_factor_min": 1, "outcome": "ADMITTED", "expected": "REJECT"},
+    {"spreading_factor_min": 6, "outcome": "ADMITTED", "expected": "REJECT"},
+    {"spreading_factor_min": 7, "outcome": "ADMITTED", "expected": "ADMIT"},
+    {"spreading_factor_min": 8, "outcome": "REJECTED", "expected": "ADMIT_AS_NARROWED"}
+  ],
+  "source_cause": "The generic integer comparison rejects value greater than the delegated value for every key, even though spreading_factor_min narrows in the opposite direction.",
+  "tests_run": false,
+  "mcp_launched": false,
+  "hardware_accessed": false,
+  "reproduced": true
+}

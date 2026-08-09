@@ -1,0 +1,16 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R2",
+  "worker_invocation_id": "s2-r2-route-review-001",
+  "branch": "firmware/v2-s2-r2",
+  "commit": "83b693aa9845f2816fd15a36b249bcfad8516db0",
+  "outcome": "FAIL",
+  "summary": "FAIL: limitation evidence now calls real candidate result validation, but its required copied paths are incompatible with the controller's real RESULT.json path, and adapter controller identity remains free rather than status-derived.",
+  "checks": [
+    {"name":"Delta and real deployment trace","outcome":"PASS","summary":"Reviewed only a63498cccd83d17499e113116ec90670c7c56265..83b693aa9845f2816fd15a36b249bcfad8516db0 and traced lane_controller, discovery, git_safety, and current limitation verification."},
+    {"name":"Real status/result path compatibility","outcome":"FAIL","summary":"The controller records the real workspace RESULT.json in result_validation.path, while the limitation verifier requires copied subtree result paths and exact equality."},
+    {"name":"C3 controller identity","outcome":"FAIL","summary":"Controller PID/creation fields are checked for presence but never converted into the identity required by assignment/launch/execution adapters."},
+    {"name":"Retained safeguards","outcome":"PASS","summary":"Current verifier still requires attempt-partitioned adapter paths, validated PASS result, current clean tip, worker/lane binding, empty claims, result hash, and NOT_CERTIFIED limitation status when a compatible real reference is supplied."},
+    {"name":"Host-only scope","outcome":"PASS","summary":"Inspection and source parsing only; no MCP, hardware, probe, serial, or RF operation was invoked."}
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schema": "firmware-v2-root-join-acceptance/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+  "candidate_branch": "firmware/v2-candidate",
+  "candidate_clean": true,
+  "mcp_fixture": {
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "branch": "firmware/v2-mcp-candidate",
+    "clean": true,
+    "immutable": true,
+    "edited_or_launched_during_s2": false
+  },
+  "governing_contract": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_PRE_C1_EXECUTABLE_CONTRACT_DECISION.json",
+    "sha256": "9e0fbac168edc13b0d243392b661d95eb6483d7234f515703158c57b273dee91"
+  },
+  "validated_evidence": [
+    {
+      "role": "production_coder",
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_PRE_C1_NULL_ROUTE_PRODUCT_RESULT_e524feb.json",
+      "sha256": "a3a73a164b32a17cbf0381099b033e388ca7aa719bb435f29784f4019532deb6",
+      "outcome": "PASS"
+    },
+    {
+      "role": "controller_and_route_reviewer",
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_ROUTE_REREVIEW_007_R1_RESULT_e524feb.json",
+      "sha256": "ebef4472986732384909d026c22b04ea540738c3752908d09109e828215e04f1",
+      "findings_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_ROUTE_REREVIEW_007_R1_FINDINGS_e524feb.json",
+      "findings_sha256": "e14fdfc45ef326c24e0840b00ada64d4b5d9f643caea809362c5f82ea3687663",
+      "triage_sha256": "7db226fa3655bcea9f53003a0f663e94a90db473e18b7bec8fcfa6ca22e9847c",
+      "outcome": "PASS"
+    },
+    {
+      "role": "limitation_and_call_chain_reviewer",
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_ROUTE_REREVIEW_007_R2_RESULT_939f2da.json",
+      "sha256": "35edb147acab3b8c02d9fd825a32b3c13e5327f77bcc1134c95dc89adfdf1f9b",
+      "findings_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_ROUTE_REREVIEW_007_R2_FINDINGS_939f2da.json",
+      "findings_sha256": "16aa5a995b7070799615f1dcc7f6fc66d7826ecd09ffb53f5c01baaa03277e70",
+      "triage_sha256": "731addc84e74672b807397b5aaa8322f73453a47bfb8fb073919cfa0bdff3441",
+      "outcome": "PASS",
+      "inheritance": "No production kit or limitation-call-chain code changed after 939f2da; later changes are controller or test fixtures, and current D2 executes the joined kit tests."
+    },
+    {
+      "role": "controller_and_host_executor",
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_PRE_C1_D1_GREEN_RESULT_e524feb.json",
+      "sha256": "a9b1172f8da9586aa7a3680d5f65506766751a1087ec13d2cd3e680324963670",
+      "findings_sha256": "0403cf9dca21a3d67ba80352ccfb56b8bbdc41975b1b44bf203450470ebf5597",
+      "test_report_sha256": "f0832b9d4f49f11a396d6dd41c347babc25c1e917b76009ca29f8b3039b74948",
+      "triage_sha256": "bbf812ad034a97be550710170c1afbb2b760f56ceade9fce5dd92e27f75a2101",
+      "outcome": "PASS",
+      "tests": "26/26 joined"
+    },
+    {
+      "role": "kit_and_target_executor",
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_PRE_C1_D2_GREEN_RESULT_228024d.json",
+      "sha256": "81b3b3cacb6510d1793edb8312e17458158c8f341e7c53fe6ae42a7bbf57ef8f",
+      "findings_sha256": "c04d64c568c22ae1541c60d1602ff6d7009de6244677dfc085ee04ccaadea2d8",
+      "test_report_sha256": "81478b6247749328c4f1eff3a2dca058d577d388e4aed3552da19e341e864233",
+      "triage_sha256": "021dedcb3c8ea068650f37a8ee6b66975421e2313d69a109d370009087a933a2",
+      "outcome": "PASS",
+      "tests": "20/20 joined",
+      "inheritance": "No production kit dependency changed after 228024d; later kit-file changes are test-fixture-only and are included in the green joined execution."
+    }
+  ],
+  "findings_validation": {
+    "validator": "candidate orchestrator_harness.git_safety.validate_findings",
+    "r1_count": 0,
+    "r2_count": 0,
+    "d1_count": 0,
+    "d2_count": 0,
+    "root_triage_present": true
+  },
+  "green_test_policy": {
+    "dependency_invalidated_tests_only": true,
+    "unaffected_tests_rerun": false,
+    "protected_original_general_harness_suite_preserved": true,
+    "controller_host_joined": "26/26 PASS",
+    "kit_target_joined": "20/20 PASS"
+  },
+  "boundary": {
+    "c1_created": false,
+    "c2_created": false,
+    "hardware_authorized": false,
+    "hardware_accessed": false,
+    "mcp_launched": false,
+    "next_gate": "brand-new C0"
+  },
+  "outcome": "PASS"
+}

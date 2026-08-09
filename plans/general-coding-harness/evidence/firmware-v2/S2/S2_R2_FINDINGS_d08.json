@@ -1,0 +1,63 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.R2",
+  "worker_invocation_id": "s2-r2-001",
+  "role": "reviewer",
+  "commit": "d08b6ccf3d2e0eacd3686b01658645249dfcc0a0",
+  "findings": [
+    {
+      "id": "S2R2-F01",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["H00", "H01", "H02", "H05", "S10", "S11", "S12", "S13", "A21", "A23", "A24", "D30", "D31", "D32", "D33", "D34", "D35", "D36"],
+      "evidence": ["firmware_acceptance/seed/TEST_CONTRACT.json:1", "firmware_acceptance/seed/EVIDENCE_SCHEMA.json:1", "firmware_acceptance/seed/TARGET_CHARTER.md:3", "firmware_acceptance/kit.py:191-227"],
+      "observed": "The contract still contains only the selected-ID list and a prose selective-rerun string. It has no per-ID definitions, dependency inputs, fingerprint algorithm, passed registry, deterministic oracle, failure-injection, contention/resume/cleanup procedure, or route binding. The evidence JSON Schema leaves behavioral_oracle and evidence_chain items unconstrained. The broker admits generic records but never consumes a selected-ID contract or registry.",
+      "expected": "Each selected ID must have a closed, machine-readable executable definition and dependency fingerprint inputs, and the evidence/result schema must close the oracle, chain, provenance, failure-route, passed-registry, and selective-rerun records that implement that definition.",
+      "reproduction": "Inspect TEST_CONTRACT.json: it has gating_ids, non_gating, one string, and finding-gate metadata only. Search kit.py for stable_test_id, dependency_fingerprint, passed registry, or selective rerun: no implementation consumes the contract. An evidence object with any arbitrary behavioral_oracle object and arbitrary evidence_chain values satisfies the shown schema types.",
+      "impact": "A controller cannot deterministically execute or adjudicate any required STM32, nRF52, LoRa, concurrency, failure, resume, contention, or cleanup test from the seed; the claim in the charter is not executable evidence.",
+      "no_fix_consequence": "Acceptance may be reported from self-described records without a reproducible mapping from every gating ID to its deterministic inputs, oracle, dependency state, and allowed recovery route.",
+      "smallest_fix": "Add closed per-ID contract entries plus closed registry/result definitions, then make the admission/record path validate and consume those entries and add focused synthetic tests for one success and one rejected record per required mechanism.",
+      "complexity": "moderate and bounded to the existing static acceptance kit and seed schemas",
+      "regression_risk": "bounded because it adds validation to a currently unconsumed contract rather than a transport or hardware controller",
+      "verification_cost": "focused schema and synthetic-kit tests; no MCP, hardware, or product test launch is required",
+      "alternatives": "Leaving definitions in prose or adding a broad workflow framework would not satisfy deterministic execution; the former remains non-executable and the latter exceeds scope.",
+      "cost_benefit": "The missing executable contract defeats every selected acceptance assertion, while the smallest fix is a narrow data schema and validator extension.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "S2R2-F02",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["S2.seed-integrity", "S2.hostile-proofs", "S2.physical-capability-absence"],
+      "evidence": ["firmware_acceptance/kit.py:118-150", "firmware_acceptance/kit.py:152-168", "firmware_acceptance/kit.py:34-46", "orchestrator_harness/tests/test_firmware_acceptance_kit.py:21-48"],
+      "observed": "Materialization creates a confined Git repository and marks five files read-only, but it neither launches nor constrains a target worker, does not make the target directory or Git metadata immutable, and only detects seed modification when validate_target is called. validate_seed_manifest only rejects extra regular files at the seed root. The synthetic tests do not attempt a target rewrite, Git-reference rewrite, nested payload injection, post-materialization tamper, endpoint inheritance in an actual worker process, expiry/timeout cleanup, contention, or resume.",
+      "expected": "The disposable target must be continuously integrity-bound and inaccessible for mutation by target workers, with hostile synthetic proofs that exercise rewrite/tamper/order/expiry/timeout/cleanup/contention/resume and actual absence of inherited endpoint or physical capability.",
+      "reproduction": "Trace materialize_seed and validate_target: files are chmod-ed and validation is caller-initiated only. controller_config returns a worker_environment dictionary but no worker-launch boundary exists. The only test checks two empty dictionary values and a single successful materialization; it contains none of the hostile cases listed above.",
+      "impact": "A target worker can be given normal filesystem authority outside the returned dictionary and alter the materialized repository between checks, invalidating the claimed immutable-seed and no-capability guarantees without a deterministic rejection point.",
+      "no_fix_consequence": "The repair remains a best-effort static convention, not the reproducible hostile-proof boundary required before hardware-facing orchestration can rely on it.",
+      "smallest_fix": "Define a narrow worker-launch/isolation interface that supplies a read-only target view and empty capability environment, validate target Git tree/HEAD and allowed tree shape before and after each attempt, and add disposable tests that prove each rejection and cleanup path.",
+      "complexity": "moderate; it is a bounded synthetic isolation fixture, not a scheduler or hardware platform",
+      "regression_risk": "contained because the kit currently has no transport or worker launcher and the interface can remain synthetic",
+      "verification_cost": "deterministic temporary-directory/process tests with no MCP or hardware",
+      "alternatives": "Relying on chmod plus an optional validation call is insufficient; requiring real boards or adding a general execution framework is unnecessary.",
+      "cost_benefit": "The boundary is central to all acceptance evidence and current tests do not prove it, whereas a small disposable isolation harness directly addresses the demonstrated gap.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "S2R2-F03",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["S2.review-test-gate", "S2.manager-triage", "C4", "C5", "C6", "C7", "C8"],
+      "evidence": ["orchestrator_harness/git_safety.py:47-100", "orchestrator_harness/lane_controller.py:597-617", "orchestrator_harness/tests/test_finding_gate.py:38-58", "firmware_acceptance/LANE_TEMPLATES.json:1"],
+      "observed": "The controller validates FINDINGS.json only when an optional finding_gate is present. validate_finding_triage is never called by a production controller path; repository search finds it only in git_safety.py and its direct unit test. The test validates a triage object against a findings file containing literal {} and synthetic finding ID F1, so it does not prove triage of a valid submitted closed findings document or any manager publication/closure.",
+      "expected": "For the mandatory reviewer/test role templates, a valid submitted findings document must require an exact, hash-bound, closed manager triage decision before the review/test outcome is accepted or promoted; the system must reject missing, stale, malformed, or incomplete triage.",
+      "reproduction": "Follow _coding_result_validation: it calls validate_findings and returns VALID without loading or validating any triage record. Search for validate_finding_triage callers outside tests: none exist. Therefore a FAIL finding can validate as a lane result with no manager triage at all.",
+      "impact": "The advertised mandatory closed manager triage is not a gate. Findings can be ignored or selectively acted on without a durable decision bound to the submitted file hash.",
+      "no_fix_consequence": "The new review/test governance cannot provide the required accountable disposition of accepted or rejected findings, undermining the repair's admission purpose.",
+      "smallest_fix": "Add one confined triage artifact path to the finding-gate contract, invoke validate_finding_triage from result validation whenever the role template requires it, and add tests for absent, wrong-hash, incomplete, and valid triage of a valid findings document.",
+      "complexity": "small to moderate, localized to the existing finding-gate validator and lane result path",
+      "regression_risk": "bounded by making it conditional on the already-declared mandatory templates",
+      "verification_cost": "focused unit tests only",
+      "alternatives": "A prose requirement or a standalone unused validator leaves the same bypass; building a separate manager service would be unnecessary scope expansion.",
+      "cost_benefit": "The validator already exists, so wiring its single demonstrated missing call and testing the failure modes has low cost and closes a direct governance bypass.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

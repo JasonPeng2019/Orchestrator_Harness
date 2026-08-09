@@ -1,0 +1,26 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-001",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "d08b6ccf3d2e0eacd3686b01658645249dfcc0a0",
+  "outcome": "FAIL",
+  "summary": "Three residual S2/C3 findings remain at the repaired tip; see REREVIEW.md and FINDINGS.json.",
+  "checks": [
+    {
+      "name": "superseding candidate identity and cleanliness before lane artifacts",
+      "command": "git status --short --branch; git rev-parse HEAD",
+      "outcome": "PASS"
+    },
+    {
+      "name": "pinned server method, parameter, and launch-contract comparison",
+      "command": "static read-only comparison of repaired policy, kit, pinned server source, and preflight evidence",
+      "outcome": "FAIL"
+    },
+    {
+      "name": "immutable admission, provenance, confinement, cleanup, and finding-triage review",
+      "command": "static read-only comparison against refreshed goal/spec/roadmap/readiness/plan contracts and S2 triage evidence",
+      "outcome": "FAIL"
+    }
+  ]
+}

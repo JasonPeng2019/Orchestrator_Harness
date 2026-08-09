@@ -1,0 +1,35 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-001",
+  "branch": "firmware/v2-s2-d1",
+  "commit": "7a28b186e91f2945ea9c59869a216fa8caf8407e",
+  "outcome": "PASS",
+  "summary": "Independent D1 host/MCP/isolation shard passed S2_A1_001 and S2_A1_002 at the exact joined tip; sealed seed hashes validate, findings are empty, and no unexpected managed process, resource claim, MCP server, or hardware access was observed.",
+  "checks": [
+    {
+      "name": "S2.D1 authoritative host/MCP/isolation shard",
+      "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_host -v",
+      "outcome": "PASS",
+      "summary": "2 tests passed: S2_A1_001 and S2_A1_002; no skips or failures."
+    },
+    {
+      "name": "sealed seed manifest validation",
+      "command": "python -c \"from pathlib import Path; from firmware_acceptance.kit import validate_seed_manifest; validate_seed_manifest(Path('firmware_acceptance/seed'))\"",
+      "outcome": "PASS",
+      "summary": "All four canonical seed payload hashes match TARGET_SEED_MANIFEST.json."
+    },
+    {
+      "name": "finding gate",
+      "command": "validate .agent-workspace/FINDINGS.json",
+      "outcome": "PASS",
+      "summary": "Closed orchestrator-review-findings/v1, exact D1 identity, zero findings."
+    },
+    {
+      "name": "current tip, cleanliness, and host-only boundary",
+      "command": "git rev-parse HEAD; git branch --show-current; git status --short",
+      "outcome": "PASS",
+      "summary": "Exact requested branch and tip; tracked status clean; no MCP or physical operation launched; only expected D1/D2 test-shard claims observed."
+    }
+  ]
+}

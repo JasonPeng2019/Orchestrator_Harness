@@ -1,0 +1,64 @@
+{
+  "schema": "firmware-v2-c2-root-retry-acceptance/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0005",
+  "accepted_at_utc": "2026-08-05T10:36:00Z",
+  "authority": {
+    "retry_triage_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0005\\ROOT_RETRY_TRIAGE.json",
+    "retry_triage_sha256": "8ce54c3bbef182dc6e69e698deeec05fdb74f9b2db5e12febf807a048a41bba2",
+    "report_path_audit_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0005\\ROOT_PATH_HASH_AUDIT_FAILURE.json",
+    "report_path_audit_sha256": "15dc0d4816eb8e67fad678340895668bd920fa02e1422f49ff634fb749524f8d"
+  },
+  "preserved_initial_history": {
+    "logical_ids": ["F-C2-LOCK-001", "F-C2-AUTH-001", "F-C2-DISPOSABLE-001", "F-C2-CREDIT-001", "F-C2-STATE-001"],
+    "outcomes": ["PASS", "FAIL", "PASS", "FAIL", "PASS"],
+    "initial_processes": 5,
+    "initial_result_sha256": "8adb910c8f7c722b543a02d3e71a8a5485ad13f5fb9868f3448fbaba2a8bfb0d",
+    "initial_test_report_sha256": "277977366011ff12b2a5aa332dba05d5d8dfd850da7a963f673c5ce7d907f033",
+    "canonical_failure_bytes_unchanged": true
+  },
+  "authorized_retry": {
+    "thread_id": "019fd15f-b7b0-7aa2-a483-30d0cd14dded",
+    "logical_ids": ["F-C2-AUTH-001", "F-C2-CREDIT-001"],
+    "outcomes": ["PASS", "PASS"],
+    "retry_processes": 2,
+    "already_green_ids_rerun": 0,
+    "candidate_findings": 0,
+    "locked_input_changes": 0
+  },
+  "report_integrity_correction": {
+    "same_thread": true,
+    "tests_or_bounded_processes_executed": 0,
+    "corrected_path_fields": 3,
+    "path_hash_references_valid": "34/34",
+    "test_report_sha256": "ab52a6051be15846103078a5a7ab562fece65939e944b27a55fcf56dbdb90a19",
+    "result_rewritten_last_sha256": "be2e71cc2ae37d715fb68d06fa09cbd52e21b631a4cc33b910fa40a2a843bef1",
+    "prelaunch_failure_recorded": true,
+    "read_only_verifier_syntax_errors_recorded_in_jsonl": true
+  },
+  "final_mechanical_checks": {
+    "finding_gate_passed": true,
+    "findings_count": 0,
+    "final_logical_passed_ids": 5,
+    "fresh_processes_total": 7,
+    "green_groups": 24,
+    "unique_green_ids": 157,
+    "invalidated_groups": 0,
+    "total_evidence_credits": 76,
+    "hashed_evidence_credits": 70,
+    "inheritance_only_credits": 6,
+    "protected_baseline_ids": 248,
+    "new_s25_ids": 11,
+    "freshly_revalidated_affected_prior_ids": 50,
+    "claims_released": true,
+    "surviving_test_or_external_processes": 0,
+    "candidate_bytecode_restored": true,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "classification": "ORDINARY_EXECUTOR_AND_REPORT_PROCEDURE_CORRECTION",
+  "candidate_harness_failure": false,
+  "watcher_failure": false,
+  "c1_invalidation": false,
+  "accepted": true
+}

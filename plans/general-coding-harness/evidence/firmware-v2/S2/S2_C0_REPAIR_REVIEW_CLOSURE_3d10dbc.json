@@ -1,0 +1,47 @@
+{
+  "schema": "firmware-v2-root-review-closure/v1",
+  "owner": "ROOT-IM",
+  "commit": "3d10dbc1e4454e7686fc32572dc5c402cfa32895",
+  "product_result": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.P/.agent-workspace/RESULT.json",
+    "sha256": "2da988a57b6b62011179c79024aac009492d001b694402d1ac05968ea8c770a4",
+    "validated": true
+  },
+  "reviews": [
+    {
+      "lane": "S2.R1",
+      "worker_invocation_id": "s2-r1-004",
+      "findings_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R1/.agent-workspace/FINDINGS.json",
+      "findings_sha256": "2460fe2b714791f87291fd999d24aa1d267c3172aa36e165a99850a5e10252f3",
+      "result_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R1/.agent-workspace/RESULT.json",
+      "result_sha256": "236dd355a6deda2b203a1749f53359f1a07d236163ac876d7def2c5b3b2fcd06",
+      "outcome": "PASS",
+      "findings_count": 0
+    },
+    {
+      "lane": "S2.R2",
+      "worker_invocation_id": "s2-r2-004",
+      "findings_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R2/.agent-workspace/FINDINGS.json",
+      "findings_sha256": "7a25a8a2b758c0663418edba64eae629d0935c276f20cc28649e6e18aad9795e",
+      "result_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R2/.agent-workspace/RESULT.json",
+      "result_sha256": "97d015674444631437b3df865339b37a4ac53ae5024e607928d56a7432b84c5e",
+      "outcome": "PASS",
+      "findings_count": 0
+    }
+  ],
+  "root_validation": {
+    "exact_tip_and_branch": "PASS",
+    "tracked_worktrees_clean": true,
+    "finding_schema_identity_and_outcome": "PASS",
+    "accepted_cross_board_finding_closed": true,
+    "remaining_admissible_findings": 0
+  },
+  "operator_correction": {
+    "initial_rereview_launch_ran_worker": false,
+    "cause": "Resume invocations incorrectly used fresh status paths, so persisted resume identity was unavailable before Codex launch.",
+    "correction": "Reprojected with each reviewer's original persisted status path and relaunched through the same pinned stable runner.",
+    "candidate_or_watcher_reset": false,
+    "green_test_invalidation": false
+  },
+  "next": "Run only dependency-invalidated S2.A1/S2.A2 authoring and D1/D2 execution, then integrate the candidate and start a fresh C0."
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R2",
+  "worker_invocation_id": "s2-r2-route-review-001",
+  "branch": "firmware/v2-s2-r2",
+  "commit": "939f2da9dc87ad53e195ec0a97ae9f65f5e931a2",
+  "outcome": "PASS",
+  "summary": "Accepted limitation-reference projection repair review passed with no admissible findings.",
+  "checks": [
+    {"name": "exact-current-tip", "outcome": "PASS", "summary": "Reviewed the requested a79e51b..939f2da limitation-reference repair at the clean current tip."},
+    {"name": "closed-call-chain-projection", "outcome": "PASS", "summary": "The exact {path, sha256, stage} call-chain shape and stage order are checked before only path/sha256 is projected to the generic reference verifier."},
+    {"name": "limitation-admission-tests", "outcome": "PASS", "summary": "Focused tests construct valid create-once admission and reject relevant closed-evidence mutations."}
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "schema": "firmware-v2-c3-attempt-allocation/v1",
+  "owner": "ROOT-IM",
+  "attempt_id": "attempt-0008",
+  "allocated_at_utc": "2026-08-05T18:49:42.8618576Z",
+  "allocation_rule": {
+    "largest_prior_runtime_attempt": "attempt-0007",
+    "largest_prior_evidence_attempt": "attempt-0007",
+    "largest_prior_control_attempt": "attempt-0007",
+    "all_selected_paths_absent_before_allocation": true,
+    "monotonic_selection": "attempt-0008"
+  },
+  "roots": {
+    "runtime": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0008",
+    "evidence": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0008",
+    "external_control": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance-control\\attempt-0008"
+  },
+  "prior_attempt": {
+    "attempt_id": "attempt-0007",
+    "closeout_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0007\\topology\\ROOT_ATTEMPT_CLOSEOUT.json",
+    "closeout_sha256": "82181650443dcf5ce08b16e9a3c4eb6c8bcb5831829016ab937c50885b4d76c8",
+    "topology_shutdown_sha256": "47225289745b143848e5036221a390547082b0310fe4c230a73876c169c91153",
+    "procedure_abort_sha256": "48af8ac38d6feeadd716a598678d348e6460bbec2ad63dcea66d0162a4b2760c",
+    "outcome": "FAILED_CANDIDATE_AUTHORIZATION_DERIVATION_AND_WATCHER_TERMINAL_REPORT",
+    "reused_mutable_state": false,
+    "candidate_correction": "Use admitted session-specific retained-session authorization derivation at 542f48c.",
+    "watcher_correction": "Use an exact blocking helper invocation and write terminal evidence only after helper exit.",
+    "server_change": false
+  },
+  "repair_lineage": {
+    "root_admission_sha256": "c936376942e39fa65dd3cf60636c457930401887ec210a45770cd8c6b016a23e",
+    "join_root_acceptance_sha256": "f1a43cf92471a4ff2ca9c9df768813676e3464c40d609c990f0da6d6243472bb",
+    "watcher_change": "prompt-only",
+    "target_source_reconstruction": null
+  },
+  "operative_c1": {
+    "lock_id": "d96f270b-bb92-4b3e-aac0-29321e2ea44a",
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\d96f270b-bb92-4b3e-aac0-29321e2ea44a\\C1_LOCK.json",
+    "sha256": "d9bc07a1eb812775e046f8b87f19955dcac65dae3ecb59994d84613e293a60c7",
+    "validation_sha256": "0308e3883912749678d24f449f2725486d312f1a55bace61caa2dbabc6c05462",
+    "delegated_sha256": "d673cca3705af4c6be326268125ecd9d4731001b43d72d239189ee9a0ad326b5"
+  },
+  "operative_c2": {
+    "attempt": "attempt-0011",
+    "root_acceptance_sha256": "f8e2d328f085f5ce6b5ccbe3b735d287ec9e348da6321a615e55ba4bbd72204e",
+    "decision": "ACCEPT_AGGREGATED_CURRENT_C2_AND_ADMIT_FRESH_C3"
+  },
+  "candidate": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "branch": "firmware/v2-candidate",
+    "commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "clean": true
+  },
+  "mcp_server": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\mcp-candidate",
+    "branch": "firmware/v2-mcp-candidate",
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "clean": true,
+    "immutable": true
+  },
+  "governing_hashes": {
+    "goal": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "generalization_spec_2": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "implementation_roadmap_2": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "execution_readiness_2": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66",
+    "execution_plan_2": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"
+  },
+  "initial_state": {
+    "fresh_attempt_registry": true,
+    "registry_entries": 0,
+    "target_source_reconstruction": null,
+    "target_root_absent_until_candidate_materialization": true,
+    "governing_watcher_root_absent_until_helper_initialization": true,
+    "external_control_root_excluded_from_manifest": true,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "target_workers_launched": 0,
+    "resource_claims": 0
+  }
+}

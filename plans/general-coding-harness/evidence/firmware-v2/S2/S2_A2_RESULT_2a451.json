@@ -1,0 +1,17 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.A2",
+  "worker_invocation_id": "s2-a2-001",
+  "branch": "firmware/v2-s2-a2",
+  "commit": "2a451ff851bb78ced9c1461078d15e1641fac78c",
+  "outcome": "FAIL",
+  "summary": "Added focused disposable target-materialization tests; public seed validation blocks two required tests because TARGET_CHARTER.md disagrees with TARGET_SEED_MANIFEST.json.",
+  "checks": [
+    {
+      "name": "S2.A2 target materialization tests",
+      "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_target -v",
+      "outcome": "FAIL",
+      "summary": "1 passed, 2 errors: AdmissionError seed hash mismatch: TARGET_CHARTER.md"
+    }
+  ]
+}

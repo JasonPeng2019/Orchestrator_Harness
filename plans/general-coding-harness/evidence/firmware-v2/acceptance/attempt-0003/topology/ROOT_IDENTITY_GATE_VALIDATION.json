@@ -1,0 +1,36 @@
+{
+  "schema": "firmware-c3-root-identity-gate-validation/v1",
+  "attempt_id": "attempt-0003",
+  "owner": "ROOT-IM",
+  "validated_at_utc": "2026-08-05T10:46:00Z",
+  "checks": {
+    "intent_identity_hash": true,
+    "nonce_pid_creation_thread_acknowledgement_formula": true,
+    "anonymous_pipe_ack_matches": true,
+    "identity_ack_precedes_key_release": true,
+    "key_release_identity_hash": true,
+    "root_private_key_discarded": true,
+    "orchestrator_profile_exact": true,
+    "watcher_profile_exact": true,
+    "root_launch_status_identity_bindings_exact": true,
+    "watcher_ready_launch_hash_exact": true,
+    "capability_environment_empty": true
+  },
+  "identities": {
+    "orchestrator": {"pid": 197112, "created_utc": "2026-08-05T10:42:53.091154Z", "thread_id": "019fd184-dd9d-79c2-97a8-df7183b41b3c"},
+    "watcher": {"pid": 40084, "created_utc": "2026-08-05T10:43:03.036017Z", "thread_id": "019fd185-0468-76d1-b884-f9d213a96ab8"},
+    "signer": {"pid": 176872, "created_utc": "2026-08-05T10:42:52.021205Z"}
+  },
+  "artifact_sha256": {
+    "ORCHESTRATOR_LAUNCH_INTENT.json": "94527b4bd62069b24f288b642c4fa4c49737d28cdd28dd7dd6332a670f809300",
+    "ORCHESTRATOR_IDENTITY.json": "064d6ac25f896856d45aa19441d6da817591fd8ca94f5c90bd5d3e868a53ae37",
+    "ORCHESTRATOR_IDENTITY_ACK.json": "6cb5a5305bcb774826b79ec9ab1080bf60abba7311b06c0b6d6184345722dcb4",
+    "ORCHESTRATOR_KEY_RELEASE.json": "e4d12c94b13dda092cc4588e9ea50d38b26e0275c646ad6fe581df4f5dc664e7",
+    "ORCHESTRATOR_PROCESS_LAUNCH.json": "53094cf726ab53c3dd798d56a595fa96823d90f4cacdadce45f925d18fef7955",
+    "ORCHESTRATOR_SIGNER_LAUNCH.json": "45e1efa66948381f959dee3f1add06bee2938cde9257305ed6c87ce3f3111106",
+    "WATCHER_LAUNCH.json": "2191d87515910e75e568b65646fb8b5f213ab748f0e5326362b82529696d5331",
+    "WATCHER_READY.json": "4a1ee3e38357520a0a49a516087784fd882e31fa0f6ba77a5bfa2d2968dedbe6",
+    "ROOT_LAUNCH_STATUS.json": "a93450a52aa067de360ac2d424a52a92bcd278888e88d97b47a247357d6eb48a"
+  },
+  "outcome": "PASS"
+}

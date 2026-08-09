@@ -1,0 +1,29 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-001",
+  "branch": "firmware/v2-c0-final-review",
+  "commit": "bbc8ad94c32f3ddad4a54afd4c1a2d51ac4bb11e",
+  "outcome": "FAIL",
+  "summary": "F-C0-FR1-001",
+  "checks": [
+    {
+      "name": "commit-and-cleanliness",
+      "command": "git status --porcelain; git branch --show-current; git rev-parse HEAD",
+      "outcome": "PASS",
+      "summary": "Requested branch and commit were checked; tracked worktree remained clean."
+    },
+    {
+      "name": "baseline-candidate-manifest-and-diff-audit",
+      "command": "git diff --name-status 4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f bbc8ad94c32f3ddad4a54afd4c1a2d51ac4bb11e; read passed registries and S1/S2/S3 dependency evidence",
+      "outcome": "PASS",
+      "summary": "No baseline-test deletion/skip/xfail or assertion weakening was found; changed shared controller coverage is documented as rerun."
+    },
+    {
+      "name": "candidate-c3-controller-integration-audit",
+      "command": "read-only source trace of firmware_acceptance/kit.py and orchestrator_harness/lane_controller.py",
+      "outcome": "FAIL",
+      "summary": "F-C0-FR1-001: the static broker is not wired to an executable candidate-owned MCP/controller lifecycle."
+    }
+  ]
+}

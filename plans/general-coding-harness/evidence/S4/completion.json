@@ -1,0 +1,9 @@
+{
+  "step": "S4 General-use delivery",
+  "status": "pass",
+  "candidate_commit": "d907e0d2ad24e7e58e810f3498f1a62c5f6ed3b9",
+  "checkpoint_a": "closed after one docs-only repair",
+  "focused_tests": "5 passed",
+  "static": "Ruff and BasedPyright pass",
+  "frozen_checkout": "unchanged"
+}

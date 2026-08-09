@@ -1,0 +1,29 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_ROUTE_REREVIEW_003_R2_FINDINGS_a63498c.json",
+  "findings_sha256": "afd108eb65f3caaa6964ca6c4e8e82a09f6dd3cba5b666513ef9efb7cfd06ade",
+  "decisions": [
+    {
+      "id": "S2-R2-CAUSAL-005",
+      "decision": "ACCEPT",
+      "rationale": "Computed source/input/failure hashes are useful, but a custom diagnostic object that repeats them and says PASS remains self-attested. The decisive component reproduction needs the same real candidate controller/status/current-result evidence required of ordinary C3 work. Reusing existing validators is bounded and prevents false server attribution.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Make the diagnostic an attempt-confined adapter to hash-bound actual C3 controller status, launch receipt, and validated current-tip orchestrator-lane-result/v1, with the computed source/input/failure signatures carried through the executed diagnostic assignment/result."
+    },
+    {
+      "id": "S2-R2-ATTEMPT-PATH-006",
+      "decision": "ACCEPT",
+      "rationale": "The exact path omits attempt_id despite every schema carrying it, so same-lane/same-limitation evidence collides or replays across attempts. Adding one validated attempt path segment is a low-risk local correction that makes create-once confinement truthful.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Include the validated attempt_id in the limitation/C3 subtree and require diagnostic, assignment, launch, execution, worker-result, and result references at their exact attempt-derived paths."
+    },
+    {
+      "id": "S2-R2-C3-RESULT-007",
+      "decision": "ACCEPT",
+      "rationale": "Mutually consistent custom launch/worker PASS records do not establish candidate-controller ownership or current repository result validity. The candidate already has exact controller status, repository declaration, and coding-result validation helpers; a narrow adapter to those contracts is less complex and safer than maintaining a parallel untrusted execution protocol.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Reference and validate the actual orchestrator-lane-controller/v1 terminal status and orchestrator-lane-result/v1 through declaration_from_status and validate_coding_result, require CODEX_EXITED/exit zero/result_valid/current hash/PASS, and bind the exact worker/assignment/launch identities."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "attempt": "0005-targeted-review",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-004",
+  "reviewer_thread_id": "019fcc02-2294-76f1-be18-b2c507f29854",
+  "candidate_commit": "b956d502c6332d106005cb6e03826939bf594f9a",
+  "root_decision": "ACCEPT_MINIMAL_FORCED_CLOSE_CORRECTION",
+  "accepted_findings": [
+    {
+      "id": "S2R1-C0-ATTEMPT0005-STDERR-FORCED-CLOSE-001",
+      "classification": "CODEBASE_BREAKING",
+      "root_validation": "Confirmed: the fallback closes stderr without recording that it induced EOF; _stderr can then set stderr_eof on an empty read and the completion predicate has no forced-close exclusion.",
+      "cost_benefit": "A single explicit forced-close state plus one completion-predicate condition prevents a concrete false-complete evidence record. The benefit exceeds its minimal complexity and verification risk."
+    }
+  ],
+  "findings_sha256": "467cd592ae1a20241272196302c14631a446a41d73c78ba1141cd92197937b02",
+  "result_sha256": "c19930bf68eeb72c0a1d8f46c06aef756ab24ef14ad64b146219949b18ea87e7",
+  "required_action": "Persistent S2.P adds only an explicit stderr forced-close marker and excludes forced-close teardown from stderr_log_complete; then same-reviewer closure, focused A1 regression, and independent D1 shard.",
+  "preserved_credits": "All unrelated green IDs and the accepted natural-EOF repair remain credited. No MCP or hardware action is authorized.",
+  "triaged_at_utc": "2026-08-04T11:42:30Z"
+}

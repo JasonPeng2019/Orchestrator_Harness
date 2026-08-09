@@ -1,0 +1,21 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S23.A2",
+  "worker_invocation_id": "s23-a2-c3-final-001",
+  "branch": "firmware/v2-s23-a2-c3-final",
+  "commit": "22ebf0dbc5e13514745a2d05e38ba658ffab5468",
+  "outcome": "PASS",
+  "summary": "Focused C3 OS-snapshot provenance regression authoring and Python compilation completed.",
+  "checks": [
+    {
+      "name": "test module compilation",
+      "outcome": "PASS",
+      "summary": "Compiled only the two touched test modules; runtime tests were not collected or executed."
+    },
+    {
+      "name": "runtime execution boundary",
+      "outcome": "NOT_RUN",
+      "summary": "No runtime tests, MCP fixture, hardware, pyOCD, serial, probe, RF, or Codex child process was launched."
+    }
+  ]
+}

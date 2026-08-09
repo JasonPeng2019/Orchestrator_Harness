@@ -1,0 +1,86 @@
+{
+  "schema": "firmware-v2-c2-attempt-record/v1",
+  "attempt": "attempt-0011",
+  "label": "selective F-C2-AUTH-001 retry",
+  "recorded_at_utc": "2026-08-05T18:44:31Z",
+  "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "c1_lock": {
+    "id": "d96f270b-bb92-4b3e-aac0-29321e2ea44a",
+    "sha256": "d9bc07a1eb812775e046f8b87f19955dcac65dae3ecb59994d84613e293a60c7",
+    "validation_sha256": "0308e3883912749678d24f449f2725486d312f1a55bace61caa2dbabc6c05462",
+    "authorization_sha256": "d673cca3705af4c6be326268125ecd9d4731001b43d72d239189ee9a0ad326b5"
+  },
+  "executor": {
+    "lane_id": "F.C2.D1",
+    "worker_invocation_id": "c2-d1-011",
+    "thread_id": "019fd337-d056-7872-a0ba-ba3529e7ad81",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority"
+  },
+  "stable_runner": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "source_invocation_sha256": "fa089e8e8ab00cd7e3347180c68b74f239950627d1fabfef694d80e6a01d41ab",
+    "projected_invocation_sha256": "4c960ca273465d95014696477aeae1e8c6fd460d1a40df1d6589e61601100b7f",
+    "projection_record_sha256": "d10a25be23fa75699e0202df857c0fb7eaf88eb4fb283e737209798228f24a3f",
+    "projection_proof_sha256": "49beb560d458275871d1b990064dce9897164818439bb6c8a23da9f3ffed0971",
+    "dispatch_proof_sha256": "2e618484b8ebd3dca78fb263059f7b0e59e31be9bc5cc90e323882b232e53901"
+  },
+  "artifacts": {
+    "findings_sha256": "b037a29c9d174f619efd679158d8f9614c401903930702e5df0acfcbaa5432e7",
+    "test_report_sha256": "762bfdbb4e66f420eb56ce08b7d2d4f4fb388d1d581b06d202ab2cffa83f15bc",
+    "result_sha256": "656290b89bc823ed530c6217179f822bda8ce9e658bb470ccc3960393f9871dd",
+    "controller_status_sha256": "b4aa4d799ef54c15f701d95af2adda287970bf6610be7b752578718ab1f583f6",
+    "worker_jsonl_sha256": "4c77528e408326f4b7db067d1e79977ce439a1c292caed61747241ddce780f00",
+    "worker_stderr_sha256": "d654d08da5ab726c10a93334461ca67ab9b7c00bda215ee88148aa35495af245",
+    "worker_last_message_sha256": "f5860acb2c5100ac19afa536cc59879f2fad11157bc372d885acf847c53c4de6",
+    "prompt_sha256": "d71d03c435a9e67935b37ec2d41312fbd47ae15978c4d3bf355d9d4355687255",
+    "verifier_sha256": "66e4bc4275708caa995b66081c16b18ed4d37ad7b0aab9767b17da76179dd057"
+  },
+  "selective_execution": {
+    "executed_ids": [
+      "F-C2-AUTH-001"
+    ],
+    "execution_count": 1,
+    "retry_within_attempt": false,
+    "inherited_from_attempt_0010": [
+      "F-C2-LOCK-001",
+      "F-C2-DISPOSABLE-001",
+      "F-C2-CREDIT-001",
+      "F-C2-STATE-001"
+    ],
+    "inherited_attempt_record_sha256": "881b0450526acb4f43f1a183421357072846c72208db3e85513c6bb7df3c5e68",
+    "inherited_root_triage_sha256": "3ddc4f7423a7225ef985861a687dde85e8e844d9f272cdc8211faeff44dc7a18",
+    "unrelated_ids_rerun": false
+  },
+  "test": {
+    "stable_id": "F-C2-AUTH-001",
+    "pid": 198608,
+    "creation_identity": "windows-filetime:134304288129663942",
+    "process_record_sha256": "64e5c0ba9b2f232a18bc316ddd6d11eac0a5e712303f54a9ca35a026d566f227",
+    "stdout_sha256": "80ddac702c1c562a8054758f2090ec2ef2e3602eae7a7bac523976b792efd57d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exit_code": 0,
+    "outcome": "PASS"
+  },
+  "aggregate_credit_counts": {
+    "green_groups": 27,
+    "unique_green_ids": 166,
+    "invalidated_groups": 0,
+    "evidence_credits": 91,
+    "hashed_evidence_credits": 85,
+    "inheritance_only_credits": 6,
+    "protected_baseline_ids": 248,
+    "focused_s28_ids": 5,
+    "retained_dependency_valid_prior_ids": 166
+  },
+  "findings_count": 0,
+  "candidate_changed": false,
+  "mcp_server_changed": false,
+  "hardware_or_mcp_accessed": false,
+  "post_controller_claim_files": 0,
+  "post_controller_surviving_test_processes": 0,
+  "result_gate_valid": true,
+  "c3_admitted": false,
+  "outcome": "PASS_PENDING_ROOT_ACCEPTANCE"
+}

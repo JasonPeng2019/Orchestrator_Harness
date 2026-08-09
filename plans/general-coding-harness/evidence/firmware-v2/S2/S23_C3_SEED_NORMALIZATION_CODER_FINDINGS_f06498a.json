@@ -1,0 +1,8 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.P",
+  "worker_invocation_id": "s23-p2-c3-control-plane-013",
+  "role": "coder",
+  "commit": "f06498a227d7d13cef628534f316e876dfdb0073",
+  "findings": []
+}

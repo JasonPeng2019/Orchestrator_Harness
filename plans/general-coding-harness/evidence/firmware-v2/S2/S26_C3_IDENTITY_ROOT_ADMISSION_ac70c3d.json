@@ -1,0 +1,38 @@
+{
+  "schema": "firmware-v2-root-review-admission/v1",
+  "owner": "ROOT-IM",
+  "created_utc": "2026-08-05T12:10:00Z",
+  "commit": "ac70c3d278849fd1c0355173d548ef2a4f3b5268",
+  "review_lane": {
+    "lane_id": "S26.R3",
+    "worker_invocation_id": "s26-r3-c3-identity-0001",
+    "thread_id": "019fd1d2-5599-7720-a2be-054a26ba4756",
+    "controller_exit_code": 0,
+    "controller_result_valid": true,
+    "findings_sha256": "40079f0b4625719937c18af2ea60a40b5bd022fd65bd8198c80742fb5c8ec7c7",
+    "result_sha256": "35a6d161a2a23811aa12c1442960e0397cbd1dcb36b689143bff430ce935649d",
+    "status_sha256": "d105c6efd68dbda5cb7cb11482d5dff1975376b8f8573c5cb718c5a1863dd273",
+    "last_message_sha256": "0efa5f189d84dd29d8150c82e61f36a5d126a9c638e52ecf888d13020dd8b637",
+    "findings_count": 0,
+    "outcome": "PASS"
+  },
+  "root_review": {
+    "joined_revision_exact": true,
+    "worktree_clean": true,
+    "resource_claims_remaining": 0,
+    "shared_process_identity_byte_identical_to_baseline": true,
+    "retained_cleanup_and_recovery_consumers_migrated": true,
+    "quick_exit_unknown_identity_case_corrected": true,
+    "reviewer_r2_criticism_closed": true,
+    "tests_executed_by_reviewer": false,
+    "hardware_accessed": false,
+    "firmware_mcp_accessed": false
+  },
+  "cost_benefit_decision": "The independent full-diff review found no material defect after the bounded identity, recovery, oracle, and retained-test repair. The only noted malformed-recovery-object TypeError remains fail-closed during startup and has no demonstrated authorization, cleanup, or containment escape; expanding the parser now would add unvalidated complexity without a release-safety benefit.",
+  "admission": "ACCEPT_SOURCE_AND_STATIC_TEST_CONSUMERS; AUTHORIZE_EXACTLY_ONE_FOCUSED_TWO_MODULE_EXECUTION_AT_AC70C3D",
+  "invalidated_test_modules": [
+    "orchestrator_harness.tests.test_firmware_c3_harness",
+    "orchestrator_harness.tests.test_firmware_c3_watcher_oracle"
+  ],
+  "non_invalidated_evidence": "The shared harness_common/process_identity.py dependency is byte-identical to the accepted baseline, so the prior general-harness and unrelated C3 modules remain credited and must not be rerun."
+}

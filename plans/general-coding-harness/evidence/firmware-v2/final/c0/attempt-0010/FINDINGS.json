@@ -1,0 +1,8 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-010",
+  "role": "reviewer",
+  "commit": "659dd03e2aa7159090c8e0e20123b1fec1749f90",
+  "findings": []
+}

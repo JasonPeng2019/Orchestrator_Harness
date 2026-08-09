@@ -1,0 +1,141 @@
+{
+  "schema": "firmware-v2-c2-root-retry-triage/v1",
+  "owner": "ROOT-IM",
+  "recorded_at_utc": "2026-08-05T06:04:02Z",
+  "attempt": "attempt-0004",
+  "candidate_commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+  "c1": {
+    "lock_id": "97ab7b9e-48a4-4ba0-93dc-55c724e9682c",
+    "lock_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\97ab7b9e-48a4-4ba0-93dc-55c724e9682c\\C1_LOCK.json",
+    "lock_sha256": "a72d30f6f6788edbc639fd90f8174ee78a84d006ab70f9a5712bf64ec3302eb1",
+    "validation_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\97ab7b9e-48a4-4ba0-93dc-55c724e9682c\\C1_VALIDATION.json",
+    "validation_sha256": "96a070864535d807aac1406def45df9ff91835164a81a5f0cb23c188ff265a37",
+    "locked_inputs_changed_during_retries": false
+  },
+  "retry_authority": {
+    "execution_plan_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\EXECUTION_PLAN_2.md",
+    "execution_plan_sha256": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261",
+    "lines": "728-736",
+    "rule": "Environment or test-execution failures may rerun only their failed IDs against the same C1 when no locked input changes; C3 may consume only the latest green C1/C2 pair.",
+    "applies": true
+  },
+  "verifier": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2_verify.py",
+    "final_sha256": "c177279bc07aaa0b8f97cd379d4a49617202a97242c4432d23ec093158e30699"
+  },
+  "diagnostics": [
+    {
+      "stable_id": "F-C2-LOCK-001",
+      "diagnostic": "initial-failure",
+      "stdout": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-LOCK-001.initial-failure.stdout.log", "sha256": "5cbf37974c5a1e414d06aeba425b8aa9fd756328a4fb45204ee8b6d3bd4d510e"},
+      "stderr": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-LOCK-001.initial-failure.stderr.log", "sha256": "d0936114ab02d456a634eda0dc21f8456601e836ffb0ef9b1cbc3ca8a9e03aaf"},
+      "observed_issue": "The verifier required git symbolic-ref to return zero even though the locked stable runner is intentionally detached and correctly returned one with empty output.",
+      "correction": "Accept symbolic-ref return codes zero or one, require empty branch output, and independently require the exact stable-runner HEAD.",
+      "classification": "VERIFIER_TEST_EXECUTION_ERROR",
+      "candidate_finding": false,
+      "locked_input_changed": false
+    },
+    {
+      "stable_id": "F-C2-LOCK-001",
+      "diagnostic": "process-failure",
+      "stdout": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-LOCK-001.process-failure.stdout.log", "sha256": "63356273ba8d68a38ef6b5ae765bb778b4b08ed3b0cabff0ae9582def2c4102e"},
+      "stderr": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-LOCK-001.process-failure.stderr.log", "sha256": "2db30dc02068cf01b7255cf4a7d567cfcd580581c737de11158f796a3f9fa055"},
+      "observed_issue": "The process scan counted the active C2 controller and its own child as forbidden residue.",
+      "correction": "Exclude only the exact c2-d1-004 lane identity while retaining scans for pyocd-debug-mcp, lane_controller, and c3_harness in every other process.",
+      "classification": "VERIFIER_TEST_EXECUTION_ERROR",
+      "candidate_finding": false,
+      "locked_input_changed": false
+    },
+    {
+      "stable_id": "F-C2-AUTH-001",
+      "diagnostic": "bytecode-check-failure",
+      "stdout": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-AUTH-001.bytecode-check-failure.stdout.log", "sha256": "a2d7b56049eb2f9d637f7f7a30a24f4318d9b757c226c06703eb500819d5b146"},
+      "stderr": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-AUTH-001.bytecode-check-failure.stderr.log", "sha256": "3a351b4b6b64897acca8f35a95794af32cebb7b9f9dfe3bfa45142e8d77ff309"},
+      "observed_issue": "The verifier incorrectly required that no bytecode files pre-exist in the candidate worktree.",
+      "correction": "Hash all pre-existing bytecode before and after the authorization import and require exact equality; no bytecode was created or changed.",
+      "classification": "VERIFIER_TEST_EXECUTION_ERROR",
+      "candidate_finding": false,
+      "locked_input_changed": false
+    },
+    {
+      "stable_id": "F-C2-DISPOSABLE-001",
+      "diagnostic": "root-layout-failure",
+      "stdout": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-DISPOSABLE-001.root-layout-failure.stdout.log", "sha256": "3b615359f1d97aabb5d0b8f6d260619aecb078c6d531b3b713416b837d494acc"},
+      "stderr": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-DISPOSABLE-001.root-layout-failure.stderr.log", "sha256": "541c3b5f2dbf52f3fa32961f4712a3b0874c55561cd6d88f7231b4944ee0ff74"},
+      "observed_issue": "The procedure put target-local source, test, and configuration files at the protected seed root, so the candidate correctly rejected unmanifested root files.",
+      "correction": "Place target-local files under src, tests, and config while retaining the exact protected root seed; validation then passed and seed mutation was rejected.",
+      "classification": "TEST_PROCEDURE_ERROR_CANDIDATE_BEHAVIOR_CORRECT",
+      "candidate_finding": false,
+      "locked_input_changed": false
+    },
+    {
+      "stable_id": "F-C2-CREDIT-001",
+      "diagnostic": "path-resolution-failure",
+      "stdout": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-CREDIT-001.path-resolution-failure.stdout.log", "sha256": "e1c82f845bcc80b4991b72babd022341b9ec68fb87eb0bc835ea25140b915b54"},
+      "stderr": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-CREDIT-001.path-resolution-failure.stderr.log", "sha256": "e53634ccd4ff746ccc7c35520c0d1d63dcaea683a3cb62279077a7df2f035f67"},
+      "observed_issue": "The verifier resolved repository-relative passed-registry evidence paths against the candidate worktree instead of the outer evidence root.",
+      "correction": "Resolve those declared evidence paths against the outer repository and validate their exact hashes.",
+      "classification": "VERIFIER_TEST_EXECUTION_ERROR",
+      "candidate_finding": false,
+      "locked_input_changed": false
+    },
+    {
+      "stable_id": "F-C2-CREDIT-001",
+      "diagnostic": "bom-failure",
+      "stdout": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-CREDIT-001.bom-failure.stdout.log", "sha256": "eb17006f658d9424ff74ce6e2c84e6780d035aee170e6051d0d32defa2703b7d"},
+      "stderr": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-CREDIT-001.bom-failure.stderr.log", "sha256": "2e955bf571240c82ded8202cc1dbb882bea7b8e3a746990e1aba67a288d888ee"},
+      "observed_issue": "AST collection decoded a retained baseline test as plain UTF-8 even though it begins with a UTF-8 BOM.",
+      "correction": "Decode candidate Python sources with utf-8-sig before AST collection.",
+      "classification": "VERIFIER_TEST_EXECUTION_ERROR",
+      "candidate_finding": false,
+      "locked_input_changed": false
+    },
+    {
+      "stable_id": "F-C2-CREDIT-001",
+      "diagnostic": "skip-scan-failure",
+      "stdout": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-CREDIT-001.skip-scan-failure.stdout.log", "sha256": "9f1acee585e34b1308fe83d80072e844412697edfd3acb0b01a22210f91d9fef"},
+      "stderr": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-CREDIT-001.skip-scan-failure.stderr.log", "sha256": "56e0270eabc9c2694ce4d3a29b485b7af84cc59dd3cbee4da1c4bcd1b6a6d2dd"},
+      "observed_issue": "The verifier treated three retained pre-existing baseline skip decorators as newly introduced weakening.",
+      "correction": "Validate all 248 protected IDs, the locked dependency map's empty modified-protected-path and weakened-oracle inventories, its non-regression proof, and the exact two-path mapped delta instead of misclassifying unchanged baseline decorators.",
+      "classification": "VERIFIER_TEST_EXECUTION_ERROR",
+      "candidate_finding": false,
+      "locked_input_changed": false
+    },
+    {
+      "stable_id": "F-C2-STATE-001",
+      "diagnostic": "claim-scan-failure",
+      "stdout": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-STATE-001.claim-scan-failure.stdout.log", "sha256": "7303bc1fb03bd3f2e34454fc2bb65b0bf7549abf3ec499ac6824af88bceb8b1f"},
+      "stderr": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0004\\.agent-workspace\\c2-lock-bound\\F-C2-STATE-001.claim-scan-failure.stderr.log", "sha256": "979dfddfc5a16328c4c215b6a6b979509825684b30a52de50324249e80ae30c7"},
+      "observed_issue": "The verifier classified the immutable orchestrator_harness/uv.lock dependency lockfile as a runtime resource claim.",
+      "correction": "Scope residue detection to claims, locks, or resource-claims path components and claim or lock artifact names, excluding evidence and the verifier workspace.",
+      "classification": "VERIFIER_TEST_EXECUTION_ERROR",
+      "candidate_finding": false,
+      "locked_input_changed": false
+    }
+  ],
+  "retry_scope": {
+    "logical_ids_assigned": ["F-C2-LOCK-001", "F-C2-AUTH-001", "F-C2-DISPOSABLE-001", "F-C2-CREDIT-001", "F-C2-STATE-001"],
+    "only_failed_logical_ids_retried": true,
+    "already_green_stable_ids_rerun": [],
+    "candidate_or_policy_repairs_during_c2": false
+  },
+  "final_evidence": {
+    "findings_sha256": "1e3462c6c8409ac52f60fb7b006d9c6a5e3e8a91e139613e3f6370124274100e",
+    "result_sha256": "451d9b586e9132931518b2bc168fee1c1d61d608a514a14909e20fe49722f301",
+    "test_report_sha256": "1644ea52165ba95141d2ca92bf408031b297f51d202e28192d0b3c9e79fa6470",
+    "status_sha256": "3ba3debd3e9fd8419fe8ac97a674c14c08356cfdb94c7ca6c974677ed13cbc66",
+    "passed_ids": 5,
+    "failed_ids": 0,
+    "findings": 0,
+    "hardware_or_mcp_accessed": false,
+    "active_resource_claims": 0,
+    "surviving_managed_test_processes": 0
+  },
+  "classification": {
+    "candidate_harness_failure": false,
+    "watcher_failure": false,
+    "c1_invalidation": false,
+    "ordinary_executor_correction": true
+  },
+  "decision": "ACCEPT_RETRY_HISTORY_AND_USE_FINAL_GREEN_RESULTS"
+}

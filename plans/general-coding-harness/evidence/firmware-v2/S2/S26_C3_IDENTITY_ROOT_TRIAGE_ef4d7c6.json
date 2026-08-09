@@ -1,0 +1,120 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "lane_id": "S26.ROOT",
+  "worker_invocation_id": "s26-root-c3-identity-triage-0001",
+  "commit": "ef4d7c6a299e68a9f0325961680e266d20b7f5a1",
+  "critic_artifacts": [
+    {
+      "lane_id": "S26.R1",
+      "findings_sha256": "cc4d5ca5682678ccddbf6c69aee599afaf69317cbaab8fbc58b601b776f97618",
+      "result_sha256": "a754aaa86db8602dd5877fc13598451c09de7e35451e8f9f11af27267d8d6665",
+      "stable_projection_sha256": "9d0df6956e57704f784c967b5680570d92ac0d8fcd2a4d523ed3ccd6d85135d4",
+      "controller_exit_code": 0,
+      "controller_result_valid": false,
+      "validation_failure": "CODING_RESULT_INVALID: coding result has an invalid root shape",
+      "root_use": "ADVISORY_CONTENT_ONLY_PENDING_CLOSED_REREVIEW"
+    },
+    {
+      "lane_id": "S26.A1",
+      "findings_sha256": "312538740a4082741c6ad5902686f6b76f2eddf56a061d3ac95542dbb9d63240",
+      "result_sha256": "d92f3ec4bc8e22978a22cc0f22ffee476f09b398d2b294d923e72d5643dd47ac",
+      "stable_projection_sha256": "89dd1ce049dc52fe0e4b761ffeea160fd643716307a1daea62115de12a7270ea",
+      "controller_exit_code": 0,
+      "controller_result_valid": false,
+      "validation_failure": "CODING_RESULT_INVALID: coding result has an invalid root shape",
+      "test_commit": "b12c5723b7acb4a1b4ed55c1b0fa3816d4613872",
+      "root_use": "UNJOINED_TEST_INPUT_PENDING_CORRECTION_AND_EXECUTION"
+    }
+  ],
+  "decisions": [
+    {
+      "finding_id": "S26-R1-001/S26.A1-001",
+      "decision": "ACCEPT",
+      "category": "FUNCTIONALITY_BREAKING",
+      "reason": "Both production and oracle authenticate command-line substrings rather than the exact Python module argv. A direct unrelated child can satisfy the current predicate.",
+      "smallest_fix": "Parse the platform command line into an exact four-argument Python module launch and use one closed predicate in both admission and oracle validation.",
+      "complexity_and_risk": "Low; one narrow parser/predicate plus quoted-path and collision tests.",
+      "problem_outweighs_fix_risk": true,
+      "route": "S26.P"
+    },
+    {
+      "finding_id": "S26-R1-002",
+      "decision": "ACCEPT",
+      "category": "FUNCTIONALITY_BREAKING",
+      "reason": "A syntactically plausible but unauthenticated status PID is promoted into cleanup ownership and can hold the entire attempt in recovery until an unrelated process exits.",
+      "smallest_fix": "Keep untrusted observations non-owning and assign controller cleanup identity only after the closed relationship authenticates.",
+      "complexity_and_risk": "Low; move ownership assignment behind authentication and retain launcher-only fail-closed cleanup otherwise.",
+      "problem_outweighs_fix_risk": true,
+      "route": "S26.P"
+    },
+    {
+      "finding_id": "S26-R1-003",
+      "decision": "ACCEPT",
+      "category": "FUNCTIONALITY_BREAKING",
+      "reason": "The relationship is written only after authentication and binds a mutable status file. It cannot durably prove a rejected authentic observation after status evolution or post-observation failure.",
+      "smallest_fix": "Persist a create-once non-owning observation immediately after a complete same/direct process observation, embed a closed initial-status snapshot, and make current status supplementary rather than an authenticity prerequisite.",
+      "complexity_and_risk": "Moderate but bounded to the existing two C3 modules and their focused tests.",
+      "problem_outweighs_fix_risk": true,
+      "route": "S26.P"
+    },
+    {
+      "finding_id": "S26-R1-004",
+      "decision": "ACCEPT",
+      "category": "FUNCTIONALITY_BREAKING",
+      "reason": "Known in-repository oracle callers remain on the removed API. The source-only commit cannot be admitted until the test consumer is migrated without discarding the old containment cases.",
+      "smallest_fix": "Migrate the focused oracle tests after the corrected source contract is fixed; retain only a compatibility adapter if an actual external caller is discovered.",
+      "complexity_and_risk": "Low and isolated to the owned S26.A1 tests.",
+      "problem_outweighs_fix_risk": true,
+      "route": "S26.A1"
+    },
+    {
+      "finding_id": "S26.A1-002",
+      "decision": "ACCEPT_WITH_CORRECTED_FIX",
+      "category": "FUNCTIONALITY_BREAKING",
+      "reason": "There is a PID-reuse race between the process snapshot and the first exact controller identity read. However the proposed equality is invalid: Windows exact identity is a FILETIME token while the status/snapshot creation field is an ISO UTC value, so direct equality would recreate the physical-attempt rejection.",
+      "smallest_fix": "Bracket the complete snapshot with equal exact controller identity reads, while separately requiring the status ISO creation value to equal the snapshot ISO creation value. Correct the test to model identity change across the bracket instead of comparing unlike encodings.",
+      "complexity_and_risk": "Low; two exact identity observations around one complete snapshot and one corrected synthetic race case.",
+      "problem_outweighs_fix_risk": true,
+      "route": "S26.P_AND_S26.A1"
+    },
+    {
+      "finding_id": "S26.A1-003/ROOT-S26-001",
+      "decision": "ACCEPT",
+      "category": "FUNCTIONALITY_BREAKING",
+      "reason": "_require_recovery no longer validates before writing, observed_controller_identity is not validated, and one cleanup branch dynamically adds process_identity_unresolved even though both the live and restart validators exclude it. The produced recovery can be permanently unreconcilable.",
+      "smallest_fix": "Use one closed cleanup shape, validate all launcher/controller identities and bindings, and call the validator before create-once recovery persistence.",
+      "complexity_and_risk": "Low; restores an existing validation gate and completes its new identity coverage.",
+      "problem_outweighs_fix_risk": true,
+      "route": "S26.P"
+    },
+    {
+      "finding_id": "S26.A1-004",
+      "decision": "ACCEPT_WITH_CORRECTED_FIX",
+      "category": "FUNCTIONALITY_BREAKING",
+      "reason": "The oracle can pair a response and relationship from different assignments. Equating response request_id with assignment_id is not valid because the real protocol uses distinct values.",
+      "smallest_fix": "Add the immutable signed request as an oracle input and require response.request_id == request.request_id plus request.payload.assignment_id == relationship.assignment_id; bind all four input hashes in the oracle result.",
+      "complexity_and_risk": "Low-to-moderate; one additional read-only input and closed correlation checks, with no response schema expansion.",
+      "problem_outweighs_fix_risk": true,
+      "route": "S26.P_AND_S26.A1"
+    },
+    {
+      "finding_id": "ROOT-S26-002",
+      "decision": "ACCEPT",
+      "category": "FUNCTIONALITY_BREAKING",
+      "reason": "The revised recovery path can emit outcome RECOVERY_REQUIRED with an added recovery object and a generic reason, while the oracle accepts only the four-key REJECTED envelope. The exact recovery-prefixed contradiction required by the author prompt is therefore unobservable.",
+      "smallest_fix": "Preserve the exact underlying cleanup reason in RecoveryRequired and make the oracle accept only the two closed response envelopes and exact raw/prefixed reason forms required by the contract.",
+      "complexity_and_risk": "Low; closed response-shape alternatives and focused negative cases.",
+      "problem_outweighs_fix_risk": true,
+      "route": "S26.P"
+    }
+  ],
+  "vetoed_scope": [
+    "Do not compare Windows FILETIME exact-process tokens directly with ISO snapshot/status timestamps.",
+    "Do not equate request_id with assignment_id.",
+    "Do not introduce a scheduler, generic process framework, mutable database, or broad response-schema migration.",
+    "Do not run already-green tests until the repaired dependency fingerprint and focused test set are joined."
+  ],
+  "root_decision": "REJECT_EF4D7C6; ROUTE_BOUNDED_SOURCE_REPAIR; CORRECT_TEST_COMMIT_BEFORE_JOIN; REQUIRE_FRESH_CLOSED_REREVIEW",
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false
+}

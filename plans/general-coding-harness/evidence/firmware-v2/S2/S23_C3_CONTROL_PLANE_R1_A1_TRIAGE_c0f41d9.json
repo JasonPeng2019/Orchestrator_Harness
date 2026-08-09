@@ -1,0 +1,69 @@
+{
+  "schema": "firmware-v2-review-test-triage/v1",
+  "owner": "ROOT-IM",
+  "recorded_at_utc": "2026-08-04T22:35:34Z",
+  "reviewed_candidate_commit": "c0f41d9062fd7378bfda77080f87314df409abc5",
+  "sources": {
+    "review_findings": {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S23.R1-C3-CP/.agent-workspace/FINDINGS.json",
+      "sha256": "07c881c279f68df4e48c248a4bf3272990a36771ce3e94041ce1ba7e01966982"
+    },
+    "review_result": {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S23.R1-C3-CP/.agent-workspace/RESULT.json",
+      "sha256": "c7d3e750e985ddc8a22ac05c831cd7d4e63265b5fe75b974cc54381ae355330b"
+    },
+    "test_author_findings": {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S23.A1-C3-CP/.agent-workspace/FINDINGS.json",
+      "sha256": "4ce4ae51ed0f0838b9e35dbeb6b616e208ac6cbfbe4ec23c4b6f5ac7db5cb7da"
+    },
+    "test_author_result": {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S23.A1-C3-CP/.agent-workspace/RESULT.json",
+      "sha256": "d4d08a50ad7bd569386fcd79a620eb52155f36802738cb99367f780a95c6d8d8"
+    },
+    "test_commit": "b835e2c1fa8f7155aaf814df7de7d30ce3873fc2"
+  },
+  "decisions": [
+    {
+      "finding": "S23.R1-001",
+      "decision": "ACCEPT",
+      "classification": "FUNCTIONALITY_BREAKING",
+      "rationale": "A synchronous lane-controller call blocks the only request loop, so the active P1 worker cannot use the candidate broker and two P3 lane calls cannot progress. The fix is a bounded controller subprocess/monitor plus a narrow non-capability worker request channel, not a scheduler."
+    },
+    {
+      "finding": "S23.R1-002 and C3-CP-F02",
+      "decision": "ACCEPT_CONSOLIDATED",
+      "classification": "FUNCTIONALITY_BREAKING",
+      "rationale": "The facade lacks exact C1/delegated/UTC admission and claims replay only after dispatch. Admission must be create-once before side effects for both serve and one-shot paths."
+    },
+    {
+      "finding": "S23.R1-003 and C3-CP-F03",
+      "decision": "ACCEPT_CONSOLIDATED",
+      "classification": "FUNCTIONALITY_BREAKING",
+      "rationale": "In-memory live state, idle exit, retained terminal controllers, and missing terminal evidence cannot establish candidate-owned quiescence. A small durable registry/status/heartbeat and signed drain-to-terminal shutdown are necessary."
+    },
+    {
+      "finding": "S23.R1-004",
+      "decision": "ACCEPT",
+      "classification": "FUNCTIONALITY_BREAKING",
+      "rationale": "The existing strict broker correctly requires causal candidate-dispatch evidence, but the facade cannot create it. A narrow substitute-assignment/launch/result adapter around the same target-worker path is required; weakening the broker is forbidden."
+    },
+    {
+      "finding": "C3-CP-F01",
+      "decision": "ACCEPT_AND_COMPLETE_ROLE_MATRIX",
+      "classification": "FUNCTIONALITY_BREAKING",
+      "rationale": "A1 must be Terra-medium priority with test_writer gate, P1 Luna-high default with test_executor gate, R1 Terra-medium priority with reviewer gate, and C1 Terra-medium default without a gate. The exact user model/topology contract is testable and low-risk to correct."
+    }
+  ],
+  "root_additional_required_closure": [
+    "Each assignment uses a candidate-created isolated target Git worktree/branch based on the latest accepted target commit; O can accept a completed current-tip branch only through a signed candidate operation, and the candidate revalidates immutable seed content.",
+    "The candidate, not O, generates every worktree path, branch, invocation, safe worker-channel path, role/model/tier/gate, and candidate-controlled prompt prefix. O supplies task content only.",
+    "Per-lane physical executions may run concurrently only in separate candidate-owned lane tasks under the one active P1 assignment; calls for the same lane remain serialized.",
+    "Readiness validates and hash-binds exact C1/delegated/seed/policy/templates/manifest/topology inputs before any request, and the service cannot terminate by idle timeout."
+  ],
+  "cost_risk_gate": {
+    "accepted_items_are_breaking_or_worth_fix": true,
+    "problem_outweighs_localized_facade_and_test_risk": true,
+    "no_speculative_hardening_or_framework_expansion": true
+  },
+  "rerun_policy": "Repair production only, join the existing focused test commit, and rerun only the dependency-invalidated C3 control-plane IDs. No prior green registry ID, protected suite, MCP, or hardware test is authorized."
+}

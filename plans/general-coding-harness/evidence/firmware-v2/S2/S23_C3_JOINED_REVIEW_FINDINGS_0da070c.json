@@ -1,0 +1,35 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S23.R3",
+  "worker_invocation_id": "s23-r3-c3-final-001",
+  "role": "reviewer",
+  "commit": "0da070cfad5bfcc481ac1d8fc90b1253ed9fbff8",
+  "findings": [
+    {
+      "id": "S23.R3-C3-001",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": [
+        "C3-CP-04",
+        "C3-CP-06",
+        "C3-CP-07"
+      ],
+      "evidence": [
+        "firmware_acceptance/c3_harness.py: C3Harness._assignment records exact_process_identity(proc.pid) as record['identity'] before registering the lane-controller child.",
+        "firmware_acceptance/c3_harness.py: C3Harness.reap_workers accepts completion based on unbound fields in the target-worktree status artifact, but never compares status controller_pid or controller creation identity with record['identity'].",
+        "firmware_acceptance/c3_harness.py: the accepted completion is then the sole input to assignment acceptance and LimitationEvidenceAdapter completion; the focused host test exercises only a FAIL result and does not exercise a mismatched or forged controller identity."
+      ],
+      "observed": "After launch, reap_workers records an exact controller identity but does not consume it while deciding valid PASS completion. A status JSON in the target worktree can claim CODEX_EXITED, a zero exit, valid findings, and a PASS result without evidence that it was written by the registered controller process captured at launch.",
+      "expected": "Worker completion must bind the terminal status controller PID and creation identity to the exact registered lane-controller identity before it may become a PASS completion, be merged into a target, or supply limitation credit.",
+      "reproduction": "Create a candidate assignment, retain its captured record['identity'], then provide a syntactically valid PASS status/result pair whose controller_pid or controller_created_utc/controller_started_utc does not match that identity before the child exits zero. reap_workers has no comparison that rejects this mismatch and can record PASS.",
+      "impact": "The harness cannot establish that an accepted target result or a credited limitation diagnostic/substitute came from its registered controller. A stale or substituted status/result pair can satisfy the current completion predicate, defeating the exact controller-evidence boundary required for dispatch, acceptance, shutdown accounting, and limitation attribution.",
+      "no_fix_consequence": "C3 acceptance and server-limitation evidence remain provenance-incomplete: a PASS can be accepted without proving that the candidate-owned controller identified at launch actually produced it.",
+      "smallest_fix": "In reap_workers, require the terminal status controller PID and creation identity to exactly equal record['identity'] before recording PASS, and add one host regression that supplies a mismatched identity and asserts FAIL/no assignment acceptance.",
+      "complexity": "Small localized predicate and one focused host assertion in the existing reap path.",
+      "regression_risk": "Low: it rejects only terminal evidence that is not attributable to the controller already required and recorded at launch.",
+      "verification_cost": "Low: the host test needs no Codex, MCP, hardware, or physical tooling.",
+      "alternatives": "Relying on the child Popen exit code or on mutable status/result shape alone does not establish controller provenance; broader target isolation or fixture changes are unnecessary.",
+      "cost_benefit": "Binding already-captured identity to the existing terminal predicate closes a required executable provenance gap with minimal code and verification surface.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S23.R4",
+  "worker_invocation_id": "s23-r4-c3-final-001",
+  "role": "reviewer",
+  "commit": "77fd792973bb57297c2d0c299f6ee56ce1701f13",
+  "findings": [
+    {
+      "id": "S23.R4-C3-001",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": [
+        "C3-CP-04",
+        "C3-CP-06",
+        "C3-CP-07"
+      ],
+      "evidence": [
+        "firmware_acceptance/c3_harness.py:300-313 captures exact_process_identity(proc.pid), but the initial-status predicate checks only that controller_pid equals proc.pid and controller_created_utc is a nonempty string.",
+        "firmware_acceptance/c3_harness.py:330 stores that unverified status string as record['status_identity']; reap_workers at lines 425-437 compares terminal status only to that self-recorded value, never to record['identity'] from exact_process_identity.",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py:77-92 supplies initial controller_created_utc '2026-08-04T00:00:00Z' while its exact_process_identity mock supplies a different and non-contract 'creation_identity' field; the test proves only a change from the forged initial status value fails, not binding to the registered Popen creation identity."
+      ],
+      "observed": "The repair records both the registered Popen identity and a status identity, but it does not establish that the status creation identity belongs to that registered process. A syntactically valid initial status with the registered PID and an arbitrary nonempty creation string is accepted; a terminal PASS retaining that same string satisfies the new predicate.",
+      "expected": "Before registering a worker, the bounded initial controller status must be verified as the exact Popen child: its PID and creation identity must be bound to the captured exact_process_identity result. Terminal PASS must retain that bound identity, rather than a status-originated value that was never authenticated.",
+      "reproduction": "Mock the registered child as PID 4242 with exact_process_identity returning its actual created_utc. Publish an initial status for PID 4242 with a different nonempty controller_created_utc, then publish CODEX_EXITED/zero/PASS with the same different value. _assignment accepts the initial status and reap_workers accepts PASS because both terminal comparisons are against the attacker-selected initial value, not the registered child identity.",
+      "impact": "A PASS result, target acceptance, and limitation credit can still be attributed to a status/result pair not proven to originate from the C3-registered controller process. This leaves the precise provenance boundary that the accepted S23.R3 finding required open.",
+      "no_fix_consequence": "C3 final acceptance remains unable to prove that a successful completion was produced by its exact launched controller, despite recording an exact Popen identity.",
+      "smallest_fix": "Validate the initial status creation field against the captured Popen identity using the repository's canonical identity representation (or derive the persisted status identity from a verified translation), reject and exactly reap on any mismatch, and make the focused CP04 test use a real-format exact identity and prove a mismatched initial/terminal identity cannot reach acceptance or limitation credit.",
+      "complexity": "Low: one existing startup predicate and its focused host regression.",
+      "regression_risk": "Low: it rejects only status evidence that is not bound to the controller child already required by the repair.",
+      "verification_cost": "Low: static/host regression only; no controller, Codex, MCP, or hardware is needed.",
+      "alternatives": "Comparing terminal status to a value copied from the initial status cannot prove provenance; it only proves the two mutable artifacts agree. Broader process abstractions or server changes are unnecessary.",
+      "cost_benefit": "The missing equality/translation is the central assurance promised by the repair. Closing it is materially cheaper and safer than accepting a provenance check that can be satisfied by an unbound status value.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

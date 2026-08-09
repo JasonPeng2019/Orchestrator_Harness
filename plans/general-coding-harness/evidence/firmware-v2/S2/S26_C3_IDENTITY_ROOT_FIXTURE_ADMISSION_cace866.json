@@ -1,0 +1,44 @@
+{
+  "schema": "firmware-v2-root-review-admission/v1",
+  "owner": "ROOT-IM",
+  "commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+  "repair": {
+    "author_commit": "90887e9de43b66d4a40683f60dba4cc5a3df2afc",
+    "joined_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "author_findings_sha256": "e46e40b96316f51f5b7c1bb886d81f3a81a69f53a8146c36918d043849050ee7",
+    "author_result_sha256": "16f667dfbd6355bc8980b266c439aa738c6eed9562a50ed696908c7a009e0b50",
+    "files_changed": [
+      "orchestrator_harness/tests/test_firmware_c3_harness.py"
+    ],
+    "production_changed": false
+  },
+  "review": {
+    "lane_id": "S26.R4",
+    "worker_invocation_id": "s26-r4-c3-identity-0001",
+    "findings_sha256": "1638269e1a7b15b72f001fbbf835c3012ec4719361c22368aae0ed278ab90e17",
+    "result_sha256": "f39c703028565adaa386a3f247444f04f6c6d9a2da52b0dbd4cb1155796afd47",
+    "status_sha256": "69ec0c3e8b2ef7d069ac2b9de3c314b5294800b958aa9058075590cde46ac52f",
+    "findings_count": 0,
+    "outcome": "PASS",
+    "controller_result_valid": true,
+    "resource_claims_remaining": 0
+  },
+  "dependency_decision": {
+    "failed_selection_non_fail_fast": true,
+    "failed_selection_tests_run": 23,
+    "harness_module_static_test_count": 21,
+    "watcher_module_static_test_count": 2,
+    "watcher_module_completed_green": true,
+    "watcher_module_bytes_changed_after_run": false,
+    "next_execution": [
+      "orchestrator_harness.tests.test_firmware_c3_harness"
+    ],
+    "not_rerun": [
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle"
+    ]
+  },
+  "admission": "ACCEPT_FIXTURE_REPAIR; AUTHORIZE_ONE_FRESH_WARNING_FATAL_HARNESS_MODULE_EXECUTION_AT_CACE866",
+  "tests_run_by_root": false,
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false
+}

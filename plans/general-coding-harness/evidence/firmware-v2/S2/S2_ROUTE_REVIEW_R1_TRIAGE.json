@@ -1,0 +1,36 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_ROUTE_REVIEW_R1_FINDINGS_7c28bfc.json",
+  "findings_sha256": "98d596831ff20f1a28342e55fc4fa4cb146384d886b8ac3d004d780e12f28eb0",
+  "decisions": [
+    {
+      "id": "S2-R1-001",
+      "decision": "ACCEPT",
+      "rationale": "All five supported populated PermissionMode.NONE plans omit user_permission in the immutable pinned server, while the candidate requires it. This blocks every intended guarded plan/action route. A split closed schema for null and populated plans is local, preserves default deny, and is substantially safer than leaving the supported workflow unusable.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Represent the exact eleven-key all-null plan envelope and exact ten-key populated PermissionMode.NONE envelope separately, admit only those closed shapes, and preserve rejection of partial or unknown fields."
+    },
+    {
+      "id": "S2-R1-002",
+      "decision": "ACCEPT",
+      "rationale": "The candidate can durably publish a normal result naming a requested transition before validating the dynamic route payload. Moving validation ahead of the normal immutable result write is a small ordering change that prevents false transition evidence without widening any route.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Validate the parsed route or plan payload before writing the normal session-result artifact, so malformed dynamic output can never be retained as a successful transition."
+    },
+    {
+      "id": "S2-R1-003",
+      "decision": "ACCEPT",
+      "rationale": "A literal PINNED_SERVER_SOURCE assertion and pinned commit identify the launched child but do not prove why it failed. Without closed attribution evidence, target, fixture, operator, environment, hardware-absence, or unknown failures could be laundered into the authorized limitation path. A bounded immutable attribution record closes only that exceptional boundary.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Require a closed hash-bound attribution artifact linking the raw failure to the immutable pinned source or deterministic signature and containing evidence-backed exclusions for every non-server and unknown attribution class before publishing AUTHORIZED_SERVER_LIMITATION."
+    },
+    {
+      "id": "S2-R1-004",
+      "decision": "ACCEPT",
+      "rationale": "Identity-only substitute artifacts can claim coverage even when the assigned work never ran or failed. Requiring an exact C3-HARNESS execution/completion reference and PASS result is contained to the exceptional path and does not convert substitute coverage into physical certification.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Extend the closed substitute-result artifact with a hash-bound C3-HARNESS execution/completion reference and exact PASS outcome, reject missing or failed execution, and retain physical_certification.status as NOT_CERTIFIED."
+    }
+  ]
+}

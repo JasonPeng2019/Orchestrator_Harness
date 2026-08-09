@@ -1,0 +1,62 @@
+{
+  "schema": "firmware-c3-orchestrator-abort-observation/v1",
+  "attempt_id": "attempt-0003",
+  "owner": "F.C3.O",
+  "classification": "REPRODUCIBLE_CANDIDATE_AND_WATCHER_DEFECTS",
+  "earliest_invalidated_step": "P0_CONTROLLER_ADMISSION",
+  "state": {
+    "new_work_stopped": true,
+    "active_target_workers": 0,
+    "mutating_hardware_calls_dispatched": 0,
+    "open_bootstrap_sessions": 4,
+    "candidate_owned_board_claims": 4,
+    "board_state_mutated": false
+  },
+  "findings": [
+    {
+      "invariant": "C3_ATTEMPT_TARGET_LAYOUT",
+      "outcome": "PASS",
+      "evidence": {
+        "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0003\\p0\\P0_REPAIRED_CRITICISMS.json",
+        "sha256": "515af44eb6e20a1f584b15b41958fc585981450b12149d90d1bb26c4ed645e4f"
+      }
+    },
+    {
+      "invariant": "C3_AUTHENTIC_INITIAL_CONTROLLER_STATUS",
+      "outcome": "FAIL",
+      "reproductions": [
+        {
+          "assignment_id": "p0-p1-0001",
+          "candidate_tracked_pid": 196320,
+          "published_controller_pid": 192920,
+          "response_sha256": "2c0e033600f51b990cb1ba25e4a426175f5f37951ac5f982a6c08c185662b1bb",
+          "status_sha256": "f9cba419c3a01252ed9fe7c97a422b7f3da39a5d4ed517cf510918cf97609d2a"
+        },
+        {
+          "assignment_id": "p0-p1-0002",
+          "candidate_tracked_pid": 190476,
+          "published_controller_pid": 198560,
+          "response_sha256": "064354da220e7dd3dd9d369bb4bc21115c0548e223ab9d5d13f38276e8dd28cb",
+          "status_sha256": "89642af055c6bd203ea699f7cf99a8d1464aebc93a82ada845dc0e5e185a4d51"
+        }
+      ]
+    },
+    {
+      "invariant": "WATCHER_ORACLE_CLASSIFICATION",
+      "outcome": "FAIL",
+      "observed": "Both locked oracle invocations returned EXPECTED_CONTAINMENT and watcher heartbeats continued with abort_present=false after two candidate rejections claiming unauthentic initial status.",
+      "correlations": [
+        {
+          "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0003\\p0\\P0_WATCHER_ORACLE_CORRELATION.json",
+          "sha256": "48e3a30945293a119f02a9c8da79464b8075471e909c90ee2cb292ba5a367c45"
+        },
+        {
+          "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0003\\p0\\P0_WATCHER_ORACLE_CORRELATION_0002.json",
+          "sha256": "caee9ef452f7940dbad2d18219575da8457052232321dd237317fdd7da947bb9"
+        }
+      ]
+    }
+  ],
+  "required_topology_action": "ROOT or F.C3.W must publish the abort boundary; F.C3.O will issue signed candidate shutdown only after that handling.",
+  "created_utc": "2026-08-05T11:05:00Z"
+}

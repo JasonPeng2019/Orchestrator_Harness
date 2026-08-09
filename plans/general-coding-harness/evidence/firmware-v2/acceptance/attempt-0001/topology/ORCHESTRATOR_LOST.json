@@ -1,0 +1,41 @@
+{
+  "schema": "firmware-c3-orchestrator-lost/v1",
+  "attempt_id": "attempt-0001",
+  "owner": "ROOT-IM",
+  "classification": "ENVIRONMENT_ONLY_TOPOLOGY_HELPER_LIVENESS_DEFECT",
+  "reason": "The released in-memory signing service misclassified the live Windows O PID as absent and exited immediately; the discarded private key cannot be recovered or reused.",
+  "orchestrator": {
+    "pid": 10152,
+    "thread_id": "019fd099-3c28-7a63-a610-00914e815ea4",
+    "still_alive_when_loss_detected": true
+  },
+  "watcher": {
+    "pid": 196176,
+    "thread_id": "019fd099-5f0e-70b2-b935-a326afa1c16c",
+    "ready_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0001\\watcher\\WATCHER_READY.json",
+    "ready_sha256": "eb6e2e005080b85bcab28fe3f919900cc229c5f09fb5f83f584b8346745f58f0"
+  },
+  "signer": {
+    "pid": 186152,
+    "ready_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0001\\.agent-workspace\\orchestrator\\signing\\SIGNER_READY.json",
+    "ready_sha256": "8b753897e4cba91a8c296b08fad4c915cbc87983489b1e1418d2324bc2f7d3a6",
+    "stopped_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0001\\.agent-workspace\\orchestrator\\signing\\SIGNER_STOPPED.json",
+    "stopped_sha256": "17b628eb832fbe656849ca39e19efcbc7b19cf040b174919cf6a744f7482f555",
+    "private_key_discarded": true
+  },
+  "release": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0001\\topology\\ORCHESTRATOR_KEY_RELEASE.json",
+    "sha256": "e9e8b571f86c74fb9d24d63ea41787bb846197173c3cb08e460a04b9b7c58080"
+  },
+  "state_at_loss": {
+    "candidate_harness_started": false,
+    "signed_c3_requests": 0,
+    "target_repository_materialized": false,
+    "target_workers_launched": 0,
+    "mcp_processes_launched": 0,
+    "resource_claims": 0,
+    "hardware_accessed": false
+  },
+  "decision": "PRESERVE_ATTEMPT_AND_ALLOCATE_FRESH_ATTEMPT_0002",
+  "recorded_at_utc": "2026-08-05T06:28:00Z"
+}

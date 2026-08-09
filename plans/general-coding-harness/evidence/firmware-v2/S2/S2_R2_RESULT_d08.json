@@ -1,0 +1,26 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R2",
+  "worker_invocation_id": "s2-r2-001",
+  "branch": "firmware/v2-s2-r2",
+  "commit": "d08b6ccf3d2e0eacd3686b01658645249dfcc0a0",
+  "outcome": "FAIL",
+  "summary": "FAIL: three accepted repaired-tip findings remain in the executable per-ID contract, continuous target-worker isolation proofs, and mandatory manager triage gate.",
+  "checks": [
+    {
+      "name": "repaired candidate identity and tracked-worktree review",
+      "outcome": "PASS",
+      "summary": "Branch and HEAD match d08b6ccf3d2e0eacd3686b01658645249dfcc0a0; tracked files were not edited."
+    },
+    {
+      "name": "S2 repaired charter, seed, broker, schemas, and finding-gate review",
+      "outcome": "FAIL",
+      "summary": "Three closed accepted findings are documented in REREVIEW.md and FINDINGS.json."
+    },
+    {
+      "name": "non-gating scope and repair-credit review",
+      "outcome": "PASS",
+      "summary": "The stored contract retains the requested gated ID set and excludes the specified expansion categories."
+    }
+  ]
+}

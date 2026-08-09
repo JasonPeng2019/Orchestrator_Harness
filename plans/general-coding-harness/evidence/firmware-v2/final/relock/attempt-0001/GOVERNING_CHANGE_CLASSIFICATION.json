@@ -1,0 +1,79 @@
+{
+  "schema": "firmware-v2-governing-change-classification/v1",
+  "owner": "ROOT-IM",
+  "classification_id": "topology-optimization-relock-0001",
+  "classified_at_utc": "2026-08-05T19:34:00Z",
+  "trigger": "post-C1 user edit to goal.md and all four governing planning/readiness documents",
+  "prior_operative_c1": {
+    "id": "d96f270b-bb92-4b3e-aac0-29321e2ea44a",
+    "lock_sha256": "d9bc07a1eb812775e046f8b87f19955dcac65dae3ecb59994d84613e293a60c7",
+    "c2_root_acceptance_sha256": "f8e2d328f085f5ce6b5ccbe3b735d287ec9e348da6321a615e55ba4bbd72204e",
+    "disposition": "immutable historical evidence; invalidated for future admission by the changed goal.md hash"
+  },
+  "prior_governing_sha256": {
+    "goal.md": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "active_docs/GENERALIZATION_SPEC_2.md": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "active_docs/IMPLEMENTATION_ROADMAP_2.md": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "active_docs/EXECUTION_READINESS_2.md": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66",
+    "plans/general-coding-harness/EXECUTION_PLAN_2.md": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"
+  },
+  "current_governing_sha256": {
+    "goal.md": "9ef9bdb24b913f1ed2b15b7c80f28139705da823296ccd6f341a562a9948f547",
+    "active_docs/GENERALIZATION_SPEC_2.md": "70ba5e876e120466f03899fd826d439c1d0cc0dc01c5235e5950dc54a1d27cc6",
+    "active_docs/IMPLEMENTATION_ROADMAP_2.md": "fb8d60d76c8217f75d6a6a9d69965c7817e8c2bf0c560bac18c8a0ed3ab3af49",
+    "active_docs/EXECUTION_READINESS_2.md": "e357862e985d61efcf9f38727fe4ca8a718961b4e02bd404dac56d99cb88455c",
+    "plans/general-coding-harness/EXECUTION_PLAN_2.md": "79ebc3de0d6506ce8ec5ab242db9810be527a6c07b1e9bb100f3c73827520af7"
+  },
+  "semantic_change": {
+    "classification": "EXECUTION_TOPOLOGY_AND_FINDING_ADMISSIBILITY",
+    "requirements": [
+      "same-lane no-product/MCP/hardware executor recordability preflight before an expensive custom inner-process-evidence selection",
+      "one pooled test-only correction batch and one rerun when the complete selected-run failure set is only fixture/mock/runner/executor-environment defects",
+      "exact-C1/C2 host-only disposable-fake C3 rehearsal before attempt/O/W/target/MCP/hardware allocation"
+    ],
+    "unchanged": [
+      "candidate product bytes and supported behavior",
+      "hardware authority and canonical user-issued scope",
+      "fixture, toolchain, target seed, and immutable MCP server pin",
+      "accepted S28 retained-session authorization repair",
+      "implementation passed-test registry contents and dependency map"
+    ],
+    "editorial_supersession_allowed": false
+  },
+  "exact_state_before_relock_dispatch": {
+    "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "candidate_clean": true,
+    "mcp_server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "mcp_server_clean": true,
+    "stable_runner_commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "stable_runner_detached_and_clean": true,
+    "implementation_registry_sha256": "47a9793901cb84f7d973e0c8f27446823e94e658901d84ca091d0df253cb84fb",
+    "managed_execution_processes": 0,
+    "resource_claim_files": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "plan_validation": {
+    "command": "uv run --project .codex/dev --locked python .codex/skills/plan-harness-workflow/scripts/validate_execution_plan.py plans/general-coding-harness/EXECUTION_PLAN_2.md",
+    "exit_code": 0,
+    "stdout": "execution plan validation: PASS"
+  },
+  "dependency_impact": {
+    "earliest_affected_gate": "fresh C0 on unchanged candidate",
+    "candidate_source_or_test_change_required": false,
+    "fresh_c0_required": true,
+    "new_opaque_c1_required": true,
+    "dependency_invalidated_c2_required": true,
+    "c3_rehearsal_required_after_green_c1_c2": true,
+    "physical_attempt_reuse_forbidden": "attempt-0008 remains immutable and non-acceptable; next physical namespace is attempt-0009"
+  },
+  "authorized_relock_sequence": [
+    "fresh complete Terra C0 review and disjoint Luna governing-topology validation on candidate 542f48c",
+    "ROOT merit triage with no product edit unless an admissible evidence-backed defect is proven",
+    "fresh opaque C1 binding all five current hashes and unchanged locked inputs",
+    "same-lane executor recordability preflight followed by dependency-invalidated C2",
+    "exact-C1/C2 host-only disposable-fake C3 rehearsal",
+    "fresh physical C3 attempt-0009 only after green rehearsal"
+  ],
+  "decision": "INVALIDATE_PRIOR_C1_C2_ADMISSION_AND_ENTER_MINIMAL_RELOCK_ROUTE"
+}

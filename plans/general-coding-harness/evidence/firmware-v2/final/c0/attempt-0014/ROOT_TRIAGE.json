@@ -1,0 +1,7 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0014/FINDINGS.json",
+  "findings_sha256": "3948a12db018cba0a52588a906f587fcd7e37dac7993e86fc1e2ece5cefa6bcd",
+  "decisions": []
+}

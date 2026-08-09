@@ -1,0 +1,47 @@
+{
+  "schema": "firmware-v2-c2-root-retry-result-triage/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "retry_suffix": "retry-003",
+  "triaged_at_utc": "2026-08-05T13:23:35Z",
+  "artifacts": {
+    "result_sha256": "2b5d0640765dbfd76f974c228c3d82686da57c50259043c44eabf7419fd10b51",
+    "test_report_sha256": "7f9559f3b891557a66cec01784f2fd3a35c6777d9ec26940080dc67353e7e6af",
+    "closed_retry_jsonl_sha256": "468a788f2cb4b3d765b2d6b8c7d7af20b02ebbb839aaa6f91d31847d32caa25e",
+    "closed_retry_stderr_sha256": "774a389e01ea4d99e8c7a38143c840449a8a561e5a33466a43ba2258ed9bd4c3",
+    "closed_retry_last_message_sha256": "fa6ac6900b920044b2304dded419bd5e840b96125081b6c45a34018084e03f1c",
+    "closed_status_sha256": "0a1532ac1e44433be63f4f3aa03215e6bc89f6e649fd07423e64e515d4841697",
+    "process_metadata_sha256": null
+  },
+  "facts": {
+    "static_parser_proof_passed": true,
+    "identity_binding_markers_intact": true,
+    "supervisor_finally_markers_intact": true,
+    "bootstrap_started": true,
+    "bootstrap_exit_code": 1,
+    "bootstrap_failure": "Python SyntaxError caused by PowerShell-to-python -c quote loss",
+    "supervisor_module_imported": false,
+    "verifier_spawned": false,
+    "process_metadata_created": false,
+    "lock_assertions_began": false,
+    "failure_stage": "EXECUTOR_BOOTSTRAP_QUOTING"
+  },
+  "accepted_criticism": {
+    "id": "C2-D1-PROCEDURE-003",
+    "description": "The executor used an inline python -c mutation bootstrap for retry-003. PowerShell quote loss converted the intended string constants into invalid Python tokens, so the bootstrap failed before importing the already-proven supervisor or spawning the verifier.",
+    "candidate_finding": false,
+    "locked_input_change": false,
+    "bounded_correction": "Create one standalone supervisor file with retry-004 constants baked in and execute that file directly. Do not use an inline command-string bootstrap, alter the identity predicate, or rerun any green check."
+  },
+  "root_checks": {
+    "prior_lock_procedure_failures_preserved": 4,
+    "green_ids_rerun": 0,
+    "candidate_and_server_clean": true,
+    "lane_clean": true,
+    "claims_released": true,
+    "surviving_test_processes": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "PRESERVE_BOOTSTRAP_FAIL_AND_ALLOW_ONE_FILE_BASED_SUPERVISOR_CORRECTION"
+}

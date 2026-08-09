@@ -1,0 +1,41 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-bind-005",
+  "branch": "firmware/v2-s2-d1",
+  "commit": "42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+  "outcome": "PASS",
+  "summary": "Bound the immutable canonical executor evidence to the persistent joined tip at 42a9d7082ac0193cf7cd1685b5eb95baafff41ac: 32/32 passed, with zero failures, skips, expected failures, unexpected successes, or findings. No tests or compilation were rerun; the evidence hashes, committed dependency fingerprint, revision, and no-MCP/no-hardware boundary were independently reconciled.",
+  "checks": [
+    {
+      "name": "immutable evidence SHA-256 binding",
+      "outcome": "PASS",
+      "summary": "FINDINGS, RESULT, and TEST_REPORT matched the three user-specified SHA-256 digests exactly."
+    },
+    {
+      "name": "revision and persistent tip",
+      "outcome": "PASS",
+      "summary": "Branch firmware/v2-s2-d1 and HEAD both match 42a9d7082ac0193cf7cd1685b5eb95baafff41ac; tracked status is clean."
+    },
+    {
+      "name": "32/32 canonical executor counts",
+      "outcome": "PASS",
+      "summary": "The immutable report contains 32 collected, 32 executed, 32 passed, 0 failed, 0 skipped, 0 expected failures, and 0 unexpected successes."
+    },
+    {
+      "name": "dependency fingerprint",
+      "outcome": "PASS",
+      "summary": "All 15 dependency input hashes and the canonical SHA-256 fingerprint 1188efa64e6cb65e1d061234d4832148e1d3a62a2b70ebbf467d3e802ff3bb20 match committed Git content."
+    },
+    {
+      "name": "no-MCP/no-hardware boundary",
+      "outcome": "PASS",
+      "summary": "The report records no MCP launch or server, no hardware access or lease, no forbidden operation, and no remaining disposable process or resource claim."
+    },
+    {
+      "name": "findings gate",
+      "outcome": "PASS",
+      "summary": "The bound review findings record is schema-valid for S2.D1/test_executor and contains zero findings."
+    }
+  ]
+}

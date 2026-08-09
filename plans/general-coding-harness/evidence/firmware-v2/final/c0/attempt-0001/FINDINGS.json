@@ -1,0 +1,33 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-001",
+  "role": "reviewer",
+  "commit": "bbc8ad94c32f3ddad4a54afd4c1a2d51ac4bb11e",
+  "findings": [
+    {
+      "id": "F-C0-FR1-001",
+      "category": "CODEBASE_BREAKING",
+      "affected_ids": ["C20", "C29", "C31", "C32", "C33", "C34", "C35", "C36", "C37", "C38", "C39", "C40", "C41", "C42", "C43", "C44", "C45", "C46", "C47", "C48", "C49", "C50", "C51", "C52", "C53", "C54", "C55", "C56", "C57", "C58", "C59", "C60"],
+      "evidence": [
+        "firmware_acceptance/kit.py:170-314: AcceptanceBroker only materializes/configures/records/adopts pre-existing evidence; its class documentation states it never dispatches MCP itself.",
+        "orchestrator_harness/lane_controller.py:1-533 and repository-wide rg for AcceptanceBroker/controller_config/evaluate_call: lane_controller neither imports nor invokes firmware_acceptance; schema-less mcp_servers is only parsed and recorded, not launched or brokered.",
+        "firmware_acceptance/README.md:3-5 calls the kit a static test medium and says a future controller alone starts the server and produces the call chain.",
+        "orchestrator_harness/tests/test_firmware_acceptance_host.py:37-64 and test_firmware_acceptance_kit.py:16-25 construct every stage, signature, raw result, and exact_reaped value directly before calling admit; no test exercises an executable controller-to-MCP request/response lifecycle.",
+        "GENERALIZATION_SPEC_2.md:313 requires each candidate controller to own the MCP process/stdio and broker every physical interaction, rejecting forwarding without the ordered valid artifacts; EXECUTION_READINESS_2.md:101-110 requires only that controller to receive the physical capability and to forward structured O/worker requests after validation."
+      ],
+      "observed": "The candidate contains a static, host-only validator and a generic Codex lane controller, but no C3-HARNESS controller path that receives a structured request, creates/verifies the required proposal-decision-authorization-admission chain, starts the pinned MCP process, forwards an admitted call, records its raw result, and performs exact process/claim cleanup.",
+      "expected": "C3-HARNESS must be an executable candidate control plane: it alone launches target workers and lane-owned MCP processes, retains the physical endpoint, brokers only admitted requests, and produces lifecycle/evidence records sufficient for C3/C4.",
+      "reproduction": "Read-only trace: search the candidate for AcceptanceBroker, controller_config, and evaluate_call. Their only production definitions are in firmware_acceptance/kit.py; the only other references are tests and package exports. Trace lane_controller.run: it launches only the Codex child and has no firmware_acceptance import, MCP subprocess creation, structured-request input, forwarding, or MCP cleanup path. The current S2 host tests instead call broker.record repeatedly with synthetic signature/raw-result/exact_reaped fields.",
+      "impact": "A future F.C3.O cannot submit an assignment to a candidate-owned C3-HARNESS that can perform the mandated physical work. Either C3 is blocked outright, or an operator/O/target worker must add a direct MCP launch/dispatch path outside the candidate, which violates the exclusive-capability and topology requirements and makes physical acceptance non-certifying.",
+      "no_fix_consequence": "The candidate cannot satisfy its central physical acceptance contract; passing the present synthetic tests would provide no evidence that server ownership, authorization-before-forwarding, timeout/expiry handling, raw-result capture, or exact MCP cleanup works in a real controller lifecycle.",
+      "smallest_fix": "Add a narrowly scoped firmware acceptance controller entry point integrated with the existing lane-controller ownership model. It should consume only structured broker requests, instantiate AcceptanceBroker, launch/reap the pinned stdio MCP process with its returned controller-only configuration, create/verify the immutable stages and signature/authorization hooks, forward only after admission, capture the real raw result, and retain claims through exact cleanup. Add synthetic subprocess/stdio tests proving this end-to-end boundary and direct-endpoint denial; keep the legacy schema-less route unchanged.",
+      "complexity": "Moderate: one bounded controller/broker integration plus fake-stdio lifecycle tests; it reuses the existing static policy, evidence, seed, and exact-child cleanup primitives rather than introducing a scheduler or framework.",
+      "regression_risk": "Moderate but contained: isolate the new behavior behind the C3 firmware controller entry point and retain the existing coding V1 and schema-less legacy loaders unchanged; rerun the mapped controller and cross-route suites.",
+      "verification_cost": "Moderate: host-only fake pinned MCP subprocess tests for admission, forwarding, expiry/timeout, crash cleanup, and endpoint isolation, followed by the required later C2/C3 evidence gates.",
+      "alternatives": "Leaving the kit static is not viable because the governing documents require a candidate-owned executable control plane. Giving F.C3.O or target workers the MCP declaration would reduce code now but directly violates the required capability/topology boundary.",
+      "cost_benefit": "This is the smallest implementation that turns the already-created policy/evidence kit into the required operable harness boundary. Its bounded complexity and test cost are outweighed by preventing an unavoidable C3 block or an uncertifiable direct physical-MCP bypass.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

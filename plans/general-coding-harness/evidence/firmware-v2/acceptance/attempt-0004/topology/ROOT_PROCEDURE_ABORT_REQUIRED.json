@@ -1,0 +1,37 @@
+{
+  "schema": "firmware-c3-root-procedure-abort-required/v1",
+  "attempt_id": "attempt-0004",
+  "owner": "ROOT-IM",
+  "classification": "ROOT_PROCEDURE_DEFECT_PRE_CANDIDATE_READINESS",
+  "candidate_behavior": "CORRECT_FAIL_CLOSED",
+  "candidate_finding": false,
+  "watcher_finding": false,
+  "c1_invalidated": false,
+  "c2_invalidated": false,
+  "cause": "ROOT's stronger native-identity evidence was embedded in the candidate-consumed create-once topology records instead of only in the separate launch/supervision records. The candidate requires exact closed legacy identity and release key sets and rejected the service before readiness.",
+  "evidence": {
+    "service_stderr": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0004\\c3-harness\\service.stderr.log",
+      "sha256": "2c632f29879fd1591a4ce5bd1ca65e05c6da6635751825b9b941c855a36e81a4"
+    },
+    "orchestrator_identity": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0004\\topology\\ORCHESTRATOR_IDENTITY.json",
+      "sha256": "0584fb2fe5e1977add4dd888b012f9a6621e03a13d77e8de81bab08c9459cc80"
+    },
+    "key_release": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0004\\topology\\ORCHESTRATOR_KEY_RELEASE.json",
+      "sha256": "329ba449abd00d4321e9443bbed16bd2fbe8003f6a2e5776ce19f342253bfac3"
+    },
+    "candidate_contract": "firmware_acceptance/controller.py:load_root_topology"
+  },
+  "scope": {
+    "candidate_ready": false,
+    "target_materialized": false,
+    "target_workers_launched": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "resource_claims": 0
+  },
+  "disposition": "Preserve attempt-0004, terminate only exact registered control identities, correct only the attempt launcher/control procedure, and allocate fresh attempt-0005 under unchanged C1/C2.",
+  "recorded_utc": "2026-08-05T14:43:52.1547763Z"
+}

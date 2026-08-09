@@ -1,0 +1,27 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-route-review-001",
+  "role": "reviewer",
+  "commit": "a63498cccd83d17499e113116ec90670c7c56265",
+  "findings": [
+    {
+      "id": "S2-R1-005",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["continue_setup", "setup_research_required", "board_setup", "board_fix_setup"],
+      "evidence": ["firmware_acceptance/controller.py:403-406,471-486,500-511", "S2_PRE_C1_EXECUTABLE_CONTRACT_DECISION.json:53-55,138-144", "mcp-candidate@f003f84a7df51cd8595a3203c62e225b21da2a22:src/pyocd_debug_mcp/setup_flow/setup.py:188-230", "mcp-candidate@f003f84a7df51cd8595a3203c62e225b21da2a22:src/pyocd_debug_mcp/server.py:5247-5273,5429-5443"],
+      "observed": "The new research-continuation branch rejects the pinned accepted-response template before retaining it because that template contains official_sha256:null (controller.py:483), although the pinned server explicitly permits a concrete official_sha256 value of null. If that predicate were relaxed, the later admission still requires the new continue_setup call's plan and permission references to equal the predecessor board_setup/board_fix_setup references (controller.py:405), despite the contract requiring each stage's own authorization and a separately signed continuation call. The proposed result is written with resulting_state=SETUP_CONTINUATION before this newly introduced continuation-template rejection runs.",
+      "expected": "A research continuation must retain the predecessor's exact field set and continuation ID, permit valid concrete null values such as official_sha256:null, validate values through the pinned server and locked/local-or-official-source evidence, and use fresh plan, permission, and O authorization artifacts bound to the new call before dispatch. All continuation admission checks must pass before a durable normal successor result is written.",
+      "reproduction": "From a pinned setup_research_required result whose exact response fields are the pack schema, use the returned accepted_response (setup.py:197-230), preserving official_sha256:null. controller.py:483 aborts because a template value is None after controller.py:463 has already written the normal result. Replacing that null with any string gets past that predicate but a fresh per-call plan or permission reference is rejected by controller.py:405 solely because it differs from the predecessor reference; retaining the predecessor reference defeats the required fresh per-call authority.",
+      "impact": "The supported pinned-server research route cannot complete with a legitimate absent official checksum, and cannot receive new per-call plan/permission authority. It consequently blocks setup/repair continuation and can leave an invalid nominal successor result durable before the session aborts.",
+      "no_fix_consequence": "Research-required setup remains unusable for valid official-source packages without published checksums, while any workaround either reuses authorization material contrary to the continuation contract or is rejected before the server can validate the research evidence.",
+      "smallest_fix": "Retain only the exact research response key set plus predecessor continuation ID and any needed source constraints; allow null where the pinned template denotes a valid nullable field, remove predecessor plan/permission equality, require fresh call-bound plan/permission/O artifacts normally, and move continuation validation ahead of result publication.",
+      "complexity": "Medium: a focused continuation-state schema and ordering adjustment confined to controller admission.",
+      "regression_risk": "Low to medium: it preserves closed keys, exact predecessor IDs, and fresh signed authorization while aligning nullable values with the immutable server schema.",
+      "verification_cost": "Medium: host-only fixtures for a choice continuation, a pack continuation with official_sha256:null, a fresh per-call plan/permission pair, and rejection of stale IDs, extra keys, unsupported values, and post-validation failures before result creation.",
+      "alternatives": "Forcing a fabricated checksum contradicts the pinned server's explicit null-or-text contract; reusing the predecessor plan/permission is not a fresh continuation authority; accepting arbitrary research keys or values would weaken the closed predecessor binding.",
+      "cost_benefit": "The change restores a required safe continuation route and prevents a durable nominal successor from preceding continuation validation, with limited code surface and no hardware-authority expansion.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

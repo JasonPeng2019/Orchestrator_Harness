@@ -1,0 +1,37 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S23.D2",
+  "worker_invocation_id": "s23-d2-c3-remaining-002",
+  "role": "test_executor",
+  "commit": "3c862b9ef3e79ab010eabd990aac3745ac2013ee",
+  "findings": [
+    {
+      "id": "S23.D2-C3-REMAINING-002-FIXTURE-CONTRACT-001",
+      "category": "WORTH_FIXING",
+      "affected_ids": [
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier",
+        "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_server_limitation_create_once_has_causal_and_c3_evidence",
+        "C3-CP-01-02",
+        "C3-SERVER-LIMITATION-CREATE-ONCE"
+      ],
+      "evidence": [
+        "Exact command output: test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier ERROR with KeyError: 'public_key' at firmware_acceptance/c3_harness.py:212.",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py:37-40 constructs harness.topology without public_key, while firmware_acceptance/c3_harness.py:212 requires topology['public_key']; this is a stale synthetic fixture contract, not evidence of a deployed-topology defect.",
+        "Exact command output: test_server_limitation_create_once_has_causal_and_c3_evidence ERROR with AdmissionError: C3 terminal status is not exact at firmware_acceptance/kit.py:524.",
+        "orchestrator_harness/tests/test_firmware_acceptance_kit.py:226-237 creates diagnostic status/result lane identity STM-A, but :579 calls _verify_c3_completion with worker role F.C3.A1 and the current closed check compares declared_lane_id to that role."
+      ],
+      "observed": "The exact five-test command ran once and produced two unittest errors because two synthetic fixtures do not satisfy the current closed C3 identity contracts. No production behavior is shown broken: the first fixture bypasses normal topology construction and omits public_key, and the second fixture uses the physical lane label where the diagnostic completion verifier now requires the worker role.",
+      "expected": "The selected host-only fixtures should construct complete current-contract identities so the tests exercise their intended behavior; fixture incompatibility should not prevent the C3 and server-limitation acceptance IDs from producing creditable PASS outcomes.",
+      "reproduction": "Run the user-specified exact command once at commit 3c862b9ef3e79ab010eabd990aac3745ac2013ee. The observed result was 5 tests run, 3 PASS, 2 ERROR, 0 skips, 0 expected failures, and 0 unexpected successes. No rerun was performed.",
+      "impact": "Two of the five selected IDs cannot be credited green, so this lane cannot establish the requested five-ID acceptance evidence even though the failures are fixture-contract errors rather than demonstrated runtime defects.",
+      "no_fix_consequence": "The remaining C3 credit stays blocked and future acceptance runs continue to conflate stale synthetic evidence with product regressions at the joined tip.",
+      "smallest_fix": "Update only the host fixtures: add the required public_key to the _bare topology, and make the synthetic diagnostic status/result declared_lane_id and lane_id consistently use the assigned worker role F.C3.A1 while retaining the physical STM-A lane in the appropriate attempt/lane fields. Do not weaken the production closed identity checks.",
+      "complexity": "Low: two localized test-fixture updates in existing host-only helpers; no harness topology, broker policy, MCP server, hardware, or production validation change is required.",
+      "regression_risk": "Low: the changes make synthetic artifacts conform to fields already required by the current implementation and preserve fail-closed runtime validation.",
+      "verification_cost": "Low: the two affected focused tests and the three already-passing selected IDs can be run in a future fresh authorized attempt; no MCP or hardware access is needed.",
+      "alternatives": "Treating the errors as PASS, weakening _load or _verify_c3_completion, or broadening the production identity contract would hide evidence drift and reduce the fail-closed guarantee.",
+      "cost_benefit": "Correcting the stale fixtures is a small, bounded cost that restores creditable acceptance evidence and keeps genuine production identity regressions distinguishable from test-construction drift.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

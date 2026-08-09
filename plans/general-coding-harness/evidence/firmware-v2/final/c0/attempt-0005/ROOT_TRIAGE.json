@@ -1,0 +1,22 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "attempt": "0005",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-005",
+  "reviewer_thread_id": "019fcc88-92ff-7a42-ae0e-a39daaa5a840",
+  "candidate_commit": "24a1ae7c08e559e606231543e1bbff0da0fd3a5a",
+  "root_decision": "ACCEPT_FINDING_AND_REOPEN_MINIMAL_S2_STDERR_DRAIN_SLICE",
+  "accepted_findings": [
+    {
+      "id": "F-C0-FR1-005-001",
+      "classification": "WORTH_FIXING",
+      "root_validation": "Confirmed directly in controller.py: close_and_join sets the shared stop event before reader join, _stderr checks that event between 4096-byte reads, and stderr_log_complete requires persistence success but no EOF/drain proof. A normal post-reap teardown can therefore hash and certify only a prefix.",
+      "cost_benefit": "The evidence-integrity failure affects exactly the diagnostic record required for physical failure classification. A bounded post-reap EOF proof plus one coordinated host regression is localized and materially lower risk and cost than certifying truncated logs as complete."
+    }
+  ],
+  "findings_sha256": "5dfa68c79696199cf73dde806ef1bf4a146deee1bcf2a6741fe9889a2c1fac39",
+  "result_sha256": "fb77d522485af357e76a14a05ec90f9ca06dada7af4cb6f51cbba1b638069ff0",
+  "required_action": "Route only stderr EOF/drain completion to persistent S2.P, then exact targeted review, focused A1 coordinated multi-chunk coverage, independent D1 controller/kit/host shard, joined-tip evidence binding, candidate integration, and a brand-new C0 attempt.",
+  "preserved_credits": "All unrelated 78 green IDs remain credited until their mapped dependencies change. No hardware or MCP operation is authorized.",
+  "triaged_at_utc": "2026-08-04T11:35:00Z"
+}

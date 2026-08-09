@@ -1,0 +1,7 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S23_C3_CP04_SMOKE_0003_FINDINGS_cb2a66a.json",
+  "findings_sha256": "c095a82c8dac05fd95c768c4eb250ca6d52b7578d99a342cd473e647a730b758",
+  "decisions": []
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-route-review-001",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "83b693aa9845f2816fd15a36b249bcfad8516db0",
+  "outcome": "FAIL",
+  "summary": "The null/default and fresh continuation-authorization fixes are present, but malformed choice rows and arbitrary nonempty research key sets can still become durable SETUP_CONTINUATION results.",
+  "checks": [
+    {
+      "name": "exact-tip-and-controller-delta",
+      "command": "git rev-parse HEAD; git diff --name-status a63498cccd83d17499e113116ec90670c7c56265..83b693aa9845f2816fd15a36b249bcfad8516db0; git show 83b693aa9845f2816fd15a36b249bcfad8516db0:firmware_acceptance/controller.py",
+      "outcome": "PASS",
+      "summary": "Reviewed exact committed 83b693a controller delta only."
+    },
+    {
+      "name": "pinned-continuation-shapes-and-ordering",
+      "command": "Static read of executable decision and immutable mcp-candidate@f003f84a7df51cd8595a3203c62e225b21da2a22 setup.py/server.py",
+      "outcome": "FAIL",
+      "summary": "The helper now runs before result creation and allows valid null/default template values and fresh per-call authority, but its choice and research shape checks remain incomplete."
+    },
+    {
+      "name": "host-only-delta-integrity",
+      "command": "git diff --check a63498cccd83d17499e113116ec90670c7c56265..83b693aa9845f2816fd15a36b249bcfad8516db0",
+      "outcome": "PASS",
+      "summary": "No whitespace defects in the reviewed committed delta; no MCP server or hardware was invoked."
+    }
+  ]
+}

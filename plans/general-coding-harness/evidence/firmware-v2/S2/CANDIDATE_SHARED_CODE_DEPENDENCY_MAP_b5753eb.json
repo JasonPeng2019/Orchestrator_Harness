@@ -1,0 +1,113 @@
+{
+  "schema": "firmware-v2-candidate-shared-code-dependency-map/v1",
+  "owner": "ROOT-IM",
+  "candidate": {
+    "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+    "joined_branch": "firmware/v2-s23-a2-c3-final",
+    "clean_at_audit": true,
+    "prior_accepted_commit": "659dd03e2aa7159090c8e0e20123b1fec1749f90"
+  },
+  "protected_baseline": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "manifest_path": "plans/general-coding-harness/evidence/firmware-v2/preflight/BASELINE_UNIT_MANIFEST.json",
+    "manifest_sha256": "e0113dd1f0f6ab2d6fd8e450caef5d407ad8aa3b6b28c7eb234ecd04bd51a120",
+    "node_count": 248
+  },
+  "prior_complete_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_659dd03.json",
+    "sha256": "9dd4fd25edbce63ce86f5f1d82834734a434ff59f95b7c2d930fc8fc237ee7d6",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_659dd03.json",
+    "root_acceptance_sha256": "f897211f9c750bd079d703a26eef030a71d0f6d1952527c2fe9091c03560abab",
+    "preserved_without_rewrite": true
+  },
+  "delta_inventory": {
+    "base_commit": "659dd03e2aa7159090c8e0e20123b1fec1749f90",
+    "candidate_commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+    "changed_path_count": 9,
+    "changed_paths": [
+      "QUICK_START.md",
+      "docs/HARNESS_WATCHER_GUIDE.md",
+      "firmware_acceptance/README.md",
+      "firmware_acceptance/c3_harness.py",
+      "firmware_acceptance/c3_limitation.py",
+      "firmware_acceptance/controller.py",
+      "firmware_acceptance/kit.py",
+      "orchestrator_harness/tests/test_firmware_acceptance_kit.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py"
+    ],
+    "deleted_test_paths": [],
+    "modified_protected_baseline_test_paths": [],
+    "weakened_oracles": []
+  },
+  "delta_mappings": [
+    {
+      "paths": ["firmware_acceptance/c3_harness.py", "orchestrator_harness/tests/test_firmware_c3_harness.py"],
+      "behavior": "C3 request binding, replay barrier, target materialization, exact role tiers, retained sessions, limitation brokerage, and shutdown/recovery",
+      "stable_ids": ["C3-CP-01-02", "C3-CP-04", "C3-CP-05", "C3-CP-06", "C3-CP-07"],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_04_disposable_target_assignment_and_fail_closed_acceptance",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_05_sessions_overlap_and_p1_channel_is_token_bound",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_06_limitation_shapes_roles_and_broker_gate",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_07_shutdown_blocks_then_reaps_and_refuses_unreconciled_restart"
+      ],
+      "credit": "CP01-02 passed after replay-response repair at 8832505; CP04 alone was invalidated by the later role-tier change and passed at b5753eb; CP05 passed after exact session-identity repair at 3c862b9; CP06/07 passed at 3c862b9 and their mapped inputs did not change afterward."
+    },
+    {
+      "paths": ["firmware_acceptance/c3_limitation.py", "firmware_acceptance/kit.py", "orchestrator_harness/tests/test_firmware_acceptance_kit.py"],
+      "behavior": "create-once immutable-server limitation attribution and closed-evidence mutation rejection",
+      "stable_ids": ["C3-SERVER-LIMITATION-CREATE-ONCE", "C3-SERVER-LIMITATION-CLOSED-EVIDENCE"],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_server_limitation_create_once_has_causal_and_c3_evidence",
+        "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_server_limitation_rejects_closed_evidence_mutations"
+      ],
+      "credit": "Closed-evidence passed at 3c862b9; create-once passed after the fixture-identity correction at 30ff0c6; neither mapped production path changed afterward."
+    },
+    {
+      "paths": ["firmware_acceptance/controller.py"],
+      "behavior": "retained-session request identity is bound through open_session",
+      "stable_ids": ["C3-CP-05"],
+      "unit_test_ids": ["orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_05_sessions_overlap_and_p1_channel_is_token_bound"],
+      "credit": "The exact controller/c3_harness session-identity change and its test passed together at 3c862b9; controller.py did not change afterward."
+    },
+    {
+      "paths": ["QUICK_START.md", "docs/HARNESS_WATCHER_GUIDE.md", "firmware_acceptance/README.md"],
+      "behavior": "priority-tier role documentation, C3 cleanup/registry/operator bindings, and documented command presence",
+      "stable_ids": [
+        "tests/test_general_coding_docs.py::GeneralCodingDocumentationTests::test_coding_examples_and_documented_commands_are_present",
+        "tests/test_s3_operator_journey.py::S3OperatorJourneyTests::test_S3_DUAL_003_docs_roles_cleanup_registry_templates_and_safeguard_are_bound"
+      ],
+      "credit": "Both documentation IDs passed once at b5753eb after the final role-tier wording change."
+    }
+  ],
+  "evidence": [
+    {"ids": ["C3-CP-01-02"], "commit": "88325059f8ae74993b85a9ab989d98de298a5bb2", "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S23_C3_CP01_02_SMOKE_0005_TEST_REPORT_8832505.json", "sha256": "2f163db8861e4259d0c4ea459161ddd0e160d12425af615db860c3eaecb69be4"},
+    {"ids": ["C3-CP-04"], "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96", "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S23_C3_CP04_FAST_SMOKE_0006_TEST_REPORT_b5753eb.json", "sha256": "3674ee1423f34fc0b3282229855902697d99d877d9a3e1b8493053a8d44e8fbf"},
+    {"ids": ["C3-CP-05"], "commit": "3c862b9ef3e79ab010eabd990aac3745ac2013ee", "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S23_C3_CP05_SMOKE_0004_TEST_REPORT_3c862b9.json", "sha256": "14a1dbf950b55e5271728e036740087341779a239d59a3e8f009559fcf384127"},
+    {"ids": ["C3-CP-06", "C3-CP-07", "C3-SERVER-LIMITATION-CLOSED-EVIDENCE"], "commit": "3c862b9ef3e79ab010eabd990aac3745ac2013ee", "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S23.D2-C3-REMAINING-0002/.agent-workspace/TEST_REPORT.json", "sha256": "d0b86d2008f5d9d01cd084ae010a226e9bad8117c5e470b27c27ff3f09f0cd43", "root_triage_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S23_C3_REMAINING_0002_TRIAGE_3c862b9.json", "root_triage_sha256": "32a880ecd80390fd71bc6680750002b1814bbc61397a3c02f398b35a549c5aed"},
+    {"ids": ["C3-SERVER-LIMITATION-CREATE-ONCE"], "commit": "30ff0c677a14bbe7a7f0a73e9899002752fe0b2c", "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S23.D2-C3-REMAINING-0003/.agent-workspace/TEST_REPORT.json", "sha256": "9f01fc72c579946201f327a0e37a78e66fd6a799300e4bbc79e35a9f7481ea54", "root_triage_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S23_C3_REMAINING_0003_TRIAGE_30ff0c6.json", "root_triage_sha256": "f55d2704ab276de992d4ba1b4ce85b15e9d0e2fa4ded9b6e9e6885af308e106e"},
+    {"ids": ["tests/test_general_coding_docs.py::GeneralCodingDocumentationTests::test_coding_examples_and_documented_commands_are_present", "tests/test_s3_operator_journey.py::S3OperatorJourneyTests::test_S3_DUAL_003_docs_roles_cleanup_registry_templates_and_safeguard_are_bound"], "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96", "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S23_C3_FAST_DOCS_0004_TEST_REPORT_b5753eb.json", "sha256": "eadf9c26c8a041e175f2dc5c4fe99cd31bf6a370dee9dab0954a9b1103c0a192"}
+  ],
+  "registry_reconciliation": {
+    "prior_unique_green_ids": 140,
+    "new_unit_test_ids": 5,
+    "current_unique_green_ids": 145,
+    "freshly_revalidated_existing_ids": 2,
+    "invalidated_groups": 0,
+    "selected_for_additional_execution": []
+  },
+  "non_regression_proof": {
+    "baseline_collection_recollected": false,
+    "deleted_protected_baseline_ids": [],
+    "baseline_assertion_modifications": [],
+    "oracle_weakened": false,
+    "unaffected_green_tests_rerun": false,
+    "conclusion": "The nine-path delta adds the C3 control plane and tests and changes only mapped operator documentation; no protected baseline test was deleted or weakened. Every new C3 method has exact retained or final-tip green evidence, and only the role-tier-dependent CP04 plus two changed-doc IDs were rerun at b5753eb."
+  },
+  "no_hardware_boundary": {
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "server_edited": false,
+    "statement": "This map reconciles completed source review and synthetic unit/documentation evidence only; no MCP, board, probe, serial, flash, debug, BLE, LoRa, RF, or hardware operation was run."
+  }
+}

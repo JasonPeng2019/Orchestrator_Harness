@@ -1,0 +1,20 @@
+{
+  "schema": "firmware-v2-c2-retry-dispatch-failure/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0005",
+  "worker_invocation_id": "c2-d1-005",
+  "thread_id": "019fd15f-b7b0-7aa2-a483-30d0cd14dded",
+  "candidate_commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+  "classification": "PRE_CHECK_RESUME_CONFIGURATION_ERROR",
+  "command_exit_code": 1,
+  "error": "lane-controller invocation error: coding resume requires persisted controller status",
+  "cause": "The first retry projection used a fresh output status path instead of the persisted completed-lane status path required by the stable resume contract.",
+  "correction": "Reuse the exact persisted status path while keeping retry JSONL, stderr, last-message, prompt, thread, lane, and worker identities distinct and unchanged.",
+  "controller_started": false,
+  "codex_started": false,
+  "resource_claim_acquired": false,
+  "assigned_check_began": false,
+  "locked_input_changed": false,
+  "candidate_finding": false,
+  "recorded_at_utc": "2026-08-05T10:19:00Z"
+}

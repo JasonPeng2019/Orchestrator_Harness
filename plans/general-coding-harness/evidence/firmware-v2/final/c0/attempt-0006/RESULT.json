@@ -1,0 +1,21 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-006",
+  "branch": "firmware/v2-c0-final-review",
+  "commit": "42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+  "outcome": "PASS",
+  "summary": "NO CANDIDATE GAP / READY",
+  "checks": [
+    {
+      "name": "independent-read-only-source-docs-tests-and-evidence-review",
+      "outcome": "PASS",
+      "summary": "No admissible CODEBASE_BREAKING, FUNCTIONALITY_BREAKING, or WORTH_FIXING gap found."
+    },
+    {
+      "name": "tests-and-candidate-safeguard",
+      "outcome": "NOT_RUN",
+      "summary": "Not run by reviewer instruction."
+    }
+  ]
+}

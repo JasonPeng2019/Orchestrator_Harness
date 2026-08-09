@@ -1,0 +1,51 @@
+{
+  "schema": "firmware-v2-root-dependency-map-acceptance/v1",
+  "owner": "ROOT-IM",
+  "accepted_utc": "2026-08-04T21:14:50.7337225Z",
+  "candidate": {
+    "branch": "firmware/v2-candidate",
+    "commit": "659dd03e2aa7159090c8e0e20123b1fec1749f90",
+    "clean": true
+  },
+  "map": {
+    "source_path": "plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C2.A1-0001/.agent-workspace/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP.json",
+    "immutable_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_659dd03.json",
+    "sha256": "9dd4fd25edbce63ce86f5f1d82834734a434ff59f95b7c2d930fc8fc237ee7d6"
+  },
+  "author_identity": {
+    "lane_id": "F.C2.A1",
+    "worker_invocation_id": "c2-a1-001",
+    "thread_id": "019fce23-8b6b-7e50-bec1-5aca2f627511",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority",
+    "findings_sha256": "520eb8dcfe80c16b67b030fcf6c7c3cdf962dfd2a4fd430fb3fa2dd3c8ab4bdd",
+    "result_sha256": "e9cd01b699ac8b549fe01b4c6935eaa7c98cdb323bf7f5bc47efbebdd0219c7a"
+  },
+  "root_checks": {
+    "exact_delta_base": "9606444ccf64216a44e448e88f6a824f2012ae60",
+    "exact_delta_paths": [
+      "firmware_acceptance/kit.py",
+      "orchestrator_harness/tests/test_firmware_acceptance_kit.py"
+    ],
+    "mapped_existing_ids": 1,
+    "new_ids": 0,
+    "d5_revalidated_ids": 1,
+    "retained_registry_ids": 140,
+    "selected_for_additional_execution": 0,
+    "deleted_protected_ids": 0,
+    "weakened_oracles": 0,
+    "all_declared_evidence_hashes_valid": true,
+    "author_findings_empty_and_current_tip": true,
+    "author_result_current_tip_and_controller_valid": true,
+    "author_worktree_clean_and_claims_released": true
+  },
+  "immutable_mcp_fixture": {
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "clean": true,
+    "launched": false,
+    "edited": false
+  },
+  "decision": "ACCEPT_CURRENT_TIP_MAP",
+  "rerun_policy": "No green ID is rerun unless a mapped production, test, configuration, or oracle dependency changes."
+}

@@ -1,0 +1,92 @@
+{
+  "schema": "firmware-v2-c1-lock/v1",
+  "c1_lock_id": "d31d847b-ab7a-4abf-9b06-823a8d09146d",
+  "created_at_utc": "2026-08-05T04:56:00Z",
+  "candidate": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "branch": "firmware/v2-candidate",
+    "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+    "clean": true
+  },
+  "authorization": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\d31d847b-ab7a-4abf-9b06-823a8d09146d\\DELEGATED_HARDWARE_AUTHORIZATION.json",
+    "sha256": "4a9dec426b0b32bedfa9ac2a90f851e84cd4dd442f5700193c45caa319595ee6",
+    "canonical_user_scope_sha256": "571d7d36cd7242762f0bbea0f2c55b095c2b381c6270538285190097a6e50013",
+    "delegated_expires_at_utc": null,
+    "invalidates_on": ["user revocation or scope change", "C1 replacement or invalidation", "project completion"]
+  },
+  "governing_documents": {
+    "goal": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\goal.md", "sha256": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d"},
+    "generalization_spec": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\active_docs\\GENERALIZATION_SPEC_2.md", "sha256": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07"},
+    "implementation_roadmap": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\active_docs\\IMPLEMENTATION_ROADMAP_2.md", "sha256": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250"},
+    "execution_plan": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\EXECUTION_PLAN_2.md", "sha256": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"},
+    "execution_readiness": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\active_docs\\EXECUTION_READINESS_2.md", "sha256": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66"}
+  },
+  "server": {
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "clean": true,
+    "immutable_fixture": true,
+    "pin": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\d31d847b-ab7a-4abf-9b06-823a8d09146d\\MCP_SERVER_PIN.json", "sha256": "bccadcdaf8cec66efeba19ebcda85bd42f8bfeb619bc66191287bece2b34123c"},
+    "allowed_schema_digest": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\d31d847b-ab7a-4abf-9b06-823a8d09146d\\MCP_ALLOWED_SCHEMA_DIGEST.json", "sha256": "c7fb3173c513a58eff9e21fde5d592810c6c8e9bbd00f646cd86c33a76497e6a", "schema_sha256": "3c5500fc7b7b33b0a84140f9b3db516a0b7010d8ec1ba94d67cb7268cae56672"},
+    "limitation_history": []
+  },
+  "candidate_acceptance_inputs": {
+    "acceptance_manifest": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\firmware_acceptance\\ACCEPTANCE_MANIFEST.json", "sha256": "ffde1fd5aec3f515f1f5c0ec1b7f657b196fed7c008a4650fc6c2d0bc3a81800"},
+    "lane_templates": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\firmware_acceptance\\LANE_TEMPLATES.json", "sha256": "af7cebbc5e3910c32f0ef183fcad401234ea8cd6afe466fdb6990e75016d83f4"},
+    "c3_harness": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\firmware_acceptance\\c3_harness.py", "sha256": "09d0abd0f4c667b82d2b16fe17bcc41a398c274af94a534ac45320aa466f4307"},
+    "c3_limitation": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\firmware_acceptance\\c3_limitation.py", "sha256": "6fbdd847740170d5c2ab0f3e729e3e242b493ac714cfe9deb2557475d416c299"},
+    "mcp_method_policy": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\d31d847b-ab7a-4abf-9b06-823a8d09146d\\MCP_METHOD_POLICY.json", "sha256": "f2fa03fbaf41f602121249f8709537040cfd3792369492ceeaf5ffc4f7c029a4"},
+    "mcp_method_policy_source": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\firmware_acceptance\\MCP_METHOD_POLICY.json", "sha256": "35bc68b6ec79a8e9680c42dd32c32be228ee956ee7b53d68908b8dec13d19b78"},
+    "operator_launch": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\orchestrator_harness\\operator_launch.py", "sha256": "5872dd874c4dcefb8db88ee7d76aab94936f9928bed35ccb4964c137989972e5"},
+    "watcher_integration": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\orchestrator_harness\\watcher_integration.py", "sha256": "97e80aba939527a979d5614c9a41b70b6284ee37804b0f7da2e1ba54f4084fa1"},
+    "watcher_config_template": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\harness_watcher_implementation\\config.example.json", "sha256": "ea60de50a25187b9d57fc102fb246db239c096d9be153907fbb0070a70a1d978"},
+    "candidate_safeguard": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\tools\\Invoke-CandidateSafeguard.ps1", "sha256": "de260bd204b63e5b76abcfb9f5e4fa70f837c4e798bbbe9121b86334ad2c32ac"}
+  },
+  "target_seed": {
+    "manifest": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\firmware_acceptance\\seed\\TARGET_SEED_MANIFEST.json", "sha256": "ae83c269010a4dac18723f1197cc7b22f445435b9ac13c879e253fc0c3b0a52d"},
+    "files": {
+      "TARGET_CHARTER.md": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\firmware_acceptance\\seed\\TARGET_CHARTER.md", "sha256": "4a624cb41018e06738706d4a24958554491e953ff8c0af18e6ba17aecf385944"},
+      "PINNED_INPUTS.json": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\firmware_acceptance\\seed\\PINNED_INPUTS.json", "sha256": "67fbc2adc499f11c32c99d4484f2ff8ae14a3ca6ee4b899acf35d7897c4623f6"},
+      "TEST_CONTRACT.json": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\firmware_acceptance\\seed\\TEST_CONTRACT.json", "sha256": "1a9bafa07b3d44d0bcd2384083ab53495cd31ecd8e503b2ca0f72ddd1693224d"},
+      "EVIDENCE_SCHEMA.json": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate\\firmware_acceptance\\seed\\EVIDENCE_SCHEMA.json", "sha256": "87d8b2e85abb49d434310d2fe38b9b0aac35804dd77b42421a076f43e9045ce3"}
+    },
+    "target_application_source_locked": false,
+    "target_repository_local_configuration_locked": false,
+    "later_governance": "target dependency fingerprint"
+  },
+  "preflight_and_fixture_evidence": {
+    "authorization_draft": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\preflight\\DELEGATED_HARDWARE_AUTHORIZATION.draft.json", "sha256": "f532f7a1fa5c4c9e0943f3971b8bea6a3c068e4d9953ce4bbdb5dbefec13fae8"},
+    "mcp_discovery": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\preflight\\MCP_DISCOVERY.json", "sha256": "4d659847b405cff6096fe3bdd2a82c008a179ae0c9f4f41a955e2ec8c7b65e80"},
+    "resource_hashes": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\preflight\\RESOURCE_HASHES.json", "sha256": "a49051f6986131a95905ac2ad3ff65f092ef5d4623e801ce60d8ba6d974dd014"},
+    "toolchain_hashes": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\preflight\\TOOLCHAIN_HASHES.json", "sha256": "07f24c50050dbc6b0818a0bdeaf83e34d14819807e274f4ec718618a407bb4e7"},
+    "rf_admission": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\preflight\\RF_ADMISSION.json", "sha256": "571c170de32021201c2bbbfa35a9d8b38cef18e814c70419109c9965d501295b"}
+  },
+  "test_and_evidence_contracts": {
+    "baseline_unit_manifest": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\preflight\\BASELINE_UNIT_MANIFEST.json", "sha256": "e0113dd1f0f6ab2d6fd8e450caef5d407ad8aa3b6b28c7eb234ecd04bd51a120"},
+    "shared_code_dependency_map": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_b5753eb.json", "sha256": "d257d7ae8bb4037da309ea7efad8afd94e755dc5f41dd595738e59cf2fa18ecb"},
+    "shared_code_dependency_map_root_acceptance": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_b5753eb.json", "sha256": "bfedc55e0b54087300472de2b57617f13f452edd925eadb8cf2cc1d9a0644dc3"},
+    "pre_c1_executable_contract": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_PRE_C1_EXECUTABLE_CONTRACT_DECISION.json", "sha256": "9e0fbac168edc13b0d243392b661d95eb6483d7234f515703158c57b273dee91"},
+    "s2_join_acceptance": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_C3_FINAL_JOIN_ROOT_ACCEPTANCE_b5753eb.json", "sha256": "c63b8a185372b201a0d4e9f045463c3c7020923782f8df8fbf3af44995b68b3a"},
+    "registry_reconciliation": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_C3_FINAL_REGISTRY_RECONCILIATION_b5753eb.json", "sha256": "26ece80073e9febec4b6c13ea8a8412c5592453d475518c6f824b119c6fc2f98"},
+    "fresh_c0_admission": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c0\\attempt-0014\\ROOT_ADMISSION.json", "sha256": "210999033e6c3009d9abfbaf1798dbf78394a8943bba572db010a5b99e7cd739"}
+  },
+  "implementation_state": {
+    "passed_tests_registry": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\passed-tests.json", "sha256": "d3542a5e2b927fbc941268c5995dda27a595866a0063781b9bff1231c593664c"},
+    "parallel_checkpoint": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\PARALLEL_CHECKPOINT.md", "sha256": "a2378702ef9acd83933796e85fb2dc8e4e695e7f7f9b778e115952f1b7cdc575"},
+    "out_of_scope_ledger": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\OUT_OF_SCOPE.md", "sha256": "e6c1b141d8da4a789752040014a417a4c0f6f4edd3f62b6ba46d9c69b376cd80"},
+    "green_groups": 22,
+    "unique_green_test_ids": 145,
+    "invalidated_groups": 0,
+    "evidence_credits": 64,
+    "active_resource_claims": 0,
+    "surviving_managed_processes": 0
+  },
+  "call_authorization": {
+    "one_shot": true,
+    "maximum_lifetime_utc_minutes": 5,
+    "expires_on_bound_field_change": true,
+    "expires_on_attempt_exit_or_abort": true,
+    "fresh_call_id_required_for_retry": true
+  },
+  "status": "LOCKED_FOR_C2"
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "firmware-c3-governing-input-watcher-launch/v1",
+  "attempt_id": "attempt-0003",
+  "owner": "ROOT-IM",
+  "pid": 196920,
+  "created_utc": "2026-08-05T10:47:20.5678269Z",
+  "interpreter": "C:\\Users\\Jason\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+  "script": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0003\\.agent-workspace\\root_governing_watcher.py",
+    "sha256": "b1d43d1a0593dbac7985683450a3b2061ba9fd6fe323853115077b6f987e07af"
+  },
+  "status_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\topology\\GOVERNING_INPUT_WATCHER.json",
+  "initial_observation": {
+    "sequence": 2,
+    "state": "RUNNING",
+    "changed": {},
+    "heartbeat_utc": "2026-08-05T10:47:25.811729Z"
+  },
+  "mutating_authority": false,
+  "hardware_or_mcp_authority": false,
+  "launched_utc": "2026-08-05T10:47:20.5678269Z"
+}

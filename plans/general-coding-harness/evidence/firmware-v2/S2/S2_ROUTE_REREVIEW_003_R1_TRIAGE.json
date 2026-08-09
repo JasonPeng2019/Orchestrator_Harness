@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_ROUTE_REREVIEW_003_R1_FINDINGS_a63498c.json",
+  "findings_sha256": "4e519ead942f0bc776134fa5298ee6d28cfcb25708bfa69772bed4ce2463eeb3",
+  "decisions": [
+    {
+      "id": "S2-R1-005",
+      "decision": "ACCEPT",
+      "rationale": "The clean pinned server permits official_sha256 null and emits that nullable template, while the candidate rejects the result after already writing a nominal successor. It also requires the continuation to reuse predecessor plan/permission references, directly contradicting separate per-call authorization. A localized template-key/value and ordering correction restores a required route without widening authority.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Validate and retain the exact research response field set before normal-result publication, allow pinned nullable/default values, remove predecessor plan/permission equality, and rely on the continuation call's own fresh validated plan, permission, decision, and authorization artifacts."
+    }
+  ]
+}

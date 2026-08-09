@@ -10,12 +10,21 @@ from typing import Any
 from dev_state import verification_is_current
 
 ROOT = Path(__file__).resolve().parents[2]
-VERIFY = ROOT / ".codex" / "scripts" / "verify.py"
+VERIFY_CHANGED = ROOT / ".codex" / "scripts" / "verify_changed.py"
 
 DESTRUCTIVE_PATTERNS = (
-    (re.compile(r"\bgit\s+reset\s+--hard\b", re.IGNORECASE), "git reset --hard is blocked"),
-    (re.compile(r"\bgit\s+(?:checkout|restore)\s+--\s", re.IGNORECASE), "destructive Git restore is blocked"),
-    (re.compile(r"\bgit\s+clean\s+-[^\s]*f", re.IGNORECASE), "git clean with force is blocked"),
+    (
+        re.compile(r"\bgit\s+reset\s+--hard\b", re.IGNORECASE),
+        "git reset --hard is blocked",
+    ),
+    (
+        re.compile(r"\bgit\s+(?:checkout|restore)\s+--\s", re.IGNORECASE),
+        "destructive Git restore is blocked",
+    ),
+    (
+        re.compile(r"\bgit\s+clean\s+-[^\s]*f", re.IGNORECASE),
+        "git clean with force is blocked",
+    ),
     (
         re.compile(r"\brm\s+-[^\s]*r[^\s]*f|\brm\s+-[^\s]*f[^\s]*r", re.IGNORECASE),
         "recursive forced removal is blocked",
@@ -25,7 +34,10 @@ DESTRUCTIVE_PATTERNS = (
         "recursive or forced Remove-Item is blocked",
     ),
     (
-        re.compile(r"\b(?:curl|wget)\b[^\r\n|]*\|\s*(?:sh|bash|zsh|pwsh|powershell)\b", re.IGNORECASE),
+        re.compile(
+            r"\b(?:curl|wget)\b[^\r\n|]*\|\s*(?:sh|bash|zsh|pwsh|powershell)\b",
+            re.IGNORECASE,
+        ),
         "download-to-shell is blocked",
     ),
 )
@@ -74,21 +86,27 @@ def pre_compact(_payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def verify_on_stop(_payload: dict[str, Any]) -> dict[str, Any]:
-    if verification_is_current(ROOT):
-        return {}
-    result = subprocess.run(
-        [sys.executable, str(VERIFY)],
-        cwd=ROOT,
-        check=False,
-        text=True,
-        capture_output=True,
-    )
+    try:
+        if verification_is_current(ROOT):
+            return {}
+        result = subprocess.run(
+            [sys.executable, str(VERIFY_CHANGED)],
+            cwd=ROOT,
+            check=False,
+            text=True,
+            capture_output=True,
+        )
+    except Exception as exc:
+        return {
+            "decision": "block",
+            "reason": f"Changed-code verification could not run: {exc}",
+        }
     if result.returncode == 0:
-        return {"systemMessage": "Harness verification passed for the current repository state."}
+        return {"systemMessage": "Changed-code verification passed for the current repository state."}
     output = (result.stdout + "\n" + result.stderr).strip()
     return {
         "decision": "block",
-        "reason": "Repository verification failed. Fix the failures and rerun the gate before finishing.\n\n"
+        "reason": "Changed-code verification failed. Fix the failures and rerun the gate before finishing.\n\n"
         + output[-6000:],
     }
 

@@ -1,0 +1,99 @@
+{
+  "schema": "firmware-v2-test-report/v1",
+  "lane_id": "S2.D2",
+  "worker_invocation_id": "s2-d2-pre-c1-executor-002",
+  "commit": "228024d7d51f3a185cbf88f5e5a159c9049b3e38",
+  "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_kit -v",
+  "expected": {
+    "fresh_module": 17,
+    "preserved_target_credit": 3,
+    "joined_total": 20,
+    "per_module": {
+      "orchestrator_harness.tests.test_firmware_acceptance_kit": 17,
+      "orchestrator_harness.tests.test_firmware_acceptance_target": 3
+    }
+  },
+  "observed": {
+    "fresh_module": {
+      "module": "orchestrator_harness.tests.test_firmware_acceptance_kit",
+      "collected": 17,
+      "executed": 17,
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0,
+      "expected_failures": 0,
+      "unexpected_successes": 0,
+      "elapsed_seconds": 29.473,
+      "unittest_reported_elapsed_seconds": 29.065
+    },
+    "preserved_target_credit": {
+      "module": "orchestrator_harness.tests.test_firmware_acceptance_target",
+      "collected": 3,
+      "executed": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "expected_failures": 0,
+      "unexpected_successes": 0,
+      "source": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_D2_TARGET_CREDIT_40b4039.json",
+      "source_sha256": "7872f29f7b39b8b5e7d9534953b846a04c472d1d93da6549b654dbb37e916691",
+      "source_commit": "40b4039b3ecb3021dc545901419416b278226f7e",
+      "preserved_at_commit": "228024d7d51f3a185cbf88f5e5a159c9049b3e38",
+      "source_test_report_sha256": "bc051de3596343199cdaa6356c6f2d4878b841f39635c9a181be8d9b6ae8b3de",
+      "source_result_sha256": "3e11d8bbfe88c25e2a19a6001cf0aafe9b66bf5602e6f7a8f6103e568e03efd0"
+    },
+    "joined": {
+      "collected": 20,
+      "executed": 20,
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "expected_failures": 0,
+      "unexpected_successes": 0
+    }
+  },
+  "outcome": "PASS",
+  "no_hardware_no_mcp": {
+    "statement": "Host-only synthetic unit tests; no MCP, pinned server, pyOCD, serial, probe, flash, reset, debug, RF, or physical hardware operation occurred.",
+    "mcp_launched": false,
+    "server_launched": false,
+    "hardware_accessed": false
+  },
+  "process_boundary": {
+    "zero_surviving_processes": true,
+    "surviving_processes": [],
+    "unexpected_resource_claims": [],
+    "leases": []
+  },
+  "dependency_scope": {
+    "kind": "dependency-invalidated-only",
+    "freshly_executed": [
+      "orchestrator_harness.tests.test_firmware_acceptance_kit"
+    ],
+    "preserved_without_rerun": [
+      "orchestrator_harness.tests.test_firmware_acceptance_target"
+    ],
+    "preserved_credit_reference": {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_D2_TARGET_CREDIT_40b4039.json",
+      "sha256": "7872f29f7b39b8b5e7d9534953b846a04c472d1d93da6549b654dbb37e916691"
+    },
+    "excluded_shards": [
+      "controller/host S2.D1",
+      "protected original general-harness suite",
+      "static analysis",
+      "compilation",
+      "MCP",
+      "pinned server",
+      "pyOCD",
+      "serial",
+      "probe",
+      "flash",
+      "reset",
+      "debug",
+      "RF",
+      "physical hardware"
+    ]
+  },
+  "findings_count": 0,
+  "tracked_status_clean": true
+}

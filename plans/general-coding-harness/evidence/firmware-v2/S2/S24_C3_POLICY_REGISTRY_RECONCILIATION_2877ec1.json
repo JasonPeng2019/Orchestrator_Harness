@@ -1,0 +1,64 @@
+{
+  "schema": "firmware-v2-registry-reconciliation/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+  "prior_candidate_commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+  "registry": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+    "sha256": "e9988a886fb8b541ea8c648ad94c1a35ce0180b4c0d694fec79b618ea33373a5",
+    "green_groups": 23,
+    "unique_green_ids": 146,
+    "invalidated_groups": 0,
+    "evidence_credits": 70,
+    "hash_valid_evidence_credits": 64,
+    "explicit_inheritance_only_credits": 6
+  },
+  "prior_registry": {
+    "sha256": "d3542a5e2b927fbc941268c5995dda27a595866a0063781b9bff1231c593664c",
+    "green_groups": 22,
+    "unique_green_ids": 145,
+    "invalidated_groups": 0,
+    "evidence_credits": 64
+  },
+  "delta": {
+    "added_green_group": "S2::c3-policy-binding-repair-joined-tip-reconciliation",
+    "added_green_ids": [
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_startup_distinguishes_operative_and_source_policy_bindings"
+    ],
+    "removed_green_ids": [],
+    "added_evidence_credits": 6,
+    "new_invalidations": [],
+    "duplicate_green_groups": [],
+    "duplicate_green_ids": []
+  },
+  "dependency_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_2877ec1.json",
+    "sha256": "7efac0d0852609516a9a9caeecb3f99ad7d040d0f40671bb7dea52a25d8cc450",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_2877ec1.json",
+    "root_acceptance_sha256": "1fc90573d9ea507fd7ae15add1d71b26eee8c572a94d6d4678fdd5516d9adcd0"
+  },
+  "fresh_green_evidence": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S24.D1-C3-POLICY-0002/.agent-workspace/TEST_REPORT.json",
+    "sha256": "00fc5a97ffaf85f89776f5b232b2889189e1fbbaa04b087a3129ea5cf25d2bf6",
+    "tests_run": 1,
+    "skips": 0,
+    "xfails": 0,
+    "outcome": "PASS"
+  },
+  "fresh_c0_root_admission": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0015/ROOT_ADMISSION.json",
+    "sha256": "a6b819d326b60ed150486aae91b93bd1136e0a924fed6656a066ce5cdd02100f",
+    "outcome": "PASS"
+  },
+  "audit": {
+    "all_declared_evidence_paths_exist": true,
+    "all_64_declared_evidence_hashes_match": true,
+    "six_hashless_entries_are_prior_explicit_inheritance_edges": true,
+    "new_test_id_executed_exactly_once_at_current_tip": true,
+    "unaffected_green_ids_rerun": false,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "REGISTRY_RECONCILED",
+  "outcome": "PASS"
+}

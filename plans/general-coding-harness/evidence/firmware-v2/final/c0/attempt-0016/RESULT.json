@@ -1,0 +1,41 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-016",
+  "branch": "firmware/v2-c0-final-review-0016",
+  "commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+  "outcome": "PASS",
+  "summary": "NO CANDIDATE GAP / READY",
+  "checks": [
+    {
+      "name": "governing inputs and candidate identity",
+      "outcome": "PASS",
+      "summary": "All five authoritative SHA-256 locks, requested branch, and exact candidate tip matched."
+    },
+    {
+      "name": "C1-C73 and complete affected-surface review",
+      "outcome": "PASS",
+      "summary": "Completed the baseline-to-tip audit of compatibility, route isolation, default-deny authority, retained sessions, lifecycle/recovery, schemas, replay, limitation containment, cleanup, watcher evidence, docs, priority tiers, and regression risk."
+    },
+    {
+      "name": "S25 runtime delta and evidence reconciliation",
+      "outcome": "PASS",
+      "summary": "Reviewed all seven required S25 paths from 2877ec1 through the exact tip; source/test acceptance, registry reconciliation, dependency coverage, and the 61-test one-shot evidence hashes match. No assertion weakening, credit duplication, deleted IDs, skip substitution, or hidden diagnostic mechanism was found."
+    },
+    {
+      "name": "stream ownership and C1 policy provenance",
+      "outcome": "PASS",
+      "summary": "The S25 repair closes controller streams after natural EOF and partial launch failure while retaining forced-close digest evidence; C1-local operative-policy and candidate-source provenance remain separately bound without a root or link escape."
+    },
+    {
+      "name": "runtime execution",
+      "outcome": "NOT_RUN",
+      "summary": "Not run by assignment; this lane performed read-only inspection and did not launch tests, gates, imports, MCP, Codex children, or hardware."
+    },
+    {
+      "name": "findings gate",
+      "outcome": "PASS",
+      "summary": "Closed exact-identity reviewer findings artifact contains an empty finding set."
+    }
+  ]
+}

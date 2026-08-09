@@ -1,0 +1,33 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S23.R2",
+  "worker_invocation_id": "s23-r2-c3-final-001",
+  "role": "reviewer",
+  "commit": "96a9365af04462d36145b0901f1b00206cec0ff7",
+  "findings": [
+    {
+      "id": "S23.R2-C3-001",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": [
+        "C3-CP-03",
+        "C3-CP-04"
+      ],
+      "evidence": [
+        "firmware_acceptance/kit.py: AcceptanceBroker.materialize_seed writes the five target seed files read-only before Git initialization.",
+        "firmware_acceptance/c3_harness.py: C3Harness._assignment creates a linked Git worktree, then _protected_seed_snapshot compares its modes to self.seed_identity captured from the packaged 0644 seed files."
+      ],
+      "observed": "Git checks the protected files out writable in the linked assignment worktree, and the snapshot accepts those writable modes.",
+      "expected": "The five protected seed files remain read-only and identity-bound in each candidate-created assignment worktree while the linked .git file remains permitted.",
+      "reproduction": "Materialize a target, create an assignment worktree through _assignment, and inspect the five protected file modes against the read-only target files; the worktree modes match the writable packaged-seed snapshot instead of the protected target modes.",
+      "impact": "A target worker can alter charter, pinned-input, test-contract, or evidence-schema content during its assignment and restore it before reap or acceptance.",
+      "no_fix_consequence": "The candidate cannot honestly claim an immutable five-file seed boundary for dispatched target work, because final content checks cannot prove the files remained protected during execution.",
+      "smallest_fix": "After git worktree add, mark exactly the five protected seed files read-only and bind _protected_seed_snapshot to those protected content/mode pairs before launch, reap, and acceptance.",
+      "complexity": "Small localized mode-binding change in the existing materialization and assignment path.",
+      "regression_risk": "Low: it affects only the five already protected seed files and preserves the linked .git file behavior.",
+      "verification_cost": "Low: a host-only worktree-mode assertion before launch and after reap covers the corrected boundary.",
+      "alternatives": "End-only hash checks and writable-mode snapshots do not prevent reversible in-assignment mutation; broad worktree isolation is unnecessary.",
+      "cost_benefit": "The localized repair restores the required immutable-seed guarantee with less complexity than any broader isolation mechanism.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "schema": "firmware-v2-candidate-shared-code-dependency-map/v1",
+  "owner": "ROOT-IM",
+  "candidate": {
+    "commit": "c6999d173c344b317a918df91619308fd9f93f63",
+    "reserved_branch": "firmware/v2-candidate",
+    "clean_at_audit": true,
+    "prior_accepted_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343"
+  },
+  "prior_complete_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_542f48c.json",
+    "sha256": "85ca5d7a68f59e2b06f2eb9428166d4cac3e1af43df3ed67312ed846c1464c04",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_542f48c.json",
+    "root_acceptance_sha256": "bac63a36feae55f74901000996b19a69c1ab16c64a9d844168a2744138899fa1",
+    "preserved_without_rewrite": true
+  },
+  "delta_inventory": {
+    "base_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "candidate_commit": "c6999d173c344b317a918df91619308fd9f93f63",
+    "changed_paths": [
+      "firmware_acceptance/kit.py",
+      "orchestrator_harness/tests/test_firmware_acceptance_target.py"
+    ],
+    "deleted_test_paths": [],
+    "modified_protected_baseline_test_paths": [],
+    "shared_process_identity_changed": false,
+    "watcher_oracle_changed": false,
+    "authorization_or_policy_changed": false,
+    "oracle_weakened": false
+  },
+  "delta_mappings": [
+    {
+      "paths": [
+        "firmware_acceptance/kit.py",
+        "orchestrator_harness/tests/test_firmware_acceptance_target.py"
+      ],
+      "behavior": "Fresh targets remain exact five-file materializations, while later validation admits ordinary target-created files and still verifies protected seed bytes against the known initial commit and read-only state.",
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_acceptance_target.FirmwareAcceptanceTargetTests.test_five_file_seed_remains_immutable_while_target_files_can_be_committed",
+        "orchestrator_harness.tests.test_firmware_acceptance_target.FirmwareAcceptanceTargetTests.test_seed_rewrite_is_rejected_after_target_files_exist",
+        "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_broker_materializes_seed_and_immutable_ordered_chain",
+        "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_campaign_contract_is_closed_and_seed_rewrite_fails",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_singular_target_preserves_generic_broker_default",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_04_disposable_target_assignment_and_fail_closed_acceptance"
+      ]
+    }
+  ],
+  "focused_execution": {
+    "regression_lane": "S29.D1",
+    "regression_execution_sha256": "6f67142d114c010c2537ac25df2b9a23312b0787be153d1ff9c919743122925e",
+    "regression_tests": 2,
+    "remaining_dependency_lane": "S29.D2",
+    "remaining_execution_sha256": "205e133d7bc8cdd90463ce1f617157d78e0f6a0a26b908b8da632c710afa9a38",
+    "remaining_tests": 4,
+    "tests_covered": 6,
+    "new_green_ids": 2,
+    "freshly_revalidated_existing_ids": 4,
+    "removed_superseded_ids": 0,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "resource_warnings": 0,
+    "outcome": "PASS"
+  },
+  "retained_prior_mappings": {
+    "prior_map_preserved": true,
+    "prior_unique_green_ids": 166,
+    "prior_green_ids_retained": 166,
+    "reason": "The only production delta removes a fresh-directory extra-file check from later target validation. Protected seed byte/read-only checks, target confinement, Git identity, process lifecycle, watcher, authorization, policy, and every unrelated public route remain unchanged. Four directly affected prior IDs were revalidated and two exact target-regression IDs were added."
+  },
+  "review_and_triage": {
+    "root_admission_path": "plans/general-coding-harness/evidence/firmware-v2/S2/S29_C3_EVOLVED_TARGET_ROOT_ADMISSION_c6999d1.json",
+    "root_admission_sha256": "59626c2d7b30e0a7f40750d223681e2a8c786b1c31e63581eaf84b6610c64bc6",
+    "final_review_result_sha256": "89bbdf4811750473037f12a776bcb006ce1aab4329f612fe463ed1aa111ff614",
+    "final_review_findings_sha256": "ce6968c33fcfe9b93c960541b6e50255c1922efa1a57e83a60351875ecfe6ec2",
+    "remaining_actionable_findings": [],
+    "rejected_extra_engineering": "No phase flag, validation abstraction, duplicate seed hashing, broader test selection, or watcher/candidate framework change was admitted."
+  },
+  "registry_reconciliation": {
+    "prior_unique_green_ids": 166,
+    "added_green_ids": 2,
+    "removed_superseded_green_ids": 0,
+    "current_unique_green_ids": 168,
+    "freshly_revalidated_existing_ids": 4,
+    "invalidated_groups": 0,
+    "selected_for_additional_execution": []
+  },
+  "no_hardware_boundary": {
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "server_edited": false,
+    "statement": "This batch used static attempt evidence and host-only focused unit execution. No MCP, board, probe, serial, flash, reset, debug, BLE, LoRa, RF, or physical operation ran."
+  },
+  "created_at": "2026-08-05T22:20:56.4401649Z"
+}

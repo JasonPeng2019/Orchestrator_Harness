@@ -1,0 +1,14 @@
+{
+  "schema": "root-agent-artifact-correction/v1",
+  "owner": "ROOT-IM",
+  "lane_id": "S2.A1",
+  "worker_invocation_id": "s2-a1-pre-c1-author-006",
+  "commit": "0a637123380b0591fd5d47a340dfefbcdd7e9093",
+  "original_status_sha256": "134ec165ffd693273890955bd8a57cabeded1ba0fbae57c66e57f148ebaefaed",
+  "original_result_sha256": "f739b214845571839dc0c6b445964ebfa6376dbff6293d2d47cff8d37fa0f097",
+  "controller_error": "coding result check 1 has an invalid shape",
+  "classification": "AGENT_ARTIFACT_FORMAT_ERROR",
+  "code_or_test_invalidated": false,
+  "green_check_rerun_allowed": false,
+  "required_correction": "Resume the same thread and replace the unsupported check key detail with summary; make no tracked edit and rerun no check."
+}

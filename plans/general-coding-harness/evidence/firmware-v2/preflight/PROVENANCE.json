@@ -1,0 +1,46 @@
+{
+  "schema_version": "firmware-v2-preflight-provenance-v1",
+  "recorded_at_utc": "2026-08-04T00:21:00Z",
+  "harness_candidate": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/harness-candidate",
+    "branch": "firmware/v2-candidate",
+    "head": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "git_status_count": 0
+  },
+  "mcp_candidate": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/mcp-candidate",
+    "branch": "firmware/v2-mcp-candidate",
+    "head": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "git_status_count": 0
+  },
+  "frozen_rollback": {
+    "path": "frozen-harness-to-use",
+    "branch": "frozen-v1",
+    "head": "287ea53793e3963062882012ff80c3b0e8c41587",
+    "git_status_count": 0
+  },
+  "dirty_mcp_input_checkout": {
+    "path": "Firmware/BYO-Firmware-MCP",
+    "head": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "git_status_count": 1209,
+    "preserved_read_only": true
+  },
+  "outer_checkout": {
+    "git_status_count_at_record": 25,
+    "intentionally_dirty": true,
+    "preservation_rule": "Do not reset, clean, overwrite, or absorb unrelated user changes."
+  },
+  "historical_harness_worktrees": {
+    "protected_existing_linked_count_excluding_main_and_new_v2": 13,
+    "removed_or_reused": false
+  },
+  "reserved_promotion_ref": {
+    "name": "progress/v1.2",
+    "present": false
+  },
+  "path_correction": {
+    "occurred": true,
+    "description": "Initial worktrees were created at shortened non-reserved directory names, then preserved and moved with native git worktree move to the literal reserved coordinates before product work.",
+    "source_or_commit_changed": false
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-pre-c1-executor-006",
+  "role": "test_executor",
+  "commit": "a79e51b9d89b917d537abef0f7cd18ccd61afcf7",
+  "findings": [
+    {
+      "id": "S2.D1-001",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_bootstraps_once_executes_and_aborts_terminally", "retained-session null setup-overview contract"],
+      "evidence": ["orchestrator_harness/tests/test_firmware_acceptance_controller.py:215-222", "firmware_acceptance/controller.py:551-557", "orchestrator_harness/tests/test_firmware_acceptance_controller.py:143-145"],
+      "observed": "The isolated named test exits in 0.515s with AdmissionError: null setup overview did not require names. Its fake id=3 response is {status: ok}, while its null setup_overview call reaches the controller branch that requires status setup_names_required.",
+      "expected": "A retained-session null setup_overview response must use the current server route contract: status setup_names_required, with optional connection_assignments. The test should then advance to ROUTED and exercise its retained-session terminal cleanup assertions.",
+      "reproduction": "Run only the bounded diagnostic command recorded in TEST_REPORT.json. The redirected stderr records one ERROR at test_firmware_acceptance_controller.py:222, raised by firmware_acceptance/controller.py:557.",
+      "impact": "The named retained-session regression test cannot reach its bootstrap/abort assertions and remains red independently of the prior shard timeout; the controller is correctly rejecting the stale response shape.",
+      "no_fix_consequence": "The retained-session contract test continues to fail before exercising the behavior it claims to cover, leaving the reopened S2.D1 evidence red and obscuring whether terminal cleanup remains covered.",
+      "smallest_fix": "Update only the test fixture response at test_firmware_acceptance_controller.py:216 to status setup_names_required and provide the expected optional connection_assignments shape, matching the existing route-contract fixture at lines 143-145. No product-code relaxation is warranted.",
+      "complexity": "Low: localized test-fixture contract correction.",
+      "regression_risk": "Low: it aligns the fixture with the controller's explicit closed route contract and preserves the controller rejection behavior.",
+      "verification_cost": "Low: rerun the named diagnostic test after the fixture correction; the full 26-test shard need not be rerun for this isolated contract repair.",
+      "alternatives": "Relaxing controller.py:554-557 to accept status ok would weaken the server-returned route contract and hide malformed retained-session responses. Leaving the fixture unchanged preserves a known stale test contract.",
+      "cost_benefit": "The defect is directly reproduced, the correction is confined to one stale synthetic response, and the value of restoring the intended retained-session coverage clearly exceeds its low complexity, regression risk, and verification cost.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

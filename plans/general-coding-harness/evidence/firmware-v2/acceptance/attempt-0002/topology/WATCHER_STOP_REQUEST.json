@@ -1,0 +1,22 @@
+{
+  "schema": "firmware-c3-watcher-stop-request/v1",
+  "attempt_id": "attempt-0002",
+  "owner": "ROOT-IM",
+  "reason": "ROOT abort override after reproducible candidate control-plane defects and watcher misclassification",
+  "root_abort": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\topology\\ROOT_ABORT_REQUIRED.json",
+    "sha256": "757ff52b1dea928871f21b525d72d5b3387ffaec492fd27a217ef6420c22ec74"
+  },
+  "abort_override": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\watcher\\ABORT_REQUIRED.json",
+    "sha256": "638cf7a750c238f2407cf0ad7d6d1c3aaacd6ee75f157f10e110e2219f60d52e",
+    "watcher_authored": false
+  },
+  "candidate_shutdown": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\c3-harness\\C3_HARNESS_SHUTDOWN.json",
+    "sha256": "4d3d9e60d3521fec22025c5280587144a819cf898865876e1c086282c2357144",
+    "all_sessions_exact_reaped": true,
+    "claims_remaining": 0
+  },
+  "requested_at_utc": "2026-08-05T06:50:24.0912796Z"
+}

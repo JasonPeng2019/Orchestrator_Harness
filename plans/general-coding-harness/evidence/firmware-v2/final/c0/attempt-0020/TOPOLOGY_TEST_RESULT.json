@@ -1,0 +1,31 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.D1",
+  "worker_invocation_id": "c0-d1-001",
+  "branch": "firmware/v2-c0-topology-doer-0001",
+  "commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "outcome": "PASS",
+  "summary": "F-C0-TOPOLOGY-DOC-001 passed: exact governing-document hashes matched, direct plan validation passed, all three topology policies were statically confirmed, findings were empty, and the tracked lane remained clean at the exact candidate commit.",
+  "checks": [
+    {
+      "name": "F-C0-TOPOLOGY-DOC-001 direct plan validation",
+      "outcome": "PASS",
+      "summary": "The required command exited 0 and emitted execution plan validation: PASS."
+    },
+    {
+      "name": "five governing-document hashes",
+      "outcome": "PASS",
+      "summary": "All five observed SHA-256 values exactly matched the required hashes."
+    },
+    {
+      "name": "topology policy static consistency",
+      "outcome": "PASS",
+      "summary": "All five live documents require executor recordability preflight, pooled fixture/mock/executor-environment correction, and exact-C1/C2 host-only disposable-fake C3 rehearsal before physical allocation; rehearsal is admission-only and not physical credit."
+    },
+    {
+      "name": "exact candidate and tracked cleanliness",
+      "outcome": "PASS",
+      "summary": "Branch and HEAD matched the assignment, and git reported no tracked changes."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "firmware-c3-topology-shutdown/v1",
+  "attempt_id": "attempt-0002",
+  "owner": "ROOT-IM",
+  "acceptance_pass": false,
+  "inventory_excludes_self": true,
+  "files": [
+    {"path":"ORCHESTRATOR_EXIT.json","bytes":2746,"sha256":"2ffbaaba0db6ccb656fc32d55cc41bc76eebd7561e7419a0e292492a837c7a62"},
+    {"path":"ORCHESTRATOR_HEARTBEATS.jsonl","bytes":41642,"sha256":"f5488483c7a1fdc5ef9fed301b70b9fa329faca4d47cc534e6c339fb994217df"},
+    {"path":"ORCHESTRATOR_IDENTITY.json","bytes":777,"sha256":"7d27e71735f36744cbf8234828a74cfe0b8beb01be84fc2043f4604785c6b959"},
+    {"path":"ORCHESTRATOR_KEY_RELEASE.json","bytes":457,"sha256":"8f9097056cb78e5da852e31cb651205d155d3057b5f9e7c461152ec6ae8feedd"},
+    {"path":"ORCHESTRATOR_LAUNCH_INTENT.json","bytes":310,"sha256":"7dd79f7e88886e7bbffd4b5c9c7a85d3a1882860e01f21834ade27d7f08251e3"},
+    {"path":"ORCHESTRATOR_PROCESS_LAUNCH.json","bytes":2112,"sha256":"d1f53d2930c1fefb84522cff0015927e79fcfb1ea653a533e9fd4f7e5262cc59"},
+    {"path":"ORCHESTRATOR_SIGNER_LAUNCH.json","bytes":1601,"sha256":"0635bc965ec20fb80878723ba8bbc0c4a84cc56f272682a3a7e5a12469e90c2c"},
+    {"path":"ROOT_ABORT_REQUIRED.json","bytes":3295,"sha256":"757ff52b1dea928871f21b525d72d5b3387ffaec492fd27a217ef6420c22ec74"},
+    {"path":"ROOT_ENVIRONMENT_CORRECTION.json","bytes":2191,"sha256":"f56e2188f9411c200982e89632cd5a6996ef527e9a78433c0f3a7462d294a19f"},
+    {"path":"ROOT_LAUNCH_STATUS.json","bytes":575,"sha256":"def101936d43e6996549ee1c5018b20dd1571dcc9cda631b9bd43dd3d86c4264"},
+    {"path":"ROOT_SUPERVISION_OBSERVATION.json","bytes":2236,"sha256":"83eb9996ae943f9c34bb4fa30fb21f8a60fe7edc127643125c2e04e1baa19692"},
+    {"path":"WATCHER_EXIT.json","bytes":2132,"sha256":"d87e3117504f6f8793c582c404b6d6a2619cdf2f7debc1238cd9d6958510db4e"},
+    {"path":"WATCHER_LAUNCH.json","bytes":2057,"sha256":"f9b8b9c290327bb667fa5a3471a73702201b0a8ebbda702768cc3664f89f938b"},
+    {"path":"WATCHER_STOP_REQUEST.json","bytes":1258,"sha256":"671136fd7a91de70b888e9cb8d141f1825d9bfb5038a27618d2930e2dad5b7c9"}
+  ],
+  "closure": {
+    "inventory_count": 14,
+    "symlink_or_reparse_points": 0,
+    "unresolved_temporary_files": 0,
+    "registered_processes_remaining": 0,
+    "candidate_harness_processes_remaining": 0,
+    "mcp_processes_remaining": 0,
+    "resource_claims_remaining": 0,
+    "candidate_clean": true,
+    "mcp_server_clean": true
+  },
+  "closed_at_utc": "2026-08-05T06:56:06.3459784Z"
+}

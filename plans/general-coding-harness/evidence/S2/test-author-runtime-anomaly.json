@@ -1,0 +1,7 @@
+{
+  "event_id": "774cf177e025d46fe8500c295fa21ee703e327d575114d965524a7b539c8ef3c",
+  "type": "STALE_STATUS",
+  "cause": "The external test author rewrote the observer-owned shadow controller status to CODEX_EXITED while its exact shadow processes remained live.",
+  "product_impact": "none; tracked test commit remained clean",
+  "response": "Stop the exact shadow process pair, acknowledge after handling, and retain the frozen evidence."
+}

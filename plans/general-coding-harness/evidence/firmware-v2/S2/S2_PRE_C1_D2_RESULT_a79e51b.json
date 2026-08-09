@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.D2",
+  "worker_invocation_id": "s2-d2-pre-c1-executor-002",
+  "branch": "firmware/v2-s2-d2",
+  "commit": "a79e51b9d89b917d537abef0f7cd18ccd61afcf7",
+  "outcome": "FAIL",
+  "summary": "The exact 20-test S2.D2 kit and target shard ran host-only: 19 passed and 1 errored in server-limitation admission. The failure is a demonstrated functionality break recorded in FINDINGS.json; tracked worktree state remains clean.",
+  "checks": [
+    {"name":"S2.D2 authorized kit and target shard","command":"python -m unittest orchestrator_harness.tests.test_firmware_acceptance_kit orchestrator_harness.tests.test_firmware_acceptance_target -v","outcome":"FAIL","summary":"20 executed: 19 passed, 1 error; kit 16/17 passed and target 3/3 passed; 0 skips, 0 expected failures, 0 unexpected successes."},
+    {"name":"findings gate","command":"validate .agent-workspace/FINDINGS.json","outcome":"FAIL","summary":"One demonstrated functionality-breaking finding is submitted for the call-chain reference shape defect in firmware_acceptance/kit.py."},
+    {"name":"exact current tip and tracked-worktree cleanliness","command":"git branch --show-current; git rev-parse HEAD; git diff --quiet","outcome":"PASS","summary":"Branch firmware/v2-s2-d2 and HEAD match the requested exact commit; tracked Git state is clean."},
+    {"name":"no-MCP/no-hardware boundary","command":"authorized host-only unittest command and post-run boundary review","outcome":"PASS","summary":"No MCP/server, pyOCD, serial, probe, flash, reset, debug, RF, lease, or physical hardware operation occurred."}
+  ]
+}

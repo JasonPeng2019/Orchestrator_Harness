@@ -1,0 +1,84 @@
+{
+  "schema": "firmware-v2-c0-root-admission/v1",
+  "owner": "ROOT-IM",
+  "attempt": "0016",
+  "candidate": {
+    "commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+    "branch": "firmware/v2-c0-final-review-0016",
+    "reserved_branch": "firmware/v2-candidate",
+    "review_worktree_clean": true,
+    "reserved_worktree_clean": true
+  },
+  "governing_hashes": {
+    "goal": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "generalization_spec_2": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "implementation_roadmap_2": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "execution_readiness_2": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66",
+    "execution_plan_2": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"
+  },
+  "lane": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority",
+    "thread_id": "019fd156-b3f7-74b1-b7b6-183f7484c796",
+    "findings_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/F.C0.FR1-0016/.agent-workspace/FINDINGS.json",
+    "findings_sha256": "bae4c97e91468707c56691b757b206e2320103f71a77b69b76984d8cab0d4741",
+    "result_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/F.C0.FR1-0016/.agent-workspace/RESULT.json",
+    "result_sha256": "3caa59bde4118b6eac99dfcdd97de10c68a9912a148536e42c67ccdcf79c4b12",
+    "status_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/F.C0.FR1-0016/.agent-workspace/status.json",
+    "status_sha256": "a2c585f677ead7f62d293e8a68b47c8aff092e40d74076afd5ff11c78e69019e",
+    "worker_jsonl_sha256": "f65d4796dda143fd9c3fffca69d56ebe40c05ca13a76808fd55dabdf8a287a0b",
+    "worker_last_message_sha256": "638cd24a1e440002427a62d4392a93a8e282231eb3338bccd112dbb921fd1e46",
+    "worker_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stable_runner": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "clean_detached": true,
+    "source_invocation_sha256": "aed0dacccb523065aefe4ff1df9a9d44de67e4fd4994d2177996fc2d9774d536",
+    "projected_invocation_sha256": "48557c0db3b1c62b60aab2e1230f3847e8b669bf8096f06d49ed24aea0f9d6b7",
+    "projection_record_sha256": "c9b763d5e70a2508975e07011fc20ed664480bc6b90f932f5ddc189a0ba52808",
+    "projection_proof_sha256": "1c496e65841063321856d72b4c9055a610a05c4f0cde7f78f4012f67921048e2",
+    "dispatch_proof_sha256": "eff87796e1e3ad4d4cc9562faf0f59feffc375ca9ccb210088c50957276a9b57",
+    "removed_candidate_only_fields": [
+      "child_environment_isolation",
+      "finding_gate"
+    ],
+    "root_revalidated_candidate_only_fields": true
+  },
+  "archived": {
+    "findings_path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0016/FINDINGS.json",
+    "findings_sha256": "bae4c97e91468707c56691b757b206e2320103f71a77b69b76984d8cab0d4741",
+    "result_path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0016/RESULT.json",
+    "result_sha256": "3caa59bde4118b6eac99dfcdd97de10c68a9912a148536e42c67ccdcf79c4b12",
+    "byte_identical_to_lane": true
+  },
+  "reconciliation": {
+    "dependency_map_sha256": "d0d3691e3703d8cc5262a2bacbf96adbb05c910b60b376248403643da9efff23",
+    "dependency_map_root_acceptance_sha256": "ca679460c44a56e50632d535db0f12e566026075a8bf7606461a067e29eb2b3d",
+    "registry_reconciliation_sha256": "9bfa2101ec480fd824ed362c91f778480643213ab8d0a9a05fe3f26c751a63a8",
+    "joined_tip_acceptance_sha256": "a91c0f6485b943e80d694310303179c59f253bd9a5027b915e7c8c571123432b",
+    "registry_sha256": "fd6e2e238e1404cd8fc39a84ca40b10b14da520366641fe5cbccf568ff9cd899",
+    "green_groups": 24,
+    "unique_green_ids": 157,
+    "invalidated_groups": 0,
+    "evidence_credits": 76
+  },
+  "validation": {
+    "candidate_findings_validator": "PASS",
+    "findings_count": 0,
+    "result_schema_and_identity": "PASS",
+    "result_outcome": "PASS",
+    "result_summary": "NO CANDIDATE GAP / READY",
+    "controller_result_valid": true,
+    "controller_exit_code": 0,
+    "held_resource_claims": [],
+    "surviving_review_processes": 0,
+    "source_or_test_files_changed_by_review": false,
+    "tests_run_by_review": false,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "ADMIT_EXACT_TIP_FOR_FRESH_C1",
+  "outcome": "PASS",
+  "admitted_at_utc": "2026-08-05T09:55:00Z"
+}

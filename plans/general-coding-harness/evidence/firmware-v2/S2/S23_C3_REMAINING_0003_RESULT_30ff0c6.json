@@ -1,0 +1,40 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S23.D2",
+  "worker_invocation_id": "s23-d2-c3-remaining-003",
+  "branch": "firmware/v2-s23-d2-c3-remaining-0003",
+  "commit": "30ff0c677a14bbe7a7f0a73e9899002752fe0b2c",
+  "outcome": "FAIL",
+  "summary": "The exact two-test command ran once: C3-CP-01-02 FAIL and C3-SERVER-LIMITATION-CREATE-ONCE PASS. The failure is a reachable stale test-fixture request-ID sequencing issue; no production or pinned-server defect was demonstrated.",
+  "checks": [
+    {
+      "name": "C3-CP-01-02",
+      "command": "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier",
+      "outcome": "FAIL",
+      "summary": "Expected ACCEPTED but received REJECTED after the fixture reused request ID r1 with changed bytes following an earlier rejected request."
+    },
+    {
+      "name": "C3-SERVER-LIMITATION-CREATE-ONCE",
+      "command": "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_server_limitation_create_once_has_causal_and_c3_evidence",
+      "outcome": "PASS"
+    },
+    {
+      "name": "findings and identity",
+      "command": "validate .agent-workspace/FINDINGS.json against orchestrator-review-findings/v1",
+      "outcome": "PASS",
+      "summary": "One admissible WORTH_FIXING fixture finding is bound to lane S23.D2, worker s23-d2-c3-remaining-003, role test_executor, and the exact commit."
+    },
+    {
+      "name": "tracked cleanliness and residual state",
+      "command": "git status --porcelain --untracked-files=all; inspect selected-test processes, temporary directories, test worktrees, and claims",
+      "outcome": "PASS",
+      "summary": "Tracked state is clean; no test child process, temporary directory, or test-owned worktree/claim remains. The active outer lane controller/Codex and its lane claim are recorded as infrastructure residue."
+    },
+    {
+      "name": "no-MCP/no-hardware boundary",
+      "command": "selected host-only unittest and post-run boundary review",
+      "outcome": "PASS",
+      "summary": "No firmware MCP fixture, pinned server, pyOCD, serial, probe, flash, reset, debug, RF, or hardware operation occurred."
+    }
+  ]
+}

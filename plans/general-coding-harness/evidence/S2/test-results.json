@@ -1,0 +1,8 @@
+{
+  "candidate_commit": "2f6757ddac98efcc910b5d1e2a7fb9e508d534d2",
+  "result": "pass",
+  "source": "S2.A1 exact-commit focused execution; D2 duplicate rerun skipped",
+  "combined_focused_tests": "22 passed",
+  "coverage": "valid, stale, dirty, malformed, routing, correction, command nonexecution",
+  "post_author_static": {"ruff": "pass", "basedpyright": "pass"}
+}

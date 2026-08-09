@@ -1,0 +1,35 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S3.D1",
+  "worker_invocation_id": "s3-d1-001",
+  "branch": "firmware/v2-s3-d1",
+  "commit": "bbc8ad94c32f3ddad4a54afd4c1a2d51ac4bb11e",
+  "outcome": "PASS",
+  "summary": "Complete S3 operator journey passed all three stable IDs at the exact joined tip; findings are empty, tracked Git state is clean, and no test-owned process or claim state remains.",
+  "checks": [
+    {
+      "name": "S3 operator journey",
+      "command": "python -m unittest orchestrator_harness.tests.test_s3_operator_journey -v",
+      "outcome": "PASS",
+      "summary": "3/3 tests passed: S3-DUAL-001, S3-DUAL-002, and S3-DUAL-003; no skips, expected failures, or unexpected successes."
+    },
+    {
+      "name": "findings gate",
+      "command": "validate .agent-workspace/FINDINGS.json",
+      "outcome": "PASS",
+      "summary": "Closed orchestrator-review-findings/v1 with exact lane identity and zero findings."
+    },
+    {
+      "name": "tip and tracked cleanliness",
+      "command": "git rev-parse HEAD; git branch --show-current; git status --porcelain=v1 --untracked-files=all",
+      "outcome": "PASS",
+      "summary": "Branch firmware/v2-s3-d1 remains at bbc8ad94c32f3ddad4a54afd4c1a2d51ac4bb11e; tracked Git state is clean."
+    },
+    {
+      "name": "test process and claim cleanup",
+      "command": "inspect test-owned processes and claim paths after teardown",
+      "outcome": "PASS",
+      "summary": "No process referenced the S3 test module and no claim/claim-state paths remained; synthetic fixture temp state was cleaned up."
+    }
+  ]
+}

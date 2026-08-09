@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe",
+    "-I",
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\scripts\\stable_runner.py",
+    "--module",
+    "orchestrator_harness.lane_controller",
+    "--"
+  ],
+  "child_pid": 10664,
+  "cleanup_confirmed": true,
+  "cleanup_error": null,
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C0.FR1",
+  "error": "child identity could not be proved live",
+  "label": "F.C0.FR1",
+  "launched_utc": "2026-08-04T06:24:45.162897Z",
+  "platform": "windows",
+  "role": "controller",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "failed"
+}

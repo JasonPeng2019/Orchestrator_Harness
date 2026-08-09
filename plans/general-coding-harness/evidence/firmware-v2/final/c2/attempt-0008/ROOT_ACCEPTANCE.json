@@ -1,0 +1,128 @@
+{
+  "schema": "firmware-v2-c2-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0008",
+  "accepted_at_utc": "2026-08-05T16:38:42Z",
+  "candidate_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+  "c1_lock": {
+    "id": "40419d28-e343-44c1-bf5b-399709b771ba",
+    "sha256": "2140cf26b49174a48d097c192cc7c2012f853b77b5fa43e510b69ad744cf2626",
+    "validation_sha256": "aa54182d58c72d0de0ec5bd9e305409d757da1209e65e3d8bf2063293f1d590f",
+    "authorization_sha256": "5c3bd11e076dd1c72104499bd1e8266f5799528e2626c279fd461869f7952409"
+  },
+  "attempt_record": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0008\\ATTEMPT_RECORD.json",
+    "sha256": "34f2f65cfa043115b05f7eb5993eb0ba4fb89de36498413fda93075e6b706c6e"
+  },
+  "executor": {
+    "lane_id": "F.C2.D1",
+    "worker_invocation_id": "c2-d1-008",
+    "thread_id": "019fd2c2-448d-7ed3-826e-a3de40811020",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority"
+  },
+  "artifacts": {
+    "findings": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0008\\.agent-workspace\\FINDINGS.json",
+      "sha256": "71c7473f0a00cd3f000e86eb811d830711d87961bcede7e1db2276d7af854d1e"
+    },
+    "test_report": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0008\\.agent-workspace\\TEST_REPORT.json",
+      "sha256": "3c00063edb4bdb41d4d07dd24ab52a7c5e915ac2d58370007f9ffd5244370597"
+    },
+    "result": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0008\\.agent-workspace\\RESULT.json",
+      "sha256": "89c8b9709033daf0033f94ea0c2a8f9ee999c5317e5a884300f433937102a165"
+    },
+    "controller_status": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0008\\.agent-workspace\\status.json",
+      "sha256": "42a63f9b14634997c175ca110531541515714dd06eae52dc2db873409709c9b9"
+    },
+    "closed_worker_jsonl_sha256": "15c0f369064b5992119d77b78ece639d7e08ec646ed0c6e5f20fa1e474aa78fa",
+    "worker_stderr_sha256": "e1f58f1d31d81c4efa758568d045398dea34a4ac62f246df83307371c00a44d6",
+    "worker_last_message_sha256": "4f0a82da371afcc205d0922f475cd8b990ce797db15e74a3ff528abd59cfa423",
+    "verifier_sha256": "6200a90868211b0cdadddccfbc48e8051aae20fee6526b21b2c62d717e9dc1f7"
+  },
+  "root_audit": {
+    "controller_result_gate_valid": true,
+    "controller_exit_code": 0,
+    "findings_empty": true,
+    "test_report_overall": "PASS",
+    "five_stable_ids_exact_and_in_order": true,
+    "five_process_exit_codes": [0, 0, 0, 0, 0],
+    "five_process_pid_creation_identities_present": true,
+    "five_process_record_hashes_match": true,
+    "five_stdout_hashes_match": true,
+    "five_stderr_hashes_match_and_are_empty": true,
+    "report_path_hash_references_valid": "22/22",
+    "result_root_shape_exact": true,
+    "result_check_object_shapes_exact": true,
+    "lock_references_valid": 42,
+    "green_groups": 26,
+    "unique_green_ids": 166,
+    "invalidated_groups": 0,
+    "evidence_credits": 86,
+    "hashed_evidence_credits": 80,
+    "inheritance_only_credits": 6,
+    "protected_baseline_ids": 248,
+    "focused_s27_ids": 3,
+    "retained_dependency_valid_prior_ids": 163,
+    "candidate_clean": true,
+    "mcp_server_clean": true,
+    "stable_runner_clean_detached": true,
+    "execution_lane_clean": true,
+    "claims_released": true,
+    "surviving_c2_or_controller_processes": 0,
+    "c2_broker_roots": 0,
+    "new_bytecode_files": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "criticism_disposition": [
+    {
+      "criticism": "Attempt-0007 required native creation identity through inaccessible winlogon.exe and failed before gate bodies.",
+      "decision": "ACCEPTED_TEST_PROCEDURE_DEFECT",
+      "resolution": "The attempt-0008 verifier records an explicit parent_identity_unavailable boundary only after exact controller and accessible-prefix verification; LOCK passed with the full boundary evidence.",
+      "candidate_change": false
+    },
+    {
+      "criticism": "Attempt-0007 process metadata capture misapplied ManagementDateTimeConverter and lost its first PID.",
+      "decision": "ACCEPTED_TEST_PROCEDURE_DEFECT",
+      "resolution": "All five attempt-0008 records use Start-Process PID/StartTime/ExitCode evidence and bind exact native FILETIME identities.",
+      "candidate_change": false
+    },
+    {
+      "criticism": "Attempt-0007 RESULT.json had two extra root fields.",
+      "decision": "ACCEPTED_REPORT_ENVELOPE_DEFECT",
+      "resolution": "Attempt-0008 RESULT.json has exactly the eight controller-supported root keys and was accepted by the stable controller.",
+      "candidate_change": false
+    },
+    {
+      "criticism": "Attempt-0008 final self-audit initially treated PowerShell's null output for clean git status as dirty.",
+      "decision": "PRESENTATION_ONLY_VETO_RERUN",
+      "resolution": "The same read-only audit immediately established zero status entries; ROOT independently confirmed all four Git identities clean. No gate or artifact changed.",
+      "candidate_change": false
+    },
+    {
+      "criticism": "RESULT.json aggregates the five exact stable IDs into three summary checks rather than duplicating five per-ID checks.",
+      "decision": "VETO_REPORT_REWRITE",
+      "resolution": "The controller-valid result schema requires exact check object shapes, not stable-ID check names; TEST_REPORT.json contains all five IDs in exact order with individual process evidence. Rewriting a valid result would add risk without information gain.",
+      "candidate_change": false
+    },
+    {
+      "criticism": "The candidate contains preexisting ignored bytecode from earlier executor activity.",
+      "decision": "VETO_CLEANUP_OR_PRODUCT_CHANGE",
+      "resolution": "AUTH proved the preexisting bytecode set was unchanged and attempt-0008 created none; deleting ignored historical executor residue is not a product or C2 gate requirement.",
+      "candidate_change": false
+    }
+  ],
+  "superseded_attempt": {
+    "attempt": "attempt-0007",
+    "root_triage_sha256": "d8ebb1fe262f7cf481ea5f4b612a6d07ba9689b01bea7cb55d9c32ad8736f9a7",
+    "attempt_record_sha256": "73f0e2a6bc292119712b6bbe085804bce5f7c71e720d2b389fb1c5ad2922b9b0",
+    "history_preserved": true
+  },
+  "outcome": "PASS",
+  "decision": "ACCEPT_C2_AND_UNLOCK_FRESH_C3_ATTEMPT"
+}

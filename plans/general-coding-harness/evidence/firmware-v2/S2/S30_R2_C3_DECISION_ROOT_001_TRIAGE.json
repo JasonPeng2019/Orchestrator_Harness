@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\S30.R2-C3-DECISION-ROOT-0001\\.agent-workspace\\FINDINGS.json",
+  "findings_sha256": "b0f1ec9c5d455d69e841395a5baef93057845142152673fb933fe0421a3aa215",
+  "decisions": [
+    {
+      "id": "S30-R2-F01",
+      "decision": "ACCEPT",
+      "rationale": "The existing fixture places the signed decision below broker.root, so it cannot distinguish the reproduced external evidence-root rejection from the repaired behavior. One deterministic host-only regression directly covering the valid external decision path protects the exact acceptance-blocking behavior with negligible maintenance and no product expansion.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Adapt the focused retained-session controller test surface so one valid signed decision is stored outside broker.root, reaches authorization derivation and retained execution, and proves the existing decision path/hash binding; add no production change, path abstraction, unrelated matrix, MCP launch, or hardware action."
+    }
+  ]
+}

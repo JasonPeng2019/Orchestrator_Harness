@@ -1,0 +1,156 @@
+{
+  "schema": "firmware-v2-c3-host-rehearsal-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0003",
+  "accepted_at_utc": "2026-08-05T23:55:03Z",
+  "candidate_commit": "c6999d173c344b317a918df91619308fd9f93f63",
+  "c1": {
+    "id": "fd4aa79b-d081-4a7b-b232-9ba963ddbc92",
+    "lock_sha256": "a08d01f855a314ee0d113b71af9ad2ffe6f1718cddbaa7fcda1bd0d5f3d429e0",
+    "validation_sha256": "b626bfffb83e8c41ef9d913e34c96fad069e0a9d56acc360c9c6820c32d9f2f3",
+    "authorization_sha256": "b6577b616bc5295b2c6390222d2086b2839152ad7dec7485afab892f9233a0f1"
+  },
+  "c2": {
+    "attempt": "attempt-0013",
+    "attempt_record_sha256": "96dfb40006cf74e162f8d92e3abad48ce61528b12a5db5b364608b1de5286737",
+    "root_acceptance_sha256": "95665660e7c6f72600b1ca8d4e3a8efb267d61c9942c52d27a89089a0b56ff8a"
+  },
+  "governing_hashes": {
+    "goal_sha256": "9ef9bdb24b913f1ed2b15b7c80f28139705da823296ccd6f341a562a9948f547",
+    "spec_sha256": "70ba5e876e120466f03899fd826d439c1d0cc0dc01c5235e5950dc54a1d27cc6",
+    "roadmap_sha256": "fb8d60d76c8217f75d6a6a9d69965c7817e8c2bf0c560bac18c8a0ed3ab3af49",
+    "readiness_sha256": "e357862e985d61efcf9f38727fe4ca8a718961b4e02bd404dac56d99cb88455c",
+    "plan_sha256": "79ebc3de0d6506ce8ec5ab242db9810be527a6c07b1e9bb100f3c73827520af7"
+  },
+  "dependency_predecessors": {
+    "accepted_rehearsal_attempt_0002": {
+      "root_acceptance_sha256": "4b2d1fdc74f018dbeb6cc143318b1b7a4e4cb47c0a1bed786a40fc217c0d75c6",
+      "reused": false,
+      "reason": "Its candidate, C1, C2, and watcher-lifecycle dependency fingerprint differs from the operative attempt-0003 selection."
+    },
+    "physical_attempt_0009": {
+      "root_failure_classification_sha256": "eddb475e4660c1436f19796e95c37448bc9f17aabc24b44e3336f98811494fed",
+      "root_closeout_sha256": "4f0442451a6642670b30b00c4bafbf1f72c35ddfe63cd325503fbcf5c02add8e",
+      "topology_shutdown_sha256": "48a63aadf9eb48e3ba757ec87d77de5b326096877046a30761b8076285db74cc",
+      "credited": false,
+      "disposition": "PRESERVED_NONACCEPTABLE"
+    }
+  },
+  "attempt_record": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c3-rehearsal\\attempt-0003\\ATTEMPT_RECORD.json",
+    "sha256": "11c05c7867895850525729c1ccd083d66c9702a450418fdbae1da28e9e84f8d8"
+  },
+  "current_artifacts": {
+    "selection": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C3.RH.D1-0003\\.agent-workspace\\REHEARSAL_SELECTION.json",
+      "sha256": "418f26b7d7280eaabad883ca4027f3738e6ddf00cab689b573d75e07d14091b5"
+    },
+    "watcher_lifecycle_fixture": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C3.RH.D1-0003\\.agent-workspace\\watcher_lifecycle_rehearsal.py",
+      "sha256": "10749c4eb89a5d758930be8ddc5fdc3304de3e9f45358526483b764a31dfc96f"
+    },
+    "findings": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C3.RH.D1-0003\\.agent-workspace\\FINDINGS.json",
+      "sha256": "4f32f32a77b2f074e31145749756beea520d3621f27274bcdeec80ba9d47ecf7"
+    },
+    "test_report": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C3.RH.D1-0003\\.agent-workspace\\TEST_REPORT.json",
+      "sha256": "d30114514e3d3cd2f5cadbc92b881bb8dd23392512a875899bfbb7ed4c373b32"
+    },
+    "rejected_result": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C3.RH.D1-0003\\.agent-workspace\\RESULT.pre-shape-correction.json",
+      "sha256": "71c262058921fede697a4614df68000474862d141103303e2a7c006d1c59830b"
+    },
+    "result": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C3.RH.D1-0003\\.agent-workspace\\RESULT.json",
+      "sha256": "34d68b2628f37414f0394ead1770ff9316334470ea535cd805f224139b2fbd04"
+    },
+    "closed_controller_status": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C3.RH.D1-0003\\.agent-workspace\\status.json",
+      "sha256": "2d7ff63216d8d35597e2f83bc2499c0d23d510036bf5149e0f566174c80b49d9"
+    }
+  },
+  "root_audit": {
+    "selection_hash_valid": true,
+    "candidate_dependency_hashes_checked": 10,
+    "external_dependency_hashes_checked": 9,
+    "dependency_hash_mismatches": 0,
+    "recordability_preflight_green": true,
+    "fixture_frozen_before_recordability_preflight": true,
+    "recordability_preflight_before_selected_set": true,
+    "all_seven_initial_ids_green": true,
+    "all_thirteen_tests_passed": true,
+    "complete_initial_set_before_classification": true,
+    "pooled_correction_performed": false,
+    "selected_id_rerun_count": 0,
+    "all_eight_process_record_hashes_valid": true,
+    "all_native_creation_identities_present": true,
+    "all_exact_process_identities_absent": true,
+    "all_stdout_and_stderr_hashes_valid": true,
+    "all_obligations_mapped_green": true,
+    "candidate_findings_validator_passed": true,
+    "findings_empty": true,
+    "candidate_result_validator_passed": true,
+    "controller_result_gate_valid": true,
+    "strict_utf8_without_bom": true,
+    "candidate_exact_and_clean": true,
+    "mcp_server_exact_and_clean": true,
+    "stable_runner_exact_detached_and_clean": true,
+    "lane_exact_and_clean": true,
+    "c1_hashes_current": true,
+    "c2_acceptance_current": true,
+    "registry_hash_current": true,
+    "governing_hashes_current": true,
+    "correction_jsonl_command_records": 12,
+    "correction_jsonl_test_executions": 0,
+    "claims_after_controller_exit": 0,
+    "surviving_exact_processes": 0,
+    "no_write_scan_runs_discovered": 16,
+    "no_write_scan_live_lanes_helpers_mcps_claims_requests_signals_conflicts_or_errors": 0,
+    "mcp_launched": false,
+    "candidate_service_started": false,
+    "target_repository_created": false,
+    "hardware_accessed": false,
+    "physical_attempt_0010_absent": true,
+    "physical_certification_claimed": false
+  },
+  "pre_lock_fixture_authoring": {
+    "direct_trials": 2,
+    "outcomes": [
+      "FAIL",
+      "PASS"
+    ],
+    "first_failure_was_real_and_preserved": true,
+    "minimal_fixture_only_correction": "Use GetExitCodeProcess and require STILL_ACTIVE before treating the exact helper PID/create-time identity as present.",
+    "selected_stable_id_credit": false,
+    "product_candidate_mcp_hardware_or_external_action": false,
+    "disposition": "ACCEPT"
+  },
+  "administrative_correction": {
+    "same_lane_same_thread": true,
+    "classification": "result_envelope_checks_object_instead_of_required_list",
+    "controller_correctly_rejected_initial_result": true,
+    "rejected_result_sha256": "71c262058921fede697a4614df68000474862d141103303e2a7c006d1c59830b",
+    "final_result_sha256": "34d68b2628f37414f0394ead1770ff9316334470ea535cd805f224139b2fbd04",
+    "raw_identity_evidence_complete": true,
+    "tests_rerun": false,
+    "selected_ids_rerun": [],
+    "operative_meaning_changed": false
+  },
+  "criticism_disposition": {
+    "accepted": [
+      "Physical attempt-0009 exposed two concrete gaps in the prior rehearsal selection: evolved-target seed immutability and the blocking watcher-helper lifecycle. Attempt-0003 added only those exact host-only obligations.",
+      "The first direct local-fake authoring trial exposed a concrete exited-process identity check error in the new lane-local watcher fixture. One minimal fixture-only correction was made before freeze and before the mandatory recorder preflight; the failed trial is preserved and receives no stable-ID credit.",
+      "The stable controller correctly rejected the terminal RESULT whose checks field was an object. The same thread corrected only that result-envelope shape with zero test executions or selected-ID reruns."
+    ],
+    "vetoed": [
+      "No candidate, server, policy, contract, C1, C2, registry, tracked test, or stable-runner change was warranted by rehearsal evidence.",
+      "No new watcher framework, second observer, duplicate guard, broad suite, safeguard run, target allocation, MCP launch, or hardware action was admitted.",
+      "No selected stable ID or green dependency was rerun solely for pre-lock fixture authoring, command errors, read-only attribute restoration, or the result-envelope correction."
+    ]
+  },
+  "decision": "ACCEPT_HOST_ONLY_C3_REHEARSAL_AND_ADMIT_FRESH_PHYSICAL_C3_ATTEMPT_0010",
+  "physical_c3_admitted": true,
+  "physical_certification": false,
+  "outcome": "PASS"
+}

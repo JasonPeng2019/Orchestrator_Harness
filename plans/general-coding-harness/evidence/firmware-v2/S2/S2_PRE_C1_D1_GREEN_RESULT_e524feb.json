@@ -1,0 +1,44 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-pre-c1-executor-006",
+  "branch": "firmware/v2-s2-d1",
+  "commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+  "outcome": "PASS",
+  "summary": "The sole invalidated D1 stable ID ran exactly once in a fresh bounded Python process and passed naturally in 3.547 seconds with exit code 0, OK, and zero skips/expected failures/unexpected successes. Joined with ROOT's SHA-256-verified 25-test green credit, D1 is 26/26 PASS. No other test ran; no hardware or MCP was accessed; tracked Git state is clean.",
+  "checks": [
+    {
+      "name": "selective invalidated-ID rerun",
+      "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_dynamic_route_plan_validation_ready_uart_and_terminal_contract -v",
+      "outcome": "PASS",
+      "summary": "1/1 fresh ID passed with a natural zero exit, no timeout, no skips, no expected failures, and no unexpected successes."
+    },
+    {
+      "name": "joined D1 credit",
+      "outcome": "PASS",
+      "summary": "The ROOT-preserved 25-test credit matches SHA-256 935c71c592153d161e894a23691f3dd55be9b7e33d108566b3dcf4e245278652; joined D1 is 26/26 PASS."
+    },
+    {
+      "name": "findings gate",
+      "outcome": "PASS",
+      "summary": "FINDINGS.json uses the exact required identity and contains no findings."
+    },
+    {
+      "name": "per-test process cleanup",
+      "outcome": "PASS",
+      "summary": "The fresh test process exited naturally; no PID termination was needed and no exact test process remains."
+    },
+    {
+      "name": "exact current tip and tracked-worktree cleanliness",
+      "command": "git branch --show-current; git rev-parse HEAD; git status --porcelain",
+      "outcome": "PASS",
+      "summary": "Branch firmware/v2-s2-d1 and HEAD match e524feb14ef8a84b31a613a6ddc5bd1fc2491df7; tracked Git state is clean."
+    },
+    {
+      "name": "no-MCP/no-hardware boundary",
+      "command": "selective host-only rerun and post-run boundary review",
+      "outcome": "PASS",
+      "summary": "No MCP/server, pyOCD, serial, probe, flash, reset, debug, RF, lease, or physical hardware operation occurred."
+    }
+  ]
+}

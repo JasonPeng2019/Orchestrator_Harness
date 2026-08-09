@@ -1,0 +1,48 @@
+{
+  "schema": "firmware-v2-c2-root-retry-authorization/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "authorized_at_utc": "2026-08-05T13:32:05Z",
+  "same_lock": {
+    "c1_lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "c1_lock_sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "thread_id": "019fd1fd-83a3-7ad0-8370-a544c08c7c6e",
+    "worker_invocation_id": "c2-d1-006"
+  },
+  "authorized_retry": {
+    "stable_id": "F-C2-LOCK-001",
+    "retry_suffix": "retry-005",
+    "maximum_fresh_processes": 1,
+    "required_launch": "python.exe .agent-workspace/supervise_retry005.py",
+    "only_verifier_changes": [
+      "Add retry-005 to the argparse retry-suffix choices.",
+      "Replace [System.Management.ManagementDateTimeConverter]::ToDateTime($_.CreationDate).ToUniversalTime().ToFileTimeUtc() with $_.CreationDate.ToUniversalTime().ToFileTimeUtc()."
+    ],
+    "bounded_supervisor_change": "Create supervise_retry005.py as a structural copy of supervise_retry004.py with only retry-004 constants changed to retry-005.",
+    "required_artifact_correction": "Preserve the executor's current-claim audit criticism but correct TEST_REPORT so the exact claim held while RUNNING_CODEX is not residue; bind the correction to ROOT_RETRY_004_TRIAGE and its post-exit zero-claim observation.",
+    "required_unchanged_mechanisms": [
+      "Fail-closed PowerShell process-enumeration return-code check.",
+      "Persisted-status/resource-claim PID-plus-creation identity binding.",
+      "Exact current controller parent-chain exclusion.",
+      "Relevant-process and foreign-claim predicates.",
+      "Supervisor initialized-before-spawn evidence, PID-plus-creation capture, wait, timeout, and finally behavior."
+    ],
+    "pre_spawn_static_checks": [
+      "Prove retry-005 is admitted and the DMTF converter call is absent.",
+      "Execute the corrected enumeration command without running a stable ID; require exit 0 and an exact live controller identity equal to the current claim owner.",
+      "Prove all identity, process-scan, claim-scan, and LOCK assertion markers are intact.",
+      "Prove retry-004/005 supervisors are structurally identical after retry normalization.",
+      "Prove no retry-005 process/stdout/stderr artifact exists before spawn."
+    ]
+  },
+  "forbidden": {
+    "rerun_green_ids": true,
+    "source_or_locked_input_edits": true,
+    "mcp_or_hardware_access": true,
+    "identity_or_process_predicate_rewrite": true,
+    "second_retry_005_spawn": true,
+    "classification_of_current_live_claim_as_residue": true
+  },
+  "decision": "AUTHORIZE_EXACTLY_ONE_RETRY_005_AFTER_DATETIME_AND_AUDIT_CORRECTIONS"
+}

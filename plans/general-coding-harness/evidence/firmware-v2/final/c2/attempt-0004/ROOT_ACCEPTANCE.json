@@ -1,0 +1,94 @@
+{
+  "schema": "firmware-v2-c2-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "accepted_at_utc": "2026-08-05T06:09:00Z",
+  "attempt_record": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0004\\ATTEMPT_RECORD.json",
+    "sha256": "8e7afbcd02b0f96a330c8b1a259c573c63ce11607d2162d73574934ef6c89471"
+  },
+  "root_triage": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0004\\ROOT_TRIAGE.json",
+    "sha256": "1c10ca6aa2b964f181781b1d238921ea3694cfcec76c2ea7a7eaf7e819a5dfaa"
+  },
+  "retry_triage": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0004\\ROOT_RETRY_TRIAGE.json",
+    "sha256": "1caaeb58e91212a7154c6a1893aacb02ea9ce0718e7fd43e9354aa651604a047",
+    "diagnostics": 8,
+    "all_classified_as_test_execution_or_procedure_errors": true,
+    "candidate_findings": 0,
+    "locked_input_changes": 0
+  },
+  "c1": {
+    "lock_id": "97ab7b9e-48a4-4ba0-93dc-55c724e9682c",
+    "lock_sha256": "a72d30f6f6788edbc639fd90f8174ee78a84d006ab70f9a5712bf64ec3302eb1",
+    "validation_sha256": "96a070864535d807aac1406def45df9ff91835164a81a5f0cb23c188ff265a37",
+    "checksum_matches": true,
+    "locked_path_hash_references_valid": "38/38",
+    "governing_hashes_unchanged": true,
+    "candidate_and_server_inputs_unchanged": true
+  },
+  "governing_hashes": {
+    "goal": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "generalization_spec_2": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "implementation_roadmap_2": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "execution_readiness_2": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66",
+    "execution_plan_2": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"
+  },
+  "executor": {
+    "thread_id": "019fd074-2a7b-7a03-890d-6b969e560d4f",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority",
+    "controller_exit_code": 0,
+    "controller_result_valid": true,
+    "root_findings_validation_passed": true,
+    "root_result_validation_passed": true,
+    "claims_released": true,
+    "worktree_clean": true
+  },
+  "root_checks": {
+    "findings_exact_six_key_shape": true,
+    "findings_count": 0,
+    "result_exact_eight_key_shape": true,
+    "result_check_exact_three_key_shapes": "5/5",
+    "test_report_path_hash_references_valid": "26/26",
+    "assigned_ids": 5,
+    "passed_ids": 5,
+    "failed_ids": 0,
+    "skips_or_xfails": 0,
+    "preserved_verifier_diagnostics": 8,
+    "protected_baseline_ids_compared_without_execution": 248,
+    "registry_green_groups": 23,
+    "registry_unique_green_ids": 146,
+    "registry_invalidations": 0,
+    "registry_explicit_hash_valid_evidence_credits": 64,
+    "registry_permitted_inheritance_edges": 6,
+    "registry_total_evidence_credits": 70,
+    "green_ids_rerun_after_pass": 0,
+    "active_resource_claims": 0,
+    "surviving_managed_test_processes": 0,
+    "c2_broker_roots": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "identities": {
+    "stable_runner_commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "stable_runner_clean_detached": true,
+    "candidate_commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+    "candidate_branch": "firmware/v2-candidate",
+    "candidate_clean": true,
+    "mcp_server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "mcp_server_branch": "firmware/v2-mcp-candidate",
+    "mcp_server_clean": true,
+    "execution_lane_commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+    "execution_lane_clean": true
+  },
+  "classification": {
+    "candidate_harness_failure": false,
+    "watcher_failure": false,
+    "c1_invalidation": false,
+    "ordinary_executor_correction": true
+  },
+  "decision": "C3_UNLOCKED",
+  "next_gate": "Allocate fresh C3 attempt-0001, bind it to this C1/C2 pair, then launch fresh Sol-high-priority F.C3.O and separate Terra-medium-priority read-only F.C3.W. ROOT-IM supervises and does not orchestrate target work."
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\S30.R1-C3-DECISION-ROOT-0001\\.agent-workspace\\FINDINGS.json",
+  "findings_sha256": "7810935b30d5f3f024679aaa19ad0d24c60f4244cce26414bf058cfaa7aaff63",
+  "decisions": []
+}

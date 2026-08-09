@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S23_C3_JOINED_REVIEW_FINDINGS_0da070c.json",
+  "findings_sha256": "557493e72718703eef1ef533f6bbddaa82452a4da04f040c7aa07aa35eacfc60",
+  "decisions": [
+    {
+      "id": "S23.R3-C3-001",
+      "decision": "ACCEPT",
+      "rationale": "The registered controller Popen handle and exact launch identity are already available, yet the PASS predicate does not bind the terminal status to them. That lets unattributed status/result evidence reach target acceptance and limitation credit. Adding the missing equality at the existing reap boundary and one mismatch regression is materially cheaper and safer than accepting provenance-incomplete physical acceptance; no broader isolation mechanism is required.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Capture the controller status creation identity at candidate-controlled launch, require the terminal status PID and creation identity to equal that captured registered identity before PASS, and assert a mismatch remains FAIL and unmergeable."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.D2",
+  "worker_invocation_id": "s2-d2-pre-c1-executor-002",
+  "role": "test_executor",
+  "commit": "a79e51b9d89b917d537abef0f7cd18ccd61afcf7",
+  "findings": [
+    {
+      "id": "S2.D2-001",
+      "classification": "FUNCTIONALITY_BREAKING",
+      "title": "Server-limitation admission rejects every structurally valid call-chain reference",
+      "affected_requirement": "The reopened limitation/target shard must accept a closed, hash-bound limitation evidence graph and create the limitation record exactly once.",
+      "evidence": {
+        "file": "firmware_acceptance/kit.py",
+        "lines": "429-434, 494-496",
+        "detail": "record_server_limitation() requires each call_chain item to have path, sha256, and stage, then passes the full item to _verify_limitation_reference(). That helper requires the reference key set to be exactly path and sha256, so every valid call-chain item is rejected before the limitation evidence can be admitted. The exact regression is exercised by orchestrator_harness/tests/test_firmware_acceptance_kit.py:183-187."
+      },
+      "reproduction_and_impact": "The exact authorized command ran 20 tests and errored in FirmwareAcceptanceKitTests.test_server_limitation_create_once_has_causal_and_c3_evidence with AdmissionError: limitation call chain reference is not closed. The fixture supplies the required {path, sha256, stage} chain shape; the implementation's exact-key helper rejects it deterministically. Consequently a valid pinned-server limitation cannot be recorded, and the reopened limitation path cannot reach its create-once and causal-evidence assertions.",
+      "smallest_fix": "Validate the chain item's path and sha256 fields while permitting its required stage discriminator, or pass a path/sha256-only projection to the generic reference helper and retain the explicit stage-shape check. Preserve the exact stage/order validation and add the authorized create-once test as the regression gate.",
+      "implementation_complexity": "Low: localized reference-shape handling in the limitation admission path.",
+      "regression_risk": "Low: the correction would affect only the already-closed limitation call-chain validation and would retain hash, path, stage, identity, and ordering checks.",
+      "verification_cost": "Low: rerun the same two authorized unittest modules; no MCP, hardware, server, or physical resource is required.",
+      "cost_benefit_reasoning": "This is a directly demonstrated functionality break in the assigned acceptance kit, blocking all valid server-limitation admissions. A narrow shape-handling correction has materially lower complexity, regression risk, and verification cost than leaving the required limitation route unusable.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

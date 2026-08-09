@@ -1,0 +1,32 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "lane_id": "S3.D1",
+  "worker_invocation_id": "s3-d1-001",
+  "commit": "bbc8ad94c32f3ddad4a54afd4c1a2d51ac4bb11e",
+  "root_decision": "ACCEPT_EMPTY_FINDINGS_AND_EXACT_SHARD_PASS",
+  "findings_count": 0,
+  "stable_runner_consumed_finding_gate": false,
+  "root_independently_validated_artifact": true,
+  "independent_validation": {
+    "expected_ids": ["S3-DUAL-001", "S3-DUAL-002", "S3-DUAL-003"],
+    "actual_id_count": 3,
+    "exact_order_match": true,
+    "all_outcomes": "PASS",
+    "skips": 0,
+    "expected_failures": 0,
+    "unexpected_successes": 0,
+    "tracked_lane_clean": true,
+    "resource_locks_empty_after_exit": true,
+    "controller_state": "CODEX_EXITED",
+    "controller_result_state": "VALID"
+  },
+  "artifact_hashes": {
+    "findings_sha256": "6d907610f1a8deccb5ed7fd700557fe28575f9b2076d8d0ee790e3cbe13d6c4a",
+    "result_sha256": "7087ce0114175866c9fe89f2cad1ce3ead321141b81628d3953e25d19078bfaa",
+    "test_report_sha256": "88c8c151ce6d7dbe0eec184f42ee6c7bc9a6e54eb5f0e3a855cc70d372986a50"
+  },
+  "cost_benefit_rule": "Only codebase-breaking, functionality-breaking, or demonstrably worth-the-effort findings may route repair; no finding was submitted.",
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false,
+  "accepted": true
+}

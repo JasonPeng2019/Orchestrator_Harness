@@ -1,0 +1,12 @@
+{
+  "candidate_commit": "79345bc9a8541468d604eb2cd2ca908b73a91c2b",
+  "result": "pass",
+  "source": "S1.A1 exact-commit test execution; no redundant D1 rerun",
+  "tests": [
+    "orchestrator_harness.tests.test_coding_lane_controller.CodingLaneControllerTests.test_minimal_coding_invocation_has_no_firmware_contract",
+    "orchestrator_harness.tests.test_coding_lane_controller.CodingLaneControllerTests.test_unknown_schema_and_prompt_integrity_or_confinement_are_rejected",
+    "orchestrator_harness.tests.test_coding_lane_controller.CodingLaneControllerTests.test_start_records_identity_events_and_configured_codex_argv",
+    "orchestrator_harness.tests.test_coding_lane_controller.CodingLaneControllerTests.test_start_without_thread_is_failure_and_resume_identity_mismatches_are_rejected",
+    "orchestrator_harness.tests.test_coding_lane_controller.CodingLaneControllerTests.test_resume_rejects_child_thread_mismatch"
+  ]
+}

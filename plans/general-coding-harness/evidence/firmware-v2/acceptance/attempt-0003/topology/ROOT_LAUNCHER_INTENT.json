@@ -1,0 +1,34 @@
+{
+  "schema": "firmware-c3-root-launcher-intent/v1",
+  "attempt_id": "attempt-0003",
+  "owner": "ROOT-IM",
+  "launcher": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0003\\.agent-workspace\\root_launch.py",
+    "sha256": "ca6824fa330b0bdf3b304ed96845447e7e220bb0cd200f4114f27a0a634cd1f7"
+  },
+  "orchestrator_prompt_sha256": "6bcf41ec2fb9d48c57b4264beb110ff68b951fa6ac1ac7d97f7e49ec9564891b",
+  "watcher_prompt_sha256": "f2b94ee854378928a97af784950052f8f351bb4b7e23b3c7b176dad95fa315d3",
+  "orchestrator_support_sha256": {
+    "ack_identity.py": "c8afd75ec50bb42115fde345624fd7360fd12d8d3f8eeb49b960c54463381000",
+    "c3_request.py": "987fe0557ff34782d02fbf0211d155dc2ce3d2be12693203899409d215a0cb4b",
+    "sign_payload.py": "70cb9804fb1dbc08850e6e75caa647b41852f3e9773c66e69265d0e05d61da0c",
+    "signer_service.py": "3df7a7137d2a29c8447771fc0b9303a7ef9b0025a6233be8e5eeb81facc0a115"
+  },
+  "watcher_loop_sha256": "a672728b5a4a2ee57965708ea38f235abb40b48bcf8b1c7a166b629f1132bc93",
+  "prelaunch": {
+    "candidate_exact_clean": true,
+    "server_exact_clean": true,
+    "governing_hashes_current": true,
+    "c1_and_c2_references_valid": true,
+    "attempt_resource_claims": 0,
+    "relevant_processes": 0,
+    "target_and_targets_roots_absent": true,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "requested_roles": {
+    "orchestrator": {"model": "gpt-5.6-sol", "reasoning_effort": "high", "service_tier": "priority"},
+    "watcher": {"model": "gpt-5.6-terra", "reasoning_effort": "medium", "service_tier": "priority"}
+  },
+  "issued_utc": "2026-08-05T10:42:00Z"
+}

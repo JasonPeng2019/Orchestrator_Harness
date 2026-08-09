@@ -1,0 +1,26 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-004",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "8ed3a025b3f19a2b4b9c9ecca09c9e2edba23683",
+  "outcome": "PASS",
+  "summary": "S2R1-C0-ATTEMPT0003-STDERR-001 is closed: stderr persistence failures are retained and fail closed through cleanup_error; no admissible remaining finding in the one-file correction.",
+  "checks": [
+    {
+      "name": "candidate identity and tracked-worktree cleanliness",
+      "command": "git rev-parse HEAD; git status --porcelain",
+      "outcome": "PASS"
+    },
+    {
+      "name": "ROOT triage and one-file stderr failure-path correction audit",
+      "command": "read-only evidence review; git diff ea659be5d32a3eb24c6fe6e0c765f15209727dff..8ed3a025b3f19a2b4b9c9ecca09c9e2edba23683",
+      "outcome": "PASS"
+    },
+    {
+      "name": "automated tests",
+      "command": "not run by this reviewer (ROOT triage records its separate focused check)",
+      "outcome": "NOT_RUN"
+    }
+  ]
+}

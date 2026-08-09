@@ -1,0 +1,44 @@
+{
+  "schema": "firmware-v2-dependency-map-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "recorded_utc": "2026-08-04T19:07:56.4258376Z",
+  "candidate_commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+  "source": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C2.A1-0001/.agent-workspace/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP.json",
+    "sha256": "fdcefc1a511d8d452238a66a3daa5f6833e8698b69d4c4051ffd2b9c87fe2798"
+  },
+  "immutable_copy": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_e524feb.json",
+    "sha256": "fdcefc1a511d8d452238a66a3daa5f6833e8698b69d4c4051ffd2b9c87fe2798",
+    "byte_identical": true
+  },
+  "author_evidence": {
+    "lane_id": "F.C2.A1",
+    "worker_invocation_id": "c2-a1-001",
+    "thread_id": "019fce23-8b6b-7e50-bec1-5aca2f627511",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority",
+    "findings_sha256": "4d5185c21298cbf74063cba2a5dc6b30a28a22641f696f7516972d185293fe86",
+    "corrected_result_sha256": "8ebb0eb56be7f2000898c1759afa44c6f7a483400d791515a714a99410b355ba",
+    "original_invalid_result_sha256": "b1eb9d5f5779685273a2cb0f6e5a7ee912ba0252af0fe32e0bb7cdba54b7ec8a",
+    "same_thread_envelope_correction_only": true
+  },
+  "root_checks": {
+    "candidate_clean_exact_tip": true,
+    "baseline_to_candidate_changed_paths": 41,
+    "modified_preexisting_shared_paths": 6,
+    "modified_baseline_test_paths_additive_only": 2,
+    "protected_git_result_ids_selected": 9,
+    "direct_finding_gate_ids_selected": 5,
+    "selective_execution_ids": 14,
+    "selected_ids_already_green": 0,
+    "deleted_protected_ids": 0,
+    "weakened_protected_oracles": 0,
+    "candidate_findings_validator_accepted_empty_findings": true,
+    "tests_executed_by_author": false,
+    "mcp_or_hardware_access": false
+  },
+  "decision": "ACCEPT",
+  "rationale": "The supplement closes F-C2-FINDING-001 with the smallest conservative shared-code map. Its 14 uncovered IDs are dependency-justified and none has an existing exact-tip independent executor credit; all other green IDs remain preserved."
+}

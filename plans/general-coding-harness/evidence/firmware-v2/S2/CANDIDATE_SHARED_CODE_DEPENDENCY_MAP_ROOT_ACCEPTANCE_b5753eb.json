@@ -1,0 +1,43 @@
+{
+  "schema": "firmware-v2-root-dependency-map-acceptance/v1",
+  "owner": "ROOT-IM",
+  "accepted_utc": "2026-08-05T04:42:00Z",
+  "candidate": {
+    "joined_branch": "firmware/v2-s23-a2-c3-final",
+    "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+    "clean": true,
+    "reserved_candidate_not_yet_advanced": "659dd03e2aa7159090c8e0e20123b1fec1749f90"
+  },
+  "map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_b5753eb.json",
+    "sha256": "d257d7ae8bb4037da309ea7efad8afd94e755dc5f41dd595738e59cf2fa18ecb"
+  },
+  "root_checks": {
+    "prior_complete_map_hash_valid": true,
+    "prior_root_acceptance_hash_valid": true,
+    "delta_changed_paths": 9,
+    "mapped_new_c3_unit_ids": 5,
+    "freshly_revalidated_existing_doc_ids": 2,
+    "retained_green_ids": 138,
+    "current_green_ids_after_reconciliation": 145,
+    "selected_for_additional_execution": 0,
+    "deleted_protected_ids": 0,
+    "modified_protected_baseline_tests": 0,
+    "weakened_oracles": 0,
+    "declared_evidence_references": 10,
+    "all_declared_evidence_hashes_valid": true,
+    "joined_tip_full_review_findings_empty": true,
+    "joined_tip_cp04_passed_once": true,
+    "joined_tip_docs_passed_two_of_two_once": true,
+    "active_resource_claims": 0,
+    "surviving_managed_test_or_agent_processes": 0
+  },
+  "immutable_mcp_fixture": {
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "clean": true,
+    "launched": false,
+    "edited": false
+  },
+  "decision": "ACCEPT_CURRENT_JOINED_TIP_MAP",
+  "rerun_policy": "No green ID is rerun unless a mapped production, test, configuration, oracle, or governing dependency changes."
+}

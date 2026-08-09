@@ -1,0 +1,39 @@
+{
+  "schema": "firmware-v2-user-directed-pre-c1-semantic-change/v1",
+  "recorded_at_utc": "2026-08-04T13:18:32.9722479Z",
+  "phase": "S2_REOPENED_PRE_C1",
+  "c1_exists": false,
+  "hardware_authorized": false,
+  "hardware_accessed": false,
+  "candidate_before_repair": "42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+  "mcp_server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+  "directives": [
+    "Treat the pinned BYO Firmware MCP server as an immutable compatibility fixture rather than a product target.",
+    "For a proven pinned-server limitation, use the strongest safe partial-MCP, focused pinned-component, or synthetic candidate-boundary substitute and report the unexecuted physical behavior as not certified.",
+    "Retain one MCP Server Run across separately authorized setup, validation, plan, action, observation, and returning-state calls.",
+    "Define closed session aggregation, transition, normal-close, abort, exact process cleanup, and claim-release authority before implementation resumes."
+  ],
+  "governing_hashes_before_session_clarification": {
+    "goal.md": "ad4dcec854dd55a5f55814d4b090ec162ca043af0c721e2f42819b0f158c2880",
+    "active_docs/GENERALIZATION_SPEC_2.md": "f82362781e7b95fac95ba56a1f93c4a723884c3207153a0f6e91fe6b68bcc1e3",
+    "active_docs/IMPLEMENTATION_ROADMAP_2.md": "70c4912175931b78bdd5f938a65e232f0bc0d8cdab27bd098b255a895d360c3b",
+    "plans/general-coding-harness/EXECUTION_PLAN_2.md": "d21142d77b15900029ee6c721505acd22a684fd9d68aaab1be582c7fc3829823",
+    "active_docs/EXECUTION_READINESS_2.md": "856cc742defd0133a35ce8f592873f507384335396f69adef0d5685f10425ff1"
+  },
+  "governing_hashes_after": {
+    "goal.md": "6173c7fb3ce09f2727efbf0d7bb24b73e772f01bb255e594ed380b07cc379e09",
+    "active_docs/GENERALIZATION_SPEC_2.md": "3001e9fa12da51072543ddd2f6a16b0048d63e393131f92b90e63defd9c09181",
+    "active_docs/IMPLEMENTATION_ROADMAP_2.md": "1ec50dfea3166ba286973975aa88582460b8452d1e6cd0dde83cd6eefcea8476",
+    "plans/general-coding-harness/EXECUTION_PLAN_2.md": "1d1ec4a52e13549b7f710c50027105d13f51111171f42cb9ab0c57baba82ed03",
+    "active_docs/EXECUTION_READINESS_2.md": "0ef7a73d9fb1be38d240f7cede9b5be50114d7d0c161e22ff5c3dff0c9eaf6d0"
+  },
+  "invalidation_decision": {
+    "attempt_0006": "already superseded by ROOT pre-C1 admission; preserved immutable",
+    "c1": "not applicable; never created",
+    "physical_acceptance": "not applicable; never authorized or started",
+    "s2": "current policy/session dependencies invalidated and folded into the open repair",
+    "unrelated_green_tests": "preserved because their dependency fingerprints are unchanged"
+  },
+  "server_source_policy": "read-only; no edit, recommit, repair, or repin",
+  "next_action": "Resume the same persistent S2.P coder through the pinned stable runner, then run only dependency-invalidated review/test work and a brand-new C0."
+}

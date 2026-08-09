@@ -1,0 +1,99 @@
+{
+  "schema": "firmware-v2-registry-reconciliation/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+  "prior_candidate_commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+  "registry": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+    "sha256": "4439ffb1b83fd6d5c7a524d3ba249c141237a1058ef9aeab9ea6e063d3cf9db5",
+    "green_groups": 25,
+    "unique_green_ids": 163,
+    "invalidated_groups": 0,
+    "evidence_credits": 81,
+    "hash_valid_evidence_credits": 75,
+    "explicit_inheritance_only_credits": 6
+  },
+  "prior_registry": {
+    "sha256": "fd6e2e238e1404cd8fc39a84ca40b10b14da520366641fe5cbccf568ff9cd899",
+    "green_groups": 24,
+    "unique_green_ids": 157,
+    "invalidated_groups": 0,
+    "evidence_credits": 76
+  },
+  "delta": {
+    "added_green_group": "S2::c3-controller-identity-watcher-correlation-joined-tip-reconciliation",
+    "added_green_ids": [
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_observation_brackets_opaque_identity_and_accepts_same_or_direct_shape",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_windows_redirector_requires_exact_python_module_argv",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_observation_rejects_incomplete_non_direct_and_invalid_initial_projection",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_recovery_validates_before_persisting_and_allows_null_or_changed_launcher_identity",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_rejection_keeps_worktree_and_channels_when_launcher_exits_but_controller_survives",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s26_a1_terminal_popen_without_captured_identity_reaps_and_completion_keeps_legacy_exit_code",
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s26_a1_oracle_aborts_for_correlated_raw_and_recovery_rejections_after_status_mutation",
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s26_a1_oracle_contains_unrelated_or_mutated_evidence"
+    ],
+    "removed_superseded_green_ids": [
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s25_a1_oracle_closed_authentic_contradiction_and_hash_evidence",
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s25_a1_oracle_contains_malformed_wrong_identity_and_noncontradictions"
+    ],
+    "freshly_revalidated_existing_ids": 15,
+    "added_evidence_credits": 5,
+    "new_invalidations": [],
+    "duplicate_green_groups": [],
+    "duplicate_green_ids": []
+  },
+  "dependency_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_cace866.json",
+    "sha256": "f12aa53dcd063bda4f4db20260b5e8c93ea6c076343eb301867ef4254bfd1037",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_cace866.json",
+    "root_acceptance_sha256": "9065fe2d1952f351149772ef5e541e5efac6943f8cfc8dee169269c1b50db186"
+  },
+  "fresh_green_evidence": {
+    "current_tip_execution_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S26.D2-C3-IDENTITY-0001/.agent-workspace/TEST_EXECUTION.json",
+    "current_tip_execution_sha256": "aef66a06b326b08f4fc7f811e30760ee6c1086c128e28d4bca1d4ef925290a2d",
+    "current_tip_output_sha256": "6e0c528e0f9d334c8a0f355bd08885c998bf7149f002198125ff441d706e54ca",
+    "exact_byte_watcher_execution_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S26.D1-C3-IDENTITY-0001/.agent-workspace/TEST_EXECUTION.json",
+    "exact_byte_watcher_execution_sha256": "078d00a00e6c97a1b8a329fec86550a97284f5f58cdd5bce478667662c91313a",
+    "root_admission_path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S26.D2-C3-IDENTITY-0001/.agent-workspace/ROOT_ADMISSION.json",
+    "root_admission_sha256": "eccacdbef7dc27a9241d6481e42ef46b32c0343e810339cabee19dd1158cc5d9",
+    "tests_covered": 23,
+    "skips": 0,
+    "xfails": 0,
+    "failures_remaining": 0,
+    "errors": 0,
+    "resource_warnings": 0,
+    "outcome": "PASS"
+  },
+  "audit": {
+    "all_declared_evidence_paths_exist": true,
+    "all_75_declared_evidence_hashes_match": true,
+    "six_hashless_entries_are_prior_explicit_inheritance_edges": true,
+    "all_8_new_test_ids_covered_at_current_or_exact_byte_tip": true,
+    "all_15_affected_prior_green_ids_freshly_revalidated_at_current_tip": true,
+    "two_superseded_watcher_ids_removed": true,
+    "unaffected_green_ids_rerun": false,
+    "reviewer_and_tester_criticisms_preserved_and_dispositioned": true,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "criticism_disposition": {
+    "accepted": [
+      "Six ROOT identity/recovery/oracle findings were repaired and independently re-reviewed.",
+      "R2's stale retained cleanup/recovery consumer criticism was repaired across every affected fixture.",
+      "D1's fixed-argc test-double criticism was repaired test-only and proven by D2."
+    ],
+    "corrected_evidence_only": [
+      "D1's lane/lane_id and cost-benefit boolean inconsistency.",
+      "A1's undeclared command keys inside result checks."
+    ],
+    "rejected": [
+      "A production response to the test-double defect.",
+      "A broad process identity framework or shared helper change.",
+      "A redundant watcher-oracle rerun after exact-byte green completion."
+    ],
+    "remaining_actionable_findings": []
+  },
+  "decision": "REGISTRY_RECONCILED_ONCE_FOR_ACCEPTED_S26_BATCH",
+  "outcome": "PASS",
+  "created_at": "2026-08-05T12:35:00Z"
+}

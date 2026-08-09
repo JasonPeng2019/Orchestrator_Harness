@@ -134,7 +134,12 @@ def main() -> int:
                 print("no task worktrees")
         else:
             _print_record(close_task(args.task, root))
-    except (OSError, RuntimeError, subprocess.CalledProcessError, json.JSONDecodeError) as exc:
+    except (
+        OSError,
+        RuntimeError,
+        subprocess.CalledProcessError,
+        json.JSONDecodeError,
+    ) as exc:
         parser.exit(1, f"worktree-task: {exc}\n")
     return 0
 

@@ -1,0 +1,69 @@
+{
+  "schema": "firmware-v2-c2-root-retry-result-triage/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "retry_suffix": "retry-004",
+  "triaged_at_utc": "2026-08-05T13:32:05Z",
+  "artifacts": {
+    "result_sha256": "3aa82f7026fc9337fc66f350ac166711e5a5c0891d5f127e2412fc6250eb97ef",
+    "test_report_sha256": "232ef7c3a365b8ba0cce06981cb01fc02568f0e6905d4c1f28decbf247a92896",
+    "findings_sha256": "0a1b2390547dfc8d05413e266285c99c6db2482234f38fcac17ac7baba277214",
+    "closed_retry_jsonl_sha256": "f2b5d76e1dabc0d9fc805095035dfd3943e4c9a591cd14963781b353e8ee5e11",
+    "closed_status_sha256": "3a342eaf74a316153367f85fcff0b31c38e8891ff562651df4b6be21934c940a",
+    "process_metadata_sha256": "90e3b439b9aa4e1ac191d84fa7a163c43799a5d68a709884967f92c3794664e6",
+    "stdout_sha256": "1e8d32650a255477217438c6758e2fd004dd239433ece4b06156d1f308c3ee48",
+    "stderr_sha256": "c319a581e39650ad296e3b4e1e6673ff0edfa81a5271d1d6ba2d0839bc47f5aa"
+  },
+  "facts": {
+    "process_started": true,
+    "pid": 189760,
+    "creation_identity": "windows-filetime:134304100609390190",
+    "exit_observed": true,
+    "exit_code": 1,
+    "timeout": false,
+    "metadata_initialized_before_spawn": true,
+    "lock_assertions_began": false,
+    "failure_stage": "PROCESS_ENUMERATION",
+    "failure_message": "AssertionError: process scan failed"
+  },
+  "accepted_criticism": {
+    "id": "C2-D1-PROCESS-DATE-001",
+    "description": "The lane-local verifier called ManagementDateTimeConverter.ToDateTime on Win32_Process.CreationDate even though Get-CimInstance materialized that property as System.DateTime. The conversion raised ArgumentOutOfRangeException and the process enumeration returned 1 before identity binding or LOCK assertions.",
+    "root_reproduction": {
+      "creation_date_runtime_type": "System.DateTime",
+      "failing_converter_exit_code": 1,
+      "correct_direct_datetime_expression": "$_.CreationDate.ToUniversalTime().ToFileTimeUtc()",
+      "live_controller_direct_filetime": 134304099315868880,
+      "live_controller_claim_identity": "windows-filetime:134304099315868880",
+      "identities_equal": true
+    },
+    "candidate_finding": false,
+    "locked_input_change": false,
+    "bounded_correction": "Replace only the erroneous DMTF conversion expression with the direct System.DateTime UTC FILETIME expression; preserve the fail-closed return-code check and every identity/process predicate."
+  },
+  "executor_audit_criticism": {
+    "id": "C2-D1-AUDIT-CURRENT-CLAIM-001",
+    "description": "The executor labeled the exact current controller claim as residue while its controller was still RUNNING_CODEX. Its relative resource-lock scan also targeted the wrong directory. ROOT observed the claim file and its exact live PID-plus-creation owner during the audit, then observed controller/codex exit, zero held claims, zero claim files, and no surviving retry verifier after lane closure.",
+    "candidate_finding": false,
+    "artifact_publication_correction_required": true,
+    "post_exit": {
+      "controller_alive": false,
+      "codex_alive": false,
+      "held_claim_count": 0,
+      "resource_claim_file_count": 0,
+      "retry_verifier_alive": false
+    }
+  },
+  "root_checks": {
+    "prior_lock_failures_preserved": 5,
+    "green_ids_rerun": 0,
+    "report_referenced_hashes_valid": "60/60",
+    "candidate_and_server_clean": true,
+    "lane_clean": true,
+    "claims_released_after_controller_exit": true,
+    "surviving_test_processes": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "PRESERVE_PROCESS_ENUMERATION_FAIL_CORRECT_FALSE_CLAIM_AUDIT_AND_ALLOW_ONE_DATETIME_FIX"
+}

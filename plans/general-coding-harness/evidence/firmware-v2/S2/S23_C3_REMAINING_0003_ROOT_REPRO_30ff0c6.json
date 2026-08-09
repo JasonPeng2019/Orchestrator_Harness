@@ -1,0 +1,13 @@
+{
+  "schema": "firmware-v2-root-reproduction/v1",
+  "owner": "ROOT-IM",
+  "commit": "30ff0c677a14bbe7a7f0a73e9899002752fe0b2c",
+  "affected_id": "C3-CP-01-02",
+  "first_outcome": "REJECTED",
+  "claim_after_first_rejection": false,
+  "second_outcome": "REJECTED",
+  "dispatch_call_count_on_second": 1,
+  "claim_after_second": true,
+  "preserved_response": "REJECTED",
+  "conclusion": "A malformed request is rejected before admission is claimed. Reusing its ID with a valid request reaches dispatch once, then returns the earlier immutable rejection. This is a reachable hidden-side-effect and response-correlation defect, not only fixture drift."
+}

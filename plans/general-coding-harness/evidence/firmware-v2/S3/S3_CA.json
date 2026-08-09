@@ -1,0 +1,15 @@
+{
+  "schema": "firmware-v2-s3-checkpoint-a/v1",
+  "gate": "S3.CA",
+  "candidate_commit": "6325d6d5dec052274d35634ae943994226ecd3a9",
+  "product_branch": "firmware/v2-s3-product",
+  "product_clean": true,
+  "ordinary_static_review_closed": true,
+  "review_finding_count": 0,
+  "product_result_sha256": "4411e255fe5b9622d700d836ca62eed4e6dce4d69e006eec183cc9c238720e96",
+  "review_findings_sha256": "2b6ba5c8f19789ba9fad2a6430d2af47c1364e4d5593415963648c8d43c9fb3d",
+  "review_result_sha256": "88a70e269ad0ff4ee008e004ee202dc4e690b5946657f832686fde2b651d3cdf",
+  "next_lane": "S3.A1",
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false
+}

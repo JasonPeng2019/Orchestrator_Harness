@@ -1,0 +1,26 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-004",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "ea659be5d32a3eb24c6fe6e0c765f15209727dff",
+  "outcome": "FAIL",
+  "summary": "C0-FR1-003-002 (.env) is closed; C0-FR1-003-001 remains incomplete because stderr write/flush errors are silently converted into a retained partial-log success claim.",
+  "checks": [
+    {
+      "name": "candidate identity and tracked-worktree cleanliness",
+      "command": "git rev-parse HEAD; git status --porcelain",
+      "outcome": "PASS"
+    },
+    {
+      "name": "immutable C0 attempt-0003 findings/ROOT triage and requested production-delta audit",
+      "command": "read-only evidence review; git diff 1c9d16de9e56d1f5340777a81bf09c448dfe9f5c..ea659be5d32a3eb24c6fe6e0c765f15209727dff",
+      "outcome": "FAIL"
+    },
+    {
+      "name": "automated tests",
+      "command": "not run (requested read-only review)",
+      "outcome": "NOT_RUN"
+    }
+  ]
+}

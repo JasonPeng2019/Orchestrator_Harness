@@ -1,0 +1,91 @@
+{
+  "schema": "firmware-v2-root-join-acceptance/v1",
+  "owner": "ROOT-IM",
+  "accepted_utc": "2026-08-04T21:16:44.2743215Z",
+  "candidate": {
+    "branch": "firmware/v2-candidate",
+    "commit": "659dd03e2aa7159090c8e0e20123b1fec1749f90",
+    "clean": true
+  },
+  "c0_attempt": {
+    "attempt": "0009",
+    "findings_sha256": "a5586e6f379c00742c25b521c69fbabf176e16368572079c1a2e3a6826968a70",
+    "result_sha256": "dec7778b7972197a78ffe32fe8e430ec8e451b0a8ef5932367f33e12320750fe",
+    "thread_id": "019fce88-4c1d-76b0-b3ef-04027f6b4fda",
+    "accepted_finding": "F-C0-FR1-009-001",
+    "root_triage_sha256": "b1b5eb7f9b19c16d6ee0622c4e04f1b967e99a6069a35df0285df310b90f15d8",
+    "root_reproduction_sha256": "abe85808b573baf8c12353299bf9373b5806d406eb82da2bce2bbcd26ce79340"
+  },
+  "production": {
+    "commit": "21aeadc108e4666f18e00f8ad424fa8ec55ff891",
+    "findings_sha256": "a3fd76fccfad6cb4cff6e67a12bf60f2fb60d7d830a13eb44acfe5b15a4e9073",
+    "result_sha256": "0c7ffbad5a41c2fa924c240abc6632ab06331fefca094ff6ad3fcde8963b9206",
+    "thread_id": "019fcd5f-176c-7221-bc37-0ce1f5a0b4a4",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "default",
+    "result_valid": true,
+    "claims_released": true
+  },
+  "fresh_review": {
+    "lane_id": "S2.R5",
+    "commit": "21aeadc108e4666f18e00f8ad424fa8ec55ff891",
+    "findings_sha256": "8e83919f8ce9f8dab19bcc4f2f0dc88490379d95a3eba62e1edf1c7bc8d8a248",
+    "result_sha256": "83734e1b90ff5e9d1106849a90f2a77e43a0be9ecce53c902d32436ba613388d",
+    "thread_id": "019fce8f-e294-7372-b678-bf4692625744",
+    "production_green": true,
+    "accepted_test_only_finding": "F-S2-R5-0009-001",
+    "root_coverage_triage_sha256": "51b162a0fbb87505d3a1ba14a925c1511f1986ee297295296e15e5e854b4fbbb",
+    "result_valid": true,
+    "claims_released": true
+  },
+  "test_author": {
+    "lane_id": "S2.A4",
+    "commit": "659dd03e2aa7159090c8e0e20123b1fec1749f90",
+    "findings_sha256": "7af0e34ab23533a70e4910a1cb5e2516e877263db2965fb8ca4148ca0880cbb4",
+    "plan_sha256": "bfe04c971be138937d6a433d84be0c7f4284b9721fbce246c2cbe492aafcee44",
+    "result_sha256": "82f87cb6aedf1037a5023af2ed417f72e984d858c1943556bae4a6d2ce1a937a",
+    "thread_id": "019fce54-557a-7070-9ca9-8c97fb508814",
+    "selected_exact_ids": 1,
+    "findings_empty": true,
+    "result_valid": true,
+    "claims_released": true
+  },
+  "test_executor": {
+    "lane_id": "S2.D5",
+    "commit": "659dd03e2aa7159090c8e0e20123b1fec1749f90",
+    "findings_sha256": "7bd02af8b8df6499dc94a9abe437be5202327645f13e0292c44cea79bef6fa9c",
+    "report_sha256": "75c68d569fe47a859e640a98ad8a05578a5d75d1dadd65af2fd9124afbe95722",
+    "result_sha256": "d640984bfc1e470c40dae0a5578a6911bec32cd0503290e1223ee5192eb3e931",
+    "thread_id": "019fce99-5624-7750-b6bf-3360bb4a7a65",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "default",
+    "executed": 1,
+    "passed": 1,
+    "skipped": 0,
+    "findings_empty": true,
+    "result_valid": true,
+    "claims_released": true
+  },
+  "dependency_and_registry": {
+    "map_sha256": "9dd4fd25edbce63ce86f5f1d82834734a434ff59f95b7c2d930fc8fc237ee7d6",
+    "map_root_acceptance_sha256": "f897211f9c750bd079d703a26eef030a71d0f6d1952527c2fe9091c03560abab",
+    "registry_sha256": "4eff6f5e46ae33056dc40f27474eb7c85b322f2392bf52b5fbbd9a356fd11c3d",
+    "green_groups": 21,
+    "unique_green_ids": 140,
+    "invalidated_groups": 0,
+    "evidence_credits": 56,
+    "all_declared_hashes_valid": true
+  },
+  "protected_state": {
+    "original_general_harness_tests_substituted": false,
+    "unaffected_green_tests_rerun": false,
+    "mcp_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "mcp_clean": true,
+    "mcp_launched": false,
+    "mcp_edited": false,
+    "hardware_accessed": false
+  },
+  "decision": "ACCEPT_JOIN_AND_REQUIRE_FRESH_C0"
+}

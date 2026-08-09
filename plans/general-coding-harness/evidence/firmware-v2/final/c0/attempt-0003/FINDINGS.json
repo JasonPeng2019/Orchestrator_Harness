@@ -1,0 +1,55 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-003",
+  "role": "reviewer",
+  "commit": "1c9d16de9e56d1f5340777a81bf09c448dfe9f5c",
+  "findings": [
+    {
+      "id": "C0-FR1-003-001",
+      "category": "CODEBASE_BREAKING",
+      "affected_ids": ["C8", "C31", "C33", "C49", "C67"],
+      "evidence": [
+        "firmware_acceptance/kit.py:282-297 declares a per-lane stderr_path at lanes/<lane>/logs/mcp.stderr.log.",
+        "firmware_acceptance/controller.py:101-105 launches the MCP server with stderr=subprocess.PIPE, and controller.py:200-208 drains it only into the in-memory _StdioTransport.stderr_bytes buffer.",
+        "firmware_acceptance/controller.py:166-176 records only stderr_sha256; no production code opens or writes config['stdio']['stderr_path'] (repository search finds its sole production occurrence in kit.py:297).",
+        "EXECUTION_READINESS_2.md:126-131 and EXECUTION_PLAN_2.md:280-284 require separately captured MCP stderr as the server log; IMPLEMENTATION_ROADMAP_2.md C33 requires each physical controller to own a distinct log root."
+      ],
+      "observed": "The executable controller creates a log directory and advertises mcp.stderr.log, but discards all server stderr after hashing up to 64 KiB in memory. No server-log file is retained under the lane log root on either successful or failed calls.",
+      "expected": "Each candidate-owned MCP process must have its stderr captured to the declared confined per-lane server-log file while preserving MCP-only stdout framing.",
+      "reproduction": "Static trace at the sealed commit: controller_config returns stdio.stderr_path; _launch instead selects a stderr PIPE; _StdioTransport._stderr appends chunks to stderr_bytes; close_and_join returns a digest only. There is no open/write/copy operation for the declared path, so an MCP error cannot create the required server log.",
+      "impact": "A real C3 MCP launch can fail or emit diagnostics with no retained server log, leaving C3/C4 unable to inspect the server-side cause or prove the declared log-root ownership. The configuration therefore represents a log boundary that the executable controller does not actually provide.",
+      "no_fix_consequence": "Physical acceptance evidence can be incomplete or non-diagnosable precisely when an MCP failure requires classification, and C33/C49/C67 cannot be honestly certified from the resulting lane artifacts.",
+      "smallest_fix": "Open the already-confined config stdio.stderr_path exclusively in the controller and tee the drained stderr bytes to it (including failure/cleanup paths); retain the bounded digest as supplemental evidence and add a fake-stdio success/failure assertion that the file exists with the captured bytes.",
+      "complexity": "Low: the path is already constructed and confined; this is one bounded transport-output change plus focused host tests.",
+      "regression_risk": "Low: stdout framing, policy admission, launch command, and target-worker isolation remain unchanged; only the missing stderr sink is added.",
+      "verification_cost": "Low: run the controller/kit/host shard with fake stdio and inspect the resulting lane-local log file; no MCP server or hardware is needed.",
+      "alternatives": "A hash of transient in-memory bytes is not a server log and cannot supply missing diagnostics. Deferring capture to an operator would violate the controller-only ownership and leave an untracked physical-capability path.",
+      "cost_benefit": "The small, isolated persistence fix restores an explicitly required per-lane evidence boundary and failure-diagnosis artifact, with substantially less risk and cost than accepting an uncertifiable C3 log path.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "C0-FR1-003-002",
+      "category": "CODEBASE_BREAKING",
+      "affected_ids": ["C20", "C31", "C33", "C34", "C39"],
+      "evidence": [
+        "EXECUTION_READINESS_2.md:133-138 states that the pinned server loads .env from its working directory or checkout, and requires the launcher to reject unreviewed .env files before binding a lane.",
+        "firmware_acceptance/kit.py:77-86 validates only the pinned worktree HEAD and porcelain cleanliness; kit.py:282-297 then sets the server working_directory to that pinned checkout.",
+        "firmware_acceptance/controller.py:101-105 launches in config['working_directory']; controller.py:211-220 scrubs inherited environment but does not inspect or reject a .env file that the launched server can load.",
+        "No production occurrence of '.env' exists in firmware_acceptance/, so there is no candidate-owned rejection path or test for this required boundary."
+      ],
+      "observed": "The controller can launch the pinned MCP checkout while an ignored or otherwise unreviewed .env in that checkout remains present. Its own clean-Git check does not establish the absence or review of such a file, and it launches exactly from the directory the server is documented to load.",
+      "expected": "Before configuration or launch, the candidate controller must fail closed on an unreviewed .env in every server-working-directory/check-out location the pinned MCP server can load, then record only the reviewed effective routing environment.",
+      "reproduction": "Static trace at the sealed commit: validate_pinned_server checks rev-parse and git status; controller_config supplies the pinned checkout as cwd; _launch uses that cwd. Neither path checks Path(cwd)/'.env' (nor any allowed reviewed identity), despite the authoritative readiness contract stating that this server loads it.",
+      "impact": "An unreviewed server .env can alter physical routing or other server behavior outside the signed proposal, selected lane template, and scrubbed inherited environment. The controller can then record an approved STM/NRF lane while the MCP server consumes configuration not admitted by its evidence chain.",
+      "no_fix_consequence": "C3 cannot prove that only the reviewed probe/target/profile environment reached the physical MCP process; a stale local .env can make a supposedly lane-bound call use unreviewed server configuration, undermining C31/C33/C34/C39.",
+      "smallest_fix": "Before validate_pinned_server/controller_config returns launch configuration, reject any .env at the pinned MCP checkout or selected server working root unless an exact C1-locked reviewed-file path/hash mechanism is deliberately implemented; add a host-only ignored-.env rejection test.",
+      "complexity": "Low: a regular-file/link-safe presence check at the already pinned root and one focused test.",
+      "regression_risk": "Low: an authorized clean MCP worktree has no need for ambient .env configuration because the controller supplies the reviewed allowlisted environment explicitly.",
+      "verification_cost": "Low: exercise configuration against a temporary or mocked pinned-root .env condition and rerun the existing controller/kit/host shard; no server launch or hardware access is required.",
+      "alternatives": "Relying on git cleanliness is insufficient for ignored local configuration, and environment scrubbing cannot neutralize a file the server loads after process start. Allowing it would require a broader C1-locked review-and-hash mechanism, not a lower-risk workaround.",
+      "cost_benefit": "A small fail-closed prelaunch check prevents an unreviewed configuration channel from changing physical-server behavior. Its safety and evidence benefit outweigh the contained implementation and verification cost.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

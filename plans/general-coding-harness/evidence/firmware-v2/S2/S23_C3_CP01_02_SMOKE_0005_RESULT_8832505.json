@@ -1,0 +1,35 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S23.D1",
+  "worker_invocation_id": "s23-d1-c3-smoke-005",
+  "branch": "firmware/v2-s23-d1-c3-smoke-0005",
+  "commit": "88325059f8ae74993b85a9ab989d98de298a5bb2",
+  "outcome": "PASS",
+  "summary": "The exact C3-CP-01-02 replay/response-barrier smoke ran once and passed; no qualifying findings were established, tracked Git state is clean, and no test-owned process, temporary state, worktree, or resource claim remains.",
+  "checks": [
+    {
+      "name": "C3-CP-01-02 stable selection",
+      "command": "python -m unittest orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier -v",
+      "outcome": "PASS",
+      "summary": "1 test ran once; 1 passed, 0 failed, 0 errors, 0 skips, 0 expected failures, and 0 unexpected successes."
+    },
+    {
+      "name": "findings gate",
+      "command": "validate_findings .agent-workspace/FINDINGS.json",
+      "outcome": "PASS",
+      "summary": "Closed orchestrator-review-findings/v1 with exact lane identity and zero qualifying findings."
+    },
+    {
+      "name": "tip and tracked cleanliness",
+      "command": "git rev-parse HEAD; git branch --show-current; git status --porcelain=v1",
+      "outcome": "PASS",
+      "summary": "Branch firmware/v2-s23-d1-c3-smoke-0005 remains at 88325059f8ae74993b85a9ab989d98de298a5bb2; tracked Git state is clean."
+    },
+    {
+      "name": "test process, temporary state, worktree, and claim cleanup",
+      "command": "inspect exact test-owned processes, temporary paths, lane worktrees, and resource claims after teardown",
+      "outcome": "PASS",
+      "summary": "The test-owned temporary directory was removed by teardown; no test-owned process, additional worktree, or claim-like runtime state remains."
+    }
+  ]
+}

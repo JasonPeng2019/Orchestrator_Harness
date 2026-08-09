@@ -1,0 +1,29 @@
+{
+  "schema": "firmware-v2-registry-reconciliation/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+  "registry_path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+  "registry_sha256": "db58fc51a8c6b2e4e09815b92e9ecdd217aff503c54ab22449c74286104e740a",
+  "green_groups": 18,
+  "unique_green_groups": 18,
+  "green_test_ids": 123,
+  "unique_green_test_ids": 123,
+  "invalidated_groups": 0,
+  "evidence_credits": 44,
+  "evidence_validation": {
+    "referenced_paths_exist": true,
+    "all_declared_sha256_values_match": true
+  },
+  "changes": [
+    "Advanced the registry from 42a9d708 to exact candidate e524feb1.",
+    "Added the completed pre-C1 controller/host and kit/target green groups and exact current stable IDs.",
+    "Added immutable R1, R2, D1, D2, and ROOT join-acceptance credits.",
+    "Removed one obsolete mutable S2.A2 workspace-result credit whose original bytes had been superseded; the current immutable D2 target report retains the same target-test evidence without rerunning it."
+  ],
+  "protected_original_suite": {
+    "preserved": true,
+    "rerun": false,
+    "reason": "The S2 repair changes only firmware_acceptance production/seed code and firmware-acceptance tests; no protected original general-harness dependency changed."
+  },
+  "outcome": "PASS"
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "firmware-v2-mcp-discovery-v1",
+  "server_worktree": "plans/general-coding-harness/runtime/firmware-v2/worktrees/mcp-candidate",
+  "server_revision": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+  "command": [
+    "uv",
+    "run",
+    "--project",
+    "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/worktrees/mcp-candidate",
+    "--locked",
+    "pyocd-debug-mcp"
+  ],
+  "server_environment": {
+    "BYO_MCP_ARTIFACT_ROOT": "plans/general-coding-harness/runtime/firmware-v2/preflight/mcp-routing-exact-attempt-0003/artifacts",
+    "PYTHONUTF8": "1",
+    "PYOCD_PROBE_UID": null,
+    "PYOCD_TARGET": null
+  },
+  "global_user_configuration_used": false,
+  "unreviewed_dotenv_present": false,
+  "thread_id": "019fca23-b477-7742-acd1-23e5a84d5723",
+  "server_run_id": "run-20260804T001932Z-e5213525",
+  "server_started_at_utc": "2026-08-04T00:19:32.397294Z",
+  "boards": {
+    "STM-A": {
+      "board_id": "stm_a",
+      "route": "setup",
+      "status": "setup_routes_ready",
+      "stable_probe_uid": "066FFF514988525067233337",
+      "current_serial_route": "COM12"
+    },
+    "STM-B": {
+      "board_id": "stm_b",
+      "route": "setup",
+      "status": "setup_routes_ready",
+      "stable_probe_uid": "0668FF514988525067213913",
+      "current_serial_route": "COM17"
+    },
+    "NRF-A": {
+      "board_id": "nrf_a",
+      "route": "setup",
+      "status": "setup_routes_ready",
+      "stable_probe_uid": "683710208",
+      "current_serial_route": "COM16",
+      "serial_usb_identity": "000683710208"
+    },
+    "NRF-B": {
+      "board_id": "nrf_b",
+      "route": "setup",
+      "status": "setup_routes_ready",
+      "stable_probe_uid": "683854191",
+      "current_serial_route": "COM15",
+      "serial_usb_identity": "000683854191"
+    }
+  },
+  "mismatches": [],
+  "hardware_mutation": false,
+  "evidence": {
+    "stdout_path": "plans/general-coding-harness/runtime/firmware-v2/preflight/mcp-routing-exact-attempt-0003/stdout.jsonl",
+    "stdout_sha256": "272303dfd8d3da383cc344c602b7f1135ff87549a7e0aee3ac66256b0886c844",
+    "final_message_path": "plans/general-coding-harness/runtime/firmware-v2/preflight/mcp-routing-exact-attempt-0003/final-message.txt",
+    "final_message_sha256": "37d1eb782b217fb1fe81fc60b2e918772e71e703cbdc8251093e163c33ffd2aa"
+  },
+  "environment_repairs": [
+    "Native git worktree move corrected initial non-reserved path names without changing commits.",
+    "uv sync --locked --reinstall rewrote ignored virtual-environment trampolines that retained the old absolute path.",
+    "PYTHONUTF8=1 prevents pyOCD Windows console rendering from failing on Unicode status glyphs."
+  ]
+}

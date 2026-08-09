@@ -1,8 +1,8 @@
 {
   "include": [
-    "harness-in-progress/orchestrator_harness",
-    "harness-in-progress/harness_common",
-    "harness-in-progress/harness_watcher_implementation",
+    "stable-general-harness-runner/orchestrator_harness",
+    "stable-general-harness-runner/harness_common",
+    "stable-general-harness-runner/harness_watcher_implementation",
     ".codex/scripts",
     ".codex/tests"
   ],
@@ -14,8 +14,8 @@
     "references"
   ],
   "extraPaths": [
-    "harness-in-progress",
-    "harness-in-progress/orchestrator_harness/tests/support",
+    "stable-general-harness-runner",
+    "stable-general-harness-runner/orchestrator_harness/tests/support",
     ".codex/scripts"
   ],
   "typeCheckingMode": "standard",

@@ -1,0 +1,23 @@
+{
+  "schema": "firmware-v2-read-only-planning-audit/v1",
+  "audit_id": "S2-SESSION-CONTRACT-ADVERSARIAL-AUDIT-001",
+  "agent": "/root/s2_session_contract_audit",
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "medium",
+  "role": "reviewer",
+  "mutation_performed": false,
+  "tests_run": false,
+  "mcp_or_hardware_access": false,
+  "verdict": "GREEN",
+  "validated_boundaries": [
+    "C3-HARNESS owns session creation, process, transport, claim, and lifecycle while O/target workers have no control access.",
+    "SESSION_ID, SESSION_OPEN hash, consecutive sequence, predecessor result, and locked-policy transition join separately signed calls.",
+    "The locked method policy alone supplies transition authority.",
+    "Dynamic plan, permission, action, and fallback data require a new proposal and independent signed O decision.",
+    "Normal close requires O's signed last-result/phase-bound close decision; only the controller drains, exits, reaps, and releases.",
+    "Failure cleanup is controller-owned, bounded, records abort, invents no hardware cleanup call, and claims no clean successful return.",
+    "Closed or aborted sessions cannot accept calls, restart under the same ID, resume, or be reused."
+  ],
+  "stale_resume_coordinate": false,
+  "resume_decision": "Executable without inventing authority; resume the same S2.P coder from 42a9d708 for only the accepted policy/session repair."
+}

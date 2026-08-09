@@ -1,0 +1,60 @@
+{
+  "schema": "firmware-v2-root-join-acceptance/v1",
+  "root_role": "ROOT-IM",
+  "candidate_commit": "42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+  "decision": "ACCEPT_JOIN_AND_OPEN_FRESH_C0",
+  "accepted_repair": "Post-reap MCP stderr teardown now distinguishes natural EOF from forced stream closure, drains through EOF before certifying the log complete, and fails closed with a partial digest when the bounded fallback must force-close a blocked stream.",
+  "evidence": [
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0005/ROOT_TRIAGE.json",
+      "sha256": "4cdedf76c12399e1d00a18243da52667f1eeb3f440972633449ca0ec23f6b1f3"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_005_PRODUCT_RESULT_b956d50.json",
+      "sha256": "27d1683ab25ff1e02e866b4e919a60292def15157b5ad9e9a1414b7e16ef7683"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_005_STDERR_EOF_REVIEW_FINDINGS_b956d50.json",
+      "sha256": "467cd592ae1a20241272196302c14631a446a41d73c78ba1141cd92197937b02"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_005_STDERR_EOF_REVIEW_RESULT_b956d50.json",
+      "sha256": "c19930bf68eeb72c0a1d8f46c06aef756ab24ef14ad64b146219949b18ea87e7"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_005_STDERR_EOF_REVIEW_ROOT_TRIAGE.json",
+      "sha256": "0b928ab6368dedbf1a820d887b808ddf637cb513cbd0d6fef55371be3e0158d9"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_005_FORCED_CLOSE_CORRECTION_RESULT_d7ffe7d.json",
+      "sha256": "eaf3d85da5ff7356562ff4aca84a186814ac45013c08e543cf3dfe3d2d7cd395"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_005_REPAIR_CLOSURE_FINDINGS_d7ffe7d.json",
+      "sha256": "085b2a7e547d106699ab21e89e66b1a6800319563be42cfebea40fdad1caf8c0"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_005_REPAIR_CLOSURE_RESULT_d7ffe7d.json",
+      "sha256": "d109dc91b311fdd9feea232b1c8970bf6863ac468027d88473d968f29f88da8a"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_005_A1_RESULT_42a9d70.json",
+      "sha256": "e188d56adcfbd95821835a6ec0f747da6893b41f07763d2efc2ffc993467ce25",
+      "findings_sha256": "7b2960f22d00856fd91ff3c8c32e2ff919e24189a696c8fe794cd94e7d3f7826"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_005_D1_RESULT_42a9d70.json",
+      "sha256": "ef011df9394736e3ed069040e185b8884a08c59c19b74452fa7e4f9c3c89b8ea",
+      "findings_sha256": "9b285ac42e03435ebd64eaf5bfb0b9d909f6bd603bbe0e3b2f3c455d7f242369",
+      "test_report_sha256": "690798181d82b718b198a2517bead1878884fc627df1a93f6ed57dfae7a4738b"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_005_PRODUCT_CHAIN_RESULT_42a9d70.json",
+      "sha256": "12e221274061e93cfa356fe058911ee65b9c9bc0f3655e33073e3c118a86d94a"
+    }
+  ],
+  "test_summary": "A1 added deterministic natural-EOF and bounded forced-close regressions; independent Luna-high D1 passed all 32 current controller, kit, and host tests with zero failures, skips, findings, MCP access, or hardware access.",
+  "credit_summary": "Only firmware_acceptance/controller.py and two focused controller regressions changed. Every unrelated green ID remains dependency-valid and was not rerun.",
+  "boundary": "No MCP server, serial interface, probe, flash, reset, debug, RF, or physical hardware operation occurred; disposable checkouts and claims are absent.",
+  "accepted_at_utc": "2026-08-04T12:19:21Z"
+}

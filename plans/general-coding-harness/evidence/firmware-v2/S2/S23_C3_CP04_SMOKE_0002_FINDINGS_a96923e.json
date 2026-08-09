@@ -1,0 +1,32 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S23.D1",
+  "worker_invocation_id": "s23-d1-c3-smoke-002",
+  "role": "test_executor",
+  "commit": "a96923e95ecb1e8648f737b3d35efb21d9924c0b",
+  "findings": [
+    {
+      "id": "CP04-PROTECTED-SEED-DRIFT",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": [
+        "C3HarnessTests.test_c3_cp_04_disposable_target_assignment_and_fail_closed_acceptance",
+        "firmware_acceptance.c3_harness.C3Harness._assignment"
+      ],
+      "evidence": [
+        "At exact commit a96923e95ecb1e8648f737b3d35efb21d9924c0b, the exact CP04 selection ran once and raised AdmissionError('protected seed file drifted') at firmware_acceptance/c3_harness.py:274, immediately after git worktree add and before controller launch. The Windows lane inherits core.autocrlf=true; the freshly initialized disposable target has no local normalization setting, while the source repository marks the seed files eol=lf."
+      ],
+      "observed": "A clean materialized target assignment is rejected by _protected_seed_snapshot after worktree creation, producing 1 unittest error with no pass, skip, expected failure, or unexpected success.",
+      "expected": "The disposable assignment worktree preserves the protected seed bytes and read-only mode, reaches the synthetic controller launch, and allows CP04 to exercise fail-closed acceptance.",
+      "reproduction": "On Windows with inherited core.autocrlf=true, run once in a fresh attempt: python -m unittest orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_04_disposable_target_assignment_and_fail_closed_acceptance -v. The temporary target repository has no local normalization configuration, so git worktree add changes protected seed bytes and CP04 rejects them.",
+      "impact": "C3-HARNESS cannot launch a target worker for this supported Windows Git configuration because every clean disposable assignment that reaches protected-seed validation is rejected before launch.",
+      "no_fix_consequence": "CP04 remains red and the disposable target-assignment path remains unavailable on affected Windows installations, blocking acceptance of the candidate topology there.",
+      "smallest_fix": "Configure the freshly initialized disposable target repository locally for byte-stable seed checkout before committing or creating its worktree, without adding a sixth tracked seed file and without weakening hash or mode validation.",
+      "complexity": "LOW: one local Git normalization configuration in the existing disposable-target setup path.",
+      "regression_risk": "LOW: the change narrows checkout behavior for the temporary repository and preserves existing protected-seed hash and mode checks.",
+      "verification_cost": "LOW: run the one dependency-invalidated CP04 test in a fresh attempt; no aggregate suite is required for this correction.",
+      "alternatives": "Disable or override inherited core.autocrlf for the whole executor environment, which is broader and less reproducible; add a sixth tracked normalization file, which changes the protected seed contract; or relax hash or mode validation, which weakens the fail-closed boundary.",
+      "cost_benefit": "A small local configuration change restores the intended disposable-assignment behavior across the supported Windows Git trigger while retaining the existing integrity and immutability checks.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

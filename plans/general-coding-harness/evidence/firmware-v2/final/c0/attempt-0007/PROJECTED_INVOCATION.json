@@ -1,0 +1,40 @@
+{
+  "action": "start",
+  "codex": {
+    "approval_policy": "never",
+    "command": [
+      "codex",
+      "--dangerously-bypass-hook-trust"
+    ],
+    "config_overrides": [],
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "sandbox": "danger-full-access",
+    "service_tier": "priority"
+  },
+  "event_log_path": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/events/LANE_EVENTS.jsonl",
+  "exclusive_resources": [],
+  "lane_id": "F.C0.FR1",
+  "output_paths": {
+    "jsonl": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C0.FR1-0007/.agent-workspace/worker-c0-fr1-007.jsonl",
+    "last_message": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C0.FR1-0007/.agent-workspace/worker-c0-fr1-007.last-message.txt",
+    "status": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C0.FR1-0007/.agent-workspace/worker-c0-fr1-007.status.json",
+    "stderr": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C0.FR1-0007/.agent-workspace/worker-c0-fr1-007.stderr.log"
+  },
+  "phase": "review",
+  "prompt_path": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C0.FR1-0007/.agent-workspace/worker-prompt-c0-fr1-007.md",
+  "prompt_sha256": "2010e6352dfaefdeb5d98b797d11db2d6cbca5304921e46d5dc9af3c2de31cd6",
+  "repository": {
+    "base_commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+    "branch": "firmware/v2-c0-final-review-0007",
+    "common_dir": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.git/modules/harness-in-progress",
+    "merge_inputs": [],
+    "worktree_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C0.FR1-0007"
+  },
+  "resource_lock_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/resource-locks",
+  "run_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C0.FR1-0007",
+  "runtime_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2",
+  "schema": "orchestrator-coding-invocation/v1",
+  "task": "Fresh C0 final candidate review attempt 0007",
+  "worker_invocation_id": "c0-fr1-007"
+}

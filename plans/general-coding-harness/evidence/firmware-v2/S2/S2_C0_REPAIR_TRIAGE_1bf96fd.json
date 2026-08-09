@@ -1,0 +1,47 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "owner": "ROOT-IM",
+  "candidate_repair_commit": "1bf96fddf84fb35c5ef723e7f808b87818a9374f",
+  "review_artifacts": [
+    {
+      "lane": "S2.R1",
+      "worker_invocation_id": "s2-r1-004",
+      "findings_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R1/.agent-workspace/FINDINGS.json",
+      "findings_sha256": "c29b56e2c851a4e069a7a7403b416bf40b1c26155b30d2ec3b9ed6a8f276ac56",
+      "result_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R1/.agent-workspace/RESULT.json",
+      "result_sha256": "2ae97401a20bb8f4ddfb236cb4b10af4bed1339867ea6838cfeeeae38dac6b4d"
+    },
+    {
+      "lane": "S2.R2",
+      "worker_invocation_id": "s2-r2-004",
+      "findings_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R2/.agent-workspace/FINDINGS.json",
+      "findings_sha256": "b0243a71c87d6abe35e1a79816bf6f423bae24204f879f67de8fc824e3426ecd",
+      "result_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R2/.agent-workspace/RESULT.json",
+      "result_sha256": "1db6c7b6a59dcb36309badc65685f741217366e9bf97b14a198ae4619b987274"
+    }
+  ],
+  "identity_validation": {
+    "schema_lane_worker_role_commit": "PASS",
+    "tracked_review_worktrees_clean": true,
+    "pass_fail_finding_count_consistent": true,
+    "stable_runner_finding_gate_projection_caveat_applied": true
+  },
+  "decisions": [
+    {
+      "source_ids": ["S2R1-C0-EXECUTABLE-003", "S2R2-004-BOARD-MAPPING"],
+      "decision": "ACCEPTED_MERGED",
+      "category": "CODEBASE_BREAKING",
+      "reason": "Both independent reviews reproduce the same cross-board authority defect: claim/evidence identity can disagree with the lane template that selects the physical probe and target.",
+      "problem_versus_fix": "A signed claim could operate a different board, invalidating isolation and provenance. Exact template/fixture correlation before claim and before launch is localized, low-risk, and host-verifiable, so the demonstrated problem materially outweighs the implementation and verification cost.",
+      "smallest_sufficient_route": "S2.P validates the selected template against the locked fixture manifest and the closed call before claim acquisition and again before launch, with focused substitution tests.",
+      "owner_lane": "S2.P"
+    }
+  ],
+  "rejected_suggestions": [],
+  "test_invalidation": {
+    "reopen": ["S2 host/MCP/controller acceptance shard", "S2.A2.T1", "S2.A2.T2", "S2.A2.T3"],
+    "retain_green": ["19 protected general-coding shared-code IDs", "S1", "S3 documentation and operator IDs"],
+    "reason": "The repair changes only firmware acceptance controller/kit behavior and its direct tests; kit.py is an explicit dependency of all three S2 target-materialization IDs, while shared coding-controller dependencies are unchanged."
+  },
+  "hardware_or_mcp_activity": false
+}

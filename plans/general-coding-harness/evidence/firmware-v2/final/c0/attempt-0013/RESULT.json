@@ -1,0 +1,41 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-013",
+  "branch": "firmware/v2-c0-focused-review-0013",
+  "commit": "30ff0c677a14bbe7a7f0a73e9899002752fe0b2c",
+  "outcome": "PASS",
+  "summary": "Complete focused read-only C0 review of the qualifying test-only correction found no admissible findings.",
+  "checks": [
+    {
+      "name": "governing document hashes",
+      "outcome": "PASS",
+      "summary": "All five prior-C0 SHA-256 locks matched."
+    },
+    {
+      "name": "frozen delta scope",
+      "outcome": "PASS",
+      "summary": "Exact branch and tip matched; 3c862b9..30ff0c6 changes only the two specified host-test files."
+    },
+    {
+      "name": "C3 fixture identity consistency",
+      "outcome": "PASS",
+      "summary": "Diagnostic invocation/result/status use F.C3.A1 and substitute invocation/result/status use F.C3.P1; physical attempt and limitation lane fields remain STM-A."
+    },
+    {
+      "name": "protected production contracts",
+      "outcome": "PASS",
+      "summary": "No production code, operative contract, MCP fixture, hardware authority, protected original test, or production validation was changed."
+    },
+    {
+      "name": "runtime execution",
+      "outcome": "NOT_RUN",
+      "summary": "Not run as assigned; review was read-only and did not invoke tests, MCP, Codex children, or hardware."
+    },
+    {
+      "name": "findings gate",
+      "outcome": "PASS",
+      "summary": "Closed exact-identity reviewer findings artifact has an empty finding set."
+    }
+  ]
+}

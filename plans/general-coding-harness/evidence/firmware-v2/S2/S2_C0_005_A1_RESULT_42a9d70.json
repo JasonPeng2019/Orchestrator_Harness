@@ -1,0 +1,21 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.A1",
+  "worker_invocation_id": "s2-a1-005-canonical",
+  "branch": "firmware/v2-s2-a1-c0-005-canonical",
+  "commit": "42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+  "outcome": "PASS",
+  "summary": "Added focused deterministic stderr natural-EOF and forced-close regressions; no MCP or hardware operation occurred.",
+  "checks": [
+    {
+      "name": "controller test module",
+      "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_controller -v",
+      "outcome": "PASS"
+    },
+    {
+      "name": "test module compilation",
+      "command": "python -m py_compile orchestrator_harness/tests/test_firmware_acceptance_controller.py",
+      "outcome": "PASS"
+    }
+  ]
+}

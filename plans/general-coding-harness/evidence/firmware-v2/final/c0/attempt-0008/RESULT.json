@@ -1,0 +1,26 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-008",
+  "branch": "firmware/v2-c0-final-review-0008",
+  "commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+  "outcome": "FAIL",
+  "summary": "F-C0-FR1-001: executable UART policy admission is not default-deny for multiple locked scalar and nested constraints.",
+  "checks": [
+    {
+      "name": "candidate and immutable MCP fixture identity",
+      "outcome": "PASS",
+      "summary": "Candidate is clean at e524feb14ef8a84b31a613a6ddc5bd1fc2491df7; mcp-candidate is clean at f003f84a7df51cd8595a3203c62e225b21da2a22."
+    },
+    {
+      "name": "protected-baseline and dependency-evidence audit",
+      "outcome": "PASS",
+      "summary": "The 248-ID baseline has no deleted test path or weakened edited assertion; the accepted map, reconciliation, registry, and 14-ID executor report hashes reconcile."
+    },
+    {
+      "name": "default-deny UART admission source audit",
+      "outcome": "FAIL",
+      "summary": "evaluate_call omits declared UART scalar, safe-flag, and serial_exchange nested-schema enforcement; see F-C0-FR1-001."
+    }
+  ]
+}

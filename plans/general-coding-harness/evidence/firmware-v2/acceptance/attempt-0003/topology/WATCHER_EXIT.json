@@ -1,0 +1,46 @@
+{
+  "schema": "firmware-c3-watcher-exit/v1",
+  "attempt_id": "attempt-0003",
+  "owner": "ROOT-IM",
+  "normal_p4_exit": false,
+  "exit_reason": "ORDERED_ABORT_AFTER_REPRODUCIBLE_CANDIDATE_AND_WATCHER_DEFECTS",
+  "watcher_identity": {
+    "pid": 40084,
+    "created_utc": "2026-08-05T10:43:03.036017Z",
+    "thread_id": "019fd185-0468-76d1-b884-f9d213a96ab8",
+    "reaped": true,
+    "exit_code": null,
+    "exit_code_note": "The detached ROOT launcher did not retain an exit-code handle; JSONL ended in turn.completed, the final-message file was written, and the exact PID was absent at ROOT observation."
+  },
+  "helper_identity": {
+    "pid": 193152,
+    "created_utc": "2026-08-05T10:43:46.1928358Z",
+    "reaped": true
+  },
+  "launch": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\topology\\WATCHER_LAUNCH.json",
+    "sha256": "2191d87515910e75e568b65646fb8b5f213ab748f0e5326362b82529696d5331"
+  },
+  "terminal": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\watcher\\WATCHER_TERMINAL.json",
+    "sha256": "adc64ddeb6413e01a7f43c9c016afa457279c66673a9178032e2aa4ae917e711"
+  },
+  "report": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\watcher\\WATCHER_REPORT.md",
+    "sha256": "d9bb7f8cd15596d5e71f37e0d75b458d4ebc61105a52a34c24437c6161baffd2"
+  },
+  "abort": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\watcher\\ABORT_REQUIRED.json",
+    "sha256": "daa5fedfd06db8f2fa763bf5ead5f1207afb6690f8bbc2de12f403ca6692fd3b"
+  },
+  "captured_final_message": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0003\\.agent-workspace\\watcher\\watcher.last-message.txt",
+    "sha256": "f91f590f38b5e81f66248120b866c01ac4172c58c989ad1180352ab679eda987"
+  },
+  "captured_jsonl": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0003\\.agent-workspace\\watcher\\watcher.jsonl",
+    "sha256": "cd1b53ad28652845b7ff41c91b1854794c0f5d345283129d59429b8c355e7925",
+    "terminal_event": "turn.completed"
+  },
+  "observed_reaped_at_utc": "2026-08-05T11:10:18.0047118Z"
+}

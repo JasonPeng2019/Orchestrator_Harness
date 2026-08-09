@@ -1,0 +1,32 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "attempt": "0006",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-006",
+  "reviewer_thread_id": "019fccbc-c9ed-7bc2-b0a0-3e846cd17645",
+  "candidate_commit": "42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+  "governing_hashes": {
+    "goal.md": "6b281df2a032937b2ab69679ee96d9c75bada52cab295376261d87e89b174ecc",
+    "active_docs/GENERALIZATION_SPEC_2.md": "4fdb0fb031b9a0abc3169791bdb26ae546cc6d1302a6cb212a6f69a521c32ea9",
+    "active_docs/IMPLEMENTATION_ROADMAP_2.md": "1ba9d5833f6d9609ff9656f5d07af134e3789afe93bdcff13fe08b885bf473e9",
+    "plans/general-coding-harness/EXECUTION_PLAN_2.md": "e4fb236d806b391404a4914ed403b374dbbf441a7ad5769fc6e1eea36c596152",
+    "active_docs/EXECUTION_READINESS_2.md": "0bc90e7b6f0b4cfa1b97f7739d1ffd26f6e7993bdb15e7106468aaaf081a58bc"
+  },
+  "root_decision": "ACCEPT_GREEN_C0_AND_UNLOCK_C1",
+  "accepted_findings": [],
+  "findings_sha256": "b682956b59157b9d2ef3daea47a5f38afcbeaad4b2883669bf9b00f403943580",
+  "result_sha256": "dacbf25941d5df036cc274e7959cb6507f42a541c359503eb9d728eb1f51e965",
+  "launch_validation": {
+    "thread_was_fresh": true,
+    "profile": "gpt-5.6-terra/medium/priority",
+    "status_sha256": "12edba15f1dff5931b96e3cdc1b31ac58370468c7fd9363832abe1e7544260ad",
+    "invocation_sha256": "86115563a3b8079a922336fcab417cb2abae4aef86c0ced5d7d7cb74956c26f4",
+    "prompt_sha256": "ffc39fff0fd3262f7dc5a9ca1da4825e21b1ff462cb2e1b4753b0cc2bdee16d0",
+    "stable_projection_sha256": "55b2b5ec35b487b605b27597842b87d1055cae179886a8bf3a69b3c8dd9bb4e1",
+    "stable_projection_proof_sha256": "7680634beddd6f477113e124d24bb078c2aa19b5f6adb829b3ec4d1e739e12d1",
+    "stable_launch_proof_sha256": "9ba6ea78444812d1edbbb847e4aef2ebedce909fd140a3c9c13d09e2f430d715"
+  },
+  "root_validation": "ROOT-IM independently parsed the original candidate-only findings/result, proved the closed schemas and exact commit/worker/role identity, confirmed zero findings and exact NO CANDIDATE GAP / READY result, validated the fresh thread and requested model/effort/tier, verified clean tracked state, current governing hashes, zero MCP/resources/leases/claims, and exact controller/Codex exit.",
+  "required_action": "Create C1 in the prescribed non-circular order and run C2 against the unchanged lock. No implementation test is invalidated and no hardware operation is authorized before C2 is green.",
+  "triaged_at_utc": "2026-08-04T12:29:09Z"
+}

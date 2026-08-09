@@ -1,0 +1,19 @@
+{
+  "schema": "root-preserved-green-test-credit/v1",
+  "owner": "ROOT-IM",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-pre-c1-executor-006",
+  "source_commit": "40b4039b3ecb3021dc545901419416b278226f7e",
+  "source_test_report_path": "S2_PRE_C1_D1_BOUNDED_TEST_REPORT_40b4039.json",
+  "source_test_report_sha256": "627b25fe426585ba8e87a4a1d61c12eaace2d6be5d45486ad30cbc6f19c2379f",
+  "preserved_passed": 23,
+  "invalidated_ids": [
+    "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_signed_close_requires_returned_disconnect",
+    "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_dynamic_route_plan_validation_ready_uart_and_terminal_contract",
+    "orchestrator_harness.tests.test_firmware_acceptance_host.FirmwareAcceptanceHostTests.test_S2_A1_002_admission_rejects_immutable_operation_drift"
+  ],
+  "preserved_at_commit": "184a869d0f49ae9ef6b222ae90dc3488f7229f60",
+  "dependency_decision": "Only the two named controller fixtures and one named host fixture changed; the remaining 23 stable IDs and their production dependencies are unchanged from their one-pass bounded green executions.",
+  "rerun_prohibited": true,
+  "hardware_or_mcp_accessed": false
+}

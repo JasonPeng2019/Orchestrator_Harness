@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.P",
+  "worker_invocation_id": "s2-p-006",
+  "branch": "firmware/v2-s2-product",
+  "commit": "b956d502c6332d106005cb6e03826939bf594f9a",
+  "outcome": "PASS",
+  "summary": "Production-only repair requiring EOF drain before certifying a call-bound MCP stderr log as complete.",
+  "checks": [
+    {"name": "controller compilation", "command": "python -m py_compile firmware_acceptance/controller.py", "outcome": "PASS", "summary": "Changed production module compiles."},
+    {"name": "focused controller tests", "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_controller -q", "outcome": "PASS", "summary": "17 focused host-only tests passed."},
+    {"name": "diff hygiene", "command": "git diff --check", "outcome": "PASS", "summary": "No whitespace errors."},
+    {"name": "hardware boundary", "command": "no MCP or physical interfaces accessed", "outcome": "PASS", "summary": "No MCP process, serial, probe, flash, reset, debug, RF, or hardware operation occurred."}
+  ]
+}

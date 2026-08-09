@@ -1,0 +1,17 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.D2",
+  "worker_invocation_id": "s2-d2-001",
+  "branch": "firmware/v2-s2-d2",
+  "commit": "64199127ac787eeaaf6863726ff0a3bcb79798ed",
+  "outcome": "PASS",
+  "summary": "The dependency-invalidated joined target shard passed all three stable IDs in a fresh detached core.autocrlf=true proof worktree; manifest hashes matched, the proof worktree was removed, findings are empty, and no hardware or MCP access occurred.",
+  "checks": [
+    {
+      "name": "S2.D2 joined target dependency shard",
+      "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_target -v",
+      "outcome": "PASS",
+      "summary": "3 tests passed: S2.A2.T1, S2.A2.T2, and S2.A2.T3"
+    }
+  ]
+}

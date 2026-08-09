@@ -1,0 +1,24 @@
+{
+  "schema": "firmware-c3-root-prelaunch-retry/v1",
+  "attempt_id": "attempt-0001",
+  "owner": "ROOT-IM",
+  "failed_command": "uv run --project .codex/dev --locked python -I <attempt root_launch.py>",
+  "failure": "ModuleNotFoundError: No module named 'cryptography'",
+  "classification": "PRELAUNCH_ENVIRONMENT_INTERPRETER_SELECTION",
+  "launcher_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0001\\.agent-workspace\\root_launch.py",
+  "launcher_sha256": "8b7091e8abad78cf83d5e7fbd2d1593505814d60056369af9e84d4bda7df6720",
+  "state_after_failure": {
+    "key_generated": false,
+    "orchestrator_launch_intent_created": false,
+    "orchestrator_processes": 0,
+    "watcher_processes": 0,
+    "signer_processes": 0,
+    "candidate_harness_processes": 0,
+    "mcp_processes": 0,
+    "resource_claims": 0,
+    "target_workers": 0,
+    "hardware_accessed": false
+  },
+  "retry": "Run the identical hash-bound launcher with system Python isolated mode, whose installed cryptography package was independently confirmed before retry.",
+  "recorded_at_utc": "2026-08-05T06:24:00Z"
+}

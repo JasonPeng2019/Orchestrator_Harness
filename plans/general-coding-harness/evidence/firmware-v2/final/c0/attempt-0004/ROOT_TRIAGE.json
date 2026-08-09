@@ -1,0 +1,22 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "attempt": "0004",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-004",
+  "reviewer_thread_id": "019fcc6c-2bb8-7202-9bf2-9c6fe6ce03cb",
+  "candidate_commit": "b8d3d7917921d3bf7ef06e69b6af23bb4e50df50",
+  "root_decision": "ACCEPT_FINDING_AND_REOPEN_MINIMAL_S2_POLICY_SLICE",
+  "accepted_findings": [
+    {
+      "id": "F-C0-FR1-004-001",
+      "classification": "CODEBASE_BREAKING",
+      "root_validation": "Confirmed: the packaged write_serial rule allows text and defines maximum_bytes=256, but evaluate_call checks a nonexistent bytes argument and then forwards allowed text unchanged.",
+      "cost_benefit": "A localized UTF-8 byte-length check plus focused boundary tests closes a concrete out-of-scope physical mutation path. The safety benefit materially exceeds the low implementation, regression, and verification cost."
+    }
+  ],
+  "findings_sha256": "ceab5669098e4343874a2a4884b895ad2a8c71ce569c58e76a513237c70fe536",
+  "result_sha256": "203f41b7388b4775e419cd5d8af2212a34c24d7b2b84de195c952747b1c2d304",
+  "required_action": "Route only write_serial policy admission to persistent S2.P, then exact targeted review, focused A1 boundary tests, independent D1 controller/kit/host shard, joined-tip evidence binding, candidate integration, and a brand-new C0 attempt.",
+  "preserved_credits": "All unrelated 77 green IDs remain credited until their mapped dependencies change. No hardware/MCP operation is authorized.",
+  "triaged_at_utc": "2026-08-04T11:00:40Z"
+}

@@ -1,0 +1,110 @@
+{
+  "schema": "firmware-v2-c2-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "accepted_at_utc": "2026-08-05T14:13:25Z",
+  "attempt_record": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0006\\ATTEMPT_RECORD.json",
+    "sha256": "90df7955f1875144861c90e36ebe5135858e5562f1380fdf3c826c82e564da39"
+  },
+  "root_triage": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0006\\ROOT_TRIAGE.json",
+    "sha256": "002321abd89122179bf13228e902352d4ed3025d8f060204819260573251e649"
+  },
+  "retry_acceptance": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0006\\ROOT_RETRY_ACCEPTANCE.json",
+    "sha256": "54b8db6c53e98400ef8efe89dc87d8053650437c7adc4122ad2db3fd86021a90"
+  },
+  "c1": {
+    "lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "lock_sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "validation_sha256": "10b361ecbfa448790b0c2d9045c29459cc4af96b33d9be51faf20a233a7bb678",
+    "authorization_sha256": "1c379ea4732e87985b06c48b9723e5f5572415eb59d1293d8d82512f53b7ba12",
+    "checksum_matches": true,
+    "locked_path_hash_references_valid": "42/42",
+    "governing_hashes_unchanged": true,
+    "candidate_and_server_inputs_unchanged": true
+  },
+  "governing_hashes": {
+    "goal": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "generalization_spec_2": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "implementation_roadmap_2": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "execution_readiness_2": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66",
+    "execution_plan_2": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"
+  },
+  "executor": {
+    "thread_id": "019fd1fd-83a3-7ad0-8370-a544c08c7c6e",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority",
+    "final_controller_exit_code": 0,
+    "final_controller_result_valid": true,
+    "root_findings_validation_passed": true,
+    "root_result_validation_passed": true,
+    "claims_released_after_controller_exit": true,
+    "worktree_clean": true
+  },
+  "root_checks": {
+    "findings_exact_six_key_shape": true,
+    "findings_count": 0,
+    "result_exact_eight_key_shape": true,
+    "result_check_exact_three_key_shapes": "5/5",
+    "test_report_path_hash_references_valid": "77/77",
+    "report_stable_record_count": 13,
+    "historical_failure_records_preserved": 8,
+    "effective_assigned_ids": 5,
+    "passed_ids": 5,
+    "failed_effective_ids": 0,
+    "skips_or_xfails": 0,
+    "green_ids_rerun_after_pass": 0,
+    "protected_baseline_ids_compared_without_execution": 248,
+    "registry_green_groups": 25,
+    "registry_unique_green_ids": 163,
+    "registry_invalidations": 0,
+    "registry_explicit_hash_valid_evidence_credits": 75,
+    "registry_permitted_inheritance_edges": 6,
+    "registry_total_evidence_credits": 81,
+    "active_resource_claims": 0,
+    "surviving_managed_or_external_test_processes": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "identities": {
+    "stable_runner_commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "stable_runner_clean_detached": true,
+    "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "candidate_branch": "firmware/v2-candidate",
+    "candidate_clean": true,
+    "mcp_server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "mcp_server_branch": "firmware/v2-mcp-candidate",
+    "mcp_server_clean": true,
+    "execution_lane_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "execution_lane_branch": "firmware/v2-c2-final-test-0006",
+    "execution_lane_clean": true
+  },
+  "retry_008": {
+    "authorization_sha256": "69e7c275731940522b347959f66c6c5228d058afa6c334c7754543b77ea0af79",
+    "root_lock_body_diagnostic_sha256": "d756dc1715727f85ce9ac4e932ffa60b817cb8dafb4ead02161220fb2837923b",
+    "process_sha256": "b91cf38df997636f056cba26c375f55fc7ca1d7b0fb0f0c0b3a51b6989a3614f",
+    "stdout_sha256": "3a83627b807237da8982eb02570b7aeb5982b6344ee4a668bf53c1430121ff8b",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_report_sha256": "58dbed8183462454cb51c25083510ee4d9301b0a39ca9758261f9bb4c86ddad2",
+    "result_sha256": "0764c758c46a2f5a4ec2382358ebc61ee08840ebe13eab911737ff6877b994c3",
+    "findings_sha256": "0a1b2390547dfc8d05413e266285c99c6db2482234f38fcac17ac7baba277214"
+  },
+  "criticism_disposition": {
+    "verifier_procedure_failures_preserved": true,
+    "identity_precision_and_ancestry_criticisms_preserved": true,
+    "recursive_fixture_scan_criticism_preserved": true,
+    "all_authorized_corrections_bounded_to_executor_verifier": true,
+    "none_reclassified_as_candidate_findings": true,
+    "reason": "ROOT reproduced and reviewed each criticism. Exact evidence showed executor-owned launch, argument, process-enumeration, identity, ancestry, and claim-discovery failures; candidate inputs never changed. The same LOCK body passed independently and then in the sole retry-008 process."
+  },
+  "classification": {
+    "candidate_harness_failure": false,
+    "watcher_failure": false,
+    "c1_invalidation": false,
+    "ordinary_executor_correction": true
+  },
+  "decision": "C3_UNLOCKED",
+  "next_gate": "Allocate fresh C3 attempt-0004 with all O/W/signer/helper control workspaces under runtime/firmware-v2/acceptance-control/attempt-0004, while C3-HARNESS writes only the ordinary runtime/evidence attempt roots. Launch fresh Sol-high-priority F.C3.O and separate Terra-medium-priority F.C3.W; ROOT supervises and does not orchestrate target work."
+}

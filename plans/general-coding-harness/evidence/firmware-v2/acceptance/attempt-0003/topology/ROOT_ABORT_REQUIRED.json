@@ -1,0 +1,35 @@
+{
+  "schema": "firmware-c3-root-abort-required/v1",
+  "attempt_id": "attempt-0003",
+  "owner": "ROOT-IM",
+  "classification": "REPRODUCIBLE_CANDIDATE_AND_WATCHER_DEFECTS",
+  "reason_for_root_authorship": "F.C3.W did not observe or classify either authentic inner-controller rejection reproduction and did not emit watcher/ABORT_REQUIRED.json; its observation loss and the deterministic oracle's repeated EXPECTED_CONTAINMENT result are independently inside the watcher abort boundary.",
+  "findings": [
+    {
+      "invariant": "C3_AUTHENTIC_CONTROLLER_INITIAL_STATUS",
+      "evidence_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\topology\\ROOT_SUPERVISION_OBSERVATION.json",
+      "reproduction_count": 2,
+      "earliest_invalidated_step": "S3.C3_CONTROL_PLANE"
+    },
+    {
+      "invariant": "C3_WATCHER_ORACLE_WRAPPER_CONTROLLER_CORRELATION",
+      "observed_classification": "EXPECTED_CONTAINMENT for both authentic inner-controller status records because the oracle requires exact equality with the outer launcher identity",
+      "earliest_invalidated_step": "S3.WATCHER_INTEGRATION"
+    },
+    {
+      "invariant": "C3_WATCHER_CONTINUOUS_OBSERVATION",
+      "observed_failure": "F.C3.W reported no target worker or target work while two assignment admission/rejection lifecycles and four candidate-owned session claims existed; no watcher-authored abort was created.",
+      "earliest_invalidated_step": "S3.WATCHER_INTEGRATION"
+    }
+  ],
+  "state_at_abort": {
+    "new_assignments_stopped_by_orchestrator": true,
+    "active_target_workers": 0,
+    "mutating_hardware_calls_dispatched": 0,
+    "open_bootstrap_sessions": 4,
+    "candidate_owned_claims": 4,
+    "board_state_mutated": false
+  },
+  "required_action": "F.C3.O MUST ISSUE SIGNED CANDIDATE SHUTDOWN; ROOT THEN REQUESTS WATCHER TERMINAL SHUTDOWN, PRESERVES THE ATTEMPT, AND REOPENS IMPLEMENTATION WITH FRESH C0_C1_C2_BEFORE A FRESH C3 ATTEMPT.",
+  "recorded_at_utc": "2026-08-05T11:06:15.1504501Z"
+}

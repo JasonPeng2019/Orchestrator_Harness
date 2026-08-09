@@ -1,0 +1,40 @@
+{
+  "schema": "firmware-c3-root-environment-correction/v1",
+  "attempt_id": "attempt-0002",
+  "owner": "ROOT-IM",
+  "classification": "ENVIRONMENT_ONLY_ATTEMPT_LOCAL_HELPER_CORRECTION",
+  "source_failure": {
+    "attempt_id": "attempt-0001",
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0001\\topology\\ORCHESTRATOR_LOST.json",
+    "sha256": "88e30e693c879f195d3917fc9d4de25b621aa7a2a2f4017d102436c0f6d8491b"
+  },
+  "change": {
+    "old_helper_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0001\\.agent-workspace\\orchestrator\\signer_service.py",
+    "old_helper_sha256": "53001d1364610df06f695f2907d77bc63d88ddfaa8aa52d42a7ea56b223c6c60",
+    "new_helper_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\.agent-workspace\\orchestrator\\signer_service.py",
+    "new_helper_sha256": "347dbb26846fefec240a44a7d2e2ae99ad8374d04785faafb3e64d99267a22b5",
+    "semantic_delta": "On Windows, query STILL_ACTIVE through OpenProcess/GetExitCodeProcess and bind liveness to GetProcessTimes creation identity; retain os.kill(pid, 0) on non-Windows.",
+    "attempt_identity_updates_only_elsewhere": true
+  },
+  "validation": {
+    "python_ast_parse_all_attempt_helpers": "PASS",
+    "live_current_process_exact_identity": "PASS",
+    "wrong_creation_identity_rejected": "PASS",
+    "absent_pid_rejected": "PASS",
+    "stale_attempt_0001_references": 0
+  },
+  "scope_proof": {
+    "candidate_commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+    "candidate_clean": true,
+    "mcp_server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "mcp_server_clean": true,
+    "governing_hashes_unchanged": true,
+    "c1_locked_input_changed": false,
+    "candidate_harness_changed": false,
+    "watcher_contract_changed": false,
+    "mcp_server_changed": false,
+    "target_seed_changed": false
+  },
+  "decision": "ATTEMPT_0002_MAY_LAUNCH_FROM_OPERATIVE_C1",
+  "recorded_at_utc": "2026-08-05T06:32:31.1542207Z"
+}

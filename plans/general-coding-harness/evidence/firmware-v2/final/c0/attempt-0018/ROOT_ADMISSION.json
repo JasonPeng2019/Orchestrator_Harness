@@ -1,0 +1,78 @@
+{
+  "schema": "firmware-v2-c0-root-admission/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0018",
+  "candidate": {
+    "commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "joined_branch": "firmware/v2-s27-a1-c3-recovery-tests-0001",
+    "review_branch": "firmware/v2-c0-final-review-0018",
+    "reserved_branch": "firmware/v2-candidate",
+    "joined_clean": true,
+    "review_clean": true,
+    "reserved_clean": true
+  },
+  "review": {
+    "lane_id": "F.C0.FR1",
+    "worker_invocation_id": "c0-fr1-018",
+    "thread_id": "019fd2a5-3854-7582-b3be-d9b15524cd85",
+    "findings_sha256": "5d002857ae439b9158e93403b8f59f34604edf2f0a4f6f3622d927455eeac8b4",
+    "result_sha256": "f3996dd2b0f9dcc231171962abfe4c99a47a7ae613145831fa2f2f7f3910bd68",
+    "status_sha256": "b71a662fe2ba9616b75493cdb0a303ec29392b139e75b2304ad39da8ab0fab9f",
+    "findings_count": 0,
+    "outcome": "PASS",
+    "summary": "NO CANDIDATE GAP / READY",
+    "controller_result_valid": true,
+    "tracked_state_clean": true
+  },
+  "envelope_audit": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0018/ROOT_ENVELOPE_AUDIT.json",
+    "sha256": "cd9c31296f29c91a731ab5d2b1b038e77845a9c9d2099ab2220f78018ca2bb39",
+    "recovered_read_only_command_error": true,
+    "administrative_stdlib_json_imports": 2,
+    "candidate_execution": false,
+    "same_thread_text_only_correction": true,
+    "review_repeated": false
+  },
+  "same_tip_focused_execution": {
+    "lane": "S27.D2",
+    "commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "execution_sha256": "b126fb631c09e7cf48c3c9398342904cd310136a873cf955126f9b75cf4e7be7",
+    "result_sha256": "ca4d2e52ce3895f2e9c1563393e53fc78bcd4cfabf2109fe6d0ebc6b5e547aaf",
+    "tests_run": 3,
+    "tests_passed": 3,
+    "failures": 0,
+    "errors": 0,
+    "resource_warnings": 0,
+    "outcome": "PASS"
+  },
+  "coverage": {
+    "criteria": "C1-C73",
+    "latest_changed_paths": 4,
+    "dependency_references_valid": "8/8",
+    "protected_baseline_nodes": 248,
+    "registry_green_groups": 26,
+    "registry_unique_ids": 166,
+    "registry_invalidations": 0,
+    "registry_evidence_credits": 86,
+    "remaining_actionable_findings": 0
+  },
+  "criticism_disposition": {
+    "accepted_and_closed": [
+      "Both S27.D1 Popen fixture-scope findings."
+    ],
+    "preserved": [
+      "The failed D1 run and attempt-0005 candidate-recovery failure.",
+      "The separate attempt-0005 watcher evidence-production defect."
+    ],
+    "vetoed": [
+      "Candidate bytecode cleanup for stable-runner environment projection.",
+      "A production subprocess test seam.",
+      "PowerShell stderr presentation suppression.",
+      "Duplicate focused or unaffected unit execution."
+    ]
+  },
+  "decision": "ACCEPT_C0_AND_UNLOCK_NEW_OPAQUE_C1",
+  "hardware_execution_admitted": false,
+  "mcp_server_launched": false,
+  "created_at": "2026-08-05T16:04:00Z"
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "firmware-v2-c2-root-lock-body-diagnostic/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "executed_at_utc": "2026-08-05T13:59:58Z",
+  "classification": "READ_ONLY_UNLABELED_ROOT_DIAGNOSTIC_NOT_A_STABLE_ID_RUN",
+  "same_lock": {
+    "c1_lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "c1_lock_sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d"
+  },
+  "diagnostic_source": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0006\\.agent-workspace\\c2_verify.py",
+    "sha256": "7836e1050c5f9b98986c7d738140d17622c0946d3fbc2b981caa9fbbaf788122",
+    "function": "lock_check"
+  },
+  "execution": {
+    "spawned_verifier_process": false,
+    "stable_id_emitted": false,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "writes_expected": false,
+    "exit_code": 0
+  },
+  "result": {
+    "active_claims": 0,
+    "active_processes": [],
+    "authorization_first_serialization": true,
+    "candidate": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "governing_hashes_current": true,
+    "lock_references": 42,
+    "seed_rows": [
+      {
+        "path": "TARGET_CHARTER.md",
+        "sha256": "4a624cb41018e06738706d4a24958554491e953ff8c0af18e6ba17aecf385944"
+      },
+      {
+        "path": "PINNED_INPUTS.json",
+        "sha256": "67fbc2adc499f11c32c99d4484f2ff8ae14a3ca6ee4b899acf35d7897c4623f6"
+      },
+      {
+        "path": "TEST_CONTRACT.json",
+        "sha256": "1a9bafa07b3d44d0bcd2384083ab53495cd31ecd8e503b2ca0f72ddd1693224d"
+      },
+      {
+        "path": "EVIDENCE_SCHEMA.json",
+        "sha256": "87d8b2e85abb49d434310d2fe38b9b0aac35804dd77b42421a076f43e9045ce3"
+      }
+    ],
+    "server": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "stable_runner": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f"
+  },
+  "decision": "LOCK_BODY_IS_GREEN_AFTER_PREFLIGHT_AND_NEEDS_NO_CORRECTION"
+}

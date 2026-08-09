@@ -1,0 +1,111 @@
+{
+  "schema": "firmware-v2-root-review-admission/v1",
+  "owner": "ROOT-IM",
+  "created_utc": "2026-08-05T17:58:00Z",
+  "commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "reserved_branch": "firmware/v2-candidate",
+  "reserved_branch_fast_forwarded": true,
+  "incident": {
+    "attempt_id": "attempt-0007",
+    "classification": "FAILED_CANDIDATE_SESSION_AUTHORIZATION_DERIVATION_AND_SEPARATE_WATCHER_PROCEDURE",
+    "root_procedure_abort_required_sha256": "48af8ac38d6feeadd716a598678d348e6460bbec2ad63dcea66d0162a4b2760c",
+    "root_closeout_sha256": "82181650443dcf5ce08b16e9a3c4eb6c8bcb5831829016ab937c50885b4d76c8",
+    "topology_shutdown_sha256": "47225289745b143848e5036221a390547082b0310fe4c230a73876c169c91153",
+    "signed_decision_sha256": "26cabf506d3948425b5f942c99d87ea49ecda28648742842e4e0fe63f1684c5b",
+    "candidate_defect": "A valid retained-session proposal and signed O decision reached C3 without a derived authorization artifact, so execution failed before pending publication or hardware dispatch.",
+    "watcher_procedure_kept_separate": "The watcher service terminated, but the W agent returned before its helper exited and never authored its terminal report. The fresh watcher prompt will use an exact blocking helper invocation; no candidate or watcher framework change is admitted from that separate procedure failure.",
+    "hardware_dispatched": false
+  },
+  "repair": {
+    "base_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "initial_source_commit": "e797fbc9fa01efedf8500de0ff375b28c8a08c8a",
+    "accepted_source_commit": "6c8b81a361ff734037552e332d362db691d0e92e",
+    "initial_test_commit": "4fff7e73359192a5a2431e54d9d9784b1ec358c3",
+    "final_test_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "firmware_acceptance/controller.py",
+      "orchestrator_harness/tests/test_firmware_acceptance_controller.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py"
+    ],
+    "source_status_sha256": "03488877b7a4680e93e5418b591403ffe9c69b0071c27298ec29c8c5aab69983",
+    "source_result_sha256": "4de8e4565ce291dc43690e91acc9bc6ed31692226db3ef4c6e9db57faad84bbc",
+    "test_author_status_sha256": "e765e0b313a2cebcb443f88497828ee7299416e0ad9bddb36d68e00fa12a9913",
+    "test_author_result_sha256": "90e45c1c7b2a76ea8373141a830bf5086535731d3d8134b33106cc978380658c"
+  },
+  "review": {
+    "initial_review": {
+      "lane_id": "S28.R1",
+      "commit": "e797fbc9fa01efedf8500de0ff375b28c8a08c8a",
+      "findings_sha256": "641c0e54f51f588b9b04f0b201751e13482b9ae2a42c0f6a386b1557a43014ce",
+      "result_sha256": "5a5fa83df80854d2f762e1c2dd0b141ba740992fc2664a0616870b04a09546f4",
+      "accepted_finding": "C3-AUTH-SESSION-DERIVATION-001",
+      "report_envelope_procedure_defect": "The reviewer used firmware-review-result/v1, so the controller rejected its RESULT. ROOT accepted the independently valid, evidence-backed FINDINGS artifact and did not treat the envelope error as a candidate defect.",
+      "outcome": "ACTIONABLE_FINDING_ACCEPTED"
+    },
+    "fresh_final_review": {
+      "lane_id": "S28.R2",
+      "commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+      "status_sha256": "f813b5621d685993dfc60c66381c55a6d8d7c7e23e93ed52d32a1b420ce35d93",
+      "findings_sha256": "cee20ba55bb79725ba5f933dfa8a13ed61a0710740d14da0ffac1977781d4c40",
+      "result_sha256": "03608c2250fb31b0b675c29215fcc986adee1ae189d2566be86c1bddce976bb5",
+      "findings_count": 0,
+      "outcome": "PASS"
+    }
+  },
+  "test_execution": {
+    "preserved_root_environment_failure": {
+      "lane_id": "S28.D1",
+      "commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+      "status_sha256": "979ad342935378f1b6fe7471ab3319fc7fe45742c910074aa789c1b9783bc836",
+      "test_execution_sha256": "9a8358f999ca8625807dcca2cd23488488a4b2b3b34b7109452178d299e78aca",
+      "output_sha256": "e9107504ff2a7050e97e00ad86e4f7f0142f6fc06d6184eb6641e211ff5f87d0",
+      "findings_sha256": "7f5bdd6095aecbc1cf134733ee6b91191f7312a037f557764f86dad1eb17ca7e",
+      "result_sha256": "e697940cacf4e52962f63c1786f4035152fa301943f989a5a99e4174c8398259",
+      "tests_run": 5,
+      "tests_passed": 5,
+      "accepted_procedure_finding": "S28.D1-C3-ENV-PYTHONDONTWRITEBYTECODE-001",
+      "disposition": "ROOT omitted the required inherited variable at launch. The run remains FAIL evidence; no product, runner, cleanup, or test change was made."
+    },
+    "fresh_passing_run": {
+      "lane_id": "S28.D2",
+      "commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+      "status_sha256": "4015bc22697cc9b251f83bb6618d8a389f6c51f71aae6419f71dd564a206d579",
+      "test_execution_sha256": "5b53a16cf5566dbf292ab34f932dbfc0ab95f52c00b68abf2fd785e93590bee4",
+      "output_sha256": "ae084d5098df48edfc0a46d0c0cb1abaa9b295e18a5f373106379d3d6687ff6b",
+      "findings_sha256": "18fbb347f7f11e473646e381eb9012300a87482e8a9c766612a34eeeefd91137",
+      "result_sha256": "fca9ed3af036eea139d57b9824b08af15eea26fd4424f5f5df70623e6fdfd85f",
+      "tests_run": 5,
+      "tests_passed": 5,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "resource_warnings": 0,
+      "bytecode_files": 0,
+      "findings_count": 0,
+      "report_envelope_correction": "The same D2 thread changed only RESULT.schema from orchestrator-review-result/v1 to orchestrator-lane-result/v1 after the controller rejected the first envelope. Tests were not rerun and all raw execution artifacts were preserved.",
+      "outcome": "PASS"
+    }
+  },
+  "root_decision": {
+    "accepted_behavior": [
+      "C3 synchronously derives retained-session authorization before publishing pending state or submitting work.",
+      "The session-specific derivation validates the exact pending proposal, signed O decision, expiry, live session claim, and closed authorization artifact shape.",
+      "A derivation failure leaves no operation future and no pending artifact.",
+      "The existing generic authorization path remains unchanged."
+    ],
+    "rejected_extra_engineering": [
+      "No generic derivation branch or authorization adapter framework.",
+      "No helper extraction merely to remove localized validation duplication.",
+      "No extra path guards beyond existing session and controller-root containment contracts.",
+      "No bytecode cleanup or stable-runner environment behavior in the candidate.",
+      "No duplicate or broadened unit execution after the five invalidated IDs passed."
+    ],
+    "candidate_clean": true,
+    "reserved_candidate_clean": true,
+    "resource_claims_remaining": 0,
+    "hardware_accessed": false,
+    "firmware_mcp_accessed": false
+  },
+  "admission": "ACCEPT_S28_SESSION_AUTHORIZATION_REPAIR; INVALIDATE_C0_C1_C2; AUTHORIZE_DEPENDENCY_RECONCILIATION_AT_542F48C"
+}

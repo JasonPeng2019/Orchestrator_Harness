@@ -1,0 +1,100 @@
+{
+  "schema": "firmware-v2-c0-root-admission/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0021",
+  "created_at_utc": "2026-08-05T22:27:00Z",
+  "relock_trigger": {
+    "attempt_id": "attempt-0009",
+    "failure_classification_sha256": "eddb475e4660c1436f19796e95c37448bc9f17aabc24b44e3336f98811494fed",
+    "prior_c1_invalidated": "ad244788-9890-420f-a491-fa82601ca46f",
+    "candidate_bytes_changed": true,
+    "candidate_change": "One deletion permits ordinary files in an evolved target while retaining existing protected-seed validation.",
+    "server_or_hardware_authority_changed": false
+  },
+  "candidate": {
+    "commit": "c6999d173c344b317a918df91619308fd9f93f63",
+    "reserved_branch": "firmware/v2-candidate",
+    "review_branch": "firmware/v2-c0-final-review-0021",
+    "reserved_clean": true,
+    "review_clean": true
+  },
+  "governing_documents": {
+    "goal": "9ef9bdb24b913f1ed2b15b7c80f28139705da823296ccd6f341a562a9948f547",
+    "generalization_spec": "70ba5e876e120466f03899fd826d439c1d0cc0dc01c5235e5950dc54a1d27cc6",
+    "implementation_roadmap": "fb8d60d76c8217f75d6a6a9d69965c7817e8c2bf0c560bac18c8a0ed3ab3af49",
+    "execution_plan": "79ebc3de0d6506ce8ec5ab242db9810be527a6c07b1e9bb100f3c73827520af7",
+    "execution_readiness": "e357862e985d61efcf9f38727fe4ca8a718961b4e02bd404dac56d99cb88455c"
+  },
+  "review": {
+    "lane_id": "F.C0.FR1",
+    "worker_invocation_id": "c0-fr1-021",
+    "thread_id": "019fd409-3dd3-7031-8fb1-879ad6f87412",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority",
+    "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c0\\attempt-0021\\REVIEW_FINDINGS.json",
+    "findings_sha256": "dea10ff3866ab0d8ba918c9f357fae6b99b3d06b280bd71b59a58890041e61ad",
+    "result_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c0\\attempt-0021\\REVIEW_RESULT.json",
+    "result_sha256": "418b9ffc1fa0c275caacc74ce54dbda706f803f07951196abcb0ed30b239b93d",
+    "controller_status_sha256": "fc6a52bb1d22158fcf6ebba9eeedaed22ca71c8f4ff94dc2ed69f55df71091b0",
+    "findings_count": 0,
+    "outcome": "PASS",
+    "summary": "NO CANDIDATE GAP / READY",
+    "controller_result_valid": true,
+    "candidate_result_validator_passed": true,
+    "candidate_findings_validator_passed": true,
+    "complete_sweep_required_and_reported": true
+  },
+  "same_tip_focused_execution": {
+    "source": "accepted S29 batch",
+    "regression_lane": "S29.D1",
+    "regression_execution_sha256": "6f67142d114c010c2537ac25df2b9a23312b0787be153d1ff9c919743122925e",
+    "remaining_dependency_lane": "S29.D2",
+    "remaining_execution_sha256": "205e133d7bc8cdd90463ce1f617157d78e0f6a0a26b908b8da632c710afa9a38",
+    "recordability_preflight": "NOT_APPLICABLE",
+    "tests_run": 6,
+    "tests_passed": 6,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "resource_warnings": 0,
+    "outcome": "PASS"
+  },
+  "accepted_batch": {
+    "join_root_acceptance_sha256": "b2544e293e6757e0bfca8fb9960cb52804cdbedbde9f0377eff1dcce0c8b839c",
+    "dependency_map_sha256": "d4fe04d15a525b70282726ac84be7f734b7fb92ae2e520df0242d994925674be",
+    "dependency_map_root_acceptance_sha256": "907aa4a3e5ffd0b51a35b0ad2a7cd85d309b1384add4fe8c031ab532932b48e9",
+    "registry_reconciliation_sha256": "6254a14fba7d78ffd909e81be65b37f6b484666c89a1135edc0fcc729f9de834",
+    "registry_sha256": "82f809ce6b0d7f6d4e967d649da4eb61b33769be86dafb6ce459f5d9d9e5cef5"
+  },
+  "stable_runner": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "detached_and_clean": true,
+    "review_source_invocation_sha256": "638e6d902176d993d7b1cab33b9c9ca9146fd5cecb6fd3e517e2de6198370ee8",
+    "review_projected_invocation_sha256": "9d63039537872ee6ce0b5b9dc955d4455ad9d60a567e62979dc233b48eca9d9c",
+    "review_projection_record_sha256": "40dc15e06f2532f41fbdb8b330f577dc5720ab6acbef65da9631d7d4ab1bc7c1",
+    "review_projection_proof_sha256": "372320fea3515b988286324a58b10a0e95047c0416ce410a1327a114b5d53532",
+    "review_dispatch_proof_sha256": "bcd06748aab89f145c0d57f5e29a4d7502cdd99d2c6b2cfb0567144dfe8f88bf"
+  },
+  "criticism_disposition": {
+    "accepted": [
+      "Attempt-0009 proved a candidate functionality break, so candidate bytes, C0, C1, C2, and rehearsal must all be fresh.",
+      "The separate watcher command-timeout procedure must be corrected and proven in the new host-only rehearsal."
+    ],
+    "vetoed": [
+      "Adding a candidate rehearsal or watcher framework for an outside execution procedure.",
+      "Adding validation modes, duplicate seed guards, or unrelated hardening.",
+      "Rerunning dependency-valid tests beyond the six exact mapped IDs before C2."
+    ]
+  },
+  "cleanup": {
+    "review_controller_and_codex_reaped": true,
+    "active_resource_claims": 0,
+    "candidate_clean": true,
+    "mcp_server_clean": true,
+    "mcp_server_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "ACCEPT_FRESH_C0_AND_UNLOCK_NEW_OPAQUE_C1",
+  "outcome": "PASS"
+}

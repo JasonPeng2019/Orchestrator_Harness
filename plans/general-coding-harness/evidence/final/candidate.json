@@ -1,0 +1,26 @@
+{
+  "schema": "general-coding-harness-candidate/v1",
+  "branch": "progress/v1.1",
+  "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+  "remote": "origin",
+  "remote_ref": "refs/heads/progress/v1.1",
+  "remote_commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+  "large_steps": ["S1", "S2", "S3", "S4"],
+  "clean": true,
+  "status": "ACCEPTED_PROMOTION_READY",
+  "final_review": {
+    "lane": "F.C0.FR1",
+    "outcome": "NO_GAP_READY",
+    "candidate_defects": 0
+  },
+  "practical_acceptance": {
+    "version": "V2",
+    "outcome": "PASS",
+    "target_commit": "86daa9901f46b41c14e26b45135fa553503021ef",
+    "tests": 77,
+    "compileall": "PASS"
+  },
+  "final_full_verification": "PASS",
+  "diagnostic_v1_target_commit": "a3f15d6679b0963e40f4136f7f535441ec4d59d5"
+}
+

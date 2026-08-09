@@ -1,0 +1,58 @@
+{
+  "schema": "firmware-v2-registry-reconciliation/v1",
+  "owner": "ROOT-IM",
+  "reconciled_utc": "2026-08-05T04:47:00Z",
+  "candidate_commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+  "prior_registry": {
+    "candidate_commit": "659dd03e2aa7159090c8e0e20123b1fec1749f90",
+    "sha256": "4eff6f5e46ae33056dc40f27474eb7c85b322f2392bf52b5fbbd9a356fd11c3d",
+    "green_groups": 21,
+    "unique_green_ids": 140,
+    "invalidated_groups": 0,
+    "evidence_credits": 56
+  },
+  "accepted_dependency_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_b5753eb.json",
+    "sha256": "d257d7ae8bb4037da309ea7efad8afd94e755dc5f41dd595738e59cf2fa18ecb",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_b5753eb.json",
+    "root_acceptance_sha256": "bfedc55e0b54087300472de2b57617f13f452edd925eadb8cf2cc1d9a0644dc3"
+  },
+  "current_registry": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+    "sha256": "d3542a5e2b927fbc941268c5995dda27a595866a0063781b9bff1231c593664c",
+    "green_groups": 22,
+    "unique_green_ids": 145,
+    "invalidated_groups": 0,
+    "evidence_credits": 64,
+    "declared_hash_credits": 58,
+    "historical_hashless_credits_retained_from_prior_accepted_registry": 6
+  },
+  "delta": {
+    "new_green_group": "S2::c3-control-plane-joined-tip-reconciliation",
+    "new_unit_ids": [
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_04_disposable_target_assignment_and_fail_closed_acceptance",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_05_sessions_overlap_and_p1_channel_is_token_bound",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_06_limitation_shapes_roles_and_broker_gate",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_07_shutdown_blocks_then_reaps_and_refuses_unreconciled_restart"
+    ],
+    "freshly_revalidated_existing_ids": [
+      "tests/test_general_coding_docs.py::GeneralCodingDocumentationTests::test_coding_examples_and_documented_commands_are_present",
+      "tests/test_s3_operator_journey.py::S3OperatorJourneyTests::test_S3_DUAL_003_docs_roles_cleanup_registry_templates_and_safeguard_are_bound"
+    ],
+    "new_evidence_credits": 8,
+    "removed_ids": [],
+    "invalidated_ids_remaining": [],
+    "selected_for_additional_execution": []
+  },
+  "root_validation": {
+    "registry_json_valid": true,
+    "green_ids_unique": true,
+    "declared_evidence_hashes_valid": "58/58",
+    "prior_registry_preserved": true,
+    "unaffected_green_ids_rerun": false,
+    "hardware_accessed": false,
+    "mcp_launched": false
+  },
+  "decision": "REGISTRY_RECONCILED_AT_JOINED_TIP"
+}

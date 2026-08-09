@@ -1,0 +1,8 @@
+FAIL — found one admissible safety gap: UART policy admission is not fully default-deny; several locked scalar and nested `serial_exchange` constraints are declared but not enforced before allow/forwarding.
+
+Artifacts written:
+
+- [FINDINGS.json](C:\Users\Jason\Documents\Jason\Orchestrator_Harness\plans\general-coding-harness\runtime\firmware-v2\final\lanes\F.C0.FR1-0008\.agent-workspace\FINDINGS.json)
+- [RESULT.json](C:\Users\Jason\Documents\Jason\Orchestrator_Harness\plans\general-coding-harness\runtime\firmware-v2\final\lanes\F.C0.FR1-0008\.agent-workspace\RESULT.json)
+
+Candidate and pinned MCP fixture identities were verified clean. No tests, MCP, hardware, or server were launched.

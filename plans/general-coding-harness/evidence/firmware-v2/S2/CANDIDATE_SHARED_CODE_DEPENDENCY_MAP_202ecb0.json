@@ -1,0 +1,290 @@
+{
+  "schema": "firmware-v2-candidate-shared-code-dependency-map/v1",
+  "owner": "ROOT-IM",
+  "candidate": {
+    "commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+    "joined_branch": "firmware/v2-s25-p-c3-runtime-0001",
+    "reserved_branch": "firmware/v2-candidate",
+    "clean_at_audit": true,
+    "prior_accepted_commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782"
+  },
+  "protected_baseline": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "manifest_path": "plans/general-coding-harness/evidence/firmware-v2/preflight/BASELINE_UNIT_MANIFEST.json",
+    "manifest_sha256": "e0113dd1f0f6ab2d6fd8e450caef5d407ad8aa3b6b28c7eb234ecd04bd51a120",
+    "node_count": 248
+  },
+  "prior_complete_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_2877ec1.json",
+    "sha256": "7efac0d0852609516a9a9caeecb3f99ad7d040d0f40671bb7dea52a25d8cc450",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_2877ec1.json",
+    "root_acceptance_sha256": "1fc90573d9ea507fd7ae15add1d71b26eee8c572a94d6d4678fdd5516d9adcd0",
+    "preserved_without_rewrite": true
+  },
+  "delta_inventory": {
+    "base_commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+    "candidate_commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+    "changed_path_count": 7,
+    "changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "firmware_acceptance/c3_watcher_oracle.py",
+      "firmware_acceptance/controller.py",
+      "firmware_acceptance/kit.py",
+      "orchestrator_harness/tests/test_firmware_acceptance_controller.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py",
+      "orchestrator_harness/tests/test_firmware_c3_watcher_oracle.py"
+    ],
+    "deleted_test_paths": [],
+    "modified_protected_baseline_test_paths": [],
+    "weakened_oracles": []
+  },
+  "delta_mappings": [
+    {
+      "paths": [
+        "firmware_acceptance/c3_harness.py",
+        "firmware_acceptance/controller.py",
+        "firmware_acceptance/kit.py",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py"
+      ],
+      "behavior": "C3 confines the singular target, lane, retained-session, result, cleanup, and pycache roots to the attempt HIL tree while preserving generic broker defaults outside C3",
+      "stable_ids": [
+        "C3-RUNTIME-ROOT-CONFINEMENT",
+        "C3-SINGULAR-TARGET-COMPATIBILITY"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_session_roots_are_single_hil_lane_and_generic_defaults_remain",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_singular_target_preserves_generic_broker_default",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_04_disposable_target_assignment_and_fail_closed_acceptance",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_05_sessions_overlap_and_p1_channel_is_token_bound"
+      ]
+    },
+    {
+      "paths": [
+        "firmware_acceptance/c3_harness.py",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py"
+      ],
+      "behavior": "C3 prestart and initial-status publication bind process identity, reject malformed/wrong-identity/early-exit/timeout states, and commit bounded terminal evidence for branch-only, setup, launch, and ambiguous-start failures",
+      "stable_ids": [
+        "C3-RUNTIME-PRESTART-CLEANUP",
+        "C3-RUNTIME-INITIAL-STATUS",
+        "C3-RUNTIME-STARTED-PUBLICATION"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_initial_status_rejects_malformed_wrong_identity_exit_and_timeout",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_prestart_branch_only_and_setup_launch_failures_cleanup_exactly",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_started_publication_ambiguity_gets_bound_terminal"
+      ]
+    },
+    {
+      "paths": [
+        "firmware_acceptance/c3_harness.py",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py"
+      ],
+      "behavior": "C3 recovery validates closed ownership evidence, rejects mutation matrices, reconciles reap and claim cleanup, emits a closed status, and permits only signed shutdown after restart",
+      "stable_ids": [
+        "C3-RUNTIME-RECOVERY-CLOSURE",
+        "C3-RUNTIME-RECONCILED-RESTART"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_reconciled_restart_emits_closed_status_and_allows_signed_shutdown_only",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_record_is_closed_and_restart_remains_shutdown_only",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_required_response_and_reap_reconciliation_are_exact",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_restart_rejects_closed_evidence_mutation_matrix"
+      ]
+    },
+    {
+      "paths": [
+        "firmware_acceptance/c3_watcher_oracle.py",
+        "orchestrator_harness/tests/test_firmware_c3_watcher_oracle.py"
+      ],
+      "behavior": "The watcher oracle recognizes only hash-bound authentic closed contradictions and distinguishes malformed, wrong-identity, and non-contradictory observations without mutating candidate state",
+      "stable_ids": [
+        "C3-WATCHER-CLOSED-CONTRADICTION-ORACLE"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s25_a1_oracle_closed_authentic_contradiction_and_hash_evidence",
+        "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s25_a1_oracle_contains_malformed_wrong_identity_and_noncontradictions"
+      ]
+    },
+    {
+      "paths": [
+        "firmware_acceptance/controller.py",
+        "orchestrator_harness/tests/test_firmware_acceptance_controller.py",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py"
+      ],
+      "behavior": "Controller-owned stdout and stderr handles close both after natural helper completion and on every partial-launch or forced-cleanup path, including second-exclusive-open failure",
+      "stable_ids": [
+        "C3-TRANSPORT-STREAM-OWNERSHIP"
+      ],
+      "unit_test_ids": [
+        "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_transport_post_reap_stderr_drain_reaches_eof_before_join_budget",
+        "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_transport_forced_close_of_blocked_stderr_is_incomplete_with_partial_digest",
+        "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_transport_rejects_malformed_wrong_id_error_and_eof_and_joins_helpers",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_prestart_branch_only_and_setup_launch_failures_cleanup_exactly"
+      ]
+    }
+  ],
+  "focused_execution": {
+    "lane": "S25.D5",
+    "commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+    "command_modules": [
+      "orchestrator_harness.tests.test_firmware_c3_harness",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit",
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle"
+    ],
+    "test_ids": [
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_04_disposable_target_assignment_and_fail_closed_acceptance",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_05_sessions_overlap_and_p1_channel_is_token_bound",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_06_limitation_shapes_roles_and_broker_gate",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_07_shutdown_blocks_then_reaps_and_refuses_unreconciled_restart",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_startup_distinguishes_operative_and_source_policy_bindings",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_initial_status_rejects_malformed_wrong_identity_exit_and_timeout",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_prestart_branch_only_and_setup_launch_failures_cleanup_exactly",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_reconciled_restart_emits_closed_status_and_allows_signed_shutdown_only",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_record_is_closed_and_restart_remains_shutdown_only",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_required_response_and_reap_reconciliation_are_exact",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_recovery_restart_rejects_closed_evidence_mutation_matrix",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_session_roots_are_single_hil_lane_and_generic_defaults_remain",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_singular_target_preserves_generic_broker_default",
+      "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_s25_a1_started_publication_ambiguity_gets_bound_terminal",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_authorization_launch_or_identity_mutation_rejects_before_launch",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_begin_sign_derive_authorize_and_dispatch",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_default_identity_provider_proves_tiny_subprocess_reaped",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_existing_result_and_incomplete_authority_reject_before_claim",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_failed_transport_commits_raw_failure_and_cleanup_before_claim_release",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_lane_template_binding_mutation_matrix_rejects_before_claim",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_launcher_failure_writes_failure_cleanup_and_releases_claim",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_path_hash_owner_claim_and_replay_mismatch_deny_before_launch",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_record_config_result_and_admit_errors_release_retained_claim",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_authorization_raw_rewrite_rejects_before_launch",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_bootstraps_once_executes_and_aborts_terminally",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_signed_close_requires_returned_disconnect",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_continuation_responses_are_closed_and_fresh_per_call",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_dynamic_route_plan_validation_ready_uart_and_terminal_contract",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_pre_result_route_and_continuation_rejections_leave_no_successor",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_same_identity_after_wait_is_cleanup_ambiguity",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_single_lifecycle_retains_the_publishing_controller_until_dispatch",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_stderr_persistence_failure_is_incomplete_and_fails_closed",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_terminate_timeout_escalates_to_kill_and_reaps_captured_handle",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_transport_drains_pipe_sized_stderr_without_blocking_and_serializes_writes",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_transport_forced_close_of_blocked_stderr_is_incomplete_with_partial_digest",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_transport_post_reap_stderr_drain_reaches_eof_before_join_budget",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_transport_rejects_malformed_wrong_id_error_and_eof_and_joins_helpers",
+      "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_unretained_execution_and_retained_authority_drift_reject_before_launch",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_admission_accepts_hash_bound_retained_raw_result",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_admission_rejects_raw_result_digest_mismatch",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_broker_materializes_seed_and_immutable_ordered_chain",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_broker_rejects_ambient_capabilities_and_policy_is_data_driven",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_campaign_contract_is_closed_and_seed_rewrite_fails",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_controller_admission_is_bounded_and_fail_closed",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_delegated_artifact_is_exact_and_verbatim",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_pinned_server_rejects_regular_and_linked_dotenv",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_plan_action_admits_exact_null_and_populated_shapes_only",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_policy_rejects_unknown_state_and_unsafe_flash_arguments",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_read_memory_policy_matches_pinned_signature_and_bounds",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_scope_effect_is_closed_and_independently_limited",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_seed_is_exact_and_hash_bound",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_server_limitation_create_once_has_causal_and_c3_evidence",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_server_limitation_rejects_closed_evidence_mutations",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_uart_exchange_surface_and_null_plan_disclosure_are_closed",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_uart_timing_read_and_write_values_are_closed_direct_and_plan",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_uart_write_transmitted_utf8_limits_apply_direct_and_plan",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_worker_environment_has_no_mcp_capability",
+      "orchestrator_harness.tests.test_firmware_acceptance_kit.FirmwareAcceptanceKitTests.test_write_serial_uses_locked_utf8_byte_limit",
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s25_a1_oracle_closed_authentic_contradiction_and_hash_evidence",
+      "orchestrator_harness.tests.test_firmware_c3_watcher_oracle.C3WatcherOracleTests.test_s25_a1_oracle_contains_malformed_wrong_identity_and_noncontradictions"
+    ],
+    "tests_run": 61,
+    "new_green_ids": 11,
+    "freshly_revalidated_existing_ids": 50,
+    "failures": 0,
+    "errors": 0,
+    "resource_warnings": 0,
+    "invocations": 1,
+    "outcome": "PASS"
+  },
+  "retained_prior_mappings": {
+    "prior_map_preserved": true,
+    "reason": "All prior dependency-valid green credits remain preserved. The complete four-module affected selection was freshly revalidated at the joined tip, so no affected retained ID relies only on inheritance. No protected baseline test was deleted or changed."
+  },
+  "evidence": [
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_2877ec1.json",
+      "sha256": "7efac0d0852609516a9a9caeecb3f99ad7d040d0f40671bb7dea52a25d8cc450"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_2877ec1.json",
+      "sha256": "1fc90573d9ea507fd7ae15add1d71b26eee8c572a94d6d4678fdd5516d9adcd0"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.P-C3-RUNTIME-0001/.agent-workspace/RESULT.json",
+      "sha256": "9278a2307e6f44a9015a823fb5e2738d4b5b3c2b822a85ca3e8c6479d3e64567"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.P-C3-RUNTIME-0001/.agent-workspace/ROOT_JOIN_003.json",
+      "sha256": "63ac9d857a9b3dca60a4486ddc09f1471e24161c1bf83900ad0238d4c21ed492"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.R1-C3-RUNTIME-0001/.agent-workspace/FINDINGS.json",
+      "sha256": "62041d839aed9e58e76b66d02e58930bf99deea706df8a9875b9454227e2002c"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.R1-C3-RUNTIME-0001/.agent-workspace/ROOT_TRIAGE_REREVIEW_008.json",
+      "sha256": "6859a55af875fb149a9102dc4af583e76f119fc170e2e169cf8c89bbc122349d"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.A1-C3-RUNTIME-0001/.agent-workspace/RESULT.json",
+      "sha256": "198204fce2272ee9008fa2c83cc8579de21a1e857b69f8d0229c809f9be636b5"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.A1-C3-RUNTIME-0001/.agent-workspace/ROOT_AUTHOR_ACCEPTANCE_015.json",
+      "sha256": "2842e55595a05295805144192530c6a3ace1c2d1fe7b093649ba564f99e22050"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.D5-C3-RUNTIME-0001/.agent-workspace/TEST_EXECUTION.json",
+      "sha256": "ef8e64447e95df9576692d04ba6b3737d83c29daac8f2ab10059c2ecc94675c2"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.D5-C3-RUNTIME-0001/.agent-workspace/TEST_OUTPUT.txt",
+      "sha256": "823f27ee73001afeed47212c1fd54eeef2679c598556d4896c9c73ad44e7a3e9"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.D5-C3-RUNTIME-0001/.agent-workspace/ROOT_TRIAGE.json",
+      "sha256": "7746f82a8744fda95be5d4282eac8d770d38eff0b5d457b33030dabb9555191f"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/S25.D5-C3-RUNTIME-0001/.agent-workspace/ROOT_ADMISSION.json",
+      "sha256": "60e1669f9df0fb8ea0c56be2ca87887dd47b9983b0f0b6ee2b4813e6db3ad5d4"
+    }
+  ],
+  "registry_reconciliation": {
+    "prior_unique_green_ids": 146,
+    "new_unit_test_ids": 11,
+    "current_unique_green_ids": 157,
+    "freshly_revalidated_existing_ids": 50,
+    "invalidated_groups": 0,
+    "selected_for_additional_execution": []
+  },
+  "non_regression_proof": {
+    "baseline_collection_recollected": false,
+    "deleted_protected_baseline_ids": [],
+    "baseline_assertion_modifications": [],
+    "oracle_weakened": false,
+    "unaffected_green_tests_rerun": false,
+    "conclusion": "The seven-path delta adds bounded C3 runtime recovery/root/oracle behavior and stream-ownership cleanup. The complete 61-test affected selection passed once at the exact joined tip, 50 existing IDs were freshly revalidated, 11 new IDs passed, no protected baseline test changed, and no additional execution is dependency-justified before fresh C0."
+  },
+  "reviewer_and_tester_criticism_disposition": {
+    "accepted_source_criticism": "The reviewer-observed stream ownership leak was repaired and the same reviewer returned an empty exact-tip finding set.",
+    "accepted_test_criticism": "The test author added natural-EOF, successful-controller, and second-exclusive-open ownership assertions; ROOT rejected two type-unsafe intermediate revisions before accepting the BasedPyright-neutral final commit.",
+    "rejected_executor_criticism": "S25.D5-EXEC-001 was preserved and rejected because PowerShell only wrapped normal unittest stderr progress; exit 0, 61 green tests, exact output bytes, and zero ResourceWarnings remained intact. Suppressing that transport presentation would be net-negative complexity."
+  },
+  "no_hardware_boundary": {
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "server_edited": false,
+    "statement": "This reconciliation uses host-only static evidence and the single four-module unittest execution. No board, probe, serial, flash, reset, debug, BLE, LoRa, RF, pinned-server, or physical operation ran."
+  },
+  "created_at": "2026-08-05T09:45:56Z"
+}

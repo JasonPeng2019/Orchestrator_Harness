@@ -1,0 +1,26 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R2",
+  "worker_invocation_id": "s2-r2-001",
+  "branch": "firmware/v2-s2-r2",
+  "commit": "66e053a3822a7769590266f977c266f33a520ed5",
+  "outcome": "PASS",
+  "summary": "PASS: the targeted repaired tip closes the accepted R2 contract, seed-integrity, and opt-in child-isolation risks without implementing rejected triage or expanding scope.",
+  "checks": [
+    {
+      "name": "targeted repaired-tip identity review",
+      "outcome": "PASS",
+      "summary": "Branch and HEAD match 66e053a3822a7769590266f977c266f33a520ed5; no tracked files were edited."
+    },
+    {
+      "name": "per-ID contract, evidence closure, seed tree, and child-isolation review",
+      "outcome": "PASS",
+      "summary": "The dependency-invalidated repair closes the prior accepted risks within the static acceptance-kit scope."
+    },
+    {
+      "name": "finding admissibility and scope review",
+      "outcome": "PASS",
+      "summary": "No admissible findings remain; rejected triage and framework-expansion proposals were not reopened."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-pre-c1-executor-006",
+  "role": "test_executor",
+  "commit": "184a869d0f49ae9ef6b222ae90dc3488f7229f60",
+  "findings": [
+    {
+      "id": "S2.D1-001",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": [
+        "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_dynamic_route_plan_validation_ready_uart_and_terminal_contract",
+        "firmware_acceptance.controller.FirmwareAcceptanceController._validate_route_pre_dispatch"
+      ],
+      "evidence": [
+        ".agent-workspace/bounded-rerun-184a869/02-orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_dynamic_route_plan_validation_ready_uart_and_terminal_contract.stderr.log",
+        "orchestrator_harness/tests/test_firmware_acceptance_controller.py:141-148",
+        "orchestrator_harness/tests/test_firmware_acceptance_controller.py:160-163",
+        "firmware_acceptance/controller.py:527-546"
+      ],
+      "observed": "The corrected dynamic-route test still errors at controller.py:543 with call board_id differs from the retained server route. The server route's required board_setup-plan initialization deliberately contains board_id: null at test_firmware_acceptance_controller.py:141, but _validate_route_pre_dispatch rejects that null before its existing exact plan-initialization comparison. The test body reports FAILED in 0.836s, then the retained stderr helper keeps the temporary log open and the exact Python PID remains live until the 30-second bound.",
+      "expected": "The route validator must permit the route's explicitly bound null board_id during the all-null board_setup-plan initialization call, then enforce the exact route plan comparison already implemented below. Non-null board IDs must remain equal to the returned route board_id.",
+      "reproduction": "Run only the recorded dynamic-route command from bounded-rerun-184a869. Its preserved stderr shows the AdmissionError at controller.py:543 followed by TemporaryDirectory WinError 32 for the retained stderr log; PID 147180 was verified by creation identity and command line, terminated after 30 seconds, and confirmed absent.",
+      "impact": "The last invalidated controller ID cannot complete, so the joined D1 evidence is 25/26 rather than 26/26 and the dynamic route/plan/validation/UART terminal contract is not certified. The malformed cleanup side effect also recreates the timeout behavior the bounded batch was designed to expose.",
+      "no_fix_consequence": "Every valid dynamic route whose required all-null plan initialization carries board_id: null is rejected before dispatch, preventing the retained setup state machine from reaching setup, validation, ready, and disconnect states.",
+      "smallest_fix": "In _validate_route_pre_dispatch, compare args['board_id'] with the retained route only when the argument is non-null, leaving the subsequent board_setup-plan all-null route equality check as the authority for the null initialization shape.",
+      "complexity": "Low: one localized conditional in the route pre-dispatch validator.",
+      "regression_risk": "Low: non-null route board IDs remain exact, and the existing board_setup-plan route-call comparison continues to reject any null-plan drift.",
+      "verification_cost": "Low: rerun only this one invalidated stable ID after the localized correction; the other 25 joined IDs already have fresh or ROOT-preserved green evidence.",
+      "alternatives": "Changing the corrected test to provide a guessed board_id would weaken the explicit null initialization contract. Removing route validation would allow predecessor-bound board drift and is materially riskier.",
+      "cost_benefit": "The defect is directly reproduced at a single production line with a corrected fixture, blocks the only remaining D1 ID, and has a narrow low-risk fix whose certification value clearly exceeds its complexity and verification cost.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

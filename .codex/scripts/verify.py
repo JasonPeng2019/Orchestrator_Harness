@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-SOURCE_ROOT = ROOT / "harness-in-progress"
+SOURCE_ROOT = ROOT / "stable-general-harness-runner"
 DEV_ROOT = ROOT / ".codex" / "dev"
 SCRIPT_ROOT = Path(__file__).resolve().parent
 if str(SCRIPT_ROOT) not in sys.path:
@@ -33,7 +33,7 @@ def main() -> int:
                 "--config",
                 str(DEV_ROOT / "pyproject.toml"),
                 "--no-cache",
-                "harness-in-progress",
+                "stable-general-harness-runner",
                 ".codex/scripts",
                 ".codex/tests",
             ],
@@ -66,7 +66,16 @@ def main() -> int:
         ),
         (
             "orchestrator tests",
-            [sys.executable, "-m", "unittest", "discover", "-s", "orchestrator_harness/tests", "-t", "."],
+            [
+                sys.executable,
+                "-m",
+                "unittest",
+                "discover",
+                "-s",
+                "orchestrator_harness/tests",
+                "-t",
+                ".",
+            ],
         ),
         (
             "watcher tests",
@@ -83,14 +92,25 @@ def main() -> int:
         ),
         (
             "Codex integration tests",
-            [sys.executable, "-m", "pytest", "-p", "no:cacheprovider", "-q", ".codex/tests"],
+            [
+                sys.executable,
+                "-m",
+                "pytest",
+                "-p",
+                "no:cacheprovider",
+                "-q",
+                ".codex/tests",
+            ],
         ),
     ]
     if args.full:
         commands.append(
             (
                 "attention retention",
-                [sys.executable, "harness_watcher_implementation/tests/run_attention_practical.py"],
+                [
+                    sys.executable,
+                    "harness_watcher_implementation/tests/run_attention_practical.py",
+                ],
             )
         )
 

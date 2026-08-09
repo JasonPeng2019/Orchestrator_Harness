@@ -1,0 +1,48 @@
+{
+  "schema": "firmware-v2-c0-root-envelope-audit/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0018",
+  "candidate_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+  "findings_sha256": "5d002857ae439b9158e93403b8f59f34604edf2f0a4f6f3622d927455eeac8b4",
+  "result_sha256_before_correction": "fbda87cbfa93d11de0dfefeca37878edf91107cb20873a48d5afc6a4c872012d",
+  "result_sha256_after_correction": "f3996dd2b0f9dcc231171962abfe4c99a47a7ae613145831fa2f2f7f3910bd68",
+  "controller_status_sha256_before_correction": "5dc3c4efbe5a0ee6500914d6ddabd21879407e6156d7902818ab2416794af926",
+  "controller_status_sha256_after_correction": "b71a662fe2ba9616b75493cdb0a303ec29392b139e75b2304ad39da8ab0fab9f",
+  "initial_transcript_sha256": "4f73d3f3203ddc50a0d0cbf148d772e7cd95323ebc6ef0eb904e4865d17a2692",
+  "correction_transcript_sha256": "b47022dc3e1ed2fa842b5266255a7807fa1fc5dc7d31baa8190e92c9b86cc3be",
+  "review_content": {
+    "complete_c1_c73_sweep": true,
+    "latest_four_path_delta_reviewed": true,
+    "attempt_0005_and_s27_criticism_chain_reviewed": true,
+    "findings_count": 0,
+    "verdict": "NO CANDIDATE GAP / READY",
+    "candidate_tests_or_gates_run": false,
+    "product_imports_run": false,
+    "mcp_or_hardware_accessed": false,
+    "tracked_state_clean": true
+  },
+  "observed_procedure_noise": [
+    {
+      "observation": "The first PowerShell hash command had a quoting error and exited 1.",
+      "effect": "The reviewer immediately issued a corrected read-only command, matched every prescribed hash, and completed the full sweep; no evidence or candidate state changed.",
+      "classification": "REVIEWER_COMMAND_ERROR_RECOVERED"
+    },
+    {
+      "observation": "The reviewer used two short Python snippets importing standard-library json only to validate FINDINGS.json and RESULT.json.",
+      "effect": "No candidate module, product code, test, gate, compilation, MCP, hardware, or live-process probe ran. The original prompt's unqualified import prohibition was broader than the intended product-execution boundary.",
+      "classification": "ADMINISTRATIVE_OUTPUT_VALIDATION"
+    }
+  ],
+  "same_thread_correction": {
+    "thread_id": "019fd2a5-3854-7582-b3be-d9b15524cd85",
+    "review_repeated": false,
+    "findings_changed": false,
+    "outcome_changed": false,
+    "top_level_summary_changed": false,
+    "only_change": "The NOT_RUN execution summary now discloses the two standard-library json imports and distinguishes them from candidate/product execution.",
+    "commands_run_during_correction": false,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "decision": "ADMIT_CORRECTED_TRANSPARENT_ENVELOPE_WITHOUT_REVIEW_OR_TEST_RERUN",
+  "created_at": "2026-08-05T16:03:00Z"
+}

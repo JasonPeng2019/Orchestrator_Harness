@@ -1,0 +1,85 @@
+{
+  "schema": "firmware-v2-c2-attempt-record/v1",
+  "attempt": "attempt-0006",
+  "recorded_at_utc": "2026-08-05T14:13:25Z",
+  "c1_lock": {
+    "id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\721b6351-0fdd-448d-8d89-0cee20acf8b0\\C1_LOCK.json",
+    "sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "validation_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\721b6351-0fdd-448d-8d89-0cee20acf8b0\\C1_VALIDATION.json",
+    "validation_sha256": "10b361ecbfa448790b0c2d9045c29459cc4af96b33d9be51faf20a233a7bb678",
+    "authorization_sha256": "1c379ea4732e87985b06c48b9723e5f5572415eb59d1293d8d82512f53b7ba12"
+  },
+  "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+  "mcp_server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+  "executor": {
+    "lane_id": "F.C2.D1",
+    "worker_invocation_id": "c2-d1-006",
+    "thread_id": "019fd1fd-83a3-7ad0-8370-a544c08c7c6e",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority"
+  },
+  "stable_runner": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "clean_detached": true,
+    "retry_008_source_invocation_sha256": "0e4992d388b427e87584c1366fc40949071b8b7f724b7bc5caed2fa64f4d9848",
+    "retry_008_projected_invocation_sha256": "933350f97a4492044de3283797d17d08331098814e3defa6e8b6ec3c8c51df56",
+    "retry_008_projection_record_sha256": "45e619fd66987a952138382e33910171cf81a1e99e9355beffde517dd782e4ce",
+    "retry_008_projection_proof_sha256": "1e74c778931ffb23640faca964ab519ba87ff4e3e0f822d15f058af4a8408b63",
+    "retry_008_dispatch_proof_sha256": "c2cc325564d11f4f9d1de1c7612c09ef08529d0f55958822b65b1cd3dec0f660"
+  },
+  "artifacts": {
+    "findings": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0006\\.agent-workspace\\FINDINGS.json",
+      "sha256": "0a1b2390547dfc8d05413e266285c99c6db2482234f38fcac17ac7baba277214"
+    },
+    "result": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0006\\.agent-workspace\\RESULT.json",
+      "sha256": "0764c758c46a2f5a4ec2382358ebc61ee08840ebe13eab911737ff6877b994c3"
+    },
+    "test_report": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0006\\.agent-workspace\\TEST_REPORT.json",
+      "sha256": "58dbed8183462454cb51c25083510ee4d9301b0a39ca9758261f9bb4c86ddad2"
+    },
+    "controller_status": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0006\\.agent-workspace\\status.json",
+      "sha256": "35f2039c1b907a33d69818215e8c6e9faf0b519f637ff494b9631e13e9c950f8"
+    },
+    "retry_008_worker_jsonl_sha256": "023573d65788f7ac2d6520c28195d96b10a1dfdab144f29997450ba9cb4a1ef7",
+    "retry_008_worker_stderr_sha256": "526f179ebe842bde73102ef7b1c0e18341dc35a835af09c24c0a208738e3af03",
+    "retry_008_worker_last_message_sha256": "a843e9e9d65197f5c20564500ab791adf3572bf80536e3a3ad4e2686c4f73e8c",
+    "verifier_sha256": "0034ee6b549aa781a1016c452794bc0cb9bd7fac88b420f39071f3e3defed5f4",
+    "standalone_proof_sha256": "71581c0df9a51e0794651ba5022cb7c60fe415d71408d1733a4559cc4ec979bf",
+    "supervisor_sha256": "4a3a7cc2dabcc6a84bb5b0af8d61a9ffa38ba21060ecd292a01043295c3c9297"
+  },
+  "retry_008_process": {
+    "pid": 174752,
+    "creation_identity": "windows-filetime:134304124711322673",
+    "process_sha256": "b91cf38df997636f056cba26c375f55fc7ca1d7b0fb0f0c0b3a51b6989a3614f",
+    "stdout_sha256": "3a83627b807237da8982eb02570b7aeb5982b6344ee4a668bf53c1430121ff8b",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exit_code": 0,
+    "exit_observed": true,
+    "timeout": false,
+    "metadata_initialized_before_spawn": true
+  },
+  "effective_passed_ids": [
+    "F-C2-LOCK-001",
+    "F-C2-AUTH-001",
+    "F-C2-DISPOSABLE-001",
+    "F-C2-CREDIT-001",
+    "F-C2-STATE-001"
+  ],
+  "historical_failed_records_preserved": 8,
+  "report_record_count": 13,
+  "skips_or_xfails": 0,
+  "green_ids_rerun_after_pass": [],
+  "hardware_or_mcp_accessed": false,
+  "candidate_changed": false,
+  "mcp_server_changed": false,
+  "post_controller_claim_files": 0,
+  "post_controller_surviving_test_processes": 0,
+  "c3_admitted": false,
+  "outcome": "PASS_PENDING_ROOT_ACCEPTANCE"
+}

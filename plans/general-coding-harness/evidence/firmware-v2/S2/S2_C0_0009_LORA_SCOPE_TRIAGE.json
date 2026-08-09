@@ -1,0 +1,24 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "9606444ccf64216a44e448e88f6a824f2012ae60",
+  "findings_path": "plans/general-coding-harness/runtime/firmware-v2/final/lanes/F.C0.FR1-0009/.agent-workspace/FINDINGS.json",
+  "findings_sha256": "a5586e6f379c00742c25b521c69fbabf176e16368572079c1a2e3a6826968a70",
+  "result_sha256": "dec7778b7972197a78ffe32fe8e430ec8e451b0a8ef5932367f33e12320750fe",
+  "decisions": [
+    {
+      "id": "F-C0-FR1-009-001",
+      "decision": "ACCEPT",
+      "classification": "functionality_breaking",
+      "rationale": "ROOT independently reproduced that the candidate admits LoRa spreading_factor_min values 1 and 6 under the delegated minimum 7, while it rejects the valid narrowed minimum 8. This reverses lower-bound narrowing at the signed physical-dispatch scope boundary. The problem is an explicit RF authority expansion; the correction is a localized predicate plus one focused host-only regression.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Treat spreading_factor_min as a delegated lower bound, retain spreading_factor_max as an upper bound, and require the effective minimum not to exceed the effective maximum. Preserve all fixed/equality and other maximum rules."
+    }
+  ],
+  "immutable_mcp_fixture": {
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "accessed": false,
+    "edited": false
+  },
+  "hardware_accessed": false
+}

@@ -1,0 +1,59 @@
+{
+  "schema": "firmware-v2-c2-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "accepted_at_utc": "2026-08-04T22:12:00Z",
+  "attempt_record": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0002\\ATTEMPT_RECORD.json",
+    "sha256": "3296b41d218f6973684456d9870bb58a08b9e649860ee5abde71bdc4fe8679b8"
+  },
+  "c1": {
+    "lock_id": "bf17d2fc-9dda-4932-b8e6-448de69b0591",
+    "lock_sha256": "73cd9542ad2d360c94476a3531291ca09d242dd7245a2018a5998abe3a910f39",
+    "checksum_matches": true,
+    "locked_path_hash_references_valid": "42/42",
+    "governing_hashes_unchanged": true,
+    "candidate_and_server_inputs_unchanged": true
+  },
+  "executor": {
+    "thread_id": "019fcebd-9167-75b0-906f-f1442492a3be",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "default",
+    "controller_result_valid": true,
+    "claims_released": true,
+    "worktree_clean": true
+  },
+  "root_checks": {
+    "findings_exact_six_key_shape": true,
+    "findings_count": 0,
+    "result_exact_eight_key_shape": true,
+    "result_check_exact_three_key_shapes": "5/5",
+    "test_report_path_hash_references_valid": "23/23",
+    "assigned_ids": 5,
+    "passed_ids": 5,
+    "failed_ids": 0,
+    "skips_or_xfails": 0,
+    "protected_baseline_ids_compared_without_execution": 248,
+    "registry_green_groups": 21,
+    "registry_unique_green_ids": 140,
+    "registry_invalidations": 0,
+    "registry_evidence_credits": 56,
+    "green_ids_rerun_after_pass": 0,
+    "only_failed_id_retried_after_lane_local_cleanup_fix": "F-C2-DISPOSABLE-001",
+    "result_correction_reran_checks": false,
+    "active_resource_claims": 0,
+    "surviving_managed_test_processes": 0,
+    "c2_broker_roots": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "classification": {
+    "disposable_cleanup_error": "ORDINARY_TEST_EXECUTOR_CORRECTION",
+    "result_envelope_error": "ORDINARY_TEST_EXECUTOR_CORRECTION",
+    "candidate_harness_failure": false,
+    "watcher_failure": false,
+    "c1_invalidation": false
+  },
+  "decision": "C3_UNLOCKED",
+  "next_gate": "Allocate a fresh C3 attempt and launch a fresh Sol-high-priority F.C3.O orchestrator plus separate watcher; ROOT-IM must supervise but not orchestrate target tasks."
+}

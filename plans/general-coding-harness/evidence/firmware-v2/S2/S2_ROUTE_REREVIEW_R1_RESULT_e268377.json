@@ -1,0 +1,29 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-route-review-001",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "e26837785745bae3f5102e79305ade677b68cdac",
+  "outcome": "FAIL",
+  "summary": "S2-R1-001 and S2-R1-002 are closed. Four admissible findings remain: attribution and substitute execution are still self-asserted, continuation templates block concrete pinned-server responses, and limitation terminal-state validation mismatches the controller output.",
+  "checks": [
+    {
+      "name": "commit-branch-and-delta",
+      "command": "git status --porcelain; git rev-parse HEAD; git branch --show-current; git diff --name-status 7c28bfc5d223323065515694514baefb47e864ad e26837785745bae3f5102e79305ade677b68cdac",
+      "outcome": "PASS",
+      "summary": "Reviewed the requested clean firmware/v2-s2-r1 fast-forward tip and complete production delta."
+    },
+    {
+      "name": "accepted-finding-closure-and-pinned-source-shapes",
+      "command": "Read contract, preserved findings/triage, current policy/controller/kit, and immutable pinned source at f003f84a7df51cd8595a3203c62e225b21da2a22",
+      "outcome": "FAIL",
+      "summary": "The exact 11/10 plan split and validation-before-result ordering close S2-R1-001/002. Findings S2-R1-003 through S2-R1-006 remain on limitation causation/substitute provenance, continuation execution, and terminal-schema compatibility."
+    },
+    {
+      "name": "host-only-static-checks",
+      "command": "python -B JSON policy-shape assertions; git diff --check 7c28bfc5d223323065515694514baefb47e864ad e26837785745bae3f5102e79305ade677b68cdac",
+      "outcome": "PASS",
+      "summary": "All five plan rules have exact 11-key null and 10-key populated sets; the committed delta has no whitespace errors."
+    }
+  ]
+}

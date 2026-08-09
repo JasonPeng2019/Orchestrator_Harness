@@ -1,0 +1,74 @@
+{
+  "schema": "firmware-v2-outer-support-readiness/v1",
+  "created_at_utc": "2026-08-06T08:20:13.521Z",
+  "owner": "ROOT-IM",
+  "outcome": "PASS",
+  "scope": "host-only external C3 support preparation; no product, MCP, or hardware execution",
+  "governing_sha256": {
+    "goal.md": "cdce025b375f2b9d1a9bef46eb043dd2f8c51c95c327f608ad355b07acce38b9",
+    "active_docs/GENERALIZATION_SPEC_2.md": "ee0d71282dc9608f810cc7de69c903c4c808b73ce2cfd16e45273bd90b2d7dd9",
+    "active_docs/IMPLEMENTATION_ROADMAP_2.md": "a805d5dc44019ecece0a04cbec2554527fe50fe090758fba2adc52fb6e90d810",
+    "active_docs/EXECUTION_READINESS_2.md": "e97ef68f2e4ddf137c0c56450f02ba291f918a24e6dcbcbbc2428b75e6532d90",
+    "plans/general-coding-harness/EXECUTION_PLAN_2.md": "c06207971a87ec32538f12a20d0330b30bc3e9c9aeaf9c22c7901da8af7efc47",
+    "task-card-spec.md": "ca7c0e94630604a8b4bb52517cf262a8e2160356befd4412deadaee97336adca",
+    "test-cleanup.md": "a454252c5586e8623638d3d3ab88ff0c7d656b038a72f72b49b7c9babdef90dd"
+  },
+  "support_sha256": {
+    ".codex/scripts/c3_outer_support.py": "adab6122d108a3da2c38e5df4e612d7487b7cedbd00b0459d2f609b933ad54f4",
+    ".codex/scripts/c3_watcher_helper.py": "b994556fa4cf9d0ae18ea107b62ff19c6a2ac53b5db29812a9de5ac3206d87ed",
+    ".codex/scripts/run_c3_outer_support_smoke.py": "1ac2a0d67c4a88317fc38604da7f691c5f39fa3c5c173e27099f4f56882caa32",
+    ".codex/tests/test_c3_outer_support.py": "ec55c042a79b8e1c4a6cccfeff101a61cfb44144aedc0bfd8a495850402d8e25"
+  },
+  "verification": {
+    "execution_plan_validator": "PASS --require-scoped-locks",
+    "focused_ruff": "PASS",
+    "focused_basedpyright": "0 errors, 0 warnings, 0 notes",
+    "focused_pytest": "16 passed",
+    "host_only_practical_smoke": "8 of 8 PASS",
+    "full_repository_gate": "VERIFY: PASS",
+    "full_repository_counts": {
+      "orchestrator_tests": "248 passed with 1 skip",
+      "watcher_tests": "100 passed",
+      "codex_integration_tests": "103 passed",
+      "attention_practical": "PASS"
+    }
+  },
+  "independent_luna": {
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority",
+    "first_dispatch": {
+      "thread_id": "019fd623-2dde-7f53-9b4d-15e2d45589ee",
+      "outcome": "NO_TEST_SUPPORT_FAILURE",
+      "reason": "workspace-write execution could not locate codex-windows-sandbox-setup.exe",
+      "product_finding": false
+    },
+    "bounded_retry": {
+      "thread_id": "019fd626-0892-7403-970d-d91bf8d1cf83",
+      "execution_mode": "local unsandboxed command execution with read-only task authority",
+      "ruff": "PASS",
+      "basedpyright": "PASS",
+      "pytest": "16 passed",
+      "smoke": "8 of 8 PASS",
+      "smoke_observation_close_sha256": "9fd40021281166f109630f2e34e9a72947652a057a71b295123560e7a7feed05",
+      "finding_count": 0,
+      "verdict": "PASS"
+    }
+  },
+  "protected_state": {
+    "stable_runner_commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "stable_runner_clean_detached": true,
+    "reserved_candidate_commit": "c6999d173c344b317a918df91619308fd9f93f63",
+    "reserved_candidate_clean": true,
+    "mcp_fixture_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "mcp_fixture_clean": true,
+    "rollback_commit": "287ea53793e3963062882012ff80c3b0e8c41587",
+    "rollback_clean_detached": true,
+    "related_support_processes": 0,
+    "resource_claim_files": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "candidate_source_changed": false
+  },
+  "decision": "ACCEPT_OUTER_SUPPORT_PREPARATION_AND_ALLOW_EXPLICIT_NEXT_RUN_RESUME"
+}

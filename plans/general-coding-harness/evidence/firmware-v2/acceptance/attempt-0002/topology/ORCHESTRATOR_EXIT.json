@@ -1,0 +1,42 @@
+{
+  "schema": "firmware-c3-orchestrator-exit/v1",
+  "attempt_id": "attempt-0002",
+  "owner": "ROOT-IM",
+  "acceptance_pass": false,
+  "exit_reason": "NORMAL_EXIT_AFTER_DURABLE_FAIL_RESULT_AND_ORDERED_ABORT_CLEANUP",
+  "orchestrator_identity": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\topology\\ORCHESTRATOR_IDENTITY.json",
+    "sha256": "7d27e71735f36744cbf8234828a74cfe0b8beb01be84fc2043f4604785c6b959",
+    "pid": 155904,
+    "created_utc": "2026-08-05T06:35:17.707264Z",
+    "thread_id": "019fd0a2-323c-7962-bc35-0e5d5747d288",
+    "reaped": true,
+    "exit_code": null,
+    "exit_code_note": "The detached ROOT launcher did not retain an exit-code handle; JSONL ended in turn.completed and the exact PID was absent at ROOT observation."
+  },
+  "key_release": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\topology\\ORCHESTRATOR_KEY_RELEASE.json",
+    "sha256": "8f9097056cb78e5da852e31cb651205d155d3057b5f9e7c461152ec6ae8feedd"
+  },
+  "result": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\ACCEPTANCE_RESULT.json",
+    "sha256": "a56e50156b5f5801aece131564a50cd7d5608d6ed0fc22468b0f758a9fb19727",
+    "decision": "FAIL"
+  },
+  "signer_terminal": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\.agent-workspace\\orchestrator\\signing\\SIGNER_STOPPED.json",
+    "sha256": "35ef56726ba97d40a59a8778e0af4e7cf5857c5b65bcc50a9980d6741972bd1c",
+    "private_key_discarded": true
+  },
+  "captured_final_message": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\.agent-workspace\\orchestrator\\orchestrator.last-message.txt",
+    "sha256": "46f9ef2d71c8d66d0df9cebc35ec5d776a031dad24c2ae8ff6bd11da58adfbd1",
+    "note": "The final message misstated the WATCHER_EXIT hash; ACCEPTANCE_RESULT.json contains the correct immutable hash d87e3117504f6f8793c582c404b6d6a2619cdf2f7debc1238cd9d6958510db4e."
+  },
+  "captured_jsonl": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002\\.agent-workspace\\orchestrator\\orchestrator.jsonl",
+    "sha256": "92a7ba9c43752bf3a47d5df00aa74c4b9a8ae8e22cd8c52aa607295a096cd7d2",
+    "terminal_event": "turn.completed"
+  },
+  "observed_reaped_at_utc": "2026-08-05T06:55:19.6331832Z"
+}

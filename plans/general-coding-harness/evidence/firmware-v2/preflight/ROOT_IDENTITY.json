@@ -1,0 +1,20 @@
+{
+  "schema_version": "firmware-v2-root-identity-v1",
+  "role_id": "ROOT-IM",
+  "identity_kind": "current-outside-root-session",
+  "launched_child": false,
+  "child_model_gate_applies": false,
+  "authority": [
+    "implementation_coordination",
+    "implementation_integration",
+    "implementation_finding_triage",
+    "implementation_verification",
+    "c3_topology_launch_and_supervision"
+  ],
+  "prohibited_c3_authority": [
+    "target_task_assignment",
+    "target_project_repair_decision",
+    "target_worker_direct_launch"
+  ],
+  "recorded_at_utc": "2026-08-04T00:21:00Z"
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "firmware-c3-orchestrator-exit/v1",
+  "attempt_id": "attempt-0003",
+  "owner": "ROOT-IM",
+  "acceptance_pass": false,
+  "exit_reason": "NORMAL_EXIT_AFTER_DURABLE_FAIL_RESULT_AND_ORDERED_ABORT_CLEANUP",
+  "orchestrator_identity": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\topology\\ORCHESTRATOR_IDENTITY.json",
+    "sha256": "064d6ac25f896856d45aa19441d6da817591fd8ca94f5c90bd5d3e868a53ae37",
+    "pid": 197112,
+    "created_utc": "2026-08-05T10:42:53.091154Z",
+    "thread_id": "019fd184-dd9d-79c2-97a8-df7183b41b3c",
+    "reaped": true,
+    "exit_code": null,
+    "exit_code_note": "The detached ROOT launcher did not retain an exit-code handle; JSONL ended in turn.completed, the final-message file was written, and the exact PID was absent at ROOT observation."
+  },
+  "key_release": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\topology\\ORCHESTRATOR_KEY_RELEASE.json",
+    "sha256": "e4d12c94b13dda092cc4588e9ea50d38b26e0275c646ad6fe581df4f5dc664e7"
+  },
+  "result": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\ACCEPTANCE_RESULT.json",
+    "sha256": "5da030a6e6102e6233c63ee7767b75d3f12b94afec8ce23c4f6276ac217a0334",
+    "decision": "FAIL"
+  },
+  "manifest": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0003\\EVIDENCE_MANIFEST.json",
+    "sha256": "c06f44dc57b870e6926faa6285739fdfa993010e6d1d58a1ad9881e0aef7cf47",
+    "integrity_pending_root_post_exit_audit": true
+  },
+  "signer_terminal": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0003\\.agent-workspace\\orchestrator\\signing\\SIGNER_STOPPED.json",
+    "sha256": "e8ad774427f65b0f074201e2e8d4f23ce1a0b50d52168b9471813fedeb539d1b",
+    "private_key_discarded": true
+  },
+  "captured_final_message": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0003\\.agent-workspace\\orchestrator\\orchestrator.last-message.txt",
+    "sha256": "59a1bc94ac26db36ee7adce31dd229419a882dddba17079eb00ae34b86ed9bfa"
+  },
+  "captured_jsonl": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0003\\.agent-workspace\\orchestrator\\orchestrator.jsonl",
+    "sha256": "b4007793e7e19fdff314f3174ee69b65807abcb00a262bb1d9eb04ae8ec61758",
+    "terminal_event": "turn.completed"
+  },
+  "observed_reaped_at_utc": "2026-08-05T11:13:44.8066250Z"
+}

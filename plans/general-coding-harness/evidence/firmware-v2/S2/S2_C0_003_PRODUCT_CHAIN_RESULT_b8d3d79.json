@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.P",
+  "worker_invocation_id": "s2-p-006",
+  "branch": "firmware/v2-s2-product",
+  "commit": "b8d3d7917921d3bf7ef06e69b6af23bb4e50df50",
+  "outcome": "PASS",
+  "summary": "Bound completed attempt-0003 production, closure-review, A1, and D1 evidence to the clean joined tip; this turn made no source change and reran no tests.",
+  "checks": [
+    {"name": "preserved Terra closure review", "command": "preserved review at 8ed3a025b3f19a2b4b9c9ecca09c9e2edba23683", "outcome": "PASS", "summary": "Zero findings; preserved result SHA-256 28f32f54f9d7df29e544da252374b207da1f1752053fc5dd2aee3b6d714f70aa."},
+    {"name": "preserved A1 focused result", "command": "preserved A1 result at b8d3d7917921d3bf7ef06e69b6af23bb4e50df50", "outcome": "PASS", "summary": "Zero findings; preserved result SHA-256 486bfff9e215afe9d5344b0f7c6aed507dede65a7575292819b9f4ac5cbdb007."},
+    {"name": "preserved independent D1 execution", "command": "preserved D1 result at b8d3d7917921d3bf7ef06e69b6af23bb4e50df50", "outcome": "PASS", "summary": "29/29 exact controller/kit/host tests passed; zero findings; result SHA-256 3f09cbef79892415c1ddf71b6d8c84c9a8bb9516d7f5b10913d7400901621e45."},
+    {"name": "this evidence-binding turn", "command": "git branch --show-current; git rev-parse HEAD; git status --short", "outcome": "PASS", "summary": "Matched firmware/v2-s2-product at the exact joined tip with clean tracked status; no tests, MCP, or hardware access."}
+  ]
+}

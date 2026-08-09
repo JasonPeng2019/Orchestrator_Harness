@@ -1,0 +1,35 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S23.D2",
+  "worker_invocation_id": "s23-d2-c3-remaining-004",
+  "branch": "firmware/v2-s23-d2-c3-remaining-0004",
+  "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+  "outcome": "PASS",
+  "summary": "Both exact documentation selections ran once and passed; findings are empty, tracked Git state is clean, and no test-owned process, worktree, temporary root, or resource claim residue remains.",
+  "checks": [
+    {
+      "name": "two exact documentation selections",
+      "command": "python -m unittest orchestrator_harness.tests.test_general_coding_docs.GeneralCodingDocumentationTests.test_coding_examples_and_documented_commands_are_present orchestrator_harness.tests.test_s3_operator_journey.S3OperatorJourneyTests.test_S3_DUAL_003_docs_roles_cleanup_registry_templates_and_safeguard_are_bound -v",
+      "outcome": "PASS",
+      "summary": "2 tests ran once; 2 passed, 0 failed, 0 errors, 0 skipped, 0 expected failures, and 0 unexpected successes."
+    },
+    {
+      "name": "findings gate",
+      "command": "validate .agent-workspace/FINDINGS.json",
+      "outcome": "PASS",
+      "summary": "Closed orchestrator-review-findings/v1 has exact lane, worker, role, and commit identity with an empty findings array."
+    },
+    {
+      "name": "tracked Git state",
+      "command": "git rev-parse HEAD; git branch --show-current; git status --porcelain=v1 --untracked-files=all",
+      "outcome": "PASS",
+      "summary": "Branch firmware/v2-s23-d2-c3-remaining-0004 remains at b5753eb31fb3a725804ace76fb770e7c6629dc96 with no tracked or untracked project changes."
+    },
+    {
+      "name": "test-owned cleanup",
+      "command": "inspect exact unittest process query, git worktree list --porcelain, temporary-root state, and resource claims",
+      "outcome": "PASS",
+      "summary": "No selected-test child process, test-created worktree, temporary root, or test-owned resource claim remains; the outer controller and invocation claim are lane infrastructure."
+    }
+  ]
+}

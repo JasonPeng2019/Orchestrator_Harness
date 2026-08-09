@@ -1,0 +1,80 @@
+{
+  "schema": "firmware-v2-c3-attempt-allocation/v1",
+  "owner": "ROOT-IM",
+  "attempt_id": "attempt-0002",
+  "allocated_at_utc": "2026-08-05T06:32:31.1542207Z",
+  "allocation_rule": {
+    "largest_prior_runtime_attempt": "attempt-0001",
+    "largest_prior_evidence_attempt": "attempt-0001",
+    "both_selected_paths_absent_before_allocation": true,
+    "monotonic_selection": "attempt-0002"
+  },
+  "roots": {
+    "runtime": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0002",
+    "evidence": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002"
+  },
+  "prior_attempt": {
+    "attempt_id": "attempt-0001",
+    "closeout_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0001\\topology\\ROOT_ATTEMPT_CLOSEOUT.json",
+    "closeout_sha256": "b13344bb0a6757de2213d2c317dc48d9bc257a02d4dd2221db7a6be6f0137155",
+    "outcome": "FAILED_BEFORE_P0_ENVIRONMENT_ONLY",
+    "reused_mutable_state": false
+  },
+  "operative_c1": {
+    "lock_id": "97ab7b9e-48a4-4ba0-93dc-55c724e9682c",
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\97ab7b9e-48a4-4ba0-93dc-55c724e9682c\\C1_LOCK.json",
+    "sha256": "a72d30f6f6788edbc639fd90f8174ee78a84d006ab70f9a5712bf64ec3302eb1",
+    "validation_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\97ab7b9e-48a4-4ba0-93dc-55c724e9682c\\C1_VALIDATION.json",
+    "validation_sha256": "96a070864535d807aac1406def45df9ff91835164a81a5f0cb23c188ff265a37",
+    "delegated_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\97ab7b9e-48a4-4ba0-93dc-55c724e9682c\\DELEGATED_HARDWARE_AUTHORIZATION.json",
+    "delegated_sha256": "c6ea8f8b2ca7a1278e6da5589b8b1fafbd1c240868811a9cc6ecbd5a5578a61b"
+  },
+  "operative_c2": {
+    "attempt": "attempt-0004",
+    "root_acceptance_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0004\\ROOT_ACCEPTANCE.json",
+    "root_acceptance_sha256": "9b5ec6dac5391f7c3b8045903cf9c43a5f56121df61586c44907554658ae77a3",
+    "decision": "C3_UNLOCKED"
+  },
+  "candidate": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "branch": "firmware/v2-candidate",
+    "commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+    "clean": true
+  },
+  "mcp_server": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\mcp-candidate",
+    "branch": "firmware/v2-mcp-candidate",
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "clean": true,
+    "immutable": true
+  },
+  "governing_hashes": {
+    "goal": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "generalization_spec_2": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "implementation_roadmap_2": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "execution_readiness_2": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66",
+    "execution_plan_2": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"
+  },
+  "environment_only_correction": {
+    "scope": "attempt-local ROOT signing-service liveness helper only",
+    "reason": "Replace os.kill(pid, 0) on Windows with a native process-query check.",
+    "c1_locked_input_changed": false,
+    "candidate_changed": false,
+    "server_changed": false,
+    "governing_input_changed": false
+  },
+  "implementation_checkpoint": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\PARALLEL_CHECKPOINT.md",
+    "sha256_at_allocation": "503c1a7d7cdbfa775803654205708768c366ec69ffb56414c299907bd7eb140e",
+    "note": "Operative C1 independently retains the immutable pre-update checkpoint hash."
+  },
+  "initial_state": {
+    "fresh_attempt_registry": true,
+    "registry_entries": 0,
+    "target_source_reconstruction": null,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "target_workers_launched": 0,
+    "resource_claims": 0
+  }
+}

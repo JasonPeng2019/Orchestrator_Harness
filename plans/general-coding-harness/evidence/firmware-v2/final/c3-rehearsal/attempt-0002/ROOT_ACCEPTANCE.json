@@ -1,0 +1,110 @@
+{
+  "schema": "firmware-v2-c3-host-rehearsal-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0002",
+  "accepted_at_utc": "2026-08-05T21:06:36Z",
+  "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "c1": {
+    "id": "ad244788-9890-420f-a491-fa82601ca46f",
+    "lock_sha256": "a8a368c4b04905ae37c5ccf7757bc3d87247c5feff3e3dc5bae974738745cdc0",
+    "validation_sha256": "58200436fee0ee7751f425f699fb895570b9b6635783838a04db2132decf0ff7",
+    "authorization_sha256": "832153a346482bdaf06e9eff3c324f8c89713bcf504d71e30a816f9d350a0f4d"
+  },
+  "c2": {
+    "attempt": "attempt-0012",
+    "root_acceptance_sha256": "6f2cf06403e5489a1f2bd309c5ae8c3a56dde20bc01a9e33a1bb8a9e9888d974"
+  },
+  "governing_hashes": {
+    "goal_sha256": "9ef9bdb24b913f1ed2b15b7c80f28139705da823296ccd6f341a562a9948f547",
+    "spec_sha256": "70ba5e876e120466f03899fd826d439c1d0cc0dc01c5235e5950dc54a1d27cc6",
+    "roadmap_sha256": "fb8d60d76c8217f75d6a6a9d69965c7817e8c2bf0c560bac18c8a0ed3ab3af49",
+    "readiness_sha256": "e357862e985d61efcf9f38727fe4ca8a718961b4e02bd404dac56d99cb88455c",
+    "plan_sha256": "79ebc3de0d6506ce8ec5ab242db9810be527a6c07b1e9bb100f3c73827520af7"
+  },
+  "prior_rehearsal": {
+    "attempt": "attempt-0001",
+    "root_closeout_sha256": "70f5609b40091f4bfa63941d06ed9584fe77394b247cddb856c4e2f796aeb2f9",
+    "disposition": "REJECTED_ROOT_EXECUTOR_PROCEDURE_FAILURE",
+    "credited": false
+  },
+  "attempt_record": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c3-rehearsal\\attempt-0002\\ATTEMPT_RECORD.json",
+    "sha256": "c6bbeb27cd7a1c5f511d9e22e9f92b9d6e4348626a08938f483921690d36c9b1"
+  },
+  "current_artifacts": {
+    "findings": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C3.RH.D1-0002\\.agent-workspace\\FINDINGS.json",
+      "sha256": "d5473ee8d83f3a1d72dc15c557d50696f21073064dfc8b4b7e1e97d435da72a4"
+    },
+    "test_report": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C3.RH.D1-0002\\.agent-workspace\\TEST_REPORT.json",
+      "sha256": "ea4dff20d3f729934f6d4230f32e0bb5ea43a300e57721268b20d5e07eaf2a32"
+    },
+    "result": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C3.RH.D1-0002\\.agent-workspace\\RESULT.json",
+      "sha256": "6cfa3a573af000438cb9f53f53a0dd16af68f8256205614d1885bb8f2e437388"
+    },
+    "closed_controller_status": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C3.RH.D1-0002\\.agent-workspace\\status.json",
+      "sha256": "7dc54dbfb661a21f4fd057fbc1bab14d3e8d5984438bd404af8704933fb79048"
+    }
+  },
+  "root_audit": {
+    "selection_hash_valid": true,
+    "candidate_and_external_dependency_hashes_valid": true,
+    "recordability_preflight_green": true,
+    "preflight_faster_than_selected_children": true,
+    "runner_and_recorder_frozen_after_preflight": true,
+    "all_six_initial_ids_green": true,
+    "all_ten_tests_passed": true,
+    "complete_initial_set_before_classification": true,
+    "pooled_correction_performed": false,
+    "selection_rerun_count": 0,
+    "all_process_record_hashes_valid": true,
+    "all_native_creation_identities_present": true,
+    "all_exact_process_identities_absent": true,
+    "all_stdout_and_stderr_hashes_valid": true,
+    "all_obligations_mapped_green": true,
+    "candidate_findings_validator_passed": true,
+    "candidate_result_validator_passed": true,
+    "strict_utf8_without_bom": true,
+    "candidate_exact_and_clean": true,
+    "mcp_server_exact_and_clean": true,
+    "stable_runner_exact_detached_and_clean": true,
+    "lane_exact_and_clean": true,
+    "c1_hashes_current": true,
+    "c2_acceptance_current": true,
+    "registry_hash_current": true,
+    "governing_hashes_current": true,
+    "claims_after_controller_exit": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "physical_attempt_0009_absent": true,
+    "physical_certification_claimed": false
+  },
+  "administrative_correction": {
+    "same_lane_same_thread": true,
+    "initial_report_sha256": "3a746064bb099206825642808dcb37940d1f7354fb9c574729961b612478d9ef",
+    "final_report_sha256": "ea4dff20d3f729934f6d4230f32e0bb5ea43a300e57721268b20d5e07eaf2a32",
+    "classification": "single_reconstructable_dependency_digest_typo",
+    "raw_identity_evidence_complete": true,
+    "tests_rerun": false,
+    "findings_and_result_preserved": true
+  },
+  "criticism_disposition": {
+    "accepted": [
+      "Rehearsal attempt-0001 violated the complete-set pooled-correction topology and was rejected without candidate changes.",
+      "Attempt-0002's initial preflight self-audit overcounted expected controller ancestry; ROOT accepted the complete raw preflight record and no preflight rerun occurred.",
+      "The terminal report contained one mistyped dependency digest; the same thread corrected only that reconstructable metadata without rerunning tests."
+    ],
+    "vetoed": [
+      "No candidate, tracked test, C1, C2, registry, policy, contract, oracle, stable runner, or MCP change was warranted.",
+      "No executor framework, second guard, broad selection, safeguard run, target allocation, MCP launch, or hardware action was admitted.",
+      "No green stable ID was rerun for an administrative command or report error."
+    ]
+  },
+  "decision": "ACCEPT_HOST_ONLY_C3_REHEARSAL_AND_ADMIT_FRESH_PHYSICAL_C3_ATTEMPT_0009",
+  "physical_c3_admitted": true,
+  "physical_certification": false,
+  "outcome": "PASS"
+}

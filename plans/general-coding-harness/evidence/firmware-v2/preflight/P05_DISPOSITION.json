@@ -1,0 +1,14 @@
+{
+  "schema_version": "firmware-v2-p05-disposition-v1",
+  "source_notation": "P.05",
+  "resolved_gpio": null,
+  "inference_permitted": false,
+  "dependent_action_admitted": false,
+  "acceptance_design": {
+    "dio1_irq_pin": "P0.03",
+    "dio2_sampled_by_mcu": false,
+    "dio2_role": "SX1262-internal RF-switch output only; no target requirement reads or configures a guessed nRF GPIO",
+    "radio_gate_can_proceed_without_p05": true
+  },
+  "rule": "If any later design consumes DIO2 as an nRF input, this disposition becomes invalid and the action remains blocked until authoritative live setup evidence supplies the exact port and pin."
+}

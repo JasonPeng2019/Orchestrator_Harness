@@ -1,0 +1,110 @@
+{
+  "schema": "firmware-v2-c2-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0011",
+  "acceptance_kind": "aggregate_same-lock selective-rerun acceptance",
+  "accepted_at_utc": "2026-08-05T18:44:31Z",
+  "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "c1_lock": {
+    "id": "d96f270b-bb92-4b3e-aac0-29321e2ea44a",
+    "sha256": "d9bc07a1eb812775e046f8b87f19955dcac65dae3ecb59994d84613e293a60c7",
+    "validation_sha256": "0308e3883912749678d24f449f2725486d312f1a55bace61caa2dbabc6c05462",
+    "authorization_sha256": "d673cca3705af4c6be326268125ecd9d4731001b43d72d239189ee9a0ad326b5"
+  },
+  "attempt_record": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0011\\ATTEMPT_RECORD.json",
+    "sha256": "3b800188885fe636e2075c2ed105c84d972d8ab4a511fbac7dcaa724fdebd0f4"
+  },
+  "evidence_sources": {
+    "four_complete_green_ids": {
+      "attempt": "attempt-0010",
+      "attempt_record_sha256": "881b0450526acb4f43f1a183421357072846c72208db3e85513c6bb7df3c5e68",
+      "root_triage_sha256": "3ddc4f7423a7225ef985861a687dde85e8e844d9f272cdc8211faeff44dc7a18",
+      "ids": [
+        "F-C2-LOCK-001",
+        "F-C2-DISPOSABLE-001",
+        "F-C2-CREDIT-001",
+        "F-C2-STATE-001"
+      ]
+    },
+    "selective_green_id": {
+      "attempt": "attempt-0011",
+      "lane_id": "F.C2.D1",
+      "worker_invocation_id": "c2-d1-011",
+      "thread_id": "019fd337-d056-7872-a0ba-ba3529e7ad81",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "high",
+      "service_tier": "priority",
+      "id": "F-C2-AUTH-001",
+      "process_record_sha256": "64e5c0ba9b2f232a18bc316ddd6d11eac0a5e712303f54a9ca35a026d566f227",
+      "stdout_sha256": "80ddac702c1c562a8054758f2090ec2ef2e3602eae7a7bac523976b792efd57d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "current_artifacts": {
+    "findings": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0011\\.agent-workspace\\FINDINGS.json",
+      "sha256": "b037a29c9d174f619efd679158d8f9614c401903930702e5df0acfcbaa5432e7"
+    },
+    "test_report": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0011\\.agent-workspace\\TEST_REPORT.json",
+      "sha256": "762bfdbb4e66f420eb56ce08b7d2d4f4fb388d1d581b06d202ab2cffa83f15bc"
+    },
+    "result": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0011\\.agent-workspace\\RESULT.json",
+      "sha256": "656290b89bc823ed530c6217179f822bda8ce9e658bb470ccc3960393f9871dd"
+    },
+    "closed_controller_status": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\F.C2.D1-0011\\.agent-workspace\\status.json",
+      "sha256": "b4aa4d799ef54c15f701d95af2adda287970bf6610be7b752578718ab1f583f6"
+    },
+    "closed_worker_jsonl_sha256": "4c77528e408326f4b7db067d1e79977ce439a1c292caed61747241ddce780f00",
+    "worker_stderr_sha256": "d654d08da5ab726c10a93334461ca67ab9b7c00bda215ee88148aa35495af245",
+    "worker_last_message_sha256": "f5860acb2c5100ac19afa536cc59879f2fad11157bc372d885acf847c53c4de6",
+    "verifier_sha256": "66e4bc4275708caa995b66081c16b18ed4d37ad7b0aab9767b17da76179dd057"
+  },
+  "credit_counts": {
+    "green_groups": 27,
+    "unique_green_ids": 166,
+    "invalidated_groups": 0,
+    "evidence_credits": 91,
+    "hashed_evidence_credits": 85,
+    "inheritance_only_credits": 6,
+    "protected_baseline_ids": 248,
+    "focused_s28_ids": 5,
+    "retained_dependency_valid_prior_ids": 166
+  },
+  "criticism_disposition": {
+    "accepted": [
+      "Attempt-0010's auth process envelope was incomplete and correctly blocked that attempt despite verifier PASS."
+    ],
+    "vetoed": [
+      "A fresh five-mode rerun was excessive. The same-lock environment/test-execution rule preserved four fully evidenced passes and required only F-C2-AUTH-001.",
+      "No candidate, verifier semantics, C1, registry, test, MCP-server, or stable-runner change was warranted.",
+      "No process reconstruction, extra wrapper framework, duplicate guard, or broad test execution was admitted."
+    ]
+  },
+  "root_audit": {
+    "all_five_current_ids_green": true,
+    "all_five_process_records_hash_valid": true,
+    "all_five_stdout_results_pass": true,
+    "all_five_stderr_hashes_empty": true,
+    "selective_retry_matches_only_failed_id": true,
+    "unrelated_green_ids_rerun": false,
+    "findings_empty": true,
+    "result_root_and_checks_exact": true,
+    "controller_result_gate_valid": true,
+    "candidate_exact_and_clean": true,
+    "mcp_server_exact_and_clean": true,
+    "stable_runner_exact_detached_and_clean": true,
+    "c1_hashes_current": true,
+    "governing_hashes_current": true,
+    "registry_hash_and_counts_current": true,
+    "claims_after_controller_exit": 0,
+    "surviving_exact_test_processes": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "ACCEPT_AGGREGATED_CURRENT_C2_AND_ADMIT_FRESH_C3",
+  "outcome": "PASS"
+}

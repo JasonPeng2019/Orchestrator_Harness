@@ -1,0 +1,76 @@
+{
+  "schema": "firmware-v2-c3-host-rehearsal-root-closeout/v1",
+  "attempt": "attempt-0001",
+  "lane_id": "F.C3.RH.D1",
+  "worker_invocation_id": "c3-rh-d1-001",
+  "thread_id": "019fd39a-176c-73a3-adae-5e1bbb8f2a83",
+  "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "operative_c1": {
+    "id": "ad244788-9890-420f-a491-fa82601ca46f",
+    "lock_sha256": "a8a368c4b04905ae37c5ccf7757bc3d87247c5feff3e3dc5bae974738745cdc0"
+  },
+  "accepted_c2": {
+    "attempt": "attempt-0012",
+    "root_acceptance_sha256": "6f2cf06403e5489a1f2bd309c5ae8c3a56dde20bc01a9e33a1bb8a9e9888d974"
+  },
+  "dependency_fingerprint": {
+    "goal_sha256": "9ef9bdb24b913f1ed2b15b7c80f28139705da823296ccd6f341a562a9948f547",
+    "generalization_spec_sha256": "70ba5e876e120466f03899fd826d439c1d0cc0dc01c5235e5950dc54a1d27cc6",
+    "implementation_roadmap_sha256": "fb8d60d76c8217f75d6a6a9d69965c7817e8c2bf0c560bac18c8a0ed3ab3af49",
+    "execution_readiness_sha256": "e357862e985d61efcf9f38727fe4ca8a718961b4e02bd404dac56d99cb88455c",
+    "execution_plan_sha256": "79ebc3de0d6506ce8ec5ab242db9810be527a6c07b1e9bb100f3c73827520af7",
+    "passed_registry_sha256": "47a9793901cb84f7d973e0c8f27446823e94e658901d84ca091d0df253cb84fb",
+    "selection_sha256": "4729233a42d613071152781408984d7b144dc5344961297cae36bd61fef6d955"
+  },
+  "decision": "REJECT_REHEARSAL_PROCEDURE_FAILURE_AND_REQUIRE_FRESH_ATTEMPT",
+  "physical_c3_admitted": false,
+  "candidate_finding": false,
+  "classification": "ROOT_EXECUTOR_PROCEDURE_FAILURE",
+  "reason": "The doer ran F-C3-RH-ADMISSION-001 twice while correcting the selection process recorder. It did not finish the complete initial six-ID selection before classifying non-product failures, and it performed more than the single pooled correction/rerun allowed by the governing topology.",
+  "topology_checks": {
+    "same_lane_disposable_fake_preflight_passed": true,
+    "complete_initial_selection_before_classification": false,
+    "one_pooled_non_product_correction_batch": false,
+    "one_selection_rerun_maximum": false,
+    "candidate_contract_or_oracle_changed": false,
+    "mcp_or_hardware_action_performed": false,
+    "physical_attempt_0009_created": false
+  },
+  "source_workspace": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/F.C3.RH.D1-0001/.agent-workspace",
+  "evidence": [
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/F.C3.RH.D1-0001/.agent-workspace/status.json",
+      "sha256": "6c951d2d6e0d8ba1906e34688ab58ca773163cd50ec37558c2b524c2800923a9"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/F.C3.RH.D1-0001/.agent-workspace/worker.jsonl",
+      "sha256": "f07a97c7bc3c444909869c051c541345268b9a18f0f42e13d1c0f1a8cafca7d7"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/F.C3.RH.D1-0001/.agent-workspace/worker.stderr.log",
+      "sha256": "cdb42bb6e404899a511d0ecbacc9270cd75fc26a43013ec83efcd43cb3c5debc"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/F.C3.RH.D1-0001/.agent-workspace/EXECUTOR_PREFLIGHT.json",
+      "sha256": "fd1414f1e0fb2e23b184593e6fceb9dbb0ba916a62f4e5c52248397636167c02"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/F.C3.RH.D1-0001/.agent-workspace/INITIAL_PROCESS_RECORDER_FAILED_001.json",
+      "sha256": "b64c775cf2d2a1b12ac5433e05467df0bc4b0c048ca19c2efe80af46531dda89"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/F.C3.RH.D1-0001/.agent-workspace/INITIAL_PROCESS_RECORDER_FAILED_002.json",
+      "sha256": "408bb4ae93dc96b11a68f6ac807afe937844b931955540b1135d4a31ab6f2d2e"
+    }
+  ],
+  "cleanup": {
+    "controller_pid": 169748,
+    "codex_pid": 184688,
+    "exact_recorded_process_tree_absent": true,
+    "resource_claim_absent": true,
+    "candidate_clean_at_exact_commit": true,
+    "mcp_fixture_clean_at_exact_commit": true
+  },
+  "ended_utc": "2026-08-05T20:38:49.092280Z",
+  "root_closeout_utc": "2026-08-05T20:40:41.1681680Z"
+}

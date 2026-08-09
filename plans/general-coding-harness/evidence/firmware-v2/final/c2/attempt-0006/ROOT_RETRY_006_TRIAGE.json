@@ -1,0 +1,77 @@
+{
+  "schema": "firmware-v2-c2-root-retry-result-triage/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "retry_suffix": "retry-006",
+  "triaged_at_utc": "2026-08-05T13:51:06Z",
+  "same_lock": {
+    "c1_lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "c1_lock_sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "thread_id": "019fd1fd-83a3-7ad0-8370-a544c08c7c6e",
+    "worker_invocation_id": "c2-d1-006"
+  },
+  "launch_provenance": {
+    "prompt_sha256": "c966d4f36b486fb922a2ed92445317c0975799d9d01db84f452759a8dce62373",
+    "source_invocation_sha256": "52f91a2608c491c8d4e3a548ce7f6c0ef1793ad2a12e1e9864fd835f79e35d13",
+    "projected_invocation_sha256": "578b30682c14220b535c749cd1c98bfc4d500f59b7ac98557cbc16dc43d1651f",
+    "projection_record_sha256": "e62aa40846d5657ebe14679a9687391de30f6d50a63284e333830dac638bd762",
+    "projection_proof_sha256": "29b04509b7bbe7beaff6bb7e8d36ef97c420cc627694a0959cf5305e513bf6fe",
+    "dispatch_proof_sha256": "c41ea826d1cae5a4f7363606824865fd1ade479ce52bf59e26dd0d661fab6984",
+    "dispatch_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dispatch_stderr_sha256": "b9841e7134c756e822e6f4a2756af01c76755e52c92f1b05bb4873c7459e3851",
+    "stable_runner_commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f"
+  },
+  "artifacts": {
+    "test_report_sha256": "a9642f840c373eb3a5f23c9c74dea36361ed5cd400fb7ed32c94de256eb70806",
+    "result_sha256": "4db2a3a846a2575d49dc9417091237077551fadd335437bc3cd18e8279001b24",
+    "findings_sha256": "0a1b2390547dfc8d05413e266285c99c6db2482234f38fcac17ac7baba277214",
+    "process_metadata_sha256": "b8f5c192f9ba9a17ff5b5741f742eb1d4c2ab8aee9746b6fdadffe142177e0f7",
+    "verifier_stdout_sha256": "15aacd4bb334eef6fa6f4aaa0efba13101b95125860615f912159f7c5167d914",
+    "verifier_stderr_sha256": "81e3a249473708ffcb08674c48de863ab3ed78d2cd0c484bb3a723e46ec0997b",
+    "closed_worker_jsonl_sha256": "b81681fbb25ec11052b4ce9c10e2b5f21640aadce86434f84465fe7ceafcc0af",
+    "closed_worker_stderr_sha256": "250c21d1d0389d78f7c5c1f4f05b7e1ac7add504444f5bcd9d1189e4471d8e2d",
+    "closed_worker_last_message_sha256": "28e3177322fa4191fbdcb3c544a009c7fcf54b5779017a8c67bb40f557deea68",
+    "closed_status_sha256": "ef8b194027f763e54aebf17e202424a03fa4996f6ead248bceb3aa144d8228ef"
+  },
+  "facts": {
+    "standalone_proof_script_sha256": "c42e0943f585962aa914e8a91087f1909a59ecb83049beb42ef908fb92c75786",
+    "standalone_proof_passed": true,
+    "cim_creation_date_absent": true,
+    "controller_pid": 177240,
+    "claim_creation_identity": "windows-filetime:134304110832488228",
+    "native_controller_creation_identity": "windows-filetime:134304110832488228",
+    "controller_identity_exact": true,
+    "verifier_pid": 191972,
+    "verifier_creation_identity": "windows-filetime:134304111991973811",
+    "verifier_exit_code": 1,
+    "verifier_exit_observed": true,
+    "verifier_timeout": false,
+    "lock_assertions_began": false,
+    "live_chain_prefix_observed_by_root": [177240, 191208],
+    "missing_parent_boundary_pid": 151572,
+    "failure_stage": "PRE_LOCK_PARENT_CHAIN_CONSTRUCTION"
+  },
+  "accepted_criticism": {
+    "id": "C2-D1-VANISHED-ANCESTOR-001",
+    "description": "The verifier required every historical controller ancestor to remain present until PID 0. The stable-runner launcher's PowerShell parent exited normally after dispatch, leaving a valid live controller and venv-launcher prefix whose recorded next parent PID was absent. Treating that normal orphan boundary as a controller identity failure made the procedure timing-dependent.",
+    "candidate_finding": false,
+    "locked_input_change": false,
+    "bounded_correction": "Keep exact current-controller claim binding. Build an identity-qualified live ancestor prefix; stop at an absent parent or a parent PID whose native creation time proves PID reuse. In the subsequent fresh process scan, exclude a prefix member only when both its PID and native creation FILETIME still match, so an exited or reused ancestor cannot hide another process."
+  },
+  "root_checks": {
+    "green_ids_rerun": 0,
+    "report_referenced_hashes_valid": "65/65",
+    "report_id_order_exact": true,
+    "result_check_key_failures": 0,
+    "candidate_findings": 0,
+    "candidate_and_server_clean": true,
+    "lane_clean": true,
+    "claims_released_after_controller_exit": true,
+    "resource_claim_file_count": 0,
+    "surviving_test_processes": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "PRESERVE_RETRY_006_FAILURE_AND_ALLOW_ONE_IDENTITY_QUALIFIED_LIVE_ANCESTRY_CORRECTION"
+}

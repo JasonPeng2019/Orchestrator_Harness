@@ -1,0 +1,56 @@
+{
+  "schema": "firmware-v2-c2-root-retry-authorization/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "authorized_at_utc": "2026-08-05T13:59:58Z",
+  "same_lock": {
+    "c1_lock_id": "721b6351-0fdd-448d-8d89-0cee20acf8b0",
+    "c1_lock_sha256": "c24fef25a2132a1f643adeb45c475a288f030729ad28e9b6f20a263d6444f65a",
+    "candidate_commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+    "thread_id": "019fd1fd-83a3-7ad0-8370-a544c08c7c6e",
+    "worker_invocation_id": "c2-d1-006"
+  },
+  "authorized_retry": {
+    "stable_id": "F-C2-LOCK-001",
+    "retry_suffix": "retry-008",
+    "maximum_fresh_processes": 1,
+    "required_launch": "python.exe .agent-workspace/supervise_retry008.py",
+    "only_verifier_changes": [
+      "Add retry-008 to the argparse retry-suffix choices.",
+      "Replace recursive runtime-schema discovery in claim_files with authoritative live-root discovery.",
+      "The mandatory root is Path(load(STATUS)['resource_lock_root']); it must exist, be a real directory, not be a symlink, and be the resolved parent of the already validated exact current claim.",
+      "Optional roots are PLAN/runtime/orchestrator-harness/resource-locks and each direct PLAN/runtime/firmware-v2/acceptance/attempt-*/claims directory that exists. Existing optional roots must also be real non-symlink directories.",
+      "Enumerate only direct *.json children of those roots. Exclude only the exact current claim by resolved-path equality. Return every other JSON path as foreign residue without parsing or trusting its schema/content."
+    ],
+    "bounded_supervisor_change": "Create supervise_retry008.py as a structural copy of supervise_retry007.py with only retry-007 constants changed to retry-008.",
+    "required_unchanged_mechanisms": [
+      "Exact current controller/claim PID-plus-native-FILETIME binding.",
+      "Identity-qualified live ancestry and exact PID-plus-identity process exclusion.",
+      "Fail-closed complete process enumeration and native identity queries.",
+      "Relevant-process predicates and every LOCK/C1/repository/stable-runner assertion.",
+      "Supervisor initialized-before-spawn evidence, PID-plus-creation capture, wait, timeout, and finally behavior."
+    ],
+    "pre_spawn_static_and_dynamic_checks": [
+      "Use a standalone prove_retry008.py file; do not construct nested PowerShell command strings inline.",
+      "Prove retry-008 admission and retry-007/008 normalized supervisor equality.",
+      "Prove the lock_check function AST/source is unchanged from the pre-edit verifier and rehash ROOT_LOCK_BODY_DIAGNOSTIC_AFTER_RETRY_007.json to d756dc1715727f85ce9ac4e932ffa60b817cb8dafb4ead02161220fb2837923b.",
+      "Prove preflight succeeds with the current exact live controller claim and zero foreign authoritative-root files.",
+      "Prove a schema-matching example outside authoritative roots is ignored.",
+      "Prove any extra JSON, including malformed JSON, inside an authoritative root is returned as foreign residue.",
+      "Prove nested JSON below an authoritative root is not treated as a direct live claim, while symlink/root-shape guards remain fail-closed.",
+      "Prove all ancestry/process/LOCK markers remain intact and all retry-008 evidence paths are absent."
+    ]
+  },
+  "forbidden": {
+    "rerun_green_ids": true,
+    "source_or_locked_input_edits": true,
+    "mcp_or_hardware_access": true,
+    "identity_rounding_or_tolerance": true,
+    "recursive_runtime_claim_scan": true,
+    "schema_only_live_claim_classification": true,
+    "claim_root_symlink_following": true,
+    "second_retry_008_spawn": true,
+    "volatile_live_status_path_sha_reference": true
+  },
+  "decision": "AUTHORIZE_EXACTLY_ONE_RETRY_008_WITH_AUTHORITATIVE_LIVE_CLAIM_ROOTS"
+}

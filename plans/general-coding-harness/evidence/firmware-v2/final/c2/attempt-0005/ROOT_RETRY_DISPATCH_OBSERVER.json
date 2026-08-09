@@ -1,0 +1,19 @@
+{
+  "schema": "firmware-v2-c2-retry-dispatch-observer/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0005",
+  "worker_invocation_id": "c2-d1-005",
+  "stable_runner_commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+  "source_invocation_sha256": "404cab94e64852d4fb049221fa7564f2dc4063f75b1f7cc1cdfb6a09c8136d0c",
+  "projected_invocation_sha256": "7b590fe069695a77b7751fb28b32cadb6342185a61c8dfb32d040aadf8d6bd24",
+  "shell_observer_timed_out_after_seconds": 24,
+  "controller_survived_observer_timeout": true,
+  "controller_pid": 166340,
+  "codex_pid": 184160,
+  "thread_id": "019fd15f-b7b0-7aa2-a483-30d0cd14dded",
+  "status_state_after_observer_timeout": "RUNNING_CODEX",
+  "exclusive_claim_held_by_exact_controller": true,
+  "classification": "OUTER_OBSERVER_TIMEOUT_WITH_INTACT_CONTROLLER",
+  "assigned_work_invalidated": false,
+  "recorded_at_utc": "2026-08-05T10:22:00Z"
+}

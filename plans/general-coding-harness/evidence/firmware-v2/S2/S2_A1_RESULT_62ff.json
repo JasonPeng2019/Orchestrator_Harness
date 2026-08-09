@@ -1,0 +1,21 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.A1",
+  "worker_invocation_id": "s2-a1-001",
+  "branch": "firmware/v2-s2-a1",
+  "commit": "62ff09624b06e418c1f767e0985e019c776e46ce",
+  "outcome": "FAIL",
+  "summary": "Committed two focused green host/MCP/isolation tests. Accepted product has a gated functionality-breaking sealed-seed hash mismatch recorded in FINDINGS.json.",
+  "checks": [
+    {
+      "name": "S2.A1 host/MCP/isolation tests",
+      "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_host -v",
+      "outcome": "PASS"
+    },
+    {
+      "name": "checked-in seed validation",
+      "command": "python -c \"from pathlib import Path; from firmware_acceptance.kit import validate_seed_manifest; validate_seed_manifest(Path('firmware_acceptance/seed'))\"",
+      "outcome": "FAIL"
+    }
+  ]
+}

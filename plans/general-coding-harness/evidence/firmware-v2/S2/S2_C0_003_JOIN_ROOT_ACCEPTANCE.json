@@ -1,0 +1,56 @@
+{
+  "schema": "firmware-v2-root-join-acceptance/v1",
+  "root_role": "ROOT-IM",
+  "candidate_commit": "b8d3d7917921d3bf7ef06e69b6af23bb4e50df50",
+  "decision": "ACCEPT_JOIN_AND_OPEN_FRESH_C0",
+  "accepted_repairs": [
+    "persist call-bound confined MCP stderr logs",
+    "reject regular or symlinked pinned-server .env before launch",
+    "fail closed and mark evidence incomplete on stderr persistence failure"
+  ],
+  "evidence": [
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0003/FINDINGS.json",
+      "sha256": "29bd41b306c61f2f54550dd7c23dfee28e3af4274cab2b444c417105a8145e92"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0003/RESULT.json",
+      "sha256": "b82d6b9f2c991f5c45de44da5d04d9af4f8473342e1ba0e4763bd2151152f61d"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0003/ROOT_TRIAGE.json",
+      "sha256": "2c001deb82d9fecec2e153fca53fe0ba4b6c325400ba6b0012a7003c40f1b7af"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_003_REPAIR_CLOSURE_FINDINGS_8ed3a02.json",
+      "sha256": "b722c573cda553ebb8a89ef71b3259694e2084d93022d99349a355e61c7ee726"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_003_REPAIR_CLOSURE_RESULT_8ed3a02.json",
+      "sha256": "28f32f54f9d7df29e544da252374b207da1f1752053fc5dd2aee3b6d714f70aa"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_003_REPAIR_CLOSURE_ROOT_TRIAGE.json",
+      "sha256": "d1270cd893bed6c5137c77a467ea1ab1bc1026c622ac612343751393647af54f"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_003_A1_RESULT_b8d3d79.json",
+      "sha256": "486bfff9e215afe9d5344b0f7c6aed507dede65a7575292819b9f4ac5cbdb007",
+      "findings_sha256": "f2ca9fff8d1f30fed7080d630654c15452cb73546ca269497d25f72da7f6155c"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_003_D1_RESULT_b8d3d79.json",
+      "sha256": "3f09cbef79892415c1ddf71b6d8c84c9a8bb9516d7f5b10913d7400901621e45",
+      "findings_sha256": "f0f4c63508bee49d5533441fa3813d2a0de6dbf027e8c8ac422791e6c6341903",
+      "test_report_sha256": "be3fb02fac9a2d72ddc28a96e2c3ba063f1546756de4edde93201852de035f1f"
+    },
+    {
+      "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_C0_003_PRODUCT_CHAIN_RESULT_b8d3d79.json",
+      "sha256": "fdb8cb5ccf09eef79cc0a8c1924987894160c94afad796e9382bf5973c571895"
+    }
+  ],
+  "test_summary": "Independent Luna-high D1 passed all 29 dependency-invalidated controller, kit, and host tests; A1 and D1 findings are empty.",
+  "credit_summary": "The protected 19-test general-harness set and S2.A2.T1-T3 remain credited because the attempt-0003 delta does not change their mapped dependencies.",
+  "boundary": "No MCP server, probe, serial, flash, reset, debug, RF, or physical hardware operation occurred; all disposable checkouts and claims were removed after evidence validation.",
+  "accepted_at_utc": "2026-08-04T10:49:29Z"
+}

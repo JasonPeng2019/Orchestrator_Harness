@@ -1,0 +1,8 @@
+{
+  "candidate_commit": "a5a330c",
+  "result": "pass",
+  "source": "S3.A1 exact-content test execution; D1 duplicate rerun skipped",
+  "focused": "10 tests passed including 100-cycle contention",
+  "ruff": "pass",
+  "basedpyright": "pass"
+}

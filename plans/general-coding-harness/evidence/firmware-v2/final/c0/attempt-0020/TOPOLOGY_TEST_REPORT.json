@@ -1,0 +1,62 @@
+{
+  "schema": "firmware-v2-c0-focused-test-report/v1",
+  "stable_id": "F-C0-TOPOLOGY-DOC-001",
+  "candidate": {
+    "commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "branch": "firmware/v2-c0-topology-doer-0001"
+  },
+  "lane": {
+    "lane_id": "F.C0.D1",
+    "worker_invocation_id": "c0-d1-001",
+    "commit": "542f48c2185b70ab3724a95d60f071e1a5a90343"
+  },
+  "observed_hashes": {
+    "goal.md": "9ef9bdb24b913f1ed2b15b7c80f28139705da823296ccd6f341a562a9948f547",
+    "active_docs/GENERALIZATION_SPEC_2.md": "70ba5e876e120466f03899fd826d439c1d0cc0dc01c5235e5950dc54a1d27cc6",
+    "active_docs/IMPLEMENTATION_ROADMAP_2.md": "fb8d60d76c8217f75d6a6a9d69965c7817e8c2bf0c560bac18c8a0ed3ab3af49",
+    "active_docs/EXECUTION_READINESS_2.md": "e357862e985d61efcf9f38727fe4ca8a718961b4e02bd404dac56d99cb88455c",
+    "plans/general-coding-harness/EXECUTION_PLAN_2.md": "79ebc3de0d6506ce8ec5ab242db9810be527a6c07b1e9bb100f3c73827520af7"
+  },
+  "plan_validation": {
+    "command": "uv run --project .codex/dev --locked python .codex/skills/plan-harness-workflow/scripts/validate_execution_plan.py plans/general-coding-harness/EXECUTION_PLAN_2.md",
+    "working_directory": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness",
+    "exit_code": 0,
+    "stdout_summary": "execution plan validation: PASS",
+    "stderr_summary": "No separate stderr text was observed; the single permitted PowerShell capture merged streams and contained only the required PASS line."
+  },
+  "static_policy_confirmation": {
+    "documents_checked": [
+      "goal.md",
+      "active_docs/GENERALIZATION_SPEC_2.md",
+      "active_docs/IMPLEMENTATION_ROADMAP_2.md",
+      "active_docs/EXECUTION_READINESS_2.md",
+      "plans/general-coding-harness/EXECUTION_PLAN_2.md"
+    ],
+    "executor_recordability_preflight": "REQUIRED before expensive custom inner-process evidence selections, with no real product, MCP, or hardware work.",
+    "pooled_fixture_mock_executor_environment_correction": "REQUIRED as one complete classified test-only batch before one selection rerun.",
+    "exact_c1_c2_host_only_disposable_fake_c3_rehearsal": "REQUIRED before C3 attempt/O/W/target/MCP/hardware allocation and covers admission, retained-session authorization, identity binding, duplicate refusal, watcher correlation, recovery/idempotence, cleanup, and terminal closure.",
+    "rehearsal_physical_credit": "EXPLICITLY NOT PHYSICAL CREDIT: the rehearsal is admission evidence/readiness only and does not substitute for physical evidence, certification, or the physical attempt."
+  },
+  "recordability_preflight": {
+    "outcome": "NOT_APPLICABLE",
+    "reason": "The selected check does not rely on a custom runner or custom per-check child-process evidence: it is one direct plan-validation command plus static hash/content checks in this lane."
+  },
+  "safety": {
+    "candidate_unit_tests": "NOT_RUN",
+    "c2_verifier": "NOT_RUN",
+    "accumulated_safeguard": "NOT_RUN",
+    "mcp": "NOT_RUN",
+    "immutable_server_import": "NOT_RUN",
+    "hardware": "NOT_RUN",
+    "rf": "NOT_RUN",
+    "serial": "NOT_RUN",
+    "pyocd": "NOT_RUN",
+    "unrelated_checks": "NOT_RUN"
+  },
+  "lane_state": {
+    "head_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "branch": "firmware/v2-c0-topology-doer-0001",
+    "tracked_changes": "NONE"
+  },
+  "terminal_outcome": "PASS"
+}

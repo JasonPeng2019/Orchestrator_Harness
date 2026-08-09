@@ -1,0 +1,16 @@
+{
+  "requested": {
+    "coder": "gpt-5.6-luna high",
+    "reviewer": "gpt-5.6-terra medium",
+    "doer": "gpt-5.6-luna high",
+    "acceptance_orchestrator": "gpt-5.6-sol",
+    "acceptance_workers": "gpt-5.6-luna medium"
+  },
+  "launcher_models_exposed": [
+    "gpt-5.6-sol",
+    "codex-auto-review",
+    "gpt-5.6-terra"
+  ],
+  "observed_behavior": "The launcher rejected gpt-5.6-luna before creating a worker.",
+  "substitution": "Use gpt-5.6-sol at the requested reasoning effort for Luna coding roles and record each substitution. Terra and Sol roles remain exact."
+}

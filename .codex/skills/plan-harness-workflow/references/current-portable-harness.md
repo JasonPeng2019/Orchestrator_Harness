@@ -8,7 +8,7 @@ Use this reference when filling the execution template. Re-read the live harness
 - Workers perform assigned work. They do not manage other workers.
 - The native harness observes run records and delivers durable events. It does not schedule or launch workers.
 - The deterministic watcher records diagnostics only. Keep `evaluator_enabled: false`.
-- Do not add a wrapper, alternate scheduler, relay, polling loop, repair controller, or AI watcher subagent.
+- Do not add an alternate scheduler, relay, polling loop, repair controller, or AI watcher subagent. The outer migration launcher is the sole fail-closed import boundary and delegates directly to the stable harness.
 
 ## Concurrency
 
@@ -27,12 +27,12 @@ There are at most four active agents: one orchestrator and three workers.
 Every emitted plan must include:
 
 1. Establish a Git baseline before worktrees. If `git rev-parse --verify HEAD` fails, create the initial reviewed commit first.
-2. Use a frozen harness copy to coordinate candidate development.
+2. Use the pinned `stable-general-harness-runner` to coordinate implementation; retain `pre-conversion-rollback` as an independently recoverable rollback.
 3. Give every author or runner a separate branch/worktree when it writes or needs isolated state.
 4. Give every harness epoch fresh config, output, watcher runtime, cursor, manager session ID, and manager invocation ID.
 5. Keep runtime under ignored runtime directories, never source packages.
-6. Run the coordinating harness from `frozen-harness-to-use` so its Python packages import correctly.
-7. Treat `harness-in-progress` as candidate code only; do not use it to coordinate its own full-system acceptance run.
+6. Run the coordinating harness through `.codex/scripts/stable_runner.py` so its Python packages import only from detached 4699.
+7. Treat `stable-general-harness-runner` as immutable implementation control; evolving firmware candidate work remains under `plans/general-coding-harness/runtime/firmware-v2/worktrees/harness-candidate/`.
 
 Useful development helper when available:
 
@@ -49,11 +49,11 @@ Create and close worktrees serially. Never close a dirty worktree.
 The downstream runner, not this planner skill, performs this sequence:
 
 ```powershell
-python -m orchestrator_harness --config local-config/harness.json scan --no-write
+python -I .codex/scripts/stable_runner.py --module orchestrator_harness.cli --config local-config/harness.json scan --no-write
 python -m harness_watcher_implementation --config local-config/watcher.json poll
 python -m harness_watcher_implementation --config local-config/watcher.json start --owner-pid <durable-owner-pid>
-python -m orchestrator_harness --config local-config/harness.json watch --until-actionable --timeout 60 --manager-session-id <session-id> --manager-invocation-id <invocation-id>
-python -m orchestrator_harness --config local-config/harness.json ack --event-id <native-event-id>
+python -I .codex/scripts/stable_runner.py --module orchestrator_harness.cli --config local-config/harness.json watch --until-actionable --timeout 60 --manager-session-id <session-id> --manager-invocation-id <invocation-id>
+python -I .codex/scripts/stable_runner.py --module orchestrator_harness.cli --config local-config/harness.json ack --event-id <native-event-id>
 python -m harness_watcher_implementation --config local-config/watcher.json stop
 python -m orchestrator_harness --config local-config/harness.json watch stop
 ```

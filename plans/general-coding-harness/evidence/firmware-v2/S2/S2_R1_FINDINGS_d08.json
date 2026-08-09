@@ -1,0 +1,63 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-001",
+  "role": "reviewer",
+  "commit": "d08b6ccf3d2e0eacd3686b01658645249dfcc0a0",
+  "findings": [
+    {
+      "id": "S2R1-API-001",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["C31", "C39", "MCP_METHOD_POLICY.read_memory_address"],
+      "evidence": ["firmware_acceptance/MCP_METHOD_POLICY.json:9", "firmware_acceptance/kit.py:254-256", "pinned f003f84 src/pyocd_debug_mcp/tools/memory.py:475-480"],
+      "observed": "The policy admits read_memory_address.board_id,address,size, but the pinned registered handler accepts board_id,address,width,length.",
+      "expected": "Each admitted parameter must exactly match the pinned registered guarded API.",
+      "reproduction": "A width call is rejected as unlisted; a size call reaches a handler with no size parameter.",
+      "impact": "A policy-approved debug operation is denied before dispatch or invalid at the server.",
+      "no_fix_consequence": "C3 cannot certify the read-memory route as pinned, executable, and fail-closed.",
+      "smallest_fix": "Use width and length with reviewed ranges, then add a static policy-versus-signature regression case.",
+      "complexity": "Low: one method entry and focused negative and positive tests.",
+      "regression_risk": "Low: it confines an already invalid method description to the actual server contract.",
+      "verification_cost": "Low: static signature and policy coverage without MCP or hardware.",
+      "alternatives": "Removing read memory avoids the mismatch but unnecessarily removes required diagnostic coverage.",
+      "cost_benefit": "The deterministic API mismatch blocks a governed operation; the localized correction has negligible compatibility cost.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "S2R1-BINDING-002",
+      "category": "CODEBASE_BREAKING",
+      "affected_ids": ["C4", "C7", "C31", "C39", "C49"],
+      "evidence": ["firmware_acceptance/kit.py:160-162", "firmware_acceptance/kit.py:209-227", "firmware_acceptance/kit.py:230-266", "firmware_acceptance/kit.py:70-79"],
+      "observed": "The broker checks only an existing server directory and limited identity baseline; it does not bind exact clean server identity or equality of method, arguments, policy, plan, permission, authorization, and admission across stages.",
+      "expected": "Dispatch must prove the exact clean pinned server and compare all required call fields and hashes across every immutable stage.",
+      "reproduction": "Substitute another checkout at the fixed path, or create a signed proposal then same-identity later artifacts with changed method, arguments, or plan; the shown checks do not reject either substitution.",
+      "impact": "A physical operation can be attributed to a reviewed proposal while executing under different server or call authority.",
+      "no_fix_consequence": "C3 cannot establish C4/C7/C31/C39/C49 provenance or fail-closed authorization for mutating calls.",
+      "smallest_fix": "Verify exact clean Git server identity before launch and compare one canonical bound-call object/hash at every stage before dispatch and result acceptance.",
+      "complexity": "Moderate but localized to the existing acceptance broker and focused tests.",
+      "regression_risk": "Bounded: it rejects only mismatched or unpinned evidence already forbidden by contract.",
+      "verification_cost": "Moderate static tests for changed revision, arguments, authorization/plan, and stale admission; no hardware.",
+      "alternatives": "Record names, free-standing hashes, and operator discipline leave the demonstrated substitution paths open.",
+      "cost_benefit": "This is the core physical-operation trust boundary; canonical comparison is cheaper and safer than accepting unverifiable evidence.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "S2R1-TRIAGE-003",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["C68", "review_test_findings.manager_triage_required", "validate_finding_triage"],
+      "evidence": ["firmware_acceptance/seed/TEST_CONTRACT.json:1", "orchestrator_harness/lane_controller.py:419-429", "orchestrator_harness/lane_controller.py:604-610", "orchestrator_harness/git_safety.py:80-106", "orchestrator_harness/tests/test_finding_gate.py:44-58"],
+      "observed": "Manager triage is declared required, but validate_finding_triage is not called by production controller or completion code; only its unit test calls it.",
+      "expected": "A gated review/test result with findings cannot be accepted until its owner records a hash-bound closed one-for-one triage decision.",
+      "reproduction": "Submit a valid finding-gated RESULT.json; lane_controller validates only FINDINGS.json and returns VALID without reading triage evidence.",
+      "impact": "The project-required cost-benefit gate can be bypassed, allowing untriaged findings to enter or disappear from manager workflow.",
+      "no_fix_consequence": "The finding contract remains advisory at the manager boundary and cannot support required C68 decision evidence.",
+      "smallest_fix": "Add a plan-specific manager completion validator requiring a create-once triage artifact and validate it before accepting a nonempty gated submission.",
+      "complexity": "Low to moderate: one narrow integration point and focused manager-path tests.",
+      "regression_risk": "Low: apply only to existing opt-in project review/test templates, preserving ordinary coding invocations.",
+      "verification_cost": "Low: PASS-empty, FAIL-without-triage, stale-hash, duplicate/missing-decision, and valid-triage static tests.",
+      "alternatives": "Prompt-only manager discipline does not fail closed and contradicts manager_triage_required.",
+      "cost_benefit": "The missing call makes an explicit requirement non-operative; a narrow opt-in integration is proportionate.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

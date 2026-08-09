@@ -1,0 +1,59 @@
+{
+  "authority": {
+    "board_free_build_tools_authorized": true,
+    "flash_authorized": false,
+    "hil_authorized": false
+  },
+  "bundle_id": "936afb6332",
+  "created_at": "2026-07-26T12:25:59.637525+00:00",
+  "files": {
+    "arm-zephyr-eabi-gcc.exe": {
+      "path": "C:\\ncs\\toolchains\\936afb6332\\opt\\zephyr-sdk\\arm-zephyr-eabi\\bin\\arm-zephyr-eabi-gcc.exe",
+      "sha256": "0feed5743ef2775d2d1c795708459f834f9035d4c6cbc40af7a591236d8b8b17",
+      "size_bytes": 2319872
+    },
+    "arm-zephyr-eabi-ld.exe": {
+      "path": "C:\\ncs\\toolchains\\936afb6332\\opt\\zephyr-sdk\\arm-zephyr-eabi\\bin\\arm-zephyr-eabi-ld.exe",
+      "sha256": "e7aa72aaa6a9fcbe206fc126d7018637d0a0c2d33ffa53f317df467ec8c9f38f",
+      "size_bytes": 1519104
+    },
+    "arm-zephyr-eabi-nm.exe": {
+      "path": "C:\\ncs\\toolchains\\936afb6332\\opt\\zephyr-sdk\\arm-zephyr-eabi\\bin\\arm-zephyr-eabi-nm.exe",
+      "sha256": "f93d0b9e8c31ba1e945b31c6f73e1321ec8e41d222a587a17c92987ce2fba90c",
+      "size_bytes": 901120
+    },
+    "arm-zephyr-eabi-objcopy.exe": {
+      "path": "C:\\ncs\\toolchains\\936afb6332\\opt\\zephyr-sdk\\arm-zephyr-eabi\\bin\\arm-zephyr-eabi-objcopy.exe",
+      "sha256": "0f17429fc1fb587a62921260dbc243d1db4524e5a7558f2af1de4b138c114bd4",
+      "size_bytes": 1014784
+    },
+    "arm-zephyr-eabi-objdump.exe": {
+      "path": "C:\\ncs\\toolchains\\936afb6332\\opt\\zephyr-sdk\\arm-zephyr-eabi\\bin\\arm-zephyr-eabi-objdump.exe",
+      "sha256": "5c0550dc1a12bb34c3f33b3d8b570f2104408e00b91f1bb61e43191155173186",
+      "size_bytes": 1547264
+    },
+    "arm-zephyr-eabi-size.exe": {
+      "path": "C:\\ncs\\toolchains\\936afb6332\\opt\\zephyr-sdk\\arm-zephyr-eabi\\bin\\arm-zephyr-eabi-size.exe",
+      "sha256": "c989595005eedf5b65018e9045ebf9d5808012366750a7a65994b649344962bd",
+      "size_bytes": 885248
+    },
+    "cmake.exe": {
+      "path": "C:\\ncs\\toolchains\\936afb6332\\opt\\bin\\cmake.exe",
+      "sha256": "083a412e9a21430da453bcd9713ffa5589ea1c677cc4d5f58f9a0b55fab1f546",
+      "size_bytes": 12823632
+    },
+    "ninja.exe": {
+      "path": "C:\\ncs\\toolchains\\936afb6332\\opt\\bin\\ninja.exe",
+      "sha256": "e52a7ad9538d9618c67a0bd777964e2eec8a30f68b810a2f6adce1f2daf847b8",
+      "size_bytes": 603648
+    }
+  },
+  "manager": "main/orchestrating gpt-5.6-sol",
+  "purpose": "A21 immutable bare-metal ARM Cortex-M4 build-tool input; no SDK source, HIL, or flash authority",
+  "schema_version": 1,
+  "versions": {
+    "cmake": "cmake version 4.2.1",
+    "gcc": "arm-zephyr-eabi-gcc.exe (Zephyr SDK 0.17.0) 12.2.0",
+    "ninja": "1.13.2"
+  }
+}

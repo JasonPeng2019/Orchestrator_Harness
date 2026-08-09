@@ -1,0 +1,36 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-017",
+  "branch": "firmware/v2-c0-final-review-0017",
+  "commit": "cace866c5d31e146e333f4469ab95c64d9fe4f6d",
+  "outcome": "PASS",
+  "summary": "NO CANDIDATE GAP / READY",
+  "checks": [
+    {
+      "name": "governing-document-hashes",
+      "outcome": "PASS",
+      "summary": "All five required authoritative documents matched their pinned SHA-256 values."
+    },
+    {
+      "name": "c3-delta-and-control-path-review",
+      "outcome": "PASS",
+      "summary": "Reviewed the exact five-path S26 delta, C3 lifecycle/recovery/oracle controls, compatibility boundaries, and complete accepted candidate diff."
+    },
+    {
+      "name": "dependency-and-registry-reconciliation",
+      "outcome": "PASS",
+      "summary": "Verified 13/13 mapped hashes, 23 focused IDs, 8 additions, 2 removals, 15 revalidations, 25 groups, 163 unique IDs, and 81 credits."
+    },
+    {
+      "name": "execution",
+      "outcome": "NOT_RUN",
+      "summary": "Per review constraints, no tests, gates, imports, MCP, hardware, or live processes were launched."
+    },
+    {
+      "name": "tracked-state",
+      "outcome": "PASS",
+      "summary": "No tracked candidate files were edited; required review artifacts were written under .agent-workspace."
+    }
+  ]
+}

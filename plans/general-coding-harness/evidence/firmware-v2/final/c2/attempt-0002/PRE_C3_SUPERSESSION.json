@@ -1,0 +1,22 @@
+{
+  "schema": "firmware-v2-c2-pre-c3-supersession/v1",
+  "owner": "ROOT-IM",
+  "recorded_at_utc": "2026-08-04T22:18:33Z",
+  "attempt": "attempt-0002",
+  "attempt_record": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c2/attempt-0002/ATTEMPT_RECORD.json",
+    "sha256": "3296b41d218f6973684456d9870bb58a08b9e649860ee5abde71bdc4fe8679b8"
+  },
+  "root_acceptance": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c2/attempt-0002/ROOT_ACCEPTANCE.json",
+    "sha256": "22c1ce84e42b7671924e0b86789433c5b9136d96c736c7a70a2403be7397d863"
+  },
+  "superseding_gap": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c2/attempt-0002/ROOT_PRE_C3_ADMISSION_GAP.json",
+    "finding_id": "F-PRE-C3-001"
+  },
+  "preserved_result": "C2's five assigned checks remain historically green for candidate 659dd03 and were not rerun.",
+  "supersession_effect": "The prior C3_UNLOCKED decision is no longer operative. This attempt cannot authorize C3 because the required candidate repair invalidates its C1 lock and candidate dependency.",
+  "classification": "PRE_C3_ADMISSION_SUPERSESSION",
+  "hardware_or_mcp_accessed": false
+}

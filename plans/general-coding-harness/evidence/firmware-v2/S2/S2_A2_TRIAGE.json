@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_A2_FINDINGS_2a451.json",
+  "findings_sha256": "ca22c4a956b550d066faed06bb83a826ad9466d909bfe0767b30c200d1d12fcc",
+  "decisions": [
+    {
+      "id": "S2-A2-F1",
+      "decision": "ACCEPT",
+      "rationale": "This is the same independently reproduced joined defect as S2-A1-F1: fresh Windows worktrees convert the four canonical LF seed files to CRLF, causing exact manifest validation to fail before target creation. A seed-scoped LF checkout rule is smaller and safer than platform-specific digest replacement or validator weakening. Restoring the mandatory target entrypoint outweighs the negligible configuration and focused-verification cost.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Enforce LF working-tree bytes only for firmware_acceptance/seed/*, retain the canonical manifest digests, prove the rule in a fresh worktree, then rerun only A2's failed materialization/substitution IDs and any directly dependent A1 seed check."
+    }
+  ]
+}

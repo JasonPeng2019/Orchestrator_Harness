@@ -1,0 +1,58 @@
+{
+  "schema": "firmware-v2-c2-attempt-record/v1",
+  "attempt": "attempt-0007",
+  "recorded_at_utc": "2026-08-05T16:25:40Z",
+  "candidate_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+  "c1_lock": {
+    "id": "40419d28-e343-44c1-bf5b-399709b771ba",
+    "sha256": "2140cf26b49174a48d097c192cc7c2012f853b77b5fa43e510b69ad744cf2626",
+    "validation_sha256": "aa54182d58c72d0de0ec5bd9e305409d757da1209e65e3d8bf2063293f1d590f",
+    "authorization_sha256": "5c3bd11e076dd1c72104499bd1e8266f5799528e2626c279fd461869f7952409"
+  },
+  "executor": {
+    "lane_id": "F.C2.D1",
+    "worker_invocation_id": "c2-d1-007",
+    "thread_id": "019fd2b5-c4f5-7512-81b6-9b40e4ad7ac6",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority"
+  },
+  "stable_runner": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "source_invocation_sha256": "bc14b03d7ca6339b85980c83eccff3a73418ef16f0cb95ee458a060fb847f81c",
+    "projected_invocation_sha256": "b52ad42fbd169c1f32b105d5b37ccbfc1f13264f5519fa4d48f5e45d73e11eab",
+    "projection_record_sha256": "be4c689ee12896d8b575c2431fa144454ad48a4abd93988489079560dd1bcea3",
+    "projection_proof_sha256": "16117c055604f232d39445e22cd6ae6e2ac231aff21b16e891cfe88037bffe9f",
+    "scan_proof_sha256": "2aec06302a1fc0df3c1f619c2d493685ed6e98af232da9338584c55412f1b079",
+    "dispatch_proof_sha256": "f7a925ce9b1428011f4a48a37d1fb9fe9b1b85fb9b71433ddaa6c4178bc6cc2"
+  },
+  "artifacts": {
+    "findings_sha256": "13b10424d8f439c0e4d6274c460f40376c7d88141f9ab3a78639fe8a5cee4e4c",
+    "test_report_sha256": "be70103b08e3d5a88dcf649da7ae9a4bf84860a4c9321f5e67473063e0e8569a",
+    "result_sha256": "1ca112cff6308368d638f29dffdae0fbcff750ca3c279a0576de96353d938a78",
+    "controller_status_sha256": "54990b1f229d3d0c7458b353cd7aaa3b3af14769664f0300a64624bdf0753869",
+    "worker_jsonl_sha256": "450d0fcaf500f941c14fbc27cfa4a32d8cc7a105236eb1fd471ad542295371ed",
+    "worker_stderr_sha256": "0acaa38e70ec2f74b8ba6055a2a08f3e75c7438d65798a13358dad92aee48c45",
+    "worker_last_message_sha256": "d6be06796dbf3cdb1dd0cdd987a3ed81755ea63e70622e43b0d5232eaf52d1a1",
+    "prompt_sha256": "9b8e1d925084e2c1d4355dd0391192b0a6e2c7ade10e05edeaf2d81c6f00f9ad",
+    "verifier_sha256": "f82c0dd55f4953d527dfc1828dcef5cc86b36c01caeecb1d9f6c69d2c9e8aa50"
+  },
+  "executed_stable_ids": [
+    "F-C2-LOCK-001",
+    "F-C2-AUTH-001",
+    "F-C2-DISPOSABLE-001",
+    "F-C2-CREDIT-001",
+    "F-C2-STATE-001"
+  ],
+  "passed_ids": [],
+  "failed_ids": 5,
+  "skips_or_xfails": 0,
+  "candidate_changed": false,
+  "mcp_server_changed": false,
+  "hardware_or_mcp_accessed": false,
+  "post_controller_claim_files": 0,
+  "post_controller_surviving_test_processes": 0,
+  "result_gate_valid": false,
+  "c3_admitted": false,
+  "outcome": "FAIL_PRESERVED_ROOT_TRIAGED"
+}

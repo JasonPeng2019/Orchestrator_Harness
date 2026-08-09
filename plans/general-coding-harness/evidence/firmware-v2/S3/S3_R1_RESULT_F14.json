@@ -1,0 +1,23 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S3.R1",
+  "worker_invocation_id": "s3-r1-001",
+  "branch": "firmware/v2-s3-r1",
+  "commit": "f14e4e54e6f29d755312932345f89985437a6341",
+  "outcome": "FAIL",
+  "summary": "S3.R1-001: candidate safeguard is not bound to the exact reserved candidate root and can credit a same-suffix clone.",
+  "checks": [
+    {
+      "name": "read-only S3 operator/release surface audit",
+      "command": "read-only inspection of required S3 contracts, operator surface, examples, release templates, safeguard launcher/test, and full diff",
+      "outcome": "FAIL",
+      "summary": "S3.R1-001: candidate safeguard is not bound to the exact reserved candidate root."
+    },
+    {
+      "name": "tracked worktree cleanliness",
+      "command": "git diff --quiet",
+      "outcome": "PASS",
+      "summary": "No tracked-file changes introduced by this review."
+    }
+  ]
+}

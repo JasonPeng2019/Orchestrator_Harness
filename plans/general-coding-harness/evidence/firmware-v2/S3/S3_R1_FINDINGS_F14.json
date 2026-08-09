@@ -1,0 +1,27 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S3.R1",
+  "worker_invocation_id": "s3-r1-001",
+  "role": "reviewer",
+  "commit": "f14e4e54e6f29d755312932345f89985437a6341",
+  "findings": [
+    {
+      "id": "S3.R1-001",
+      "classification": "FUNCTIONALITY_BREAKING",
+      "title": "Candidate safeguard is suffix-bound, not bound to the exact reserved candidate root",
+      "affected_requirement": "S3/C64 requires every safeguard source check and test to name the exact reserved candidate root; the candidate gate must never be confused with a candidate or legacy alias.",
+      "evidence": {
+        "file": "tools/Invoke-CandidateSafeguard.ps1",
+        "lines": "18-21",
+        "detail": "The only path check is `$normalizedRoot.EndsWith($reservedTail)`, where `$reservedTail` is the reserved relative suffix. The script then checks only that local repository's branch, cleanliness, and HEAD, not the configured absolute reserved worktree."
+      },
+      "reproduction_and_impact": "Create or retain another clean repository clone at any path ending in `plans/general-coding-harness/runtime/firmware-v2/worktrees/harness-candidate`, check out branch `firmware/v2-candidate`, include the baseline/configuration, and invoke its copied launcher. It passes the root/branch/clean checks and runs its checks there. An operator could consequently record a green safeguard for that clone rather than the reserved candidate that C4/promotion must certify.",
+      "smallest_fix": "Resolve the canonical absolute reserved candidate path from the repository's fixed outer-root contract and require case-insensitive equality with `$script:candidateRoot` (while retaining the Git-top-level, branch, clean, and stable-revision checks). Update the safeguard test to reject a same-suffix non-reserved root.",
+      "implementation_complexity": "Low: replace the suffix predicate with one canonical exact-path comparison and add one focused negative test.",
+      "regression_risk": "Low: the launcher is intentionally candidate-only and the permitted path is already fixed by the S3 contract.",
+      "verification_cost": "Low: static inspection plus the focused launcher negative test; no hardware or full safeguard run is required.",
+      "cost_benefit_reasoning": "The safeguard is the final promotion gate, so accepting a non-reserved clone defeats its candidate-binding purpose. The narrow exact-path check removes that realistic false-credit path with negligible surface area.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

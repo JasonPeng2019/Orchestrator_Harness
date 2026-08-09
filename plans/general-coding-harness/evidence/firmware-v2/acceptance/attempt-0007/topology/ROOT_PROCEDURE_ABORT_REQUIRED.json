@@ -1,0 +1,61 @@
+{
+  "schema": "firmware-c3-root-procedure-abort-required/v1",
+  "attempt_id": "attempt-0007",
+  "owner": "ROOT-IM",
+  "classification": "CANDIDATE_AUTHORIZATION_DERIVATION_DEFECT_AND_WATCHER_TERMINAL_REPORT_LOSS",
+  "candidate_defect": {
+    "invariant": "C3_HARNESS_DERIVES_AUTHORIZATION_BEFORE_SESSION_DISPATCH",
+    "description": "After an accepted candidate-created proposal and a valid signed O decision, session execution failed before MCP dispatch because the candidate did not derive the required authorization artifact.",
+    "proposal": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0007\\hil\\STM-A\\sessions\\1416a083-8bd8-4eb9-887c-347fa032d028\\call-proposals\\c77da493-240f-468b-acf8-047ef5d7fe20.json",
+      "sha256": "ea582ed0840ba4f7e0b3e26488549277cd51be98044180c3b8817eba588df167"
+    },
+    "decision": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0007\\authorization-decisions\\c77da493-240f-468b-acf8-047ef5d7fe20.json",
+      "sha256": "26cabf506d3948425b5f942c99d87ea49ecda28648742842e4e0fe63f1684c5b"
+    },
+    "terminal_operation": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0007\\hil\\STM-A\\sessions\\1416a083-8bd8-4eb9-887c-347fa032d028\\operations\\4030700cfca0c53bce1d457cb1743cd0aa6ce3315d5e5cc3ba4bc4686acbe248.TERMINAL.json",
+      "sha256": "e743088c500e2c3a1d20af229de3359977f507549e589a416dbeff9e0869e619"
+    },
+    "authorization_artifacts_created": 0,
+    "dispatch_admissions_created": 0,
+    "mcp_calls_dispatched": 0,
+    "earliest_invalidated_sprint": "P0",
+    "repair_required": true
+  },
+  "watcher_procedure_failure": {
+    "invariant": "WATCHER_TERMINAL_REPORT_PRECEDES_WATCHER_EXIT",
+    "description": "The watcher helper honored the ordered stop and wrote its service terminal, but the W agent exited without WATCHER_REPORT.md or WATCHER_TERMINAL.json; ROOT rejected closure.",
+    "watcher_stop_request": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0007\\topology\\WATCHER_STOP_REQUEST.json",
+      "sha256": "c1fbf070fde2f5d670535d1741772449ce1daf514d4ba001671d0a0a7a246a65"
+    },
+    "watcher_service_terminal": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0007\\watcher\\WATCHER_SERVICE_TERMINAL.json",
+      "sha256": "d8754223880061c918f6a4f591d948d3efcfddf28410a7559bfc19de5417621a"
+    },
+    "root_supervisor_failure": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0007\\topology\\ROOT_SUPERVISOR_FAILURE.json",
+      "sha256": "8a43276bd1bbf8b78f0039defde07998910d06597c1dd0f88ca5b15b7b4b92b5"
+    },
+    "candidate_or_server_defect": false,
+    "fresh_attempt_procedure_correction_required": true
+  },
+  "containment": {
+    "candidate_shutdown": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0007\\c3-harness\\C3_HARNESS_SHUTDOWN.json",
+      "sha256": "7d1374bdfe61ee66898a8900f9f1a71620017a6e8bfa83f47303144fd9c221eb"
+    },
+    "session_aborted": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0007\\hil\\STM-A\\sessions\\1416a083-8bd8-4eb9-887c-347fa032d028\\SESSION_ABORTED.json",
+      "sha256": "52cc8977802c393389e7a5ba8c61fd01a2608630904c42007c7504592d6f7581"
+    },
+    "registered_processes_remaining": 0,
+    "resource_claims_remaining": 0,
+    "candidate_clean": true,
+    "server_clean": true
+  },
+  "fresh_candidate_repair_c0_c1_c2_c3_required": true,
+  "recorded_utc": "2026-08-05T17:19:56.7034659Z"
+}

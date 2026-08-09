@@ -1,0 +1,64 @@
+{
+  "schema": "firmware-v2-c2-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "accepted_at_utc": "2026-08-05T05:04:00Z",
+  "attempt_record": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0003\\ATTEMPT_RECORD.json",
+    "sha256": "66c8d521e3bdde034597556bf33fa8a32233c47990b003e1bf9095b0c0c18037"
+  },
+  "root_triage": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0003\\ROOT_TRIAGE.json",
+    "sha256": "3d62c9e4aee9b29fa212de85ecffeba7c7db991af3ec112d8c8b102513f48ddc"
+  },
+  "c1": {
+    "lock_id": "d31d847b-ab7a-4abf-9b06-823a8d09146d",
+    "lock_sha256": "d403facd1bdddbe98c58aca15bef683f309cf300ab41a9d3054eea65a704db23",
+    "validation_sha256": "17562d3b982e641fbdcdf0d678867982fc78d412633b05daeb6f71859cc2be45",
+    "checksum_matches": true,
+    "locked_path_hash_references_valid": "38/38",
+    "governing_hashes_unchanged": true,
+    "candidate_and_server_inputs_unchanged": true
+  },
+  "executor": {
+    "thread_id": "019fd041-e8eb-7323-a00a-cef949043d02",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority",
+    "controller_result_valid": true,
+    "candidate_findings_validator_passed": true,
+    "candidate_result_validator_passed": true,
+    "claims_released": true,
+    "worktree_clean": true
+  },
+  "root_checks": {
+    "findings_exact_six_key_shape": true,
+    "findings_count": 0,
+    "result_exact_eight_key_shape": true,
+    "result_check_exact_three_key_shapes": "5/5",
+    "test_report_path_hash_references_valid": "45/45",
+    "assigned_ids": 5,
+    "passed_ids": 5,
+    "failed_ids": 0,
+    "skips_or_xfails": 0,
+    "bounded_process_timeouts": 0,
+    "protected_baseline_ids_compared_without_execution": 248,
+    "registry_green_groups": 22,
+    "registry_unique_green_ids": 145,
+    "registry_invalidations": 0,
+    "registry_evidence_credits": 64,
+    "green_ids_rerun_after_pass": 0,
+    "active_resource_claims": 0,
+    "surviving_managed_test_processes": 0,
+    "c2_broker_roots": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "classification": {
+    "candidate_harness_failure": false,
+    "watcher_failure": false,
+    "c1_invalidation": false,
+    "ordinary_executor_correction": false
+  },
+  "decision": "C3_UNLOCKED",
+  "next_gate": "Allocate a fresh immutable C3 attempt and launch a fresh Sol-high-priority F.C3.O plus separate Terra-medium-priority read-only watcher; ROOT-IM supervises and never orchestrates target tasks."
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "firmware-v2-root-pre-c1-admission/v1",
+  "attempt": "0006",
+  "candidate_commit": "42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+  "mcp_server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+  "supersedes_root_decision": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c0/attempt-0006/ROOT_TRIAGE.json",
+    "decision": "ACCEPT_GREEN_C0_AND_UNLOCK_C1",
+    "reason": "ROOT-IM found two executable-boundary gaps during the independent pre-C1 admission check before C1 was created. The immutable reviewer result and original ROOT triage remain preserved; this later record prevents their green decision from unlocking C1."
+  },
+  "root_decision": "REOPEN_S2_BEFORE_C1",
+  "c1_created": false,
+  "hardware_authorized": false,
+  "hardware_accessed": false,
+  "findings": [
+    {
+      "id": "ROOT-PRE-C1-AUTHORIZATION-POLICY-001",
+      "classification": "CODEBASE_BREAKING",
+      "accepted": true,
+      "problem": "The candidate can hash-bind a delegated authorization artifact but does not parse its user scope or enforce fixture, action-class, prohibition, or action-specific limit membership. MCP_METHOD_POLICY.json also lacks the required one-action-class-per-method and closed parameter/safe-flag/prohibited-predicate contract. Consequently a syntactically valid delegated reference can accompany a method allowed by the incomplete policy even when the user-issued scope does not authorize that action.",
+      "exact_evidence": [
+        "goal.md Section 11 requires a default-deny exact method/version policy with one action class, parameter schemas/ranges, safe flags, prohibited predicates, and enforcement of the canonical user scope.",
+        "firmware_acceptance/MCP_METHOD_POLICY.json at candidate 42a9d70 contains seven method rules but no action_class fields, no complete parameter schemas, and no per-method prohibited predicates.",
+        "firmware_acceptance/controller.py:82-95 verifies only raw path/hash identity for delegated_reference.",
+        "firmware_acceptance/kit.py:400-445 evaluates method/version, selected bounds, duration, and permission but never parses delegated_reference or checks allowed_action_classes, prohibited_action_classes, fixtures, or action-specific user limits."
+      ],
+      "candidate_sources": {
+        "firmware_acceptance/MCP_METHOD_POLICY.json": {
+          "git_blob": "31542e00f359e45088b32f523c5c1feff906e95d",
+          "worktree_sha256": "f8cc679590b2e87bd70c4455ea2810c56dd0ecfb1a1134c1a64b8bacbfcba769"
+        },
+        "firmware_acceptance/kit.py": {
+          "git_blob": "5f5e1722bd616063e6c2454520475cc9b983f1ad",
+          "worktree_sha256": "00c1236112c8152672d4da38cba4263a20ee810f9e715d61e2be811deb48e7d6"
+        },
+        "firmware_acceptance/controller.py": {
+          "git_blob": "7721556d4f2b5cdc3349057089c95a1a61c70767",
+          "worktree_sha256": "829f2a3f5b9df1acf252954c8e2dc39c72b15889c8c4de640434bb354932aebe"
+        }
+      },
+      "merit": "The defect is an authorization-boundary failure. Enforcing the already-required scope and method policy is necessary for any physical dispatch, and the risk of leaving it unfixed is categorically greater than the bounded implementation and regression-test cost."
+    },
+    {
+      "id": "ROOT-PRE-C1-MCP-SESSION-LIFECYCLE-001",
+      "classification": "FUNCTIONALITY_BREAKING",
+      "accepted": true,
+      "problem": "Each candidate call launches a new MCP server process, performs initialize plus exactly one tools/call, and then terminates/reaps that server. The pinned MCP server is explicitly stateful across calls: setup assignment, connection, validation, plan initialization/acceptance, dynamically unlocked action, and returning-state cleanup exist only within one Server Run. The candidate therefore cannot complete the required setup/validate/plan/action workflow for guarded physical operations such as application flash or UART in C3.",
+      "exact_evidence": [
+        "firmware_acceptance/controller.py:419 launches a fresh process; lines 428-432 initialize and issue exactly one tools/call before the cleanup path terminates/reaps it.",
+        "pinned server.py:5-7 states that debug sessions are stateful and connections persist across calls.",
+        "pinned tools/handshake.py:49-55 requires two calls to each *-plan tool before the real action is exposed, and lines 111-112 require validation again after the Server Run ends.",
+        "pinned guardrails/plan_engine.py:587 and 1183-1194 unlock the action only inside the active Server Run; close_run at 1201 clears that state.",
+        "orchestrator_harness/tests/test_firmware_acceptance_controller.py:90 currently asserts only initialize, initialized, and one tools/call, so the green host test encodes the incompatible behavior rather than proving a real guarded session."
+      ],
+      "pinned_server_sources": {
+        "src/pyocd_debug_mcp/server.py": {
+          "git_blob": "fc0175eac584149ff65d3210270c1e70d5984aa7",
+          "worktree_sha256": "c271e86f7987bf210847988df7cb3642151395cfd129c8ee5c4b1944a922ba13"
+        },
+        "src/pyocd_debug_mcp/tools/handshake.py": {
+          "git_blob": "cc92f954d8bacbf4b385b6fc618d6129b718be85",
+          "worktree_sha256": "937162e7de50e6dc3ab50eb451929f00e45b75d6162acde53745d174eacbdcbe"
+        },
+        "src/pyocd_debug_mcp/guardrails/plan_engine.py": {
+          "git_blob": "d62abaaadb406aa4fdc52f4ddcbfb187c8dac800",
+          "worktree_sha256": "bbd121033e794882e94f6a4b1acc5fb6e63a6f94011d887a08fad312a658abbc"
+        }
+      },
+      "merit": "The required physical acceptance cannot execute against the pinned server without a state-preserving, policy-bound MCP lifecycle. The failure is deterministic from the pinned source and is worth the smallest sufficient repair because otherwise C3 is impossible regardless of target firmware quality."
+    }
+  ],
+  "required_route": [
+    "Keep C1 absent and all hardware locked.",
+    "Return both accepted findings to the serial S2.P product lane through the pinned stable implementation runner.",
+    "Review and test only dependency-invalidated authorization, controller-session, kit, and host behavior; preserve unrelated green tests.",
+    "Join the accepted repair to a new exact candidate tip, then run a brand-new C0 review before creating C1."
+  ],
+  "recorded_at_utc": "2026-08-04T12:49:03.4493496Z"
+}

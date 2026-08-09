@@ -1,0 +1,120 @@
+{
+  "schema": "firmware-v2-c2-attempt-record/v1",
+  "attempt": "attempt-0010",
+  "recorded_at_utc": "2026-08-05T18:34:53Z",
+  "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "c1_lock": {
+    "id": "d96f270b-bb92-4b3e-aac0-29321e2ea44a",
+    "sha256": "d9bc07a1eb812775e046f8b87f19955dcac65dae3ecb59994d84613e293a60c7",
+    "validation_sha256": "0308e3883912749678d24f449f2725486d312f1a55bace61caa2dbabc6c05462",
+    "authorization_sha256": "d673cca3705af4c6be326268125ecd9d4731001b43d72d239189ee9a0ad326b5"
+  },
+  "executor": {
+    "lane_id": "F.C2.D1",
+    "worker_invocation_id": "c2-d1-010",
+    "thread_id": "019fd32d-af55-7e62-bd62-fed6ab6431ec",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority"
+  },
+  "stable_runner": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "source_invocation_sha256": "519b887093ae983cbc2641defd2814393dbd572abfc5ca6234db86219f302042",
+    "projected_invocation_sha256": "8ae584ae07a1012988086e74f848e6e13b83e29b1652af6574561edb15920d6b",
+    "projection_record_sha256": "ceccf3825c7744388992b2628bff749e58f10919e881949935beb65be29061cc",
+    "projection_proof_sha256": "6ef580d3c39d036e9a6851a93306e04f496a6c1a16f289c5b8472c6b6693b7f3",
+    "dispatch_proof_sha256": "9dee021e95ef6cb22bffbdb6ebb2935e0253075955515cd76de94d29214bf8a3"
+  },
+  "artifacts": {
+    "findings_sha256": "49a9e7172247e50a979258631a8afcd2c3383f6a1889916ad9c22111a377462b",
+    "test_report_sha256": "e1bf0af276a333b0c5ee933a2d64ec0eeae9dfff9949c15c48fc773870081a32",
+    "result_sha256": "86cef29368ae39266c4ddfcbb59fa7c2a52c2540b1ac9aecdc620ef555c6ca3d",
+    "controller_status_sha256": "caffa0a01ab169277d07c7ad8873d33a62f9000db8e5086373c3c40bc5d35309",
+    "worker_jsonl_sha256": "4e881bc70413737cbaa86447f3b7004ed322300e34e2d2a0d6df873d340a39d4",
+    "worker_stderr_sha256": "80161e0bea46af198dee75608bbd2014fb1568ecc012e5bcaedaa3911ecb0c1f",
+    "worker_last_message_sha256": "22d5fc210077942093cca25398c72f537c864235e6084a35aeff0e814e0ddbf5",
+    "prompt_sha256": "abb942c100708b33ba01c843902f0e7478eac16f8a7fa74a2c4ec1f825b79923",
+    "verifier_sha256": "a21ecba06b96631566f1cf55d5df3d968cc3a2fc1d284b958a974ee75f2cd8c1"
+  },
+  "tests": [
+    {
+      "stable_id": "F-C2-LOCK-001",
+      "pid": 10696,
+      "creation_identity": "windows-filetime:134304280875914823",
+      "process_record_sha256": "41900d088b6cec1a4cc069ac650d47a3643281f17733932df89ef9c71ccdab67",
+      "stdout_sha256": "fda83d5615ecf4dbaff1b7468bf6bdd7e3f3192ef3445582610ce8f92845bc42",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "outcome": "PASS"
+    },
+    {
+      "stable_id": "F-C2-AUTH-001",
+      "pid": null,
+      "creation_identity": null,
+      "process_record_sha256": "a03c15de3db59f31f58319d0e5b4d2ae7838ef4701b4522d219b24e2ac37ddbf",
+      "stdout_sha256": "80ddac702c1c562a8054758f2090ec2ef2e3602eae7a7bac523976b792efd57d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_exit_code": 0,
+      "verifier_outcome": "PASS",
+      "process_envelope_outcome": "FAIL"
+    },
+    {
+      "stable_id": "F-C2-DISPOSABLE-001",
+      "pid": 184896,
+      "creation_identity": "windows-filetime:134304281418026352",
+      "process_record_sha256": "edeb2db2c828d31d3f90000b66dbc1a8e72368ccca7158ca1d734f832c54a623",
+      "stdout_sha256": "32abf6df7922d452c6d183c5979eaaa62625466d7622dffae3ec1fa9cd6f13ce",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "outcome": "PASS"
+    },
+    {
+      "stable_id": "F-C2-CREDIT-001",
+      "pid": 191472,
+      "creation_identity": "windows-filetime:134304281559796684",
+      "process_record_sha256": "3fcdd87c3a4c0d2c65b7bc12a2295f03ee4f4ce349a1a0481491dbf82390d69a",
+      "stdout_sha256": "d9812d8a50c0337ff5ca0c863522d7b1e8d0d0b434780d05de9027a9208e83e4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "outcome": "PASS"
+    },
+    {
+      "stable_id": "F-C2-STATE-001",
+      "pid": 4440,
+      "creation_identity": "windows-filetime:134304281692254688",
+      "process_record_sha256": "8d8dc0cf45dd3cb2143a5bcab4c70822a722e775db45fcb68bd0498fc05b41f2",
+      "stdout_sha256": "fb9ad045a3f43a6e33807b225d4b49e1450e9344399b4c9dd63b038949f1dda1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "outcome": "PASS"
+    }
+  ],
+  "credit_counts": {
+    "green_groups": 27,
+    "unique_green_ids": 166,
+    "invalidated_groups": 0,
+    "evidence_credits": 91,
+    "hashed_evidence_credits": 85,
+    "inheritance_only_credits": 6,
+    "protected_baseline_ids": 248,
+    "focused_s28_ids": 5,
+    "retained_dependency_valid_prior_ids": 166
+  },
+  "passed_ids": [
+    "F-C2-LOCK-001",
+    "F-C2-DISPOSABLE-001",
+    "F-C2-CREDIT-001",
+    "F-C2-STATE-001"
+  ],
+  "failed_ids": [
+    "F-C2-AUTH-001"
+  ],
+  "candidate_changed": false,
+  "mcp_server_changed": false,
+  "hardware_or_mcp_accessed": false,
+  "post_controller_claim_files": 0,
+  "post_controller_surviving_test_processes": 0,
+  "result_gate_valid": true,
+  "c3_admitted": false,
+  "outcome": "FAIL_PRESERVED_ROOT_TRIAGED"
+}

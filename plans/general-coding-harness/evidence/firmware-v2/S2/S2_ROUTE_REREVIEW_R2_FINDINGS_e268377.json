@@ -1,0 +1,45 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.R2",
+  "worker_invocation_id": "s2-r2-route-review-001",
+  "role": "reviewer",
+  "commit": "e26837785745bae3f5102e79305ade677b68cdac",
+  "findings": [
+    {
+      "id": "S2-R2-ATTRIBUTION-003",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["AUTHORIZED_SERVER_LIMITATION", "PINNED_SERVER_SOURCE", "record_server_limitation"],
+      "evidence": ["firmware_acceptance/kit.py:501-530", "firmware_acceptance/kit.py:410-442"],
+      "observed": "The new attribution record binds its raw-result reference and pin, but PINNED_SOURCE_BEHAVIOR accepts any nonempty behavior_signature after proving only that source_path exists in the pinned commit. DETERMINISTIC_REPRODUCTION_SIGNATURE accepts any nonempty behavior_signature with no source linkage at all. The six exclusion records add only same-call identities and excluded: true; none binds a concrete observation, predicate, or the failed server response to the asserted source behavior.",
+      "expected": "A PINNED_SERVER_SOURCE limitation must require a small closed, falsifiable causal binding between the exact raw server failure and immutable pinned behavior, plus evidence that distinguishes the named source failure from target, fixture, operator, environment, hardware-absence, and unknown alternatives.",
+      "reproduction": "Create an otherwise complete signed limitation decision whose attribution_evidence names any tracked pinned file, sets behavior_signature to an unrelated nonempty string, and supplies six hash-valid exclusion JSON objects with excluded: true. _verify_pinned_source_attribution accepts all of those values: it checks git show succeeds for the path and never compares the source bytes or behavior_signature with raw_result or any exclusion observation.",
+      "impact": "A signed O decision can classify an arbitrary dispatched server failure as AUTHORIZED_SERVER_LIMITATION without executable evidence that the immutable server caused it. That enables an unwarranted fallback route and makes the limitation decision non-falsifiable.",
+      "no_fix_consequence": "The candidate cannot honestly distinguish a proved pinned-server limitation from a self-declared attribution, contrary to the exact fallback gate; target or environment failures may receive substitute credit under the server-limitation label.",
+      "smallest_fix": "Define one narrow closed attribution witness that hash-binds the raw failure signature to the exact git-show source bytes and a reviewed matching predicate, and require each exclusion record to contain a hash-bound, category-specific observed fact checked against that same failed call. Keep it limited to this limitation API rather than adding general provenance machinery.",
+      "complexity": "Medium: a bounded witness schema and verifier, with focused host-only positive and mutation tests.",
+      "regression_risk": "Low to medium: it tightens only the exceptional limitation path; valid evidence must already possess the raw failure and immutable pin required by the contract.",
+      "verification_cost": "Low: synthetic immutable files and the broker limitation unit shard are sufficient; no MCP or hardware use is required.",
+      "alternatives": "Treating signature, source-path existence, or six asserted exclusions as causal proof does not work because each can be supplied independently of the actual raw server failure.",
+      "cost_benefit": "This localized check prevents the sole allowed server-defect fallback from becoming an attribution bypass, which outweighs the limited evidence-schema work.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "S2-R2-SUBSTITUTE-004",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["AUTHORIZED_SERVER_LIMITATION", "substitute_rule", "record_server_limitation"],
+      "evidence": ["firmware_acceptance/kit.py:463-465", "firmware_acceptance/kit.py:497-499", "firmware_acceptance/kit.py:532-565"],
+      "observed": "The substitute assignment, result, and execution are accepted if they are hash-valid JSON beneath the broad broker root and self-report matching IDs and PASS. Their closed schemas contain no C3-HARNESS controller/launch identity, no authenticated assignment issuer, and no attempt-confined path requirement. A precreated arbitrary broker-root file can therefore self-declare an assignment, execution, and PASS result for the decision's identities.",
+      "expected": "Substitute credit requires evidence that the exact C3-HARNESS-owned assignment was executed in this attempt and completed PASS, with every assignment/result/execution reference confined to the corresponding broker attempt boundary; physical certification must remain NOT_CERTIFIED.",
+      "reproduction": "Place three create-once-shaped JSON artifacts anywhere under broker.root but outside an attempt-specific assignment/execution location. Give all fields the limitation decision's IDs, make result and execution outcome PASS, and set result.execution to the execution reference. _verify_broker_reference checks only that each path is a descendant of broker.root, while _verify_substitute_identity trusts the self-reported schemas and does not bind them to a C3 launch/controller identity or attempt-scoped artifact root.",
+      "impact": "A limitation record can award substitute credit without a demonstrated C3-HARNESS launch or execution of the exact assignment, weakening the required fallback boundary even though the result says PASS and physical work remains NOT_CERTIFIED.",
+      "no_fix_consequence": "The limitation pathway remains structurally closed but cannot prove that its credited substitute actually ran under C3-HARNESS in the affected attempt; unrelated or fabricated PASS records can satisfy the gate.",
+      "smallest_fix": "Have C3-HARNESS create assignment, execution, and result in one attempt-confined broker subtree and include the existing exact controller/launch identity plus predecessor path/hash bindings in the execution artifact; require those exact locations and bindings when recording the limitation.",
+      "complexity": "Medium: a narrow artifact-path/identity extension and focused fixture updates.",
+      "regression_risk": "Low: it affects only exceptional substitute credit and rejects artifacts that were never tied to the owning C3 execution.",
+      "verification_cost": "Low: host-only broker tests can prove legitimate attempted execution admits and outside-root, wrong-attempt, forged-identity, and non-PASS artifacts reject.",
+      "alternatives": "A broad broker-root containment check and self-reported PASS are insufficient to establish C3 ownership or an attempt-local execution; requiring physical certification would violate the contract's NOT_CERTIFIED rule.",
+      "cost_benefit": "The fix preserves the intended strongest-safe fallback without granting unearned substitute credit, with a bounded implementation surface.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

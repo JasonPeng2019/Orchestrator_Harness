@@ -1,0 +1,86 @@
+{
+  "schema_version": "firmware-v2-model-availability-v1",
+  "codex_cli": "codex-cli 0.146.0",
+  "required_flags": [
+    "--dangerously-bypass-approvals-and-sandbox",
+    "--dangerously-bypass-hook-trust",
+    "--ignore-user-config",
+    "--json",
+    "-C",
+    "--model",
+    "model_reasoning_effort"
+  ],
+  "fast_tier_flag": "service_tier=priority",
+  "smokes": [
+    {
+      "role": "sol-high-priority",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "high",
+      "service_tier": "priority",
+      "thread_id": "019fca16-c636-7e60-8055-05860c789c89",
+      "pid": 188816,
+      "creation_time_utc": "2026-08-04T00:05:17.5260580Z",
+      "exit_time_utc": "2026-08-04T00:05:26.7206237Z",
+      "exit_code": 0,
+      "final_message": "MODEL_SMOKE_OK sol-high-priority",
+      "stdout_sha256": "6f831511802a2ebdcadcffefdb39e12de8befa64ebcbd073ad5055a2a60c013d",
+      "final_message_sha256": "1e97cb5bf1b8d8fb4e5ab252284e08edad6b606521934b1ef69d69d1f3c5393b"
+    },
+    {
+      "role": "terra-medium-default",
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "service_tier": "default",
+      "thread_id": "019fca17-445e-7132-822a-6e1dc62070a4",
+      "pid": 187740,
+      "creation_time_utc": "2026-08-04T00:05:49.7348923Z",
+      "exit_time_utc": "2026-08-04T00:05:56.7851212Z",
+      "exit_code": 0,
+      "final_message": "MODEL_SMOKE_OK terra-medium-default",
+      "stdout_sha256": "b992f7b64ad196fa6642dc4ae9c02161a21ce665cd61ebe5f1f3148c78df43dc",
+      "final_message_sha256": "74e2c42419b534776d51d9182bb31e31f859f4acbce2db22d7dea2"
+    },
+    {
+      "role": "terra-medium-priority",
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "service_tier": "priority",
+      "thread_id": "019fca17-60b0-7672-9762-3671b00c5720",
+      "pid": 195072,
+      "creation_time_utc": "2026-08-04T00:05:57.1194035Z",
+      "exit_time_utc": "2026-08-04T00:06:02.9116926Z",
+      "exit_code": 0,
+      "final_message": "MODEL_SMOKE_OK terra-medium-priority",
+      "stdout_sha256": "9fbc72af99a3a2dfc84623d30fce7a105b1901300fb83fbc3f85d75bf973261b",
+      "final_message_sha256": "11113e59a233bb0a5438516fa684779cf854d384a43fba746b5fc59d575fcc00"
+    },
+    {
+      "role": "luna-high-default",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "high",
+      "service_tier": "default",
+      "thread_id": "019fca17-78b2-7413-8622-09a630a955b3",
+      "pid": 10852,
+      "creation_time_utc": "2026-08-04T00:06:03.2868735Z",
+      "exit_time_utc": "2026-08-04T00:06:08.9478494Z",
+      "exit_code": 0,
+      "final_message": "MODEL_SMOKE_OK luna-high-default",
+      "stdout_sha256": "6397e23555957ea9a91473b6d229943acb819d119995ffea0bc04f0a42e8647a",
+      "final_message_sha256": "a3cd6ec5cca9bfb430ede8c67504736a482b566acf5db0873827639cf1ffa6b4"
+    }
+  ],
+  "preserved_launcher_failures": [
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/preflight/model-smokes/sol-high-priority",
+      "cause": "PowerShell Start-Process split an unquoted multiword prompt before Codex startup.",
+      "disposition": "new attempt with corrected argument quoting"
+    },
+    {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/preflight/mcp-discovery",
+      "cause": "Windows native argument serialization stripped TOML sequence quotes before Codex startup.",
+      "disposition": "new attempt with TOML literal strings"
+    }
+  ],
+  "all_required_combinations_green": true,
+  "model_substitution_used": false
+}

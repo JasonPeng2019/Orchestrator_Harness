@@ -1,0 +1,20 @@
+{
+  "schema": "firmware-c3-root-attempt-allocation/v1",
+  "attempt_id": "attempt-0010",
+  "owner": "ROOT-IM",
+  "candidate_commit": "c6999d173c344b317a918df91619308fd9f93f63",
+  "c1_lock_sha256": "a08d01f855a314ee0d113b71af9ad2ffe6f1718cddbaa7fcda1bd0d5f3d429e0",
+  "c2_root_acceptance_sha256": "95665660e7c6f72600b1ca8d4e3a8efb267d61c9942c52d27a89089a0b56ff8a",
+  "c3_rehearsal_root_acceptance_sha256": "9c60ac370e7023105d25cee240c89b9a2f17fd9bc3dfda1a08045d104493a15f",
+  "prior_attempt_failure_classification_sha256": "eddb475e4660c1436f19796e95c37448bc9f17aabc24b44e3336f98811494fed",
+  "prior_attempt_closeout_sha256": "4f0442451a6642670b30b00c4bafbf1f72c35ddfe63cd325503fbcf5c02add8e",
+  "fresh_runtime_evidence_and_external_control_roots": true,
+  "external_control_root_outside_manifest_domains": true,
+  "governing_watcher_root_absent_for_create_new_initialization": true,
+  "prior_mutable_runtime_reused": false,
+  "target_source_reconstruction": null,
+  "target_root_absent": true,
+  "supervisor_owned_pause_path": true,
+  "watcher_nonblocking_helper_and_bounded_polling": true,
+  "allocated_utc": "2026-08-05T23:59:13.2272171Z"
+}

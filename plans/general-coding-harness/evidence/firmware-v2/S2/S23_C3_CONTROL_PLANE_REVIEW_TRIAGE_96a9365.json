@@ -1,0 +1,15 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S23_C3_CONTROL_PLANE_REVIEW_FINDINGS_96a9365.json",
+  "findings_sha256": "9479071c530c3ce1369fd44f31d51c6fe38b5d2a127f28682a2a1d6e36860ccb",
+  "decisions": [
+    {
+      "id": "S23.R2-C3-001",
+      "decision": "ACCEPT",
+      "rationale": "ROOT independently confirmed the executable problem, with a stronger Windows-specific observation than the review wording: the packaged source seed files were writable (mode 0666), while Git linked-worktree checkout did not preserve the target's read-only protection. The prior snapshot therefore either rejected startup for the wrong reason or failed to establish a protected linked-worktree boundary. The localized repair at f571c5ed binds the exact five content hashes, applies read-only mode only after worktree creation, and rechecks that boundary before launch, at worker reap, and at assignment acceptance. This functionality break materially outweighs the small implementation and verification risk; no broader isolation feature is justified.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Keep source seed identity content-only; after git worktree add mark exactly the five protected seed files read-only, then require their exact hashes and non-writable mode before launch, at reap, and at acceptance."
+    }
+  ]
+}

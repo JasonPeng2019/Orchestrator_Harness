@@ -1,0 +1,13 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.P",
+  "worker_invocation_id": "s23-p2-c3-control-plane-013",
+  "branch": "firmware/v2-s2-product",
+  "commit": "87ae701baca7a26951343f01d59b2c4e65db8283",
+  "outcome": "PASS",
+  "summary": "A preserved C3 response now blocks claim creation and dispatch for that request ID. Runtime tests NOT_RUN.",
+  "checks": [
+    {"name": "C3 static compile", "command": "python -m py_compile firmware_acceptance/c3_harness.py", "outcome": "PASS"},
+    {"name": "Runtime tests", "command": "NOT_RUN (not authorized in coder lane)", "outcome": "NOT_RUN"}
+  ]
+}

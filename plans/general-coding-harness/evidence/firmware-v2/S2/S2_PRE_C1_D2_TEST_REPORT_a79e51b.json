@@ -1,0 +1,17 @@
+{
+  "schema":"firmware-v2-test-report/v1",
+  "lane_id":"S2.D2",
+  "worker_invocation_id":"s2-d2-pre-c1-executor-002",
+  "commit":"a79e51b9d89b917d537abef0f7cd18ccd61afcf7",
+  "command":"python -m unittest orchestrator_harness.tests.test_firmware_acceptance_kit orchestrator_harness.tests.test_firmware_acceptance_target -v",
+  "expected":{"total":20,"per_module":{"orchestrator_harness.tests.test_firmware_acceptance_kit":17,"orchestrator_harness.tests.test_firmware_acceptance_target":3}},
+  "observed":{"collected":20,"executed":20,"passed":19,"failed":1,"skipped":0,"expected_failures":0,"unexpected_successes":0,"per_module":{"orchestrator_harness.tests.test_firmware_acceptance_kit":{"collected":17,"executed":17,"passed":16,"failed":1,"skipped":0,"expected_failures":0,"unexpected_successes":0},"orchestrator_harness.tests.test_firmware_acceptance_target":{"collected":3,"executed":3,"passed":3,"failed":0,"skipped":0,"expected_failures":0,"unexpected_successes":0}}},
+  "outcome":"FAIL",
+  "elapsed_seconds":24.343,
+  "unittest_reported_elapsed_seconds":23.783,
+  "no_hardware_no_mcp":{"statement":"Host-only synthetic unit tests; no MCP, pyOCD, serial, probe, flash, reset, debug, RF, or physical hardware operation occurred.","mcp_launched":false,"hardware_accessed":false},
+  "dependency_scope":{"kind":"dependency-invalidated-only","included_modules":["orchestrator_harness.tests.test_firmware_acceptance_kit","orchestrator_harness.tests.test_firmware_acceptance_target"],"included_change_domains":["authorization/limitation kit","firmware acceptance seed contract","assigned target module"],"excluded_shards":["controller/host S2.D1","protected original general-harness suite","static analysis","compilation","MCP","pyOCD","serial","probe","flash","reset","debug","RF","physical hardware"]},
+  "failure_classification":"DEMONSTRATED_CODEBASE_FUNCTIONALITY_BREAKAGE",
+  "findings_count":1,
+  "tracked_status_clean":true
+}

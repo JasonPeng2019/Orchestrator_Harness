@@ -1,0 +1,107 @@
+{
+  "schema": "firmware-v2-c2-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "accepted_at_utc": "2026-08-05T10:38:00Z",
+  "attempt_record": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0005\\ATTEMPT_RECORD.json",
+    "sha256": "87bab53a50b6524a32533ab81cfacb7fab0cb13cf430490cce0de36cd59d368e"
+  },
+  "root_triage": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0005\\ROOT_TRIAGE.json",
+    "sha256": "e2be21d533eb54f3e5c8354649bc7e8b9a7e6a93ae616b766a1f247def643d58"
+  },
+  "retry_triage": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0005\\ROOT_RETRY_TRIAGE.json",
+    "sha256": "8ce54c3bbef182dc6e69e698deeec05fdb74f9b2db5e12febf807a048a41bba2",
+    "authorized_ids": ["F-C2-AUTH-001", "F-C2-CREDIT-001"],
+    "candidate_findings": 0,
+    "locked_input_changes": 0
+  },
+  "retry_acceptance": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c2\\attempt-0005\\ROOT_RETRY_ACCEPTANCE.json",
+    "sha256": "7cd887d9522f954d7853480f1e2970f818ad9e4ab03fe4257faf2cd1202ada9c"
+  },
+  "c1": {
+    "lock_id": "d5aac12a-5486-4046-bafc-9fcdac544b10",
+    "lock_sha256": "97add36a20457bc555852e501acd592663152dafe90b4b35fb51803e042ebb0c",
+    "validation_sha256": "4ca00e1c99f31eae136bca55e17d2e0e12f0ed13a01ab840e8454385089d9297",
+    "authorization_sha256": "72c0d671d695e96f3c7b785f4245edc9ca91399d0c4a27a0e29e37d9481f08f0",
+    "checksum_matches": true,
+    "locked_path_hash_references_valid": "41/41",
+    "governing_hashes_unchanged": true,
+    "candidate_and_server_inputs_unchanged": true
+  },
+  "governing_hashes": {
+    "goal": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "generalization_spec_2": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "implementation_roadmap_2": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "execution_readiness_2": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66",
+    "execution_plan_2": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"
+  },
+  "executor": {
+    "thread_id": "019fd15f-b7b0-7aa2-a483-30d0cd14dded",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority",
+    "initial_and_retry_and_report_fix_controller_exit_codes": [0, 0, 0],
+    "final_controller_result_valid": true,
+    "root_findings_validation_passed": true,
+    "root_result_validation_passed": true,
+    "claims_released": true,
+    "worktree_clean": true
+  },
+  "root_checks": {
+    "findings_exact_six_key_shape": true,
+    "findings_count": 0,
+    "result_exact_eight_key_shape": true,
+    "result_check_exact_three_key_shapes": "5/5",
+    "test_report_path_hash_references_valid": "34/34",
+    "assigned_ids": 5,
+    "initial_processes": 5,
+    "authorized_retry_processes": 2,
+    "report_fix_test_processes": 0,
+    "passed_ids": 5,
+    "failed_ids": 0,
+    "skips_or_xfails": 0,
+    "protected_baseline_ids_compared_without_execution": 248,
+    "registry_green_groups": 24,
+    "registry_unique_green_ids": 157,
+    "registry_invalidations": 0,
+    "registry_explicit_hash_valid_evidence_credits": 70,
+    "registry_permitted_inheritance_edges": 6,
+    "registry_total_evidence_credits": 76,
+    "green_ids_rerun_after_pass": 0,
+    "active_resource_claims": 0,
+    "surviving_managed_or_external_test_processes": 0,
+    "c2_broker_roots": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "identities": {
+    "stable_runner_commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "stable_runner_clean_detached": true,
+    "candidate_commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+    "candidate_branch": "firmware/v2-candidate",
+    "candidate_clean": true,
+    "mcp_server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "mcp_server_branch": "firmware/v2-mcp-candidate",
+    "mcp_server_clean": true,
+    "execution_lane_commit": "202ecb09549f47550e94c5bbfc89d68b09f40130",
+    "execution_lane_clean": true
+  },
+  "criticism_disposition": {
+    "verifier_procedure_failures_preserved": true,
+    "root_report_path_audit_failure_preserved": true,
+    "report_fix_read_only_syntax_failures_preserved_in_jsonl": true,
+    "none_reclassified_as_candidate_findings": true,
+    "reason": "Each criticism was reproduced against its exact artifact and traced to the executor, report metadata, or read-only audit predicate; candidate semantics and locked inputs remained unchanged."
+  },
+  "classification": {
+    "candidate_harness_failure": false,
+    "watcher_failure": false,
+    "c1_invalidation": false,
+    "ordinary_executor_correction": true
+  },
+  "decision": "C3_UNLOCKED",
+  "next_gate": "Allocate fresh C3 attempt-0003 bound to this C1/C2 pair, then launch fresh Sol-high-priority F.C3.O and separate Terra-medium-priority F.C3.W. ROOT-IM supervises and does not orchestrate target work."
+}

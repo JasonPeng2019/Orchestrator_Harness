@@ -1,0 +1,29 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-route-review-001",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "7c28bfc5d223323065515694514baefb47e864ad",
+  "outcome": "FAIL",
+  "summary": "Four admissible safety/provenance findings: populated plan shape is incompatible with the exact pinned server; an invalid dynamic route can be durable before validation; limitation attribution is asserted rather than evidenced; and substitute success is not proved.",
+  "checks": [
+    {
+      "name": "commit-branch-and-delta",
+      "command": "git status --porcelain; git rev-parse HEAD; git branch --show-current; git diff --name-status 42a9d7082ac0193cf7cd1685b5eb95baafff41ac 7c28bfc5d223323065515694514baefb47e864ad",
+      "outcome": "PASS",
+      "summary": "Reviewed the requested clean firmware/v2-s2-r1 tip and complete production delta."
+    },
+    {
+      "name": "contract-and-pinned-source-shapes",
+      "command": "Read S2_PRE_C1_EXECUTABLE_CONTRACT_DECISION.json and pinned mcp-candidate source at f003f84a7df51cd8595a3203c62e225b21da2a22",
+      "outcome": "FAIL",
+      "summary": "The reviewed contract requirements are not fully enforced by the production tip; findings S2-R1-001 through S2-R1-004 record the exact gaps."
+    },
+    {
+      "name": "focused-host-tests",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python -m unittest orchestrator_harness.tests.test_firmware_acceptance_controller orchestrator_harness.tests.test_firmware_acceptance_kit -v",
+      "outcome": "FAIL",
+      "summary": "The suite is blocked at broker initialization by the pre-existing base-commit PINNED_INPUTS.json seed-hash mismatch; no tracked files were modified and this was not submitted as a delta finding."
+    }
+  ]
+}

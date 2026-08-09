@@ -1,0 +1,34 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S23.D2",
+  "worker_invocation_id": "s23-d2-c3-remaining-003",
+  "role": "test_executor",
+  "commit": "30ff0c677a14bbe7a7f0a73e9899002752fe0b2c",
+  "findings": [
+    {
+      "id": "S23.D2-C3-REMAINING-003-REPLAY-FIXTURE-001",
+      "category": "WORTH_FIXING",
+      "affected_ids": [
+        "C3-CP-01-02",
+        "orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier"
+      ],
+      "evidence": [
+        "Exact mandated command output: test_c3_cp_01_02_startup_request_binding_seed_and_replay_barrier FAIL; assertion at orchestrator_harness/tests/test_firmware_c3_harness.py:71 expected ACCEPTED but received REJECTED.",
+        "The fixture at orchestrator_harness/tests/test_firmware_c3_harness.py:69 first handles request ID r1 with payload [], which creates the immutable admission claim before dispatch rejects the closed payload; it then rewrites the same r1 artifact with different bytes and expects acceptance twice.",
+        "firmware_acceptance/c3_harness.py:211-217 correctly treats an existing admission claim with a different request hash as a request replay or request-ID collision, so this is stale synthetic fixture sequencing rather than a production replay-barrier defect."
+      ],
+      "observed": "The selected CP01/02 fixture cannot reach its intended accepted-then-identical-replay assertions because it reuses request ID r1 after an earlier rejected request with different bytes. The implementation rejects the changed request as required by the immutable admission barrier.",
+      "expected": "The host-only fixture should use a fresh request ID and path for the accepted request, then repeat that unchanged accepted artifact for the replay assertion, while retaining the earlier r1 rejection case.",
+      "reproduction": "At commit 30ff0c677a14bbe7a7f0a73e9899002752fe0b2c, run exactly the mandated two-test command once; CP01/02 fails at line 71 with ACCEPTED != REJECTED while the server-limitation ID passes.",
+      "impact": "One of the two requested stable IDs remains uncreditable, so this focused acceptance slice is 1/2 rather than green and future runs continue to confuse fixture drift with a product regression.",
+      "no_fix_consequence": "CP01/02 acceptance evidence remains blocked whenever the corrected fixture is executed, and maintainers cannot distinguish the intended successful replay path from the already-covered request-ID collision path.",
+      "smallest_fix": "Change only the test fixture to use a fresh request ID/path, such as r2, for the valid accepted request and its identical replay; do not weaken the production request claim or replay checks.",
+      "complexity": "Low: one localized host-only test sequence change.",
+      "regression_risk": "Low: the change aligns synthetic request identities with the existing closed replay contract and leaves production validation unchanged.",
+      "verification_cost": "Low: the single affected host-only ID can be verified in a future authorized focused run; no MCP, pinned server, or hardware access is involved.",
+      "alternatives": "Treating the rejection as PASS or changing production replay handling would hide the immutable request-ID safety guarantee and create a larger regression risk.",
+      "cost_benefit": "A fresh fixture request ID is a minimal change that restores creditable CP01/02 evidence and preserves the distinction between a fixture issue and a real replay-barrier failure.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

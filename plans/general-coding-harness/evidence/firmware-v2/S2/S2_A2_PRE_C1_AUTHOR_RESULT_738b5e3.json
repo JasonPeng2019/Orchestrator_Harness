@@ -1,0 +1,16 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.A2",
+  "worker_invocation_id": "s2-a2-pre-c1-author-002",
+  "branch": "firmware/v2-s2-a2",
+  "commit": "738b5e30f557c8cf3a7ee1fa15a48b41d4fa3674",
+  "outcome": "PASS",
+  "summary": "Test-author readiness: split shared raw-result fixture outcomes so only limitation evidence retains FAIL; syntax compilation completed and this does not claim test execution, C0/C1, or certification.",
+  "checks": [
+    {
+      "name": "syntax-compile",
+      "command": "python -m py_compile orchestrator_harness/tests/test_firmware_acceptance_kit.py",
+      "outcome": "PASS"
+    }
+  ]
+}

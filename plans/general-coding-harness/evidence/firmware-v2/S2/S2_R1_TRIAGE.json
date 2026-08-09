@@ -1,0 +1,28 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_R1_FINDINGS_d08.json",
+  "findings_sha256": "c96c45130e7bdbbbf8d3e5cf40ff14a49602f72a27904316843d93b0bf93e4fb",
+  "decisions": [
+    {
+      "id": "S2R1-API-001",
+      "decision": "ACCEPT",
+      "rationale": "The pinned handler takes width and length, while the policy exposes size. This deterministically blocks or malforms an admitted diagnostic call. The correction is one policy entry plus focused signature tests, with negligible regression risk.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Replace size with bounded width and length in the exact method policy and add static positive/negative signature coverage."
+    },
+    {
+      "id": "S2R1-BINDING-002",
+      "decision": "ACCEPT",
+      "rationale": "The current stage chain proves order and partial identity but not the exact server pin or complete canonical operation authority across every stage. A mismatched operation could retain a valid-looking chain. One canonical bound-call hash and clean-pin validator closes the trust boundary without a new framework.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Validate exact clean server revision and require one canonical bound-call object/hash covering method, normalized arguments, policy, plan, permission, authorization, claim, deadline, and route at every stage."
+    },
+    {
+      "id": "S2R1-TRIAGE-003",
+      "decision": "REJECT",
+      "rationale": "Requiring manager triage before the reviewer result becomes valid is causally circular: ROOT-IM cannot receive and decide the findings until the controller validates and publishes the gated result. The existing pure validator is used immediately at the join, as this exact artifact demonstrates; S3 may expose that join operation without making lane result validation depend on future manager evidence.",
+      "reason": "unsupported"
+    }
+  ]
+}

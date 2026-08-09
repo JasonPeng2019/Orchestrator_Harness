@@ -1,0 +1,41 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-020",
+  "branch": "firmware/v2-c0-final-review-0020",
+  "commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "outcome": "PASS",
+  "summary": "NO CANDIDATE GAP / READY",
+  "checks": [
+    {
+      "name": "governing-document-hashes",
+      "outcome": "PASS",
+      "summary": "goal.md and all four governing documents match the required SHA-256 values."
+    },
+    {
+      "name": "preserved-exact-tip-evidence",
+      "outcome": "PASS",
+      "summary": "All five requested C0/S28/dependency/registry artifacts match their required SHA-256 values."
+    },
+    {
+      "name": "c3-host-only-rehearsal-composability",
+      "outcome": "PASS",
+      "summary": "Existing disposable-fake C3 seams cover admission, retained authorization, identity, duplicate refusal, watcher correlation, recovery, cleanup, and terminal closure; the new policy needs no candidate framework."
+    },
+    {
+      "name": "affected-surface-static-review",
+      "outcome": "PASS",
+      "summary": "Reviewed baseline-to-tip product diff and C1-C73 affected controls; no admissible candidate gap found."
+    },
+    {
+      "name": "execution",
+      "outcome": "NOT_RUN",
+      "summary": "Not run by explicit read-only review instruction."
+    },
+    {
+      "name": "tracked-state",
+      "outcome": "PASS",
+      "summary": "Requested branch and exact commit were verified clean before lane-artifact publication."
+    }
+  ]
+}

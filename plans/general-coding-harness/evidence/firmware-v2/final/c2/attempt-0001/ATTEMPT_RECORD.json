@@ -1,0 +1,34 @@
+{
+  "schema": "firmware-v2-c2-attempt-record/v1",
+  "attempt": "attempt-0001",
+  "recorded_at_utc": "2026-08-04T18:54:45.517758Z",
+  "c1_lock": {
+    "id": "cbc1ec54-5523-428e-9bd8-23c0d0cf1420",
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\cbc1ec54-5523-428e-9bd8-23c0d0cf1420\\C1_LOCK.json",
+    "sha256": "a902d6c07c1cca19cc04b2ae9077efd24604f91cac77ebc60a8143f759e5837d"
+  },
+  "candidate_commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+  "mcp_server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+  "executor": {
+    "lane_id": "F.C2.D1",
+    "worker_invocation_id": "c2-d1-001",
+    "thread_id": "019fce0f-6ef1-7251-be3b-827ca7334cc9",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "default"
+  },
+  "artifacts": {
+    "findings": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0001\\.agent-workspace\\FINDINGS.json", "sha256": "d566030cc934ada97b1195e14f59ebc9cbb0e3216b085e26f4fe0b516110b2c3"},
+    "result": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0001\\.agent-workspace\\RESULT.json", "sha256": "0af3d91d8a70ed48d2108636c38a705d7b3bc440e3eee785a8e505f5169ab690"},
+    "test_report": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0001\\.agent-workspace\\TEST_REPORT.json", "sha256": "7c2e9876cc1162fd5f9c769475d0ab076cfbe655b3b175fb4740dba5132fe387"},
+    "controller_status": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0001\\.agent-workspace\\worker-c2-d1-001.status.json", "sha256": "c3a18cbb2f95cbadb68e920626997bfa3a81b4026558905329269b8841bd5156"},
+    "last_message": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\final\\lanes\\F.C2.D1-0001\\.agent-workspace\\worker-c2-d1-001.last-message.txt", "sha256": "a29c403f2150af46819fc175317b376957341524d777fb2c44cf16d1f90a03eb"}
+  },
+  "passed_ids": ["F-C2-LOCK-001", "F-C2-AUTH-001", "F-C2-DISPOSABLE-001", "F-C2-STATE-001"],
+  "failed_ids": ["F-C2-CREDIT-001"],
+  "hardware_or_mcp_accessed": false,
+  "candidate_changed": false,
+  "mcp_server_changed": false,
+  "c3_admitted": false,
+  "outcome": "FAIL_ACCEPTED_FINDING"
+}

@@ -1,0 +1,92 @@
+{
+  "schema": "firmware-v2-test-report/v1",
+  "lane": "S2.D2",
+  "worker": "s2-d2-001",
+  "commit": "64199127ac787eeaaf6863726ff0a3bcb79798ed",
+  "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_target -v",
+  "stable_ids": [
+    {
+      "id": "S2.A2.T1",
+      "outcome": "PASS",
+      "test": "FirmwareAcceptanceTargetTests.test_five_file_seed_remains_immutable_while_target_files_can_be_committed"
+    },
+    {
+      "id": "S2.A2.T2",
+      "outcome": "PASS",
+      "test": "FirmwareAcceptanceTargetTests.test_closed_contract_keeps_all_eighteen_ids_and_failure_routes"
+    },
+    {
+      "id": "S2.A2.T3",
+      "outcome": "PASS",
+      "test": "FirmwareAcceptanceTargetTests.test_seed_rewrite_is_rejected_after_target_files_exist"
+    }
+  ],
+  "dependency_inputs": {
+    "S2.A2.T1": [
+      "firmware_acceptance/kit.py",
+      "firmware_acceptance/seed/TARGET_SEED_MANIFEST.json",
+      "firmware_acceptance/seed/TARGET_CHARTER.md",
+      "firmware_acceptance/seed/PINNED_INPUTS.json",
+      "firmware_acceptance/seed/TEST_CONTRACT.json",
+      "firmware_acceptance/seed/EVIDENCE_SCHEMA.json",
+      "git executable"
+    ],
+    "S2.A2.T2": [
+      "firmware_acceptance/kit.py",
+      "firmware_acceptance/seed/TEST_CONTRACT.json"
+    ],
+    "S2.A2.T3": [
+      "firmware_acceptance/kit.py",
+      "firmware_acceptance/seed/TARGET_SEED_MANIFEST.json",
+      "firmware_acceptance/seed/TARGET_CHARTER.md",
+      "firmware_acceptance/seed/PINNED_INPUTS.json",
+      "firmware_acceptance/seed/TEST_CONTRACT.json",
+      "firmware_acceptance/seed/EVIDENCE_SCHEMA.json"
+    ]
+  },
+  "dependency_fingerprints": {
+    "algorithm": "sha256(sorted dependency path=content hash lines; T1 includes git --version)",
+    "S2.A2.T1": "53715e36f50bec219233e19a9dea90377c25d08a68584b5c88e371d78418080a",
+    "S2.A2.T2": "5d3aedd71a344ea6a4c14285b1437df24a95a2e8b0f41dcf31971d4dd0fc50c7",
+    "S2.A2.T3": "6dd881d123599a28b7b6b49560b9fae5d4ee284ce3b6a9de984ab0589f98d9d2"
+  },
+  "elapsed_seconds": 2.447,
+  "seed_proof": {
+    "worktree": "runtime/firmware-v2/disposable/s2-d2-001-64199127",
+    "commit": "64199127ac787eeaaf6863726ff0a3bcb79798ed",
+    "detached": true,
+    "core_autocrlf": true,
+    "manifest_hashes_match": true,
+    "seed_hashes": {
+      "TARGET_CHARTER.md": "5aea61dec6babcc2dd09abecc41349139f1e5fc01c2ec6f10df9af18beeb8a78",
+      "PINNED_INPUTS.json": "67fbc2adc499f11c32c99d4484f2ff8ae14a3ca6ee4b899acf35d7897c4623f6",
+      "TEST_CONTRACT.json": "3154e0c102b5379de03d57161da2f9ea4d2d0f083a411e577aa7431541e5736a",
+      "EVIDENCE_SCHEMA.json": "e4670ca5901421813d30476630a5347ff1e286f60634651b1cd284c66f201114"
+    }
+  },
+  "disposable_cleanup": {
+    "removed_worktree": "runtime/firmware-v2/disposable/s2-d2-001-64199127",
+    "path_exists_after_remove": false,
+    "git_registration_after_remove": false
+  },
+  "process_boundary": {
+    "disposable_target_repositories_only": true,
+    "unexpected_managed_processes": [],
+    "unexpected_resource_claims": [],
+    "mcp_servers": [],
+    "board_tokens": [],
+    "leases": [],
+    "proof_worktree_processes_or_claims": []
+  },
+  "hardware_boundary": {
+    "mcp_launched": false,
+    "pyocd": false,
+    "serial": false,
+    "probe_flash_reset_debug_rf": false,
+    "physical_access": false
+  },
+  "failure_classification": null,
+  "outcome": "PASS",
+  "findings_count": 0,
+  "tracked_status_clean": true
+}

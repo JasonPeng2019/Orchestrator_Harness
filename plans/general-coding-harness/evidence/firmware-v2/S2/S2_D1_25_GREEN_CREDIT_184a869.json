@@ -1,0 +1,23 @@
+{
+  "schema": "root-preserved-green-test-credit/v1",
+  "owner": "ROOT-IM",
+  "lane_id": "S2.D1",
+  "worker_invocation_id": "s2-d1-pre-c1-executor-006",
+  "source_commit": "184a869d0f49ae9ef6b222ae90dc3488f7229f60",
+  "source_test_report_path": "S2_PRE_C1_D1_RERUN_TEST_REPORT_184a869.json",
+  "source_test_report_sha256": "299d3a951739fbe4a268efd5c7b66f723288dc9f36b690a1aaf152a34b48ad0b",
+  "prior_credit_path": "S2_D1_UNAFFECTED_CREDIT_40b4039.json",
+  "prior_credit_sha256": "5bee2c75f3c2863b06e108e894af46d7ef047608ffee601706fd424ba524ef13",
+  "preserved_passed": 25,
+  "fresh_green_ids_added": [
+    "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_retained_session_signed_close_requires_returned_disconnect",
+    "orchestrator_harness.tests.test_firmware_acceptance_host.FirmwareAcceptanceHostTests.test_S2_A1_002_admission_rejects_immutable_operation_drift"
+  ],
+  "invalidated_ids": [
+    "orchestrator_harness.tests.test_firmware_acceptance_controller.FirmwareAcceptanceControllerTests.test_s2_a1_dynamic_route_plan_validation_ready_uart_and_terminal_contract"
+  ],
+  "preserved_at_commit": "e524feb14ef8a84b31a613a6ddc5bd1fc2491df7",
+  "dependency_decision": "The production change from 184a869 to e524feb changes only the generic retained-route board_id condition reached by the named dynamic-route test. The other 25 stable IDs and their exercised behavior are unchanged, so their exact prior green executions remain valid and must not be rerun.",
+  "rerun_prohibited": true,
+  "hardware_or_mcp_accessed": false
+}

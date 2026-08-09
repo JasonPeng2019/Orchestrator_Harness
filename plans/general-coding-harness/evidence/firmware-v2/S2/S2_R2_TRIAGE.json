@@ -1,0 +1,28 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_R2_FINDINGS_d08.json",
+  "findings_sha256": "32a154902e6332b3cee4a809812eca4cf2cd1eddc854a1e42e0ae02a7d26aa5a",
+  "decisions": [
+    {
+      "id": "S2R2-F01",
+      "decision": "ACCEPT",
+      "rationale": "The seed lists required IDs but does not yet define deterministic actions, inputs, oracles, dependency fingerprints, registry semantics, and closed evidence per ID. That makes the final campaign non-executable. A compact data contract and validator are bounded and materially necessary.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Add compact closed per-ID definitions and fingerprint/registry/evidence validation consumed by the existing kit, with representative focused synthetic rejection/success tests."
+    },
+    {
+      "id": "S2R2-F02",
+      "decision": "ACCEPT",
+      "rationale": "The seed is hash-checked on demand and the worker environment is only returned as data; the actual coding child still inherits ambient process environment. This leaves the required no-endpoint and no-seed-edit boundary unproved. A narrow optional sanitized child environment plus pre/post seed/tree validation and hostile temporary-process tests is proportionate; making the whole target immutable or adding a scheduler is rejected.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Add an opt-in allowlisted/sanitized coding-child environment used by C3 target templates, revalidate immutable seed and allowed Git tree at defined admission/result boundaries, and test rewrite/injection/endpoint/expiry/cleanup/contention/resume paths synthetically."
+    },
+    {
+      "id": "S2R2-F03",
+      "decision": "REJECT",
+      "rationale": "Manager triage necessarily follows safe result publication. Wiring future manager evidence into current lane result validation would create a circular dependency and extra lifecycle complexity. The exact hash-bound triage validator is instead invoked at the manager join before any repair or acceptance, as this artifact demonstrates.",
+      "reason": "net_negative_complexity"
+    }
+  ]
+}

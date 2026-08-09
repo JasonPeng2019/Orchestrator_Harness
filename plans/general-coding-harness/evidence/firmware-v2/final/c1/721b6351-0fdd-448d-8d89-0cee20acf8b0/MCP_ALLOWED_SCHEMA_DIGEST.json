@@ -1,0 +1,37 @@
+{
+  "schema_version": "pinned-mcp-allowed-tool-schema-digest/v1",
+  "server_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+  "algorithm": "sha256(sorted-key compact UTF-8 JSON, ensure_ascii=false) over full name/input_schema/output_schema envelope",
+  "registered_tool_count": 56,
+  "allowed_tool_count": 21,
+  "tools": [
+    {"name": "setup_overview", "schema_sha256": "bb95b0a18b111ef7c12c57b12dcbff654fe1d4823501b287ae12597ded71a990"},
+    {"name": "load_setup_tool", "schema_sha256": "6b1a02649f836f930b6fb2aff231c32b8b1a5c03fe0b801e34df741dfda0879c"},
+    {"name": "board_setup-plan", "schema_sha256": "104e533b253144673f3933bb4abf1b7cbf621effb38ee55565bdd712ce5bbecd"},
+    {"name": "board_setup", "schema_sha256": "2e350a3c40559bc1b23ae5567db8f1952b67a9ffcd36c42666476d1f63a855b4"},
+    {"name": "continue_setup", "schema_sha256": "6027279c1b158220051fa8593a1d2807137cbb958cf83ea10c6e2170b31f31d7"},
+    {"name": "board_fix_setup", "schema_sha256": "ad88f338f2f634e3cdc46171860f2af8fc7d2abd3f49689058f9a27ea6e5b916"},
+    {"name": "board_validate", "schema_sha256": "5819c9900c9a856d31bf63ac0f0731294e0270c33495ac2972034043296c28cb"},
+    {"name": "get_setup_status", "schema_sha256": "1d567e2ed426d6a9959ef2dd97b3312cc1883743ab2572eca667a00f9552f6d3"},
+    {"name": "get_board_info", "schema_sha256": "190a7f6173550cd624acd127d7b9766fc5edea3ea00a39f2cc82e206dfacab1f"},
+    {"name": "get_state", "schema_sha256": "b4c36c12d3cf0ca5b941ac246ae4fb1fca6e84c94677238b4525ec7756dcc6a5"},
+    {"name": "flash_application-plan", "schema_sha256": "cff5ec49e432119cd4319031e3383aa9a66592e296e84cbb0ba377218e469e85"},
+    {"name": "flash_application", "schema_sha256": "3e847ca84fb8a43ba1e1db9fd10c4d43ba918030e03823189404a59b73a55adb"},
+    {"name": "reset_and_run", "schema_sha256": "cdfc72304e7408376c2a1ab7ec9319fbe78ebb7acde149b4cb29f1bfdb1086a3"},
+    {"name": "read_memory_symbol", "schema_sha256": "3a82c839c3b5faa3910767210b6dbd32dc2fbbfc9a696d0035921b5b121efa62"},
+    {"name": "read_serial-plan", "schema_sha256": "450d0acfcb79c09d0835db7e954a14dde2c38ea68bca8e2fc87e31ff16f54bce"},
+    {"name": "read_serial", "schema_sha256": "496bc019f8ee6cd0f04409a09db155cdc468dbc19c493172e0d2a5ecd6e95821"},
+    {"name": "write_serial-plan", "schema_sha256": "5635aeb0cc8f5ff4757279065485138be5d353a47763f535fb5f941c5ac6cdee"},
+    {"name": "write_serial", "schema_sha256": "6b9a8a9e4037ea28bda4e5854f93b3bde644d61c5ceaf9d34f68702f423cf8c8"},
+    {"name": "serial_exchange-plan", "schema_sha256": "e625153839335a7650f6098eb5c4e56332e273584bd47a2957c80beb3e1dd042"},
+    {"name": "serial_exchange", "schema_sha256": "f7ae6a8d4171c4295a1f70b30a0f653484ceaaf2fd399e4f797da16a6c7e3f49"},
+    {"name": "disconnect", "schema_sha256": "b446afd3beb91534318d4300ff9dab67d584dfce3c0fa1a591f7c403a0549695"}
+  ],
+  "schema_sha256": "3c5500fc7b7b33b0a84140f9b3db516a0b7010d8ec1ba94d67cb7268cae56672",
+  "capture": {
+    "kind": "static pinned-component import; FastMCP server transport not launched",
+    "artifact_root_created": false,
+    "hardware_accessed": false,
+    "policy_sha256": "35bc68b6ec79a8e9680c42dd32c32be228ee956ee7b53d68908b8dec13d19b78"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "lane_id": "S26.ROOT",
+  "worker_invocation_id": "s26-root-c3-identity-triage-r2-0001",
+  "commit": "1a40645ab2c3d274e792211d0fadad903f3bee9e",
+  "critic_artifact": {
+    "lane_id": "S26.R2",
+    "findings_sha256": "430ee467b25f3e309276c26b5bed509759f6738e5d12a73a034331c58d95a8b9",
+    "result_sha256": "a2e24555d87f44ddf355f0d99b7d6cf8171943651ca43f674c99ec99e923781f",
+    "controller_exit_code": 0,
+    "controller_result_valid": false,
+    "validation_failure": "CODING_RESULT_INVALID: coding result schema must be orchestrator-lane-result/v1",
+    "root_use": "ADVISORY_FINDING_CONTENT_ACCEPTED; LANE_RESULT_NOT_ACCEPTED"
+  },
+  "decisions": [
+    {
+      "finding_id": "S26-R2-001",
+      "decision": "ACCEPT",
+      "category": "CODEBASE_BREAKING",
+      "reason": "The joined tests retain multiple exact-key assertions and recovery fixtures from the pre-S26 contract. Static comparison against the final producer and validator confirms deterministic incompatibility; executing the focused suite now would spend the one invalidated run on known stale tests rather than candidate behavior.",
+      "expanded_evidence": [
+        "orchestrator_harness/tests/test_firmware_c3_harness.py:185 still reads removed observed_identity",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py:255-331 construct the removed pid/observed_identity/process_identity_unresolved recovery and cleanup shapes",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py:373 and 408 assert the old cleanup key set",
+        "orchestrator_harness/tests/test_firmware_c3_harness.py:439-441 construct the old restart reconciliation shape"
+      ],
+      "smallest_fix": "Resume the same S26.A1 test owner to migrate every retained cleanup/recovery consumer to the final exact schemas, preserving all negative cases and adding assertions for launcher/controller-specific facts. Change no production code and do not run tests before rejoin and fresh review.",
+      "complexity_and_risk": "Low; one owned test module contains the stale consumers and the production contract is already fixed.",
+      "problem_outweighs_fix_risk": true,
+      "route": "S26.A1"
+    }
+  ],
+  "vetoed_scope": [
+    "Do not revert or weaken the final production identity/recovery schema to satisfy stale tests.",
+    "Do not delete, skip, xfail, or broadly rewrite the retained negative-path tests.",
+    "Do not execute the focused suite until all static consumers are migrated and a fresh closed review passes.",
+    "Do not treat the review lane's invalid RESULT envelope as accepted lane evidence."
+  ],
+  "root_decision": "REJECT_JOINED_TEST_CONSUMERS; RESUME_S26.A1_FOR_BOUNDED_TEST_ONLY_MIGRATION; REQUIRE_FRESH_CLOSED_REREVIEW",
+  "tests_run": false,
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false
+}

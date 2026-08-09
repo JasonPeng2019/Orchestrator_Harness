@@ -1,0 +1,47 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.D2",
+  "worker_invocation_id": "s2-d2-pre-c1-executor-002",
+  "branch": "firmware/v2-s2-d2",
+  "commit": "228024d7d51f3a185cbf88f5e5a159c9049b3e38",
+  "outcome": "PASS",
+  "summary": "The invalidated kit module passed 17/17 at the exact current tip. ROOT's immutable 3/3 target credit was verified by its exact SHA-256 and preserved without rerun, yielding a joined D2 result of 20/20 PASS with empty findings, no surviving process or claim, no MCP/hardware access, and clean tracked Git state.",
+  "checks": [
+    {
+      "name": "fresh S2.D2 kit shard",
+      "command": "python -m unittest orchestrator_harness.tests.test_firmware_acceptance_kit -v",
+      "outcome": "PASS",
+      "summary": "17/17 passed; 0 skips, expected failures, or unexpected successes."
+    },
+    {
+      "name": "preserved S2.D2 target credit",
+      "command": "SHA-256 and schema validation of plans/general-coding-harness/evidence/firmware-v2/S2/S2_D2_TARGET_CREDIT_40b4039.json",
+      "outcome": "PASS",
+      "summary": "Exact credit SHA-256 7872f29f7b39b8b5e7d9534953b846a04c472d1d93da6549b654dbb37e916691; source commit 40b4039; 3/3 target tests preserved at current tip without rerun."
+    },
+    {
+      "name": "joined D2 count",
+      "command": "combine fresh kit result with immutable target credit",
+      "outcome": "PASS",
+      "summary": "20/20 joined: 17 kit plus 3 target; 0 failed, 0 skipped, 0 expected failures, 0 unexpected successes."
+    },
+    {
+      "name": "findings gate",
+      "command": "validate .agent-workspace/FINDINGS.json",
+      "outcome": "PASS",
+      "summary": "Closed orchestrator-review-findings/v1 with exact S2.D2 identity and an empty findings list."
+    },
+    {
+      "name": "process and hardware boundary",
+      "command": "post-run lane evidence review",
+      "outcome": "PASS",
+      "summary": "Zero surviving test-owned processes, claims, or leases; no MCP/server or hardware activity."
+    },
+    {
+      "name": "exact current tip and tracked-worktree cleanliness",
+      "command": "git branch --show-current; git rev-parse HEAD; git diff --quiet",
+      "outcome": "PASS",
+      "summary": "Branch firmware/v2-s2-d2 and HEAD match 228024d7d51f3a185cbf88f5e5a159c9049b3e38; tracked Git state is clean."
+    }
+  ]
+}

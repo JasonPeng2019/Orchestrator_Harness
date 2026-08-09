@@ -1,0 +1,73 @@
+{
+  "schema": "firmware-v2-candidate-shared-code-dependency-map-root-acceptance/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "candidate_branch": "firmware/v2-s28-a1-c3-auth-tests-0001",
+  "reserved_candidate_branch": "firmware/v2-candidate",
+  "candidate_clean": true,
+  "reserved_candidate_clean": true,
+  "map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_542f48c.json",
+    "sha256": "85ca5d7a68f59e2b06f2eb9428166d4cac3e1af43df3ed67312ed846c1464c04"
+  },
+  "audit": {
+    "base_commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "git_changed_paths": [
+      "firmware_acceptance/c3_harness.py",
+      "firmware_acceptance/controller.py",
+      "orchestrator_harness/tests/test_firmware_acceptance_controller.py",
+      "orchestrator_harness/tests/test_firmware_c3_harness.py"
+    ],
+    "declared_changed_paths_match_git": true,
+    "declared_reference_count": 9,
+    "declared_reference_hashes_valid": 9,
+    "protected_baseline_ids": 248,
+    "deleted_protected_ids": [],
+    "modified_protected_test_paths": [],
+    "shared_process_identity_changed": false,
+    "watcher_oracle_changed": false,
+    "generic_authorization_path_changed": false,
+    "weakened_oracles": [],
+    "prior_green_ids": 166,
+    "new_green_ids": [],
+    "removed_superseded_green_ids": [],
+    "freshly_revalidated_prior_green_ids": 5,
+    "current_green_ids": 166,
+    "invalidated_groups": 0,
+    "uncovered_changed_behavior": [],
+    "selected_for_additional_execution": []
+  },
+  "fresh_execution": {
+    "lane": "S28.D2",
+    "commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+    "execution_sha256": "5b53a16cf5566dbf292ab34f932dbfc0ab95f52c00b68abf2fd785e93590bee4",
+    "output_sha256": "ae084d5098df48edfc0a46d0c0cb1abaa9b295e18a5f373106379d3d6687ff6b",
+    "result_sha256": "fca9ed3af036eea139d57b9824b08af15eea26fd4424f5f5df70623e6fdfd85f",
+    "tests_covered": 5,
+    "failures_remaining": 0,
+    "errors": 0,
+    "skips": 0,
+    "resource_warnings": 0,
+    "outcome": "PASS",
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "criticism_audit": {
+    "accepted": "R1's concrete session-schema incompatibility finding was correct. The source thread replaced the generic call with a bounded session-specific method, the test thread exercised both failure ordering and real derivation, and fresh R2 returned empty findings.",
+    "failed_runs_preserved": true,
+    "environment_finding_disposition": "D1's missing PYTHONDONTWRITEBYTECODE was caused by ROOT launch environment omission; D2 inherited the required value and generated no bytecode.",
+    "report_envelope_disposition": "R1's invalid result envelope did not erase its valid finding, and D2 corrected its own result schema on the same thread without rerunning the green tests.",
+    "scope_veto": "No generic authorization branch, adapter layer, production test seam, extra path-guard set, cleanup framework, duplicate execution, or unrelated hardening was admitted."
+  },
+  "classification": {
+    "candidate_harness_gap_remaining": false,
+    "test_gap_remaining": false,
+    "environment_gap_remaining": false,
+    "report_envelope_gap_remaining": false,
+    "pinned_mcp_server_defect": false,
+    "hardware_or_rf_operation": false
+  },
+  "decision": "ACCEPT_MAP_AND_UNLOCK_SINGLE_REGISTRY_RECONCILIATION",
+  "outcome": "PASS",
+  "created_at": "2026-08-05T18:00:00Z"
+}

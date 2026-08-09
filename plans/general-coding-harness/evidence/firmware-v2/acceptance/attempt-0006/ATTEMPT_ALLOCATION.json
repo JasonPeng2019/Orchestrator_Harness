@@ -1,0 +1,80 @@
+{
+  "schema": "firmware-v2-c3-attempt-allocation/v1",
+  "owner": "ROOT-IM",
+  "attempt_id": "attempt-0006",
+  "allocated_at_utc": "2026-08-05T16:46:32.1151330Z",
+  "allocation_rule": {
+    "largest_prior_runtime_attempt": "attempt-0005",
+    "largest_prior_evidence_attempt": "attempt-0005",
+    "largest_prior_control_attempt": "attempt-0005",
+    "all_selected_paths_absent_before_allocation": true,
+    "monotonic_selection": "attempt-0006"
+  },
+  "roots": {
+    "runtime": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0006",
+    "evidence": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0006",
+    "external_control": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance-control\\attempt-0006"
+  },
+  "prior_attempt": {
+    "attempt_id": "attempt-0005",
+    "closeout_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0005\\topology\\ROOT_ATTEMPT_CLOSEOUT.json",
+    "closeout_sha256": "340bc843e814c944655616da3b49408d2048423652e617bca5595ac75ad0f6f0",
+    "topology_shutdown_sha256": "4075af64614a1ffcc2c040760764973671de300b9d49548d6b3d7ca303671505",
+    "procedure_abort_sha256": "2959037e317c9b330f783f49d32fb998b1303e6354ac98f3cd6196ea475840bb",
+    "emergency_termination_sha256": "99725df8a0e5392725f79c0f2b1f548c1630cf0f0ba7188d4f88260db692f42d",
+    "outcome": "FAILED_CANDIDATE_RECOVERY_AND_WATCHER_EVIDENCE",
+    "candidate_repair_root_acceptance_sha256": "8d0dbac1f34268b5f5ffdcb0e9897ccafae635a8e32b28c5c4798cd0eb980839",
+    "reused_mutable_state": false,
+    "accepted_corrections": [
+      "Use the admitted candidate recovery and lifecycle fixes at eb3bbab39a9b78b93ff606dd658bd3bad4eac92f.",
+      "Serialize and validate a complete watcher abort payload and all referenced files before an atomic create-new final rename; preparation failure writes only external-control diagnostics."
+    ],
+    "vetoed_expansion": [
+      "No pinned-server change, candidate change, retry-suffix scheme, broader watcher framework, or redundant rerun of green C0/C2 gates.",
+      "No prior target reconstruction because attempt-0005 had no accepted target source commit."
+    ]
+  },
+  "operative_c1": {
+    "lock_id": "40419d28-e343-44c1-bf5b-399709b771ba",
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\40419d28-e343-44c1-bf5b-399709b771ba\\C1_LOCK.json",
+    "sha256": "2140cf26b49174a48d097c192cc7c2012f853b77b5fa43e510b69ad744cf2626",
+    "validation_sha256": "aa54182d58c72d0de0ec5bd9e305409d757da1209e65e3d8bf2063293f1d590f",
+    "delegated_sha256": "5c3bd11e076dd1c72104499bd1e8266f5799528e2626c279fd461869f7952409"
+  },
+  "operative_c2": {
+    "attempt": "attempt-0008",
+    "root_acceptance_sha256": "0728aae4b6edb772ef4beeacd849edb99b9709a8ad55e3c0774bfbc01a611fba",
+    "decision": "ACCEPT_C2_AND_UNLOCK_FRESH_C3_ATTEMPT"
+  },
+  "candidate": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "branch": "firmware/v2-candidate",
+    "commit": "eb3bbab39a9b78b93ff606dd658bd3bad4eac92f",
+    "clean": true
+  },
+  "mcp_server": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\mcp-candidate",
+    "branch": "firmware/v2-mcp-candidate",
+    "commit": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "clean": true,
+    "immutable": true
+  },
+  "governing_hashes": {
+    "goal": "e96969e0b16190d06603973bf15e24a79a8b5869f3caf2bcb22937618898e19d",
+    "generalization_spec_2": "4f922396a442e860969423394072e1ee953ed6191cd8ed7c8529dc2e6b8d1b07",
+    "implementation_roadmap_2": "d6d99bf0cdbc8020c320e7c5d997da4ebfb98549ef1e83addff35a7422455250",
+    "execution_readiness_2": "e4587d0e0339b496aadf6ffa0c6a6af5127f3c11643410182e53240304417c66",
+    "execution_plan_2": "ba3b2c39594d5865902601408b3f57a28d215cd36bc9f273b56d55f39275b261"
+  },
+  "initial_state": {
+    "fresh_attempt_registry": true,
+    "registry_entries": 0,
+    "target_source_reconstruction": null,
+    "target_root_absent_until_candidate_materialization": true,
+    "external_control_root_excluded_from_manifest": true,
+    "mcp_launched": false,
+    "hardware_accessed": false,
+    "target_workers_launched": 0,
+    "resource_claims": 0
+  }
+}

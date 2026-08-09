@@ -1,0 +1,66 @@
+{
+  "schema": "firmware-v2-registry-reconciliation/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "c6999d173c344b317a918df91619308fd9f93f63",
+  "prior_candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "registry": {
+    "path": "plans/general-coding-harness/runtime/firmware-v2/passed-tests.json",
+    "sha256": "82f809ce6b0d7f6d4e967d649da4eb61b33769be86dafb6ce459f5d9d9e5cef5",
+    "green_groups": 28,
+    "unique_green_ids": 168,
+    "invalidated_groups": 0,
+    "evidence_credits": 96,
+    "missing_evidence_paths": 0,
+    "evidence_hash_mismatches": 0
+  },
+  "prior_registry": {
+    "sha256": "47a9793901cb84f7d973e0c8f27446823e94e658901d84ca091d0df253cb84fb",
+    "green_groups": 27,
+    "unique_green_ids": 166,
+    "invalidated_groups": 0,
+    "evidence_credits": 91
+  },
+  "delta": {
+    "added_green_group": "S2::c3-evolved-target-joined-tip-reconciliation",
+    "added_green_ids": [
+      "orchestrator_harness.tests.test_firmware_acceptance_target.FirmwareAcceptanceTargetTests.test_five_file_seed_remains_immutable_while_target_files_can_be_committed",
+      "orchestrator_harness.tests.test_firmware_acceptance_target.FirmwareAcceptanceTargetTests.test_seed_rewrite_is_rejected_after_target_files_exist"
+    ],
+    "removed_superseded_green_ids": [],
+    "freshly_revalidated_existing_ids": 4,
+    "retained_prior_green_ids": 166,
+    "added_evidence_credits": 5,
+    "new_invalidations": [],
+    "duplicate_green_groups": [],
+    "duplicate_green_ids": []
+  },
+  "dependency_map": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_c6999d1.json",
+    "sha256": "d4fe04d15a525b70282726ac84be7f734b7fb92ae2e520df0242d994925674be",
+    "root_acceptance_path": "plans/general-coding-harness/evidence/firmware-v2/S2/CANDIDATE_SHARED_CODE_DEPENDENCY_MAP_ROOT_ACCEPTANCE_c6999d1.json",
+    "root_acceptance_sha256": "907aa4a3e5ffd0b51a35b0ad2a7cd85d309b1384add4fe8c031ab532932b48e9"
+  },
+  "fresh_green_evidence": {
+    "regression_execution_sha256": "6f67142d114c010c2537ac25df2b9a23312b0787be153d1ff9c919743122925e",
+    "remaining_execution_sha256": "205e133d7bc8cdd90463ce1f617157d78e0f6a0a26b908b8da632c710afa9a38",
+    "tests_covered": 6,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "resource_warnings": 0,
+    "outcome": "PASS"
+  },
+  "audit": {
+    "all_declared_evidence_paths_exist": true,
+    "all_declared_evidence_hashes_match": true,
+    "all_six_affected_test_ids_covered_at_current_tip": true,
+    "all_166_prior_green_ids_dependency_valid": true,
+    "unaffected_green_ids_rerun": false,
+    "reviewer_and_tester_criticisms_preserved_and_dispositioned": true,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "REGISTRY_RECONCILED_ONCE_FOR_ACCEPTED_S29_BATCH",
+  "outcome": "PASS",
+  "created_at": "2026-08-05T22:20:56.4401649Z"
+}

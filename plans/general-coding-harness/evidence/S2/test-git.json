@@ -1,0 +1,6 @@
+{
+  "candidate_commit": "2f6757ddac98efcc910b5d1e2a7fb9e508d534d2",
+  "result": "pass",
+  "source": "S2.A1 exact-commit focused execution; D1 duplicate rerun skipped",
+  "coverage": "clone, linked worktree, identity, wrong branch/base, resume, duplicates, Windows normalization, poisoned Git environment"
+}

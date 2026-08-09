@@ -1,0 +1,14 @@
+{
+  "schema": "firmware-v2-test-report/v1",
+  "lane_id": "S23.D1",
+  "worker_invocation_id": "s23-d1-c3-smoke-006",
+  "commit": "b5753eb31fb3a725804ace76fb770e7c6629dc96",
+  "exact_command": "python -m unittest orchestrator_harness.tests.test_firmware_c3_harness.C3HarnessTests.test_c3_cp_04_disposable_target_assignment_and_fail_closed_acceptance -v",
+  "totals": {"run": 1, "passed": 1, "failed": 0, "errors": 0},
+  "skips": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "stable_ids": [
+    {"id": "C3-CP-04", "test": "C3HarnessTests.test_c3_cp_04_disposable_target_assignment_and_fail_closed_acceptance", "outcome": "PASS"}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "firmware-v2-root-dispatch-failure/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0005",
+  "operation": "c2-report-fix-dispatch",
+  "observed_at_utc": "2026-08-05T10:32:00Z",
+  "classification": "ROOT_PRELAUNCH_CHECK_SCRIPT_ERROR",
+  "description": "The first outer prelaunch check called Trim() on the null output of git branch --show-current for the intentionally detached stable runner. The check failed closed before Start-Process was reached.",
+  "controller_launched": false,
+  "codex_launched": false,
+  "resource_claim_acquired": false,
+  "candidate_or_report_mutated": false,
+  "correction": "Normalize null detached-branch and clean-status output to empty strings, retain the exact stable-runner identity and zero-claim checks, then dispatch once.",
+  "candidate_finding": false,
+  "locked_input_change": false
+}

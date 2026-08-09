@@ -1,0 +1,19 @@
+{
+  "schema": "firmware-c3-root-abort-override/v1",
+  "attempt_id": "attempt-0002",
+  "owner": "ROOT-IM",
+  "watcher_authored": false,
+  "reason_for_override": "The live watcher reproducibly misclassified two authentic RUNNING_CODEX controller-status rejection failures and did not emit its required abort record.",
+  "root_abort": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\acceptance\\attempt-0002\\topology\\ROOT_ABORT_REQUIRED.json",
+    "sha256": "757ff52b1dea928871f21b525d72d5b3387ffaec492fd27a217ef6420c22ec74"
+  },
+  "invariants": [
+    "C3_ATTEMPT_TARGET_LAYOUT",
+    "C3_AUTHENTIC_CONTROLLER_INITIAL_STATUS",
+    "WATCHER_MISCLASSIFICATION"
+  ],
+  "earliest_invalidated_step": "S3.C3_CONTROL_PLANE_AND_WATCHER_INTEGRATION",
+  "required_action": "STOP_NEW_WORK_AND_PERFORM_SIGNED_CANDIDATE_SHUTDOWN",
+  "created_at_utc": "2026-08-05T06:50:00Z"
+}

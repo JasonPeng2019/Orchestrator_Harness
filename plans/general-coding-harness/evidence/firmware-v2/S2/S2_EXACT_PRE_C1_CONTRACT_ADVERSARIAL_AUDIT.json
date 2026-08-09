@@ -1,0 +1,88 @@
+{
+  "schema": "firmware-v2-exact-pre-c1-contract-adversarial-audit/v1",
+  "audit_id": "S2-EXACT-PRE-C1-CONTRACT-AUDIT-001",
+  "ended_utc": "2026-08-04T13:52:38.451764Z",
+  "scope": "Read-only adversarial audit of S2_PRE_C1_EXECUTABLE_CONTRACT_DECISION.json and its integration into the five governing documents; no product implementation or test execution.",
+  "decision": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/S2/S2_PRE_C1_EXECUTABLE_CONTRACT_DECISION.json",
+    "sha256": "9e0fbac168edc13b0d243392b661d95eb6483d7234f515703158c57b273dee91"
+  },
+  "governing_hashes": {
+    "goal.md": "0815f54b6f8767fe1e7abbe4c43d307c34562e63203917c9582afa3122b0696f",
+    "GENERALIZATION_SPEC_2.md": "e1dddca123779203814e978bb2bd3c5a2aa909546d52795d4cb5ad495a5a30b3",
+    "IMPLEMENTATION_ROADMAP_2.md": "161cbe266804cc710a722a8ca06989c77d58e9a7acfc9db0437fc165855d3fe6",
+    "EXECUTION_PLAN_2.md": "3775ae7ca694951362223cea3c3571fce6d1c6cd9e3bcc3dfd0435e4d87015b7",
+    "EXECUTION_READINESS_2.md": "c56af934fbe87ffbf98049d3a0565874e6fb04d4caefe1e6e81b289ca71cd05b"
+  },
+  "reviewer": {
+    "lane_id": "S2.R1",
+    "worker_invocation_id": "s2-r1-exact-contract-audit-001",
+    "thread_id": "019fcd08-412f-75d3-8b4c-cdde3e419b67",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "service_tier": "priority",
+    "candidate_commit": "42a9d7082ac0193cf7cd1685b5eb95baafff41ac",
+    "pinned_mcp_commit": "f003f84a7df51cd8595a3203c62e225b21da2a22"
+  },
+  "stable_runner": {
+    "commit": "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f",
+    "invocation_path": "plans/general-coding-harness/runtime/firmware-v2/runner-migration/S2_R1_EXACT_PRE_C1_CONTRACT_AUDIT_RETRY_1_STABLE_INVOCATION.json",
+    "invocation_sha256": "70cf1709354246e3cba984dd51f0e3b4f090af5f7ae1fe84e450e337f1726a53",
+    "projected_path": "plans/general-coding-harness/runtime/firmware-v2/runner-migration/S2_R1_EXACT_PRE_C1_CONTRACT_AUDIT_RETRY_1_STABLE_PROJECTED.json",
+    "projected_sha256": "03185eb01b2f2bc746f77489bb62d931e3c0aed38a48bdc0d996ee1e1481bfd4",
+    "projection_removed_candidate_finding_gate": true,
+    "root_validated_original_finding_artifact": true
+  },
+  "artifacts": {
+    "findings": {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R1/.agent-workspace/FINDINGS.exact-contract-audit.json",
+      "sha256": "3f06764e6ebbdfda71aef8e42116dc412863afb9e8fced506d1c3715c5a4a542"
+    },
+    "review": {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R1/.agent-workspace/REVIEW_EXACT_CONTRACT.md",
+      "sha256": "52443eac8e5d757076f7d6c9d2cc97ae80069c0b6a754d807f4e0a9283111b69"
+    },
+    "result": {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R1/.agent-workspace/RESULT.json",
+      "sha256": "0a186183f51e9baa984052e0f2df9c0f43138698ebf1e9aa446d86fc84a7742a",
+      "controller_validation": "VALID"
+    },
+    "status": {
+      "path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R1/.agent-workspace/worker-exact-contract-audit.status.json",
+      "sha256": "71185d46bafc14504fcdd7b0a1561a986108340b18a6e899b9ced7f7e9592eee",
+      "state": "CODEX_EXITED",
+      "exit_code": 0,
+      "result_valid": true
+    }
+  },
+  "reviewer_verdict": "GREEN: IMPLEMENTATION READY",
+  "finding_count": 0,
+  "root_triage": {
+    "decision": "ACCEPT_GREEN",
+    "reason": "The reviewer matched every governed hash and both source identities, directly tested all seven former ambiguity classes, submitted zero findings, and the exact decision supplies a bounded executable contract without widening authority or requiring server changes.",
+    "remaining_planning_ambiguity": false,
+    "coder_may_resume": true
+  },
+  "operator_corrections": [
+    {
+      "issue": "The first launch-only invocation used unsupported action new and exited before a lane status or Codex process existed.",
+      "classification": "ROOT invocation-envelope correction",
+      "invalidated_work": false
+    },
+    {
+      "issue": "The first completed reviewer turn added a non-schema role field and non-schema check summaries to RESULT.json; the stable controller rejected it.",
+      "classification": "reviewer artifact-format correction",
+      "resolution": "The same thread rewrote only RESULT.json to the closed shape; no audit, test, or source work was repeated.",
+      "invalidated_work": false
+    }
+  ],
+  "safety": {
+    "tracked_candidate_clean": true,
+    "tracked_review_lane_clean": true,
+    "pinned_mcp_clean": true,
+    "mcp_server_launched": false,
+    "hardware_accessed": false,
+    "tests_run": false
+  },
+  "next_action": "Resume the same persistent S2.P coder through the stable runner for the exact closed contract, then run only dependency-invalidated review/test lanes and a brand-new C0."
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.A2",
+  "worker_invocation_id": "s2-a2-001",
+  "role": "test_writer",
+  "commit": "2a451ff851bb78ced9c1461078d15e1641fac78c",
+  "findings": [
+    {
+      "id": "S2-A2-F1",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["C43", "C49", "C63", "C65"],
+      "evidence": ["orchestrator_harness/tests/test_firmware_acceptance_target.py::FirmwareAcceptanceTargetTests.test_five_file_seed_remains_immutable_while_target_files_can_be_committed", "firmware_acceptance/seed/TARGET_SEED_MANIFEST.json", "firmware_acceptance/seed/TARGET_CHARTER.md"],
+      "observed": "AcceptanceBroker construction calls validate_seed_manifest and raises AdmissionError: seed hash mismatch: TARGET_CHARTER.md. The file SHA-256 is 43a43f2f6a494e1b5e9b2eb118e6a43765304d2630d379e607e56d4e725a3a63, while the manifest declares 5aea61dec6babcc2dd09abecc41349139f1e5fc01c2ec6f10df9af18beeb8a78.",
+      "expected": "The exact five-file seed validates before a broker can materialize a fresh disposable target repository.",
+      "reproduction": "From branch tip 2a451ff851bb78ced9c1461078d15e1641fac78c run: python -m unittest orchestrator_harness.tests.test_firmware_acceptance_target -v. The closed-contract test passes and both broker-materialization tests fail at validate_seed_manifest before Git initialization.",
+      "impact": "The public acceptance kit cannot materialize any target, so the target/evidence campaign and its hash-bound provenance cannot start.",
+      "no_fix_consequence": "C43 target creation and every dependent C49/C63/C65 acceptance proof remain blocked on every run.",
+      "smallest_fix": "Correct the TARGET_CHARTER.md hash in TARGET_SEED_MANIFEST.json to the accepted file bytes, or restore the charter bytes intended by the declared hash; add or retain the existing seed validator regression.",
+      "complexity": "One manifest-or-seed-byte correction plus the focused target test.",
+      "regression_risk": "Low and bounded to the sealed seed identity; the public validator immediately verifies the chosen canonical bytes.",
+      "verification_cost": "Rerun only orchestrator_harness.tests.test_firmware_acceptance_target after the accepted correction.",
+      "alternatives": "Bypassing, weakening, or deferring seed validation would violate the exact five-file hash-bound contract and has higher provenance risk.",
+      "cost_benefit": "A one-line identity correction restores the mandatory target-materialization entrypoint, while leaving it unresolved prevents all downstream acceptance work.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

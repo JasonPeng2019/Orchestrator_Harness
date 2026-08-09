@@ -1,0 +1,81 @@
+{
+  "schema": "firmware-v2-root-finding-triage/v1",
+  "gate": "S2-C0-repair-second-review",
+  "candidate_base": "bbc8ad94c32f3ddad4a54afd4c1a2d51ac4bb11e",
+  "reviewed_repair_commit": "b155a70294ca1ffef35df55fc1bdce41b89a8748",
+  "root_independent_source_trace_confirmed": true,
+  "review_artifacts": [
+    {
+      "lane_id": "S2.R1",
+      "thread_id": "019fca7b-173d-7072-aa90-185a73320f24",
+      "finding_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R1/.agent-workspace/FINDINGS.json",
+      "finding_sha256": "bed7a0de559ee4da0f6b9f457ce953df07fe299bff54ce3ba1a50733a711b1ef",
+      "result_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R1/.agent-workspace/RESULT.json",
+      "result_sha256": "491832179423ce9685d3a9aff6edee17b3e4e9005e635e56a378bf19055d7488",
+      "controller_status_sha256": "4dcb47405852a1855b000393c0ae98d7729d9181aa52c207f32901abfa0886c5",
+      "result_valid": true,
+      "tracked_worktree_clean": true
+    },
+    {
+      "lane_id": "S2.R2",
+      "thread_id": "019fca7b-1739-7e70-bffb-a6d36202f6b8",
+      "finding_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R2/.agent-workspace/FINDINGS.json",
+      "finding_sha256": "a311d456230874d34fbf0694f24847976353a9d451d07e67857daadc2eb16000",
+      "result_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R2/.agent-workspace/RESULT.json",
+      "result_sha256": "121c084cbae3aaf2990e7fa550421e183a8bde1fb60745b6264126672c907635",
+      "controller_status_sha256": "9e9d96130b433441770564f9ce3680919e561c4cce364ee818871d3d07cec7ab",
+      "result_valid": true,
+      "tracked_worktree_clean": true
+    }
+  ],
+  "decisions": [
+    {
+      "finding_id": "S2R1-C0-EXECUTABLE-002",
+      "decision": "ACCEPT_CONSOLIDATED",
+      "category": "CODEBASE_BREAKING",
+      "root_trace": [
+        "AcceptanceBroker.controller_config emits BYO_MCP_ARTIFACT_ROOT, PYOCD_PROBE_UID, PYOCD_TARGET, and PYTHONPYCACHEPREFIX, while _scrubbed_environment copies only nonexistent FIRMWARE aliases, so the real child loses every locked lane binding.",
+        "controller.main parses three artifact arguments and then unconditionally refuses; it never constructs a broker or executes the artifacts.",
+        "The claim is acquired before the only release-guaranteeing finally scope. Evidence/configuration/launcher/cleanup-record failures can leave the exact board claim held.",
+        "Daemonized bounded pipe and stderr helpers are not joined or proven stopped before stream closure and claim release."
+      ],
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "finding_id": "S2R2-C0-002",
+      "decision": "ACCEPT_CONSOLIDATED",
+      "category": "CODEBASE_BREAKING",
+      "root_trace": [
+        "execute verifies the decision signature over proposal SHA-256 bytes, but AcceptanceBroker.admit verifies the same signature over canonical SHA-256 of a different broker record; a real signature cannot satisfy both payloads.",
+        "The focused verifier accepts any nonempty payload and therefore masks the inconsistent signed-message contract.",
+        "Authorization accepts a truthy delegated_authority string and permits local C1/governing/seed/target defaults instead of exact path/hash/identity bindings and revocation checks.",
+        "The request claim string is never compared with ResourceClaims.held.resource and owner, so the signed/delegated intent does not bind the acquired resource."
+      ],
+      "problem_outweighs_fix_risk": true
+    }
+  ],
+  "consolidated_smallest_sufficient_repair": {
+    "route": "S2.P",
+    "required": [
+      "Use the actual allowlisted broker keys in a scrubbed inherited environment and retain no ambient capability, import injection, project override, or route authority.",
+      "Provide a genuinely executable dedicated controller command/API which constructs the broker from exact confined paths, consumes the structured request/proposal/O-decision/C1-delegated authorization flow, uses a real supplied verifier boundary, and invokes the bounded controller without revealing capability to O or target workers.",
+      "Define one canonical decision-signature payload and verify exactly those bytes both before launch and at final broker admission; replace permissive payload tests with an exact-message verifier test.",
+      "Require closed exact proposal/decision/authorization fields for operative C1/delegated path/hash, attempt/call/lane/board/probe/target/profile/route, governing hashes, seed/target identity, method/version/arguments/policy/plan/permission, public key/topology identity, expiry and one-shot identity. Reject placeholders, mutation, substitution, replay, deny, expiry, revocation, or mismatch before launch.",
+      "Bind the proposal's declared exact resource to the acquired ResourceClaims resource/path/hash/owner and carry those exact values through the immutable broker chain.",
+      "Put claim acquisition and every subsequent record/configuration/launch/I/O/cleanup/admission path under one outer release boundary. Retain the claim until child identity, termination, exit/reap, cleanup record, and stopped pipe-drain helpers are proved; fail closed on release ambiguity.",
+      "Budget all blocking I/O/cancellation/termination against the live call deadline/expiry, safely cancel/kill as required, and prove helper threads cannot outlive cleanup or claim release.",
+      "Add focused host-only regressions for exact environment keys, executable entry flow, real canonical signature payload consistency, closed C1/delegated/claim/replay/revocation rejection, record/config/launcher/timeout cleanup, helper teardown, and exact claim release."
+    ],
+    "explicit_nonrequirements": [
+      "Do not add a scheduler, daemon fleet, workflow framework, database, UI, generic hardware abstraction, final target application, or new board support.",
+      "Do not expose the MCP command, environment, endpoint, stdio, credential, process object, or handle to F.C3.O or target workers.",
+      "Do not change coding V1, schema-less legacy firmware behavior, the pinned MCP source/revision, or unrelated green test contracts.",
+      "Do not launch the pinned MCP server or touch serial, probes, flash, debug, reset, RF, or hardware during this repair."
+    ],
+    "cost_benefit": "The current route cannot execute in deployment, cannot validate a real O signature, can discard locked board routing, and can strand an exclusive claim. Those are direct certification and functionality failures. The repair is moderate but isolated to the new firmware controller/broker boundary and its focused host tests, so its benefit outweighs the contained complexity and verification cost."
+  },
+  "root_decision": "RESUME_S2_P_SAME_THREAD_FOR_MINIMAL_REPAIR_THEN_TARGETED_REREVIEW_AND_INVALIDATED_TEST_GATES",
+  "c1_created": false,
+  "hardware_accessed": false,
+  "firmware_mcp_accessed": false
+}

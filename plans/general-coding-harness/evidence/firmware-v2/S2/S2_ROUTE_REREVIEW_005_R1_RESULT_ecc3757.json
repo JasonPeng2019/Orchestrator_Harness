@@ -1,0 +1,29 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-route-review-001",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "ecc37579bd5719b8185912aa9e28562f8705f03f",
+  "outcome": "PASS",
+  "summary": "The continuation closeout delta validates every choice row and exactly the four pinned research field sets before result creation, while preserving nullable/default values and fresh per-call authorization.",
+  "checks": [
+    {
+      "name": "exact-tip-and-controller-delta",
+      "command": "git rev-parse HEAD; git diff --name-status 83b693aa9845f2816fd15a36b249bcfad8516db0..ecc37579bd5719b8185912aa9e28562f8705f03f",
+      "outcome": "PASS",
+      "summary": "Reviewed exact committed ecc3757 continuation delta only."
+    },
+    {
+      "name": "pinned-continuation-contract",
+      "command": "Static comparison of exact controller blob, executable decision, and immutable mcp-candidate@f003f84a7df51cd8595a3203c62e225b21da2a22 setup.py/server.py",
+      "outcome": "PASS",
+      "summary": "Choice rows, four research schemas, nullable/default values, pre-result validation, predecessor IDs, and fresh proposal/decision/authorization binding agree with the pinned contract."
+    },
+    {
+      "name": "host-only-delta-integrity",
+      "command": "git diff --check 83b693aa9845f2816fd15a36b249bcfad8516db0..ecc37579bd5719b8185912aa9e28562f8705f03f",
+      "outcome": "PASS",
+      "summary": "No whitespace defects found; no MCP server or hardware was invoked."
+    }
+  ]
+}

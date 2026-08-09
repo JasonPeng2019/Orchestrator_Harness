@@ -1,0 +1,45 @@
+{
+  "schema": "orchestrator-review-findings/v1",
+  "lane_id": "S2.R2",
+  "worker_invocation_id": "s2-r2-route-review-001",
+  "role": "reviewer",
+  "commit": "83b693aa9845f2816fd15a36b249bcfad8516db0",
+  "findings": [
+    {
+      "id": "S2-R2-REAL-PATH-008",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["AUTHORIZED_SERVER_LIMITATION", "_verify_c3_completion", "result_validation.path", "CANDIDATE_RESULT.json", "DIAGNOSTIC_RESULT.json"],
+      "evidence": ["firmware_acceptance/kit.py:506-517", "firmware_acceptance/kit.py:550-552", "firmware_acceptance/kit.py:587-589", "orchestrator_harness/lane_controller.py:601-636", "orchestrator_harness/discovery.py:367-417"],
+      "observed": "The real coding controller validates only <worktree>/.agent-workspace/RESULT.json and persists result_validation.path as that real path. The limitation verifier instead requires controller_status and worker_result references at its attempt-confined DIAGNOSTIC_STATUS.json/DIAGNOSTIC_RESULT.json and STATUS.json/CANDIDATE_RESULT.json locations, then requires status.result_validation.path to equal the copied result reference path. A copied result cannot satisfy that equality; an unmodified real result cannot satisfy the limitation path check.",
+      "expected": "The limitation verifier must consume the exact real safe controller-status and workspace RESULT.json references that the candidate controller produced and validated, while attempt-confined limitation adapters bind those external references by immutable path/hash rather than relocating or renaming them.",
+      "reproduction": "Run the normal candidate path conceptually: lane_controller._coding_result_validation sets path = invocation.workspace / 'RESULT.json' and records it in status.result_validation.path. Supply those real status/result references to _verify_c3_completion: kit.py rejects before validation because their paths are not the limitation subtree. Copy both files to the required subtree instead: _verify_c3_completion rejects because the copied status still records the original workspace RESULT.json in result_validation.path, not the copied result reference.",
+      "impact": "No actual final-C3 worker can satisfy the limitation verifier's required CANDIDATE_RESULT/DIAGNOSTIC_RESULT evidence shape. Consequently a genuinely proven pinned-server limitation cannot receive a substitute or diagnostic credit through the implemented boundary.",
+      "no_fix_consequence": "The exceptional limitation route is executable only with fabricated status/result records, precisely the condition the repair was intended to prevent; real candidate-controller evidence always fails closed.",
+      "smallest_fix": "Keep only limitation-owned assignment/launch/execution adapters in the attempt subtree. Let their closed references point to the real controller status and its real workspace RESULT.json, require status.result_validation.path/sha256 to match those real references, and hash-bind the adapters to them.",
+      "complexity": "Medium: a narrow reference-model adjustment plus focused fixtures built from the existing lane-controller status/result contract.",
+      "regression_risk": "Low: it removes an impossible copied-path requirement while preserving current result validation, hashes, attempt adapters, PASS, clean-tip, no-claim, and NOT_CERTIFIED checks.",
+      "verification_cost": "Low: host-only tests can create a normal controller status and real workspace RESULT.json, then prove admission without copying and rejection for copied, stale, wrong-worker, or mismatched-hash records.",
+      "alternatives": "Copying or renaming RESULT.json is not viable because status.result_validation.path is intentionally the real workspace path; changing that status would no longer be actual candidate-controller evidence.",
+      "cost_benefit": "This correction restores the only executable evidence path for the allowed fallback without weakening the real controller/result gate.",
+      "problem_outweighs_fix_risk": true
+    },
+    {
+      "id": "S2-R2-C3-IDENTITY-009",
+      "category": "FUNCTIONALITY_BREAKING",
+      "affected_ids": ["c3_controller", "controller_identity", "_verify_c3_completion", "AUTHORIZED_SERVER_LIMITATION"],
+      "evidence": ["firmware_acceptance/kit.py:506-517", "firmware_acceptance/kit.py:562-589", "orchestrator_harness/git_safety.py:249-273"],
+      "observed": "_verify_c3_completion checks that the referenced status has an integer controller_pid and a creation-time string, but it returns no derived controller identity. The limitation launch merely compares launch.controller_identity with assignment.c3_controller, two free mutually supplied values; neither is compared with the referenced terminal status's controller PID plus creation identity.",
+      "expected": "assignment.c3_controller and launch.controller_identity must equal one canonical identity derived directly from the referenced actual terminal status: its controller_pid plus controller_created_utc/started identity, with the status's normal worker and result validation also bound.",
+      "reproduction": "Use a status that passes _verify_c3_completion's fields and result validation, then set assignment.c3_controller and launch.controller_identity to the same unrelated nonempty string. Lines 584-589 accept their equality and line 506-517 never returns or compares a canonical status-derived controller identity, so the forged pair is not rejected.",
+      "impact": "Even after real result paths are made consumable, limitation adapters can claim an arbitrary C3 controller identity unrelated to the candidate controller that launched and validated the worker.",
+      "no_fix_consequence": "The record cannot prove that its assignment, launch, execution, and PASS result belong to the exact C3-HARNESS controller required by the limitation contract.",
+      "smallest_fix": "Have _verify_c3_completion derive and return a closed {pid, creation_identity} value from the referenced terminal status and require assignment/launch/execution controller fields to equal it exactly; reject free string identities.",
+      "complexity": "Low: a localized derivation/comparison using fields already required by the status contract.",
+      "regression_risk": "Low: it only rejects forged adapter identities in the exceptional credit path.",
+      "verification_cost": "Low: host-only status fixtures can cover matching and mismatched PID/creation identities.",
+      "alternatives": "Mutually comparing adapter strings cannot prove controller ownership because both values can be invented independently of the real status.",
+      "cost_benefit": "The small derivation closes a direct ownership bypass in substitute and diagnostic evidence.",
+      "problem_outweighs_fix_risk": true
+    }
+  ]
+}

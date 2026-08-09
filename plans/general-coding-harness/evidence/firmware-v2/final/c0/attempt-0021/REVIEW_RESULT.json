@@ -1,0 +1,31 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-021",
+  "branch": "firmware/v2-c0-final-review-0021",
+  "commit": "c6999d173c344b317a918df91619308fd9f93f63",
+  "outcome": "PASS",
+  "summary": "NO CANDIDATE GAP / READY",
+  "checks": [
+    {
+      "name": "governing and batch artifact hashes",
+      "outcome": "PASS",
+      "summary": "All five governing hashes and all five specified S29 batch hashes match; the six dependency-mapped tests are recorded once across D1 and D2."
+    },
+    {
+      "name": "candidate affected-surface static audit",
+      "outcome": "PASS",
+      "summary": "Reviewed C1-C73, the complete accepted-baseline-to-tip diff, legacy/coding isolation, C3 control paths, evidence, watcher boundary, documentation, role enforcement, and S29 evolved-target repair; no admissible gap found."
+    },
+    {
+      "name": "clean candidate and immutable server",
+      "outcome": "PASS",
+      "summary": "Candidate is at the required clean tip and the immutable MCP worktree remains clean at f003f84a7df51cd8595a3203c62e225b21da2a22."
+    },
+    {
+      "name": "execution",
+      "outcome": "NOT_RUN",
+      "summary": "No tests, gates, compilation, imports, MCP, hardware, serial, or live process probes were run; this review used only read-only Git, file, hash, and static-source inspection."
+    }
+  ]
+}

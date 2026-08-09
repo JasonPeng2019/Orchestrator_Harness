@@ -1,0 +1,29 @@
+{
+  "schema": "firmware-c3-topology-shutdown/v1",
+  "attempt_id": "attempt-0006",
+  "owner": "ROOT-IM",
+  "acceptance_pass": false,
+  "inventory_excludes_self": true,
+  "files": [
+    {"path": "ROOT_ATTEMPT_ALLOCATION.json", "bytes": 821, "sha256": "3789766c8dedf888a342fc8ac4f12e10d8e04ca3b06c1ce8b0addde796431dbb"},
+    {"path": "ROOT_ATTEMPT_CLOSEOUT.json", "bytes": 1490, "sha256": "1a484957209908b27313816a53396cc6a9ee4785cd7e180579be2640601e8bae"},
+    {"path": "ROOT_LAUNCHER_INTENT.json", "bytes": 1096, "sha256": "f784d3ff8eb67e8311a61de98a756f4200761e1ac2949ed18e53740626ed3b0f"},
+    {"path": "ROOT_PRELAUNCH_VALIDATION.json", "bytes": 8250, "sha256": "eeb5239aa08e7e95d9221231908127a27924b67d92bc3e079e382c0260839227"},
+    {"path": "ROOT_PROCEDURE_ABORT_REQUIRED.json", "bytes": 1767, "sha256": "0f8d5c00f1a863e281bf57d9f01d4ce6e82e7e86b427783a6c53cea97cb967bd"},
+    {"path": "ROOT_SUPERVISOR_FAILURE.json", "bytes": 640, "sha256": "d0f290df0e42943f5df1b5b85bd1e582b30a8dd49d2e4412061a31a569efde1e"}
+  ],
+  "closure": {
+    "inventory_count": 6,
+    "identity_gate_complete": false,
+    "registered_processes_remaining": 0,
+    "candidate_harness_processes_remaining": 0,
+    "target_worker_processes_remaining": 0,
+    "mcp_processes_remaining": 0,
+    "resource_claims_remaining": 0,
+    "candidate_clean": true,
+    "mcp_server_clean": true,
+    "hardware_calls_dispatched": 0,
+    "manifest_integrity": "NOT_CREATED_FAILED_ATTEMPT"
+  },
+  "closed_at_utc": "2026-08-05T16:53:14.1169301Z"
+}

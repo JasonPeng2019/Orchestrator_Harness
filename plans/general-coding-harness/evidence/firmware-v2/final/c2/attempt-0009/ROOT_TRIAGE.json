@@ -1,0 +1,77 @@
+{
+  "schema": "firmware-v2-c2-root-triage/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0009",
+  "triaged_at_utc": "2026-08-05T18:23:52Z",
+  "candidate_commit": "542f48c2185b70ab3724a95d60f071e1a5a90343",
+  "c1_lock_id": "d96f270b-bb92-4b3e-aac0-29321e2ea44a",
+  "c1_lock_sha256": "d9bc07a1eb812775e046f8b87f19955dcac65dae3ecb59994d84613e293a60c7",
+  "executor": {
+    "lane_id": "F.C2.D1",
+    "worker_invocation_id": "c2-d1-009",
+    "thread_id": "019fd324-3d2d-7681-804a-b89c4f56099b",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "priority"
+  },
+  "artifacts": {
+    "findings_sha256": "5ea378ff3bd102992f4b1178ab8e3507aa7d10661307ce5a3872f50d046b9c1f",
+    "test_report_sha256": "f3de96af5f576bb3ca416aac2bdadac9cdd68bd4585d45b3de3b05c1bee734ea",
+    "result_sha256": "3eedd70e720278b935c064faa789b4f3f805613bcc2947f4c8f754fbbb62d3a4",
+    "closed_controller_status_sha256": "c0110f4c4b6d74c2cc3958fdd5026c08576dc1966aa72aa6f7e8611185f24393",
+    "closed_worker_jsonl_sha256": "c72c3f250e52549275e0b5181d9ec4d1200b0ef46dd3493508bb0fba96caa8b1",
+    "worker_stderr_sha256": "d048d833c41d0c2483d96bc8811a2c2c5e92452ee45c0a220887224efc0d9c18",
+    "worker_last_message_sha256": "80044676b6ed62987375abf6fb48f51147616238ed92ac554ece4e11348adee8",
+    "verifier_sha256": "9df622649f401d66efc6ce65e342d8b5bda935f21298fcec7521f38cd31f8918"
+  },
+  "criticisms": [
+    {
+      "id": "F-C2-VERIFIER-IDENTITY-001",
+      "classification": "EXECUTOR_VERIFIER_STALE_ATTEMPT_IDENTITY",
+      "accepted": true,
+      "candidate_finding": false,
+      "exact_cause": "ROOT adapted the prior attempt-local verifier to current candidate, C1, map, registry, and branch bindings but left two preflight comparisons at worker_invocation_id c2-d1-008. The live controller status and exact claim correctly used c2-d1-009, so every one-shot mode stopped before its body with controller status identity mismatch.",
+      "minimal_correction": "In a fresh attempt-local verifier, change only the two worker_invocation_id literals from c2-d1-008 to c2-d1-010 and the lane branch literal from attempt 0009 to attempt 0010. Preserve all current C1, candidate, count, dependency, process, claim, and test obligations."
+    },
+    {
+      "id": "F-C2-PREP-0009-001",
+      "classification": "EXECUTOR_PRELAUNCH_DIRECTORY_ORDERING",
+      "accepted": true,
+      "candidate_finding": false,
+      "exact_cause": "The executor's first capture command attempted Resolve-Path for c2-lock-bound before creating the directory. PowerShell exited before spawning any verifier mode; the executor then created the directory and ran each authorized mode exactly once.",
+      "minimal_correction": "Create c2-lock-bound before resolving it. No wrapper, retry framework, product change, or extra test is needed."
+    },
+    {
+      "id": "ROOT-C2-STATUS-HASH-0009-001",
+      "classification": "TRANSIENT_REPORT_REFERENCE",
+      "accepted": true,
+      "candidate_finding": false,
+      "exact_cause": "FINDINGS.json recorded the live status hash while the controller still owned its claim. The controller then correctly finalized status and released the claim, so that embedded hash no longer equals the final status file. The finding's verifier assertion, live worker ID, five process records, and final closed status independently establish the same cause.",
+      "minimal_correction": "Do not add a live mutable status path/hash pair to final findings. Bind the final closed status only in ROOT's attempt record after controller exit."
+    }
+  ],
+  "vetoed_changes": [
+    "No candidate, test, registry, C1, MCP-server, or stable-runner change: every mode stopped in attempt-local verifier preflight.",
+    "No generalized attempt-identity adapter: replacing the exact fresh worker literal is sufficient.",
+    "No duplicate guards, broader unit suite, or already-green test rerun.",
+    "No same-attempt retry: attempt-0009 remains immutable evidence.",
+    "No hardware or MCP launch before a fresh green C2."
+  ],
+  "root_audit": {
+    "five_modes_executed_once_in_order": true,
+    "mode_bodies_reached": 0,
+    "common_preflight_failures": 5,
+    "process_records_present": 5,
+    "result_gate_valid": true,
+    "result_outcome": "FAIL",
+    "candidate_clean": true,
+    "mcp_server_clean": true,
+    "stable_runner_clean": true,
+    "lane_clean": true,
+    "claims_released": true,
+    "surviving_test_processes": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "PRESERVE_ATTEMPT_AND_START_FRESH_C2_ATTEMPT_0010_UNDER_SAME_C1_LOCK"
+}

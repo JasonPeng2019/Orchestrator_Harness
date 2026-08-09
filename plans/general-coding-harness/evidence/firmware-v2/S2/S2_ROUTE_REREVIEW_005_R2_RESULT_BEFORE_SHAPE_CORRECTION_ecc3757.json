@@ -1,0 +1,16 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R2",
+  "worker_invocation_id": "s2-r2-route-review-001",
+  "branch": "firmware/v2-s2-r2",
+  "commit": "ecc37579bd5719b8185912aa9e28562f8705f03f",
+  "outcome": "FAIL",
+  "summary": "Three admissible artifact-DAG and terminal-status provenance gaps found in ecc3757.",
+  "checks": [
+    {"name": "exact-current-tip", "outcome": "PASS", "summary": "HEAD is ecc37579bd5719b8185912aa9e28562f8705f03f and tracked worktree is clean."},
+    {"name": "delta-scope", "outcome": "PASS", "summary": "Reviewed only 83b693a..ecc3757 changes in firmware_acceptance/controller.py and kit.py plus affected candidate controller/result contracts."},
+    {"name": "substitute-artifact-dag", "outcome": "FAIL", "summary": "ASSIGNMENT, LAUNCH, and actual RESULT create a hash forward-reference cycle."},
+    {"name": "diagnostic-artifact-dag", "outcome": "FAIL", "summary": "Attribution, DIAGNOSTIC, and actual RESULT create a hash forward-reference cycle."},
+    {"name": "actual-controller-status-binding", "outcome": "FAIL", "summary": "The actual RESULT path is exact, but controller status is only constrained to the workspace rather than its configured terminal-status path."}
+  ]
+}

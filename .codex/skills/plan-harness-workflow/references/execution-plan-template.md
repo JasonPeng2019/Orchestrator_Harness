@@ -1,6 +1,6 @@
 # Execution Plan Template
 
-Fill every field. Preserve sections 0 through 11 in this order. Repeat section 6's step block for every serial step.
+Fill every field. Preserve sections 0 through 11 in this order. Repeat section 6's step block only for every large step, never for each module or small change inside one.
 
 ## 0. Metadata
 
@@ -17,7 +17,7 @@ Fill every field. Preserve sections 0 through 11 in this order. Repeat section 6
 
 ## 1. Agent-per-role mapping
 
-The user chooses concrete agents. The skill chooses pool sizes, capped at three workers beside the orchestrator.
+The user chooses concrete agents only. The skill chooses pool sizes and fixed conceptual splits, capped at three workers beside the orchestrator. Pool size 1 is valid, means no parallel fan-out, and is the default for each function. Use two or three only when named independent slices provide a concrete benefit. Record any later user override without presenting it as the skill's original decision.
 
 | Role | Agent chosen | Pool size | Pool-size authority |
 |---|---|---:|---|
@@ -27,7 +27,8 @@ The user chooses concrete agents. The skill chooses pool sizes, capped at three 
 | doer-main | `<agent>` | `<1-3>` | skill |
 | final-reviewer | `<agent>` | `<1-3>` | skill |
 
-Concurrency waves when slices exceed capacity: `<ordered waves>`
+Concurrency waves when slices exceed capacity: `<ordered waves by large step>`
+Skill-decided conceptual split map: `<large step -> fixed non-overlapping feature/test/action slices; never file paths alone>`
 
 ## 2. Coverage checklist
 
@@ -40,33 +41,61 @@ Every discrete implementation, test, documentation, operation, and completion re
 
 ## 3. Decomposition and disposition
 
-| Plan module/step | Disposition | Reason if re-decomposed | Covers |
-|---|---|---|---|
-| `<M1>` | `<reused as-is / reused with minor adjustment / re-decomposed>` | `<reason or n/a>` | `<coverage IDs>` |
+Atomic changes and individual modules are not execution steps. Group modules primarily by coherence and feature into the smallest practical number of meaningful, independently testable large steps. Each large step bundles multiple modules into one feature or deliverable that justifies a full QA pass.
 
-Dependency decisions and deliberately serialized boundaries: `<details>`
+Preflight gates (no full cycle): `<evidence-only setup and pass/fail evidence; no product cycle unless code changes>`
+
+| Module | Included atomic changes | Functional area | Assigned large step |
+|---|---|---|---|
+| `<module>` | `<coverage IDs and small changes>` | `<feature area>` | `<S1>` |
+
+| Large step | Disposition | Included modules | Coherent feature or deliverable | Why one full QA cycle | Covers |
+|---|---|---|---|---|---|
+| `<S1>` | `<reused as-is / reused with minor adjustment / re-decomposed>` | `<multiple module names>` | `<meaningful delivered capability>` | `<cohesion and integration boundary>` | `<coverage IDs>` |
+
+Dependency decisions and deliberately serialized boundaries: `<details, including uncertain independence kept serial>`
 
 ## 4. Coverage map
 
-| Checklist ID | Built in | Tested by |
-|---|---|---|
-| C1 | `<module/step>` | `<planned tests>` |
-| C2 | `<module/step>` | `<planned tests>` |
+| Checklist ID | Built in module | Containing large step | Tested by |
+|---|---|---|---|
+| C1 | `<module>` | `<large step>` | `<planned tests>` |
+| C2 | `<module>` | `<large step>` | `<planned tests>` |
 
 Gaps / surfaced issues (must be empty to finalize): `<none or unresolved items>`
 
 ## 5. Serial step flow
 
-Step N completes before step N+1 begins.
+Large steps only appear in this flow. Step N completes before step N+1 begins. Modules and small changes do not receive their own cycle; they remain ordered tasks inside the owning product lane.
 
-| Order | Step | Depends on | Completion evidence |
-|---:|---|---|---|
-| 1 | `<step>` | `<none>` | `<evidence>` |
+| Order | Large step and feature | Included modules and serial tasks | Depends on | Completion evidence |
+|---:|---|---|---|---|
+| 1 | `<S1: feature or deliverable>` | `<multiple modules and ordered implementation changes>` | `<none>` | `<evidence>` |
+
+### Global lane topology
+
+Use stable step-scoped lane IDs. Role slots are not lane IDs. Show the complete serial spine and every branch-and-join point that actually exists. Pool size 1 is a direct lane and must not be drawn as a parallel split.
+
+```text
+<singleton example: S1.P -> S1.R1 -> S1.JR -> S1.CA -> S1.A1 -> S1.JA -> S1.D1 -> S1.JT -> S1.DONE -> S2.P>
+<parallel example: S2.P -> S2.SR -> {S2.R1, S2.R2} -> S2.JR -> S2.CA -> S2.SA -> {S2.A1, S2.A2} -> S2.JA -> S2.ST -> {S2.D1, S2.D2} -> S2.JT -> S2.DONE>
+```
+
+| Large step | Product lane and bundled modules | Review lane(s) -> triage | Author lane(s) -> integration | Test lane(s) -> triage | Failure route | Unlocks |
+|---|---|---|---|---|---|---|
+| `<S1>` | `<S1.P: coherent feature plus included modules>` | `<R1 -> JR when size 1; SR -> {R*} -> JR when size 2-3>` | `<A1 -> JA when size 1; SA -> {A*} -> JA with serial merge when size 2-3>` | `<D1 -> JT when size 1; ST -> {D*} -> JT when size 2-3>` | `<return lane and repeated triage/gap lanes>` | `<next large-step product lane>` |
 
 ## 6. Per-step execution spec
 
 ### Step `<N>`: `<title>`
 
+- Step class: `large step`
+- Coherent feature or deliverable: `<meaningful independently testable behavior delivered by this entire cycle>`
+- Included modules: `<multiple related implementation modules>`
+- Included serial tasks: `<ordered small implementation changes completed by the singular coder across those modules>`
+- Why grouped by coherence: `<why these modules form one feature and belong in one QA cycle>`
+- Why full QA is justified: `<integration or risk boundary that makes this a meaningful step>`
+- Granularity boundary: modules and small changes do not receive their own cycle; `<what would be independent enough to become another large step>`
 - Covers: `<coverage IDs>`
 - Delivers: `<specific outcome>`
 - Depends on: `<prior steps>`
@@ -75,69 +104,120 @@ Step N completes before step N+1 begins.
 - Harness run root and lane ID: `<run root and lane>`
 - Manager-authored step spec: `<path>`
 - Shared resources and ownership: `<manager-assigned resources or none>`
+- Fixed conceptual split authority: `<skill-decided slices; runtime may not re-partition>`
+- Smallest useful pool: `<selected review, author, and doer sizes and why each is needed; default 1 per function>`
+
+| Function | Pool size | Why this exact size | Topology |
+|---|---:|---|---|
+| Review | `<1-3>` | `<independent review slices or one coherent review>` | `<direct R1 when 1; SR -> R* -> JR when 2-3>` |
+| Test/document authoring | `<1-3>` | `<independent owned outputs or one coherent author task>` | `<direct A1 when 1; SA -> A* -> JA when 2-3>` |
+| Test execution | `<1-3>` | `<isolated test groups or one test run>` | `<direct D1 when 1; ST -> D* -> JT when 2-3>` |
+
+Pool size 1 is fully valid and has no parallel fan-out. Do not add a split gate for a singleton lane.
+
+**Explicit lane topology**
+
+```text
+<one product lane completes all included modules -> direct review lane or real review split -> review triage -> Checkpoint A -> direct author lane or real author split -> author integration -> direct test lane or real test split -> test triage -> repair or next large step>
+```
+
+| Lane ID | Agent role / wave | Concrete task | Starts after / base | Branch / worktree or run root | Ownership | Output / handoff | Join / merge target and order | Failure route |
+|---|---|---|---|---|---|---|---|---|
+| `<S1.P>` | `<coder-main / serial>` | `<coherent feature and bundled modules>` | `<prior large step and integration base>` | `<exact branch and worktree>` | `<concept and paths>` | `<reviewable commit/result>` | `<R1 directly when review size 1, otherwise S1.SR>` | `<fix here, then repeat selected review path to S1.JR>` |
+| `<S1.R1>` | `<reviewer-main / wave 1>` | `<review task>` | `<product tip directly when size 1, otherwise S1.SR>` | `<exact read-only context>` | `<concept; no writes>` | `<review path>` | `<S1.JR; no Git merge>` | `<finding returns through S1.JR to S1.P>` |
+| `<S1.A1>` | `<reviewer-main / wave 1>` | `<test or documentation task>` | `<Checkpoint-A tip directly when size 1, otherwise S1.SA>` | `<exact branch and worktree>` | `<concept and exact paths>` | `<commit/result>` | `<S1.JA -> product branch; only serial merge position when size 1>` | `<integration conflict returns to S1.A1 or singular integrator>` |
+| `<S1.D1>` | `<doer-main / wave 1>` | `<test execution task>` | `<integrated candidate tip directly when size 1, otherwise S1.ST>` | `<exact validation worktree and isolated runtime>` | `<test IDs and isolated resources>` | `<test evidence>` | `<S1.JT; result handoff only>` | `<failing IDs return through S1.JT to S1.P>` |
+
+The graph and manifest are authoritative. Every lane in the graph has one manifest row. Reviewer, author, and doer assignment tables below use these full lane IDs and may not introduce undeclared lanes. Triage and integration gates name the direct singleton handoff or, for actual fan-out, who waits, what is combined, the serial Git merge order, and the only permitted next or repair path.
 
 **Loop 1 - static review until Checkpoint A**
 
-1. The orchestrator writes or updates the step spec and exact ownership map.
-2. Singular coder-main writes or fixes production code.
-3. Reviewer-main fans out over these disjoint slices:
+1. The orchestrator writes or updates the step spec and exact ownership overlay.
+2. Singular coder-main completes every included module and ordered small change, then publishes one coherent feature tip.
+3. Reviewer-main uses the selected pool size. Size 1 reviews directly; sizes 2 or 3 fan out over named disjoint slices:
 
-| Reviewer slot/wave | Conceptual slice | Output path |
+| Reviewer lane ID / wave | Conceptual slice | Output path |
 |---|---|---|
-| R1 | `<slice>` | `<lane RESULT.json or evidence path>` |
+| `<S1.R1 / wave 1>` | `<slice>` | `<lane RESULT.json or evidence path>` |
 
-4. The orchestrator waits for all reviewer outputs, merges and de-duplicates findings, then performs one triage.
-5. Functional defects return to coder-main. Extraneous findings go to the out-of-scope ledger.
+4. For size 1, the orchestrator receives the result directly. For sizes 2 or 3, it waits for all outputs and merges and de-duplicates them. It then performs one triage.
+5. Functional defects on realistic, non-trivial paths return to coder-main. Speculative, stylistic, negligible, or invented-complexity findings go to the out-of-scope ledger.
 6. Repeat until only extraneous findings remain, then record permanent Checkpoint A for this step.
 
 **Test and documentation authoring after Checkpoint A**
 
-Parallelize only manager-assigned disjoint files or conceptual slices.
+Use the selected pool size. Size 1 is a direct author lane without a split. Use sizes 2 or 3 only for fixed non-overlapping concepts and paths. Exact owned paths prevent collisions but never define or replace the conceptual split. Include documentation only when the reference plan requires it.
 
-| Author slot/wave | Kind | Assigned slice | Exact owned paths | Planned output |
+| Author lane ID / wave | Kind | Assigned slice | Exact owned paths | Planned output |
 |---|---|---|---|---|
-| R1 | `<unit / smoke / documentation>` | `<slice>` | `<paths>` | `<tests or document>` |
+| `<S1.A1 / wave 1>` | `<unit / smoke / documentation>` | `<slice>` | `<paths>` | `<tests or document>` |
 
 The orchestrator integrates author commits serially and resolves shared-file work with one writer.
 
 **Loop 2 - test until green; no ordinary static review**
 
-| Doer slot/wave | Test slice | Isolated writable state | Planned test IDs |
+| Doer lane ID / wave | Test slice | Isolated writable state | Planned test IDs |
 |---|---|---|---|
-| D1 | `<slice>` | `<temp/runtime path>` | `<IDs assigned at execution>` |
+| `<S1.D1 / wave 1>` | `<slice>` | `<temp/runtime path>` | `<IDs assigned at execution>` |
 
-1. Doers run the current gap set concurrently by wave.
-2. The orchestrator merges results; reviewer-main classifies them; the orchestrator triages once.
+1. With size 1, one doer runs the gap set directly. With sizes 2 or 3, doers run isolated gap slices concurrently by wave.
+2. The orchestrator receives a singleton result directly or merges multi-doer results; reviewer-main classifies them; the orchestrator triages once.
 3. A fix records the exact failing test IDs it targets.
 4. Rerun only still-failing tests, failed unit tests, and new tests implicated by that change.
-5. On green or only extraneous findings, mark the step complete.
+5. Passed test IDs remain locked in the persistent passed registry during the loop.
+6. Ordinary static review remains permanently closed after Checkpoint A.
+7. On green or only extraneous findings, mark the step complete.
 
 **Current Portable Harness binding**
 
 - Worker launch mechanism: `<external mechanism; do not claim the harness launches>`
+- Harness execution checkout: `stable-general-harness-runner` at `<commit>` through the fail-closed stable runner launcher
+- Candidate checkout: `plans/general-coding-harness/runtime/firmware-v2/worktrees/harness-candidate/` at `<base commit/branch>`
 - Run glob coverage: `<glob>`
 - Lane `.agent-workspace`: `<path>`
 - Checkpoint: `<PARALLEL_CHECKPOINT.md path>`
 - Result: `<RESULT.json path and orchestrator validation fields>`
 - Manager signals: `<paths/kinds or none>`
-- Native wait command: `<watch command>`
-- Completion event and acknowledgement: `<top-level event ID handling>`
+- Preflight scan: `python -m orchestrator_harness --config <fresh config> scan --no-write`
+- Diagnostic watcher: `evaluator_enabled: false`; `<poll/start/stop commands and fresh runtime paths>`
+- Native wait command: `python -m orchestrator_harness --config <fresh config> watch --until-actionable --timeout <seconds> --manager-session-id <session ID> --manager-invocation-id <invocation ID>`
+- Completion event and acknowledgement: handle the native top-level `event_id`, publish and verify the response, then run `python -m orchestrator_harness --config <fresh config> ack --event-id <native event ID>`
 - Shutdown/repair boundary: `<safe procedure>`
 
 ## 7. Final phase
 
-- **C0:** Spawn fresh final-reviewer pool: `<agent and size>`.
-- **C1:** Final-reviewers author the final unit, smoke, and documentation checks over disjoint slices:
+### Final and acceptance lane topology
+
+Show C0-C4 as explicit lanes and gates. C3 must be preplanned rather than delegated as an unspecified future decomposition.
+
+```text
+<direct singleton lanes or justified split pools for F.C0-F.C2 -> F.C3.O controlling serialized F.C3.P* plus only justified F.C3.A*/D* -> F.C3.M -> F.C3.SD -> pass or F.C4 repair>
+```
+
+| Lane ID | Agent | Concrete task | Starts after / base | Branch / worktree or run root | Output | Join / merge target | Failure route |
+|---|---|---|---|---|---|---|---|
+| `<F.C3.O>` | `<candidate orchestrator>` | `<execute the predefined acceptance topology>` | `<candidate gate>` | `<isolated candidate root>` | `<accepted target and evidence>` | `<F.C3.SD>` | `<ordinary failure route or watcher abort>` |
+| `<F.C3.W>` | `<isolated watcher>` | `<read-only invariant observation>` | `<candidate process manifest>` | `<outside read-only evidence root>` | `<watcher report or critical finding>` | `<outside supervisor only>` | `<exact whole-test abort and exit>` |
+| `<F.C3.P1>` | `<target production worker>` | `<first serialized target task>` | `<recorded target base>` | `<exact target branch/worktree>` | `<validated result and commit>` | `<next production lane or F.C3.M>` | `<candidate orchestrator repair/retry>` |
+| `<F.C3.M>` | `<merge worker>` | `<serially merge accepted target commits and run merge checks>` | `<all required target lanes>` | `<exact merge branch/worktree>` | `<integrated target commit>` | `<F.C3.SD>` | `<ordinary candidate merge repair>` |
+
+- **C0:** Spawn a fresh final-reviewer invocation/pool: `<agent and size; new context, not a reused build-phase reviewer invocation>`.
+- **C1:** Give the final-reviewer the prewritten final/acceptance spec and finished product. Record `<no spec change / genuinely required tweak and reason>`. Final-reviewers author the complete final unit and smoke set, plus only reference-required documentation checks, over fixed conceptual slices:
+- **Final-pool cardinality:** `<size 1 direct lanes with no split, or concrete independent slices justifying size 2-3>`.
 
 | Final-reviewer slot/wave | Slice | Exact owned paths/output |
 |---|---|---|
-| FR1 | `<slice>` | `<paths>` |
+| `<F.C0.FR1 / wave 1>` | `<slice>` | `<paths>` |
 
-- **C2 - final test loop:** doer pool runs gap tests -> merge -> review -> one triage -> singular fix; repeat until pass.
-- **C3 - practical test:** `<real end-to-end scenario, external supervisor, authority transition, and pass evidence>`.
+- **C2 - final test loop:** doer pool runs gap tests -> merge -> reviewer classification -> one orchestrator triage -> singular fix -> gap-only rerun; repeat until pass with no static review.
+- **Executor self-check decision:** `<for every expensive custom runner/per-check process-evidence selection: recordability preflight, exact fields verified, disposable/local-fake boundary, prohibited real side effects, and same-lane correction route; otherwise “not applicable” with reason>`.
+- **Pooled process-environment decision:** `<fixture/mock/runner/executor-environment-only failures are collected as one classified batch and cause one selection rerun; candidate/contract/oracle/expected-behavior/coverage finding uses material route; administrative evidence correction with complete raw record resumes in place>`.
+- **Pooled finding disposition:** `<every review, selected test set, and observer completes its assigned surface, reports the complete set to one triage gate, then one bounded repair batch follows; only exact wrong-resource/unauthorized-operation, live-process-containment, or irreversible-evidence-integrity risk stops immediately>`.
+- **Operational-failure isolation:** `<test setup/fixture/runner/watcher/report/process/evidence-support defects are corrected in place or mark only affected work incomplete; they never block/invalidate/relock/rerun a product gate unless exact evidence makes the product pass/fail result indeterminate>`.
+- **C3 - practical test:** doer-main launches `<real end-to-end scenario, external supervisor, authority transition, and pass evidence>`.
   - Pass -> section 8 safeguard.
   - Fail -> C4.
-- **C4 - nested static-audit loop:** final practical failure -> reviewer audit -> one orchestrator plan -> singular coder fix -> nested static audit until clean -> new tests -> doer run -> review -> rerun C3. This is the only post-Checkpoint-A static-review revival.
+- **C4 - nested static-audit loop:** final practical failure -> reviewer audit -> one orchestrator plan -> singular coder fix -> reintroduced nested static audit until clean -> new regression tests -> doer run -> reviewer classification -> one triage. Failure returns to the top of C4; pass reruns C3. This is the only post-Checkpoint-A static-review revival and remains dormant during the ordinary build.
 
 ## 8. Safeguard
 
@@ -145,21 +225,35 @@ The orchestrator integrates author commits serially and resolves shared-file wor
 - After practical success, run the complete accumulated suite exactly once.
 - A regression returns its test IDs to the gap set and resumes the relevant loop.
 - Required firmware regression treatment: `<synthetic required; physical release rule>`
+- Completion summary: `<practical evidence, full-suite evidence when enabled, final artifacts, and out-of-scope ledger summary>`
 
 ## 9. Rules the runner applies
 
-- **Goal:** ship a working product efficiently; do not gold-plate.
-- **Triage:** functional realistic defect -> admit and fix. Speculative, stylistic, or negligible edge hardening -> record in out-of-scope ledger and drop. Reviewer recommends; orchestrator decides.
+- **Goal:** ship a working product efficiently; do not gold-plate, chase hypothetical rigor, or grow work merely to keep a loop alive.
+- **Triage:** broken behavior on a realistic, non-trivial path -> functional defect -> admit and fix. Speculative hardening, stylistic rigor, hypotheticals, invented complexity, or edge behavior already adequate for roughly 99.9% of real use -> extraneous -> record in out-of-scope ledger and drop. Reviewer recommends; orchestrator decides with a bias toward shipping.
 - **Scope policy:** `<policy>`
-- **Passed registry:** passed tests remain locked during loops. Rerun only the gap set and newly implicated tests until the final safeguard.
+- **Passed registry:** passed tests remain locked during loops. Each admitted fix records its targeted stable test IDs. Rerun only still-failing gap tests, failed unit tests, and tests newly implicated by that specific finding or change until the final safeguard.
 - **Gap scope:** `<change or all-failing>`
 - **Test-ID scheme:** `<stable scheme such as path::class::test>`
-- **Termination:** no iteration cap. Stop on success, `stall_threshold` no-progress iterations, same-signature failure, oscillation without net passed-set growth, only-extraneous churn, or unrecoverable error.
+- **Termination:** no iteration cap. Stop and report on success, `stall_threshold` consecutive no-progress iterations, identical same-signature failure across fix attempts, pass/fail oscillation without net passed-set growth, only-extraneous scope churn, or unrecoverable error.
 - **Planning:** one informed orchestrator makes all plans and decisions.
 - **Production coding:** one serial coder-main.
 - **Parallel authoring:** only disjoint test or documentation paths assigned by the orchestrator.
-- **Parallel execution:** at most three workers beside the orchestrator; excess slices use waves.
-- **Merge-then-triage:** every fan-out rejoins before one decision.
+- **Parallel execution:** pools may contain 1-3 workers. Size 1 is valid and preferred unless independent work justifies 2 or 3; excess slices use waves.
+- **Split authority:** the skill fixes every real fan-out by non-overlapping concepts at plan time; paths are only an ownership overlay and the runtime never re-partitions the concepts. Singleton lanes have no split gate.
+- **Lane topology:** every worker invocation has a stable lane ID, predecessor/start gate, branch or run root, output, triage or integration gate, merge target/order when applicable, and failure route. Role slots never stand in for lanes.
+- **Merge-then-triage:** every real fan-out rejoins before one decision.
+- **Singleton direct handoff:** a size-1 pool hands its result directly to the same triage or integration gate without a fake split or merge.
+- **Static-review closure:** Checkpoint A permanently closes ordinary per-large-step static review; only final C4 may revive it.
+- **Final safeguard:** after practical success, the complete accumulated suite runs exactly once when `final_full_verification` is true.
+- **Executor self-check:** before every expensive selected set relying on a custom runner or per-check child-process evidence, run a same-lane recordability preflight with disposable/local fakes and no real product, MCP, hardware, or external side effects. Verify a complete record: stable ID, inputs, process/worker creation identity, timing, command, outputs, and exit. Correct preflight or reconstructable reporting defects in place; if raw identity evidence is irrecoverable, rerun only that affected ID on the same lock. Record `not applicable` with reason when no custom inner-process evidence exists.
+- **Pooled process-environment correction:** when a selected run exposes only classified fixture, mock, runner, or executor-environment defects, correct the complete test-only batch before one rerun of that selection. Never rerun the broad selection after each individual setup/process correction. Product, contract, oracle, expected-behavior, or coverage findings use the material route; administrative correction with complete raw evidence resumes in place.
+- **Pooled finding disposition:** every review, selected test set, and observer/watch lane completes its assigned surface and supplies its complete finding set to one triage gate. Do not repair, restart review, or rerun after each non-safety finding. Permit immediate stop only on exact evidence that continued work risks an unauthorized/wrong-resource operation, loss of containment or cleanup of a live process, or irreversible corruption of evidence needed to judge later work. Name the exception owner, stop condition, preserved evidence, and post-gate pooled route.
+- **Operational-failure isolation:** a test setup, fixture, runner, watcher, report writer, process-supervision, evidence-collection, or other support-infrastructure defect never blocks, invalidates, relocks, or reruns a product gate merely because support code failed. Correct it in place when the result is still determinable. Otherwise mark only affected work `INCOMPLETE` or `INDETERMINATE`, preserve valid immutable product credit, and run only incomplete work in a fresh support attempt. Escalate only when exact evidence makes the product pass/fail result unknowable. A safety interlock may stop live operations but does not itself invalidate unrelated product credit.
+- **External-operation readiness:** before using scarce or irreversible external resources, decide whether a disposable/local rehearsal or another cheaper readiness check is proportionate. State what it verifies, what real side effects it forbids, what unlocks the real operation, and why the chosen check—or `not applicable`—is sufficient. A rehearsal never substitutes for real-operation evidence.
+- **Scoped lock-input domains:** record whole-document hashes for audit, but choose the smallest project-specific domains that may independently invalidate a gate. Do not use a document hash alone as a blanket reason to re-run unaffected gates.
+- **Gate dependency matrix:** list every gate and the lock-input domains it consumes.
+- **Governing-change classification:** record prior/new document hashes, changed requirement IDs and domains, invalidated gates, preserved evidence, and reasons. Invalidate only gates consuming a changed domain; use the **conservative fallback** when classification is uncertain.
 - **Current harness:** no scheduler, wrapper, automatic launcher, generic lock, or future coding contract may be assumed.
 - **Live-run discipline:** freeze code/config, use fresh epoch state, discover only through native wait, acknowledge only after handling, and repair only after safe shutdown.
 
@@ -168,6 +262,7 @@ The orchestrator integrates author commits serially and resolves shared-file wor
 | Artifact | Concrete path/pattern | Producer -> consumer | Publication/validation rule |
 |---|---|---|---|
 | Execution plan | `<path>` | planner skill -> orchestrator | immutable for epoch or versioned by orchestrator |
+| Lane topology and ownership manifests | `<paths>` | planner/orchestrator -> all lanes | stable IDs, graph/manifest agreement, branch bases, joins, and merge order validated before launch |
 | Step specs | `<path>` | orchestrator -> coder/reviewers | manager-authored before launch |
 | Static reviews | `<lane paths>` | reviewer-main -> orchestrator | merge and de-duplicate before triage |
 | Test/doc author results | `<lane paths>` | reviewer-main -> orchestrator | exact ownership checked before integration |
@@ -178,6 +273,8 @@ The orchestrator integrates author commits serially and resolves shared-file wor
 | Results | `<run>/.agent-workspace/RESULT.json` | workers -> orchestrator | orchestrator validates current contract |
 | Manager signals | `<run>/.agent-workspace/manager-signals/*.json` | worker -> orchestrator | valid current schema; native event handling |
 | Harness events | `<fresh runtime path>` | harness -> orchestrator | native wait and exact acknowledgement |
+| Final acceptance artifacts | `<paths>` | final-reviewer/doers -> orchestrator | acceptance spec, final tests, practical evidence, and final findings retained |
+| Completion summary | `<path>` | orchestrator -> user | includes pass evidence and out-of-scope ledger summary |
 
 ## 11. Config block
 
@@ -185,12 +282,26 @@ The orchestrator integrates author commits serially and resolves shared-file wor
 - Reviewer pool size and waves: `<skill decision>`
 - Doer pool size and waves: `<skill decision>`
 - Final-reviewer pool size and waves: `<skill decision>`
+- Conceptual split map: `<echo fixed per-stage splits from sections 6 and 7>`
+- Lane topology map: `<echo/reference the global graph, every per-step manifest, and final acceptance graph>`
+- Coverage checklist and map: `<echo/reference sections 2 and 4>`
+- Decomposition disposition: `<echo/reference section 3>`
 - `scope_policy`: `<value>`
 - `stall_threshold`: `<positive integer>`
 - `gap_scope`: `<change or all-failing>`
 - `final_full_verification`: `<true or false>`
+- Executor self-check decision: `<required recordability preflight and route, or not applicable with reason>`
+- Pooled process-environment correction policy: `<complete classified batch then one selection rerun>`
+- Pooled finding disposition: `<complete review/test/observer finding set -> one triage -> one bounded repair batch; named immediate-stop exception only>`
+- Operational-failure isolation: `<support defect continues in place or marks only affected work incomplete; product gate blocks only when pass/fail is indeterminate>`
+- External-operation readiness decision: `<chosen cheap readiness check and scope, or not applicable with reason>`
+- Scoped lock-input domains: `<project-chosen domains and fingerprint sources>`
+- Gate dependency matrix: `<gate -> consumed lock-input domains>`
+- Governing-change classification: `<append-only artifact path/schema and required fields>`
+- Conservative fallback: `<route used when change-domain classification is uncertain>`
 - Pass criteria: `<value>`
 - Test-ID scheme: `<value>`
+- File handoff paths: `<echo/reference section 10>`
 - Plan output path: `<path>`
 - Frozen harness path/commit: `<path and commit>`
 - Candidate path/commit: `<path and commit>`

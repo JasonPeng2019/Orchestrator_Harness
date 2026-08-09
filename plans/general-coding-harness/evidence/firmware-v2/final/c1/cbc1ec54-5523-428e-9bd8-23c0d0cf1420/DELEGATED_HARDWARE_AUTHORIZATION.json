@@ -1,0 +1,96 @@
+{
+  "schema_version": "delegated-hardware-authorization-v1",
+  "issuance_source": "goal.md Section 11 USER_HARDWARE_AUTHORIZATION_V1",
+  "canonical_user_scope_sha256": "571d7d36cd7242762f0bbea0f2c55b095c2b381c6270538285190097a6e50013",
+  "user_issued_scope": {
+    "allowed_action_classes": [
+      "probe_discovery_read",
+      "connect_setup",
+      "application_flash",
+      "reset",
+      "debug_halt_resume",
+      "memory_register_read",
+      "uart_session_io",
+      "ble_gatt_test",
+      "lora_ping_pong_test"
+    ],
+    "expires_at_utc": null,
+    "fixtures": ["STM-A", "STM-B", "NRF-A", "NRF-B"],
+    "limits": {
+      "application_flash": {
+        "application_regions_only": true,
+        "allow_bootloader_replace": false,
+        "allow_mass_erase": false,
+        "allow_protection_change": false,
+        "allow_target_unlock": false
+      },
+      "ble": {"max_tx_power_dbm": 0},
+      "lora": {
+        "bandwidth_hz": 125000,
+        "center_frequency_hz": 915000000,
+        "coding_rate_denominator": 5,
+        "max_campaign_minutes": 30,
+        "max_payload_bytes": 64,
+        "max_tx_airtime_ms_per_60s": 6000,
+        "max_tx_power_dbm": 10,
+        "spreading_factor_max": 10,
+        "spreading_factor_min": 7
+      },
+      "uart": {"max_write_bytes_per_call": 256}
+    },
+    "prohibited_action_classes": [
+      "bootloader_replace",
+      "mass_erase",
+      "protection_change",
+      "target_unlock",
+      "destructive_recovery"
+    ],
+    "schema_version": "user-hardware-authorization-v1"
+  },
+  "derived_bindings": {
+    "c1_lock_id": "cbc1ec54-5523-428e-9bd8-23c0d0cf1420",
+    "operative_goal_sha256": "0815f54b6f8767fe1e7abbe4c43d307c34562e63203917c9582afa3122b0696f",
+    "stable_fixtures": {
+      "STM-A": {"probe_uid": "066FFF514988525067233337", "target": "STM32L476RG", "profile": "stm-a-l476"},
+      "STM-B": {"probe_uid": "0668FF514988525067213913", "target": "STM32L476RG", "profile": "stm-b-l476"},
+      "NRF-A": {"probe_uid": "683710208", "target": "nRF52840", "profile": "nrf-a-52840"},
+      "NRF-B": {"probe_uid": "683854191", "target": "nRF52840", "profile": "nrf-b-52840"}
+    },
+    "destructive_exclusions": [
+      "bootloader_replace",
+      "mass_erase",
+      "protection_change",
+      "target_unlock",
+      "destructive_recovery"
+    ],
+    "rf_limits": {
+      "ble": {"max_tx_power_dbm": 0},
+      "lora": {
+        "bandwidth_hz": 125000,
+        "center_frequency_hz": 915000000,
+        "coding_rate_denominator": 5,
+        "max_campaign_minutes": 30,
+        "max_payload_bytes": 64,
+        "max_tx_airtime_ms_per_60s": 6000,
+        "max_tx_power_dbm": 10,
+        "spreading_factor_max": 10,
+        "spreading_factor_min": 7
+      }
+    },
+    "mcp_server_pin": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\cbc1ec54-5523-428e-9bd8-23c0d0cf1420\\MCP_SERVER_PIN.json",
+      "sha256": "55c87106de29a79d2e2e39e13892ac671861cadd20eeefe511d81ce2458b8740"
+    },
+    "mcp_method_policy": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\final\\c1\\cbc1ec54-5523-428e-9bd8-23c0d0cf1420\\MCP_METHOD_POLICY.json",
+      "sha256": "cb8ceab79aed3cd4703868455c25072649ece64da55ca3268e488aa72ab32e65"
+    },
+    "governing_documents": {
+      "goal": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\goal.md", "sha256": "0815f54b6f8767fe1e7abbe4c43d307c34562e63203917c9582afa3122b0696f"},
+      "generalization_spec": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\active_docs\\GENERALIZATION_SPEC_2.md", "sha256": "e1dddca123779203814e978bb2bd3c5a2aa909546d52795d4cb5ad495a5a30b3"},
+      "implementation_roadmap": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\active_docs\\IMPLEMENTATION_ROADMAP_2.md", "sha256": "161cbe266804cc710a722a8ca06989c77d58e9a7acfc9db0437fc165855d3fe6"},
+      "execution_plan": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\EXECUTION_PLAN_2.md", "sha256": "3775ae7ca694951362223cea3c3571fce6d1c6cd9e3bcc3dfd0435e4d87015b7"},
+      "execution_readiness": {"path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\active_docs\\EXECUTION_READINESS_2.md", "sha256": "c56af934fbe87ffbf98049d3a0565874e6fb04d4caefe1e6e81b289ca71cd05b"}
+    }
+  }
+}

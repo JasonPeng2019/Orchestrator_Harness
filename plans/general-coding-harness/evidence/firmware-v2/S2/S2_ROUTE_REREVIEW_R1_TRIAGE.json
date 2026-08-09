@@ -1,0 +1,36 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "findings_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\evidence\\firmware-v2\\S2\\S2_ROUTE_REREVIEW_R1_FINDINGS_e268377.json",
+  "findings_sha256": "27ecf01ee881ff4f280a1c9c197b8187722fc29b5318c483244293cae683b687",
+  "decisions": [
+    {
+      "id": "S2-R1-003",
+      "decision": "ACCEPT",
+      "rationale": "The new attribution structure still accepts an arbitrary behavior string, any existing pinned path, and six assertion-only excluded:true files. Those values are independent of the actual raw failure, so the exceptional fallback remains an attribution bypass. A narrow computed witness and category-specific observed facts are necessary and contained.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Hash-bind the exact raw failure signature to immutable pinned source bytes plus a closed reviewed match predicate, and require each excluded category to cite a hash-bound observed fact whose closed category-specific predicate is validated against the same call."
+    },
+    {
+      "id": "S2-R1-004",
+      "decision": "ACCEPT",
+      "rationale": "Self-reported PASS artifacts under the broad broker root do not prove C3-HARNESS launched or completed the assigned substitute. Binding them to an attempt-confined path and existing exact controller, launch, worker-result, assignment, and predecessor identities closes only the exceptional path and preserves NOT_CERTIFIED.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Require an attempt-confined C3-HARNESS assignment/execution/result subtree and exact hash-bound controller launch and worker completion identities; accept substitute credit only when the exact assigned worker result is PASS."
+    },
+    {
+      "id": "S2-R1-005",
+      "decision": "ACCEPT",
+      "rationale": "The immutable pinned server returns response templates, not literal accepted values. Exact equality forces placeholder replay and blocks every valid choice or research continuation. The governing decision explicitly requires the exact response key set while values come from locked local authority or official-source evidence and receive separate O authorization. A narrow template-aware validator restores the specified route without widening keys.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Retain the predecessor's exact continuation key set and choice/research constraints, then admit only separately signed concrete values that match those keys and exact returned choices or hash-bound locked official-source evidence."
+    },
+    {
+      "id": "S2-R1-006",
+      "decision": "ACCEPT",
+      "rationale": "The controller's sole closed terminal artifact uses terminal_state, while limitation admission reads state. This deterministic producer-consumer mismatch makes every genuine authorized limitation unrecordable. The one-field schema alignment is low risk and clearly necessary.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Validate the exact firmware-session-terminal/v1 producer schema and read terminal_state as ABORTED or CLOSED, preserving session ID, create-once reference, cleanup, and process checks."
+    }
+  ]
+}

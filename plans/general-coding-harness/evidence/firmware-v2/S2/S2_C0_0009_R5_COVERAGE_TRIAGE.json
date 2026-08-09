@@ -1,0 +1,22 @@
+{
+  "schema": "orchestrator-review-triage/v1",
+  "owner": "ROOT-IM",
+  "candidate_commit": "21aeadc108e4666f18e00f8ad424fa8ec55ff891",
+  "findings_path": "plans/general-coding-harness/runtime/firmware-v2/implementation/lanes/S2.R5-C0-0009/.agent-workspace/FINDINGS.json",
+  "findings_sha256": "8e83919f8ce9f8dab19bcc4f2f0dc88490379d95a3eba62e1edf1c7bc8d8a248",
+  "result_sha256": "83734e1b90ff5e9d1106849a90f2a77e43a0be9ecce53c902d32436ba613388d",
+  "decisions": [
+    {
+      "id": "F-S2-R5-0009-001",
+      "decision": "ACCEPT",
+      "classification": "worth_fixing",
+      "rationale": "The production repair is green, but neither changed predicate has direct regression coverage. Five assertions inside the existing host-only scope-effect test protect an RF authorization boundary at negligible complexity and regression risk; this benefit clearly exceeds the test-only cost.",
+      "conclusion": "PROBLEM_OUTWEIGHS_FIX_RISK",
+      "smallest_fix": "Extend only test_scope_effect_is_closed_and_independently_limited with LoRa 7..10 and 8..10 ALLOW cases plus 6..10, 7..11, and 10..9 rejection cases."
+    }
+  ],
+  "production_change_requested": false,
+  "tests_run": false,
+  "mcp_accessed": false,
+  "hardware_accessed": false
+}

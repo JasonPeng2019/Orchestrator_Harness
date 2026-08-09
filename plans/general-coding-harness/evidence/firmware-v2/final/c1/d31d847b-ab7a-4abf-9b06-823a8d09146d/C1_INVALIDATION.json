@@ -1,0 +1,22 @@
+{
+  "schema": "firmware-v2-c1-invalidation/v1",
+  "owner": "ROOT-IM",
+  "recorded_at_utc": "2026-08-05T05:08:00Z",
+  "lock_id": "d31d847b-ab7a-4abf-9b06-823a8d09146d",
+  "lock": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c1/d31d847b-ab7a-4abf-9b06-823a8d09146d/C1_LOCK.json",
+    "sha256": "d403facd1bdddbe98c58aca15bef683f309cf300ab41a9d3054eea65a704db23"
+  },
+  "trigger": {
+    "path": "plans/general-coding-harness/evidence/firmware-v2/final/c2/attempt-0003/ROOT_PRE_C3_ADMISSION_GAP.json",
+    "finding_id": "F-PRE-C3-002"
+  },
+  "reason": "The locked candidate cannot start C3 with the correctly distinct C1-local operative policy and candidate-source policy provenance inputs. Repair changes the C1-locked candidate c3_harness.py input.",
+  "status": "INVALIDATED_BEFORE_C3",
+  "hardware_or_mcp_accessed": false,
+  "replacement_requirements": [
+    "fresh C0 on the repaired exact candidate",
+    "fresh opaque C1 lock",
+    "dependency-invalidated C2 before C3"
+  ]
+}

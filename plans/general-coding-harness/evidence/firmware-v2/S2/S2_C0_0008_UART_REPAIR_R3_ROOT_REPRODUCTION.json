@@ -1,0 +1,24 @@
+{
+  "schema": "firmware-v2-root-repair-review-reproduction/v1",
+  "owner": "ROOT-IM",
+  "recorded_utc": "2026-08-04T19:43:58.2184825Z",
+  "reviewed_commit": "d4d5e6aee0f118c7d9a0c5f274b15fd3a5a0af93",
+  "cases": [
+    {
+      "finding_id": "S2-R3-C0-0008-001",
+      "input": "write_serial with 256 ASCII text bytes and append_newline true",
+      "observed": "ALLOW",
+      "actual_transmitted_bytes": 257
+    },
+    {
+      "finding_id": "S2-R3-C0-0008-002",
+      "input": "read_serial with read_seconds equal to 10**1000",
+      "observed": "OverflowError: int too large to convert to float",
+      "expected": "AdmissionError"
+    }
+  ],
+  "tests_run": false,
+  "mcp_launched": false,
+  "hardware_accessed": false,
+  "decision": "BOTH_REPRODUCED_ACCEPTED"
+}

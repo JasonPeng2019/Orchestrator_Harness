@@ -1,0 +1,26 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "S2.R1",
+  "worker_invocation_id": "s2-r1-001",
+  "branch": "firmware/v2-s2-r1",
+  "commit": "66e053a3822a7769590266f977c266f33a520ed5",
+  "outcome": "FAIL",
+  "summary": "One residual raw-result provenance finding remains at the final targeted repaired tip; see REREVIEW_2.md and FINDINGS.json.",
+  "checks": [
+    {
+      "name": "final targeted candidate identity and tracked cleanliness",
+      "command": "git status --short --branch; git rev-parse HEAD",
+      "outcome": "PASS"
+    },
+    {
+      "name": "read-memory signature and bound comparison",
+      "command": "read-only policy versus pinned source comparison",
+      "outcome": "PASS"
+    },
+    {
+      "name": "pinned server, canonical operation, and child isolation review",
+      "command": "read-only diff and source inspection",
+      "outcome": "FAIL"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema": "firmware-v2-c2-root-retry-result-triage/v1",
+  "owner": "ROOT-IM",
+  "attempt": "attempt-0006",
+  "retry_suffix": "retry-005",
+  "triaged_at_utc": "2026-08-05T13:41:58Z",
+  "artifacts": {
+    "result_sha256": "b929d17a63f9d00035efebcc74b43b29cc36f6e7fa86a7b8a2e5cb7e14333051",
+    "test_report_sha256": "ab62b4eca7f958013e8707c939dd89232db5549ababcc96965683f45eb6a20bc",
+    "findings_sha256": "0a1b2390547dfc8d05413e266285c99c6db2482234f38fcac17ac7baba277214",
+    "closed_retry_jsonl_sha256": "ca8498875d64662dd68153a8d611f48c0d7943b22dbc7eef15fe65bf66899101",
+    "closed_retry_stderr_sha256": "4d2f7c7749ea6aa091769a5b54f9769bc6ca014020b688298f71496314079279",
+    "closed_retry_last_message_sha256": "f34d5cfa2ddf4b23658a3222f068ac9db9bc63bfb23b7baca7b568bac28a554f",
+    "closed_status_sha256": "71e5a0bbd9772ebb071a293a9de9a912d099568644f7e3705d250fb962209cf9",
+    "process_metadata_sha256": null
+  },
+  "facts": {
+    "corrected_enumeration_exit_code": 0,
+    "controller_rows": 1,
+    "controller_pid": 195672,
+    "claim_creation_identity": "windows-filetime:134304104368864252",
+    "cim_datetime_creation_identity": "windows-filetime:134304104368864250",
+    "filetime_tick_delta": 2,
+    "time_delta_nanoseconds": 200,
+    "exact_identity_proof_passed": false,
+    "verifier_spawned": false,
+    "process_metadata_created": false,
+    "lock_assertions_began": false,
+    "failure_stage": "PRE_SPAWN_EXACT_IDENTITY_PROOF"
+  },
+  "accepted_criticism": {
+    "id": "C2-D1-CIM-PRECISION-001",
+    "description": "The direct System.DateTime conversion fixed the process-enumeration exception but CIM rounded the controller creation time by two 100-nanosecond FILETIME ticks. The required exact PID-plus-creation equality correctly rejected the retry before spawn; relaxing or rounding equality would weaken PID-reuse safety.",
+    "candidate_finding": false,
+    "locked_input_change": false,
+    "bounded_correction": "Keep exact equality and obtain the controller creation FILETIME through the same native OpenProcess/GetProcessTimes mechanism already proven by the supervisor. CIM remains the source only for PID, parent PID, name, and command line."
+  },
+  "root_reproduction": {
+    "system_diagnostics_targeted_start_time_filetime": 134304104368864252,
+    "claim_filetime": 134304104368864252,
+    "targeted_start_time_matches_claim": true,
+    "selected_implementation": "ctypes OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION) plus GetProcessTimes",
+    "reason": "The native helper is already used by the retry supervisor and preserves full FILETIME precision."
+  },
+  "root_checks": {
+    "prior_lock_failures_preserved": 6,
+    "green_ids_rerun": 0,
+    "report_referenced_hashes_valid": "59/59",
+    "result_check_key_failures": 0,
+    "candidate_and_server_clean": true,
+    "lane_clean": true,
+    "claims_released_after_controller_exit": true,
+    "resource_claim_file_count": 0,
+    "surviving_test_processes": 0,
+    "mcp_launched": false,
+    "hardware_accessed": false
+  },
+  "decision": "PRESERVE_NO_SPAWN_PRECISION_REJECTION_AND_ALLOW_ONE_NATIVE_IDENTITY_CORRECTION"
+}

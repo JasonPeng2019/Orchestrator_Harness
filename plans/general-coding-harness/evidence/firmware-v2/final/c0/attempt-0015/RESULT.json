@@ -1,0 +1,41 @@
+{
+  "schema": "orchestrator-lane-result/v1",
+  "lane_id": "F.C0.FR1",
+  "worker_invocation_id": "c0-fr1-015",
+  "branch": "firmware/v2-c0-final-review-0015",
+  "commit": "2877ec1385b947a6ed72bbd7c95ac7a28d169782",
+  "outcome": "PASS",
+  "summary": "NO CANDIDATE GAP / READY",
+  "checks": [
+    {
+      "name": "governing inputs and candidate identity",
+      "outcome": "PASS",
+      "summary": "All five governing SHA-256 locks, branch, and exact candidate tip matched."
+    },
+    {
+      "name": "C3 policy binding repair",
+      "outcome": "PASS",
+      "summary": "Reviewed the b5753eb-to-tip repair and fail-closed startup behavior: operative C1-local policy remains bound to delegated authorization and AcceptanceBroker; candidate source policy is independently path/hash-bound, non-linked, and semantically equal."
+    },
+    {
+      "name": "affected surface and retained evidence",
+      "outcome": "PASS",
+      "summary": "Completed the baseline-to-tip C1-C73 and critical-control-path review, including compatibility/isolation, authorization, retained sessions, lifecycle, provenance, replay, limitation, cleanup, documentation, priority tier, and protected-credit continuity. CP01-02, CP04, CP05-07, and limitation evidence were inspected and remain valid for unchanged mapped paths."
+    },
+    {
+      "name": "focused corrected evidence",
+      "outcome": "PASS",
+      "summary": "The supplied corrected one-shot constructor report matches its SHA-256 pin, exact tip, zero skips/xfails, and no MCP or hardware use."
+    },
+    {
+      "name": "runtime execution",
+      "outcome": "NOT_RUN",
+      "summary": "Not run by assignment; this lane performed read-only inspection and did not launch tests, MCP, Codex children, or hardware."
+    },
+    {
+      "name": "findings gate",
+      "outcome": "PASS",
+      "summary": "Closed exact-identity reviewer findings artifact contains an empty finding set."
+    }
+  ]
+}

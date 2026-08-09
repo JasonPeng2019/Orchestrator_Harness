@@ -1,0 +1,20 @@
+{
+  "schema_version": "firmware-v2-toolchain-hashes-v1",
+  "arm_lock": {
+    "path": "Firmware/Firmware resources/fixture-and-toolchain/ARM_TOOLCHAIN_LOCK.json",
+    "bytes": 2573,
+    "sha256": "4578ded8834a404df8cdfa2eb1986c006cdfda122ea7872a40474ec376286c5b"
+  },
+  "ncs_lock": {
+    "path": "Firmware/Firmware resources/fixture-and-toolchain/NCS_V3_3_1_LOCK.json",
+    "bytes": 36540,
+    "sha256": "d4be18a5cfeb2c833606f6fbd91fc2d1836ffd0209a1ffa7ac19490ac892669c"
+  },
+  "locked_paths_checked": 13,
+  "locked_path_failures": 0,
+  "python_cache_policy": {
+    "historical_cache_reused": false,
+    "root": "plans/general-coding-harness/runtime/firmware-v2/pycache",
+    "rule": "Each implementation, test, and physical lane receives a new child directory."
+  }
+}

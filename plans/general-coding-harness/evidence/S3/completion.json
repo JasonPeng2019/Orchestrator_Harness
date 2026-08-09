@@ -1,0 +1,10 @@
+{
+  "step": "S3 Coordination and recovery",
+  "status": "pass",
+  "candidate_commit": "a5a330c",
+  "checkpoint_a": "closed after two focused repairs",
+  "focused_author_tests": "18 passed",
+  "product_regressions": "95 passed before review; 89 and 10 implicated tests passed after repairs",
+  "static": "Ruff and BasedPyright pass",
+  "frozen_checkout": "unchanged"
+}

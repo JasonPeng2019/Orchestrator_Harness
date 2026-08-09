@@ -1,0 +1,62 @@
+{
+  "schema": "firmware-v2-root-pre-c3-admission-gap/v1",
+  "owner": "ROOT-IM",
+  "recorded_at_utc": "2026-08-04T22:18:33Z",
+  "candidate_commit": "659dd03e2aa7159090c8e0e20123b1fec1749f90",
+  "admission_point": "after C2 root acceptance and before allocation of any C3 attempt",
+  "reproduction": {
+    "candidate_clean": true,
+    "hardware_or_mcp_accessed": false,
+    "c3_attempt_allocated": false,
+    "source_observations": [
+      {
+        "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/harness-candidate/firmware_acceptance/controller.py",
+        "sha256": "ab16026d6c63e9416d7462eb912acfc827f7e7b350974be1f6462a1761c08a5d",
+        "observation": "The executable main accepts one request/proposal/decision/authorization/result set and invokes one run_lifecycle call; retained session methods and topology validation are Python-only and no command accepts a C3 target assignment."
+      },
+      {
+        "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/harness-candidate/firmware_acceptance/kit.py",
+        "sha256": "481838a866b6fd6cc9428085150709fe470c7469c0f44a8445e6a0db88de80e6",
+        "observation": "Seed materialization and AUTHORIZED_SERVER_LIMITATION recording exist only as in-process methods; no executable C3 control-plane boundary exposes them."
+      },
+      {
+        "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/harness-candidate/orchestrator_harness/lane_controller.py",
+        "sha256": "7d8a462642c44973c741482aefb84e1eb65331bd043b004c3072f4467e4711ef",
+        "observation": "The generic coding-lane executable can launch a supplied invocation but does not validate an O-signed, attempt/topology/C1-bound C3 assignment or write the required C3 assignment/result lifecycle."
+      },
+      {
+        "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/harness-candidate/orchestrator_harness/operator_launch.py",
+        "sha256": "5872dd874c4dcefb8db88ee7d76aab94936f9928bed35ccb4964c137989972e5",
+        "observation": "The detached process launcher records a generic manager-owned process and is not a C3 target-assignment API."
+      },
+      {
+        "path": "plans/general-coding-harness/runtime/firmware-v2/worktrees/harness-candidate/firmware_acceptance/README.md",
+        "sha256": "748a7fbff530b6dc84cfe30824f007fdcaa09eeec28426366a0ef34edc64a285",
+        "observation": "The documented kit is a static S2 medium and does not document an executable C3 orchestration workflow."
+      }
+    ]
+  },
+  "finding": {
+    "id": "F-PRE-C3-001",
+    "classification": "FUNCTIONALITY_BREAKING",
+    "title": "Candidate lacks the executable C3-HARNESS assignment and lifecycle boundary required to run the final project",
+    "impact": "F.C3.O cannot submit a signed target assignment to the candidate and have the candidate exclusively launch, validate, observe, reap, and report exactly one target worker while retaining the physical MCP session. Starting C3 would either be impossible or require F.C3.O to bypass the system under test.",
+    "cost_risk_decision": "ACCEPTED_WORTH_FIXING",
+    "cost_risk_rationale": "The missing boundary is essential to the stated final acceptance topology. A localized executable facade over existing lane, topology, broker, and retained-session primitives has materially lower risk than bypassing the candidate or building an unrelated orchestration framework."
+  },
+  "classification_boundaries": {
+    "candidate_harness_gap": true,
+    "watcher_failure": false,
+    "orchestrator_or_worker_mistake": false,
+    "pinned_mcp_server_defect_or_incompatibility": false,
+    "authorized_server_limitation_applicable": false
+  },
+  "decision": "REOPEN_MINIMAL_C3_CONTROL_PLANE_PRODUCT_SLICE",
+  "required_route": [
+    "preserve and supersede the current C1 and C2 records",
+    "implement the minimal executable C3-HARNESS boundary through the stable implementation runner",
+    "run only dependency-invalidated review and tests",
+    "run a fresh C0, create a fresh C1, and run dependency-invalidated C2",
+    "allocate C3 only after those gates are green"
+  ]
+}

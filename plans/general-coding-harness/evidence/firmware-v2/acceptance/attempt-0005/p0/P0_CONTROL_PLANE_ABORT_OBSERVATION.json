@@ -1,0 +1,71 @@
+{
+  "schema": "firmware-c3-orchestrator-abort-observation/v1",
+  "attempt_id": "attempt-0005",
+  "owner": "F.C3.O",
+  "classification": "REPRODUCIBLE_CANDIDATE_RECOVERY_CRASH_WITH_BINDING_ABORT",
+  "earliest_invalidated_step": "P0_CONTROLLER_ADMISSION",
+  "state": {
+    "new_work_stopped": true,
+    "active_target_workers": 0,
+    "candidate_service_processes": 0,
+    "mutating_hardware_calls_dispatched": 0,
+    "mcp_processes_launched": 0,
+    "open_bootstrap_sessions": 0,
+    "candidate_owned_resource_claims_remaining": 1,
+    "unaccepted_assignment_worktrees_remaining": 1,
+    "board_state_mutated": false
+  },
+  "findings": [
+    {
+      "invariant": "C3_ATTEMPT_TARGET_LAYOUT",
+      "outcome": "PASS",
+      "detail": "The candidate materialized exactly singular target/ from the five locked read-only seed files; targets/target was absent."
+    },
+    {
+      "invariant": "C3_INITIAL_CONTROLLER_ADMISSION",
+      "outcome": "FAIL",
+      "detail": "The candidate persisted a direct-venv-redirector observation while the controller's transient state was LAUNCH_FAILED, immediately rejected the startup, and entered RECOVERY_REQUIRED. The same controller subsequently published RUNNING_CODEX but was never registered as an accepted assignment.",
+      "request_sha256": "4f71a583f242bf4c5118d7c3a0decb8458af8f1e0c4ed48a51384790403ffeb8",
+      "observation_sha256": "820af945826e08cff15ab7864bd646eafe57e5cc96865366deb47c62a743e42d",
+      "response_sha256": "da03699535193025ab6fe20ddc0769122e167437295253ea4d0a0ce82469c6b9"
+    },
+    {
+      "invariant": "C3_DETERMINISTIC_WATCHER_ORACLE",
+      "outcome": "EXPECTED_CONTAINMENT",
+      "detail": "The locked oracle correctly classified the persisted transient LAUNCH_FAILED observation as non-authentic; it therefore did not relabel that immutable observation as an authentic-status rejection.",
+      "evidence": {
+        "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\acceptance\\attempt-0005\\p0\\P0_WATCHER_ORACLE_CORRELATION_0001.json",
+        "sha256": "ae623c261d23a7c63b83b66e5ca94100d658a7d1c33148bff540882cce491ac1"
+      }
+    },
+    {
+      "invariant": "C3_RECOVERY_LIVENESS_AND_CREATE_ONCE_EVIDENCE",
+      "outcome": "FAIL",
+      "detail": "After the unregistered launcher exited, reap_recovery invoked the cleanup writer again. Because PRESTART_RECOVERY_RECONCILED.json already existed, create-once admission raised 'immutable artifact already exists' and crashed the only candidate service.",
+      "recovery_required_sha256": "6091e8ef1ef46f6568dc20c3f267173976c457fa86336d5cff99ed9b5ce8dd98",
+      "service_stderr_sha256": "8e8b1598c573b9b0c0ae69e26e203626503a99c2aebee17808cd1519fdc7cc9d",
+      "service_exit_sha256": "4bdc1bdc703e12d9532b7c6879631a3b42dfc5ad2d158439adf33e9ee1652288"
+    },
+    {
+      "invariant": "C3_EXACT_CLEANUP",
+      "outcome": "FAIL",
+      "detail": "All exact candidate uv/wrapper/service and controller/worker processes are absent, but the target-tests claim and unaccepted assignment worktree/branch remain because the candidate crashed before cleanup.",
+      "remaining_claim_sha256": "8cc4213dab77496100e8890eb05fc4217383249d4bb4341378e724e90ab5902a"
+    },
+    {
+      "invariant": "WATCHER_ABORT_SIGNAL",
+      "outcome": "BINDING_MALFORMED_SIGNAL",
+      "detail": "watcher/ABORT_REQUIRED.json appeared and is binding under the assignment, but its retained bytes are empty. ROOT bound that exact empty-file hash in ROOT_ABORT_REQUIRED.json.",
+      "watcher_abort_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "root_abort_sha256": "92f9fd04282fedb3150fc2328219b8a58a6680a084d3acf3220868b01f207db1"
+    },
+    {
+      "invariant": "SIGNED_CANDIDATE_SHUTDOWN",
+      "outcome": "REQUESTED_BUT_UNPROCESSABLE",
+      "detail": "F.C3.O submitted a fresh signed shutdown request after the binding abort. The only candidate service had already crashed, so no candidate response or C3_HARNESS_SHUTDOWN.json could be produced without impermissibly starting a second service or fabricating evidence.",
+      "request_sha256": "a13dc9d46c7075883b083090251d08c5b374c2b54253b4cffe59dd3fce257b98"
+    }
+  ],
+  "required_topology_action": "ROOT must preserve the attempt as a pre-P0 candidate failure. Normal P4 watcher-stop and sealing cannot honestly proceed because candidate-managed shutdown is absent and a second service is forbidden.",
+  "created_utc": "2026-08-05T15:14:18.1422111Z"
+}
