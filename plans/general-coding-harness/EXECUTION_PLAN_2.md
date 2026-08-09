@@ -36,11 +36,17 @@
   enforcement.
   - **Current execution point:** execution is user-paused for next-run preparation. Preflight and
     S1-S3 are green. S30's production repair, independent reviews, focused regression, and four-ID
-    execution are complete on joined tip `6649cf201ded9782c2cb3bc56983f4a560728ea8`; ROOT has not yet
-    archived/admitted it to reserved candidate `c6999d173c344b317a918df91619308fd9f93f63`.
+    execution are complete on joined tip `6649cf201ded9782c2cb3bc56983f4a560728ea8`. That tip has now
+    been git-merged into the candidate branch (`working/firmware/v2-candidate`) alongside the prior
+    candidate-only test-verification tip `64373c0c7f066082be7c1b73bf5bbe94b5204b1c`, producing merge
+    commit `27d7972` (pushed to origin). This merge is a git-level integration only — it performs the
+    "admit that exact tip" step below and nothing more. It does NOT satisfy, and must not be read as
+    having satisfied, any of: mandatory S4, mandatory S5, the shortest affected S4/S5 smoke, fresh
+    C0/C1, dependency-invalidated C2, or the host-only C3 rehearsal. All of those remain outstanding
+    and queued exactly as before.
     Topology/support preparation may update governing documents and the external support code only.
     On explicit resume, classify the governing diff by lock-input domain, preserve unchanged S30
-    credit, admit that exact tip, complete mandatory S4 and then mandatory S5, then run the shortest
+    credit, complete mandatory S4 and then mandatory S5, then run the shortest
     affected S4/S5 smoke, fresh C0/C1, dependency-invalidated C2, and the host-only C3 rehearsal. The pinned server remains immutable
     and unlaunched; C3/hardware stay locked until all prerequisites pass.
 - Gaps / surfaced issues: none

@@ -6,3 +6,7 @@
 	path = stable-general-harness-runner
 	url = https://github.com/JasonPeng2019/harness-single.git
 	branch = working/firmware/v2-candidate
+[submodule "post-conversion-harness-runner"]
+	path = post-conversion-harness-runner
+	url = https://github.com/JasonPeng2019/harness-single.git
+	branch = progress/v1.1
