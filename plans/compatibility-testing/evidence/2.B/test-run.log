@@ -1,0 +1,13 @@
+test_L10_fake_capability_adapter_contract (orchestrator_harness.tests.test_compat_capability_broker.CompatCapabilityBrokerTests.test_L10_fake_capability_adapter_contract) ... ok
+test_L1_request_construction_closed_shape_and_reason_codes (orchestrator_harness.tests.test_compat_capability_broker.CompatCapabilityBrokerTests.test_L1_request_construction_closed_shape_and_reason_codes) ... ok
+test_L2_snapshot_point_in_time_capture_and_immutability (orchestrator_harness.tests.test_compat_capability_broker.CompatCapabilityBrokerTests.test_L2_snapshot_point_in_time_capture_and_immutability) ... ok
+test_L3_mediated_approval_gate_admits_and_denies (orchestrator_harness.tests.test_compat_capability_broker.CompatCapabilityBrokerTests.test_L3_mediated_approval_gate_admits_and_denies) ... ok
+test_L4_bounded_single_use_grant_actual_broker_mechanism (orchestrator_harness.tests.test_compat_capability_broker.CompatCapabilityBrokerTests.test_L4_bounded_single_use_grant_actual_broker_mechanism) ... ok
+test_L5_result_cleanup_pipeline_and_private_material_fail_closed (orchestrator_harness.tests.test_compat_capability_broker.CompatCapabilityBrokerTests.test_L5_result_cleanup_pipeline_and_private_material_fail_closed) ... ok
+test_L6_A25_full_orchestration_end_to_end_and_no_authority_leak (orchestrator_harness.tests.test_compat_capability_broker.CompatCapabilityBrokerTests.test_L6_A25_full_orchestration_end_to_end_and_no_authority_leak) ... ok
+test_L7_fail_closed_paths_and_no_permit_leak (orchestrator_harness.tests.test_compat_capability_broker.CompatCapabilityBrokerTests.test_L7_fail_closed_paths_and_no_permit_leak) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.141s
+
+OK

@@ -1,0 +1,99 @@
+{
+  "schema": "m5-process-registry/v1",
+  "epoch": "20260802-m5-s1d-065143Z",
+  "created_utc": "2026-08-02T06:52:04.444367+00:00",
+  "root_manager": {
+    "pid": 192592,
+    "creation_utc": "2026-08-01T22:36:46.3275151Z"
+  },
+  "processes": [
+    {
+      "role": "native-harness-managed-owner",
+      "pid": 196184,
+      "parent_pid": 192208,
+      "creation_utc": "2026-08-02T06:52:51.4609650Z",
+      "command": "\"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\BYO-Firmware-MCP\\.venv\\Scripts\\python.exe\" -m orchestrator_harness --config multi-agent-logs\\orchestrator-harness\\20260802-m5-s1d-065143Z\\config.json watch --managed",
+      "allowed": true
+    },
+    {
+      "role": "native-harness-managed-child",
+      "pid": 162996,
+      "parent_pid": 196184,
+      "creation_utc": "2026-08-02T06:52:51.4738490Z",
+      "command": "\"C:\\Users\\Jason\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\"  -m orchestrator_harness --config multi-agent-logs\\orchestrator-harness\\20260802-m5-s1d-065143Z\\config.json watch --managed",
+      "allowed": true
+    },
+    {
+      "role": "native-diagnostic-watcher-launcher",
+      "pid": 168344,
+      "parent_pid": 196096,
+      "creation_utc": "2026-08-02T06:53:08.7705910Z",
+      "command": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\BYO-Firmware-MCP\\.venv\\Scripts\\python.exe -m harness_watcher_implementation --config harness_watcher\\20260802-m5-s1d-065143Z\\config.json serve --startup-token cae56a9d-ef0e-4562-8f6e-03522fb6796f",
+      "allowed": true
+    },
+    {
+      "role": "native-diagnostic-watcher",
+      "pid": 157736,
+      "parent_pid": 168344,
+      "creation_utc": "2026-08-02T06:53:08.8104090Z",
+      "command": "\"C:\\Users\\Jason\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\"  -m harness_watcher_implementation --config harness_watcher\\20260802-m5-s1d-065143Z\\config.json serve --startup-token cae56a9d-ef0e-4562-8f6e-03522fb6796f",
+      "allowed": true
+    },
+    {
+      "role": "external-controller-Atlas",
+      "pid": 186852,
+      "creation_utc": "2026-08-02T06:54:14.1478082Z",
+      "command": "documented run_persistent_lane_r9.ps1 controller",
+      "allowed": true
+    },
+    {
+      "role": "external-codex-worker-Atlas",
+      "pid": 132120,
+      "creation_utc": "2026-08-02T06:54:14.9797612Z",
+      "command": "codex exec resume 019fb877-1475-76c0-a137-2743580015de gpt-5.6-luna high default",
+      "allowed": true
+    },
+    {
+      "role": "external-controller-Boreal",
+      "pid": 10132,
+      "creation_utc": "2026-08-02T06:55:01.9713981Z",
+      "command": "documented run_persistent_lane_r9.ps1 controller",
+      "allowed": true
+    },
+    {
+      "role": "external-codex-worker-Boreal",
+      "pid": 189420,
+      "creation_utc": "2026-08-02T06:55:02.7296601Z",
+      "command": "codex exec resume 019fb877-1447-7693-92b1-f4bda04c6ecf gpt-5.6-luna high default",
+      "allowed": true
+    },
+    {
+      "role": "external-controller-Cygnus",
+      "pid": 191460,
+      "creation_utc": "2026-08-02T06:55:16.1145146Z",
+      "command": "documented run_persistent_lane_r9.ps1 controller",
+      "allowed": true
+    },
+    {
+      "role": "external-codex-worker-Cygnus",
+      "pid": 160624,
+      "creation_utc": "2026-08-02T06:55:16.8774037Z",
+      "command": "codex exec resume 019fb877-1199-79b1-a32e-34348178f111 gpt-5.6-luna high default",
+      "allowed": true
+    },
+    {
+      "role": "external-controller-Delta",
+      "pid": 191232,
+      "creation_utc": "2026-08-02T06:55:27.2213783Z",
+      "command": "documented run_persistent_lane_r9.ps1 controller",
+      "allowed": true
+    },
+    {
+      "role": "external-codex-worker-Delta",
+      "pid": 186864,
+      "creation_utc": "2026-08-02T06:55:27.9286502Z",
+      "command": "codex exec resume 019fb877-1441-7c92-84e2-cbb5bc422879 gpt-5.6-luna high default",
+      "allowed": true
+    }
+  ]
+}

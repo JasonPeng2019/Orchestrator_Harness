@@ -1,0 +1,11 @@
+{
+  "schema": "repair008-readiness-verdict/v1",
+  "epoch_id": "20260801-attention-r8-repair008-readiness",
+  "event_id": "repair008-readiness-event",
+  "deadline_utc": "2026-08-01T19:16:00.507796Z",
+  "classification": "BUSY_MANAGER_DELAY",
+  "deadline_lateness_seconds": 1.875128,
+  "cursor_drained": true,
+  "observation_errors": [],
+  "passed": true
+}

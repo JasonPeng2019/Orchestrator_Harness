@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .codex\\skills\\design-project-topology\\scripts\\validate_execution_plan.py plans\\general-coding-harness\\FULL-EXECUTION-SPEC_PLAN_2.md --mapping plans\\general-coding-harness\\SUBAGENT_ROLE_MODEL_MAPPING.json",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Prior Plan 2 topology validations completed in approximately 2.6 seconds; 30 seconds provides more than tenfold measured headroom for this documentation-only amendment.",
+    "started_at":  "2026-08-14T22:55:09.3253222+00:00",
+    "finished_at":  "2026-08-14T22:55:11.4153638+00:00",
+    "elapsed_seconds":  2.09,
+    "root_process_id":  195424,
+    "observed_process_ids":  [
+                                 195424
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-general-worker-root-boundary-topology-validate-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-general-worker-root-boundary-topology-validate-20260814.stderr.log"
+}

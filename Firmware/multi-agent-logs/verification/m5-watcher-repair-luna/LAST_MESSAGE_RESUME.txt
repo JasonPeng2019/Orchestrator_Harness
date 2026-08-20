@@ -1,0 +1,10 @@
+PASS. The fresh smoke completed successfully with no production edits, commits, hardware, providers, MCP servers, or leases.
+
+- [REPORT.md](C:/Users/Jason/Documents/Jason/FirmCLI_Tester/Firmware-Test-Manual/MCP-Trial-3/multi-agent-logs/verification/m5-watcher-repair-luna/REPORT.md)
+- [Runtime evidence](C:/Users/Jason/Documents/Jason/FirmCLI_Tester/Firmware-Test-Manual/MCP-Trial-3/multi-agent-logs/verification/m5-watcher-repair-luna/runtime/)
+- Focused tests: 50 passed
+- `ROUTE_REJECTED`: exactly 2; later valid records routed
+- Evaluator sentinel absent; 12 `EVALUATOR_SKIPPED` events
+- Exact owner/watcher identities confirmed absent after cooperative shutdown
+
+Harness-only failed attempts and cleanup evidence were preserved alongside the final runtime.

@@ -1,0 +1,159 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+   --> .codex\scripts\dev_state.py:148:64
+    |
+147 |
+    - def verification_delta(root: Path) -> VerificationDelta | None:
+148 + def verification_delta(root: Path) -> VerificationDelta | None:
+149 |     """Return the current manifest and changed code paths, or None for an unusable baseline."""
+--------------------------------------------------------------------------------
+155 |         return None
+    -     previous = value.get("files")
+156 +     previous = value.get("files")
+157 |     if (
+--------------------------------------------------------------------------------
+163 |         return None
+    -     previous = {
+    -         path: digest
+    -         for path, digest in previous.items()
+    -         if not _is_linked_worktree_member(root, Path(path))
+    -     }
+    -     changed = sorted(path for path in set(previous) | set(manifest) if previous.get(path) != manifest.get(path))
+164 +     previous = {path: digest for path, digest in previous.items() if not _is_linked_worktree_member(root, Path(path))}
+165 +     changed = sorted(path for path in set(previous) | set(manifest) if previous.get(path) != manifest.get(path))
+166 |     return VerificationDelta(manifest=manifest, changed_paths=tuple(Path(path) for path in changed))
+--------------------------------------------------------------------------------
+175 |
+    - def _repository_files(root: Path) -> list[Path]:
+176 + def _repository_files(root: Path) -> list[Path]:
+177 |     candidates: list[Path] = []
+178 |     for directory, directory_names, file_names in os.walk(root, topdown=True):
+179 |         current = Path(directory)
+180 |         relative_directory = current.relative_to(root)
+    -         directory_names[:] = [
+    -             name
+    -             for name in sorted(directory_names)
+    -             if not _skip_path(relative_directory / name) and not _is_linked_worktree(current / name)
+    -         ]
+181 +         directory_names[:] = [
+182 +             name
+183 +             for name in sorted(directory_names)
+184 +             if not _skip_path(relative_directory / name) and not _is_linked_worktree(current / name)
+185 +         ]
+186 |         for name in sorted(file_names):
+--------------------------------------------------------------------------------
+192 |
+    - def _skip_path(relative: Path) -> bool:
+193 + def _skip_path(relative: Path) -> bool:
+194 |     return (
+--------------------------------------------------------------------------------
+198 |         or relative.parts[:2] == (".codex", "notes")
+    -     )
+    -
+    -
+    - def _is_linked_worktree(path: Path) -> bool:
+    -     """Return whether *path* is a Git linked worktree owned outside this checkout."""
+    -
+    -     return (path / ".git").is_file()
+    -
+    -
+    - def _is_linked_worktree_member(root: Path, relative: Path) -> bool:
+    -     """Avoid reviving legacy verification entries below a current linked worktree."""
+    -
+    -     current = root
+    -     for part in relative.parts[:-1]:
+    -         current /= part
+    -         if _is_linked_worktree(current):
+    -             return True
+    -     return False
+199 +     )
+200 +
+201 +
+202 + def _is_linked_worktree(path: Path) -> bool:
+203 +     """Return whether *path* is a Git linked worktree owned outside this checkout."""
+204 +
+205 +     return (path / ".git").is_file()
+206 +
+207 +
+208 + def _is_linked_worktree_member(root: Path, relative: Path) -> bool:
+209 +     """Avoid reviving legacy verification entries below a current linked worktree."""
+210 +
+211 +     current = root
+212 +     for part in relative.parts[:-1]:
+213 +         current /= part
+214 +         if _is_linked_worktree(current):
+215 +             return True
+216 +     return False
+    |
+
+unformatted: File would be reformatted
+  --> .codex\tests\test_verify_changed.py:13:24
+   |
+12 | import verify_changed
+   - from dev_state import (
+   -     STATE_PATH,
+   -     VerificationDelta,
+   -     record_verified_snapshot,
+   -     repository_manifest,
+   -     verification_delta,
+   - )
+13 + from dev_state import (
+14 +     STATE_PATH,
+15 +     VerificationDelta,
+16 +     record_verified_snapshot,
+17 +     repository_manifest,
+18 +     verification_delta,
+19 + )
+20 |
+--------------------------------------------------------------------------------
+45 |
+   - def test_obsolete_or_corrupt_state_requires_full_fallback(tmp_path: Path) -> None:
+46 + def test_obsolete_or_corrupt_state_requires_full_fallback(tmp_path: Path) -> None:
+47 |     _write(tmp_path, "source.py", "value = 1\n")
+48 |     state_path = tmp_path / STATE_PATH
+49 |     state_path.parent.mkdir(parents=True)
+50 |     state_path.write_text('{"snapshot": "legacy"}\n', encoding="utf-8")
+   -     assert verification_delta(tmp_path) is None
+   -
+   -
+   - def test_manifest_excludes_linked_worktrees_and_legacy_entries(tmp_path: Path) -> None:
+   -     _write(tmp_path, "source.py", "value = 1\n")
+   -     linked = _write(tmp_path, "Firmware/target-harness/.git", "gitdir: elsewhere\n")
+   -     _write(tmp_path, "Firmware/target-harness/target.py", "value = 2\n")
+   -
+   -     manifest = repository_manifest(tmp_path)
+   -     assert set(manifest) == {"source.py"}
+   -     record_verified_snapshot(tmp_path, manifest=manifest)
+   -     state_path = tmp_path / STATE_PATH
+   -     state = json.loads(state_path.read_text(encoding="utf-8"))
+   -     state["files"]["Firmware/target-harness/target.py"] = "legacy-target-worktree-entry"
+   -     state_path.write_text(json.dumps(state), encoding="utf-8")
+   -
+   -     assert linked.is_file()
+   -     assert verification_delta(tmp_path).changed_paths == ()  # type: ignore[union-attr]
+51 +     assert verification_delta(tmp_path) is None
+52 +
+53 +
+54 + def test_manifest_excludes_linked_worktrees_and_legacy_entries(tmp_path: Path) -> None:
+55 +     _write(tmp_path, "source.py", "value = 1\n")
+56 +     linked = _write(tmp_path, "Firmware/target-harness/.git", "gitdir: elsewhere\n")
+57 +     _write(tmp_path, "Firmware/target-harness/target.py", "value = 2\n")
+58 +
+59 +     manifest = repository_manifest(tmp_path)
+60 +     assert set(manifest) == {"source.py"}
+61 +     record_verified_snapshot(tmp_path, manifest=manifest)
+62 +     state_path = tmp_path / STATE_PATH
+63 +     state = json.loads(state_path.read_text(encoding="utf-8"))
+64 +     state["files"]["Firmware/target-harness/target.py"] = "legacy-target-worktree-entry"
+65 +     state_path.write_text(json.dumps(state), encoding="utf-8")
+66 +
+67 +     assert linked.is_file()
+68 +     assert verification_delta(tmp_path).changed_paths == ()  # type: ignore[union-attr]
+69 |     state_path.write_text("{bad json\n", encoding="utf-8")
+   |
+
+2 files would be reformatted

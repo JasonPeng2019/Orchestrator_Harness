@@ -1,0 +1,17 @@
+{
+  "state": "exited",
+  "controller_pid": 177112,
+  "codex_pid": 189244,
+  "doer": "Atlas",
+  "task": "A00",
+  "phase": "complete",
+  "thread_id": "luna-live-lane",
+  "declared_lane_id": "m5-managed-consumer-luna-final:Atlas:A00",
+  "started_utc": "2026-08-02T02:22:57.275697Z",
+  "controller_started_utc": "2026-08-02T02:22:57.275697Z",
+  "codex_started_utc": "2026-08-02T02:22:57.275697Z",
+  "ended_utc": "2026-08-02T02:24:37.529347Z",
+  "exit_code": 0,
+  "board_tokens": [],
+  "mcp_servers": []
+}

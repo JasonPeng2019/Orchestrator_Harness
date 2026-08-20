@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "\u0026 \u0027C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev/.venv/Scripts/python.exe\u0027 C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/runtime/bounded-tests/compare_release_format_lint_001.py C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/worktrees/harness-candidate C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/plan2-release-format-001",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Two identical Ruff JSON scans completed in under two seconds each; normalization and multiset comparison are in-memory.",
+    "started_at":  "2026-08-14T19:49:45.6166425+00:00",
+    "finished_at":  "2026-08-14T19:49:48.9838193+00:00",
+    "elapsed_seconds":  3.367,
+    "root_process_id":  155864,
+    "observed_process_ids":  [
+                                 155864
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-format-lint-no-regression-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-format-lint-no-regression-001.stderr.log"
+}

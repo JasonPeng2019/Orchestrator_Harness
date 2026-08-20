@@ -1,0 +1,36 @@
+{
+    "epoch":  "20260802-m5-q5-141502Z",
+    "started_utc":  "2026-08-02T14:15:17.1993293Z",
+    "harness_pid":  172888,
+    "harness_creation_utc":  "2026-08-02T14:15:12.0070483Z",
+    "watcher_start":  {
+                          "started":  true,
+                          "pid":  197280,
+                          "owner":  {
+                                        "pid":  192592,
+                                        "created_utc":  "windows-filetime:134300974063275151"
+                                    }
+                      },
+    "watcher_status":  {
+                           "running":  true,
+                           "state":  {
+                                         "evaluator_enabled":  false,
+                                         "exit_reason":  null,
+                                         "owner":  {
+                                                       "created_utc":  "windows-filetime:134300974063275151",
+                                                       "pid":  192592
+                                                   },
+                                         "schema":  "harness-watcher-service/v1",
+                                         "started_utc":  "2026-08-02T14:15:14.525658+00:00",
+                                         "startup_status":  "READY",
+                                         "startup_token":  "818382ae-3997-4cd9-b4e1-f045d7904a7d",
+                                         "stop_requested":  false,
+                                         "watcher":  {
+                                                         "created_utc":  "windows-filetime:134301537145869044",
+                                                         "pid":  197280
+                                                     }
+                                     }
+                       },
+    "watcher_evaluator_enabled":  false,
+    "root_owner_pid":  192592
+}

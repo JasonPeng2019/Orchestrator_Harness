@@ -1,0 +1,32 @@
+
+== ruff ==
+All checks passed!
+
+== format ==
+18 files already formatted
+
+== types ==
+0 errors, 0 warnings, 0 notes
+
+== compile ==
+
+== orchestrator tests ==
+
+== watcher tests ==
+{"disabled": true}
+{"error": "[Errno 2] No such file or directory: 'C:\\\\Users\\\\Jason\\\\AppData\\\\Local\\\\Temp\\\\tmp1tubwy3m\\\\missing.json'"}
+{"error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"}
+{"error": "metadata must be an object"}
+{"record_id": "c6a0f257-1956-44ae-a27a-ceac433f2edc", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpmfxust2h\\readiness\\inputs\\subagent\\lane-d93244e7b08131ef\\attention.jsonl"}
+{"record_id": "270383e4-517d-4eb5-95c9-d10631b4d997", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpmfxust2h\\readiness\\inputs\\orchestrator\\root-4813494d137e1631\\attention.jsonl"}
+{"record_id": "11111111-1111-4111-8111-111111111111", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpjhtwfj8k\\inline\\inputs\\subagent\\lane-d93244e7b08131ef\\attention.jsonl"}
+{"record_id": "11111111-1111-4111-8111-111111111111", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpjhtwfj8k\\file\\inputs\\subagent\\lane-d93244e7b08131ef\\attention.jsonl"}
+{"record_id": "b39ba9dd-5f90-4ce4-9b57-0c63578140af", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmprtkb7r38\\baseline\\inputs\\orchestrator\\root-4813494d137e1631\\attention.jsonl"}
+{"error": "record kind is not permitted for producer role"}
+{"record_id": "d97d8782-2703-444f-84f8-2a19c766eb33", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpyocwvu0p\\runtime\\inputs\\subagent\\lane-d93244e7b08131ef\\attention.jsonl"}
+
+== Codex integration tests ==
+........................................................................ [ 46%]
+........................................................................ [ 92%]
+............                                                             [100%]
+156 passed in 60.92s (0:01:00)

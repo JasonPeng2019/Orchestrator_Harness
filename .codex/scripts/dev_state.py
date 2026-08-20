@@ -68,6 +68,7 @@ SKIP_PARTS = {
     "references",
     "runtime",
 }
+TOP_LEVEL_VIEW_ONLY_ROOTS = frozenset({"user-display-wip-harness-runner-(used-owned)"})
 
 
 class SnapshotError(RuntimeError):
@@ -160,6 +161,11 @@ def verification_delta(root: Path) -> VerificationDelta | None:
         or not all(isinstance(path, str) and isinstance(digest, str) for path, digest in previous.items())
     ):
         return None
+    previous = {
+        path: digest
+        for path, digest in previous.items()
+        if not _is_linked_worktree_member(root, Path(path)) and not _skip_path(Path(path))
+    }
     changed = sorted(path for path in set(previous) | set(manifest) if previous.get(path) != manifest.get(path))
     return VerificationDelta(manifest=manifest, changed_paths=tuple(Path(path) for path in changed))
 
@@ -176,7 +182,11 @@ def _repository_files(root: Path) -> list[Path]:
     for directory, directory_names, file_names in os.walk(root, topdown=True):
         current = Path(directory)
         relative_directory = current.relative_to(root)
-        directory_names[:] = [name for name in sorted(directory_names) if not _skip_path(relative_directory / name)]
+        directory_names[:] = [
+            name
+            for name in sorted(directory_names)
+            if not _skip_path(relative_directory / name) and not _is_linked_worktree(current / name)
+        ]
         for name in sorted(file_names):
             relative = relative_directory / name
             if not _skip_path(relative) and relative.suffix.casefold() in CODE_SUFFIXES:
@@ -187,6 +197,28 @@ def _repository_files(root: Path) -> list[Path]:
 def _skip_path(relative: Path) -> bool:
     return (
         any(part in SKIP_PARTS for part in relative.parts)
+        or bool(relative.parts and relative.parts[0] in TOP_LEVEL_VIEW_ONLY_ROOTS)
+        or relative.parts[:2] == ("Firmware", "fresh-experiments")
+        or relative.parts[:3] == ("Firmware", ".agent-workspace", "epochs")
+        or relative.parts[:1] == ("harness-single-worktrees",)
+        or relative.parts[:1] == ("scratch",)
         or relative.parts[:2] == (".codex", "state")
         or relative.parts[:2] == (".codex", "notes")
     )
+
+
+def _is_linked_worktree(path: Path) -> bool:
+    """Return whether *path* is a Git linked worktree owned outside this checkout."""
+
+    return (path / ".git").is_file()
+
+
+def _is_linked_worktree_member(root: Path, relative: Path) -> bool:
+    """Avoid reviving legacy verification entries below a current linked worktree."""
+
+    current = root
+    for part in relative.parts[:-1]:
+        current /= part
+        if _is_linked_worktree(current):
+            return True
+    return False

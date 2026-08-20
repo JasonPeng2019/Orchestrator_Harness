@@ -1,0 +1,571 @@
+{
+  "schema": "m5-python-fingerprint/v1",
+  "epoch": "20260802-m5-s3-101953Z",
+  "created_utc": "2026-08-02T10:20:57.561077Z",
+  "file_count": 112,
+  "baseline_aggregate_sha256": "73b4b08196d68165754ed15b13d1bd8451c66b778c9f68f206bde6dda4449bfe",
+  "exact_path_byte_hash_match": true,
+  "changed_files": [],
+  "files": [
+    {
+      "path": "harness_common/__init__.py",
+      "bytes": 76,
+      "sha256": "6688b3582081db1a34def7c0dcd11ea9bb1576f03d189fdbb2cc296caac6232f"
+    },
+    {
+      "path": "harness_common/process_identity.py",
+      "bytes": 2047,
+      "sha256": "b24d125b2c5b5a4529e64cb7b4524adf3c08ff2a33ca02a8857a35d3a530fbd7"
+    },
+    {
+      "path": "harness_watcher_implementation/__init__.py",
+      "bytes": 123,
+      "sha256": "dcb71cf34c4963892bec39eb700988f6b33abc91e75cdbe719cb64aeec29f3eb"
+    },
+    {
+      "path": "harness_watcher_implementation/__main__.py",
+      "bytes": 11827,
+      "sha256": "43dc914a8572e059e3baf4f3b25b154610f5ed9a1df73fda10308ebf4881f6ad"
+    },
+    {
+      "path": "harness_watcher_implementation/attention.py",
+      "bytes": 75080,
+      "sha256": "c55a11798b9a4b4076ed7d9b306681bd4e8dcb1ac843b83c4a4ac493bcc35898"
+    },
+    {
+      "path": "harness_watcher_implementation/config.py",
+      "bytes": 5282,
+      "sha256": "bb08606de760716248c4b5379d5017567f5c2753e7f0867c7cc9c0f41258adab"
+    },
+    {
+      "path": "harness_watcher_implementation/evaluator.py",
+      "bytes": 5013,
+      "sha256": "45209e479737d469543e6536303792318fc85752c30123ff82d348cdb9466298"
+    },
+    {
+      "path": "harness_watcher_implementation/logging.py",
+      "bytes": 1346,
+      "sha256": "8440f4889a3f52394cb9b20353216c03dc4af150271a5c47a1fe4a17a4059fba"
+    },
+    {
+      "path": "harness_watcher_implementation/poller.py",
+      "bytes": 14986,
+      "sha256": "f66a9ba890d9a872464041c259babf404e0f37358d34a1472a0ad62fdb2acdbc"
+    },
+    {
+      "path": "harness_watcher_implementation/settings.py",
+      "bytes": 104,
+      "sha256": "1c1ab0e2b5147bee2ae642fdedfb417eb824dd6693de36c44f9ea8c1fb782e6a"
+    },
+    {
+      "path": "harness_watcher_implementation/state.py",
+      "bytes": 2853,
+      "sha256": "8d1e6fb1b2115ac9f94dd836b3e5840c75e6018cda9fb532a437b31507160337"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/harness_watcher_implementation/__init__.py",
+      "bytes": 123,
+      "sha256": "dcb71cf34c4963892bec39eb700988f6b33abc91e75cdbe719cb64aeec29f3eb"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/harness_watcher_implementation/__main__.py",
+      "bytes": 5728,
+      "sha256": "375d2a1b175c2b2f485e6f9dc35c474a4f430e7f9756457012875a6268ffb42e"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/harness_watcher_implementation/config.py",
+      "bytes": 3181,
+      "sha256": "68235ca8c279da3401f5f2dbdce9b6cd1d3c6778aefce3bbee56a04fe3b64d9e"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/harness_watcher_implementation/evaluator.py",
+      "bytes": 3383,
+      "sha256": "ca86f32bc81433a5edf1498f8221268ef1b2dc0ee9aba2e3c0922f2eddad62e5"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/harness_watcher_implementation/logging.py",
+      "bytes": 1346,
+      "sha256": "8440f4889a3f52394cb9b20353216c03dc4af150271a5c47a1fe4a17a4059fba"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/harness_watcher_implementation/poller.py",
+      "bytes": 5856,
+      "sha256": "1db303ada2131dfe54f8a0a2f8a0e079b88f91f97623d5c29ca7066fbc217d19"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/harness_watcher_implementation/settings.py",
+      "bytes": 104,
+      "sha256": "1c1ab0e2b5147bee2ae642fdedfb417eb824dd6693de36c44f9ea8c1fb782e6a"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/harness_watcher_implementation/state.py",
+      "bytes": 2853,
+      "sha256": "8d1e6fb1b2115ac9f94dd836b3e5840c75e6018cda9fb532a437b31507160337"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/harness_watcher_implementation/tests/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/harness_watcher_implementation/tests/run_canary.py",
+      "bytes": 8792,
+      "sha256": "0b752e911cf23faf91bf5b5c0ce9dbf3a3dbadf0c685ea8966799edd2ad2814b"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/harness_watcher_implementation/tests/run_defect_canary.py",
+      "bytes": 3045,
+      "sha256": "c5c710749ae9a00defeca5d4bd94b00491ae82975c4ef7cf1a7ccd1b4f7c8155"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/harness_watcher_implementation/tests/run_lifecycle_canary.py",
+      "bytes": 3597,
+      "sha256": "9a76e27d1dda0b200d9d65fcd6821469251a03e3d13b7434dfa75abf750bc0a4"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/harness_watcher_implementation/tests/test_watcher_smoke.py",
+      "bytes": 11560,
+      "sha256": "722fcb21ed7466516d1bc87c28ab0dab33817ba246dd44a4483b2b92b2488fc2"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/__init__.py",
+      "bytes": 192,
+      "sha256": "667605e7eb1adade5d41c36b2a702923e783f3dccdff4422ea6b4b8dc5046f98"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/__main__.py",
+      "bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/active_management.py",
+      "bytes": 22657,
+      "sha256": "51778f2f990ac32bceb1b818dfce654d624cfbff07b2544685824fa19066dbb7"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/cli.py",
+      "bytes": 20048,
+      "sha256": "9eebc510db8c94b2137c0edea3fd8eeafc46d7d12f844f2866fb919abaec04fd"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/config.py",
+      "bytes": 5643,
+      "sha256": "25fdf0de185ce05b1e49155434a79b095f587ebaa4f72ad2d3145f3d91fe57d7"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/discovery.py",
+      "bytes": 11295,
+      "sha256": "f5a413a3a963e7131dd58b326a54691cfccca8ff7b7ec29910622e984bff177f"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/events.py",
+      "bytes": 11517,
+      "sha256": "14f189cd14520b93e5f45baf9c47f86200ceb44c739a07010419a44a2028c56f"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/models.py",
+      "bytes": 2071,
+      "sha256": "34fee5f9c8cebd302ecf69c0a0623d581ed64975c725c23bfeda806834fd7afe"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/notifications.py",
+      "bytes": 4279,
+      "sha256": "fcb7c29cb3eb28a578a7e1205295950fedd2ec30426c5d9f76f932264f3a727f"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/processes.py",
+      "bytes": 4972,
+      "sha256": "a0c538de5eeb05a77f0b6b245df8ccab3e690220235df1208b842a87f90833f4"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/reconcile.py",
+      "bytes": 42288,
+      "sha256": "225437ad26f8ada50f3396eb9718919440caf1c61b3d7d875402b92da8f7cd28"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/stable_io.py",
+      "bytes": 24947,
+      "sha256": "9c857cf4c962adb1b64e7577f7e715f03a3d52d6ee77daa037f3d3451c57173d"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/__init__.py",
+      "bytes": 48,
+      "sha256": "305c19227738cd9fcf0402a6c282d9751c8bf6b21406215911fbd910cd751df7"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/real_agent_test.py",
+      "bytes": 3200,
+      "sha256": "ca263c8984252251c9a6a8ea70f9fcccd1cb2917463333201276c2a3513df911"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/support.py",
+      "bytes": 7572,
+      "sha256": "1c35e3eb1f3a48326dc751cc48b8e987a67c72c8523652c0f606e1cf6b397806"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/support/allowlist_connect_proxy.py",
+      "bytes": 4856,
+      "sha256": "13f2a126dcda93433815aef8a195097ac16d8fda84c0d8d7b7f3d0c6593b8cfd"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/support/cgroup_exec.py",
+      "bytes": 1029,
+      "sha256": "b8192f006bfbf876b7e550cef8dafb0760234db8ad9ce83e79221f5219b4d4a2"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/support/synthetic_agent_helper.py",
+      "bytes": 3833,
+      "sha256": "64c38bd898f52b71df80e1e1c6e0679ea374d429505f6ff7b03ff4affa6ef441"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/support/wsl_cleanup_fixture_driver.py",
+      "bytes": 1086,
+      "sha256": "7280d84156687043dd8d67b80f5b28dd96bba0cd946eb9af97b0492cddb73640"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/support/wsl_guarded_entry.py",
+      "bytes": 2029,
+      "sha256": "b3a0e9d035c1740e56885a957d3490720362cf893f50437c46a8e5643d614802"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/support/wsl_real_agent_driver.py",
+      "bytes": 36057,
+      "sha256": "c701f619c1f4c44900ccf25fcc44276658840917f4d04530ac4ab2f98f25ff6e"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/test_active_manager_watch_smoke.py",
+      "bytes": 36887,
+      "sha256": "5682bbd42e857bbca941efcd2156cdb35f00b984cbb46743cf0ac08957f4a51b"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/test_config_store.py",
+      "bytes": 5425,
+      "sha256": "5dd9da60069c7d4b8b6076543396aac5adb6d55801e8a493b0f1b9f20fdaff21"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/test_events_cli.py",
+      "bytes": 10797,
+      "sha256": "e0528af1c06dce393e795d07899002cb77026890bbba771598a0ff66f84c1a02"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/test_integration_processes.py",
+      "bytes": 3685,
+      "sha256": "6b4dc101f0c48a2ba23ba144fac41e70c84329461e0ec8d4738a3565ed47b27b"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/test_manager_notifications.py",
+      "bytes": 7388,
+      "sha256": "5a0cb8bc6e443b56cb247c074e96ea8df4ced8adcb83dc423f3a91e65c5f51cf"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/test_manager_notifications_adversarial.py",
+      "bytes": 3696,
+      "sha256": "f7334fd434c80064a01b8a9928eba654756e70ce526816881d409f4e2715f013"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/test_processes.py",
+      "bytes": 2313,
+      "sha256": "8da5734e3e5e8cd25804171187e0d6f4d3ea6e24603777924ece21ad431cb533"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/test_real_agent_isolation.py",
+      "bytes": 5761,
+      "sha256": "be2538e46e79d3080dcef0e9ddd6f45d61a6212a0383446ed43bf16ac69a7367"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/test_real_manager_notification.py",
+      "bytes": 9963,
+      "sha256": "3e66cb2e47ec9398afb8b09985ebd98c3df2a3e781a655aeb170e4a261d41625"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/test_reconcile.py",
+      "bytes": 36222,
+      "sha256": "b353264918850a91e6fd8ab3b9bfcfc0e50a4b68f5e917d0a9e1a5fedc0c63b2"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/tests/wsl_cleanup_guard_test.py",
+      "bytes": 1635,
+      "sha256": "eb470134bf7c6d3ab3d2fc269af742eddda1736d240112abb6b9be063060c58b"
+    },
+    {
+      "path": "harness_watcher_implementation/test_results/luna_final/canary_workspace/orchestrator_harness/watcher_integration.py",
+      "bytes": 1853,
+      "sha256": "7d453c508623c18f34700cb989224b40cd690af0ef33049a1cc038ea214f847e"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/run_attention_practical.py",
+      "bytes": 22184,
+      "sha256": "203b672fbe2b5fe782bddc562714fb769b0e80c0f09b057cc1b3cb715f51a78a"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/run_canary.py",
+      "bytes": 8792,
+      "sha256": "0b752e911cf23faf91bf5b5c0ce9dbf3a3dbadf0c685ea8966799edd2ad2814b"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/run_defect_canary.py",
+      "bytes": 3045,
+      "sha256": "c5c710749ae9a00defeca5d4bd94b00491ae82975c4ef7cf1a7ccd1b4f7c8155"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/run_lifecycle_canary.py",
+      "bytes": 3664,
+      "sha256": "c60cdfb2d142d553dace744a2c48a531e64a486192d7c9532ff613338bfb6233"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/test_attention.py",
+      "bytes": 48361,
+      "sha256": "16b2374b6ef5aa476bdbc6859aa284191426d868eaec7819d78054f85739dc44"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/test_attention_ingestion.py",
+      "bytes": 11104,
+      "sha256": "a8011e24b369c4a231bfd4c79060fab3bdde07b876458bc18964ca4466b1cf6c"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/test_attention_practical_retention.py",
+      "bytes": 1877,
+      "sha256": "00c67791be000a33601b2947a5ea312649d45cb1750504838837b030846d1c5a"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/test_attention_recorder_cli.py",
+      "bytes": 6651,
+      "sha256": "04bb0f3c9db448cadf6d177ffadfc8b278697c77f110da175f04e22a9e6dd838"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/test_watcher_smoke.py",
+      "bytes": 49123,
+      "sha256": "927167504b37f7aaef7c5dd4a0335b17377537d34ef6bf930ce5a7c4511a59e9"
+    },
+    {
+      "path": "orchestrator_harness/__init__.py",
+      "bytes": 192,
+      "sha256": "667605e7eb1adade5d41c36b2a702923e783f3dccdff4422ea6b4b8dc5046f98"
+    },
+    {
+      "path": "orchestrator_harness/__main__.py",
+      "bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "orchestrator_harness/active_management.py",
+      "bytes": 22744,
+      "sha256": "45a0982a6606b9122e2cddbd0aad25ec6676a6e1b916bc9232b96230675de605"
+    },
+    {
+      "path": "orchestrator_harness/attention_sprint.py",
+      "bytes": 7943,
+      "sha256": "c7b40339e421b5c9c15794859cf25660a502085e42c5c8c8b57db73c93bfe5c5"
+    },
+    {
+      "path": "orchestrator_harness/cli.py",
+      "bytes": 34328,
+      "sha256": "2abf70fd743b8714db9effa6a18a6ca99395cc63b56420a14dfa8cb93789898a"
+    },
+    {
+      "path": "orchestrator_harness/config.py",
+      "bytes": 7356,
+      "sha256": "bc8bc01b3492cc0f38fd5957f225b8e47ce4ad443acc77dd0d1c9d0ba36c57f5"
+    },
+    {
+      "path": "orchestrator_harness/discovery.py",
+      "bytes": 14003,
+      "sha256": "b471b204fcdfda13f8ac2015c520806e378e060e17690c7687c7cacb585073fd"
+    },
+    {
+      "path": "orchestrator_harness/events.py",
+      "bytes": 12173,
+      "sha256": "1c03fd542eec647da696bcec16e7c782e4193fa51ce8d7b7136cb528ee867451"
+    },
+    {
+      "path": "orchestrator_harness/lane_controller.py",
+      "bytes": 17445,
+      "sha256": "73848d47487eced7b7338277a6a7ebc5da46e0e314fc188221726f2f50a225d2"
+    },
+    {
+      "path": "orchestrator_harness/models.py",
+      "bytes": 2071,
+      "sha256": "34fee5f9c8cebd302ecf69c0a0623d581ed64975c725c23bfeda806834fd7afe"
+    },
+    {
+      "path": "orchestrator_harness/notifications.py",
+      "bytes": 16142,
+      "sha256": "b5f2e8248e8a9105cccf074cb6764df50d4669daf4b3e5eb214531aa5fabdc5c"
+    },
+    {
+      "path": "orchestrator_harness/operator_launch.py",
+      "bytes": 6679,
+      "sha256": "59120497a71c023aba143e609d8195d461206e90eec82373f4c11e27bc1ff0c2"
+    },
+    {
+      "path": "orchestrator_harness/processes.py",
+      "bytes": 4972,
+      "sha256": "a0c538de5eeb05a77f0b6b245df8ccab3e690220235df1208b842a87f90833f4"
+    },
+    {
+      "path": "orchestrator_harness/reconcile.py",
+      "bytes": 48669,
+      "sha256": "b6d82e5ca305a864184097bf870cccf9052e771f00ef1a3c5f6dfaabd0909c81"
+    },
+    {
+      "path": "orchestrator_harness/stable_io.py",
+      "bytes": 32577,
+      "sha256": "02971a1617a654e4485cb6cb4a209bc9365dedc1963ff95f4eec4d91fe374d7b"
+    },
+    {
+      "path": "orchestrator_harness/tests/__init__.py",
+      "bytes": 48,
+      "sha256": "305c19227738cd9fcf0402a6c282d9751c8bf6b21406215911fbd910cd751df7"
+    },
+    {
+      "path": "orchestrator_harness/tests/real_agent_test.py",
+      "bytes": 3200,
+      "sha256": "ca263c8984252251c9a6a8ea70f9fcccd1cb2917463333201276c2a3513df911"
+    },
+    {
+      "path": "orchestrator_harness/tests/support.py",
+      "bytes": 7737,
+      "sha256": "8a3d902848615a2eced96eb92ed910a6ecaaf11aca2b260e3728936b8ea446f1"
+    },
+    {
+      "path": "orchestrator_harness/tests/support/allowlist_connect_proxy.py",
+      "bytes": 4856,
+      "sha256": "13f2a126dcda93433815aef8a195097ac16d8fda84c0d8d7b7f3d0c6593b8cfd"
+    },
+    {
+      "path": "orchestrator_harness/tests/support/cgroup_exec.py",
+      "bytes": 1029,
+      "sha256": "b8192f006bfbf876b7e550cef8dafb0760234db8ad9ce83e79221f5219b4d4a2"
+    },
+    {
+      "path": "orchestrator_harness/tests/support/synthetic_agent_helper.py",
+      "bytes": 3833,
+      "sha256": "64c38bd898f52b71df80e1e1c6e0679ea374d429505f6ff7b03ff4affa6ef441"
+    },
+    {
+      "path": "orchestrator_harness/tests/support/wsl_cleanup_fixture_driver.py",
+      "bytes": 1086,
+      "sha256": "7280d84156687043dd8d67b80f5b28dd96bba0cd946eb9af97b0492cddb73640"
+    },
+    {
+      "path": "orchestrator_harness/tests/support/wsl_guarded_entry.py",
+      "bytes": 2029,
+      "sha256": "b3a0e9d035c1740e56885a957d3490720362cf893f50437c46a8e5643d614802"
+    },
+    {
+      "path": "orchestrator_harness/tests/support/wsl_real_agent_driver.py",
+      "bytes": 36057,
+      "sha256": "c701f619c1f4c44900ccf25fcc44276658840917f4d04530ac4ab2f98f25ff6e"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_active_manager_watch_smoke.py",
+      "bytes": 40144,
+      "sha256": "375c5839f57c9aaa0b08ccbf1636098dda41d0acca90616fe4694210d9d38f8d"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_attention_scan_continuity.py",
+      "bytes": 3855,
+      "sha256": "518c5382ab2c88b6fe784ffc30b4e2ab82a2f1458b5378e3160e377ed969f14a"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_attention_signal_correlation.py",
+      "bytes": 4594,
+      "sha256": "4690c55c5ac053f9af450c206eb088996c4c145c003f300b831d34870e506d36"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_attention_sprint.py",
+      "bytes": 3801,
+      "sha256": "a7be835713b8addb149e0880b9f746b20f22a07d19bfe132ef7c05d7fb6a5aa5"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_clean_m_handoffs.py",
+      "bytes": 10217,
+      "sha256": "c1429eee490912297e13022be5384d8650beb9648d33b80d3515449201af199a"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_clean_n.py",
+      "bytes": 8265,
+      "sha256": "75e8d57876b3714ca39163d2ef57fefb1206aa4a3f7e5e7cab5d69bcfcb0ead4"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_config_store.py",
+      "bytes": 6509,
+      "sha256": "7969afa2a50f4e7e46c4140d98c1baee69fee877e5fc84835bb6daba6e71beda"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_events_cli.py",
+      "bytes": 10797,
+      "sha256": "e0528af1c06dce393e795d07899002cb77026890bbba771598a0ff66f84c1a02"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_integration_processes.py",
+      "bytes": 3685,
+      "sha256": "6b4dc101f0c48a2ba23ba144fac41e70c84329461e0ec8d4738a3565ed47b27b"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_lane_controller.py",
+      "bytes": 9008,
+      "sha256": "0c1c7b15554a54b91c6f538ef21a25373010706e4cbb557927dbaa2f0f73b517"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_manager_notifications.py",
+      "bytes": 29285,
+      "sha256": "d2389beb277fd198d2d54ac54613261a7d86d5571c0c92f73b769979d25b6262"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_manager_notifications_adversarial.py",
+      "bytes": 3696,
+      "sha256": "f7334fd434c80064a01b8a9928eba654756e70ce526816881d409f4e2715f013"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_operator_launch.py",
+      "bytes": 4278,
+      "sha256": "845ca64555ad1a34be6e136390cfe1f656a954c5fb8758156288b722d422068c"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_primary_owner_script.py",
+      "bytes": 1768,
+      "sha256": "126ae1d78be05abceb2ff6d9c7ea63f4bc4e15941006d25ad01716e5da0c9fda"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_processes.py",
+      "bytes": 2313,
+      "sha256": "8da5734e3e5e8cd25804171187e0d6f4d3ea6e24603777924ece21ad431cb533"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_real_agent_isolation.py",
+      "bytes": 5761,
+      "sha256": "be2538e46e79d3080dcef0e9ddd6f45d61a6212a0383446ed43bf16ac69a7367"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_real_manager_notification.py",
+      "bytes": 9963,
+      "sha256": "3e66cb2e47ec9398afb8b09985ebd98c3df2a3e781a655aeb170e4a261d41625"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_reconcile.py",
+      "bytes": 57116,
+      "sha256": "218bdc6a9740e71691a578a0c9ab84c0a77419aae7034e5d2cde082bc7a3eae9"
+    },
+    {
+      "path": "orchestrator_harness/tests/wsl_cleanup_guard_test.py",
+      "bytes": 1635,
+      "sha256": "eb470134bf7c6d3ab3d2fc269af742eddda1736d240112abb6b9be063060c58b"
+    },
+    {
+      "path": "orchestrator_harness/watcher_integration.py",
+      "bytes": 1791,
+      "sha256": "97e80aba939527a979d5614c9a41b70b6284ee37804b0f7da2e1ba54f4084fa1"
+    },
+    {
+      "path": "scripts/orchestration/prompt_policy.py",
+      "bytes": 2571,
+      "sha256": "e68c294b73926514716a9d8b12c7a198976c4160d78123371a1f28075860b13d"
+    }
+  ]
+}

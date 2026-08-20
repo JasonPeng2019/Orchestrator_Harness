@@ -1,0 +1,4 @@
+interface:
+  display_name: "Run Firmware Test Suite"
+  short_description: "Run the self-contained firmware evaluation suite"
+  default_prompt: "Use $run-firmware-test-suite to execute or resume the package-local catalog from the Firmware root, keep every dependency-ready non-conflicting lane active, and require current explicit authorization before hardware use."

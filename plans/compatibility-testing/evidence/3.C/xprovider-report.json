@@ -1,0 +1,28 @@
+{
+  "reused_completed_run": true,
+  "claude": {
+    "state": "PROVIDER_EXITED",
+    "outcome": "COMPLETED",
+    "session": "904f4185-4e4b-48a8-813b-176151f52700",
+    "provider_id": "claude-code"
+  },
+  "codex": {
+    "state": "CODEX_EXITED",
+    "outcome": "COMPLETED",
+    "session": "01a01ff8-4029-7433-9eec-392e5ef57bd5",
+    "provider_id": "codex"
+  },
+  "shared_event_log_sequence": [
+    "CODEX_STARTED",
+    "PROVIDER_STARTED",
+    "CODEX_EXITED",
+    "PROVIDER_EXITED"
+  ],
+  "both_completed": true,
+  "distinct_sessions": true,
+  "event_name_divergence": {
+    "claude": "PROVIDER_STARTED/PROVIDER_EXITED",
+    "codex": "CODEX_STARTED/CODEX_EXITED",
+    "note": "same shared LANE_EVENTS.jsonl; codex adapter emits legacy CODEX_* names, claude worker-invocation emits PROVIDER_* \u2014 classifier treats both as launch-lifecycle events"
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "epoch":  "20260802-m5-q2-123208Z",
+    "created_utc":  "2026-08-02T12:32:08.4275906Z",
+    "qualifying_count_before":  "0/3",
+    "attempt":  "2/10",
+    "python_baseline_match":  true,
+    "policy_baseline_match":  true,
+    "forbidden_assistance":  [
+                                 "runner",
+                                 "wrapper",
+                                 "relay",
+                                 "scheduler",
+                                 "retry controller",
+                                 "automated event handler",
+                                 "watcher subagent",
+                                 "AI evaluator",
+                                 "collaboration notification",
+                                 "transcript inspection"
+                             ],
+    "root_decision":  "START",
+    "safe_boundary":  true
+}

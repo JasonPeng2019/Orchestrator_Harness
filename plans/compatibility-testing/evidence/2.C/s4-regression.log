@@ -1,0 +1,55 @@
+test_S4_ADAPTER_HELPER_LIFECYCLE_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_ADAPTER_HELPER_LIFECYCLE_001) ... ok
+test_S4_BINDING_REPLAY_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_BINDING_REPLAY_001) ... ok
+test_S4_CODEX_IDLE_FINALIZE_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_CODEX_IDLE_FINALIZE_001) ... ok
+test_S4_CODEX_INSTALL_LIFECYCLE_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_CODEX_INSTALL_LIFECYCLE_001) ... ok
+test_S4_CODEX_INSTALL_WAKE_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_CODEX_INSTALL_WAKE_001) ... ok
+test_S4_CODEX_PACKAGED_ASSET_CANONICALIZATION_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_CODEX_PACKAGED_ASSET_CANONICALIZATION_001) ... ok
+test_S4_CODEX_PACKAGED_ASSET_INTEGRITY_REJECTS_NONCANONICAL_INPUT_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_CODEX_PACKAGED_ASSET_INTEGRITY_REJECTS_NONCANONICAL_INPUT_001) ... ok
+test_S4_CODEX_PACKAGED_ASSET_MODE_is_closed_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_CODEX_PACKAGED_ASSET_MODE_is_closed_001) ... ok
+test_S4_CODEX_PACKAGED_ASSET_PATHS_REJECT_UNSAFE_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_CODEX_PACKAGED_ASSET_PATHS_REJECT_UNSAFE_001) ... ok
+test_S4_CONFIG_MIGRATION_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_CONFIG_MIGRATION_001) ... ok
+test_S4_FORBIDDEN_CALLS_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_FORBIDDEN_CALLS_001) ... ok
+test_S4_HOST_EXTENSION_CONTRACT_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_HOST_EXTENSION_CONTRACT_001) ... ok
+test_S4_IMMUTABLE_VIEW_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_IMMUTABLE_VIEW_001) ... ok
+test_S4_LANE_RETIREMENT_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_LANE_RETIREMENT_001) ... ERROR
+test_S4_NONPREEMPTIVE_DELIVERY_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_NONPREEMPTIVE_DELIVERY_001) ... ok
+test_S4_R10_MUTATION_REJECTS_BEFORE_OBSERVATION_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_R10_MUTATION_REJECTS_BEFORE_OBSERVATION_001) ... ok
+test_S4_R10_PROJECT_GUARD_REJECTS_BEFORE_OBSERVATION_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_R10_PROJECT_GUARD_REJECTS_BEFORE_OBSERVATION_001) ... ok
+test_S4_R10_SHARED_RELATIVE_CLASSIFIER_AND_ABSOLUTE_CONTROLS_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_R10_SHARED_RELATIVE_CLASSIFIER_AND_ABSOLUTE_CONTROLS_001) ... ok
+test_S4_ROOT_R10_PACKAGED_ROOTED_AND_DRIVE_RELATIVE_REJECT_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_ROOT_R10_PACKAGED_ROOTED_AND_DRIVE_RELATIVE_REJECT_001) ... ok
+test_S4_SPARSE_NOTICE_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_SPARSE_NOTICE_001) ... ok
+test_S4_WATCHER_SIMPLIFICATION_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_WATCHER_SIMPLIFICATION_001) ... usage: python -m orchestrator_harness watch [-h] (--once | --until-event |
+                                            --until-actionable)
+                                            [--timeout TIMEOUT] [--no-write]
+python -m orchestrator_harness watch: error: one of the arguments --once --until-event --until-actionable is required
+ok
+
+======================================================================
+ERROR: test_S4_LANE_RETIREMENT_001 (orchestrator_harness.tests.test_s4_contract.S4ContractTests.test_S4_LANE_RETIREMENT_001)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_s4_contract.py", line 768, in test_S4_LANE_RETIREMENT_001
+    self._publish_lifecycle_record(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        root,
+        ^^^^^
+    ...<2 lines>...
+        revision=revision,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_s4_contract.py", line 490, in _publish_lifecycle_record
+    if lane_controller.main([str(invocation)]) != 0:
+       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\lane_controller.py", line 3441, in main
+    return run(load_invocation(args.invocation))
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\lane_controller.py", line 2140, in run
+    controller = _identity(os.getpid())
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\lane_controller.py", line 1010, in _identity
+    raise RuntimeError(f"cannot establish exact process identity for PID {pid}")
+RuntimeError: cannot establish exact process identity for PID 28120
+
+----------------------------------------------------------------------
+Ran 21 tests in 11.825s
+
+FAILED (errors=1)

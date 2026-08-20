@@ -1,0 +1,3 @@
+PASS. Focused tests passed (10 total), scoped process cleanup verified, and the durable report is written:
+
+[REPORT.md](C:/Users/Jason/Documents/Jason/FirmCLI_Tester/Firmware-Test-Manual/MCP-Trial-3/multi-agent-logs/verification/m5-managed-consumer-luna/REPORT.md)

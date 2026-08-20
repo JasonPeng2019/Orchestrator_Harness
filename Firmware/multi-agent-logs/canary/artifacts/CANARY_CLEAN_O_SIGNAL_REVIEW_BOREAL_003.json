@@ -1,0 +1,11 @@
+﻿{
+    "schema":  "canary-manager-signal-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:36:11.2100289Z",
+    "event_id":  "958c7a5673d7e5017c7ba99329d7526b1b159cefb8c45ed6fc6a392ca6cfded7",
+    "signal_id":  "20260731T232859Z-Boreal-D31-S1O-CHECKPOINT",
+    "signal_sha256":  "e42cee0b1facb03d5edc9ae506ace5b6e8f442a2d294859ec01f426ec5d059fc",
+    "verdict":  "ACCEPTED_NONTERMINAL_TEST_FIXTURE_FAILURE",
+    "classification":  "RUN_LOCAL_ADAPTER_DEFECT_NOT_SERVER_OR_HARNESS",
+    "analysis":  "Exact signal/checkpoint/lifetime confirms one O lifetime through initialization, tools/list, setup routing, and all-NULL board_setup-plan. The run-local helper wrongly required JSON for valid textual plan guidance and stopped before populated plan, permission relay, hardware action, retry, or residue. Preserve evidence; no production server or harness defect."
+}

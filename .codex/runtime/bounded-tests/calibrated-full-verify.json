@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  300,
+    "expected_upper_bound_seconds":  240,
+    "cleanup_allowance_seconds":  60,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The immediately preceding authoritative gate completed in 166 seconds. A 240-second expected upper bound supplies 45% execution headroom for suite variance; the 60-second cleanup allowance is exactly the permitted 25% cap, yielding a five-minute—not ten-minute—deadline.",
+    "started_at":  "2026-08-13T23:34:54.3816693+00:00",
+    "finished_at":  "2026-08-13T23:34:56.5003559+00:00",
+    "elapsed_seconds":  2.119,
+    "root_process_id":  188988,
+    "observed_process_ids":  [
+                                 188988
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\calibrated-full-verify.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\calibrated-full-verify.stderr.log"
+}

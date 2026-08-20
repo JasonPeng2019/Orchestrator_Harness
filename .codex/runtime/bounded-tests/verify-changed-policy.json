@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  180,
+    "expected_upper_bound_seconds":  150,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "measured",
+    "started_at":  "2026-08-14T09:56:16.1881195+00:00",
+    "finished_at":  "2026-08-14T09:56:26.4309546+00:00",
+    "elapsed_seconds":  10.243,
+    "root_process_id":  189236,
+    "observed_process_ids":  [
+                                 189236
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\verify-changed-policy.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\verify-changed-policy.stderr.log"
+}

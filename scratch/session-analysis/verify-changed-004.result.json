@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  240,
+    "expected_upper_bound_seconds":  210,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Stop hook uses 210s expected + 30s cleanup; targeted checks on 3 Firmware files plus manifest walk",
+    "started_at":  "2026-08-18T02:38:48.3453197+00:00",
+    "finished_at":  "2026-08-18T02:39:18.6518981+00:00",
+    "elapsed_seconds":  30.307,
+    "root_process_id":  1900,
+    "observed_process_ids":  [
+                                 1900
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\verify-changed-004.result.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\verify-changed-004.result.stderr.log"
+}

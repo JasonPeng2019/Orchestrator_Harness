@@ -1,0 +1,7 @@
+{
+  "schema": "m5-isolation/v1",
+  "epoch": "20260802-m5-s1c-064703Z",
+  "forbidden_assistance_used": false,
+  "worker_launches": 0,
+  "ended_before_worker_launch": true
+}

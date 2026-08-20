@@ -1,0 +1,38 @@
+{
+    "schema":  "m5-isolation/v2",
+    "epoch":  "20260802-m5-s1-052110Z",
+    "runtime_roles":  [
+                          "root orchestrator",
+                          "native harness",
+                          "native diagnostic watcher",
+                          "external workers and documented descendants"
+                      ],
+    "prohibited_assistance":  {
+                                  "ai_notifier":  false,
+                                  "runner":  false,
+                                  "collaboration_notification":  false,
+                                  "scheduler":  false,
+                                  "watcher_subagent":  false,
+                                  "canary_helper":  false,
+                                  "transcript_inspection":  false,
+                                  "relay":  false,
+                                  "retry_controller":  false,
+                                  "user_message_discovery":  false,
+                                  "owner_wrapper":  false
+                              },
+    "diagnostic_watcher":  {
+                               "evaluator_enabled":  false,
+                               "running":  false,
+                               "terminal_reason":  "stop-requested"
+                           },
+    "managed_harness":  {
+                            "exited_utc":  "2026-08-02T05:41:58.459443Z",
+                            "exit_reason":  "stop-requested"
+                        },
+    "code_fingerprint_match":  true,
+    "sealed_inputs_match":  true,
+    "exact_process_cleanup":  true,
+    "remaining_processes":  [
+
+                            ]
+}

@@ -39,12 +39,60 @@ PENDING_S2_D1 = (
 )
 
 
+def _role_model_mapping_path() -> Path:
+    runner = _load_runner()
+    path = runner.ROLE_MODEL_MAPPING_PATH
+    assert isinstance(path, Path)
+    return path
+
+
+def _role_allocations() -> dict[str, dict[str, object]]:
+    runner = _load_runner()
+    allocations = runner._read_role_model_mapping(_role_model_mapping_path())
+    assert isinstance(allocations, dict)
+    return allocations
+
+
+def _role_allocation(role: str) -> dict[str, object]:
+    return _role_allocations()[role]
+
+
+def _model_settings(role: str) -> dict[str, str]:
+    allocation = _role_allocation(role)
+    model = allocation["model"]
+    effort = allocation["reasoning_effort"]
+    tier = allocation["service_tier"]
+    assert isinstance(model, str) and isinstance(effort, str) and isinstance(tier, str)
+    return {
+        "model": model,
+        "reasoning_effort": effort,
+        "service_tier": tier,
+    }
+
+
+def _full_access_settings() -> dict[str, object]:
+    return {
+        "sandbox": "danger-full-access",
+        "approval_policy": "never",
+        "config_overrides": [],
+    }
+
+
 def _load_runner():
     spec = importlib.util.spec_from_file_location("stable_runner_under_test", LAUNCHER)
     assert spec is not None and spec.loader is not None
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
+
+
+def _init_overlay_repository(path: Path) -> None:
+    subprocess.run(
+        ["git", "init", "--initial-branch", "main", str(path)],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
 
 
 def _lock_copy(path: Path) -> None:
@@ -129,7 +177,7 @@ def test_conflicting_preloaded_import_is_rejected() -> None:
             sys.modules["orchestrator_harness"] = prior
 
 
-def test_projection_is_explicit_and_hash_bound() -> None:
+def test_projection_is_explicit_and_role_resolved() -> None:
     runner = _load_runner()
     with tempfile.TemporaryDirectory() as raw:
         root = Path(raw)
@@ -161,15 +209,15 @@ def test_projection_is_explicit_and_hash_bound() -> None:
             },
             "codex": {
                 "command": ["codex"],
-                "model": "model",
-                "reasoning_effort": "medium",
-                "service_tier": "default",
+                "model": "source-placeholder",
+                "reasoning_effort": "source-placeholder",
+                "service_tier": "source-placeholder",
                 "sandbox": "danger-full-access",
                 "approval_policy": "never",
                 "config_overrides": [],
             },
             "finding_gate": {
-                "role": "test_executor",
+                "role": _role_allocation("doer-main")["finding_gate_role"],
                 "path": str(root / ".agent-workspace" / "FINDINGS.json"),
             },
             "child_environment_isolation": True,
@@ -180,8 +228,12 @@ def test_projection_is_explicit_and_hash_bound() -> None:
             output_path=output,
             record_path=record_path,
             proof=runner.validate_checkout(),
+            workflow_role="doer-main",
         )
         projected = json.loads(output.read_text(encoding="utf-8"))
+        assert {
+            key: projected["codex"][key] for key in ("model", "reasoning_effort", "service_tier")
+        } == _model_settings("doer-main")
         assert "finding_gate" not in projected
         assert "child_environment_isolation" not in projected
         assert {item["field"] for item in record["removed_candidate_only_fields"]} == {
@@ -189,6 +241,7 @@ def test_projection_is_explicit_and_hash_bound() -> None:
             "child_environment_isolation",
         }
         assert record["projected_invocation_sha256"] == runner.hashlib.sha256(output.read_bytes()).hexdigest()
+        assert record["workflow_role"] == "doer-main"
         source_value["unrecognized"] = True
         source.write_text(json.dumps(source_value), encoding="utf-8")
         with pytest.raises(runner.RunnerError, match="unknown fields"):
@@ -197,6 +250,7 @@ def test_projection_is_explicit_and_hash_bound() -> None:
                 output_path=root / "second.json",
                 record_path=root / "second-record.json",
                 proof=runner.validate_checkout(),
+                workflow_role="doer-main",
             )
         with pytest.raises(runner.RunnerError, match="inside the immutable stable checkout"):
             runner.project_invocation(
@@ -204,7 +258,500 @@ def test_projection_is_explicit_and_hash_bound() -> None:
                 output_path=STABLE / "runner-migration-test-output.json",
                 record_path=root / "stable-output-record.json",
                 proof=runner.validate_checkout(),
+                workflow_role="doer-main",
             )
+
+
+@pytest.mark.parametrize("workflow_role", sorted(_role_allocations()))
+def test_workflow_roles_resolve_current_mapping(workflow_role: str) -> None:
+    runner = _load_runner()
+    allocation = _role_allocation(workflow_role)
+    gate_role = allocation["finding_gate_role"]
+    invocation = {
+        "schema": "orchestrator-coding-invocation/v1",
+        "codex": {
+            "model": "source-placeholder",
+            "reasoning_effort": "source-placeholder",
+            "service_tier": "source-placeholder",
+            **_full_access_settings(),
+        },
+    }
+    if gate_role is not None:
+        invocation["finding_gate"] = {"role": gate_role, "path": "FINDINGS.json"}
+    resolved = runner.apply_workflow_role_allocation(invocation, workflow_role, validate_finding_gate=True)
+    assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+        _model_settings(workflow_role)
+    )
+    settings = resolved["codex"]
+    assert settings["sandbox"] == "danger-full-access"
+    assert settings["approval_policy"] == "never"
+    assert "--dangerously-bypass-approvals-and-sandbox" not in settings["command"]
+    assert "--ignore-user-config" not in settings["command"]
+    assert 'approval_policy="never"' in settings["config_overrides"]
+    assert 'approvals_reviewer="user"' in settings["config_overrides"]
+
+
+@pytest.mark.parametrize("workflow_role", sorted(_role_allocations()))
+def test_workflow_role_allocations_replace_materialized_settings(
+    workflow_role: str,
+) -> None:
+    runner = _load_runner()
+    settings = _model_settings(workflow_role)
+    settings["model"] += "-stale"
+    gate_role = _role_allocation(workflow_role)["finding_gate_role"]
+    invocation = {
+        "schema": "orchestrator-coding-invocation/v1",
+        "codex": {**settings, **_full_access_settings()},
+    }
+    if gate_role is not None:
+        invocation["finding_gate"] = {"role": gate_role, "path": "FINDINGS.json"}
+    resolved = runner.apply_workflow_role_allocation(invocation, workflow_role, validate_finding_gate=True)
+    assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+        _model_settings(workflow_role)
+    )
+
+
+def test_workflow_role_allocation_rejects_wrong_finding_gate_role() -> None:
+    runner = _load_runner()
+    allocation = _role_allocation("reviewer-main")
+    expected_gate_role = allocation["finding_gate_role"]
+    assert isinstance(expected_gate_role, str)
+    invocation = {
+        "schema": "orchestrator-coding-invocation/v1",
+        "codex": {**_model_settings("reviewer-main"), **_full_access_settings()},
+        "finding_gate": {
+            "role": expected_gate_role + "-wrong",
+            "path": "FINDINGS.json",
+        },
+    }
+    with pytest.raises(runner.RunnerError, match="requires finding_gate role"):
+        runner.apply_workflow_role_allocation(invocation, "reviewer-main", validate_finding_gate=True)
+
+
+def test_real_codex_subagent_prompt_requires_bounded_test_contract(
+    tmp_path: Path,
+) -> None:
+    runner = _load_runner()
+    prompt = tmp_path / "prompt.md"
+    prompt.write_text("Implement the task.\n", encoding="utf-8")
+    invocation = {"prompt_path": str(prompt), "codex": {"command": ["codex"]}}
+    with pytest.raises(runner.RunnerError, match="bounded-test contract"):
+        runner._require_bounded_test_prompt(invocation)
+
+    prompt.write_text(
+        "Follow BOUNDED-TEST-v1 through Invoke-BoundedTest.ps1.\n",
+        encoding="utf-8",
+    )
+    runner._require_bounded_test_prompt(invocation)
+
+    runner._require_bounded_test_prompt(
+        {
+            "prompt_path": str(prompt),
+            "codex": {"command": [sys.executable, "fake_codex.py"]},
+        }
+    )
+
+
+def test_real_codex_dispatch_gets_temporary_bounded_test_hook(tmp_path: Path) -> None:
+    runner = _load_runner()
+    _init_overlay_repository(tmp_path)
+    hooks = tmp_path / ".codex" / "hooks.json"
+    invocation = {"run_root": str(tmp_path), "codex": {"command": ["codex"]}}
+
+    with runner._codex_bounded_test_overlay(invocation):
+        value = json.loads(hooks.read_text(encoding="utf-8"))
+        assert "PreToolUse" in value["hooks"]
+        assert "SessionStart" in value["hooks"]
+        assert value["hooks"]["PreToolUse"][0]["matcher"] == "^(Bash|shell_command)$"
+        assert any(
+            key.startswith("GIT_CONFIG_KEY_") and setting == "core.excludesFile" for key, setting in os.environ.items()
+        )
+        sanitized = os.environ.copy()
+        for key in tuple(sanitized):
+            if key.startswith("GIT_CONFIG_"):
+                sanitized.pop(key)
+        status = subprocess.run(
+            [
+                "git",
+                "-C",
+                str(tmp_path),
+                "status",
+                "--porcelain=v1",
+                "--untracked-files=all",
+            ],
+            check=False,
+            capture_output=True,
+            text=True,
+            env=sanitized,
+        )
+        assert status.returncode == 0, status.stderr
+        assert status.stdout == ""
+
+    assert not hooks.exists()
+    assert not hooks.parent.exists()
+
+
+def test_injected_hook_bounds_nested_work_but_not_stable_launcher(
+    tmp_path: Path,
+) -> None:
+    runner = _load_runner()
+    _init_overlay_repository(tmp_path)
+    hooks = tmp_path / ".codex" / "hooks.json"
+    invocation = {"run_root": str(tmp_path), "codex": {"command": ["codex"]}}
+
+    with runner._codex_bounded_test_overlay(invocation):
+        value = json.loads(hooks.read_text(encoding="utf-8"))
+        assert value["hooks"]["PreToolUse"][0]["matcher"] == "^(Bash|shell_command)$"
+        command = value["hooks"]["PreToolUse"][0]["hooks"][0]["commandWindows"]
+        nested = subprocess.run(
+            [
+                "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+                "-NoLogo",
+                "-NoProfile",
+                "-Command",
+                command,
+            ],
+            cwd=tmp_path,
+            input=json.dumps(
+                {
+                    "cwd": str(tmp_path),
+                    "tool_input": {"command": 'python -c "print(1)"'},
+                }
+            ),
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        assert nested.returncode == 0, nested.stderr
+        assert json.loads(nested.stdout)["hookSpecificOutput"]["permissionDecision"] == "deny"
+
+        stable = subprocess.run(
+            [
+                "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+                "-NoLogo",
+                "-NoProfile",
+                "-Command",
+                command,
+            ],
+            cwd=tmp_path,
+            input=json.dumps(
+                {
+                    "cwd": str(tmp_path),
+                    "tool_input": {
+                        "command": f'python -I "{LAUNCHER}" --module orchestrator_harness.lane_controller invocation.json'
+                    },
+                }
+            ),
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        assert stable.returncode == 0, stable.stderr
+        assert json.loads(stable.stdout) == {}
+
+
+def test_bounded_test_overlay_merges_and_restores_existing_hook(tmp_path: Path) -> None:
+    runner = _load_runner()
+    _init_overlay_repository(tmp_path)
+    hooks = tmp_path / ".codex" / "hooks.json"
+    hooks.parent.mkdir()
+    original = b'{"description":"product hook","hooks":{"Stop":[]}}\n'
+    hooks.write_bytes(original)
+    invocation = {"run_root": str(tmp_path), "codex": {"command": ["codex"]}}
+
+    with runner._codex_bounded_test_overlay(invocation):
+        value = json.loads(hooks.read_text(encoding="utf-8"))
+        assert value["description"] == "product hook"
+        assert value["hooks"]["Stop"] == []
+        assert "PreToolUse" in value["hooks"]
+        assert "SessionStart" in value["hooks"]
+
+    assert hooks.read_bytes() == original
+
+
+def test_bounded_test_overlay_restores_existing_hook_after_launch_error(
+    tmp_path: Path,
+) -> None:
+    runner = _load_runner()
+    _init_overlay_repository(tmp_path)
+    hooks = tmp_path / ".codex" / "hooks.json"
+    hooks.parent.mkdir()
+    original = b'{"description":"product hook","hooks":{"Stop":[]}}\n'
+    hooks.write_bytes(original)
+    invocation = {"run_root": str(tmp_path), "codex": {"command": ["codex"]}}
+
+    with pytest.raises(RuntimeError, match="launch failed"):
+        with runner._codex_bounded_test_overlay(invocation):
+            raise RuntimeError("launch failed")
+
+    assert hooks.read_bytes() == original
+
+
+def test_workflow_role_mapping_is_adjustable_without_code_changes() -> None:
+    runner = _load_runner()
+    custom_profile = {
+        "model": "custom-model",
+        "reasoning_effort": "custom-effort",
+        "service_tier": "custom-tier",
+        "codex_flags": [],
+        "model_context_window": None,
+        "model_auto_compact_token_limit": None,
+        "model_auto_compact_token_limit_scope": None,
+        "model_catalog_path": None,
+    }
+    custom_role = {
+        "primary_profile": "custom-profile",
+        "fallback_profile": None,
+        "fallback_after_consecutive_backend_failures": None,
+        "fallback_error_classes": [],
+        "finding_gate_role": None,
+    }
+    with tempfile.TemporaryDirectory() as raw:
+        policy = Path(raw) / "allocations.json"
+        policy.write_text(
+            json.dumps(
+                {
+                    "schema": "orchestrator-subagent-role-model-mapping/v2",
+                    "profiles": {"custom-profile": custom_profile},
+                    "roles": {"custom-role": custom_role},
+                }
+            ),
+            encoding="utf-8",
+        )
+        invocation = {
+            "schema": "orchestrator-coding-invocation/v1",
+            "codex": {
+                "model": "source-placeholder",
+                "reasoning_effort": "source-placeholder",
+                "service_tier": "source-placeholder",
+                **_full_access_settings(),
+            },
+        }
+        resolved = runner.apply_workflow_role_allocation(
+            invocation,
+            "custom-role",
+            validate_finding_gate=True,
+            role_model_mapping_path=policy,
+        )
+        assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == {
+            key: custom_profile[key] for key in ("model", "reasoning_effort", "service_tier")
+        }
+
+
+def _coding_invocation(action: str = "start") -> dict[str, object]:
+    return {
+        "schema": "orchestrator-coding-invocation/v1",
+        "action": action,
+        "codex": {
+            "command": ["codex", "--dangerously-bypass-hook-trust"],
+            "model": "source-placeholder",
+            "reasoning_effort": "source-placeholder",
+            "service_tier": "source-placeholder",
+            "sandbox": "danger-full-access",
+            "approval_policy": "never",
+            "config_overrides": ["model_auto_compact_token_limit=1"],
+        },
+    }
+
+
+@pytest.mark.parametrize(
+    ("field", "value"),
+    (("sandbox", "workspace-write"), ("approval_policy", "on-request")),
+)
+def test_workflow_role_allocation_rejects_non_full_access_invocations(field: str, value: str) -> None:
+    runner = _load_runner()
+    invocation = _coding_invocation()
+    settings = invocation["codex"]
+    assert isinstance(settings, dict)
+    settings[field] = value
+    with pytest.raises(runner.RunnerError, match=field):
+        runner.apply_workflow_role_allocation(invocation, "doer-main", validate_finding_gate=False)
+
+
+def _failure_history(*error_classes: str, workflow_role: str = "doer-main") -> dict[str, object]:
+    return {
+        "schema": "orchestrator-backend-failure-history/v1",
+        "workflow_role": workflow_role,
+        "logical_task_id": "logical-task-1",
+        "attempts": [
+            {
+                "attempt_id": f"attempt-{index}",
+                "profile_id": "deepseek-v4-flash-0731-high",
+                "outcome": "BACKEND_FAILURE",
+                "error_class": error_class,
+                "error_sha256": f"{index:064x}",
+            }
+            for index, error_class in enumerate(error_classes, start=1)
+        ],
+    }
+
+
+def test_launch_profiles_materialize_luna_deepseek_and_terra_compaction_settings() -> None:
+    runner = _load_runner()
+    coder = runner.apply_workflow_role_allocation(_coding_invocation(), "coder-main", validate_finding_gate=False)
+    coder_settings = coder["codex"]
+    assert coder_settings["launch_profile"] == "luna-max"
+    assert coder_settings["model"] == "gpt-5.6-luna"
+    assert coder_settings["reasoning_effort"] == "max"
+    assert "model_context_window=272000" in coder_settings["config_overrides"]
+    assert "model_auto_compact_token_limit=150000" in coder_settings["config_overrides"]
+
+    test_executor = runner.apply_workflow_role_allocation(
+        _coding_invocation(), "doer-main", validate_finding_gate=False
+    )
+    test_executor_settings = test_executor["codex"]
+    assert test_executor_settings["launch_profile"] == "deepseek-v4-flash-0731-high"
+    assert test_executor_settings["model"] == "deepseek-v4-flash:0731-cloud"
+    assert test_executor_settings["reasoning_effort"] == "high"
+    assert test_executor_settings["command"] == [
+        "codex",
+        "--dangerously-bypass-hook-trust",
+        "--oss",
+        "--local-provider",
+        "ollama",
+    ]
+    assert "model_context_window=1048576" in test_executor_settings["config_overrides"]
+    assert "model_auto_compact_token_limit=230000" in test_executor_settings["config_overrides"]
+    assert "model_auto_compact_token_limit=1" not in test_executor_settings["config_overrides"]
+    assert test_executor_settings["sandbox"] == "danger-full-access"
+    assert test_executor_settings["approval_policy"] == "never"
+    assert 'approval_policy="never"' in test_executor_settings["config_overrides"]
+    assert 'approvals_reviewer="user"' in test_executor_settings["config_overrides"]
+    catalog_override = next(
+        item for item in test_executor_settings["config_overrides"] if item.startswith("model_catalog_json=")
+    )
+    assert ".codex/delegates/deepseek-model-catalog.json" in catalog_override.replace("\\", "/")
+
+    terra = runner.apply_workflow_role_allocation(_coding_invocation(), "reviewer-main", validate_finding_gate=False)
+    terra_settings = terra["codex"]
+    assert terra_settings["launch_profile"] == "terra-xhigh"
+    assert terra_settings["model"] == "gpt-5.6-terra"
+    assert "model_context_window=1048576" in terra_settings["config_overrides"]
+    assert "model_auto_compact_token_limit=250000" in terra_settings["config_overrides"]
+
+    sprint_evidence_reviewer = runner.apply_workflow_role_allocation(
+        _coding_invocation(), "sprint-evidence-reviewer", validate_finding_gate=False
+    )
+    sprint_evidence_settings = sprint_evidence_reviewer["codex"]
+    assert sprint_evidence_settings["launch_profile"] == "terra-xhigh"
+    assert sprint_evidence_settings["model"] == "gpt-5.6-terra"
+    assert sprint_evidence_settings["reasoning_effort"] == "xhigh"
+
+
+def test_backend_fallback_requires_three_consecutive_classified_deepseek_failures() -> None:
+    runner = _load_runner()
+    with pytest.raises(runner.RunnerError, match="requires 3 consecutive"):
+        runner.apply_workflow_role_allocation(
+            _coding_invocation(),
+            "doer-main",
+            validate_finding_gate=False,
+            fallback_history=_failure_history("HTTP_429", "RATE_LIMIT"),
+        )
+
+    fallback = runner.apply_workflow_role_allocation(
+        _coding_invocation(),
+        "doer-main",
+        validate_finding_gate=False,
+        fallback_history=_failure_history("HTTP_429", "HTTP_303", "BACKEND_ERROR"),
+    )
+    settings = fallback["codex"]
+    assert settings["launch_profile"] == "luna-high"
+    assert settings["model"] == "gpt-5.6-luna"
+    assert settings["reasoning_effort"] == "high"
+    assert "model_auto_compact_token_limit=150000" in settings["config_overrides"]
+
+    with pytest.raises(runner.RunnerError, match="action=start"):
+        runner.apply_workflow_role_allocation(
+            _coding_invocation("resume"),
+            "doer-main",
+            validate_finding_gate=False,
+            fallback_history=_failure_history("HTTP_429", "HTTP_303", "BACKEND_ERROR"),
+        )
+
+
+@pytest.mark.parametrize("error_class", ("HTTP_429", "HTTP_303", "RATE_LIMIT", "BACKEND_ERROR"))
+def test_each_declared_backend_class_can_complete_the_fallback_streak(
+    error_class: str,
+) -> None:
+    runner = _load_runner()
+    fallback = runner.apply_workflow_role_allocation(
+        _coding_invocation(),
+        "doer-main",
+        validate_finding_gate=False,
+        fallback_history=_failure_history(error_class, error_class, error_class),
+    )
+    assert fallback["codex"]["launch_profile"] == "luna-high"
+
+
+def test_backend_error_classifier_is_narrow_and_redactable() -> None:
+    runner = _load_runner()
+    assert runner.classify_backend_error("HTTP status 429: too many requests") == "HTTP_429"
+    assert runner.classify_backend_error("provider returned HTTP 303 error") == "HTTP_303"
+    assert runner.classify_backend_error("Rate limit exceeded") == "RATE_LIMIT"
+    assert runner.classify_backend_error("backend service unavailable") == "BACKEND_ERROR"
+    assert runner.classify_backend_error("ordinary product test assertion failed") is None
+
+
+def test_backend_error_classifier_cli_emits_only_the_class_and_content_hash(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    runner = _load_runner()
+    raw_error = "provider request failed: HTTP 429; secret detail must not enter history"
+    error_path = tmp_path / "provider.stderr"
+    error_path.write_text(raw_error, encoding="utf-8")
+
+    assert runner.main(["--classify-backend-error-file", str(error_path)]) == 0
+    result = json.loads(capsys.readouterr().out)
+    assert result == {
+        "backend_error_class": "HTTP_429",
+        "error_sha256": hashlib.sha256(raw_error.encode("utf-8")).hexdigest(),
+    }
+    assert raw_error not in json.dumps(result)
+
+
+def test_fallback_history_file_is_enforced_by_projection_cli(tmp_path: Path) -> None:
+    runner = _load_runner()
+    source = tmp_path / "source.json"
+    source_invocation = _coding_invocation()
+    source_invocation["finding_gate"] = {
+        "role": _role_allocation("doer-main")["finding_gate_role"],
+        "path": "FINDINGS.json",
+    }
+    source.write_text(json.dumps(source_invocation), encoding="utf-8")
+    history = tmp_path / "backend-history.json"
+    history.write_text(
+        json.dumps(_failure_history("HTTP_429", "HTTP_303", "BACKEND_ERROR")),
+        encoding="utf-8",
+    )
+    output = tmp_path / "projected.json"
+    record = tmp_path / "projection.json"
+
+    assert (
+        runner.main(
+            [
+                "--project-invocation",
+                str(source),
+                "--workflow-role",
+                "doer-main",
+                "--launch-profile",
+                "luna-high",
+                "--fallback-history",
+                str(history),
+                "--projection-output",
+                str(output),
+                "--projection-record",
+                str(record),
+            ]
+        )
+        == 0
+    )
+    projected = json.loads(output.read_text(encoding="utf-8"))
+    projection = json.loads(record.read_text(encoding="utf-8"))
+    assert projected["action"] == "start"
+    assert projected["codex"]["launch_profile"] == "luna-high"
+    assert projected["codex"]["reasoning_effort"] == "high"
+    assert projection["fallback_history_sha256"] == hashlib.sha256(history.read_bytes()).hexdigest()
 
 
 def test_proof_file_inside_stable_is_rejected_before_any_write() -> None:
@@ -294,7 +841,9 @@ def test_proof_file_inside_stable_is_rejected_before_any_write() -> None:
             proof_path.unlink(missing_ok=True)
 
 
-def test_module_result_type_boundary_fails_closed(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_module_result_type_boundary_fails_closed(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     runner = _load_runner()
     fake_module = types.SimpleNamespace(main=lambda _argv: "invalid-result")
     proof = runner.validate_checkout()
@@ -399,12 +948,10 @@ def test_hostile_cwds_and_conflicting_pythonpath_still_prove_stable_import() -> 
         (fake_import_root / "orchestrator_harness" / "__init__.py").write_text(
             "raise RuntimeError('wrong package won')\n", encoding="utf-8"
         )
-        candidate = (
-            ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "worktrees" / "harness-candidate"
-        )
-        lane = (
-            ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "implementation" / "lanes" / "S1.A1"
-        )
+        candidate = config_root / "hostile-candidate-cwd"
+        lane = config_root / "hostile-lane-cwd"
+        candidate.mkdir()
+        lane.mkdir()
         for cwd in (candidate, lane):
             env = os.environ.copy()
             env["PYTHONPATH"] = str(fake_import_root)
@@ -451,7 +998,7 @@ def test_hostile_cwds_and_conflicting_pythonpath_still_prove_stable_import() -> 
         assert '"module": "orchestrator_harness.operator_launch"' in operator.stderr
 
 
-def test_disposable_controller_proof_uses_projected_stable_invocation() -> None:
+def test_disposable_controller_refreshes_role_at_dispatch() -> None:
     runner = _load_runner()
     with tempfile.TemporaryDirectory(prefix="stable-controller-proof-") as raw:
         run_root = Path(raw)
@@ -543,15 +1090,13 @@ def test_disposable_controller_proof_uses_projected_stable_invocation() -> None:
             },
             "codex": {
                 "command": [sys.executable, "-m", "fake_codex"],
-                "model": "proof-model",
-                "reasoning_effort": "medium",
-                "service_tier": "default",
+                **_model_settings("doer-main"),
                 "sandbox": "danger-full-access",
                 "approval_policy": "never",
                 "config_overrides": [],
             },
             "finding_gate": {
-                "role": "test_executor",
+                "role": _role_allocation("doer-main")["finding_gate_role"],
                 "path": str(workspace / "FINDINGS.json"),
             },
             "child_environment_isolation": True,
@@ -564,7 +1109,13 @@ def test_disposable_controller_proof_uses_projected_stable_invocation() -> None:
             output_path=projected,
             record_path=projection_record,
             proof=runner.validate_checkout(),
+            workflow_role="doer-main",
         )
+        dispatch_input = run_root / "earlier-materialized.invocation.json"
+        dispatch_value = json.loads(projected.read_text(encoding="utf-8"))
+        for key in ("model", "reasoning_effort", "service_tier"):
+            dispatch_value["codex"][key] = "earlier-materialized"
+        dispatch_input.write_text(json.dumps(dispatch_value, indent=2) + "\n", encoding="utf-8")
         hostile_cwd = (
             ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "worktrees" / "harness-candidate"
         )
@@ -575,9 +1126,11 @@ def test_disposable_controller_proof_uses_projected_stable_invocation() -> None:
                 sys.executable,
                 "-I",
                 str(LAUNCHER),
+                "--workflow-role",
+                "doer-main",
                 "--module",
                 "orchestrator_harness.lane_controller",
-                str(projected),
+                str(dispatch_input),
             ],
             check=False,
             cwd=hostile_cwd,
@@ -598,6 +1151,10 @@ def test_disposable_controller_proof_uses_projected_stable_invocation() -> None:
         assert status["state"] == "CODEX_EXITED"
         assert status["thread_id"] == "synthetic-thread"
         assert status["result_validation"]["state"] == "MISSING"
+        expected_settings = _model_settings("doer-main")
+        assert status["launcher_settings"]["model"] == expected_settings["model"]
+        assert status["launcher_settings"]["model_reasoning_effort"] == expected_settings["reasoning_effort"]
+        assert status["launcher_settings"]["service_tier"] == expected_settings["service_tier"]
         observed_claims = json.loads((run_root / "resource-observed.json").read_text(encoding="utf-8"))
         assert observed_claims == [hashlib.sha256(b"stable-controller-proof").hexdigest() + ".json"]
         assert list(resource_lock_root.iterdir()) == []

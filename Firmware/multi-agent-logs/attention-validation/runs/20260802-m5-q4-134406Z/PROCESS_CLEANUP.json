@@ -1,0 +1,64 @@
+{
+    "epoch":  "20260802-m5-q4-134406Z",
+    "checked_utc":  "2026-08-02T14:07:21.6212399Z",
+    "registered_pid_count":  10,
+    "registered_pids":  [
+                            22712,
+                            171560,
+                            177732,
+                            178568,
+                            188884,
+                            191548,
+                            193196,
+                            193312,
+                            194052,
+                            196972
+                        ],
+    "alive_registered_pids":  [
+
+                              ],
+    "exact_cleanup":  true,
+    "workers":  [
+                    {
+                        "doer":  "Atlas",
+                        "controller_pid":  196972,
+                        "codex_pid":  171560,
+                        "status_state":  "CODEX_EXITED",
+                        "status_exit_code":  null,
+                        "controller_alive":  false,
+                        "codex_alive":  false,
+                        "checkpoint_exists":  true
+                    },
+                    {
+                        "doer":  "Boreal",
+                        "controller_pid":  194052,
+                        "codex_pid":  22712,
+                        "status_state":  "CODEX_EXITED",
+                        "status_exit_code":  null,
+                        "controller_alive":  false,
+                        "codex_alive":  false,
+                        "checkpoint_exists":  true
+                    },
+                    {
+                        "doer":  "Cygnus",
+                        "controller_pid":  191548,
+                        "codex_pid":  188884,
+                        "status_state":  "CODEX_EXITED",
+                        "status_exit_code":  null,
+                        "controller_alive":  false,
+                        "codex_alive":  false,
+                        "checkpoint_exists":  true
+                    },
+                    {
+                        "doer":  "Delta",
+                        "controller_pid":  193312,
+                        "codex_pid":  177732,
+                        "status_state":  "CODEX_EXITED",
+                        "status_exit_code":  null,
+                        "controller_alive":  false,
+                        "codex_alive":  false,
+                        "checkpoint_exists":  true
+                    }
+                ],
+    "atlas_forced_cleanup":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\attention-validation\\runs\\20260802-m5-q4-134406Z/WORKER_FORCED_CLEANUP.json"
+}

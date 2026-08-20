@@ -1,0 +1,88 @@
+{
+  "classification_counts": {
+    "ACKNOWLEDGEMENT_ONLY_DELAY": 0,
+    "BUSY_MANAGER_DELAY": 0,
+    "HARNESS_DELIVERY_DELAY": 0,
+    "IDLE_OR_ABSENT_MANAGER_DELAY": 0,
+    "INSUFFICIENT_EVIDENCE": 2,
+    "NO_BLOCKING_IMPACT": 0
+  },
+  "cursor_drained": true,
+  "events": [
+    {
+      "classification": "INSUFFICIENT_EVIDENCE",
+      "contradictory_evidence": [],
+      "epoch_id": "20260801-attention-r7-repair007-readiness",
+      "event_id": "repair007-blocking-001",
+      "evidence_record_ids": [
+        "b8e223d7-0039-4152-b595-b308574fe342",
+        "fb3d1bce-ae4e-41e1-aa19-7333e83e8c56",
+        "8f5b42e6-c5b7-485f-a2fc-d7bbc627f3e0",
+        "e6410c27-ded5-4f20-906b-d4f93a82a1aa",
+        "d86e9d5e-4f4d-4440-a295-ca342567b1a2",
+        "514f3db5-2777-4381-8665-a075f5b60aa2",
+        "a3721409-2f2c-440c-a7ec-7a17ab37e59a",
+        "0ea4194e-98a6-4e3a-9827-e0eaefa5567c",
+        "3ce19333-7f63-456b-b402-efab04aef926"
+      ],
+      "metrics": {
+        "claim_to_decision_seconds": 0.0,
+        "deadline_lateness_seconds": null,
+        "explicit_blocked_seconds": 0.0,
+        "explicit_deferral_seconds": null,
+        "observation_to_actionable_seconds": null,
+        "pending_to_manager_claim_seconds": null,
+        "receipt_to_resume_seconds": 0.0,
+        "response_to_ack_seconds": null,
+        "response_to_agent_receipt_seconds": 0.007984,
+        "signal_to_observation_seconds": null
+      },
+      "missing_evidence": [
+        "matching stage deadline and late endpoint"
+      ],
+      "schema": "manager-attention-report/v1"
+    },
+    {
+      "classification": "INSUFFICIENT_EVIDENCE",
+      "contradictory_evidence": [],
+      "epoch_id": "20260801-attention-r7-repair007-readiness",
+      "event_id": "repair007-invocation-001",
+      "evidence_record_ids": [
+        "fa575695-0304-4aae-b62b-8f4176187cc0"
+      ],
+      "metrics": {
+        "claim_to_decision_seconds": null,
+        "deadline_lateness_seconds": null,
+        "explicit_blocked_seconds": null,
+        "explicit_deferral_seconds": null,
+        "observation_to_actionable_seconds": null,
+        "pending_to_manager_claim_seconds": null,
+        "receipt_to_resume_seconds": null,
+        "response_to_ack_seconds": null,
+        "response_to_agent_receipt_seconds": null,
+        "signal_to_observation_seconds": null
+      },
+      "missing_evidence": [
+        "matching stage deadline and late endpoint"
+      ],
+      "schema": "manager-attention-report/v1"
+    }
+  ],
+  "generated_utc": "2026-08-01T18:46:36.141621+00:00",
+  "observation_errors": [],
+  "schema": "manager-attention-report/v1",
+  "trusted_coverage": {
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\runs\\20260801-attention-r7-repair007-readiness\\inputs\\orchestrator\\root-readiness-007-81b9d1a6b2459027\\attention.jsonl": {
+      "error": false,
+      "generation": "1",
+      "offset": 3180,
+      "partial_bytes": 0
+    },
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\runs\\20260801-attention-r7-repair007-readiness\\inputs\\subagent\\lane-readiness-007-bfc1a6a7475b57c9\\attention.jsonl": {
+      "error": false,
+      "generation": "1",
+      "offset": 1898,
+      "partial_bytes": 0
+    }
+  }
+}

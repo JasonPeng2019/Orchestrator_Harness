@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python -m pytest -q .codex/tests/test_verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  62,
+    "expected_upper_bound_seconds":  50,
+    "cleanup_allowance_seconds":  12,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "focused verifier unit suite; 50-second upper bound based on prior sub-30-second runs",
+    "started_at":  "2026-08-14T11:46:27.0868027+00:00",
+    "finished_at":  "2026-08-14T11:46:30.5032645+00:00",
+    "elapsed_seconds":  3.416,
+    "root_process_id":  164676,
+    "observed_process_ids":  [
+                                 164676
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\test-verify-changed-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\test-verify-changed-20260814.stderr.log"
+}

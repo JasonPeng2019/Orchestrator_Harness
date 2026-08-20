@@ -1,0 +1,46 @@
+{
+    "epoch":  "20260802-m5-q1-115933Z",
+    "verified_utc":  "2026-08-02T12:13:17.5926583Z",
+    "all_absent":  true,
+    "processes":  [
+                      {
+                          "role":  "harness-owner",
+                          "pid":  172192,
+                          "alive":  false
+                      },
+                      {
+                          "role":  "harness-watcher",
+                          "pid":  179400,
+                          "alive":  false
+                      },
+                      {
+                          "role":  "diagnostic-watcher",
+                          "pid":  168284,
+                          "alive":  false
+                      },
+                      {
+                          "role":  "Atlas-controller",
+                          "pid":  190420,
+                          "creation_utc":  "2026-08-02T12:01:44.6620974Z",
+                          "alive":  false
+                      },
+                      {
+                          "role":  "Boreal-controller",
+                          "pid":  195088,
+                          "creation_utc":  "2026-08-02T12:01:45.1163705Z",
+                          "alive":  false
+                      },
+                      {
+                          "role":  "Cygnus-controller",
+                          "pid":  190648,
+                          "creation_utc":  "2026-08-02T12:01:45.8429669Z",
+                          "alive":  false
+                      },
+                      {
+                          "role":  "Delta-controller",
+                          "pid":  189976,
+                          "creation_utc":  "2026-08-02T12:01:46.3036081Z",
+                          "alive":  false
+                      }
+                  ]
+}

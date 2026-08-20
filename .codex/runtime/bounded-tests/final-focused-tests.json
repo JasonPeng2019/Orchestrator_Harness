@@ -1,0 +1,29 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked pytest -q .codex/tests/test_bounded_test_supervisor.py .codex/tests/test_hooks.py .codex/tests/test_stable_runner.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  110,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  20,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The immediately prior 61-test run completed in 39 seconds; 90 seconds gives over 2.3x execution headroom and 20 seconds is below the 25 percent cleanup cap.",
+    "started_at":  "2026-08-13T23:39:42.5280135+00:00",
+    "finished_at":  "2026-08-13T23:40:23.0420713+00:00",
+    "elapsed_seconds":  40.514,
+    "root_process_id":  25240,
+    "observed_process_ids":  [
+                                 25240,
+                                 100516,
+                                 164232,
+                                 184644,
+                                 187400,
+                                 188156,
+                                 195876,
+                                 199212
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-focused-tests.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-focused-tests.stderr.log"
+}

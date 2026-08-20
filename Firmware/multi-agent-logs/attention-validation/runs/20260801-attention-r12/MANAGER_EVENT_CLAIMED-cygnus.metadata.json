@@ -1,0 +1,23 @@
+{
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r12-001",
+    "manager_state":  "READING_EVENT",
+    "source_record_id":  "d14c9137-a9f2-4b3e-a0ca-faa82a2e5263",
+    "wake_transport":  "collaboration.send_message",
+    "continuous_from_record_id":  "ab7cb143-b0d9-42ba-8f40-1446b1fb3a48",
+    "pending_work_snapshot":  {
+                                  "complete":  true,
+                                  "events":  [
+                                                 {
+                                                     "event_id":  "sig-20260801-attention-r12-cygnus-a24-gate-001",
+                                                     "type":  "HELP",
+                                                     "priority":  1,
+                                                     "age_seconds":  45,
+                                                     "agent_blocked":  true,
+                                                     "response_deadline_utc":  "2026-08-01T20:57:43.3457091Z"
+                                                 }
+                                             ],
+                                  "selected_event_id":  "sig-20260801-attention-r12-cygnus-a24-gate-001",
+                                  "selection_reason":  "SELECT_ACTIONABLE"
+                              }
+}

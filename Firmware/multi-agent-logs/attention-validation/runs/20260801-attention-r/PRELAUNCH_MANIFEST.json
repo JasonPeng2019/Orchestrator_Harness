@@ -1,0 +1,28 @@
+﻿{
+    "schema":  "attention-sprint-prelaunch/v1",
+    "epoch_id":  "20260801-attention-r",
+    "status":  "SEALED_FOR_SERVICE_START",
+    "created_utc":  "2026-08-01T17:02:42.6405651Z",
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r-001",
+    "primary_config":  "orchestrator_harness/canary-20260801-attention-r.json",
+    "primary_output":  "orchestrator_harness/canary-20260801-attention-r-state",
+    "optional_config":  "harness_watcher_implementation/canary-20260801-attention-r.json",
+    "optional_runtime":  "harness_watcher/runs/20260801-attention-r",
+    "watcher_subagent":  "/root/attention_watcher",
+    "server":  {
+                   "unstaged_diff_sha256":  "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+                   "head":  "f003f84a7df51cd8595a3203c62e225b21da2a22",
+                   "staged_diff_sha256":  "3836928191999e0b32010d684a14ca324d8f260f"
+               },
+    "policy_sha256":  "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68",
+    "intervals":  {
+                      "formal_review_seconds":  150,
+                      "optional_poll_seconds":  2,
+                      "harness_poll_seconds":  1,
+                      "watcher_observer":  "continuous collaboration mailbox"
+                  },
+    "old_epoch_processes_absent":  true,
+    "stop_files_absent":  true,
+    "lane_authority_status":  "NOT_YET_ISSUED"
+}

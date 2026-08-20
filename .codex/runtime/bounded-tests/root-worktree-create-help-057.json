@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/worktree_task.py create --help",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  20,
+    "expected_upper_bound_seconds":  15,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "worktree create help",
+    "started_at":  "2026-08-16T06:38:10.1331695+00:00",
+    "finished_at":  "2026-08-16T06:38:12.3442232+00:00",
+    "elapsed_seconds":  2.211,
+    "root_process_id":  16128,
+    "observed_process_ids":  [
+                                 16128
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\root-worktree-create-help-057.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\root-worktree-create-help-057.stderr.log"
+}

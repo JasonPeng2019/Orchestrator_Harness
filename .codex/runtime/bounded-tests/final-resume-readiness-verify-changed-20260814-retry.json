@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  55,
+    "expected_upper_bound_seconds":  45,
+    "cleanup_allowance_seconds":  10,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The latest changed-code gate completed in 6.987 seconds and the recent broader changed set completed in 23.797 seconds; forty-five seconds allows realistic variation and ten seconds bounds cleanup.",
+    "started_at":  "2026-08-14T13:04:45.8784407+00:00",
+    "finished_at":  "2026-08-14T13:04:48.8392206+00:00",
+    "elapsed_seconds":  2.961,
+    "root_process_id":  192088,
+    "observed_process_ids":  [
+                                 192088
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-resume-readiness-verify-changed-20260814-retry.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-resume-readiness-verify-changed-20260814-retry.stderr.log"
+}

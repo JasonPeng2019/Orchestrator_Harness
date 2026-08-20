@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  375,
+    "expected_upper_bound_seconds":  300,
+    "cleanup_allowance_seconds":  75,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "the immediately prior authoritative repository gate completed in 179.382 seconds; 300 seconds covers realistic local variance without excessive padding",
+    "started_at":  "2026-08-14T05:32:38.4782681+00:00",
+    "finished_at":  "2026-08-14T05:32:40.8187420+00:00",
+    "elapsed_seconds":  2.34,
+    "root_process_id":  182568,
+    "observed_process_ids":  [
+                                 182568
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\boundary-robustness-authoritative-verify-2.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\boundary-robustness-authoritative-verify-2.stderr.log"
+}

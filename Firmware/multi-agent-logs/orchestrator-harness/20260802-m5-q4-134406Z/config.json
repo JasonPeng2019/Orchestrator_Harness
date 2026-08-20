@@ -1,0 +1,26 @@
+{
+  "suite_root": "../../..",
+  "run_globs": [
+    "fresh-experiments/A22_20260726-062324",
+    "fresh-experiments/D31_20260726-062325",
+    "fresh-experiments/A24_20260726-052146",
+    "fresh-experiments/A26_20260726-062325"
+  ],
+  "workspace_relpath": ".agent-workspace",
+  "output_dir": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-q4-134406Z",
+  "poll_interval_seconds": 1,
+  "watch_timeout_seconds": 45,
+  "manager_review_interval_seconds": 900,
+  "lane_no_progress_seconds": 1200,
+  "manager_heartbeat_timeout_seconds": 2100,
+  "request_warning_seconds": 120,
+  "request_critical_seconds": 30,
+  "process_start_tolerance_seconds": 2,
+  "max_json_bytes": 4000000,
+  "max_jsonl_tail_bytes": 512000,
+  "stable_read_retries": 4,
+  "stable_read_delay_seconds": 0.03,
+  "attention_logging_enabled": true,
+  "attention_epoch_id": "20260802-m5-q4-134406Z",
+  "attention_sprint_lifetime_seconds": 1800
+}

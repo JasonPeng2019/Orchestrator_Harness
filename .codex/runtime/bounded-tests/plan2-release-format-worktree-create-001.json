@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked python \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\scripts\\worktree_task.py\u0027 create plan2-release-format-001 --branch firmware/v2-release-format-0365 --owner coder-main",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "local git worktree creation normally under 5 seconds with 15 seconds headroom",
+    "started_at":  "2026-08-14T19:04:46.0119688+00:00",
+    "finished_at":  "2026-08-14T19:04:49.6004826+00:00",
+    "elapsed_seconds":  3.589,
+    "root_process_id":  448,
+    "observed_process_ids":  [
+                                 448
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-format-worktree-create-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-format-worktree-create-001.stderr.log"
+}

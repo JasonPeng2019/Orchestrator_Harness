@@ -1,0 +1,28 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python -m pytest .codex/tests/test_stable_runner.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The full stable-runner suite passed in 28.568 seconds before the all-role assertions; 60 seconds covers the same suite with normal Windows variance.",
+    "started_at":  "2026-08-15T00:29:04.2284658+00:00",
+    "finished_at":  "2026-08-15T00:29:31.3510933+00:00",
+    "elapsed_seconds":  27.123,
+    "root_process_id":  172944,
+    "observed_process_ids":  [
+                                 167372,
+                                 169580,
+                                 172944,
+                                 186108,
+                                 193396,
+                                 195360,
+                                 195664
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\outer-full-access-stable-runner-all-roles-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\outer-full-access-stable-runner-all-roles-20260814.stderr.log"
+}

@@ -1,0 +1,10 @@
+{
+    "schema":  "clean-n-successor-gate/v1",
+    "observed_utc":  "2026-07-31T22:39:10.7125340Z",
+    "gate":  "operator-launch-survival",
+    "exit_code":  0,
+    "output":  "python.exe : test_child_survives_launch_cli_and_receipt_has_identity (orchestrator_harness.tests.test_operator_launch.OperatorLaunchTests.test_child_survives_launch_cli_and_receipt_has_identity) ... ok\r\nAt line:2 char:44\r\n+ ... e\u0027; $out = (\u0026 python -m unittest orchestrator_harness.tests.test_oper ...\r\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (test_child_surv...dentity) ... ok:String) [], RemoteException\r\n    + FullyQualifiedErrorId : NativeCommandError\r\n \r\n\r\n----------------------------------------------------------------------\r\nRan 1 test in 5.056s\r\n\r\nOK",
+    "residue":  [
+
+                ]
+}

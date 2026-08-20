@@ -1,0 +1,7 @@
+{
+  "manager_session_id": "readiness-session",
+  "manager_invocation_id": "readiness-invocation",
+  "manager_state": "HANDLING_OTHER_EVENT",
+  "related_event_id": "other-1",
+  "continuous_from_record_id": "0453e7ed-4475-44ea-82a1-7c012f6b5274"
+}

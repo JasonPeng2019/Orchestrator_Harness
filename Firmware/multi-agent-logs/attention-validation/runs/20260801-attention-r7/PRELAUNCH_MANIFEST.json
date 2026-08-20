@@ -1,0 +1,58 @@
+{
+  "schema": "attention-sprint-prelaunch/v1",
+  "epoch_id": "20260801-attention-r7",
+  "counter_before": "0/3",
+  "status": "SEALED_COUNTED_SPRINT_CANDIDATE_1",
+  "created_utc": "2026-08-01T18:15:02.488969+00:00",
+  "manager_session_id": "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+  "manager_invocation_id": "root-attention-r7-001",
+  "primary_config": "orchestrator_harness/canary-20260801-attention-r7.json",
+  "optional_config": "harness_watcher_implementation/canary-20260801-attention-r7.json",
+  "policy_sha256": "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68",
+  "server_head": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+  "server_diff_sha256": "48d2f0be5ecfcdeeaa43f8d66c538eabb34ed5544ad13f273968308063573640",
+  "lanes": [
+    {
+      "doer": "Atlas",
+      "task": "A22",
+      "thread": "019fb877-1475-76c0-a137-2743580015de",
+      "run_root": "fresh-experiments/A22_20260726-062324"
+    },
+    {
+      "doer": "Boreal",
+      "task": "D31",
+      "thread": "019fb877-1447-7693-92b1-f4bda04c6ecf",
+      "run_root": "fresh-experiments/D31_20260726-062325"
+    },
+    {
+      "doer": "Cygnus",
+      "task": "A24",
+      "thread": "019fb877-1199-79b1-a32e-34348178f111",
+      "run_root": "fresh-experiments/A24_20260726-052146"
+    },
+    {
+      "doer": "Delta",
+      "task": "A26",
+      "thread": "019fb877-1441-7c92-84e2-cbb5bc422879",
+      "run_root": "fresh-experiments/A26_20260726-062325"
+    }
+  ],
+  "leases": {
+    "Atlas": [
+      "STM-A"
+    ],
+    "Boreal": [
+      "STM-B"
+    ],
+    "Cygnus": [
+      "NRF-A",
+      "NRF-B"
+    ],
+    "Delta": [
+      "WAITING_STM-A_AFTER_ATLAS"
+    ]
+  },
+  "formal_review_seconds": 150,
+  "attention_challenge": "fixed Atlas blocking host-only gate before live operations",
+  "old_processes_absent": true
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python C:/Users/Jason/.codex/skills/.system/skill-creator/scripts/quick_validate.py Firmware/.codex/skills/run-firmware-test-suite",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Skill validation is a small local parse previously completing in seconds; 30 seconds covers cold uv and YAML startup.",
+    "started_at":  "2026-08-14T09:19:52.4755664+00:00",
+    "finished_at":  "2026-08-14T09:19:55.9897675+00:00",
+    "elapsed_seconds":  3.514,
+    "root_process_id":  190536,
+    "observed_process_ids":  [
+                                 190536
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\run-skill-validate.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\run-skill-validate.stderr.log"
+}

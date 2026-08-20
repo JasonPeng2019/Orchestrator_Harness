@@ -1,0 +1,30 @@
+{
+    "epoch":  "20260802-m5-s3-101953Z",
+    "started_utc":  "2026-08-02T10:22:26.1555023Z",
+    "workers":  [
+                    {
+                        "doer":  "Atlas",
+                        "task":  "A22",
+                        "controller_pid":  194848,
+                        "creation_utc":  "2026-08-02T10:22:25.1501847Z",
+                        "command":  "run_persistent_lane_r9.ps1",
+                        "lane_id":  "20260802-m5-s3-101953Z:Atlas:A22"
+                    },
+                    {
+                        "doer":  "Boreal",
+                        "task":  "D31",
+                        "controller_pid":  176328,
+                        "creation_utc":  "2026-08-02T10:22:25.5626914Z",
+                        "command":  "run_persistent_lane_r9.ps1",
+                        "lane_id":  "20260802-m5-s3-101953Z:Boreal:D31"
+                    },
+                    {
+                        "doer":  "Cygnus",
+                        "task":  "A24",
+                        "controller_pid":  191088,
+                        "creation_utc":  "2026-08-02T10:22:25.8840113Z",
+                        "command":  "run_persistent_lane_r9.ps1",
+                        "lane_id":  "20260802-m5-s3-101953Z:Cygnus:A24"
+                    }
+                ]
+}

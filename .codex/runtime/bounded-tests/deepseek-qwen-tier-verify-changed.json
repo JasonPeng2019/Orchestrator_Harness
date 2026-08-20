@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  115,
+    "expected_upper_bound_seconds":  100,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  25,
+    "timeout_basis":  "Changed-code verification selects only affected static checks and tests; one hundred seconds allows the current targeted routes and fifteen seconds bounds cleanup.",
+    "started_at":  "2026-08-14T11:42:25.3815011+00:00",
+    "finished_at":  "2026-08-14T11:42:48.5640165+00:00",
+    "elapsed_seconds":  23.183,
+    "root_process_id":  174916,
+    "observed_process_ids":  [
+                                 174916
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-verify-changed.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-verify-changed.stderr.log"
+}

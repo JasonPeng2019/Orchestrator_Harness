@@ -1,0 +1,15 @@
+{
+    "schema":  "canary-optional-watcher-owner/v1",
+    "owner":  {
+                  "created_utc":  "2026-07-31T23:12:48.6287478Z",
+                  "pid":  185628
+              },
+    "config":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher_implementation\\canary-20260731-s1-clean-o.json",
+    "started_utc":  "2026-07-31T23:12:49.5223557Z",
+    "watcher":  {
+                    "created_utc":  1785539569.7689245,
+                    "pid":  170092
+                },
+    "exit_reason":  "stop-file",
+    "ended_utc":  "2026-07-31T23:40:32.9175771Z"
+}

@@ -1,0 +1,5 @@
+﻿param([string]$SuiteRoot)
+$ErrorActionPreference='Stop'; Set-Location -LiteralPath $SuiteRoot
+$identity=Join-Path $SuiteRoot '.agent-workspace/ORCHESTRATOR_HARNESS/20260801-attention-r14_optional_identity.json'
+$p=Start-Process python -ArgumentList @('-m','harness_watcher_implementation','--config','harness_watcher_implementation/canary-20260801-attention-r14.json','serve') -WorkingDirectory $SuiteRoot -WindowStyle Hidden -PassThru
+$o=Get-Process -Id $PID; $p.Refresh(); $j=[ordered]@{schema='canary-optional-watcher-owner/v1';owner=@{pid=$PID;created_utc=$o.StartTime.ToUniversalTime().ToString('o')};config='harness_watcher_implementation/canary-20260801-attention-r14.json';started_utc=[DateTime]::UtcNow.ToString('o');watcher=@{pid=$p.Id;created_utc=$p.StartTime.ToUniversalTime().ToString('o')}}; [IO.File]::WriteAllText($identity,($j|ConvertTo-Json -Depth 5),[Text.UTF8Encoding]::new($false)); $p.WaitForExit();$j.ended_utc=[DateTime]::UtcNow.ToString('o');$j.watcher_exit_code=$p.ExitCode;[IO.File]::WriteAllText($identity,($j|ConvertTo-Json -Depth 5),[Text.UTF8Encoding]::new($false))

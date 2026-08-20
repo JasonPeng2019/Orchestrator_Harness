@@ -11,6 +11,9 @@ from dev_state import verification_is_current
 
 ROOT = Path(__file__).resolve().parents[2]
 VERIFY_CHANGED = ROOT / ".codex" / "scripts" / "verify_changed.py"
+BOUNDED_TEST_SUPERVISOR = ROOT / ".codex" / "scripts" / "Invoke-BoundedTest.ps1"
+STOP_VERIFY_RESULT = ROOT / ".codex" / "runtime" / "bounded-tests" / "stop-verify.json"
+HARNESS_PLAN = ROOT / "plans" / "general-coding-harness" / "FULL-EXECUTION-SPEC_PLAN_2.md"
 
 DESTRUCTIVE_PATTERNS = (
     (
@@ -86,15 +89,43 @@ def pre_compact(_payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def verify_on_stop(_payload: dict[str, Any]) -> dict[str, Any]:
+    if not HARNESS_PLAN.is_file():
+        return {}
     try:
         if verification_is_current(ROOT):
             return {}
         result = subprocess.run(
-            [sys.executable, str(VERIFY_CHANGED)],
+            [
+                "powershell.exe",
+                "-NoLogo",
+                "-NoProfile",
+                "-NonInteractive",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                str(BOUNDED_TEST_SUPERVISOR),
+                "-Command",
+                "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+                "-WorkingDirectory",
+                str(ROOT),
+                "-MaximumLifetimeSeconds",
+                "240",
+                "-ExpectedUpperBoundSeconds",
+                "210",
+                "-CleanupAllowanceSeconds",
+                "30",
+                "-HeartbeatIntervalSeconds",
+                "30",
+                "-TimeoutBasis",
+                ("The Codex Stop hook has a 300-second ceiling; 240 seconds reserves cleanup and response time."),
+                "-ResultPath",
+                str(STOP_VERIFY_RESULT),
+            ],
             cwd=ROOT,
             check=False,
             text=True,
             capture_output=True,
+            timeout=290,
         )
     except Exception as exc:
         return {

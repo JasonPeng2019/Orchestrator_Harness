@@ -1,0 +1,68 @@
+﻿{
+    "schema":  "m5-resource-cleanup/v1",
+    "epoch":  "20260802-m5-s1d-065143Z",
+    "checked_utc":  "2026-08-02T08:54:15.5824102Z",
+    "workers":  [
+                    {
+                        "lane_id":  "20260802-m5-s1d-065143Z:Atlas:A22",
+                        "state":  "CODEX_EXITED",
+                        "leases":  [
+
+                                   ],
+                        "board_tokens":  [
+
+                                         ],
+                        "mcp_servers":  [
+
+                                        ],
+                        "status_path":  "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1d-065143Z_controller.status.json"
+                    },
+                    {
+                        "lane_id":  "20260802-m5-s1d-065143Z:Boreal:D31",
+                        "state":  "CODEX_EXITED",
+                        "leases":  [
+
+                                   ],
+                        "board_tokens":  [
+
+                                         ],
+                        "mcp_servers":  [
+
+                                        ],
+                        "status_path":  "fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1d-065143Z_controller.status.json"
+                    },
+                    {
+                        "lane_id":  "20260802-m5-s1d-065143Z:Cygnus:A24",
+                        "state":  "CODEX_EXITED",
+                        "leases":  [
+
+                                   ],
+                        "board_tokens":  [
+
+                                         ],
+                        "mcp_servers":  [
+
+                                        ],
+                        "status_path":  "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1d-065143Z_controller.status.json"
+                    },
+                    {
+                        "lane_id":  "20260802-m5-s1d-065143Z:Delta:A26",
+                        "state":  "CODEX_EXITED",
+                        "leases":  [
+
+                                   ],
+                        "board_tokens":  [
+
+                                         ],
+                        "mcp_servers":  [
+
+                                        ],
+                        "status_path":  "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1d-065143Z_controller.status.json"
+                    }
+                ],
+    "all_empty":  true,
+    "notes":  [
+                  "No suite-owned Python, controller, MCP, debugger, programmer, or hardware-tool process was present in the current reconciliation.",
+                  "No active resource lease was found in current authority records."
+              ]
+}

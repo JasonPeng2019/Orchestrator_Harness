@@ -1,0 +1,20 @@
+PHASE 0 GATE PROOF
+==================
+probe env ANTHROPIC_* inherited and removed: ['ANTHROPIC_API_KEY', 'ANTHROPIC_AUTH_TOKEN', 'ANTHROPIC_BASE_URL']
+config_overrides expansion: {"ANTHROPIC_BASE_URL": "http://localhost:11434", "ANTHROPIC_AUTH_TOKEN": "ollama", "ANTHROPIC_API_KEY": ""}
+adapter argv includes --verbose: True
+adapter argv includes --permission-mode bypassPermissions: True
+alpha-artifact.txt exists: True
+alpha-artifact.txt content: C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\scratch\0.5\fixture-root\worktrees\lane-alpha\alpha-artifact.txt
+alpha provider_terminal_outcome: 'COMPLETED'
+alpha state: 'PROVIDER_EXITED'
+alpha exit_code: 0
+alpha provider_session_id: '7288e624-c6ed-4c91-8a69-1add92b194f6'
+alpha branch: 'lane/alpha'
+beta provider_terminal_outcome: 'COMPLETED'
+beta state: 'PROVIDER_EXITED'
+beta provider_session_id: 'd7ad3bc4-b097-448e-8744-fc640aa05e06'
+beta branch: 'lane/beta'
+
+GATE VERDICT: PASS
+alpha-artifact.txt raw content: 'HELLO FROM LANE A'

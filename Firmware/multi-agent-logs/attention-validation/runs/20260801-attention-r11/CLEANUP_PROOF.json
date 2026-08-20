@@ -1,0 +1,80 @@
+[
+    {
+        "pid":  109320,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:39:09.0767764Z"
+    },
+    {
+        "pid":  170824,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:39:09.1177764Z"
+    },
+    {
+        "pid":  166956,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:39:09.1497767Z"
+    },
+    {
+        "pid":  192464,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:39:09.1807775Z"
+    },
+    {
+        "pid":  176340,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:39:09.2127765Z"
+    },
+    {
+        "pid":  193600,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:39:09.2467766Z"
+    },
+    {
+        "pid":  187568,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:39:09.2817766Z"
+    },
+    {
+        "pid":  195764,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:39:09.3127775Z"
+    },
+    {
+        "pid":  191364,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:39:09.3587765Z"
+    },
+    {
+        "pid":  96084,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:39:09.3918186Z"
+    },
+    {
+        "pid":  150108,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:39:09.4237872Z"
+    },
+    {
+        "pid":  193116,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:39:09.4577798Z"
+    },
+    {
+        "pid":  185332,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:39:09.4938103Z"
+    }
+]

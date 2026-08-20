@@ -1,0 +1,30 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev --locked python -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6SafeguardTests",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-final-safeguard-argv-repair-001",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "writer-measured-safeguard-tests-35s",
+    "started_at":  "2026-08-14T21:09:24.4981689+00:00",
+    "finished_at":  "2026-08-14T21:10:04.2472573+00:00",
+    "elapsed_seconds":  39.749,
+    "root_process_id":  175328,
+    "observed_process_ids":  [
+                                 14568,
+                                 173012,
+                                 174996,
+                                 175328,
+                                 180808,
+                                 188976,
+                                 190008,
+                                 193512,
+                                 195528
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\root-final-safeguard-tests-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\root-final-safeguard-tests-001.stderr.log"
+}

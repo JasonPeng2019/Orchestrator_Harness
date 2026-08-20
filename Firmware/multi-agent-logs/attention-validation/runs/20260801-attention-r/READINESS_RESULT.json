@@ -1,0 +1,21 @@
+{
+  "schema": "attention-readiness-result/v1",
+  "epoch_id": "20260801-attention-r",
+  "status": "PASS",
+  "exact_configs_loaded": true,
+  "signal_correlation_stages": 6,
+  "wait_finish_before_claim_classification": "IDLE_OR_ABSENT_MANAGER_DELAY",
+  "wake_to_claim_seconds": 1,
+  "evaluator_calls_for_attention_only": 0,
+  "restart_cursor_reingestion_passed": true,
+  "configured_producer_paths_exercised": 6,
+  "canonical_timeline_records": 8,
+  "disabled_default_off_covered_by": "harness_watcher_implementation.tests.test_watcher_smoke.WatcherSmokeTests.test_disabled_cli_poll_is_a_noop + test_disabled_public_poller_api_is_also_a_noop",
+  "host_suites": {
+    "targeted": 47,
+    "harness": 179,
+    "harness_skipped": 1,
+    "watcher": 53
+  },
+  "proxy_test_note": "one known coalesced-read race reproduced twice, then passed focused retry and full suite; unrelated to attention changes"
+}

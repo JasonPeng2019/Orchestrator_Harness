@@ -1,0 +1,50 @@
+
+== ruff ==
+All checks passed!
+
+== format ==
+18 files already formatted
+
+== types ==
+0 errors, 0 warnings, 0 notes
+
+== compile ==
+
+== orchestrator tests ==
+
+== watcher tests ==
+{"disabled": true}
+{"error": "[Errno 2] No such file or directory: 'C:\\\\Users\\\\Jason\\\\AppData\\\\Local\\\\Temp\\\\tmp7ypf0vlu\\\\missing.json'"}
+{"error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"}
+{"error": "metadata must be an object"}
+{"record_id": "5bdcd6e0-b768-42a5-a4b6-552f059a1285", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp0jhu57i3\\readiness\\inputs\\subagent\\lane-d93244e7b08131ef\\attention.jsonl"}
+{"record_id": "8b0af304-43fb-44e5-a8a6-2fa4e2497662", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp0jhu57i3\\readiness\\inputs\\orchestrator\\root-4813494d137e1631\\attention.jsonl"}
+{"record_id": "11111111-1111-4111-8111-111111111111", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpalgrdudc\\inline\\inputs\\subagent\\lane-d93244e7b08131ef\\attention.jsonl"}
+{"record_id": "11111111-1111-4111-8111-111111111111", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpalgrdudc\\file\\inputs\\subagent\\lane-d93244e7b08131ef\\attention.jsonl"}
+{"record_id": "a881f114-3d9c-4da8-8248-6c0a54934511", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpfvhz5szg\\baseline\\inputs\\orchestrator\\root-4813494d137e1631\\attention.jsonl"}
+{"error": "record kind is not permitted for producer role"}
+{"record_id": "a740d46d-81d5-40c1-9389-6f4dda3a20e2", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpvwjvrrav\\runtime\\inputs\\subagent\\lane-d93244e7b08131ef\\attention.jsonl"}
+
+== Codex integration tests ==
+...........................F............................................ [ 51%]
+....................................................................     [100%]
+================================== FAILURES ===================================
+______________ test_hook_catalog_contains_every_installed_action ______________
+
+    def test_hook_catalog_contains_every_installed_action() -> None:
+        payload = json.loads((ROOT / ".codex" / "hooks.json").read_text(encoding="utf-8"))
+        assert set(payload["hooks"]) == {"SessionStart", "PreToolUse", "PreCompact", "Stop"}
+        commands = [
+            handler["commandWindows"]
+            for groups in payload["hooks"].values()
+            for group in groups
+            for handler in group["hooks"]
+        ]
+>       assert all(".codex/dev" in command for command in commands)
+E       assert False
+E        +  where False = all(<generator object test_hook_catalog_contains_every_installed_action.<locals>.<genexpr> at 0x000001ED7A44FD30>)
+
+.codex\tests\test_codex_configuration.py:74: AssertionError
+=========================== short test summary info ===========================
+FAILED .codex/tests/test_codex_configuration.py::test_hook_catalog_contains_every_installed_action
+1 failed, 139 passed in 44.14s

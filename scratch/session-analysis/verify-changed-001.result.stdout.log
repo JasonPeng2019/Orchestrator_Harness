@@ -1,0 +1,116 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+   --> .codex\scripts\dev_state.py:197:40
+    |
+196 |
+    - def _skip_path(relative: Path) -> bool:
+    -     return (
+    -         any(part in SKIP_PARTS for part in relative.parts)
+    -         or bool(relative.parts and relative.parts[0] in TOP_LEVEL_VIEW_ONLY_ROOTS)
+    -         or relative.parts[:2] == ("Firmware", "fresh-experiments")
+    -         or relative.parts[:3] == ("Firmware", ".agent-workspace", "epochs")
+    -         or relative.parts[:1] == ("harness-single-worktrees",)
+    -         or relative.parts[:1] == ("scratch",)
+    -         or relative.parts[:2] == (".codex", "state")
+    -         or relative.parts[:2] == (".codex", "notes")
+    -     )
+197 + def _skip_path(relative: Path) -> bool:
+198 +     return (
+199 +         any(part in SKIP_PARTS for part in relative.parts)
+200 +         or bool(relative.parts and relative.parts[0] in TOP_LEVEL_VIEW_ONLY_ROOTS)
+201 +         or relative.parts[:2] == ("Firmware", "fresh-experiments")
+202 +         or relative.parts[:3] == ("Firmware", ".agent-workspace", "epochs")
+203 +         or relative.parts[:1] == ("harness-single-worktrees",)
+204 +         or relative.parts[:1] == ("scratch",)
+205 +         or relative.parts[:2] == (".codex", "state")
+206 +         or relative.parts[:2] == (".codex", "notes")
+207 +     )
+208 |
+    |
+
+unformatted: File would be reformatted
+  --> .codex\tests\test_verify_changed.py:54:88
+   |
+53 |
+   - def test_manifest_excludes_linked_worktrees_and_legacy_entries(tmp_path: Path) -> None:
+   -     _write(tmp_path, "source.py", "value = 1\n")
+   -     linked = _write(tmp_path, "Firmware/target-harness/.git", "gitdir: elsewhere\n")
+   -     _write(tmp_path, "Firmware/target-harness/target.py", "value = 2\n")
+   -     _write(
+   -         tmp_path,
+   -         "Firmware/fresh-experiments/A21/.agent-workspace/copied_firmware.c",
+   -         "int main(void) { return 0; }\n",
+   -     )
+   -     _write(
+   -         tmp_path,
+   -         "Firmware/.agent-workspace/epochs/20260816-plan2-suite-008/build_prompt_bundle.py",
+   -         "value = 3\n",
+   -     )
+   -     _write(
+   -         tmp_path,
+   -         "harness-single-worktrees/claude-test/orchestrator_harness/__init__.py",
+   -         "value = 4\n",
+   -     )
+   -     _write(tmp_path, "scratch/session-analysis/analyze_session.py", "value = 5\n")
+   -
+   -     manifest = repository_manifest(tmp_path)
+   -     assert set(manifest) == {"source.py"}
+   -     record_verified_snapshot(tmp_path, manifest=manifest)
+   -     state_path = tmp_path / STATE_PATH
+   -     state = json.loads(state_path.read_text(encoding="utf-8"))
+   -     state["files"]["Firmware/target-harness/target.py"] = "legacy-target-worktree-entry"
+   -     state["files"]["Firmware/fresh-experiments/A21/firmware/main.c"] = "legacy-run-entry"
+   -     state["files"]["Firmware/.agent-workspace/epochs/20260816-plan2-suite-008/validate_invocation.py"] = "legacy-epoch-entry"
+   -     state["files"]["harness-single-worktrees/claude-test/orchestrator_harness/tests/test_x.py"] = "legacy-worktree-entry"
+   -     state["files"]["scratch/search_fw_blobs.py"] = "legacy-scratch-entry"
+   -     state_path.write_text(json.dumps(state), encoding="utf-8")
+   -
+   -     assert linked.is_file()
+   -     assert verification_delta(tmp_path).changed_paths == ()  # type: ignore[union-attr]
+54 + def test_manifest_excludes_linked_worktrees_and_legacy_entries(tmp_path: Path) -> None:
+55 +     _write(tmp_path, "source.py", "value = 1\n")
+56 +     linked = _write(tmp_path, "Firmware/target-harness/.git", "gitdir: elsewhere\n")
+57 +     _write(tmp_path, "Firmware/target-harness/target.py", "value = 2\n")
+58 +     _write(
+59 +         tmp_path,
+60 +         "Firmware/fresh-experiments/A21/.agent-workspace/copied_firmware.c",
+61 +         "int main(void) { return 0; }\n",
+62 +     )
+63 +     _write(
+64 +         tmp_path,
+65 +         "Firmware/.agent-workspace/epochs/20260816-plan2-suite-008/build_prompt_bundle.py",
+66 +         "value = 3\n",
+67 +     )
+68 +     _write(
+69 +         tmp_path,
+70 +         "harness-single-worktrees/claude-test/orchestrator_harness/__init__.py",
+71 +         "value = 4\n",
+72 +     )
+73 +     _write(tmp_path, "scratch/session-analysis/analyze_session.py", "value = 5\n")
+74 +
+75 +     manifest = repository_manifest(tmp_path)
+76 +     assert set(manifest) == {"source.py"}
+77 +     record_verified_snapshot(tmp_path, manifest=manifest)
+78 +     state_path = tmp_path / STATE_PATH
+79 +     state = json.loads(state_path.read_text(encoding="utf-8"))
+80 +     state["files"]["Firmware/target-harness/target.py"] = "legacy-target-worktree-entry"
+81 +     state["files"]["Firmware/fresh-experiments/A21/firmware/main.c"] = "legacy-run-entry"
+82 +     state["files"]["Firmware/.agent-workspace/epochs/20260816-plan2-suite-008/validate_invocation.py"] = (
+83 +         "legacy-epoch-entry"
+84 +     )
+85 +     state["files"]["harness-single-worktrees/claude-test/orchestrator_harness/tests/test_x.py"] = (
+86 +         "legacy-worktree-entry"
+87 +     )
+88 +     state["files"]["scratch/search_fw_blobs.py"] = "legacy-scratch-entry"
+89 +     state_path.write_text(json.dumps(state), encoding="utf-8")
+90 +
+91 +     assert linked.is_file()
+92 +     assert verification_delta(tmp_path).changed_paths == ()  # type: ignore[union-attr]
+93 |     state_path.write_text("{bad json\n", encoding="utf-8")
+   |
+
+2 files would be reformatted

@@ -1,0 +1,43 @@
+{
+  "schema": "m5-process-registry/v1",
+  "epoch": "20260802-m5-s1b-063804Z",
+  "created_utc": "2026-08-02T06:39:34.369352+00:00",
+  "root_manager": {
+    "pid": 192592,
+    "creation_utc": "2026-08-01T22:36:46.3275151Z"
+  },
+  "processes": [
+    {
+      "role": "native-harness-managed-owner",
+      "pid": 179776,
+      "parent_pid": 157736,
+      "creation_utc": "2026-08-02T06:41:55.4600830Z",
+      "command": "\"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\BYO-Firmware-MCP\\.venv\\Scripts\\python.exe\" -m orchestrator_harness --config multi-agent-logs\\orchestrator-harness\\20260802-m5-s1b-063804Z\\config.json watch --managed",
+      "allowed": true
+    },
+    {
+      "role": "native-harness-managed-child",
+      "pid": 160284,
+      "parent_pid": 179776,
+      "creation_utc": "2026-08-02T06:41:55.4740510Z",
+      "command": "\"C:\\Users\\Jason\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\"  -m orchestrator_harness --config multi-agent-logs\\orchestrator-harness\\20260802-m5-s1b-063804Z\\config.json watch --managed",
+      "allowed": true
+    },
+    {
+      "role": "native-diagnostic-watcher-launcher",
+      "pid": 180648,
+      "parent_pid": 149712,
+      "creation_utc": "2026-08-02T06:42:25.9293340Z",
+      "command": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\BYO-Firmware-MCP\\.venv\\Scripts\\python.exe -m harness_watcher_implementation --config harness_watcher\\20260802-m5-s1b-063804Z\\config.json serve --startup-token 85e142de-c032-4e94-a61b-55c5f5df16d0",
+      "allowed": true
+    },
+    {
+      "role": "native-diagnostic-watcher",
+      "pid": 174376,
+      "parent_pid": 180648,
+      "creation_utc": "2026-08-02T06:42:25.9675430Z",
+      "command": "\"C:\\Users\\Jason\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\"  -m harness_watcher_implementation --config harness_watcher\\20260802-m5-s1b-063804Z\\config.json serve --startup-token 85e142de-c032-4e94-a61b-55c5f5df16d0",
+      "allowed": true
+    }
+  ]
+}

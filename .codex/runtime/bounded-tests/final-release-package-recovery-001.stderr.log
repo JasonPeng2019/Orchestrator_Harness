@@ -1,0 +1,6 @@
+test_out_of_tree_wheel_resolves_one_canonical_asset_tree_and_leaves_source_clean (orchestrator_harness.tests.test_s6_public_release.S6PackageTests.test_out_of_tree_wheel_resolves_one_canonical_asset_tree_and_leaves_source_clean) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 8.032s
+
+OK

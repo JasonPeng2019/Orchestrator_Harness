@@ -1,0 +1,106 @@
+{
+  "conditions": {
+    "helper:C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp0q0ibccv\\suite\\runs\\A00_test\\.agent-workspace\\helper_process.json:state": {
+      "data": {
+        "declared_lane_id": "A00_test:Atlas:A00",
+        "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp0q0ibccv\\suite\\runs\\A00_test\\.agent-workspace\\helper_process.json",
+        "processes": [
+          {
+            "actual_created_utc": "2026-08-02T10:55:44.784626Z",
+            "expected_started_utc": "2026-08-02T10:55:44.784626Z",
+            "pid": 147232,
+            "reason": "PID and creation time match",
+            "role": "pid",
+            "state": "live"
+          }
+        ],
+        "session_id": null,
+        "sha256": "74934db93ea3533627a16deece72800a86035ca57c43dac087417d67d31997d5",
+        "state": "HELPER_RUNNING"
+      },
+      "event_id": "0c386f8c64d908f3b461b92ccb28f0ef81a2653c0e25e4bfca5c2cea4f2f5de6",
+      "identity": "helper:C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp0q0ibccv\\suite\\runs\\A00_test\\.agent-workspace\\helper_process.json:state",
+      "severity": "info",
+      "type": "HELPER_ACTIVE"
+    },
+    "manager-signal:wake": {
+      "data": {
+        "attention_epoch_id": "A00_test",
+        "correlated_request_answered": false,
+        "correlated_request_id": null,
+        "correlated_request_path": null,
+        "created_utc": "2026-07-30T12:00:00Z",
+        "deadline_utc": null,
+        "evidence_paths": [],
+        "kind": "HELP",
+        "lane_id": "A00_test:Atlas:A00",
+        "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp0q0ibccv\\suite\\runs\\A00_test\\.agent-workspace\\manager-signals\\wake.json",
+        "phase": "synthetic",
+        "run_root": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp0q0ibccv\\suite\\runs\\A00_test",
+        "sha256": "259d73f3291c072b2256020a8ac7da07a3328e3d4ff109bfc5eb0aa57ac7c8b6",
+        "signal_id": "wake",
+        "summary": "wake",
+        "task": "A00"
+      },
+      "event_id": "f01481f4f6c41134087618a77ca673c19822697d961dba21191e8a24adc3fb0c",
+      "identity": "manager-signal:wake",
+      "severity": "info",
+      "type": "MANAGER_SIGNAL"
+    }
+  },
+  "schema": "orchestrator-watcher-cursor/v1",
+  "snapshot": {
+    "helpers": [
+      {
+        "declared_lane_id": "A00_test:Atlas:A00",
+        "operational_state": "HELPER_RUNNING",
+        "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp0q0ibccv\\suite\\runs\\A00_test\\.agent-workspace\\helper_process.json",
+        "processes": [
+          {
+            "actual_created_utc": "2026-08-02T10:55:44.784626Z",
+            "expected_started_utc": "2026-08-02T10:55:44.784626Z",
+            "pid": 147232,
+            "reason": "PID and creation time match",
+            "role": "pid",
+            "state": "live"
+          }
+        ],
+        "run_root": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp0q0ibccv\\suite\\runs\\A00_test",
+        "server_name": null,
+        "session_id": null,
+        "sha256": "74934db93ea3533627a16deece72800a86035ca57c43dac087417d67d31997d5"
+      }
+    ],
+    "lanes": [],
+    "manager_signals": [
+      {
+        "attention_epoch_id": "A00_test",
+        "correlated_request_answered": false,
+        "correlated_request_id": null,
+        "correlated_request_path": null,
+        "created_utc": "2026-07-30T12:00:00Z",
+        "deadline_utc": null,
+        "evidence_paths": [],
+        "kind": "HELP",
+        "lane_id": "A00_test:Atlas:A00",
+        "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp0q0ibccv\\suite\\runs\\A00_test\\.agent-workspace\\manager-signals\\wake.json",
+        "phase": "synthetic",
+        "run_root": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp0q0ibccv\\suite\\runs\\A00_test",
+        "sha256": "259d73f3291c072b2256020a8ac7da07a3328e3d4ff109bfc5eb0aa57ac7c8b6",
+        "signal_id": "wake",
+        "summary": "wake",
+        "task": "A00"
+      }
+    ],
+    "mcps": [],
+    "observation_errors": [],
+    "observed_utc": "2026-08-02T10:55:48.642052Z",
+    "process_errors": [],
+    "process_provider": "windows-cim",
+    "process_snapshot_complete": true,
+    "requests": [],
+    "resource_conflicts": [],
+    "runs_discovered": 1,
+    "schema": "orchestrator-watcher-snapshot/v1"
+  }
+}

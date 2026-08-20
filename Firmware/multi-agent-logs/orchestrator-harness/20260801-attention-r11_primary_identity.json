@@ -1,0 +1,22 @@
+{
+    "schema":  "canary-primary-owner/v1",
+    "epoch":  "20260801-attention-r11",
+    "owner":  {
+                  "pid":  109320,
+                  "created_utc":  "2026-08-01T20:23:45.615102Z"
+              },
+    "watcher":  {
+                    "pid":  170824,
+                    "created_utc":  "2026-08-01T20:23:45.719970Z"
+                },
+    "config":  "orchestrator_harness/canary-20260801-attention-r11.json",
+    "started_utc":  "2026-08-01T20:23:46.774505Z",
+    "managed_owner":  {
+                          "pid":  109320,
+                          "created_utc":  "2026-08-01T20:23:45.615102Z"
+                      },
+    "managed_watcher":  {
+                            "pid":  170824,
+                            "created_utc":  "2026-08-01T20:23:45.719970Z"
+                        }
+}

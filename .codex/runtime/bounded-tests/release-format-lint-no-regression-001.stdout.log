@@ -1,0 +1,13 @@
+{
+  "parent_finding_count": 420,
+  "tip_finding_count": 409,
+  "introduced_finding_count": 2,
+  "introduced": [
+    {
+      "path": "orchestrator_harness/lane_controller.py",
+      "code": "F402",
+      "message": "Import `field` from line 19 shadowed by loop variable",
+      "count": 2
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "acknowledged_event_ids": [
+    "2837d03ab821036424652ed82de9b85dba386bf9fbbe1da24eb0aac94357d5e2",
+    "e13f984bba0105776d1c8857d9a7b844cf4a9f7b3c230e1145ee4ad0543c6987",
+    "a6e1c2dd66844c2807470a09a339dd4228f0a00bc92ca93fd8138cda786e736a",
+    "610f012370f54d5d32a5bd126a3c566c26abf5c41b2d4659bacbae40a0502956",
+    "1010b12cc2180355fdada2259dd118d824347044e7a6c0841c7ee68688de8315",
+    "4b5d424dcf8b909a501c695d1e11ab637568ae2c59a8db384694f4b64e09e361",
+    "ec65f51dd051116bf3cb25f3d4f2a9fba706ce0041a314b73aa18e05eaa4c029"
+  ],
+  "deferred": [
+    {
+      "admitted_utc": "2026-08-02T03:33:25.020671Z",
+      "deadline_order": "9999-12-31T23:59:59Z",
+      "event": {
+        "data": {
+          "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+          "checkpoint_sha256": "73259c6a013f300cc48aa559767365cf3160594e2203c9553393b2310788f1e1",
+          "lane_id": "20260802-m5-s1-031903Z:Delta:A26"
+        },
+        "event_id": "20c80fc36fd14ab086cc9238de902429d62b033803bde8c806b1dfbff8ffc563",
+        "identity": "lane:20260802-m5-s1-031903Z:Delta:A26:checkpoint",
+        "severity": "info",
+        "type": "CHECKPOINT_UPDATED"
+      },
+      "identity": "lane:20260802-m5-s1-031903Z:Delta:A26:checkpoint",
+      "priority": 5
+    }
+  ],
+  "pending": {
+    "admitted_utc": "2026-08-02T03:27:00.664737Z",
+    "data": {
+      "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+      "checkpoint_sha256": "b483d6fd4fdb8523ffc2852991a834448da4d79a2ec1248e9d244f69b83073bb",
+      "lane_id": "20260802-m5-s1-031903Z:Boreal:D31"
+    },
+    "event_id": "8fa4a175c2a06070139434838f28f02644ae0a488ec9c17e5c80c9c8cef76063",
+    "identity": "lane:20260802-m5-s1-031903Z:Boreal:D31:checkpoint",
+    "notification": "MANAGER_ACTION_REQUIRED",
+    "observed_utc": "2026-08-02T03:29:13.506503Z",
+    "severity": "info",
+    "type": "CHECKPOINT_UPDATED"
+  },
+  "schema": "orchestrator-manager-notification/v1"
+}

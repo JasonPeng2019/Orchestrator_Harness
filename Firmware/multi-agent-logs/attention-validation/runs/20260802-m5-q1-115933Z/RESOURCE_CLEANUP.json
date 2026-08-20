@@ -1,0 +1,21 @@
+{
+    "epoch":  "20260802-m5-q1-115933Z",
+    "verified_utc":  "2026-08-02T12:13:17.6106582Z",
+    "safe":  true,
+    "leases":  [
+
+               ],
+    "board_tokens":  [
+
+                     ],
+    "mcp_servers":  [
+
+                    ],
+    "provider_processes":  [
+
+                           ],
+    "hardware_actions":  [
+
+                         ],
+    "temporary_state":  "preserved under epoch paths"
+}

@@ -1,0 +1,38 @@
+test_canonical_codex_equivalent_last_message_spellings_share_identity (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_canonical_codex_equivalent_last_message_spellings_share_identity) ... ok
+test_canonical_codex_last_message_path_change_rejects_before_adapter (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_canonical_codex_last_message_path_change_rejects_before_adapter) ... ok
+test_canonical_no_status_fixed_artifacts_are_occupied (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_canonical_no_status_fixed_artifacts_are_occupied) ... lane-controller invocation error: canonical task has retained fixed artifacts; action:start rejected before provider launch
+lane-controller invocation error: canonical start task advancement rejected: task advancement artifact COMPLETION_REVIEW.json is not valid UTF-8 JSON: Expecting value: line 1 column 1 (char 0)
+lane-controller invocation error: canonical start requires a valid task result: Expecting value: line 1 column 1 (char 0)
+lane-controller invocation error: canonical start requires a valid task result: task result task/card identity does not match
+ok
+test_canonical_output_reservations_reject_before_workspace_mutation (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_canonical_output_reservations_reject_before_workspace_mutation) ... ok
+test_canonical_prompt_resume_and_task_advancement_are_content_bound (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_canonical_prompt_resume_and_task_advancement_are_content_bound) ... ok
+test_canonical_provider_launch_identity_is_immutable_before_adapter (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_canonical_provider_launch_identity_is_immutable_before_adapter) ... ok
+test_canonical_rejected_preflight_does_not_create_event_parent (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_canonical_rejected_preflight_does_not_create_event_parent) ... lane-controller invocation error: canonical task already has persisted work; action:start rejected; use action:resume
+lane-controller invocation error: canonical prior task identity does not match persisted status
+lane-controller invocation error: canonical start task advancement rejected: task advancement artifact COMPLETION_REVIEW.json is not valid UTF-8 JSON: Expecting value: line 1 column 1 (char 0)
+lane-controller invocation error: canonical task is already accepted; start rejected before provider launch
+lane-controller invocation error: canonical accepted task cannot be resumed or amended before provider launch
+ok
+test_canonical_resume_admits_exact_reviewed_card_and_prompt_amendments (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_canonical_resume_admits_exact_reviewed_card_and_prompt_amendments) ... ok
+test_canonical_resume_admits_valid_large_root_review_without_local_cap (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_canonical_resume_admits_valid_large_root_review_without_local_cap) ... ok
+test_canonical_resume_amendment_rejects_unreviewed_material_wrong_pair_and_accepted (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_canonical_resume_amendment_rejects_unreviewed_material_wrong_pair_and_accepted) ... ok
+test_canonical_unconsumed_last_message_path_does_not_change_identity (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_canonical_unconsumed_last_message_path_does_not_change_identity) ... ok
+test_canonical_workspace_symlink_is_rejected_before_mutation (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_canonical_workspace_symlink_is_rejected_before_mutation) ... ok
+test_claude_adapter_and_profile_use_only_synthetic_provider_facts (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_claude_adapter_and_profile_use_only_synthetic_provider_facts) ... ok
+test_coding_v1_closed_contract_and_alias_matrix (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_coding_v1_closed_contract_and_alias_matrix) ... ok
+test_controller_acceptance_chain_blocks_start_and_resume_before_fake_provider (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_controller_acceptance_chain_blocks_start_and_resume_before_fake_provider) ... lane-controller invocation error: canonical task is already accepted; start rejected before provider launch
+lane-controller invocation error: canonical accepted task cannot be resumed or amended before provider launch
+lane-controller invocation error: canonical task is already accepted; start rejected before provider launch
+ok
+test_controller_fake_claude_start_resume_failure_and_wrong_session (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_controller_fake_claude_start_resume_failure_and_wrong_session) ... ok
+test_controller_result_gate_rejects_wrong_task_card_digest (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_controller_result_gate_rejects_wrong_task_card_digest) ... ok
+test_file_backed_declared_content_hashes_preserve_raw_chain_identity (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_file_backed_declared_content_hashes_preserve_raw_chain_identity) ... ok
+test_fixed_task_advancement_chain_fails_closed (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_fixed_task_advancement_chain_fails_closed) ... ok
+test_legacy_adapters_are_separate_and_reject_ambiguous_aliases (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_legacy_adapters_are_separate_and_reject_ambiguous_aliases) ... ok
+test_review_pair_paths_require_absolute_identity_before_hashing (orchestrator_harness.tests.test_s2_contract.S2ContractTests.test_review_pair_paths_require_absolute_identity_before_hashing) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 73.365s
+
+OK

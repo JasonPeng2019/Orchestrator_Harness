@@ -1,0 +1,2 @@
+{"error":"managed watcher runtime startup timed out","observed_utc":"2026-08-01T17:03:53.2189954Z","schema":"manager-supervision-owner-error/v1","epoch":"20260801-attention-r"}
+{"schema":"manager-supervision-notification/v1","observed_utc":"2026-08-01T17:08:03.077168Z","scan":".agent-workspace/CANARY_AUTO_SCAN_20260801-attention-r_20260801T170740867859Z.json","lanes":[],"resource_conflicts":[],"observation_errors":[],"process_errors":[]}

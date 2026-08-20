@@ -1,0 +1,16 @@
+{
+  "schema": "attention-sprint-prelaunch/v1",
+  "epoch_id": "20260801-attention-r6",
+  "counter_before": "0/3",
+  "status": "SEALED_POST_REPAIR_READINESS",
+  "created_utc": "2026-08-01T18:10:18.617054+00:00",
+  "manager_session_id": "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+  "manager_invocation_id": "root-attention-r6-001",
+  "primary_config": "orchestrator_harness/canary-20260801-attention-r6.json",
+  "optional_config": "harness_watcher_implementation/canary-20260801-attention-r6.json",
+  "repair": "LOGGING_REPAIR_PLAN_006.md",
+  "repair_review": "CLEAR",
+  "tests": "watcher 64; harness 186 with known flaky rerun pass; focused lint/type clean",
+  "old_processes_absent": true,
+  "hardware_authorized": false
+}

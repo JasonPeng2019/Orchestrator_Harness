@@ -1,0 +1,16 @@
+{
+  "epoch": "20260802-m5-s1r1-055644Z",
+  "valid": false,
+  "reasons": [
+    "root directly probed manager-signal paths during the active attempt",
+    "native managed harness owner was killed by the root tool-call timeout and could not restart because committed scan identity changed"
+  ],
+  "forbidden_support_layers_used": false,
+  "transcripts_inspected_for_discovery": false,
+  "collaboration_notification_used": false,
+  "user_message_used": false,
+  "manual_signal_path_probe_used": true,
+  "source_fingerprint_match": true,
+  "sealed_inputs_match": true,
+  "cleanup_exact": true
+}

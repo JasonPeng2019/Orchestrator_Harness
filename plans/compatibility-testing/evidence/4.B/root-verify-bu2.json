@@ -1,0 +1,23 @@
+{
+  "verdict": "PASS",
+  "checks": {
+    "import": "ok",
+    "install_changed_gt0": true,
+    "install_not_idempotent": true,
+    "settings_written": true,
+    "manifest_written": true,
+    "check_installed": true,
+    "check_owned": true,
+    "check_current": true,
+    "reinstall_idempotent": true,
+    "managed_asset_present": true,
+    "tamper_flips_current_false": true,
+    "tamper_keeps_installed": true,
+    "preserve_modified_nonempty": true,
+    "modified_asset_survives": true,
+    "foreign_survives_install": true,
+    "managed_added_alongside": true,
+    "foreign_survives_uninstall": true,
+    "managed_removed": true
+  }
+}

@@ -1,0 +1,15 @@
+*** Begin Patch
+*** Update File: .codex/scripts/dev_state.py
+@@
+ def _skip_path(relative: Path) -> bool:
+     return (
+         any(part in SKIP_PARTS for part in relative.parts)
+         or bool(relative.parts and relative.parts[0] in TOP_LEVEL_VIEW_ONLY_ROOTS)
+         or relative.parts[:2] == ("Firmware", "fresh-experiments")
++        or relative.parts[:3] == ("Firmware", ".agent-workspace", "epochs")
++        or relative.parts[:1] == ("harness-single-worktrees",)
++        or relative.parts[:1] == ("scratch",)
+         or relative.parts[:2] == (".codex", "state")
+         or relative.parts[:2] == (".codex", "notes")
+     )
+*** End Patch

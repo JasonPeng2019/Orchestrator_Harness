@@ -1,0 +1,21 @@
+{
+    "epoch":  "20260802-m5-q4-134406Z",
+    "validated_utc":  "2026-08-02T13:51:40.5371467Z",
+    "attempt":  "4/10",
+    "qualifying_count":  "0/3",
+    "python_baseline_match":  true,
+    "policy_baseline_match":  true,
+    "boundary_validation":  "PASS",
+    "root_pid":  192592,
+    "root_creation_utc":  "2026-08-01T22:36:46.3275151Z",
+    "q4_runtime_processes_before":  [
+
+                                    ],
+    "leases":  [
+
+               ],
+    "hardware_actions":  [
+
+                         ],
+    "decision":  "LAUNCH_NATIVE_INFRASTRUCTURE"
+}

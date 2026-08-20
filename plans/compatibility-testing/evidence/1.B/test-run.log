@@ -1,0 +1,15 @@
+test_B15_view_source_allocate_immutable_and_read_only (orchestrator_harness.tests.test_compat_cli_subcommands.CompatCliSubcommandTests.test_B15_view_source_allocate_immutable_and_read_only) ... ok
+test_B16_lane_retire_cli_dispatch (orchestrator_harness.tests.test_compat_cli_subcommands.CompatCliSubcommandTests.test_B16_lane_retire_cli_dispatch) ... ok
+test_B16_lane_retire_writes_archive_before_closing_worktree (orchestrator_harness.tests.test_compat_cli_subcommands.CompatCliSubcommandTests.test_B16_lane_retire_writes_archive_before_closing_worktree) ... ok
+test_B1_scan_prints_a_snapshot_and_persists_nothing (orchestrator_harness.tests.test_compat_cli_subcommands.CompatCliSubcommandTests.test_B1_scan_prints_a_snapshot_and_persists_nothing) ... ok
+test_B2_scan_no_write_is_diagnostic_only_and_flag_is_a_noop (orchestrator_harness.tests.test_compat_cli_subcommands.CompatCliSubcommandTests.test_B2_scan_no_write_is_diagnostic_only_and_flag_is_a_noop) ... ok
+test_B3_watch_once_runs_exactly_one_reconcile_pass (orchestrator_harness.tests.test_compat_cli_subcommands.CompatCliSubcommandTests.test_B3_watch_once_runs_exactly_one_reconcile_pass) ... ok
+test_B4_watch_until_event_returns_on_a_new_record (orchestrator_harness.tests.test_compat_cli_subcommands.CompatCliSubcommandTests.test_B4_watch_until_event_returns_on_a_new_record) ... ok
+test_B7_watch_no_write_leaves_the_tree_unchanged (orchestrator_harness.tests.test_compat_cli_subcommands.CompatCliSubcommandTests.test_B7_watch_no_write_leaves_the_tree_unchanged) ... ok
+test_B8_handoff_preflight_cli_dispatch (orchestrator_harness.tests.test_compat_cli_subcommands.CompatCliSubcommandTests.test_B8_handoff_preflight_cli_dispatch) ... ok
+test_B8_handoff_preflight_ok_and_missing_evidence (orchestrator_harness.tests.test_compat_cli_subcommands.CompatCliSubcommandTests.test_B8_handoff_preflight_ok_and_missing_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 11.099s
+
+OK

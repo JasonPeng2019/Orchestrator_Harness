@@ -1,0 +1,8 @@
+test_compat_N4_MANAGER_EVENT_ACK_MINTED_ONLY_BY_ACKNOWLEDGE_PATH_001 (orchestrator_harness.tests.test_compat_host_adapters.CompatHostAdapterTests.test_compat_N4_MANAGER_EVENT_ACK_MINTED_ONLY_BY_ACKNOWLEDGE_PATH_001) ... ok
+test_compat_N5_NOTIFICATION_STOP_DECISION_SHAPE_AND_STOP_MATRIX_001 (orchestrator_harness.tests.test_compat_host_adapters.CompatHostAdapterTests.test_compat_N5_NOTIFICATION_STOP_DECISION_SHAPE_AND_STOP_MATRIX_001) ... ok
+test_compat_N7_SEVERITY_AND_HIGHEST_PENDING_RANKING_001 (orchestrator_harness.tests.test_compat_host_adapters.CompatHostAdapterTests.test_compat_N7_SEVERITY_AND_HIGHEST_PENDING_RANKING_001) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.576s
+
+OK

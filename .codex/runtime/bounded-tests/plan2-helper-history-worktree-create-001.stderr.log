@@ -1,0 +1,1 @@
+worktree-task: Command '['git', 'worktree', 'add', '-b', 'firmware/v2-plan2-helper-history-assets-001', 'C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\.plan2-basedpyright-repair-001-worktrees\\plan2-helper-history-assets-001', 'HEAD']' returned non-zero exit status 128.

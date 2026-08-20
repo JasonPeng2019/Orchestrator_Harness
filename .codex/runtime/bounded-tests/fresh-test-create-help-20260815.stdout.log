@@ -1,0 +1,8 @@
+usage: fresh_test.py create [-h] [--label LABEL] test_id
+
+positional arguments:
+  test_id
+
+options:
+  -h, --help     show this help message and exit
+  --label LABEL  Unique safe suffix; defaults to local timestamp.

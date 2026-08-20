@@ -1,0 +1,18 @@
+[1m============================= test session starts =============================[0m
+platform win32 -- Python 3.14.2, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\Jason\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness
+configfile: pyproject.toml
+plugins: anyio-4.12.1
+[1mcollecting ... [0mcollected 14 items / 6 deselected / 8 selected
+
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_A24_resume_as_wake_reenters_idle_session [32mPASSED[0m[32m [ 12%][0m
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_G17_resume_wake_tracks_delivered_and_failed [32mPASSED[0m[32m [ 25%][0m
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_G19_manager_wake_roundtrip_via_finalization [32mPASSED[0m[32m [ 37%][0m
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_N1_real_adapter_replaces_future_fixture [32mPASSED[0m[32m [ 50%][0m
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_N2_bounded_wake_notice_is_sparse [32mPASSED[0m[32m [ 62%][0m
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_N3_receipt_is_transport_evidence_only [32mPASSED[0m[32m [ 75%][0m
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_N6_registration_replay_persists_across_restart [32mPASSED[0m[32m [ 87%][0m
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_N8_capability_selection [32mPASSED[0m[32m [100%][0m
+
+[32m======================= [32m[1m8 passed[0m, [33m6 deselected[0m[32m in 3.33s[0m[32m =======================[0m

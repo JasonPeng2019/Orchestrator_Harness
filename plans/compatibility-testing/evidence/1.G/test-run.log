@@ -1,0 +1,16 @@
+test_k2_matching_identity_and_live_nonterminal_admits (orchestrator_harness.tests.test_compat_resume_admission.CompatResumeAdmissionTests.test_k2_matching_identity_and_live_nonterminal_admits) ... ok
+test_k3_identity_mismatch_rejects_and_require_raises (orchestrator_harness.tests.test_compat_resume_admission.CompatResumeAdmissionTests.test_k3_identity_mismatch_rejects_and_require_raises) ... ok
+test_k4_amendment_diff_review_valid_missing_and_altered (orchestrator_harness.tests.test_compat_resume_admission.CompatResumeAdmissionTests.test_k4_amendment_diff_review_valid_missing_and_altered) ... ok
+test_k5_review_card_payload_and_digest_tamper_rejected (orchestrator_harness.tests.test_compat_resume_admission.CompatResumeAdmissionTests.test_k5_review_card_payload_and_digest_tamper_rejected) ... ok
+test_k6_diff_command_safety_rejects_metachars_and_non_git (orchestrator_harness.tests.test_compat_resume_admission.CompatResumeAdmissionTests.test_k6_diff_command_safety_rejects_metachars_and_non_git) ... ok
+test_k7_job_identity_derivation_is_stable_and_matches_amendment (orchestrator_harness.tests.test_compat_resume_admission.CompatResumeAdmissionTests.test_k7_job_identity_derivation_is_stable_and_matches_amendment) ... ok
+test_k8_thread_id_precedence_is_conflict_rejection (orchestrator_harness.tests.test_compat_resume_admission.CompatResumeAdmissionTests.test_k8_thread_id_precedence_is_conflict_rejection) ... ok
+test_k10_amendment_identity_mismatch_blocks_with_distinct_reason (orchestrator_harness.tests.test_compat_resume_admission.HandoffPreflightCompatTests.test_k10_amendment_identity_mismatch_blocks_with_distinct_reason) ... ok
+test_k10_complete_bundle_passes (orchestrator_harness.tests.test_compat_resume_admission.HandoffPreflightCompatTests.test_k10_complete_bundle_passes) ... ok
+test_k10_missing_invocation_file_blocks_with_distinct_reason (orchestrator_harness.tests.test_compat_resume_admission.HandoffPreflightCompatTests.test_k10_missing_invocation_file_blocks_with_distinct_reason) ... ok
+test_k10_missing_required_evidence_blocks_with_distinct_reason (orchestrator_harness.tests.test_compat_resume_admission.HandoffPreflightCompatTests.test_k10_missing_required_evidence_blocks_with_distinct_reason) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 5.507s
+
+OK

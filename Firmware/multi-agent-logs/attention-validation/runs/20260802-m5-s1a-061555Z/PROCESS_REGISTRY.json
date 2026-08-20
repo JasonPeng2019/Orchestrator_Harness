@@ -1,0 +1,99 @@
+{
+  "schema": "m5-process-registry/v1",
+  "epoch": "20260802-m5-s1a-061555Z",
+  "created_utc": "2026-08-02T06:16:13.388901+00:00",
+  "root_manager": {
+    "pid": 192592,
+    "creation_utc": "2026-08-01T22:36:46.3275151Z"
+  },
+  "processes": [
+    {
+      "role": "native-harness-managed-owner",
+      "pid": 162276,
+      "parent_pid": 187256,
+      "creation_utc": "2026-08-02T06:17:20.4481118Z",
+      "command": "\"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\BYO-Firmware-MCP\\.venv/Scripts\\python.exe\" -m orchestrator_harness --config multi-agent-logs/orchestrator-harness/20260802-m5-s1a-061555Z/config.json watch --managed",
+      "allowed": true
+    },
+    {
+      "role": "native-harness-managed-child",
+      "pid": 171132,
+      "parent_pid": 162276,
+      "creation_utc": "2026-08-02T06:17:20.4604906Z",
+      "command": "\"C:\\Users\\Jason\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\"  -m orchestrator_harness --config multi-agent-logs/orchestrator-harness/20260802-m5-s1a-061555Z/config.json watch --managed",
+      "allowed": true
+    },
+    {
+      "role": "native-diagnostic-watcher-launcher",
+      "pid": 157724,
+      "parent_pid": 170064,
+      "creation_utc": "2026-08-02T06:17:38.8518550Z",
+      "command": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\BYO-Firmware-MCP\\.venv\\Scripts\\python.exe -m harness_watcher_implementation --config harness_watcher/20260802-m5-s1a-061555Z/config.json serve --startup-token 0553d567-1ada-48ad-b508-a05792b5ee05",
+      "allowed": true
+    },
+    {
+      "role": "native-diagnostic-watcher",
+      "pid": 3548,
+      "parent_pid": 157724,
+      "creation_utc": "2026-08-02T06:17:38.9001209Z",
+      "command": "\"C:\\Users\\Jason\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\"  -m harness_watcher_implementation --config harness_watcher/20260802-m5-s1a-061555Z/config.json serve --startup-token 0553d567-1ada-48ad-b508-a05792b5ee05",
+      "allowed": true
+    },
+    {
+      "role": "external-controller-Atlas",
+      "pid": 192392,
+      "creation_utc": "2026-08-02T06:19:25.1783248Z",
+      "command": "documented run_persistent_lane_r9.ps1 controller",
+      "allowed": true
+    },
+    {
+      "role": "external-codex-worker-Atlas",
+      "pid": 194004,
+      "creation_utc": "2026-08-02T06:19:25.8771592Z",
+      "command": "codex exec resume 019fb877-1475-76c0-a137-2743580015de --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy=\"never\" -c approvals_reviewer=\"user\" -m gpt-5.6-luna -c model_reasoning_effort=\"high\" -c service_tier=\"default\" --json --output-last-message C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1a-061555Z_last_message.txt",
+      "allowed": true
+    },
+    {
+      "role": "external-controller-Boreal",
+      "pid": 186904,
+      "creation_utc": "2026-08-02T06:19:25.8846537Z",
+      "command": "documented run_persistent_lane_r9.ps1 controller",
+      "allowed": true
+    },
+    {
+      "role": "external-codex-worker-Boreal",
+      "pid": 184896,
+      "creation_utc": "2026-08-02T06:19:26.9138330Z",
+      "command": "codex exec resume 019fb877-1447-7693-92b1-f4bda04c6ecf --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy=\"never\" -c approvals_reviewer=\"user\" -m gpt-5.6-luna -c model_reasoning_effort=\"high\" -c service_tier=\"default\" --json --output-last-message C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1a-061555Z_last_message.txt",
+      "allowed": true
+    },
+    {
+      "role": "external-controller-Cygnus",
+      "pid": 176488,
+      "creation_utc": "2026-08-02T06:19:26.8489640Z",
+      "command": "documented run_persistent_lane_r9.ps1 controller",
+      "allowed": true
+    },
+    {
+      "role": "external-codex-worker-Cygnus",
+      "pid": 190000,
+      "creation_utc": "2026-08-02T06:19:27.9966694Z",
+      "command": "codex exec resume 019fb877-1199-79b1-a32e-34348178f111 --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy=\"never\" -c approvals_reviewer=\"user\" -m gpt-5.6-luna -c model_reasoning_effort=\"high\" -c service_tier=\"default\" --json --output-last-message C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1a-061555Z_last_message.txt",
+      "allowed": true
+    },
+    {
+      "role": "external-controller-Delta",
+      "pid": 167740,
+      "creation_utc": "2026-08-02T06:19:27.8911301Z",
+      "command": "documented run_persistent_lane_r9.ps1 controller",
+      "allowed": true
+    },
+    {
+      "role": "external-codex-worker-Delta",
+      "pid": 180080,
+      "creation_utc": "2026-08-02T06:19:29.1734467Z",
+      "command": "codex exec resume 019fb877-1441-7c92-84e2-cbb5bc422879 --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy=\"never\" -c approvals_reviewer=\"user\" -m gpt-5.6-luna -c model_reasoning_effort=\"high\" -c service_tier=\"default\" --json --output-last-message C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1a-061555Z_last_message.txt",
+      "allowed": true
+    }
+  ]
+}

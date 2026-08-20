@@ -1,0 +1,30 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked pytest -q .codex/tests/test_bounded_test_supervisor.py .codex/tests/test_hooks.py .codex/tests/test_stable_runner.py .codex/tests/test_codex_configuration.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  125,
+    "expected_upper_bound_seconds":  100,
+    "cleanup_allowance_seconds":  25,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The prior 70-test focused run completed in 38 seconds; 100 seconds covers the changed boundary matrix and cold startup while 25 seconds is the exact cleanup cap.",
+    "started_at":  "2026-08-14T01:42:45.5704127+00:00",
+    "finished_at":  "2026-08-14T01:43:29.1887005+00:00",
+    "elapsed_seconds":  43.618,
+    "root_process_id":  18812,
+    "observed_process_ids":  [
+                                 18812,
+                                 70776,
+                                 165156,
+                                 174212,
+                                 183696,
+                                 186456,
+                                 192440,
+                                 194808,
+                                 195096
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\mechanical-boundary-focused.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\mechanical-boundary-focused.stderr.log"
+}

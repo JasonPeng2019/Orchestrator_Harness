@@ -1,0 +1,6 @@
+{
+  "epoch": "20260802-m5-q10-170245Z",
+  "records": 268,
+  "result": "FAIL",
+  "error": "manager claim requires its own exact complete event-selection snapshot"
+}

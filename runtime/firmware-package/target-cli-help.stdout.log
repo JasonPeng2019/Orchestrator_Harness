@@ -1,0 +1,16 @@
+usage: python -m orchestrator_harness [-h] [--config CONFIG]
+                                      {scan,watch,handoff-preflight,adapter,view,source,lane,workspace} ...
+
+Durable diagnostic observation and safe lane lifecycle boundaries
+
+positional arguments:
+  {scan,watch,handoff-preflight,adapter,view,source,lane,workspace}
+    scan                print one reconciled snapshot
+    watch               run a bounded diagnostic watch
+    adapter             install or inspect a project-local host adapter
+    view                allocate an exact retained-ref immutable source view
+    workspace           provider-neutral workspace overlay lifecycle
+
+options:
+  -h, --help            show this help message and exit
+  --config CONFIG

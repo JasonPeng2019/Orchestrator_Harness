@@ -1,0 +1,16 @@
+{
+  "schema": "m5-isolation/v1",
+  "epoch": "20260802-m5-r1-110513Z",
+  "request_discovery": "native blocking harness wait only",
+  "runner": false,
+  "wrapper": false,
+  "relay": false,
+  "scheduler": false,
+  "retry_controller": false,
+  "automated_event_handler": false,
+  "watcher_subagent": false,
+  "ai_evaluator": false,
+  "collaboration_notification": false,
+  "transcript_or_direct_signal_inspection": false,
+  "user_message_discovery": false
+}

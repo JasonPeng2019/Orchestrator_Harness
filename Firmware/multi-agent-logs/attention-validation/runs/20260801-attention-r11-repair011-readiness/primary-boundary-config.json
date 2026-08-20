@@ -1,0 +1,12 @@
+{
+  "suite_root": "../../..",
+  "run_globs": [
+    "fresh-experiments/A22_20260726-062324"
+  ],
+  "output_dir": "repair011-readiness-state",
+  "manager_review_interval_seconds": 60,
+  "manager_heartbeat_timeout_seconds": 600,
+  "attention_sprint_lifetime_seconds": 300,
+  "attention_logging_enabled": true,
+  "attention_epoch_id": "20260801-attention-r11-repair011-readiness"
+}

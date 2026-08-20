@@ -1,0 +1,144 @@
+{
+  "epoch_id": "20260802-m5-s1-042512Z",
+  "challenges": [
+    {
+      "event_id": "sig-20260802-m5-s1-042512Z-boreal-d31-gate-001",
+      "wake_id": "b75c40b9-b779-4cbb-ab50-1117a497dd25",
+      "lane_id": "20260802-m5-s1-042512Z:Boreal:D31",
+      "harness_event_id": "e30e3e905c173d1b2cf74ea79e3d7c6b14f05798d335a7d9224b84740ba455ef",
+      "response_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\manager-responses\\20260802-m5-s1-042512Z-Boreal-D31-gate.json",
+      "ack_exit": 0,
+      "classification": "INSUFFICIENT_EVIDENCE",
+      "metrics": {
+        "signal_to_observation_seconds": -12.585201,
+        "observation_to_actionable_seconds": 0.001001,
+        "pending_to_manager_claim_seconds": 38.193298,
+        "claim_to_decision_seconds": 0.0,
+        "response_to_agent_receipt_seconds": 28.58293,
+        "receipt_to_resume_seconds": 6.42874,
+        "explicit_blocked_seconds": 60.620768,
+        "deadline_lateness_seconds": 0.0,
+        "response_to_ack_seconds": -0.011,
+        "explicit_deferral_seconds": 0.0
+      },
+      "wake_evidence": {
+        "status": "INSUFFICIENT_EVIDENCE",
+        "reason": "wake outcome contradicts attempt"
+      },
+      "missing_evidence": [
+        "matching on-time manager response identity",
+        "wake outcome contradicts attempt"
+      ]
+    },
+    {
+      "event_id": "sig-20260802-m5-s1-042512Z-atlas-a22-gate-001",
+      "wake_id": "f7e702a8-4461-4df5-9962-bf8698603647",
+      "lane_id": "20260802-m5-s1-042512Z:Atlas:A22",
+      "harness_event_id": "a70b3f01d00811c97da601e3a9498e651588741419ffe027419dda8fefad1f2a",
+      "response_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\manager-responses\\20260802-m5-s1-042512Z-Atlas-A22-gate.json",
+      "ack_exit": 0,
+      "classification": "NO_BLOCKING_IMPACT",
+      "metrics": {
+        "signal_to_observation_seconds": 44.686088,
+        "observation_to_actionable_seconds": 0.000978,
+        "pending_to_manager_claim_seconds": 3.323998,
+        "claim_to_decision_seconds": 0.0,
+        "response_to_agent_receipt_seconds": 28.928738,
+        "receipt_to_resume_seconds": 6.637598,
+        "explicit_blocked_seconds": 83.578401,
+        "deadline_lateness_seconds": 0.0,
+        "response_to_ack_seconds": -0.013,
+        "explicit_deferral_seconds": 0.000978,
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 2.56108,
+        "received_to_claim_seconds": 0.632999
+      },
+      "wake_evidence": {
+        "status": "COMPLETE",
+        "wake_id": "f7e702a8-4461-4df5-9962-bf8698603647",
+        "manager_session_id": "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+        "manager_invocation_id": "root-20260802-m5-s1-042512Z-001",
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 2.56108,
+        "received_to_claim_seconds": 0.632999
+      },
+      "missing_evidence": []
+    },
+    {
+      "event_id": "sig-20260802-m5-s1-042512Z-cygnus-a24-gate-001",
+      "wake_id": "fe4456eb-00cd-4189-b1df-7fccb868de1b",
+      "lane_id": "20260802-m5-s1-042512Z:Cygnus:A24",
+      "harness_event_id": "61f3335dfdb63d0827b2c248b7987daf0857dfdecab79dbb5b79581d5f8d573b",
+      "response_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\manager-responses\\20260802-m5-s1-042512Z-Cygnus-A24-gate.json",
+      "ack_exit": 0,
+      "classification": "NO_BLOCKING_IMPACT",
+      "metrics": {
+        "signal_to_observation_seconds": 38.168299,
+        "observation_to_actionable_seconds": 70.525,
+        "pending_to_manager_claim_seconds": 0.013,
+        "claim_to_decision_seconds": 0.0,
+        "response_to_agent_receipt_seconds": 72.121041,
+        "receipt_to_resume_seconds": 3.493365,
+        "explicit_blocked_seconds": 184.320705,
+        "deadline_lateness_seconds": 0.0,
+        "response_to_ack_seconds": 3.334002,
+        "explicit_deferral_seconds": 70.525,
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 2.482996,
+        "received_to_claim_seconds": 0.549561
+      },
+      "wake_evidence": {
+        "status": "COMPLETE",
+        "wake_id": "fe4456eb-00cd-4189-b1df-7fccb868de1b",
+        "manager_session_id": "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+        "manager_invocation_id": "root-20260802-m5-s1-042512Z-001",
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 2.482996,
+        "received_to_claim_seconds": 0.549561
+      },
+      "missing_evidence": []
+    },
+    {
+      "event_id": "sig-20260802-m5-s1-042512Z-delta-a26-gate-001",
+      "wake_id": "f52768d4-0a11-4e5e-bf5d-cac2733c08e2",
+      "lane_id": "20260802-m5-s1-042512Z:Delta:A26",
+      "harness_event_id": "de87d2f91e89c8fe93d22db931e9075511a2411b0db364d829b5af54c1d53710",
+      "response_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\manager-responses\\20260802-m5-s1-042512Z-Delta-A26-gate.json",
+      "ack_exit": 0,
+      "classification": "NO_BLOCKING_IMPACT",
+      "metrics": {
+        "signal_to_observation_seconds": 19.142431,
+        "observation_to_actionable_seconds": 103.237288,
+        "pending_to_manager_claim_seconds": 3.509584,
+        "claim_to_decision_seconds": 0.0,
+        "response_to_agent_receipt_seconds": 68.937325,
+        "receipt_to_resume_seconds": 0.0,
+        "explicit_blocked_seconds": 194.826628,
+        "deadline_lateness_seconds": 0.0,
+        "response_to_ack_seconds": -0.013,
+        "explicit_deferral_seconds": 103.237288,
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 2.659631,
+        "received_to_claim_seconds": 0.623
+      },
+      "wake_evidence": {
+        "status": "COMPLETE",
+        "wake_id": "f52768d4-0a11-4e5e-bf5d-cac2733c08e2",
+        "manager_session_id": "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+        "manager_invocation_id": "root-20260802-m5-s1-042512Z-001",
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 2.659631,
+        "received_to_claim_seconds": 0.623
+      },
+      "missing_evidence": []
+    }
+  ],
+  "distinct_lane_count": 4,
+  "busy_control_event_ids": [
+    "sig-20260802-m5-s1-042512Z-cygnus-a24-gate-001",
+    "sig-20260802-m5-s1-042512Z-boreal-d31-gate-001",
+    "sig-20260802-m5-s1-042512Z-delta-a26-gate-001",
+    "sig-20260802-m5-s1-042512Z-atlas-a22-gate-001"
+  ],
+  "all_sufficient": false
+}

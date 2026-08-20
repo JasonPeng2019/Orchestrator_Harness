@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe -m ruff --version",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Prior full Ruff format checks completed within 13 seconds; 30 seconds preserves measured headroom.",
+    "started_at":  "2026-08-14T18:28:50.3655772+00:00",
+    "finished_at":  "2026-08-14T18:28:53.0601276+00:00",
+    "elapsed_seconds":  2.695,
+    "root_process_id":  188980,
+    "observed_process_ids":  [
+                                 188980
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-ruff-version-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-ruff-version-001.stderr.log"
+}

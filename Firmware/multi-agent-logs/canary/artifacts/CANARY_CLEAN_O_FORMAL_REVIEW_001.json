@@ -1,0 +1,63 @@
+{
+  "schema": "canary-whole-suite-review/v1",
+  "epoch": "20260731-s1-clean-o",
+  "reviewed_utc": "2026-07-31T23:22:48.669329Z",
+  "event_id": "1eef1cc3516d31e10080a49219e6fa2bb5107651ff6e186329b0a7a067a48d66",
+  "event_type": "MANAGER_REVIEW_DUE",
+  "verdict": "CONTINUE",
+  "analysis": "All current-epoch lanes individually inspected. Delta, Cygnus, and the first Atlas host turn exited zero at safe host checkpoints. Atlas endpoint uses one exact live helper/lifetime and is still in bounded provider startup with no relaunch. Boreal is actively completing fresh O host adaptation; no provider release exists. No duplicate controller, resource conflict, observation/process error, retry, hardware cross-lease, server repair, flash, or RF action is observed. Continue Atlas; preserve Boreal/Cygnus gating; Delta waits STM-A.",
+  "lanes": [
+    {
+      "lane_id": "20260731-s1-clean-o:Atlas:A22",
+      "process_state": "RUNNING_CODEX",
+      "operational_state": "RUNNING_CODEX",
+      "controller_pid": 97416,
+      "codex_pid": 189800,
+      "resource_ambiguity": [
+        "active hardware lane has no current request identity for probe/serial/root audit"
+      ],
+      "requests": [],
+      "jsonl_sha256": "8950a19bfdb535b186d1f3f9c8ff43309304fbcdf2b4bba1d771f423833b58a2",
+      "jsonl_size": 60903
+    },
+    {
+      "lane_id": "20260731-s1-clean-o:Boreal:D31",
+      "process_state": "RUNNING_CODEX",
+      "operational_state": "RUNNING_CODEX",
+      "controller_pid": 188684,
+      "codex_pid": 52744,
+      "resource_ambiguity": [
+        "active hardware lane has no current request identity for probe/serial/root audit",
+        "declared MCP server has no lane/session-correlated PID lifetime evidence"
+      ],
+      "requests": [],
+      "jsonl_sha256": "3bfb81188c7ac4536d78230660517d800cc6bd9c9edcf11b3bb722d976528b86",
+      "jsonl_size": 133596
+    },
+    {
+      "lane_id": "20260731-s1-clean-o:Cygnus:A24",
+      "process_state": "EXITED",
+      "operational_state": "CHECKPOINTED",
+      "controller_pid": 17604,
+      "codex_pid": 188060,
+      "resource_ambiguity": [],
+      "requests": [],
+      "jsonl_sha256": "964fcb07b8d1d74cdab5f207aad8cadf0ac07dd7b05dd3d28df30f05b2404f2d",
+      "jsonl_size": 78492
+    },
+    {
+      "lane_id": "20260731-s1-clean-o:Delta:A26",
+      "process_state": "EXITED",
+      "operational_state": "CHECKPOINTED",
+      "controller_pid": 194244,
+      "codex_pid": 190284,
+      "resource_ambiguity": [],
+      "requests": [],
+      "jsonl_sha256": "63eac2656ad2cdd2236990635fcda78fe12e3462baae78f211c77dad5917af1c",
+      "jsonl_size": 64229
+    }
+  ],
+  "resource_conflicts": [],
+  "observation_errors": [],
+  "process_errors": []
+}

@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "powershell.exe",
+    "-NoProfile",
+    "-NonInteractive",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    ".agent-workspace/tools/optional_watcher_owner.ps1",
+    "-SuiteRoot",
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+    "-Config",
+    "harness_watcher_implementation/canary-20260801-attention-r3.json",
+    "-StopFile",
+    ".agent-workspace/CANARY_ATTENTION_R3_OPTIONAL.stop",
+    "-IdentityFile",
+    ".agent-workspace/ORCHESTRATOR_HARNESS/attention_r3_optional_identity.json"
+  ],
+  "created_utc": "2026-08-01T17:21:35.616169Z",
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+  "expected_state_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\.agent-workspace\\ORCHESTRATOR_HARNESS\\attention_r3_optional_identity.json",
+  "label": "attention_r3_optional_owner",
+  "launched_utc": "2026-08-01T17:21:35.613757Z",
+  "pid": 193948,
+  "platform": "windows",
+  "role": "optional-watcher-owner",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "launched"
+}

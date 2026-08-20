@@ -1,0 +1,76 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+   --> .codex\scripts\dev_state.py:164:17
+    |
+163 |         return None
+    -     previous = {
+    -         path: digest
+    -         for path, digest in previous.items()
+    -         if not _is_linked_worktree_member(root, Path(path)) and not _skip_path(Path(path))
+    -     }
+164 +     previous = {
+165 +         path: digest
+166 +         for path, digest in previous.items()
+167 +         if not _is_linked_worktree_member(root, Path(path)) and not _skip_path(Path(path))
+168 +     }
+169 |     changed = sorted(path for path in set(previous) | set(manifest) if previous.get(path) != manifest.get(path))
+--------------------------------------------------------------------------------
+196 |
+    - def _skip_path(relative: Path) -> bool:
+    -     return (
+    -         any(part in SKIP_PARTS for part in relative.parts)
+    -         or bool(relative.parts and relative.parts[0] in TOP_LEVEL_VIEW_ONLY_ROOTS)
+    -         or relative.parts[:2] == ("Firmware", "fresh-experiments")
+    -         or relative.parts[:2] == (".codex", "state")
+    -         or relative.parts[:2] == (".codex", "notes")
+    -     )
+197 + def _skip_path(relative: Path) -> bool:
+198 +     return (
+199 +         any(part in SKIP_PARTS for part in relative.parts)
+200 +         or bool(relative.parts and relative.parts[0] in TOP_LEVEL_VIEW_ONLY_ROOTS)
+201 +         or relative.parts[:2] == ("Firmware", "fresh-experiments")
+202 +         or relative.parts[:2] == (".codex", "state")
+203 +         or relative.parts[:2] == (".codex", "notes")
+204 +     )
+205 |
+    |
+
+unformatted: File would be reformatted
+  --> .codex\tests\test_verify_changed.py:54:88
+   |
+53 |
+   - def test_manifest_excludes_linked_worktrees_and_legacy_entries(tmp_path: Path) -> None:
+   -     _write(tmp_path, "source.py", "value = 1\n")
+   -     linked = _write(tmp_path, "Firmware/target-harness/.git", "gitdir: elsewhere\n")
+   -     _write(tmp_path, "Firmware/target-harness/target.py", "value = 2\n")
+   -     _write(
+   -         tmp_path,
+   -         "Firmware/fresh-experiments/A21/.agent-workspace/copied_firmware.c",
+   -         "int main(void) { return 0; }\n",
+   -     )
+54 + def test_manifest_excludes_linked_worktrees_and_legacy_entries(tmp_path: Path) -> None:
+55 +     _write(tmp_path, "source.py", "value = 1\n")
+56 +     linked = _write(tmp_path, "Firmware/target-harness/.git", "gitdir: elsewhere\n")
+57 +     _write(tmp_path, "Firmware/target-harness/target.py", "value = 2\n")
+58 +     _write(
+59 +         tmp_path,
+60 +         "Firmware/fresh-experiments/A21/.agent-workspace/copied_firmware.c",
+61 +         "int main(void) { return 0; }\n",
+62 +     )
+63 |
+--------------------------------------------------------------------------------
+68 |     state = json.loads(state_path.read_text(encoding="utf-8"))
+   -     state["files"]["Firmware/target-harness/target.py"] = "legacy-target-worktree-entry"
+   -     state["files"]["Firmware/fresh-experiments/A21/firmware/main.c"] = "legacy-run-entry"
+   -     state_path.write_text(json.dumps(state), encoding="utf-8")
+69 +     state["files"]["Firmware/target-harness/target.py"] = "legacy-target-worktree-entry"
+70 +     state["files"]["Firmware/fresh-experiments/A21/firmware/main.c"] = "legacy-run-entry"
+71 +     state_path.write_text(json.dumps(state), encoding="utf-8")
+72 |
+   |
+
+2 files would be reformatted

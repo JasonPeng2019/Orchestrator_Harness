@@ -1,0 +1,17 @@
+[1m============================= test session starts =============================[0m
+platform win32 -- Python 3.14.2, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\Jason\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness
+configfile: pyproject.toml
+plugins: anyio-4.12.1
+[1mcollecting ... [0mcollected 14 items / 8 deselected / 6 selected
+
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_B10_check_reports_ownership_and_currency [32mPASSED[0m[32m [ 16%][0m
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_B11_upgrade_is_idempotent_on_current [32mPASSED[0m[32m [ 33%][0m
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_B12_uninstall_removes_owned_preserves_modified [32mPASSED[0m[32m [ 50%][0m
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_B13_self_test_succeeds_against_claude_adapter [32mPASSED[0m[32m [ 66%][0m
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_B14_boundary_dispatch_delivers_via_transport 
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_B14_boundary_dispatch_delivers_via_transport [32mPASSED[0m[32m [ 83%][0m
+orchestrator_harness\tests\test_compat_claude_adapter.py::ClaudeAdapterCompatTests::test_B9_install_writes_settings_and_manifest_atomically [32mPASSED[0m[32m [100%][0m
+
+[32m============= [32m[1m6 passed[0m, [33m8 deselected[0m, [32m[1m3 subtests passed[0m[32m in 2.65s[0m[32m ==============[0m

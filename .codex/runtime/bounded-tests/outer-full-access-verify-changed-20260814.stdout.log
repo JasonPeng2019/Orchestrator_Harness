@@ -1,0 +1,279 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+   --> .codex\scripts\stable_runner.py:80:28
+    |
+79  | )
+    - _CODING_FIELDS = frozenset(
+80  + _CODING_FIELDS = frozenset(
+81  |     {
+--------------------------------------------------------------------------------
+95  |         "worker_invocation_id",
+    -     }
+    - )
+    - _REQUIRED_SANDBOX = "danger-full-access"
+    - _REQUIRED_APPROVAL_POLICY = "never"
+    - _REQUIRED_APPROVALS_REVIEWER = "user"
+    - _REQUIRED_CODEX_FLAGS = (
+    -     "--dangerously-bypass-approvals-and-sandbox",
+    -     "--ignore-user-config",
+    - )
+    - _REQUIRED_CONFIG_OVERRIDES = (
+    -     'approval_policy="never"',
+    -     'approvals_reviewer="user"',
+    - )
+96  +     }
+97  + )
+98  + _REQUIRED_SANDBOX = "danger-full-access"
+99  + _REQUIRED_APPROVAL_POLICY = "never"
+100 + _REQUIRED_APPROVALS_REVIEWER = "user"
+101 + _REQUIRED_CODEX_FLAGS = (
+102 +     "--dangerously-bypass-approvals-and-sandbox",
+103 +     "--ignore-user-config",
+104 + )
+105 + _REQUIRED_CONFIG_OVERRIDES = (
+106 +     'approval_policy="never"',
+107 +     'approvals_reviewer="user"',
+108 + )
+109 |
+--------------------------------------------------------------------------------
+356 |
+    - def _apply_profile_command(
+    -     command: Any,
+    -     codex_flags: list[str],
+    - ) -> list[str]:
+    -     if not isinstance(command, list) or not all(isinstance(item, str) and item for item in command):
+    -         return ["codex", *_REQUIRED_CODEX_FLAGS, *codex_flags]
+    -     if command and Path(command[0]).name.lower() in {"codex", "codex.exe"}:
+    -         resolved = list(command)
+    -         for flag in (*_REQUIRED_CODEX_FLAGS, *codex_flags):
+    -             if flag not in resolved:
+    -                 resolved.append(flag)
+    -         return resolved
+    -     return list(command)
+    -
+    -
+    - def _require_full_access_settings(settings: Mapping[str, Any], settings_name: str) -> None:
+    -     """Refuse any outer worker invocation that could prompt or be sandboxed."""
+    -     if settings.get("sandbox") != _REQUIRED_SANDBOX:
+    -         raise RunnerError(
+    -             f"{settings_name} sandbox must be {_REQUIRED_SANDBOX!r} for every outer workflow role"
+    -         )
+    -     if settings.get("approval_policy") != _REQUIRED_APPROVAL_POLICY:
+    -         raise RunnerError(
+    -             f"{settings_name} approval_policy must be {_REQUIRED_APPROVAL_POLICY!r} for every outer workflow role"
+    -         )
+357 + def _apply_profile_command(
+358 +     command: Any,
+359 +     codex_flags: list[str],
+360 + ) -> list[str]:
+361 +     if not isinstance(command, list) or not all(isinstance(item, str) and item for item in command):
+362 +         return ["codex", *_REQUIRED_CODEX_FLAGS, *codex_flags]
+363 +     if command and Path(command[0]).name.lower() in {"codex", "codex.exe"}:
+364 +         resolved = list(command)
+365 +         for flag in (*_REQUIRED_CODEX_FLAGS, *codex_flags):
+366 +             if flag not in resolved:
+367 +                 resolved.append(flag)
+368 +         return resolved
+369 +     return list(command)
+370 +
+371 +
+372 + def _require_full_access_settings(settings: Mapping[str, Any], settings_name: str) -> None:
+373 +     """Refuse any outer worker invocation that could prompt or be sandboxed."""
+374 +     if settings.get("sandbox") != _REQUIRED_SANDBOX:
+375 +         raise RunnerError(f"{settings_name} sandbox must be {_REQUIRED_SANDBOX!r} for every outer workflow role")
+376 +     if settings.get("approval_policy") != _REQUIRED_APPROVAL_POLICY:
+377 +         raise RunnerError(
+378 +             f"{settings_name} approval_policy must be {_REQUIRED_APPROVAL_POLICY!r} for every outer workflow role"
+379 +         )
+380 |
+--------------------------------------------------------------------------------
+614 |     settings_name = "codex" if raw.get("schema") == "orchestrator-coding-invocation/v1" else "model_settings"
+    -     settings = raw.get(settings_name)
+    -     if not isinstance(settings, Mapping):
+    -         raise RunnerError(f"{settings_name} must be an object for workflow-role resolution")
+    -     _require_full_access_settings(settings, settings_name)
+    -     resolved = dict(raw)
+615 +     settings = raw.get(settings_name)
+616 +     if not isinstance(settings, Mapping):
+617 +         raise RunnerError(f"{settings_name} must be an object for workflow-role resolution")
+618 +     _require_full_access_settings(settings, settings_name)
+619 +     resolved = dict(raw)
+620 |     resolved_settings = dict(settings)
+--------------------------------------------------------------------------------
+633 |         raise RunnerError(f"{settings_name} config_overrides must be a string list")
+    -     profile_overrides = _profile_config_overrides(profile)
+    -     managed_override_keys = {
+    -         *{item.partition("=")[0] for item in profile_overrides},
+    -         *{item.partition("=")[0] for item in _REQUIRED_CONFIG_OVERRIDES},
+    -     }
+    -     resolved_settings["config_overrides"] = [
+    -         item for item in existing_overrides if item.partition("=")[0] not in managed_override_keys
+    -     ] + [*_REQUIRED_CONFIG_OVERRIDES, *profile_overrides]
+634 +     profile_overrides = _profile_config_overrides(profile)
+635 +     managed_override_keys = {
+636 +         *{item.partition("=")[0] for item in profile_overrides},
+637 +         *{item.partition("=")[0] for item in _REQUIRED_CONFIG_OVERRIDES},
+638 +     }
+639 +     resolved_settings["config_overrides"] = [
+640 +         item for item in existing_overrides if item.partition("=")[0] not in managed_override_keys
+641 +     ] + [*_REQUIRED_CONFIG_OVERRIDES, *profile_overrides]
+642 |     resolved_settings["launch_profile"] = selected_profile
+    |
+
+unformatted: File would be reformatted
+   --> .codex\tests\test_stable_runner.py:60:50
+    |
+59  |
+    - def _model_settings(role: str) -> dict[str, str]:
+60  + def _model_settings(role: str) -> dict[str, str]:
+61  |     allocation = _role_allocation(role)
+--------------------------------------------------------------------------------
+65  |     assert isinstance(model, str) and isinstance(effort, str) and isinstance(tier, str)
+    -     return {
+66  +     return {
+67  |         "model": model,
+68  |         "reasoning_effort": effort,
+69  |         "service_tier": tier,
+    -     }
+    -
+    -
+    - def _full_access_settings() -> dict[str, object]:
+    -     return {
+    -         "sandbox": "danger-full-access",
+    -         "approval_policy": "never",
+    -         "config_overrides": [],
+    -     }
+70  +     }
+71  |
+72  |
+73  + def _full_access_settings() -> dict[str, object]:
+74  +     return {
+75  +         "sandbox": "danger-full-access",
+76  +         "approval_policy": "never",
+77  +         "config_overrides": [],
+78  +     }
+79  +
+80  +
+81  | def _load_runner():
+--------------------------------------------------------------------------------
+271 |         "schema": "orchestrator-coding-invocation/v1",
+    -         "codex": {
+    -             "model": "source-placeholder",
+    -             "reasoning_effort": "source-placeholder",
+    -             "service_tier": "source-placeholder",
+    -             **_full_access_settings(),
+    -         },
+272 +         "codex": {
+273 +             "model": "source-placeholder",
+274 +             "reasoning_effort": "source-placeholder",
+275 +             "service_tier": "source-placeholder",
+276 +             **_full_access_settings(),
+277 +         },
+278 |     }
+--------------------------------------------------------------------------------
+294 |     gate_role = _role_allocation(workflow_role)["finding_gate_role"]
+    -     invocation = {
+    -         "schema": "orchestrator-coding-invocation/v1",
+    -         "codex": {**settings, **_full_access_settings()},
+295 +     invocation = {
+296 +         "schema": "orchestrator-coding-invocation/v1",
+297 +         "codex": {**settings, **_full_access_settings()},
+298 |     }
+--------------------------------------------------------------------------------
+311 |     assert isinstance(expected_gate_role, str)
+    -     invocation = {
+    -         "schema": "orchestrator-coding-invocation/v1",
+    -         "codex": {**_model_settings("reviewer-main"), **_full_access_settings()},
+312 +     invocation = {
+313 +         "schema": "orchestrator-coding-invocation/v1",
+314 +         "codex": {**_model_settings("reviewer-main"), **_full_access_settings()},
+315 |         "finding_gate": {
+--------------------------------------------------------------------------------
+515 |             "schema": "orchestrator-coding-invocation/v1",
+    -             "codex": {
+    -                 "model": "source-placeholder",
+    -                 "reasoning_effort": "source-placeholder",
+    -                 "service_tier": "source-placeholder",
+    -                 **_full_access_settings(),
+    -             },
+516 +             "codex": {
+517 +                 "model": "source-placeholder",
+518 +                 "reasoning_effort": "source-placeholder",
+519 +                 "service_tier": "source-placeholder",
+520 +                 **_full_access_settings(),
+521 +             },
+522 |         }
+--------------------------------------------------------------------------------
+544 |             "approval_policy": "never",
+    -             "config_overrides": ["model_auto_compact_token_limit=1"],
+    -         },
+    -     }
+    -
+    -
+    - @pytest.mark.parametrize(
+    -     ("field", "value"),
+    -     (("sandbox", "workspace-write"), ("approval_policy", "on-request")),
+    - )
+    - def test_workflow_role_allocation_rejects_non_full_access_invocations(field: str, value: str) -> None:
+    -     runner = _load_runner()
+    -     invocation = _coding_invocation()
+    -     settings = invocation["codex"]
+    -     assert isinstance(settings, dict)
+    -     settings[field] = value
+    -     with pytest.raises(runner.RunnerError, match=field):
+    -         runner.apply_workflow_role_allocation(invocation, "doer-main", validate_finding_gate=False)
+545 +             "config_overrides": ["model_auto_compact_token_limit=1"],
+546 +         },
+547 +     }
+548 |
+549 |
+550 + @pytest.mark.parametrize(
+551 +     ("field", "value"),
+552 +     (("sandbox", "workspace-write"), ("approval_policy", "on-request")),
+553 + )
+554 + def test_workflow_role_allocation_rejects_non_full_access_invocations(field: str, value: str) -> None:
+555 +     runner = _load_runner()
+556 +     invocation = _coding_invocation()
+557 +     settings = invocation["codex"]
+558 +     assert isinstance(settings, dict)
+559 +     settings[field] = value
+560 +     with pytest.raises(runner.RunnerError, match=field):
+561 +         runner.apply_workflow_role_allocation(invocation, "doer-main", validate_finding_gate=False)
+562 +
+563 +
+564 | def _failure_history(*error_classes: str) -> dict[str, object]:
+--------------------------------------------------------------------------------
+588 |     assert deepseek_settings["reasoning_effort"] == "max"
+    -     assert deepseek_settings["command"] == [
+    -         "codex",
+    -         "--dangerously-bypass-hook-trust",
+    -         "--dangerously-bypass-approvals-and-sandbox",
+    -         "--ignore-user-config",
+    -         "--oss",
+589 +     assert deepseek_settings["command"] == [
+590 +         "codex",
+591 +         "--dangerously-bypass-hook-trust",
+592 +         "--dangerously-bypass-approvals-and-sandbox",
+593 +         "--ignore-user-config",
+594 +         "--oss",
+595 |         "--local-provider",
+--------------------------------------------------------------------------------
+599 |     assert "model_auto_compact_token_limit=230000" in deepseek_settings["config_overrides"]
+    -     assert "model_auto_compact_token_limit=1" not in deepseek_settings["config_overrides"]
+    -     assert deepseek_settings["sandbox"] == "danger-full-access"
+    -     assert deepseek_settings["approval_policy"] == "never"
+    -     assert 'approval_policy="never"' in deepseek_settings["config_overrides"]
+    -     assert 'approvals_reviewer="user"' in deepseek_settings["config_overrides"]
+600 +     assert "model_auto_compact_token_limit=1" not in deepseek_settings["config_overrides"]
+601 +     assert deepseek_settings["sandbox"] == "danger-full-access"
+602 +     assert deepseek_settings["approval_policy"] == "never"
+603 +     assert 'approval_policy="never"' in deepseek_settings["config_overrides"]
+604 +     assert 'approvals_reviewer="user"' in deepseek_settings["config_overrides"]
+605 |     catalog_override = next(
+    |
+
+2 files would be reformatted

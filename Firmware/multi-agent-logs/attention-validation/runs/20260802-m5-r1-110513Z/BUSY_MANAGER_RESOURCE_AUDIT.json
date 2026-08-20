@@ -1,0 +1,23 @@
+{
+  "schema": "m5-busy-manager-resource-audit/v1",
+  "epoch": "20260802-m5-r1-110513Z",
+  "activity_id": "busy-manager-resource-readiness-audit-001",
+  "started_utc": "2026-08-02T11:13:32.178422Z",
+  "finished_utc": "2026-08-02T11:15:07.195782Z",
+  "elapsed_seconds": 95.01736,
+  "checks": 383760,
+  "failures": [],
+  "python_baseline_match": true,
+  "server_snapshot": {
+    "head": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "tracked_dirty_diff_fingerprint": "99942141bb0bbe730ceb0ea4b30916bf8ed657bb",
+    "production_src_tree_sha256": "ca3a326e8ba6a3e0d14724a4f9fded286700790cfebc722352223d1b18e4c36a"
+  },
+  "resource_decision": "HOST_ONLY; no live lease, provider, MCP, board, flash, reset, serial, or RF authority granted",
+  "checkpoint_hashes": {
+    "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\m5\\20260802-m5-s3-101953Z\\M5_PRELIVE_ASSIGNMENT_CHECKPOINT.md": "6e9453a35ca78e012053fb0c7ff84a65d62c8f7af870b9219e35cc4400dc6c74",
+    "fresh-experiments\\D31_20260726-062325\\.agent-workspace\\m5\\20260802-m5-s3-101953Z\\M5_PRELIVE_ASSIGNMENT_CHECKPOINT.md": "9935e5eb7331ae8dfe0231c89744cae51b0a8a4ec1ebef6ffa86794a6fdfb7be",
+    "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\m5\\20260802-m5-s3-101953Z\\M5_PRELIVE_ASSIGNMENT_CHECKPOINT.md": "71210ffed688bc981bd553a974cd5e561da09ecde1f3a43d38cca286aec39173",
+    "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\m5\\20260802-m5-s3-101953Z\\M5_BUSY_AUTHORIZATION_CHECKPOINT.md": "15fe68948113c89b832374891ceef60ae41f13cc6d0d7b79a59c86263ab5227f"
+  }
+}

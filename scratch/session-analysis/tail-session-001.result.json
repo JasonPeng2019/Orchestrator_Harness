@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python scratch\\session-analysis\\tail_session.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Measured history: prior 611MB streaming parse took 8s; tail reads same file, worst credible 2 min",
+    "started_at":  "2026-08-18T02:19:25.5387392+00:00",
+    "finished_at":  "2026-08-18T02:19:32.5182458+00:00",
+    "elapsed_seconds":  6.98,
+    "root_process_id":  8588,
+    "observed_process_ids":  [
+                                 8588
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\tail-session-001.result.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\tail-session-001.result.stderr.log"
+}

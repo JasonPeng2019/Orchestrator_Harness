@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "python.exe",
+    "-m",
+    "orchestrator_harness.lane_controller",
+    "fresh-experiments/A24_20260726-052146/.agent-workspace/cygnus_a24_s1_clean_p_prep.invocation.json"
+  ],
+  "created_utc": "2026-07-31T23:59:45.916708Z",
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+  "expected_state_path": null,
+  "label": "cygnus_a24_s1_clean_p_prep",
+  "launched_utc": "2026-07-31T23:59:45.914061Z",
+  "pid": 190460,
+  "platform": "windows",
+  "role": "lane-controller",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "launched"
+}

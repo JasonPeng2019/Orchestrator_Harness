@@ -1,0 +1,41 @@
+{
+  "schema": "attention-prelaunch-manifest/v1",
+  "epoch": "20260801-attention-r12",
+  "counter": "0/3 candidate 1 after Repair 011",
+  "manager_session_id": "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+  "manager_invocation_id": "root-attention-r12-001",
+  "bounded_lifetime_seconds": 900,
+  "heartbeat_timeout_seconds": 1200,
+  "formal_review_interval_seconds": 150,
+  "primary_config": "orchestrator_harness/canary-20260801-attention-r12.json",
+  "optional_config": "harness_watcher_implementation/canary-20260801-attention-r12.json",
+  "policy_sha256": "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68",
+  "stale_epoch_authority_live": false,
+  "lanes": [
+    {
+      "run_root": "fresh-experiments/A22_20260726-062324",
+      "doer": "Atlas",
+      "task": "A22",
+      "boards": []
+    },
+    {
+      "run_root": "fresh-experiments/D31_20260726-062325",
+      "doer": "Boreal",
+      "task": "D31",
+      "boards": []
+    },
+    {
+      "run_root": "fresh-experiments/A24_20260726-052146",
+      "doer": "Cygnus",
+      "task": "A24",
+      "boards": []
+    },
+    {
+      "run_root": "fresh-experiments/A26_20260726-062325",
+      "doer": "Delta",
+      "task": "A26",
+      "boards": []
+    }
+  ],
+  "created_utc": "2026-08-01T20:50:39.770606Z"
+}

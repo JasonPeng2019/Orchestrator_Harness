@@ -1,0 +1,37 @@
+{
+    "epoch":  "20260802-m5-q6-144500Z",
+    "started_utc":  "2026-08-02T14:45:33.0915171Z",
+    "harness_pid":  197976,
+    "harness_creation_utc":  "2026-08-02T14:45:27.9148482Z",
+    "watcher_start":  {
+                          "started":  true,
+                          "pid":  186620,
+                          "owner":  {
+                                        "pid":  197708,
+                                        "created_utc":  "windows-filetime:134301555302238115"
+                                    }
+                      },
+    "watcher_status":  {
+                           "running":  false,
+                           "state":  {
+                                         "evaluator_enabled":  false,
+                                         "exit_reason":  "owner-identity-lost",
+                                         "exited_utc":  "2026-08-02T14:45:31.733530+00:00",
+                                         "owner":  {
+                                                       "created_utc":  "windows-filetime:134301555302238115",
+                                                       "pid":  197708
+                                                   },
+                                         "schema":  "harness-watcher-service/v1",
+                                         "started_utc":  "2026-08-02T14:45:30.444515+00:00",
+                                         "startup_status":  "READY",
+                                         "startup_token":  "39cc0c5f-a359-4299-8311-226e91d19cb3",
+                                         "stop_requested":  false,
+                                         "watcher":  {
+                                                         "created_utc":  "windows-filetime:134301555304837410",
+                                                         "pid":  186620
+                                                     }
+                                     }
+                       },
+    "watcher_evaluator_enabled":  false,
+    "root_owner_pid":  192592
+}

@@ -1,0 +1,15 @@
+{
+  "card_id": "card-claude-hello",
+  "cohort_id": "cohort-claude-fixture",
+  "evidence": [
+    "HELLO.txt committed and RESULT.json validated"
+  ],
+  "lane_id": "claude-hello",
+  "owner": "ROOT-IM",
+  "result_sha256": "9cb10e3392016075a6a1544f7389bf4ee8909ccf5997664d427edd67bbc230b8",
+  "revision": "r1",
+  "schema": "orchestrator-completion-review/v1",
+  "summary": "Reviewed committed artifact and canonical result.",
+  "verdict": "PASS",
+  "worker_invocation_id": "claude-hello-001"
+}

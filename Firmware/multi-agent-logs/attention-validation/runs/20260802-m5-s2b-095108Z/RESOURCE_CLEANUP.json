@@ -1,0 +1,66 @@
+{
+  "schema": "m5-resource-cleanup/v1",
+  "observed_utc": "2026-08-02T10:11:48.969727Z",
+  "epoch": "20260802-m5-s2b-095108Z",
+  "workers": [
+    {
+      "doer": "Atlas",
+      "task": "A22",
+      "status_path": "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s2b-095108Z_controller.status.json",
+      "state": "CODEX_EXITED",
+      "controller_pid": 190320,
+      "codex_pid": 169052,
+      "leases": [],
+      "board_tokens": [],
+      "mcp_servers": []
+    },
+    {
+      "doer": "Boreal",
+      "task": "D31",
+      "status_path": "fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s2b-095108Z_controller.status.json",
+      "state": "CODEX_EXITED",
+      "controller_pid": 169924,
+      "codex_pid": 186456,
+      "leases": [],
+      "board_tokens": [],
+      "mcp_servers": []
+    },
+    {
+      "doer": "Cygnus",
+      "task": "A24",
+      "status_path": "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s2b-095108Z_controller.status.json",
+      "state": "CODEX_EXITED",
+      "controller_pid": 71324,
+      "codex_pid": 138844,
+      "leases": [],
+      "board_tokens": [],
+      "mcp_servers": []
+    },
+    {
+      "doer": "Delta",
+      "task": "A26",
+      "status_path": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s2b-095108Z_controller.status.json",
+      "state": "CODEX_EXITED",
+      "controller_pid": 185752,
+      "codex_pid": 196520,
+      "leases": [],
+      "board_tokens": [],
+      "mcp_servers": []
+    },
+    {
+      "doer": "Delta",
+      "task": "A26 gate2",
+      "status_path": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s2b-095108Z_gate2_controller.status.json",
+      "state": "CODEX_EXITED",
+      "controller_pid": 182568,
+      "codex_pid": 14652,
+      "leases": [],
+      "board_tokens": [],
+      "mcp_servers": []
+    }
+  ],
+  "all_declared_resources_empty": true,
+  "hardware_actions_performed": false,
+  "provider_or_mcp_started": false,
+  "disposition": "SAFE_BOUNDARY"
+}

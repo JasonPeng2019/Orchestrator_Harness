@@ -1,0 +1,13 @@
+{
+    "epoch":  "20260802-m5-q1-115933Z",
+    "forbidden_assistance":  false,
+    "request_discovery":  "native blocking harness wait only",
+    "watcher_evaluator_enabled":  false,
+    "runtime_helpers":  [
+
+                        ],
+    "reviewer_started_after_runtime_stop":  true,
+    "hardware_actions":  [
+
+                         ]
+}

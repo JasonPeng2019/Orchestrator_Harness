@@ -1,0 +1,39 @@
+{
+  "schema": "orchestrator-compat-acceptance/v1",
+  "phase": "4",
+  "role": "test-orchestrator (ROOT)",
+  "authored_utc": "2026-08-20",
+  "provider_track": "claude-code",
+  "scope_note": "This acceptance covers ONLY the Claude Code half of the dual-provider compatibility folder. The Qwen Code half is a separate track and is not written or accepted here.",
+  "accepts": "PHASE4-COMPLETION_REVIEW.json",
+  "acceptance_basis": {
+    "independence": "ROOT authored every spec and independently re-ran and read every result; subagents only wrote/ran under delegation. Subagent self-reports were not accepted on their own.",
+    "root_reruns": [
+      "python -m pytest orchestrator_harness/tests/test_compat_claude_adapter.py -v  => 14 passed, 3 subtests passed",
+      "scratch/phase4/verify_bu1.py  => verdict PASS (evidence/4.A/root-verify-bu1.json)",
+      "scratch/phase4/verify_bu2.py  => verdict PASS (evidence/4.B/root-verify-bu2.json)",
+      "python -m pytest test_codex_bounded_policy.py test_s4_contract.py test_compat_host_adapters.py  => 45 passed, 95 subtests (regression baseline intact)"
+    ],
+    "code_read": "ROOT read claude_adapter.py and test_compat_claude_adapter.py in full to confirm real seams and regression-catching assertions (not truthy constants, not mocks)."
+  },
+  "rows_accepted": {
+    "4.A": ["N1", "N2", "N3", "N6", "N8", "A24", "G17", "G19"],
+    "4.B": ["B9", "B10", "B11", "B12", "B13", "B14"],
+    "4.C": ["M1-M16 (regression reference, green)"]
+  },
+  "rows_rejected": [],
+  "gaps_opened": [],
+  "evidence_paths": [
+    "evidence/4.A/claude-adapter-4A-run.txt",
+    "evidence/4.A/test_compat_claude_adapter.py.copy",
+    "evidence/4.A/root-verify-bu1.json",
+    "evidence/4.B/claude-installer-4B-run.txt",
+    "evidence/4.B/root-verify-bu2.json",
+    "evidence/4.C/codex-reference-baseline.txt",
+    "scratch/phase4/runs/bu1.jsonl",
+    "scratch/phase4/runs/bu2.jsonl",
+    "scratch/phase4/runs/bu3.jsonl"
+  ],
+  "decision": "ACCEPTED",
+  "phase4_status": "COMPLETE — CX-GAP closed for the Claude Code track; all 30 provider-neutral rows now built-and-tested (A24, N1-N3, N6, N8, G17, G19, B9-B14) or held as green Codex regression reference (M1-M16). 4.D remains out-of-scope by instruction."
+}

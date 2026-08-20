@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/skills/design-project-topology/scripts/validate_execution_plan.py plans/general-coding-harness/FULL-EXECUTION-SPEC_PLAN_2.md --mapping plans/general-coding-harness/SUBAGENT_ROLE_MODEL_MAPPING.json",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Prior validation completed in 2.241 seconds; ten seconds is conservative",
+    "started_at":  "2026-08-14T04:21:13.3905894+00:00",
+    "finished_at":  "2026-08-14T04:21:14.9753558+00:00",
+    "elapsed_seconds":  1.585,
+    "root_process_id":  183412,
+    "observed_process_ids":  [
+                                 183412
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan-3.7.0-doc-validation-2.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan-3.7.0-doc-validation-2.stderr.log"
+}

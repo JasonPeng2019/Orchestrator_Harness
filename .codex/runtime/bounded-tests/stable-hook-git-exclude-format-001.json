@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked ruff format --config .codex/dev/pyproject.toml --no-cache .codex/scripts/stable_runner.py .codex/tests/test_stable_runner.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Ruff formatting of two changed outer-runner Python files previously completes in seconds",
+    "started_at":  "2026-08-14T07:09:23.8812390+00:00",
+    "finished_at":  "2026-08-14T07:09:27.6374147+00:00",
+    "elapsed_seconds":  3.756,
+    "root_process_id":  171412,
+    "observed_process_ids":  [
+                                 171412
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\stable-hook-git-exclude-format-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\stable-hook-git-exclude-format-001.stderr.log"
+}

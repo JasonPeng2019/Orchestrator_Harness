@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "canary-manager-event-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:38:16.8052045Z",
+    "event_id":  "15e86a346544ae26450e7fe15ce67df39373c6a679d1d84d5ebcefbddd705446",
+    "event_type":  "CHECKPOINT_UPDATED",
+    "checkpoint_sha256":  "dcca4821a2c07929b5a9d4823dea0b23d83246dc96195069c6b7eadec6df8e45",
+    "verdict":  "ACKNOWLEDGED_ALREADY_REVIEWED_CURRENT_CHECKPOINT",
+    "analysis":  "The exact current Boreal checkpoint includes the O live stop already reviewed via its immutable signal. It confirms one lifetime, no populated plan/action/retry/result, and exact cleanup; no additional action."
+}

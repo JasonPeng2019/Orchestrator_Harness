@@ -1,0 +1,15 @@
+{
+  "exit_reason": "stop-requested",
+  "exited_utc": "2026-08-02T02:51:00.211984Z",
+  "last_manager_heartbeat_utc": "2026-08-02T02:47:24.032661Z",
+  "lease_expires_utc": "2026-08-02T03:07:24.032661Z",
+  "manager_heartbeat_timeout_seconds": 1200.0,
+  "owner_created_utc": "2026-08-02T02:32:01.986752Z",
+  "owner_pid": 404,
+  "schema": "orchestrator-managed-watch-runtime/v1",
+  "started_utc": "2026-08-02T02:32:03.406796Z",
+  "stop_requested": true,
+  "stop_requested_utc": "2026-08-02T02:50:57.701280Z",
+  "watcher_created_utc": "2026-08-02T02:32:02.060092Z",
+  "watcher_pid": 176588
+}

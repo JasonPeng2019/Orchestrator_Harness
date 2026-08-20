@@ -1,0 +1,6 @@
+test_safeguard_core_delivers_one_argument_command_tail_as_array (orchestrator_harness.tests.test_s6_public_release.S6SafeguardTests.test_safeguard_core_delivers_one_argument_command_tail_as_array) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.818s
+
+OK

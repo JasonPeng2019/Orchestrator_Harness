@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --locked --no-sync pytest --collect-only -q",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\BYO-Firmware-MCP",
+    "maximum_lifetime_seconds":  70,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  10,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "documented no-hardware pytest collection for Firmware MCP package",
+    "started_at":  "2026-08-14T10:38:54.8105539+00:00",
+    "finished_at":  "2026-08-14T10:39:08.8322548+00:00",
+    "elapsed_seconds":  14.022,
+    "root_process_id":  198872,
+    "observed_process_ids":  [
+                                 198872
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-server-pytest-collect-final.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-server-pytest-collect-final.stderr.log"
+}

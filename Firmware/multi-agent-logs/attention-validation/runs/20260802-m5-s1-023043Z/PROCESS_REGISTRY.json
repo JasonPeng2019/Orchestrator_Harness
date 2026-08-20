@@ -1,0 +1,127 @@
+{
+  "schema": "m5-process-registry/v1",
+  "epoch": "20260802-m5-s1-023043Z",
+  "captured_utc": "2026-08-02T02:55:41.916804+00:00",
+  "snapshot_complete": true,
+  "snapshot_errors": [],
+  "processes": [
+    {
+      "role": "worker-controller",
+      "label": "atlas_a22_m5_s1_023043",
+      "pid": 2884,
+      "created_utc": "2026-08-02T02:33:06.693714Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_m5_s1_023043_controller.status.json",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-codex",
+      "label": "atlas_a22_m5_s1_023043",
+      "pid": 175272,
+      "created_utc": "2026-08-02T02:33:07.3206193Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_m5_s1_023043_controller.status.json",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-controller",
+      "label": "boreal_d31_m5_s1_023043",
+      "pid": 191508,
+      "created_utc": "2026-08-02T02:33:08.665004Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_m5_s1_023043_controller.status.json",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-codex",
+      "label": "boreal_d31_m5_s1_023043",
+      "pid": 189140,
+      "created_utc": "2026-08-02T02:33:09.5283331Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_m5_s1_023043_controller.status.json",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-controller",
+      "label": "cygnus_a24_m5_s1_023043",
+      "pid": 189296,
+      "created_utc": "2026-08-02T02:33:11.044581Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_m5_s1_023043_controller.status.json",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-codex",
+      "label": "cygnus_a24_m5_s1_023043",
+      "pid": 174236,
+      "created_utc": "2026-08-02T02:33:11.6768954Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_m5_s1_023043_controller.status.json",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-controller",
+      "label": "delta_a26_m5_s1_023043",
+      "pid": 171404,
+      "created_utc": "2026-08-02T02:33:13.111342Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_m5_s1_023043_controller.status.json",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-codex",
+      "label": "delta_a26_m5_s1_023043",
+      "pid": 160888,
+      "created_utc": "2026-08-02T02:33:13.6923689Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_m5_s1_023043_controller.status.json",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "primary-owner",
+      "label": "20260802-m5-s1-023043Z-primary",
+      "pid": 193152,
+      "created_utc": "2026-08-02T02:32:01.210744Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-s1-023043Z\\primary-owner-identity.json",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "watcher-owner",
+      "label": "20260802-m5-s1-023043Z-diagnostic-watcher",
+      "pid": 186780,
+      "created_utc": "2026-08-02T02:32:02.488546Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-s1-023043Z\\owner-identity.json",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "managed-owner",
+      "label": "20260802-m5-s1-023043Z",
+      "pid": 404,
+      "created_utc": "2026-08-02T02:32:01.986752Z",
+      "status_path": "multi-agent-logs/orchestrator-harness/20260802-m5-s1-023043Z/primary-owner-identity.json",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "managed-watcher",
+      "label": "20260802-m5-s1-023043Z",
+      "pid": 176588,
+      "created_utc": "2026-08-02T02:32:02.060092Z",
+      "status_path": "multi-agent-logs/orchestrator-harness/20260802-m5-s1-023043Z/primary-owner-identity.json",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "diagnostic-watcher-service",
+      "label": "20260802-m5-s1-023043Z",
+      "pid": 171616,
+      "created_utc": "windows-filetime:134301115234840698",
+      "status_path": "harness_watcher/20260802-m5-s1-023043Z/owner-identity.json",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    }
+  ],
+  "all_exact_identities_absent": true
+}

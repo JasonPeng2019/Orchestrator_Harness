@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/skills/design-project-topology/scripts/validate_execution_plan.py plans/general-coding-harness/FULL-EXECUTION-SPEC_PLAN_2.md --mapping plans/general-coding-harness/SUBAGENT_ROLE_MODEL_MAPPING.json",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Recent Plan 2 topology validation completed in about two seconds; 30 seconds covers the added P02 launch-policy prose and normal Windows variance.",
+    "started_at":  "2026-08-15T00:28:25.9352938+00:00",
+    "finished_at":  "2026-08-15T00:28:28.0465765+00:00",
+    "elapsed_seconds":  2.111,
+    "root_process_id":  10880,
+    "observed_process_ids":  [
+                                 10880
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\outer-full-access-plan-topology-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\outer-full-access-plan-topology-20260814.stderr.log"
+}

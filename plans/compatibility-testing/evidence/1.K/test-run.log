@@ -1,0 +1,14 @@
+test_q14_safe_component_path_enforces_run_root_boundary (orchestrator_harness.tests.test_compat_config_bundle.ConfigBundleCompatTests.test_q14_safe_component_path_enforces_run_root_boundary) ... skipped "file symlink is unavailable: [WinError 1314] A required privilege is not held by the client: 'C:\\\\Users\\\\Jason\\\\AppData\\\\Local\\\\Temp\\\\tmpx4cl9ii5\\\\run\\\\real.txt' -> 'C:\\\\Users\\\\Jason\\\\AppData\\\\Local\\\\Temp\\\\tmpx4cl9ii5\\\\run\\\\link.txt'"
+test_q15_bundle_from_record_round_trip_and_tamper (orchestrator_harness.tests.test_compat_config_bundle.ConfigBundleCompatTests.test_q15_bundle_from_record_round_trip_and_tamper) ... ok
+test_q17_compose_is_ordered_concatenation_no_substitution (orchestrator_harness.tests.test_compat_config_bundle.ConfigBundleCompatTests.test_q17_compose_is_ordered_concatenation_no_substitution) ... ok
+test_q17_prompt_module_reexports_exactly_its_documented_all (orchestrator_harness.tests.test_compat_config_bundle.ConfigBundleCompatTests.test_q17_prompt_module_reexports_exactly_its_documented_all) ... ok
+test_q1_load_config_non_numeric_and_non_integer_reject (orchestrator_harness.tests.test_compat_config_bundle.ConfigBundleCompatTests.test_q1_load_config_non_numeric_and_non_integer_reject) ... ok
+test_q1_load_config_numeric_bounds_reject_instead_of_clamp (orchestrator_harness.tests.test_compat_config_bundle.ConfigBundleCompatTests.test_q1_load_config_numeric_bounds_reject_instead_of_clamp) ... ok
+test_q1_valid_in_range_numeric_config_carries_exact_value (orchestrator_harness.tests.test_compat_config_bundle.ConfigBundleCompatTests.test_q1_valid_in_range_numeric_config_carries_exact_value) ... ok
+test_q2_clean_relative_lists_load_and_alias_path_resolves (orchestrator_harness.tests.test_compat_config_bundle.ConfigBundleCompatTests.test_q2_clean_relative_lists_load_and_alias_path_resolves) ... ok
+test_q2_declared_relative_paths_reject_absolute_and_traversal (orchestrator_harness.tests.test_compat_config_bundle.ConfigBundleCompatTests.test_q2_declared_relative_paths_reject_absolute_and_traversal) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.510s
+
+OK (skipped=1)

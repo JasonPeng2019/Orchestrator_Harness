@@ -18,8 +18,15 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "^Bash$",
+        "matcher": "^(Bash|shell_command)$",
         "hooks": [
+          {
+            "type": "command",
+            "command": "r=\"$PWD\"; while [ \"$r\" != / ] && [ ! -f \"$r/.codex/scripts/bounded_test_adapter.py\" ]; do r=$(dirname \"$r\"); done; [ -f \"$r/.codex/scripts/bounded_test_adapter.py\" ] || { echo 'Unable to locate bounded-test adapter' >&2; exit 1; }; python \"$r/.codex/scripts/bounded_test_adapter.py\" pre-tool-use",
+            "commandWindows": "$payload=[Console]::In.ReadToEnd(); $j=$null; try { $j=$payload | ConvertFrom-Json } catch {}; $starts=@($j.cwd,$j.tool_input.workdir,$env:CODEX_PROJECT_ROOT,$env:CODEX_WORKSPACE_ROOT,$env:CLAUDE_PROJECT_DIR,(Get-Location).Path); $r=$null; foreach ($s in $starts) { if ([string]::IsNullOrWhiteSpace([string]$s)) { continue }; try { $c=[IO.Path]::GetFullPath([string]$s) } catch { continue }; if (Test-Path -LiteralPath $c -PathType Leaf) { $c=Split-Path -Parent $c }; while ($c) { if (Test-Path -LiteralPath (Join-Path $c '.codex/scripts/bounded_test_adapter.py')) { $r=$c; break }; $p=Split-Path -Parent $c; if ($p -eq $c) { break }; $c=$p }; if ($r) { break } }; if (-not $r) { Write-Error 'Unable to locate bounded-test adapter from hook cwd, environment, or process directory'; exit 1 }; $payload | python (Join-Path $r '.codex/scripts/bounded_test_adapter.py') pre-tool-use; exit $LASTEXITCODE",
+            "timeout": 60,
+            "statusMessage": "Enforcing bounded-test execution"
+          },
           {
             "type": "command",
             "command": "r=\"$PWD\"; while [ \"$r\" != / ] && [ ! -f \"$r/.codex/scripts/hook_runner.py\" ]; do r=$(dirname \"$r\"); done; [ -f \"$r/.codex/scripts/hook_runner.py\" ] || { echo 'Unable to locate project hook runner' >&2; exit 1; }; uv run --project \"$r/.codex/dev\" --locked python \"$r/.codex/scripts/hook_runner.py\" guard-dangerous",

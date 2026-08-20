@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python -m pytest .codex/tests/test_stable_runner.py -q -k \u0027temporary_bounded_test_hook or injected_hook_bounds or bounded_test_overlay\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  113,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  23,
+    "heartbeat_interval_seconds":  20,
+    "timeout_basis":  "four focused stable-runner overlay regressions plus hook subprocess cases previously complete well under one minute; ninety seconds includes Windows process-start variance",
+    "started_at":  "2026-08-14T07:09:36.9467549+00:00",
+    "finished_at":  "2026-08-14T07:09:43.5706281+00:00",
+    "elapsed_seconds":  6.624,
+    "root_process_id":  11052,
+    "observed_process_ids":  [
+                                 11052
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\stable-hook-git-exclude-focused-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\stable-hook-git-exclude-focused-001.stderr.log"
+}

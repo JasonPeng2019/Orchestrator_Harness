@@ -1,0 +1,22 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+   --> .codex\tests\test_bounded_test_supervisor.py:160:1
+    |
+159 |
+160 +
+161 | def test_timeout_tolerates_taskkill_stderr_via_shim(tmp_path: Path) -> None:
+162 |     shim = tmp_path / "taskkill.cmd"
+163 |     shim.write_text(
+    -         "@echo off\r\n"
+    -         "%SystemRoot%\\System32\\taskkill.exe %*\r\n"
+    -         "echo deterministic-shim-stderr 1>&2\r\n"
+    -         "exit /b 7\r\n",
+164 +         "@echo off\r\n%SystemRoot%\\System32\\taskkill.exe %*\r\necho deterministic-shim-stderr 1>&2\r\nexit /b 7\r\n",
+165 |         encoding="utf-8",
+    |
+
+1 file would be reformatted, 6 files already formatted

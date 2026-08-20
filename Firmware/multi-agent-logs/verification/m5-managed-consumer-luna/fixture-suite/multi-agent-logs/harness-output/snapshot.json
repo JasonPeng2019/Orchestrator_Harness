@@ -1,0 +1,149 @@
+{
+  "conditions": {
+    "lane:m5-managed-consumer-luna:Atlas:A00:process": {
+      "data": {
+        "codex_pid": 177180,
+        "codex_started_utc": "2026-08-02T02:20:04.170875Z",
+        "controller_pid": 175596,
+        "controller_started_utc": "2026-08-02T02:20:04.170875Z",
+        "doer": "Atlas",
+        "lane_id": "m5-managed-consumer-luna:Atlas:A00",
+        "reason": "controller and Codex identities are live",
+        "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-managed-consumer-luna\\fixture-suite\\runs\\A00_test",
+        "state": "RUNNING_CODEX",
+        "task": "A00"
+      },
+      "event_id": "72b707d8d346cfbd740fa406289a8af123f11706033cba26f561eb7245dd9b19",
+      "identity": "lane:m5-managed-consumer-luna:Atlas:A00:process",
+      "severity": "info",
+      "type": "CONTROLLER_ACTIVE"
+    },
+    "manager:lane:m5-managed-consumer-luna:Atlas:A00:no-progress": {
+      "data": {
+        "fingerprint": "64f842786f2d12f809afc718c223fd94fd6e6ccb024d3b55b16d2871eb3d82c3",
+        "lane": {
+          "controller_operational_state": "RUNNING_CODEX",
+          "controller_state": "live",
+          "declared_resources": {
+            "boards": [],
+            "mcp_servers": []
+          },
+          "doer": "Atlas",
+          "elapsed_seconds": 40.453,
+          "fingerprint": "64f842786f2d12f809afc718c223fd94fd6e6ccb024d3b55b16d2871eb3d82c3",
+          "fingerprint_age_seconds": 38.699,
+          "fingerprint_since_utc": "2026-08-02T02:20:05.925058Z",
+          "helper_states": [],
+          "lane_id": "m5-managed-consumer-luna:Atlas:A00",
+          "latest_activity": null,
+          "manager_signals": [],
+          "mcp_states": [],
+          "phase": "waiting manager signal",
+          "request": null,
+          "resource_ambiguity": [],
+          "resource_conflicts": [],
+          "resources": [],
+          "task": "A00"
+        },
+        "unchanged_since_utc": "2026-08-02T02:20:05.925058Z"
+      },
+      "event_id": "efc760897645bf504e3ed8e248c3ae77cc63c99d98eba130b9863b2b1f8d69b1",
+      "identity": "manager:lane:m5-managed-consumer-luna:Atlas:A00:no-progress",
+      "severity": "warning",
+      "type": "LANE_NO_PROGRESS"
+    },
+    "manager:review-due": {
+      "data": {
+        "active_lane_count": 1,
+        "due_utc": "2026-08-02T02:20:05.925058Z",
+        "lanes": [
+          {
+            "controller": {
+              "classification": "live",
+              "operational_state": "RUNNING_CODEX"
+            },
+            "declared_resources": {
+              "boards": [],
+              "mcp_servers": []
+            },
+            "doer": "Atlas",
+            "elapsed_seconds": 40.453,
+            "fingerprint_age_seconds": 38.699,
+            "lane_id": "m5-managed-consumer-luna:Atlas:A00",
+            "latest_activity": null,
+            "phase": "waiting manager signal",
+            "request": null,
+            "resource_ambiguity": [],
+            "resource_conflicts": [],
+            "task": "A00"
+          }
+        ],
+        "review_baseline_utc": "2026-08-02T02:20:05.925058Z"
+      },
+      "event_id": "3e928b359cd4013d8121d20624833ee660cc08d25df686b10d8a9a118c421b73",
+      "identity": "manager:review-due",
+      "severity": "info",
+      "type": "MANAGER_REVIEW_DUE"
+    }
+  },
+  "schema": "orchestrator-watcher-cursor/v1",
+  "snapshot": {
+    "helpers": [],
+    "lanes": [
+      {
+        "board_tokens": [],
+        "codex_created_utc": "2026-08-02T02:20:04.164340Z",
+        "codex_identity": "live",
+        "codex_pid": 177180,
+        "codex_reason": "PID and creation time match",
+        "codex_started_utc": "2026-08-02T02:20:04.170875Z",
+        "controller_created_utc": "2026-08-02T02:20:04.044995Z",
+        "controller_identity": "live",
+        "controller_pid": 175596,
+        "controller_reason": "PID and creation time match",
+        "controller_started_utc": "2026-08-02T02:20:04.170875Z",
+        "declared_state": "running",
+        "doer": "Atlas",
+        "duplicate_live_attempts": 1,
+        "ended_utc": null,
+        "jsonl_path": null,
+        "label": "atlas",
+        "lane_id": "m5-managed-consumer-luna:Atlas:A00",
+        "live_attempt_labels": [
+          "atlas"
+        ],
+        "mcp_servers": [],
+        "operational_state": "RUNNING_CODEX",
+        "parent_reason": "PID and creation-time parent identity match",
+        "parent_state": "match",
+        "phase": "waiting manager signal",
+        "process_reason": "controller and Codex identities are live",
+        "process_state": "RUNNING_CODEX",
+        "provider_wait": false,
+        "reason": "controller and Codex identities are live",
+        "resource_ambiguity": [],
+        "resource_release_possible": false,
+        "resources": [],
+        "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-managed-consumer-luna\\fixture-suite\\runs\\A00_test",
+        "started_utc": "2026-08-02T02:20:04.170875Z",
+        "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-managed-consumer-luna\\fixture-suite\\runs\\A00_test\\.agent-workspace\\atlas_controller.status.json",
+        "status_sha256": "2bc7638384d82e003803bb708184335febbdea218c7b43bf822045fd74ee3656",
+        "task": "A00",
+        "terminal_event": null,
+        "thread_id": "luna-live-lane",
+        "workspace": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-managed-consumer-luna\\fixture-suite\\runs\\A00_test\\.agent-workspace"
+      }
+    ],
+    "manager_signals": [],
+    "mcps": [],
+    "observation_errors": [],
+    "observed_utc": "2026-08-02T02:20:44.623933Z",
+    "process_errors": [],
+    "process_provider": "windows-cim",
+    "process_snapshot_complete": true,
+    "requests": [],
+    "resource_conflicts": [],
+    "runs_discovered": 1,
+    "schema": "orchestrator-watcher-snapshot/v1"
+  }
+}

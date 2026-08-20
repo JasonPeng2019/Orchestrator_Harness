@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py", line 822, in _load_canonical_invocation
+    bundle = bundle_from_record(canonical.prompt_bundle, run_root=run_root)
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\prompt_bundle.py", line 281, in bundle_from_record
+    raise PromptBundleError("prompt bundle manifest is stale or tampered")
+orchestrator_harness.prompt_bundle.PromptBundleError: prompt bundle manifest is stale or tampered
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.agent-workspace\epochs\20260816-plan2-suite-003\validate_invocation.py", line 14, in <module>
+    load_invocation(Path(__file__).with_name("INVOCATION.json"))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py", line 955, in load_invocation
+    invocation = _load_canonical_invocation(raw)
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py", line 941, in _load_canonical_invocation
+    raise InvocationError(str(exc)) from exc
+orchestrator_harness.lane_controller.InvocationError: prompt bundle manifest is stale or tampered

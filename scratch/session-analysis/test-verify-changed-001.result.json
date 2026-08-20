@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked pytest .codex/tests/test_verify_changed.py -q",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  225,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  45,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Focused verifier test module; prior runs of this module complete in well under 3 min; worst credible 3 min",
+    "started_at":  "2026-08-18T02:32:30.0644339+00:00",
+    "finished_at":  "2026-08-18T02:32:33.2703353+00:00",
+    "elapsed_seconds":  3.206,
+    "root_process_id":  4788,
+    "observed_process_ids":  [
+                                 4788
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\test-verify-changed-001.result.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\test-verify-changed-001.result.stderr.log"
+}

@@ -1,0 +1,16 @@
+﻿{
+    "schema":  "canary-manager-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:21:42.0890546Z",
+    "pending_event_id":  "81fcf343a163241c7f607e388ae2ac8fa838cc0190d3013ae01dbb42f4575343",
+    "pending_type":  "MCP_STATE_UNKNOWN",
+    "verdict":  "ACKNOWLEDGED_PROVIDER_START_IN_PROGRESS",
+    "analysis":  "Atlas validated the exact assignment/release and started its one O helper PID 185388. The provider environment is still being created and no MCP lifetime/public artifact exists, so the declared MCP state is truthfully unknown. Exact helper identity is live, no second lifetime exists, and no conflicting lease/process error is present. Continue the same single startup without relaunch.",
+    "helper":  {
+                   "ProcessId":  185388,
+                   "ParentProcessId":  190752,
+                   "Name":  "python.exe",
+                   "CreationDate":  "\/Date(1785540053132)\/",
+                   "CommandLine":  "\"C:\\Users\\Jason\\AppData\\Local\\Programs\\Python\\Python314\\python.exe\" .agent-workspace\\tools\\a22_stm_a_b14_s1_clean_o.py "
+               }
+}

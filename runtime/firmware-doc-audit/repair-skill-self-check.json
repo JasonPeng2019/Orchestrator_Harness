@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "bash .codex/skills/plan-changes/scripts/plan.sh --self-check; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; bash .codex/skills/change-loop/scripts/run_loop.sh --self-check",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  20,
+    "timeout_basis":  "Static Bash syntax and package-wiring checks for the two server-repair skills; no models, hardware, or server mutation.",
+    "started_at":  "2026-08-14T09:46:07.2004060+00:00",
+    "finished_at":  "2026-08-14T09:46:12.1479266+00:00",
+    "elapsed_seconds":  4.948,
+    "root_process_id":  172620,
+    "observed_process_ids":  [
+                                 172620
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-doc-audit\\repair-skill-self-check.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-doc-audit\\repair-skill-self-check.stderr.log"
+}

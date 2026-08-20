@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "canary-manager-event-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:38:57.3612205Z",
+    "event_id":  "ff156b8d85c7508d551de7d0d9c409aa2f654c6704e4a3133930bb9f3df80400",
+    "event_type":  "CHECKPOINT_UPDATED",
+    "checkpoint_sha256":  "f2be1c72893410ef4ce59d52198c35084e9a0d98b09d12f7a1bc590498b0f638",
+    "verdict":  "ACKNOWLEDGED_ALREADY_REVIEWED_CURRENT_CHECKPOINT",
+    "analysis":  "The exact current Cygnus checkpoint includes the O endpoint already reviewed via its immutable signal. It confirms the run-local pre-provider guard, one command, no retry/action/result, and exact absence; no additional action."
+}

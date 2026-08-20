@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "epoch_id": "20260802-m5-q4-134406Z",
+  "heartbeat_timeout_seconds": 2100.0,
+  "formal_review_interval_seconds": 900.0,
+  "bounded_lifetime_seconds": 1800.0
+}

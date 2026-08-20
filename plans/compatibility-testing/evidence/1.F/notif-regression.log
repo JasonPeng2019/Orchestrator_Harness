@@ -1,0 +1,9 @@
+test_hidden_atomic_signal_file_is_not_a_second_native_event (orchestrator_harness.tests.test_manager_notifications_adversarial.ManagerNotificationAdversarialTests.test_hidden_atomic_signal_file_is_not_a_second_native_event) ... ok
+test_identical_duplicate_signal_files_are_one_condition (orchestrator_harness.tests.test_manager_notifications_adversarial.ManagerNotificationAdversarialTests.test_identical_duplicate_signal_files_are_one_condition) ... ok
+test_malformed_signal_is_recorded_but_does_not_wake_without_active_state (orchestrator_harness.tests.test_manager_notifications_adversarial.ManagerNotificationAdversarialTests.test_malformed_signal_is_recorded_but_does_not_wake_without_active_state) ... ok
+test_signal_evidence_is_never_followed_and_source_is_not_modified (orchestrator_harness.tests.test_manager_notifications_adversarial.ManagerNotificationAdversarialTests.test_signal_evidence_is_never_followed_and_source_is_not_modified) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.176s
+
+OK

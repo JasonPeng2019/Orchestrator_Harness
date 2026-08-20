@@ -1,0 +1,6 @@
+{
+  "epoch": "20260802-m5-q9-160750Z",
+  "records": 262,
+  "result": "FAIL",
+  "error": "blocking gate sig-20260802-m5-q9-160750Z-delta-a26-gate-001 lacks receipt/resume or terminal expiration"
+}

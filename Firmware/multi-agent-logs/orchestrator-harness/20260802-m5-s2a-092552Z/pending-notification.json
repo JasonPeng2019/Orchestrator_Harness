@@ -1,0 +1,15 @@
+{
+  "acknowledged_event_ids": [
+    "ac2aa31e1e4bf4eeb465abb860339b3f6f016e622fa56acf6424c46c1a8e8c69",
+    "beec46d2f96c3f70762b496fd506779408452dbd99bd0aa99c2506977485d95c",
+    "53ce4c46c54a528cdfe2b35200f5bb6deb35d17af1188776b7204bdf5b8aa76d",
+    "33696f82469a52701933ca15c72775424f2b51ab523ef927f2bb953c6bf3b0b5",
+    "2e22a8ea71e2b3f48994eb7bc2d342b5eb826f01d70d66d7bb5c99c9a8b03eee",
+    "5ff96080dface746218777eadb3444c099dfe27270172c938b4336db1aba8652",
+    "e3e66b4f95596cc1fd4718841be110ed85afa60eda0dc7f20b6ab5ca5f845769",
+    "86c60c3ced69d90a68b92692234b5c35f5d8e8d93b0df205551ee97fcc1f190f"
+  ],
+  "deferred": [],
+  "pending": null,
+  "schema": "orchestrator-manager-notification/v1"
+}

@@ -1,0 +1,17 @@
+{
+  "max_json_bytes": 4000000,
+  "max_jsonl_tail_bytes": 512000,
+  "output_dir": "runtime/watch-epoch",
+  "poll_interval_seconds": 0.2,
+  "process_start_tolerance_seconds": 2,
+  "request_critical_seconds": 30,
+  "request_warning_seconds": 120,
+  "run_globs": [
+    "worktrees/*"
+  ],
+  "stable_read_delay_seconds": 0.03,
+  "stable_read_retries": 4,
+  "suite_root": ".",
+  "watch_timeout_seconds": 3.0,
+  "workspace_relpath": ".agent-workspace"
+}

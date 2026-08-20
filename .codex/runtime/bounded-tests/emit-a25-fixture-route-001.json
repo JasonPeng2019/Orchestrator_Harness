@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/.agent-workspace/epochs/20260816-plan2-suite-004/emit_a25_fixture_route.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "One local manager-event append; previous event append completed within seconds.",
+    "started_at":  "2026-08-16T09:07:28.2695473+00:00",
+    "finished_at":  "2026-08-16T09:07:32.3831372+00:00",
+    "elapsed_seconds":  4.114,
+    "root_process_id":  172788,
+    "observed_process_ids":  [
+                                 172788
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\emit-a25-fixture-route-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\emit-a25-fixture-route-001.stderr.log"
+}

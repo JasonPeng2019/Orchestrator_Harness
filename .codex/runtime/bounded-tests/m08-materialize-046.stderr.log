@@ -1,0 +1,5 @@
+Using CPython 3.12.13
+Creating virtual environment at: Firmware\target-harness\orchestrator_harness\.venv
+   Building portable-orchestrator-harness @ file:///C:/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/target-harness/orchestrator_harness
+      Built portable-orchestrator-harness @ file:///C:/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/target-harness/orchestrator_harness
+Installed 1 package in 24ms

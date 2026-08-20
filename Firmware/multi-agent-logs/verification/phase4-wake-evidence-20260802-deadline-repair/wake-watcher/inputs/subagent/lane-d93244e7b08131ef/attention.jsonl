@@ -1,0 +1,1 @@
+{"agent_blocked":true,"epoch_id":"A00_test","event_id":"wake","kind":"AGENT_SIGNAL_CREATED","lane_id":"A00_test:Atlas:A00","record_id":"82b65599-09e5-4e50-9b7b-f1438048c850","recorder":"lane","schema":"manager-attention-timeline/v1","source_timestamp_utc":"2026-08-02T10:55:46.848052+00:00"}

@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "manager-event-review/v1",
+    "epoch":  "20260731-s1-clean-p",
+    "event_id":  "f608033ddaf3b40ad9e2260438996119da91ff43d3c3f839826708421ed1241e",
+    "lane":  "20260731-s1-clean-p:Atlas:A22",
+    "reviewed_utc":  "2026-08-01T00:13:35.9663223Z",
+    "decision":  "CONTINUE_PRE_PROVIDER_VALIDATION",
+    "reason":  "The endpoint controller declares its future STM-A/MCP leases while the persistent doer is still validating the fresh assignment/release before starting the one provider lifetime. No helper, request, MCP lifetime, or hardware operation exists yet; the warning is truthful and no conflicting lease exists.",
+    "authority":  "No additional provider/hardware release."
+}

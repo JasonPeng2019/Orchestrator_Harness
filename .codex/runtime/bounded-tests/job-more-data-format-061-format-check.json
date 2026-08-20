@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe\u0027 -m ruff format --check orchestrator_harness/process_supervisor.py orchestrator_harness/tests/test_s4_repair.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\wshrt-061",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Retained Ruff 0.16.1 format-check of two files; the same retained formatter checked a comparable 18-file set in 1.7s, so 30s is a conservative upper bound with the 5s short-command cleanup allowance.",
+    "started_at":  "2026-08-16T06:58:06.8078495+00:00",
+    "finished_at":  "2026-08-16T06:58:09.9452981+00:00",
+    "elapsed_seconds":  3.137,
+    "root_process_id":  174580,
+    "observed_process_ids":  [
+                                 174580
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\job-more-data-format-061-format-check.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\job-more-data-format-061-format-check.stderr.log"
+}

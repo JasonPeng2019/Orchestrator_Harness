@@ -1,0 +1,11 @@
+﻿{
+    "schema":  "manager-host-gate-review/v1",
+    "epoch":  "20260731-s1-clean-p",
+    "lane":  "20260731-s1-clean-p:Delta:A26",
+    "reviewed_utc":  "2026-08-01T00:09:44.6523103Z",
+    "controller_status":  "CODEX_EXITED exit 0",
+    "focused_result":  "6/6 route replay tests PASS",
+    "decision":  "ACCEPT_CORRECTED_HOST_GATE",
+    "reason":  "Exact advertised manager assignment produces one bounded second setup_overview call with the same board name and exact probe connection; both responses and binding are persisted; unadvertised/mismatched/ambiguous guidance fails closed; ordinary populated route does not retry; no provider/MCP/hardware action.",
+    "noncounting_candidate":  "Initial incomplete host result and one pre-controller BOM launch failure remain for sprint audit."
+}

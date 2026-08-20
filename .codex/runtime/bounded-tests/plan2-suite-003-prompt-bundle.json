@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/.agent-workspace/epochs/20260816-plan2-suite-003/build_prompt_bundle.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "prompt-bundle helper measured short product helper",
+    "started_at":  "2026-08-16T05:02:56.6228505+00:00",
+    "finished_at":  "2026-08-16T05:02:58.8867524+00:00",
+    "elapsed_seconds":  2.264,
+    "root_process_id":  171396,
+    "observed_process_ids":  [
+                                 171396
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite-003-prompt-bundle.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite-003-prompt-bundle.stderr.log"
+}

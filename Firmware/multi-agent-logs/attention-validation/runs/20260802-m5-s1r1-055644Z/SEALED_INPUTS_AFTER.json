@@ -1,0 +1,83 @@
+{
+  "epoch": "20260802-m5-s1r1-055644Z",
+  "all_match": true,
+  "inputs": [
+    {
+      "path": "multi-agent-logs/orchestrator-harness/20260802-m5-s1r1-055644Z/config.json",
+      "exists": true,
+      "bytes": 1026,
+      "sha256": "f823c1182a33b8049bd45d258c8032a7dc49d84c1e0e3c5528f008770435b9c0",
+      "matches": true
+    },
+    {
+      "path": "harness_watcher/20260802-m5-s1r1-055644Z/config.json",
+      "exists": true,
+      "bytes": 3122,
+      "sha256": "ae13aeec5f0cc4f7548e1c490bdc4c967c1c57418f42b49cb175002e0dba070b",
+      "matches": true
+    },
+    {
+      "path": "active-working-spec/m5-three-sprint-wake-test.md",
+      "exists": true,
+      "bytes": 31300,
+      "sha256": "00fb4840d4e24052b91f63b3d5c1868a5d6ad465245b96004cbc8711707925ea",
+      "matches": true
+    },
+    {
+      "path": "active-working-spec/m5-watcher-causal-metrics-repair.md",
+      "exists": true,
+      "bytes": 2789,
+      "sha256": "ab1a0ef786b3369ffc1d5fbfe104d82ca8561d6d81fc0288ed600125f05f7fec",
+      "matches": true
+    },
+    {
+      "path": ".agent-workspace/AUTONOMOUS_EXECUTION_POLICY.md",
+      "exists": true,
+      "bytes": 3190,
+      "sha256": "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68",
+      "matches": true
+    },
+    {
+      "path": ".agent-workspace/AUTONOMY_REQUIREMENT_MATRIX.md",
+      "exists": true,
+      "bytes": 1449,
+      "sha256": "3c33b4c448b7c8d234e7e6704b90d8c69984ce060a4c4c3c71876f7aec621256",
+      "matches": true
+    },
+    {
+      "path": "multi-agent-logs/server-snapshots/server-snapshot-20260802-m5-s1r1-055644Z.json",
+      "exists": true,
+      "bytes": 14675,
+      "sha256": "49ba8659c77f7432e0d81e24c1db431c4b1b2ec6a9eaa29753f6a951fec01130",
+      "matches": true
+    },
+    {
+      "path": "fresh-experiments/A22_20260726-062324/.agent-workspace/m5/20260802-m5-s1-052110Z/M5_S1_REAL_LIVE_ENTRY_READINESS_CHECKPOINT.md",
+      "exists": true,
+      "bytes": 3605,
+      "sha256": "9b3ec26955c7d0bb264635cd63f31169c9a28bdcbce44bbb6209f9aeabd67b61",
+      "matches": true
+    },
+    {
+      "path": "fresh-experiments/D31_20260726-062325/.agent-workspace/m5/20260802-m5-s1-052110Z/M5_S1_READINESS_CHECKPOINT.md",
+      "exists": true,
+      "bytes": 4388,
+      "sha256": "3de3898868d284204929f0500b16dc50ba2b22fbb1c0d24732a47887b913f6bb",
+      "matches": true
+    },
+    {
+      "path": "fresh-experiments/A24_20260726-052146/.agent-workspace/m5/20260802-m5-s1-052110Z/M5_S1_REAL_LIVE_ENTRY_CHECKPOINT.md",
+      "exists": true,
+      "bytes": 3749,
+      "sha256": "99337c57ed1f2f0110aba693d2693d57a8267848598565731a537a4a40282868",
+      "matches": true
+    },
+    {
+      "path": "fresh-experiments/A26_20260726-062325/.agent-workspace/m5/20260802-m5-s1-052110Z/M5_S1_LIVE_ENTRY_READINESS_CHECKPOINT.md",
+      "exists": true,
+      "bytes": 2597,
+      "sha256": "dc6b3ac98b63c11610a1f559e328805298023d34608894a9c0cfb47f9817d4d4",
+      "matches": true
+    }
+  ]
+}

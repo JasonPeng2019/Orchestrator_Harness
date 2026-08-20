@@ -1,0 +1,47 @@
+{
+    "epoch":  "20260802-m5-q3-132710Z",
+    "verified_utc":  "2026-08-02T13:40:14.1891966Z",
+    "all_absent":  true,
+    "processes":  [
+                      {
+                          "pid":  167040,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  173628,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  173776,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  178164,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  186148,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  192952,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  195732,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  197236,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  198052,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  198132,
+                          "alive":  false
+                      }
+                  ]
+}

@@ -1,0 +1,28 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe -m unittest -v orchestrator_harness.tests.test_s5_capability_broker",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  113,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  23,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The same 27-test module completed in 39.4 seconds under concurrent load; 90 seconds preserves measured headroom.",
+    "started_at":  "2026-08-14T18:41:58.3767572+00:00",
+    "finished_at":  "2026-08-14T18:42:36.0299461+00:00",
+    "elapsed_seconds":  37.653,
+    "root_process_id":  9680,
+    "observed_process_ids":  [
+                                 484,
+                                 9680,
+                                 172668,
+                                 174092,
+                                 189808,
+                                 192224,
+                                 196092
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-postjoin-s5-3a73-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-postjoin-s5-3a73-001.stderr.log"
+}

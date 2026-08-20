@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\.agent-workspace\\tools\\optional_watcher_owner.ps1",
+    "-SuiteRoot",
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+    "-Config",
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher_implementation\\canary-20260731-s1-clean-o.json",
+    "-StopFile",
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\.agent-workspace\\CANARY_S1O_OPTIONAL.stop",
+    "-IdentityFile",
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\.agent-workspace\\ORCHESTRATOR_HARNESS\\clean_o_optional_identity.json"
+  ],
+  "created_utc": "2026-07-31T23:12:48.628747Z",
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+  "expected_state_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\runs\\20260731-s1-clean-o\\watcher\\service.json",
+  "label": "clean-o-optional-owner",
+  "launched_utc": "2026-07-31T23:12:48.627281Z",
+  "pid": 185628,
+  "platform": "windows",
+  "role": "watcher-owner",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "launched"
+}

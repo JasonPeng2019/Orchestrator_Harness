@@ -1,0 +1,63 @@
+..................FFF..........................................          [100%]
+================================== FAILURES ===================================
+___________ test_windows_guard_launcher_receives_payload_and_blocks ___________
+
+    def test_windows_guard_launcher_receives_payload_and_blocks() -> None:
+        payload = json.loads((ROOT / ".codex" / "hooks.json").read_text(encoding="utf-8"))
+        handler = payload["hooks"]["PreToolUse"][0]["hooks"][0]
+        result = _run_windows_hook(
+            handler["commandWindows"],
+            cwd=ROOT,
+            hook_input={"tool_input": {"command": "git reset --hard HEAD~1"}},
+        )
+        assert result.returncode == 0, result.stderr
+        output = json.loads(result.stdout)
+>       assert output["hookSpecificOutput"]["permissionDecision"] == "deny"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'hookSpecificOutput'
+
+.codex\tests\test_hooks.py:207: KeyError
+__________ test_windows_guard_launcher_works_from_nested_repository ___________
+
+    def test_windows_guard_launcher_works_from_nested_repository() -> None:
+        payload = json.loads((ROOT / ".codex" / "hooks.json").read_text(encoding="utf-8"))
+        handler = payload["hooks"]["PreToolUse"][0]["hooks"][0]
+        nested_repository = ROOT / "stable-general-harness-runner"
+        assert nested_repository.is_dir()
+    
+        for command, expected_decision in (
+            ("git status --short", None),
+            ("git reset --hard HEAD~1", "deny"),
+        ):
+            result = _run_windows_hook(
+                handler["commandWindows"],
+                cwd=nested_repository,
+                hook_input={"tool_input": {"command": command}},
+            )
+            assert result.returncode == 0, result.stderr
+            output = json.loads(result.stdout)
+            if expected_decision is None:
+                assert output == {}
+            else:
+>               assert output["hookSpecificOutput"]["permissionDecision"] == expected_decision
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               KeyError: 'hookSpecificOutput'
+
+.codex\tests\test_hooks.py:230: KeyError
+_______ test_hook_launchers_do_not_depend_on_the_current_git_repository _______
+
+    def test_hook_launchers_do_not_depend_on_the_current_git_repository() -> None:
+        payload = json.loads((ROOT / ".codex" / "hooks.json").read_text(encoding="utf-8"))
+        handlers = [handler for groups in payload["hooks"].values() for group in groups for handler in group["hooks"]]
+        for handler in handlers:
+            assert "git rev-parse --show-toplevel" not in handler["command"]
+            assert "git rev-parse --show-toplevel" not in handler["commandWindows"]
+>           assert ".codex/scripts/hook_runner.py" in handler["command"]
+E           assert '.codex/scripts/hook_runner.py' in 'r="$PWD"; while [ "$r" != / ] && [ ! -f "$r/.codex/scripts/bounded_test_adapter.py" ]; do r=$(dirname "$r"); done; [ ...nable to locate bounded-test adapter\' >&2; exit 1; }; python "$r/.codex/scripts/bounded_test_adapter.py" pre-tool-use'
+
+.codex\tests\test_hooks.py:239: AssertionError
+=========================== short test summary info ===========================
+FAILED .codex/tests/test_hooks.py::test_windows_guard_launcher_receives_payload_and_blocks
+FAILED .codex/tests/test_hooks.py::test_windows_guard_launcher_works_from_nested_repository
+FAILED .codex/tests/test_hooks.py::test_hook_launchers_do_not_depend_on_the_current_git_repository
+3 failed, 60 passed in 38.56s

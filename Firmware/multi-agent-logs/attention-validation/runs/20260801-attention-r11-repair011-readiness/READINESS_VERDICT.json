@@ -1,0 +1,12 @@
+{
+  "schema": "attention-repair011-readiness/v1",
+  "epoch_id": "20260801-attention-r11-repair011-readiness",
+  "boundary_lifetime_seconds": 300.0,
+  "heartbeat_timeout_seconds": 600.0,
+  "cursor_drained": true,
+  "observation_error_count": 0,
+  "healthy_classification": "NO_BLOCKING_IMPACT",
+  "terminal_expired_present": true,
+  "finalize_passed": true,
+  "passed": true
+}

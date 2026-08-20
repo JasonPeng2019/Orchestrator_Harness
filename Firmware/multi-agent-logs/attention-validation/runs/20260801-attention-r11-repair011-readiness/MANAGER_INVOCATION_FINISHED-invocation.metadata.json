@@ -1,0 +1,10 @@
+{
+  "manager_session_id": "readiness-session",
+  "manager_invocation_id": "readiness-invocation",
+  "pending_work_snapshot": {
+    "complete": true,
+    "events": [],
+    "selected_event_id": null,
+    "selection_reason": "BOUNDARY_INVENTORY"
+  }
+}

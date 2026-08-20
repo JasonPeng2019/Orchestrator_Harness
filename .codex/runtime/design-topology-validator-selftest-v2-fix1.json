@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/skills/design-project-topology/scripts/validate_execution_plan.py --self-test",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The first run found one deterministic fixture column mismatch caused by the intentional schema change; the corrected self-test normally completes in seconds.",
+    "started_at":  "2026-08-14T02:55:52.4693334+00:00",
+    "finished_at":  "2026-08-14T02:55:54.5009807+00:00",
+    "elapsed_seconds":  2.032,
+    "root_process_id":  190476,
+    "observed_process_ids":  [
+                                 190476
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\design-topology-validator-selftest-v2-fix1.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\design-topology-validator-selftest-v2-fix1.stderr.log"
+}

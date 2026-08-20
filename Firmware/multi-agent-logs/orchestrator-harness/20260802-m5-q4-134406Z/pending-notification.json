@@ -1,0 +1,63 @@
+{
+  "acknowledged_event_ids": [
+    "6d2a6ed5ca97008fed130912cb0f20079e19f7ec6b02585fe9bb0548325ceaab",
+    "bdaa90ef8f60e43a76546afc95f501bc2f887c30e7bafcec4a5500ab298a5773",
+    "aaf65000069b7232f6483c05c1d050da6cea5ef5e014d0faafea8faccddf79d1",
+    "88f24ef193cf4d43e7bb739077eeee1595df640f60956e706d67f94636035953"
+  ],
+  "deferred": [
+    {
+      "admitted_utc": "2026-08-02T13:59:42.514909Z",
+      "deadline_order": "9999-12-31T23:59:59Z",
+      "event": {
+        "data": {
+          "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+          "checkpoint_sha256": "96ac565487da9b8575563ab1bc541f654006fd666821463ba12fa27bdb8d508d",
+          "lane_id": "20260802-m5-q4-134406Z:Cygnus:A24"
+        },
+        "event_id": "cf2d011a29f4b2945d50c040d701dc88137448deb00866b61eb62e326de7b987",
+        "identity": "lane:20260802-m5-q4-134406Z:Cygnus:A24:checkpoint",
+        "severity": "info",
+        "type": "CHECKPOINT_UPDATED"
+      },
+      "identity": "lane:20260802-m5-q4-134406Z:Cygnus:A24:checkpoint",
+      "priority": 5
+    },
+    {
+      "admitted_utc": "2026-08-02T13:58:05.806957Z",
+      "deadline_order": "9999-12-31T23:59:59Z",
+      "event": {
+        "data": {
+          "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+          "checkpoint_sha256": "0ac52688fc1a170bcdf140e486548728f2c25f44166ffe78d43457164f628b8a",
+          "lane_id": "20260802-m5-q4-134406Z:Delta:A26"
+        },
+        "event_id": "6a5b12ee1f97ac10e17649b5862d7668b287abd50403f9f75d7af77866cd46e1",
+        "identity": "lane:20260802-m5-q4-134406Z:Delta:A26:checkpoint",
+        "severity": "info",
+        "type": "CHECKPOINT_UPDATED"
+      },
+      "identity": "lane:20260802-m5-q4-134406Z:Delta:A26:checkpoint",
+      "priority": 5
+    }
+  ],
+  "pending": {
+    "admitted_priority": 5,
+    "admitted_utc": "2026-08-02T14:00:20.146159Z",
+    "data": {
+      "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+      "checkpoint_sha256": "258e88d0858e5cea0a217bb48e7694627743b47c6edc8ca3aead111a1cf5ea15",
+      "lane_id": "20260802-m5-q4-134406Z:Boreal:D31",
+      "superseded_event_ids": [
+        "354d00107233e82163f2c9ab82dccdb5f622db978e11e52a8eef4da458f30033"
+      ]
+    },
+    "event_id": "47c36aa974e3beb60aa480050be6f58b6fd497d92bad2628b51895fc2ab4d06e",
+    "identity": "lane:20260802-m5-q4-134406Z:Boreal:D31:checkpoint",
+    "notification": "MANAGER_ACTION_REQUIRED",
+    "observed_utc": "2026-08-02T14:00:20.146159Z",
+    "severity": "info",
+    "type": "CHECKPOINT_UPDATED"
+  },
+  "schema": "orchestrator-manager-notification/v1"
+}

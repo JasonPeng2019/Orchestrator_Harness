@@ -1,0 +1,15 @@
+{
+  "accepted_by": "ROOT-IM",
+  "accepted_commit": "ce04f66df560149b6e7301f7c5455ff16d4d9fb9",
+  "card_id": "card-claude-hello",
+  "card_sha256": "76fa6a91ec0b1d351d4bd15226f988b029f1fd80b0fe478c1fa9d7958425d710",
+  "cohort_id": "cohort-claude-fixture",
+  "completion_review_sha256": "03ac04b54d35fe4588efbcb57e67f3d70f3a8171a01daa1a0fcc0691aa5d4295",
+  "lane_id": "claude-hello",
+  "result_sha256": "9cb10e3392016075a6a1544f7389bf4ee8909ccf5997664d427edd67bbc230b8",
+  "revision": "r1",
+  "schema": "orchestrator-acceptance/v1",
+  "summary": "Accepted committed result.",
+  "verdict": "ACCEPTED",
+  "worker_invocation_id": "claude-hello-001"
+}

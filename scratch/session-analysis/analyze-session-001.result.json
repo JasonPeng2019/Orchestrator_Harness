@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python scratch\\session-analysis\\analyze_session.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  375,
+    "expected_upper_bound_seconds":  300,
+    "cleanup_allowance_seconds":  75,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Measured history: 611MB/85k-line JSONL; Get-Content line count took 7s; streaming JSON parse bounded by file size, worst credible 5 min",
+    "started_at":  "2026-08-18T02:16:16.2571553+00:00",
+    "finished_at":  "2026-08-18T02:16:24.4747820+00:00",
+    "elapsed_seconds":  8.218,
+    "root_process_id":  9736,
+    "observed_process_ids":  [
+                                 9736
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\analyze-session-001.result.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\analyze-session-001.result.stderr.log"
+}

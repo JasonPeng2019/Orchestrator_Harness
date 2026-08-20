@@ -1,0 +1,98 @@
+{
+  "schema": "m5-sealed-manifest/v2",
+  "epoch": "20260802-m5-s1a-061555Z",
+  "sprint": 1,
+  "accepted_count_before": 0,
+  "created_utc": "2026-08-02T06:17:13.936247+00:00",
+  "root_manager": {
+    "session_id": "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "pid": 192592
+  },
+  "python_fingerprint": {
+    "aggregate_sha256": "73b4b08196d68165754ed15b13d1bd8451c66b778c9f68f206bde6dda4449bfe",
+    "path": "PYTHON_CODE_FINGERPRINT_BEFORE.json",
+    "file_count": 112
+  },
+  "sealed_inputs": [
+    {
+      "path": "multi-agent-logs/orchestrator-harness/20260802-m5-s1a-061555Z/config.json",
+      "bytes": 1024,
+      "sha256": "1789237f22175c377f1120d630429b1bf5468cae8d4bcb459b4ad2bc37f1684d"
+    },
+    {
+      "path": "harness_watcher/20260802-m5-s1a-061555Z/config.json",
+      "bytes": 1920,
+      "sha256": "15230202005fc8d5c8f34f67d65231dfe13b144e230bb6e4b06dec42531617bd"
+    },
+    {
+      "path": "active-working-spec/m5-three-sprint-wake-test.md",
+      "bytes": 31300,
+      "sha256": "00fb4840d4e24052b91f63b3d5c1868a5d6ad465245b96004cbc8711707925ea"
+    },
+    {
+      "path": "active-working-spec/m5-watcher-causal-metrics-repair.md",
+      "bytes": 2789,
+      "sha256": "ab1a0ef786b3369ffc1d5fbfe104d82ca8561d6d81fc0288ed600125f05f7fec"
+    },
+    {
+      "path": ".agent-workspace/AUTONOMOUS_EXECUTION_POLICY.md",
+      "bytes": 3190,
+      "sha256": "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68"
+    },
+    {
+      "path": ".agent-workspace/AUTONOMY_REQUIREMENT_MATRIX.md",
+      "bytes": 1449,
+      "sha256": "3c33b4c448b7c8d234e7e6704b90d8c69984ce060a4c4c3c71876f7aec621256"
+    },
+    {
+      "path": "multi-agent-logs/server-snapshots/server-snapshot-20260802-m5-s1a-061555Z.json",
+      "bytes": 14675,
+      "sha256": "49ba8659c77f7432e0d81e24c1db431c4b1b2ec6a9eaa29753f6a951fec01130"
+    },
+    {
+      "path": "fresh-experiments/A22_20260726-062324/.agent-workspace/m5/20260802-m5-s1r1-055644Z/M5_S1R1_LIVE_ENTRY_AUTHORIZATION_CHECKPOINT.md",
+      "bytes": 3620,
+      "sha256": "f4f3dbff6f107d2912977d8b565254697799ef84938ffdb79b80b518857dac0b"
+    },
+    {
+      "path": "fresh-experiments/D31_20260726-062325/.agent-workspace/m5/20260802-m5-s1r1-055644Z/M5_S1R1_LIVE_ENTRY_AUTHORIZATION_CHECKPOINT.md",
+      "bytes": 6050,
+      "sha256": "7023c2d77fc71552b9bccf8feef22cb892c20d20b78fd97140a9944adbf2e56d"
+    },
+    {
+      "path": "fresh-experiments/A24_20260726-052146/.agent-workspace/m5/20260802-m5-s1r1-055644Z/M5_S1R1_LIVE_ENTRY_AUTHORIZATION_CHECKPOINT.md",
+      "bytes": 5959,
+      "sha256": "bfa0ceb113f374ab73c0a2152b0fbf8c5ea2de3dfddf58579bd7f396aa26af7a"
+    },
+    {
+      "path": "fresh-experiments/A26_20260726-062325/.agent-workspace/m5/20260802-m5-s1r1-055644Z/M5_S1_LIVE_ENTRY_AUTHORIZATION_CHECKPOINT.md",
+      "bytes": 3565,
+      "sha256": "3df0b6f763cf598c2e60e86cb03779e8616d6967e1ddb22226d3584ac1c7871e"
+    }
+  ],
+  "runtime_allowlist": [
+    "root orchestrator PID 192592",
+    "native managed harness owner/child",
+    "native diagnostic watcher",
+    "four documented external controllers/Codex workers"
+  ],
+  "forbidden": [
+    "runner",
+    "relay",
+    "wrapper",
+    "scheduler",
+    "retry controller",
+    "watcher subagent",
+    "AI notifier",
+    "transcript inspection",
+    "direct signal inspection",
+    "collaboration notification",
+    "user-message discovery"
+  ],
+  "run_roots": [
+    "fresh-experiments/A22_20260726-062324",
+    "fresh-experiments/D31_20260726-062325",
+    "fresh-experiments/A24_20260726-052146",
+    "fresh-experiments/A26_20260726-062325"
+  ]
+}

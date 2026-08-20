@@ -1,0 +1,2 @@
+ERROR: MI-VERIFICATION-ASSET-CORRECT ordered_actions must contain M03-A1, M03-A2, M03-A3, M03-A4, M03-A5, M03-A6, M03-A7 exactly once and in order
+ERROR: GATE-CANDIDATE PRODUCT continuation eligibility must say that only a failed/undecidable required product criterion permits continuation

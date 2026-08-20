@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked ruff format --config .codex/dev/pyproject.toml --no-cache .codex/tests/test_bounded_test_supervisor.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The change-aware verifier isolated a single format-only test file; the configured Ruff formatter completes in seconds.",
+    "started_at":  "2026-08-15T02:14:41.9313257+00:00",
+    "finished_at":  "2026-08-15T02:14:44.4210176+00:00",
+    "elapsed_seconds":  2.49,
+    "root_process_id":  193784,
+    "observed_process_ids":  [
+                                 193784
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\stop-gate-format-supervisor-test-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\stop-gate-format-supervisor-test-20260814.stderr.log"
+}

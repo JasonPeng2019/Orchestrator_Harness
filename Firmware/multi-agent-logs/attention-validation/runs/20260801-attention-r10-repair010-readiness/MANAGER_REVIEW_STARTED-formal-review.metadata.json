@@ -1,0 +1,7 @@
+{
+  "manager_session_id": "readiness-session",
+  "manager_invocation_id": "readiness-invocation",
+  "manager_state": "READING_EVENT",
+  "formal_review_due_utc": "2026-08-01T20:22:02.226244Z",
+  "continuous_from_record_id": "621d2f66-b30d-4e25-a7b7-166e2e2410b1"
+}

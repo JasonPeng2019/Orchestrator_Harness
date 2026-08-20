@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev --locked python -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6PackageTests.test_out_of_tree_wheel_resolves_one_canonical_asset_tree_and_leaves_source_clean",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  57,
+    "expected_upper_bound_seconds":  45,
+    "cleanup_allowance_seconds":  12,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "prior-failed-package-test-5s-plus-wheel-build-margin",
+    "started_at":  "2026-08-14T20:43:51.2216003+00:00",
+    "finished_at":  "2026-08-14T20:44:01.5536432+00:00",
+    "elapsed_seconds":  10.332,
+    "root_process_id":  1660,
+    "observed_process_ids":  [
+                                 1660
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-release-package-recovery-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-release-package-recovery-001.stderr.log"
+}

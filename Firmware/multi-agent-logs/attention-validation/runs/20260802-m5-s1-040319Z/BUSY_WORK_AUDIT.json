@@ -1,0 +1,13 @@
+{
+  "activity_id": "busy-integrity-audit",
+  "started_utc": "2026-08-02T04:05:11.137805+00:00",
+  "finished_utc": "2026-08-02T04:07:12.168255+00:00",
+  "hashes": {
+    "orchestrator_harness\\attention_sprint.py": "c7b40339e421b5c9c15794859cf25660a502085e42c5c8c8b57db73c93bfe5c5",
+    "orchestrator_harness\\cli.py": "2abf70fd743b8714db9effa6a18a6ca99395cc63b56420a14dfa8cb93789898a",
+    "harness_watcher_implementation\\attention.py": "68d733e847dc4a6c19a5fd076fd4e923fc7a83489af576124b6da85ae92390d0",
+    "harness_watcher_implementation\\poller.py": "f66a9ba890d9a872464041c259babf404e0f37358d34a1472a0ad62fdb2acdbc",
+    "scripts\\orchestration\\run_m5_counted_sprint.py": "1526d25ea9fcb298b352552572a08fd7961cc0c19d98a27ba5672007a0b2a240",
+    "active-working-spec\\m5-three-sprint-wake-test.md": "6154e785a51de0db81dbb3cab9d150fadb6d78cdb1a6ff65dc39278e48a4b24e"
+  }
+}

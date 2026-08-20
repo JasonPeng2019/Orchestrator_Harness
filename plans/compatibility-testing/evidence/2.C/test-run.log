@@ -1,0 +1,19 @@
+test_P10_CANONICAL_REGISTRY_IDENTITY_001 (orchestrator_harness.tests.test_compat_lane_lifecycle.CompatLaneLifecycleTests.test_P10_CANONICAL_REGISTRY_IDENTITY_001) ... ok
+test_P11_PROCESS_PROOF_REQUIRED_001 (orchestrator_harness.tests.test_compat_lane_lifecycle.CompatLaneLifecycleTests.test_P11_PROCESS_PROOF_REQUIRED_001) ... ok
+test_P12_SAFE_MEMBER_TRAVERSAL_001 (orchestrator_harness.tests.test_compat_lane_lifecycle.CompatLaneLifecycleTests.test_P12_SAFE_MEMBER_TRAVERSAL_001) ... ok
+test_P1_IMMUTABLE_VIEW_RETAINED_COMMIT_001 (orchestrator_harness.tests.test_compat_lane_lifecycle.CompatLaneLifecycleTests.test_P1_IMMUTABLE_VIEW_RETAINED_COMMIT_001) ... ok
+test_P2_IMMUTABLE_VIEW_READ_ONLY_001 (orchestrator_harness.tests.test_compat_lane_lifecycle.CompatLaneLifecycleTests.test_P2_IMMUTABLE_VIEW_READ_ONLY_001) ... ok
+test_P3_CONTROLLER_ADMISSION_PATH_PROBE_001 (orchestrator_harness.tests.test_compat_lane_lifecycle.CompatLaneLifecycleTests.test_P3_CONTROLLER_ADMISSION_PATH_PROBE_001)
+Probe the controller-driven admission path (detection only). ... ok
+test_P3_LIFECYCLE_REGISTRY_ADMISSION_001 (orchestrator_harness.tests.test_compat_lane_lifecycle.CompatLaneLifecycleTests.test_P3_LIFECYCLE_REGISTRY_ADMISSION_001) ... ok
+test_P4_LIFECYCLE_REGISTRY_UPDATE_TRANSITION_001 (orchestrator_harness.tests.test_compat_lane_lifecycle.CompatLaneLifecycleTests.test_P4_LIFECYCLE_REGISTRY_UPDATE_TRANSITION_001) ... ok
+test_P5_RETAINED_ROOT_SAFETY_001 (orchestrator_harness.tests.test_compat_lane_lifecycle.CompatLaneLifecycleTests.test_P5_RETAINED_ROOT_SAFETY_001) ... ok
+test_P6_RETIRE_ARCHIVE_FIRST_001 (orchestrator_harness.tests.test_compat_lane_lifecycle.CompatLaneLifecycleTests.test_P6_RETIRE_ARCHIVE_FIRST_001) ... ok
+test_P7_LANE_BINDING_MISMATCH_REJECTED_001 (orchestrator_harness.tests.test_compat_lane_lifecycle.CompatLaneLifecycleTests.test_P7_LANE_BINDING_MISMATCH_REJECTED_001) ... ok
+test_P8_ARCHIVE_DIGEST_MEMBER_INTEGRITY_001 (orchestrator_harness.tests.test_compat_lane_lifecycle.CompatLaneLifecycleTests.test_P8_ARCHIVE_DIGEST_MEMBER_INTEGRITY_001) ... ok
+test_P9_VALIDATE_ARCHIVE_CORRUPTION_001 (orchestrator_harness.tests.test_compat_lane_lifecycle.CompatLaneLifecycleTests.test_P9_VALIDATE_ARCHIVE_CORRUPTION_001) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 31.488s
+
+OK

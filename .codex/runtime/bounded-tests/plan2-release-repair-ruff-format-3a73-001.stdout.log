@@ -1,0 +1,1515 @@
+unformatted: File would be reformatted
+   --> orchestrator_harness\firmware_adapter.py:8:1
+    |
+7   | """
+8   +
+9   | from __future__ import annotations
+--------------------------------------------------------------------------------
+108 |         value = self.snapshot_provider(request)
+    -         snapshot = CapabilitySnapshot.from_record(value.to_record() if isinstance(value, CapabilitySnapshot) else value)
+109 +         snapshot = CapabilitySnapshot.from_record(
+110 +             value.to_record() if isinstance(value, CapabilitySnapshot) else value
+111 +         )
+112 |         if snapshot.adapter_identity != dict(self.ADAPTER_IDENTITY):
+113 |             raise CapabilityAdapterError("snapshot belongs to another adapter")
+114 |         if (
+115 |             snapshot.resources != (operation.canonical_resource,)
+    -             or snapshot.resource_identities.get(operation.canonical_resource) != operation.resource_identity
+    -             or snapshot.identity.get("canonical_resource") != operation.canonical_resource
+116 +             or snapshot.resource_identities.get(operation.canonical_resource)
+117 +             != operation.resource_identity
+118 +             or snapshot.identity.get("canonical_resource")
+119 +             != operation.canonical_resource
+120 |             or snapshot.identity.get("resource_identity") != operation.resource_identity
+121 |         ):
+    -             raise CapabilityAdapterError("snapshot does not bind the exact firmware resource")
+122 +             raise CapabilityAdapterError(
+123 +                 "snapshot does not bind the exact firmware resource"
+124 +             )
+125 |         return snapshot
+126 |
+    -     def verify_approval(self, request: CapabilityRequest, snapshot: CapabilitySnapshot, approval: Any) -> bool:
+127 +     def verify_approval(
+128 +         self, request: CapabilityRequest, snapshot: CapabilitySnapshot, approval: Any
+129 +     ) -> bool:
+130 |         try:
+131 |             operation = self._operation(request)
+    -             return hasattr(approval, "policy") and self.campaign_pack.approval_policy(request, operation, approval)
+132 +             return hasattr(approval, "policy") and self.campaign_pack.approval_policy(
+133 +                 request, operation, approval
+134 +             )
+135 |         except Exception:
+--------------------------------------------------------------------------------
+146 |         if not hasattr(approval, "issued_monotonic"):
+    -             raise CapabilityAdapterUnavailable("approval duration identity is unavailable")
+147 +             raise CapabilityAdapterUnavailable(
+148 +                 "approval duration identity is unavailable"
+149 +             )
+150 |         return min(
+151 |             request.expires_monotonic,
+152 |             float(approval.expires_monotonic),
+    -             self.campaign_pack.effective_duration(request, operation, now_monotonic=now_monotonic),
+153 +             self.campaign_pack.effective_duration(
+154 +                 request, operation, now_monotonic=now_monotonic
+155 +             ),
+156 |         )
+157 |
+158 |     @staticmethod
+    -     def _child_identity(pid: int, exact: Mapping[str, Any], process: ProcessInfo | None) -> dict[str, Any]:
+159 +     def _child_identity(
+160 +         pid: int, exact: Mapping[str, Any], process: ProcessInfo | None
+161 +     ) -> dict[str, Any]:
+162 |         exact_created = exact.get("created_utc")
+163 |         if not isinstance(exact_created, str) or not exact_created:
+    -             raise CapabilityAdapterError("adapter child creation identity is unavailable")
+164 +             raise CapabilityAdapterError(
+165 +                 "adapter child creation identity is unavailable"
+166 +             )
+167 |         created = iso_utc(process.created_utc) if process is not None else exact_created
+168 |         if not isinstance(created, str) or not created:
+    -             raise CapabilityAdapterError("adapter child process timestamp is unavailable")
+169 +             raise CapabilityAdapterError(
+170 +                 "adapter child process timestamp is unavailable"
+171 +             )
+172 |         return {"pid": pid, "created_utc": created, "creation_identity": exact_created}
+--------------------------------------------------------------------------------
+179 |         key = self._operation_key(permit)
+    -         active = _ActiveOperation(process=None, identity=None, supervisor_identity=None, transport=None, boundary=boundary, operation=operation)
+180 +         active = _ActiveOperation(
+181 +             process=None,
+182 +             identity=None,
+183 +             supervisor_identity=None,
+184 +             transport=None,
+185 +             boundary=boundary,
+186 +             operation=operation,
+187 +         )
+188 |         self._active[key] = active
+--------------------------------------------------------------------------------
+202 |             if not isinstance(exact, Mapping) or exact.get("pid") != pid:
+    -                 raise CapabilityAdapterError("adapter child creation identity is unavailable")
+203 +                 raise CapabilityAdapterError(
+204 +                     "adapter child creation identity is unavailable"
+205 +                 )
+206 |             process_info = process_snapshot().by_pid.get(pid)
+--------------------------------------------------------------------------------
+213 |             transport_config["_authority_check"] = authority_check
+    -             active.transport = self.transport_factory(process, remaining, permit.request.request_id, transport_config)
+214 +             active.transport = self.transport_factory(
+215 +                 process, remaining, permit.request.request_id, transport_config
+216 +             )
+217 |
+218 |             def send_checked(value: dict[str, Any], label: str) -> None:
+219 |                 if not authority_check():
+    -                     raise CapabilityAdapterError("adapter permit expired before transport enqueue")
+220 +                     raise CapabilityAdapterError(
+221 +                         "adapter permit expired before transport enqueue"
+222 +                     )
+223 |                 active.transport.send(value, label)
+--------------------------------------------------------------------------------
+232 |                         "capabilities": {},
+    -                         "clientInfo": {"name": "orchestrator-harness", "version": "0.1.0"},
+233 +                         "clientInfo": {
+234 +                             "name": "orchestrator-harness",
+235 +                             "version": "0.1.0",
+236 +                         },
+237 |                     },
+--------------------------------------------------------------------------------
+241 |             active.transport.receive(1)
+    -             send_checked({"jsonrpc": "2.0", "method": "notifications/initialized", "params": {}}, "initialized")
+242 |             send_checked(
+243 +                 {"jsonrpc": "2.0", "method": "notifications/initialized", "params": {}},
+244 +                 "initialized",
+245 +             )
+246 +             send_checked(
+247 |                 {
+248 |                     "jsonrpc": "2.0",
+249 |                     "id": 2,
+250 |                     "method": "tools/call",
+    -                     "params": {"name": operation.mcp_tool, "arguments": dict(operation.arguments)},
+251 +                     "params": {
+252 +                         "name": operation.mcp_tool,
+253 +                         "arguments": dict(operation.arguments),
+254 +                     },
+255 |                 },
+256 |                 "dispatch",
+257 |             )
+258 |             raw = active.transport.receive(2)
+    -             if not isinstance(raw, Mapping) or not isinstance(raw.get("result"), Mapping):
+    -                 raise CapabilityAdapterError("adapter response is not a structured result")
+259 +             if not isinstance(raw, Mapping) or not isinstance(
+260 +                 raw.get("result"), Mapping
+261 +             ):
+262 +                 raise CapabilityAdapterError(
+263 +                     "adapter response is not a structured result"
+264 +                 )
+265 |             result_payload = dict(raw["result"])
+266 |             failed = result_payload.get("isError") is True or "error" in raw
+267 |             return AdapterResult(
+268 |                 succeeded=not failed,
+    -                 raw_result={"status": "FAIL" if failed else "completed", "payload": result_payload},
+269 +                 raw_result={
+270 +                     "status": "FAIL" if failed else "completed",
+271 +                     "payload": result_payload,
+272 +                 },
+273 |                 interpreted_result={"status": "FAIL" if failed else "PASS"},
+--------------------------------------------------------------------------------
+284 |         allowed = {
+    -             "status", "stages", "terminate_attempted", "kill_attempted", "final_reap",
+    -             "cleanup_confirmed", "identity_verified", "identity_uncertain", "exit_code",
+    -             "reaped_after", "errors", "owned_boundary_empty", "boundary_complete",
+    -             "boundary_cleanup", "boundary_errors",
+285 +             "status",
+286 +             "stages",
+287 +             "terminate_attempted",
+288 +             "kill_attempted",
+289 +             "final_reap",
+290 +             "cleanup_confirmed",
+291 +             "identity_verified",
+292 +             "identity_uncertain",
+293 +             "exit_code",
+294 +             "reaped_after",
+295 +             "errors",
+296 +             "owned_boundary_empty",
+297 +             "boundary_complete",
+298 +             "boundary_cleanup",
+299 +             "boundary_errors",
+300 |         }
+--------------------------------------------------------------------------------
+305 |         if not isinstance(value, Mapping):
+    -             return {"closed": False, "helpers_stopped": False, "errors": ["invalid transport cleanup"]}
+306 +             return {
+307 +                 "closed": False,
+308 +                 "helpers_stopped": False,
+309 +                 "errors": ["invalid transport cleanup"],
+310 +             }
+311 |         allowed = {
+    -             "closed", "helpers_stopped", "stderr_sha256", "stderr_log_complete",
+    -             "stderr_log_sha256", "stderr_log_partial_sha256", "stderr_eof",
+    -             "stderr_forced_close", "helper_threads", "stream_close_errors", "error_type",
+312 +             "closed",
+313 +             "helpers_stopped",
+314 +             "stderr_sha256",
+315 +             "stderr_log_complete",
+316 +             "stderr_log_sha256",
+317 +             "stderr_log_partial_sha256",
+318 +             "stderr_eof",
+319 +             "stderr_forced_close",
+320 +             "helper_threads",
+321 +             "stream_close_errors",
+322 +             "error_type",
+323 |         }
+--------------------------------------------------------------------------------
+335 |         if not isinstance(value, Mapping):
+    -             return {"complete": False, "members": [], "live_members": [], "errors": ["invalid boundary cleanup"]}
+    -         allowed = {"kind", "complete", "inventory_source", "cleanup", "errors", "members", "live_members"}
+336 +             return {
+337 +                 "complete": False,
+338 +                 "members": [],
+339 +                 "live_members": [],
+340 +                 "errors": ["invalid boundary cleanup"],
+341 +             }
+342 +         allowed = {
+343 +             "kind",
+344 +             "complete",
+345 +             "inventory_source",
+346 +             "cleanup",
+347 +             "errors",
+348 +             "members",
+349 +             "live_members",
+350 +         }
+351 |         result = {key: value[key] for key in value if key in allowed}
+--------------------------------------------------------------------------------
+376 |                 identities=(),
+    -                 details={"launch_started": False, "dispatch_failed": failure is not None},
+377 +                 details={
+378 +                     "launch_started": False,
+379 +                     "dispatch_failed": failure is not None,
+380 +                 },
+381 |             )
+--------------------------------------------------------------------------------
+392 |                 try:
+    -                     supervisor = self.supervisor_factory(active.process, active.identity, permit.request.request_id, active.boundary)
+393 +                     supervisor = self.supervisor_factory(
+394 +                         active.process,
+395 +                         active.identity,
+396 +                         permit.request.request_id,
+397 +                         active.boundary,
+398 +                     )
+399 |                 except TypeError:
+    -                     supervisor = self.supervisor_factory(active.process, active.identity, permit.request.request_id)
+400 +                     supervisor = self.supervisor_factory(
+401 +                         active.process, active.identity, permit.request.request_id
+402 +                     )
+403 |                 cleanup_result = supervisor.cleanup()
+--------------------------------------------------------------------------------
+415 |
+    -         boundary_record: dict[str, Any] = {"complete": False, "members": [], "live_members": [], "errors": ["boundary evidence unavailable"]}
+416 +         boundary_record: dict[str, Any] = {
+417 +             "complete": False,
+418 +             "members": [],
+419 +             "live_members": [],
+420 +             "errors": ["boundary evidence unavailable"],
+421 +         }
+422 |         try:
+423 |             inventory = active.boundary.inventory()
+    -             boundary_record = self._public_boundary_cleanup(active.boundary.to_record(inventory))
+424 +             boundary_record = self._public_boundary_cleanup(
+425 +                 active.boundary.to_record(inventory)
+426 +             )
+427 |         except Exception as exc:
+    -             boundary_record = {"complete": False, "members": [], "live_members": [], "errors": [f"boundary inventory failed: {type(exc).__name__}"]}
+428 +             boundary_record = {
+429 +                 "complete": False,
+430 +                 "members": [],
+431 +                 "live_members": [],
+432 +                 "errors": [f"boundary inventory failed: {type(exc).__name__}"],
+433 +             }
+434 |
+--------------------------------------------------------------------------------
+443 |                 else:
+    -                     io_record = {"closed": False, "helpers_stopped": False, "errors": ["invalid transport cleanup"]}
+444 +                     io_record = {
+445 +                         "closed": False,
+446 +                         "helpers_stopped": False,
+447 +                         "errors": ["invalid transport cleanup"],
+448 +                     }
+449 |             except Exception as exc:
+    -                 io_record = {"closed": False, "helpers_stopped": False, "error_type": type(exc).__name__}
+450 +                 io_record = {
+451 +                     "closed": False,
+452 +                     "helpers_stopped": False,
+453 +                     "error_type": type(exc).__name__,
+454 +                 }
+455 |
+    -         child_record = self._public_child_cleanup(cleanup_result) if cleanup_result is not None else {}
+    -         child_ok = (
+    -             cleanup_error is None
+    -             and (
+    -                 (not active.launch_attempted and active.process is None)
+    -                 or (cleanup_result is not None and bool(getattr(cleanup_result, "proved_reap", False)))
+456 +         child_record = (
+457 +             self._public_child_cleanup(cleanup_result)
+458 +             if cleanup_result is not None
+459 +             else {}
+460 +         )
+461 +         child_ok = cleanup_error is None and (
+462 +             (not active.launch_attempted and active.process is None)
+463 +             or (
+464 +                 cleanup_result is not None
+465 +                 and bool(getattr(cleanup_result, "proved_reap", False))
+466 |             )
+467 |         )
+    -         boundary_ok = boundary_record.get("complete") is True and not boundary_record.get("live_members") and not boundary_record.get("errors")
+    -         io_ok = io_record.get("closed") is True and io_record.get("helpers_stopped") is True and not io_record.get("error_type") and not io_record.get("errors")
+468 +         boundary_ok = (
+469 +             boundary_record.get("complete") is True
+470 +             and not boundary_record.get("live_members")
+471 +             and not boundary_record.get("errors")
+472 +         )
+473 +         io_ok = (
+474 +             io_record.get("closed") is True
+475 +             and io_record.get("helpers_stopped") is True
+476 +             and not io_record.get("error_type")
+477 +             and not io_record.get("errors")
+478 +         )
+479 |         proved = child_ok and boundary_ok and io_ok
+    -         identities: tuple[dict[str, Any], ...] = () if proved else (() if active.identity is None else (dict(active.identity),))
+480 +         identities: tuple[dict[str, Any], ...] = (
+481 +             ()
+482 +             if proved
+483 +             else (() if active.identity is None else (dict(active.identity),))
+484 +         )
+485 |         details: dict[str, Any] = {
+--------------------------------------------------------------------------------
+492 |             details["cleanup_error"] = cleanup_error
+    -         result = CleanupEvidence(proved=proved, boundary=boundary_record, identities=identities, details=details)
+493 +         result = CleanupEvidence(
+494 +             proved=proved,
+495 +             boundary=boundary_record,
+496 +             identities=identities,
+497 +             details=details,
+498 +         )
+499 |         if proved:
+    |
+
+unformatted: File would be reformatted
+    --> orchestrator_harness\tests\test_s5_capability_broker.py:34:53
+     |
+33   | from orchestrator_harness.firmware_campaign import FirmwareAction, FirmwareCampaignPack
+     - from orchestrator_harness.process_supervisor import CleanupResult, ProcessBoundary, ProcessBoundaryUnsupported, ProcessSupervisor
+34   + from orchestrator_harness.process_supervisor import (
+35   +     CleanupResult,
+36   +     ProcessBoundary,
+37   +     ProcessBoundaryUnsupported,
+38   +     ProcessSupervisor,
+39   + )
+40   | from orchestrator_harness.processes import process_snapshot
+     - from orchestrator_harness.resource_locks import BOUNDARY_ARMED_STATE, ResourceClaims, claim_filename
+41   + from orchestrator_harness.resource_locks import (
+42   +     BOUNDARY_ARMED_STATE,
+43   +     ResourceClaims,
+44   +     claim_filename,
+45   + )
+46   |
+47   |
+     - OWNER = {"pid": 321, "created_utc": "2026-01-01T00:00:00Z", "creation_identity": "fake:321"}
+48   + OWNER = {
+49   +     "pid": 321,
+50   +     "created_utc": "2026-01-01T00:00:00Z",
+51   +     "creation_identity": "fake:321",
+52   + }
+53   |
+--------------------------------------------------------------------------------
+60   | class _Claims:
+     -     def __init__(self, root: Path, events: list[str], *, owner: dict[str, Any] = OWNER, arm_failures: list[str] | None = None, release_failures: list[str] | None = None, retention_failures: list[str] | None = None) -> None:
+61   +     def __init__(
+62   +         self,
+63   +         root: Path,
+64   +         events: list[str],
+65   +         *,
+66   +         owner: dict[str, Any] = OWNER,
+67   +         arm_failures: list[str] | None = None,
+68   +         release_failures: list[str] | None = None,
+69   +         retention_failures: list[str] | None = None,
+70   +     ) -> None:
+71   |         self.root = root
+--------------------------------------------------------------------------------
+137  | class _ContendedClaims:
+     -     def __init__(self, shared: _SharedClaims, root: Path, owner: dict[str, Any] = OWNER) -> None:
+138  +     def __init__(
+139  +         self, shared: _SharedClaims, root: Path, owner: dict[str, Any] = OWNER
+140  +     ) -> None:
+141  |         self.shared = shared
+--------------------------------------------------------------------------------
+165  |                         break
+     -                 on_wait({"resource": resource, "state": "CONTENDED", "reason": "shared fake owner", "wait_seconds": 0.001, "actionable": False})
+166  +                 on_wait(
+167  +                     {
+168  +                         "resource": resource,
+169  +                         "state": "CONTENDED",
+170  +                         "reason": "shared fake owner",
+171  +                         "wait_seconds": 0.001,
+172  +                         "actionable": False,
+173  +                     }
+174  +                 )
+175  |                 time.sleep(0.001)
+--------------------------------------------------------------------------------
+246  |
+     -     def __init__(self, *, complete: bool = True, live_members: list[dict[str, Any]] | None = None, errors: list[str] | None = None) -> None:
+247  +     def __init__(
+248  +         self,
+249  +         *,
+250  +         complete: bool = True,
+251  +         live_members: list[dict[str, Any]] | None = None,
+252  +         errors: list[str] | None = None,
+253  +     ) -> None:
+254  |         self.popen_kwargs: dict[str, Any] = {}
+--------------------------------------------------------------------------------
+307  |     from harness_common.process_identity import exact_process_identity
+308  +
+309  |     if pid not in process_snapshot().by_pid:
+--------------------------------------------------------------------------------
+331  |         resources={
+     -             "board:stm-a": {"probe_uid": "probe-a", "target": "stm32l476rg", "profile": "stm32"},
+     -             "board:nrf-a": {"probe_uid": "probe-b", "target": "nrf52840", "profile": "nrf"},
+332  +             "board:stm-a": {
+333  +                 "probe_uid": "probe-a",
+334  +                 "target": "stm32l476rg",
+335  +                 "profile": "stm32",
+336  +             },
+337  +             "board:nrf-a": {
+338  +                 "probe_uid": "probe-b",
+339  +                 "target": "nrf52840",
+340  +                 "profile": "nrf",
+341  +             },
+342  +         },
+343  +         policy={
+344  +             "policy": "caller-declared-policy-v1",
+345  +             "revision": "caller-supplied-revision",
+346  |         },
+     -         policy={"policy": "caller-declared-policy-v1", "revision": "caller-supplied-revision"},
+347  |     )
+348  |
+349  |
+     - def _firmware_snapshot(request: CapabilityRequest, pack: FirmwareCampaignPack) -> CapabilitySnapshot:
+350  + def _firmware_snapshot(
+351  +     request: CapabilityRequest, pack: FirmwareCampaignPack
+352  + ) -> CapabilitySnapshot:
+353  |     resource = request.resources[0]
+--------------------------------------------------------------------------------
+362  |         snapshot_id="hardware-snapshot-1",
+     -         identity={"target_revision": "fake-target-1", "canonical_resource": resource, "resource_identity": identity},
+363  +         identity={
+364  +             "target_revision": "fake-target-1",
+365  +             "canonical_resource": resource,
+366  +             "resource_identity": identity,
+367  +         },
+368  |         resource_identities={resource: identity},
+--------------------------------------------------------------------------------
+374  |
+     - def _firmware_adapter(root: Path, clock: Callable[[], float] | None = None, *, transport=None, boundary_factory=None, pack=None) -> tuple[FirmwareHardwareAdapter, FirmwareCampaignPack, Any]:
+375  + def _firmware_adapter(
+376  +     root: Path,
+377  +     clock: Callable[[], float] | None = None,
+378  +     *,
+379  +     transport=None,
+380  +     boundary_factory=None,
+381  +     pack=None,
+382  + ) -> tuple[FirmwareHardwareAdapter, FirmwareCampaignPack, Any]:
+383  |     selected_pack = pack or _campaign_pack()
+--------------------------------------------------------------------------------
+394  |         launcher=lambda config: _Process(),
+     -         identity_provider=lambda pid: {"pid": pid, "created_utc": "fake-child", "creation_identity": "fake-exact"},
+395  +         identity_provider=lambda pid: {
+396  +             "pid": pid,
+397  +             "created_utc": "fake-child",
+398  +             "creation_identity": "fake-exact",
+399  +         },
+400  |         config_provider=lambda request, operation: {"private": "controller-config"},
+401  |         transport_factory=make_transport,
+402  |         mcp_protocol_version="2025-03-26",
+     -         supervisor_factory=lambda process, identity, request_id, boundary: _Supervisor(),
+403  +         supervisor_factory=lambda process, identity, request_id, boundary: (
+404  +             _Supervisor()
+405  +         ),
+406  |         boundary_factory=boundary_factory or (lambda: _Boundary()),
+--------------------------------------------------------------------------------
+411  |
+     - def _firmware_request_and_approval(adapter: FirmwareHardwareAdapter, pack: FirmwareCampaignPack, *, request_id: str = "hardware-request", resource: str = "board:stm-a", expiry: float = 100.0, action: str = "observe", arguments: dict[str, Any] | None = None) -> tuple[dict[str, Any], dict[str, Any]]:
+412  + def _firmware_request_and_approval(
+413  +     adapter: FirmwareHardwareAdapter,
+414  +     pack: FirmwareCampaignPack,
+415  +     *,
+416  +     request_id: str = "hardware-request",
+417  +     resource: str = "board:stm-a",
+418  +     expiry: float = 100.0,
+419  +     action: str = "observe",
+420  +     arguments: dict[str, Any] | None = None,
+421  + ) -> tuple[dict[str, Any], dict[str, Any]]:
+422  |     request = _request(
+--------------------------------------------------------------------------------
+447  |
+     - def _request(*, request_id: str = "request-1", arguments: dict[str, Any] | None = None, expiry: float = 100.0, resources: list[str] | None = None, lane_id: str = "lane-a", capability: str = "synthetic", action: str = "read") -> dict[str, Any]:
+448  + def _request(
+449  +     *,
+450  +     request_id: str = "request-1",
+451  +     arguments: dict[str, Any] | None = None,
+452  +     expiry: float = 100.0,
+453  +     resources: list[str] | None = None,
+454  +     lane_id: str = "lane-a",
+455  +     capability: str = "synthetic",
+456  +     action: str = "read",
+457  + ) -> dict[str, Any]:
+458  |     return {
+--------------------------------------------------------------------------------
+471  |
+     - def _approval(request: CapabilityRequest, snapshot, *, approval_id: str = "approval-1", expires: float = 90.0, snapshot_sha256: str | None = None) -> dict[str, Any]:
+472  + def _approval(
+473  +     request: CapabilityRequest,
+474  +     snapshot,
+475  +     *,
+476  +     approval_id: str = "approval-1",
+477  +     expires: float = 90.0,
+478  +     snapshot_sha256: str | None = None,
+479  + ) -> dict[str, Any]:
+480  |     value = {
+--------------------------------------------------------------------------------
+502  |
+     - def _approval_for_native_claim(request: CapabilityRequest, adapter: FakeCapabilityAdapter) -> dict[str, Any]:
+503  + def _approval_for_native_claim(
+504  +     request: CapabilityRequest, adapter: FakeCapabilityAdapter
+505  + ) -> dict[str, Any]:
+506  |     return _approval(request, adapter.observe(request), approval_id="native-approval")
+507  |
+508  |
+     - def _broker(adapter, claims, *, now: float = 10.0, events: list[str] | None = None, state_root: Path | None = None) -> CapabilityBroker:
+509  + def _broker(
+510  +     adapter,
+511  +     claims,
+512  +     *,
+513  +     now: float = 10.0,
+514  +     events: list[str] | None = None,
+515  +     state_root: Path | None = None,
+516  + ) -> CapabilityBroker:
+517  |     return CapabilityBroker(
+--------------------------------------------------------------------------------
+524  |         clock=lambda: now,
+     -         evidence_sink=(lambda record: events.append(f"published:{record['state']}") if events is not None else None),
+525  +         evidence_sink=(
+526  +             lambda record: (
+527  +                 events.append(f"published:{record['state']}")
+528  +                 if events is not None
+529  +                 else None
+530  +             )
+531  +         ),
+532  |     )
+533  |
+534  |
+535  | class S5CapabilityBrokerTests(unittest.TestCase):
+     -     def _approval_for(self, request_value: dict[str, Any], adapter: FakeCapabilityAdapter) -> dict[str, Any]:
+536  +     def _approval_for(
+537  +         self, request_value: dict[str, Any], adapter: FakeCapabilityAdapter
+538  +     ) -> dict[str, Any]:
+539  |         request = CapabilityRequest.from_record(request_value, now_monotonic=0.0)
+540  |         snapshot = adapter.observe(request)
+541  |         return _approval(request, snapshot)
+542  |
+     -     def test_S5_F1_generic_success_binds_exact_facts_and_releases_after_cleanup(self) -> None:
+543  +     def test_S5_F1_generic_success_binds_exact_facts_and_releases_after_cleanup(
+544  +         self,
+545  +     ) -> None:
+546  |         with TemporaryDirectory() as temporary:
+--------------------------------------------------------------------------------
+550  |             request = _request()
+     -             result = _broker(adapter, claims, events=events).execute(request, self._approval_for(request, adapter))
+551  +             result = _broker(adapter, claims, events=events).execute(
+552  +                 request, self._approval_for(request, adapter)
+553  +             )
+554  |
+--------------------------------------------------------------------------------
+565  |             self.assertEqual(result.record["permit_sha256"], permit["permit_sha256"])
+     -             self.assertEqual(result.record["raw_result_sha256"], hashlib.sha256(b'{"request_id":"request-1","status":"completed"}').hexdigest())
+     -
+566  +             self.assertEqual(
+567  +                 result.record["raw_result_sha256"],
+568  +                 hashlib.sha256(
+569  +                     b'{"request_id":"request-1","status":"completed"}'
+570  +                 ).hexdigest(),
+571  +             )
+572  |
+--------------------------------------------------------------------------------
+601  |
+     -
+     -     def test_S5_F2_closed_request_rejects_endpoint_material_before_observation(self) -> None:
+602  +     def test_S5_F2_closed_request_rejects_endpoint_material_before_observation(
+603  +         self,
+604  +     ) -> None:
+605  |         adapter = FakeCapabilityAdapter({"synthetic": ("read",)})
+--------------------------------------------------------------------------------
+613  |
+     -
+     -     def test_S5_F5_dispatch_failure_is_terminal_failure_and_cleanup_precedes_release(self) -> None:
+614  +     def test_S5_F5_dispatch_failure_is_terminal_failure_and_cleanup_precedes_release(
+615  +         self,
+616  +     ) -> None:
+617  |         with TemporaryDirectory() as temporary:
+--------------------------------------------------------------------------------
+621  |             request = _request()
+     -             result = _broker(adapter, claims).execute(request, self._approval_for(request, adapter))
+622  +             result = _broker(adapter, claims).execute(
+623  +                 request, self._approval_for(request, adapter)
+624  +             )
+625  |             self.assertEqual("FAIL", result.outcome)
+--------------------------------------------------------------------------------
+629  |             self.assertEqual("release", events[3])
+     -
+630  |
+631  |     def test_S5_F5_unproved_cleanup_retains_exact_claim_and_is_uncertain(self) -> None:
+632  |         with TemporaryDirectory() as temporary:
+     -             adapter = FakeCapabilityAdapter({"synthetic": ("read",)}, cleanup_proved=False)
+633  +             adapter = FakeCapabilityAdapter(
+634  +                 {"synthetic": ("read",)}, cleanup_proved=False
+635  +             )
+636  |             claims = _Claims(Path(temporary), [])
+637  |             request = _request()
+     -             result = _broker(adapter, claims).execute(request, self._approval_for(request, adapter))
+638  +             result = _broker(adapter, claims).execute(
+639  +                 request, self._approval_for(request, adapter)
+640  +             )
+641  |             self.assertEqual("UNCERTAIN", result.outcome)
+642  |             self.assertFalse(result.record["claims_released"])
+643  |             self.assertTrue(claims.retained)
+644  |             self.assertTrue(claims.held)
+     -
+645  |
+     -     def test_S5_F3_same_resource_serializes_and_disjoint_resource_progresses(self) -> None:
+646  +     def test_S5_F3_same_resource_serializes_and_disjoint_resource_progresses(
+647  +         self,
+648  +     ) -> None:
+649  |         with TemporaryDirectory() as temporary:
+--------------------------------------------------------------------------------
+658  |                     identity_provider=lambda: dict(OWNER),
+     -                     claims_factory=lambda lane, request_id: _ContendedClaims(shared, Path(temporary)),
+659  +                     claims_factory=lambda lane, request_id: _ContendedClaims(
+660  +                         shared, Path(temporary)
+661  +                     ),
+662  |                     clock=lambda: 10.0,
+663  |                 )
+664  |
+665  |             first = _request(request_id="request-1", resources=["resource-a"])
+     -             second_same = _request(request_id="request-2", resources=["resource-a"], lane_id="lane-b")
+666  +             second_same = _request(
+667  +                 request_id="request-2", resources=["resource-a"], lane_id="lane-b"
+668  +             )
+669  |             first_result: dict[str, Any] = {}
+--------------------------------------------------------------------------------
+674  |             second_approval = self._approval_for(second_same, adapter)
+     -             thread_one = threading.Thread(target=lambda: first_result.setdefault("value", first_broker.execute(first, first_approval)), daemon=True)
+675  +             thread_one = threading.Thread(
+676  +                 target=lambda: first_result.setdefault(
+677  +                     "value", first_broker.execute(first, first_approval)
+678  +                 ),
+679  +                 daemon=True,
+680  +             )
+681  |             thread_one.start()
+682  |             self.assertTrue(adapter.first_dispatch.wait(1.0))
+     -             thread_two = threading.Thread(target=lambda: second_result.setdefault("value", second_broker.execute(second_same, second_approval)), daemon=True)
+683  +             thread_two = threading.Thread(
+684  +                 target=lambda: second_result.setdefault(
+685  +                     "value", second_broker.execute(second_same, second_approval)
+686  +                 ),
+687  +                 daemon=True,
+688  +             )
+689  |             thread_two.start()
+--------------------------------------------------------------------------------
+700  |             first = _request(request_id="request-3", resources=["resource-a"])
+     -             disjoint = _request(request_id="request-4", resources=["resource-b"], lane_id="lane-b")
+701  +             disjoint = _request(
+702  +                 request_id="request-4", resources=["resource-b"], lane_id="lane-b"
+703  +             )
+704  |             first_result.clear()
+705  |             second_result.clear()
+706  |
+     -             def make_broker_for(adapter_value: FakeCapabilityAdapter) -> CapabilityBroker:
+707  +             def make_broker_for(
+708  +                 adapter_value: FakeCapabilityAdapter,
+709  +             ) -> CapabilityBroker:
+710  |                 return CapabilityBroker(
+--------------------------------------------------------------------------------
+714  |                     identity_provider=lambda: dict(OWNER),
+     -                     claims_factory=lambda lane, request_id: _ContendedClaims(shared, Path(temporary)),
+715  +                     claims_factory=lambda lane, request_id: _ContendedClaims(
+716  +                         shared, Path(temporary)
+717  +                     ),
+718  |                     clock=lambda: 10.0,
+--------------------------------------------------------------------------------
+722  |             second_broker = make_broker_for(adapter)
+     -             thread_one = threading.Thread(target=lambda: first_result.setdefault("value", first_broker.execute(first, self._approval_for(first, adapter))), daemon=True)
+723  +             thread_one = threading.Thread(
+724  +                 target=lambda: first_result.setdefault(
+725  +                     "value",
+726  +                     first_broker.execute(first, self._approval_for(first, adapter)),
+727  +                 ),
+728  +                 daemon=True,
+729  +             )
+730  |             thread_one.start()
+731  |             self.assertTrue(adapter.first_dispatch.wait(1.0))
+     -             thread_two = threading.Thread(target=lambda: second_result.setdefault("value", second_broker.execute(disjoint, self._approval_for(disjoint, adapter))), daemon=True)
+732  +             thread_two = threading.Thread(
+733  +                 target=lambda: second_result.setdefault(
+734  +                     "value",
+735  +                     second_broker.execute(
+736  +                         disjoint, self._approval_for(disjoint, adapter)
+737  +                     ),
+738  +                 ),
+739  +                 daemon=True,
+740  +             )
+741  |             thread_two.start()
+--------------------------------------------------------------------------------
+747  |             self.assertEqual("PASS", first_result["value"].outcome)
+     -
+748  |
+--------------------------------------------------------------------------------
+753  |             def acquire_all(self, resources, *, on_wait) -> None:
+     -                 on_wait({"resource": resources[0], "state": "INVENTORY_UNKNOWN", "reason": "fake incomplete inventory"})
+754  +                 on_wait(
+755  +                     {
+756  +                         "resource": resources[0],
+757  +                         "state": "INVENTORY_UNKNOWN",
+758  +                         "reason": "fake incomplete inventory",
+759  +                     }
+760  +                 )
+761  |
+--------------------------------------------------------------------------------
+766  |         request = _request()
+     -         result = _broker(adapter, UncertainClaims()).execute(request, self._approval_for(request, adapter))
+767  +         result = _broker(adapter, UncertainClaims()).execute(
+768  +             request, self._approval_for(request, adapter)
+769  +         )
+770  |         self.assertEqual("DENIED", result.outcome)
+771  |         self.assertEqual("RESOURCE_UNCERTAIN", result.record["denial"]["reason_code"])
+772  |         self.assertEqual(0, adapter.dispatch_calls)
+     -
+773  |
+     -     def test_S5_F4_broker_consumes_native_resource_claim_owner_and_releases_it(self) -> None:
+774  +     def test_S5_F4_broker_consumes_native_resource_claim_owner_and_releases_it(
+775  +         self,
+776  +     ) -> None:
+777  |         owner = current_process_identity()
+--------------------------------------------------------------------------------
+797  |
+     -
+     -     def test_S5_F6_legacy_and_coding_records_are_not_mixed_into_generic_route(self) -> None:
+798  +     def test_S5_F6_legacy_and_coding_records_are_not_mixed_into_generic_route(
+799  +         self,
+800  +     ) -> None:
+801  |         adapter = FakeCapabilityAdapter({"synthetic": ("read",)})
+802  |         claims = _Claims(Path("."), [])
+803  |         records = [
+804  |             {"action": "start", "run_root": "legacy", "prompt_path": "prompt"},
+     -             {"schema": "orchestrator-coding-invocation/v1", "action": "start", "lane_id": "coding-a"},
+805  +             {
+806  +                 "schema": "orchestrator-coding-invocation/v1",
+807  +                 "action": "start",
+808  +                 "lane_id": "coding-a",
+809  +             },
+810  |             {**_request(), "route": "coding"},
+--------------------------------------------------------------------------------
+816  |         self.assertEqual(0, adapter.observe_calls)
+     -
+817  |
+     -     def test_S5_F8_exact_retry_reuses_terminal_result_and_changed_replay_denies(self) -> None:
+818  +     def test_S5_F8_exact_retry_reuses_terminal_result_and_changed_replay_denies(
+819  +         self,
+820  +     ) -> None:
+821  |         with TemporaryDirectory() as temporary:
+--------------------------------------------------------------------------------
+836  |
+     -
+     -     def test_S5_R1_001_native_claim_is_armed_before_dispatch_and_retained_after_uncertainty(self) -> None:
+837  +     def test_S5_R1_001_native_claim_is_armed_before_dispatch_and_retained_after_uncertainty(
+838  +         self,
+839  +     ) -> None:
+840  |         class ArmObservingAdapter(FakeCapabilityAdapter):
+--------------------------------------------------------------------------------
+846  |             def dispatch(self, permit):
+     -                 claim = json.loads((self.claim_root / claim_filename("resource-a")).read_text(encoding="utf-8"))
+847  +                 claim = json.loads(
+848  +                     (self.claim_root / claim_filename("resource-a")).read_text(
+849  +                         encoding="utf-8"
+850  +                     )
+851  +                 )
+852  |                 self.observed_state = claim.get("boundary_state")
+--------------------------------------------------------------------------------
+873  |             self.assertEqual(BOUNDARY_ARMED_STATE, adapter.observed_state)
+     -             retained = json.loads((root / "claims" / claim_filename("resource-a")).read_text(encoding="utf-8"))
+874  +             retained = json.loads(
+875  +                 (root / "claims" / claim_filename("resource-a")).read_text(
+876  +                     encoding="utf-8"
+877  +                 )
+878  +             )
+879  |             self.assertEqual("RETAINED", retained["boundary_state"])
+880  |             self.assertIsInstance(retained.get("retained_boundary"), dict)
+881  |             self.assertFalse(result.record["claims_released"])
+     -
+882  |
+--------------------------------------------------------------------------------
+888  |             request = _request()
+     -             result = _broker(adapter, claims).execute(request, self._approval_for(request, adapter))
+889  +             result = _broker(adapter, claims).execute(
+890  +                 request, self._approval_for(request, adapter)
+891  +             )
+892  |             self.assertEqual("DENIED", result.outcome)
+--------------------------------------------------------------------------------
+897  |
+     -
+     -     def test_S5_R1_003_default_boundary_tracks_descendant_and_proves_empty_cleanup(self) -> None:
+898  +     def test_S5_R1_003_default_boundary_tracks_descendant_and_proves_empty_cleanup(
+899  +         self,
+900  +     ) -> None:
+901  |         base_python = getattr(sys, "_base_executable", sys.executable)
+--------------------------------------------------------------------------------
+909  |                 self.skipTest(f"native process boundary unavailable: {exc}")
+     -             process = subprocess.Popen([base_python, "-c", script], stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, **boundary.popen_kwargs)
+910  +             process = subprocess.Popen(
+911  +                 [base_python, "-c", script],
+912  +                 stdin=subprocess.DEVNULL,
+913  +                 stdout=subprocess.DEVNULL,
+914  +                 stderr=subprocess.DEVNULL,
+915  +                 **boundary.popen_kwargs,
+916  +             )
+917  |             identity = None
+--------------------------------------------------------------------------------
+951  |
+     -
+     -     def test_S5_R1_003_boundary_contradiction_retains_claim_even_when_adapter_says_proved(self) -> None:
+952  +     def test_S5_R1_003_boundary_contradiction_retains_claim_even_when_adapter_says_proved(
+953  +         self,
+954  +     ) -> None:
+955  |         with TemporaryDirectory() as temporary:
+--------------------------------------------------------------------------------
+961  |                         proved=True,
+     -                         boundary={"complete": True, "members": [{"pid": 7}], "live_members": [{"pid": 7}]},
+962  +                         boundary={
+963  +                             "complete": True,
+964  +                             "members": [{"pid": 7}],
+965  +                             "live_members": [{"pid": 7}],
+966  +                         },
+967  |                         identities=(),
+--------------------------------------------------------------------------------
+973  |             request = _request()
+     -             result = _broker(adapter, claims).execute(request, self._approval_for(request, adapter))
+974  +             result = _broker(adapter, claims).execute(
+975  +                 request, self._approval_for(request, adapter)
+976  +             )
+977  |             self.assertEqual("UNCERTAIN", result.outcome)
+978  |             self.assertFalse(result.record["claims_released"])
+     -             self.assertIn("cleanup boundary reports live_members", result.record["cleanup_validation"]["reasons"])
+979  +             self.assertIn(
+980  +                 "cleanup boundary reports live_members",
+981  +                 result.record["cleanup_validation"]["reasons"],
+982  +             )
+983  |             self.assertNotIn("release", events)
+984  |
+     -
+     -     def test_S5_R1_004_fresh_broker_reuses_durable_terminal_and_rejects_replays(self) -> None:
+985  +     def test_S5_R1_004_fresh_broker_reuses_durable_terminal_and_rejects_replays(
+986  +         self,
+987  +     ) -> None:
+988  |         with TemporaryDirectory() as temporary:
+--------------------------------------------------------------------------------
+994  |             first_claims = _Claims(root / "claims-1", [])
+     -             first = _broker(adapter, first_claims, state_root=state_root).execute(request, approval)
+995  +             first = _broker(adapter, first_claims, state_root=state_root).execute(
+996  +                 request, approval
+997  +             )
+998  |             self.assertEqual("PASS", first.outcome)
+999  |             second_claims = _Claims(root / "claims-2", [])
+     -             second = _broker(adapter, second_claims, state_root=state_root).execute(copy.deepcopy(request), copy.deepcopy(approval))
+1000 +             second = _broker(adapter, second_claims, state_root=state_root).execute(
+1001 +                 copy.deepcopy(request), copy.deepcopy(approval)
+1002 +             )
+1003 |             self.assertEqual(first.to_record(), second.to_record())
+--------------------------------------------------------------------------------
+1008 |             changed_request["arguments"] = {"value": "changed"}
+     -             changed = _broker(adapter, _Claims(root / "claims-3", []), state_root=state_root).execute(changed_request, approval)
+1009 +             changed = _broker(
+1010 +                 adapter, _Claims(root / "claims-3", []), state_root=state_root
+1011 +             ).execute(changed_request, approval)
+1012 |             self.assertEqual("DENIED", changed.outcome)
+1013 |             self.assertEqual("REPLAY_MISMATCH", changed.record["denial"]["reason_code"])
+1014 |             changed_approval = copy.deepcopy(approval)
+1015 |             changed_approval["signature"] = "different-signature"
+     -             approval_replay = _broker(adapter, _Claims(root / "claims-4", []), state_root=state_root).execute(request, changed_approval)
+1016 +             approval_replay = _broker(
+1017 +                 adapter, _Claims(root / "claims-4", []), state_root=state_root
+1018 +             ).execute(request, changed_approval)
+1019 |             self.assertEqual("DENIED", approval_replay.outcome)
+     -             self.assertEqual("APPROVAL_REPLAY", approval_replay.record["denial"]["reason_code"])
+1020 +             self.assertEqual(
+1021 +                 "APPROVAL_REPLAY", approval_replay.record["denial"]["reason_code"]
+1022 +             )
+1023 |             self.assertEqual(1, adapter.dispatch_calls)
+1024 |
+     -
+     -     def test_S5_R1_005_cleanup_contradictions_and_retention_failures_never_release(self) -> None:
+1025 +     def test_S5_R1_005_cleanup_contradictions_and_retention_failures_never_release(
+1026 +         self,
+1027 +     ) -> None:
+1028 |         variants = (
+1029 |             {"complete": False, "members": [], "live_members": []},
+1030 |             {"complete": True, "members": [], "live_members": []},
+     -             {"complete": True, "members": [], "live_members": [], "errors": ["boundary"]},
+1031 +             {
+1032 +                 "complete": True,
+1033 +                 "members": [],
+1034 +                 "live_members": [],
+1035 +                 "errors": ["boundary"],
+1036 +             },
+1037 |             {"complete": True, "members": [{"pid": 9}], "live_members": []},
+1038 |         )
+1039 |         for index, boundary in enumerate(variants):
+1040 |             with self.subTest(index=index), TemporaryDirectory() as temporary:
+1041 +
+1042 |                 class VariantAdapter(FakeCapabilityAdapter):
+1043 |                     def cleanup(self, permit, dispatch_result, failure):
+1044 |                         details = {"launch_started": True}
+1045 |                         if index == 1:
+     -                             details["io_cleanup"] = {"closed": False, "helpers_stopped": False, "errors": ["transport helper"]}
+     -                         identities = ({"pid": 999, "created_utc": "fake", "creation_identity": "fake"},) if index == 2 else ()
+     -                         return CleanupEvidence(proved=True, boundary=boundary, identities=identities, details=details)
+1046 +                             details["io_cleanup"] = {
+1047 +                                 "closed": False,
+1048 +                                 "helpers_stopped": False,
+1049 +                                 "errors": ["transport helper"],
+1050 +                             }
+1051 +                         identities = (
+1052 +                             (
+1053 +                                 {
+1054 +                                     "pid": 999,
+1055 +                                     "created_utc": "fake",
+1056 +                                     "creation_identity": "fake",
+1057 +                                 },
+1058 +                             )
+1059 +                             if index == 2
+1060 +                             else ()
+1061 +                         )
+1062 +                         return CleanupEvidence(
+1063 +                             proved=True,
+1064 +                             boundary=boundary,
+1065 +                             identities=identities,
+1066 +                             details=details,
+1067 +                         )
+1068 |
+1069 |                 events: list[str] = []
+1070 |                 adapter = VariantAdapter({"synthetic": ("read",)})
+     -                 claims = _Claims(Path(temporary), events, retention_failures=["retention-proof-failed"])
+1071 +                 claims = _Claims(
+1072 +                     Path(temporary),
+1073 +                     events,
+1074 +                     retention_failures=["retention-proof-failed"],
+1075 +                 )
+1076 |                 request = _request(request_id=f"cleanup-{index}")
+     -                 result = _broker(adapter, claims).execute(request, self._approval_for(request, adapter))
+1077 +                 result = _broker(adapter, claims).execute(
+1078 +                     request, self._approval_for(request, adapter)
+1079 +                 )
+1080 |                 self.assertEqual("UNCERTAIN", result.outcome)
+1081 |                 self.assertFalse(result.record["claims_released"])
+     -                 self.assertEqual(("retention-proof-failed",), result.record["retention_failures"])
+1082 +                 self.assertEqual(
+1083 +                     ("retention-proof-failed",), result.record["retention_failures"]
+1084 +                 )
+1085 |                 self.assertNotIn("release", events)
+     -
+1086 |
+1087 |     def test_S5_R1_006_recursive_public_authority_aliases_are_rejected(self) -> None:
+1088 |         aliases = (
+     -             "endpoint", "mcp_server", "server", "connection", "server_config", "connection_token",
+     -             "transport", "session", "handle", "credential", "api_key", "API-Key", "ApiKey", "apikey",
+     -             "authorization", "Authorization", "bearer", "Bearer", "private_key", "private-key", "PrivateKey",
+1089 +             "endpoint",
+1090 +             "mcp_server",
+1091 +             "server",
+1092 +             "connection",
+1093 +             "server_config",
+1094 +             "connection_token",
+1095 +             "transport",
+1096 +             "session",
+1097 +             "handle",
+1098 +             "credential",
+1099 +             "api_key",
+1100 +             "API-Key",
+1101 +             "ApiKey",
+1102 +             "apikey",
+1103 +             "authorization",
+1104 +             "Authorization",
+1105 +             "bearer",
+1106 +             "Bearer",
+1107 +             "private_key",
+1108 +             "private-key",
+1109 +             "PrivateKey",
+1110 |         )
+--------------------------------------------------------------------------------
+1114 |                 request = _request(arguments={alias: {"nested": "private"}})
+     -                 result = _broker(adapter, _Claims(Path(temporary), [])).execute(request, {})
+1115 +                 result = _broker(adapter, _Claims(Path(temporary), [])).execute(
+1116 +                     request, {}
+1117 +                 )
+1118 |                 self.assertEqual("DENIED", result.outcome)
+1119 |                 self.assertEqual(0, adapter.support_calls)
+     -                 self.assertNotIn(alias, json.dumps(result.to_record(), sort_keys=True).lower())
+1120 +                 self.assertNotIn(
+1121 +                     alias, json.dumps(result.to_record(), sort_keys=True).lower()
+1122 +                 )
+1123 |                 with self.assertRaises(CapabilityError):
+--------------------------------------------------------------------------------
+1150 |                 adapter = AliasSnapshotAdapter(alias)
+     -                 result = _broker(adapter, _Claims(Path(temporary), [])).execute(_request(), {})
+1151 +                 result = _broker(adapter, _Claims(Path(temporary), [])).execute(
+1152 +                     _request(), {}
+1153 +                 )
+1154 |                 self.assertEqual("DENIED", result.outcome)
+     -                 self.assertEqual("SNAPSHOT_INVALID", result.record["denial"]["reason_code"])
+1155 +                 self.assertEqual(
+1156 +                     "SNAPSHOT_INVALID", result.record["denial"]["reason_code"]
+1157 +                 )
+1158 |
+1159 |             with self.subTest(public_fact=alias):
+1160 |                 with self.assertRaises(CapabilityError):
+     -                     AdapterResult(True, {"nested": [{alias: "private"}]}, {"status": "PASS"}, {"adapter_id": "fake", "adapter_version": "v1"})
+1161 +                     AdapterResult(
+1162 +                         True,
+1163 +                         {"nested": [{alias: "private"}]},
+1164 +                         {"status": "PASS"},
+1165 +                         {"adapter_id": "fake", "adapter_version": "v1"},
+1166 +                     )
+1167 |                 with self.assertRaises(CapabilityError):
+     -                     AdapterResult(True, {"status": "completed"}, {"nested": {alias: "private"}}, {"adapter_id": "fake", "adapter_version": "v1"})
+1168 +                     AdapterResult(
+1169 +                         True,
+1170 +                         {"status": "completed"},
+1171 +                         {"nested": {alias: "private"}},
+1172 +                         {"adapter_id": "fake", "adapter_version": "v1"},
+1173 +                     )
+1174 |                 with self.assertRaises(CapabilityError):
+     -                     CleanupEvidence(True, {"complete": True, "members": [], "live_members": []}, (), {"nested": {alias: "private"}})
+1175 +                     CleanupEvidence(
+1176 +                         True,
+1177 +                         {"complete": True, "members": [], "live_members": []},
+1178 +                         (),
+1179 +                         {"nested": {alias: "private"}},
+1180 +                     )
+1181 |                 with self.assertRaises(CapabilityError):
+     -                     CapabilityDenied("TEST", "private fact", stage="test", details={"nested": {alias: "private"}})
+1182 +                     CapabilityDenied(
+1183 +                         "TEST",
+1184 +                         "private fact",
+1185 +                         stage="test",
+1186 +                         details={"nested": {alias: "private"}},
+1187 +                     )
+1188 |
+--------------------------------------------------------------------------------
+1198 |         public_approval = CapabilityApproval.from_record(_approval(parsed, snapshot))
+     -         self.assertTrue(_Verifier().verify(public_approval.signed_payload, public_approval.signature, public_approval.public_key))
+     -         self.assertEqual(public_approval.to_record(), json.loads(public_approval.signed_payload.decode("utf-8")) | {"signature": public_approval.signature})
+1199 +         self.assertTrue(
+1200 +             _Verifier().verify(
+1201 +                 public_approval.signed_payload,
+1202 +                 public_approval.signature,
+1203 +                 public_approval.public_key,
+1204 +             )
+1205 +         )
+1206 |         self.assertEqual(
+     -             canonical_json_bytes({"keyboard": "ordinary", "monkey": "ordinary", "ordinary_key": "ordinary", "public_key": "typed-public"}),
+     -             canonical_json_bytes({"public_key": "typed-public", "ordinary_key": "ordinary", "monkey": "ordinary", "keyboard": "ordinary"}),
+1207 +             public_approval.to_record(),
+1208 +             json.loads(public_approval.signed_payload.decode("utf-8"))
+1209 +             | {"signature": public_approval.signature},
+1210 +         )
+1211 +         self.assertEqual(
+1212 +             canonical_json_bytes(
+1213 +                 {
+1214 +                     "keyboard": "ordinary",
+1215 +                     "monkey": "ordinary",
+1216 +                     "ordinary_key": "ordinary",
+1217 +                     "public_key": "typed-public",
+1218 +                 }
+1219 +             ),
+1220 +             canonical_json_bytes(
+1221 +                 {
+1222 +                     "public_key": "typed-public",
+1223 +                     "ordinary_key": "ordinary",
+1224 +                     "monkey": "ordinary",
+1225 +                     "keyboard": "ordinary",
+1226 +                 }
+1227 +             ),
+1228 |         )
+1229 |
+     -
+     -     def test_S5_R1_009_ordinary_preclaim_failures_are_typed_published_denials(self) -> None:
+1230 +     def test_S5_R1_009_ordinary_preclaim_failures_are_typed_published_denials(
+1231 +         self,
+1232 +     ) -> None:
+1233 |         cases: list[tuple[str, Any, Any]] = []
+--------------------------------------------------------------------------------
+1242 |
+     -         cases.append(("supports", SupportsRaises({"synthetic": ("read",)}), lambda request, snapshot, approval: True))
+     -         cases.append(("observe", ObserveRaises({"synthetic": ("read",)}), lambda request, snapshot, approval: True))
+1243 +         cases.append(
+1244 +             (
+1245 +                 "supports",
+1246 +                 SupportsRaises({"synthetic": ("read",)}),
+1247 +                 lambda request, snapshot, approval: True,
+1248 +             )
+1249 +         )
+1250 +         cases.append(
+1251 +             (
+1252 +                 "observe",
+1253 +                 ObserveRaises({"synthetic": ("read",)}),
+1254 +                 lambda request, snapshot, approval: True,
+1255 +             )
+1256 +         )
+1257 |         for name, adapter, policy in cases:
+--------------------------------------------------------------------------------
+1278 |             adapter,
+     -             approval_verifier=lambda *_: (_ for _ in ()).throw(RuntimeError("signature exploded")),
+1279 +             approval_verifier=lambda *_: (_ for _ in ()).throw(
+1280 +                 RuntimeError("signature exploded")
+1281 +             ),
+1282 |             policy_verifier=lambda *_: True,
+--------------------------------------------------------------------------------
+1288 |         self.assertEqual("DENIED", result.outcome)
+     -         self.assertEqual("APPROVAL_SIGNATURE_INVALID", result.record["denial"]["reason_code"])
+1289 +         self.assertEqual(
+1290 +             "APPROVAL_SIGNATURE_INVALID", result.record["denial"]["reason_code"]
+1291 +         )
+1292 |         self.assertEqual(0, result.record["dispatch_count"])
+--------------------------------------------------------------------------------
+1300 |             approval_verifier=_Verifier(),
+     -             policy_verifier=lambda *_: (_ for _ in ()).throw(RuntimeError("policy exploded")),
+1301 +             policy_verifier=lambda *_: (_ for _ in ()).throw(
+1302 +                 RuntimeError("policy exploded")
+1303 +             ),
+1304 |             identity_provider=lambda: dict(OWNER),
+--------------------------------------------------------------------------------
+1308 |         self.assertEqual("DENIED", policy_result.outcome)
+     -         self.assertEqual("APPROVAL_POLICY_UNAVAILABLE", policy_result.record["denial"]["reason_code"])
+1309 +         self.assertEqual(
+1310 +             "APPROVAL_POLICY_UNAVAILABLE", policy_result.record["denial"]["reason_code"]
+1311 +         )
+1312 |         self.assertEqual(0, policy_result.record["dispatch_count"])
+1313 |
+1314 |         malformed = self._approval_for(_request(request_id="approval-parse"), adapter)
+1315 |         malformed["policy"] = ["not-an-object"]
+     -         parse_result = _broker(adapter, _Claims(Path("."), [])).execute(_request(request_id="approval-parse"), malformed)
+1316 +         parse_result = _broker(adapter, _Claims(Path("."), [])).execute(
+1317 +             _request(request_id="approval-parse"), malformed
+1318 +         )
+1319 |         self.assertEqual("DENIED", parse_result.outcome)
+     -         self.assertEqual("ADMISSION_FAILED", parse_result.record["denial"]["reason_code"])
+1320 +         self.assertEqual(
+1321 +             "ADMISSION_FAILED", parse_result.record["denial"]["reason_code"]
+1322 +         )
+1323 |         self.assertEqual(0, parse_result.record["dispatch_count"])
+1324 |
+     -
+     -     def test_S5_R1_010_malicious_adapter_cannot_mutate_nested_permit_or_hash(self) -> None:
+1325 +     def test_S5_R1_010_malicious_adapter_cannot_mutate_nested_permit_or_hash(
+1326 +         self,
+1327 +     ) -> None:
+1328 |         class MutatingAdapter(FakeCapabilityAdapter):
+--------------------------------------------------------------------------------
+1341 |                 copied["request"]["arguments"]["value"] = "mutated-copy"
+     -                 self.mutation_blocked = self.mutation_blocked and permit.request.arguments["value"] == "safe"
+1342 +                 self.mutation_blocked = (
+1343 +                     self.mutation_blocked
+1344 +                     and permit.request.arguments["value"] == "safe"
+1345 +                 )
+1346 |                 return super().dispatch(permit)
+1347 |
+1348 |         adapter = MutatingAdapter()
+1349 |         request = _request()
+     -         result = _broker(adapter, _Claims(Path("."), [])).execute(request, self._approval_for(request, adapter))
+1350 +         result = _broker(adapter, _Claims(Path("."), [])).execute(
+1351 +             request, self._approval_for(request, adapter)
+1352 +         )
+1353 |         self.assertEqual("PASS", result.outcome)
+1354 |         self.assertTrue(adapter.mutation_blocked)
+1355 |         self.assertEqual(adapter.original_hash, adapter.permits[0]["permit_sha256"])
+1356 |
+     -     def test_S5_R1_003_default_adapter_boundary_releases_after_disposable_process_cleanup(self) -> None:
+1357 +     def test_S5_R1_003_default_adapter_boundary_releases_after_disposable_process_cleanup(
+1358 +         self,
+1359 +     ) -> None:
+1360 |         with TemporaryDirectory() as temporary:
+--------------------------------------------------------------------------------
+1375 |                     config_provider=lambda request, operation: {},
+     -                     transport_factory=lambda process, remaining, request_id, config: _Transport(),
+1376 +                     transport_factory=lambda process, remaining, request_id, config: (
+1377 +                         _Transport()
+1378 +                     ),
+1379 |                     mcp_protocol_version="2025-03-26",
+--------------------------------------------------------------------------------
+1383 |                 self.skipTest(f"native process boundary unavailable: {exc}")
+     -             request, approval = _firmware_request_and_approval(adapter, pack, request_id="default-adapter-boundary")
+1384 +             request, approval = _firmware_request_and_approval(
+1385 +                 adapter, pack, request_id="default-adapter-boundary"
+1386 +             )
+1387 |             claims = _Claims(root, [])
+--------------------------------------------------------------------------------
+1397 |             self.assertTrue(result.record["claims_released"])
+     -             self.assertNotIn("session_id", json.dumps(result.to_record(), sort_keys=True))
+1398 +             self.assertNotIn(
+1399 +                 "session_id", json.dumps(result.to_record(), sort_keys=True)
+1400 +             )
+1401 |
+     -     def test_S5_R1_004_adapter_cleanup_cache_is_keyed_by_request_and_permit_digest(self) -> None:
+1402 +     def test_S5_R1_004_adapter_cleanup_cache_is_keyed_by_request_and_permit_digest(
+1403 +         self,
+1404 +     ) -> None:
+1405 |         with TemporaryDirectory() as temporary:
+1406 |             adapter, pack, _ = _firmware_adapter(Path(temporary))
+     -             request_value, approval_value = _firmware_request_and_approval(adapter, pack, request_id="cache-request")
+1407 +             request_value, approval_value = _firmware_request_and_approval(
+1408 +                 adapter, pack, request_id="cache-request"
+1409 +             )
+1410 |             request = CapabilityRequest.from_record(request_value, now_monotonic=0.0)
+1411 |             snapshot = adapter.observe(request)
+1412 |             approval = CapabilityApproval.from_record(approval_value)
+     -             permit_a = CapabilityPermit(request, snapshot, approval, (), dict(OWNER), dict(adapter.adapter_identity), 40.0, "a" * 64)
+     -             permit_b = CapabilityPermit(request, snapshot, approval, (), dict(OWNER), dict(adapter.adapter_identity), 40.0, "b" * 64)
+1413 +             permit_a = CapabilityPermit(
+1414 +                 request,
+1415 +                 snapshot,
+1416 +                 approval,
+1417 +                 (),
+1418 +                 dict(OWNER),
+1419 +                 dict(adapter.adapter_identity),
+1420 +                 40.0,
+1421 +                 "a" * 64,
+1422 +             )
+1423 +             permit_b = CapabilityPermit(
+1424 +                 request,
+1425 +                 snapshot,
+1426 +                 approval,
+1427 +                 (),
+1428 +                 dict(OWNER),
+1429 +                 dict(adapter.adapter_identity),
+1430 +                 40.0,
+1431 +                 "b" * 64,
+1432 +             )
+1433 |             first = adapter.cleanup(permit_a, None, {"reason_code": "failed"})
+--------------------------------------------------------------------------------
+1437 |
+     -     def test_S5_R1_008_expiry_is_checked_before_enqueue_and_at_writer_effect(self) -> None:
+1438 +     def test_S5_R1_008_expiry_is_checked_before_enqueue_and_at_writer_effect(
+1439 +         self,
+1440 +     ) -> None:
+1441 |         for mode in ("before-enqueue", "dispatch"):
+1442 |             with self.subTest(mode=mode), TemporaryDirectory() as temporary:
+1443 |                 clock = _MutableClock()
+     -                 transport = _ExpiryTransport(clock, expire_on="dispatch" if mode == "dispatch" else None)
+1444 +                 transport = _ExpiryTransport(
+1445 +                     clock, expire_on="dispatch" if mode == "dispatch" else None
+1446 +                 )
+1447 |
+--------------------------------------------------------------------------------
+1452 |
+     -                 adapter, pack, _ = _firmware_adapter(Path(temporary), clock, transport=transport, boundary_factory=boundary_factory)
+     -                 request, approval = _firmware_request_and_approval(adapter, pack, request_id=f"expiry-{mode}")
+1453 +                 adapter, pack, _ = _firmware_adapter(
+1454 +                     Path(temporary),
+1455 +                     clock,
+1456 +                     transport=transport,
+1457 +                     boundary_factory=boundary_factory,
+1458 +                 )
+1459 +                 request, approval = _firmware_request_and_approval(
+1460 +                     adapter, pack, request_id=f"expiry-{mode}"
+1461 +                 )
+1462 |                 claims = _Claims(Path(temporary), [])
+--------------------------------------------------------------------------------
+1471 |                 self.assertEqual("FAIL", result.outcome, result.to_record())
+     -                 self.assertFalse(any(message.get("params", {}).get("name") == "get_board_info" for message in transport.messages))
+1472 +                 self.assertFalse(
+1473 +                     any(
+1474 +                         message.get("params", {}).get("name") == "get_board_info"
+1475 +                         for message in transport.messages
+1476 +                     )
+1477 +                 )
+1478 |                 self.assertTrue(result.record["claims_released"])
+1479 |
+     -     def test_S5_R2_001_caller_declared_pack_maps_actions_and_keeps_lane_and_resource_independent(self) -> None:
+1480 +     def test_S5_R2_001_caller_declared_pack_maps_actions_and_keeps_lane_and_resource_independent(
+1481 +         self,
+1482 +     ) -> None:
+1483 |         pack = _campaign_pack()
+--------------------------------------------------------------------------------
+1490 |             request = CapabilityRequest.from_record(
+     -                 _request(request_id=f"pack-{lane_id}", lane_id=lane_id, capability="firmware-acceptance", action="observe", arguments={"board_id": "stm-a"}, resources=["board:stm-a"]),
+1491 +                 _request(
+1492 +                     request_id=f"pack-{lane_id}",
+1493 +                     lane_id=lane_id,
+1494 +                     capability="firmware-acceptance",
+1495 +                     action="observe",
+1496 +                     arguments={"board_id": "stm-a"},
+1497 +                     resources=["board:stm-a"],
+1498 +                 ),
+1499 |                 now_monotonic=0.0,
+--------------------------------------------------------------------------------
+1509 |         extra = CapabilityRequest.from_record(
+     -             _request(request_id="pack-extra", lane_id="lane-a", capability="firmware-acceptance", action="observe", arguments={"board_id": "stm-a", "extra": True}, resources=["board:stm-a"]),
+1510 +             _request(
+1511 +                 request_id="pack-extra",
+1512 +                 lane_id="lane-a",
+1513 +                 capability="firmware-acceptance",
+1514 +                 action="observe",
+1515 +                 arguments={"board_id": "stm-a", "extra": True},
+1516 +                 resources=["board:stm-a"],
+1517 +             ),
+1518 |             now_monotonic=0.0,
+--------------------------------------------------------------------------------
+1522 |         missing = CapabilityRequest.from_record(
+     -             _request(request_id="pack-missing", lane_id="lane-a", capability="firmware-acceptance", action="flash_application", arguments={"board_id": "stm-a"}, resources=["board:stm-a"]),
+1523 +             _request(
+1524 +                 request_id="pack-missing",
+1525 +                 lane_id="lane-a",
+1526 +                 capability="firmware-acceptance",
+1527 +                 action="flash_application",
+1528 +                 arguments={"board_id": "stm-a"},
+1529 +                 resources=["board:stm-a"],
+1530 +             ),
+1531 |             now_monotonic=0.0,
+--------------------------------------------------------------------------------
+1537 |             request = CapabilityRequest.from_record(
+     -                 _request(request_id="pack-resource", lane_id="lane-a", capability="firmware-acceptance", action="observe", arguments={"board_id": "stm-a"}, resources=resources),
+1538 +                 _request(
+1539 +                     request_id="pack-resource",
+1540 +                     lane_id="lane-a",
+1541 +                     capability="firmware-acceptance",
+1542 +                     action="observe",
+1543 +                     arguments={"board_id": "stm-a"},
+1544 +                     resources=resources,
+1545 +                 ),
+1546 |                 now_monotonic=0.0,
+--------------------------------------------------------------------------------
+1550 |
+     -     def test_S5_R2_002_exact_mcp_traffic_policy_duration_binding_and_private_config_stays_private(self) -> None:
+1551 +     def test_S5_R2_002_exact_mcp_traffic_policy_duration_binding_and_private_config_stays_private(
+1552 +         self,
+1553 +     ) -> None:
+1554 |         with TemporaryDirectory() as temporary:
+--------------------------------------------------------------------------------
+1561 |                 launcher=lambda config: _Process(),
+     -                 identity_provider=lambda pid: {"pid": pid, "created_utc": "fake-child", "creation_identity": "fake-exact"},
+     -                 config_provider=lambda request, operation: {"private": "controller-config", "endpoint": "server-private"},
+     -                 transport_factory=lambda process, remaining, request_id, config: transport,
+     -                 supervisor_factory=lambda process, identity, request_id, boundary: _Supervisor(),
+1562 +                 identity_provider=lambda pid: {
+1563 +                     "pid": pid,
+1564 +                     "created_utc": "fake-child",
+1565 +                     "creation_identity": "fake-exact",
+1566 +                 },
+1567 +                 config_provider=lambda request, operation: {
+1568 +                     "private": "controller-config",
+1569 +                     "endpoint": "server-private",
+1570 +                 },
+1571 +                 transport_factory=lambda process, remaining, request_id, config: (
+1572 +                     transport
+1573 +                 ),
+1574 +                 supervisor_factory=lambda process, identity, request_id, boundary: (
+1575 +                     _Supervisor()
+1576 +                 ),
+1577 |                 boundary_factory=lambda: _Boundary(),
+1578 |                 mcp_protocol_version="2025-03-26",
+1579 |                 clock=lambda: 10.0,
+1580 |             )
+     -             request, approval = _firmware_request_and_approval(adapter, pack, request_id="mcp-traffic")
+1581 +             request, approval = _firmware_request_and_approval(
+1582 +                 adapter, pack, request_id="mcp-traffic"
+1583 +             )
+1584 |             claims = _Claims(root, [])
+--------------------------------------------------------------------------------
+1595 |                 [
+     -                     {"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"protocolVersion": "2025-03-26", "capabilities": {}, "clientInfo": {"name": "orchestrator-harness", "version": "0.1.0"}}},
+     -                     {"jsonrpc": "2.0", "method": "notifications/initialized", "params": {}},
+     -                     {"jsonrpc": "2.0", "id": 2, "method": "tools/call", "params": {"name": "get_board_info", "arguments": {"board_id": "stm-a"}}},
+1596 +                     {
+1597 +                         "jsonrpc": "2.0",
+1598 +                         "id": 1,
+1599 +                         "method": "initialize",
+1600 +                         "params": {
+1601 +                             "protocolVersion": "2025-03-26",
+1602 +                             "capabilities": {},
+1603 +                             "clientInfo": {
+1604 +                                 "name": "orchestrator-harness",
+1605 +                                 "version": "0.1.0",
+1606 +                             },
+1607 +                         },
+1608 +                     },
+1609 +                     {
+1610 +                         "jsonrpc": "2.0",
+1611 +                         "method": "notifications/initialized",
+1612 +                         "params": {},
+1613 +                     },
+1614 +                     {
+1615 +                         "jsonrpc": "2.0",
+1616 +                         "id": 2,
+1617 +                         "method": "tools/call",
+1618 +                         "params": {
+1619 +                             "name": "get_board_info",
+1620 +                             "arguments": {"board_id": "stm-a"},
+1621 +                         },
+1622 +                     },
+1623 |                 ],
+--------------------------------------------------------------------------------
+1634 |             self.assertTrue(adapter.verify_approval(parsed, snapshot, approval_object))
+     -             self.assertEqual(50.0, adapter.effective_expiry(parsed, snapshot, approval_object, 10.0))
+1635 +             self.assertEqual(
+1636 +                 50.0, adapter.effective_expiry(parsed, snapshot, approval_object, 10.0)
+1637 +             )
+1638 |             operation = pack.resolve(parsed)
+1639 |             self.assertEqual(40, operation.maximum_duration_seconds)
+1640 |             self.assertEqual("caller-supplied-revision", operation.policy["revision"])
+1641 |
+     -     def test_S5_R2_003_supervised_cleanup_releases_claim_only_after_boundary_and_transport_closed(self) -> None:
+1642 +     def test_S5_R2_003_supervised_cleanup_releases_claim_only_after_boundary_and_transport_closed(
+1643 +         self,
+1644 +     ) -> None:
+1645 |         for boundary_complete, transport_closed, expected in (
+--------------------------------------------------------------------------------
+1649 |         ):
+     -             with self.subTest(boundary_complete=boundary_complete, transport_closed=transport_closed), TemporaryDirectory() as temporary:
+1650 +             with (
+1651 +                 self.subTest(
+1652 +                     boundary_complete=boundary_complete,
+1653 +                     transport_closed=transport_closed,
+1654 +                 ),
+1655 +                 TemporaryDirectory() as temporary,
+1656 +             ):
+1657 |                 root = Path(temporary)
+--------------------------------------------------------------------------------
+1661 |                 if not transport_closed:
+     -                     transport.close_and_join = lambda: (False, {"helpers_stopped": False, "errors": ["transport helper"]})
+1662 +                     transport.close_and_join = lambda: (
+1663 +                         False,
+1664 +                         {"helpers_stopped": False, "errors": ["transport helper"]},
+1665 +                     )
+1666 |                 adapter = FirmwareHardwareAdapter(
+1667 |                     campaign_pack=pack,
+1668 |                     snapshot_provider=lambda request: _firmware_snapshot(request, pack),
+1669 |                     launcher=lambda config: _Process(),
+     -                     identity_provider=lambda pid: {"pid": pid, "created_utc": "fake-child", "creation_identity": "fake-exact"},
+1670 +                     identity_provider=lambda pid: {
+1671 +                         "pid": pid,
+1672 +                         "created_utc": "fake-child",
+1673 +                         "creation_identity": "fake-exact",
+1674 +                     },
+1675 |                     config_provider=lambda request, operation: {},
+     -                     transport_factory=lambda process, remaining, request_id, config: transport,
+1676 +                     transport_factory=lambda process, remaining, request_id, config: (
+1677 +                         transport
+1678 +                     ),
+1679 |                     mcp_protocol_version="2025-03-26",
+     -                     supervisor_factory=lambda process, identity, request_id, boundary: _Supervisor(),
+1680 +                     supervisor_factory=lambda process, identity, request_id, boundary: (
+1681 +                         _Supervisor()
+1682 +                     ),
+1683 |                     boundary_factory=lambda: _Boundary(complete=boundary_complete),
+1684 |                     clock=lambda: 10.0,
+1685 |                 )
+     -                 request, approval = _firmware_request_and_approval(adapter, pack, request_id=f"cleanup-{boundary_complete}-{transport_closed}")
+1686 +                 request, approval = _firmware_request_and_approval(
+1687 +                     adapter,
+1688 +                     pack,
+1689 +                     request_id=f"cleanup-{boundary_complete}-{transport_closed}",
+1690 +                 )
+1691 |                 claims = _Claims(root, events)
+--------------------------------------------------------------------------------
+1705 |
+     -     def test_S5_R2_004_zero_argument_declaration_accepts_only_empty_argument_map(self) -> None:
+1706 +     def test_S5_R2_004_zero_argument_declaration_accepts_only_empty_argument_map(
+1707 +         self,
+1708 +     ) -> None:
+1709 |         pack = FirmwareCampaignPack(
+--------------------------------------------------------------------------------
+1733 |         }
+     -         operation = pack.resolve(CapabilityRequest.from_record(empty_value, now_monotonic=0.0))
+1734 +         operation = pack.resolve(
+1735 +             CapabilityRequest.from_record(empty_value, now_monotonic=0.0)
+1736 +         )
+1737 |         self.assertEqual({}, operation.arguments)
+--------------------------------------------------------------------------------
+1742 |         with self.assertRaises(CapabilityAdapterUnavailable):
+     -             pack.resolve(CapabilityRequest.from_record(nonempty_value, now_monotonic=0.0))
+     -
+1743 +             pack.resolve(
+1744 +                 CapabilityRequest.from_record(nonempty_value, now_monotonic=0.0)
+1745 +             )
+1746 |
+--------------------------------------------------------------------------------
+1753 |                 launcher=lambda config: _Process(),
+     -                 identity_provider=lambda pid: {"pid": pid, "created_utc": "fake-child", "creation_identity": "fake-exact"},
+1754 +                 identity_provider=lambda pid: {
+1755 +                     "pid": pid,
+1756 +                     "created_utc": "fake-child",
+1757 +                     "creation_identity": "fake-exact",
+1758 +                 },
+1759 |                 config_provider=lambda request, operation: {},
+     -                 transport_factory=lambda process, remaining, request_id, config: _Transport(),
+     -                 supervisor_factory=lambda process, identity, request_id, boundary: _Supervisor(),
+1760 +                 transport_factory=lambda process, remaining, request_id, config: (
+1761 +                     _Transport()
+1762 +                 ),
+1763 +                 supervisor_factory=lambda process, identity, request_id, boundary: (
+1764 +                     _Supervisor()
+1765 +                 ),
+1766 |                 boundary_factory=lambda: _Boundary(),
+1767 |                 clock=lambda: 10.0,
+1768 |             )
+1769 |
+1770 +
+1771 | if __name__ == "__main__":
+     |
+
+2 files would be reformatted

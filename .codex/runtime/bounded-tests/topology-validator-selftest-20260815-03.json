@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/skills/design-project-topology/scripts/validate_execution_plan.py --self-test",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Prior validator self-tests complete in under 3 seconds; 30 seconds allows cold locked-environment startup and 8 seconds bounds cleanup.",
+    "started_at":  "2026-08-15T11:11:48.6377651+00:00",
+    "finished_at":  "2026-08-15T11:11:50.2818640+00:00",
+    "elapsed_seconds":  1.644,
+    "root_process_id":  194948,
+    "observed_process_ids":  [
+                                 194948
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\topology-validator-selftest-20260815-03.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\topology-validator-selftest-20260815-03.stderr.log"
+}

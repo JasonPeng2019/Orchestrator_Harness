@@ -1,0 +1,108 @@
+{
+  "schema": "orchestrator-subagent-role-model-mapping/v2",
+  "profiles": {
+    "deepseek-v4-flash-0731-high": {
+      "model": "deepseek-v4-flash:0731-cloud",
+      "reasoning_effort": "high",
+      "service_tier": "priority",
+      "codex_flags": [
+        "--oss",
+        "--local-provider",
+        "ollama"
+      ],
+      "model_context_window": 1048576,
+      "model_auto_compact_token_limit": 230000,
+      "model_auto_compact_token_limit_scope": "total",
+      "model_catalog_path": ".codex/delegates/deepseek-model-catalog.json"
+    },
+    "luna-max": {
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "service_tier": "priority",
+      "codex_flags": [],
+      "model_context_window": 272000,
+      "model_auto_compact_token_limit": 150000,
+      "model_auto_compact_token_limit_scope": "total",
+      "model_catalog_path": null
+    },
+    "luna-high": {
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "high",
+      "service_tier": "priority",
+      "codex_flags": [],
+      "model_context_window": 272000,
+      "model_auto_compact_token_limit": 150000,
+      "model_auto_compact_token_limit_scope": "total",
+      "model_catalog_path": null
+    },
+    "terra-xhigh": {
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "xhigh",
+      "service_tier": "priority",
+      "codex_flags": [],
+      "model_context_window": 1048576,
+      "model_auto_compact_token_limit": 250000,
+      "model_auto_compact_token_limit_scope": "total",
+      "model_catalog_path": null
+    },
+    "sol-low": {
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "low",
+      "service_tier": "priority",
+      "codex_flags": [],
+      "model_context_window": null,
+      "model_auto_compact_token_limit": null,
+      "model_auto_compact_token_limit_scope": null,
+      "model_catalog_path": null
+    }
+  },
+  "roles": {
+    "coder-main": {
+      "primary_profile": "luna-max",
+      "fallback_profile": null,
+      "fallback_after_consecutive_backend_failures": null,
+      "fallback_error_classes": [],
+      "finding_gate_role": null
+    },
+    "reviewer-main": {
+      "primary_profile": "terra-xhigh",
+      "fallback_profile": null,
+      "fallback_after_consecutive_backend_failures": null,
+      "fallback_error_classes": [],
+      "finding_gate_role": "reviewer"
+    },
+    "doer-main": {
+      "primary_profile": "deepseek-v4-flash-0731-high",
+      "fallback_profile": "luna-high",
+      "fallback_after_consecutive_backend_failures": 3,
+      "fallback_error_classes": [
+        "HTTP_429",
+        "HTTP_303",
+        "RATE_LIMIT",
+        "BACKEND_ERROR"
+      ],
+      "finding_gate_role": "test_executor"
+    },
+    "final-reviewer": {
+      "primary_profile": "terra-xhigh",
+      "fallback_profile": null,
+      "fallback_after_consecutive_backend_failures": null,
+      "fallback_error_classes": [],
+      "finding_gate_role": "reviewer"
+    },
+    "acceptance-orchestrator": {
+      "primary_profile": "sol-low",
+      "fallback_profile": null,
+      "fallback_after_consecutive_backend_failures": null,
+      "fallback_error_classes": [],
+      "finding_gate_role": null
+    },
+    "sprint-evidence-reviewer": {
+      "primary_profile": "terra-xhigh",
+      "fallback_profile": null,
+      "fallback_after_consecutive_backend_failures": null,
+      "fallback_error_classes": [],
+      "finding_gate_role": "reviewer"
+    }
+  }
+}

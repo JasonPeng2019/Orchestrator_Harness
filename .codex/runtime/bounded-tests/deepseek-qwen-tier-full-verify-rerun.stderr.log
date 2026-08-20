@@ -1,0 +1,24 @@
+...................................................................lane-controller invocation error: coding worktree branch 'switched' does not match declared branch 'coding'
+...lane-controller invocation error: resume worker_invocation_id does not match persisted status
+........................................lane-controller invocation error: cannot read invocation: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+...lane-controller invocation error: resume requires the persisted lane thread ID
+lane-controller invocation error: status escapes its allowed root
+..lane-controller invocation error: prompt is not the required policy-bound prompt composition
+lane-controller invocation error: prompt bytes do not match prompt_sha256
+lane-controller invocation error: canonical policy file or sidecar does not match policy_sha256
+.................................................s...................................................................................
+----------------------------------------------------------------------
+Ran 248 tests in 127.087s
+
+OK (skipped=1)
+..............................................usage: python -m harness_watcher_implementation record-attention
+       [-h] --role {orchestrator,subagent} --source-id SOURCE_ID --epoch-id
+       EPOCH_ID --event-id EVENT_ID --kind KIND
+       [--source-timestamp-utc SOURCE_TIMESTAMP_UTC]
+       [--metadata METADATA | --metadata-file METADATA_FILE]
+python -m harness_watcher_implementation record-attention: error: argument --metadata-file: not allowed with argument --metadata
+......................................................
+----------------------------------------------------------------------
+Ran 100 tests in 16.168s
+
+OK

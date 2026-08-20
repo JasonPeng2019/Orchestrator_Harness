@@ -1,0 +1,936 @@
+F401 [*] `datetime.datetime` imported but unused
+  --> orchestrator_harness\process_supervisor.py:11:22
+   |
+ 9 | import time
+10 | from dataclasses import dataclass, field
+11 | from datetime import datetime
+   |                      ^^^^^^^^
+12 | from typing import Any, Callable, Mapping
+   |
+help: Remove unused import: `datetime.datetime`
+   |
+10 | from dataclasses import dataclass, field
+   - from datetime import datetime
+11 | from typing import Any, Callable, Mapping
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Callable`, `Mapping`
+  --> orchestrator_harness\process_supervisor.py:12:1
+   |
+10 | from dataclasses import dataclass, field
+11 | from datetime import datetime
+12 | from typing import Any, Callable, Mapping
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13 |
+14 | from .models import (
+   |
+help: Import from `collections.abc`
+   |
+11 | from datetime import datetime
+   - from typing import Any, Callable, Mapping
+12 + from typing import Any
+13 + from collections.abc import Callable, Mapping
+14 |
+   |
+
+PLR0402 [*] Use `from ctypes import wintypes` in lieu of alias
+  --> orchestrator_harness\process_supervisor.py:43:12
+   |
+41 |     if os.name != "nt":
+42 |         raise ProcessBoundaryUnsupported("Windows Job Objects are unavailable")
+43 |     import ctypes.wintypes as wintypes
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+44 |
+45 |     kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+   |
+help: Replace with `from ctypes import wintypes`
+   |
+42 |         raise ProcessBoundaryUnsupported("Windows Job Objects are unavailable")
+   -     import ctypes.wintypes as wintypes
+43 +     from ctypes import wintypes
+44 |
+   |
+
+UP037 [*] Remove quotes from type annotation
+   --> orchestrator_harness\process_supervisor.py:139:25
+    |
+138 |     @classmethod
+139 |     def prepare(cls) -> "ProcessBoundary":
+    |                         ^^^^^^^^^^^^^^^^^
+140 |         if os.name == "nt":
+141 |             boundary = cls(kind="windows-job")
+    |
+help: Remove quotes
+    |
+138 |     @classmethod
+    -     def prepare(cls) -> "ProcessBoundary":
+139 +     def prepare(cls) -> ProcessBoundary:
+140 |         if os.name == "nt":
+    |
+
+S110 `try`-`except`-`pass` detected, consider logging the exception
+   --> orchestrator_harness\process_supervisor.py:202:21
+    |
+200 |                       try:
+201 |                           _windows_job_api()[5](boundary._job_handle)
+202 | /                     except Exception:
+203 | |                         pass
+    | |____________________________^
+204 |                   raise ProcessBoundaryUnsupported(
+205 |                       f"Windows Job Object setup failed: {exc}"
+    |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> orchestrator_harness\process_supervisor.py:202:28
+    |
+200 |                     try:
+201 |                         _windows_job_api()[5](boundary._job_handle)
+202 |                     except Exception:
+    |                            ^^^^^^^^^
+203 |                         pass
+204 |                 raise ProcessBoundaryUnsupported(
+    |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> orchestrator_harness\process_supervisor.py:547:20
+    |
+545 |                     source="job-object",
+546 |                 )
+547 |             except Exception as exc:
+    |                    ^^^^^^^^^
+548 |                 self._inventory_errors.append(f"job inventory failed: {exc}")
+549 |                 return ProcessBoundaryInventory(
+    |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> orchestrator_harness\process_supervisor.py:628:20
+    |
+626 |                 else:
+627 |                     self._cleanup_result = "job-terminated"
+628 |             except Exception as exc:
+    |                    ^^^^^^^^^
+629 |                 self._cleanup_result = f"job-termination-failed:{exc}"
+630 |             return self._cleanup_result
+    |
+
+S110 `try`-`except`-`pass` detected, consider logging the exception
+   --> orchestrator_harness\process_supervisor.py:743:13
+    |
+741 |               try:
+742 |                   _windows_job_api()[5](self._job_handle)
+743 | /             except Exception:
+744 | |                 pass
+    | |____________________^
+745 |               self._job_handle = None
+    |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> orchestrator_harness\process_supervisor.py:743:20
+    |
+741 |             try:
+742 |                 _windows_job_api()[5](self._job_handle)
+743 |             except Exception:
+    |                    ^^^^^^^^^
+744 |                 pass
+745 |             self._job_handle = None
+    |
+
+BLE001 Do not catch blind exception: `BaseException`
+   --> orchestrator_harness\process_supervisor.py:920:16
+    |
+918 |         except TypeError:
+919 |             query = self.observer(self.pid)
+920 |         except BaseException as exc:
+    |                ^^^^^^^^^^^^^
+921 |             return (
+922 |                 False,
+    |
+
+BLE001 Do not catch blind exception: `BaseException`
+   --> orchestrator_harness\process_supervisor.py:939:20
+    |
+937 |                         "exact observation says child is absent while owned handle is live",
+938 |                     )
+939 |             except BaseException as exc:
+    |                    ^^^^^^^^^^^^^
+940 |                 return (
+941 |                     False,
+    |
+
+BLE001 Do not catch blind exception: `BaseException`
+    --> orchestrator_harness\process_supervisor.py:1094:16
+     |
+1092 |         try:
+1093 |             already_exited = self.process.poll()
+1094 |         except BaseException as exc:
+     |                ^^^^^^^^^^^^^
+1095 |             already_exited = None
+1096 |             errors.append(f"initial poll failed: {type(exc).__name__}: {exc}")
+     |
+
+BLE001 Do not catch blind exception: `BaseException`
+    --> orchestrator_harness\process_supervisor.py:1115:20
+     |
+1113 |                 )
+1114 |                 return self._result
+1115 |             except BaseException as exc:
+     |                    ^^^^^^^^^^^^^
+1116 |                 errors.append(
+1117 |                     f"already-exited reap failed: {type(exc).__name__}: {exc}"
+     |
+
+BLE001 Do not catch blind exception: `BaseException`
+    --> orchestrator_harness\process_supervisor.py:1124:16
+     |
+1122 |         try:
+1123 |             self.process.terminate()
+1124 |         except BaseException as exc:
+     |                ^^^^^^^^^^^^^
+1125 |             errors.append(f"graceful stop failed: {type(exc).__name__}: {exc}")
+1126 |         try:
+     |
+
+BLE001 Do not catch blind exception: `BaseException`
+    --> orchestrator_harness\process_supervisor.py:1145:16
+     |
+1143 |         except subprocess.TimeoutExpired:
+1144 |             stages.append("GRACEFUL_WAIT_TIMEOUT")
+1145 |         except BaseException as exc:
+     |                ^^^^^^^^^^^^^
+1146 |             errors.append(f"graceful wait failed: {type(exc).__name__}: {exc}")
+     |
+
+BLE001 Do not catch blind exception: `BaseException`
+    --> orchestrator_harness\process_supervisor.py:1152:16
+     |
+1150 |         try:
+1151 |             self.process.kill()
+1152 |         except BaseException as exc:
+     |                ^^^^^^^^^^^^^
+1153 |             errors.append(f"force stop failed: {type(exc).__name__}: {exc}")
+1154 |         try:
+     |
+
+BLE001 Do not catch blind exception: `BaseException`
+    --> orchestrator_harness\process_supervisor.py:1172:16
+     |
+1170 |         except subprocess.TimeoutExpired:
+1171 |             stages.append("FINAL_REAP_TIMEOUT")
+1172 |         except BaseException as exc:
+     |                ^^^^^^^^^^^^^
+1173 |             errors.append(f"final reap failed: {type(exc).__name__}: {exc}")
+1174 |         self._result = self._result_for(
+     |
+
+RUF022 [*] `__all__` is not sorted
+    --> orchestrator_harness\process_supervisor.py:1207:11
+     |
+1207 |   __all__ = [
+     |  ___________^
+1208 | |     "CleanupResult",
+1209 | |     "PROCESS_CLEANUP_SCHEMA",
+1210 | |     "PROCESS_BOUNDARY_SCHEMA",
+1211 | |     "ProcessBoundary",
+1212 | |     "ProcessBoundaryInventory",
+1213 | |     "ProcessBoundaryUnsupported",
+1214 | |     "ProcessSupervisor",
+1215 | |     "supervise_process",
+1216 | | ]
+     | |_^
+help: Apply an isort-style sorting to `__all__`
+     |
+1207 | __all__ = [
+1208 +     "PROCESS_BOUNDARY_SCHEMA",
+1209 +     "PROCESS_CLEANUP_SCHEMA",
+1210 |     "CleanupResult",
+     -     "PROCESS_CLEANUP_SCHEMA",
+     -     "PROCESS_BOUNDARY_SCHEMA",
+1211 |     "ProcessBoundary",
+     |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> orchestrator_harness\tests\test_s4_repair.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | import json
+ 4 | | import hashlib
+ 5 | | import ctypes
+ 6 | | import io
+ 7 | | import importlib
+ 8 | | import os
+ 9 | | import pkgutil
+10 | | import subprocess
+11 | | import sys
+12 | | import tempfile
+13 | | import threading
+14 | | import unittest
+15 | | from contextlib import nullcontext
+16 | | from datetime import datetime, timezone
+17 | | from pathlib import Path
+18 | | from typing import Any, Mapping
+19 | | from unittest.mock import MagicMock, patch
+20 | |
+21 | | import orchestrator_harness.lane_controller as lane_controller
+22 | |
+23 | | from orchestrator_harness.codex_adapter import (
+24 | |     CODEX_ADAPTER_VERSION,
+25 | |     CODEX_INSTALL_MANIFEST_SCHEMA,
+26 | |     CODEX_PACKAGE_REVISION,
+27 | |     CodexAdapterError,
+28 | |     CodexInstallConflict,
+29 | |     install_codex_adapter,
+30 | |     check_codex_adapter,
+31 | |     uninstall_codex_adapter,
+32 | | )
+33 | | from orchestrator_harness.host_adapters import (
+34 | |     AdapterCapabilities,
+35 | |     DeliveryCoordinator,
+36 | |     DeliveryReceipt,
+37 | |     HostAdapter,
+38 | |     HostProfile,
+39 | | )
+40 | | from orchestrator_harness.lane_lifecycle import (
+41 | |     ImmutableViewError,
+42 | |     allocate_immutable_source_view,
+43 | |     lifecycle_registry_path,
+44 | |     retire_terminal_lane,
+45 | |     validate_lane_archive,
+46 | | )
+47 | | from orchestrator_harness.notifications import ManagerEventRouter
+48 | | from orchestrator_harness.models import (
+49 | |     ProcessBoundaryInventory,
+50 | |     ProcessInfo,
+51 | |     ProcessSnapshot,
+52 | |     iso_utc,
+53 | | )
+54 | | from orchestrator_harness.process_supervisor import (
+55 | |     CleanupResult,
+56 | |     ProcessBoundary,
+57 | |     ProcessSupervisor,
+58 | | )
+59 | | from orchestrator_harness.processes import (
+60 | |     process_group_inventory,
+61 | |     targeted_process_query,
+62 | | )
+63 | | from orchestrator_harness.resource_locks import (
+64 | |     ResourceClaims,
+65 | |     ResourceLockError,
+66 | |     _owner_state,
+67 | | )
+68 | | from orchestrator_harness.stable_io import (
+69 | |     AppendLockError,
+70 | |     PathKeyedAppendLock,
+71 | |     SafeOutput,
+72 | | )
+73 | | from orchestrator_harness import codex_adapter, lane_lifecycle
+   | |______________________________________________________________^
+help: Organize imports
+   |
+2  |
+   - import json
+3  + import ctypes
+4  | import hashlib
+   - import ctypes
+   - import io
+5  | import importlib
+6  + import io
+7  + import json
+8  | import os
+--------------------------------------------------------------------------------
+21 | import orchestrator_harness.lane_controller as lane_controller
+   -
+22 + from orchestrator_harness import codex_adapter, lane_lifecycle
+23 | from orchestrator_harness.codex_adapter import (
+--------------------------------------------------------------------------------
+28 |     CodexInstallConflict,
+   -     install_codex_adapter,
+29 |     check_codex_adapter,
+30 +     install_codex_adapter,
+31 |     uninstall_codex_adapter,
+--------------------------------------------------------------------------------
+46 | )
+   - from orchestrator_harness.notifications import ManagerEventRouter
+47 | from orchestrator_harness.models import (
+--------------------------------------------------------------------------------
+52 | )
+53 + from orchestrator_harness.notifications import ManagerEventRouter
+54 | from orchestrator_harness.process_supervisor import (
+--------------------------------------------------------------------------------
+72 | )
+   - from orchestrator_harness import codex_adapter, lane_lifecycle
+73 |
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Mapping`
+  --> orchestrator_harness\tests\test_s4_repair.py:18:1
+   |
+16 | from datetime import datetime, timezone
+17 | from pathlib import Path
+18 | from typing import Any, Mapping
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+19 | from unittest.mock import MagicMock, patch
+   |
+help: Import from `collections.abc`
+   |
+17 | from pathlib import Path
+   - from typing import Any, Mapping
+18 + from typing import Any
+19 + from collections.abc import Mapping
+20 | from unittest.mock import MagicMock, patch
+   |
+
+PLR0402 [*] Use `from orchestrator_harness import lane_controller` in lieu of alias
+  --> orchestrator_harness\tests\test_s4_repair.py:21:8
+   |
+19 | from unittest.mock import MagicMock, patch
+20 |
+21 | import orchestrator_harness.lane_controller as lane_controller
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+22 |
+23 | from orchestrator_harness.codex_adapter import (
+   |
+help: Replace with `from orchestrator_harness import lane_controller`
+   |
+20 |
+   - import orchestrator_harness.lane_controller as lane_controller
+21 + from orchestrator_harness import lane_controller
+22 |
+   |
+
+F401 [*] `orchestrator_harness.codex_adapter.CodexAdapterError` imported but unused
+  --> orchestrator_harness\tests\test_s4_repair.py:27:5
+   |
+25 |     CODEX_INSTALL_MANIFEST_SCHEMA,
+26 |     CODEX_PACKAGE_REVISION,
+27 |     CodexAdapterError,
+   |     ^^^^^^^^^^^^^^^^^
+28 |     CodexInstallConflict,
+29 |     install_codex_adapter,
+   |
+help: Remove unused import: `orchestrator_harness.codex_adapter.CodexAdapterError`
+   |
+26 |     CODEX_PACKAGE_REVISION,
+   -     CodexAdapterError,
+27 |     CodexInstallConflict,
+   |
+
+UP022 Prefer `capture_output` over sending `stdout` and `stderr` to `PIPE`
+   --> orchestrator_harness\tests\test_s4_repair.py:102:18
+    |
+100 |       @staticmethod
+101 |       def _git(cwd: Path, *args: str) -> str:
+102 |           result = subprocess.run(
+    |  __________________^
+103 | |             ["git", "-C", str(cwd), *args],
+104 | |             check=True,
+105 | |             stdout=subprocess.PIPE,
+106 | |             stderr=subprocess.PIPE,
+107 | |             text=True,
+108 | |         )
+    | |_________^
+109 |           return result.stdout.strip()
+    |
+help: Replace with `capture_output` keyword argument
+
+F841 Local variable `bound_worktree` is assigned to but never used
+   --> orchestrator_harness\tests\test_s4_repair.py:178:9
+    |
+176 |         workspace = lane / ".agent-workspace"
+177 |         workspace.mkdir(exist_ok=True)
+178 |         bound_worktree = lane
+    |         ^^^^^^^^^^^^^^
+179 |         common = Path(cls._git(lane, "rev-parse", "--git-common-dir"))
+180 |         if not common.is_absolute():
+    |
+help: Remove assignment to unused variable `bound_worktree`
+
+SIM117 [*] Use a single `with` statement with multiple contexts instead of nested `with` statements
+   --> orchestrator_harness\tests\test_s4_repair.py:574:17
+    |
+573 |               try:
+574 | /                 with patch(
+575 | |                     "orchestrator_harness.mutation._before_commit",
+576 | |                     side_effect=swap_parent,
+577 | |                 ):
+578 | |                     with self.assertRaises(CodexInstallConflict):
+    | |_________________________________________________________________^
+579 |                           guard.atomic_replace(
+580 |                               Path(".codex/hooks/repair.txt"), b"bounded"
+    |
+help: Combine `with` statements
+    |
+576 |                     side_effect=swap_parent,
+    -                 ):
+    -                     with self.assertRaises(CodexInstallConflict):
+    -                         guard.atomic_replace(
+    -                             Path(".codex/hooks/repair.txt"), b"bounded"
+    -                         )
+577 +                 ), self.assertRaises(CodexInstallConflict):
+578 +                     guard.atomic_replace(
+579 +                         Path(".codex/hooks/repair.txt"), b"bounded"
+580 +                     )
+581 |                 self.assertFalse((outside / "repair.txt").exists())
+    |
+
+SIM117 [*] Use a single `with` statement with multiple contexts instead of nested `with` statements
+   --> orchestrator_harness\tests\test_s4_repair.py:605:13
+    |
+603 |                   changed = True
+604 |
+605 | /             with patch(
+606 | |                 "orchestrator_harness.mutation._before_commit",
+607 | |                 side_effect=change_target,
+608 | |             ):
+609 | |                 with self.assertRaises(CodexInstallConflict):
+    | |_____________________________________________________________^
+610 |                       guard.atomic_replace(
+611 |                           Path(".codex/hooks/repair.txt"),
+    |
+help: Combine `with` statements
+    |
+607 |                 side_effect=change_target,
+    -             ):
+    -                 with self.assertRaises(CodexInstallConflict):
+    -                     guard.atomic_replace(
+    -                         Path(".codex/hooks/repair.txt"),
+    -                         b"managed-after-authorization\n",
+    -                     )
+608 +             ), self.assertRaises(CodexInstallConflict):
+609 +                 guard.atomic_replace(
+610 +                     Path(".codex/hooks/repair.txt"),
+611 +                     b"managed-after-authorization\n",
+612 +                 )
+613 |             self.assertTrue(changed)
+    |
+
+RUF059 Unpacked variable `revision` is never used
+   --> orchestrator_harness\tests\test_s4_repair.py:620:25
+    |
+618 |         with tempfile.TemporaryDirectory() as raw:
+619 |             root = Path(raw)
+620 |             main, lane, revision = self._git_fixture(root)
+    |                         ^^^^^^^^
+621 |             refs = self._archive_refs(root)
+622 |             foreign_runtime = root / "foreign-runtime"
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+F841 Local variable `runtime` is assigned to but never used
+   --> orchestrator_harness\tests\test_s4_repair.py:705:13
+    |
+703 |             main, lane, revision = self._git_fixture(root)
+704 |             refs = self._archive_refs(root)
+705 |             runtime = self._lifecycle_record(
+    |             ^^^^^^^
+706 |                 root,
+707 |                 lane,
+    |
+help: Remove assignment to unused variable `runtime`
+
+SIM117 [*] Use a single `with` statement with multiple contexts instead of nested `with` statements
+   --> orchestrator_harness\tests\test_s4_repair.py:724:13
+    |
+722 |                   changed = True
+723 |
+724 | /             with patch.object(
+725 | |                 lane_lifecycle,
+726 | |                 "_after_initial_retirement_proof",
+727 | |                 side_effect=mutate_after_initial_proof,
+728 | |             ):
+729 | |                 with patch.object(
+730 | |                     lane_lifecycle,
+731 | |                     "process_snapshot",
+732 | |                     return_value=ProcessSnapshot(True, (), (), "synthetic-test"),
+733 | |                 ):
+    | |__________________^
+734 |                       result = retire_terminal_lane(
+735 |                           lane,
+    |
+help: Combine `with` statements
+    |
+727 |                 side_effect=mutate_after_initial_proof,
+728 +             ), patch.object(
+729 +                 lane_lifecycle,
+730 +                 "process_snapshot",
+731 +                 return_value=ProcessSnapshot(True, (), (), "synthetic-test"),
+732 |             ):
+    -                 with patch.object(
+    -                     lane_lifecycle,
+    -                     "process_snapshot",
+    -                     return_value=ProcessSnapshot(True, (), (), "synthetic-test"),
+    -                 ):
+    -                     result = retire_terminal_lane(
+    -                         lane,
+    -                         root / "archive",
+    -                         lane_id="changed",
+    -                         task_ref=refs[0],
+    -                         result_ref=refs[1],
+    -                         findings_ref=refs[2],
+    -                         acceptance_ref=refs[3],
+    -                         transcript_ref=refs[4],
+    -                         dependency_ref=refs[5],
+    -                     )
+733 +                 result = retire_terminal_lane(
+734 +                     lane,
+735 +                     root / "archive",
+736 +                     lane_id="changed",
+737 +                     task_ref=refs[0],
+738 +                     result_ref=refs[1],
+739 +                     findings_ref=refs[2],
+740 +                     acceptance_ref=refs[3],
+741 +                     transcript_ref=refs[4],
+742 +                     dependency_ref=refs[5],
+743 +                 )
+744 |             self.assertTrue(changed)
+    |
+
+BLE001 Do not catch blind exception: `Exception`
+    --> orchestrator_harness\tests\test_s4_repair.py:1047:24
+     |
+1045 |                         )
+1046 |                     )
+1047 |                 except Exception as exc:
+     |                        ^^^^^^^^^
+1048 |                     results.append(exc)
+     |
+
+BLE001 Do not catch blind exception: `Exception`
+    --> orchestrator_harness\tests\test_s4_repair.py:1218:24
+     |
+1216 |                 try:
+1217 |                     supervisor.cleanup()
+1218 |                 except Exception:
+     |                        ^^^^^^^^^
+1219 |                     boundary.terminate_owned()
+1220 |             if provider.poll() is None:
+     |
+
+SIM117 [*] Use a single `with` statement with multiple contexts instead of nested `with` statements
+    --> orchestrator_harness\tests\test_s4_repair.py:1436:13
+     |
+1434 |                   pass
+1435 |
+1436 | /             with patch(
+1437 | |                 "orchestrator_harness.resource_locks.time.sleep",
+1438 | |                 side_effect=WaitAbort(),
+1439 | |             ):
+1440 | |                 with self.assertRaises(WaitAbort):
+     | |__________________________________________________^
+1441 |                       contender.acquire_all(["resource"], on_wait=waits.append)
+1442 |               self.assertEqual("INVENTORY_UNKNOWN", waits[0]["state"])
+     |
+help: Combine `with` statements
+     |
+1438 |                 side_effect=WaitAbort(),
+     -             ):
+     -                 with self.assertRaises(WaitAbort):
+     -                     contender.acquire_all(["resource"], on_wait=waits.append)
+1439 +             ), self.assertRaises(WaitAbort):
+1440 +                 contender.acquire_all(["resource"], on_wait=waits.append)
+1441 |             self.assertEqual("INVENTORY_UNKNOWN", waits[0]["state"])
+     |
+
+B023 Function definition does not bind loop variable `returned_mode`
+    --> orchestrator_harness\tests\test_s4_repair.py:1663:30
+     |
+1661 |                     ctypes.memmove(buffer, payload, len(payload))
+1662 |                     returned._obj.value = (
+1663 |                         8 if returned_mode == "header-only" else size + 1
+     |                              ^^^^^^^^^^^^^
+1664 |                     )  # type: ignore[attr-defined]
+1665 |                     return True
+     |
+
+F841 Local variable `runtime` is assigned to but never used
+    --> orchestrator_harness\tests\test_s4_repair.py:1974:13
+     |
+1972 |             refs = self._archive_refs(root)
+1973 |             pids_path = root / "helper-pids-helpers.json"
+1974 |             runtime = self._lifecycle_record(
+     |             ^^^^^^^
+1975 |                 root,
+1976 |                 lane,
+     |
+help: Remove assignment to unused variable `runtime`
+
+SIM117 [*] Use a single `with` statement with multiple contexts instead of nested `with` statements
+    --> orchestrator_harness\tests\test_s4_repair.py:2055:13
+     |
+2053 |                   target.write_bytes(b"user-after-final-proof\n")
+2054 |
+2055 | /             with patch(
+2056 | |                 "orchestrator_harness.mutation._after_target_proof",
+2057 | |                 side_effect=change_after_final_proof,
+2058 | |                 create=True,
+2059 | |             ):
+2060 | |                 with self.assertRaises(CodexInstallConflict):
+     | |_____________________________________________________________^
+2061 |                       guard.atomic_replace(target.relative_to(project), b"must-not-win\n")
+2062 |               self.assertEqual(b"user-after-final-proof\n", target.read_bytes())
+     |
+help: Combine `with` statements
+     |
+2058 |                 create=True,
+     -             ):
+     -                 with self.assertRaises(CodexInstallConflict):
+     -                     guard.atomic_replace(target.relative_to(project), b"must-not-win\n")
+2059 +             ), self.assertRaises(CodexInstallConflict):
+2060 +                 guard.atomic_replace(target.relative_to(project), b"must-not-win\n")
+2061 |             self.assertEqual(b"user-after-final-proof\n", target.read_bytes())
+     |
+
+SIM117 [*] Use a single `with` statement with multiple contexts instead of nested `with` statements
+    --> orchestrator_harness\tests\test_s4_repair.py:2077:13
+     |
+2075 |                   target.write_bytes(b"user-after-final-proof\n")
+2076 |
+2077 | /             with patch(
+2078 | |                 "orchestrator_harness.mutation._after_target_proof",
+2079 | |                 side_effect=change_after_final_proof,
+2080 | |                 create=True,
+2081 | |             ):
+2082 | |                 with self.assertRaises(CodexInstallConflict):
+     | |_____________________________________________________________^
+2083 |                       guard.delete(Path(".codex/hooks/late-delete.txt"))
+2084 |               self.assertEqual(b"user-after-final-proof\n", target.read_bytes())
+     |
+help: Combine `with` statements
+     |
+2080 |                 create=True,
+     -             ):
+     -                 with self.assertRaises(CodexInstallConflict):
+     -                     guard.delete(Path(".codex/hooks/late-delete.txt"))
+2081 +             ), self.assertRaises(CodexInstallConflict):
+2082 +                 guard.delete(Path(".codex/hooks/late-delete.txt"))
+2083 |             self.assertEqual(b"user-after-final-proof\n", target.read_bytes())
+     |
+
+UP022 Prefer `capture_output` over sending `stdout` and `stderr` to `PIPE`
+    --> orchestrator_harness\tests\test_s4_repair.py:2099:26
+     |
+2097 |               def relocate_after_anchor() -> None:
+2098 |                   hooks.rename(moved)
+2099 |                   result = subprocess.run(
+     |  __________________________^
+2100 | |                     ["cmd.exe", "/c", "mklink", "/J", str(hooks), str(outside)],
+2101 | |                     stdout=subprocess.PIPE,
+2102 | |                     stderr=subprocess.PIPE,
+2103 | |                     text=True,
+2104 | |                 )
+     | |_________________^
+2105 |                   if result.returncode != 0:
+2106 |                       raise AssertionError(f"junction fixture failed: {result.stderr}")
+     |
+help: Replace with `capture_output` keyword argument
+
+PLW1510 `subprocess.run` without explicit `check` argument
+    --> orchestrator_harness\tests\test_s4_repair.py:2099:26
+     |
+2097 |             def relocate_after_anchor() -> None:
+2098 |                 hooks.rename(moved)
+2099 |                 result = subprocess.run(
+     |                          ^^^^^^^^^^^^^^
+2100 |                     ["cmd.exe", "/c", "mklink", "/J", str(hooks), str(outside)],
+2101 |                     stdout=subprocess.PIPE,
+     |
+help: Add explicit `check=False`
+
+SIM117 [*] Use a single `with` statement with multiple contexts instead of nested `with` statements
+    --> orchestrator_harness\tests\test_s4_repair.py:2109:17
+     |
+2108 |               try:
+2109 | /                 with patch(
+2110 | |                     "orchestrator_harness.mutation._after_anchor",
+2111 | |                     side_effect=relocate_after_anchor,
+2112 | |                     create=True,
+2113 | |                 ):
+2114 | |                     with self.assertRaises(CodexInstallConflict):
+     | |_________________________________________________________________^
+2115 |                           guard.atomic_replace(
+2116 |                               Path(".codex/hooks/outside.txt"), b"must-stay-inside\n"
+     |
+help: Combine `with` statements
+     |
+2112 |                     create=True,
+     -                 ):
+     -                     with self.assertRaises(CodexInstallConflict):
+     -                         guard.atomic_replace(
+     -                             Path(".codex/hooks/outside.txt"), b"must-stay-inside\n"
+     -                         )
+2113 +                 ), self.assertRaises(CodexInstallConflict):
+2114 +                     guard.atomic_replace(
+2115 +                         Path(".codex/hooks/outside.txt"), b"must-stay-inside\n"
+2116 +                     )
+2117 |                 self.assertFalse((outside / "outside.txt").exists())
+     |
+
+UP022 Prefer `capture_output` over sending `stdout` and `stderr` to `PIPE`
+    --> orchestrator_harness\tests\test_s4_repair.py:2142:26
+     |
+2140 |               def substitute_lock_root() -> None:
+2141 |                   lock_root.rename(moved)
+2142 |                   result = subprocess.run(
+     |  __________________________^
+2143 | |                     ["cmd.exe", "/c", "mklink", "/J", str(lock_root), str(outside)],
+2144 | |                     stdout=subprocess.PIPE,
+2145 | |                     stderr=subprocess.PIPE,
+2146 | |                     text=True,
+2147 | |                 )
+     | |_________________^
+2148 |                   if result.returncode != 0:
+2149 |                       raise AssertionError(f"junction fixture failed: {result.stderr}")
+     |
+help: Replace with `capture_output` keyword argument
+
+PLW1510 `subprocess.run` without explicit `check` argument
+    --> orchestrator_harness\tests\test_s4_repair.py:2142:26
+     |
+2140 |             def substitute_lock_root() -> None:
+2141 |                 lock_root.rename(moved)
+2142 |                 result = subprocess.run(
+     |                          ^^^^^^^^^^^^^^
+2143 |                     ["cmd.exe", "/c", "mklink", "/J", str(lock_root), str(outside)],
+2144 |                     stdout=subprocess.PIPE,
+     |
+help: Add explicit `check=False`
+
+SIM117 [*] Use a single `with` statement with multiple contexts instead of nested `with` statements
+    --> orchestrator_harness\tests\test_s4_repair.py:2153:17
+     |
+2151 |               try:
+2152 |                   lock = PathKeyedAppendLock(target, lock_root=lock_root)
+2153 | /                 with patch(
+2154 | |                     "orchestrator_harness.mutation._after_anchor",
+2155 | |                     side_effect=substitute_lock_root,
+2156 | |                     create=True,
+2157 | |                 ):
+2158 | |                     with self.assertRaises(AppendLockError):
+     | |____________________________________________________________^
+2159 |                           with lock:
+2160 |                               target.write_bytes(b"must-not-bypass\n")
+     |
+help: Combine `with` statements
+     |
+2156 |                     create=True,
+     -                 ):
+     -                     with self.assertRaises(AppendLockError):
+     -                         with lock:
+     -                             target.write_bytes(b"must-not-bypass\n")
+2157 +                 ), self.assertRaises(AppendLockError):
+2158 +                     with lock:
+2159 +                         target.write_bytes(b"must-not-bypass\n")
+2160 |                 self.assertFalse(any(outside.glob("*.lock")))
+     |
+
+UP022 Prefer `capture_output` over sending `stdout` and `stderr` to `PIPE`
+    --> orchestrator_harness\tests\test_s4_repair.py:2186:26
+     |
+2184 |                   nonlocal swapped
+2185 |                   hooks.rename(moved)
+2186 |                   result = subprocess.run(
+     |  __________________________^
+2187 | |                     ["cmd.exe", "/c", "mklink", "/J", str(hooks), str(outside)],
+2188 | |                     stdout=subprocess.PIPE,
+2189 | |                     stderr=subprocess.PIPE,
+2190 | |                     text=True,
+2191 | |                 )
+     | |_________________^
+2192 |                   if result.returncode != 0:
+2193 |                       raise AssertionError(f"junction fixture failed: {result.stderr}")
+     |
+help: Replace with `capture_output` keyword argument
+
+PLW1510 `subprocess.run` without explicit `check` argument
+    --> orchestrator_harness\tests\test_s4_repair.py:2186:26
+     |
+2184 |                 nonlocal swapped
+2185 |                 hooks.rename(moved)
+2186 |                 result = subprocess.run(
+     |                          ^^^^^^^^^^^^^^
+2187 |                     ["cmd.exe", "/c", "mklink", "/J", str(hooks), str(outside)],
+2188 |                     stdout=subprocess.PIPE,
+     |
+help: Add explicit `check=False`
+
+SIM117 [*] Use a single `with` statement with multiple contexts instead of nested `with` statements
+    --> orchestrator_harness\tests\test_s4_repair.py:2197:17
+     |
+2196 |               try:
+2197 | /                 with patch(
+2198 | |                     "orchestrator_harness.mutation._before_commit",
+2199 | |                     side_effect=swap_parent,
+2200 | |                     create=True,
+2201 | |                 ):
+2202 | |                     with self.assertRaises(CodexInstallConflict):
+     | |_________________________________________________________________^
+2203 |                           guard.atomic_replace(
+2204 |                               Path(".codex/hooks/reparse.txt"), b"must stay inside\n"
+     |
+help: Combine `with` statements
+     |
+2200 |                     create=True,
+     -                 ):
+     -                     with self.assertRaises(CodexInstallConflict):
+     -                         guard.atomic_replace(
+     -                             Path(".codex/hooks/reparse.txt"), b"must stay inside\n"
+     -                         )
+2201 +                 ), self.assertRaises(CodexInstallConflict):
+2202 +                     guard.atomic_replace(
+2203 +                         Path(".codex/hooks/reparse.txt"), b"must stay inside\n"
+2204 +                     )
+2205 |                 self.assertTrue(swapped)
+     |
+
+BLE001 Do not catch blind exception: `Exception`
+    --> orchestrator_harness\tests\test_s4_repair.py:2354:17
+     |
+2352 |                 importlib.import_module(module.name)
+2353 |             except (
+2354 |                 Exception
+     |                 ^^^^^^^^^
+2355 |             ) as exc:  # pragma: no cover - failure detail is asserted below
+2356 |                 failures.append(f"{module.name}: {type(exc).__name__}: {exc}")
+     |
+
+SIM117 [*] Use a single `with` statement with multiple contexts instead of nested `with` statements
+    --> orchestrator_harness\tests\test_s4_repair.py:2433:13
+     |
+2431 |                   original_atomic_json(path, value)
+2432 |
+2433 | /             with patch(
+2434 | |                 "orchestrator_harness.lane_lifecycle._atomic_json",
+2435 | |                 side_effect=fail_ready,
+2436 | |             ):
+2437 | |                 with self.assertRaises(RuntimeError):
+     | |_____________________________________________________^
+2438 |                       allocate_immutable_source_view(
+2439 |                           source,
+     |
+help: Combine `with` statements
+     |
+2435 |                 side_effect=fail_ready,
+     -             ):
+     -                 with self.assertRaises(RuntimeError):
+     -                     allocate_immutable_source_view(
+     -                         source,
+     -                         revision=revision,
+     -                         retained_ref="HEAD",
+     -                         view_root=root / "publication-failed-view",
+     -                         result_root=root / "publication-failed-result",
+     -                         cache_root=root / "publication-failed-cache",
+     -                     )
+2436 +             ), self.assertRaises(RuntimeError):
+2437 +                 allocate_immutable_source_view(
+2438 +                     source,
+2439 +                     revision=revision,
+2440 +                     retained_ref="HEAD",
+2441 +                     view_root=root / "publication-failed-view",
+2442 +                     result_root=root / "publication-failed-result",
+2443 +                     cache_root=root / "publication-failed-cache",
+2444 +                 )
+2445 |             self.assertFalse((root / "publication-failed-view").exists())
+     |
+
+Found 48 errors.
+[*] 19 fixable with the `--fix` option (8 hidden fixes can be enabled with the `--unsafe-fixes` option).

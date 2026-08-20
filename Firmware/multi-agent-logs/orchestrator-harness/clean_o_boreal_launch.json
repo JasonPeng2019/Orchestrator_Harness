@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "python.exe",
+    "-m",
+    "orchestrator_harness.lane_controller",
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_s1_clean_o_live.invocation.json"
+  ],
+  "created_utc": "2026-07-31T23:14:31.129960Z",
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+  "expected_state_path": null,
+  "label": "clean-o-boreal",
+  "launched_utc": "2026-07-31T23:14:31.128489Z",
+  "pid": 188684,
+  "platform": "windows",
+  "role": "lane-controller",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "launched"
+}

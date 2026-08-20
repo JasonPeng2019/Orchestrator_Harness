@@ -1,0 +1,32 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe\u0027 -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6SelectorTests orchestrator_harness.tests.test_s6_public_release.S6SafeguardTests",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  450,
+    "expected_upper_bound_seconds":  360,
+    "cleanup_allowance_seconds":  90,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The same 19 tests took 269.04 seconds on the accepted input; six minutes provides about ninety-one seconds of measured headroom and ninety seconds is the policy-capped cleanup allowance.",
+    "started_at":  "2026-08-14T20:23:33.0903647+00:00",
+    "finished_at":  "2026-08-14T20:27:56.3371818+00:00",
+    "elapsed_seconds":  263.247,
+    "root_process_id":  198604,
+    "observed_process_ids":  [
+                                 38580,
+                                 74200,
+                                 160236,
+                                 165180,
+                                 172024,
+                                 187284,
+                                 192440,
+                                 194440,
+                                 197620,
+                                 198604,
+                                 199044
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\postjoin-release-lint-selector-safeguard-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\postjoin-release-lint-selector-safeguard-001.stderr.log"
+}

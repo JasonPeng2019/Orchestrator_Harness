@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\.agent-workspace\\attention-validation\\20260801-attention-r14\\optional_owner.ps1",
+    "-SuiteRoot",
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3"
+  ],
+  "child_pid": 187160,
+  "cleanup_confirmed": true,
+  "cleanup_error": null,
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+  "error": "child identity could not be proved live",
+  "label": "attention-r14-optional-owner",
+  "launched_utc": "2026-08-01T21:13:58.570935Z",
+  "platform": "windows",
+  "role": "watcher-owner",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "failed"
+}

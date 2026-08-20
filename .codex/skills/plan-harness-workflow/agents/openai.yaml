@@ -1,6 +1,6 @@
 interface:
-  display_name: "Plan Harness Workflow"
-  short_description: "Plan lean, large-step Portable Harness workflows."
-  default_prompt: "Use $plan-harness-workflow to group requirements into modules, compose modules into coherent large steps, and author an effective execution workflow."
+  display_name: "Deprecated Plan Harness Workflow"
+  short_description: "Redirect old planner requests to the topology skill."
+  default_prompt: "Use $plan-harness-workflow only to redirect this obsolete planning request to $design-project-topology; do not generate a plan with the legacy workflow."
 policy:
   allow_implicit_invocation: false

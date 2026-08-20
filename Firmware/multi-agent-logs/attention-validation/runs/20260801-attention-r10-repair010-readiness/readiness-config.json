@@ -1,0 +1,34 @@
+{
+  "poll_interval_seconds": 1,
+  "observed_sources": [
+    {
+      "path": ".agent-workspace/attention-validation/20260801-attention-r10-repair010-readiness/ordinary-source.jsonl",
+      "role": "orchestrator",
+      "source_id": "ordinary-readiness"
+    }
+  ],
+  "runtime_root": "harness_watcher/runs/20260801-attention-r10-repair010-readiness",
+  "no_progress_seconds": 900,
+  "max_tail_bytes": 65536,
+  "evaluator_command": [
+    "python",
+    "-c",
+    "raise SystemExit(0)"
+  ],
+  "attention_logging_enabled": true,
+  "attention_lock_timeout_seconds": 5,
+  "attention_producers": [
+    {
+      "role": "orchestrator",
+      "source_id": "root"
+    },
+    {
+      "role": "subagent",
+      "source_id": "lane"
+    },
+    {
+      "role": "subagent",
+      "source_id": "watcher-observer"
+    }
+  ]
+}

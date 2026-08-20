@@ -1,0 +1,17 @@
+{
+  "epoch_id": "20260802-m5-q8-152800Z",
+  "runtime_assistance": {
+    "runner": false,
+    "harness_wrapper": false,
+    "relay": false,
+    "watcher_subagent": false,
+    "watcher_evaluator": false,
+    "collaboration_notification_discovery": false,
+    "transcript_inspection_discovery": false,
+    "user_message_discovery": false
+  },
+  "workers": "four real external E2E worker/controller sessions",
+  "request_discovery": "root direct native blocking harness wait only",
+  "watcher_mode": "deterministic diagnostic-only",
+  "hardware_actions": []
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "m5-busy-resource-audit/v1",
+  "completed_utc": "2026-08-02T13:47:24.147424Z",
+  "roots": [
+    {
+      "root": "fresh-experiments\\A22_20260726-062324",
+      "files": 107021,
+      "bytes": 2330020804,
+      "manifest_sha256": "1742ef483cfcda3346914aa0d3f6f6be35ee92a0f6d617aa56268137bebe6051"
+    },
+    {
+      "root": "fresh-experiments\\D31_20260726-062325",
+      "files": 105116,
+      "bytes": 1778138446,
+      "manifest_sha256": "9b8532055b4d9c8daf3bc0f2261cfa57d7ea2b3995473b7d8728e1556f45197f"
+    },
+    {
+      "root": "fresh-experiments\\A24_20260726-052146",
+      "files": 122110,
+      "bytes": 2208860239,
+      "manifest_sha256": "c87d0ab65c3ef38a9e27a9b0b7e5751763626648cd390d9023bda139052ad0a2"
+    },
+    {
+      "root": "fresh-experiments\\A26_20260726-062325",
+      "files": 1185,
+      "bytes": 215408860,
+      "manifest_sha256": "c64c6c870c3c17b7e1ee4ad91b18a88368475b51fe32fb4fc02c77accc7e3f10"
+    }
+  ],
+  "files": 335432,
+  "bytes": 6532428349,
+  "purpose": "genuine preserved E2E integrity and ownership review; excludes live request/response and controller streams"
+}

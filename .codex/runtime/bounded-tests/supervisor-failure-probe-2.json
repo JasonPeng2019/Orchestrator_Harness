@@ -1,0 +1,20 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "Write-Error \u0027intentional supervisor exit-propagation probe\u0027; exit 7",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  30,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "An intentional immediate failure probe should complete in under one second; 30 seconds bounds process startup anomalies.",
+    "started_at":  "2026-08-13T23:21:22.1277833+00:00",
+    "finished_at":  "2026-08-13T23:21:24.0225462+00:00",
+    "elapsed_seconds":  1.895,
+    "root_process_id":  87872,
+    "observed_process_ids":  [
+                                 87872
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  7,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\supervisor-failure-probe-2.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\supervisor-failure-probe-2.stderr.log"
+}

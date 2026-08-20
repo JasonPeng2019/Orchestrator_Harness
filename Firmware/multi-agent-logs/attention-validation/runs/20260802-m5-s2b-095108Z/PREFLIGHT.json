@@ -1,0 +1,18 @@
+{
+  "schema": "m5-preflight/v1",
+  "epoch": "20260802-m5-s2b-095108Z",
+  "created_utc": "2026-08-02T09:51:08.032280Z",
+  "root_manager": {
+    "session_id": "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "pid": 192592
+  },
+  "qualifying_count_before": 1,
+  "additional_attempt_number": 2,
+  "python_fingerprint": "73b4b08196d68165754ed15b13d1bd8451c66b778c9f68f206bde6dda4449bfe",
+  "python_entry_set_exact_match": true,
+  "matches_comparable_set": true,
+  "safe_start_evidence": "multi-agent-logs\\attention-validation\\runs\\20260802-m5-s2a-092552Z\\PROCESS_CLEANUP.json",
+  "forbidden_assistance_declared": true,
+  "watcher_evaluator_enabled": false,
+  "procedure_correction": "All root recorder metadata is written by Python UTF-8 without BOM and recorder persistence is verified before workers."
+}

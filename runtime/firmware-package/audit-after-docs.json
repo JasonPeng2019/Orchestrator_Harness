@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "python Firmware/.codex/skills/run-firmware-test-suite/scripts/audit_autonomy.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Focused package audit previously completed in under three seconds; 30-second upper bound includes local filesystem headroom.",
+    "started_at":  "2026-08-14T09:16:57.7614341+00:00",
+    "finished_at":  "2026-08-14T09:16:59.5834899+00:00",
+    "elapsed_seconds":  1.822,
+    "root_process_id":  182352,
+    "observed_process_ids":  [
+                                 182352
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\audit-after-docs.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\audit-after-docs.stderr.log"
+}

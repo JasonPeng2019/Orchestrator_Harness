@@ -1,0 +1,109 @@
+[env] removed inherited ANTHROPIC_* from probe env: ['ANTHROPIC_API_KEY', 'ANTHROPIC_AUTH_TOKEN', 'ANTHROPIC_BASE_URL']
+[env] CLAUDE_CONFIG_DIR for all lane children: C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\scratch\0.5\fixture-root\claude-config-dir
+[env] claude_config_override_env expansion: {'ANTHROPIC_BASE_URL': 'http://localhost:11434', 'ANTHROPIC_AUTH_TOKEN': 'ollama', 'ANTHROPIC_API_KEY': ''}
+[concurrency] launching alpha + beta controllers simultaneously ...
+[concurrency] both controllers terminal after 14.5s
+[behavior] 1-lane-concurrency: PASS  (fixture-root/worktrees + git diff)
+    detail: each lane touched only its own file and branch
+[behavior] 2-provider-event-logging: PASS  (fixture-root/runtime/LANE_EVENTS.jsonl)
+    detail: STARTED/EXITED for both lanes with session/thread ids
+[behavior] 3-transcript-parse: PASS  (fixture-root/worktrees/*/worker_*.jsonl)
+    detail: init->STARTED and success->COMPLETED from real transcript
+[behavior] 4-missing-result: PASS  (fixture-root/worktrees/*/worker_*.status.json)
+    detail: result_validation.state == MISSING for both lanes
+[behavior] gate-happy-path: PASS  (gate-proof.txt + alpha-artifact.txt exists)
+    detail: no flag error; real lane COMPLETED with artifact committed
+[resume] launching direct --resume 7288e624-c6ed-4c91-8a69-1add92b194f6
+[behavior] 5-resume: PASS  (resume-proof.txt + resume-transcript.jsonl)
+    detail: returncode=0
+[behavior] 6-watch-timeout: PASS  (watch-result.txt)
+    detail: exit_code=3; WATCH_TIMEOUT in output: True
+{
+  "behaviors": {
+    "1-lane-concurrency": {
+      "detail": "each lane touched only its own file and branch",
+      "evidence": "fixture-root/worktrees + git diff",
+      "result": "PASS"
+    },
+    "2-provider-event-logging": {
+      "detail": "STARTED/EXITED for both lanes with session/thread ids",
+      "evidence": "fixture-root/runtime/LANE_EVENTS.jsonl",
+      "result": "PASS"
+    },
+    "3-transcript-parse": {
+      "detail": "init->STARTED and success->COMPLETED from real transcript",
+      "evidence": "fixture-root/worktrees/*/worker_*.jsonl",
+      "result": "PASS"
+    },
+    "4-missing-result": {
+      "detail": "result_validation.state == MISSING for both lanes",
+      "evidence": "fixture-root/worktrees/*/worker_*.status.json",
+      "result": "PASS"
+    },
+    "5-resume": {
+      "detail": "returncode=0",
+      "evidence": "resume-proof.txt + resume-transcript.jsonl",
+      "result": "PASS"
+    },
+    "6-watch-timeout": {
+      "detail": "exit_code=3; WATCH_TIMEOUT in output: True",
+      "evidence": "watch-result.txt",
+      "result": "PASS"
+    },
+    "gate-happy-path": {
+      "detail": "no flag error; real lane COMPLETED with artifact committed",
+      "evidence": "gate-proof.txt + alpha-artifact.txt exists",
+      "result": "PASS"
+    }
+  },
+  "cleanup": "retained by --keep",
+  "concurrency_elapsed_s": 14.5,
+  "config_overrides": [
+    "model_provider=\"ollama\""
+  ],
+  "events": {
+    "exited": 2,
+    "started": 2
+  },
+  "inherited_anthropic_removed": [
+    "ANTHROPIC_API_KEY",
+    "ANTHROPIC_AUTH_TOKEN",
+    "ANTHROPIC_BASE_URL"
+  ],
+  "lanes": {
+    "alpha": {
+      "branch": "lane/alpha",
+      "error": null,
+      "exit_code": 0,
+      "outcome": "COMPLETED",
+      "result_validation": {
+        "acceptance_state": "PENDING",
+        "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\0.5\\fixture-root\\worktrees\\lane-alpha\\.agent-workspace\\RESULT.json",
+        "state": "MISSING"
+      },
+      "session_id": "7288e624-c6ed-4c91-8a69-1add92b194f6",
+      "state": "PROVIDER_EXITED"
+    },
+    "beta": {
+      "branch": "lane/beta",
+      "error": null,
+      "exit_code": 0,
+      "outcome": "COMPLETED",
+      "result_validation": {
+        "acceptance_state": "PENDING",
+        "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\0.5\\fixture-root\\worktrees\\lane-beta\\.agent-workspace\\RESULT.json",
+        "state": "MISSING"
+      },
+      "session_id": "d7ad3bc4-b097-448e-8744-fc640aa05e06",
+      "state": "PROVIDER_EXITED"
+    }
+  },
+  "model": "deepseek-v4-flash:0731-cloud",
+  "resume": {
+    "attempted": true,
+    "reply_excerpt": "HELLO FROM LANE A",
+    "returncode": 0,
+    "session_id": "7288e624-c6ed-4c91-8a69-1add92b194f6"
+  },
+  "schema": "orchestrator-0.5-probe/v1"
+}

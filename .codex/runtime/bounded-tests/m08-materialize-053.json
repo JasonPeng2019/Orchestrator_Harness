@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/runtime/host-readiness/host-readiness-20260815-053/materialize_m08_retry.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Prior corrected materialization completed in 2.065 seconds; 30 seconds allows cold interpreter and filesystem startup",
+    "started_at":  "2026-08-15T18:08:08.9638171+00:00",
+    "finished_at":  "2026-08-15T18:08:10.4371910+00:00",
+    "elapsed_seconds":  1.473,
+    "root_process_id":  201604,
+    "observed_process_ids":  [
+                                 201604
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-materialize-053.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-materialize-053.stderr.log"
+}

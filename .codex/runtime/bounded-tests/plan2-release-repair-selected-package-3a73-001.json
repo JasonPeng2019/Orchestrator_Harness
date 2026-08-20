@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6PackageTests",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\woc-0365",
+    "maximum_lifetime_seconds":  57,
+    "expected_upper_bound_seconds":  45,
+    "cleanup_allowance_seconds":  12,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Prior package checks completed near 11 seconds; 45 seconds covers build and host variance.",
+    "started_at":  "2026-08-14T18:35:53.7245647+00:00",
+    "finished_at":  "2026-08-14T18:36:09.6798481+00:00",
+    "elapsed_seconds":  15.955,
+    "root_process_id":  15264,
+    "observed_process_ids":  [
+                                 15264
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-selected-package-3a73-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-selected-package-3a73-001.stderr.log"
+}

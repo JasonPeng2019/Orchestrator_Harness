@@ -1,0 +1,123 @@
+{
+  "conditions": {
+    "lane:m5-managed-consumer-luna-final:Atlas:A00:process": {
+      "data": {
+        "codex_pid": 189244,
+        "codex_started_utc": "2026-08-02T02:22:57.275697Z",
+        "controller_pid": 177112,
+        "controller_started_utc": "2026-08-02T02:22:57.275697Z",
+        "doer": "Atlas",
+        "lane_id": "m5-managed-consumer-luna-final:Atlas:A00",
+        "reason": "controller and Codex identities are live",
+        "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-managed-consumer-luna\\fixture-suite-final\\runs\\A00_test",
+        "state": "RUNNING_CODEX",
+        "task": "A00"
+      },
+      "event_id": "cda76856237cd0b6c5bef850ca58080b49a3597068604f5a37380cb2740a3e70",
+      "identity": "lane:m5-managed-consumer-luna-final:Atlas:A00:process",
+      "severity": "info",
+      "type": "CONTROLLER_ACTIVE"
+    },
+    "manager-signal:luna-managed-consumer-final-001": {
+      "data": {
+        "correlated_request_answered": false,
+        "correlated_request_id": null,
+        "correlated_request_path": null,
+        "created_utc": "2026-08-02T02:23:25.346166Z",
+        "deadline_utc": "2099-01-01T00:00:00Z",
+        "evidence_paths": [],
+        "kind": "HELP",
+        "lane_id": "m5-managed-consumer-luna-final:Atlas:A00",
+        "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-managed-consumer-luna\\fixture-suite-final\\runs\\A00_test\\.agent-workspace\\manager-signals\\luna-managed-consumer-final-001.json",
+        "phase": "managed-consumer-smoke",
+        "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-managed-consumer-luna\\fixture-suite-final\\runs\\A00_test",
+        "sha256": "6378ec13a3dfe64f3a3658afbb3ea9586c3fad62967c59a4f1745023067d5240",
+        "signal_id": "luna-managed-consumer-final-001",
+        "summary": "isolated managed consumer wake",
+        "task": "A00"
+      },
+      "event_id": "ee0790bfab3b828db08960e13f004a1f909c261dab496c448020b88772a1db13",
+      "identity": "manager-signal:luna-managed-consumer-final-001",
+      "severity": "info",
+      "type": "MANAGER_SIGNAL"
+    }
+  },
+  "schema": "orchestrator-watcher-cursor/v1",
+  "snapshot": {
+    "helpers": [],
+    "lanes": [
+      {
+        "board_tokens": [],
+        "codex_created_utc": "2026-08-02T02:22:57.270422Z",
+        "codex_identity": "live",
+        "codex_pid": 189244,
+        "codex_reason": "PID and creation time match",
+        "codex_started_utc": "2026-08-02T02:22:57.275697Z",
+        "controller_created_utc": "2026-08-02T02:22:57.165196Z",
+        "controller_identity": "live",
+        "controller_pid": 177112,
+        "controller_reason": "PID and creation time match",
+        "controller_started_utc": "2026-08-02T02:22:57.275697Z",
+        "declared_state": "running",
+        "doer": "Atlas",
+        "duplicate_live_attempts": 1,
+        "ended_utc": null,
+        "jsonl_path": null,
+        "label": "atlas",
+        "lane_id": "m5-managed-consumer-luna-final:Atlas:A00",
+        "live_attempt_labels": [
+          "atlas"
+        ],
+        "mcp_servers": [],
+        "operational_state": "RUNNING_CODEX",
+        "parent_reason": "PID and creation-time parent identity match",
+        "parent_state": "match",
+        "phase": "waiting manager signal",
+        "process_reason": "controller and Codex identities are live",
+        "process_state": "RUNNING_CODEX",
+        "provider_wait": false,
+        "reason": "controller and Codex identities are live",
+        "resource_ambiguity": [],
+        "resource_release_possible": false,
+        "resources": [],
+        "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-managed-consumer-luna\\fixture-suite-final\\runs\\A00_test",
+        "started_utc": "2026-08-02T02:22:57.275697Z",
+        "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-managed-consumer-luna\\fixture-suite-final\\runs\\A00_test\\.agent-workspace\\atlas_controller.status.json",
+        "status_sha256": "19eeca8136ed3349689bb8dcd2ceeb835efc05f7070831cf3d286d43154d62e6",
+        "task": "A00",
+        "terminal_event": null,
+        "thread_id": "luna-live-lane",
+        "workspace": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-managed-consumer-luna\\fixture-suite-final\\runs\\A00_test\\.agent-workspace"
+      }
+    ],
+    "manager_signals": [
+      {
+        "correlated_request_answered": false,
+        "correlated_request_id": null,
+        "correlated_request_path": null,
+        "created_utc": "2026-08-02T02:23:25.346166Z",
+        "deadline_utc": "2099-01-01T00:00:00Z",
+        "evidence_paths": [],
+        "kind": "HELP",
+        "lane_id": "m5-managed-consumer-luna-final:Atlas:A00",
+        "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-managed-consumer-luna\\fixture-suite-final\\runs\\A00_test\\.agent-workspace\\manager-signals\\luna-managed-consumer-final-001.json",
+        "phase": "managed-consumer-smoke",
+        "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-managed-consumer-luna\\fixture-suite-final\\runs\\A00_test",
+        "sha256": "6378ec13a3dfe64f3a3658afbb3ea9586c3fad62967c59a4f1745023067d5240",
+        "signal_id": "luna-managed-consumer-final-001",
+        "summary": "isolated managed consumer wake",
+        "task": "A00"
+      }
+    ],
+    "mcps": [],
+    "observation_errors": [],
+    "observed_utc": "2026-08-02T02:24:09.074223Z",
+    "process_errors": [],
+    "process_provider": "windows-cim",
+    "process_snapshot_complete": true,
+    "requests": [],
+    "resource_conflicts": [],
+    "runs_discovered": 1,
+    "schema": "orchestrator-watcher-snapshot/v1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "inactive_lanes": {},
+  "lanes": {
+    "m5-managed-consumer-luna-final:Atlas:A00": {
+      "acknowledged_management_event_ids": [],
+      "fingerprint": "64155835a5c3883ee91e4ef8991f7668ca2951c4ce2f1b7a60bea879a918295c",
+      "fingerprint_generation": 2,
+      "fingerprint_since_utc": "2026-08-02T02:23:26.640738Z",
+      "stage_context": "0308657d1a64d269df8c60ec0cf972ece28557dac7630a43c9dad12dc4713fb7",
+      "stage_repeat_occurrences": {},
+      "stage_requests_by_kind": {}
+    }
+  },
+  "review_baseline_utc": "2026-08-02T02:22:59.183309Z",
+  "schema": "orchestrator-active-management-history/v1"
+}

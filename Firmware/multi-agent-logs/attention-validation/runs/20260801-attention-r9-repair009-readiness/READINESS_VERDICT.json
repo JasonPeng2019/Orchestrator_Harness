@@ -1,0 +1,10 @@
+{
+  "schema": "attention-repair009-readiness/v1",
+  "epoch_id": "20260801-attention-r9-repair009-readiness",
+  "cursor_drained": true,
+  "response_classification": "BUSY_MANAGER_DELAY",
+  "formal_review_classification": "BUSY_MANAGER_DELAY",
+  "response_missing_evidence": [],
+  "formal_review_missing_evidence": [],
+  "passed": true
+}

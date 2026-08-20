@@ -1,0 +1,60 @@
+
+== ruff ==
+All checks passed!
+
+== format ==
+unformatted: File would be reformatted
+   --> .codex\scripts\stable_runner.py:786:53
+    |
+785 |             {
+    -                 "matcher": "^(Bash|shell_command)$",
+786 +                 "matcher": "^(Bash|shell_command)$",
+787 |                 "hooks": [
+    |
+
+unformatted: File would be reformatted
+   --> .codex\tests\test_hooks.py:607:80
+    |
+606 |
+    - def test_windows_bounded_hook_applies_exclusions_per_command_segment() -> None:
+    -     payload = json.loads((ROOT / ".codex" / "hooks.json").read_text(encoding="utf-8"))
+    -     assert payload["hooks"]["PreToolUse"][0]["matcher"] == "^(Bash|shell_command)$"
+    -     handler = next(
+607 + def test_windows_bounded_hook_applies_exclusions_per_command_segment() -> None:
+608 +     payload = json.loads((ROOT / ".codex" / "hooks.json").read_text(encoding="utf-8"))
+609 +     assert payload["hooks"]["PreToolUse"][0]["matcher"] == "^(Bash|shell_command)$"
+610 +     handler = next(
+611 |         item
+    |
+
+unformatted: File would be reformatted
+   --> .codex\tests\test_stable_runner.py:335:57
+    |
+334 |
+    -     with runner._codex_bounded_test_overlay(invocation):
+    -         value = json.loads(hooks.read_text(encoding="utf-8"))
+    -         assert "PreToolUse" in value["hooks"]
+    -         assert "SessionStart" in value["hooks"]
+    -         assert value["hooks"]["PreToolUse"][0]["matcher"] == "^(Bash|shell_command)$"
+    -         assert any(
+335 +     with runner._codex_bounded_test_overlay(invocation):
+336 +         value = json.loads(hooks.read_text(encoding="utf-8"))
+337 +         assert "PreToolUse" in value["hooks"]
+338 +         assert "SessionStart" in value["hooks"]
+339 +         assert value["hooks"]["PreToolUse"][0]["matcher"] == "^(Bash|shell_command)$"
+340 +         assert any(
+341 |             key.startswith("GIT_CONFIG_KEY_") and setting == "core.excludesFile" for key, setting in os.environ.items()
+--------------------------------------------------------------------------------
+352 |
+    -     with runner._codex_bounded_test_overlay(invocation):
+    -         value = json.loads(hooks.read_text(encoding="utf-8"))
+    -         assert value["hooks"]["PreToolUse"][0]["matcher"] == "^(Bash|shell_command)$"
+    -         command = value["hooks"]["PreToolUse"][0]["hooks"][0]["commandWindows"]
+353 +     with runner._codex_bounded_test_overlay(invocation):
+354 +         value = json.loads(hooks.read_text(encoding="utf-8"))
+355 +         assert value["hooks"]["PreToolUse"][0]["matcher"] == "^(Bash|shell_command)$"
+356 +         command = value["hooks"]["PreToolUse"][0]["hooks"][0]["commandWindows"]
+357 |         nested = subprocess.run(
+    |
+
+3 files would be reformatted, 15 files already formatted

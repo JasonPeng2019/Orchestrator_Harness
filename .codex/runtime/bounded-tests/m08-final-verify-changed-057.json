@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  135,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The most recent identical post-M08 changed-code gate completed in 3.647 seconds and skipped with no code changes; 120 seconds allows route selection and any focused documentation-adjacent checks",
+    "started_at":  "2026-08-15T18:14:15.7613399+00:00",
+    "finished_at":  "2026-08-15T18:14:18.0556557+00:00",
+    "elapsed_seconds":  2.294,
+    "root_process_id":  198708,
+    "observed_process_ids":  [
+                                 198708
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-final-verify-changed-057.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-final-verify-changed-057.stderr.log"
+}

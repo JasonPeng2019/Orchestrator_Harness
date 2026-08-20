@@ -1,0 +1,10 @@
+# Settings consumed by scripts/Invoke-CodexDelegate.ps1.
+# GPT-5.6 Luna's detected context window is 272,000 tokens.
+model = "gpt-5.6-luna"
+model_reasoning_effort = "high"
+model_context_window = 272000
+model_auto_compact_token_limit = 150000
+model_auto_compact_token_limit_scope = "total"
+windows_sandbox = "elevated"
+
+developer_instructions = "You are the GPT-5.6 Luna delegated coding worker. Work only on the delegated task in the supplied workspace. End with a concise handoff: findings, files changed, and verification run."

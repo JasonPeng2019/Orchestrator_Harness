@@ -1,0 +1,122 @@
+[
+  {
+    "test_id": "H00",
+    "title": "Reproducible server-snapshot materialization",
+    "doer_name": null
+  },
+  {
+    "test_id": "H01",
+    "title": "Handshake, discovery, strict schemas, and dynamic visibility",
+    "doer_name": null
+  },
+  {
+    "test_id": "H02",
+    "title": "No-board, absent-board, ambiguous-board, and duplicate assignment",
+    "doer_name": null
+  },
+  {
+    "test_id": "H03",
+    "title": "Native build and artifact collector matrix",
+    "doer_name": null
+  },
+  {
+    "test_id": "H04",
+    "title": "Datasheet, pack, and durable-evidence correctness",
+    "doer_name": null
+  },
+  {
+    "test_id": "H05",
+    "title": "Managed-operation and process fault injection",
+    "doer_name": null
+  },
+  {
+    "test_id": "S10",
+    "title": "Fresh STM32 setup from datasheet",
+    "doer_name": "Atlas"
+  },
+  {
+    "test_id": "S11",
+    "title": "Fresh nRF setup from datasheet",
+    "doer_name": "Boreal"
+  },
+  {
+    "test_id": "S12",
+    "title": "Four-board simultaneous routing",
+    "doer_name": "Cygnus"
+  },
+  {
+    "test_id": "S13",
+    "title": "Returning state versus run-scoped authority",
+    "doer_name": "Atlas"
+  },
+  {
+    "test_id": "A20",
+    "title": "APP-1 build, collect, flash, reset, and UART",
+    "doer_name": "Atlas"
+  },
+  {
+    "test_id": "A21",
+    "title": "APP-2 dual-STM32 I2C",
+    "doer_name": "Boreal"
+  },
+  {
+    "test_id": "A22",
+    "title": "APP-3 startup, low-power, watchdog, and fault debugging",
+    "doer_name": "Atlas"
+  },
+  {
+    "test_id": "A23",
+    "title": "APP-4 dual-nRF BLE",
+    "doer_name": "Nova"
+  },
+  {
+    "test_id": "A24",
+    "title": "APP-5 dual-nRF CoreSX1262",
+    "doer_name": "Cygnus"
+  },
+  {
+    "test_id": "A25",
+    "title": "APP-6 BLE-to-LoRa bridge",
+    "doer_name": "Delta"
+  },
+  {
+    "test_id": "A26",
+    "title": "Cross-scheduler queue and concurrency comparison",
+    "doer_name": "Delta"
+  },
+  {
+    "test_id": "D30",
+    "title": "Symbols, memory, CPU registers, and peripheral registers",
+    "doer_name": "Atlas"
+  },
+  {
+    "test_id": "D31",
+    "title": "Breakpoints, stepping, reset, under-reset, and override",
+    "doer_name": "Boreal"
+  },
+  {
+    "test_id": "D32",
+    "title": "Flash and artifact guardrails",
+    "doer_name": "Atlas"
+  },
+  {
+    "test_id": "D33",
+    "title": "UART, finalizers, batch, and evidence completeness",
+    "doer_name": "Cygnus"
+  },
+  {
+    "test_id": "D34",
+    "title": "Four-board concurrency and isolation",
+    "doer_name": "Cygnus"
+  },
+  {
+    "test_id": "D36",
+    "title": "Plans, permissions, freshness, and audit reports",
+    "doer_name": "Boreal"
+  },
+  {
+    "test_id": "Q41",
+    "title": "Repetition and soak",
+    "doer_name": "Atlas"
+  }
+]

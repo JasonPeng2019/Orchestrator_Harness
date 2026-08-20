@@ -1,0 +1,6 @@
+{
+  "manager_session_id": "readiness-session",
+  "manager_invocation_id": "readiness-invocation",
+  "activity_id": "review-tool",
+  "manager_state": "RUNNING_TOOL"
+}

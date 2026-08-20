@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-task-result/v1",
+  "card_id": "card-claude-hello",
+  "lane_id": "claude-hello",
+  "worker_invocation_id": "claude-hello-001",
+  "cohort_id": "cohort-claude-fixture",
+  "revision": "r1",
+  "task_card_sha256": "76fa6a91ec0b1d351d4bd15226f988b029f1fd80b0fe478c1fa9d7958425d710",
+  "prompt_bundle_sha256": "17e87f97ed72882dcfdddad52bd1614d10818e02995da3648cd5cd33329f4cda",
+  "prompt_content_sha256": "f616c9f170ca78022da992061a3af48ec05c8f67de630cd6685de3b2f002782c",
+  "branch": "lane/claude-hello",
+  "commit": "ce04f66df560149b6e7301f7c5455ff16d4d9fb9",
+  "outcome": "PASS",
+  "summary": "Created and committed HELLO.txt as specified.",
+  "checks": [
+    {"name": "hello-file-committed", "outcome": "PASS", "summary": "HELLO.txt committed"}
+  ],
+  "acceptance_state": "PENDING"
+}

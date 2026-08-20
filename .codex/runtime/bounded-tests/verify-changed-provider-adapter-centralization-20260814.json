@@ -1,0 +1,31 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  110,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  20,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "measured",
+    "started_at":  "2026-08-14T12:07:51.6189882+00:00",
+    "finished_at":  "2026-08-14T12:08:15.4164816+00:00",
+    "elapsed_seconds":  23.797,
+    "root_process_id":  137132,
+    "observed_process_ids":  [
+                                 137132,
+                                 159536,
+                                 174548,
+                                 174852,
+                                 181940,
+                                 183804,
+                                 185576,
+                                 185924,
+                                 191676,
+                                 193792
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\verify-changed-provider-adapter-centralization-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\verify-changed-provider-adapter-centralization-20260814.stderr.log"
+}

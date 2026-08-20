@@ -1,0 +1,183 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+   --> .codex\scripts\dev_state.py:95:33
+    |
+94  |         except OSError as exc:
+    -             raise SnapshotError(
+    -                 f"cannot read verification input {relative.as_posix()}: {exc}"
+    -             ) from exc
+95  +             raise SnapshotError(f"cannot read verification input {relative.as_posix()}: {exc}") from exc
+96  |         manifest[relative.as_posix()] = digest
+--------------------------------------------------------------------------------
+160 |         or not isinstance(previous, dict)
+    -         or not all(
+    -             isinstance(path, str) and isinstance(digest, str)
+    -             for path, digest in previous.items()
+    -         )
+161 +         or not all(isinstance(path, str) and isinstance(digest, str) for path, digest in previous.items())
+162 |     ):
+--------------------------------------------------------------------------------
+166 |         for path, digest in previous.items()
+    -         if not _is_linked_worktree_member(root, Path(path))
+    -         and not _skip_path(Path(path))
+167 +         if not _is_linked_worktree_member(root, Path(path)) and not _skip_path(Path(path))
+168 |     }
+    -     changed = sorted(
+    -         path
+    -         for path in set(previous) | set(manifest)
+    -         if previous.get(path) != manifest.get(path)
+    -     )
+    -     return VerificationDelta(
+    -         manifest=manifest, changed_paths=tuple(Path(path) for path in changed)
+    -     )
+169 +     changed = sorted(path for path in set(previous) | set(manifest) if previous.get(path) != manifest.get(path))
+170 +     return VerificationDelta(manifest=manifest, changed_paths=tuple(Path(path) for path in changed))
+171 |
+--------------------------------------------------------------------------------
+187 |             for name in sorted(directory_names)
+    -             if not _skip_path(relative_directory / name)
+    -             and not _is_linked_worktree(current / name)
+188 +             if not _skip_path(relative_directory / name) and not _is_linked_worktree(current / name)
+189 |         ]
+    |
+
+unformatted: File would be reformatted
+   --> .codex\tests\test_verify_changed.py:70:72
+    |
+69  |     state["files"]["Firmware/target-harness/target.py"] = "legacy-target-worktree-entry"
+    -     state["files"]["Firmware/fresh-experiments/A21/firmware/main.c"] = (
+    -         "legacy-run-entry"
+    -     )
+70  +     state["files"]["Firmware/fresh-experiments/A21/firmware/main.c"] = "legacy-run-entry"
+71  |     state_path.write_text(json.dumps(state), encoding="utf-8")
+--------------------------------------------------------------------------------
+87  |     }
+    -     delta = VerificationDelta(
+    -         manifest=manifest, changed_paths=(Path(".codex/scripts/dev_state.py"),)
+    -     )
+88  +     delta = VerificationDelta(manifest=manifest, changed_paths=(Path(".codex/scripts/dev_state.py"),))
+89  |     plan = verify_changed.plan_changed_verification(tmp_path, delta)
+--------------------------------------------------------------------------------
+129 |     assert labels == {"Codex changed tests"}
+    -     test_check = next(
+    -         check for check in plan.checks if check.label == "Codex changed tests"
+    -     )
+130 +     test_check = next(check for check in plan.checks if check.label == "Codex changed tests")
+131 |     assert ".codex/tests/test_bounded_test_supervisor.py" in test_check.argv
+--------------------------------------------------------------------------------
+179 |         manifest=manifest,
+    -         changed_paths=(
+    -             Path("stable-general-harness-runner/orchestrator_harness/reconcile.py"),
+    -         ),
+180 +         changed_paths=(Path("stable-general-harness-runner/orchestrator_harness/reconcile.py"),),
+181 |     )
+182 |     plan = verify_changed.plan_changed_verification(tmp_path, delta)
+183 |
+    -     test_check = next(
+    -         check for check in plan.checks if check.label == "orchestrator changed tests"
+    -     )
+184 +     test_check = next(check for check in plan.checks if check.label == "orchestrator changed tests")
+185 |     assert "orchestrator_harness.tests.test_reconcile" in test_check.argv
+--------------------------------------------------------------------------------
+190 | def test_firmware_skill_change_selects_its_test_suite(tmp_path: Path) -> None:
+    -     relative = (
+    -         "Firmware/.codex/skills/run-firmware-test-suite/scripts/audit_autonomy.py"
+    -     )
+191 +     relative = "Firmware/.codex/skills/run-firmware-test-suite/scripts/audit_autonomy.py"
+192 |     _write(tmp_path, relative, "VALUE = 1\n")
+--------------------------------------------------------------------------------
+205 |     assert plan.full_fallback_reason is None
+    -     test_check = next(
+    -         check for check in plan.checks if check.label == "firmware changed tests"
+    -     )
+206 +     test_check = next(check for check in plan.checks if check.label == "firmware changed tests")
+207 |     assert test_check.argv == (
+--------------------------------------------------------------------------------
+258 |     }
+    -     assert all(
+    -         check.cwd == tmp_path / "Firmware" / "BYO-Firmware-MCP"
+    -         for check in checks.values()
+    -     )
+259 +     assert all(check.cwd == tmp_path / "Firmware" / "BYO-Firmware-MCP" for check in checks.values())
+260 |     assert checks["Firmware MCP Ruff"].argv == (
+--------------------------------------------------------------------------------
+291 |
+    -     test_check = next(
+    -         check for check in plan.checks if check.label == "Codex changed tests"
+    -     )
+292 +     test_check = next(check for check in plan.checks if check.label == "Codex changed tests")
+293 |     assert ".codex/tests" in test_check.argv
+--------------------------------------------------------------------------------
+298 |         path = _write(tmp_path, relative, "code\n")
+    -         delta = VerificationDelta(
+    -             manifest={relative: "new"}, changed_paths=(path.relative_to(tmp_path),)
+    -         )
+299 +         delta = VerificationDelta(manifest={relative: "new"}, changed_paths=(path.relative_to(tmp_path),))
+300 |         plan = verify_changed.plan_changed_verification(tmp_path, delta)
+301 |         assert plan.full_fallback_reason is not None
+302 |
+303 |
+    - def test_unsupported_changed_code_does_not_run_full_verification(
+    -     monkeypatch, tmp_path: Path, capsys
+    - ) -> None:
+304 + def test_unsupported_changed_code_does_not_run_full_verification(monkeypatch, tmp_path: Path, capsys) -> None:
+305 |     delta = VerificationDelta(
+--------------------------------------------------------------------------------
+312 |         "_run_full_fallback",
+    -         lambda *_args: (_ for _ in ()).throw(
+    -             AssertionError("must not run full verification")
+    -         ),
+313 +         lambda *_args: (_ for _ in ()).throw(AssertionError("must not run full verification")),
+314 |     )
+--------------------------------------------------------------------------------
+319 |
+    - def test_failed_targeted_check_leaves_previous_state(
+    -     monkeypatch, tmp_path: Path
+    - ) -> None:
+320 + def test_failed_targeted_check_leaves_previous_state(monkeypatch, tmp_path: Path) -> None:
+321 |     state_path = _write(tmp_path, STATE_PATH.as_posix(), '{"sentinel": true}\n')
+    -     delta = VerificationDelta(
+    -         manifest={".codex/scripts/tool.py": "new"}, changed_paths=(Path("tool.py"),)
+    -     )
+322 +     delta = VerificationDelta(manifest={".codex/scripts/tool.py": "new"}, changed_paths=(Path("tool.py"),))
+323 |     check = verify_changed.Check("selected", ("failing",), tmp_path)
+--------------------------------------------------------------------------------
+339 |
+    - def test_code_mutation_during_checks_fails_without_recording(
+    -     monkeypatch, tmp_path: Path
+    - ) -> None:
+    -     delta = VerificationDelta(
+    -         manifest={"source.py": "before"}, changed_paths=(Path("source.py"),)
+    -     )
+340 + def test_code_mutation_during_checks_fails_without_recording(monkeypatch, tmp_path: Path) -> None:
+341 +     delta = VerificationDelta(manifest={"source.py": "before"}, changed_paths=(Path("source.py"),))
+342 |     check = verify_changed.Check("selected", ("passing",), tmp_path)
+--------------------------------------------------------------------------------
+352 |         lambda *_args, **_kwargs: subprocess.CompletedProcess([], 0),
+    -     )
+    -     monkeypatch.setattr(
+    -         verify_changed, "repository_manifest", lambda _root: {"source.py": "after"}
+353 |     )
+354 +     monkeypatch.setattr(verify_changed, "repository_manifest", lambda _root: {"source.py": "after"})
+355 |     monkeypatch.setattr(
+356 |         verify_changed,
+357 |         "record_verified_snapshot",
+    -         lambda *_args, **_kwargs: (_ for _ in ()).throw(
+    -             AssertionError("state must not be recorded")
+    -         ),
+358 +         lambda *_args, **_kwargs: (_ for _ in ()).throw(AssertionError("state must not be recorded")),
+359 |     )
+--------------------------------------------------------------------------------
+395 |
+    -     def run(
+    -         argv: tuple[str, ...] | list[str], **_kwargs: object
+    -     ) -> subprocess.CompletedProcess[str]:
+396 +     def run(argv: tuple[str, ...] | list[str], **_kwargs: object) -> subprocess.CompletedProcess[str]:
+397 |         calls.append(tuple(argv))
+    |
+
+2 files would be reformatted

@@ -1,0 +1,29 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  225,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  45,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The prior run proved the verifier reaches its changed-file format step in under six seconds. The formatting command now uses the verifier exact Ruff configuration and is the changed condition; three minutes remains the credible cold selected-gate bound with the policy-capped 45-second cleanup allowance.",
+    "started_at":  "2026-08-14T22:14:28.3566589+00:00",
+    "finished_at":  "2026-08-14T22:15:12.9181040+00:00",
+    "elapsed_seconds":  44.561,
+    "root_process_id":  176928,
+    "observed_process_ids":  [
+                                 161548,
+                                 161704,
+                                 170764,
+                                 174884,
+                                 175424,
+                                 176928,
+                                 180788,
+                                 198748
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-role-routing-verify-changed-config-fixed-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-role-routing-verify-changed-config-fixed-20260814.stderr.log"
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev --locked python C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\scripts\\worktree_task.py create plan2-helper-history-assets-001 --branch firmware/v2-plan2-helper-history-assets-001 --owner plan2-helper-history-doer-001",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-basedpyright-repair-001",
+    "maximum_lifetime_seconds":  20,
+    "expected_upper_bound_seconds":  15,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "measured local Git worktree creation under two seconds with thirteen seconds headroom",
+    "started_at":  "2026-08-15T04:49:36.8167661+00:00",
+    "finished_at":  "2026-08-15T04:49:40.9775085+00:00",
+    "elapsed_seconds":  4.161,
+    "root_process_id":  200984,
+    "observed_process_ids":  [
+                                 200984
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-helper-history-worktree-create-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-helper-history-worktree-create-001.stderr.log"
+}

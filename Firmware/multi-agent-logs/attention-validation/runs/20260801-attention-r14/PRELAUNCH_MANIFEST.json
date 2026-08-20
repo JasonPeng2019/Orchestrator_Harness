@@ -1,0 +1,35 @@
+{
+    "schema":  "attention-prelaunch-manifest/v1",
+    "epoch":  "20260801-attention-r14",
+    "counter":  "2/3 candidate 3",
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r14-001",
+    "bounded_lifetime_seconds":  900,
+    "heartbeat_timeout_seconds":  1200,
+    "formal_review_interval_seconds":  150,
+    "primary_config":  "orchestrator_harness/canary-20260801-attention-r14.json",
+    "optional_config":  "harness_watcher_implementation/canary-20260801-attention-r14.json",
+    "lanes":  [
+                  {
+                      "run_root":  "fresh-experiments/A22_20260726-062324",
+                      "doer":  "Atlas",
+                      "task":  "A22"
+                  },
+                  {
+                      "run_root":  "fresh-experiments/D31_20260726-062325",
+                      "doer":  "Boreal",
+                      "task":  "D31"
+                  },
+                  {
+                      "run_root":  "fresh-experiments/A24_20260726-052146",
+                      "doer":  "Cygnus",
+                      "task":  "A24"
+                  },
+                  {
+                      "run_root":  "fresh-experiments/A26_20260726-062325",
+                      "doer":  "Delta",
+                      "task":  "A26"
+                  }
+              ],
+    "created_utc":  "2026-08-01T21:11:14.4635898Z"
+}

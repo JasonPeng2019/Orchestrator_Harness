@@ -1,0 +1,32 @@
+[
+  {
+    "name": "attention_practical",
+    "exit_code": 0,
+    "elapsed_seconds": 7.027
+  },
+  {
+    "name": "retention",
+    "exit_code": 0,
+    "elapsed_seconds": 7.488
+  },
+  {
+    "name": "harness_full",
+    "exit_code": 0,
+    "elapsed_seconds": 32.083
+  },
+  {
+    "name": "watcher_full",
+    "exit_code": 0,
+    "elapsed_seconds": 13.254
+  },
+  {
+    "name": "pyright",
+    "exit_code": 0,
+    "elapsed_seconds": 3.955
+  },
+  {
+    "name": "compileall",
+    "exit_code": 0,
+    "elapsed_seconds": 0.698
+  }
+]

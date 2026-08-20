@@ -1,0 +1,9 @@
+test_h10_release_possible_fires_on_owner_exit (orchestrator_harness.tests.test_compat_resource_locks.CompatReconcileResourceReleaseTests.test_h10_release_possible_fires_on_owner_exit) ... ok
+test_h10_release_possible_is_fail_closed_while_owner_is_live (orchestrator_harness.tests.test_compat_resource_locks.CompatReconcileResourceReleaseTests.test_h10_release_possible_is_fail_closed_while_owner_is_live) ... ok
+test_h9a_coding_exclusive_resources_are_canonical_resources (orchestrator_harness.tests.test_compat_resource_locks.CompatResourceLockTests.test_h9a_coding_exclusive_resources_are_canonical_resources) ... ok
+test_h9b_exclusive_claim_blocks_a_second_claimant (orchestrator_harness.tests.test_compat_resource_locks.CompatResourceLockTests.test_h9b_exclusive_claim_blocks_a_second_claimant) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.106s
+
+OK

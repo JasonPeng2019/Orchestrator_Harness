@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The current change is documentation-only and recent status-only changed-state checks complete in about three seconds; thirty seconds covers environment startup and state inspection without permitting a prolonged wait.",
+    "started_at":  "2026-08-14T13:16:05.5298977+00:00",
+    "finished_at":  "2026-08-14T13:16:08.1483140+00:00",
+    "elapsed_seconds":  2.618,
+    "root_process_id":  188112,
+    "observed_process_ids":  [
+                                 188112
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\resume-readiness-verify-changed-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\resume-readiness-verify-changed-20260814.stderr.log"
+}

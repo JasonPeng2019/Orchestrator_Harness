@@ -1,0 +1,6 @@
+test_release_ruff_check_selects_stable_correctness_rules (orchestrator_harness.tests.test_s6_public_release.S6SelectorTests.test_release_ruff_check_selects_stable_correctness_rules) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+OK

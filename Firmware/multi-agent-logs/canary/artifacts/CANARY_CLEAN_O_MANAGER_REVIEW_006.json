@@ -1,0 +1,9 @@
+﻿{
+    "schema":  "canary-manager-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:23:57.9824086Z",
+    "pending_event_id":  "f1510200ce07aee40f32fc7f060f33c7b28ac6c454ab865a6652821c26ac02cb",
+    "pending_type":  "RESOURCE_AMBIGUOUS",
+    "verdict":  "ACKNOWLEDGED_POST_LIFETIME_CHECKPOINTING",
+    "analysis":  "Atlas consumed its one O lifetime and exact helper/provider descendants are absent. The run ended before a manager request because the run-local adapter misclassified the server plan-guidance text as JSON. No board operation or server defect is claimed. The still-live Codex turn is writing the safe checkpoint with its declared STM-A lease; resource ambiguity is therefore truthful until controller exit."
+}

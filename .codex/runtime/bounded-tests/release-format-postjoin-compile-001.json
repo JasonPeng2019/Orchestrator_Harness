@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 \u0027C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev/.venv/Scripts/python.exe\u0027 -m compileall -q orchestrator_harness harness_watcher_implementation",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Compilation of these two source packages completed in about four seconds on the identical tree.",
+    "started_at":  "2026-08-14T19:52:37.4316354+00:00",
+    "finished_at":  "2026-08-14T19:52:41.5590549+00:00",
+    "elapsed_seconds":  4.127,
+    "root_process_id":  198548,
+    "observed_process_ids":  [
+                                 198548
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-format-postjoin-compile-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-format-postjoin-compile-001.stderr.log"
+}

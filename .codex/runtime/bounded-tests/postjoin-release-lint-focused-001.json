@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe\u0027 -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6SelectorTests.test_release_ruff_check_selects_stable_correctness_rules",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The same oracle took 4.084 seconds on the accepted input; thirty seconds covers joined-coordinate startup with measured headroom.",
+    "started_at":  "2026-08-14T20:23:32.9657915+00:00",
+    "finished_at":  "2026-08-14T20:23:36.8878681+00:00",
+    "elapsed_seconds":  3.922,
+    "root_process_id":  17292,
+    "observed_process_ids":  [
+                                 17292
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\postjoin-release-lint-focused-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\postjoin-release-lint-focused-001.stderr.log"
+}

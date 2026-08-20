@@ -1,0 +1,16 @@
+{
+    "schema":  "canary-optional-watcher-owner/v1",
+    "owner":  {
+                  "created_utc":  "2026-08-01T18:15:25.9180891Z",
+                  "pid":  188388
+              },
+    "config":  "harness_watcher_implementation/canary-20260801-attention-r7.json",
+    "started_utc":  "2026-08-01T18:15:26.5658601Z",
+    "watcher":  {
+                    "created_utc":  "windows-filetime:134300817268632276",
+                    "pid":  184720
+                },
+    "exit_reason":  "owner-script-error",
+    "error":  "optional watcher exited before cooperative stop",
+    "ended_utc":  "2026-08-01T18:42:24.6127916Z"
+}

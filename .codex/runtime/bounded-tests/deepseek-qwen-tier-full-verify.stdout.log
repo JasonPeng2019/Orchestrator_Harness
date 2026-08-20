@@ -1,0 +1,186 @@
+
+== ruff ==
+All checks passed!
+
+== format ==
+unformatted: File would be reformatted
+   --> .codex\scripts\stable_runner.py:429:121
+    |
+428 |             raise RunnerError(f"launch profile {profile_id} has an unexpected schema")
+    -         if not all(isinstance(value[key], str) and value[key] for key in ("model", "reasoning_effort", "service_tier")):
+    -             raise RunnerError(f"launch profile {profile_id} has empty model settings")
+429 +         if not all(isinstance(value[key], str) and value[key] for key in ("model", "reasoning_effort", "service_tier")):
+430 +             raise RunnerError(f"launch profile {profile_id} has empty model settings")
+431 |         flags = value["codex_flags"]
+--------------------------------------------------------------------------------
+594 |     resolved_settings = dict(settings)
+    -     for key in ("model", "reasoning_effort", "service_tier"):
+    -         value = profile[key]
+    -         assert isinstance(value, str)
+    -         resolved_settings[key] = value
+595 +     for key in ("model", "reasoning_effort", "service_tier"):
+596 +         value = profile[key]
+597 +         assert isinstance(value, str)
+598 +         resolved_settings[key] = value
+599 |     resolved_settings["command"] = _apply_profile_command(
+    |
+
+unformatted: File would be reformatted
+    --> .codex\tests\test_stable_runner.py:60:50
+     |
+59   |
+     - def _model_settings(role: str) -> dict[str, str]:
+60   + def _model_settings(role: str) -> dict[str, str]:
+61   |     allocation = _role_allocation(role)
+62   |     model = allocation["model"]
+63   |     effort = allocation["reasoning_effort"]
+64   |     tier = allocation["service_tier"]
+     -     assert isinstance(model, str) and isinstance(effort, str) and isinstance(tier, str)
+     -     return {
+     -         "model": model,
+     -         "reasoning_effort": effort,
+     -         "service_tier": tier,
+     -     }
+65   +     assert isinstance(model, str) and isinstance(effort, str) and isinstance(tier, str)
+66   +     return {
+67   +         "model": model,
+68   +         "reasoning_effort": effort,
+69   +         "service_tier": tier,
+70   +     }
+71   |
+--------------------------------------------------------------------------------
+225  |         projected = json.loads(output.read_text(encoding="utf-8"))
+     -         assert {
+     -             key: projected["codex"][key] for key in ("model", "reasoning_effort", "service_tier")
+     -         } == _model_settings("doer-main")
+226  +         assert {
+227  +             key: projected["codex"][key] for key in ("model", "reasoning_effort", "service_tier")
+228  +         } == _model_settings("doer-main")
+229  |         assert "finding_gate" not in projected
+--------------------------------------------------------------------------------
+272  |     resolved = runner.apply_workflow_role_allocation(invocation, workflow_role, validate_finding_gate=True)
+     -     assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+     -         _model_settings(workflow_role)
+     -     )
+273  +     assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+274  +         _model_settings(workflow_role)
+275  +     )
+276  |
+--------------------------------------------------------------------------------
+281  | ) -> None:
+     -     runner = _load_runner()
+     -     settings = _model_settings(workflow_role)
+     -     settings["model"] += "-stale"
+282  +     runner = _load_runner()
+283  +     settings = _model_settings(workflow_role)
+284  +     settings["model"] += "-stale"
+285  |     gate_role = _role_allocation(workflow_role)["finding_gate_role"]
+--------------------------------------------------------------------------------
+292  |     resolved = runner.apply_workflow_role_allocation(invocation, workflow_role, validate_finding_gate=True)
+     -     assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+     -         _model_settings(workflow_role)
+     -     )
+293  +     assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+294  +         _model_settings(workflow_role)
+295  +     )
+296  |
+--------------------------------------------------------------------------------
+562  |     assert deepseek_settings["launch_profile"] == "deepseek-v4-flash-0731"
+     -     assert deepseek_settings["model"] == "deepseek-v4-flash:0731-cloud"
+     -     assert deepseek_settings["reasoning_effort"] == "max"
+     -     assert deepseek_settings["command"] == [
+     -         "codex",
+     -         "--dangerously-bypass-hook-trust",
+     -         "--oss",
+     -         "--local-provider",
+     -         "ollama",
+     -     ]
+     -     assert "model_context_window=1048576" in deepseek_settings["config_overrides"]
+     -     assert "model_auto_compact_token_limit=230000" in deepseek_settings["config_overrides"]
+     -     assert "model_auto_compact_token_limit=1" not in deepseek_settings["config_overrides"]
+     -     catalog_override = next(
+     -         item for item in deepseek_settings["config_overrides"] if item.startswith("model_catalog_json=")
+     -     )
+     -     assert ".codex/delegates/deepseek-model-catalog.json" in catalog_override.replace("\\", "/")
+563  +     assert deepseek_settings["model"] == "deepseek-v4-flash:0731-cloud"
+564  +     assert deepseek_settings["reasoning_effort"] == "max"
+565  +     assert deepseek_settings["command"] == [
+566  +         "codex",
+567  +         "--dangerously-bypass-hook-trust",
+568  +         "--oss",
+569  +         "--local-provider",
+570  +         "ollama",
+571  +     ]
+572  +     assert "model_context_window=1048576" in deepseek_settings["config_overrides"]
+573  +     assert "model_auto_compact_token_limit=230000" in deepseek_settings["config_overrides"]
+574  +     assert "model_auto_compact_token_limit=1" not in deepseek_settings["config_overrides"]
+575  +     catalog_override = next(
+576  +         item for item in deepseek_settings["config_overrides"] if item.startswith("model_catalog_json=")
+577  +     )
+578  +     assert ".codex/delegates/deepseek-model-catalog.json" in catalog_override.replace("\\", "/")
+579  |
+--------------------------------------------------------------------------------
+583  |     test_executor_settings = test_executor["codex"]
+     -     assert test_executor_settings["launch_profile"] == "deepseek-v4-flash-0731-testing"
+     -     assert test_executor_settings["model"] == "deepseek-v4-flash:0731-cloud"
+     -     assert test_executor_settings["reasoning_effort"] == "high"
+     -
+     -     test_author = runner.apply_workflow_role_allocation(
+     -         _coding_invocation(), "test-author-main", validate_finding_gate=False
+     -     )
+     -     test_author_settings = test_author["codex"]
+     -     assert test_author_settings["launch_profile"] == "deepseek-v4-flash-0731-testing"
+     -     assert test_author_settings["reasoning_effort"] == "high"
+584  +     assert test_executor_settings["launch_profile"] == "deepseek-v4-flash-0731-testing"
+585  +     assert test_executor_settings["model"] == "deepseek-v4-flash:0731-cloud"
+586  +     assert test_executor_settings["reasoning_effort"] == "high"
+587  +
+588  +     test_author = runner.apply_workflow_role_allocation(
+589  +         _coding_invocation(), "test-author-main", validate_finding_gate=False
+590  +     )
+591  +     test_author_settings = test_author["codex"]
+592  +     assert test_author_settings["launch_profile"] == "deepseek-v4-flash-0731-testing"
+593  +     assert test_author_settings["reasoning_effort"] == "high"
+594  |
+595  |     terra = runner.apply_workflow_role_allocation(_coding_invocation(), "reviewer-main", validate_finding_gate=False)
+596  |     terra_settings = terra["codex"]
+     -     assert terra_settings["launch_profile"] == "terra-xhigh"
+     -     assert terra_settings["model"] == "gpt-5.6-terra"
+597  +     assert terra_settings["launch_profile"] == "terra-xhigh"
+598  +     assert terra_settings["model"] == "gpt-5.6-terra"
+599  |     assert "model_context_window=1048576" in terra_settings["config_overrides"]
+--------------------------------------------------------------------------------
+606  |     assert sprint_evidence_settings["launch_profile"] == "terra-xhigh"
+     -     assert sprint_evidence_settings["model"] == "gpt-5.6-terra"
+     -     assert sprint_evidence_settings["reasoning_effort"] == "xhigh"
+607  +     assert sprint_evidence_settings["model"] == "gpt-5.6-terra"
+608  +     assert sprint_evidence_settings["reasoning_effort"] == "xhigh"
+609  |
+--------------------------------------------------------------------------------
+1045 |                 "command": [sys.executable, "-m", "fake_codex"],
+     -                 **_model_settings("doer-main"),
+1046 +                 **_model_settings("doer-main"),
+1047 |                 "sandbox": "danger-full-access",
+--------------------------------------------------------------------------------
+1051 |             "finding_gate": {
+     -                 "role": _role_allocation("doer-main")["finding_gate_role"],
+1052 +                 "role": _role_allocation("doer-main")["finding_gate_role"],
+1053 |                 "path": str(workspace / "FINDINGS.json"),
+--------------------------------------------------------------------------------
+1064 |             proof=runner.validate_checkout(),
+     -             workflow_role="doer-main",
+1065 +             workflow_role="doer-main",
+1066 |         )
+--------------------------------------------------------------------------------
+1082 |                 "--workflow-role",
+     -                 "doer-main",
+1083 +                 "doer-main",
+1084 |                 "--module",
+--------------------------------------------------------------------------------
+1106 |         assert status["result_validation"]["state"] == "MISSING"
+     -         expected_settings = _model_settings("doer-main")
+1107 +         expected_settings = _model_settings("doer-main")
+1108 |         assert status["launcher_settings"]["model"] == expected_settings["model"]
+     |
+
+2 files would be reformatted, 16 files already formatted

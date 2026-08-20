@@ -1,0 +1,91 @@
+{
+    "schema":  "m5-busy-manager-audit/v1",
+    "epoch":  "20260802-m5-s1-052110Z",
+    "activity_id":  "busy-control-001",
+    "started_utc":  "2026-08-02T05:35:30.7498562Z",
+    "finished_utc":  "2026-08-02T05:36:17.0543318Z",
+    "trigger_created_utc":  "2026-08-02T05:35:31.0308539Z",
+    "files_checked":  112,
+    "mismatches":  [
+
+                   ],
+    "processes_observed":  [
+                               {
+                                   "ProcessId":  184352,
+                                   "ParentProcessId":  186608,
+                                   "CreationDate":  "\/Date(1785648333167)\/",
+                                   "Name":  "python.exe",
+                                   "CommandLine":  "\"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\BYO-Firmware-MCP\\.venv/Scripts\\python.exe\" -m orchestrator_harness --config multi-agent-logs\\orchestrator-harness\\20260802-m5-s1-052110Z\\config.json watch --managed"
+                               },
+                               {
+                                   "ProcessId":  176480,
+                                   "ParentProcessId":  184352,
+                                   "CreationDate":  "\/Date(1785648333183)\/",
+                                   "Name":  "python.exe",
+                                   "CommandLine":  "\"C:\\Users\\Jason\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\"  -m orchestrator_harness --config multi-agent-logs\\orchestrator-harness\\20260802-m5-s1-052110Z\\config.json watch --managed"
+                               },
+                               {
+                                   "ProcessId":  156928,
+                                   "ParentProcessId":  195552,
+                                   "CreationDate":  "\/Date(1785648385964)\/",
+                                   "Name":  "python.exe",
+                                   "CommandLine":  "\"C:\\Users\\Jason\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\"  -m harness_watcher_implementation --config harness_watcher\\20260802-m5-s1-052110Z\\config.json serve --startup-token 729fb8b8-eb82-4242-a53c-c963616ef0ce"
+                               },
+                               {
+                                   "ProcessId":  189388,
+                                   "ParentProcessId":  186524,
+                                   "CreationDate":  "\/Date(1785648548006)\/",
+                                   "Name":  "powershell.exe",
+                                   "CommandLine":  "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -ExecutionPolicy Bypass -File scripts\\orchestration\\run_persistent_lane_r9.ps1 -RunRoot C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324 -ThreadId 019fb877-1475-76c0-a137-2743580015de -PromptPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1-052110Z.bound.md -Label atlas-a22-20260802-m5-s1-052110Z -Doer Atlas -Task A22 -Phase M5_S1_LIVE_ENTRY_REVIEW -LaneId 20260802-m5-s1-052110Z:Atlas:A22 -StatusPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1-052110Z_controller.status.json -JsonlPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1-052110Z_codex.jsonl -StderrPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1-052110Z_codex.stderr.log -LastMessagePath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1-052110Z_last_message.txt -LaneEventLog C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-s1-052110Z\\lane-events.jsonl"
+                               },
+                               {
+                                   "ProcessId":  191424,
+                                   "ParentProcessId":  189388,
+                                   "CreationDate":  "\/Date(1785648548747)\/",
+                                   "Name":  "codex.exe",
+                                   "CommandLine":  "\"C:\\Users\\Jason\\AppData\\Local\\Programs\\OpenAI\\Codex\\bin\\codex.exe\" exec resume 019fb877-1475-76c0-a137-2743580015de --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy=\"never\" -c approvals_reviewer=\"user\" -m gpt-5.6-luna -c model_reasoning_effort=\"high\" -c service_tier=\"default\" --json --output-last-message C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1-052110Z_last_message.txt "
+                               },
+                               {
+                                   "ProcessId":  164248,
+                                   "ParentProcessId":  150092,
+                                   "CreationDate":  "\/Date(1785648555735)\/",
+                                   "Name":  "powershell.exe",
+                                   "CommandLine":  "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -ExecutionPolicy Bypass -File scripts\\orchestration\\run_persistent_lane_r9.ps1 -RunRoot C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325 -ThreadId 019fb877-1447-7693-92b1-f4bda04c6ecf -PromptPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1-052110Z.bound.md -Label boreal-d31-20260802-m5-s1-052110Z -Doer Boreal -Task D31 -Phase M5_S1_LIVE_ENTRY_REVIEW -LaneId 20260802-m5-s1-052110Z:Boreal:D31 -StatusPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1-052110Z_controller.status.json -JsonlPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1-052110Z_codex.jsonl -StderrPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1-052110Z_codex.stderr.log -LastMessagePath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1-052110Z_last_message.txt -LaneEventLog C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-s1-052110Z\\lane-events.jsonl"
+                               },
+                               {
+                                   "ProcessId":  190396,
+                                   "ParentProcessId":  164248,
+                                   "CreationDate":  "\/Date(1785648556534)\/",
+                                   "Name":  "codex.exe",
+                                   "CommandLine":  "\"C:\\Users\\Jason\\AppData\\Local\\Programs\\OpenAI\\Codex\\bin\\codex.exe\" exec resume 019fb877-1447-7693-92b1-f4bda04c6ecf --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy=\"never\" -c approvals_reviewer=\"user\" -m gpt-5.6-luna -c model_reasoning_effort=\"high\" -c service_tier=\"default\" --json --output-last-message C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1-052110Z_last_message.txt "
+                               },
+                               {
+                                   "ProcessId":  84944,
+                                   "ParentProcessId":  177976,
+                                   "CreationDate":  "\/Date(1785648568395)\/",
+                                   "Name":  "powershell.exe",
+                                   "CommandLine":  "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -ExecutionPolicy Bypass -File scripts\\orchestration\\run_persistent_lane_r9.ps1 -RunRoot C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146 -ThreadId 019fb877-1199-79b1-a32e-34348178f111 -PromptPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1-052110Z.bound.md -Label cygnus-a24-20260802-m5-s1-052110Z -Doer Cygnus -Task A24 -Phase M5_S1_LIVE_ENTRY_REVIEW -LaneId 20260802-m5-s1-052110Z:Cygnus:A24 -StatusPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1-052110Z_controller.status.json -JsonlPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1-052110Z_codex.jsonl -StderrPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1-052110Z_codex.stderr.log -LastMessagePath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1-052110Z_last_message.txt -LaneEventLog C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-s1-052110Z\\lane-events.jsonl"
+                               },
+                               {
+                                   "ProcessId":  178596,
+                                   "ParentProcessId":  84944,
+                                   "CreationDate":  "\/Date(1785648569097)\/",
+                                   "Name":  "codex.exe",
+                                   "CommandLine":  "\"C:\\Users\\Jason\\AppData\\Local\\Programs\\OpenAI\\Codex\\bin\\codex.exe\" exec resume 019fb877-1199-79b1-a32e-34348178f111 --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy=\"never\" -c approvals_reviewer=\"user\" -m gpt-5.6-luna -c model_reasoning_effort=\"high\" -c service_tier=\"default\" --json --output-last-message C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1-052110Z_last_message.txt "
+                               },
+                               {
+                                   "ProcessId":  180304,
+                                   "ParentProcessId":  191728,
+                                   "CreationDate":  "\/Date(1785648576078)\/",
+                                   "Name":  "powershell.exe",
+                                   "CommandLine":  "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -ExecutionPolicy Bypass -File scripts\\orchestration\\run_persistent_lane_r9.ps1 -RunRoot C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325 -ThreadId 019fb877-1441-7c92-84e2-cbb5bc422879 -PromptPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1-052110Z.bound.md -Label delta-a26-20260802-m5-s1-052110Z -Doer Delta -Task A26 -Phase M5_S1_LIVE_ENTRY_REVIEW -LaneId 20260802-m5-s1-052110Z:Delta:A26 -StatusPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1-052110Z_controller.status.json -JsonlPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1-052110Z_codex.jsonl -StderrPath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1-052110Z_codex.stderr.log -LastMessagePath C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1-052110Z_last_message.txt -LaneEventLog C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-s1-052110Z\\lane-events.jsonl"
+                               },
+                               {
+                                   "ProcessId":  168124,
+                                   "ParentProcessId":  180304,
+                                   "CreationDate":  "\/Date(1785648576711)\/",
+                                   "Name":  "codex.exe",
+                                   "CommandLine":  "\"C:\\Users\\Jason\\AppData\\Local\\Programs\\OpenAI\\Codex\\bin\\codex.exe\" exec resume 019fb877-1441-7c92-84e2-cbb5bc422879 --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy=\"never\" -c approvals_reviewer=\"user\" -m gpt-5.6-luna -c model_reasoning_effort=\"high\" -c service_tier=\"default\" --json --output-last-message C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1-052110Z_last_message.txt "
+                               }
+                           ]
+}

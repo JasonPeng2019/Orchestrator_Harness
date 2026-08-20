@@ -1,0 +1,45 @@
+{
+    "epoch":  "20260802-m5-q4-134406Z",
+    "utc":  "2026-08-02T14:05:49.2667754Z",
+    "lane":  "Atlas:A22",
+    "reason":  "Worker failed to exit after valid manager response and its ten-minute response deadline; forced cleanup at already-proven host-only checkpoint.",
+    "classification":  "WORKER_PROCEDURE_FAILURE_NOT_HARNESS_OR_WATCHER",
+    "before":  {
+                   "controller_pid":  196972,
+                   "codex_pid":  171560,
+                   "controller_alive":  true,
+                   "codex_alive":  true,
+                   "checkpoint_exists":  true,
+                   "response_exists":  true,
+                   "leases":  [
+
+                              ],
+                   "board_tokens":  [
+
+                                    ],
+                   "mcp_servers":  [
+
+                                   ]
+               },
+    "after":  {
+                  "controller_alive":  false,
+                  "codex_alive":  false
+              },
+    "safety":  {
+                   "provider_processes":  [
+
+                                          ],
+                   "mcp_processes":  [
+
+                                     ],
+                   "leases":  [
+
+                              ],
+                   "board_tokens":  [
+
+                                    ],
+                   "hardware_actions":  [
+
+                                        ]
+               }
+}

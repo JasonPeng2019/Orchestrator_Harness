@@ -1,0 +1,17 @@
+﻿{
+  "schema": "attention-sprint-summary/v1",
+  "epoch_id": "20260801-attention-r14",
+  "accepted": true,
+  "consecutive_sprint": 3,
+  "required_consecutive_sprints": 3,
+  "cursor_drained": true,
+  "observation_errors": 0,
+  "finalize_passed": true,
+  "material_classifications": {
+    "sig-20260801-attention-r14-atlas-a22-gate-001": "HARNESS_DELIVERY_DELAY",
+    "sig-20260801-attention-r14-boreal-d31-gate-001": "NO_BLOCKING_IMPACT",
+    "sig-20260801-attention-r14-cygnus-a24-gate-001": "HARNESS_DELIVERY_DELAY",
+    "sig-20260801-attention-r14-delta-a26-gate-001": "NO_BLOCKING_IMPACT",
+    "r14-review-001": "BUSY_MANAGER_DELAY"
+  }
+}

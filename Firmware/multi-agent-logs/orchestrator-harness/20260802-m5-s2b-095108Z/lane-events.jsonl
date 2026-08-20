@@ -1,0 +1,10 @@
+{"event":"CODEX_STARTED","utc":"2026-08-02T09:52:12.4736105Z","label":"Atlas-20260802-m5-s2b-095108Z","declared_lane_id":"20260802-m5-s2b-095108Z:Atlas:A22","controller_pid":190320,"codex_pid":169052}
+{"event":"CODEX_STARTED","utc":"2026-08-02T09:52:13.9781863Z","label":"Boreal-20260802-m5-s2b-095108Z","declared_lane_id":"20260802-m5-s2b-095108Z:Boreal:D31","controller_pid":169924,"codex_pid":186456}
+{"event":"CODEX_STARTED","utc":"2026-08-02T09:52:14.8587456Z","label":"Cygnus-20260802-m5-s2b-095108Z","declared_lane_id":"20260802-m5-s2b-095108Z:Cygnus:A24","controller_pid":71324,"codex_pid":138844}
+{"event":"CODEX_EXITED","utc":"2026-08-02T09:56:05.0935667Z","label":"Atlas-20260802-m5-s2b-095108Z","declared_lane_id":"20260802-m5-s2b-095108Z:Atlas:A22","thread_id":"019fb877-1475-76c0-a137-2743580015de","exit_code":null}
+{"event":"CODEX_EXITED","utc":"2026-08-02T09:57:16.6851670Z","label":"Boreal-20260802-m5-s2b-095108Z","declared_lane_id":"20260802-m5-s2b-095108Z:Boreal:D31","thread_id":"019fb877-1447-7693-92b1-f4bda04c6ecf","exit_code":null}
+{"event":"CODEX_STARTED","utc":"2026-08-02T09:57:47.9106660Z","label":"Delta-20260802-m5-s2b-095108Z","declared_lane_id":"20260802-m5-s2b-095108Z:Delta:A26","controller_pid":185752,"codex_pid":196520}
+{"event":"CODEX_EXITED","utc":"2026-08-02T10:00:08.0059199Z","label":"Cygnus-20260802-m5-s2b-095108Z","declared_lane_id":"20260802-m5-s2b-095108Z:Cygnus:A24","thread_id":"019fb877-1199-79b1-a32e-34348178f111","exit_code":null}
+{"event":"CODEX_EXITED","utc":"2026-08-02T10:03:54.4772696Z","label":"Delta-20260802-m5-s2b-095108Z","declared_lane_id":"20260802-m5-s2b-095108Z:Delta:A26","thread_id":"019fb877-1441-7c92-84e2-cbb5bc422879","exit_code":null}
+{"event":"CODEX_STARTED","utc":"2026-08-02T10:04:27.7796455Z","label":"Delta2-20260802-m5-s2b-095108Z","declared_lane_id":"20260802-m5-s2b-095108Z:Delta:A26","controller_pid":182568,"codex_pid":14652}
+{"event":"CODEX_EXITED","utc":"2026-08-02T10:09:11.5499069Z","label":"Delta2-20260802-m5-s2b-095108Z","declared_lane_id":"20260802-m5-s2b-095108Z:Delta:A26","thread_id":"019fb877-1441-7c92-84e2-cbb5bc422879","exit_code":null}

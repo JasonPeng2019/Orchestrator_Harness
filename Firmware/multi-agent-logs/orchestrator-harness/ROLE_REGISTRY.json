@@ -1,0 +1,97 @@
+{
+  "schema": "mcp-trial-3-role-registry/v1",
+  "epoch": "20260731-s1-clean-h",
+  "epoch_state": "LANES_RUNNING",
+  "manager": {
+    "provider": "codex-vscode",
+    "pid": 99828,
+    "thread_id": "019f924b-9104-73d3-af50-74e977282794",
+    "live_epoch_authority": true
+  },
+  "primary_harness": {
+    "config": "orchestrator_harness/canary-20260731-s1-clean-h.json",
+    "config_sha256": "2eab466df163885f6dd64c1a0a092f7b83704686aae860a5ace9638c11d4f854",
+    "output": "orchestrator_harness/canary-20260731-s1-clean-h-state",
+    "state": "RUNNING_MANAGED",
+    "owner_pid": 176872,
+    "watcher_pid": 191068
+  },
+  "optional_watcher": {
+    "config": "harness_watcher_implementation/canary-20260731-s1-clean-h.json",
+    "config_sha256": "c674f4e1f2b100abf7799ef47c281230c647a13fc42ff8ae8a84896423e1ebbf",
+    "runtime_root": "harness_watcher/runs/20260731-s1-clean-h",
+    "state": "RUNNING",
+    "owner_pid": 99828,
+    "watcher_pid": 196052
+  },
+  "supervision_alarm": {
+    "interval_seconds": 75,
+    "state": "RUNNING",
+    "pid": 194924,
+    "first_scan": ".agent-workspace/CANARY_AUTO_SCAN_20260731-s1-clean-h_20260731T185309850645Z.json"
+  },
+  "lanes": {
+    "Atlas": {
+      "task": "A22",
+      "thread_id": "019fb877-1475-76c0-a137-2743580015de",
+      "state": "RUNNING_CODEX",
+      "invocation": "fresh-experiments/A22_20260726-062324/.agent-workspace/atlas_a22_s1_clean_h_hil.invocation.json",
+      "invocation_sha256": "cc074f92bcdf0356ec4f1dfa0ce9862755bdf404a740199c583fcb44e30b80fc",
+      "assignment": "fresh-experiments/A22_20260726-062324/.agent-workspace/RESOURCE_ASSIGNMENT_S1H.md",
+      "assignment_sha256": "191cc0edd7207bee3a2afed95296cec81d521210a2f4c8c2a90faae97db921c1",
+      "controller_pid": 11924,
+      "controller_created_utc": "2026-07-31T18:54:14.238996Z",
+      "codex_pid": 194344,
+      "codex_created_utc": "2026-07-31T18:54:16.336060Z",
+      "status": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_h_hil_controller.status.json",
+      "jsonl": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_h_hil_codex.jsonl"
+    },
+    "Cygnus": {
+      "task": "A24",
+      "thread_id": "019fb877-1199-79b1-a32e-34348178f111",
+      "state": "RUNNING_CODEX",
+      "invocation": "fresh-experiments/A24_20260726-052146/.agent-workspace/cygnus_a24_s1_clean_h_hil.invocation.json",
+      "invocation_sha256": "ae58c310711653f513292515392ede10a66accc01815d7de4502891d834ac885",
+      "assignment": "fresh-experiments/A24_20260726-052146/.agent-workspace/RESOURCE_ASSIGNMENT_S1H.md",
+      "assignment_sha256": "31be204b469b8e1997e92842cffeaf5c42f5d3fabca421a149421a460490eb92",
+      "controller_pid": 178032,
+      "controller_created_utc": "2026-07-31T18:54:14.373114Z",
+      "codex_pid": 195104,
+      "codex_created_utc": "2026-07-31T18:54:16.379350Z",
+      "status": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_s1_clean_h_hil_controller.status.json",
+      "jsonl": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_s1_clean_h_hil_codex.jsonl"
+    },
+    "Delta": {
+      "task": "A26",
+      "thread_id": "019fb877-1441-7c92-84e2-cbb5bc422879",
+      "state": "RUNNING_CODEX",
+      "invocation": "fresh-experiments/A26_20260726-062325/.agent-workspace/delta_a26_s1_clean_h_bind.invocation.json",
+      "invocation_sha256": "2405f186fe2e35672e93ed0654656ac83412e20293521be657bff516975c899c",
+      "assignment": "fresh-experiments/A26_20260726-062325/.agent-workspace/RESOURCE_ASSIGNMENT_S1H.md",
+      "assignment_sha256": "b813891b70d878ca80a73ba231d9e73dd5fda1439ddbcb645eaf7e060219dda1",
+      "controller_pid": 185744,
+      "controller_created_utc": "2026-07-31T18:54:14.469011Z",
+      "codex_pid": 180344,
+      "codex_created_utc": "2026-07-31T18:54:16.466822Z",
+      "status": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_s1_clean_h_bind_controller.status.json",
+      "jsonl": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_s1_clean_h_bind_codex.jsonl"
+    },
+    "Boreal": {
+      "task": "D31",
+      "thread_id": "019fb877-1447-7693-92b1-f4bda04c6ecf",
+      "state": "RUNNING_CODEX",
+      "invocation": "fresh-experiments/D31_20260726-062325/.agent-workspace/boreal_d31_s1_clean_h_hil.invocation.json",
+      "invocation_sha256": "0589d8a8f2e17cb59a258f5154bbeaaecffd2284f935de357b62fca5d66f940c",
+      "assignment": "fresh-experiments/D31_20260726-062325/.agent-workspace/RESOURCE_ASSIGNMENT_S1H.md",
+      "assignment_sha256": "bc4822e5fe90221da2458a3eb002707498eb28b311b19d569c61e373ad52db24",
+      "controller_pid": 58004,
+      "controller_created_utc": "2026-07-31T18:54:14.313726Z",
+      "codex_pid": 179400,
+      "codex_created_utc": "2026-07-31T18:54:16.277106Z",
+      "status": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_s1_clean_h_hil_controller.status.json",
+      "jsonl": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_s1_clean_h_hil_codex.jsonl"
+    }
+  },
+  "updated_utc": "2026-07-31T18:55:38.756578Z",
+  "restart_authority": "HANDOFF.md and .agent-workspace/CURRENT_SUITE_STATE.json"
+}

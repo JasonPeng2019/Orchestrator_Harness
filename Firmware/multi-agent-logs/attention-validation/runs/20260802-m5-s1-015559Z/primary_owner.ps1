@@ -1,0 +1,4 @@
+param([string]$SuiteRoot,[string]$Config,[string]$IdentityFile)
+$ErrorActionPreference='Stop'; Set-Location -LiteralPath $SuiteRoot
+$p=Start-Process python -ArgumentList @('-m','orchestrator_harness','--config',$Config,'watch','--managed') -WorkingDirectory $SuiteRoot -WindowStyle Hidden -PassThru
+$o=Get-Process -Id $PID; $p.Refresh(); $j=[ordered]@{schema='m5-primary-owner/v1';epoch='20260802-m5-s1-015559Z';owner=@{pid=$PID;created_utc=$o.StartTime.ToUniversalTime().ToString('o')};watcher=@{pid=$p.Id;created_utc=$p.StartTime.ToUniversalTime().ToString('o')};config=$Config;started_utc=[DateTime]::UtcNow.ToString('o')}; [IO.File]::WriteAllText($IdentityFile,($j|ConvertTo-Json -Depth 5)+"`n",[Text.UTF8Encoding]::new($false)); $p.WaitForExit(); $p.Refresh(); $j.ended_utc=[DateTime]::UtcNow.ToString('o');$j.watcher_exit_code=$p.ExitCode;[IO.File]::WriteAllText($IdentityFile,($j|ConvertTo-Json -Depth 5)+"`n",[Text.UTF8Encoding]::new($false)); exit $p.ExitCode

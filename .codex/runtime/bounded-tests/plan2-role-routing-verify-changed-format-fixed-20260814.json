@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  225,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  45,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The previous verifier reached only the changed-file format check in under six seconds. The format correction is the changed condition; three minutes remains the credible cold selected-gate bound with the policy-capped 45-second cleanup allowance.",
+    "started_at":  "2026-08-14T22:13:52.9897249+00:00",
+    "finished_at":  "2026-08-14T22:13:56.9184874+00:00",
+    "elapsed_seconds":  3.929,
+    "root_process_id":  175112,
+    "observed_process_ids":  [
+                                 175112
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-role-routing-verify-changed-format-fixed-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-role-routing-verify-changed-format-fixed-20260814.stderr.log"
+}

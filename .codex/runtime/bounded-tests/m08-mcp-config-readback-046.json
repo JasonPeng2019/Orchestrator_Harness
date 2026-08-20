@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "powershell -NoProfile -File Firmware/runtime/host-readiness/host-readiness-20260815-046/readback_mcp.ps1",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "M08 Codex MCP override readback; local configuration parse only",
+    "started_at":  "2026-08-15T17:38:59.6982749+00:00",
+    "finished_at":  "2026-08-15T17:39:01.3166586+00:00",
+    "elapsed_seconds":  1.618,
+    "root_process_id":  186100,
+    "observed_process_ids":  [
+                                 186100
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-mcp-config-readback-046.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-mcp-config-readback-046.stderr.log"
+}

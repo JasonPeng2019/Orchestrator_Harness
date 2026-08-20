@@ -1,0 +1,38 @@
+{
+  "records": [
+    {
+      "board_id": "stm_a",
+      "confirmed": true,
+      "confirmed_at": "2026-08-16T00:52:54.707671Z",
+      "probe_family": "stlink",
+      "probe_usb_serial": "066FFF514988525067233337",
+      "revoked_at": null,
+      "uart_pid": 14155,
+      "uart_usb_serial": "066FFF514988525067233337",
+      "uart_vid": 1155
+    },
+    {
+      "board_id": "nrf_a",
+      "confirmed": true,
+      "confirmed_at": "2026-08-16T07:53:52.846398Z",
+      "probe_family": "jlink",
+      "probe_usb_serial": "683710208",
+      "revoked_at": null,
+      "uart_pid": 4133,
+      "uart_usb_serial": "000683710208",
+      "uart_vid": 4966
+    },
+    {
+      "board_id": "stm_b",
+      "confirmed": true,
+      "confirmed_at": "2026-08-16T07:54:14.366620Z",
+      "probe_family": "stlink",
+      "probe_usb_serial": "0668FF514988525067213913",
+      "revoked_at": null,
+      "uart_pid": 14155,
+      "uart_usb_serial": "0668FF514988525067213913",
+      "uart_vid": 1155
+    }
+  ],
+  "schema_version": 1
+}

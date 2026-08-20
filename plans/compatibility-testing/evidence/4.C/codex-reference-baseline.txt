@@ -1,0 +1,15 @@
+Phase 4.C — Codex host-adapter internals as the known-good reference contract
+Captured 2026-08-20 (ROOT / Opus 4.8 parent, direct).
+
+test_codex_bounded_policy ......... Ran 21 tests — OK        (M15/M16 launcher+status+exclusion)
+test_s4_contract + test_s4_repair
+  + test_compat_host_adapters ...... Ran 71 tests — OK (skipped=1)
+      (the two "lane-controller invocation error: ... synthetic final publication failure"
+       lines are the intentional S4 repair negative-path cases, not real failures)
+
+Conclusion: the Codex side (codex_adapter.py + codex_bounded_policy.py + host_adapters.py
+DeliveryCoordinator) is green. This is the contract the new ClaudeAdapter (4.A/4.B) must
+match — DeliveryCoordinator is already provider-neutral (consumes any HostAdapter), so the
+build surface is (a) a real ClaudeAdapter class + capabilities, (b) select_host_adapter
+routing "claude" -> real adapter, (c) resume-as-wake transport, (d) packaged Claude assets
++ `adapter --host claude` CLI parity.

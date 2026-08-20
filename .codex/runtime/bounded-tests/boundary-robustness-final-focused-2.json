@@ -1,0 +1,29 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python -m pytest -q .codex/tests/test_bounded_test_supervisor.py .codex/tests/test_hooks.py .codex/tests/test_stable_runner.py .codex/tests/test_codex_configuration.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  93,
+    "expected_upper_bound_seconds":  75,
+    "cleanup_allowance_seconds":  18,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "the immediately prior identical focused campaign completed in 48.536 seconds; seventy-five seconds covers local variance",
+    "started_at":  "2026-08-14T05:31:39.5492902+00:00",
+    "finished_at":  "2026-08-14T05:32:30.1700627+00:00",
+    "elapsed_seconds":  50.621,
+    "root_process_id":  193268,
+    "observed_process_ids":  [
+                                 11052,
+                                 174944,
+                                 182552,
+                                 187124,
+                                 191356,
+                                 193268,
+                                 194480,
+                                 198020
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\boundary-robustness-final-focused-2.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\boundary-robustness-final-focused-2.stderr.log"
+}

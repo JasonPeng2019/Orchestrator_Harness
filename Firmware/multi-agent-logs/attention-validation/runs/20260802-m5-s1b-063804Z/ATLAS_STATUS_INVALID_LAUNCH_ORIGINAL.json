@@ -1,0 +1,61 @@
+{
+    "schema":  "orchestrator-lane-controller/v1",
+    "state":  "RUNNING_CODEX",
+    "controller_pid":  186360,
+    "controller_started_utc":  "2026-08-02T06:43:49.7500637Z",
+    "controller_created_utc":  "2026-08-02T06:43:49.7500637Z",
+    "codex_pid":  14700,
+    "codex_started_utc":  "2026-08-02T06:43:50.5294456Z",
+    "codex_created_utc":  "2026-08-02T06:43:50.5294456Z",
+    "declared_lane_id":  "20260802-m5-s1b-063804Z:Atlas:A22",
+    "doer":  "Atlas",
+    "task":  "A22",
+    "phase":  "M5_S1_LIVE_ENTRY_AUTHORIZATION_DECISION",
+    "thread_id":  "019fb877-1475-76c0-a137-2743580015de",
+    "started_utc":  "2026-08-02T06:43:50.4912411Z",
+    "prompt_path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1b-063804Z.bound.md",
+    "status_path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1b-063804Z_controller.status.json",
+    "jsonl_path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1b-063804Z_codex.jsonl",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1b-063804Z_codex.stderr.log",
+    "last_message_path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1b-063804Z_last_message.txt",
+    "leases":  [
+                   "\\lane-events.jsonl"
+               ],
+    "board_tokens":  [
+
+                     ],
+    "mcp_servers":  [
+
+                    ],
+    "launcher_settings":  {
+                              "model":  "gpt-5.6-luna",
+                              "model_reasoning_effort":  "high",
+                              "service_tier":  "default",
+                              "approval_policy":  "never",
+                              "sandbox":  "danger-full-access",
+                              "ephemeral":  false,
+                              "jsonl":  true,
+                              "argv":  [
+                                           "codex",
+                                           "exec",
+                                           "resume",
+                                           "019fb877-1475-76c0-a137-2743580015de",
+                                           "--dangerously-bypass-approvals-and-sandbox",
+                                           "--ignore-user-config",
+                                           "--skip-git-repo-check",
+                                           "-c",
+                                           "approval_policy=\"never\"",
+                                           "-c",
+                                           "approvals_reviewer=\"user\"",
+                                           "-m",
+                                           "gpt-5.6-luna",
+                                           "-c",
+                                           "model_reasoning_effort=\"high\"",
+                                           "-c",
+                                           "service_tier=\"default\"",
+                                           "--json",
+                                           "--output-last-message",
+                                           "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1b-063804Z_last_message.txt"
+                                       ]
+                          }
+}

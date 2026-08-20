@@ -1,0 +1,8 @@
+optional watcher did not publish exact identity
+At C:\Users\Jason\Documents\Jason\FirmCLI_Tester\Firmware-Test-Manual\MCP-Trial-3\scripts\orchestration\optional_watche
+r_owner.ps1:33 char:47
++ ... atcher")) { throw "optional watcher did not publish exact identity" } ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (optional watche... exact identity:String) [], RuntimeException
+    + FullyQualifiedErrorId : optional watcher did not publish exact identity
+ 

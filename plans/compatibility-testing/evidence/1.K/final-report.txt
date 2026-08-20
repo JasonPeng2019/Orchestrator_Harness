@@ -1,0 +1,41 @@
+Everything is green, evidence is in place. Two plan-vs-reality divergences (Q1, Q17)
+are documented as green tests pinning ACTUAL behavior and recorded as findings below.
+
+---
+
+## Final Report — Phase 1 / Area 1.K: Config / prompt-bundle contract (detection-only)
+
+### Feature-by-feature results
+
+| Feature | Result | What differed (if any) |
+|---|---|---|
+| **Q1** load_config numeric bounds | **FINDING** | plan says out-of-range numbers *clamp* to bounds; real `_number`/`_integer` (`config.py:62,74`) **raise** `ConfigError("{key} must be >= {minimum}")` — stricter/safer (reject, never silently clamp). Non-numeric/bool → "must be numeric"/"must be an integer"; non-finite → "must be finite"; valid in-range config carries the exact value. See F1K-Q1-1. |
+| **Q2** `_declared_relative_paths` / path validation | **PASS** | absolute and `..`-traversal entries in `record_paths` → `"record_paths must be a list of safe relative paths"`; same entries in `run_globs`/`workspace_relpath` raise their dedicated errors; blank/non-str rejected; clean relative list loads; `observation_paths`→`record_paths` and `record_manifest_paths`→`record_manifests` aliases resolve. |
+| **Q14** `_safe_component_path` enforcement | **PASS** | out-of-root (relative `../` and absolute) → `"escapes run root"`; symlink → `"cannot be a symlink"` (sub-case SKIPPED on this Windows session — file symlinks unavailable, WinError 1314; the check itself is pinned); non-existent / in-root directory → `"must be an existing regular file"`; real in-root file resolves. |
+| **Q15** `bundle_from_record` round trip | **PASS** | 2-file record round-trips byte-identically with matching sha256/size/final_sha256/bundle_sha256 and `to_record() == record`; on-disk length tamper → size gate, same-length byte tamper → sha256 gate, record component-digest tamper → digest gate, manifest-digest tamper → `"manifest is stale or tampered"`. All fail closed. |
+| **Q17** `prompt.py` surface | **FINDING** | plan says to assert "documented template constants / templates"; `prompt.py` contains **no template constants** — it is a pure compatibility re-export shim. Real surface pinned: exact 7-name `__all__`, object identity with `prompt_bundle`, and `compose_prompt_bundle` produces the exact ordered concatenation with no placeholder substitution. See F1K-Q17-1. |
+
+**Findings: 2** (both `note` severity — the ACTUAL behavior is stricter than the plan text, never a fail-open):
+
+- **F1K-Q1-1** — `config.py:62-80`: `_number`/`_integer` raise `ConfigError("{key} must be >= {minimum}")` on out-of-range values instead of clamping to bounds as the plan described. Documented in green test `test_q1_load_config_numeric_bounds_reject_instead_of_clamp`; no silent acceptance of an out-of-range value exists.
+- **F1K-Q17-1** — `prompt.py` is a pure compatibility re-export shim (no template constants / template strings). The real Q17 surface is the re-export contract: exact `__all__`, same-object identity with `prompt_bundle`, and verbatim ordered concatenation in `compose_prompt_bundle` (placeholder-looking bytes are passed through, never substituted). Documented in green tests `test_q17_prompt_module_reexports_exactly_its_documented_all` and `test_q17_compose_is_ordered_concatenation_no_substitution`.
+
+### Commands run
+```bash
+cd "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/harness-single-worktrees/compat-test"
+PYTHONPATH="$PWD:$PWD/.." python -m unittest orchestrator_harness.tests.test_compat_config_bundle -v
+PYTHONPATH="$PWD:$PWD/.." python -m unittest orchestrator_harness.tests.test_config_store -v
+```
+
+### Test tally
+- New module `test_compat_config_bundle.py`: **9 run, 8 passed, 0 failed, 0 errors, 1 skipped** (the Q14 symlink sub-case — file symlinks cannot be created in this Windows session: WinError 1314).
+- `test_config_store` regression: **12 run, 12 passed, 0 failed** — shared config/store behavior undisturbed.
+
+### Evidence left behind
+- `plans/compatibility-testing/evidence/1.K/test-run.log` — full `-v` output of the new module.
+- `plans/compatibility-testing/evidence/1.K/config-regression.log` — full `-v` output of the regression.
+
+### Scope compliance
+- Only `orchestrator_harness/tests/test_compat_config_bundle.py` (new) and the `1.K` evidence dir were written; no harness source module touched.
+- No `claude`/provider subprocess launched; fabricated temp JSON configs and path-bound prompt-bundle records only.
+- No "fix to green": the two plan divergences are pinned as green tests asserting actual behavior and recorded as findings.

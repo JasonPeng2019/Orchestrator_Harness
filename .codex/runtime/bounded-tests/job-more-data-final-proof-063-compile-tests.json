@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "$py = \u0027C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev/.venv/Scripts/python.exe\u0027\n\u0026 $py -m py_compile orchestrator_harness/process_supervisor.py orchestrator_harness/tests/test_s4_repair.py\nif ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }\n\u0026 $py -m unittest -v orchestrator_harness.tests.test_s4_repair.S4RepairRegressionTests.test_FC37_windows_job_assigned_and_list_mismatch_is_incomplete orchestrator_harness.tests.test_s4_repair.S4RepairRegressionTests.test_FC42_windows_job_equal_counts_require_returned_pid_bytes orchestrator_harness.tests.test_s4_repair.S4RepairRegressionTests.test_FC43_windows_job_retry_policy_is_bounded_for_oversized_and_changing_counts orchestrator_harness.tests.test_s4_repair.S4RepairRegressionTests.test_FC45_windows_job_more_data_retries_and_other_errors_fail_closed\nexit $LASTEXITCODE",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\wshrt-063",
+    "maximum_lifetime_seconds":  110,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  20,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "calibrated: 061 single FC45 unittest 60s+15s; this receipt adds two-file py_compile plus three more short mocked S4 methods",
+    "started_at":  "2026-08-16T07:04:04.5058513+00:00",
+    "finished_at":  "2026-08-16T07:04:08.3517756+00:00",
+    "elapsed_seconds":  3.846,
+    "root_process_id":  174188,
+    "observed_process_ids":  [
+                                 174188
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\job-more-data-final-proof-063-compile-tests.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\job-more-data-final-proof-063-compile-tests.stderr.log"
+}

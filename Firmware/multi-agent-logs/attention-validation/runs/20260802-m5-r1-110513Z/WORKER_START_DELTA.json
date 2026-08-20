@@ -1,0 +1,10 @@
+{
+    "epoch":  "20260802-m5-r1-110513Z",
+    "started_utc":  "2026-08-02T11:13:18.7116981Z",
+    "busy_activity_id":  "busy-manager-resource-readiness-audit-001",
+    "doer":  "Delta",
+    "task":  "A26",
+    "controller_pid":  185768,
+    "creation_utc":  "2026-08-02T11:13:18.5108143Z",
+    "lane_id":  "20260802-m5-r1-110513Z:Delta:A26"
+}

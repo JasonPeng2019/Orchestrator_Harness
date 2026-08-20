@@ -1,0 +1,31 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6SelectorTests",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  375,
+    "expected_upper_bound_seconds":  300,
+    "cleanup_allowance_seconds":  75,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The immediately preceding selector suite completed in 216.7 seconds; 300 seconds preserves measured headroom.",
+    "started_at":  "2026-08-14T18:41:58.3597550+00:00",
+    "finished_at":  "2026-08-14T18:45:31.0138858+00:00",
+    "elapsed_seconds":  212.654,
+    "root_process_id":  184616,
+    "observed_process_ids":  [
+                                 14568,
+                                 14852,
+                                 16524,
+                                 150208,
+                                 167768,
+                                 181524,
+                                 184616,
+                                 187120,
+                                 190816,
+                                 197764
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-postjoin-selected-selector-3a73-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-postjoin-selected-selector-3a73-001.stderr.log"
+}

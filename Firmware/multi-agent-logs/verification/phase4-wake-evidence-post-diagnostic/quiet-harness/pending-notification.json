@@ -1,0 +1,6 @@
+{
+  "acknowledged_event_ids": [],
+  "deferred": [],
+  "pending": null,
+  "schema": "orchestrator-manager-notification/v1"
+}

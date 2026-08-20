@@ -1,0 +1,132 @@
+{
+  "epoch": "20260802-m5-q8-152800Z",
+  "checked_utc": "2026-08-02T15:39:02.3998372Z",
+  "registered_pid_count": 10,
+  "registered_pids": [
+    {
+      "role": "harness",
+      "pid": 197744,
+      "created_utc": "2026-08-02T15:29:05.6433287Z"
+    },
+    {
+      "role": "watcher",
+      "pid": 198404,
+      "created_utc": "windows-filetime:134301581480801944"
+    },
+    {
+      "role": "Atlas-controller",
+      "pid": 192384,
+      "created_utc": "2026-08-02T15:30:21.3279008Z"
+    },
+    {
+      "role": "Atlas-codex",
+      "pid": 178728,
+      "created_utc": "2026-08-02T15:30:22.7056757Z"
+    },
+    {
+      "role": "Boreal-controller",
+      "pid": 185696,
+      "created_utc": "2026-08-02T15:30:22.8572422Z"
+    },
+    {
+      "role": "Boreal-codex",
+      "pid": 177896,
+      "created_utc": "2026-08-02T15:30:23.6983399Z"
+    },
+    {
+      "role": "Cygnus-controller",
+      "pid": 191112,
+      "created_utc": "2026-08-02T15:30:23.9860427Z"
+    },
+    {
+      "role": "Cygnus-codex",
+      "pid": 195708,
+      "created_utc": "2026-08-02T15:30:25.0499544Z"
+    },
+    {
+      "role": "Delta-controller",
+      "pid": 196184,
+      "created_utc": "2026-08-02T15:30:25.0572031Z"
+    },
+    {
+      "role": "Delta-codex",
+      "pid": 196660,
+      "created_utc": "2026-08-02T15:30:26.2669422Z"
+    }
+  ],
+  "checks": [
+    {
+      "role": "harness",
+      "pid": 197744,
+      "expected_creation_utc": "2026-08-02T15:29:05.6433287Z",
+      "present": false,
+      "identity_match": false
+    },
+    {
+      "role": "watcher",
+      "pid": 198404,
+      "expected_creation_utc": "windows-filetime:134301581480801944",
+      "present": false,
+      "identity_match": false
+    },
+    {
+      "role": "Atlas-controller",
+      "pid": 192384,
+      "expected_creation_utc": "2026-08-02T15:30:21.3279008Z",
+      "present": false,
+      "identity_match": false
+    },
+    {
+      "role": "Atlas-codex",
+      "pid": 178728,
+      "expected_creation_utc": "2026-08-02T15:30:22.7056757Z",
+      "present": false,
+      "identity_match": false
+    },
+    {
+      "role": "Boreal-controller",
+      "pid": 185696,
+      "expected_creation_utc": "2026-08-02T15:30:22.8572422Z",
+      "present": false,
+      "identity_match": false
+    },
+    {
+      "role": "Boreal-codex",
+      "pid": 177896,
+      "expected_creation_utc": "2026-08-02T15:30:23.6983399Z",
+      "present": false,
+      "identity_match": false
+    },
+    {
+      "role": "Cygnus-controller",
+      "pid": 191112,
+      "expected_creation_utc": "2026-08-02T15:30:23.9860427Z",
+      "present": false,
+      "identity_match": false
+    },
+    {
+      "role": "Cygnus-codex",
+      "pid": 195708,
+      "expected_creation_utc": "2026-08-02T15:30:25.0499544Z",
+      "present": false,
+      "identity_match": false
+    },
+    {
+      "role": "Delta-controller",
+      "pid": 196184,
+      "expected_creation_utc": "2026-08-02T15:30:25.0572031Z",
+      "present": false,
+      "identity_match": false
+    },
+    {
+      "role": "Delta-codex",
+      "pid": 196660,
+      "expected_creation_utc": "2026-08-02T15:30:26.2669422Z",
+      "present": false,
+      "identity_match": false
+    }
+  ],
+  "all_registered_absent": true,
+  "unexpected_epoch_processes": [],
+  "exact_cleanup": true
+}

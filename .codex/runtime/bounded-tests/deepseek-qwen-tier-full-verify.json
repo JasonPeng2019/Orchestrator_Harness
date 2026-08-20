@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  280,
+    "expected_upper_bound_seconds":  250,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The recent whole-repository verifier completed in about 238 seconds; 250 seconds allows measured variation and thirty seconds bounds cleanup.",
+    "started_at":  "2026-08-14T11:38:36.1066524+00:00",
+    "finished_at":  "2026-08-14T11:38:40.5259663+00:00",
+    "elapsed_seconds":  4.419,
+    "root_process_id":  184260,
+    "observed_process_ids":  [
+                                 184260
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-full-verify.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-full-verify.stderr.log"
+}

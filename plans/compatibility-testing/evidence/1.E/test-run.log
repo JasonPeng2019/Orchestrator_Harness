@@ -1,0 +1,18 @@
+test_f24_memoized_coding_result_validation_cache (orchestrator_harness.tests.test_compat_reconcile_classify.ReconcileClassifyCacheCompatTests.test_f24_memoized_coding_result_validation_cache) ... ok
+test_f24_task_result_validation_is_not_memoized (orchestrator_harness.tests.test_compat_reconcile_classify.ReconcileClassifyCacheCompatTests.test_f24_task_result_validation_is_not_memoized) ... ok
+test_f10_relay_binding_four_states (orchestrator_harness.tests.test_compat_reconcile_classify.ReconcileClassifyCompatTests.test_f10_relay_binding_four_states) ... ok
+test_f11_request_lifetime_tristate (orchestrator_harness.tests.test_compat_reconcile_classify.ReconcileClassifyCompatTests.test_f11_request_lifetime_tristate) ... ok
+test_f12_expiry_bucket_boundaries (orchestrator_harness.tests.test_compat_reconcile_classify.ReconcileClassifyCompatTests.test_f12_expiry_bucket_boundaries) ... ok
+test_f14_relay_ready_unbound_ambiguous (orchestrator_harness.tests.test_compat_reconcile_classify.ReconcileClassifyCompatTests.test_f14_relay_ready_unbound_ambiguous) ... ok
+test_f16_duplicate_coding_worktree_and_branch (orchestrator_harness.tests.test_compat_reconcile_classify.ReconcileClassifyCompatTests.test_f16_duplicate_coding_worktree_and_branch) ... ok
+test_f19_record_kind_classification (orchestrator_harness.tests.test_compat_reconcile_classify.ReconcileClassifyCompatTests.test_f19_record_kind_classification) ... ok
+test_f22_utc_timestamp_validation (orchestrator_harness.tests.test_compat_reconcile_classify.ReconcileClassifyCompatTests.test_f22_utc_timestamp_validation) ... ok
+test_f3_waiting_relay (orchestrator_harness.tests.test_compat_reconcile_classify.ReconcileClassifyCompatTests.test_f3_waiting_relay) ... ok
+test_f4_helper_tristate (orchestrator_harness.tests.test_compat_reconcile_classify.ReconcileClassifyCompatTests.test_f4_helper_tristate) ... ok
+test_f7_process_state_unknown_fail_closed (orchestrator_harness.tests.test_compat_reconcile_classify.ReconcileClassifyCompatTests.test_f7_process_state_unknown_fail_closed) ... ok
+test_f8_exited_unknown_terminal_states (orchestrator_harness.tests.test_compat_reconcile_classify.ReconcileClassifyCompatTests.test_f8_exited_unknown_terminal_states) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 3.360s
+
+OK

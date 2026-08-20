@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .codex/skills/design-project-topology/scripts/validate_execution_plan.py plans/general-coding-harness/FULL-EXECUTION-SPEC_PLAN_2.md --mapping plans/general-coding-harness/SUBAGENT_ROLE_MODEL_MAPPING.json",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  70,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  10,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Final topology validation previously completed in 1.515 seconds; 60 seconds allows cold interpreter startup plus repository IO",
+    "started_at":  "2026-08-15T18:13:43.2263315+00:00",
+    "finished_at":  "2026-08-15T18:13:44.6807462+00:00",
+    "elapsed_seconds":  1.454,
+    "root_process_id":  149832,
+    "observed_process_ids":  [
+                                 149832
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan-v3.9.21-final-validator-056.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan-v3.9.21-final-validator-056.stderr.log"
+}

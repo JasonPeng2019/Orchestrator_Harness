@@ -1,0 +1,29 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked pytest -q .codex/tests/test_bounded_test_supervisor.py .codex/tests/test_hooks.py .codex/tests/test_stable_runner.py .codex/tests/test_codex_configuration.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "measured comparable focused suites at 28-38 seconds; sixty seconds includes realistic local variance",
+    "started_at":  "2026-08-14T05:11:18.1374071+00:00",
+    "finished_at":  "2026-08-14T05:12:03.0775674+00:00",
+    "elapsed_seconds":  44.94,
+    "root_process_id":  194984,
+    "observed_process_ids":  [
+                                 1260,
+                                 15524,
+                                 154656,
+                                 166056,
+                                 172084,
+                                 189684,
+                                 194124,
+                                 194984
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\configurable-boundary-focused.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\configurable-boundary-focused.stderr.log"
+}

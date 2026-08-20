@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev --locked python C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\scripts\\worktree_task.py create plan2-release-lint-review-001 --branch firmware/v2-release-lint-review-0365 --owner reviewer-main",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  20,
+    "expected_upper_bound_seconds":  15,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Measured local worktree-helper operations complete in under four seconds; fifteen seconds covers attaching the existing review branch at the normal sibling path with five seconds reserved for verified cleanup.",
+    "started_at":  "2026-08-14T20:14:43.4341984+00:00",
+    "finished_at":  "2026-08-14T20:14:46.4247036+00:00",
+    "elapsed_seconds":  2.991,
+    "root_process_id":  100020,
+    "observed_process_ids":  [
+                                 100020
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-lint-review-worktree-create-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-lint-review-worktree-create-002.stderr.log"
+}

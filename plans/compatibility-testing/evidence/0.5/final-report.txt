@@ -1,0 +1,29 @@
+=== RESULT ENVELOPE ===
+**Step 0.5 complete — all six behaviors PASS, phase-0 gate PASS.** The full probe ran against genuinely-launching real `claude` CLI lanes on the local Ollama backend, with the redirect flowing **only** through the invocation's `provider.config_overrides` env channel (the probe stripped the ANTHROPIC_* vars it inherited from its own launcher).
+
+## Per-behavior results
+
+| # | Behavior | Result | Evidence |
+|---|----------|--------|----------|
+| 1 | 2-lane concurrency, genuine claude subprocesses | **PASS** | Both controllers terminal in 14.5 s via `launch_lane_controller`; each lane committed exactly its own artifact (`alpha-artifact.txt`="HELLO FROM LANE A", `beta-artifact.txt`="HELLO FROM LANE B") on its own branch; no cross-lane file/commit. `LANE_EVENTS.jsonl` + worktree `git diff` |
+| 2 | Provider event/evidence logging | **PASS** | `PROVIDER_STARTED`/`PROVIDER_EXITED` x2 with provider_id `claude-code`, real provider_pid, real session_id/thread_id UUIDs, outcome COMPLETED, exit 0. `LANE_EVENTS.jsonl` |
+| 3 | Transcript parsing | **PASS** | Real adapter classifies both transcripts `[('STARTED',''),('COMPLETED','COMPLETED')]`. `worker_*.jsonl` |
+| 4 | MISSING result detection | **PASS** | `result_validation.state == MISSING` both lanes; no RESULT.json written. `worker_*.status.json` |
+| 5 | `--resume <session_id>` recall | **PASS** | Direct `--resume 7288e624-…` recalled "HELLO FROM LANE A" (rc 0). `resume-proof.txt` + `resume-transcript.jsonl` |
+| 6 | `watch --until-actionable` → WATCH_TIMEOUT | **PASS** | exit_code 3 + WATCH_TIMEOUT event against two genuinely-completed lanes (SAFE_BOUNDARY_ONLY, not a regression). `watch-result.txt` |
+
+## Phase-0 gate — **PASS**
+- `build_argv` emits `--verbose` and `--permission-mode bypassPermissions` (0.1 fix) — confirmed on the real adapter.
+- No flag error; happy path asserted: `alpha-artifact.txt` exists with the fixed content, both lanes `provider_terminal_outcome COMPLETED`, `state PROVIDER_EXITED`, exit 0, real session ids. `gate-proof.txt`.
+
+## New findings (honest record)
+1. **Harness resume requires a valid RESULT.json** — `_canonical_prior_task_preflight` refuses `--resume` when prior status exists without one, which conflicts with behavior 4's MISSING state. Behavior 5 used the original findings-doc mechanism (direct `claude --resume`, env-scoped launcher). Phase 3 note: a harness-side resume proof needs RESULT.json present.
+2. **Watch tooling note** — `python -m orchestrator_harness` from a fixture root needs `PYTHONPATH` → harness root (config's relative suite paths dictate cwd).
+3. `session_id == thread_id` on claude stream-json (both = conversation UUID), matching 0.4 evidence.
+4. `PROVIDER_STARTED` rows still carry legacy `codex_pid` alongside `provider_pid` (cosmetic carryover, both populated).
+5. **No Ollama 429s this run** (r1 died on the daily limit); lanes completed cleanly. `[claude-code:unrecognized_model]` stderr warning is benign and didn't affect lanes.
+
+## Evidence (`plans/compatibility-testing/evidence/0.5/`)
+`probe.py`, `probe-run.log`, `LANE_EVENTS.jsonl`, `resume-proof.txt`, `resume-transcript.jsonl`, `watch-result.txt`, `gate-proof.txt`, `final-report.txt`.
+
+No harness source modified; nothing committed; branch remains `compat-test-copy`.

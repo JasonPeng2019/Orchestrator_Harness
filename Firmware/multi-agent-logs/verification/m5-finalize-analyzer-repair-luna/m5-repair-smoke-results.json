@@ -1,0 +1,26 @@
+{
+  "schema": "m5-repair-smoke-results/v1",
+  "sprint_contract": {
+    "accepted_combined_timeline": true,
+    "accepted_baselines": [
+      "explicit-activation",
+      "explicit-post-review"
+    ],
+    "ignored_incomplete_harness_telemetry": [
+      "telemetry-activation-incomplete",
+      "telemetry-review-incomplete"
+    ],
+    "activation_negative_rejected": true,
+    "post_review_negative_rejected": true
+  },
+  "analyzer_contract": {
+    "notification_count": 0,
+    "production_wake_status": "COMPLETE",
+    "healthy_classification": "NO_BLOCKING_IMPACT",
+    "healthy_deadline_lateness_seconds": 0.0,
+    "unrelated_identity_classification": "INSUFFICIENT_EVIDENCE",
+    "unrelated_identity_deadline_lateness_seconds": null,
+    "unrelated_response_record_id": "a7d7e2fb-678f-4b3c-ad5a-d34723f65893"
+  },
+  "result": "PASS"
+}

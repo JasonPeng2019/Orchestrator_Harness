@@ -1,0 +1,10 @@
+50	F401	[*] unused-import
+20	B023	[ ] function-uses-loop-variable
+ 8	F841	[ ] unused-variable
+ 4	B007	[ ] unused-loop-control-variable
+ 4	B905	[ ] zip-without-explicit-strict
+ 4	F403	[ ] undefined-local-with-import-star
+ 2	F402	[ ] import-shadowed-by-loop-var
+ 1	B904	[ ] raise-without-from-inside-except
+Found 93 errors.
+[*] 50 fixable with the `--fix` option (13 hidden fixes can be enabled with the `--unsafe-fixes` option).

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python -m unittest discover -s Firmware/.codex/skills/run-firmware-test-suite/tests -p test_audit_autonomy.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  110,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  20,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Focused unit module for the package documentation audit; it has no network, hardware, or provider work.",
+    "started_at":  "2026-08-14T09:44:46.0446690+00:00",
+    "finished_at":  "2026-08-14T09:44:49.1043372+00:00",
+    "elapsed_seconds":  3.06,
+    "root_process_id":  195100,
+    "observed_process_ids":  [
+                                 195100
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-doc-audit\\unit.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-doc-audit\\unit.stderr.log"
+}

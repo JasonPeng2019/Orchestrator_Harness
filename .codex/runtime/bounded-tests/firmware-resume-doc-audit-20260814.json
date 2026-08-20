@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .codex/skills/run-firmware-test-suite/scripts/audit_autonomy.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "The package-only autonomy and documentation audit is deterministic and previously designed as a short preflight; ten seconds is a reasonable work bound and five seconds is reserved for cleanup.",
+    "started_at":  "2026-08-14T13:00:01.7196410+00:00",
+    "finished_at":  "2026-08-14T13:00:03.7365082+00:00",
+    "elapsed_seconds":  2.017,
+    "root_process_id":  190776,
+    "observed_process_ids":  [
+                                 190776
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-resume-doc-audit-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-resume-doc-audit-20260814.stderr.log"
+}

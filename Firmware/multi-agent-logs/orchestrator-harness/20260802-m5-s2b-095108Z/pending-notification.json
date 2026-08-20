@@ -1,0 +1,60 @@
+{
+  "acknowledged_event_ids": [
+    "7a67febd1a5a648aa52d766ca94456820afc1d5ea0feaddb7f43fe80e2cb833e",
+    "24c32cb561173a2719f2c6e5f2f2c1414b958edba67dcadb06c0f08ab86e8ce3",
+    "556bf7ebbf50383ce2d47ed85e8d1cd041f23f5cb42f766ab5b45ee80735aceb",
+    "c85f6171c5c989ad82f6eb6b3505999f599a69b94d27c4b4f229cf9c225aa637",
+    "571d2b1cdf2b8a95fbe507adadb547840d64cc58fa1aad1a8628eb081038df5d",
+    "9efd440df6ff5818317e5f4e6e6106dc73eac40cff3c88e0ca9e158c9bdc578b",
+    "4f8a2a474c4b39418bec13de01c21d948d20ef66ada84b2c105fb365c2526367",
+    "403d29add5983040ac3cb42507543b96c2670ba6581a5f93c173ea0c0fe13795",
+    "622a9f5dc138bdd608131f885f17d7a72ffa912551bc5ee376f3d6f58d183e16",
+    "0e55496dd58946dfeb01ef6f5c7c3118d45f0c766543467ebfd7a4d830f45179",
+    "a8ace5a57e9fb809d7f7351bac8e595610dcf379e0b14f5c0b10d7f17387d27d"
+  ],
+  "deferred": [],
+  "pending": {
+    "data": {
+      "active_lane_count": 1,
+      "due_utc": "2026-08-02T09:53:02.653313Z",
+      "lanes": [
+        {
+          "controller": {
+            "classification": "live",
+            "operational_state": "RUNNING_CODEX"
+          },
+          "declared_resources": {
+            "boards": [],
+            "mcp_servers": []
+          },
+          "doer": "Delta",
+          "elapsed_seconds": 239.518,
+          "fingerprint_age_seconds": 108.985,
+          "lane_id": "20260802-m5-s2b-095108Z:Delta:A26",
+          "latest_activity": {
+            "age_seconds": 182.994,
+            "identity": {
+              "sha256": "2a81106b30a2c7f8a5bacd8d066eb76f613cbe2520aba1bd2fc2b47c57bf45c8",
+              "signal_id": "sig-20260802-m5-s2b-095108Z-delta-a26-gate-002"
+            },
+            "kind": "manager_signal",
+            "observed_utc": "2026-08-02T10:05:24.039618Z"
+          },
+          "phase": "M5_LIVE_ENTRY_AUTHORIZATION",
+          "request": null,
+          "resource_ambiguity": [],
+          "resource_conflicts": [],
+          "task": "A26"
+        }
+      ],
+      "review_baseline_utc": "2026-08-02T09:53:02.653313Z"
+    },
+    "event_id": "9aab53c3aeb25c7ef0d0af4137d89248e9dcefccedd30bbb22a875ed0ce525ac",
+    "identity": "manager:review-due",
+    "notification": "MANAGER_ACTION_REQUIRED",
+    "observed_utc": "2026-08-02T10:08:27.033616Z",
+    "severity": "info",
+    "type": "MANAGER_REVIEW_DUE"
+  },
+  "schema": "orchestrator-manager-notification/v1"
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .codex/skills/design-project-topology/scripts/validate_execution_plan.py plans/general-coding-harness/FULL-EXECUTION-SPEC_PLAN_2.md --mapping plans/general-coding-harness/SUBAGENT_ROLE_MODEL_MAPPING.json",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "The prior validator completed in 2.245 seconds and identified two schema mismatches. The fixed plan retains the same small local validation workload, so 20 seconds remains a credible cold-start bound with the policy-minimum five-second cleanup.",
+    "started_at":  "2026-08-14T22:22:07.2385366+00:00",
+    "finished_at":  "2026-08-14T22:22:09.2661330+00:00",
+    "elapsed_seconds":  2.028,
+    "root_process_id":  191268,
+    "observed_process_ids":  [
+                                 191268
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-proof-contract-topology-validate-fixed-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-proof-contract-topology-validate-fixed-20260814.stderr.log"
+}

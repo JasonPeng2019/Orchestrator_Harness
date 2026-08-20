@@ -1,0 +1,78 @@
+﻿[
+    {
+        "argv":  [
+                     "python.exe",
+                     "-m",
+                     "orchestrator_harness.lane_controller",
+                     "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_n_prep.invocation.json"
+                 ],
+        "created_utc":  "2026-07-31T22:44:13.952247Z",
+        "creationflags":  150994944,
+        "cwd":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+        "expected_state_path":  null,
+        "label":  "atlas-clean-n-prep",
+        "launched_utc":  "2026-07-31T22:44:13.951423Z",
+        "pid":  173656,
+        "platform":  "windows",
+        "role":  "lane-controller",
+        "schema":  "orchestrator-operator-launch/v1",
+        "status":  "launched"
+    },
+    {
+        "argv":  [
+                     "python.exe",
+                     "-m",
+                     "orchestrator_harness.lane_controller",
+                     "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_s1_clean_n_prep.invocation.json"
+                 ],
+        "created_utc":  "2026-07-31T22:44:15.248843Z",
+        "creationflags":  150994944,
+        "cwd":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+        "expected_state_path":  null,
+        "label":  "boreal-clean-n-prep",
+        "launched_utc":  "2026-07-31T22:44:15.248104Z",
+        "pid":  190440,
+        "platform":  "windows",
+        "role":  "lane-controller",
+        "schema":  "orchestrator-operator-launch/v1",
+        "status":  "launched"
+    },
+    {
+        "argv":  [
+                     "python.exe",
+                     "-m",
+                     "orchestrator_harness.lane_controller",
+                     "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_s1_clean_n_prep.invocation.json"
+                 ],
+        "created_utc":  "2026-07-31T22:44:16.973896Z",
+        "creationflags":  150994944,
+        "cwd":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+        "expected_state_path":  null,
+        "label":  "cygnus-clean-n-prep",
+        "launched_utc":  "2026-07-31T22:44:16.972631Z",
+        "pid":  163976,
+        "platform":  "windows",
+        "role":  "lane-controller",
+        "schema":  "orchestrator-operator-launch/v1",
+        "status":  "launched"
+    },
+    {
+        "argv":  [
+                     "python.exe",
+                     "-m",
+                     "orchestrator_harness.lane_controller",
+                     "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_s1_clean_n_prep.invocation.json"
+                 ],
+        "created_utc":  "2026-07-31T22:44:18.747623Z",
+        "creationflags":  150994944,
+        "cwd":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+        "expected_state_path":  null,
+        "label":  "delta-clean-n-prep",
+        "launched_utc":  "2026-07-31T22:44:18.746526Z",
+        "pid":  194792,
+        "platform":  "windows",
+        "role":  "lane-controller",
+        "schema":  "orchestrator-operator-launch/v1",
+        "status":  "launched"
+    }
+]

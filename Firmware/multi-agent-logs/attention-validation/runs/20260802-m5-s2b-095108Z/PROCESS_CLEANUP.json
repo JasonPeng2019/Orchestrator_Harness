@@ -1,0 +1,18 @@
+{
+    "schema":  "mcp-trial-3-process-inventory/v1",
+    "observed_utc":  "2026-08-02T10:11:12.1268467Z",
+    "epoch":  "20260802-m5-s2b-095108Z",
+    "live_relevant":  [
+
+                      ],
+    "expected_absent_pids":  [
+                                 3024,
+                                 170304,
+                                 150760,
+                                 181216,
+                                 182568,
+                                 14652
+                             ],
+    "expected_absent_verified":  true,
+    "disposition":  "SAFE_BOUNDARY"
+}

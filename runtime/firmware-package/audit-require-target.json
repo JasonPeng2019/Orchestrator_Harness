@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/.codex/skills/run-firmware-test-suite/scripts/audit_autonomy.py --require-target",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Focused target preflight previously completed in under three seconds; 30-second upper bound includes junction and local filesystem headroom.",
+    "started_at":  "2026-08-14T09:19:02.8903128+00:00",
+    "finished_at":  "2026-08-14T09:19:05.6957777+00:00",
+    "elapsed_seconds":  2.805,
+    "root_process_id":  11216,
+    "observed_process_ids":  [
+                                 11216
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\audit-require-target.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\audit-require-target.stderr.log"
+}

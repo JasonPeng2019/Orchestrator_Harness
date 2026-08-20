@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../../../scripts/orchestration/prompt_policy.py", line 74, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../../../scripts/orchestration/prompt_policy.py", line 66, in main
+    compose_policy_bound_prompt(source),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../../../scripts/orchestration/prompt_policy.py", line 31, in compose_policy_bound_prompt
+    policy = load_verified_policy()
+  File "/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../../../scripts/orchestration/prompt_policy.py", line 22, in load_verified_policy
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: autonomous-execution policy hash mismatch: expected=60e6e03c14d52c0dead8fce82b1ccc42601daff1de19212a5cd6bb709a82d96e actual=ca9a0cf634c950a0cc8eb081f772388658afa831ddacb240ea5e5d5198114314 sidecar=ca9a0cf634c950a0cc8eb081f772388658afa831ddacb240ea5e5d5198114314
+mv: cannot stat '/tmp/tmp.WWslBgMCRX/.change-loop/custom-runtime/state/doer.prompt.md.policy-bound.tmp': No such file or directory

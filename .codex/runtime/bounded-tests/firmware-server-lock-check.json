@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv lock --check",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\BYO-Firmware-MCP",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "documented lock-consistency check for the bundled BYO Firmware MCP server",
+    "started_at":  "2026-08-14T10:37:01.6984894+00:00",
+    "finished_at":  "2026-08-14T10:37:03.5613348+00:00",
+    "elapsed_seconds":  1.863,
+    "root_process_id":  65988,
+    "observed_process_ids":  [
+                                 65988
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-server-lock-check.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-server-lock-check.stderr.log"
+}

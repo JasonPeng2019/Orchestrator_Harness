@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/scripts/orchestration/build_server_snapshot.py Firmware/.agent-workspace/server-snapshots/smoke.json",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The snapshot scans the local tracked server src tree and should finish in seconds; 60 seconds covers Git and antivirus overhead.",
+    "started_at":  "2026-08-14T09:27:02.1817901+00:00",
+    "finished_at":  "2026-08-14T09:27:04.9527593+00:00",
+    "elapsed_seconds":  2.771,
+    "root_process_id":  186412,
+    "observed_process_ids":  [
+                                 186412
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\server-snapshot-smoke.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\server-snapshot-smoke.stderr.log"
+}

@@ -1,0 +1,15 @@
+
+== ruff ==
+All checks passed!
+
+== format ==
+unformatted: File would be reformatted
+   --> .codex\tests\test_stable_runner.py:557:59
+    |
+556 |     assert deepseek_settings["model"] == "deepseek-v4-flash:0731-cloud"
+    -     assert deepseek_settings["reasoning_effort"] == "high"
+557 +     assert deepseek_settings["reasoning_effort"] == "high"
+558 |     assert deepseek_settings["command"] == [
+    |
+
+1 file would be reformatted, 17 files already formatted

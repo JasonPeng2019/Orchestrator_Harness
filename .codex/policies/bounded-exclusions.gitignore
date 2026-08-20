@@ -1,0 +1,10 @@
+# Paths are relative to the repository root. Git-ignore syntax applies.
+# The supervisor must be directly callable so it can enforce the nested command's bound.
+.codex/scripts/Invoke-BoundedTest.ps1
+# The Codex launch bridge starts a lane-managed agent session, not a bounded test.
+.codex/scripts/stable_runner.py
+# The Firmware Qwen bootstrap starts a target-lane-managed provider session, not a bounded test.
+Firmware/scripts/orchestration/qwen_provider_bootstrap.py
+Firmware/scripts/orchestration/target_lane_controller_bootstrap.py
+# The accepted target's lane controller starts a lane-managed provider session, not a bounded test.
+Firmware/target-harness/orchestrator_harness/lane_controller.py

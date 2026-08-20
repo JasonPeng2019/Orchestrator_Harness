@@ -1,0 +1,32 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python -m pytest -q .codex/tests/test_stable_runner.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  90,
+    "expected_upper_bound_seconds":  75,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  20,
+    "timeout_basis":  "The focused stable-runner suite historically completes well below one minute; seventy-five seconds allows startup and deterministic fixture variation, with fifteen seconds bounded cleanup.",
+    "started_at":  "2026-08-14T11:33:09.8420256+00:00",
+    "finished_at":  "2026-08-14T11:33:36.7994472+00:00",
+    "elapsed_seconds":  26.957,
+    "root_process_id":  155068,
+    "observed_process_ids":  [
+                                 2932,
+                                 54600,
+                                 73908,
+                                 155068,
+                                 162336,
+                                 163480,
+                                 173628,
+                                 173764,
+                                 177796,
+                                 193200,
+                                 194160
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-stable-runner.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-stable-runner.stderr.log"
+}

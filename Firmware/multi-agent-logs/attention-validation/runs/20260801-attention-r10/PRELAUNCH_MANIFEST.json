@@ -1,0 +1,51 @@
+{
+    "schema":  "attention-prelaunch-manifest/v1",
+    "epoch":  "20260801-attention-r10",
+    "counter":  "0/3 candidate 1 after Repair 009",
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r10-001",
+    "primary_config":  "orchestrator_harness/canary-20260801-attention-r10.json",
+    "optional_config":  "harness_watcher_implementation/canary-20260801-attention-r10.json",
+    "policy_sha256":  "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68",
+    "server_head":  "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "stale_epoch_authority_live":  false,
+    "required_logging_transport":  "--metadata-file",
+    "required_notification_event":  "WATCHER_NOTIFICATION_SENT",
+    "required_continuity_field":  "continuous_from_record_id",
+    "lanes":  [
+                  {
+                      "run_root":  "fresh-experiments/A22_20260726-062324",
+                      "doer":  "Atlas",
+                      "task":  "A22",
+                      "boards":  [
+
+                                 ]
+                  },
+                  {
+                      "run_root":  "fresh-experiments/D31_20260726-062325",
+                      "doer":  "Boreal",
+                      "task":  "D31",
+                      "boards":  [
+
+                                 ]
+                  },
+                  {
+                      "run_root":  "fresh-experiments/A24_20260726-052146",
+                      "doer":  "Cygnus",
+                      "task":  "A24",
+                      "boards":  [
+
+                                 ]
+                  },
+                  {
+                      "run_root":  "fresh-experiments/A26_20260726-062325",
+                      "doer":  "Delta",
+                      "task":  "A26",
+                      "boards":  [
+
+                                 ]
+                  }
+              ],
+    "bounded_endpoint":  "read-only E2E state/plan reconciliation after one real manager gate; no hardware mutation in this sprint",
+    "created_utc":  "2026-08-01T19:56:27.3025494Z"
+}

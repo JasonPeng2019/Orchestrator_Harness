@@ -1,0 +1,220 @@
+{
+  "schema": "canary-manager-review/v1",
+  "epoch": "20260731-s1-clean-o",
+  "reviewed_utc": "2026-07-31T23:16:05.113864Z",
+  "pending_event_id": "5e7dbd6988de4240a6b52f84892c4adac185161134a1da00a1cb7c191705327b",
+  "pending_type": "RESOURCE_AMBIGUOUS",
+  "verdict": "ACKNOWLEDGED_EXPECTED_PRE_PROVIDER_BOUNDARY",
+  "analysis": "The three live HIL lane invocations intentionally hold exclusive board/runtime leases while their agents mechanically adapt the already-green Clean-N entry before manager provider release. No provider or public MCP identity should exist yet. The warning is truthful and fail-closed; no resource conflict, duplicate controller, process error, or observation error exists. Atlas will receive the first serialized provider release; Boreal and Cygnus remain gated.",
+  "lanes": [
+    {
+      "board_tokens": [
+        "STM-A"
+      ],
+      "codex_created_utc": "2026-07-31T23:14:31.131856Z",
+      "codex_identity": "live",
+      "codex_pid": 195924,
+      "codex_reason": "PID and creation time match",
+      "codex_started_utc": "2026-07-31T23:14:31.131856Z",
+      "controller_created_utc": "2026-07-31T23:14:29.938665Z",
+      "controller_identity": "live",
+      "controller_pid": 196040,
+      "controller_reason": "PID and creation time match",
+      "controller_started_utc": "2026-07-31T23:14:29.938665Z",
+      "declared_state": "running_codex",
+      "doer": "Atlas",
+      "duplicate_live_attempts": 1,
+      "ended_utc": null,
+      "jsonl_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_o_live_codex.jsonl",
+      "label": "atlas_a22_s1_clean_o_live",
+      "lane_id": "20260731-s1-clean-o:Atlas:A22",
+      "live_attempt_labels": [
+        "atlas_a22_s1_clean_o_live"
+      ],
+      "mcp_servers": [
+        "a22_b14_s1o_mcp"
+      ],
+      "operational_state": "RUNNING_CODEX",
+      "parent_reason": "PID and creation-time parent identity match",
+      "parent_state": "match",
+      "phase": "S1O_B14_LIVE",
+      "process_reason": "controller and Codex identities are live",
+      "process_state": "RUNNING_CODEX",
+      "provider_wait": false,
+      "reason": "controller and Codex identities are live",
+      "resource_ambiguity": [
+        "active hardware lane has no current request identity for probe/serial/root audit",
+        "declared MCP server has no lane/session-correlated PID lifetime evidence"
+      ],
+      "resource_release_possible": false,
+      "resources": [
+        "board:stm-a",
+        "mcp-name:a22_b14_s1o_mcp"
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324",
+      "started_utc": "2026-07-31T23:14:31.122221Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_o_live_controller.status.json",
+      "status_sha256": "1de9d96dc03af3d6e2f696626f0fa09531f32d9aebd45b5fbefbacedc3fea2da",
+      "task": "A22",
+      "terminal_event": null,
+      "thread_id": "019fb877-1475-76c0-a137-2743580015de",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace"
+    },
+    {
+      "board_tokens": [
+        "STM-B"
+      ],
+      "codex_created_utc": "2026-07-31T23:14:32.957068Z",
+      "codex_identity": "live",
+      "codex_pid": 52744,
+      "codex_reason": "PID and creation time match",
+      "codex_started_utc": "2026-07-31T23:14:32.957068Z",
+      "controller_created_utc": "2026-07-31T23:14:31.129960Z",
+      "controller_identity": "live",
+      "controller_pid": 188684,
+      "controller_reason": "PID and creation time match",
+      "controller_started_utc": "2026-07-31T23:14:31.129960Z",
+      "declared_state": "running_codex",
+      "doer": "Boreal",
+      "duplicate_live_attempts": 1,
+      "ended_utc": null,
+      "jsonl_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_s1_clean_o_live_codex.jsonl",
+      "label": "boreal_d31_s1_clean_o_live",
+      "lane_id": "20260731-s1-clean-o:Boreal:D31",
+      "live_attempt_labels": [
+        "boreal_d31_s1_clean_o_live"
+      ],
+      "mcp_servers": [
+        "d31_app1_s1o_mcp"
+      ],
+      "operational_state": "RUNNING_CODEX",
+      "parent_reason": "PID and creation-time parent identity match",
+      "parent_state": "match",
+      "phase": "S1O_APP1_LIVE",
+      "process_reason": "controller and Codex identities are live",
+      "process_state": "RUNNING_CODEX",
+      "provider_wait": false,
+      "reason": "controller and Codex identities are live",
+      "resource_ambiguity": [
+        "active hardware lane has no current request identity for probe/serial/root audit",
+        "declared MCP server has no lane/session-correlated PID lifetime evidence"
+      ],
+      "resource_release_possible": false,
+      "resources": [
+        "board:stm-b",
+        "mcp-name:d31_app1_s1o_mcp"
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "started_utc": "2026-07-31T23:14:32.951655Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_s1_clean_o_live_controller.status.json",
+      "status_sha256": "bbb8fb8199fee10c89f57bd97af8f26e7bae3d2369b47c088a2d6c7209ca2c2e",
+      "task": "D31",
+      "terminal_event": null,
+      "thread_id": "019fb877-1447-7693-92b1-f4bda04c6ecf",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace"
+    },
+    {
+      "board_tokens": [
+        "NRF-A",
+        "NRF-B"
+      ],
+      "codex_created_utc": "2026-07-31T23:14:34.691508Z",
+      "codex_identity": "live",
+      "codex_pid": 188060,
+      "codex_reason": "PID and creation time match",
+      "codex_started_utc": "2026-07-31T23:14:34.691508Z",
+      "controller_created_utc": "2026-07-31T23:14:33.035441Z",
+      "controller_identity": "live",
+      "controller_pid": 17604,
+      "controller_reason": "PID and creation time match",
+      "controller_started_utc": "2026-07-31T23:14:33.035441Z",
+      "declared_state": "running_codex",
+      "doer": "Cygnus",
+      "duplicate_live_attempts": 1,
+      "ended_utc": null,
+      "jsonl_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_s1_clean_o_live_codex.jsonl",
+      "label": "cygnus_a24_s1_clean_o_live",
+      "lane_id": "20260731-s1-clean-o:Cygnus:A24",
+      "live_attempt_labels": [
+        "cygnus_a24_s1_clean_o_live"
+      ],
+      "mcp_servers": [
+        "a24_pair_a_s1o_mcp",
+        "a24_pair_b_s1o_mcp"
+      ],
+      "operational_state": "RUNNING_CODEX",
+      "parent_reason": "PID and creation-time parent identity match",
+      "parent_state": "match",
+      "phase": "S1O_PAIRED_PRE_RF_LIVE",
+      "process_reason": "controller and Codex identities are live",
+      "process_state": "RUNNING_CODEX",
+      "provider_wait": false,
+      "reason": "controller and Codex identities are live",
+      "resource_ambiguity": [
+        "active hardware lane has no current request identity for probe/serial/root audit",
+        "declared MCP server has no lane/session-correlated PID lifetime evidence"
+      ],
+      "resource_release_possible": false,
+      "resources": [
+        "board:nrf-a",
+        "board:nrf-b",
+        "mcp-name:a24_pair_a_s1o_mcp",
+        "mcp-name:a24_pair_b_s1o_mcp"
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146",
+      "started_utc": "2026-07-31T23:14:34.684359Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_s1_clean_o_live_controller.status.json",
+      "status_sha256": "0469626c6a6a8b0717b603eb60ab926702739cac225eac2d528414442db9a331",
+      "task": "A24",
+      "terminal_event": null,
+      "thread_id": "019fb877-1199-79b1-a32e-34348178f111",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace"
+    },
+    {
+      "board_tokens": [],
+      "codex_created_utc": "2026-07-31T23:14:36.407453Z",
+      "codex_identity": "live",
+      "codex_pid": 190284,
+      "codex_reason": "PID and creation time match",
+      "codex_started_utc": "2026-07-31T23:14:36.407453Z",
+      "controller_created_utc": "2026-07-31T23:14:34.726985Z",
+      "controller_identity": "live",
+      "controller_pid": 194244,
+      "controller_reason": "PID and creation time match",
+      "controller_started_utc": "2026-07-31T23:14:34.726985Z",
+      "declared_state": "running_codex",
+      "doer": "Delta",
+      "duplicate_live_attempts": 1,
+      "ended_utc": null,
+      "jsonl_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_s1_clean_o_prep_codex.jsonl",
+      "label": "delta_a26_s1_clean_o_prep",
+      "lane_id": "20260731-s1-clean-o:Delta:A26",
+      "live_attempt_labels": [
+        "delta_a26_s1_clean_o_prep"
+      ],
+      "mcp_servers": [],
+      "operational_state": "RUNNING_CODEX",
+      "parent_reason": "PID and creation-time parent identity match",
+      "parent_state": "match",
+      "phase": "S1O_HOST_ADAPT_WAIT",
+      "process_reason": "controller and Codex identities are live",
+      "process_state": "RUNNING_CODEX",
+      "provider_wait": false,
+      "reason": "controller and Codex identities are live",
+      "resource_ambiguity": [],
+      "resource_release_possible": false,
+      "resources": [],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325",
+      "started_utc": "2026-07-31T23:14:36.401680Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_s1_clean_o_prep_controller.status.json",
+      "status_sha256": "49ce7eee4bc61e406442be6c0cecb0d98981501ff9db3f132d162b65218b09be",
+      "task": "A26",
+      "terminal_event": null,
+      "thread_id": "019fb877-1441-7c92-84e2-cbb5bc422879",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace"
+    }
+  ],
+  "resource_conflicts": [],
+  "observation_errors": [],
+  "process_errors": []
+}

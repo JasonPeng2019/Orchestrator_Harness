@@ -1,0 +1,44 @@
+{
+  "inactive_lanes": {
+    "20260802-m5-s1a-061555Z:Atlas:A22": {
+      "acknowledged_management_event_ids": [],
+      "fingerprint": "593d5ec1ac921eb09bedbff9c46f220e7a254e1574edd899aa143e92da51cf08",
+      "fingerprint_generation": 2,
+      "fingerprint_since_utc": "2026-08-02T06:22:36.608149Z",
+      "stage_context": "7a0b94855243d5a8581c5ac7b13dcde0caec11b2d369b502c9107f1b253cb469",
+      "stage_repeat_occurrences": {},
+      "stage_requests_by_kind": {}
+    },
+    "20260802-m5-s1a-061555Z:Boreal:D31": {
+      "acknowledged_management_event_ids": [],
+      "fingerprint": "bacc429f8da12b495f23e89e8744b86c906ef46e5688cf4ef5d688cc0530253f",
+      "fingerprint_generation": 4,
+      "fingerprint_since_utc": "2026-08-02T06:28:58.504461Z",
+      "stage_context": "2a3065881dfce883cccdbdc5aff1e19715fb632189ec9bfeb642e4355c573a8e",
+      "stage_repeat_occurrences": {},
+      "stage_requests_by_kind": {}
+    }
+  },
+  "lanes": {
+    "20260802-m5-s1a-061555Z:Cygnus:A24": {
+      "acknowledged_management_event_ids": [],
+      "fingerprint": "2203ee99bda452c7272a9fa128124dc3663a705ba1ae7e12719a01b1f62b9c59",
+      "fingerprint_generation": 4,
+      "fingerprint_since_utc": "2026-08-02T06:30:39.847280Z",
+      "stage_context": "a7afa202e6bb1b74b977e7b97a78c10baffc82d6a9834963968a9db2e56c1e66",
+      "stage_repeat_occurrences": {},
+      "stage_requests_by_kind": {}
+    },
+    "20260802-m5-s1a-061555Z:Delta:A26": {
+      "acknowledged_management_event_ids": [],
+      "fingerprint": "b35365037850e1503dcb856bdcdd5aa7a8f85b3b9042253c2061a15437c59c30",
+      "fingerprint_generation": 3,
+      "fingerprint_since_utc": "2026-08-02T06:28:58.504461Z",
+      "stage_context": "85f2c901f32ac10b171f9ff9523be48038ea89dffea2a3a7b815a5dfcd9ac274",
+      "stage_repeat_occurrences": {},
+      "stage_requests_by_kind": {}
+    }
+  },
+  "review_baseline_utc": "2026-08-02T06:20:06.333399Z",
+  "schema": "orchestrator-active-management-history/v1"
+}

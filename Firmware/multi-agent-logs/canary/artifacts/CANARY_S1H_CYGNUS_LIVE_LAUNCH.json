@@ -1,0 +1,7 @@
+﻿{
+    "launched_utc":  "2026-07-31T19:07:00.4538616Z",
+    "epoch":  "20260731-s1-clean-h",
+    "lane_id":  "20260731-s1-clean-h:Cygnus:A24",
+    "controller_pid":  186652,
+    "invocation":  "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_s1_clean_h_live.invocation.json"
+}

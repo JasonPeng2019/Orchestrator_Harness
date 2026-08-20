@@ -1,0 +1,11 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+2 files already formatted
+
+== types changed Python ==
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\scripts\orchestration\qwen_provider_bootstrap.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\scripts\orchestration\qwen_provider_bootstrap.py:36:6 - error: Import "orchestrator_harness.provider" could not be resolved (reportMissingImports)
+1 error, 0 warnings, 0 notes

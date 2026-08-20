@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6DocumentationTests",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\woc-0365",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Prior focused documentation checks complete within seconds; 30 seconds covers ordinary host variance.",
+    "started_at":  "2026-08-14T18:35:54.0286374+00:00",
+    "finished_at":  "2026-08-14T18:35:58.3872173+00:00",
+    "elapsed_seconds":  4.359,
+    "root_process_id":  167804,
+    "observed_process_ids":  [
+                                 167804
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-selected-docs-3a73-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-selected-docs-3a73-001.stderr.log"
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m orchestrator_harness handoff-preflight --task-card C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/generalization/generalization-20260810T182017Z-0365e2613294/stages/WORKSPACE_OVERLAY/lanes/WO.P/TASK_CARD_002.json --invocation C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/generalization/generalization-20260810T182017Z-0365e2613294/stages/WORKSPACE_OVERLAY/lanes/WO.P/INVOCATION_002.json --result .agent-workspace/RESULT.json --dependency-map .agent-workspace/DEPENDENCY_MAP.json --worktree . --evidence-root .agent-workspace --required-evidence bounded/overlay-policy-005.result.json --required-evidence boundary-smoke.status.json",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\wop-0365",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  20,
+    "timeout_basis":  "target handoff preflight is a bounded read-only identity and evidence validation with internal Git calls capped at fifteen seconds",
+    "started_at":  "2026-08-14T07:06:26.4224716+00:00",
+    "finished_at":  "2026-08-14T07:06:32.0964707+00:00",
+    "elapsed_seconds":  5.674,
+    "root_process_id":  195784,
+    "observed_process_ids":  [
+                                 195784
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\wop-postcleanup-preflight-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\wop-postcleanup-preflight-001.stderr.log"
+}

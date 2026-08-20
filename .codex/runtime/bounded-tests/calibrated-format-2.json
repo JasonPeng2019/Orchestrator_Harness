@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked ruff format --config .codex/dev/pyproject.toml --no-cache .codex/tests/test_bounded_test_supervisor.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Formatting one test file completed in under two seconds for the same toolchain; 30 seconds is a conservative upper bound with five seconds for cleanup.",
+    "started_at":  "2026-08-13T23:35:07.8260571+00:00",
+    "finished_at":  "2026-08-13T23:35:09.5277762+00:00",
+    "elapsed_seconds":  1.702,
+    "root_process_id":  185468,
+    "observed_process_ids":  [
+                                 185468
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\calibrated-format-2.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\calibrated-format-2.stderr.log"
+}

@@ -1,0 +1,16 @@
+﻿[
+    {
+        "ProcessId":  166056,
+        "ParentProcessId":  187380,
+        "CreationDate":  "\/Date(1785535337191)\/",
+        "Name":  "powershell.exe",
+        "CommandLine":  "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\.agent-workspace\\ORCHESTRATOR_HARNESS\\clean_l_primary_owner.ps1 -Config orchestrator_harness/canary-20260731-s1-clean-m.json -Epoch 20260731-s1-clean-m"
+    },
+    {
+        "ProcessId":  194608,
+        "ParentProcessId":  166056,
+        "CreationDate":  "\/Date(1785535337968)\/",
+        "Name":  "python.exe",
+        "CommandLine":  "\"C:\\Users\\Jason\\AppData\\Local\\Programs\\Python\\Python314\\python.exe\" -m orchestrator_harness --config orchestrator_harness/canary-20260731-s1-clean-m.json watch --managed "
+    }
+]

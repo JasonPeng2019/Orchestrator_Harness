@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/runtime/host-readiness/host-readiness-20260815-052/validate_invocation.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Canonical invocation validation previously completed in 1.67 seconds; 20 seconds allows cold interpreter startup",
+    "started_at":  "2026-08-15T18:08:20.2977764+00:00",
+    "finished_at":  "2026-08-15T18:08:21.7416931+00:00",
+    "elapsed_seconds":  1.444,
+    "root_process_id":  199460,
+    "observed_process_ids":  [
+                                 199460
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-invocation-validate-053.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-invocation-validate-053.stderr.log"
+}

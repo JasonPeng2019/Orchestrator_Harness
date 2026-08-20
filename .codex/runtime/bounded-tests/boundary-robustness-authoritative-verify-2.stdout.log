@@ -1,0 +1,84 @@
+
+== ruff ==
+All checks passed!
+
+== format ==
+unformatted: File would be reformatted
+   --> .codex\scripts\bounded_test_adapter.py:155:35
+    |
+154 |     while index < len(command):
+    -         character = command[index]
+    -         if quote is not None:
+    -             current.append(character)
+    -             if quote == '"' and character == "`" and index + 1 < len(command):
+    -                 index += 1
+    -                 current.append(command[index])
+    -             elif character == quote:
+    -                 quote = None
+    -             index += 1
+    -             continue
+    -         if character == "`" and index + 1 < len(command):
+    -             current.append(character)
+    -             index += 1
+    -             current.append(command[index])
+    -             if command[index] == "\r" and index + 1 < len(command) and command[index + 1] == "\n":
+    -                 index += 1
+    -                 current.append(command[index])
+    -             index += 1
+    -             continue
+    -         if character in {"'", '"'}:
+155 +         character = command[index]
+156 +         if quote is not None:
+157 +             current.append(character)
+158 +             if quote == '"' and character == "`" and index + 1 < len(command):
+159 +                 index += 1
+160 +                 current.append(command[index])
+161 +             elif character == quote:
+162 +                 quote = None
+163 +             index += 1
+164 +             continue
+165 +         if character == "`" and index + 1 < len(command):
+166 +             current.append(character)
+167 +             index += 1
+168 +             current.append(command[index])
+169 +             if command[index] == "\r" and index + 1 < len(command) and command[index + 1] == "\n":
+170 +                 index += 1
+171 +                 current.append(command[index])
+172 +             index += 1
+173 +             continue
+174 +         if character in {"'", '"'}:
+175 |             quote = character
+    |
+
+unformatted: File would be reformatted
+   --> .codex\tests\test_hooks.py:398:85
+    |
+397 |     )
+    -     result = guard_code_test({"cwd": str(ROOT), "tool_input": {"command": command}})
+    -     assert result["hookSpecificOutput"]["permissionDecision"] == "deny"
+    -
+    -     backslash_before_quote = (
+    -         "powershell -File .codex/scripts/Invoke-BoundedTest.ps1 "
+    -         "-TimeoutBasis 'measured\\'; python .codex/scripts/verify.py"
+    -     )
+    -     backslash_result = guard_code_test(
+    -         {"cwd": str(ROOT), "tool_input": {"command": backslash_before_quote}}
+    -     )
+    -     assert backslash_result["hookSpecificOutput"]["permissionDecision"] == "deny"
+    -
+    -     quoted_separator = (
+398 +     result = guard_code_test({"cwd": str(ROOT), "tool_input": {"command": command}})
+399 +     assert result["hookSpecificOutput"]["permissionDecision"] == "deny"
+400 +
+401 +     backslash_before_quote = (
+402 +         "powershell -File .codex/scripts/Invoke-BoundedTest.ps1 "
+403 +         "-TimeoutBasis 'measured\\'; python .codex/scripts/verify.py"
+404 +     )
+405 +     backslash_result = guard_code_test({"cwd": str(ROOT), "tool_input": {"command": backslash_before_quote}})
+406 +     assert backslash_result["hookSpecificOutput"]["permissionDecision"] == "deny"
+407 +
+408 +     quoted_separator = (
+409 |         "powershell -File .codex/scripts/Invoke-BoundedTest.ps1 "
+    |
+
+2 files would be reformatted, 16 files already formatted

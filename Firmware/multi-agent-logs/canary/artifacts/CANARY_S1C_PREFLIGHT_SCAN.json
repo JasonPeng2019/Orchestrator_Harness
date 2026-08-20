@@ -1,0 +1,812 @@
+﻿{
+  "helpers": [],
+  "lanes": [
+    {
+      "board_tokens": [
+        "STM-A"
+      ],
+      "checkpoint_observed_utc": "2026-07-31T15:28:29.810738Z",
+      "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+      "checkpoint_sha256": "ccbdb5269553df76d294495c98a0f47108a445ec8a8c0b69f9e6f1a11c6b0611",
+      "codex_created_utc": null,
+      "codex_identity": "absent",
+      "codex_pid": 159184,
+      "codex_reason": "PID 159184 is absent",
+      "codex_started_utc": "2026-07-31T15:21:28.652225Z",
+      "controller_created_utc": null,
+      "controller_identity": "absent",
+      "controller_pid": 26908,
+      "controller_reason": "PID 26908 is absent",
+      "controller_started_utc": "2026-07-31T15:21:27.237167Z",
+      "declared_state": "codex_exited",
+      "doer": "Atlas",
+      "duplicate_live_attempts": 0,
+      "ended_utc": "2026-07-31T15:28:52.902371Z",
+      "jsonl_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_b_b14_codex.jsonl",
+      "label": "atlas_a22_s1_clean_b_b14",
+      "lane_id": "20260731-s1-clean-b:Atlas:A22",
+      "live_attempt_labels": [],
+      "mcp_servers": [
+        "a22_b14_s1b_mcp"
+      ],
+      "operational_state": "CHECKPOINTED",
+      "parent_reason": "process identity unavailable",
+      "parent_state": "unknown",
+      "phase": "S1B_B14_FIX_AND_ORACLE",
+      "process_reason": "controller declared codex_exited and recorded identities are absent",
+      "process_state": "EXITED",
+      "provider_wait": false,
+      "reason": "controller declared codex_exited and recorded identities are absent",
+      "resource_ambiguity": [
+        "declared MCP server has no lane/session-correlated PID lifetime evidence"
+      ],
+      "resource_release_possible": false,
+      "resources": [
+        "mcp-name:a22_b14_s1b_mcp"
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324",
+      "started_utc": "2026-07-31T15:21:28.646585Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_b_b14_controller.status.json",
+      "status_sha256": "e89873898392c764a13f92210c0d587dde736c4b6571a3fdf78d3efa8c97581d",
+      "task": "A22",
+      "terminal_event": "turn.completed",
+      "thread_id": "019fb877-1475-76c0-a137-2743580015de",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace"
+    },
+    {
+      "board_tokens": [
+        "STM-B"
+      ],
+      "checkpoint_observed_utc": "2026-07-31T15:34:03.956885Z",
+      "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+      "checkpoint_sha256": "bbeba50eaaf9e67304519b53248a0e376fe5f42d36c5f7e776de21bf6864c744",
+      "codex_created_utc": null,
+      "codex_identity": "absent",
+      "codex_pid": 182956,
+      "codex_reason": "PID 182956 is absent",
+      "codex_started_utc": "2026-07-31T15:21:28.645814Z",
+      "controller_created_utc": null,
+      "controller_identity": "absent",
+      "controller_pid": 187172,
+      "controller_reason": "PID 187172 is absent",
+      "controller_started_utc": "2026-07-31T15:21:27.245677Z",
+      "declared_state": "controller_interrupted",
+      "doer": "Boreal",
+      "duplicate_live_attempts": 0,
+      "ended_utc": "2026-07-31T15:24:30.397235Z",
+      "jsonl_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_s1_clean_b_rst01_codex.jsonl",
+      "label": "boreal_d31_s1_clean_b_rst01",
+      "lane_id": "20260731-s1-clean-b:Boreal:D31",
+      "live_attempt_labels": [],
+      "mcp_servers": [
+        "d31_rst01_s1b_mcp"
+      ],
+      "operational_state": "CHECKPOINTED",
+      "parent_reason": "process identity unavailable",
+      "parent_state": "unknown",
+      "phase": "S1B_RST01",
+      "process_reason": "controller declared controller_interrupted and recorded identities are absent",
+      "process_state": "EXITED",
+      "provider_wait": false,
+      "reason": "controller declared controller_interrupted and recorded identities are absent",
+      "resource_ambiguity": [
+        "declared MCP server has no lane/session-correlated PID lifetime evidence"
+      ],
+      "resource_release_possible": false,
+      "resources": [
+        "mcp-name:d31_rst01_s1b_mcp"
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "started_utc": "2026-07-31T15:21:28.640115Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_s1_clean_b_rst01_controller.status.json",
+      "status_sha256": "f6f53bb0d2d1658dfafc7b47288e8d854a1daab0677440fdd81aa48571070453",
+      "task": "D31",
+      "terminal_event": null,
+      "thread_id": "019fb877-1447-7693-92b1-f4bda04c6ecf",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace"
+    },
+    {
+      "board_tokens": [
+        "NRF-A",
+        "NRF-B"
+      ],
+      "checkpoint_observed_utc": "2026-07-31T15:29:26.252323Z",
+      "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+      "checkpoint_sha256": "f790f1529dc2eac745861e31154789a8a654b777b11c2c7bbcb280719013d1a2",
+      "codex_created_utc": null,
+      "codex_identity": "absent",
+      "codex_pid": 194896,
+      "codex_reason": "PID 194896 is absent",
+      "codex_started_utc": "2026-07-31T15:21:28.695465Z",
+      "controller_created_utc": null,
+      "controller_identity": "absent",
+      "controller_pid": 189580,
+      "controller_reason": "PID 189580 is absent",
+      "controller_started_utc": "2026-07-31T15:21:27.255104Z",
+      "declared_state": "codex_exited",
+      "doer": "Cygnus",
+      "duplicate_live_attempts": 0,
+      "ended_utc": "2026-07-31T15:30:02.552749Z",
+      "jsonl_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_s1_clean_b_pair_codex.jsonl",
+      "label": "cygnus_a24_s1_clean_b_pair",
+      "lane_id": "20260731-s1-clean-b:Cygnus:A24",
+      "live_attempt_labels": [],
+      "mcp_servers": [
+        "a24_pair_a_s1b_mcp",
+        "a24_pair_b_s1b_mcp"
+      ],
+      "operational_state": "CHECKPOINTED",
+      "parent_reason": "process identity unavailable",
+      "parent_state": "unknown",
+      "phase": "S1B_PAIRED_PROVIDER",
+      "process_reason": "controller declared codex_exited and recorded identities are absent",
+      "process_state": "EXITED",
+      "provider_wait": false,
+      "reason": "controller declared codex_exited and recorded identities are absent",
+      "resource_ambiguity": [],
+      "resource_release_possible": true,
+      "resources": [
+        "mcp-name:a24_pair_a_s1b_mcp",
+        "mcp-name:a24_pair_b_s1b_mcp"
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146",
+      "started_utc": "2026-07-31T15:21:28.689101Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_s1_clean_b_pair_controller.status.json",
+      "status_sha256": "2321ee6baa6d5d6732841357c182aeb8581ca4e434678bd3d5f91c66def5d60e",
+      "task": "A24",
+      "terminal_event": "turn.completed",
+      "thread_id": "019fb877-1199-79b1-a32e-34348178f111",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace"
+    },
+    {
+      "board_tokens": [],
+      "checkpoint_observed_utc": "2026-07-31T15:00:45.470472Z",
+      "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+      "checkpoint_sha256": "f19f61712e7362009590be8afbc76fc75a6e8c49a8a271f3c83a1b1b4cb1f15f",
+      "codex_created_utc": null,
+      "codex_identity": "absent",
+      "codex_pid": 193240,
+      "codex_reason": "PID 193240 is absent",
+      "codex_started_utc": "2026-07-31T14:56:24.776908Z",
+      "controller_created_utc": null,
+      "controller_identity": "absent",
+      "controller_pid": 14412,
+      "controller_reason": "PID 14412 is absent",
+      "controller_started_utc": "2026-07-31T14:56:23.032127Z",
+      "declared_state": "codex_exited",
+      "doer": "Delta",
+      "duplicate_live_attempts": 0,
+      "ended_utc": "2026-07-31T15:02:51.290314Z",
+      "jsonl_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_s1_success_a_counter_prep_codex.jsonl",
+      "label": "delta_a26_s1_success_a_counter_prep",
+      "lane_id": "20260731-s1-success-a:Delta:A26",
+      "live_attempt_labels": [],
+      "mcp_servers": [],
+      "operational_state": "CHECKPOINTED",
+      "parent_reason": "process identity unavailable",
+      "parent_state": "unknown",
+      "phase": "S1A_COUNTER_PREP",
+      "process_reason": "controller declared codex_exited and recorded identities are absent",
+      "process_state": "EXITED",
+      "provider_wait": false,
+      "reason": "controller declared codex_exited and recorded identities are absent",
+      "resource_ambiguity": [],
+      "resource_release_possible": true,
+      "resources": [],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325",
+      "started_utc": "2026-07-31T14:56:24.767131Z",
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_s1_success_a_counter_prep_controller.status.json",
+      "status_sha256": "ca299d09fcf88f58b7ba05523cc92107195c4380a9e074596e8b79103b507577",
+      "task": "A26",
+      "terminal_event": "turn.completed",
+      "thread_id": "019fb877-1441-7c92-84e2-cbb5bc422879",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace"
+    }
+  ],
+  "manager_signals": [
+    {
+      "created_utc": "2026-07-31T14:00:07.309668Z",
+      "deadline_utc": null,
+      "evidence_paths": [
+        ".agent-workspace/canary/20260731-long-canary/Cygnus/A24/S1_PREPARED.json",
+        ".agent-workspace/evidence/a24-provider-diagnostic-014/normalized_provider_diagnostic.json",
+        ".agent-workspace/evidence/a24-provider-diagnostic-014/immutable_classification.json",
+        ".agent-workspace/evidence/a24-provider-diagnostic-014/evidence_manifest.json",
+        ".agent-workspace/evidence/build/ping_build_handoff.json",
+        ".agent-workspace/evidence/build/pong_build_handoff.json",
+        ".agent-workspace/tools/a24_provider_diagnostic_014.py",
+        ".agent-workspace/tools/a24_phase7_harness_benchmark_001.py"
+      ],
+      "kind": "CHECKPOINT",
+      "lane_id": "20260731-long-canary:Cygnus:A24",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\manager-signals\\20260731T140007Z-Cygnus-A24-S1-CHECKPOINT.json",
+      "phase": "S1_PREPARE_NRF_A_CANARY",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146",
+      "sha256": "2e40b954b2afa11ba3dbc53dc8572f5bf1561f0f26124a44c61e3015ca0a1600",
+      "signal_id": "20260731T140007Z-Cygnus-A24-S1-CHECKPOINT",
+      "summary": "PREPARED: fresh NRF-A-alone ownership/provider canary is isolated at new project/state/artifact/log roots with expected probe 683710208 and COM16; exact bounded no-flash MCP route and cleanup evidence are recorded. S1 stopped before MCP or hardware activity.",
+      "task": "A24"
+    },
+    {
+      "created_utc": "2026-07-31T14:00:13.886858Z",
+      "deadline_utc": null,
+      "evidence_paths": [
+        ".agent-workspace/evidence/s1-fix-run-local-helper/S1_FIX_RUN_LOCAL_HELPER_EVIDENCE.md"
+      ],
+      "kind": "CHECKPOINT",
+      "lane_id": "20260731-long-canary:Boreal:D31",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\manager-signals\\20260731T140013Z-Boreal-D31-S1-CHECKPOINT.json",
+      "phase": "S1_FIX_RUN_LOCAL_HELPER",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "sha256": "874a0a3428f68870f45e626546d084d55db64eb5a8cc7f5be08c427793f4ceb8",
+      "signal_id": "20260731T140013Z-Boreal-D31-S1-CHECKPOINT",
+      "summary": "Run-local RST01 helper now sends tools/list with its proper params and keeps named tools on tools/call; focused host tests and helper compile are green.",
+      "task": "D31"
+    },
+    {
+      "created_utc": "2026-07-31T14:01:12.026931Z",
+      "deadline_utc": null,
+      "evidence_paths": [
+        ".agent-workspace/evidence/r16/protocol-checkpoint.json",
+        ".agent-workspace/PARALLEL_CHECKPOINT.md"
+      ],
+      "kind": "CHECKPOINT",
+      "lane_id": "20260731-long-canary:Delta:A26",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\manager-signals\\20260731T140112Z-20260731-long-canary-Delta-A26-r16.json",
+      "phase": "S1_R16_BOARD_FREE",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325",
+      "sha256": "1e3041326a35793d274b40ec0effc144d73772026ce2d5d4fd34b238afb63470",
+      "signal_id": "20260731T140112Z-20260731-long-canary-Delta-A26-r16",
+      "summary": "R16 board-free protocol/evidence slice passed; stop at durable checkpoint with no board or HIL use.",
+      "task": "A26"
+    },
+    {
+      "created_utc": "2026-07-31T14:25:15.334310Z",
+      "deadline_utc": null,
+      "evidence_paths": [
+        ".agent-workspace/PARALLEL_CHECKPOINT.md",
+        ".agent-workspace/canary/20260731-long-canary/Cygnus/A24/NRF-A/evidence/canary_result.json",
+        ".agent-workspace/canary/20260731-long-canary/Cygnus/A24/NRF-A/evidence/canary_result.sha256",
+        ".agent-workspace/canary/20260731-long-canary/Cygnus/A24/NRF-A/evidence/board_validate.json",
+        ".agent-workspace/canary/20260731-long-canary/Cygnus/A24/NRF-A/evidence/get_setup_status.json",
+        ".agent-workspace/canary/20260731-long-canary/Cygnus/A24/NRF-A/evidence/mcp_process_identity.json",
+        ".agent-workspace/canary/20260731-long-canary/Cygnus/A24/NRF-A/evidence/process_tree_before_first_operation.json",
+        ".agent-workspace/canary/20260731-long-canary/Cygnus/A24/NRF-A/evidence/cleanup.json",
+        ".agent-workspace/canary/20260731-long-canary/Cygnus/A24/NRF-A/evidence/delayed_absence_1.json",
+        ".agent-workspace/canary/20260731-long-canary/Cygnus/A24/NRF-A/evidence/delayed_absence_2.json",
+        ".agent-workspace/evidence/a24-provider-diagnostic-014/normalized_provider_diagnostic.json",
+        ".agent-workspace/evidence/build/ping_build_handoff.json",
+        ".agent-workspace/evidence/build/pong_build_handoff.json"
+      ],
+      "kind": "CHECKPOINT",
+      "lane_id": "20260731-long-canary:Cygnus:A24",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\manager-signals\\20260731T142515Z-Cygnus-A24-S1-CHECKPOINT.json",
+      "phase": "S1_PREPARE_NRF_A_CANARY",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146",
+      "sha256": "5f4b1037d3c4de15c2fa146fe06f4ec9785dec7dd7469998778b7d721d84a989",
+      "signal_id": "20260731T142515Z-Cygnus-A24-S1-CHECKPOINT",
+      "summary": "Bounded NRF-A-alone no-flash ownership/provider canary PASS: live validation passed for probe 683710208 / COM16; exact MCP descendants are absent at both delayed checks; flash, RF, NRF-B, and later sprint work were not started.",
+      "task": "A24"
+    },
+    {
+      "created_utc": "2026-07-31T14:30:38.018660Z",
+      "deadline_utc": null,
+      "evidence_paths": [
+        ".agent-workspace/evidence/s1-rst01-request/S1_RST01_REQUEST_CHECKPOINT.md",
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-20260731-long-canary/evidence/final-record.json",
+        ".agent-workspace/manager-requests/d31-rst01-s1-20260731-long-canary-setup-plan-20260731T142000Z.json",
+        ".agent-workspace/manager-requests/d31-rst01-s1-20260731-long-canary-setup-action-20260731T142000Z.json",
+        ".agent-workspace/MANAGER_FEEDBACK.md"
+      ],
+      "kind": "CHECKPOINT",
+      "lane_id": "20260731-long-canary:Boreal:D31",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\manager-signals\\20260731T143038Z-Boreal-D31-S1-RST01-CHECKPOINT.json",
+      "phase": "S1_RST01_REQUEST",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "sha256": "32ab81cc99af7a1d013ad85604eef6d169864e5c5878f54556d50ff5620e216c",
+      "signal_id": "20260731T143038Z-Boreal-D31-S1-RST01-CHECKPOINT",
+      "summary": "Assignment-bound STM-B MCP lifetime reached direct tools/list and accepted setup-plan evidence; manager paused the malformed setup-action request boundary, exact descendants are clean, and no RST01 action ran.",
+      "task": "D31"
+    },
+    {
+      "created_utc": "2026-07-31T14:59:38.990854Z",
+      "deadline_utc": null,
+      "evidence_paths": [
+        ".agent-workspace/evidence/a26-i1-counter-prep-s1a.json",
+        ".agent-workspace/PREPARED_HANDOFF.md",
+        ".agent-workspace/PARALLEL_CHECKPOINT.md"
+      ],
+      "kind": "CHECKPOINT",
+      "lane_id": "20260731-s1-success-a:Delta:A26",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\manager-signals\\20260731T145938Z-20260731-s1-success-a-Delta-A26-counter-prep.json",
+      "phase": "S1A_COUNTER_PREP",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325",
+      "sha256": "ca9efa553e1c512d5abc53e36e9caf7358bad0040ce4d565c9e1b4fcbbe5de11",
+      "signal_id": "20260731T145938Z-20260731-s1-success-a-Delta-A26-counter-prep",
+      "summary": "STM-A +8/+1/+1/+0 measurement and decoder path prepared and statically focused-tested; stop before hardware.",
+      "task": "A26"
+    },
+    {
+      "created_utc": "2026-07-31T15:01:55.081678Z",
+      "deadline_utc": null,
+      "evidence_paths": [
+        ".agent-workspace/PARALLEL_CHECKPOINT.md",
+        ".agent-workspace/canary/20260731-s1-success-a/Cygnus/A24/NRF-B/mcp-lifetime.json",
+        ".agent-workspace/canary/20260731-s1-success-a/Cygnus/A24/NRF-B/evidence/canary_result.json",
+        ".agent-workspace/canary/20260731-s1-success-a/Cygnus/A24/NRF-B/evidence/canary_result.sha256",
+        ".agent-workspace/canary/20260731-s1-success-a/Cygnus/A24/NRF-B/evidence/board_validate.json",
+        ".agent-workspace/canary/20260731-s1-success-a/Cygnus/A24/NRF-B/evidence/get_setup_status.json",
+        ".agent-workspace/canary/20260731-s1-success-a/Cygnus/A24/NRF-B/evidence/first_root_evidence.json",
+        ".agent-workspace/canary/20260731-s1-success-a/Cygnus/A24/NRF-B/evidence/process_tree_before_first_operation.json",
+        ".agent-workspace/canary/20260731-s1-success-a/Cygnus/A24/NRF-B/evidence/cleanup.json",
+        ".agent-workspace/canary/20260731-s1-success-a/Cygnus/A24/NRF-B/evidence/delayed_absence_1.json",
+        ".agent-workspace/canary/20260731-s1-success-a/Cygnus/A24/NRF-B/evidence/delayed_absence_2.json",
+        ".agent-workspace/evidence/a24-provider-diagnostic-014/normalized_provider_diagnostic.json",
+        ".agent-workspace/evidence/build/ping_build_handoff.json",
+        ".agent-workspace/evidence/build/pong_build_handoff.json"
+      ],
+      "kind": "CHECKPOINT",
+      "lane_id": "20260731-s1-success-a:Cygnus:A24",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\manager-signals\\20260731T150155Z-Cygnus-A24-S1-NRF-B-CHECKPOINT.json",
+      "phase": "S1_NRF_B_CANARY",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146",
+      "sha256": "2080bcc2e013ee51284a3d6bb99700eb21ce34588980e9ee94dd4752f54ab490",
+      "signal_id": "20260731T150155Z-Cygnus-A24-S1-NRF-B-CHECKPOINT",
+      "summary": "Bounded fresh NRF-B-only ownership/provider canary PASS: live validation passed for probe 683854191 / COM15; atomic lifetime and first-root evidence were captured, exact descendants are absent at both delayed checks, and paired/NRF-A/flash/RF activity was not started.",
+      "task": "A24"
+    },
+    {
+      "created_utc": "2026-07-31T15:08:40.073889Z",
+      "deadline_utc": null,
+      "evidence_paths": [
+        ".agent-workspace/PARALLEL_CHECKPOINT.md",
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-success-a/evidence/20260731T150224Z/mcp-lifetime.json",
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-success-a/evidence/20260731T150224Z/final-record.json",
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-success-a/evidence/20260731T150224Z/rst01-routing-checkpoint.json",
+        ".agent-workspace/manager-requests/d31-rst01-s1-success-a-setup-action-20260731T150224Z.json",
+        ".agent-workspace/manager-signals/d31-rst01-s1-success-a-setup-action-20260731T150224Z-HELP.json"
+      ],
+      "kind": "CHECKPOINT",
+      "lane_id": "20260731-s1-success-a:Boreal:D31",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\manager-signals\\20260731T150840Z-Boreal-D31-S1-CHECKPOINT.json",
+      "phase": "S1_RST01_REQUEST",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "sha256": "7eca98729d6d62e028fe699a9dea22b7bdd6d187103ca0e6cb94d732036f5852",
+      "signal_id": "20260731T150840Z-Boreal-D31-S1-CHECKPOINT",
+      "summary": "Corrected setup-action request was directly callable and approved; setup completed to its returned research boundary, then the fresh live route disclosed no reset_and_run plan. No RST01 action or terminal result was created.",
+      "task": "D31"
+    },
+    {
+      "created_utc": "2026-07-31T15:27:20.427328Z",
+      "deadline_utc": null,
+      "evidence_paths": [
+        ".agent-workspace/PARALLEL_CHECKPOINT.md",
+        "STATUS.md",
+        ".agent-workspace/CANARY_PROGRESS.jsonl",
+        ".agent-workspace/canary/20260731-s1-clean-b/Cygnus/A24/PAIRED/evidence/paired_result.json",
+        ".agent-workspace/canary/20260731-s1-clean-b/Cygnus/A24/PAIRED/evidence/paired_result.sha256",
+        ".agent-workspace/canary/20260731-s1-clean-b/Cygnus/A24/PAIRED/evidence/paired_timing.json",
+        ".agent-workspace/canary/20260731-s1-clean-b/Cygnus/A24/PAIRED/evidence/paired_cleanup.json",
+        ".agent-workspace/canary/20260731-s1-clean-b/Cygnus/A24/PAIRED/NRF-A/mcp-lifetime.json",
+        ".agent-workspace/canary/20260731-s1-clean-b/Cygnus/A24/PAIRED/NRF-B/mcp-lifetime.json"
+      ],
+      "kind": "CHECKPOINT",
+      "lane_id": "20260731-s1-clean-b:Cygnus:A24",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\manager-signals\\20260731T152720Z-Cygnus-A24-S1-PAIRED-CHECKPOINT.json",
+      "phase": "S1_PAIRED_STARTUP",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146",
+      "sha256": "8f9a53f95de0bf2445b0decc729c0a8a2f8df44074a969459db515041bb9f3c2",
+      "signal_id": "20260731T152720Z-Cygnus-A24-S1-PAIRED-CHECKPOINT",
+      "summary": "One fresh paired NRF-A/NRF-B no-flash ownership/provider-start attempt reached a bounded FAIL before public MCP/provider startup; exact cleanup and delayed absence passed, and no retry or terminal result was created.",
+      "task": "A24"
+    },
+    {
+      "created_utc": "2026-07-31T14:25:36.061219Z",
+      "deadline_utc": "2026-07-31T14:35:36.045624Z",
+      "evidence_paths": [
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-20260731-long-canary/evidence/parsed-responses/007-accepted-setup-plan.json"
+      ],
+      "kind": "HELP",
+      "lane_id": "20260731-long-canary:Boreal:D31",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\manager-signals\\d31-rst01-s1-20260731-long-canary-setup-action-20260731T142000Z-HELP.json",
+      "phase": "S1_RST01_REQUEST",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "sha256": "971ca28a196210d6b887697721e7b2e89658def595c34f40c28f9af4e5d08f09",
+      "signal_id": "d31-rst01-s1-20260731-long-canary-setup-action-20260731T142000Z-HELP",
+      "summary": "Manager review required for exact setup-action call; no guarded target action has started.",
+      "task": "D31"
+    },
+    {
+      "created_utc": "2026-07-31T14:23:15.885100Z",
+      "deadline_utc": "2026-07-31T14:33:15.859524Z",
+      "evidence_paths": [
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-20260731-long-canary/evidence/parsed-responses/004-setup-overview.json",
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-20260731-long-canary/evidence/parsed-responses/005-load-setup.json",
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-20260731-long-canary/evidence/parsed-responses/006-setup-plan-null.json"
+      ],
+      "kind": "HELP",
+      "lane_id": "20260731-long-canary:Boreal:D31",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\manager-signals\\d31-rst01-s1-20260731-long-canary-setup-plan-20260731T142000Z-HELP.json",
+      "phase": "S1_RST01_REQUEST",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "sha256": "339a402cb64a68280b81ccc4450decbe8b97aec3ea6346eda3046988241f7618",
+      "signal_id": "d31-rst01-s1-20260731-long-canary-setup-plan-20260731T142000Z-HELP",
+      "summary": "Manager review required for exact setup-plan call; no guarded target action has started.",
+      "task": "D31"
+    },
+    {
+      "created_utc": "2026-07-31T15:05:02.186335Z",
+      "deadline_utc": "2026-07-31T15:15:02.167782Z",
+      "evidence_paths": [
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-success-a/evidence/20260731T150224Z/parsed-responses/007-accepted-setup-plan.json"
+      ],
+      "kind": "HELP",
+      "lane_id": "20260731-s1-success-a:Boreal:D31",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\manager-signals\\d31-rst01-s1-success-a-setup-action-20260731T150224Z-HELP.json",
+      "phase": "S1_RST01_REQUEST",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "sha256": "7636e001a886bb9e2caeadd2ead58bfa09ff1f0096e8654e0943fa789a8f7f20",
+      "signal_id": "d31-rst01-s1-success-a-setup-action-20260731T150224Z-HELP",
+      "summary": "Manager review required for exact setup-action call; no guarded target action has started.",
+      "task": "D31"
+    },
+    {
+      "created_utc": "2026-07-31T15:01:46.403143Z",
+      "deadline_utc": "2026-07-31T15:11:46.383386Z",
+      "evidence_paths": [
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-success-a/evidence/parsed-responses/004-setup-overview.json",
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-success-a/evidence/parsed-responses/005-load-setup.json",
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-success-a/evidence/parsed-responses/006-setup-plan-null.json"
+      ],
+      "kind": "HELP",
+      "lane_id": "20260731-s1-success-a:Boreal:D31",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\manager-signals\\d31-rst01-s1-success-a-setup-plan-20260731T150124Z-HELP.json",
+      "phase": "S1_RST01_REQUEST",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "sha256": "d43e5decd02d50cf02109e374ae5dc726e61dfff1b827cf16157ab1c4d52d536",
+      "signal_id": "d31-rst01-s1-success-a-setup-plan-20260731T150124Z-HELP",
+      "summary": "Manager review required for exact setup-plan call; no guarded target action has started.",
+      "task": "D31"
+    },
+    {
+      "created_utc": "2026-07-31T15:02:31.925702Z",
+      "deadline_utc": "2026-07-31T15:12:31.902912Z",
+      "evidence_paths": [
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-success-a/evidence/20260731T150224Z/parsed-responses/004-setup-overview.json",
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-success-a/evidence/20260731T150224Z/parsed-responses/005-load-setup.json",
+        ".agent-workspace/mcp-runtime/d31-rst01-s1-success-a/evidence/20260731T150224Z/parsed-responses/006-setup-plan-null.json"
+      ],
+      "kind": "HELP",
+      "lane_id": "20260731-s1-success-a:Boreal:D31",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\manager-signals\\d31-rst01-s1-success-a-setup-plan-20260731T150224Z-HELP.json",
+      "phase": "S1_RST01_REQUEST",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "sha256": "c4745858e705ebf0a92f49a18d22e4587c7a0efad3f88f52b186189d2da0026c",
+      "signal_id": "d31-rst01-s1-success-a-setup-plan-20260731T150224Z-HELP",
+      "summary": "Manager review required for exact setup-plan call; no guarded target action has started.",
+      "task": "D31"
+    },
+    {
+      "created_utc": "2026-07-31T14:01:14.036000Z",
+      "deadline_utc": null,
+      "evidence_paths": [
+        ".agent-workspace/S1_PREPARE_B14_PREPARED.md",
+        ".agent-workspace/manager-inputs/blind/B14/blind-result-acceptance-051.json",
+        ".agent-workspace/evidence/hil/stm-a/b14-acceptance-053-r3-20260731T024038Z/b14-live-diagnosis.json",
+        ".agent-workspace/evidence/hil/stm-a/b14-acceptance-053-r3-20260731T024038Z/b14-live-public-oracle.json",
+        ".agent-workspace/tools/a22_stm_a_b14_acceptance_053.py",
+        ".agent-workspace/tools/mcp_stdio_client.py"
+      ],
+      "kind": "CHECKPOINT",
+      "lane_id": "20260731-long-canary:Atlas:A22",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\manager-signals\\sig-20260731-long-canary-atlas-a22-s1-prepare-b14-20260731T140114Z.json",
+      "phase": "S1_PREPARE_B14",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324",
+      "sha256": "c177cf238d15a141e0553605bbd945d4e3a0a4b4c4ce66843f6537b861803b81",
+      "signal_id": "sig-20260731-long-canary-atlas-a22-s1-prepare-b14-20260731T140114Z",
+      "summary": "PREPARED: retained B14 remains NO_MATCH; fresh isolated STM-A B14 roots, identity, helper basis, and manager assignment gate are recorded. No MCP or hardware action occurred.",
+      "task": "A22"
+    },
+    {
+      "created_utc": "2026-07-31T14:22:26.072592Z",
+      "deadline_utc": null,
+      "evidence_paths": [
+        ".agent-workspace/PARALLEL_CHECKPOINT.md",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-20260731-long-canary/evidence/mcp-process-pre-board.json",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-20260731-long-canary/evidence/mcp/003-setup_overview.json",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-20260731-long-canary/evidence/cleanup-audit-1.json",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-20260731-long-canary/evidence/cleanup-audit-2.json"
+      ],
+      "kind": "CHECKPOINT",
+      "lane_id": "20260731-long-canary:Atlas:A22",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\manager-signals\\sig-20260731-long-canary-atlas-a22-s1-routing-checkpoint-20260731T142226Z.json",
+      "phase": "S1_PREPARE_B14",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324",
+      "sha256": "6488462a36f60969d1e3a2d5bafc4310ba30f7e0f09204e4f542e12b7ba84aaf",
+      "signal_id": "sig-20260731-long-canary-atlas-a22-s1-routing-checkpoint-20260731T142226Z",
+      "summary": "Bounded Sprint-1 checkpoint: one isolated MCP lifetime reached the live setup_assignment_clarification_required response for assigned STM-A, with the exact assigned serial choice visible; no B14 plan/request or board operation occurred, exact descendants are absent on delayed audits, and no RESULT.json was created.",
+      "task": "A22"
+    },
+    {
+      "created_utc": "2026-07-31T15:27:07.967963Z",
+      "deadline_utc": null,
+      "evidence_paths": [
+        ".agent-workspace/PARALLEL_CHECKPOINT.md",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-clean-b/evidence/mcp-lifetime-recording-failure.json",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-clean-b/evidence/mcp/000-protocol-initialize.json",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-clean-b/evidence/mcp/002-initialization_handshake.json",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-clean-b/evidence/cleanup-audit-1.json",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-clean-b/evidence/cleanup-audit-2.json"
+      ],
+      "kind": "CHECKPOINT",
+      "lane_id": "20260731-s1-clean-b:Atlas:A22",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\manager-signals\\sig-20260731-s1-clean-b-atlas-a22-checkpoint-20260731T152707Z.json",
+      "phase": "S1_PREPARE_B14",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324",
+      "sha256": "51b25b054fde7fc0574a5599ecd99b1cc342b8a546edd59f6d73a636dbb5c165",
+      "signal_id": "sig-20260731-s1-clean-b-atlas-a22-checkpoint-20260731T152707Z",
+      "summary": "Bounded checkpoint after exactly one clean-B MCP lifetime: initialization completed, lifetime identity failed on an MCP executable plus Python wrapper/child in the helper-owned tree, the selector was corrected and focused-tested, exact descendants are absent, no board operation or B14 request occurred, and no RESULT.json was created.",
+      "task": "A22"
+    },
+    {
+      "created_utc": "2026-07-31T15:02:20.232191Z",
+      "deadline_utc": null,
+      "evidence_paths": [
+        ".agent-workspace/PARALLEL_CHECKPOINT.md",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-success-a/evidence/mcp-lifetime-recording-failure.json",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-success-a/evidence/mcp/000-protocol-initialize.json",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-success-a/evidence/mcp/002-initialization_handshake.json",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-success-a/evidence/cleanup-audit-1.json",
+        ".agent-workspace/mcp-runtime/a22-b14-s1-success-a/evidence/cleanup-audit-2.json"
+      ],
+      "kind": "CHECKPOINT",
+      "lane_id": "20260731-s1-success-a:Atlas:A22",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\manager-signals\\sig-20260731-s1-success-a-atlas-a22-checkpoint-20260731T150220Z.json",
+      "phase": "S1_PREPARE_B14",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324",
+      "sha256": "8327d6a3a31b34965d4344cc1aa6579914a0e6ec90e9b96090c77aeabced3f3f",
+      "signal_id": "sig-20260731-s1-success-a-atlas-a22-checkpoint-20260731T150220Z",
+      "summary": "Bounded checkpoint after exactly one new MCP lifetime: initialization completed, lifetime recording failed before setup due to unrelated host MCP descendants, no board or B14 operation occurred, delayed cleanup is empty, and no RESULT.json was created.",
+      "task": "A22"
+    }
+  ],
+  "mcps": [
+    {
+      "declared_lane_id": "20260731-s1-clean-b:Atlas:A22",
+      "operational_state": "MCP_STATE_UNKNOWN",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_b_b14_controller.status.json#mcp-name:a22_b14_s1b_mcp:session:019fb877-1475-76c0-a137-2743580015de",
+      "processes": [],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324",
+      "server_name": "a22_b14_s1b_mcp",
+      "session_id": "019fb877-1475-76c0-a137-2743580015de",
+      "sha256": "e89873898392c764a13f92210c0d587dde736c4b6571a3fdf78d3efa8c97581d",
+      "source_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_b_b14_controller.status.json"
+    },
+    {
+      "declared_lane_id": "20260731-long-canary:Atlas:A22",
+      "operational_state": "MCP_EXITED",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\mcp-runtime\\a22-b14-s1-20260731-long-canary\\mcp-lifetime.json",
+      "processes": [
+        {
+          "actual_created_utc": null,
+          "expected_started_utc": "2026-07-31T14:19:48.455000Z",
+          "pid": 189860,
+          "reason": "PID 189860 is absent",
+          "role": "pid",
+          "state": "absent"
+        }
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324",
+      "server_name": "a22_b14_s1_mcp",
+      "session_id": "019fb877-1475-76c0-a137-2743580015de",
+      "sha256": "90ba61d39fb6eb7bf3ed919fc734629d6f17e8b4792049b2a3b557ac1461ed65"
+    },
+    {
+      "declared_lane_id": "20260731-s1-success-a:Atlas:A22",
+      "operational_state": "MCP_EXITED",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\mcp-runtime\\a22-b14-s1-success-a\\mcp-lifetime.json",
+      "processes": [
+        {
+          "actual_created_utc": null,
+          "expected_started_utc": "2026-07-31T15:00:33.421000Z",
+          "pid": 184716,
+          "reason": "PID 184716 is absent",
+          "role": "pid",
+          "state": "absent"
+        }
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324",
+      "server_name": "a22_b14_s1a_mcp",
+      "session_id": "019fb877-1475-76c0-a137-2743580015de",
+      "sha256": "a6b482bdc753e17ac82114eed72768fe6585e0b10e74952d6c1b0418db9d9ee1"
+    },
+    {
+      "declared_lane_id": "20260731-long-canary:Cygnus:A24",
+      "operational_state": "MCP_EXITED",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\canary\\20260731-long-canary\\Cygnus\\A24\\NRF-A\\mcp-lifetime.json",
+      "processes": [
+        {
+          "actual_created_utc": null,
+          "expected_started_utc": "2026-07-31T14:23:06.955000Z",
+          "pid": 183212,
+          "reason": "PID 183212 is absent",
+          "role": "pid",
+          "state": "absent"
+        }
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146",
+      "server_name": "a24_nrf_a_s1_mcp",
+      "session_id": "019fb877-1199-79b1-a32e-34348178f111",
+      "sha256": "238e07fcb6a79e8cbf7788eed2d74491cb82528581fe0873cdb0a668621754b4"
+    },
+    {
+      "declared_lane_id": "20260731-s1-clean-b:Cygnus:A24",
+      "operational_state": "MCP_EXITED",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\canary\\20260731-s1-clean-b\\Cygnus\\A24\\PAIRED\\NRF-A\\mcp-lifetime.json",
+      "processes": [
+        {
+          "actual_created_utc": null,
+          "expected_started_utc": null,
+          "pid": 187068,
+          "reason": "PID 187068 is absent",
+          "role": "pid",
+          "state": "absent"
+        }
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146",
+      "server_name": "a24_pair_a_s1b_mcp",
+      "session_id": null,
+      "sha256": "901ff616e1d1f4d5e450dcd94937124442dccd089a3bdfa461489f0537d8415a"
+    },
+    {
+      "declared_lane_id": "20260731-s1-clean-b:Cygnus:A24",
+      "operational_state": "MCP_EXITED",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\canary\\20260731-s1-clean-b\\Cygnus\\A24\\PAIRED\\NRF-B\\mcp-lifetime.json",
+      "processes": [
+        {
+          "actual_created_utc": null,
+          "expected_started_utc": null,
+          "pid": 196548,
+          "reason": "PID 196548 is absent",
+          "role": "pid",
+          "state": "absent"
+        }
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146",
+      "server_name": "a24_pair_b_s1b_mcp",
+      "session_id": null,
+      "sha256": "e79c5c47bf174ab0ae3829b68f814f76cb5c07d9d5e900452166657d9618ecb2"
+    },
+    {
+      "declared_lane_id": "20260731-s1-success-a:Cygnus:A24",
+      "operational_state": "MCP_EXITED",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\canary\\20260731-s1-success-a\\Cygnus\\A24\\NRF-B\\mcp-lifetime.json",
+      "processes": [
+        {
+          "actual_created_utc": null,
+          "expected_started_utc": null,
+          "pid": 97416,
+          "reason": "PID 97416 is absent",
+          "role": "pid",
+          "state": "absent"
+        }
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146",
+      "server_name": "a24_nrf_b_s1a_mcp",
+      "session_id": null,
+      "sha256": "1c0a0f9a15eb30fef3070ad0a40bafc6a6046246e1da3d2b092999b4e1ea6a40"
+    },
+    {
+      "declared_lane_id": "20260731-s1-clean-b:Boreal:D31",
+      "operational_state": "MCP_STATE_UNKNOWN",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_s1_clean_b_rst01_controller.status.json#mcp-name:d31_rst01_s1b_mcp:session:019fb877-1447-7693-92b1-f4bda04c6ecf",
+      "processes": [],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "server_name": "d31_rst01_s1b_mcp",
+      "session_id": "019fb877-1447-7693-92b1-f4bda04c6ecf",
+      "sha256": "f6f53bb0d2d1658dfafc7b47288e8d854a1daab0677440fdd81aa48571070453",
+      "source_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_s1_clean_b_rst01_controller.status.json"
+    },
+    {
+      "declared_lane_id": "20260731-long-canary:Boreal:D31",
+      "operational_state": "MCP_EXITED",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\mcp-runtime\\d31-rst01-s1-20260731-long-canary\\mcp-lifetime.json",
+      "processes": [
+        {
+          "actual_created_utc": null,
+          "expected_started_utc": "2026-07-31T14:23:09.613000Z",
+          "pid": 177940,
+          "reason": "PID 177940 is absent",
+          "role": "pid",
+          "state": "absent"
+        }
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "server_name": "d31_rst01_s1_mcp",
+      "session_id": "019fb877-1447-7693-92b1-f4bda04c6ecf",
+      "sha256": "20135c2df41d13f90aa07f14905a876fe939522e4514d04180c81224f5540f46"
+    },
+    {
+      "declared_lane_id": "20260731-s1-success-a:Boreal:D31",
+      "operational_state": "MCP_EXITED",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\mcp-runtime\\d31-rst01-s1-success-a\\evidence\\20260731T150224Z\\mcp-lifetime.json",
+      "processes": [
+        {
+          "actual_created_utc": null,
+          "expected_started_utc": "2026-07-31T15:02:24.766207Z",
+          "pid": 187704,
+          "reason": "PID 187704 is absent",
+          "role": "launcher_pid",
+          "state": "absent"
+        },
+        {
+          "actual_created_utc": null,
+          "expected_started_utc": "2026-07-31T15:02:24.766207Z",
+          "pid": 2172,
+          "reason": "PID 2172 is absent",
+          "role": "mcp_pid",
+          "state": "absent"
+        }
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "server_name": "pyocd-debug-mcp",
+      "session_id": "019fb877-1447-7693-92b1-f4bda04c6ecf",
+      "sha256": "2b168505e2c83e910b69a1244a012cf15d11d973c2ad7fdee46d9f240081e05d"
+    },
+    {
+      "declared_lane_id": "20260731-s1-success-a:Boreal:D31",
+      "operational_state": "MCP_EXITED",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\mcp-runtime\\d31-rst01-s1-success-a\\evidence\\mcp-lifetime.json",
+      "processes": [
+        {
+          "actual_created_utc": null,
+          "expected_started_utc": "2026-07-31T15:01:24.415416Z",
+          "pid": 195868,
+          "reason": "PID 195868 is absent",
+          "role": "launcher_pid",
+          "state": "absent"
+        },
+        {
+          "actual_created_utc": null,
+          "expected_started_utc": "2026-07-31T15:01:24.415416Z",
+          "pid": 195868,
+          "reason": "PID 195868 is absent",
+          "role": "mcp_pid",
+          "state": "absent"
+        }
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "server_name": "pyocd-debug-mcp",
+      "session_id": "019fb877-1447-7693-92b1-f4bda04c6ecf",
+      "sha256": "9ac3bd39013d4a9d9c79cc51c796138526e16f00dcc8d8a3b2dbae8b698527be"
+    },
+    {
+      "declared_lane_id": "20260731-s1-success-a:Boreal:D31",
+      "operational_state": "MCP_EXITED",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\mcp-runtime\\d31-rst01-s1-success-a\\mcp-lifetime.json",
+      "processes": [
+        {
+          "actual_created_utc": null,
+          "expected_started_utc": "2026-07-31T15:02:25.491000Z",
+          "pid": 2172,
+          "reason": "PID 2172 is absent",
+          "role": "pid",
+          "state": "absent"
+        }
+      ],
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325",
+      "server_name": "d31_rst01_s1a_mcp",
+      "session_id": "019fb877-1447-7693-92b1-f4bda04c6ecf",
+      "sha256": "9b4313849a88c182b2755ac3b4dcb7dc18b9cf2c714ab9399d0e7670757aaabf"
+    }
+  ],
+  "observation_errors": [],
+  "observed_utc": "2026-07-31T15:42:42.468286Z",
+  "process_errors": [],
+  "process_provider": "windows-cim",
+  "process_snapshot_complete": true,
+  "requests": [],
+  "resource_conflicts": [],
+  "runs_discovered": 11,
+  "schema": "orchestrator-watcher-snapshot/v1"
+}

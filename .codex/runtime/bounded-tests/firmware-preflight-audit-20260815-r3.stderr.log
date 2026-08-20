@@ -1,0 +1,4 @@
+ERROR PROVIDER_ADAPTER.md: missing provider-contract clause: The admitted command shape, run from `Firmware/`
+ERROR PROVIDER_ADAPTER.md: missing provider-contract clause: Codex only if it supports the selected model and required MCP use
+ERROR PROVIDER_ADAPTER.md: missing provider-contract clause: Otherwise use Qwen Code CLI
+AUTONOMY_AUDIT_FAIL errors=3

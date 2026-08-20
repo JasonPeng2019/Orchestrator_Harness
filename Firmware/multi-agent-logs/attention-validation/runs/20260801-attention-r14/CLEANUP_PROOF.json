@@ -1,0 +1,80 @@
+﻿[
+    {
+        "pid":  14740,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:24:00.4664622Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  159752,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:24:00.5104624Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  162464,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:24:00.5424622Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  175936,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:24:00.5744621Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  179420,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:24:00.6094620Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  180648,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:24:00.6394638Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  182120,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:24:00.6737761Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  187812,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:24:00.7127402Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  189708,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:24:00.7447403Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  190304,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:24:00.7747401Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  191200,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:24:00.8087404Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  194008,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:24:00.8407580Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  196340,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:24:00.8717567Z",
+        "state":  "ABSENT"
+    }
+]

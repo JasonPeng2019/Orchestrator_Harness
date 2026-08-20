@@ -1,0 +1,48 @@
+All done. Everything is green, evidence is captured, and no harness source was modified (the `examples/` files were pre-existing untracked files from session start).
+
+## Final Report — Phase 1 / Area 1.C: Task & result lifecycle validation (detection-only)
+
+### Feature-by-feature results
+
+| Feature | Result | What differed (if any) |
+|---|---|---|
+| **D3** task-result schema validation | **PASS** | — |
+| **D4** result↔card identity cross-match | **PASS** | — |
+| **D5** `.outcome` ∈ {PASS,FAIL,BLOCKED} | **PASS** | — |
+| **D6** `.checks[]` shape + per-check outcome | **PASS** | — |
+| **D7** `.acceptance_state` ∈ {PENDING,ACCEPTED,REJECTED} | **PASS** | — |
+| **D8** completion-review schema validation | **PASS** | — |
+| **D9** completion-review result-identity cross-match | **PASS** | — |
+| **D10** review owner must own task card | **PASS** | — |
+| **D11** review `.verdict` ∈ {PASS,FAIL,BLOCKED} | **PASS** | — |
+| **D12** orchestrator-acceptance schema validation | **PASS** | — |
+| **D13** acceptance identity cross-match | **PASS** | — |
+| **D14** acceptance `.verdict` ∈ {ACCEPTED,REJECTED} | **PASS** | — |
+| **D15** `advance_task` state machine | **PASS** | Observation (not a gap): a REJECTED verdict drives state to `REJECTED`, but `terminal` follows `verdict == "ACCEPTED"`, so `REJECTED → terminal=False`. Documented in the green test (`task.py:600-607`). |
+| **D16** advancement result-must-match-supplied-card | **PASS** | — |
+| **D17** advancement review/acceptance identity cross-match | **PASS** | — |
+| **D18** advancement acceptance-commit-must-match-result | **PASS** | — |
+| **D19** `canonical_record` (guard re-assert) | **PASS** | already TESTED-PASSED in s2; re-asserted as trivial guard |
+| **D20** schema-string constant surface | **PASS** | all 4 constants equal their documented `orchestrator-*/v1` strings |
+
+**Findings: 0.** Every planned mutation was rejected by the real validator with the expected `TaskValidationError`; no enum set or guard differs from the D3–D20 description. The only behavioral nuance surfaced (D15's non-terminal `REJECTED`) is documented in the test body and is consistent with the plan's "assert resulting state" requirement.
+
+### Commands run
+```bash
+cd "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/harness-single-worktrees/compat-test"
+PYTHONPATH="$PWD:$PWD/.." python -m unittest orchestrator_harness.tests.test_compat_task_lifecycle -v   # 18 tests, 0.006s
+PYTHONPATH="$PWD:$PWD/.." python -m unittest orchestrator_harness.tests.test_s2_contract -v            # 21 tests, 103.480s
+```
+
+### Test tally
+- New module `test_compat_task_lifecycle.py`: **18 run, 18 passed, 0 failed, 0 errors** (D3–D20, one method per feature).
+- `test_s2_contract` regression: **21 run, 21 passed, 0 failed** — shared fixtures undisturbed.
+
+### Evidence left behind
+- `plans/compatibility-testing/evidence/1.C/test-run.log` — full `-v` output of the new module (stdout+stderr).
+- `plans/compatibility-testing/evidence/1.C/s2-regression.log` — full `-v` output of the s2 re-run.
+
+### Scope compliance
+- New test module lives in the clone at `orchestrator_harness/tests/test_compat_task_lifecycle.py`.
+- No provider subprocess launched; no harness source module edited (`git status` confirms only the new test file was added by me); no "fix to green" performed — the suite documents actual behavior.
+- D16–D18 exercise `advance_task`'s internal guards by constructing the frozen dataclasses directly, since the validators would reject those mutations earlier (noted in test docstrings).

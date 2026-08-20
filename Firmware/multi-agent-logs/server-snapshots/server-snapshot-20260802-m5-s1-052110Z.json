@@ -1,0 +1,416 @@
+{
+  "schema": "mcp-trial-3-server-snapshot/v1",
+  "head": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+  "tracked_dirty_diff_fingerprint": "99942141bb0bbe730ceb0ea4b30916bf8ed657bb",
+  "tracked_dirty_diff_method": "git diff --binary HEAD -- src | git hash-object --stdin",
+  "production_src_tree_sha256": "ca3a326e8ba6a3e0d14724a4f9fded286700790cfebc722352223d1b18e4c36a",
+  "production_src_tree_method": "SHA-256 over sorted git ls-files src; for each: UTF-8 path + NUL + uint64be byte length + working-tree bytes",
+  "tracked_src_file_count": 81,
+  "files": [
+    {
+      "path": "src/pyocd_debug_mcp/__init__.py",
+      "size": 102,
+      "sha256": "689e1df72aaa58d1d43c07d758b1127fc4455462551767a5a4f67216d6b2ef38"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/adapters/__init__.py",
+      "size": 47,
+      "sha256": "aeaca5cd6e20e82fa23087f6cba599531f1097a46d6927e6978762dc3548129e"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/adapters/provider_worker.py",
+      "size": 1013,
+      "sha256": "23c3ce0969ba7aa4a9a6d30b4b0ec43b0b19d178fb9aceb2376b320cd516556b"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/adapters/provider_worker_runtime.py",
+      "size": 16265,
+      "sha256": "23a1c8f560058a75cd39313aeaf9655a156472c545c056412c14398dae23dd1c"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/adapters/swd_interface.py",
+      "size": 6744,
+      "sha256": "a1cf4c58749eed7acc4294662ec47a171d756c0ff17b0b04f00b322d5e15f2a5"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/adapters/swd_process.py",
+      "size": 27207,
+      "sha256": "0289aa157e57c0be4bf380c3e834dec0fb7be93fdfbc17af79a3003a5e42d30c"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/adapters/swd_pyocd.py",
+      "size": 45690,
+      "sha256": "d891de6587a076f4f7c3e6145d5ac170e3d379c184233b02977e537baa2375df"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/adapters/uart_interface.py",
+      "size": 2946,
+      "sha256": "24e78fd46f398c098eb10a77ae9c4d1ce85f4f03d4c1dca5e94fcf0af6057740"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/adapters/uart_pyserial.py",
+      "size": 1421,
+      "sha256": "3ea3a1e2b7e41dc70f5e2457f07e645c1c85921dece0d6fd47824c56441c9b52"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/artifact_collector.py",
+      "size": 8265,
+      "sha256": "ad5ac1f1c008ec1d6537ab02584cd139e61cf2a5e3caeea5fdf4166540b462bf"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/board_config.py",
+      "size": 15103,
+      "sha256": "7fb0556658c60e44e7ceda0e6e8421c808f1b0ec220a7cbac9250975049da45f"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/firmstore/__init__.py",
+      "size": 561,
+      "sha256": "decfbcc8986183e297bd123e3d2b9c04f768ecfe6ba1dfb2c1c9af1cf615fce9"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/firmstore/cache.py",
+      "size": 14034,
+      "sha256": "66defaa89c059e010d3b8b5a1115c48f962dfbb7ae9dec664d9f5a7d1378fa7f"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/firmstore/profiles.py",
+      "size": 25404,
+      "sha256": "25cc18ce471e5b0e8cd2a7d713c91c14f21f7dd79020ba3d281bae648703c710"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/firmstore/reports.py",
+      "size": 4197,
+      "sha256": "df9dfd8ac8b35793d52f1491c10f428c0eec3253309aada3cd3f92ec41ae0cce"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/firmstore/store.py",
+      "size": 14553,
+      "sha256": "0221aede34b61a8477ce72a89d296bf3926ec63d399f81edfe0e549a00e22c92"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/guardrails/__init__.py",
+      "size": 172,
+      "sha256": "12d64f5df26a7f9e7cca88a46e58b34ef5ad76ad7a6649bed236510d79080528"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/guardrails/flash_gate.py",
+      "size": 3699,
+      "sha256": "58d7720a814cdca4211ea876bbb7a4e1196238155f18ba92d21faf05cfc332e2"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/guardrails/gate.py",
+      "size": 16141,
+      "sha256": "9dc2bfc3320704902dce5f86f34b9dd8807cacd6ab79cadf9992bd3a9eab8706"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/guardrails/permissions.py",
+      "size": 11095,
+      "sha256": "b6d271923381eb092f54c2a25392fc0be1c00773fbd0c5569b4d43030f28fd32"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/guardrails/plan_defs.py",
+      "size": 67512,
+      "sha256": "c37a637dfe02f047b2beb616c0046c3e4baa6204e215a5206c584e53fb783f9d"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/guardrails/plan_engine.py",
+      "size": 47219,
+      "sha256": "f71d941ea7858002c98c78365a1448b59f6ac180c959128799cbbaae854dbd06"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/guardrails/recover_gate.py",
+      "size": 2290,
+      "sha256": "bdc0cc4f96e2dc3d52dd7a4203c0345d8194c3664ae513ba1e88da8b11c7a8db"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/kernel/__init__.py",
+      "size": 574,
+      "sha256": "eabd3a44386ff39c789c32bba7104ab4599ea105b7aff8650ba2430319e3e9b6"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/kernel/finalizers.py",
+      "size": 3099,
+      "sha256": "9e4c56b23a130b3b4f12faf96701bd973e63bdd1ee2152437342d00a0c893b25"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/kernel/hygiene.py",
+      "size": 3757,
+      "sha256": "9dc545bc3046154c30bd7f5b132e6be8c893732e801c5d7f2a04461789807bad"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/kernel/operations.py",
+      "size": 34272,
+      "sha256": "26375de5bb9ccbbbbdfbe405323cc03468a111ef72ac0174967d2eb07d01919d"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/kernel/processes.py",
+      "size": 23135,
+      "sha256": "5f74cd9be7aeea3b2b72d97d9c0b00ad3120205902aacd17a96ca53ebac42435"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/kernel/registry.py",
+      "size": 19402,
+      "sha256": "14b7bf475313d50c2032da664b24d1babc7932b6c0f399dffbcb35957ef96efe"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/kernel/run_state.py",
+      "size": 1452,
+      "sha256": "030ddff54d2bc0117d7869c7409d43da3464c7e7e8b136025942218deedf083d"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/local_env.py",
+      "size": 683,
+      "sha256": "a9b1cd4c8591d7d591821bcd45f0cba97a3ff0843a53db77fe8073701e2d4c0c"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/native_build.py",
+      "size": 30805,
+      "sha256": "240f973e1ed15df776d113f5b32cc475f8e68fe1e5e7bac196b5469251290283"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/pack_index_repair.py",
+      "size": 13211,
+      "sha256": "210476d07aa45b138a9b892b62032930d85d267654ad44cfc23038cf222586df"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/pack_provision.py",
+      "size": 18814,
+      "sha256": "eac8ffff852ac4c13580c0ca7fcfb2369defc8cdaa9113a624d7375b38c61d1e"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/probe_families.json",
+      "size": 608,
+      "sha256": "b02042c49cf58e41edaef2c1f32097518dc4f992206f6aa51e47ccb70e19b620"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/probe_families.py",
+      "size": 6412,
+      "sha256": "5ee474848d61e02693338c0efd8a202b8df7028994edcc5cd515e7d3e275204a"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/probe_inventory.py",
+      "size": 9042,
+      "sha256": "712d87d9d081ae4efc260d60e5f3c6c41fb58a19f0f2655531938dde9a36d0a4"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/safety/__init__.py",
+      "size": 484,
+      "sha256": "98e9b4c93dd583811c55330b0447cdf203f88b00ec083ac52d5bfcea37f98dfb"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/safety/enforce.py",
+      "size": 19620,
+      "sha256": "c38767d0fb01a9681fb0e8ad3bf777a7b28f62d97acd5bd8880ec0a1882c22c3"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/safety/linker.py",
+      "size": 25479,
+      "sha256": "1f991a408cc3d2e7d610895f014db1ab0f4e51598d5f00e88ed73a89578b1c44"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/safety/map_build.py",
+      "size": 61706,
+      "sha256": "589ce44399b06f746cad47504766e9c43b8def5151a9afad60e03cc91dd7d816"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/safety/refresh.py",
+      "size": 7558,
+      "sha256": "d0c4a48ff4c226953a5cd42e0f11be6688061526d38e7130e1265625e32f3a8d"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/safety/regions.py",
+      "size": 18470,
+      "sha256": "d6efc3b745e41f7304129fc428437eaa1267bd90554594a912381068e8c94875"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/safety/verify2.py",
+      "size": 23596,
+      "sha256": "89b676d90b8a7b4f9e183ca49857a5c2b324b998c2d11fe676ffa4dd3ba9cd18"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/serial_resolver.py",
+      "size": 21455,
+      "sha256": "2a968321b57b62ad8b99c59e0a589ba067f081eb0256525855e169b14df309e2"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/server.py",
+      "size": 240290,
+      "sha256": "e6dc8b8c7e9943a4b5f9f46a37385b1d1651f2c60ab6c65e8fdad788d1938bc6"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/services/__init__.py",
+      "size": 61,
+      "sha256": "455387e272e22d2997dfcc2a9dff394cf398e10b579197681e02bc9b0824dd3c"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/services/connections.py",
+      "size": 5758,
+      "sha256": "efeb3fadfdc71fedd8ffbdc0353a1459ac143b4f39059a48b0224d00fa3535d9"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/services/session_runtime.py",
+      "size": 6698,
+      "sha256": "127353b991b5f8d8a319957ed5089f96b6b5fa37c2a711f04e5bec126c9d92de"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/services/symbols.py",
+      "size": 3135,
+      "sha256": "9ce6c370514e94cdbcf588b03c744f1aef15d6daac2852c1129e5082b66d047c"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/services/target_control.py",
+      "size": 6262,
+      "sha256": "3e29c01488b4f8a29717d371e4c5ddbbde5d360905f37957f2b02e12a55a4578"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/services/uart_capture.py",
+      "size": 15661,
+      "sha256": "bc3bd66e0cad126d090fa20c316ebcf4c941f40c3dbdaf7f8bb5e9b5ef8b420b"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/services/uart_exchange_schema.py",
+      "size": 5036,
+      "sha256": "fb99277adab629f31e6da78be02d7321f2813878c92bcca377d3954d5cd69453"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/setup_flow/__init__.py",
+      "size": 989,
+      "sha256": "8622c37a6f9c03bcc09ec96fc253aa00e4393ddfc091d116b4cd36796697ea9f"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/setup_flow/board_catalog.py",
+      "size": 19573,
+      "sha256": "86eb3db4583b8dab24a6584ae4ab0ac6e88489498c246a5c3c9195878f2fa604"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/setup_flow/datasheet_evidence.py",
+      "size": 9240,
+      "sha256": "3df1d9fcda9f413b3eb7f442b01d95ae7b66f424d5096e33c2b8a78455c48603"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/setup_flow/device_support.py",
+      "size": 60379,
+      "sha256": "f3c2db0f156acec89466aaf6272748b9507c1eaf18914377f2dda2e8da341d9e"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/setup_flow/packs.py",
+      "size": 17393,
+      "sha256": "9e73431465ffb6279f7ea474b9ca09e16810877a6b3901e021855f47abc1c11e"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/setup_flow/preflight.py",
+      "size": 17759,
+      "sha256": "393925d304cb84d7f33211c6ec36f8d42caeb03ddf7fc0231317d7358a1542c0"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/setup_flow/research.py",
+      "size": 8189,
+      "sha256": "9afa65fe51e10454ea6152a4cb36fe350cfec1a234c8b208ef3726760d2f22e3"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/setup_flow/reviewed_evidence.py",
+      "size": 12604,
+      "sha256": "41f20531be1d99f3b530181088286ceebe389db11ab6b807d34fc4bb0156fe39"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/setup_flow/setup.py",
+      "size": 39010,
+      "sha256": "ed55cafdfae4245ea6a20593810e297d391a0b47571479e934d09ba391585d47"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/setup_flow/targets.py",
+      "size": 6568,
+      "sha256": "78a0922fe2b5d3bc9b48425c39d444033570a3e50a65e589444cf9b56626fb08"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/setup_flow/validate.py",
+      "size": 23968,
+      "sha256": "6927c42a6c721d6e4df100d18644a9d614dcb208efc589d1d96d649fb9092f3a"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/target_errors.py",
+      "size": 1221,
+      "sha256": "eb0c665b08dc3f14e24b699c6584e07fbc17abb94918f4ee9ead481eb1351f7c"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/timeouts.py",
+      "size": 3465,
+      "sha256": "6b68d7d01c0f487c4c848460a73d1020ce567f0de0a17965301f26e07c730083"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/__init__.py",
+      "size": 250,
+      "sha256": "8e5e7424d52875147011e2bde5d0678d6fc5aab8a1b8508fcde9db525897b9cc"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/artifacts.py",
+      "size": 4561,
+      "sha256": "389fbf6df6ea6c17061b0bec80d326e129614196b0d618c99995a2cbcf7cf720"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/batch.py",
+      "size": 8133,
+      "sha256": "92177eda4613e4ac7406a11cdbc6d2d77f173a1c843523618b3f8c56c3b044c1"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/breakpoints.py",
+      "size": 6262,
+      "sha256": "f02aacf0b4bb637ef076116a590c9b87619ba7767bb3f1f8a5a906ab51000e43"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/execution.py",
+      "size": 2166,
+      "sha256": "0bdf46d576fb9d53bb7c39d00b8258559e2f352ffa45f6be378344218aeffc07"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/flash.py",
+      "size": 6582,
+      "sha256": "b91ff0ac7bfd219b41330a8b825c94a3f52638578f7e20fdbd83faf8b735a882"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/handshake.py",
+      "size": 8357,
+      "sha256": "937162e7de50e6dc3ab50eb451929f00e45b75d6162acde53745d174eacbdcbe"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/memory.py",
+      "size": 30548,
+      "sha256": "57b92d3d1f2e64b51bb073b0834116152eec5a8ca6c0d531c05abd79b3f365ff"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/misc.py",
+      "size": 2414,
+      "sha256": "b383dae5d7364a4beb3703ba2d4605b3850deca7ddcc3068b4b55af4e249f948"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/plans.py",
+      "size": 7491,
+      "sha256": "2427ce3f0cb3986cc0ca89107d9e2d41a6edde8e6b3fef681c7eda4070ffee09"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/registers.py",
+      "size": 10414,
+      "sha256": "376a408a402598bcce3fdeeeb81ac84e024c21ed36a77e5475e1e728f004c57f"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/serial.py",
+      "size": 18885,
+      "sha256": "fdd2a4f1cc9aae8d3256081ad2348d7cf1c962c03e849d2f0cd36fce82ac7643"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/session.py",
+      "size": 2473,
+      "sha256": "db23319d329afe5f24a01192fdb1b88a3f57a8f73056eaf48d24e742eab96299"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/setup.py",
+      "size": 28755,
+      "sha256": "48d4a6a659a7c782f03bca808020d68a7c83a6754b6e672166dc44889e5d53a9"
+    },
+    {
+      "path": "src/pyocd_debug_mcp/tools/unlock.py",
+      "size": 29679,
+      "sha256": "3fb280b69e88511ddcf6fda7e512b9492fcac44c8e13bf3d8841436170064f00"
+    }
+  ]
+}

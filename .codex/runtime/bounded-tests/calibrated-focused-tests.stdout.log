@@ -1,0 +1,23 @@
+....F........................................................            [100%]
+================================== FAILURES ===================================
+______________ test_supervisor_rejects_excessive_cleanup_padding ______________
+
+tmp_path = WindowsPath('C:/Users/Jason/AppData/Local/Temp/pytest-of-Jason/pytest-2867/test_supervisor_rejects_excess0')
+
+    def test_supervisor_rejects_excessive_cleanup_padding(tmp_path: Path) -> None:
+        completed, path = _invoke(
+            tmp_path,
+            "Write-Output 'must not launch'",
+            expected_upper_bound=120,
+            cleanup_allowance=120,
+        )
+        assert completed.returncode != 0
+        assert not path.exists()
+>       assert "maximum reasonable cleanup allowance is 30 seconds" in completed.stderr
+E       AssertionError: assert 'maximum reasonable cleanup allowance is 30 seconds' in 'CleanupAllowanceSeconds=120 is excessive for ExpectedUpperBoundSeconds=120; maximum reasonable cleanup allowance is 3...nds=120 is excessive for ExpectedUpperBoundSeconds=120; maximum reas \n   onable cleanup allowance is 30 seconds.\n \n'
+E        +  where 'CleanupAllowanceSeconds=120 is excessive for ExpectedUpperBoundSeconds=120; maximum reasonable cleanup allowance is 3...nds=120 is excessive for ExpectedUpperBoundSeconds=120; maximum reas \n   onable cleanup allowance is 30 seconds.\n \n' = CompletedProcess(args=['C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe', '-NoLogo', '-NoProfile', '-No...ds=120 is excessive for ExpectedUpperBoundSeconds=120; maximum reas \n   onable cleanup allowance is 30 seconds.\n \n').stderr
+
+.codex\tests\test_bounded_test_supervisor.py:132: AssertionError
+=========================== short test summary info ===========================
+FAILED .codex/tests/test_bounded_test_supervisor.py::test_supervisor_rejects_excessive_cleanup_padding
+1 failed, 60 passed in 39.78s

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev --locked python C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/scripts/worktree_task.py create plan2-final-release-review-002 --branch firmware/v2-final-release-review-0365-r2 --owner final-reviewer",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  19,
+    "expected_upper_bound_seconds":  15,
+    "cleanup_allowance_seconds":  4,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "measured-prior-worktree-create-10s",
+    "started_at":  "2026-08-14T21:16:03.3902806+00:00",
+    "finished_at":  "2026-08-14T21:16:06.6699378+00:00",
+    "elapsed_seconds":  3.28,
+    "root_process_id":  186028,
+    "observed_process_ids":  [
+                                 186028
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-release-review-worktree-create-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-release-review-worktree-create-002.stderr.log"
+}

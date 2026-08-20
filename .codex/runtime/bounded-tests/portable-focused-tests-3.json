@@ -1,0 +1,31 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked pytest -q .codex/tests/test_bounded_test_supervisor.py .codex/tests/test_hooks.py .codex/tests/test_stable_runner.py .codex/tests/test_codex_configuration.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  125,
+    "expected_upper_bound_seconds":  100,
+    "cleanup_allowance_seconds":  25,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The immediately preceding equivalent checks establish the runtime; this adds only one small configuration module and retains policy-capped cleanup.",
+    "started_at":  "2026-08-13T23:55:06.9809440+00:00",
+    "finished_at":  "2026-08-13T23:55:47.4192651+00:00",
+    "elapsed_seconds":  40.438,
+    "root_process_id":  16524,
+    "observed_process_ids":  [
+                                 16524,
+                                 102300,
+                                 166312,
+                                 167768,
+                                 178516,
+                                 180148,
+                                 183956,
+                                 188052,
+                                 189164,
+                                 198112
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\portable-focused-tests-3.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\portable-focused-tests-3.stderr.log"
+}

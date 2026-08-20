@@ -1,0 +1,32 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python -m pytest .codex/tests/test_stable_runner.py .codex/tests/test_hooks.py -q",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  225,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  45,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "measured-focused-hook-tests",
+    "started_at":  "2026-08-14T06:24:35.4939131+00:00",
+    "finished_at":  "2026-08-14T06:25:28.8030938+00:00",
+    "elapsed_seconds":  53.309,
+    "root_process_id":  190224,
+    "observed_process_ids":  [
+                                 147796,
+                                 170252,
+                                 180072,
+                                 181464,
+                                 184520,
+                                 186928,
+                                 187412,
+                                 190224,
+                                 192788,
+                                 193300,
+                                 196756
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\shell-tool-matcher-focused.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\shell-tool-matcher-focused.stderr.log"
+}

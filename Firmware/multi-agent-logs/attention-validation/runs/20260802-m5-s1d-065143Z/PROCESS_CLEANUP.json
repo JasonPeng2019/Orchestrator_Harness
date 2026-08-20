@@ -1,0 +1,112 @@
+﻿{
+    "schema":  "m5-process-cleanup/v1",
+    "epoch":  "20260802-m5-s1d-065143Z",
+    "checked_utc":  "2026-08-02T08:54:15.4094080Z",
+    "registered":  [
+                       {
+                           "role":  "native-harness-managed-owner",
+                           "pid":  196184,
+                           "expected_creation_utc":  "2026-08-02T06:52:51.4609650Z",
+                           "present":  false,
+                           "actual_creation_local":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "native-harness-managed-child",
+                           "pid":  162996,
+                           "expected_creation_utc":  "2026-08-02T06:52:51.4738490Z",
+                           "present":  false,
+                           "actual_creation_local":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "native-diagnostic-watcher-launcher",
+                           "pid":  168344,
+                           "expected_creation_utc":  "2026-08-02T06:53:08.7705910Z",
+                           "present":  false,
+                           "actual_creation_local":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "native-diagnostic-watcher",
+                           "pid":  157736,
+                           "expected_creation_utc":  "2026-08-02T06:53:08.8104090Z",
+                           "present":  false,
+                           "actual_creation_local":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-controller-Atlas",
+                           "pid":  186852,
+                           "expected_creation_utc":  "2026-08-02T06:54:14.1478082Z",
+                           "present":  false,
+                           "actual_creation_local":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-codex-worker-Atlas",
+                           "pid":  132120,
+                           "expected_creation_utc":  "2026-08-02T06:54:14.9797612Z",
+                           "present":  false,
+                           "actual_creation_local":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-controller-Boreal",
+                           "pid":  10132,
+                           "expected_creation_utc":  "2026-08-02T06:55:01.9713981Z",
+                           "present":  false,
+                           "actual_creation_local":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-codex-worker-Boreal",
+                           "pid":  189420,
+                           "expected_creation_utc":  "2026-08-02T06:55:02.7296601Z",
+                           "present":  false,
+                           "actual_creation_local":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-controller-Cygnus",
+                           "pid":  191460,
+                           "expected_creation_utc":  "2026-08-02T06:55:16.1145146Z",
+                           "present":  false,
+                           "actual_creation_local":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-codex-worker-Cygnus",
+                           "pid":  160624,
+                           "expected_creation_utc":  "2026-08-02T06:55:16.8774037Z",
+                           "present":  false,
+                           "actual_creation_local":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-controller-Delta",
+                           "pid":  191232,
+                           "expected_creation_utc":  "2026-08-02T06:55:27.2213783Z",
+                           "present":  false,
+                           "actual_creation_local":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-codex-worker-Delta",
+                           "pid":  186864,
+                           "expected_creation_utc":  "2026-08-02T06:55:27.9286502Z",
+                           "present":  false,
+                           "actual_creation_local":  null,
+                           "identity_absent":  true
+                       }
+                   ],
+    "all_registered_absent":  true,
+    "unexpected_epoch_processes":  [
+
+                                   ],
+    "exact_cleanup":  true,
+    "notes":  [
+                  "Root manager PID is ambient and intentionally excluded from sprint-owned cleanup.",
+                  "Harness exited by its documented heartbeat-expiry lifecycle; diagnostic watcher later stopped cooperatively and drained."
+              ]
+}

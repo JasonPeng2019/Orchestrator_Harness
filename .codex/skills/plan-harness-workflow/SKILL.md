@@ -1,9 +1,20 @@
 ---
 name: plan-harness-workflow
-description: "Author a complete multi-agent execution plan from a product spec, reference implementation plan, acceptance spec, and user-selected agents. Use only when explicitly invoked to design a workflow for the current Portable Harness Repo; compose code modules into a small number of coherent large feature steps, apply the full QA lane cycle once per large step, prefer a valid singleton lane over unnecessary parallel fan-out, preserve singular orchestrator planning, serial production coding, bounded disjoint test/documentation work, and an explicit low-overhead fast lane for strictly test-only corrections. Plans must use proportionate gates: full review for production risk, one batch/reconciliation per accepted production repair, and only deterministic eligibility checks plus exact affected-ID reruns for safe fixture corrections. Preserve native scan/wait/ack operation and the fixed execution-plan template. This skill plans but never executes work, launches agents, edits product code, or runs the generated workflow."
+description: "Deprecated compatibility marker for execution plans created by the former fixed large-step harness workflow. Never use this skill to author, revise, validate, or execute a current plan; redirect all such work to design-project-topology."
 ---
 
-# Author a Portable Harness workflow
+# Deprecated planner — redirect only
+
+Do not author, revise, validate, or execute a plan with this skill. It is retained only so historical
+plans that name `plan-harness-workflow/v1` remain understandable. Use `$design-project-topology` for
+all current planning. Its customizable module compiler, criterion-bound product loops,
+operation-boundary isolation, parallel evidence rules, and current validator supersede the fixed
+large-step/Loop 1/Loop 2/C0-C4 state machine below.
+
+The remaining text is historical reference. It is non-operative and must not be followed, copied
+into a current plan, or used to validate `FULL-EXECUTION-SPEC_PLAN_2.md`.
+
+# Historical content: Author a Portable Harness workflow
 
 ## Hold the boundary
 

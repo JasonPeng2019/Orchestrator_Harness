@@ -1,0 +1,14 @@
+﻿{
+    "schema":  "manager-event-review/v1",
+    "epoch":  "20260731-s1-clean-p",
+    "event_id":  "dd7bb3ac8deb42e58b7f4303263134c03fcd3312fac5f5f0ef1f09d01232a91f",
+    "type":  "STALE_STATUS",
+    "lane":  "20260731-s1-clean-p:Atlas:A22",
+    "reviewed_utc":  "2026-08-01T00:07:50.9531539Z",
+    "event_observed_utc":  "2026-08-01T00:07:30.058597Z",
+    "current_status":  "CODEX_EXITED",
+    "exit_code":  0,
+    "ended_utc":  "2026-08-01T00:07:19.748522Z",
+    "decision":  "TRANSIENT_CONTROLLER_FINALIZATION_RESOLVED",
+    "reason":  "At event observation the running declaration briefly outlived the exact processes; current exact controller record is CODEX_EXITED exit 0. No retry or authority action."
+}

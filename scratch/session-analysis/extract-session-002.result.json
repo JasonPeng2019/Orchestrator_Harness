@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python scratch\\session-analysis\\extract_session.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  375,
+    "expected_upper_bound_seconds":  300,
+    "cleanup_allowance_seconds":  75,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Measured history: prior 611MB streaming parse took 8s; extractor does more per-line work, worst credible 5 min",
+    "started_at":  "2026-08-18T02:17:42.0241187+00:00",
+    "finished_at":  "2026-08-18T02:17:49.3428105+00:00",
+    "elapsed_seconds":  7.319,
+    "root_process_id":  1604,
+    "observed_process_ids":  [
+                                 1604
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\extract-session-002.result.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\extract-session-002.result.stderr.log"
+}

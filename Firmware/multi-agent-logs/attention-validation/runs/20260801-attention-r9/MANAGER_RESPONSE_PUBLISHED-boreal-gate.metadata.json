@@ -1,0 +1,8 @@
+{
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r9-001",
+    "manager_state":  "REASONING",
+    "source_record_id":  "3e81e177-2f55-442f-ac33-3ab5898a993e",
+    "decision":  "CONTINUE_ASSIGNED_R9",
+    "response_path":  "fresh-experiments/D31_20260726-062325/.agent-workspace/manager-responses/29b1ca25-9b40-469b-82e7-23f2274aa04e.json"
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "m5-isolation/v1",
+  "epoch": "20260802-m5-s2a-092552Z",
+  "native_blocking_wait_only_for_tested_request_discovery": true,
+  "watcher_evaluator_enabled": false,
+  "watcher_subagent": false,
+  "runtime_wrapper_or_relay": false,
+  "collaboration_notification_used_during_live_sprint": false,
+  "transcript_used_for_request_discovery": false,
+  "operator_deviation": {
+    "fact": "Root inspected native harness pending-notification.json once after Atlas was already returned by the blocking wait; this exposed only a non-request Cygnus checkpoint and did not influence discovery or handling of any tested worker request."
+  },
+  "manager_recorder_failure": {
+    "fact": "PowerShell Set-Content emitted UTF-8 BOM in orchestrator metadata files; native recorder rejected them, leaving no orchestrator producer stream.",
+    "evidence": [
+      "atlas-received-meta.json",
+      "harness_watcher/.../inputs/orchestrator absent",
+      "watcher/attention-report.json"
+    ],
+    "owner": "operator procedure, not verified component defect"
+  }
+}

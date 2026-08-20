@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked ruff format --config .codex/dev/pyproject .codex/scripts/verify_changed.py .codex/tests/test_verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "apply the repository verifier formatter to the Firmware MCP route",
+    "started_at":  "2026-08-14T10:42:33.6542872+00:00",
+    "finished_at":  "2026-08-14T10:42:36.5902908+00:00",
+    "elapsed_seconds":  2.936,
+    "root_process_id":  104708,
+    "observed_process_ids":  [
+                                 104708
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  2,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-mcp-route-format-retry.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-mcp-route-format-retry.stderr.log"
+}

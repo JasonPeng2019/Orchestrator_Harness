@@ -1,0 +1,15 @@
+test_condition_clear_event (orchestrator_harness.tests.test_events_cli.EventAndCliTests.test_condition_clear_event) ... ok
+test_exit_checkpoint_and_release_are_independent_conditions (orchestrator_harness.tests.test_events_cli.EventAndCliTests.test_exit_checkpoint_and_release_are_independent_conditions) ... ok
+test_helper_lifecycle_condition_is_independent (orchestrator_harness.tests.test_events_cli.EventAndCliTests.test_helper_lifecycle_condition_is_independent) ... ok
+test_mcp_lifecycle_events_are_explicit (orchestrator_harness.tests.test_events_cli.EventAndCliTests.test_mcp_lifecycle_events_are_explicit) ... ok
+test_no_write_mode_creates_no_state (orchestrator_harness.tests.test_events_cli.EventAndCliTests.test_no_write_mode_creates_no_state) ... ok
+test_provider_wait_does_not_replace_exit_or_checkpoint (orchestrator_harness.tests.test_events_cli.EventAndCliTests.test_provider_wait_does_not_replace_exit_or_checkpoint) ... ok
+test_stable_event_ids_and_no_unchanged_events (orchestrator_harness.tests.test_events_cli.EventAndCliTests.test_stable_event_ids_and_no_unchanged_events) ... ok
+test_watch_once_persists_then_deduplicates (orchestrator_harness.tests.test_events_cli.EventAndCliTests.test_watch_once_persists_then_deduplicates) ... ok
+test_watch_until_event_returns_on_state_change (orchestrator_harness.tests.test_events_cli.EventAndCliTests.test_watch_until_event_returns_on_state_change) ... ok
+test_watch_until_event_timeout (orchestrator_harness.tests.test_events_cli.EventAndCliTests.test_watch_until_event_timeout) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.386s
+
+OK

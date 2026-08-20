@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project Firmware/BYO-Firmware-MCP --locked python C:\\Users\\Jason\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py Firmware/.codex/skills/run-firmware-test-suite; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; uv run --project Firmware/BYO-Firmware-MCP --locked python C:\\Users\\Jason\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py Firmware/.codex/skills/plan-changes; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; uv run --project Firmware/BYO-Firmware-MCP --locked python C:\\Users\\Jason\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py Firmware/.codex/skills/change-loop",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  20,
+    "timeout_basis":  "Three local skill-frontmatter validations using the bundled server environment, which supplies PyYAML.",
+    "started_at":  "2026-08-14T09:45:45.1488963+00:00",
+    "finished_at":  "2026-08-14T09:45:54.0264774+00:00",
+    "elapsed_seconds":  8.878,
+    "root_process_id":  186332,
+    "observed_process_ids":  [
+                                 186332
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-doc-audit\\skill-validation-retry.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-doc-audit\\skill-validation-retry.stderr.log"
+}

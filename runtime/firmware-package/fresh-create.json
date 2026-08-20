@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/.codex/skills/run-firmware-test-suite/scripts/fresh_test.py create H00 --label codex-package-smoke-20260814",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  55,
+    "expected_upper_bound_seconds":  45,
+    "cleanup_allowance_seconds":  10,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Scaffold copies two local PDFs and writes small metadata files; 45 seconds covers slower local antivirus/filesystem behavior.",
+    "started_at":  "2026-08-14T09:20:54.0636421+00:00",
+    "finished_at":  "2026-08-14T09:20:57.0285939+00:00",
+    "elapsed_seconds":  2.965,
+    "root_process_id":  160412,
+    "observed_process_ids":  [
+                                 160412
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\fresh-create.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\fresh-create.stderr.log"
+}

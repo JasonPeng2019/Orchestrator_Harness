@@ -1,0 +1,10 @@
+=== provider.id='claude-code'  adapter=ClaudeCodeProviderAdapter
+  argv: claude-code --print --output-format stream-json --verbose --model deepseek-v4-flash:0731-cloud --permission-mode bypassPermissions
+  carried in argv: []
+  dropped from argv: ['config_overrides', 'service_tier', 'approval_policy']
+
+=== provider.id='codex'  adapter=CodexProviderAdapter
+  argv: codex exec --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy="never" -m deepseek-v4-flash:0731-cloud -c model_reasoning_effort="medium" -c service_tier="standard" -c model_provider="ollama" --json --output-last-message C:\Users\Jason\AppData\Local\Temp\tmptrnpladn\codex\run\.agent-workspace\worker.last-message --cd C:\Users\Jason\AppData\Local\Temp\tmptrnpladn\codex\run -
+  carried in argv: ['config_overrides', 'service_tier', 'approval_policy']
+  dropped from argv: []
+

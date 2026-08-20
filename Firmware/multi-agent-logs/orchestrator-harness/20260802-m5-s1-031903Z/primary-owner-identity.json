@@ -1,0 +1,19 @@
+{
+    "schema":  "primary-managed-harness-owner/v1",
+    "owner":  {
+                  "created_utc":  "2026-08-02T03:19:26.0421951Z",
+                  "pid":  156476
+              },
+    "config":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-s1-031903Z\\config.json",
+    "started_utc":  "2026-08-02T03:19:26.6055278Z",
+    "managed_owner":  {
+                          "created_utc":  "2026-08-02T03:19:26.739589Z",
+                          "pid":  190088
+                      },
+    "managed_watcher":  {
+                            "created_utc":  "2026-08-02T03:19:26.795528Z",
+                            "pid":  184372
+                        },
+    "exit_reason":  "managed-harness-exited",
+    "ended_utc":  "2026-08-02T03:34:30.9224298Z"
+}

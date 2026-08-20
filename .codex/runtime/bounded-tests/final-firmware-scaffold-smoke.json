@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/.codex/skills/run-firmware-test-suite/scripts/fresh_test.py list",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  20,
+    "expected_upper_bound_seconds":  15,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The no-launch fresh-test inventory smoke completed in about three seconds during the roster update; fifteen seconds covers normal startup variation.",
+    "started_at":  "2026-08-14T11:11:18.7362945+00:00",
+    "finished_at":  "2026-08-14T11:11:21.0719211+00:00",
+    "elapsed_seconds":  2.336,
+    "root_process_id":  190376,
+    "observed_process_ids":  [
+                                 190376
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-firmware-scaffold-smoke.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-firmware-scaffold-smoke.stderr.log"
+}

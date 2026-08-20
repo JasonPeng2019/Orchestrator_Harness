@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The first change-aware run completed in 7 seconds and found only corrected formatting; 60 seconds permits its full selected gate with normal Windows variance.",
+    "started_at":  "2026-08-15T00:27:11.7615797+00:00",
+    "finished_at":  "2026-08-15T00:27:16.4657907+00:00",
+    "elapsed_seconds":  4.704,
+    "root_process_id":  193632,
+    "observed_process_ids":  [
+                                 193632
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\outer-full-access-verify-changed-corrected-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\outer-full-access-verify-changed-corrected-20260814.stderr.log"
+}

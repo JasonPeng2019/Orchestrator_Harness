@@ -1,0 +1,12 @@
+{
+  "schema": "m5-isolation/v1",
+  "epoch": "20260802-m5-s3-101953Z",
+  "native_harness_only": true,
+  "diagnostic_watcher_evaluator_enabled": false,
+  "ai_watcher_or_relay_used": false,
+  "harness_wrapper_or_runner_used": false,
+  "request_discovery": "native blocking harness wait only",
+  "collaboration_or_user_wake_used": false,
+  "transcript_or_direct_signal_discovery_used": false,
+  "post_sprint_reviewer_started": false
+}

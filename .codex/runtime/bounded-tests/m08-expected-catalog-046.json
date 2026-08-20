@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "$env:BYO_MCP_ARTIFACT_ROOT=C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\host-readiness\\host-readiness-20260815-046\\artifacts; $env:PYOCD_MCP_RUNS_ROOT=C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\host-readiness\\host-readiness-20260815-046\\server-runs; uv run --project Firmware/BYO-Firmware-MCP --locked python Firmware/runtime/host-readiness/host-readiness-20260815-046/expected_catalog.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  140,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  20,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "M08 preflight import/list operation; existing locked environment; conservative two-minute upper bound",
+    "started_at":  "2026-08-15T17:35:03.1155977+00:00",
+    "finished_at":  "2026-08-15T17:35:09.8830174+00:00",
+    "elapsed_seconds":  6.767,
+    "root_process_id":  193552,
+    "observed_process_ids":  [
+                                 193552
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-expected-catalog-046.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-expected-catalog-046.stderr.log"
+}

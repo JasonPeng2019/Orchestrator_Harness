@@ -1,0 +1,12 @@
+{
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r9-001",
+    "pending_work_snapshot":  {
+                                  "complete":  true,
+                                  "events":  [
+
+                                             ],
+                                  "selected_event_id":  null,
+                                  "selection_reason":  "NO_PENDING_BLOCKING_EVENTS"
+                              }
+}

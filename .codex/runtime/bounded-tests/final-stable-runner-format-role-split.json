@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked ruff format .codex/tests/test_stable_runner.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  20,
+    "expected_upper_bound_seconds":  15,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Ruff formatting one modified test file is a short deterministic operation; fifteen seconds covers environment startup.",
+    "started_at":  "2026-08-14T11:17:30.7277448+00:00",
+    "finished_at":  "2026-08-14T11:17:32.8263199+00:00",
+    "elapsed_seconds":  2.099,
+    "root_process_id":  172024,
+    "observed_process_ids":  [
+                                 172024
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-stable-runner-format-role-split.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-stable-runner-format-role-split.stderr.log"
+}

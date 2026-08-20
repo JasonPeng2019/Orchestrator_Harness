@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "python.exe",
+    "-m",
+    "orchestrator_harness.lane_controller",
+    "fresh-experiments/A26_20260726-062325/.agent-workspace/delta_a26_s1_clean_p_endpoint.invocation.json"
+  ],
+  "created_utc": "2026-08-01T00:24:37.872891Z",
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+  "expected_state_path": null,
+  "label": "delta_a26_s1_clean_p_endpoint",
+  "launched_utc": "2026-08-01T00:24:37.871937Z",
+  "pid": 171688,
+  "platform": "windows",
+  "role": "lane-controller",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "launched"
+}

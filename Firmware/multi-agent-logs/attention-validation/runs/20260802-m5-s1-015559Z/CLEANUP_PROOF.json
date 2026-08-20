@@ -1,0 +1,35 @@
+{
+    "known":  [
+                  {
+                      "pid":  179388,
+                      "state":  "ABSENT",
+                      "checked_utc":  "2026-08-02T02:01:08.6321358Z"
+                  },
+                  {
+                      "pid":  150496,
+                      "state":  "ABSENT",
+                      "checked_utc":  "2026-08-02T02:01:08.9751352Z"
+                  },
+                  {
+                      "pid":  174440,
+                      "state":  "ABSENT",
+                      "checked_utc":  "2026-08-02T02:01:09.2827962Z"
+                  },
+                  {
+                      "pid":  195004,
+                      "state":  "ABSENT",
+                      "checked_utc":  "2026-08-02T02:01:09.5808293Z"
+                  },
+                  {
+                      "pid":  183840,
+                      "state":  "ABSENT",
+                      "checked_utc":  "2026-08-02T02:01:09.9999347Z"
+                  }
+              ],
+    "unexpected_epoch_processes":  [
+
+                                   ],
+    "exact_cleanup":  true,
+    "schema":  "m5-cleanup-proof/v1",
+    "epoch":  "20260802-m5-s1-015559Z"
+}

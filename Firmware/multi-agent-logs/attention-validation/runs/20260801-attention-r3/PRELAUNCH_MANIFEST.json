@@ -1,0 +1,23 @@
+﻿{
+    "schema":  "attention-sprint-prelaunch/v1",
+    "epoch_id":  "20260801-attention-r3",
+    "status":  "SEALED_FOR_SERVICE_START",
+    "created_utc":  "2026-08-01T17:21:20.1763139Z",
+    "restart_after":  [
+                          "READINESS_FAILURE_002",
+                          "READINESS_FAILURE_003",
+                          "independent CLEAR"
+                      ],
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r3-001",
+    "primary_config":  "orchestrator_harness/canary-20260801-attention-r3.json",
+    "primary_output":  "orchestrator_harness/canary-20260801-attention-r3-state",
+    "optional_config":  "harness_watcher_implementation/canary-20260801-attention-r3.json",
+    "optional_runtime":  "harness_watcher/runs/20260801-attention-r3",
+    "watcher_subagent":  "/root/attention_watcher",
+    "policy_sha256":  "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68",
+    "server_head":  "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "old_processes_absent":  true,
+    "stop_files_absent":  true,
+    "lane_authority_status":  "HOST_PREP_INVOCATIONS_VALIDATED_NOT_LAUNCHED"
+}

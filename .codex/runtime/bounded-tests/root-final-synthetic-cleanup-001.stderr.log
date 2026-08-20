@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\plans\general-coding-harness\runtime\firmware-v2\worktrees\.harness-candidate-worktrees\plan2-final-safeguard-argv-repair-001\orchestrator_harness\tests\wsl_cleanup_guard_test.py", line 7, in <module>
+    from orchestrator_harness.tests.real_agent_test import (
+ModuleNotFoundError: No module named 'orchestrator_harness'

@@ -1,0 +1,20 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python -m pytest -q .codex/tests/test_hooks.py .codex/tests/test_stable_runner.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  300,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Focused hook and stable-launcher tests previously completed in 28 seconds; 300 seconds permits Windows controller fixtures while bounding a regression hang.",
+    "started_at":  "2026-08-13T23:21:37.8627371+00:00",
+    "finished_at":  "2026-08-13T23:22:05.3632745+00:00",
+    "elapsed_seconds":  27.501,
+    "root_process_id":  175000,
+    "observed_process_ids":  [
+                                 175000
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\current-run-focused-2.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\current-run-focused-2.stderr.log"
+}

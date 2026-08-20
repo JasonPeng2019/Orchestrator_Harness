@@ -1,0 +1,40 @@
+{
+  "acknowledged_event_ids": [],
+  "deferred": [],
+  "pending": {
+    "data": {
+      "active_lane_count": 1,
+      "due_utc": "2026-08-02T02:20:05.925058Z",
+      "lanes": [
+        {
+          "controller": {
+            "classification": "live",
+            "operational_state": "RUNNING_CODEX"
+          },
+          "declared_resources": {
+            "boards": [],
+            "mcp_servers": []
+          },
+          "doer": "Atlas",
+          "elapsed_seconds": 2.94,
+          "fingerprint_age_seconds": 1.186,
+          "lane_id": "m5-managed-consumer-luna:Atlas:A00",
+          "latest_activity": null,
+          "phase": "waiting manager signal",
+          "request": null,
+          "resource_ambiguity": [],
+          "resource_conflicts": [],
+          "task": "A00"
+        }
+      ],
+      "review_baseline_utc": "2026-08-02T02:20:05.925058Z"
+    },
+    "event_id": "3e928b359cd4013d8121d20624833ee660cc08d25df686b10d8a9a118c421b73",
+    "identity": "manager:review-due",
+    "notification": "MANAGER_ACTION_REQUIRED",
+    "observed_utc": "2026-08-02T02:20:07.111126Z",
+    "severity": "info",
+    "type": "MANAGER_REVIEW_DUE"
+  },
+  "schema": "orchestrator-manager-notification/v1"
+}

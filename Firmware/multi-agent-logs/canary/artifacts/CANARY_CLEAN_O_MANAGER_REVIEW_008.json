@@ -1,0 +1,9 @@
+﻿{
+    "schema":  "canary-manager-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:29:28.0048748Z",
+    "pending_event_id":  "3f5e1061acd80eb7ec5a1423aae62a2a3dbe7d588c323e8fdace932583fea30f",
+    "pending_type":  "RESOURCE_AMBIGUOUS",
+    "verdict":  "ACKNOWLEDGED_POST_LIFETIME_CHECKPOINTING",
+    "analysis":  "Boreal consumed its one O lifetime; exact provider/MCP descendants are absent and no hardware action occurred. Its run-local parser rejected the same plain-text setup plan guidance before a request. The Codex turn is only writing its safe checkpoint. No retry or conflict exists."
+}

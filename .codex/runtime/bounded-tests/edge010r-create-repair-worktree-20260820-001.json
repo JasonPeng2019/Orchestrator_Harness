@@ -1,0 +1,26 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev --locked python C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/scripts/worktree_task.py create plan2-edge010r-continuation-repair --branch plan2/edge010r-continuation-repair --owner coder-main",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\target-harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Local git worktree creation from the already-clean bound target; historical helper operations complete in seconds, with 20 seconds allowing filesystem and Git metadata work.",
+    "started_at":  "2026-08-20T16:37:21.7031923+00:00",
+    "finished_at":  "2026-08-20T16:37:28.3106333+00:00",
+    "elapsed_seconds":  6.607,
+    "root_process_id":  20024,
+    "observed_process_ids":  [
+                                 5408,
+                                 10236,
+                                 19700,
+                                 20024,
+                                 26444
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\edge010r-create-repair-worktree-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\edge010r-create-repair-worktree-20260820-001.stderr.log"
+}

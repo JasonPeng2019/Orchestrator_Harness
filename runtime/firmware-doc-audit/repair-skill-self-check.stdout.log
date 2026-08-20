@@ -1,0 +1,2 @@
+plan-changes self-check: PASS (main-model authorship, scaffold, validation contract)
+change-loop self-check: PASS (syntax, layout, gate, JSONL, and thread reuse)

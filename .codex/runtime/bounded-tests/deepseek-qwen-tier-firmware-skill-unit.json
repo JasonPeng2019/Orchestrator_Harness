@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m unittest discover -s Firmware/.codex/skills/run-firmware-test-suite/tests -p test_*.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The package-local skill unit suite previously completed in a few seconds; thirty seconds allows test-discovery and filesystem variation, with eight seconds proportionate cleanup.",
+    "started_at":  "2026-08-14T11:37:44.6488119+00:00",
+    "finished_at":  "2026-08-14T11:37:47.6218119+00:00",
+    "elapsed_seconds":  2.973,
+    "root_process_id":  195592,
+    "observed_process_ids":  [
+                                 195592
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-firmware-skill-unit.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-firmware-skill-unit.stderr.log"
+}

@@ -1,0 +1,43 @@
+{
+  "acknowledged_event_ids": [
+    "f6fcdf144188faa25383e42d448b542e1b4c6d4e97d41042e0e285eca355f11e"
+  ],
+  "deferred": [
+    {
+      "admitted_utc": "2026-08-02T06:06:32.718953Z",
+      "deadline_order": "2026-08-02T06:15:24.201373Z",
+      "event": {
+        "data": {
+          "correlated_request_answered": false,
+          "correlated_request_id": null,
+          "correlated_request_path": null,
+          "created_utc": "2026-08-02T06:05:24.201373Z",
+          "deadline_utc": "2026-08-02T06:15:24.201373Z",
+          "evidence_paths": [
+            ".agent-workspace/m5/20260802-m5-s1r1-055644Z/M5_S1R1_LIVE_ENTRY_AUTHORIZATION_CHECKPOINT.md",
+            ".agent-workspace/m5/20260802-m5-s1r1-055644Z/HOST_VALIDATION.json",
+            ".agent-workspace/M5_S1_PRELIVE_CHECKPOINT.md",
+            "m5_s1_023043z/M5_S1_B14_PRELIVE_PLAN.json"
+          ],
+          "kind": "HELP",
+          "lane_id": "20260802-m5-s1r1-055644Z:Atlas:A22",
+          "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\manager-signals\\sig-20260802-m5-s1r1-055644Z-atlas-a22-gate-001.json",
+          "phase": "M5_S1_LIVE_ENTRY_AUTHORIZATION",
+          "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324",
+          "sha256": "95226297592be7dfc4bdbb19225be59d9d7c2ef53e6578fd609add5b4addcf00",
+          "signal_id": "sig-20260802-m5-s1r1-055644Z-atlas-a22-gate-001",
+          "summary": "Atlas completed a fresh host-only reconciliation of the accepted A22 B14 pre-live continuation. The corrected invocation manifest, artifact identity, NULL-first route, and safety/resource requirements are valid, but the restarted R1 epoch has no fresh manager-owned assignment or provider release. Live-entry authorization is required before any provider, MCP, lease, or hardware action.",
+          "task": "A22"
+        },
+        "event_id": "f6fcdf144188faa25383e42d448b542e1b4c6d4e97d41042e0e285eca355f11e",
+        "identity": "manager-signal:sig-20260802-m5-s1r1-055644Z-atlas-a22-gate-001",
+        "severity": "info",
+        "type": "MANAGER_SIGNAL"
+      },
+      "identity": "manager-signal:sig-20260802-m5-s1r1-055644Z-atlas-a22-gate-001",
+      "priority": 3
+    }
+  ],
+  "pending": null,
+  "schema": "orchestrator-manager-notification/v1"
+}

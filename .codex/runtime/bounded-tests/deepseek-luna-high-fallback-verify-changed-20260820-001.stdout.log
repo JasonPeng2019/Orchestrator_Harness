@@ -1,0 +1,212 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+   --> .codex\tests\test_stable_runner.py:571:22
+    |
+570 |
+    - def _failure_history(
+    -     *error_classes: str, workflow_role: str = "doer-main"
+    - ) -> dict[str, object]:
+    -     return {
+    -         "schema": "orchestrator-backend-failure-history/v1",
+    -         "workflow_role": workflow_role,
+571 + def _failure_history(*error_classes: str, workflow_role: str = "doer-main") -> dict[str, object]:
+572 +     return {
+573 +         "schema": "orchestrator-backend-failure-history/v1",
+574 +         "workflow_role": workflow_role,
+575 |         "logical_task_id": "logical-task-1",
+576 |         "attempts": [
+577 |             {
+578 |                 "attempt_id": f"attempt-{index}",
+    -                 "profile_id": "deepseek-v4-flash-0731-high",
+579 +                 "profile_id": "deepseek-v4-flash-0731-high",
+580 |                 "outcome": "BACKEND_FAILURE",
+--------------------------------------------------------------------------------
+588 |
+    - def test_launch_profiles_materialize_luna_deepseek_and_terra_compaction_settings() -> None:
+    -     runner = _load_runner()
+    -     coder = runner.apply_workflow_role_allocation(
+    -         _coding_invocation(), "coder-main", validate_finding_gate=False
+    -     )
+    -     coder_settings = coder["codex"]
+    -     assert coder_settings["launch_profile"] == "luna-max"
+    -     assert coder_settings["model"] == "gpt-5.6-luna"
+    -     assert coder_settings["reasoning_effort"] == "max"
+    -     assert "model_context_window=272000" in coder_settings["config_overrides"]
+    -     assert "model_auto_compact_token_limit=150000" in coder_settings["config_overrides"]
+    -
+    -     test_executor = runner.apply_workflow_role_allocation(
+    -         _coding_invocation(), "doer-main", validate_finding_gate=False
+    -     )
+    -     test_executor_settings = test_executor["codex"]
+    -     assert test_executor_settings["launch_profile"] == "deepseek-v4-flash-0731-high"
+    -     assert test_executor_settings["model"] == "deepseek-v4-flash:0731-cloud"
+    -     assert test_executor_settings["reasoning_effort"] == "high"
+    -     assert test_executor_settings["command"] == [
+    -         "codex",
+    -         "--dangerously-bypass-hook-trust",
+    -         "--oss",
+    -         "--local-provider",
+    -         "ollama",
+    -     ]
+    -     assert "model_context_window=1048576" in test_executor_settings["config_overrides"]
+    -     assert "model_auto_compact_token_limit=230000" in test_executor_settings["config_overrides"]
+    -     assert "model_auto_compact_token_limit=1" not in test_executor_settings["config_overrides"]
+    -     assert test_executor_settings["sandbox"] == "danger-full-access"
+    -     assert test_executor_settings["approval_policy"] == "never"
+    -     assert 'approval_policy="never"' in test_executor_settings["config_overrides"]
+    -     assert 'approvals_reviewer="user"' in test_executor_settings["config_overrides"]
+    -     catalog_override = next(
+    -         item
+    -         for item in test_executor_settings["config_overrides"]
+    -         if item.startswith("model_catalog_json=")
+    -     )
+    -     assert ".codex/delegates/deepseek-model-catalog.json" in catalog_override.replace("\\", "/")
+589 + def test_launch_profiles_materialize_luna_deepseek_and_terra_compaction_settings() -> None:
+590 +     runner = _load_runner()
+591 +     coder = runner.apply_workflow_role_allocation(_coding_invocation(), "coder-main", validate_finding_gate=False)
+592 +     coder_settings = coder["codex"]
+593 +     assert coder_settings["launch_profile"] == "luna-max"
+594 +     assert coder_settings["model"] == "gpt-5.6-luna"
+595 +     assert coder_settings["reasoning_effort"] == "max"
+596 +     assert "model_context_window=272000" in coder_settings["config_overrides"]
+597 +     assert "model_auto_compact_token_limit=150000" in coder_settings["config_overrides"]
+598 +
+599 +     test_executor = runner.apply_workflow_role_allocation(
+600 +         _coding_invocation(), "doer-main", validate_finding_gate=False
+601 +     )
+602 +     test_executor_settings = test_executor["codex"]
+603 +     assert test_executor_settings["launch_profile"] == "deepseek-v4-flash-0731-high"
+604 +     assert test_executor_settings["model"] == "deepseek-v4-flash:0731-cloud"
+605 +     assert test_executor_settings["reasoning_effort"] == "high"
+606 +     assert test_executor_settings["command"] == [
+607 +         "codex",
+608 +         "--dangerously-bypass-hook-trust",
+609 +         "--oss",
+610 +         "--local-provider",
+611 +         "ollama",
+612 +     ]
+613 +     assert "model_context_window=1048576" in test_executor_settings["config_overrides"]
+614 +     assert "model_auto_compact_token_limit=230000" in test_executor_settings["config_overrides"]
+615 +     assert "model_auto_compact_token_limit=1" not in test_executor_settings["config_overrides"]
+616 +     assert test_executor_settings["sandbox"] == "danger-full-access"
+617 +     assert test_executor_settings["approval_policy"] == "never"
+618 +     assert 'approval_policy="never"' in test_executor_settings["config_overrides"]
+619 +     assert 'approvals_reviewer="user"' in test_executor_settings["config_overrides"]
+620 +     catalog_override = next(
+621 +         item for item in test_executor_settings["config_overrides"] if item.startswith("model_catalog_json=")
+622 +     )
+623 +     assert ".codex/delegates/deepseek-model-catalog.json" in catalog_override.replace("\\", "/")
+624 |
+--------------------------------------------------------------------------------
+640 |
+    - def test_backend_fallback_requires_three_consecutive_classified_deepseek_failures() -> None:
+    -     runner = _load_runner()
+    -     with pytest.raises(runner.RunnerError, match="requires 3 consecutive"):
+    -         runner.apply_workflow_role_allocation(
+    -             _coding_invocation(),
+    -             "doer-main",
+    -             validate_finding_gate=False,
+    -             fallback_history=_failure_history("HTTP_429", "RATE_LIMIT"),
+    -         )
+    -
+    -     fallback = runner.apply_workflow_role_allocation(
+    -         _coding_invocation(),
+    -         "doer-main",
+    -         validate_finding_gate=False,
+    -         fallback_history=_failure_history("HTTP_429", "HTTP_303", "BACKEND_ERROR"),
+    -     )
+    -     settings = fallback["codex"]
+    -     assert settings["launch_profile"] == "luna-high"
+    -     assert settings["model"] == "gpt-5.6-luna"
+    -     assert settings["reasoning_effort"] == "high"
+    -     assert "model_auto_compact_token_limit=150000" in settings["config_overrides"]
+641 + def test_backend_fallback_requires_three_consecutive_classified_deepseek_failures() -> None:
+642 +     runner = _load_runner()
+643 +     with pytest.raises(runner.RunnerError, match="requires 3 consecutive"):
+644 +         runner.apply_workflow_role_allocation(
+645 +             _coding_invocation(),
+646 +             "doer-main",
+647 +             validate_finding_gate=False,
+648 +             fallback_history=_failure_history("HTTP_429", "RATE_LIMIT"),
+649 +         )
+650 +
+651 +     fallback = runner.apply_workflow_role_allocation(
+652 +         _coding_invocation(),
+653 +         "doer-main",
+654 +         validate_finding_gate=False,
+655 +         fallback_history=_failure_history("HTTP_429", "HTTP_303", "BACKEND_ERROR"),
+656 +     )
+657 +     settings = fallback["codex"]
+658 +     assert settings["launch_profile"] == "luna-high"
+659 +     assert settings["model"] == "gpt-5.6-luna"
+660 +     assert settings["reasoning_effort"] == "high"
+661 +     assert "model_auto_compact_token_limit=150000" in settings["config_overrides"]
+662 |
+663 |     with pytest.raises(runner.RunnerError, match="action=start"):
+664 |         runner.apply_workflow_role_allocation(
+    -             _coding_invocation("resume"),
+    -             "doer-main",
+    -             validate_finding_gate=False,
+    -             fallback_history=_failure_history("HTTP_429", "HTTP_303", "BACKEND_ERROR"),
+    -         )
+    -
+    -
+    - @pytest.mark.parametrize(
+    -     "error_class", ("HTTP_429", "HTTP_303", "RATE_LIMIT", "BACKEND_ERROR")
+    - )
+    - def test_each_declared_backend_class_can_complete_the_fallback_streak(
+    -     error_class: str,
+    - ) -> None:
+    -     runner = _load_runner()
+    -     fallback = runner.apply_workflow_role_allocation(
+    -         _coding_invocation(),
+    -         "doer-main",
+    -         validate_finding_gate=False,
+    -         fallback_history=_failure_history(error_class, error_class, error_class),
+    -     )
+    -     assert fallback["codex"]["launch_profile"] == "luna-high"
+665 +             _coding_invocation("resume"),
+666 +             "doer-main",
+667 +             validate_finding_gate=False,
+668 +             fallback_history=_failure_history("HTTP_429", "HTTP_303", "BACKEND_ERROR"),
+669 +         )
+670 +
+671 +
+672 + @pytest.mark.parametrize("error_class", ("HTTP_429", "HTTP_303", "RATE_LIMIT", "BACKEND_ERROR"))
+673 + def test_each_declared_backend_class_can_complete_the_fallback_streak(
+674 +     error_class: str,
+675 + ) -> None:
+676 +     runner = _load_runner()
+677 +     fallback = runner.apply_workflow_role_allocation(
+678 +         _coding_invocation(),
+679 +         "doer-main",
+680 +         validate_finding_gate=False,
+681 +         fallback_history=_failure_history(error_class, error_class, error_class),
+682 +     )
+683 +     assert fallback["codex"]["launch_profile"] == "luna-high"
+684 |
+--------------------------------------------------------------------------------
+729 |                 str(source),
+    -                 "--workflow-role",
+    -                 "doer-main",
+    -                 "--launch-profile",
+    -                 "luna-high",
+730 +                 "--workflow-role",
+731 +                 "doer-main",
+732 +                 "--launch-profile",
+733 +                 "luna-high",
+734 |                 "--fallback-history",
+--------------------------------------------------------------------------------
+746 |     assert projected["action"] == "start"
+    -     assert projected["codex"]["launch_profile"] == "luna-high"
+    -     assert projected["codex"]["reasoning_effort"] == "high"
+747 +     assert projected["codex"]["launch_profile"] == "luna-high"
+748 +     assert projected["codex"]["reasoning_effort"] == "high"
+749 |     assert projection["fallback_history_sha256"] == hashlib.sha256(history.read_bytes()).hexdigest()
+    |
+
+1 file would be reformatted

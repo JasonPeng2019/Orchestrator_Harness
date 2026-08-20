@@ -1,0 +1,1 @@
+API Error: Request rejected (429) · you (jasonpeng2019) have reached your session usage limit, upgrade for higher limits: https://ollama.com/upgrade or add extra usage: https://ollama.com/settings (ref: 940aa3e2-4c11-481f-8333-66aa79cda4a6)

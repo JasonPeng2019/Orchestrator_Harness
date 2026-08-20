@@ -1,0 +1,32 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python -m pytest -q .codex/tests/test_bounded_test_supervisor.py .codex/tests/test_hooks.py .codex/tests/test_stable_runner.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  110,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  20,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The hook/launcher suite previously completed in 25-30 seconds and the new timeout smoke adds about six seconds; 90 seconds is a conservative observed upper bound with a 20-second cleanup allowance within the 25% cap.",
+    "started_at":  "2026-08-13T23:32:50.1863324+00:00",
+    "finished_at":  "2026-08-13T23:33:32.2917431+00:00",
+    "elapsed_seconds":  42.105,
+    "root_process_id":  131008,
+    "observed_process_ids":  [
+                                 468,
+                                 18348,
+                                 131008,
+                                 172652,
+                                 177400,
+                                 179880,
+                                 184696,
+                                 191068,
+                                 192384,
+                                 192592,
+                                 198112
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\calibrated-focused-tests.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\calibrated-focused-tests.stderr.log"
+}

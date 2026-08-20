@@ -1,0 +1,6 @@
+line 1: kind=STARTED raw_type=system detail=None
+line 62: kind=COMPLETED raw_type=result detail=None
+
+FINAL terminal event kind: COMPLETED
+terminal_outcome(event, exit_code=0): COMPLETED
+RESULT: false-COMPLETED

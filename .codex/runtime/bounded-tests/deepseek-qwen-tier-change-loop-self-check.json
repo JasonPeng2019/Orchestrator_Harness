@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "bash Firmware/.codex/skills/change-loop/scripts/run_loop.sh --self-check",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The change-loop self-check is a local syntax and configuration check and normally completes in seconds; twenty seconds allows shell startup and five seconds bounds cleanup.",
+    "started_at":  "2026-08-14T11:35:13.4281703+00:00",
+    "finished_at":  "2026-08-14T11:35:20.8438879+00:00",
+    "elapsed_seconds":  7.416,
+    "root_process_id":  166552,
+    "observed_process_ids":  [
+                                 166552
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-change-loop-self-check.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-change-loop-self-check.stderr.log"
+}

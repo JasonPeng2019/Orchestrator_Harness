@@ -1,0 +1,125 @@
+﻿{
+  "cursor_drained": true,
+  "counts": {
+    "ACKNOWLEDGEMENT_ONLY_DELAY": 0,
+    "BUSY_MANAGER_DELAY": 2,
+    "HARNESS_DELIVERY_DELAY": 2,
+    "IDLE_OR_ABSENT_MANAGER_DELAY": 0,
+    "INSUFFICIENT_EVIDENCE": 25,
+    "NO_BLOCKING_IMPACT": 4
+  },
+  "selected": [
+    {
+      "event_id": "83aa83985ea0f2de916f6b41f9a30ae682b179ab0019768ab03291154adb0938",
+      "classification": "BUSY_MANAGER_DELAY",
+      "missing_evidence": [],
+      "contradictory_evidence": [],
+      "metrics": {
+        "claim_to_decision_seconds": null,
+        "deadline_lateness_seconds": 196.677801,
+        "explicit_blocked_seconds": null,
+        "explicit_deferral_seconds": null,
+        "observation_to_actionable_seconds": null,
+        "pending_to_manager_claim_seconds": null,
+        "receipt_to_resume_seconds": null,
+        "response_to_ack_seconds": null,
+        "response_to_agent_receipt_seconds": null,
+        "signal_to_observation_seconds": null
+      }
+    },
+    {
+      "event_id": "r10-review-001",
+      "classification": "BUSY_MANAGER_DELAY",
+      "missing_evidence": [],
+      "contradictory_evidence": [],
+      "metrics": {
+        "claim_to_decision_seconds": null,
+        "deadline_lateness_seconds": 120.961999,
+        "explicit_blocked_seconds": null,
+        "explicit_deferral_seconds": null,
+        "observation_to_actionable_seconds": null,
+        "pending_to_manager_claim_seconds": null,
+        "receipt_to_resume_seconds": null,
+        "response_to_ack_seconds": null,
+        "response_to_agent_receipt_seconds": null,
+        "signal_to_observation_seconds": null
+      }
+    },
+    {
+      "event_id": "sig-20260801-attention-r10-atlas-a22-gate-001",
+      "classification": "HARNESS_DELIVERY_DELAY",
+      "missing_evidence": [],
+      "contradictory_evidence": [],
+      "metrics": {
+        "claim_to_decision_seconds": 0.0,
+        "deadline_lateness_seconds": null,
+        "explicit_blocked_seconds": 43.337165,
+        "explicit_deferral_seconds": null,
+        "observation_to_actionable_seconds": null,
+        "pending_to_manager_claim_seconds": null,
+        "receipt_to_resume_seconds": 2.961023,
+        "response_to_ack_seconds": null,
+        "response_to_agent_receipt_seconds": 19.699185,
+        "signal_to_observation_seconds": 20.662946
+      }
+    },
+    {
+      "event_id": "sig-20260801-attention-r10-boreal-d31-gate-001",
+      "classification": "INSUFFICIENT_EVIDENCE",
+      "missing_evidence": [
+        "matching stage deadline and late endpoint"
+      ],
+      "contradictory_evidence": [],
+      "metrics": {
+        "claim_to_decision_seconds": 0.0,
+        "deadline_lateness_seconds": null,
+        "explicit_blocked_seconds": 64.191198,
+        "explicit_deferral_seconds": null,
+        "observation_to_actionable_seconds": null,
+        "pending_to_manager_claim_seconds": null,
+        "receipt_to_resume_seconds": 5.928737,
+        "response_to_ack_seconds": null,
+        "response_to_agent_receipt_seconds": 19.323355,
+        "signal_to_observation_seconds": 32.859519
+      }
+    },
+    {
+      "event_id": "sig-20260801-attention-r10-cygnus-a24-gate-001",
+      "classification": "HARNESS_DELIVERY_DELAY",
+      "missing_evidence": [],
+      "contradictory_evidence": [],
+      "metrics": {
+        "claim_to_decision_seconds": 0.0,
+        "deadline_lateness_seconds": null,
+        "explicit_blocked_seconds": 83.730497,
+        "explicit_deferral_seconds": null,
+        "observation_to_actionable_seconds": null,
+        "pending_to_manager_claim_seconds": null,
+        "receipt_to_resume_seconds": 0.0,
+        "response_to_ack_seconds": null,
+        "response_to_agent_receipt_seconds": 31.416732,
+        "signal_to_observation_seconds": 26.932831
+      }
+    },
+    {
+      "event_id": "sig-20260801-attention-r10-delta-a26-gate-001",
+      "classification": "INSUFFICIENT_EVIDENCE",
+      "missing_evidence": [
+        "matching stage deadline and late endpoint"
+      ],
+      "contradictory_evidence": [],
+      "metrics": {
+        "claim_to_decision_seconds": 0.0,
+        "deadline_lateness_seconds": null,
+        "explicit_blocked_seconds": 101.637649,
+        "explicit_deferral_seconds": 0.0,
+        "observation_to_actionable_seconds": 0.0,
+        "pending_to_manager_claim_seconds": 17.61807,
+        "receipt_to_resume_seconds": 13.423688,
+        "response_to_ack_seconds": null,
+        "response_to_agent_receipt_seconds": 35.824874,
+        "signal_to_observation_seconds": 34.771017
+      }
+    }
+  ]
+}

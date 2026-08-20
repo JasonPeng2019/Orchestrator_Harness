@@ -1,0 +1,4 @@
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\runtime\plan2-hardware\a21-001\materialize_manager.py", line 33
+    f"""You are the persistent Sol acceptance/test orchestrator for one Plan 2 hardware sprint.\n\n"
+    ^
+SyntaxError: unterminated triple-quoted f-string literal (detected at line 124)

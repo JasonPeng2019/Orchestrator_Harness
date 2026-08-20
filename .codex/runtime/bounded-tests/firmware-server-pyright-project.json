@@ -1,0 +1,25 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --locked --no-sync pyright --project pyproject.toml",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\BYO-Firmware-MCP",
+    "maximum_lifetime_seconds":  70,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  10,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "confirm the BYO Firmware MCP server\u0027s own Pyright scope before isolating it from the parent configuration",
+    "started_at":  "2026-08-14T10:35:33.5451046+00:00",
+    "finished_at":  "2026-08-14T10:35:51.1849499+00:00",
+    "elapsed_seconds":  17.64,
+    "root_process_id":  170256,
+    "observed_process_ids":  [
+                                 107288,
+                                 170256,
+                                 187464,
+                                 198548
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-server-pyright-project.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-server-pyright-project.stderr.log"
+}

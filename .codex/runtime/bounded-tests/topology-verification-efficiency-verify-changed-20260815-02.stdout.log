@@ -1,0 +1,358 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+    --> .codex\skills\design-project-topology\scripts\validate_execution_plan.py:109:57
+     |
+108  | }
+     - RULE_IDS = [f"R{number}" for number in range(1, 31)] + [
+     -     f"S{number}" for number in range(1, 17)
+     - ]
+109  + RULE_IDS = [f"R{number}" for number in range(1, 31)] + [f"S{number}" for number in range(1, 17)]
+110  | CHECK_IDS = [f"V{number:02d}" for number in range(1, 30)]
+--------------------------------------------------------------------------------
+375  | )
+     - INSTANCE_RE = re.compile(
+     -     r"(?m)^###\s+(MI-[A-Z0-9][A-Z0-9_-]*)\s+-\s+(M\d{2}):\s+(.+?)\s*$"
+     - )
+376  + INSTANCE_RE = re.compile(r"(?m)^###\s+(MI-[A-Z0-9][A-Z0-9_-]*)\s+-\s+(M\d{2}):\s+(.+?)\s*$")
+377  | MI_RE = re.compile(r"\bMI-[A-Z0-9][A-Z0-9_-]*\b")
+--------------------------------------------------------------------------------
+425  |     return {
+     -         heading: section(
+     -             text, heading, HEADINGS[index + 1] if index + 1 < len(HEADINGS) else None
+     -         )
+426  +         heading: section(text, heading, HEADINGS[index + 1] if index + 1 < len(HEADINGS) else None)
+427  |         for index, heading in enumerate(HEADINGS)
+--------------------------------------------------------------------------------
+449  |             elif any(len(row) != len(header) for row in rows):
+     -                 errors.append(
+     -                     f"{heading} table has a row with the wrong column count: {' | '.join(header)}"
+     -                 )
+450  +                 errors.append(f"{heading} table has a row with the wrong column count: {' | '.join(header)}")
+451  |     return errors
+--------------------------------------------------------------------------------
+459  |     if duplicates(seen_modules):
+     -         errors.append(
+     -             f"module manifest contains duplicates: {', '.join(duplicates(seen_modules))}"
+     -         )
+460  +         errors.append(f"module manifest contains duplicates: {', '.join(duplicates(seen_modules))}")
+461  |     missing = sorted(set(MODULE_IDS) - set(seen_modules))
+--------------------------------------------------------------------------------
+482  |             if instance_id in instance_types:
+     -                 errors.append(
+     -                     f"module instance ID is declared more than once: {instance_id}"
+     -                 )
+483  +                 errors.append(f"module instance ID is declared more than once: {instance_id}")
+484  |             instance_types[instance_id] = module_id
+--------------------------------------------------------------------------------
+492  |     if duplicates(found_ids):
+     -         errors.append(
+     -             f"Section 11 contains duplicate module blocks: {', '.join(duplicates(found_ids))}"
+     -         )
+493  +         errors.append(f"Section 11 contains duplicate module blocks: {', '.join(duplicates(found_ids))}")
+494  |     missing = sorted(set(instance_types) - set(found_ids))
+495  |     extra = sorted(set(found_ids) - set(instance_types))
+496  |     if missing:
+     -         errors.append(
+     -             f"selected module instances missing from Section 11: {', '.join(missing)}"
+     -         )
+497  +         errors.append(f"selected module instances missing from Section 11: {', '.join(missing)}")
+498  |     if extra:
+--------------------------------------------------------------------------------
+502  |         instance_id, module_type = match.group(1), match.group(2)
+     -         block_end = (
+     -             matches[index + 1].start() if index + 1 < len(matches) else len(body)
+     -         )
+503  +         block_end = matches[index + 1].start() if index + 1 < len(matches) else len(body)
+504  |         block = body[match.end() : block_end]
+--------------------------------------------------------------------------------
+511  |         if fields != INSTANCE_FIELDS:
+     -             errors.append(
+     -                 f"{instance_id} does not use the exact 15 subheadings in order"
+     -             )
+512  +             errors.append(f"{instance_id} does not use the exact 15 subheadings in order")
+513  |         local_start = block.find("#### Local instructions")
+514  |         local_end = block.find("#### Outputs and results", local_start + 1)
+     -         local_body = (
+     -             block[local_start:local_end] if local_start >= 0 and local_end >= 0 else ""
+     -         )
+515  +         local_body = block[local_start:local_end] if local_start >= 0 and local_end >= 0 else ""
+516  |         task_rows = extract_table(local_body, ("Field", "Value"))
+--------------------------------------------------------------------------------
+521  |             if [row[0] for row in valid_task_rows] != TASK_FIELDS:
+     -                 errors.append(
+     -                     f"{instance_id} does not use all 20 local task-card fields in order"
+     -                 )
+522  +                 errors.append(f"{instance_id} does not use all 20 local task-card fields in order")
+523  |             task_values = {row[0]: row[1] for row in valid_task_rows}
+--------------------------------------------------------------------------------
+531  |                     )
+     -             found_actions = re.findall(
+     -                 r"\bM\d{2}-A\d+\b", task_values.get("ordered_actions", "")
+     -             )
+532  +             found_actions = re.findall(r"\bM\d{2}-A\d+\b", task_values.get("ordered_actions", ""))
+533  |             if found_actions != MODULE_ACTIONS.get(module_type, []):
+--------------------------------------------------------------------------------
+544  |     if found != POLICY_HEADINGS:
+     -         errors.append(
+     -             "Section 9 does not contain exact P01-P15 policy headings in order"
+     -         )
+545  +         errors.append("Section 9 does not contain exact P01-P15 policy headings in order")
+546  |         return errors
+547  |     for index, heading in enumerate(POLICY_HEADINGS):
+548  |         start = body.index(heading) + len(heading)
+     -         end = (
+     -             body.index(POLICY_HEADINGS[index + 1], start)
+     -             if index + 1 < len(POLICY_HEADINGS)
+     -             else len(body)
+     -         )
+549  +         end = body.index(POLICY_HEADINGS[index + 1], start) if index + 1 < len(POLICY_HEADINGS) else len(body)
+550  |         policy_body = body[start:end]
+--------------------------------------------------------------------------------
+581  |         if term not in policy_text:
+     -             errors.append(
+     -                 f"CHECKPOINTED_VERIFICATION_V1 requires policy text for {term!r}"
+     -             )
+582  +             errors.append(f"CHECKPOINTED_VERIFICATION_V1 requires policy text for {term!r}")
+583  |     if fast_lane_v2:
+--------------------------------------------------------------------------------
+595  |     if duplicates(gate_ids):
+     -         errors.append(
+     -             f"gate manifest contains duplicates: {', '.join(duplicates(gate_ids))}"
+     -         )
+596  +         errors.append(f"gate manifest contains duplicates: {', '.join(duplicates(gate_ids))}")
+597  |
+--------------------------------------------------------------------------------
+630  |         ):
+     -             errors.append(
+     -                 f"{gate_id} default-forward edge must name an advancing successor or terminal action"
+     -             )
+631  +             errors.append(f"{gate_id} default-forward edge must name an advancing successor or terminal action")
+632  |
+--------------------------------------------------------------------------------
+653  |             )
+     -             names_product_outcome = any(
+     -                 token in decided_outcome for token in strong_product_terms
+     -             ) or (
+     -                 "correct" in decided_outcome
+     -                 and not any(token in decided_outcome for token in operation_terms)
+654  +             names_product_outcome = any(token in decided_outcome for token in strong_product_terms) or (
+655  +                 "correct" in decided_outcome and not any(token in decided_outcome for token in operation_terms)
+656  |             )
+--------------------------------------------------------------------------------
+671  |             if "only" not in blocking_scope:
+     -                 errors.append(
+     -                     f"{gate_id} PRODUCT blocking scope must be explicitly limited with 'only'"
+     -                 )
+672  +                 errors.append(f"{gate_id} PRODUCT blocking scope must be explicitly limited with 'only'")
+673  |
+--------------------------------------------------------------------------------
+680  |             if "no product loop" not in continuation:
+     -                 errors.append(
+     -                     f"{gate_id} OPERATION_BOUNDARY continuation must explicitly say 'No product loop'"
+     -                 )
+681  +                 errors.append(f"{gate_id} OPERATION_BOUNDARY continuation must explicitly say 'No product loop'")
+682  |             if any(
+--------------------------------------------------------------------------------
+690  |             ):
+     -                 errors.append(
+     -                     f"{gate_id} OPERATION_BOUNDARY failure target must not enter product repair"
+     -                 )
+691  +                 errors.append(f"{gate_id} OPERATION_BOUNDARY failure target must not enter product repair")
+692  |     return errors
+693  |
+694  |
+     - def validate_cross_references(
+     -     by_section: dict[str, str], instance_types: dict[str, str]
+     - ) -> list[str]:
+695  + def validate_cross_references(by_section: dict[str, str], instance_types: dict[str, str]) -> list[str]:
+696  |     errors: list[str] = []
+--------------------------------------------------------------------------------
+709  |     if duplicates(deliverable_ids):
+     -         errors.append(
+     -             f"duplicate deliverable IDs: {', '.join(duplicates(deliverable_ids))}"
+     -         )
+710  +         errors.append(f"duplicate deliverable IDs: {', '.join(duplicates(deliverable_ids))}")
+711  |     known_deliverables = set(deliverable_ids)
+712  |     for row in req_rows:
+     -         if (
+     -             len(row) == len(req_header)
+     -             and row[0].startswith("REQ-")
+     -             and row[2] not in known_deliverables
+     -         ):
+713  +         if len(row) == len(req_header) and row[0].startswith("REQ-") and row[2] not in known_deliverables:
+714  |             errors.append(f"{row[0]} references unknown deliverable {row[2]}")
+715  |
+     -     capability_rows = (
+     -         extract_table(by_section[HEADINGS[4]], REQUIRED_TABLES[HEADINGS[4]][0]) or []
+     -     )
+716  +     capability_rows = extract_table(by_section[HEADINGS[4]], REQUIRED_TABLES[HEADINGS[4]][0]) or []
+717  |     for row in capability_rows:
+     -         if (
+     -             len(row) == 7
+     -             and row[0] != "N/A"
+     -             and row[1] not in ALLOWED_CAPABILITY_STATES
+     -         ):
+718  +         if len(row) == 7 and row[0] != "N/A" and row[1] not in ALLOWED_CAPABILITY_STATES:
+719  |             errors.append(f"capability {row[0]!r} has invalid state {row[1]!r}")
+--------------------------------------------------------------------------------
+726  |                 if instance_id not in selected_ids:
+     -                     errors.append(
+     -                         f"Section 8 references undeclared module instance {instance_id}"
+     -                     )
+727  +                     errors.append(f"Section 8 references undeclared module instance {instance_id}")
+728  |     return errors
+729  |
+730  |
+     - def validate_roles(
+     -     body: str, mapping_roles: set[str], mapping_name: str, text: str
+     - ) -> list[str]:
+731  + def validate_roles(body: str, mapping_roles: set[str], mapping_name: str, text: str) -> list[str]:
+732  |     errors: list[str] = []
+--------------------------------------------------------------------------------
+737  |     if duplicates(plan_roles):
+     -         errors.append(
+     -             f"role table contains duplicate roles: {', '.join(duplicates(plan_roles))}"
+     -         )
+738  +         errors.append(f"role table contains duplicate roles: {', '.join(duplicates(plan_roles))}")
+739  |     if set(plan_roles) != mapping_roles:
+--------------------------------------------------------------------------------
+752  |     if text.lower().count(mapping_name.lower()) != 1:
+     -         errors.append(
+     -             f"plan must mention mapping filename {mapping_name!r} exactly once"
+     -         )
+753  +         errors.append(f"plan must mention mapping filename {mapping_name!r} exactly once")
+754  |     return errors
+--------------------------------------------------------------------------------
+758  |     errors: list[str] = []
+     -     rule_rows = (
+     -         extract_table(by_section[HEADINGS[15]], REQUIRED_TABLES[HEADINGS[15]][0]) or []
+     -     )
+759  +     rule_rows = extract_table(by_section[HEADINGS[15]], REQUIRED_TABLES[HEADINGS[15]][0]) or []
+760  |     rule_ids = [row[0] for row in rule_rows if len(row) == 3]
+761  |     if rule_ids != RULE_IDS:
+     -         errors.append(
+     -             "Section 15 must map R1-R30 then S1-S16 exactly once and in order"
+     -         )
+762  +         errors.append("Section 15 must map R1-R30 then S1-S16 exactly once and in order")
+763  |
+     -     check_rows = (
+     -         extract_table(by_section[HEADINGS[16]], REQUIRED_TABLES[HEADINGS[16]][0]) or []
+     -     )
+764  +     check_rows = extract_table(by_section[HEADINGS[16]], REQUIRED_TABLES[HEADINGS[16]][0]) or []
+765  |     check_ids = [row[0] for row in check_rows if len(row) == 3]
+--------------------------------------------------------------------------------
+784  |     if len(title_matches) != 1:
+     -         errors.append(
+     -             f"expected one modular execution plan title, found {len(title_matches)}"
+     -         )
+785  +         errors.append(f"expected one modular execution plan title, found {len(title_matches)}")
+786  |
+--------------------------------------------------------------------------------
+805  |     if angle_placeholders:
+     -         errors.append(
+     -             f"angle-bracket placeholders remain: {', '.join(angle_placeholders[:5])}"
+     -         )
+806  +         errors.append(f"angle-bracket placeholders remain: {', '.join(angle_placeholders[:5])}")
+807  |
+--------------------------------------------------------------------------------
+816  |     errors.extend(validate_cross_references(by_section, instance_types))
+     -     errors.extend(
+     -         validate_roles(by_section[HEADINGS[7]], mapping_roles, mapping_name, text)
+     -     )
+817  +     errors.extend(validate_roles(by_section[HEADINGS[7]], mapping_roles, mapping_name, text))
+818  |     errors.extend(validate_rule_and_check_matrices(by_section))
+--------------------------------------------------------------------------------
+822  |         if phrase in local_instructions:
+     -             errors.append(
+     -                 f"module local instructions contain banned vague phrase: {phrase!r}"
+     -             )
+823  +             errors.append(f"module local instructions contain banned vague phrase: {phrase!r}")
+824  |     return errors
+--------------------------------------------------------------------------------
+913  |     ]
+     -     module_rows = [
+     -         [module_id, "OMITTED", "N/A", "not required", "N/A"] for module_id in MODULE_IDS
+     -     ]
+914  +     module_rows = [[module_id, "OMITTED", "N/A", "not required", "N/A"] for module_id in MODULE_IDS]
+915  |     module_rows[4] = ["M05", "SELECTED", "MI-001", "semantic acceptance", "N/A"]
+--------------------------------------------------------------------------------
+1016 |         if policy.startswith("### P14"):
+     -             parts.append(
+     -                 markdown_table(EXCEPTION_TABLE, [["N/A"] * len(EXCEPTION_TABLE)])
+     -             )
+1017 +             parts.append(markdown_table(EXCEPTION_TABLE, [["N/A"] * len(EXCEPTION_TABLE)]))
+1018 |     parts += [HEADINGS[10]]
+--------------------------------------------------------------------------------
+1024 |         if field == "Local instructions":
+     -             task_rows = [
+     -                 [task_field, f"self-test concrete {task_field}"]
+     -                 for task_field in TASK_FIELDS
+     -             ]
+1025 +             task_rows = [[task_field, f"self-test concrete {task_field}"] for task_field in TASK_FIELDS]
+1026 |             task_rows[TASK_FIELDS.index("workflow_role")][1] = "orchestrator"
+     -             task_rows[TASK_FIELDS.index("ordered_actions")][1] = "; ".join(
+     -                 MODULE_ACTIONS["M05"]
+     -             )
+1027 +             task_rows[TASK_FIELDS.index("ordered_actions")][1] = "; ".join(MODULE_ACTIONS["M05"])
+1028 |             parts.append(markdown_table(("Field", "Value"), task_rows))
+--------------------------------------------------------------------------------
+1086 |         "module manifest": plan.replace("| M10 | OMITTED |", "| M09 | OMITTED |", 1),
+     -         "instance schema": plan.replace(
+     -             "#### Cost and critical-path effect\n\nSelf-test value.\n", "", 1
+     -         ),
+1087 +         "instance schema": plan.replace("#### Cost and critical-path effect\n\nSelf-test value.\n", "", 1),
+1088 |         "bare ROOT dispatch field": plan.replace(
+1089 |             "| objective | self-test concrete objective |",
+1090 |             "| objective | N/A |",
+1091 |             1,
+     -         ),
+     -         "gate class": plan.replace(
+     -             "| GATE-001 / LOOP-001 | PRODUCT |", "| GATE-001 / LOOP-001 | ADVISORY |", 1
+1092 |         ),
+1093 +         "gate class": plan.replace("| GATE-001 / LOOP-001 | PRODUCT |", "| GATE-001 / LOOP-001 | ADVISORY |", 1),
+1094 |         "product gate eligibility": plan.replace(
+--------------------------------------------------------------------------------
+1143 |     if not isinstance(data, dict) or not isinstance(data.get("roles"), dict):
+     -         return set(), [
+     -             "role-model mapping must be a JSON object containing a roles object"
+     -         ]
+1144 +         return set(), ["role-model mapping must be a JSON object containing a roles object"]
+1145 |     roles = data["roles"]
+1146 |     errors = [
+     -         f"mapping role {role!r} must contain an object"
+     -         for role, value in roles.items()
+     -         if not isinstance(value, dict)
+1147 +         f"mapping role {role!r} must contain an object" for role, value in roles.items() if not isinstance(value, dict)
+1148 |     ]
+--------------------------------------------------------------------------------
+1154 | def main() -> int:
+     -     parser = argparse.ArgumentParser(
+     -         description="Validate a modular execution plan's deterministic structure."
+     -     )
+     -     parser.add_argument(
+     -         "plan", nargs="?", help="generated execution plan path, or - for stdin"
+     -     )
+1155 +     parser = argparse.ArgumentParser(description="Validate a modular execution plan's deterministic structure.")
+1156 +     parser.add_argument("plan", nargs="?", help="generated execution plan path, or - for stdin")
+1157 |     parser.add_argument("--mapping", help="canonical role-model mapping JSON path")
+     -     parser.add_argument(
+     -         "--self-test", action="store_true", help="run validator contract tests"
+     -     )
+1158 +     parser.add_argument("--self-test", action="store_true", help="run validator contract tests")
+1159 |     args = parser.parse_args()
+--------------------------------------------------------------------------------
+1178 |     try:
+     -         text = (
+     -             sys.stdin.read()
+     -             if args.plan == "-"
+     -             else Path(args.plan).read_text(encoding="utf-8")
+     -         )
+1179 +         text = sys.stdin.read() if args.plan == "-" else Path(args.plan).read_text(encoding="utf-8")
+1180 |     except (OSError, UnicodeError) as exc:
+     |
+
+1 file would be reformatted

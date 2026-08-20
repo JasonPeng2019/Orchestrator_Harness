@@ -1,0 +1,23 @@
+?? .agent-workspace/
+?? .codex/
+?? AGENTS.md
+?? BYO-Firmware-MCP/
+?? BYO_FIRMWARE_MCP_END_TO_END_EXPERIMENTS.md
+?? HANDOFF.md
+?? PLAN.md
+?? REPOSITORY_LAYOUT.md
+?? active-working-spec/
+?? "archive docs/"
+?? fresh-experiments/
+?? harness_common/
+?? harness_watcher.md
+?? harness_watcher/
+?? harness_watcher_implementation/
+?? logging_additions_spec_2.md
+?? manager_wake_test.md
+?? multi-agent-logs/
+?? orchestrator_harness/
+?? scripts/
+?? temp-review.txt
+?? temp-review2.txt
+?? "theory docs/"

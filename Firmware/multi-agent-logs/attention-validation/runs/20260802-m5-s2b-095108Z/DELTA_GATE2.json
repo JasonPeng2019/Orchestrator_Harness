@@ -1,0 +1,10 @@
+{
+  "event_id": "sig-20260802-m5-s2b-095108Z-delta-a26-gate-002",
+  "response_path": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\manager-responses\\20260802-m5-s2b-095108Z-Delta-A26-gate2.json",
+  "raw_prompt": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s2b-095108Z_gate2.raw.md",
+  "bound_prompt": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s2b-095108Z_gate2.bound.md",
+  "status_path": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s2b-095108Z_gate2_controller.status.json",
+  "jsonl_path": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s2b-095108Z_gate2_codex.jsonl",
+  "stderr_path": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s2b-095108Z_gate2_codex.stderr.log",
+  "last_message_path": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s2b-095108Z_gate2_last_message.txt"
+}

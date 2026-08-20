@@ -1,0 +1,1 @@
+change-loop: ERROR: provider launch is intentionally pending; select and implement the Firmware provider adapter before starting a live server-repair loop

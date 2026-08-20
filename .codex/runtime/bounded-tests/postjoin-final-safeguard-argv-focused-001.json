@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev --locked python -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6SafeguardTests.test_safeguard_core_delivers_one_argument_command_tail_as_array",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "affected-root-measured-focused-oracle-6s",
+    "started_at":  "2026-08-14T21:14:07.2792381+00:00",
+    "finished_at":  "2026-08-14T21:14:12.2325298+00:00",
+    "elapsed_seconds":  4.953,
+    "root_process_id":  193964,
+    "observed_process_ids":  [
+                                 193964
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\postjoin-final-safeguard-argv-focused-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\postjoin-final-safeguard-argv-focused-001.stderr.log"
+}

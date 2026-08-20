@@ -1,0 +1,28 @@
+{
+    "poll_interval_seconds":  1,
+    "observed_sources":  [
+                             {
+                                 "path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-watcher-repair-luna\\runtime\\source.jsonl",
+                                 "role":  "orchestrator",
+                                 "source_id":  "luna-smoke-source"
+                             }
+                         ],
+    "runtime_root":  "multi-agent-logs/verification/m5-watcher-repair-luna/runtime",
+    "no_progress_seconds":  3600,
+    "max_tail_bytes":  131072,
+    "evaluator_command":  [
+                              "powershell.exe",
+                              "-NoProfile",
+                              "-NonInteractive",
+                              "-WindowStyle",
+                              "Hidden",
+                              "-Command",
+                              "Set-Content -LiteralPath \u0027C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-watcher-repair-luna\\runtime\\evaluator-sentinel.invoked\u0027 -Value invoked -Encoding utf8"
+                          ],
+    "attention_logging_enabled":  false,
+    "evaluator_enabled":  false,
+    "attention_producers":  [
+
+                            ],
+    "attention_lock_timeout_seconds":  5
+}

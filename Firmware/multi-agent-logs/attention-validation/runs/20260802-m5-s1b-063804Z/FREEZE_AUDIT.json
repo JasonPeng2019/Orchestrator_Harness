@@ -1,0 +1,52 @@
+{
+  "python_file_list_match": true,
+  "python_per_file_match": true,
+  "python_aggregate_match": true,
+  "sealed_inputs": [
+    {
+      "path": "multi-agent-logs/orchestrator-harness/20260802-m5-s1b-063804Z/config.json",
+      "match": true
+    },
+    {
+      "path": "harness_watcher/20260802-m5-s1b-063804Z/config.json",
+      "match": true
+    },
+    {
+      "path": "active-working-spec/m5-three-sprint-wake-test.md",
+      "match": true
+    },
+    {
+      "path": "active-working-spec/m5-watcher-causal-metrics-repair.md",
+      "match": true
+    },
+    {
+      "path": ".agent-workspace/AUTONOMOUS_EXECUTION_POLICY.md",
+      "match": true
+    },
+    {
+      "path": ".agent-workspace/AUTONOMY_REQUIREMENT_MATRIX.md",
+      "match": true
+    },
+    {
+      "path": "multi-agent-logs/server-snapshots/server-snapshot-20260802-m5-s1b-063804Z.json",
+      "match": true
+    },
+    {
+      "path": "fresh-experiments/A22_20260726-062324/.agent-workspace/m5/20260802-m5-s1a-061555Z/M5_S1A_RESOURCE_RELEASE_PROPOSAL_CHECKPOINT.md",
+      "match": true
+    },
+    {
+      "path": "fresh-experiments/D31_20260726-062325/.agent-workspace/m5/20260802-m5-s1a-061555Z/M5_S1A_RESOURCE_RELEASE_PROPOSAL_CHECKPOINT.md",
+      "match": true
+    },
+    {
+      "path": "fresh-experiments/A24_20260726-052146/.agent-workspace/m5/20260802-m5-s1a-061555Z/M5_S1A_RESOURCE_RELEASE_PROPOSAL_CHECKPOINT.md",
+      "match": true
+    },
+    {
+      "path": "fresh-experiments/A26_20260726-062325/.agent-workspace/m5/20260802-m5-s1a-061555Z/M5_S1_RESOURCE_RELEASE_PROPOSAL_CHECKPOINT.md",
+      "match": true
+    }
+  ],
+  "all_sealed_inputs_match": true
+}

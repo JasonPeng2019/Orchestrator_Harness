@@ -1,0 +1,35 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+2 files already formatted
+
+== types changed Python ==
+0 errors, 0 warnings, 0 notes
+
+== compile changed Python ==
+
+== Firmware MCP Ruff ==
+All checks passed!
+
+== Firmware MCP Pyright ==
+0 errors, 0 warnings, 0 informations
+
+== Firmware MCP tests ==
+============================= test session starts =============================
+platform win32 -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP
+configfile: pyproject.toml
+plugins: anyio-4.14.2
+collected 1 item
+
+tests\test_import_smoke.py .                                             [100%]
+
+============================== 1 passed in 7.44s ==============================
+
+== Codex changed tests ==
+.............                                                            [100%]
+13 passed in 0.76s
+
+VERIFY_CHANGED: PASS (3 changed code path(s))

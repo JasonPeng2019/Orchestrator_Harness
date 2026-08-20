@@ -1,0 +1,57 @@
+{
+    "epoch":  "20260802-m5-q9-160750Z",
+    "checked_utc":  "2026-08-02T16:32:58.3360155Z",
+    "registered_processes":  [
+                                 {
+                                     "pid":  138156,
+                                     "present":  false
+                                 },
+                                 {
+                                     "pid":  66412,
+                                     "present":  false
+                                 },
+                                 {
+                                     "pid":  191460,
+                                     "present":  false
+                                 },
+                                 {
+                                     "pid":  196680,
+                                     "present":  false
+                                 },
+                                 {
+                                     "pid":  191676,
+                                     "present":  false
+                                 },
+                                 {
+                                     "pid":  193068,
+                                     "present":  false
+                                 },
+                                 {
+                                     "pid":  186492,
+                                     "present":  false
+                                 },
+                                 {
+                                     "pid":  184028,
+                                     "present":  false
+                                 },
+                                 {
+                                     "pid":  198320,
+                                     "present":  false
+                                 },
+                                 {
+                                     "pid":  179696,
+                                     "present":  false
+                                 },
+                                 {
+                                     "pid":  198604,
+                                     "present":  false
+                                 }
+                             ],
+    "registered_count":  11,
+    "absent_count":  11,
+    "all_absent":  true,
+    "active_resources":  [
+
+                         ],
+    "resources_empty":  true
+}

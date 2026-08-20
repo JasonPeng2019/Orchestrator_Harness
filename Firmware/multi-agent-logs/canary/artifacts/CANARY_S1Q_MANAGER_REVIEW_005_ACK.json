@@ -1,0 +1,15 @@
+{
+    "schema":  "canary-manager-review-ack/v1",
+    "epoch":  "20260731-s1-clean-q",
+    "review_file":  ".agent-workspace/CANARY_S1Q_MANAGER_REVIEW_005.md",
+    "acknowledged_utc":  "2026-08-01T00:50:40.8187418Z",
+    "event_id":  "a9d7b4711e8087c80bb5638aa41f01dc23a8953e1bcc09f1d5d64cbc757f5df7",
+    "event_observed_utc":  "2026-08-01T00:48:23.679536Z",
+    "review_baseline_before":  "2026-08-01T00:44:14.141475Z",
+    "ack_result":  {
+                       "acknowledged":  true,
+                       "event_id":  "a9d7b4711e8087c80bb5638aa41f01dc23a8953e1bcc09f1d5d64cbc757f5df7",
+                       "watcher_received":  false
+                   },
+    "pending_after":  null
+}

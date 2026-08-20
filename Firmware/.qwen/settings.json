@@ -1,0 +1,47 @@
+{
+  "mcpServers": {
+    "byo-firmware": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--project",
+        "BYO-Firmware-MCP",
+        "--locked",
+        "pyocd-debug-mcp"
+      ],
+      "timeout": 180000,
+      "trust": true
+    }
+  },
+  "modelProviders": {
+    "openai": [
+      {
+        "id": "deepseek-v4-flash:0731-cloud",
+        "name": "DeepSeek V4 Flash (Ollama Cloud)",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://localhost:11434/v1",
+        "generationConfig": {
+          "contextWindowSize": 1048576,
+          "extra_body": {
+            "reasoning_effort": "high"
+          }
+        }
+      },
+      {
+        "id": "qwen3.5:397b-cloud",
+        "name": "Qwen 3.5 397B (Ollama Cloud)",
+        "envKey": "OLLAMA_API_KEY",
+        "baseUrl": "http://localhost:11434/v1"
+      }
+    ]
+  },
+  "security": {
+    "auth": {
+      "selectedType": "openai"
+    }
+  },
+  "context": {
+    "autoCompactThreshold": 0.171661376953125
+  },
+  "$version": 4
+}

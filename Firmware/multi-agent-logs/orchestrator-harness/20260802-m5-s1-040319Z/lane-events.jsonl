@@ -1,0 +1,11 @@
+{"event":"CODEX_STARTED","utc":"2026-08-02T04:05:03.1798237Z","label":"atlas_a22_m5_s1_040319","declared_lane_id":"20260802-m5-s1-040319Z:Atlas:A22","controller_pid":194804,"codex_pid":187148}
+{"event":"CODEX_STARTED","utc":"2026-08-02T04:05:05.7027828Z","label":"boreal_d31_m5_s1_040319","declared_lane_id":"20260802-m5-s1-040319Z:Boreal:D31","controller_pid":191548,"codex_pid":171616}
+{"event":"CODEX_STARTED","utc":"2026-08-02T04:05:08.3731374Z","label":"cygnus_a24_m5_s1_040319","declared_lane_id":"20260802-m5-s1-040319Z:Cygnus:A24","controller_pid":183080,"codex_pid":187352}
+{"event":"CODEX_STARTED","utc":"2026-08-02T04:05:10.6538060Z","label":"delta_a26_m5_s1_040319","declared_lane_id":"20260802-m5-s1-040319Z:Delta:A26","controller_pid":150856,"codex_pid":187820}
+{"event":"CODEX_EXITED","utc":"2026-08-02T04:09:10.3466919Z","label":"cygnus_a24_m5_s1_040319","declared_lane_id":"20260802-m5-s1-040319Z:Cygnus:A24","thread_id":"019fb877-1199-79b1-a32e-34348178f111","exit_code":null}
+{"event":"CODEX_EXITED","utc":"2026-08-02T04:09:30.3375297Z","label":"atlas_a22_m5_s1_040319","declared_lane_id":"20260802-m5-s1-040319Z:Atlas:A22","thread_id":"019fb877-1475-76c0-a137-2743580015de","exit_code":null}
+{"event":"CODEX_EXITED","utc":"2026-08-02T04:10:06.8176440Z","label":"delta_a26_m5_s1_040319","declared_lane_id":"20260802-m5-s1-040319Z:Delta:A26","thread_id":"019fb877-1441-7c92-84e2-cbb5bc422879","exit_code":null}
+{"event":"CODEX_STARTED","utc":"2026-08-02T04:12:11.4877441Z","label":"delta_a26_m5_recovery_040319","declared_lane_id":"20260802-m5-s1-040319Z:Delta:A26","controller_pid":177684,"codex_pid":167108}
+{"event":"CODEX_STARTED","utc":"2026-08-02T04:12:15.1584373Z","label":"boreal_d31_m5_recovery_040319","declared_lane_id":"20260802-m5-s1-040319Z:Boreal:D31","controller_pid":149832,"codex_pid":195244}
+{"event":"CODEX_EXITED","utc":"2026-08-02T04:13:39.8299034Z","label":"delta_a26_m5_recovery_040319","declared_lane_id":"20260802-m5-s1-040319Z:Delta:A26","thread_id":"019fb877-1441-7c92-84e2-cbb5bc422879","exit_code":null}
+{"event":"CODEX_EXITED","utc":"2026-08-02T04:13:52.9089880Z","label":"boreal_d31_m5_recovery_040319","declared_lane_id":"20260802-m5-s1-040319Z:Boreal:D31","thread_id":"019fb877-1447-7693-92b1-f4bda04c6ecf","exit_code":null}

@@ -1,0 +1,1264 @@
+﻿{
+    "classification_counts":  {
+                                  "ACKNOWLEDGEMENT_ONLY_DELAY":  0,
+                                  "BUSY_MANAGER_DELAY":  0,
+                                  "HARNESS_DELIVERY_DELAY":  0,
+                                  "IDLE_OR_ABSENT_MANAGER_DELAY":  0,
+                                  "INSUFFICIENT_EVIDENCE":  34,
+                                  "NO_BLOCKING_IMPACT":  0
+                              },
+    "cursor_drained":  true,
+    "events":  [
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "0eb94b79a482a5c13da97e725ad3724d4d6cf7a52fcc80b4b7d6c68eea64e6ee",
+                       "evidence_record_ids":  [
+                                                   "d78793a2-8501-4402-ad4c-9993b3fe20ad"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "2a530c883a5b74f555d3357299cf9921746de61f84d6d1f878986fe5ea4f71bf",
+                       "evidence_record_ids":  [
+                                                   "7a802b21-057b-40c7-80c8-aefb722a05da",
+                                                   "6a7ce568-0fe8-42be-b0aa-875384d85f25",
+                                                   "c3db75c7-0289-44e2-bdbd-002e0df61cce",
+                                                   "b70106e6-8599-4154-9cc2-ba341ea79421",
+                                                   "ec934d4c-22d1-4137-af71-43d963555051",
+                                                   "73fde018-c974-4daf-bf0a-e5137ccac677",
+                                                   "093496a1-8e26-42eb-8b76-1a99e03f7d59"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "38d48ced7b4519e18b6c5ced4a11ecf04b29d38b34a1af989f66a7de2588bdbb",
+                       "evidence_record_ids":  [
+                                                   "ade9d746-0025-4875-bf0a-0ca5d5755375",
+                                                   "324031d5-eeb7-4bc2-910d-ec54e072565b",
+                                                   "6ad779fd-b025-4d95-bfa9-5311ee14d0a2",
+                                                   "81d889c0-18e6-4612-832f-7f6ebe1c7724",
+                                                   "69c92fc2-2d71-4925-b876-dfc09546fb24",
+                                                   "371a970c-c68e-4b10-8a7d-6111e58cdd52"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "47a3c4b19e7d22543623fe1b4cc16fdc6622791d89d7eec4d50ec527d86e776d",
+                       "evidence_record_ids":  [
+                                                   "ce95f080-fd60-43fb-96fe-871133827f20"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "6010db21f10bd3d92528dc1fdafc1bc3d7a980c40bdef3f2fe4f092bf57d9cd1",
+                       "evidence_record_ids":  [
+                                                   "ad881639-9147-4c78-b3f0-7b1de50522e7"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "658ff1273cecf92e61ac8cb05cd457fb6b5a927a2dd5038284d7e6b3587d9f21",
+                       "evidence_record_ids":  [
+                                                   "483d97f5-0eed-40e6-bf8c-e30aad251162",
+                                                   "a8026f62-9133-4c24-ba2a-c6666a1183b0",
+                                                   "5a568ad7-0fca-4cc8-bce3-35db570a89ef",
+                                                   "1061498f-5a30-4c93-ac1e-bd49ed378773",
+                                                   "5e05f287-387f-4fa7-9767-5350d1e97fef",
+                                                   "4fc8424d-6887-4b96-825f-4080fddd522a",
+                                                   "d7124949-fd3b-46b5-b129-dcf3c7beb084",
+                                                   "1e7bb3e2-0f1d-4f23-9655-8ac958a3c42c",
+                                                   "9e967cfc-c404-40eb-b7c2-cfb368bfa5e9"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "7c20cacf10e467f404132fcd00c8e8337e515fa566f1946b1dab62c4bedfb2e0",
+                       "evidence_record_ids":  [
+                                                   "e2095f5c-5712-4928-962d-30d600a1ac08",
+                                                   "16f58ecc-507e-4ffb-9a96-7c757c70bd71",
+                                                   "eb88a7e0-03a5-4c70-9ba3-b1886c08ffc7",
+                                                   "d3f4e7d9-1436-408d-b14f-6e9e08997ece",
+                                                   "17c8042c-c49e-4fae-a92d-f32382ffadc7",
+                                                   "a0f84bf2-b00e-4602-8277-799ed4ed50de",
+                                                   "66a4b263-e0ff-4228-ba5f-6e96ce161bcc",
+                                                   "8be13a89-700e-4eb7-bb93-4d8907caf72c",
+                                                   "aac1a179-bca5-4292-b113-17fd58167580",
+                                                   "453e8bcd-dbfe-46ac-8e3c-c0ea24634674",
+                                                   "a19ccb36-e525-4d6d-aebe-c4663cdc3e17"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "8d9f4b13bf95fd84d053ef17b506c28af4ce71abea809a77eb28dc1c475138e7",
+                       "evidence_record_ids":  [
+                                                   "048d4a11-f33e-4536-ad1a-89fbfadef50b"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "930fc6dddeb07cd67a8c39a95d91527e5c5160cb86ca3fe862469ac5bbfc9b3a",
+                       "evidence_record_ids":  [
+                                                   "f509ecbb-91b1-4ee1-a9a8-c32e002e35a6"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "94cbc003390920dc9addeb59cd5a5044b175aa481e72026d6eb00a9cedbe7974",
+                       "evidence_record_ids":  [
+                                                   "c9e69e18-dc42-4f95-ab26-474bbc864f3d"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "94ee1d185251b9510d9007ab1e7ef7d1c9babc6b1fc49b05a573dc2367d3143b",
+                       "evidence_record_ids":  [
+                                                   "0b0447a0-fc88-4134-9b12-77bc5a7d8bbd"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "9563f08f82bcd3cf7c544d0a95c2663d3ee835eb6b5ba01065219c947679bf0e",
+                       "evidence_record_ids":  [
+                                                   "8ce34428-c630-4a02-bb62-3fe56f01d161"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "a9d6b1482838de33df78391ab3d0497306960ca3f182a027f18e22432b7f169d",
+                       "evidence_record_ids":  [
+                                                   "04846814-bb45-4339-92a0-3c467984d7a9",
+                                                   "0c3a4954-ec8b-4398-a23a-cfa14823a600",
+                                                   "c2a6c3b1-87a7-414e-9cc1-2e76a1906bc8",
+                                                   "cd842cc8-5618-4945-83f6-47d23f5e43ab",
+                                                   "0b9c11d6-5e82-4298-a43d-22da46dbfc9c",
+                                                   "009e2420-c1ab-4fb9-9b42-2ca589a546be",
+                                                   "fbadca43-f41e-4eac-bcde-b1039b6845a1",
+                                                   "233ba811-792f-44c6-b524-29babb888e07",
+                                                   "c832e23f-f1b4-4852-9f01-8038047ade4d",
+                                                   "1e8a60c9-414b-4e80-80b0-ca331fbb83cf",
+                                                   "a956f561-bfa3-4694-beb2-a074fadad517",
+                                                   "527ceed3-b10a-49e1-8641-4d0b75a53508",
+                                                   "1c201756-c5f6-414d-a9dc-fae19fe8370e",
+                                                   "45b5654c-c0d7-4b60-829a-db6646195d03",
+                                                   "3041da82-b0bc-438a-97fe-30b5fcf2dee1",
+                                                   "36a7b308-72bd-4280-a2ee-07927fc8dd1a",
+                                                   "31cbe0c1-0ab1-44f2-8c72-a2cfa3aeaf97",
+                                                   "a9f91563-19a4-482a-9004-8f98b0707684",
+                                                   "9bffb43f-654a-434e-b362-fee21546ee59",
+                                                   "c1016e35-f4cb-472d-a893-6da80aabafcf",
+                                                   "5d684bec-dd7b-44b9-8058-dc00d1de8991",
+                                                   "ea256a8e-5138-46a5-aec0-36b435dd9ae6"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  0.0,
+                                       "observation_to_actionable_seconds":  0.0,
+                                       "pending_to_manager_claim_seconds":  174.111718,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint",
+                                                "wake source stages are missing"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "reason":  "wake source stages are missing",
+                                             "status":  "INSUFFICIENT_EVIDENCE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "ab16cfcb4d2014abf299931ed50b39ede265ea1e7629d69c5ff274ca83ef9b6b",
+                       "evidence_record_ids":  [
+                                                   "dd5755b1-d970-44b8-a157-2f1ea3a86037",
+                                                   "e5eececc-4b22-4a93-957b-5598c73d2105",
+                                                   "cb43d874-4525-40c6-90d4-3f20eeb1a6ac",
+                                                   "7390098d-9d49-48f2-9fb5-6b844be0c6ba",
+                                                   "4d6aaf91-251a-4599-aa20-f7f98661d1e1",
+                                                   "11c92044-8640-4bfc-b389-409ac1918660",
+                                                   "737b0951-30c0-485c-8d74-5f82f95b33ad",
+                                                   "b073b8c3-2f5e-47ac-92e1-328d930bce68",
+                                                   "5b4672e5-2791-46a4-be66-646c0fc6ac18",
+                                                   "32dba073-edd2-4b44-b330-e28634325d91",
+                                                   "6c4e5b70-c956-49d4-b240-4b588407fe00"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "ae09f0e224daee00bd7d841d2a62d98cac56d8c74b2d98bef59f3f28d033c42d",
+                       "evidence_record_ids":  [
+                                                   "15c64fd1-6468-4c4b-a374-7d90e0e11b7d"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "c837d832e4a24b6076b5fcac67522a70157cf7c3e6caf68d67e8e561b655e9fe",
+                       "evidence_record_ids":  [
+                                                   "4569a829-efad-424a-932e-84db1060247f"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "c8b24f2ef639d746d97c394f599ebf48bb056a217a7552e427a207fd581b346e",
+                       "evidence_record_ids":  [
+                                                   "3d655318-45c5-4771-a912-599a943d8049"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "d1ec2d78344fbba3d239a91adf9985ac4ce5ad6ec3fbd7d0c59f0af8c9d8e283",
+                       "evidence_record_ids":  [
+                                                   "1446a039-c509-4341-b738-512a033b2f04"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "d8028232956d2fcf831ba52149b9308301146552f9812de9c1aadaa42b919918",
+                       "evidence_record_ids":  [
+                                                   "7a5ea013-f7b8-458f-be21-d485f2ddc736"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "e054f7d4b45c9a9e4188b2c5bf7e844849c7c8eaf65bc4a9b5524d4e933bce11",
+                       "evidence_record_ids":  [
+                                                   "b5c07d1c-bb93-4a5e-946c-431144af0462"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "e1b4ce624a136ee81a6f5be1251947dee4c247483fb636000dc074abab569f1f",
+                       "evidence_record_ids":  [
+                                                   "ce02b476-76c5-4da7-8da3-f04f4385d6d6"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "formal-review-baseline-root-20260802-m5-q5-141502Z-001",
+                       "evidence_record_ids":  [
+                                                   "0434ea89-516f-419c-9953-0157a9ff1441"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "manager-invocation-root-20260802-m5-q5-141502Z-001",
+                       "evidence_record_ids":  [
+                                                   "af290276-ec34-4b7e-a8a3-728d9c726edd",
+                                                   "f646b57a-db60-40af-b207-a83284802736"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "manager-resource-integrity-audit-001",
+                       "evidence_record_ids":  [
+                                                   "9b359e7d-174f-4853-9415-089210c1d7db",
+                                                   "49dfa0aa-0f3d-4ffe-9d57-2c9630e17855"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "native-blocking-wait-001",
+                       "evidence_record_ids":  [
+                                                   "01d2daa8-b014-444e-952a-2dbe56da62c0"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "native-blocking-wait-002",
+                       "evidence_record_ids":  [
+                                                   "0d6347df-e927-4196-ae77-76ce77a2a4f9"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "native-blocking-wait-003",
+                       "evidence_record_ids":  [
+                                                   "fd52607d-70af-4d9c-8265-928bb367497f"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "native-blocking-wait-004",
+                       "evidence_record_ids":  [
+                                                   "c3479566-9936-4518-a5fc-e34fcf3ae1b1"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "native-blocking-wait-005",
+                       "evidence_record_ids":  [
+                                                   "caabc94a-f875-40c4-8bbe-1ce84b3e0737"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "quiet-native-blocking-wait-001",
+                       "evidence_record_ids":  [
+                                                   "de0a4636-8310-49f3-9fd6-3208ee882088",
+                                                   "20fe0cdf-a5a9-467b-9c42-ae1da47f723a"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  null,
+                                       "explicit_blocked_seconds":  null,
+                                       "explicit_deferral_seconds":  null,
+                                       "observation_to_actionable_seconds":  null,
+                                       "pending_to_manager_claim_seconds":  null,
+                                       "receipt_to_resume_seconds":  null,
+                                       "response_to_ack_seconds":  null,
+                                       "response_to_agent_receipt_seconds":  null,
+                                       "signal_to_observation_seconds":  null
+                                   },
+                       "missing_evidence":  [
+                                                "matching stage deadline and late endpoint"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "status":  "NOT_APPLICABLE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+                                                      "negative causal metric: receipt_to_resume_seconds"
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "sig-20260802-m5-q5-141502Z-atlas-a22-gate-001",
+                       "evidence_record_ids":  [
+                                                   "b96c2b87-fe62-40bc-b430-1315a285f60e",
+                                                   "0b8819dd-2405-4067-81bf-e3dcecee102c",
+                                                   "ce167443-2959-4a5f-b7c8-11034411fb4c",
+                                                   "eb193dbe-bde1-4b70-a36d-b08891a5613c",
+                                                   "959425c5-e8e3-4a96-82b2-84e92548e25f",
+                                                   "45c0182d-5a25-479b-93a5-ee9b3bcc13c0",
+                                                   "7c86f142-7df2-4e07-8a83-8b0478f2470f",
+                                                   "9f114361-764c-4cc8-b324-3dbdfb2309cf",
+                                                   "99ca6140-dc61-4a72-84c2-81dd8d3b3795",
+                                                   "d9ccec5a-520d-486b-956b-4c60e898a3c9",
+                                                   "cda5ef19-f632-42fa-b29c-69e2d50899ce",
+                                                   "d4730b72-4021-41ba-b09b-435469df3665",
+                                                   "bb17c51a-29d1-4df7-a5d9-3ed82036d046",
+                                                   "16f56fef-95c5-4e93-8c6e-c71c0b37c0c0",
+                                                   "1afba56b-626a-43d9-a7c6-de28bba763a2",
+                                                   "02fd942f-ad97-43b3-872d-aa96d4963e08",
+                                                   "a11d3a33-5411-4974-9331-46bfa71d35e2",
+                                                   "f2804d37-608b-4c68-9253-6af0c4e58234",
+                                                   "81759d4c-a07f-4b23-990d-3c433fe86074",
+                                                   "cbe64106-4e82-4215-933f-6fcd277c6ee1",
+                                                   "150e9fac-94ae-43b7-8c20-b9003e1dc383",
+                                                   "f0e7a112-6e31-4611-b56e-dc8b71ae790d",
+                                                   "dd0cdbfe-6758-442d-a472-3de5bf2f9257",
+                                                   "6f229611-beba-464b-8051-b4e3afba454d",
+                                                   "11ee1cf4-4202-4387-907f-a32a4ef8fb86",
+                                                   "b509d80c-11b4-4ce6-b9de-7bc3e05fe737"
+                                               ],
+                       "metrics":  {
+                                       "attempted_to_delivered_seconds":  0.0,
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  193.74064,
+                                       "delivered_to_received_seconds":  18.304908,
+                                       "explicit_blocked_seconds":  296.781154,
+                                       "explicit_deferral_seconds":  219.18153,
+                                       "observation_to_actionable_seconds":  219.18153,
+                                       "pending_to_manager_claim_seconds":  26.752094,
+                                       "receipt_to_resume_seconds":  -31.035235,
+                                       "received_to_claim_seconds":  0.547998,
+                                       "response_to_ack_seconds":  0.403998,
+                                       "response_to_agent_receipt_seconds":  68.416574,
+                                       "signal_to_observation_seconds":  13.082985
+                                   },
+                       "missing_evidence":  [
+                                                "complete explicit manager interval chain"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "attempted_to_delivered_seconds":  0.0,
+                                             "delivered_to_received_seconds":  18.304908,
+                                             "manager_invocation_id":  "root-20260802-m5-q5-141502Z-001",
+                                             "manager_session_id":  "root-persistent-192592",
+                                             "received_to_claim_seconds":  0.547998,
+                                             "status":  "COMPLETE",
+                                             "wake_id":  "7c732b07-4702-4cf6-bf70-d6749e3247e8"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+                                                      "negative causal metric: signal_to_observation_seconds"
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "sig-20260802-m5-q5-141502Z-boreal-d31-gate-001",
+                       "evidence_record_ids":  [
+                                                   "ed92cd0b-5128-4e82-bf2f-d4594cd649f3",
+                                                   "5a852809-a0d1-45f8-ae7a-a9ac668c4d8e",
+                                                   "410a8bc6-eddd-4bad-bad6-4ab2a941f013",
+                                                   "847000af-7525-4939-a878-0629b47d6cf5",
+                                                   "fa8ae919-5c05-41d8-b012-ff4e314844f2",
+                                                   "f1e2133d-c343-4ea7-be5c-7d5f5cd50c73",
+                                                   "df9a6c27-1bbd-444a-a3ab-ee4012a28ba8",
+                                                   "126913a3-4793-4b94-8b49-70ef65440b70",
+                                                   "82241ef8-1b7e-495a-85f7-586b68a87a94",
+                                                   "9e44f53f-0b3a-4cab-b511-a023c8cd77a4",
+                                                   "4103f402-0023-483c-81ba-752f0d72fd2c",
+                                                   "a10cded9-2ed3-493a-b9a0-81f2bf038ba4",
+                                                   "a89532c5-2ce6-4e88-b1ae-d0e9e4653945",
+                                                   "82123346-debb-4d35-a8df-626464fa1fbf",
+                                                   "a717fa65-bbae-4b4c-83d6-6ffd7b7e2df9",
+                                                   "1b23bd5b-49c7-4184-9346-eb2d9d5d8421",
+                                                   "d764cbb0-e7a4-4939-9c8b-ef9a08ce8941",
+                                                   "93952ea9-9f21-4e0d-b485-0003952b0c3b",
+                                                   "f32c4e7c-404c-4e7c-8925-5a511073cbd2",
+                                                   "ea854e86-062a-4983-8ff8-1c6f89f1e85c",
+                                                   "6d729def-08e8-4b48-8382-08f800561a6f",
+                                                   "f93cc872-bebf-4cd4-9307-3fb1ef42ddfc",
+                                                   "6a4ff646-f871-48eb-afd9-f7d71d581fa3",
+                                                   "e7b1139f-effa-42d9-982a-94869d7278bb",
+                                                   "07f35eb6-c1fc-4302-9fb9-d45f12365fdd",
+                                                   "d0acf636-b589-49b3-9923-7208cdcab9d9",
+                                                   "372f76af-b56d-45d5-9c52-12f312f3319a"
+                                               ],
+                       "metrics":  {
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  41.604954,
+                                       "explicit_blocked_seconds":  135.373549,
+                                       "explicit_deferral_seconds":  78.032184,
+                                       "observation_to_actionable_seconds":  78.032184,
+                                       "pending_to_manager_claim_seconds":  26.186733,
+                                       "receipt_to_resume_seconds":  6.315256,
+                                       "response_to_ack_seconds":  0.296999,
+                                       "response_to_agent_receipt_seconds":  29.074213,
+                                       "signal_to_observation_seconds":  -4.523838
+                                   },
+                       "missing_evidence":  [
+                                                "wake outcome contradicts attempt"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "reason":  "wake outcome contradicts attempt",
+                                             "status":  "INSUFFICIENT_EVIDENCE"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "sig-20260802-m5-q5-141502Z-cygnus-a24-gate-001",
+                       "evidence_record_ids":  [
+                                                   "0ff90f8e-9e3b-47b4-adc3-6ec4f165df8e",
+                                                   "a84dfaa1-0ac3-432e-b7c3-c5ece16b14e3",
+                                                   "b89559c3-dd7c-4f87-97b9-39c5e22ec08e",
+                                                   "ea5c0673-4f5c-44fc-a469-3538dd8c1267",
+                                                   "cee05eda-0eb5-44fb-966e-0b88603a143b",
+                                                   "1b916121-a7fd-4464-a7ed-6435e9f6a790",
+                                                   "f8966a0a-192e-4546-88a9-d4b32f22efff",
+                                                   "147cbcdf-25bd-478e-9898-e1bd74aa2f84",
+                                                   "1ac61f6d-b2af-465b-b50c-6635dfb70cb0",
+                                                   "893ab7ab-39fd-4e39-b460-2cfb3606df4f",
+                                                   "9bbbe743-f8e4-4bf6-95ee-240316491805",
+                                                   "5b5b1da3-c6f8-423f-92f5-83831170e4cb",
+                                                   "2e576549-8438-4baa-b771-3eacd09500eb",
+                                                   "0134f871-dbb4-44b9-b9bc-ab401d679ba3",
+                                                   "d3c4bb7c-12cb-43f2-ad39-a0d5fde8f761",
+                                                   "86f7caf6-4115-4832-aef5-a4489945a16f",
+                                                   "df7e0b4e-02db-4b87-a694-279fc3182bea",
+                                                   "67186058-2bcb-4dff-97cf-b4eb82ce48f8",
+                                                   "8ba07b2c-a3b2-4609-903b-54fc36291c71",
+                                                   "5fb9c5f4-e7a7-43e1-9ab3-2b7e60b585f2",
+                                                   "c8aa5ba5-d350-4759-ac15-58339c0a74b6",
+                                                   "e41ebed2-7110-4a36-b6c4-f4db59ad036d",
+                                                   "a54450dc-69b7-4bc3-8166-144578124c89"
+                                               ],
+                       "metrics":  {
+                                       "attempted_to_delivered_seconds":  0.0,
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  171.004565,
+                                       "delivered_to_received_seconds":  19.515884,
+                                       "explicit_blocked_seconds":  304.15925,
+                                       "explicit_deferral_seconds":  190.396804,
+                                       "observation_to_actionable_seconds":  190.396804,
+                                       "pending_to_manager_claim_seconds":  25.201726,
+                                       "receipt_to_resume_seconds":  7.801226,
+                                       "received_to_claim_seconds":  0.576999,
+                                       "response_to_ack_seconds":  0.330996,
+                                       "response_to_agent_receipt_seconds":  56.419575,
+                                       "signal_to_observation_seconds":  24.014915
+                                   },
+                       "missing_evidence":  [
+                                                "complete explicit manager interval chain"
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "attempted_to_delivered_seconds":  0.0,
+                                             "delivered_to_received_seconds":  19.515884,
+                                             "manager_invocation_id":  "root-20260802-m5-q5-141502Z-001",
+                                             "manager_session_id":  "root-persistent-192592",
+                                             "received_to_claim_seconds":  0.576999,
+                                             "status":  "COMPLETE",
+                                             "wake_id":  "d1eec202-2e47-47e2-b1a5-488eb8a93ad3"
+                                         }
+                   },
+                   {
+                       "classification":  "INSUFFICIENT_EVIDENCE",
+                       "contradictory_evidence":  [
+                                                      "negative causal metric: explicit_deferral_seconds"
+                                                  ],
+                       "epoch_id":  "20260802-m5-q5-141502Z",
+                       "event_id":  "sig-20260802-m5-q5-141502Z-delta-a26-gate-001",
+                       "evidence_record_ids":  [
+                                                   "9190c74f-705e-443a-a661-3f13f1425aa8",
+                                                   "082b9379-6e98-4867-88d8-5994652fddc2",
+                                                   "98a60ab2-6a93-4049-a80b-78556282bddc",
+                                                   "4d082953-e706-4d39-9e46-cd5d7319f561",
+                                                   "3d18bcec-05ee-40a6-9afd-a0e275edd6f0",
+                                                   "3d7c57f8-2c9c-43f4-8696-d350abcaa2f2",
+                                                   "bbb0f46a-306c-463f-9144-48caa7d011df",
+                                                   "fa340dfc-6b24-4fe8-83be-fd6b6c7d08b7",
+                                                   "d149e372-4948-4f59-8391-0d9da52f6b90",
+                                                   "23e3221e-f0c7-4b60-9842-614889d38e6c",
+                                                   "02e9aac7-0ccc-45f1-a300-ec51e7e34a4e",
+                                                   "508abc4c-1a80-4821-96d3-3be1e9a166db",
+                                                   "a9ddf69d-c932-46e4-b0c4-00c11e6e5abe",
+                                                   "a3e8bb04-bf7d-47d7-9387-c7870c2a97ff",
+                                                   "b3539e2f-2f8c-4490-ac70-31f6da66b51a",
+                                                   "fae2b094-f6c5-4732-a565-00a8b046f83e",
+                                                   "cf1f40f9-213f-4c2b-9243-a41b78b0d475",
+                                                   "e1fa73e3-23fc-4665-a441-8e02758409d7",
+                                                   "54fa6b5c-fefe-4cfa-bb54-47c35708ece7",
+                                                   "54621cb9-af82-4cfd-822e-8dd604a30331",
+                                                   "9a48a970-71da-4661-8d2f-a7f766c84dc2",
+                                                   "cf9e5ecd-9b4d-4f04-a7f1-150d454fd10a",
+                                                   "2cb0d76b-ed03-492d-9d4b-74d97b7a183a"
+                                               ],
+                       "metrics":  {
+                                       "attempted_to_delivered_seconds":  0.0,
+                                       "claim_to_decision_seconds":  null,
+                                       "deadline_lateness_seconds":  0.0,
+                                       "delivered_to_received_seconds":  38.527035,
+                                       "explicit_blocked_seconds":  276.614804,
+                                       "explicit_deferral_seconds":  -30.649669,
+                                       "observation_to_actionable_seconds":  0.0,
+                                       "pending_to_manager_claim_seconds":  207.536051,
+                                       "receipt_to_resume_seconds":  0.271001,
+                                       "received_to_claim_seconds":  0.634001,
+                                       "response_to_ack_seconds":  0.324997,
+                                       "response_to_agent_receipt_seconds":  46.87823,
+                                       "signal_to_observation_seconds":  21.555521
+                                   },
+                       "missing_evidence":  [
+
+                                            ],
+                       "schema":  "manager-attention-report/v1",
+                       "wake_evidence":  {
+                                             "attempted_to_delivered_seconds":  0.0,
+                                             "delivered_to_received_seconds":  38.527035,
+                                             "manager_invocation_id":  "root-20260802-m5-q5-141502Z-001",
+                                             "manager_session_id":  "root-persistent-192592",
+                                             "received_to_claim_seconds":  0.634001,
+                                             "status":  "COMPLETE",
+                                             "wake_id":  "c1eb1311-cd11-4961-9f88-93192e46ba1e"
+                                         }
+                   }
+               ],
+    "generated_utc":  "2026-08-02T14:27:03.035326+00:00",
+    "observation_errors":  [
+
+                           ],
+    "schema":  "manager-attention-report/v1",
+    "trusted_coverage":  {
+                             "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-q5-141502Z\\inputs\\orchestrator\\main-orchestrator-a791153f79fd86f8\\attention.jsonl":  {
+                                                                                                                                                                                                                                               "error":  false,
+                                                                                                                                                                                                                                               "generation":  "1",
+                                                                                                                                                                                                                                               "offset":  20610,
+                                                                                                                                                                                                                                               "partial_bytes":  0
+                                                                                                                                                                                                                                           },
+                             "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-q5-141502Z\\inputs\\subagent\\Atlas-9dee1c0ed39ef4e2\\attention.jsonl":  {
+                                                                                                                                                                                                                               "error":  false,
+                                                                                                                                                                                                                               "generation":  "1",
+                                                                                                                                                                                                                               "offset":  4199,
+                                                                                                                                                                                                                               "partial_bytes":  0
+                                                                                                                                                                                                                           },
+                             "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-q5-141502Z\\inputs\\subagent\\Boreal-6cea608a59112aec\\attention.jsonl":  {
+                                                                                                                                                                                                                                "error":  false,
+                                                                                                                                                                                                                                "generation":  "1",
+                                                                                                                                                                                                                                "offset":  2760,
+                                                                                                                                                                                                                                "partial_bytes":  0
+                                                                                                                                                                                                                            },
+                             "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-q5-141502Z\\inputs\\subagent\\Cygnus-f43b39ea311b6bd9\\attention.jsonl":  {
+                                                                                                                                                                                                                                "error":  false,
+                                                                                                                                                                                                                                "generation":  "1",
+                                                                                                                                                                                                                                "offset":  2447,
+                                                                                                                                                                                                                                "partial_bytes":  0
+                                                                                                                                                                                                                            },
+                             "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-q5-141502Z\\inputs\\subagent\\Delta-18833da39fb9b7f8\\attention.jsonl":  {
+                                                                                                                                                                                                                               "error":  false,
+                                                                                                                                                                                                                               "generation":  "1",
+                                                                                                                                                                                                                               "offset":  2296,
+                                                                                                                                                                                                                               "partial_bytes":  0
+                                                                                                                                                                                                                           },
+                             "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-q5-141502Z\\attention-events.jsonl":  {
+                                                                                                                                                                                                                   "error":  false,
+                                                                                                                                                                                                                   "generation":  "1",
+                                                                                                                                                                                                                   "offset":  92161,
+                                                                                                                                                                                                                   "partial_bytes":  0
+                                                                                                                                                                                                               }
+                         }
+}

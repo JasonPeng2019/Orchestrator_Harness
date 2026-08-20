@@ -1,0 +1,23 @@
+{
+    "schema":  "m5-busy-manager-audit/v1",
+    "epoch":  "20260802-m5-q8-152800Z",
+    "activity_id":  "manager-resource-integrity-audit-001",
+    "started_utc":  "2026-08-02T15:30:54.3546051Z",
+    "finished_utc":  "2026-08-02T15:31:49.3619330Z",
+    "duration_seconds":  55.0073279,
+    "files":  [
+                  "fresh-experiments/A22_20260726-062324/.agent-workspace/PARALLEL_CHECKPOINT.md",
+                  "fresh-experiments/D31_20260726-062325/.agent-workspace/PARALLEL_CHECKPOINT.md",
+                  "fresh-experiments/A24_20260726-052146/.agent-workspace/PARALLEL_CHECKPOINT.md",
+                  "fresh-experiments/A26_20260726-062325/.agent-workspace/PARALLEL_CHECKPOINT.md"
+              ],
+    "initial_sha256":  {
+                           "fresh-experiments/A22_20260726-062324/.agent-workspace/PARALLEL_CHECKPOINT.md":  "3BCCCF3EB9E17D51656851AEC6E5E54B09FAC25F5AA2ACAA976863B09374376A",
+                           "fresh-experiments/A26_20260726-062325/.agent-workspace/PARALLEL_CHECKPOINT.md":  "E20B772300737BACE3D484DE4B9D15713D236E94738114BEF3CE38CA20081E8A",
+                           "fresh-experiments/A24_20260726-052146/.agent-workspace/PARALLEL_CHECKPOINT.md":  "FD943371A81F97156307581B715E98660F6DF9BE992EE14942A96E9AD2C4A30B",
+                           "fresh-experiments/D31_20260726-062325/.agent-workspace/PARALLEL_CHECKPOINT.md":  "DD7922FB84013267DBD3600502622DC9B9968C04D4F441A8FE3F58A766804BBE"
+                       },
+    "hash_checks":  23160,
+    "mismatches":  0,
+    "result":  "PASS_BOUNDED"
+}

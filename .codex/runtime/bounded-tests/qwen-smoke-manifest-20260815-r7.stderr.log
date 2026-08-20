@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import sys,json; sys.path.insert(0, 'Firmware/target-harness-qwen-smoke'); from pathlib import Path; from orchestrator_harness.prompt_bundle import prompt_bundle_record_from_paths; p=Path('Firmware/target-harness-qwen-smoke').resolve(); print(json.dumps(prompt_bundle_record_from_paths(workflow_id='firmware-qwen-adapter-smoke', task_card_id='CARD-QWEN-ADAPTER-SMOKE-003', profile_id='firmware-qwen-deepseek-high', paths=[('task', p / '.agent-workspace' / 'QWEN_ADAPTER_SMOKE_PROMPT.md')], run_root=p), sort_keys=True))
+                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'orchestrator_harness'

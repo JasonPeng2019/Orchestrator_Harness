@@ -1,0 +1,114 @@
+{
+  "schema": "m5-process-registry/v1",
+  "epoch": "20260802-m5-s1-031903Z",
+  "captured_utc": "2026-08-02T03:35:32.782793+00:00",
+  "snapshot_complete": true,
+  "snapshot_errors": [],
+  "processes": [
+    {
+      "role": "worker-controller",
+      "label": "atlas_a22_m5_s1_031903",
+      "pid": 16304,
+      "created_utc": "2026-08-02T03:20:34.583185Z",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-codex",
+      "label": "atlas_a22_m5_s1_031903",
+      "pid": 164028,
+      "created_utc": "2026-08-02T03:20:35.1007053Z",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-controller",
+      "label": "boreal_d31_m5_s1_031903",
+      "pid": 170304,
+      "created_utc": "2026-08-02T03:20:36.613737Z",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-codex",
+      "label": "boreal_d31_m5_s1_031903",
+      "pid": 98188,
+      "created_utc": "2026-08-02T03:20:37.2448332Z",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-controller",
+      "label": "cygnus_a24_m5_s1_031903",
+      "pid": 148648,
+      "created_utc": "2026-08-02T03:20:38.794903Z",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-codex",
+      "label": "cygnus_a24_m5_s1_031903",
+      "pid": 190848,
+      "created_utc": "2026-08-02T03:20:39.3549765Z",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-controller",
+      "label": "delta_a26_m5_s1_031903",
+      "pid": 195276,
+      "created_utc": "2026-08-02T03:20:40.783468Z",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "worker-codex",
+      "label": "delta_a26_m5_s1_031903",
+      "pid": 179120,
+      "created_utc": "2026-08-02T03:20:41.5422236Z",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "primary-owner",
+      "label": "20260802-m5-s1-031903Z-primary-harness",
+      "pid": 156476,
+      "created_utc": "2026-08-02T03:19:26.042195Z",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "watcher-owner",
+      "label": "20260802-m5-s1-031903Z-diagnostic-watcher",
+      "pid": 196416,
+      "created_utc": "2026-08-02T03:19:27.266125Z",
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "managed-owner",
+      "label": "20260802-m5-s1-031903Z",
+      "created_utc": "2026-08-02T03:19:26.739589Z",
+      "pid": 190088,
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "managed-watcher",
+      "label": "20260802-m5-s1-031903Z",
+      "created_utc": "2026-08-02T03:19:26.795528Z",
+      "pid": 184372,
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    },
+    {
+      "role": "diagnostic-watcher-service",
+      "label": "20260802-m5-s1-031903Z",
+      "created_utc": "windows-filetime:134301143681993773",
+      "pid": 186852,
+      "observed_live_created_utc": null,
+      "exact_identity_absent": true
+    }
+  ],
+  "all_exact_identities_absent": true
+}

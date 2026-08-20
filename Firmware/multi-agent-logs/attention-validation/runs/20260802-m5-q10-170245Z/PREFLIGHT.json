@@ -1,0 +1,21 @@
+{
+  "epoch": "20260802-m5-q10-170245Z",
+  "attempt": "10/10 FINAL",
+  "created_utc": "2026-08-02T17:03:09.861187Z",
+  "active_epoch_before_launch": null,
+  "python_baseline_sha256": "8c428d5f610a2d2ecf9d3a8f71a60e595d7350752817842a5d658be8606b5d83",
+  "runtime_policy_projection_sha256": "89bb18cb67282fe4e71c198d9a3b4a279c6cb1412710a98b9a0a720316ec0f04",
+  "harness_config_sha256": "6e484742cb5a449ffb004d2b230d0e6ecc860a58f3ab5b413f457f2bb63fe109",
+  "watcher_config_sha256": "e194007b921c0abe1a193d9418136144d8e4db6c6aceb51dabd8984b0debc752",
+  "allowed_runtime": [
+    "persistent root manager",
+    "one native managed harness",
+    "one deterministic diagnostic-only watcher",
+    "four external E2E worker controllers and their Codex workers"
+  ],
+  "forbidden_runtime_absent": true,
+  "evaluator_enabled": false,
+  "autonomy_audit": "PASS runs=10",
+  "safe_boundary": true,
+  "controller_launch_rule": "every argument containing spaces is explicitly quoted; no wrapper/runner"
+}

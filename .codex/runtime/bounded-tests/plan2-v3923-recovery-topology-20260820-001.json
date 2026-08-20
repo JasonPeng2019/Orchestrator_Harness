@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "python .codex/skills/design-project-topology/scripts/validate_execution_plan.py plans/general-coding-harness/FULL-EXECUTION-SPEC_PLAN_2.md --mapping plans/general-coding-harness/SUBAGENT_ROLE_MODEL_MAPPING.json",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  37,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  7,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Prior Plan topology validation completed in approximately 1.55 seconds; 30 seconds includes broad headroom for the expanded v3.9.23 document.",
+    "started_at":  "2026-08-20T07:44:26.1507162+00:00",
+    "finished_at":  "2026-08-20T07:44:28.0034369+00:00",
+    "elapsed_seconds":  1.853,
+    "root_process_id":  17492,
+    "observed_process_ids":  [
+                                 17492
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-v3923-recovery-topology-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-v3923-recovery-topology-20260820-001.stderr.log"
+}

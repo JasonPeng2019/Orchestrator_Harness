@@ -1,0 +1,6 @@
+{
+  "lane_id": "20260801-attention-r7-repair007-readiness:Lane:HOST",
+  "signal_id": "repair007-blocking-001",
+  "agent_blocked": false,
+  "response_received": true
+}

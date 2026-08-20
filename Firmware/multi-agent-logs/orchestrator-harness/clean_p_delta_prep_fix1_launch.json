@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python.exe",
+    "-m",
+    "orchestrator_harness.lane_controller",
+    "fresh-experiments/A26_20260726-062325/.agent-workspace/delta_a26_s1_clean_p_prep_fix1.invocation.json"
+  ],
+  "child_pid": 194696,
+  "cleanup_confirmed": true,
+  "cleanup_error": null,
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+  "error": "child identity could not be proved live",
+  "label": "delta_a26_s1_clean_p_prep_fix1",
+  "launched_utc": "2026-08-01T00:04:46.873361Z",
+  "platform": "windows",
+  "role": "lane-controller",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "failed"
+}

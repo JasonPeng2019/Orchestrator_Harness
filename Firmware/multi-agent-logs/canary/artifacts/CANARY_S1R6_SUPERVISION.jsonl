@@ -1,0 +1,2 @@
+{"schema":"manager-supervision-notification/v1","observed_utc":"2026-08-01T18:10:56.425109Z","scan":".agent-workspace/CANARY_AUTO_SCAN_20260801-attention-r6_20260801T181023373893Z.json","lanes":[],"resource_conflicts":[],"observation_errors":[],"process_errors":[]}
+{"schema":"manager-supervision-notification/v1","observed_utc":"2026-08-01T18:11:47.755877Z","scan":".agent-workspace/CANARY_AUTO_SCAN_20260801-attention-r6_20260801T181124036348Z.json","lanes":[],"resource_conflicts":[],"observation_errors":[],"process_errors":[]}

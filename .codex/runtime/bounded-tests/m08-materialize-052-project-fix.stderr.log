@@ -1,0 +1,6 @@
+Using CPython 3.12.13
+Creating virtual environment at: Firmware\target-harness\orchestrator_harness\.venv
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\runtime\host-readiness\host-readiness-20260815-052\materialize_m08_retry.py", line 6, in <module>
+    from orchestrator_harness.prompt_bundle import prompt_bundle_record_from_paths
+ModuleNotFoundError: No module named 'orchestrator_harness'

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python Firmware/.codex/skills/run-firmware-test-suite/scripts/audit_autonomy.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  50,
+    "expected_upper_bound_seconds":  40,
+    "cleanup_allowance_seconds":  10,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "deterministic Firmware package audit; retry after corrected autonomy matrix policy record",
+    "started_at":  "2026-08-14T12:04:14.6666575+00:00",
+    "finished_at":  "2026-08-14T12:04:17.0921664+00:00",
+    "elapsed_seconds":  2.426,
+    "root_process_id":  171688,
+    "observed_process_ids":  [
+                                 171688
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\audit-firmware-provider-contract-final-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\audit-firmware-provider-contract-final-20260814.stderr.log"
+}

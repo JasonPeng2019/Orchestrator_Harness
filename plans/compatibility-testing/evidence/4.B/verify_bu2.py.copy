@@ -1,0 +1,114 @@
+#!/usr/bin/env python3
+"""ROOT coordinator verification for BU2 — independent of the subagent's self-report.
+
+Exercises the Claude installer's security-relevant invariants for phase 4.B (B9-B12):
+  * install writes .claude/settings.json + the owned manifest, changed > 0, not idempotent
+  * check reports ownership=owned, current=True
+  * reinstall is idempotent (changed == 0)
+  * currency detection: mutating a managed hook asset flips current -> False
+  * preserve-modified: uninstall of a user-modified owned asset preserves it on disk
+  * foreign-hook coexistence: an unrelated Stop hook survives install AND uninstall
+Prints a JSON verdict. Exit 0 only when every invariant holds.
+"""
+from __future__ import annotations
+import json, tempfile, shutil
+from pathlib import Path
+
+
+def main() -> int:
+    checks: dict[str, object] = {}
+    try:
+        from orchestrator_harness.claude_installer import (
+            install_claude_adapter, check_claude_adapter,
+            uninstall_claude_adapter, packaged_claude_assets,
+        )
+        checks["import"] = "ok"
+    except Exception as exc:  # noqa: BLE001
+        print(json.dumps({"verdict": "FAIL", "stage": "import", "error": repr(exc)}, indent=2))
+        return 1
+
+    # ---- Invariant set A: clean install/check/reinstall round-trip ----
+    dA = Path(tempfile.mkdtemp())
+    try:
+        r = install_claude_adapter(dA)
+        checks["install_changed_gt0"] = len(r.get("changed", [])) > 0
+        checks["install_not_idempotent"] = r.get("idempotent") is False
+        checks["settings_written"] = (dA / ".claude" / "settings.json").is_file()
+        checks["manifest_written"] = (dA / ".claude" / "orchestrator-harness-adapter.json").is_file()
+        c = check_claude_adapter(dA)
+        checks["check_installed"] = c.get("installed") is True
+        checks["check_owned"] = c.get("ownership") == "owned"
+        checks["check_current"] = c.get("current") is True
+        r2 = install_claude_adapter(dA)
+        checks["reinstall_idempotent"] = r2.get("idempotent") is True
+    finally:
+        shutil.rmtree(dA, ignore_errors=True)
+
+    # ---- Invariant set B: currency detection on a mutated managed asset ----
+    dB = Path(tempfile.mkdtemp())
+    try:
+        install_claude_adapter(dB)
+        assets = packaged_claude_assets()
+        # pick a managed hook asset destination and corrupt it
+        target = dB / ".claude" / "hooks" / "orchestrator_harness_post_tool_use.py"
+        checks["managed_asset_present"] = target.is_file()
+        if target.is_file():
+            target.write_text(target.read_text(encoding="utf-8") + "\n# tampered\n", encoding="utf-8")
+        c = check_claude_adapter(dB)
+        checks["tamper_flips_current_false"] = c.get("current") is False
+        checks["tamper_keeps_installed"] = c.get("installed") is True
+        # uninstall must PRESERVE the user-modified asset (not delete it)
+        u = uninstall_claude_adapter(dB)
+        checks["preserve_modified_nonempty"] = len(u.get("preserved_modified", [])) > 0
+        checks["modified_asset_survives"] = target.is_file()
+    finally:
+        shutil.rmtree(dB, ignore_errors=True)
+
+    # ---- Invariant set C: foreign hook coexists through install + uninstall ----
+    dC = Path(tempfile.mkdtemp())
+    try:
+        claude_dir = dC / ".claude"
+        claude_dir.mkdir(parents=True, exist_ok=True)
+        foreign = {
+            "hooks": {
+                "Stop": [
+                    {"matcher": "*", "hooks": [
+                        {"type": "command", "id": "user-own-hook",
+                         "command": "python user_script.py"}]}
+                ]
+            }
+        }
+        settings = claude_dir / "settings.json"
+        settings.write_text(json.dumps(foreign, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        install_claude_adapter(dC)
+        after_install = json.loads(settings.read_text(encoding="utf-8"))
+        stop_ids = _collect_ids(after_install, "Stop")
+        checks["foreign_survives_install"] = "user-own-hook" in stop_ids
+        checks["managed_added_alongside"] = "orchestrator-harness-stop" in stop_ids
+        uninstall_claude_adapter(dC)
+        after_uninstall = json.loads(settings.read_text(encoding="utf-8")) if settings.is_file() else {}
+        stop_ids2 = _collect_ids(after_uninstall, "Stop")
+        checks["foreign_survives_uninstall"] = "user-own-hook" in stop_ids2
+        checks["managed_removed"] = "orchestrator-harness-stop" not in stop_ids2
+    finally:
+        shutil.rmtree(dC, ignore_errors=True)
+
+    required = [k for k in checks if k != "import"]
+    verdict = "PASS" if checks.get("import") == "ok" and all(
+        checks.get(k) is True for k in required
+    ) else "FAIL"
+    print(json.dumps({"verdict": verdict, "checks": checks}, indent=2, default=str))
+    return 0 if verdict == "PASS" else 1
+
+
+def _collect_ids(settings: dict, event: str) -> set[str]:
+    ids: set[str] = set()
+    for group in settings.get("hooks", {}).get(event, []) or []:
+        for hook in group.get("hooks", []) or []:
+            if isinstance(hook, dict) and "id" in hook:
+                ids.add(hook["id"])
+    return ids
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

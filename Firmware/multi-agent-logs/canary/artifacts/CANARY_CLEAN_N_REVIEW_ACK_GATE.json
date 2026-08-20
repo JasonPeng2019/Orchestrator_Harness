@@ -1,0 +1,10 @@
+{
+  "acknowledged_utc": "2026-07-30T12:00:01.250000+00:00",
+  "after_baseline_utc": "2026-07-30T12:00:01.250000Z",
+  "before_baseline_utc": "2026-07-30T12:00:00Z",
+  "event_id": "aa1319d273c097c3e18c846a7827ff0d85ec72355d1726d0432458d726d20bc1",
+  "gate": "synthetic-exact-manager-review-ack",
+  "passed": true,
+  "pending_after": null,
+  "schema": "clean-n-successor-gate/v1"
+}

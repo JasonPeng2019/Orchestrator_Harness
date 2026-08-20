@@ -1,0 +1,39 @@
+{
+  "schema": "m5-resource-cleanup/v1",
+  "epoch": "20260802-m5-s2a-092552Z",
+  "checked_utc": "2026-08-02T09:48:21.620135Z",
+  "workers": [
+    {
+      "doer": "Atlas",
+      "state": "CODEX_EXITED",
+      "leases": [],
+      "board_tokens": [],
+      "mcp_servers": []
+    },
+    {
+      "doer": "Boreal",
+      "state": "CODEX_EXITED",
+      "leases": [],
+      "board_tokens": [],
+      "mcp_servers": []
+    },
+    {
+      "doer": "Cygnus",
+      "state": "CODEX_EXITED",
+      "leases": [],
+      "board_tokens": [],
+      "mcp_servers": []
+    },
+    {
+      "doer": "Delta",
+      "state": "CODEX_EXITED",
+      "leases": [],
+      "board_tokens": [],
+      "mcp_servers": []
+    }
+  ],
+  "active_leases": [],
+  "active_board_tokens": [],
+  "active_mcp_servers": [],
+  "safe": true
+}

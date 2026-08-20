@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/skills/design-project-topology/scripts/validate_execution_plan.py plans/general-coding-harness/FULL-EXECUTION-SPEC_PLAN_2.md --mapping plans/general-coding-harness/SUBAGENT_ROLE_MODEL_MAPPING.json",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Plan validator previously completed in under 2 seconds; 20 seconds allows cold start. The prior failure was corrected by retaining the module\u0027s fixed M09-A1 through M09-A9 schema.",
+    "started_at":  "2026-08-15T22:53:35.9937011+00:00",
+    "finished_at":  "2026-08-15T22:53:37.8575102+00:00",
+    "elapsed_seconds":  1.864,
+    "root_process_id":  188348,
+    "observed_process_ids":  [
+                                 188348
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan-3-sprint-validate-20260815-r3.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan-3-sprint-validate-20260815-r3.stderr.log"
+}

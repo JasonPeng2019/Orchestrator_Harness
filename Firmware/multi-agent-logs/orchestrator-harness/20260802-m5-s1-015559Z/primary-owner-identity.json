@@ -1,0 +1,16 @@
+{
+    "schema":  "m5-primary-owner/v1",
+    "epoch":  "20260802-m5-s1-015559Z",
+    "owner":  {
+                  "created_utc":  "2026-08-02T01:57:43.8984256Z",
+                  "pid":  179388
+              },
+    "watcher":  {
+                    "created_utc":  "2026-08-02T01:57:44.3910022Z",
+                    "pid":  150496
+                },
+    "config":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-s1-015559Z\\config.json",
+    "started_utc":  "2026-08-02T01:57:44.5984306Z",
+    "ended_utc":  "2026-08-02T01:59:57.5955497Z",
+    "watcher_exit_code":  0
+}

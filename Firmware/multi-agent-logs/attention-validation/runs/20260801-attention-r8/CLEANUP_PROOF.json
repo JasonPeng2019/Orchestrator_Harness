@@ -1,0 +1,116 @@
+{
+    "schema":  "attention-cleanup-proof/v1",
+    "epoch_id":  "20260801-attention-r8",
+    "observed_utc":  "2026-08-01T19:06:52.2250206Z",
+    "processes":  [
+                      {
+                          "pid":  191888,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  159184,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  191056,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  174292,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  193340,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  184604,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  180148,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  147308,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  157924,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  191472,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  194980,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  1424,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  172240,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  189404,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  193468,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  189176,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      },
+                      {
+                          "pid":  188880,
+                          "state":  "ABSENT",
+                          "name":  "",
+                          "command_line":  ""
+                      }
+                  ],
+    "all_absent":  true,
+    "service_identity":  ".agent-workspace/ORCHESTRATOR_HARNESS/clean_r8_primary_identity.json",
+    "stop_receipts":  [
+                          "optional watcher stop_requested=true",
+                          "primary watch stop_requested=true",
+                          ".agent-workspace/CANARY_S1R8_SUPERVISION.stop"
+                      ]
+}

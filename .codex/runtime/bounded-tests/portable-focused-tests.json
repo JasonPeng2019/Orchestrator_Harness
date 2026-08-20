@@ -1,0 +1,29 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked pytest -q .codex/tests/test_bounded_test_supervisor.py .codex/tests/test_hooks.py .codex/tests/test_stable_runner.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  110,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  20,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The prior 62-test focused run completed in 38 seconds; 90 seconds includes cold-start and the new portable-copy smoke, while 20 seconds remains below the cleanup cap.",
+    "started_at":  "2026-08-13T23:49:25.7643226+00:00",
+    "finished_at":  "2026-08-13T23:50:06.6246849+00:00",
+    "elapsed_seconds":  40.86,
+    "root_process_id":  166988,
+    "observed_process_ids":  [
+                                 161720,
+                                 166988,
+                                 183904,
+                                 187820,
+                                 188768,
+                                 193860,
+                                 196352,
+                                 196844
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\portable-focused-tests.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\portable-focused-tests.stderr.log"
+}

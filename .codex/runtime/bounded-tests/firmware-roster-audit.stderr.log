@@ -1,0 +1,3 @@
+ERROR autonomy matrix lacks policy hash
+ERROR .codex\skills\run-firmware-test-suite\SKILL.md: missing cross-document clause: high reasoning
+AUTONOMY_AUDIT_FAIL errors=2

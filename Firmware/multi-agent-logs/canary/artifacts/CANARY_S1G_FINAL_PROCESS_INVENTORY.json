@@ -1,0 +1,92 @@
+{
+  "schema": "clean-g-final-process-inventory/v1",
+  "epoch": "20260731-s1-clean-g",
+  "expected_manager_pid": 99828,
+  "records": [
+    {
+      "pid": 99828,
+      "present": true,
+      "name": "codex.exe",
+      "parent_pid": 181160,
+      "created_utc": "2026-07-31T00:08:53.1002400Z"
+    },
+    {
+      "pid": 195556,
+      "present": false,
+      "name": null,
+      "parent_pid": null,
+      "created_utc": null
+    },
+    {
+      "pid": 175244,
+      "present": false,
+      "name": null,
+      "parent_pid": null,
+      "created_utc": null
+    },
+    {
+      "pid": 194984,
+      "present": false,
+      "name": null,
+      "parent_pid": null,
+      "created_utc": null
+    },
+    {
+      "pid": 152376,
+      "present": false,
+      "name": null,
+      "parent_pid": null,
+      "created_utc": null
+    },
+    {
+      "pid": 189948,
+      "present": false,
+      "name": null,
+      "parent_pid": null,
+      "created_utc": null
+    },
+    {
+      "pid": 191048,
+      "present": false,
+      "name": null,
+      "parent_pid": null,
+      "created_utc": null
+    },
+    {
+      "pid": 196296,
+      "present": false,
+      "name": null,
+      "parent_pid": null,
+      "created_utc": null
+    },
+    {
+      "pid": 164204,
+      "present": false,
+      "name": null,
+      "parent_pid": null,
+      "created_utc": null
+    },
+    {
+      "pid": 191160,
+      "present": false,
+      "name": null,
+      "parent_pid": null,
+      "created_utc": null
+    },
+    {
+      "pid": 188848,
+      "present": false,
+      "name": null,
+      "parent_pid": null,
+      "created_utc": null
+    },
+    {
+      "pid": 183324,
+      "present": false,
+      "name": null,
+      "parent_pid": null,
+      "created_utc": null
+    }
+  ],
+  "only_manager_expected_present": true
+}

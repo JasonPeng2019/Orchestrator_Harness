@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python C:/Users/Jason/.codex/skills/.system/skill-creator/scripts/quick_validate.py .codex/skills/design-project-topology",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Skill package validation normally completes in seconds; 30 seconds provides ample local headroom.",
+    "started_at":  "2026-08-14T02:54:44.8353911+00:00",
+    "finished_at":  "2026-08-14T02:54:46.9343866+00:00",
+    "elapsed_seconds":  2.099,
+    "root_process_id":  186184,
+    "observed_process_ids":  [
+                                 186184
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\design-topology-quick-validate-v2.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\design-topology-quick-validate-v2.stderr.log"
+}

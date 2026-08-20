@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  140,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  20,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "final changed-code verification with the targeted Firmware MCP package route",
+    "started_at":  "2026-08-14T10:42:15.5151280+00:00",
+    "finished_at":  "2026-08-14T10:42:20.3177933+00:00",
+    "elapsed_seconds":  4.803,
+    "root_process_id":  166432,
+    "observed_process_ids":  [
+                                 166432
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-readiness-verify-changed-retry.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-readiness-verify-changed-retry.stderr.log"
+}

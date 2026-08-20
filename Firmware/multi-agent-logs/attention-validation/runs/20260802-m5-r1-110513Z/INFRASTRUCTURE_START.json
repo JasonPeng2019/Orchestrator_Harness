@@ -1,0 +1,41 @@
+{
+    "epoch":  "20260802-m5-r1-110513Z",
+    "created_utc":  "2026-08-02T11:06:54.9077020Z",
+    "harness_launcher_pid":  195128,
+    "harness_creation_utc":  "2026-08-02T11:06:51.5765192Z",
+    "harness_runtime":  {
+                            "exit_reason":  null,
+                            "exited_utc":  null,
+                            "last_manager_heartbeat_utc":  "2026-08-02T11:06:53.408075Z",
+                            "lease_expires_utc":  "2026-08-02T11:41:53.408075Z",
+                            "manager_heartbeat_timeout_seconds":  2100.0,
+                            "owner_created_utc":  "2026-08-02T11:06:51.576519Z",
+                            "owner_pid":  195128,
+                            "schema":  "orchestrator-managed-watch-runtime/v1",
+                            "started_utc":  "2026-08-02T11:06:53.408075Z",
+                            "stop_requested":  false,
+                            "stop_requested_utc":  null,
+                            "watcher_created_utc":  "2026-08-02T11:06:51.828768Z",
+                            "watcher_pid":  185676
+                        },
+    "watcher_status":  {
+                           "running":  true,
+                           "state":  {
+                                         "evaluator_enabled":  false,
+                                         "exit_reason":  null,
+                                         "owner":  {
+                                                       "created_utc":  "windows-filetime:134300974063275151",
+                                                       "pid":  192592
+                                                   },
+                                         "schema":  "harness-watcher-service/v1",
+                                         "started_utc":  "2026-08-02T11:06:52.065551+00:00",
+                                         "startup_status":  "READY",
+                                         "startup_token":  "8b45edcb-355c-4149-9d6b-284a9c3d3dbc",
+                                         "stop_requested":  false,
+                                         "watcher":  {
+                                                         "created_utc":  "windows-filetime:134301424121271342",
+                                                         "pid":  98392
+                                                     }
+                                     }
+                       }
+}

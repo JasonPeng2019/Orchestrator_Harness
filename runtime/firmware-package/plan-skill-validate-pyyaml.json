@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --with pyyaml python C:/Users/Jason/.codex/skills/.system/skill-creator/scripts/quick_validate.py Firmware/.codex/skills/plan-changes",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  70,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  10,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Validator needs a transient PyYAML environment; 60 seconds covers package resolution and a small local parse.",
+    "started_at":  "2026-08-14T09:20:18.1903159+00:00",
+    "finished_at":  "2026-08-14T09:20:22.4657675+00:00",
+    "elapsed_seconds":  4.275,
+    "root_process_id":  4868,
+    "observed_process_ids":  [
+                                 4868
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\plan-skill-validate-pyyaml.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\plan-skill-validate-pyyaml.stderr.log"
+}

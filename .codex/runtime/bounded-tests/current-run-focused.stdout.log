@@ -1,0 +1,31 @@
+...FF..................................................                  [100%]
+================================== FAILURES ===================================
+______ test_guard_does_not_treat_read_only_test_text_search_as_execution ______
+
+    def test_guard_does_not_treat_read_only_test_text_search_as_execution() -> None:
+        command = "rg -n 'python -m pytest|basedpyright' AGENTS.md .codex"
+>       assert hook_runner.guard_dangerous({"tool_input": {"command": command}}) == {}
+E       AssertionError: assert {'hookSpecifi...esult path.'}} == {}
+E         
+E         Left contains 1 more item:
+E         {'hookSpecificOutput': {'hookEventName': 'PreToolUse',
+E                                 'permissionDecision': 'deny',
+E                                 'permissionDecisionReason': 'Direct code-test '
+E                                                             'execution is blocked by '
+E                                                             'BOUNDED-TEST-v1. Run it '...
+E         
+E         ...Full output truncated (7 lines hidden), use '-vv' to show
+
+.codex\tests\test_hooks.py:81: AssertionError
+__________ test_subagent_session_context_names_outer_runtime_adapter __________
+
+    def test_subagent_session_context_names_outer_runtime_adapter() -> None:
+        context = session_context()["hookSpecificOutput"]["additionalContext"]
+>       assert "current working harness" in context
+E       AssertionError: assert 'current working harness' in 'The current ROOT-side orchestration infrastructure enforces BOUNDED-TEST-v1 for every code test or validation in this...; set the tested product worktree as -WorkingDirectory. This is a runtime Codex-adapter overlay, not WIP product code.'
+
+.codex\tests\test_hooks.py:86: AssertionError
+=========================== short test summary info ===========================
+FAILED .codex/tests/test_hooks.py::test_guard_does_not_treat_read_only_test_text_search_as_execution
+FAILED .codex/tests/test_hooks.py::test_subagent_session_context_names_outer_runtime_adapter
+2 failed, 53 passed in 27.84s

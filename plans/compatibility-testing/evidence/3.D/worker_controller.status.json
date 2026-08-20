@@ -1,0 +1,541 @@
+{
+  "base_commit": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+  "board_tokens": [],
+  "branch": "lane/mcp",
+  "child_environment_isolation": {
+    "cleared_variable_names": [
+      "AI_AGENT",
+      "ALLUSERSPROFILE",
+      "ANSYSEMSV_ROOT252",
+      "BUNDLED_DEBUGPY_PATH",
+      "CHOCOLATEYINSTALL",
+      "CHOCOLATEYLASTPATHUPDATE",
+      "CHROME_CRASHPAD_PIPE_NAME",
+      "CLAUDE",
+      "CLAUDECODE",
+      "CLAUDE_CODE_AUTO_COMPACT_WINDOW",
+      "CLAUDE_CODE_CHILD_SESSION",
+      "CLAUDE_CODE_ENTRYPOINT",
+      "CLAUDE_CODE_EXECPATH",
+      "CLAUDE_CODE_GIT_BASH_PATH",
+      "CLAUDE_CODE_MAX_CONTEXT_TOKENS",
+      "CLAUDE_CODE_SESSION_ID",
+      "CLAUDE_CODE_SSE_PORT",
+      "CLAUDE_EFFORT",
+      "CLAUDE_PID",
+      "COLORTERM",
+      "COMMONPROGRAMFILES",
+      "COMMONPROGRAMFILES(X86)",
+      "COMMONPROGRAMW6432",
+      "COMPUTERNAME",
+      "COPILOT_DEBUG_NONCE",
+      "COREPACK_ENABLE_AUTO_PIN",
+      "DRIVERDATA",
+      "EXEPATH",
+      "FPS_BROWSER_APP_PROFILE_STRING",
+      "FPS_BROWSER_USER_PROFILE_STRING",
+      "GEMINI_API_KEY",
+      "GIT_ASKPASS",
+      "GIT_EDITOR",
+      "HOMEDRIVE",
+      "HOMEPATH",
+      "LOGONSERVER",
+      "MSYSTEM",
+      "NODEFAULTCURRENTDIRECTORYINEXEPATH",
+      "NUMBER_OF_PROCESSORS",
+      "NVM_HOME",
+      "NVM_SYMLINK",
+      "ONEDRIVE",
+      "ONEDRIVECONSUMER",
+      "OS",
+      "PLINK_PROTOCOL",
+      "PROCESSOR_ARCHITECTURE",
+      "PROCESSOR_IDENTIFIER",
+      "PROCESSOR_LEVEL",
+      "PROCESSOR_REVISION",
+      "PROGRAMDATA",
+      "PROGRAMFILES",
+      "PROGRAMFILES(X86)",
+      "PROGRAMW6432",
+      "PSMODULEPATH",
+      "PUBLIC",
+      "PWD",
+      "PYDEVD_DISABLE_FILE_VALIDATION",
+      "PYTHONSTARTUP",
+      "PYTHON_BASIC_REPL",
+      "QWEN_CODE_IDE_SERVER_PORT",
+      "QWEN_CODE_IDE_WORKSPACE_PATH",
+      "SESSIONNAME",
+      "SHELL",
+      "SHLVL",
+      "SIMPLORER_HOME",
+      "SIWAVE_INSTALL_DIR",
+      "STM32CUBEMX_PATH",
+      "SYSTEMDRIVE",
+      "TERM",
+      "TERM_PROGRAM",
+      "TERM_PROGRAM_VERSION",
+      "USERDOMAIN",
+      "USERDOMAIN_ROAMINGPROFILE",
+      "USERNAME",
+      "VSCODE_DEBUGPY_ADAPTER_ENDPOINTS",
+      "VSCODE_GIT_ASKPASS_EXTRA_ARGS",
+      "VSCODE_GIT_ASKPASS_MAIN",
+      "VSCODE_GIT_ASKPASS_NODE",
+      "VSCODE_GIT_IPC_HANDLE",
+      "VSCODE_INJECTION",
+      "VSCODE_PYTHON_AUTOACTIVATE_GUARD",
+      "WSLENV",
+      "ZES_ENABLE_SYSMAN",
+      "_"
+    ],
+    "enabled": true,
+    "profile_id": "profile-mcp",
+    "provider_needs": [
+      "CLAUDE_CONFIG_DIR",
+      "HOME"
+    ],
+    "workflow_grants": []
+  },
+  "cleanup": {
+    "boundary_cleanup": null,
+    "boundary_complete": true,
+    "boundary_errors": [],
+    "cleanup_confirmed": true,
+    "codex_pid": 7008,
+    "errors": [],
+    "exit_code": 0,
+    "expected_created_utc": "2026-08-20T16:27:00.233003Z",
+    "final_reap": true,
+    "identity_uncertain": false,
+    "identity_verified": true,
+    "kill_attempted": false,
+    "owned_boundary_empty": true,
+    "pid": 7008,
+    "provider_pid": 7008,
+    "reaped_after": "already_exited",
+    "schema": "orchestrator-process-cleanup/v1",
+    "stages": [
+      "ALREADY_EXITED",
+      "FINAL_REAP"
+    ],
+    "status": "REAPED",
+    "terminate_attempted": false
+  },
+  "codex_created_utc": "2026-08-20T16:27:00.233003Z",
+  "codex_pid": 7008,
+  "codex_started_utc": "2026-08-20T16:27:00.233003Z",
+  "cohort_id": "cohort-mcp",
+  "completion_review_owner": "ROOT-IM",
+  "controller_created_utc": "2026-08-20T16:26:56.984596Z",
+  "controller_pid": 25520,
+  "controller_started_utc": "2026-08-20T16:26:56.984596Z",
+  "declared_lane_id": "mcp",
+  "direct_child_reaped": true,
+  "doer": "implementer",
+  "ended_utc": "2026-08-20T16:27:12.122387Z",
+  "exclusive_resources": [],
+  "exit_code": 0,
+  "held_resource_claims": [],
+  "helpers_complete": true,
+  "invocation_schema": "orchestrator-worker-invocation/v1",
+  "jsonl_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp\\.agent-workspace\\worker_claude.jsonl",
+  "lane_id": "mcp",
+  "last_message_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp\\.agent-workspace\\worker_last_message.txt",
+  "launcher_settings": {
+    "action": "start",
+    "approval_policy": "never",
+    "approvals_reviewer": null,
+    "argv": [
+      "C:\\Users\\Jason\\.local\\bin\\claude.EXE",
+      "--print",
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--model",
+      "deepseek-v4-flash:0731-cloud",
+      "--permission-mode",
+      "bypassPermissions",
+      "--allowedTools",
+      "Read",
+      "--allowedTools",
+      "Bash",
+      "--allowedTools",
+      "mcp__marker__record_marker",
+      "--mcp-config",
+      "{\"mcpServers\":{\"marker\":{\"args\":[\"C:\\\\Users\\\\Jason\\\\Documents\\\\Jason\\\\Orchestrator_Harness\\\\harness-single-worktrees\\\\compat-test\\\\scratch\\\\3D_mcp\\\\mcp_marker_server.py\"],\"command\":\"C:\\\\Users\\\\Jason\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe\",\"env\":{\"MCP_MARKER_PATH\":\"C:\\\\Users\\\\Jason\\\\Documents\\\\Jason\\\\Orchestrator_Harness\\\\harness-single-worktrees\\\\compat-test\\\\scratch\\\\3D_mcp\\\\run1\\\\mcp_marker.txt\"}}}}"
+    ],
+    "configuration_digest": "34a9b28dc0e2dec379a54cf38e30ca096720d0c4c17fc9c82c85e0096f58dd48",
+    "ephemeral": false,
+    "jsonl": true,
+    "model": "deepseek-v4-flash:0731-cloud",
+    "model_reasoning_effort": "medium",
+    "provider_id": "claude-code",
+    "sandbox": "workspace-write",
+    "service_tier": "priority"
+  },
+  "leases": [],
+  "lifecycle_registry_generation": "f6525ab3f2c24e0b81298218c4dbd354",
+  "lifecycle_registry_path": "canonical-common-git-coordinate",
+  "lifecycle_retained_ref": "refs/heads/lane/mcp",
+  "lifecycle_target_revision": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+  "mcp_servers": [],
+  "overlay_receipt": null,
+  "owned_boundary_empty": true,
+  "owned_helpers": [
+    {
+      "identity": {
+        "created_utc": "2026-08-20T16:27:00.954905Z",
+        "pid": 16580
+      },
+      "name": "helper-16580"
+    },
+    {
+      "identity": {
+        "created_utc": "2026-08-20T16:27:02.311934Z",
+        "pid": 18460
+      },
+      "name": "helper-18460"
+    }
+  ],
+  "phase": "implementation",
+  "policy_path": null,
+  "policy_sha256": null,
+  "process_boundary": {
+    "cleanup": "boundary-empty",
+    "complete": true,
+    "errors": [],
+    "group_id": null,
+    "identity": "job:23c",
+    "inventory_source": "job-object+CIM",
+    "kind": "windows-job",
+    "live_members": [],
+    "members": [
+      {
+        "created_utc": "2026-08-20T16:27:02.303834Z",
+        "name": "git.exe",
+        "pid": 6008
+      },
+      {
+        "created_utc": "2026-08-20T16:27:00.233003Z",
+        "name": "claude.exe",
+        "pid": 7008
+      },
+      {
+        "created_utc": "2026-08-20T16:27:00.954905Z",
+        "name": "conhost.exe",
+        "pid": 16580
+      },
+      {
+        "created_utc": "2026-08-20T16:27:02.311934Z",
+        "name": "conhost.exe",
+        "pid": 18460
+      }
+    ],
+    "root_pid": 7008,
+    "schema": "orchestrator-process-boundary/v1",
+    "session_id": null
+  },
+  "profile": {
+    "capabilities": [
+      "repo"
+    ],
+    "id": "profile-mcp",
+    "model": "deepseek-v4-flash:0731-cloud",
+    "provider": "claude-code",
+    "provider_needs": [
+      "CLAUDE_CONFIG_DIR",
+      "HOME"
+    ],
+    "resources": [],
+    "role": "implementer",
+    "schema": "orchestrator-runtime-profile/v1",
+    "tools": [
+      "Read",
+      "Bash",
+      "mcp__marker__record_marker"
+    ],
+    "workflow_grants": []
+  },
+  "prompt_bundle": {
+    "bundle_sha256": "82fadb256f02072d7618c729470a28c65aec5d4ef373d2815f27e6c2e0ed6d06",
+    "components": [
+      {
+        "id": "instructions",
+        "ordinal": 0,
+        "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp\\.agent-workspace\\worker-prompt.md",
+        "sha256": "4fbe7aa6ae5fb3ab8f5b1a70329147b089458826926474b1d3efa60ef2482c19",
+        "size": 249
+      }
+    ],
+    "final_sha256": "4fbe7aa6ae5fb3ab8f5b1a70329147b089458826926474b1d3efa60ef2482c19",
+    "final_size": 249,
+    "profile_id": "profile-mcp",
+    "schema": "orchestrator-prompt-bundle/v1",
+    "task_card_id": "card-mcp",
+    "version": 1,
+    "workflow_id": "mcp"
+  },
+  "prompt_bundle_sha256": "82fadb256f02072d7618c729470a28c65aec5d4ef373d2815f27e6c2e0ed6d06",
+  "prompt_content_sha256": "4fbe7aa6ae5fb3ab8f5b1a70329147b089458826926474b1d3efa60ef2482c19",
+  "prompt_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp\\.agent-workspace\\worker-prompt.md",
+  "prompt_sha256": "4fbe7aa6ae5fb3ab8f5b1a70329147b089458826926474b1d3efa60ef2482c19",
+  "provider_created_utc": "2026-08-20T16:27:00.233003Z",
+  "provider_evidence": {
+    "adapter_version": "claude-code-v1",
+    "attempt_identity": "mcp-001",
+    "capabilities": {
+      "configuration": true,
+      "event_result": true,
+      "launch": true,
+      "notification": false,
+      "permission": true,
+      "prompt": true,
+      "resume": true,
+      "session": true
+    },
+    "command_provenance": [
+      "C:\\Users\\Jason\\.local\\bin\\claude.EXE",
+      "--print",
+      "--output-format",
+      "stream-json",
+      "--verbose",
+      "--model",
+      "deepseek-v4-flash:0731-cloud",
+      "--permission-mode",
+      "bypassPermissions",
+      "--allowedTools",
+      "Read",
+      "--allowedTools",
+      "Bash",
+      "--allowedTools",
+      "mcp__marker__record_marker",
+      "--mcp-config",
+      "{\"mcpServers\":{\"marker\":{\"args\":[\"C:\\\\Users\\\\Jason\\\\Documents\\\\Jason\\\\Orchestrator_Harness\\\\harness-single-worktrees\\\\compat-test\\\\scratch\\\\3D_mcp\\\\mcp_marker_server.py\"],\"command\":\"C:\\\\Users\\\\Jason\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe\",\"env\":{\"MCP_MARKER_PATH\":\"C:\\\\Users\\\\Jason\\\\Documents\\\\Jason\\\\Orchestrator_Harness\\\\harness-single-worktrees\\\\compat-test\\\\scratch\\\\3D_mcp\\\\run1\\\\mcp_marker.txt\"}}}}"
+    ],
+    "configuration_digest": "34a9b28dc0e2dec379a54cf38e30ca096720d0c4c17fc9c82c85e0096f58dd48",
+    "provider_id": "claude-code",
+    "schema": "orchestrator-provider-adapter/v1",
+    "session_id": "89009abf-5b25-42d1-8632-c036e8f7cf61"
+  },
+  "provider_handoff": null,
+  "provider_id": "claude-code",
+  "provider_operation_results": [
+    {
+      "actionable": "operation is supported by the selected adapter",
+      "operation": "launch",
+      "provider_id": "claude-code",
+      "reason": "declared capability",
+      "required_action": "",
+      "required_actor": "",
+      "schema": "orchestrator-provider-adapter/v1",
+      "supported": true
+    },
+    {
+      "actionable": "operation is supported by the selected adapter",
+      "operation": "prompt",
+      "provider_id": "claude-code",
+      "reason": "declared capability",
+      "required_action": "",
+      "required_actor": "",
+      "schema": "orchestrator-provider-adapter/v1",
+      "supported": true
+    },
+    {
+      "actionable": "operation is supported by the selected adapter",
+      "operation": "event_result",
+      "provider_id": "claude-code",
+      "reason": "declared capability",
+      "required_action": "",
+      "required_actor": "",
+      "schema": "orchestrator-provider-adapter/v1",
+      "supported": true
+    },
+    {
+      "actionable": "operation is supported by the selected adapter",
+      "operation": "session",
+      "provider_id": "claude-code",
+      "reason": "declared capability",
+      "required_action": "",
+      "required_actor": "",
+      "schema": "orchestrator-provider-adapter/v1",
+      "supported": true
+    },
+    {
+      "actionable": "operation is supported by the selected adapter",
+      "operation": "permission",
+      "provider_id": "claude-code",
+      "reason": "declared capability",
+      "required_action": "",
+      "required_actor": "",
+      "schema": "orchestrator-provider-adapter/v1",
+      "supported": true
+    },
+    {
+      "actionable": "operation is supported by the selected adapter",
+      "operation": "configuration",
+      "provider_id": "claude-code",
+      "reason": "declared capability",
+      "required_action": "",
+      "required_actor": "",
+      "schema": "orchestrator-provider-adapter/v1",
+      "supported": true
+    }
+  ],
+  "provider_pid": 7008,
+  "provider_resume_decision": null,
+  "provider_session_id": "89009abf-5b25-42d1-8632-c036e8f7cf61",
+  "provider_started_utc": "2026-08-20T16:27:00.233003Z",
+  "provider_terminal_outcome": "COMPLETED",
+  "repository": {
+    "base_commit": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+    "branch": "lane/mcp",
+    "common_dir": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\project\\.git",
+    "expected_head": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+    "starting_commit": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+    "starting_head": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+    "worktree_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp"
+  },
+  "repository_common_dir": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\project\\.git",
+  "resource_claim_findings": [],
+  "resource_claim_release_safe": true,
+  "resource_lock_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\runtime\\canonical-resource-locks",
+  "resources": [],
+  "result_valid": true,
+  "result_validation": {
+    "acceptance_state": "PENDING",
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp\\.agent-workspace\\RESULT.json",
+    "state": "MISSING"
+  },
+  "resume_admission": {
+    "authority": "controller-admitted-canonical-coordinate",
+    "boundary": {
+      "cleanup": null,
+      "complete": false,
+      "errors": [
+        "controller process boundary has not been established"
+      ],
+      "group_id": null,
+      "identity": null,
+      "inventory_source": "controller",
+      "kind": "unsupported",
+      "live_members": [],
+      "members": [],
+      "root_pid": null,
+      "schema": "orchestrator-process-boundary/v1",
+      "session_id": null
+    },
+    "coordinate": {
+      "branch": "lane/mcp",
+      "common_dir": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\project\\.git",
+      "common_dir_identity": [
+        4918652726668201970,
+        15762598697146140
+      ],
+      "coordinate_hash": "e5f2aa1e5c42c2918a2e90247dd160445c6d5eda4736485c8394c9bfd0e73cf6",
+      "lane_id": "mcp",
+      "worktree_identity": [
+        4918652726668201970,
+        4503599628813393
+      ],
+      "worktree_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp"
+    },
+    "identities": {
+      "controller": {
+        "created_utc": "2026-08-20T16:26:56.984596Z",
+        "pid": 25520
+      },
+      "helpers": [],
+      "worker": null
+    },
+    "lifecycle": {
+      "complete": false,
+      "helpers_complete": false,
+      "state": "LAUNCH_FAILED"
+    },
+    "record_sha256": "0c1a28a8d525e23bc47cd0f00213b57102905b6aa40a1723d010984f6492966d",
+    "record_version": 1,
+    "repository": {
+      "branch": "lane/mcp",
+      "common_dir": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\project\\.git",
+      "expected_head": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+      "retained_ref": "refs/heads/lane/mcp",
+      "starting_head": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+      "target_revision": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+      "worktree_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp"
+    },
+    "run": {
+      "generation": "f6525ab3f2c24e0b81298218c4dbd354",
+      "invocation_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp\\.agent-workspace\\invocation.json",
+      "invocation_schema": "orchestrator-worker-invocation/v1",
+      "invocation_sha256": "8702aa163529bb494a144e6b92f955988c266969b02b38e45b3b659efdfaf4c1",
+      "lane_id": "mcp",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp",
+      "status_identity": {
+        "generation": null,
+        "lane_id": null,
+        "schema": null,
+        "state": null,
+        "worker_invocation_id": null
+      },
+      "status_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp\\.agent-workspace\\worker_controller.status.json",
+      "status_sha256": null,
+      "worker_invocation_id": "mcp-001"
+    },
+    "schema": "orchestrator-lifecycle-registry/v1"
+  },
+  "resume_identity": {
+    "cohort_id": "cohort-mcp",
+    "lane_id": "mcp",
+    "live_identity": {
+      "provider_id": "claude-code",
+      "session_id": "89009abf-5b25-42d1-8632-c036e8f7cf61"
+    },
+    "prompt_bundle_sha256": "82fadb256f02072d7618c729470a28c65aec5d4ef373d2815f27e6c2e0ed6d06",
+    "prompt_content_sha256": "4fbe7aa6ae5fb3ab8f5b1a70329147b089458826926474b1d3efa60ef2482c19",
+    "provider_id": "claude-code",
+    "provider_launch_sha256": "af6580b6cf0cd058d67599d4eb8236413ca8c81625be2af0ff5641519069982c",
+    "repository": {
+      "base_commit": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+      "branch": "lane/mcp",
+      "common_dir": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\project\\.git",
+      "expected_head": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+      "starting_commit": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+      "starting_head": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+      "worktree_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp"
+    },
+    "resources": [],
+    "schema": "orchestrator-worker-invocation/v1",
+    "session_id": "89009abf-5b25-42d1-8632-c036e8f7cf61",
+    "task_card_id": "card-mcp",
+    "task_card_revision": "r1",
+    "task_card_sha256": "b6452b3ad8557472b84f8c1f335c4407ace3816897139db295f37b9eead0e18f",
+    "terminal_acceptance_state": "PENDING",
+    "worker_invocation_id": "mcp-001",
+    "workflow_id": "mcp",
+    "workflow_version": "1"
+  },
+  "schema": "orchestrator-lane-controller/v1",
+  "server_snapshot": {},
+  "session_id": "89009abf-5b25-42d1-8632-c036e8f7cf61",
+  "started_utc": "2026-08-20T16:26:59.862393Z",
+  "starting_commit": "ff68f077ac2ba3b5a49866cf87e02a48d7f103f4",
+  "state": "PROVIDER_EXITED",
+  "stderr_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp\\.agent-workspace\\worker_claude.stderr.log",
+  "task": "card-mcp",
+  "task_advancement_state": "PENDING",
+  "task_card": {
+    "id": "card-mcp",
+    "revision": "r1",
+    "sha256": "b6452b3ad8557472b84f8c1f335c4407ace3816897139db295f37b9eead0e18f"
+  },
+  "terminal_acceptance_state": "PENDING",
+  "thread_id": "89009abf-5b25-42d1-8632-c036e8f7cf61",
+  "waiting_resource_claim": null,
+  "worker_invocation_id": "mcp-001",
+  "workflow": {
+    "id": "mcp",
+    "version": "1"
+  },
+  "worktree_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test\\scratch\\3D_mcp\\run1\\worktrees\\lane-mcp"
+}

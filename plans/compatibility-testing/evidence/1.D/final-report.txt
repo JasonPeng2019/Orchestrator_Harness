@@ -1,0 +1,46 @@
+Everything is green, evidence is in place, and findings are recorded. Here is the final report.
+
+---
+
+## Final Report — Phase 1 / Area 1.D: Git safety & result-merge validation (detection-only)
+
+### Feature-by-feature results
+
+| Feature | Result | What differed (if any) |
+|---|---|---|
+| **E4** repository-identity-must-be-reported | **PASS** | missing `common_dir` / absent repository object → `GitSafetyError`; a non-git worktree cannot report identity → error |
+| **E5** detached-HEAD rejection | **PASS** | `git checkout --detach` → `"coding worktree must have an attached branch"` from `inspect_repository` and `validate_coding_result` |
+| **E6** commit-identity format validation | **PASS** | non-hex `base_commit`/`commit` rejected; a well-formed 40-hex id naming no commit is also rejected on inspection |
+| **E7** duplicate active worktree/branch | **PASS** | two live statuses declaring the same branch/worktree → two `"worktree+branch already ACTIVE in …"` conflicts; a linked worktree on its own branch is not flagged |
+| **E14** coding-result root-shape + schema | **PASS** | extra root key → `"invalid root shape"`; wrong schema → `"must be orchestrator-lane-result/v1"` |
+| **E15** lane_id / branch / outcome cross-match | **PASS** | mismatched `lane_id`, `worker_invocation_id`, `branch`, and `outcome` enum each rejected |
+| **E16** per-check shape + outcome enum | **PASS** | check without `name`/`command` → `"requires name or command"`; bad outcome, extra key, non-list `checks` each rejected; empty `checks` accepted |
+| **E17** commit-must-equal-branch-tip | **PASS** | dirty tree → `"clean project worktree"`; stale (non-tip) commit → `"does not equal the current branch tip"` |
+| **E18** `CODING_RESULT_INVALID` evidence + clearing | **PASS** | invalid result → `invalid_result` dict (`state=INVALID`, `code=CODING_RESULT_INVALID`) + `ObservationError`; corrected result → `invalid_result` cleared |
+| **E19** operational-state gate | **FINDING** | the RUNNING_CODEX/RUNNING_PROVIDER gate (`git_safety.py:370-373`) exists but only governs conflict-detection *consideration*; discovery-level result acceptance does **not** reject a valid result offered under `PROVIDER_EXITED` (`discovery.py:844-895`) — see F1D-E19-1 |
+| **E20** too-many-JSON-candidates ambiguity | **FINDING** | no ">1 candidate result JSON" ambiguity rejection exists: `RESULT.json` is the single canonical result path and a second result-shaped JSON is silently ignored; the only bound is `>256` status candidates in `active_declaration_conflicts` (`git_safety.py:415-416`) — see F1D-E20-1 |
+
+**Findings: 2** (both `note` severity, both recorded in `evidence/FINDINGS.md`):
+- **F1D-E19-1** — a result offered while the controller status state is `EXITED`/`PROVIDER_EXITED` is still accepted by `discover_run`; the operational-state gate does not gate result acceptance. Documented in green tests `test_e19_operational_state_gate` (gate as it exists) and `test_e19_result_offered_under_exited_state_is_still_accepted` (actual acceptance).
+- **F1D-E20-1** — two result JSONs under the workspace do not trigger ambiguity rejection; `RESULT.json` wins deterministically and `SECOND-RESULT.json` is ignored. Documented in `test_e20_two_result_candidates_select_resolved_result_json` and `test_e20_too_many_json_candidates_bound`.
+
+### Commands run
+```bash
+cd "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/harness-single-worktrees/compat-test"
+PYTHONPATH="$PWD:$PWD/.." python -m unittest orchestrator_harness.tests.test_compat_git_safety -v   # 13 tests, 9.997s, OK
+PYTHONPATH="$PWD:$PWD/.." python -m unittest orchestrator_harness.tests.test_git_results -v         # 9 tests, 8.039s, OK
+```
+
+### Test tally
+- New module `test_compat_git_safety.py`: **13 run, 13 passed, 0 failed, 0 errors** (one method per feature E4–E7/E14–E20; E19 and E20 each get a gate/bound test plus a discovery-behavior test).
+- `test_git_results` regression: **9 run, 9 passed, 0 failed** — shared git fixtures undisturbed.
+
+### Evidence left behind
+- `plans/compatibility-testing/evidence/1.D/test-run.log` — full `-v` output of the new module.
+- `plans/compatibility-testing/evidence/1.D/gitresults-regression.log` — full `-v` output of the regression.
+- `plans/compatibility-testing/evidence/FINDINGS.md` — appended F1D-E19-1 and F1D-E20-1 detail sections.
+
+### Scope compliance
+- Only `orchestrator_harness/tests/test_compat_git_safety.py` (new) and the evidence dir were written; `git status` confirms no harness source module was touched.
+- No `claude`/provider subprocess launched; real disposable `git init` worktrees + fabricated `orchestrator-lane-result/v1` records only.
+- No "fix to green": the two plan divergences are documented as green tests asserting actual behavior and recorded as findings.

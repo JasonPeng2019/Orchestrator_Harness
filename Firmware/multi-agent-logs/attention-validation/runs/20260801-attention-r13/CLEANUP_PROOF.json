@@ -1,0 +1,74 @@
+﻿[
+    {
+        "pid":  11116,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:09:53.3004900Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  176340,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:09:53.3474894Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  178768,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:09:53.4075283Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  185148,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:09:53.4614881Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  189616,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:09:53.5104861Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  189672,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:09:53.5434861Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  191748,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:09:53.5784864Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  191948,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:09:53.6204862Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  194588,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:09:53.6614863Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  195160,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:09:53.6944863Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  195252,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:09:53.7314864Z",
+        "state":  "ABSENT"
+    },
+    {
+        "pid":  196184,
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T21:09:53.7724861Z",
+        "state":  "ABSENT"
+    }
+]

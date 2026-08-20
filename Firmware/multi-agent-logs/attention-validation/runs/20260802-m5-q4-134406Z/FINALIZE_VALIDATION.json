@@ -1,0 +1,5 @@
+{
+  "status": "FAIL",
+  "records": 222,
+  "error": "AttentionSprintError: blocking gate sig-20260802-m5-q4-134406Z-delta-a26-gate-001 lacks receipt/resume or terminal expiration"
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "m5-quiet-control/v1",
+  "epoch": "20260802-m5-s1d-065143Z",
+  "timeout_seconds": 15,
+  "returncode": 3,
+  "type": "WATCH_TIMEOUT",
+  "wake_id": null,
+  "valid": true
+}

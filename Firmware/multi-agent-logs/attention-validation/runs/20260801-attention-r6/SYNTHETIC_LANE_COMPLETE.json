@@ -1,0 +1,14 @@
+{
+  "signal_id": "sig-20260801-attention-r6-synthetic-atlas-001",
+  "response": {
+    "schema": "suite-manager-response/v1",
+    "event_id": "sig-20260801-attention-r6-synthetic-atlas-001",
+    "signal_id": "sig-20260801-attention-r6-synthetic-atlas-001",
+    "lane_id": "20260801-attention-r6:Atlas:A22",
+    "decision": "CONTINUE",
+    "summary": "R6 host-only readiness response; record receipt/resume.",
+    "created_utc": "2026-08-01T18:11:33.544743+00:00",
+    "manager_session_id": "019fbbc1-63ba-7140-ab1d-46bf412596e9"
+  },
+  "completed_utc": "2026-08-01T18:11:34.060742+00:00"
+}

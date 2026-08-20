@@ -1,0 +1,5 @@
+ERROR: FAST_LANE_V2 requires policy text for 'motivating test'
+ERROR: GATE-FIRMWARE-ADMISSION OPERATION_BOUNDARY blocking scope must say it holds only the exact operation and never product work/credit
+ERROR: GATE-FIRMWARE-ADMISSION OPERATION_BOUNDARY continuation must explicitly say 'No product loop'
+ERROR: GATE-FIRMWARE-RESULT PRODUCT decided outcome must name observable behavior, contract, capability, correctness, satisfaction, agreement, or proof; a pure required operation belongs to OPERATION_BOUNDARY
+ERROR: GATE-FIRMWARE-RESULT PRODUCT continuation eligibility must say that only a failed/undecidable required product criterion permits continuation

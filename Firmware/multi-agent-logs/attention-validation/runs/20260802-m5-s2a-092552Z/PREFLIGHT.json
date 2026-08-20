@@ -1,0 +1,17 @@
+﻿{
+    "schema":  "m5-preflight/v1",
+    "epoch":  "20260802-m5-s2a-092552Z",
+    "created_utc":  "2026-08-02T09:25:52.916112Z",
+    "root_manager":  {
+                         "session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+                         "pid":  192592
+                     },
+    "qualifying_count_before":  1,
+    "python_fingerprint":  "73b4b08196d68165754ed15b13d1bd8451c66b778c9f68f206bde6dda4449bfe",
+    "matches_comparable_set":  true,
+    "git_status":  "?? .agent-workspace/\n?? .codex/\n?? AGENTS.md\n?? BYO-Firmware-MCP/\n?? BYO_FIRMWARE_MCP_END_TO_END_EXPERIMENTS.md\n?? HANDOFF.md\n?? PLAN.md\n?? REPOSITORY_LAYOUT.md\n?? active-working-spec/\n?? \"archive docs/\"\n?? fresh-experiments/\n?? goal.md\n?? harness_common/\n?? harness_watcher.md\n?? harness_watcher/\n?? harness_watcher_implementation/\n?? multi-agent-logs/\n?? orchestrator_harness/\n?? scripts/\n?? \"theory docs/\"\n",
+    "autonomy_policy_sha256":  "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68",
+    "safe_start_evidence":  "multi-agent-logs/current-state/CURRENT_RELEVANT_PROCESS_INVENTORY.json",
+    "forbidden_assistance_declared":  true,
+    "watcher_evaluator_enabled":  false
+}

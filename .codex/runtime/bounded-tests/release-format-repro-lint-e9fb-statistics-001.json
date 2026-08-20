@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "\u0026 \u0027C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev/.venv/Scripts/python.exe\u0027 -m ruff check --select E9,F,B . --statistics",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-release-format-repro-001",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Focused Ruff rule-count inspection over the same local tree normally completes in seconds.",
+    "started_at":  "2026-08-14T19:40:16.2805696+00:00",
+    "finished_at":  "2026-08-14T19:40:18.1445754+00:00",
+    "elapsed_seconds":  1.864,
+    "root_process_id":  198428,
+    "observed_process_ids":  [
+                                 198428
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-format-repro-lint-e9fb-statistics-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-format-repro-lint-e9fb-statistics-001.stderr.log"
+}

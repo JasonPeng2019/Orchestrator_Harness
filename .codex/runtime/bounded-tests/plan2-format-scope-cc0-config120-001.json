@@ -1,0 +1,24 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "\u0026 C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe -m ruff format --check --config C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\pyproject.toml .",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Prior repository-wide Ruff format checks completed within 19 seconds; 30 seconds preserves measured headroom.",
+    "started_at":  "2026-08-14T18:30:11.8548784+00:00",
+    "finished_at":  "2026-08-14T18:30:21.4269062+00:00",
+    "elapsed_seconds":  9.572,
+    "root_process_id":  4324,
+    "observed_process_ids":  [
+                                 4324,
+                                 15584,
+                                 189892
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  2,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-format-scope-cc0-config120-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-format-scope-cc0-config120-001.stderr.log"
+}

@@ -1,3 +1,8 @@
+# Applied by Codex only when a new root session begins in this repository.
+# Worker-specific limits remain in the versioned launch-profile registry.
+model_auto_compact_token_limit = 280000
+model_auto_compact_token_limit_scope = "total"
+
 [features]
 hooks = true
 
@@ -22,5 +27,5 @@ path = "skills/worktree"
 enabled = true
 
 [[skills.config]]
-path = "skills/plan-harness-workflow"
+path = "skills/design-project-topology"
 enabled = true

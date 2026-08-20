@@ -1,0 +1,7 @@
+﻿{
+    "start_utc":  "2026-08-02T09:26:59.9082109Z",
+    "finish_utc":  "2026-08-02T09:27:10.8148636Z",
+    "exit_code":  3,
+    "stdout":  "{\"data\":{\"timeout_seconds\":8.0},\"event_id\":\"WATCH_TIMEOUT\",\"identity\":\"watch:timeout\",\"observed_utc\":\"2026-08-02T09:27:09.380090+00:00\",\"severity\":\"info\",\"type\":\"WATCH_TIMEOUT\"}",
+    "expected":  "timeout/no-actionable"
+}

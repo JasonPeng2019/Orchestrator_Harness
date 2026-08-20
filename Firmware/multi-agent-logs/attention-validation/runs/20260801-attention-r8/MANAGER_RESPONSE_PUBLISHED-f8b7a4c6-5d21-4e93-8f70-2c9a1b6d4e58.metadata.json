@@ -1,0 +1,8 @@
+{
+  "manager_session_id": "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+  "manager_invocation_id": "root-attention-r8-001",
+  "source_record_id": "02989f23-5118-413f-a037-2ba962f0b3c8",
+  "manager_state": "REASONING",
+  "decision": "CONTINUE_HOST_ONLY",
+  "response_path": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\manager-responses\\f8b7a4c6-5d21-4e93-8f70-2c9a1b6d4e58.json"
+}

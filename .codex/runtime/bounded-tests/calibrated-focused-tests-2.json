@@ -1,0 +1,32 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python -m pytest -q .codex/tests/test_bounded_test_supervisor.py .codex/tests/test_hooks.py .codex/tests/test_stable_runner.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  110,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  20,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The immediately preceding focused run completed in 40 seconds including the deliberate timeout case; 90 seconds is a conservative upper bound and 20 seconds is within its cleanup cap.",
+    "started_at":  "2026-08-13T23:33:48.6605010+00:00",
+    "finished_at":  "2026-08-13T23:34:29.8636237+00:00",
+    "elapsed_seconds":  41.203,
+    "root_process_id":  183944,
+    "observed_process_ids":  [
+                                 11268,
+                                 164440,
+                                 167256,
+                                 181940,
+                                 182308,
+                                 183944,
+                                 184396,
+                                 186636,
+                                 187636,
+                                 192684,
+                                 194056
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\calibrated-focused-tests-2.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\calibrated-focused-tests-2.stderr.log"
+}

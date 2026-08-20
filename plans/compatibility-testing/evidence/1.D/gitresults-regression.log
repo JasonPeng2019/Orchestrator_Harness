@@ -1,0 +1,14 @@
+test_discovery_exact_binding_invalid_evidence_and_corrected_clearing (orchestrator_harness.tests.test_git_results.DiscoveryCodingResultTests.test_discovery_exact_binding_invalid_evidence_and_corrected_clearing) ... ok
+test_firmware_result_is_rejected_by_coding_lane_but_firmware_is_unaffected (orchestrator_harness.tests.test_git_results.DiscoveryCodingResultTests.test_firmware_result_is_rejected_by_coding_lane_but_firmware_is_unaffected) ... ok
+test_active_conflicts_accept_arbitrary_status_name_and_ignore_exited (orchestrator_harness.tests.test_git_results.GitResultTests.test_active_conflicts_accept_arbitrary_status_name_and_ignore_exited) ... ok
+test_git_environment_is_sanitized (orchestrator_harness.tests.test_git_results.GitResultTests.test_git_environment_is_sanitized) ... ok
+test_invalid_evidence_is_bounded (orchestrator_harness.tests.test_git_results.GitResultTests.test_invalid_evidence_is_bounded) ... ok
+test_ordinary_clone_and_linked_worktree_identity (orchestrator_harness.tests.test_git_results.GitResultTests.test_ordinary_clone_and_linked_worktree_identity) ... ok
+test_repository_declaration_rejects_non_git_detached_wrong_branch_and_missing_base (orchestrator_harness.tests.test_git_results.GitResultTests.test_repository_declaration_rejects_non_git_detached_wrong_branch_and_missing_base) ... ok
+test_result_matrix_valid_identity_dirty_and_shape_checks (orchestrator_harness.tests.test_git_results.GitResultTests.test_result_matrix_valid_identity_dirty_and_shape_checks) ... ok
+test_windows_path_comparison_normalizes_case (orchestrator_harness.tests.test_git_results.GitResultTests.test_windows_path_comparison_normalizes_case) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 8.039s
+
+OK

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/skills/design-project-topology/scripts/validate_execution_plan.py --self-test",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Topology validator self-test historically completes in about one second; 20 seconds covers uv startup and filesystem variance.",
+    "started_at":  "2026-08-14T03:08:07.2005346+00:00",
+    "finished_at":  "2026-08-14T03:08:09.1643077+00:00",
+    "elapsed_seconds":  1.964,
+    "root_process_id":  187008,
+    "observed_process_ids":  [
+                                 187008
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\verification\\skill-id-policy-validator-self-test-20260814T0316Z.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\verification\\skill-id-policy-validator-self-test-20260814T0316Z.stderr.log"
+}

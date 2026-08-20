@@ -1,0 +1,22 @@
+{
+  "schema": "phase4-current-results/v2",
+  "validated_utc": "2026-08-02T14:44:26.174201Z",
+  "surface": "m5-q5-temporary-signal-repaired",
+  "verdict": "READY",
+  "harness_tests": {
+    "passed": 208,
+    "skipped": 1,
+    "subtests_passed": 15
+  },
+  "watcher_tests": {
+    "passed": 95,
+    "subtests_passed": 27
+  },
+  "attention_practical": "PASS",
+  "luna_authored_smoke": "TEMP_SIGNAL_DISCOVERY_PASS",
+  "autonomy_audit": "UNCHANGED_POLICY",
+  "compileall": "PASS",
+  "python_file_count": 68,
+  "runtime_policy_sha256": "89bb18cb67282fe4e71c198d9a3b4a279c6cb1412710a98b9a0a720316ec0f04",
+  "python_baseline_file_sha256": "139bfdff4132e5cc7a9c58cd03c884046d4e88652b246ed9d3265a13c4d60577"
+}

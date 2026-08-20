@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "bash Firmware/.codex/skills/change-loop/scripts/run_loop.sh --self-check",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  62,
+    "expected_upper_bound_seconds":  50,
+    "cleanup_allowance_seconds":  12,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "change-loop host-only self-check; 50-second upper bound based on prior 5-second runs",
+    "started_at":  "2026-08-14T12:04:23.2536498+00:00",
+    "finished_at":  "2026-08-14T12:04:27.7155842+00:00",
+    "elapsed_seconds":  4.462,
+    "root_process_id":  18032,
+    "observed_process_ids":  [
+                                 18032
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\change-loop-provider-boundary-selfcheck-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\change-loop-provider-boundary-selfcheck-20260814.stderr.log"
+}

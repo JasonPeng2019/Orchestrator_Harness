@@ -1,0 +1,15 @@
+{
+    "schema":  "canary-optional-watcher-owner/v1",
+    "owner":  {
+                  "created_utc":  "2026-08-02T02:21:55.7400123Z",
+                  "pid":  193452
+              },
+    "config":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\m5-managed-consumer-luna\\watcher-config-final.json",
+    "started_utc":  "2026-08-02T02:21:56.5070876Z",
+    "watcher":  {
+                    "created_utc":  "windows-filetime:134301109167970785",
+                    "pid":  186952
+                },
+    "exit_reason":  "stop-file",
+    "ended_utc":  "2026-08-02T02:24:15.2373759Z"
+}

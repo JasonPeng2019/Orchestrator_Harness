@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -c \"import sys,json; sys.path.insert(0, \u0027Firmware/target-harness\u0027); from pathlib import Path; from orchestrator_harness.prompt_bundle import prompt_bundle_record_from_paths; p=Path(\u0027Firmware/target-harness\u0027).resolve(); print(json.dumps(prompt_bundle_record_from_paths(workflow_id=\u0027firmware-qwen-adapter-smoke\u0027, task_card_id=\u0027CARD-QWEN-ADAPTER-SMOKE-001\u0027, profile_id=\u0027firmware-qwen-deepseek-high\u0027, paths=[(\u0027task\u0027, p / \u0027.agent-workspace\u0027 / \u0027QWEN_ADAPTER_SMOKE_PROMPT.md\u0027)], run_root=p), sort_keys=True))\"",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "evidence",
+    "started_at":  "2026-08-15T23:03:27.3215216+00:00",
+    "finished_at":  "2026-08-15T23:03:29.1502764+00:00",
+    "elapsed_seconds":  1.829,
+    "root_process_id":  169496,
+    "observed_process_ids":  [
+                                 169496
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\qwen-smoke-manifest-20260815-r5.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\qwen-smoke-manifest-20260815-r5.stderr.log"
+}

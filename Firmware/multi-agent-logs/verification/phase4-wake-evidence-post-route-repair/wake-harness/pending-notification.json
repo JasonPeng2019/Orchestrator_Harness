@@ -1,0 +1,60 @@
+{
+  "acknowledged_event_ids": [],
+  "deferred": [
+    {
+      "admitted_utc": "2026-08-02T03:15:24.610835Z",
+      "deadline_order": "9999-12-31T23:59:59Z",
+      "event": {
+        "data": {
+          "correlated_request_answered": false,
+          "correlated_request_id": null,
+          "correlated_request_path": null,
+          "created_utc": "2026-07-30T12:00:00Z",
+          "deadline_utc": null,
+          "evidence_paths": [],
+          "kind": "HELP",
+          "lane_id": "A00_test:Atlas:A00",
+          "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp5hjq62tb\\suite\\runs\\A00_test\\.agent-workspace\\manager-signals\\wake.json",
+          "phase": "synthetic",
+          "run_root": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp5hjq62tb\\suite\\runs\\A00_test",
+          "sha256": "259d73f3291c072b2256020a8ac7da07a3328e3d4ff109bfc5eb0aa57ac7c8b6",
+          "signal_id": "wake",
+          "summary": "wake",
+          "task": "A00"
+        },
+        "event_id": "7290463f449b1fe673eb5a410e16ce382726d7e6d28a42da985269f2e45c83a4",
+        "identity": "manager-signal:wake",
+        "severity": "info",
+        "type": "MANAGER_SIGNAL"
+      },
+      "identity": "manager-signal:wake",
+      "priority": 3
+    }
+  ],
+  "pending": {
+    "data": {
+      "correlated_request_answered": false,
+      "correlated_request_id": null,
+      "correlated_request_path": null,
+      "created_utc": "2026-07-30T12:00:00Z",
+      "deadline_utc": null,
+      "evidence_paths": [],
+      "kind": "HELP",
+      "lane_id": "A00_test:Atlas:A00",
+      "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp5hjq62tb\\suite\\runs\\A00_test\\.agent-workspace\\manager-signals\\wake.json",
+      "phase": "synthetic",
+      "run_root": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp5hjq62tb\\suite\\runs\\A00_test",
+      "sha256": "259d73f3291c072b2256020a8ac7da07a3328e3d4ff109bfc5eb0aa57ac7c8b6",
+      "signal_id": "wake",
+      "summary": "wake",
+      "task": "A00"
+    },
+    "event_id": "7290463f449b1fe673eb5a410e16ce382726d7e6d28a42da985269f2e45c83a4",
+    "identity": "manager-signal:wake",
+    "notification": "MANAGER_ACTION_REQUIRED",
+    "observed_utc": "2026-08-02T03:15:24.610835Z",
+    "severity": "info",
+    "type": "MANAGER_SIGNAL"
+  },
+  "schema": "orchestrator-manager-notification/v1"
+}

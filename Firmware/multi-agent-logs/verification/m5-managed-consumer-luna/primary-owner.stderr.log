@@ -1,0 +1,9 @@
+C:\Users\Jason\Documents\Jason\FirmCLI_Tester\Firmware-Test-Manual\MCP-Trial-3\BYO-Firmware-MCP\.venv\Scripts\python.exe: No module named orchestrator_harness
+managed harness exited before publishing runtime identity
+At C:\Users\Jason\Documents\Jason\FirmCLI_Tester\Firmware-Test-Manual\MCP-Trial-3\scripts\orchestration\primary_harness
+_owner.ps1:25 char:24
++ ... .HasExited){throw "managed harness exited before publishing runtime i ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (managed harness...untime identity:String) [], RuntimeException
+    + FullyQualifiedErrorId : managed harness exited before publishing runtime identity
+ 

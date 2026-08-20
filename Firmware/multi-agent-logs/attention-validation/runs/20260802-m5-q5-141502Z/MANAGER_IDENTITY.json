@@ -1,0 +1,10 @@
+{
+    "epoch":  "20260802-m5-q5-141502Z",
+    "manager_session_id":  "root-persistent-192592",
+    "manager_invocation_id":  "root-20260802-m5-q5-141502Z-001",
+    "root_pid":  192592,
+    "invocation_record_id":  "af290276-ec34-4b7e-a8a3-728d9c726edd",
+    "formal_baseline_record_id":  "0434ea89-516f-419c-9953-0157a9ff1441",
+    "quiet_start":  "de0a4636-8310-49f3-9fd6-3208ee882088",
+    "quiet_finish":  "20fe0cdf-a5a9-467b-9c42-ae1da47f723a"
+}

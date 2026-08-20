@@ -1,0 +1,42 @@
+All evidence is in place. Here is the final report.
+
+## Phase 2, Area 2.A — Workspace overlay edge cases (detection-only)
+
+New module: `orchestrator_harness/tests/test_compat_workspace_overlay.py` (19 test
+methods) driving the real `workspace_overlay.py` seams over fabricated
+`tempfile.TemporaryDirectory()` cache/target/receipt fixtures. No provider
+subprocess launched; no harness source module touched.
+
+| Feature | Status | What was verified |
+|---|---|---|
+| I4 / A9 independent receipt verification | **FINDING** (note, F2A-I4-1) | after a real `prepare_worktree`, `verify_overlay_receipt` returns `verified:True` WITHOUT calling restore; it catches structural/identity corruption (completed→false, wrong `expected_target_worktree_id`, wrong role, wrong schema, corrupt JSON → each `verified:False` with a reason). A corrupted *materialized worktree byte* is still `verified:True` (verify never reads worktree bytes); only `restore_worktree` detects it → `BLOCKED` / "later edit detected". Plan's I4 said corrupt-a-byte re-verify fails; reality pins both actual behaviors (see FINDINGS.md) |
+| I5 append-only plan + collision detection | **PASS** | cache file landing on an existing undocumented target path → `OverlayCollisionError` with target byte-identical to before (no partial write, no receipt, no receipt parent); declared-append path appended (not rejected); declared append to a non-UTF-8 target rejected `OverlayCollisionError` before mutation |
+| I7 reparse/regular-directory enforcement | **PASS** | cache root junction, target root junction, junction *inside* cache, junction *inside* target → all rejected (`WorkspaceOverlayError`/`OverlayCollisionError`) before any copy; junctions were available on this host so nothing was skipped |
+| I8 rollback on partial-apply failure | **PASS** | monkeypatched `workspace_overlay.mutation_replace` (counter raises `MutationError` on call 2, restored via `mock.patch` context) → `prepare_worktree` raises `WorkspaceOverlayError("…rolled back…")`; 2 prior mutations (create `a.txt`, create dir `sub`) reversed; target byte-identical to pre-apply; no receipt published |
+| I9 declaration read/validate | **PASS** | missing → `None`; non-file → error; malformed JSON / non-UTF-8 → error; wrong closed shape / wrong schema / non-list / blank `append_text` / duplicates (incl. whitespace-normalized) → error; valid → normalized dict. Documented: an escaping `../` path raises `MutationConflict` (from `safe_relative_path`), not `WorkspaceOverlayError` |
+| I10 byte encode/decode round trip | **PASS** | `_decode_bytes(_encode_bytes(b)) == b` for ASCII, `b"\xff\xfe\x00"`, embedded NULs, empty, full `bytes(range(256))`; `_decode_bytes` rejects non-str and invalid base64 with `WorkspaceOverlayError` |
+
+No fail-open divergences found: every collision/reparse/rollback/restore path
+closes as documented in the module source.
+
+### Findings (recorded in `evidence/FINDINGS.md`)
+- **F2A-I4-1** (severity: note) — `verify_overlay_receipt` (REQ-O41 prelaunch
+  check) never reads materialized worktree bytes: a corrupted byte still verifies
+  `True`; byte-integrity is enforced only at `restore_worktree` (exact
+  `post_prepare_bytes` comparison, `workspace_overlay.py:789-795`). Pinned green
+  in `test_i4_byte_corruption_blocks_restore_not_verify`.
+
+### Commands run (all from the disposable clone)
+```bash
+cd "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/harness-single-worktrees/compat-test"
+PYTHONPATH="$PWD:$PWD/.." python -m unittest orchestrator_harness.tests.test_compat_workspace_overlay -v   # → evidence/2.A/test-run.log
+PYTHONPATH="$PWD:$PWD/.." python -m unittest orchestrator_harness.tests.test_workspace_overlay -v           # → evidence/2.A/overlay-regression.log
+```
+
+### Tally
+- **New module:** 19 tests run, **19 passed, 0 failed** (`Ran 19 tests in 0.427s … OK`).
+- **Model suite regression (`test_workspace_overlay`):** 30 tests run,
+  **30 passed, 0 failed** (`Ran 30 tests in 44.186s … OK`) — no shared-fixture
+  regression.
+- No harness source file modified; the only repo change is the new test module
+  (`git status` confirms nothing else of mine touched the tree).

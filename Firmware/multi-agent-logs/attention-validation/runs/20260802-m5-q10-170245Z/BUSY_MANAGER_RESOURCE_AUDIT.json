@@ -1,0 +1,15 @@
+{
+    "activity_id":  "busy-manager-control-001",
+    "started_utc":  "2026-08-02T17:07:51.2540030Z",
+    "ended_utc":  "2026-08-02T17:08:46.5923601Z",
+    "duration_seconds":  55.338357099999996,
+    "hash_checks":  35455,
+    "paths":  [
+                  "goal.md",
+                  "PLAN.md",
+                  "HANDOFF.md",
+                  "active-working-spec/m5-three-sprint-wake-test.md",
+                  "multi-agent-logs/current-state/M5_PYTHON_BASELINE.json"
+              ],
+    "result":  "PASS"
+}

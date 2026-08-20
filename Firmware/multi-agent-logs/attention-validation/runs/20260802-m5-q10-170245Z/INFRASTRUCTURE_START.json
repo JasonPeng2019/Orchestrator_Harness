@@ -1,0 +1,37 @@
+{
+    "epoch":  "20260802-m5-q10-170245Z",
+    "started_utc":  "2026-08-02T17:03:40.8348528Z",
+    "harness_pid":  196100,
+    "harness_creation_utc":  "2026-08-02T17:03:35.4204390Z",
+    "harness_command":  "\"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\BYO-Firmware-MCP\\.venv/Scripts\\python.exe\" -m orchestrator_harness --config \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-q10-170245Z\\config.json\" watch --managed --manager-session-id \"root-persistent-192592\" --manager-invocation-id \"root-20260802-m5-q10-170245Z-001\" ",
+    "watcher_start":  {
+                          "started":  true,
+                          "pid":  184224,
+                          "owner":  {
+                                        "pid":  192592,
+                                        "created_utc":  "windows-filetime:134300974063275151"
+                                    }
+                      },
+    "watcher_status":  {
+                           "running":  true,
+                           "state":  {
+                                         "evaluator_enabled":  false,
+                                         "exit_reason":  null,
+                                         "owner":  {
+                                                       "created_utc":  "windows-filetime:134300974063275151",
+                                                       "pid":  192592
+                                                   },
+                                         "schema":  "harness-watcher-service/v1",
+                                         "started_utc":  "2026-08-02T17:03:37.810107+00:00",
+                                         "startup_status":  "READY",
+                                         "startup_token":  "9b780b53-f4ad-47ad-bb6a-1e67bcb162da",
+                                         "stop_requested":  false,
+                                         "watcher":  {
+                                                         "created_utc":  "windows-filetime:134301638178624324",
+                                                         "pid":  184224
+                                                     }
+                                     }
+                       },
+    "watcher_evaluator_enabled":  false,
+    "root_owner_pid":  192592
+}

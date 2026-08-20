@@ -1,0 +1,24 @@
+H00	none (bootstrap task)	Reproducible server-snapshot materialization
+H01	none (bootstrap task)	Handshake, discovery, strict schemas, and dynamic visibility
+H02	none (bootstrap task)	No-board, absent-board, ambiguous-board, and duplicate assignment
+H03	none (bootstrap task)	Native build and artifact collector matrix
+H04	none (bootstrap task)	Datasheet, pack, and durable-evidence correctness
+H05	none (bootstrap task)	Managed-operation and process fault injection
+S10	Atlas	Fresh STM32 setup from datasheet
+S11	Boreal	Fresh nRF setup from datasheet
+S12	Cygnus	Four-board simultaneous routing
+S13	Atlas	Returning state versus run-scoped authority
+A20	Atlas	APP-1 build, collect, flash, reset, and UART
+A21	Boreal	APP-2 dual-STM32 I2C
+A22	Atlas	APP-3 startup, low-power, watchdog, and fault debugging
+A23	Nova	APP-4 dual-nRF BLE
+A24	Cygnus	APP-5 dual-nRF CoreSX1262
+A25	Delta	APP-6 BLE-to-LoRa bridge
+A26	Delta	Cross-scheduler queue and concurrency comparison
+D30	Atlas	Symbols, memory, CPU registers, and peripheral registers
+D31	Boreal	Breakpoints, stepping, reset, under-reset, and override
+D32	Atlas	Flash and artifact guardrails
+D33	Cygnus	UART, finalizers, batch, and evidence completeness
+D34	Cygnus	Four-board concurrency and isolation
+D36	Boreal	Plans, permissions, freshness, and audit reports
+Q41	Atlas	Repetition and soak

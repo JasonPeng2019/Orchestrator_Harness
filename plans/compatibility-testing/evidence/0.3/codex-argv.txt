@@ -1,0 +1,6 @@
+# codex argv, same spec (unchanged behavior)
+# config_overrides, service_tier, approval_policy all carried via -c.
+
+=== CodexProviderAdapter.build_argv(spec) ===
+claude exec --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy="never" -m deepseek-v4-flash:0731-cloud -c model_reasoning_effort="medium" -c service_tier="standard" -c approvals_reviewer="user" -c model_provider="ollama" --json --output-last-message C:\run\.agent-workspace\last --cd C:\run -
+

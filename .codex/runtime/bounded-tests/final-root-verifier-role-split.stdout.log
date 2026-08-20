@@ -1,0 +1,329 @@
+
+== ruff ==
+All checks passed!
+
+== format ==
+unformatted: File would be reformatted
+    --> .codex\tests\test_stable_runner.py:27:20
+     |
+26   | )
+     - RUNNER_MIGRATION = (
+     -     ROOT
+     -     / "plans"
+     -     / "general-coding-harness"
+     -     / "runtime"
+     -     / "firmware-v2"
+     -     / "runner-migration"
+     - )
+27   + RUNNER_MIGRATION = ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "runner-migration"
+28   | PENDING_S2_D1 = (
+--------------------------------------------------------------------------------
+144  |         with pytest.raises(runner.RunnerError, match="commit"):
+     -             runner.validate_checkout(
+     -                 lock_path=lock_path, repository_root=base / "wrong"
+     -             )
+145  +             runner.validate_checkout(lock_path=lock_path, repository_root=base / "wrong")
+146  |
+--------------------------------------------------------------------------------
+158  |     fake = types.ModuleType("orchestrator_harness")
+     -     fake.__file__ = str(
+     -         Path(tempfile.gettempdir()) / "wrong" / "orchestrator_harness" / "__init__.py"
+     -     )
+159  +     fake.__file__ = str(Path(tempfile.gettempdir()) / "wrong" / "orchestrator_harness" / "__init__.py")
+160  |     prior = sys.modules.get("orchestrator_harness")
+161  |     sys.modules["orchestrator_harness"] = fake
+162  |     try:
+163  |         with pytest.raises(runner.RunnerError, match="conflicting preloaded import"):
+     -             runner.import_stable_module(
+     -                 "orchestrator_harness.cli", runner.validate_checkout()
+     -             )
+164  +             runner.import_stable_module("orchestrator_harness.cli", runner.validate_checkout())
+165  |     finally:
+--------------------------------------------------------------------------------
+226  |         assert {
+     -             key: projected["codex"][key]
+     -             for key in ("model", "reasoning_effort", "service_tier")
+227  +             key: projected["codex"][key] for key in ("model", "reasoning_effort", "service_tier")
+228  |         } == _model_settings("doer-main")
+--------------------------------------------------------------------------------
+234  |         }
+     -         assert (
+     -             record["projected_invocation_sha256"]
+     -             == runner.hashlib.sha256(output.read_bytes()).hexdigest()
+     -         )
+235  +         assert record["projected_invocation_sha256"] == runner.hashlib.sha256(output.read_bytes()).hexdigest()
+236  |         assert record["workflow_role"] == "doer-main"
+--------------------------------------------------------------------------------
+246  |             )
+     -         with pytest.raises(
+     -             runner.RunnerError, match="inside the immutable stable checkout"
+     -         ):
+247  +         with pytest.raises(runner.RunnerError, match="inside the immutable stable checkout"):
+248  |             runner.project_invocation(
+--------------------------------------------------------------------------------
+271  |         invocation["finding_gate"] = {"role": gate_role, "path": "FINDINGS.json"}
+     -     resolved = runner.apply_workflow_role_allocation(
+     -         invocation, workflow_role, validate_finding_gate=True
+272  +     resolved = runner.apply_workflow_role_allocation(invocation, workflow_role, validate_finding_gate=True)
+273  +     assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+274  +         _model_settings(workflow_role)
+275  |     )
+     -     assert {
+     -         key: resolved["codex"][key]
+     -         for key in ("model", "reasoning_effort", "service_tier")
+     -     } == (_model_settings(workflow_role))
+276  |
+--------------------------------------------------------------------------------
+291  |         invocation["finding_gate"] = {"role": gate_role, "path": "FINDINGS.json"}
+     -     resolved = runner.apply_workflow_role_allocation(
+     -         invocation, workflow_role, validate_finding_gate=True
+292  +     resolved = runner.apply_workflow_role_allocation(invocation, workflow_role, validate_finding_gate=True)
+293  +     assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+294  +         _model_settings(workflow_role)
+295  |     )
+     -     assert {
+     -         key: resolved["codex"][key]
+     -         for key in ("model", "reasoning_effort", "service_tier")
+     -     } == (_model_settings(workflow_role))
+296  |
+--------------------------------------------------------------------------------
+311  |     with pytest.raises(runner.RunnerError, match="requires finding_gate role"):
+     -         runner.apply_workflow_role_allocation(
+     -             invocation, "reviewer-main", validate_finding_gate=True
+     -         )
+312  +         runner.apply_workflow_role_allocation(invocation, "reviewer-main", validate_finding_gate=True)
+313  |
+--------------------------------------------------------------------------------
+350  |         assert any(
+     -             key.startswith("GIT_CONFIG_KEY_") and setting == "core.excludesFile"
+     -             for key, setting in os.environ.items()
+351  +             key.startswith("GIT_CONFIG_KEY_") and setting == "core.excludesFile" for key, setting in os.environ.items()
+352  |         )
+--------------------------------------------------------------------------------
+409  |         assert nested.returncode == 0, nested.stderr
+     -         assert (
+     -             json.loads(nested.stdout)["hookSpecificOutput"]["permissionDecision"]
+     -             == "deny"
+     -         )
+410  +         assert json.loads(nested.stdout)["hookSpecificOutput"]["permissionDecision"] == "deny"
+411  |
+--------------------------------------------------------------------------------
+518  |         )
+     -         assert {
+     -             key: resolved["codex"][key]
+     -             for key in ("model", "reasoning_effort", "service_tier")
+     -         } == {
+     -             key: custom_profile[key]
+     -             for key in ("model", "reasoning_effort", "service_tier")
+519  +         assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == {
+520  +             key: custom_profile[key] for key in ("model", "reasoning_effort", "service_tier")
+521  |         }
+--------------------------------------------------------------------------------
+559  |     runner = _load_runner()
+     -     deepseek = runner.apply_workflow_role_allocation(
+     -         _coding_invocation(), "coder-main", validate_finding_gate=False
+     -     )
+560  +     deepseek = runner.apply_workflow_role_allocation(_coding_invocation(), "coder-main", validate_finding_gate=False)
+561  |     deepseek_settings = deepseek["codex"]
+--------------------------------------------------------------------------------
+572  |     assert "model_context_window=1048576" in deepseek_settings["config_overrides"]
+     -     assert (
+     -         "model_auto_compact_token_limit=230000" in deepseek_settings["config_overrides"]
+     -     )
+     -     assert (
+     -         "model_auto_compact_token_limit=1" not in deepseek_settings["config_overrides"]
+     -     )
+573  +     assert "model_auto_compact_token_limit=230000" in deepseek_settings["config_overrides"]
+574  +     assert "model_auto_compact_token_limit=1" not in deepseek_settings["config_overrides"]
+575  |     catalog_override = next(
+     -         item
+     -         for item in deepseek_settings["config_overrides"]
+     -         if item.startswith("model_catalog_json=")
+576  +         item for item in deepseek_settings["config_overrides"] if item.startswith("model_catalog_json=")
+577  |     )
+     -     assert ".codex/delegates/deepseek-model-catalog.json" in catalog_override.replace(
+     -         "\\", "/"
+     -     )
+578  +     assert ".codex/delegates/deepseek-model-catalog.json" in catalog_override.replace("\\", "/")
+579  |
+--------------------------------------------------------------------------------
+587  |
+     -     terra = runner.apply_workflow_role_allocation(
+     -         _coding_invocation(), "reviewer-main", validate_finding_gate=False
+     -     )
+588  +     terra = runner.apply_workflow_role_allocation(_coding_invocation(), "reviewer-main", validate_finding_gate=False)
+589  |     terra_settings = terra["codex"]
+--------------------------------------------------------------------------------
+603  |
+     - def test_backend_fallback_requires_three_consecutive_classified_deepseek_failures() -> (
+     -     None
+     - ):
+604  + def test_backend_fallback_requires_three_consecutive_classified_deepseek_failures() -> None:
+605  |     runner = _load_runner()
+--------------------------------------------------------------------------------
+636  |     runner = _load_runner()
+     -     assert (
+     -         runner.classify_backend_error("HTTP status 429: too many requests")
+     -         == "HTTP_429"
+     -     )
+     -     assert (
+     -         runner.classify_backend_error("provider returned HTTP 303 error") == "HTTP_303"
+     -     )
+637  +     assert runner.classify_backend_error("HTTP status 429: too many requests") == "HTTP_429"
+638  +     assert runner.classify_backend_error("provider returned HTTP 303 error") == "HTTP_303"
+639  |     assert runner.classify_backend_error("Rate limit exceeded") == "RATE_LIMIT"
+     -     assert (
+     -         runner.classify_backend_error("backend service unavailable") == "BACKEND_ERROR"
+     -     )
+     -     assert (
+     -         runner.classify_backend_error("ordinary product test assertion failed") is None
+     -     )
+640  +     assert runner.classify_backend_error("backend service unavailable") == "BACKEND_ERROR"
+641  +     assert runner.classify_backend_error("ordinary product test assertion failed") is None
+642  |
+--------------------------------------------------------------------------------
+648  |     runner = _load_runner()
+     -     raw_error = (
+     -         "provider request failed: HTTP 429; secret detail must not enter history"
+     -     )
+649  +     raw_error = "provider request failed: HTTP 429; secret detail must not enter history"
+650  |     error_path = tmp_path / "provider.stderr"
+--------------------------------------------------------------------------------
+697  |     assert projected["codex"]["reasoning_effort"] == "max"
+     -     assert (
+     -         projection["fallback_history_sha256"]
+     -         == hashlib.sha256(history.read_bytes()).hexdigest()
+     -     )
+698  +     assert projection["fallback_history_sha256"] == hashlib.sha256(history.read_bytes()).hexdigest()
+699  |
+--------------------------------------------------------------------------------
+802  | def test_pending_d1_migration_binds_authoritative_s2_d1() -> None:
+     -     migration = json.loads(
+     -         (RUNNER_MIGRATION / "PENDING_D1_MIGRATION.json").read_text(encoding="utf-8")
+     -     )
+803  +     migration = json.loads((RUNNER_MIGRATION / "PENDING_D1_MIGRATION.json").read_text(encoding="utf-8"))
+804  |     authoritative_bytes = PENDING_S2_D1.read_bytes()
+--------------------------------------------------------------------------------
+813  |     stable_hash = hashlib.sha256(stable_bytes).hexdigest()
+     -     projection = json.loads(
+     -         (RUNNER_MIGRATION / "PENDING_D1_STABLE_PROJECTION.json").read_text(
+     -             encoding="utf-8"
+     -         )
+     -     )
+814  +     projection = json.loads((RUNNER_MIGRATION / "PENDING_D1_STABLE_PROJECTION.json").read_text(encoding="utf-8"))
+815  |
+816  |     assert authoritative["action"] == "resume"
+817  |     assert authoritative["lane_id"] == "S2.D1"
+818  |     assert authoritative["worker_invocation_id"] == "s2-d1-001"
+     -     assert authoritative["resume_identity"]["thread_id"] == (
+     -         "019fcacb-ab71-79c0-bb93-3813ff3d900d"
+     -     )
+819  +     assert authoritative["resume_identity"]["thread_id"] == ("019fcacb-ab71-79c0-bb93-3813ff3d900d")
+820  |     assert authoritative["repository"]["branch"] == "firmware/v2-s2-d1"
+     -     assert authoritative["repository"]["base_commit"] == (
+     -         "7a28b186e91f2945ea9c59869a216fa8caf8407e"
+     -     )
+     -     assert authoritative["prompt_sha256"] == (
+     -         "f495350ca3a5b5ff15def16c28beea83714db1aafe90e733067fa0b68fc0cf1d"
+     -     )
+821  +     assert authoritative["repository"]["base_commit"] == ("7a28b186e91f2945ea9c59869a216fa8caf8407e")
+822  +     assert authoritative["prompt_sha256"] == ("f495350ca3a5b5ff15def16c28beea83714db1aafe90e733067fa0b68fc0cf1d")
+823  |     assert migration["original_invocation"]["path"].endswith(
+--------------------------------------------------------------------------------
+827  |     assert migration["resume_projection"]["candidate_source_sha256"] == candidate_hash
+     -     assert migration["resume_projection"]["stable_compatible_invocation_sha256"] == (
+     -         stable_hash
+     -     )
+828  +     assert migration["resume_projection"]["stable_compatible_invocation_sha256"] == (stable_hash)
+829  |     assert migration["preserved_resume_identity"] == {
+--------------------------------------------------------------------------------
+895  |         candidate = (
+     -             ROOT
+     -             / "plans"
+     -             / "general-coding-harness"
+     -             / "runtime"
+     -             / "firmware-v2"
+     -             / "worktrees"
+     -             / "harness-candidate"
+896  +             ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "worktrees" / "harness-candidate"
+897  |         )
+898  |         lane = (
+     -             ROOT
+     -             / "plans"
+     -             / "general-coding-harness"
+     -             / "runtime"
+     -             / "firmware-v2"
+     -             / "implementation"
+     -             / "lanes"
+     -             / "S1.A1"
+899  +             ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "implementation" / "lanes" / "S1.A1"
+900  |         )
+--------------------------------------------------------------------------------
+923  |             assert completed.returncode == 0, completed.stderr
+     -             assert (
+     -                 "stable-general-harness-runner\\\\orchestrator_harness\\\\cli.py"
+     -                 in completed.stderr
+     -             )
+924  +             assert "stable-general-harness-runner\\\\orchestrator_harness\\\\cli.py" in completed.stderr
+925  |             assert str(fake_import_root) not in completed.stderr
+--------------------------------------------------------------------------------
+950  |         run_root = Path(raw)
+     -         (run_root / ".gitignore").write_text(
+     -             ".agent-workspace/\nruntime/\n", encoding="utf-8"
+     -         )
+951  +         (run_root / ".gitignore").write_text(".agent-workspace/\nruntime/\n", encoding="utf-8")
+952  |         prompt = run_root / "prompt.md"
+--------------------------------------------------------------------------------
+1063 |             dispatch_value["codex"][key] = "earlier-materialized"
+     -         dispatch_input.write_text(
+     -             json.dumps(dispatch_value, indent=2) + "\n", encoding="utf-8"
+     -         )
+1064 +         dispatch_input.write_text(json.dumps(dispatch_value, indent=2) + "\n", encoding="utf-8")
+1065 |         hostile_cwd = (
+     -             ROOT
+     -             / "plans"
+     -             / "general-coding-harness"
+     -             / "runtime"
+     -             / "firmware-v2"
+     -             / "worktrees"
+     -             / "harness-candidate"
+1066 +             ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "worktrees" / "harness-candidate"
+1067 |         )
+--------------------------------------------------------------------------------
+1095 |         )
+     -         status = json.loads(
+     -             (workspace / "controller.status.json").read_text(encoding="utf-8")
+     -         )
+1096 +         status = json.loads((workspace / "controller.status.json").read_text(encoding="utf-8"))
+1097 |         assert status["state"] == "CODEX_EXITED"
+--------------------------------------------------------------------------------
+1101 |         assert status["launcher_settings"]["model"] == expected_settings["model"]
+     -         assert (
+     -             status["launcher_settings"]["model_reasoning_effort"]
+     -             == expected_settings["reasoning_effort"]
+     -         )
+     -         assert (
+     -             status["launcher_settings"]["service_tier"]
+     -             == expected_settings["service_tier"]
+     -         )
+     -         observed_claims = json.loads(
+     -             (run_root / "resource-observed.json").read_text(encoding="utf-8")
+     -         )
+     -         assert observed_claims == [
+     -             hashlib.sha256(b"stable-controller-proof").hexdigest() + ".json"
+     -         ]
+1102 +         assert status["launcher_settings"]["model_reasoning_effort"] == expected_settings["reasoning_effort"]
+1103 +         assert status["launcher_settings"]["service_tier"] == expected_settings["service_tier"]
+1104 +         observed_claims = json.loads((run_root / "resource-observed.json").read_text(encoding="utf-8"))
+1105 +         assert observed_claims == [hashlib.sha256(b"stable-controller-proof").hexdigest() + ".json"]
+1106 |         assert list(resource_lock_root.iterdir()) == []
+1107 |         assert "stable-general-harness-runner" in completed.stderr
+1108 |         assert "finding_gate" not in json.loads(projected.read_text(encoding="utf-8"))
+     -         assert "child_environment_isolation" not in json.loads(
+     -             projected.read_text(encoding="utf-8")
+     -         )
+1109 +         assert "child_environment_isolation" not in json.loads(projected.read_text(encoding="utf-8"))
+1110 |         assert record["root_must_validate_before_acceptance"] is True
+     |
+
+1 file would be reformatted, 17 files already formatted

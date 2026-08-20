@@ -1,0 +1,33 @@
+{
+  "synthetic": true,
+  "note": "FAKE stall per user acceptance; no live producer exists post-S4",
+  "kinds": {
+    "MANAGER_REVIEW_DUE": {
+      "event_id": "d463a81175c0febe74ccd7222ef2504ae24d7fc6e5e0b21f428a0473323c7fc5",
+      "disposition": "WAKING_MANAGER_EVENT",
+      "disposition_is_observed": false,
+      "priority": 4.3,
+      "priority_recognised": true
+    },
+    "LANE_NO_PROGRESS": {
+      "event_id": "25a0e6ac242e103ff00508dee468af7ca5f81e47831e6371c6932eec895a6e32",
+      "disposition": "WAKING_MANAGER_EVENT",
+      "disposition_is_observed": false,
+      "priority": 4.2,
+      "priority_recognised": true
+    },
+    "LANE_STAGE_REPEAT": {
+      "event_id": "993a5cb37a10cd3c006f535821db1c5af0c2280fd9ce8e879d3fcaff0aebcc4e",
+      "disposition": "WAKING_MANAGER_EVENT",
+      "disposition_is_observed": false,
+      "priority": 4.1,
+      "priority_recognised": true
+    }
+  },
+  "selected_actionable": {
+    "type": "LANE_STAGE_REPEAT",
+    "admitted_priority": 4.1,
+    "notification": "MANAGER_ACTION_REQUIRED"
+  },
+  "all_recognised": true
+}

@@ -1,0 +1,2 @@
+{"codex_pid":26596,"controller_pid":28196,"declared_lane_id":"lane-g21","event":"PROVIDER_STARTED","invocation_schema":"orchestrator-worker-invocation/v1","label":"lane-g21-001","provider_id":"claude-code","provider_pid":26596,"utc":"2026-08-20T07:50:45.998896Z","worker_invocation_id":"lane-g21-001"}
+{"declared_lane_id":"lane-g21","error":"[Errno 22] Invalid argument","event":"CONTROLLER_FAILED","invocation_schema":"orchestrator-worker-invocation/v1","label":"lane-g21-001","utc":"2026-08-20T07:50:46.049664Z","worker_invocation_id":"lane-g21-001"}

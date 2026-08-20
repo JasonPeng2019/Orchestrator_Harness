@@ -1,0 +1,23 @@
+{
+  "schema": "suite-manager-review/v1",
+  "epoch": "20260731-s1-clean-n",
+  "review_id": "clean-n-formal-review-001",
+  "observed_utc": "2026-07-31T22:49:33.040940+00:00",
+  "kind": "WHOLE_SUITE_MANAGER_REVIEW_DUE",
+  "event_id": "db3fa6e2b0eebb969e0a7b38efddaa1362b6aa0185aabe278c9861f56b29d0dd",
+  "review_baseline_before": "2026-07-31T22:44:39.179210Z",
+  "whole_suite": {
+    "Atlas": "live, diagnosis evidence-backed, no hardware/provider action",
+    "Boreal": "live, focused 6/6 host tests green, no hardware/provider public action",
+    "Cygnus": "live, exact OSError root diagnosis and run-local correction in progress, no hardware/provider action",
+    "Delta": "live, focused process-identity tests green; final no-owned-process assertion matched current active lane and is being corrected; no hardware/provider action"
+  },
+  "requests": [],
+  "leases": "four isolated host-only lanes; no conflicts; no board/probe/serial/provider/MCP leases",
+  "deferred_handoffs": [
+    "b01d9b18d6aac286ff3cd555b471405af3a8d4fedbca349a9883c56601121e3d"
+  ],
+  "decision": "Acknowledge exact review after whole-suite inspection. Continue only host preparation; do not launch live phases because startup-scan temporal-coherence issue is retained for audit.",
+  "review_baseline_after": "2026-07-31T22:49:33.359272Z",
+  "baseline_advanced": true
+}

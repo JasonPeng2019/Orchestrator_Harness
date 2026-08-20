@@ -1,0 +1,8 @@
+﻿?? AGENTS.md
+?? HANDOFF.md
+?? PLAN.md
+?? active-working-spec/
+?? harness_common/
+?? harness_watcher_implementation/
+?? orchestrator_harness/
+?? scripts/orchestration/

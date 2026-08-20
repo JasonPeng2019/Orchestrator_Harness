@@ -1,0 +1,108 @@
+﻿{
+    "schema":  "m5-process-cleanup/v1",
+    "epoch":  "20260802-m5-s1a-061555Z",
+    "checked_utc":  "2026-08-02T06:33:56.1135787+00:00",
+    "registered":  [
+                       {
+                           "role":  "native-harness-managed-owner",
+                           "pid":  162276,
+                           "expected_creation_utc":  "2026-08-02T06:17:20.4481118Z",
+                           "present":  false,
+                           "actual_creation_utc":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "native-harness-managed-child",
+                           "pid":  171132,
+                           "expected_creation_utc":  "2026-08-02T06:17:20.4604906Z",
+                           "present":  false,
+                           "actual_creation_utc":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "native-diagnostic-watcher-launcher",
+                           "pid":  157724,
+                           "expected_creation_utc":  "2026-08-02T06:17:38.8518550Z",
+                           "present":  false,
+                           "actual_creation_utc":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "native-diagnostic-watcher",
+                           "pid":  3548,
+                           "expected_creation_utc":  "2026-08-02T06:17:38.9001209Z",
+                           "present":  false,
+                           "actual_creation_utc":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-controller-Atlas",
+                           "pid":  192392,
+                           "expected_creation_utc":  "2026-08-02T06:19:25.1783248Z",
+                           "present":  false,
+                           "actual_creation_utc":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-codex-worker-Atlas",
+                           "pid":  194004,
+                           "expected_creation_utc":  "2026-08-02T06:19:25.8771592Z",
+                           "present":  false,
+                           "actual_creation_utc":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-controller-Boreal",
+                           "pid":  186904,
+                           "expected_creation_utc":  "2026-08-02T06:19:25.8846537Z",
+                           "present":  false,
+                           "actual_creation_utc":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-codex-worker-Boreal",
+                           "pid":  184896,
+                           "expected_creation_utc":  "2026-08-02T06:19:26.9138330Z",
+                           "present":  false,
+                           "actual_creation_utc":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-controller-Cygnus",
+                           "pid":  176488,
+                           "expected_creation_utc":  "2026-08-02T06:19:26.8489640Z",
+                           "present":  false,
+                           "actual_creation_utc":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-codex-worker-Cygnus",
+                           "pid":  190000,
+                           "expected_creation_utc":  "2026-08-02T06:19:27.9966694Z",
+                           "present":  false,
+                           "actual_creation_utc":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-controller-Delta",
+                           "pid":  167740,
+                           "expected_creation_utc":  "2026-08-02T06:19:27.8911301Z",
+                           "present":  false,
+                           "actual_creation_utc":  null,
+                           "identity_absent":  true
+                       },
+                       {
+                           "role":  "external-codex-worker-Delta",
+                           "pid":  180080,
+                           "expected_creation_utc":  "2026-08-02T06:19:29.1734467Z",
+                           "present":  false,
+                           "actual_creation_utc":  null,
+                           "identity_absent":  true
+                       }
+                   ],
+    "all_registered_absent":  true,
+    "unexpected_epoch_processes":  [
+
+                                   ],
+    "exact_cleanup":  true
+}

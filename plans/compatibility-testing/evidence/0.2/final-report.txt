@@ -1,0 +1,63 @@
+All steps complete and verified. Here is the final report.
+
+---
+
+## Phase 0, Step 0.2 Report — No permission bypass → silent false-COMPLETED (bug U3)
+
+### 1. Live reproduction (real CLI, Ollama backend, `deepseek-v4-flash:0731-cloud`)
+
+Ran the exact env-scoped launcher with **no `--permission-mode`** (the buggy default path) from `scratch/0.2-repro/`. The CLI **did deny** the Write tool:
+
+- **Line 1** (init): `permissionMode:"default"` — confirmed the CLI's interactive default was in effect.
+- **Line 23**: `{"type":"system","subtype":"permission_denied","tool_name":"Write","message":"Claude requested permissions to write to ...\default_perm_test.txt, but you haven't granted it yet.", "session_id":"80adf19f-..."}`
+- **Line 62** (final `result`): `{"is_error":false,"subtype":"success","stop_reason":"end_turn","terminal_reason":"completed","permission_denials":[{"tool_name":"Write",...}]}`
+- **Process exit code: 0**.
+- **File not created**: `scratch/0.2-repro/` is empty (`ls` → no `default_perm_test.txt`).
+- stderr was clean apart from a benign `[claude-code:unrecognized_model]` session-title warning.
+
+**Harness false-COMPLETED reproduction** — pre-fix, `parse_transcript_line` produced only `STARTED` (line 1) and `COMPLETED` (line 62); the `permission_denied` line was silently dropped. `terminal_outcome(event, 0)` → **COMPLETED**. Saved: `evidence/0.2/repro-false-completed.txt`.
+
+### 2. Fixes (both in `orchestrator_harness/provider.py`)
+
+**Fix 1 — default-safe bypass** (`build_argv`, was line 518): now always emits `--permission-mode`; `permission_mode = spec.permission_mode or "bypassPermissions"`. Explicit caller value still wins. Mirrors Codex's unconditional bypass, per the documented product decision.
+
+**Fix 2 — detect permission denial** (`parse_transcript_line`, was line 538):
+- `system/subtype=permission_denied` → emits `ProviderEvent("FAILED", ..., detail=<message>)` (never COMPLETED).
+- Final `result` line with a **non-empty `permission_denials` list** → classified **FAILED** even when `is_error:false`/`subtype:success`; detail becomes `permission_denied Write` (tool names joined).
+
+**Design choice (documented):** used `FAILED`, not a new `BLOCKED` kind, to stay inside the closed `PROVIDER_TERMINAL_OUTCOMES` vocabulary `{COMPLETED, FAILED, CANCELLED}` and the existing `terminal_outcome` mapping (`lane_controller.py:3143` treats anything else as `CONTROLLER_FAILED`). The result-line `permission_denials` check is the *critical* stateless signal: it guarantees the **last** terminal event is FAILED (a mid-stream FAILED alone would be overwritten by the later success result line); the mid-stream `permission_denied` event covers truncated transcripts and gives in-stream observability. No mutable state → no cross-lane race on the shared singleton adapter.
+
+### 3. Re-test results
+
+1. **Default bypass** — ran the same prompt with the fixed harness argv (`--permission-mode bypassPermissions`): `default_perm_test.txt` **was created** with content `HI` (`-rw-r--r-- 3 bytes`, exit 0, zero `permission_denied` lines). Classification: **COMPLETED** (correct — work happened). Evidence: `bypass-success.jsonl`, `bypass-file-ls.txt`, `bypass-classified.txt`.
+2. **Forced denial** — the live denied transcript (captured with no bypass) now classifies as **FAILED**: line 23 → FAILED (`permission_denied` detail), line 62 → FAILED (`permission_denied Write`), `terminal_outcome` → FAILED. Evidence: `denied-classified.txt`.
+
+### 4. Regression tests
+
+New file `orchestrator_harness/tests/test_compat_transcript_parse.py` (5 tests, all pass):
+- default spec → `--permission-mode bypassPermissions`; explicit `permission_mode="default"` → caller value wins
+- denied transcript (system line + result `permission_denials`) → FAILED
+- result-with-`permission_denials` alone → FAILED (overwrite protection, stateless)
+- clean success → still COMPLETED
+
+Re-ran existing suites — **no regressions**:
+- `test_compat_provider_argv` + `test_s2_contract`: **23 tests OK**
+- `test_provider_adapter_registry` + `test_provider_adapter_public_seams`: **40 tests OK**
+
+### 6. Evidence files (`evidence/0.2/`)
+
+| File | Contents |
+|---|---|
+| `denied-transcript.jsonl` | raw live denied transcript (62 lines) |
+| `denied-stderr.txt` | stderr (benign model warning) |
+| `repro-false-completed.txt` | **pre-fix** classification → COMPLETED (the false positive) |
+| `denied-classified.txt` | **post-fix** same transcript → FAILED |
+| `bypass-success.jsonl` | live run with fixed default-bypass argv |
+| `bypass-stderr.txt` | stderr |
+| `bypass-file-ls.txt` | `ls` showing `default_perm_test.txt` created (3 bytes, `HI`) |
+| `bypass-classified.txt` | bypass run classification → COMPLETED |
+| `test-transcript-parse.txt` | new suite: 5 OK |
+| `test-regression-suites.txt` | argv + s2: 23 OK |
+| `test-adapter-suites.txt` | registry + seams: 40 OK |
+
+Constraints honored: env-scoped launcher only, `CLAUDE_CONFIG_DIR` pointed at the clone's `.subagent-scratch-02`, never touched `~/.claude`, no settings changes, no commits, `Firmware/target-harness` untouched. Step 0.1's `--verbose` fix was preserved.

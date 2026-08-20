@@ -1,0 +1,9 @@
+PASS. Practical validation and focused tests completed:
+
+- `64 passed, 11 subtests passed`
+- Native non-live signal produced exactly correlated `LANE_NOT_LIVE` evidence with no wake/actionable/pending records.
+- Watcher classified it as `INSUFFICIENT_EVIDENCE`.
+- Live wake behavior and all adversarial delay cases behaved correctly.
+- Temporary fixtures/state were cleaned up; no production files changed.
+
+Report: [REPORT.md](C:/Users/Jason/Documents/Jason/FirmCLI_Tester/Firmware-Test-Manual/MCP-Trial-3/multi-agent-logs/verification/m5-q9-ineligibility-luna/REPORT.md)

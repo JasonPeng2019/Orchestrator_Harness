@@ -1,0 +1,542 @@
+{
+  "schema": "mcp-trial-3-suite-restart/v1",
+  "reconciled_utc": "2026-08-02T17:25:19.0231596Z",
+  "authority": "goal.md, active-working-spec/m5-three-sprint-wake-test.md, active-working-spec/m5-sprint-checklist.md, HANDOFF.md, and per-run checkpoints",
+  "catalog": "BYO_FIRMWARE_MCP_END_TO_END_EXPERIMENTS.md",
+  "skill": ".codex/skills/run-firmware-test-suite/SKILL.md",
+  "harness": {
+    "config": "multi-agent-logs/orchestrator-harness/20260802-m5-q10-170245Z/config.json",
+    "config_sha256": "6e484742cb5a449ffb004d2b230d0e6ecc860a58f3ab5b413f457f2bb63fe109",
+    "scan": "multi-agent-logs/current-state/CURRENT_CANARY_READONLY_SCAN.json",
+    "scan_sha256": "e02738d42eb6a1797258a58b52fa1498461a9bd8f434564f911dc4ee9e8f0f0a",
+    "process_provider": "windows-cim",
+    "process_snapshot_complete": true,
+    "resource_conflicts": 0,
+    "observation_errors": 0,
+    "process_errors": 0,
+    "manager_signals": 292,
+    "runtime_state": "M5_CLOSED_ATTEMPT_LIMIT_Q10_EVIDENCE_INSUFFICIENT",
+    "historical_mcp_records": 24,
+    "observed_utc": "2026-08-02T17:25:19.0231596Z",
+    "next_config": null,
+    "next_optional_watcher_config": null,
+    "clean_g_target": ".agent-workspace/CANARY_S1_CLEAN_G_TARGET.md",
+    "clean_g_validation": {
+      "config_json_valid": true,
+      "optional_config_json_valid": true,
+      "autonomy_audit": "PASS runs=10",
+      "no_write_scan_utc": "2026-07-31T18:11:41Z",
+      "output_roots_created": true,
+      "launched": true,
+      "lanes_launched": true,
+      "stopped_cleanly": true,
+      "pending_audit": false,
+      "final_scan": ".agent-workspace/CANARY_S1G_FINAL_SCAN.json",
+      "final_scan_sha256": "c4762eb21bf6d1210fcb51412d32accad292d445290c648d766352dffc8b58ed",
+      "audit": ".agent-workspace/CANARY_AUDIT_20260731_S1_CLEAN_G.md",
+      "audit_verdict": "ACCEPTED_NONCOUNTING",
+      "repair_verified": true,
+      "repair_verification": ".agent-workspace/CANARY_CLEAN_G_REPAIR_VERIFICATION.md"
+    },
+    "clean_i_validation": {
+      "launched": true,
+      "stopped_cleanly": true,
+      "pending_audit": false,
+      "audit": ".agent-workspace/CANARY_AUDIT_20260731_S1_CLEAN_I.md",
+      "audit_verdict": "ACCEPTED_NONCOUNTING",
+      "repair_verified": true,
+      "repair_plan": ".agent-workspace/CANARY_CLEAN_I_PRIMARY_HARNESS_FIX_PLAN.md",
+      "repair_audit": ".agent-workspace/CANARY_CLEAN_I_PRIMARY_HARNESS_REPAIR_AUDIT.md",
+      "focused_coder_result": "114 passed",
+      "full_primary_result": "151 passed, 1 skipped once",
+      "independent_manager_result": "11 targeted tests plus retained-data scan clean"
+    }
+  },
+  "process_reconciliation": {
+    "inventory": "multi-agent-logs/current-state/CURRENT_RELEVANT_PROCESS_INVENTORY.json",
+    "inventory_sha256": "bb6cdc3442173aa0237cb240148bd2dd689c8002e0d1516f4c5c27df6c214e82",
+    "observed_utc": "2026-08-02T17:25:19.0231596Z",
+    "live_suite_controllers": [],
+    "live_suite_codex_workers": [],
+    "live_suite_helpers": [],
+    "live_suite_mcp_lifetimes": [],
+    "live_managed_harnesses": [],
+    "live_diagnostic_watchers": [],
+    "live_change_loops": [],
+    "active_hardware_leases": [],
+    "legacy_unknown_records": [],
+    "disposition": "SAFE_BOUNDARY"
+  },
+  "server_snapshot": {
+    "head": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "tracked_dirty_diff_fingerprint": "99942141bb0bbe730ceb0ea4b30916bf8ed657bb",
+    "production_src_tree_sha256": "ca3a326e8ba6a3e0d14724a4f9fded286700790cfebc722352223d1b18e4c36a",
+    "manifest": "multi-agent-logs/server-snapshots/server-snapshot-m5-ready-20260802.json",
+    "manifest_sha256": "49ba8659c77f7432e0d81e24c1db431c4b1b2ec6a9eaa29753f6a951fec01130",
+    "recomputed_match": true,
+    "active_repair_barrier": false,
+    "open_validated_defects": []
+  },
+  "policy_bindings": {
+    "autonomy_policy_sha256": "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68",
+    "delegated_authorization_sha256": "1cbbe4d0f1b1064818a05ccf73b6793f729ef3b16bbffc91ec1852a76390507d"
+  },
+  "terminal_green": [
+    "H00",
+    "H01",
+    "H02",
+    "H03",
+    "H04",
+    "H05",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "A20",
+    "A23",
+    "D33",
+    "D36"
+  ],
+  "retired_duplicate_runs": [],
+  "fresh_lane_sessions_required": false,
+  "lane_restarts": [
+    {
+      "doer": "Atlas",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "high",
+      "service_tier": "default",
+      "first_task": "A22",
+      "run_root": "fresh-experiments/A22_20260726-062324",
+      "state": "CHECKPOINTED_NONTERMINAL_RESPONSE_REJECTED",
+      "leases_for_first_live_phase": [
+        "STM-A",
+        "probe 066FFF514988525067233337",
+        "COM12",
+        "isolated A22 MCP/state/artifact/log roots"
+      ],
+      "resume_boundary": "Q10 host-only progress is preserved. All Q10 responses were rejected because lane_id was empty. No live authority exists. Do not launch another M5 sprint without explicit new user authority and a new bounded goal.",
+      "later_tasks": [
+        "D30",
+        "D32",
+        "Q41"
+      ]
+    },
+    {
+      "doer": "Boreal",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "high",
+      "service_tier": "default",
+      "first_task": "D31",
+      "run_root": "fresh-experiments/D31_20260726-062325",
+      "state": "CHECKPOINTED_NONTERMINAL_RESPONSE_REJECTED",
+      "leases_for_first_live_phase": [
+        "STM-B",
+        "probe 0668FF514988525067213913",
+        "COM17",
+        "isolated D31 MCP/state/artifact/log roots"
+      ],
+      "resume_boundary": "Q10 host-only progress is preserved. All Q10 responses were rejected because lane_id was empty. No live authority exists. Do not launch another M5 sprint without explicit new user authority and a new bounded goal.",
+      "later_tasks": [
+        "A21"
+      ]
+    },
+    {
+      "doer": "Cygnus",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "high",
+      "service_tier": "default",
+      "first_task": "A24",
+      "run_root": "fresh-experiments/A24_20260726-052146",
+      "state": "CHECKPOINTED_NONTERMINAL_RESPONSE_REJECTED",
+      "leases_for_first_live_phase": [
+        "NRF-A",
+        "probe 683710208",
+        "COM16",
+        "NRF-B",
+        "probe 683854191",
+        "COM15",
+        "declared CoreSX1262 peer/RF fixture",
+        "two isolated A24 MCP/state/artifact/log roots"
+      ],
+      "resume_boundary": "Q10 host-only progress is preserved. All Q10 responses were rejected because lane_id was empty. No live authority exists. Do not launch another M5 sprint without explicit new user authority and a new bounded goal.",
+      "later_tasks": [
+        "D34"
+      ]
+    },
+    {
+      "doer": "Delta",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "high",
+      "service_tier": "default",
+      "first_task": "A26",
+      "run_root": "fresh-experiments/A26_20260726-062325",
+      "state": "CHECKPOINTED_NONTERMINAL_RESPONSE_REJECTED",
+      "leases_for_first_live_phase": [
+        "STM-A",
+        "probe 066FFF514988525067233337",
+        "COM12",
+        "one isolated A26 MCP/state/artifact/log root"
+      ],
+      "resume_boundary": "Q10 host-only progress is preserved. All Q10 responses were rejected because lane_id was empty. No live authority exists. Do not launch another M5 sprint without explicit new user authority and a new bounded goal.",
+      "later_tasks": [
+        "A25"
+      ]
+    }
+  ],
+  "first_parallel_batch": [],
+  "pending_after_first_batch": {
+    "A21": "Resume on the STM pair only after Atlas/A22 and Boreal/D31 release both STM leases; start from one fresh LF role exchange plus the a21_uart_write_byte breakpoint discriminator.",
+    "A25": "Resume on the nRF pair after Cygnus/A24 releases it; boundary-012 protocol is built and tested, but all boundary-011 authority is stale.",
+    "D30": "Board-free tools are green and A20 is GREEN; manager must materialize current prerequisite/case/evidence/assignment files before Atlas enters HIL.",
+    "D32": "Board-free tools are green. Start each family shard only when its explicit catalog prerequisites are green and Atlas is free; do not honor stale whole-row prerequisites in the old checkpoint.",
+    "D34": "Host tools are green; HIL waits for A21 dual-STM and either A23 or A24 dual-nRF baseline, plus all four leases.",
+    "Q40": "Manager-owned incremental corpus aggregation; index retained A20-A26 evidence and run only genuinely missing branches with an idle roster doer.",
+    "Q41": "Board-free scheduler tools are green. Start any explicit shard whose source handoff is green when Atlas is free; no Q41 shard waits for an unrelated shard."
+  },
+  "appendix_non_gating": [
+    "D35",
+    "R37",
+    "R38"
+  ],
+  "deleted_retired_duplicate_runs": [
+    "fresh-experiments/A23_20260726-043848",
+    "fresh-experiments/H05_20260725-211528"
+  ],
+  "q40_run_root": "fresh-experiments/Q40_20260730-000000",
+  "repository_layout": "REPOSITORY_LAYOUT.md",
+  "server_tests": "fresh-experiments/<owner>/.agent-workspace/tests/server",
+  "lane_session_policy": "Resume the recorded persistent Luna thread when available; replace only if irrecoverable or the user explicitly requests fresh doers. Never restart accepted evidence.",
+  "next_dependency_ready_batch": [],
+  "post_clean_f_repairs": {
+    "primary_discovery_reconciliation": {
+      "plan": ".agent-workspace/CANARY_CLEAN_F_FIX_PLAN.md",
+      "focused_result": "58 passed",
+      "full_result_at_slice": "123 passed"
+    },
+    "expired_signal_actionability": {
+      "plan": ".agent-workspace/CANARY_CLEAN_F_REPAIR_EPOCH_FIX_PLAN.md",
+      "focused_result": "19 passed",
+      "final_full_primary_result": "129 passed"
+    },
+    "D31_host_route": {
+      "checkpoint": "fresh-experiments/D31_20260726-062325/.agent-workspace/CLEAN_F_ROUTE_FIX.md",
+      "result": "8 passed"
+    },
+    "A24_host_server_root": {
+      "checkpoint": "fresh-experiments/A24_20260726-052146/.agent-workspace/CLEAN_F_HOST_FIX.md",
+      "result": "5 passed plus py_compile"
+    },
+    "server_or_hardware_action": "none"
+  },
+  "active_epoch": null,
+  "post_clean_g_repair": {
+    "plan": ".agent-workspace/CANARY_CLEAN_G_FIX_PLAN.md",
+    "plan_review": ".agent-workspace/CANARY_CLEAN_G_FIX_PLAN_REVIEW.md",
+    "verification": ".agent-workspace/CANARY_CLEAN_G_REPAIR_VERIFICATION.md",
+    "files": [
+      "orchestrator_harness/reconcile.py",
+      "orchestrator_harness/tests/test_reconcile.py"
+    ],
+    "focused_coder_result": "83 passed",
+    "full_primary_result": "136 passed once",
+    "independent_manager_result": "5 focused controls passed plus fresh no-write exact-record scan",
+    "server_or_hardware_action": "none"
+  },
+  "post_clean_i_repair": {
+    "plan": ".agent-workspace/CANARY_CLEAN_I_PRIMARY_HARNESS_FIX_PLAN.md",
+    "plan_review": ".agent-workspace/CANARY_CLEAN_I_PRIMARY_HARNESS_PLAN_REVIEW.md",
+    "audit": ".agent-workspace/CANARY_CLEAN_I_PRIMARY_HARNESS_REPAIR_AUDIT.md",
+    "files": [
+      "orchestrator_harness/active_management.py",
+      "orchestrator_harness/reconcile.py",
+      "orchestrator_harness/notifications.py",
+      "orchestrator_harness/tests/test_active_manager_watch_smoke.py",
+      "orchestrator_harness/tests/test_reconcile.py",
+      "orchestrator_harness/tests/test_manager_notifications.py"
+    ],
+    "focused_coder_result": "114 passed",
+    "full_primary_result": "151 passed, 1 skipped once",
+    "independent_manager_result": "11 targeted tests plus retained-data scan clean",
+    "server_or_hardware_action": "none"
+  },
+  "policy_updated_utc": "2026-08-02T10:18:47.449948Z",
+  "operational_snapshot_status": {
+    "state": "CURRENT_SAFE_BOUNDARY_M5_CLOSED_Q10",
+    "observed_utc": "2026-08-02T17:25:19.0231596Z",
+    "process_inventory": "multi-agent-logs/current-state/CURRENT_RELEVANT_PROCESS_INVENTORY.json",
+    "live_suite_owned_processes": 0,
+    "active_resource_leases": [],
+    "active_epoch": null,
+    "note": "Q10 closed safely as HARNESS_PASS/WATCHER_PASS/MANAGER_EVIDENCE_INSUFFICIENT. Exact cleanup passed. Q1-Q10 exhausted the budget; count is 0/3 and Q11 is forbidden."
+  },
+  "historical_canary_validation": {
+    "counter": "0/3 consecutive issue-free sprints",
+    "noncounting_attempts": [
+      "20260731-long-canary-sprint-1",
+      "20260731-long-canary-sprint-1-success-a",
+      "20260731-s1-clean-b",
+      "20260731-s1-clean-c",
+      "20260731-s1-clean-d",
+      "20260731-s1-clean-e",
+      "20260731-s1-clean-f",
+      "20260731-s1-clean-g",
+      "20260731-s1-clean-h",
+      "20260731-s1-clean-i"
+    ],
+    "latest_attempt_reason": "Clean-I was ACCEPTED_NONCOUNTING: four one-shot lane attempts stopped at run-local defects; primary epoch/request/lifecycle correlation defects were validated and narrowly repaired. Optional watcher, server, hardware, cleanup, and manager relay handling passed.",
+    "validated_behavior": "Clean-I ran four persistent lanes concurrently, serviced four exact D31 setup relays before deadline, maintained active supervision, and shut down exactly. Optional watcher startup baseline and all eight evaluations passed.",
+    "still_required": "No Clean-J action is active. Current authority is M5 three-gate validation.",
+    "latest_completed_audit": ".agent-workspace/CANARY_AUDIT_20260731_S1_CLEAN_I.md",
+    "latest_attempt": "20260731-s1-clean-i",
+    "pending_audit_epoch": null,
+    "next_target": "Follow m5_validation.next_actions; retain historical canary evidence.",
+    "status": "ARCHIVAL_SUPERSEDED_BY_ACTIVE_M5_VALIDATION"
+  },
+  "m5_validation": {
+    "policy": "three-independent-gates/v1",
+    "counter": "0/3 comparable qualifying sprints on Q9 passive-ineligibility-repaired surface",
+    "formal_qualifying_count": 0,
+    "target_qualifying_count": 3,
+    "required_gates": [
+      "HARNESS_PASS",
+      "WATCHER_PASS",
+      "MANAGER_EVIDENCE_SUFFICIENT"
+    ],
+    "counting_rule": "A sprint counts only when all three gates pass under the same relevant harness, watcher, logging, and config-policy surface.",
+    "comparability_rule": "Qualifying runs need not be consecutive in wall-clock history. A relevant harness, watcher, required-logging, or config-policy change resets the count and requires three new comparable runs.",
+    "imperfection_rule": "Worker, orchestrator, firmware, provider, and corrected cleanup mistakes do not automatically fail a sprint when enough valid evidence remains and all three gates pass.",
+    "evidence_insufficient_rule": "Identify the exact cause before retrying. Correct sample/setup mistakes without code changes. For a verified harness, watcher, or required-logging diagnostic gap, implement the smallest passive diagnostic change, review it, smoke test it, refreeze, and reset the comparable count before continuing.",
+    "runtime_isolation": "Use only real E2E workers, the native harness blocking wait, and the deterministic diagnostic-only watcher. No runner, wrapper, relay, watcher subagent, evaluator, collaboration notification, transcript inspection, or user-message discovery.",
+    "preserved_attempts": "S1a/S1d/S2a/S2b/S3/R1 and active-goal Q1-Q10 are preserved. Q6 qualified on an earlier surface; Q7-Q9 found later watcher/logging defects. Q10 passed harness and watcher gates but root evidence errors severed all request chains. Final comparable count is 0/3.",
+    "strongest_candidate": "Q6 passed all three gates on an earlier surface. Q10 verified the Q9-repaired native harness and watcher under four genuine requests, but reversed wake record ordering and empty response lane IDs made manager evidence insufficient. No architecture verdict is justified.",
+    "next_actions": [
+      "Do not launch Q11.",
+      "Ask the user whether to authorize a new bounded manager-wake validation goal and attempt budget.",
+      "Do not repair harness or watcher code from Q10; no component defect was verified."
+    ],
+    "qualifying_runs": [],
+    "insufficient_runs": [
+      {
+        "epoch_id": "20260802-m5-s1d-065143Z",
+        "gates": [
+          "HARNESS_PASS",
+          "WATCHER_PASS",
+          "MANAGER_EVIDENCE_INSUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-s1d-065143Z/SPRINT_CHECKPOINT.md",
+        "cause": "No genuine blocking request occurred during the valid busy-manager interval.",
+        "repair_required": false
+      },
+      {
+        "epoch_id": "20260802-m5-s2a-092552Z",
+        "gates": [
+          "HARNESS_PASS",
+          "WATCHER_PASS",
+          "MANAGER_EVIDENCE_INSUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-s2a-092552Z/SPRINT_CHECKPOINT.md",
+        "cause": "Root recorder metadata contained a UTF-8 BOM, so required manager records were rejected.",
+        "repair_required": false
+      },
+      {
+        "epoch_id": "20260802-m5-s2b-095108Z",
+        "gates": [
+          "HARNESS_PASS",
+          "WATCHER_PASS",
+          "MANAGER_EVIDENCE_INSUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-s2b-095108Z/SPRINT_CHECKPOINT.md",
+        "cause": "Manager wait/activity procedure used missing or unsupported record kinds/states, leaving the otherwise useful request set causally incomplete.",
+        "repair_required": false
+      },
+      {
+        "epoch_id": "20260802-m5-q3-132710Z",
+        "gates": [
+          "HARNESS_PASS",
+          "WATCHER_PASS",
+          "MANAGER_EVIDENCE_INSUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-q3-132710Z/SPRINT_CHECKPOINT.md",
+        "cause": "Three late-actionability requests lacked a gap-free explicit manager-activity chain after the root integrity audit exceeded its bounded shell window.",
+        "repair_required": false,
+        "active_goal_attempt": 3
+      },
+      {
+        "epoch_id": "20260802-m5-q4-134406Z",
+        "gates": [
+          "HARNESS_PASS",
+          "WATCHER_PASS",
+          "MANAGER_EVIDENCE_INSUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-q4-134406Z/SPRINT_CHECKPOINT.md",
+        "cause": "Root published empty response lane IDs and left Boreal/Cygnus late windows without complete explicit manager interval chains; workers rejected responses and canonical receipt/resume/terminal evidence is absent.",
+        "repair_required": false,
+        "active_goal_attempt": 4
+      },
+      {
+        "epoch_id": "20260802-m5-q10-170245Z",
+        "gates": [
+          "HARNESS_PASS",
+          "WATCHER_PASS",
+          "MANAGER_EVIDENCE_INSUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-q10-170245Z/SPRINT_CHECKPOINT.md",
+        "cause": "Root recorded MANAGER_WAIT_FINISHED before MANAGER_WAKE_RECEIVED and published responses with empty lane_id values; workers correctly rejected them, so all four genuine request chains lack valid response receipt/resume evidence. No new harness/watcher defect was verified.",
+        "repair_required": false,
+        "active_goal_attempt": 10
+      }
+    ],
+    "pre_repair_qualifying_runs": [
+      {
+        "epoch_id": "20260802-m5-s1a-061555Z",
+        "status": "HISTORICAL_PRE_REPAIR_NOT_COMPARABLE",
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-s1a-061555Z/THREE_GATE_REAUDIT.md"
+      },
+      {
+        "epoch_id": "20260802-m5-q6-144500Z",
+        "status": "QUALIFYING_ON_Q5_REPAIRED_SURFACE_NOT_COMPARABLE_AFTER_Q7_WATCHER_REPAIR",
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-q6-144500Z/SPRINT_CHECKPOINT.md"
+      }
+    ],
+    "defect_runs": [
+      {
+        "epoch_id": "20260802-m5-s3-101953Z",
+        "gates": [
+          "HARNESS_BUG",
+          "WATCHER_PASS",
+          "MANAGER_EVIDENCE_SUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-s3-101953Z/SPRINT_CHECKPOINT.md",
+        "cause": "delivery_deadline_utc, agent_blocked, and attention_epoch_id were discarded before native selection; routine STALE_STATUS outranked a blocked HELP request and delivery was 44.100780 seconds late",
+        "repair_status": "REPAIRED_REVIEWED_SMOKED_M4_READY_REBASELINED"
+      },
+      {
+        "epoch_id": "20260802-m5-r1-110513Z",
+        "gates": [
+          "HARNESS_FAIL",
+          "WATCHER_DIAGNOSTIC_GAP",
+          "MANAGER_EVIDENCE_INSUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-r1-110513Z/SPRINT_CHECKPOINT.md",
+        "cause": "Watcher treated a partial native wait containing only the actionable endpoint as full observation-to-actionability coverage; retained Boreal and Cygnus harness delays remain supported.",
+        "repair_status": "REPAIRED_TERRA_REVIEWED_PRACTICAL_SMOKED_HOST_VERIFIED_REBASELINED"
+      },
+      {
+        "epoch_id": "20260802-m5-q1-115933Z",
+        "gates": [
+          "HARNESS_BUG",
+          "WATCHER_PASS",
+          "MANAGER_EVIDENCE_INSUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-q1-115933Z/SPRINT_CHECKPOINT.md",
+        "cause": "Recursive discovery scanned the same tree repeatedly; root also recorded invalid successful-wait linkage.",
+        "repair_status": "REPAIRED_TERRA_REVIEWED_PRACTICAL_SMOKED_M4_READY_REBASELINED",
+        "active_goal_attempt": 1
+      },
+      {
+        "epoch_id": "20260802-m5-q2-123208Z",
+        "gates": [
+          "HARNESS_BUG",
+          "WATCHER_PASS",
+          "MANAGER_EVIDENCE_INSUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-q2-123208Z/SPRINT_CHECKPOINT.md",
+        "cause": "A pending routine checkpoint blocked later urgent blocked HELP events from becoming actionable.",
+        "repair_status": "REPAIRED_TERRA_REVIEWED_LUNA_AUTHORED_SMOKE_M4_READY_REBASELINED",
+        "active_goal_attempt": 2
+      },
+      {
+        "epoch_id": "20260802-m5-q5-141502Z",
+        "gates": [
+          "HARNESS_BUG",
+          "WATCHER_PASS",
+          "MANAGER_EVIDENCE_INSUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-q5-141502Z/SPRINT_CHECKPOINT.md",
+        "cause": "Hidden atomic temporary and final Boreal manager-signal files became separate path-derived native events; a user turn also contaminated live manager attention.",
+        "repair_status": "REPAIRED_TERRA_REVIEWED_LUNA_SMOKED_M4_READY_REBASELINED",
+        "active_goal_attempt": 5
+      },
+      {
+        "epoch_id": "20260802-m5-q7-150000Z",
+        "gates": [
+          "HARNESS_PASS",
+          "WATCHER_BUG",
+          "MANAGER_EVIDENCE_INSUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-q7-150000Z/SPRINT_CHECKPOINT.md",
+        "cause": "Watcher used an after-pending deferral endpoint to compute explicit_deferral_seconds, producing an impossible negative metric. Atlas was independently unclassifiable because the worker exposed its final signal before recording AGENT_SIGNAL_CREATED.",
+        "repair_status": "REPAIRED_TERRA_REVIEWED_LUNA_SMOKED_M4_READY_REBASELINED",
+        "active_goal_attempt": 7
+      },
+      {
+        "epoch_id": "20260802-m5-q8-152800Z",
+        "gates": [
+          "HARNESS_PASS",
+          "WATCHER_BUG",
+          "MANAGER_EVIDENCE_INSUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-q8-152800Z/SPRINT_CHECKPOINT.md",
+        "cause": "No exact durable final-publication timestamp existed, so worker preparation delay before final atomic rename could be misattributed as native harness observation delay.",
+        "repair_status": "REPAIRED_TERRA_REVIEWED_LUNA_SMOKED_FULLY_TESTED_REBASELINED",
+        "active_goal_attempt": 8
+      },
+      {
+        "epoch_id": "20260802-m5-q9-160750Z",
+        "gates": [
+          "HARNESS_PASS",
+          "WATCHER_BUG",
+          "MANAGER_EVIDENCE_INSUFFICIENT"
+        ],
+        "checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-q9-160750Z/SPRINT_CHECKPOINT.md",
+        "cause": "Root launched external controllers with incorrectly quoted path arguments; the harness correctly rejected later non-live producer signals, but the watcher falsely labeled the intentional refusal HARNESS_DELIVERY_DELAY. No request reached manager receipt/claim.",
+        "repair_status": "REPAIRED_TERRA_REVIEWED_LUNA_SMOKED_M4_READY_REBASELINED",
+        "active_goal_attempt": 9
+      }
+    ],
+    "interrupted_epoch": null,
+    "latest_closed_epoch": "20260802-m5-q10-170245Z",
+    "clean_sprint_target": "3/3 clean comparable qualifying sprints",
+    "ninety_second_policy": "Diagnostic target, not automatic failure. Overrun is acceptable only when gap-free canonical proof covers the actual late window from delivery deadline through actionability and establishes genuine manager work or handling an earlier genuine request. Late harness observation, native blocking wait, idle delay, partial/overlapping/contradictory activity, and unknown gaps are not valid excuses.",
+    "active_goal_attempt_count": 10,
+    "active_goal_attempt_limit": 10,
+    "next_active_goal_attempt": null,
+    "attempt_limit_rule": "Q1-Q10 consumed the full active-goal budget. Stop at 0/3; never launch Q11. Any future live validation requires explicit new user authority and a new bounded goal.",
+    "status": "CLOSED_ATTEMPT_LIMIT_EVIDENCE_INSUFFICIENT",
+    "active_epoch_state": "SAFE_BOUNDARY_Q10_CLOSED"
+  },
+  "m4_readiness": {
+    "status": "VERIFIED_ON_CURRENT_Q9_REPAIRED_CODE_SURFACE_Q10_CLOSED",
+    "validated_utc": "2026-08-02T16:57:17.492108Z",
+    "report": "multi-agent-logs/verification/phase4-host-readiness-current.md",
+    "evidence": "multi-agent-logs/verification/m5-q9-ineligibility-repair-report.md",
+    "results": {
+      "combined_tests": "309 passed, 1 skipped, 42 subtests passed",
+      "attention_practical": "PASS",
+      "orchestrator_harness_tests": "211 passed, 1 skipped",
+      "watcher_tests": "99 passed",
+      "luna_ineligibility_smoke": "PASS: 64 passed, 11 subtests plus native practical",
+      "compileall": "PASS",
+      "terra_review": "PASS after accepted correction"
+    },
+    "python_baseline": {
+      "path": "multi-agent-logs/current-state/M5_PYTHON_BASELINE.json",
+      "file_count": 68,
+      "baseline_file_sha256": "8c428d5f610a2d2ecf9d3a8f71a60e595d7350752817842a5d658be8606b5d83"
+    },
+    "runtime_policy_sha256": "89bb18cb67282fe4e71c198d9a3b4a279c6cb1412710a98b9a0a720316ec0f04",
+    "production_code_changed_by_validation": false
+  },
+  "documentation_sync": {
+    "status": "M5_Q10_FINAL_SYNCHRONIZED",
+    "updated_utc": "2026-08-02",
+    "authoritative_goal": "goal.md",
+    "active_spec": "active-working-spec/m5-three-sprint-wake-test.md",
+    "checklist": "active-working-spec/m5-sprint-checklist.md",
+    "plan": "PLAN.md",
+    "handoff": "HANDOFF.md",
+    "final_checkpoint": "multi-agent-logs/attention-validation/runs/20260802-m5-q10-170245Z/SPRINT_CHECKPOINT.md",
+    "root_adjudication": "multi-agent-logs/attention-validation/runs/20260802-m5-q10-170245Z/ROOT_ADJUDICATION.md",
+    "verification": "multi-agent-logs/verification/m5-final-synchronization-verification.md"
+  }
+}

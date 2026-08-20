@@ -1,0 +1,11 @@
+﻿{
+    "schema":  "canary-manager-signal-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:34:35.9918097Z",
+    "event_id":  "1b475082a2ca4e684853e4b127ffcbec4821231e9aee74eeda1f819100a58352",
+    "signal_id":  "20260731T232821Z-20260731-s1-clean-o-Delta-A26-checkpoint",
+    "signal_sha256":  "9ce6e19a3cde848c952dbf5a0925d5825ffdae2f0231086ff4ac5526f4a15eaa",
+    "verdict":  "ACCEPTED_NONTERMINAL_TEST_FIXTURE_FAILURE",
+    "classification":  "RUN_LOCAL_CONTROLLER_DEFECT_NOT_SERVER_OR_HARNESS",
+    "analysis":  "Exact signal/evidence confirms one O lifetime and the assigned public MCP artifact, followed by a run-local routes[0] assumption against read-only setup_assignment_required with routes=[]. No permission request, relay, board action, retry, or owned-process residue occurred. Preserve evidence; do not classify a production server or harness defect."
+}

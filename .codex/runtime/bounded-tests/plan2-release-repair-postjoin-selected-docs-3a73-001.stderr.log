@@ -1,0 +1,6 @@
+test_current_examples_and_docs_name_the_real_public_apis (orchestrator_harness.tests.test_s6_public_release.S6DocumentationTests.test_current_examples_and_docs_name_the_real_public_apis) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.005s
+
+OK

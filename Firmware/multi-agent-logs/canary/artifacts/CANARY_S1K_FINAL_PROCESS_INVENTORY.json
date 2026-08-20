@@ -1,0 +1,8 @@
+﻿{
+    "captured_utc":  "2026-07-31T21:04:31.5042516Z",
+    "patterns":  "20260731-s1-clean-k|canary-20260731-s1-clean-k|a22_b14_s1k_mcp|d31_rst01_s1k_mcp|a24_pair_[ab]_s1k_mcp|a26_counter_s1k_mcp|cygnus_a24_s1_clean_k|boreal_d31_s1_clean_k|atlas_a22_s1_clean_k|delta_a26_s1_clean_k",
+    "processes":  [
+
+                  ],
+    "clean":  true
+}

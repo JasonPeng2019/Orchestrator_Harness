@@ -1,0 +1,7 @@
+{
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r11-001",
+    "manager_state":  "REASONING",
+    "decision":  "CONTINUE_READONLY_R11",
+    "response_path":  ".agent-workspace/manager-responses/20260801-attention-r11-Atlas-A22-gate.json"
+}

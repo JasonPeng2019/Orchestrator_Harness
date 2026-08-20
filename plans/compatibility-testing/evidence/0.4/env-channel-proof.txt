@@ -1,0 +1,13 @@
+config_overrides entry: model_provider="ollama"
+claude_config_override_env -> {"ANTHROPIC_API_KEY": "", "ANTHROPIC_AUTH_TOKEN": "ollama", "ANTHROPIC_BASE_URL": "http://localhost:11434"}
+
+ANTHROPIC_* present in scrubbed child env: []
+ANTHROPIC_* among cleared variables: ['ANTHROPIC_API_KEY', 'ANTHROPIC_AUTH_TOKEN', 'ANTHROPIC_BASE_URL', 'ANTHROPIC_DEFAULT_HAIKU_MODEL', 'ANTHROPIC_DEFAULT_OPUS_MODEL', 'ANTHROPIC_DEFAULT_SONNET_MODEL']
+granted provider_needs surviving the scrub: CLAUDE_CONFIG_DIR = True | HOME = True
+
+merged child env ANTHROPIC_* entries:
+  ANTHROPIC_API_KEY = ''
+  ANTHROPIC_AUTH_TOKEN = 'ollama'
+  ANTHROPIC_BASE_URL = 'http://localhost:11434'
+
+ENV_CHANNEL_PROOF=PASS (overrides re-injected after isolation)

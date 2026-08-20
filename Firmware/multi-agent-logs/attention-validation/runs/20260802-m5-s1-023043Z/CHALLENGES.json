@@ -1,0 +1,77 @@
+{
+  "schema": "m5-challenge-table/v1",
+  "epoch": "20260802-m5-s1-023043Z",
+  "sprint_disposition": "RESET",
+  "required_stages": [
+    "request_created",
+    "harness_detected",
+    "wake_attempted",
+    "wake_delivered",
+    "manager_received",
+    "manager_claimed"
+  ],
+  "challenges": [
+    {
+      "lane": "Boreal:D31",
+      "event_id": "sig-20260802-m5-s1-023043Z-boreal-d31-prep-001",
+      "wake_id": "9be36ef2-b744-4b5a-9c7e-27256e69fc37",
+      "stages": {
+        "request_created": null,
+        "harness_detected": "2026-08-02T02:39:14.317071Z",
+        "wake_attempted": "2026-08-02T02:39:17.017188Z",
+        "wake_delivered": "2026-08-02T02:39:17.017188Z",
+        "manager_received": "2026-08-02T02:39:30.578982Z",
+        "manager_claimed": "2026-08-02T02:39:50.331770Z"
+      },
+      "sufficient": false,
+      "gap": "producer records rejected: reserved source provenance caused source-hash integrity failure"
+    },
+    {
+      "lane": "Atlas:A22",
+      "event_id": "sig-20260802-m5-s1-023043Z-atlas-a22-prep-001",
+      "wake_id": "aa8a57a6-ff77-4f0c-a04c-4eb50c73c6ed",
+      "stages": {
+        "request_created": "2026-08-02T02:41:24.526975Z",
+        "harness_detected": "2026-08-02T02:41:41.109511Z",
+        "wake_attempted": "2026-08-02T02:43:35.803056Z",
+        "wake_delivered": "2026-08-02T02:43:35.803056Z",
+        "manager_received": "2026-08-02T02:43:57.451612Z",
+        "manager_claimed": "2026-08-02T02:43:58.011612Z"
+      },
+      "sufficient": false,
+      "gap": "diagnostic watcher stopped before request"
+    },
+    {
+      "lane": "Cygnus:A24",
+      "event_id": "sig-20260802-m5-s1-023043Z-cygnus-a24-prep-001",
+      "wake_id": "04b930fc-feb5-4e98-a17c-b4a8b2f450ad",
+      "stages": {
+        "request_created": "2026-08-02T02:39:53.135162Z",
+        "harness_detected": "2026-08-02T02:41:05.246422Z",
+        "wake_attempted": "2026-08-02T02:44:34.546691Z",
+        "wake_delivered": "2026-08-02T02:44:34.546691Z",
+        "manager_received": "2026-08-02T02:44:54.570765Z",
+        "manager_claimed": "2026-08-02T02:44:55.197767Z"
+      },
+      "sufficient": false,
+      "gap": "diagnostic watcher stopped before request"
+    },
+    {
+      "lane": "Delta:A26",
+      "event_id": "sig-20260802-m5-s1-023043Z-delta-a26-prep-001",
+      "wake_id": "d07bcba7-80c3-4f77-8935-da99a80aafa5",
+      "stages": {
+        "request_created": "2026-08-02T02:46:21.459037Z",
+        "harness_detected": "2026-08-02T02:46:23.711966Z",
+        "wake_attempted": "2026-08-02T02:47:02.032111Z",
+        "wake_delivered": "2026-08-02T02:47:02.032111Z",
+        "manager_received": "2026-08-02T02:47:22.494659Z",
+        "manager_claimed": "2026-08-02T02:47:23.117660Z"
+      },
+      "sufficient": false,
+      "gap": "diagnostic watcher stopped before request; canonical worker request timestamp falls after busy interval"
+    }
+  ],
+  "all_sufficient": false,
+  "note": "Post-failure reconstruction is retained for diagnosis only and is not counted evidence."
+}

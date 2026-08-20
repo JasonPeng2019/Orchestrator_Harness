@@ -1,0 +1,3 @@
+FIXED start argv: ['claude', '--print', '--output-format', 'stream-json', '--verbose', '--model', 'deepseek-v4-flash:0731-cloud', '--permission-mode', 'bypassPermissions']
+FIXED resume argv: ['claude', '--print', '--output-format', 'stream-json', '--verbose', '--resume', 'session-abc123', '--model', 'deepseek-v4-flash:0731-cloud', '--permission-mode', 'bypassPermissions']
+RESULT: PASS (--verbose present for both start and resume)

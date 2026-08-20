@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  225,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  45,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "evidence",
+    "started_at":  "2026-08-15T23:14:12.1705454+00:00",
+    "finished_at":  "2026-08-15T23:14:27.0295864+00:00",
+    "elapsed_seconds":  14.859,
+    "root_process_id":  158004,
+    "observed_process_ids":  [
+                                 158004
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\verify-changed-qwen-bridge-20260815.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\verify-changed-qwen-bridge-20260815.stderr.log"
+}

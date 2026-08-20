@@ -1,0 +1,21 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+   --> .codex\tests\test_stable_runner.py:583:52
+    |
+582 |     )
+    -     test_executor_settings = test_executor["codex"]
+    -     assert test_executor_settings["launch_profile"] == "deepseek-v4-flash-0731"
+    -     assert test_executor_settings["model"] == "deepseek-v4-flash:0731-cloud"
+    -     assert test_executor_settings["reasoning_effort"] == "max"
+583 +     test_executor_settings = test_executor["codex"]
+584 +     assert test_executor_settings["launch_profile"] == "deepseek-v4-flash-0731"
+585 +     assert test_executor_settings["model"] == "deepseek-v4-flash:0731-cloud"
+586 +     assert test_executor_settings["reasoning_effort"] == "max"
+587 |
+    |
+
+1 file would be reformatted

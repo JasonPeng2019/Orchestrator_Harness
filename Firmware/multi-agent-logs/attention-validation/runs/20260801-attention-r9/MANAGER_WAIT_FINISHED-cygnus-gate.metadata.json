@@ -1,0 +1,16 @@
+{
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r9-001",
+    "manager_state":  "WAITING_ON_TOOL",
+    "activity_id":  "r9-wait-001",
+    "wake_transport":  "collaboration.send_message",
+    "source_record_id":  "9f448808-e64d-4217-ab40-0f318c6e391e",
+    "pending_work_snapshot":  {
+                                  "complete":  true,
+                                  "events":  [
+                                                 "sig-20260801-attention-r9-cygnus-a24-gate-001"
+                                             ],
+                                  "selected_event_id":  "sig-20260801-attention-r9-cygnus-a24-gate-001",
+                                  "selection_reason":  "WATCHER_MAILBOX_WAKE"
+                              }
+}

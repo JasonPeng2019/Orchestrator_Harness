@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m pytest -q .codex/tests/test_verify_changed.py .codex/tests/test_hooks.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  110,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  20,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "focused Codex test files completed in 15 seconds before the semantic correction; 90 seconds allows Windows startup",
+    "started_at":  "2026-08-15T23:21:39.7703367+00:00",
+    "finished_at":  "2026-08-15T23:21:56.5773624+00:00",
+    "elapsed_seconds":  16.807,
+    "root_process_id":  183380,
+    "observed_process_ids":  [
+                                 183380
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\verify-linked-worktree-unit-20260815-r4.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\verify-linked-worktree-unit-20260815-r4.stderr.log"
+}

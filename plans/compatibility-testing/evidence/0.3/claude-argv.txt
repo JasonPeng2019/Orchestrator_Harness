@@ -1,0 +1,31 @@
+# claude-code argv + env override channel (post-fix)
+#
+# config_overrides=('model_provider="ollama"',) is HONORED via the
+# child-process env channel. service_tier/approval_policy exist on the
+# spec (Codex contract) but are REJECTED at the invocation layer below.
+
+=== ClaudeCodeProviderAdapter.build_argv(spec) ===
+claude --print --output-format stream-json --verbose --model deepseek-v4-flash:0731-cloud --permission-mode bypassPermissions
+
+=== env override channel (spec.env_overrides populated via claude_child_env_overrides) ===
+{
+  "ANTHROPIC_API_KEY": "",
+  "ANTHROPIC_AUTH_TOKEN": "ollama",
+  "ANTHROPIC_BASE_URL": "http://localhost:11434"
+}
+
+=== merged child_env after isolation/allow-list filtering ===
+base allow-listed env keys: PATH, SYSTEMROOT
+base ANTHROPIC_AUTH_TOKEN (inherited secret): None
+merged child_env:
+{
+  "ANTHROPIC_API_KEY": "",
+  "ANTHROPIC_AUTH_TOKEN": "ollama",
+  "ANTHROPIC_BASE_URL": "http://localhost:11434",
+  "PATH": "C:/bin",
+  "SYSTEMROOT": "C:/Windows"
+}
+
+=== invocation-layer rejections (InvocationValidationError) ===
+  provider.service_tier: rejected -> provider claude-code has no equivalent for field(s): provider.service_tier; Claude Code has no --service-tier or --approval-policy flags
+  provider.approval_policy: rejected -> provider claude-code has no equivalent for field(s): provider.approval_policy; Claude Code has no --service-tier or --approval-policy flags

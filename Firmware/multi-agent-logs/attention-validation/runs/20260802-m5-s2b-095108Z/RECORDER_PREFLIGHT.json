@@ -1,0 +1,24 @@
+﻿{
+    "passed":  true,
+    "path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-s2b-095108Z\\inputs\\orchestrator\\main-orchestrator-a791153f79fd86f8\\attention.jsonl",
+    "bytes":  541,
+    "first_record":  {
+                         "epoch_id":  "20260802-m5-s2b-095108Z",
+                         "event_id":  "root-20260802-m5-s2b-095108Z-001",
+                         "kind":  "MANAGER_INVOCATION_STARTED",
+                         "manager_invocation_id":  "root-20260802-m5-s2b-095108Z-001",
+                         "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+                         "pending_work_snapshot":  {
+                                                       "complete":  true,
+                                                       "events":  [
+
+                                                                  ],
+                                                       "selected_event_id":  null,
+                                                       "selection_reason":  "INVOCATION_STARTED"
+                                                   },
+                         "record_id":  "b6cfef4b-cb64-428f-ac99-394bb0f7860a",
+                         "recorder":  "main-orchestrator",
+                         "schema":  "manager-attention-timeline/v1",
+                         "source_timestamp_utc":  "2026-08-02T09:51:28.010461+00:00"
+                     }
+}

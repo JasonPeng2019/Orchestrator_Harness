@@ -1,0 +1,28 @@
+== CMD ==
+PYTHONPATH="$PWD:$PWD/.." python -m unittest orchestrator_harness.tests.test_compat_task_lifecycle -v
+== PYTHON ==
+Python 3.14.2
+== OUTPUT ==
+test_d10_completion_review_owner_must_own_task_card (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d10_completion_review_owner_must_own_task_card) ... ok
+test_d11_completion_review_verdict_enum (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d11_completion_review_verdict_enum) ... ok
+test_d12_orchestrator_acceptance_schema_validation (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d12_orchestrator_acceptance_schema_validation) ... ok
+test_d13_orchestrator_acceptance_identity_cross_match (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d13_orchestrator_acceptance_identity_cross_match) ... ok
+test_d14_orchestrator_acceptance_verdict_enum (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d14_orchestrator_acceptance_verdict_enum) ... ok
+test_d15_advance_task_state_machine (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d15_advance_task_state_machine) ... ok
+test_d16_advancement_result_must_match_supplied_card (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d16_advancement_result_must_match_supplied_card) ... ok
+test_d17_advancement_review_acceptance_identity_cross_match (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d17_advancement_review_acceptance_identity_cross_match) ... ok
+test_d18_advancement_acceptance_commit_must_match_result (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d18_advancement_acceptance_commit_must_match_result) ... ok
+test_d19_canonical_record_guard (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d19_canonical_record_guard) ... ok
+test_d20_schema_string_constant_surface (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d20_schema_string_constant_surface) ... ok
+test_d3_task_result_schema_validation (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d3_task_result_schema_validation) ... ok
+test_d4_result_to_card_identity_cross_match (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d4_result_to_card_identity_cross_match) ... ok
+test_d5_result_outcome_enum (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d5_result_outcome_enum) ... ok
+test_d6_result_checks_shape_and_check_outcome_enum (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d6_result_checks_shape_and_check_outcome_enum) ... ok
+test_d7_result_acceptance_state_enum (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d7_result_acceptance_state_enum) ... ok
+test_d8_completion_review_schema_validation (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d8_completion_review_schema_validation) ... ok
+test_d9_completion_review_result_identity_cross_match (orchestrator_harness.tests.test_compat_task_lifecycle.CompatTaskLifecycleTests.test_d9_completion_review_result_identity_cross_match) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.006s
+
+OK

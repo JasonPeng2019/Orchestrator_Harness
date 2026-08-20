@@ -1,0 +1,10 @@
+lane-controller invocation error: cannot read invocation: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+lane-controller invocation error: resume requires the persisted lane thread ID
+lane-controller invocation error: status escapes its allowed root
+lane-controller invocation error: prompt is not the required policy-bound prompt composition
+lane-controller invocation error: prompt bytes do not match prompt_sha256
+lane-controller invocation error: canonical policy file or sidecar does not match policy_sha256
+----------------------------------------------------------------------
+Ran 174 tests in 20.678s
+
+OK (skipped=1)

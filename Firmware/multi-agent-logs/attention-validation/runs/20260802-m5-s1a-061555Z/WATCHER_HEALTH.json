@@ -1,0 +1,20 @@
+{
+  "schema": "m5-watcher-health/v1",
+  "epoch": "20260802-m5-s1a-061555Z",
+  "cursor_drained": true,
+  "classification_counts": {
+    "ACKNOWLEDGEMENT_ONLY_DELAY": 0,
+    "BUSY_MANAGER_DELAY": 0,
+    "HARNESS_DELIVERY_DELAY": 2,
+    "IDLE_OR_ABSENT_MANAGER_DELAY": 0,
+    "INSUFFICIENT_EVIDENCE": 30,
+    "NO_BLOCKING_IMPACT": 1
+  },
+  "route_rejects": 0,
+  "attention_errors": 0,
+  "evaluator_skips": 379,
+  "evaluator_enabled_values": [
+    "False"
+  ],
+  "service_stopped": true
+}

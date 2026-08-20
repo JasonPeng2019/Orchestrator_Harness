@@ -1,0 +1,22 @@
+[
+    {
+        "launcher":  "fresh-experiments/A22_20260726-062324/.agent-workspace/atlas_a22_attention_r11_launch.ps1",
+        "owner_pid":  193600,
+        "owner_created_utc":  "2026-08-01T20:24:57.0183923Z"
+    },
+    {
+        "launcher":  "fresh-experiments/D31_20260726-062325/.agent-workspace/boreal_d31_attention_r11_launch.ps1",
+        "owner_pid":  187568,
+        "owner_created_utc":  "2026-08-01T20:24:57.1730957Z"
+    },
+    {
+        "launcher":  "fresh-experiments/A24_20260726-052146/.agent-workspace/cygnus_a24_attention_r11_launch.ps1",
+        "owner_pid":  195764,
+        "owner_created_utc":  "2026-08-01T20:24:57.3349422Z"
+    },
+    {
+        "launcher":  "fresh-experiments/A26_20260726-062325/.agent-workspace/delta_a26_attention_r11_launch.ps1",
+        "owner_pid":  191364,
+        "owner_created_utc":  "2026-08-01T20:24:57.5021486Z"
+    }
+]

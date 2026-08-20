@@ -1,0 +1,9 @@
+﻿{
+    "command":  "python -m orchestrator_harness --config multi-agent-logs/dry-run-config.json watch --until-actionable",
+    "exit_code":  3,
+    "expected_timeout_exit":  true,
+    "workspace_unchanged":  true,
+    "output_exists":  true,
+    "workspace_before":  "AUTONOMOUS_EXECUTION_POLICY.md,AUTONOMOUS_EXECUTION_POLICY.sha256,AUTONOMY_REQUIREMENT_MATRIX.md,SERVER_REPAIR_QUEUE.md,SUITE_COORDINATION.md,USER_DELEGATED_AUTHORIZATION.md",
+    "workspace_after":  "AUTONOMOUS_EXECUTION_POLICY.md,AUTONOMOUS_EXECUTION_POLICY.sha256,AUTONOMY_REQUIREMENT_MATRIX.md,SERVER_REPAIR_QUEUE.md,SUITE_COORDINATION.md,USER_DELEGATED_AUTHORIZATION.md"
+}

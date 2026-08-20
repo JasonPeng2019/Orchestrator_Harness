@@ -1,0 +1,64 @@
+{
+  "epoch": "20260802-m5-q6-144500Z",
+  "checked_utc": "2026-08-02T14:57:27.179951Z",
+  "registered_pid_count": 10,
+  "registered_pids": [
+    197976,
+    180128,
+    197056,
+    197684,
+    193196,
+    196136,
+    194020,
+    196148,
+    184848,
+    171612
+  ],
+  "setup_retry_exited_pids": [
+    186620
+  ],
+  "alive_registered_pids": [],
+  "exact_cleanup": true,
+  "workers": [
+    {
+      "doer": "Atlas",
+      "controller_pid": 197056,
+      "codex_pid": 197684,
+      "status_state": "CODEX_EXITED",
+      "status_exit_code": null,
+      "controller_alive": false,
+      "codex_alive": false,
+      "checkpoint_exists": true
+    },
+    {
+      "doer": "Boreal",
+      "controller_pid": 193196,
+      "codex_pid": 196136,
+      "status_state": "CODEX_EXITED",
+      "status_exit_code": null,
+      "controller_alive": false,
+      "codex_alive": false,
+      "checkpoint_exists": true
+    },
+    {
+      "doer": "Cygnus",
+      "controller_pid": 194020,
+      "codex_pid": 196148,
+      "status_state": "CODEX_EXITED",
+      "status_exit_code": null,
+      "controller_alive": false,
+      "codex_alive": false,
+      "checkpoint_exists": true
+    },
+    {
+      "doer": "Delta",
+      "controller_pid": 184848,
+      "codex_pid": 171612,
+      "status_state": "CODEX_EXITED",
+      "status_exit_code": null,
+      "controller_alive": false,
+      "codex_alive": false,
+      "checkpoint_exists": true
+    }
+  ]
+}

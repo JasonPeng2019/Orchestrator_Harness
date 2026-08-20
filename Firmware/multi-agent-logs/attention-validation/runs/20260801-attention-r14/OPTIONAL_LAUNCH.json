@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\.agent-workspace\\attention-validation\\20260801-attention-r14\\optional_owner_v2.ps1",
+    "-SuiteRoot",
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3"
+  ],
+  "created_utc": "2026-08-01T21:14:32.422624Z",
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+  "expected_state_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\.agent-workspace\\ORCHESTRATOR_HARNESS\\20260801-attention-r14_optional_identity.json",
+  "label": "attention-r14-optional-owner",
+  "launched_utc": "2026-08-01T21:14:32.421214Z",
+  "pid": 162464,
+  "platform": "windows",
+  "role": "watcher-owner",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "launched"
+}

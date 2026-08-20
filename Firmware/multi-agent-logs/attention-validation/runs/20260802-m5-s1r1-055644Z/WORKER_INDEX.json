@@ -1,0 +1,69 @@
+{
+  "epoch": "20260802-m5-s1r1-055644Z",
+  "workers": [
+    {
+      "doer": "Atlas",
+      "low": "atlas",
+      "task": "A22",
+      "run": "A22_20260726-062324",
+      "thread": "019fb877-1475-76c0-a137-2743580015de",
+      "work": "Advance the real A22 B14 continuation from the accepted pre-live checkpoint. Reconcile the exact live invocation manifest, retained artifact identity, current resource/lease requirements, and delegated safety authority. Produce a new non-duplicative host-only live-entry authorization checkpoint without starting MCP, provider, hardware, flashing, or RF.",
+      "event": "sig-20260802-m5-s1r1-055644Z-atlas-a22-gate-001",
+      "raw": "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1r1-055644Z.raw.md",
+      "bound": "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1r1-055644Z.bound.md",
+      "response": "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\manager-responses\\20260802-m5-s1r1-055644Z-Atlas-A22-gate.json",
+      "status": "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1r1-055644Z_controller.status.json",
+      "jsonl": "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1r1-055644Z_codex.jsonl",
+      "stderr": "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1r1-055644Z_codex.stderr.log",
+      "last": "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1r1-055644Z_last_message.txt"
+    },
+    {
+      "doer": "Boreal",
+      "low": "boreal",
+      "task": "D31",
+      "run": "D31_20260726-062325",
+      "thread": "019fb877-1447-7693-92b1-f4bda04c6ecf",
+      "work": "Advance the real D31 continuation from its accepted pre-live checkpoint. Reconcile the exact live setup invocation, retained ELF/test identity, current resource/lease requirements, and delegated safety authority. Produce a new non-duplicative host-only live-entry authorization checkpoint without starting MCP, provider, hardware, flashing, or RF.",
+      "event": "sig-20260802-m5-s1r1-055644Z-boreal-d31-gate-001",
+      "raw": "fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1r1-055644Z.raw.md",
+      "bound": "fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1r1-055644Z.bound.md",
+      "response": "fresh-experiments\\D31_20260726-062325\\.agent-workspace\\manager-responses\\20260802-m5-s1r1-055644Z-Boreal-D31-gate.json",
+      "status": "fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1r1-055644Z_controller.status.json",
+      "jsonl": "fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1r1-055644Z_codex.jsonl",
+      "stderr": "fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1r1-055644Z_codex.stderr.log",
+      "last": "fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1r1-055644Z_last_message.txt"
+    },
+    {
+      "doer": "Cygnus",
+      "low": "cygnus",
+      "task": "A24",
+      "run": "A24_20260726-052146",
+      "thread": "019fb877-1199-79b1-a32e-34348178f111",
+      "work": "Advance the real A24 continuation from its accepted pre-live checkpoint. Reconcile the exact BLE live-entry invocation, retained firmware/test identity, current resource/lease requirements, and delegated safety authority. Produce a new non-duplicative host-only live-entry authorization checkpoint without starting MCP, provider, hardware, flashing, or RF.",
+      "event": "sig-20260802-m5-s1r1-055644Z-cygnus-a24-gate-001",
+      "raw": "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1r1-055644Z.raw.md",
+      "bound": "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1r1-055644Z.bound.md",
+      "response": "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\manager-responses\\20260802-m5-s1r1-055644Z-Cygnus-A24-gate.json",
+      "status": "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1r1-055644Z_controller.status.json",
+      "jsonl": "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1r1-055644Z_codex.jsonl",
+      "stderr": "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1r1-055644Z_codex.stderr.log",
+      "last": "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1r1-055644Z_last_message.txt"
+    },
+    {
+      "doer": "Delta",
+      "low": "delta",
+      "task": "A26",
+      "run": "A26_20260726-062325",
+      "thread": "019fb877-1441-7c92-84e2-cbb5bc422879",
+      "work": "Advance the real A26 continuation from its accepted pre-live checkpoint. Reconcile the exact live test invocation, retained ELF/test identity, current resource/lease requirements, and delegated safety authority. Produce a new non-duplicative host-only live-entry authorization checkpoint without starting MCP, provider, hardware, flashing, or RF.",
+      "event": "sig-20260802-m5-s1r1-055644Z-delta-a26-gate-001",
+      "raw": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1r1-055644Z.raw.md",
+      "bound": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1r1-055644Z.bound.md",
+      "response": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\manager-responses\\20260802-m5-s1r1-055644Z-Delta-A26-gate.json",
+      "status": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1r1-055644Z_controller.status.json",
+      "jsonl": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1r1-055644Z_codex.jsonl",
+      "stderr": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1r1-055644Z_codex.stderr.log",
+      "last": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1r1-055644Z_last_message.txt"
+    }
+  ]
+}

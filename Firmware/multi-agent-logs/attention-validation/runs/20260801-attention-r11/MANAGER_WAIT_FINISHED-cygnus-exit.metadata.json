@@ -1,0 +1,7 @@
+{
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r11-001",
+    "activity_id":  "r11-wait-cygnus-exit",
+    "manager_state":  "WAITING_ON_SUBAGENTS",
+    "wake_transport":  "collaboration.wait_agent_timeout"
+}

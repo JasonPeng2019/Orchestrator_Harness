@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/skills/design-project-topology/scripts/validate_execution_plan.py --self-test",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The previous validator runs completed under three seconds; 30 seconds allows cold uv startup and 5 seconds is the short-command cleanup cap.",
+    "started_at":  "2026-08-13T23:51:37.5088185+00:00",
+    "finished_at":  "2026-08-13T23:51:39.4584992+00:00",
+    "elapsed_seconds":  1.95,
+    "root_process_id":  193412,
+    "observed_process_ids":  [
+                                 193412
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\portable-validator-self-test.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\portable-validator-self-test.stderr.log"
+}

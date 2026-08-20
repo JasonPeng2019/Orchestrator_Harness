@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "python C:\\Users\\Jason\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py Firmware/.codex/skills/change-loop",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "single local skill validation; 30-second upper bound based on prior 2-second runs",
+    "started_at":  "2026-08-14T12:05:27.9880877+00:00",
+    "finished_at":  "2026-08-14T12:05:30.1110683+00:00",
+    "elapsed_seconds":  2.123,
+    "root_process_id":  155680,
+    "observed_process_ids":  [
+                                 155680
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\validate-change-loop-skill-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\validate-change-loop-skill-20260814.stderr.log"
+}

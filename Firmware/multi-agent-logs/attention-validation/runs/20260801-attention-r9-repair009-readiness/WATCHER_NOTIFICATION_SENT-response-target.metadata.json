@@ -1,0 +1,5 @@
+{
+  "wake_transport": "collaboration.send_message",
+  "delivery_succeeded": true,
+  "response_deadline_utc": "2026-08-01T19:55:03.857193Z"
+}

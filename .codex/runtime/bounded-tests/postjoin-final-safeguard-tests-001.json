@@ -1,0 +1,31 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev --locked python -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6SafeguardTests",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "affected-root-measured-safeguard-tests-40s",
+    "started_at":  "2026-08-14T21:14:14.0880412+00:00",
+    "finished_at":  "2026-08-14T21:14:56.4996972+00:00",
+    "elapsed_seconds":  42.412,
+    "root_process_id":  173060,
+    "observed_process_ids":  [
+                                 66784,
+                                 154908,
+                                 166028,
+                                 173020,
+                                 173060,
+                                 173904,
+                                 179756,
+                                 186724,
+                                 192532,
+                                 193452
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\postjoin-final-safeguard-tests-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\postjoin-final-safeguard-tests-001.stderr.log"
+}

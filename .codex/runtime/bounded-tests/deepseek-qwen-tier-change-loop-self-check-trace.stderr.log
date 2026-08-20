@@ -1,0 +1,150 @@
++ set -euo pipefail
++++ dirname Firmware/.codex/skills/change-loop/scripts/run_loop.sh
+++ cd Firmware/.codex/skills/change-loop/scripts
+++ pwd
++ SCRIPT_DIR=/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts
++ source /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/lib.sh
+++ set -euo pipefail
+++++ dirname /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/lib.sh
++++ cd /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/..
++++ pwd
+++ CL_SKILL_DIR=/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop
+++ DOER_MODEL=deepseek-v4-flash:0731-cloud
+++ DOER_REASONING_EFFORT=max
+++ SPEC_TESTER_MODEL=deepseek-v4-flash:0731-cloud
+++ REGRESSION_TESTER_MODEL=deepseek-v4-flash:0731-cloud
+++ TESTER_REASONING_EFFORT=high
+++ CL_CODEX_FLAGS='--dangerously-bypass-approvals-and-sandbox --ignore-user-config --config approval_policy="never" --config approvals_reviewer="user"'
+++ CL_RUNTIME_DIR=../.agent-workspace/server-repair-runtime/current
+++ MAX_ITERS=8
+++ CL_TEST_TAIL_LINES=120
+++ CL_CODEX_BIN=codex
+++ CL_PYTHON_BIN=python3
+++ CL_BASH_BIN=bash
+++ CL_JSONL_HELPER=/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../../../scripts/orchestration/codex_jsonl.py
++ case "${1:-}" in
++ cl_require_command bash
++ command -v bash
++ cl_require_command python3
++ command -v python3
++ cl_require_command git
++ command -v git
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../../../scripts/orchestration/codex_jsonl.py ]]
++ self_check
++ required=('/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/SKILL.md' '/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/lib.sh' '/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/agent.sh' '/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/run_tests.sh' '/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/run_loop.sh' '/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/templates/doer_prompt.md' '/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/templates/spec_tester_prompt.md' '/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/templates/regression_tester_prompt.md' '/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../plan-changes/SKILL.md' '/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../plan-changes/scripts/plan.sh' '/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../plan-changes/templates/plan_prompt.md' '/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../plan-changes/templates/plan.md' '/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../../../scripts/orchestration/prompt_policy.py' '/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../../../scripts/orchestration/codex_jsonl.py')
++ local required
++ local file
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/SKILL.md ]]
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/lib.sh ]]
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/agent.sh ]]
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/run_tests.sh ]]
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/run_loop.sh ]]
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/templates/doer_prompt.md ]]
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/templates/spec_tester_prompt.md ]]
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/templates/regression_tester_prompt.md ]]
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../plan-changes/SKILL.md ]]
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../plan-changes/scripts/plan.sh ]]
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../plan-changes/templates/plan_prompt.md ]]
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../plan-changes/templates/plan.md ]]
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../../../scripts/orchestration/prompt_policy.py ]]
++ for file in "${required[@]}"
++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../../../scripts/orchestration/codex_jsonl.py ]]
++ for file in "$CL_SKILL_DIR"/scripts/*.sh "$CL_SKILL_DIR"/../plan-changes/scripts/*.sh
++ bash -n /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/agent.sh
++ for file in "$CL_SKILL_DIR"/scripts/*.sh "$CL_SKILL_DIR"/../plan-changes/scripts/*.sh
++ bash -n /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/lib.sh
++ for file in "$CL_SKILL_DIR"/scripts/*.sh "$CL_SKILL_DIR"/../plan-changes/scripts/*.sh
++ bash -n /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/run_loop.sh
++ for file in "$CL_SKILL_DIR"/scripts/*.sh "$CL_SKILL_DIR"/../plan-changes/scripts/*.sh
++ bash -n /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/run_tests.sh
++ for file in "$CL_SKILL_DIR"/scripts/*.sh "$CL_SKILL_DIR"/../plan-changes/scripts/*.sh
++ bash -n /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../plan-changes/scripts/plan.sh
++ local temporary
+++ mktemp -d
++ temporary=/tmp/tmp.ssNENgk2ck
++ trap 'rm -rf "$temporary"' RETURN
++ git -C /tmp/tmp.ssNENgk2ck init -q
++ mkdir -p /tmp/tmp.ssNENgk2ck/.change-loop/state
++ printf 'printf '\''spec-run\n'\'' >> .change-loop/state/spec-runs\n'
++ printf 'printf '\''regression-run\n'\'' >> .change-loop/state/regression-runs\n'
++ printf 'RUN\nInitial self-check execution.\n'
++ printf 'RUN\nInitial self-check execution.\n'
++ printf 'self-check\n'
++ printf 'self-check\n'
++ cd /tmp/tmp.ssNENgk2ck
++ CL_RUNTIME_DIR=.change-loop
++ /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/run_tests.sh
++ printf 'REUSE\nNo covered source or contract changed.\n'
++ printf 'REUSE\nNo covered source or contract changed.\n'
++ CL_RUNTIME_DIR=.change-loop
++ /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/run_tests.sh
++ grep -q 'Spec suite: PASS (REUSED)' /tmp/tmp.ssNENgk2ck/.change-loop/state/test_report.md
++ grep -q 'Regression suite: PASS (REUSED)' /tmp/tmp.ssNENgk2ck/.change-loop/state/test_report.md
+++ wc -l
++ [[ 1 -eq 1 ]]
+++ wc -l
++ [[ 1 -eq 1 ]]
++ CL_REPO_ROOT=/tmp/tmp.ssNENgk2ck
++ CL_RUN_DIR=/tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime
++ CL_STATE_DIR=/tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state
++ CL_LOG_DIR=/tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/logs
++ CL_PLAN_PATH=/tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/plan.md
++ mkdir -p /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/logs
++ local composed_prompt
+++ compose_prompt doer 1
+++ local role=doer
+++ local iteration=1
+++ local target=/tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md
+++ local policy_helper=/mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../../../scripts/orchestration/prompt_policy.py
+++ local policy_target=/tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md.policy-bound.tmp
+++ cat /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/templates/doer_prompt.md
+++ sed -i 's#\.change-loop/state#/tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state#g' /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md
+++ sed -i 's#\.change-loop/plan\.md#/tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/plan.md#g' /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md
+++ sed -i 's#\.change-loop/plan-review\.md#/tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/plan-review.md#g' /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md
+++ sed -i 's#\.change-loop/plan-amendments\.md#/tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/plan-amendments.md#g' /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md
+++ cat
+++ [[ -s /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../../../scripts/orchestration/prompt_policy.py ]]
+++ python3 /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/../../../scripts/orchestration/prompt_policy.py /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md.policy-bound.tmp
+++ mv /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md.policy-bound.tmp /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md
+++ printf '%s\n' ca9a0cf634c950a0cc8eb081f772388658afa831ddacb240ea5e5d5198114314
+++ printf '%s\n' /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md
++ composed_prompt=/tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md
++ grep -Fq /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/plan.md /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md
++ grep -Fq /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/plan-review.md /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md
++ grep -Fq /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/plan-amendments.md /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md
++ grep -Fq /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/test_report.md /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md
++ grep -Fq .change-loop/plan.md /tmp/tmp.ssNENgk2ck/.change-loop/custom-runtime/state/doer.prompt.md
++ local fake_codex=/tmp/tmp.ssNENgk2ck/fake-codex
++ local fake_calls=/tmp/tmp.ssNENgk2ck/fake-codex.calls
++ cat
++ chmod +x /tmp/tmp.ssNENgk2ck/fake-codex
++ printf 'Perform the mock self-check turn.\n'
++ cd /tmp/tmp.ssNENgk2ck
++ FAKE_CODEX_CALL_LOG=/tmp/tmp.ssNENgk2ck/fake-codex.calls
++ CL_RUNTIME_DIR=.change-loop
++ CL_CODEX_BIN=/tmp/tmp.ssNENgk2ck/fake-codex
++ /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/agent.sh doer /tmp/tmp.ssNENgk2ck/prompt.md
+++ cat .change-loop/state/doer.thread
++ first_thread=thread-self-check
++ FAKE_CODEX_CALL_LOG=/tmp/tmp.ssNENgk2ck/fake-codex.calls
++ CL_RUNTIME_DIR=.change-loop
++ CL_CODEX_BIN=/tmp/tmp.ssNENgk2ck/fake-codex
++ /mnt/c/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/.codex/skills/change-loop/scripts/agent.sh doer /tmp/tmp.ssNENgk2ck/prompt.md
+++ cat .change-loop/state/doer.thread
++ second_thread=thread-self-check
++ [[ thread-self-check == thread-self-check ]]
++ [[ thread-self-check == thread\-self\-check ]]
++ grep -Fq 'model_reasoning_effort="high"' /tmp/tmp.ssNENgk2ck/fake-codex.calls

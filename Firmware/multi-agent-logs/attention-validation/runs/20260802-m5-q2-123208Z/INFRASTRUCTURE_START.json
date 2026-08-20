@@ -1,0 +1,35 @@
+{
+    "epoch":  "20260802-m5-q2-123208Z",
+    "created_utc":  "2026-08-02T12:32:24.6737373Z",
+    "harness_pid":  179664,
+    "harness_creation_utc":  "2026-08-02T12:32:19.4422851Z",
+    "harness_command":  "python -m orchestrator_harness --config C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-q2-123208Z\\config.json watch --managed",
+    "watcher_start":  {
+                          "started":  true,
+                          "pid":  189792,
+                          "owner":  {
+                                        "pid":  192592,
+                                        "created_utc":  "windows-filetime:134300974063275151"
+                                    }
+                      },
+    "watcher_status":  {
+                           "running":  true,
+                           "state":  {
+                                         "evaluator_enabled":  false,
+                                         "exit_reason":  null,
+                                         "owner":  {
+                                                       "created_utc":  "windows-filetime:134300974063275151",
+                                                       "pid":  192592
+                                                   },
+                                         "schema":  "harness-watcher-service/v1",
+                                         "started_utc":  "2026-08-02T12:32:21.807135+00:00",
+                                         "startup_status":  "READY",
+                                         "startup_token":  "4704c6d2-bb79-4c63-8dd6-e71ced587151",
+                                         "stop_requested":  false,
+                                         "watcher":  {
+                                                         "created_utc":  "windows-filetime:134301475418518924",
+                                                         "pid":  189792
+                                                     }
+                                     }
+                       }
+}

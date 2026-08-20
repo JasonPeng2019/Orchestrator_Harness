@@ -1,0 +1,8 @@
+test_current_run_state_is_the_primary_status_source (test_audit_autonomy.AuditRunDiscoveryTests.test_current_run_state_is_the_primary_status_source) ... ok
+test_green_current_run_is_not_returned (test_audit_autonomy.AuditRunDiscoveryTests.test_green_current_run_is_not_returned) ... ok
+test_historical_status_remains_supported (test_audit_autonomy.AuditRunDiscoveryTests.test_historical_status_remains_supported) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.078s
+
+OK

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "bash -x Firmware/.codex/skills/change-loop/scripts/run_loop.sh --self-check",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The xtrace self-check is the same local path as the failing smoke test; twenty seconds bounds diagnosis and five seconds bounds cleanup.",
+    "started_at":  "2026-08-14T11:37:00.5821444+00:00",
+    "finished_at":  "2026-08-14T11:37:05.0086741+00:00",
+    "elapsed_seconds":  4.427,
+    "root_process_id":  173780,
+    "observed_process_ids":  [
+                                 173780
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-change-loop-self-check-trace.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-change-loop-self-check-trace.stderr.log"
+}

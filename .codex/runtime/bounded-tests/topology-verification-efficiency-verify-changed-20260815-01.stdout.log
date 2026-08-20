@@ -1,0 +1,187 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+    --> .codex\skills\design-project-topology\scripts\validate_execution_plan.py:541:47
+     |
+540  |
+     - def validate_policies(body: str) -> list[str]:
+541  + def validate_policies(body: str) -> list[str]:
+542  |     errors: list[str] = []
+--------------------------------------------------------------------------------
+557  |                 errors.append("P14 has no exception-class table or reasoned N/A row")
+     -     return errors
+     -
+     -
+     - def validate_verification_economy(by_section: dict[str, str], text: str) -> list[str]:
+     -     """Validate the optional checkpointed-gate protocol for newly amended plans."""
+     -
+     -     checkpointed = "checkpointed_verification_v1" in text.lower()
+     -     fast_lane_v2 = "fast_lane_v2" in text.lower()
+     -     if fast_lane_v2 and not checkpointed:
+     -         return ["FAST_LANE_V2 requires CHECKPOINTED_VERIFICATION_V1"]
+     -     if not checkpointed:
+     -         return []
+     -
+     -     errors: list[str] = []
+     -     policy_text = "\n".join(
+     -         by_section[heading]
+     -         for heading in (
+     -             "## 9. Global workflow policies and exceptions",
+     -             "## 10. Lane, resource, result, and handoff manifest",
+     -             "## 13. Integration, safeguard, promotion, rollback, and retirement",
+     -         )
+     -     ).lower()
+     -     for term in ("checkpoint", "input map", "first unresolved", "ordinary failure"):
+     -         if term not in policy_text:
+     -             errors.append(
+     -                 "CHECKPOINTED_VERIFICATION_V1 requires policy text for "
+     -                 f"{term!r}"
+     -             )
+     -     if fast_lane_v2:
+     -         for term in ("motivating test", "compile", "review", "integration"):
+     -             if term not in policy_text:
+     -                 errors.append(f"FAST_LANE_V2 requires policy text for {term!r}")
+     -     return errors
+558  +     return errors
+559  +
+560  |
+561  + def validate_verification_economy(by_section: dict[str, str], text: str) -> list[str]:
+562  +     """Validate the optional checkpointed-gate protocol for newly amended plans."""
+563  |
+564  +     checkpointed = "checkpointed_verification_v1" in text.lower()
+565  +     fast_lane_v2 = "fast_lane_v2" in text.lower()
+566  +     if fast_lane_v2 and not checkpointed:
+567  +         return ["FAST_LANE_V2 requires CHECKPOINTED_VERIFICATION_V1"]
+568  +     if not checkpointed:
+569  +         return []
+570  +
+571  +     errors: list[str] = []
+572  +     policy_text = "\n".join(
+573  +         by_section[heading]
+574  +         for heading in (
+575  +             "## 9. Global workflow policies and exceptions",
+576  +             "## 10. Lane, resource, result, and handoff manifest",
+577  +             "## 13. Integration, safeguard, promotion, rollback, and retirement",
+578  +         )
+579  +     ).lower()
+580  +     for term in ("checkpoint", "input map", "first unresolved", "ordinary failure"):
+581  +         if term not in policy_text:
+582  +             errors.append(f"CHECKPOINTED_VERIFICATION_V1 requires policy text for {term!r}")
+583  +     if fast_lane_v2:
+584  +         for term in ("motivating test", "compile", "review", "integration"):
+585  +             if term not in policy_text:
+586  +                 errors.append(f"FAST_LANE_V2 requires policy text for {term!r}")
+587  +     return errors
+588  +
+589  +
+590  | def validate_gates(body: str) -> list[str]:
+--------------------------------------------------------------------------------
+810  |     manifest_errors, instance_types = validate_module_manifest(by_section[HEADINGS[6]])
+     -     errors.extend(manifest_errors)
+     -     errors.extend(validate_instances(by_section[HEADINGS[11]], instance_types))
+     -     errors.extend(validate_policies(by_section[HEADINGS[9]]))
+     -     errors.extend(validate_verification_economy(by_section, text))
+     -     errors.extend(validate_gates(by_section[HEADINGS[8]]))
+811  +     errors.extend(manifest_errors)
+812  +     errors.extend(validate_instances(by_section[HEADINGS[11]], instance_types))
+813  +     errors.extend(validate_policies(by_section[HEADINGS[9]]))
+814  +     errors.extend(validate_verification_economy(by_section, text))
+815  +     errors.extend(validate_gates(by_section[HEADINGS[8]]))
+816  |     errors.extend(validate_cross_references(by_section, instance_types))
+--------------------------------------------------------------------------------
+1055 |
+     - def run_self_test() -> list[str]:
+1056 + def run_self_test() -> list[str]:
+1057 |     plan = build_self_test_plan()
+1058 |     failures: list[str] = []
+     -     if errors := validate(plan, {"orchestrator"}, "mapping.json"):
+     -         failures.append("valid fixture failed: " + "; ".join(errors))
+     -
+     -     checkpointed = plan.replace(
+     -         "| Plan ID | SELF-TEST |",
+     -         "| Plan ID | SELF-TEST; CHECKPOINTED_VERIFICATION_V1 |",
+     -         1,
+     -     ).replace(
+     -         "| orchestrator | plan | decide | recorded | plan | MI-001 |",
+     -         "| orchestrator | checkpoint | input map; first unresolved; ordinary failure continuation | "
+     -         "recorded | plan | MI-001 |",
+     -         1,
+     -     )
+     -     if errors := validate(checkpointed, {"orchestrator"}, "mapping.json"):
+     -         failures.append("checkpointed fixture failed: " + "; ".join(errors))
+     -
+     -     fast_lane = checkpointed.replace(
+     -         "input map; first unresolved; ordinary failure continuation",
+     -         "input map; first unresolved; ordinary failure continuation; FAST_LANE_V2 motivating test "
+     -         "compile review integration",
+     -         1,
+     -     )
+     -     if errors := validate(fast_lane, {"orchestrator"}, "mapping.json"):
+     -         failures.append("FAST_LANE_V2 fixture failed: " + "; ".join(errors))
+1059 +     if errors := validate(plan, {"orchestrator"}, "mapping.json"):
+1060 +         failures.append("valid fixture failed: " + "; ".join(errors))
+1061 +
+1062 +     checkpointed = plan.replace(
+1063 +         "| Plan ID | SELF-TEST |",
+1064 +         "| Plan ID | SELF-TEST; CHECKPOINTED_VERIFICATION_V1 |",
+1065 +         1,
+1066 +     ).replace(
+1067 +         "| orchestrator | plan | decide | recorded | plan | MI-001 |",
+1068 +         "| orchestrator | checkpoint | input map; first unresolved; ordinary failure continuation | "
+1069 +         "recorded | plan | MI-001 |",
+1070 +         1,
+1071 +     )
+1072 +     if errors := validate(checkpointed, {"orchestrator"}, "mapping.json"):
+1073 +         failures.append("checkpointed fixture failed: " + "; ".join(errors))
+1074 +
+1075 +     fast_lane = checkpointed.replace(
+1076 +         "input map; first unresolved; ordinary failure continuation",
+1077 +         "input map; first unresolved; ordinary failure continuation; FAST_LANE_V2 motivating test "
+1078 +         "compile review integration",
+1079 +         1,
+1080 +     )
+1081 +     if errors := validate(fast_lane, {"orchestrator"}, "mapping.json"):
+1082 +         failures.append("FAST_LANE_V2 fixture failed: " + "; ".join(errors))
+1083 |
+     -     corruptions = {
+1084 +     corruptions = {
+1085 |         "placeholder": plan + "\n{{UNFILLED}}\n",
+--------------------------------------------------------------------------------
+1113 |         ),
+     -         "operation boundary product repair": plan.replace(
+     -             "same deployment admission action or stop allocation",
+     -             "M02 material repair",
+     -             1,
+     -         ),
+     -         "checkpoint marker without protocol": plan.replace(
+     -             "| Plan ID | SELF-TEST |",
+     -             "| Plan ID | SELF-TEST; CHECKPOINTED_VERIFICATION_V1 |",
+     -             1,
+     -         ),
+     -         "FAST_LANE_V2 without checkpoint protocol": plan.replace(
+     -             "| Plan ID | SELF-TEST |",
+     -             "| Plan ID | SELF-TEST; FAST_LANE_V2 |",
+     -             1,
+     -         ),
+1114 +         "operation boundary product repair": plan.replace(
+1115 +             "same deployment admission action or stop allocation",
+1116 +             "M02 material repair",
+1117 +             1,
+1118 +         ),
+1119 +         "checkpoint marker without protocol": plan.replace(
+1120 +             "| Plan ID | SELF-TEST |",
+1121 +             "| Plan ID | SELF-TEST; CHECKPOINTED_VERIFICATION_V1 |",
+1122 +             1,
+1123 +         ),
+1124 +         "FAST_LANE_V2 without checkpoint protocol": plan.replace(
+1125 +             "| Plan ID | SELF-TEST |",
+1126 +             "| Plan ID | SELF-TEST; FAST_LANE_V2 |",
+1127 +             1,
+1128 +         ),
+1129 |     }
+     |
+
+1 file would be reformatted

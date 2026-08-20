@@ -1,0 +1,42 @@
+{
+  "schema": "orchestrator-coding-invocation/v1",
+  "action": "start",
+  "run_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/wop-0365",
+  "runtime_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/generalization/generalization-20260810T182017Z-0365e2613294",
+  "resource_lock_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/generalization/generalization-20260810T182017Z-0365e2613294/resource-locks",
+  "event_log_path": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/firmware-v2/generalization/generalization-20260810T182017Z-0365e2613294/events/events.jsonl",
+  "prompt_path": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/wop-0365/.agent-workspace/BOUNDARY_SMOKE_PROMPT.md",
+  "prompt_sha256": "3b57e96c569057c0e299149e81cec205076eabeba88af2ab285b5dc1ff43fa1a",
+  "output_paths": {
+    "status": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/wop-0365/.agent-workspace/boundary-smoke.status.json",
+    "jsonl": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/wop-0365/.agent-workspace/boundary-smoke.output.jsonl",
+    "stderr": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/wop-0365/.agent-workspace/boundary-smoke.stderr.log",
+    "last_message": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/wop-0365/.agent-workspace/boundary-smoke.last-message.txt"
+  },
+  "worker_invocation_id": "bounded-policy-launch-smoke-001",
+  "lane_id": "BOUNDARY.SMOKE",
+  "exclusive_resources": [
+    "bounded-policy-launch-smoke"
+  ],
+  "task": "Return the read-only unbounded lane-launch smoke marker",
+  "phase": "current-run-boundary-verification",
+  "repository": {
+    "common_dir": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.git/modules/harness-in-progress",
+    "worktree_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/plans/general-coding-harness/runtime/wop-0365",
+    "branch": "firmware/v2-workspace-overlay-generalization-0365",
+    "base_commit": "37ef1a69019057ee3210f0fae7682558768942ca",
+    "merge_inputs": []
+  },
+  "codex": {
+    "command": [
+      "codex",
+      "--dangerously-bypass-hook-trust"
+    ],
+    "model": "role-resolved-at-dispatch",
+    "reasoning_effort": "role-resolved-at-dispatch",
+    "service_tier": "role-resolved-at-dispatch",
+    "sandbox": "danger-full-access",
+    "approval_policy": "never",
+    "config_overrides": []
+  }
+}

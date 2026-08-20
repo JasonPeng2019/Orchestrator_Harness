@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "bash Firmware/.codex/skills/change-loop/scripts/run_loop.sh",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "intentional pending-adapter refusal; 30-second upper bound for immediate guard",
+    "started_at":  "2026-08-14T12:04:34.7185109+00:00",
+    "finished_at":  "2026-08-14T12:04:37.0968290+00:00",
+    "elapsed_seconds":  2.378,
+    "root_process_id":  167244,
+    "observed_process_ids":  [
+                                 167244
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  2,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\change-loop-live-refusal-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\change-loop-live-refusal-20260814.stderr.log"
+}

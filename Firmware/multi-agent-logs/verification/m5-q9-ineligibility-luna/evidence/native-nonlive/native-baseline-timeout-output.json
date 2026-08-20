@@ -1,0 +1,4 @@
+{
+  "exit_code": 3,
+  "stdout": "{\"data\":{\"timeout_seconds\":0},\"event_id\":\"WATCH_TIMEOUT\",\"identity\":\"watch:timeout\",\"observed_utc\":\"2026-08-02T15:59:59+00:00\",\"severity\":\"info\",\"type\":\"WATCH_TIMEOUT\"}\n"
+}

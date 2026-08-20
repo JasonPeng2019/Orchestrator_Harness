@@ -1,0 +1,23 @@
+{
+    "epoch":  "20260802-m5-q4-134406Z",
+    "checked_utc":  "2026-08-02T14:07:21.6762405Z",
+    "leases":  [
+
+               ],
+    "board_tokens":  [
+
+                     ],
+    "providers":  [
+
+                  ],
+    "mcp_processes":  [
+
+                      ],
+    "hardware_actions":  [
+
+                         ],
+    "temporary_runtime_owners":  [
+
+                                 ],
+    "safe_host_only_boundary":  true
+}

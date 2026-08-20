@@ -1,0 +1,16 @@
+{
+    "workers_launched":  false,
+    "evidence":  [
+                     "QUIET_CONTROL.json",
+                     "multi-agent-logs/orchestrator-harness/",
+                     "20260802-m5-s1-015559Z",
+                     "/attention-events.jsonl"
+                 ],
+    "next":  "repair blocking wait to consume the managed watcher durable notification state without becoming a second scanner, then rerun M4 and restart Sprint 1",
+    "count_after":  "0/3",
+    "epoch":  "20260802-m5-s1-015559Z",
+    "disposition":  "RESET",
+    "schema":  "m5-sprint-disposition/v1",
+    "verified_defect":  "A separate blocking --until-actionable process attempted to commit into the active managed harness scan chain and failed because its process identity differs from the managed watcher.",
+    "stage":  "quiet-control-before-worker-launch"
+}

@@ -1,0 +1,32 @@
+Name: setuptools
+Version: 84.0.0
+Summary: Most extensible Python build backend with support for C/C++ extension modules
+Home-page: 
+Author: 
+Author-email: Python Packaging Authority <distutils-sig@python.org>
+License-Expression: MIT
+Location: C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.codex\dev\.venv\Lib\site-packages
+Requires: 
+Required-by: 
+---
+Name: ruff
+Version: 0.16.1
+Summary: An extremely fast Python linter and code formatter, written in Rust.
+Home-page: https://docs.astral.sh/ruff
+Author: 
+Author-email: "Astral Software Inc." <hey@astral.sh>
+License-Expression: MIT
+Location: C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.codex\dev\.venv\Lib\site-packages
+Requires: 
+Required-by: 
+---
+Name: basedpyright
+Version: 1.39.9
+Summary: static type checking for Python (but based)
+Home-page: 
+Author: 
+Author-email: detachhead <detachhead@users.noreply.github.com>
+License: 
+Location: C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.codex\dev\.venv\Lib\site-packages
+Requires: nodejs-wheel-binaries
+Required-by: 

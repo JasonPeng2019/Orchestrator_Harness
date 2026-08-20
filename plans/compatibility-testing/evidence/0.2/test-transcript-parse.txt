@@ -1,0 +1,10 @@
+test_clean_success_transcript_still_completed (orchestrator_harness.tests.test_compat_transcript_parse.ClaudeCodePermissionDenialTests.test_clean_success_transcript_still_completed) ... ok
+test_default_spec_emits_bypass_permission_mode (orchestrator_harness.tests.test_compat_transcript_parse.ClaudeCodePermissionDenialTests.test_default_spec_emits_bypass_permission_mode) ... ok
+test_explicit_permission_mode_wins (orchestrator_harness.tests.test_compat_transcript_parse.ClaudeCodePermissionDenialTests.test_explicit_permission_mode_wins) ... ok
+test_permission_denied_transcript_never_classifies_completed (orchestrator_harness.tests.test_compat_transcript_parse.ClaudeCodePermissionDenialTests.test_permission_denied_transcript_never_classifies_completed) ... ok
+test_result_permission_denials_alone_classifies_failed (orchestrator_harness.tests.test_compat_transcript_parse.ClaudeCodePermissionDenialTests.test_result_permission_denials_alone_classifies_failed) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK

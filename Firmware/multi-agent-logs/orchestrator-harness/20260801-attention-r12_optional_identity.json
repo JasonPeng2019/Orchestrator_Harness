@@ -1,0 +1,15 @@
+{
+    "schema":  "canary-optional-watcher-owner/v1",
+    "owner":  {
+                  "created_utc":  "2026-08-01T20:51:05.9288237Z",
+                  "pid":  188228
+              },
+    "config":  "harness_watcher_implementation/canary-20260801-attention-r12.json",
+    "started_utc":  "2026-08-01T20:51:06.5473036Z",
+    "watcher":  {
+                    "created_utc":  "windows-filetime:134300910668039195",
+                    "pid":  13872
+                },
+    "exit_reason":  "stop-file",
+    "ended_utc":  "2026-08-01T21:00:21.7923789Z"
+}

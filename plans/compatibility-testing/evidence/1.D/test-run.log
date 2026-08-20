@@ -1,0 +1,18 @@
+test_e18_invalid_result_evidence_and_clearing (orchestrator_harness.tests.test_compat_git_safety.GitSafetyCompatDiscoveryTests.test_e18_invalid_result_evidence_and_clearing) ... ok
+test_e19_result_offered_under_exited_state_is_still_accepted (orchestrator_harness.tests.test_compat_git_safety.GitSafetyCompatDiscoveryTests.test_e19_result_offered_under_exited_state_is_still_accepted) ... ok
+test_e20_two_result_candidates_select_resolved_result_json (orchestrator_harness.tests.test_compat_git_safety.GitSafetyCompatDiscoveryTests.test_e20_two_result_candidates_select_resolved_result_json) ... ok
+test_e14_coding_result_root_shape_and_schema (orchestrator_harness.tests.test_compat_git_safety.GitSafetyCompatTests.test_e14_coding_result_root_shape_and_schema) ... ok
+test_e15_lane_branch_outcome_cross_match (orchestrator_harness.tests.test_compat_git_safety.GitSafetyCompatTests.test_e15_lane_branch_outcome_cross_match) ... ok
+test_e16_per_check_shape_and_outcome_enum (orchestrator_harness.tests.test_compat_git_safety.GitSafetyCompatTests.test_e16_per_check_shape_and_outcome_enum) ... ok
+test_e17_commit_must_equal_branch_tip (orchestrator_harness.tests.test_compat_git_safety.GitSafetyCompatTests.test_e17_commit_must_equal_branch_tip) ... ok
+test_e19_operational_state_gate (orchestrator_harness.tests.test_compat_git_safety.GitSafetyCompatTests.test_e19_operational_state_gate) ... ok
+test_e20_too_many_json_candidates_bound (orchestrator_harness.tests.test_compat_git_safety.GitSafetyCompatTests.test_e20_too_many_json_candidates_bound) ... ok
+test_e4_repository_identity_must_be_reported (orchestrator_harness.tests.test_compat_git_safety.GitSafetyCompatTests.test_e4_repository_identity_must_be_reported) ... ok
+test_e5_detached_head_rejection (orchestrator_harness.tests.test_compat_git_safety.GitSafetyCompatTests.test_e5_detached_head_rejection) ... ok
+test_e6_commit_identity_format_validation (orchestrator_harness.tests.test_compat_git_safety.GitSafetyCompatTests.test_e6_commit_identity_format_validation) ... ok
+test_e7_duplicate_active_worktree_and_branch_conflict (orchestrator_harness.tests.test_compat_git_safety.GitSafetyCompatTests.test_e7_duplicate_active_worktree_and_branch_conflict) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 9.997s
+
+OK

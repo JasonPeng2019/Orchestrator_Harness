@@ -1,0 +1,71 @@
+{
+  "schema": "m5-busy-manager-resource-audit/v1",
+  "epoch": "20260802-m5-s3-101953Z",
+  "activity_id": "busy-manager-resource-readiness-audit-001",
+  "audited_utc": "2026-08-02T10:27:32.275810Z",
+  "work": "Review fresh A22/D31/A24 checkpoints, verify retained artifacts, compare snapshot authority, and produce a conflict-free future schedule.",
+  "artifact_checks": [
+    {
+      "name": "A24_PING",
+      "path": "fresh-experiments/A24_20260726-052146/b/p/zephyr/zephyr.elf",
+      "exists": true,
+      "expected_sha256": "650f52701da39a98eaa09feb05c88e05d0fc6829daa934e0094ecdb426cfbb67",
+      "actual_sha256": "650f52701da39a98eaa09feb05c88e05d0fc6829daa934e0094ecdb426cfbb67",
+      "match": true
+    },
+    {
+      "name": "A24_PONG",
+      "path": "fresh-experiments/A24_20260726-052146/b/q/zephyr/zephyr.elf",
+      "exists": true,
+      "expected_sha256": "2b01d96f4cd8cfb5e0859ff3bbb5b8e59d787277b3765039401482f2e3c0a883",
+      "actual_sha256": "2b01d96f4cd8cfb5e0859ff3bbb5b8e59d787277b3765039401482f2e3c0a883",
+      "match": true
+    },
+    {
+      "name": "A26_APP",
+      "path": "fresh-experiments/A26_20260726-062325/repos/i1-a26-adapter/source/app-stm-a/build-a26/app.elf",
+      "exists": true,
+      "expected_sha256": "fa8500e663fa44340edb6cec9944b2b2efb89d32fb937ae61f1a03f275fb1177",
+      "actual_sha256": "fa8500e663fa44340edb6cec9944b2b2efb89d32fb937ae61f1a03f275fb1177",
+      "match": true
+    }
+  ],
+  "server_snapshot": {
+    "head": "f003f84a7df51cd8595a3203c62e225b21da2a22",
+    "tracked_dirty_diff_fingerprint": "99942141bb0bbe730ceb0ea4b30916bf8ed657bb",
+    "production_src_tree_sha256": "ca3a326e8ba6a3e0d14724a4f9fded286700790cfebc722352223d1b18e4c36a",
+    "manifest": ".agent-workspace/server-snapshot-20260730-d33-explicit-serial-port-mismatch.json",
+    "manifest_sha256": "49ba8659c77f7432e0d81e24c1db431c4b1b2ec6a9eaa29753f6a951fec01130",
+    "recomputed_match": true,
+    "active_repair_barrier": false,
+    "open_validated_defects": []
+  },
+  "findings": [
+    {
+      "lane": "A22",
+      "result": "HOST_ONLY_READY",
+      "constraint": "shares STM-A with A26; no live authority exists"
+    },
+    {
+      "lane": "D31",
+      "result": "HOST_ONLY_READY",
+      "constraint": "STM-B independent but fresh assignment/release still required"
+    },
+    {
+      "lane": "A24",
+      "result": "HOST_ONLY_NEEDS_SNAPSHOT_REVALIDATION",
+      "constraint": "checkpoint cites an older snapshot than CURRENT_SUITE_STATE; no live authority may be based on it"
+    },
+    {
+      "lane": "A26",
+      "result": "PENDING_BUSY_SAMPLE",
+      "constraint": "shares STM-A with A22 and remains host-only"
+    }
+  ],
+  "future_conflict_free_schedule": [
+    "D31/STM-B and A24/nRF-pair may be considered concurrently only after fresh exact authority and snapshot validation.",
+    "A22 and A26 must be serialized on STM-A.",
+    "No live resource is authorized in this M5 host-only evidence sprint."
+  ],
+  "safety": "No provider, MCP, lease, hardware, flash, reset, serial, or RF action was performed."
+}

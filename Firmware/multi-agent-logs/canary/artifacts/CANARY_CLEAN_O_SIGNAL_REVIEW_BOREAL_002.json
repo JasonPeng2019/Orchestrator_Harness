@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "canary-manager-signal-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:31:56.9278997Z",
+    "event_id":  "191643361ab725568922139e9c24ebf75b417edeabdb785c09d9d8b32462aaec",
+    "signal_id":  "20260731T232703Z-FIRST_PUBLIC_ARTIFACT",
+    "signal_sha256":  "40a32b763a164e8cb4ca5aaf92093bb80d66018e4f4146108a638fb177eb2a46",
+    "verdict":  "ACCEPTED_ALREADY_CONSUMED_FEEDBACK_WITH_RUN_LOCAL_LABEL_ERROR",
+    "analysis":  "The O path and D31 O lifetime prove the first public artifact and were already used to release Cygnus after exact provider cleanup. The inherited signal phase/summary incorrectly says S1M/Clean-M; this is run-local evidence-label debt, not a server/harness defect or new action."
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe -m orchestrator_harness.release_checks select --intent affected --root C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate --changed-path orchestrator_harness/firmware_adapter.py --changed-path orchestrator_harness/tests/test_s5_capability_broker.py --expected-branch firmware/v2-candidate --expected-tip 3a73a7b6c0caaff15f51832b1d4ddae63f62c7b8",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The same exact selector completed in 5.8 seconds; 30 seconds preserves broad host-load headroom.",
+    "started_at":  "2026-08-14T18:41:36.0117928+00:00",
+    "finished_at":  "2026-08-14T18:41:40.8589213+00:00",
+    "elapsed_seconds":  4.847,
+    "root_process_id":  174548,
+    "observed_process_ids":  [
+                                 174548
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-postjoin-selector-3a73-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-postjoin-selector-3a73-001.stderr.log"
+}

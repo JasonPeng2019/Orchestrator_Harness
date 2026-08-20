@@ -1,0 +1,11 @@
+﻿{
+    "schema":  "manager-host-gate-review/v1",
+    "epoch":  "20260731-s1-clean-p",
+    "lane":  "20260731-s1-clean-p:Atlas:A22",
+    "reviewed_utc":  "2026-08-01T00:09:08.3895196Z",
+    "checkpoint_event_id":  "0eed8c137acd1cde52a92511b43bd180c7ef0f9b7a9299ff3eb5b830297e4eec",
+    "checkpoint_sha256":  "5b3d14b30802b10ef8042b68c40c7439d37a41a9026c9a8d60e0850bfabefdc3",
+    "focused_result":  "host self-test PASS; mcp_started=false provider_started=false hardware_calls=0",
+    "decision":  "ACCEPT_HOST_GATE",
+    "reason":  "Classifier accepts only exact step-6 all-NULL board_setup-plan plain text with both authoritative markers; JSON remains normal; empty/truncated/unrelated responses fail closed; NULL-first order and P identities are preserved."
+}

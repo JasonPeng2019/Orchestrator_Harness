@@ -1,0 +1,22 @@
+{
+  "runtime_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\attention-quiet-runtime-z6ef7g3j",
+  "attention_logging_enabled": true,
+  "attention_epoch_id": "A00_practical_quiet",
+  "attention_producers": [
+    {
+      "role": "subagent",
+      "source_id": "lane"
+    },
+    {
+      "role": "orchestrator",
+      "source_id": "root"
+    }
+  ],
+  "observed_sources": [
+    {
+      "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp7d6gj_8o\\suite\\multi-agent-logs\\attention-quiet-harness-eg_vqg9w\\attention-events.jsonl",
+      "role": "harness",
+      "source_id": "harness"
+    }
+  ]
+}

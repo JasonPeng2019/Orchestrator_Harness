@@ -1,0 +1,45 @@
+﻿{
+    "epoch":  "20260802-m5-s2a-092552Z",
+    "harness_launcher_pid":  194968,
+    "harness_processes":  [
+                              {
+                                  "ProcessId":  194968,
+                                  "ParentProcessId":  181628,
+                                  "CreationDate":  "\/Date(1785662787780)\/",
+                                  "CommandLine":  "\"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\BYO-Firmware-MCP\\.venv\\Scripts\\python.exe\" -m orchestrator_harness --config multi-agent-logs/orchestrator-harness/20260802-m5-s2a-092552Z/config.json watch --managed "
+                              },
+                              {
+                                  "ProcessId":  191432,
+                                  "ParentProcessId":  194968,
+                                  "CreationDate":  "\/Date(1785662787878)\/",
+                                  "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4"
+                              },
+                              {
+                                  "ProcessId":  186488,
+                                  "ParentProcessId":  194968,
+                                  "CreationDate":  "\/Date(1785662788001)\/",
+                                  "CommandLine":  "\"C:\\Users\\Jason\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\"  -m orchestrator_harness --config multi-agent-logs/orchestrator-harness/20260802-m5-s2a-092552Z/config.json watch --managed "
+                              }
+                          ],
+    "watcher_start":  "{\"started\": true, \"pid\": 79348, \"owner\": {\"pid\": 192592, \"created_utc\": \"windows-filetime:134300974063275151\"}}",
+    "watcher_status":  {
+                           "running":  true,
+                           "state":  {
+                                         "evaluator_enabled":  false,
+                                         "exit_reason":  null,
+                                         "owner":  {
+                                                       "created_utc":  "windows-filetime:134300974063275151",
+                                                       "pid":  192592
+                                                   },
+                                         "schema":  "harness-watcher-service/v1",
+                                         "started_utc":  "2026-08-02T09:26:31.255385+00:00",
+                                         "startup_status":  "READY",
+                                         "startup_token":  "1c9c803e-0474-4506-bb70-d5d174a1466a",
+                                         "stop_requested":  false,
+                                         "watcher":  {
+                                                         "created_utc":  "windows-filetime:134301363913105813",
+                                                         "pid":  79348
+                                                     }
+                                     }
+                       }
+}

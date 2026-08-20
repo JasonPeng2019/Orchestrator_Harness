@@ -1,0 +1,27 @@
+{
+    "schema":  "canary-event-review/v1",
+    "epoch":  "20260731-s1-clean-q",
+    "reviewed_utc":  "2026-08-01T00:52:23.7465419Z",
+    "event_id":  "13c03a20fd9d56d029ba2a4979c6cd3909a0f7b2ecfd38356de37080826c2e05",
+    "event":  {
+                  "data":  {
+                               "lane_id":  "20260731-s1-clean-q:Atlas:A22",
+                               "reasons":  [
+                                               "active hardware lane has no current request identity for probe/serial/root audit",
+                                               "declared MCP server has no lane/session-correlated PID lifetime evidence"
+                                           ]
+                           },
+                  "event_id":  "13c03a20fd9d56d029ba2a4979c6cd3909a0f7b2ecfd38356de37080826c2e05",
+                  "identity":  "lane:20260731-s1-clean-q:Atlas:A22:resource-ambiguity",
+                  "notification":  "MANAGER_ACTION_REQUIRED",
+                  "observed_utc":  "2026-08-01T00:50:47.154289Z",
+                  "severity":  "warning",
+                  "type":  "RESOURCE_AMBIGUOUS"
+              },
+    "classification":  "TRUTHFUL_TRANSIENT_NO_LIVE_RESOURCE",
+    "evidence":  [
+                     "fresh-experiments/A22_20260726-062324/.agent-workspace/CLEAN_Q_LIVE_CHECKPOINT.md",
+                     "fresh-experiments/A22_20260726-062324/.agent-workspace/atlas_a22_s1_clean_q_endpoint_controller.status.json"
+                 ],
+    "finding":  "Atlas declared hardware/server leases but its run-local gate validator incorrectly classified future UTC expiries as expired and returned before provider/MCP startup. Controller and Codex identities are now absent; no live PID lifetime, request, board action, or retry exists. Harness warning was truthful and is not a harness defect."
+}

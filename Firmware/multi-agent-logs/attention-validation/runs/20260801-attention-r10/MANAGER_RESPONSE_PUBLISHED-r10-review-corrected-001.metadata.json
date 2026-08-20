@@ -1,0 +1,8 @@
+{
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r10-001",
+    "manager_state":  "REASONING",
+    "formal_review_due_utc":  "2026-08-01T19:58:52.947799Z",
+    "decision":  "R10_LOGGING_INVALID_REJECT_AFTER_ENDPOINTS",
+    "response_path":  ".agent-workspace/attention-validation/20260801-attention-r10/FORMAL_REVIEW_001.md"
+}

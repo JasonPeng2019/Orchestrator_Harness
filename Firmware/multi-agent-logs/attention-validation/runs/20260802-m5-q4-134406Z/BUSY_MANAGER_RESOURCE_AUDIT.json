@@ -1,0 +1,14 @@
+{
+  "schema": "m5-busy-manager-integrity-audit/v1",
+  "started_monotonic": 1098969.25,
+  "duration_seconds": 73.93699999991804,
+  "pass_count": 1,
+  "last_complete_or_bounded_pass": {
+    "file_count": 2452,
+    "bytes": 69775211,
+    "aggregate_sha256": "acca4cbb1237f426d5ed5a89746b026da044b00b88351748740fac9473ec6712",
+    "elapsed_seconds": 73.93699999991804
+  },
+  "excluded_request_discovery_paths": true,
+  "result": "PASS_BOUNDED"
+}

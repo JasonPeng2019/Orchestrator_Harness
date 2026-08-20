@@ -1,0 +1,36 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+2 files already formatted
+
+== types changed Python ==
+0 errors, 0 warnings, 0 notes
+
+== compile changed Python ==
+
+== Codex changed tests ==
+.........................F................................               [100%]
+================================== FAILURES ===================================
+____________ test_snapshot_tracks_code_inside_nested_git_worktree _____________
+
+tmp_path = WindowsPath('C:/Users/Jason/AppData/Local/Temp/pytest-of-Jason/pytest-3030/test_snapshot_tracks_code_insi0')
+
+    def test_snapshot_tracks_code_inside_nested_git_worktree(tmp_path: Path) -> None:
+        nested = tmp_path / "nested-worktree"
+        nested.mkdir()
+        (nested / ".git").write_text("gitdir: elsewhere\n", encoding="utf-8")
+        source = nested / "worker.py"
+        source.write_text("value = 1\n", encoding="utf-8")
+        record_verified_snapshot(tmp_path)
+    
+        source.write_text("value = 2\n", encoding="utf-8")
+>       assert not verification_is_current(tmp_path)
+E       AssertionError: assert not True
+E        +  where True = verification_is_current(WindowsPath('C:/Users/Jason/AppData/Local/Temp/pytest-of-Jason/pytest-3030/test_snapshot_tracks_code_insi0'))
+
+.codex\tests\test_hooks.py:631: AssertionError
+=========================== short test summary info ===========================
+FAILED .codex/tests/test_hooks.py::test_snapshot_tracks_code_inside_nested_git_worktree
+1 failed, 57 passed in 15.03s

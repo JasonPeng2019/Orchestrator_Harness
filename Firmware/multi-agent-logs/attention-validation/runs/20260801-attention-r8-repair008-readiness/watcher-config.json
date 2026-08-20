@@ -1,0 +1,49 @@
+{
+  "poll_interval_seconds": 1,
+  "observed_sources": [
+    {
+      "path": ".agent-workspace/attention-validation/20260801-attention-r8-repair008-readiness/dummy.jsonl",
+      "role": "harness",
+      "source_id": "dummy-harness"
+    }
+  ],
+  "runtime_root": "harness_watcher/runs/20260801-attention-r8-repair008-readiness",
+  "no_progress_seconds": 900,
+  "max_tail_bytes": 65536,
+  "evaluator_command": [
+    "codex",
+    "exec",
+    "--dangerously-bypass-approvals-and-sandbox",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "-c",
+    "approval_policy=\"never\"",
+    "-c",
+    "approvals_reviewer=\"user\"",
+    "--model",
+    "gpt-5.6-terra",
+    "-c",
+    "model_reasoning_effort=\"high\"",
+    "-c",
+    "service_tier=\"priority\"",
+    "--output-schema",
+    "REPLACED_BY_LOADER",
+    "-"
+  ],
+  "attention_logging_enabled": true,
+  "attention_lock_timeout_seconds": 5.0,
+  "attention_producers": [
+    {
+      "role": "subagent",
+      "source_id": "readiness-lane"
+    },
+    {
+      "role": "subagent",
+      "source_id": "watcher-observer"
+    },
+    {
+      "role": "orchestrator",
+      "source_id": "readiness-manager"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+    "record_id":  "0d140968-e24b-42c7-8fc7-2497870f96db",
+    "source_path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-q2-123208Z\\inputs\\orchestrator\\main-orchestrator-a791153f79fd86f8\\attention.jsonl",
+    "source_record_exists":  true,
+    "quiet_exit_code":  3,
+    "quiet_output":  "{\"data\":{\"timeout_seconds\":10.0},\"event_id\":\"WATCH_TIMEOUT\",\"identity\":\"watch:timeout\",\"observed_utc\":\"2026-08-02T12:32:52.893489+00:00\",\"severity\":\"info\",\"type\":\"WATCH_TIMEOUT\"}",
+    "quiet_control":  "PASS"
+}

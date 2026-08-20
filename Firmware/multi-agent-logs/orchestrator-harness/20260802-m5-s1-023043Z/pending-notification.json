@@ -1,0 +1,181 @@
+{
+  "acknowledged_event_ids": [
+    "7c3fc002e644ba478b4ee324f61c6df783469807c61d8e2bfc654d961f0705dd",
+    "82122031deb4cf915fa8864a7f1e9c4103e952ec4aaee30b71d2b62a2b539932",
+    "2dbeda177e84918f2bd93dbd9e942b8df435a29d962894ae3ba230c44ba59c7c",
+    "5efbbbe2d47710d5d7e37c4ed4b935350e7f89f860a61eb06b99bc3ece7f24d2",
+    "c2d4f9bc2b4068c5a32ae80a4c3fc31c2590f08d6ba264c50d1f8b3e7abccdd8",
+    "3693e00e6d89785c76de47823e8adcc9e121659f9605af1bfa59c7cf0f3e6e6d",
+    "f3ce0aa24d1e183533ede93a0bf220b14542df20116a5bf846b1830c3288605a"
+  ],
+  "deferred": [
+    {
+      "admitted_utc": "2026-08-02T02:47:32.235886Z",
+      "deadline_order": "9999-12-31T23:59:59Z",
+      "event": {
+        "data": {
+          "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+          "checkpoint_sha256": "fbe10b97becbf47ad140dd65992ac56c53a5dcb269205feea707cb1ae0668bb4",
+          "lane_id": "20260802-m5-s1-023043Z:Atlas:A22"
+        },
+        "event_id": "5192b79d8af30bc78768539d8083ef6abefb6548dfa8af042d9309926fc250eb",
+        "identity": "lane:20260802-m5-s1-023043Z:Atlas:A22:checkpoint",
+        "severity": "info",
+        "type": "CHECKPOINT_UPDATED"
+      },
+      "identity": "lane:20260802-m5-s1-023043Z:Atlas:A22:checkpoint",
+      "priority": 5
+    },
+    {
+      "admitted_utc": "2026-08-02T02:42:18.697506Z",
+      "deadline_order": "9999-12-31T23:59:59Z",
+      "event": {
+        "data": {
+          "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+          "checkpoint_sha256": "81600d8a403050f51aace0c369fb83c138e5a06aa19f6206dbec94086b658436",
+          "lane_id": "20260802-m5-s1-023043Z:Boreal:D31"
+        },
+        "event_id": "dd5aa4ee8cc2fe84e1097abfe9efdf1dc387aaddf625c292b97a1fae667ff517",
+        "identity": "lane:20260802-m5-s1-023043Z:Boreal:D31:checkpoint",
+        "severity": "info",
+        "type": "CHECKPOINT_UPDATED"
+      },
+      "identity": "lane:20260802-m5-s1-023043Z:Boreal:D31:checkpoint",
+      "priority": 5
+    },
+    {
+      "admitted_utc": "2026-08-02T02:48:06.479545Z",
+      "deadline_order": "9999-12-31T23:59:59Z",
+      "event": {
+        "data": {
+          "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+          "checkpoint_sha256": "eeda04362ee7cf523256a141158b53e5b8c48d2844949b9fbd3ee3d73096dd8b",
+          "lane_id": "20260802-m5-s1-023043Z:Cygnus:A24"
+        },
+        "event_id": "581d2c3c6418567b0ea323d7cd5b5d02e47fc34bea679085c7ced402672a67a7",
+        "identity": "lane:20260802-m5-s1-023043Z:Cygnus:A24:checkpoint",
+        "severity": "info",
+        "type": "CHECKPOINT_UPDATED"
+      },
+      "identity": "lane:20260802-m5-s1-023043Z:Cygnus:A24:checkpoint",
+      "priority": 5
+    },
+    {
+      "admitted_utc": "2026-08-02T02:49:50.581472Z",
+      "deadline_order": "9999-12-31T23:59:59Z",
+      "event": {
+        "data": {
+          "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+          "checkpoint_sha256": "fa44e24a13ac214050c70e73e267d1394cd98bcca01b92f2e6e6a0a92bebf519",
+          "lane_id": "20260802-m5-s1-023043Z:Delta:A26"
+        },
+        "event_id": "9f8b54028ff1b71d23a9356c9aef0ed873982771af973d41fd9cfeae8588e4f4",
+        "identity": "lane:20260802-m5-s1-023043Z:Delta:A26:checkpoint",
+        "severity": "info",
+        "type": "CHECKPOINT_UPDATED"
+      },
+      "identity": "lane:20260802-m5-s1-023043Z:Delta:A26:checkpoint",
+      "priority": 5
+    }
+  ],
+  "pending": {
+    "data": {
+      "active_lane_count": 3,
+      "due_utc": "2026-08-02T02:43:24.223434Z",
+      "lanes": [
+        {
+          "controller": {
+            "classification": "live",
+            "operational_state": "RUNNING_CODEX"
+          },
+          "declared_resources": {
+            "boards": [],
+            "mcp_servers": []
+          },
+          "doer": "Atlas",
+          "elapsed_seconds": 864.961,
+          "fingerprint_age_seconds": 0.0,
+          "lane_id": "20260802-m5-s1-023043Z:Atlas:A22",
+          "latest_activity": {
+            "age_seconds": 44.314,
+            "identity": {
+              "path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+              "sha256": "fbe10b97becbf47ad140dd65992ac56c53a5dcb269205feea707cb1ae0668bb4"
+            },
+            "kind": "checkpoint",
+            "observed_utc": "2026-08-02T02:46:47.921434Z"
+          },
+          "phase": "M5_S1_PRELIVE_REVIEW",
+          "request": null,
+          "resource_ambiguity": [],
+          "resource_conflicts": [],
+          "task": "A22"
+        },
+        {
+          "controller": {
+            "classification": "live",
+            "operational_state": "RUNNING_CODEX"
+          },
+          "declared_resources": {
+            "boards": [],
+            "mcp_servers": []
+          },
+          "doer": "Cygnus",
+          "elapsed_seconds": 860.6,
+          "fingerprint_age_seconds": 386.989,
+          "lane_id": "20260802-m5-s1-023043Z:Cygnus:A24",
+          "latest_activity": {
+            "age_seconds": 459.101,
+            "identity": {
+              "sha256": "29c338b51cbe9803f623590a729be6a968556cc61f3fc0a0fa7e7168fa7a785f",
+              "signal_id": "sig-20260802-m5-s1-023043Z-cygnus-a24-prep-001"
+            },
+            "kind": "manager_signal",
+            "observed_utc": "2026-08-02T02:39:53.135162Z"
+          },
+          "phase": "M5_S1_PRELIVE_REVIEW",
+          "request": null,
+          "resource_ambiguity": [],
+          "resource_conflicts": [],
+          "task": "A24"
+        },
+        {
+          "controller": {
+            "classification": "live",
+            "operational_state": "RUNNING_CODEX"
+          },
+          "declared_resources": {
+            "boards": [],
+            "mcp_servers": []
+          },
+          "doer": "Delta",
+          "elapsed_seconds": 858.589,
+          "fingerprint_age_seconds": 68.524,
+          "lane_id": "20260802-m5-s1-023043Z:Delta:A26",
+          "latest_activity": {
+            "age_seconds": 102.604,
+            "identity": {
+              "sha256": "22701b197763782436c48ed8dbd38d181458a7eb3c191ecdf94f4ee9eb6cedf1",
+              "signal_id": "sig-20260802-m5-s1-023043Z-delta-a26-prep-001"
+            },
+            "kind": "manager_signal",
+            "observed_utc": "2026-08-02T02:45:49.632046Z"
+          },
+          "phase": "M5_S1_PRELIVE_REVIEW",
+          "request": null,
+          "resource_ambiguity": [],
+          "resource_conflicts": [],
+          "task": "A26"
+        }
+      ],
+      "review_baseline_utc": "2026-08-02T02:43:24.223434Z"
+    },
+    "event_id": "a0cc1cee1d84c60b522257b041a0638a3b2039b7b661128aa065a2901de2ccd7",
+    "identity": "manager:review-due",
+    "notification": "MANAGER_ACTION_REQUIRED",
+    "observed_utc": "2026-08-02T02:47:32.235886Z",
+    "severity": "info",
+    "type": "MANAGER_REVIEW_DUE"
+  },
+  "schema": "orchestrator-manager-notification/v1"
+}

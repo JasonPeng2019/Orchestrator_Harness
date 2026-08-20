@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/.agent-workspace/epochs/20260816-plan2-suite-003/validate_invocation_004.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "invocation load preflight measured short product helper",
+    "started_at":  "2026-08-16T05:19:11.7144023+00:00",
+    "finished_at":  "2026-08-16T05:19:14.0107959+00:00",
+    "elapsed_seconds":  2.296,
+    "root_process_id":  191680,
+    "observed_process_ids":  [
+                                 191680
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite-003-invocation-preflight-004.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite-003-invocation-preflight-004.stderr.log"
+}

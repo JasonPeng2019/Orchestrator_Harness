@@ -1,0 +1,17 @@
+test_cli_permits_only_multi_agent_logs_outside_harness_root (orchestrator_harness.tests.test_config_store.ConfigAndStoreTests.test_cli_permits_only_multi_agent_logs_outside_harness_root) ... ok
+test_config_accepts_bounded_record_declarations (orchestrator_harness.tests.test_config_store.ConfigAndStoreTests.test_config_accepts_bounded_record_declarations) ... ok
+test_config_rejects_parent_glob (orchestrator_harness.tests.test_config_store.ConfigAndStoreTests.test_config_rejects_parent_glob) ... ok
+test_config_rejects_wide_pid_creation_tolerance (orchestrator_harness.tests.test_config_store.ConfigAndStoreTests.test_config_rejects_wide_pid_creation_tolerance) ... ok
+test_event_append_precedes_cursor_and_survives_injected_crash (orchestrator_harness.tests.test_config_store.ConfigAndStoreTests.test_event_append_precedes_cursor_and_survives_injected_crash) ... ok
+test_output_allows_sibling_of_observed_root (orchestrator_harness.tests.test_config_store.ConfigAndStoreTests.test_output_allows_sibling_of_observed_root) ... ok
+test_output_rejects_ads (orchestrator_harness.tests.test_config_store.ConfigAndStoreTests.test_output_rejects_ads) ... ok
+test_output_rejects_observed_root (orchestrator_harness.tests.test_config_store.ConfigAndStoreTests.test_output_rejects_observed_root) ... ok
+test_output_rejects_reparse_component (orchestrator_harness.tests.test_config_store.ConfigAndStoreTests.test_output_rejects_reparse_component) ... ok
+test_output_root_replacement_is_detected (orchestrator_harness.tests.test_config_store.ConfigAndStoreTests.test_output_root_replacement_is_detected) ... ok
+test_path_identity_uses_platform_case_and_separator_rules (orchestrator_harness.tests.test_config_store.ConfigAndStoreTests.test_path_identity_uses_platform_case_and_separator_rules) ... ok
+test_unstable_stat_read_stat_fails_closed (orchestrator_harness.tests.test_config_store.ConfigAndStoreTests.test_unstable_stat_read_stat_fails_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.331s
+
+OK

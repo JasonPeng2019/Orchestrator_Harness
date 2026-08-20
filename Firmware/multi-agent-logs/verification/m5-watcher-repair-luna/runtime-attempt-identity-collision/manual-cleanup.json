@@ -1,0 +1,169 @@
+{
+    "stop_token":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-watcher-repair-luna\\runtime\\stop.token",
+    "started_utc":  "2026-08-02T03:11:37.1077887Z",
+    "ended_utc":  "2026-08-02T03:11:39.6404441Z",
+    "samples":  [
+                    {
+                        "utc":  "2026-08-02T03:11:37.4907893Z",
+                        "service":  {
+                                        "evaluator_enabled":  false,
+                                        "exit_reason":  null,
+                                        "owner":  {
+                                                      "created_utc":  "windows-filetime:134301138495365641",
+                                                      "pid":  164248
+                                                  },
+                                        "schema":  "harness-watcher-service/v1",
+                                        "started_utc":  "2026-08-02T03:10:50.691012+00:00",
+                                        "startup_status":  "READY",
+                                        "startup_token":  "6d0e8c60-7c91-4967-b6c0-4d288056b420",
+                                        "stop_requested":  false,
+                                        "watcher":  {
+                                                        "created_utc":  "windows-filetime:134301138507356464",
+                                                        "pid":  184908
+                                                    }
+                                    },
+                        "checks":  [
+                                       {
+                                           "pid":  164248,
+                                           "expected":  "windows-filetime:134301138495365641",
+                                           "current":  "{\"pid\": 164248, \"created_utc\": \"windows-filetime:134301138495365641\"}"
+                                       },
+                                       {
+                                           "pid":  184908,
+                                           "expected":  "windows-filetime:134301138507356464",
+                                           "current":  "{\"pid\": 184908, \"created_utc\": \"windows-filetime:134301138507356464\"}"
+                                       }
+                                   ]
+                    },
+                    {
+                        "utc":  "2026-08-02T03:11:38.0168110Z",
+                        "service":  {
+                                        "evaluator_enabled":  false,
+                                        "exit_reason":  null,
+                                        "owner":  {
+                                                      "created_utc":  "windows-filetime:134301138495365641",
+                                                      "pid":  164248
+                                                  },
+                                        "schema":  "harness-watcher-service/v1",
+                                        "started_utc":  "2026-08-02T03:10:50.691012+00:00",
+                                        "startup_status":  "READY",
+                                        "startup_token":  "6d0e8c60-7c91-4967-b6c0-4d288056b420",
+                                        "stop_requested":  false,
+                                        "watcher":  {
+                                                        "created_utc":  "windows-filetime:134301138507356464",
+                                                        "pid":  184908
+                                                    }
+                                    },
+                        "checks":  [
+                                       {
+                                           "pid":  164248,
+                                           "expected":  "windows-filetime:134301138495365641",
+                                           "current":  "{\"pid\": 164248, \"created_utc\": \"windows-filetime:134301138495365641\"}"
+                                       },
+                                       {
+                                           "pid":  184908,
+                                           "expected":  "windows-filetime:134301138507356464",
+                                           "current":  "{\"pid\": 184908, \"created_utc\": \"windows-filetime:134301138507356464\"}"
+                                       }
+                                   ]
+                    },
+                    {
+                        "utc":  "2026-08-02T03:11:38.5538411Z",
+                        "service":  {
+                                        "evaluator_enabled":  false,
+                                        "exit_reason":  null,
+                                        "owner":  {
+                                                      "created_utc":  "windows-filetime:134301138495365641",
+                                                      "pid":  164248
+                                                  },
+                                        "schema":  "harness-watcher-service/v1",
+                                        "started_utc":  "2026-08-02T03:10:50.691012+00:00",
+                                        "startup_status":  "READY",
+                                        "startup_token":  "6d0e8c60-7c91-4967-b6c0-4d288056b420",
+                                        "stop_requested":  false,
+                                        "watcher":  {
+                                                        "created_utc":  "windows-filetime:134301138507356464",
+                                                        "pid":  184908
+                                                    }
+                                    },
+                        "checks":  [
+                                       {
+                                           "pid":  164248,
+                                           "expected":  "windows-filetime:134301138495365641",
+                                           "current":  "{\"pid\": 164248, \"created_utc\": \"windows-filetime:134301138495365641\"}"
+                                       },
+                                       {
+                                           "pid":  184908,
+                                           "expected":  "windows-filetime:134301138507356464",
+                                           "current":  "{\"pid\": 184908, \"created_utc\": \"windows-filetime:134301138507356464\"}"
+                                       }
+                                   ]
+                    },
+                    {
+                        "utc":  "2026-08-02T03:11:39.0908447Z",
+                        "service":  {
+                                        "evaluator_enabled":  false,
+                                        "exit_reason":  null,
+                                        "owner":  {
+                                                      "created_utc":  "windows-filetime:134301138495365641",
+                                                      "pid":  164248
+                                                  },
+                                        "schema":  "harness-watcher-service/v1",
+                                        "started_utc":  "2026-08-02T03:10:50.691012+00:00",
+                                        "startup_status":  "READY",
+                                        "startup_token":  "6d0e8c60-7c91-4967-b6c0-4d288056b420",
+                                        "stop_requested":  false,
+                                        "watcher":  {
+                                                        "created_utc":  "windows-filetime:134301138507356464",
+                                                        "pid":  184908
+                                                    }
+                                    },
+                        "checks":  [
+                                       {
+                                           "pid":  164248,
+                                           "expected":  "windows-filetime:134301138495365641",
+                                           "current":  "{\"pid\": 164248, \"created_utc\": \"windows-filetime:134301138495365641\"}"
+                                       },
+                                       {
+                                           "pid":  184908,
+                                           "expected":  "windows-filetime:134301138507356464",
+                                           "current":  "{\"pid\": 184908, \"created_utc\": \"windows-filetime:134301138507356464\"}"
+                                       }
+                                   ]
+                    },
+                    {
+                        "utc":  "2026-08-02T03:11:39.6384426Z",
+                        "service":  {
+                                        "evaluator_enabled":  false,
+                                        "exit_reason":  null,
+                                        "owner":  {
+                                                      "created_utc":  "windows-filetime:134301138495365641",
+                                                      "pid":  164248
+                                                  },
+                                        "schema":  "harness-watcher-service/v1",
+                                        "started_utc":  "2026-08-02T03:10:50.691012+00:00",
+                                        "startup_status":  "READY",
+                                        "startup_token":  "6d0e8c60-7c91-4967-b6c0-4d288056b420",
+                                        "stop_requested":  true,
+                                        "stop_requested_utc":  "2026-08-02T03:11:39.020841+00:00",
+                                        "watcher":  {
+                                                        "created_utc":  "windows-filetime:134301138507356464",
+                                                        "pid":  184908
+                                                    }
+                                    },
+                        "checks":  [
+                                       {
+                                           "pid":  164248,
+                                           "expected":  "windows-filetime:134301138495365641",
+                                           "current":  "null"
+                                       },
+                                       {
+                                           "pid":  184908,
+                                           "expected":  "windows-filetime:134301138507356464",
+                                           "current":  "null"
+                                       }
+                                   ]
+                    }
+                ],
+    "broad_kill_used":  false
+}

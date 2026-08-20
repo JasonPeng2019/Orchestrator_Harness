@@ -1,0 +1,22 @@
+{
+  "runtime_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\attention-runtime-juuwydmm",
+  "attention_logging_enabled": true,
+  "attention_epoch_id": "A00_test",
+  "attention_producers": [
+    {
+      "role": "subagent",
+      "source_id": "lane"
+    },
+    {
+      "role": "orchestrator",
+      "source_id": "root"
+    }
+  ],
+  "observed_sources": [
+    {
+      "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpg7bqvq0d\\suite\\multi-agent-logs\\attention-harness-6nauro95\\attention-events.jsonl",
+      "role": "harness",
+      "source_id": "harness"
+    }
+  ]
+}

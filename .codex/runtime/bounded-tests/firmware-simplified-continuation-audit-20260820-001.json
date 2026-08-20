@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .codex/skills/run-firmware-test-suite/scripts/audit_autonomy.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Repository handoff records this package audit as the focused Firmware verification; 120 seconds covers file inspection and host variance, with policy-capped cleanup.",
+    "started_at":  "2026-08-20T08:22:05.9557329+00:00",
+    "finished_at":  "2026-08-20T08:22:11.0714160+00:00",
+    "elapsed_seconds":  5.116,
+    "root_process_id":  27628,
+    "observed_process_ids":  [
+                                 27628
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-simplified-continuation-audit-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-simplified-continuation-audit-20260820-001.stderr.log"
+}

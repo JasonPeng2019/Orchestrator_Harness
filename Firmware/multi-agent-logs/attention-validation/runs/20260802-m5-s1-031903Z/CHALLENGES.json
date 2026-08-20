@@ -1,0 +1,94 @@
+{
+  "schema": "m5-challenge-table/v1",
+  "epoch": "20260802-m5-s1-031903Z",
+  "required_stages": [
+    "request_created",
+    "harness_detected",
+    "wake_attempted",
+    "wake_delivered",
+    "manager_received",
+    "manager_claimed"
+  ],
+  "challenges": [
+    {
+      "lane": "Boreal:D31",
+      "event_id": "sig-20260802-m5-s1-031903Z-boreal-d31-gate-001",
+      "wake_ids": [
+        "f952eedf-6ef7-4034-bc93-c8707fac9977"
+      ],
+      "stages": {
+        "request_created": "2026-08-02T03:24:38.816949+00:00",
+        "harness_detected": "2026-08-02T03:24:39.652804Z",
+        "wake_attempted": "2026-08-02T03:24:52.089503Z",
+        "wake_delivered": "2026-08-02T03:24:52.089503Z",
+        "manager_received": "2026-08-02T03:25:12.773748+00:00",
+        "manager_claimed": "2026-08-02T03:25:13.570746+00:00"
+      },
+      "response_received": true,
+      "work_resumed": true,
+      "sufficient": true
+    },
+    {
+      "lane": "Cygnus:A24",
+      "event_id": "sig-20260802-m5-s1-031903Z-cygnus-a24-gate-001",
+      "wake_ids": [
+        "7d00c8df-f1a8-4f89-b2a2-c59b09e7d3fa"
+      ],
+      "stages": {
+        "request_created": "2026-08-02T03:23:29.2218419Z",
+        "harness_detected": "2026-08-02T03:24:39.652804Z",
+        "wake_attempted": "2026-08-02T03:25:24.109087Z",
+        "wake_delivered": "2026-08-02T03:25:24.109087Z",
+        "manager_received": "2026-08-02T03:25:40.286453+00:00",
+        "manager_claimed": "2026-08-02T03:25:40.878457+00:00"
+      },
+      "response_received": true,
+      "work_resumed": true,
+      "sufficient": true
+    },
+    {
+      "lane": "Atlas:A22",
+      "event_id": "sig-20260802-m5-s1-031903Z-atlas-a22-gate-001",
+      "wake_ids": [
+        "d5fbe19a-c7fa-4447-b74c-cec36ef8fe0f"
+      ],
+      "stages": {
+        "request_created": "2026-08-02T03:26:04.875625+00:00",
+        "harness_detected": "2026-08-02T03:26:27.882834Z",
+        "wake_attempted": "2026-08-02T03:26:30.674473Z",
+        "wake_delivered": "2026-08-02T03:26:30.674473Z",
+        "manager_received": "2026-08-02T03:26:50.679983+00:00",
+        "manager_claimed": "2026-08-02T03:26:51.256985+00:00"
+      },
+      "response_received": true,
+      "work_resumed": true,
+      "sufficient": true
+    },
+    {
+      "lane": "Delta:A26",
+      "event_id": "sig-20260802-m5-s1-031903Z-delta-a26-gate-001",
+      "wake_ids": [
+        "68d4c28b-9cad-493f-a670-00e7a60b5a70"
+      ],
+      "stages": {
+        "request_created": "2026-08-02T03:27:48.797026+00:00",
+        "harness_detected": "2026-08-02T03:28:09.066672Z",
+        "wake_attempted": "2026-08-02T03:28:45.201921Z",
+        "wake_delivered": "2026-08-02T03:28:45.201921Z",
+        "manager_received": "2026-08-02T03:29:01.217162+00:00",
+        "manager_claimed": "2026-08-02T03:29:01.745161+00:00"
+      },
+      "response_received": true,
+      "work_resumed": true,
+      "sufficient": true
+    }
+  ],
+  "all_sufficient": true,
+  "busy_control": {
+    "activity_started_utc": "2026-08-02T03:27:06.898325Z",
+    "activity_finished_utc": "2026-08-02T03:27:57.584815Z",
+    "event_id": "sig-20260802-m5-s1-031903Z-delta-a26-gate-001",
+    "request_created_utc": "2026-08-02T03:27:48.797026+00:00",
+    "valid": true
+  }
+}

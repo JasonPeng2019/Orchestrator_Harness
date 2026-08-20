@@ -1,0 +1,20 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked ruff format .codex/scripts/bounded_test_adapter.py .codex/scripts/hook_runner.py .codex/scripts/stable_runner.py .codex/tests/test_hooks.py .codex/tests/test_stable_runner.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  120,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Formatting five small current-run infrastructure files normally completes within seconds; 120 seconds permits locked-environment startup and prevents a stuck formatter from blocking ROOT.",
+    "started_at":  "2026-08-13T23:19:19.8919091+00:00",
+    "finished_at":  "2026-08-13T23:19:21.2984759+00:00",
+    "elapsed_seconds":  1.407,
+    "root_process_id":  189808,
+    "observed_process_ids":  [
+                                 189808
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\current-run-format.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\current-run-format.stderr.log"
+}

@@ -1,0 +1,7 @@
+{
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r13-001",
+    "manager_state":  "WAITING_ON_TOOL",
+    "activity_id":  "r13-wait-lanes",
+    "wake_transport":  "shell_status_poll"
+}

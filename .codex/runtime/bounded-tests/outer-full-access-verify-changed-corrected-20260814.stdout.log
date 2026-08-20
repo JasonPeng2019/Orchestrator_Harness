@@ -1,0 +1,917 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+    --> .codex\scripts\stable_runner.py:39:27
+     |
+38   | )
+     - ROLE_MODEL_MAPPING_PATH = (
+     -     ROOT / "plans" / "general-coding-harness" / "SUBAGENT_ROLE_MODEL_MAPPING.json"
+     - )
+39   + ROLE_MODEL_MAPPING_PATH = ROOT / "plans" / "general-coding-harness" / "SUBAGENT_ROLE_MODEL_MAPPING.json"
+40   | REQUIRED_COMMIT = "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f"
+--------------------------------------------------------------------------------
+170  |
+     - def validate_checkout(
+     -     *, lock_path: Path = LOCK_PATH, repository_root: Path | None = None
+     - ) -> dict[str, Any]:
+171  + def validate_checkout(*, lock_path: Path = LOCK_PATH, repository_root: Path | None = None) -> dict[str, Any]:
+172  |     """Validate the exact clean detached checkout and return its proof material."""
+--------------------------------------------------------------------------------
+185  |     if commit != REQUIRED_COMMIT:
+     -         raise RunnerError(
+     -             f"stable checkout commit is {commit}, expected {REQUIRED_COMMIT}"
+     -         )
+186  +         raise RunnerError(f"stable checkout commit is {commit}, expected {REQUIRED_COMMIT}")
+187  |     status = _git(stable_root, "status", "--porcelain=v1", "--untracked-files=all")
+188  |     if status.returncode != 0:
+     -         raise RunnerError(
+     -             f"cannot inspect stable checkout status: {status.stderr.strip()}"
+     -         )
+189  +         raise RunnerError(f"cannot inspect stable checkout status: {status.stderr.strip()}")
+190  |     if status.stdout:
+191  |         raise RunnerError("stable checkout is dirty")
+192  |     detached = _git(stable_root, "symbolic-ref", "--quiet", "--short", "HEAD")
+193  |     if detached.returncode == 0 and detached.stdout.strip():
+     -         raise RunnerError(
+     -             f"stable checkout is attached to branch {detached.stdout.strip()}"
+     -         )
+194  +         raise RunnerError(f"stable checkout is attached to branch {detached.stdout.strip()}")
+195  |     if detached.returncode not in {0, 1}:
+     -         raise RunnerError(
+     -             f"cannot prove stable checkout is detached: {detached.stderr.strip()}"
+     -         )
+196  +         raise RunnerError(f"cannot prove stable checkout is detached: {detached.stderr.strip()}")
+197  |     common_dir = _git_value(stable_root, "rev-parse", "--git-common-dir")
+--------------------------------------------------------------------------------
+210  |     if os.name == "nt":
+     -         values.extend(
+     -             str(Path(prefix) / "DLLs")
+     -             for prefix in (sys.base_prefix, sys.base_exec_prefix)
+     -             if prefix
+     -         )
+211  +         values.extend(str(Path(prefix) / "DLLs") for prefix in (sys.base_prefix, sys.base_exec_prefix) if prefix)
+212  |     return tuple(Path(item).resolve(strict=False) for item in values if item)
+--------------------------------------------------------------------------------
+216  |     paths = sysconfig.get_paths()
+     -     return tuple(
+     -         Path(item).resolve(strict=False)
+     -         for item in (paths.get("purelib"), paths.get("platlib"))
+     -         if item
+     -     )
+217  +     return tuple(Path(item).resolve(strict=False) for item in (paths.get("purelib"), paths.get("platlib")) if item)
+218  |
+219  |
+     - def _is_stdlib_entry(
+     -     value: str, roots: tuple[Path, ...], excluded: tuple[Path, ...] = ()
+     - ) -> bool:
+220  + def _is_stdlib_entry(value: str, roots: tuple[Path, ...], excluded: tuple[Path, ...] = ()) -> bool:
+221  |     if not value:
+--------------------------------------------------------------------------------
+241  |     original = list(sys.path)
+     -     sys.path[:] = [str(stable_root)] + [
+     -         item for item in original if _is_stdlib_entry(item, roots, excluded)
+     -     ]
+242  +     sys.path[:] = [str(stable_root)] + [item for item in original if _is_stdlib_entry(item, roots, excluded)]
+243  |     for name, module in list(sys.modules.items()):
+     -         if name != "orchestrator_harness" and not name.startswith(
+     -             "orchestrator_harness."
+     -         ):
+244  +         if name != "orchestrator_harness" and not name.startswith("orchestrator_harness."):
+245  |             continue
+246  |         origin = getattr(module, "__file__", None)
+     -         if origin is not None and not _inside(
+     -             Path(origin).resolve(strict=False), stable_root
+     -         ):
+247  +         if origin is not None and not _inside(Path(origin).resolve(strict=False), stable_root):
+248  |             raise RunnerError(f"conflicting preloaded import: {name} from {origin}")
+249  |         del sys.modules[name]
+250  |
+251  |
+     - def import_stable_module(
+     -     module_name: str, proof: Mapping[str, Any]
+     - ) -> tuple[ModuleType, dict[str, Any]]:
+252  + def import_stable_module(module_name: str, proof: Mapping[str, Any]) -> tuple[ModuleType, dict[str, Any]]:
+253  |     if module_name not in ALLOWED_MODULES:
+     -         raise RunnerError(
+     -             f"module is outside the stable runner boundary: {module_name}"
+     -         )
+254  +         raise RunnerError(f"module is outside the stable runner boundary: {module_name}")
+255  |     stable_root = Path(str(proof["stable_root"])).resolve(strict=True)
+--------------------------------------------------------------------------------
+278  | def _canonical(value: Any) -> bytes:
+     -     return (
+     -         json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+     -         + "\n"
+     -     ).encode("utf-8")
+279  +     return (json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n").encode("utf-8")
+280  |
+281  |
+     - def _write_new_json(
+     -     path: Path, value: Mapping[str, Any], *, data: bytes | None = None
+     - ) -> str:
+282  + def _write_new_json(path: Path, value: Mapping[str, Any], *, data: bytes | None = None) -> str:
+283  |     path = path.resolve(strict=False)
+--------------------------------------------------------------------------------
+307  |         return set(_COMMON_FIELDS | _CODING_FIELDS), set(_CANDIDATE_ONLY_FIELDS)
+     -     raise RunnerError(
+     -         "stable projection only accepts schema-less firmware or coding v1 inputs"
+     -     )
+308  +     raise RunnerError("stable projection only accepts schema-less firmware or coding v1 inputs")
+309  |
+--------------------------------------------------------------------------------
+315  |         "RATE_LIMIT",
+     -         re.compile(
+     -             r"\brate[ -]?limit(?:ed|ing)?\b|\btoo many requests\b", re.IGNORECASE
+     -         ),
+316  +         re.compile(r"\brate[ -]?limit(?:ed|ing)?\b|\btoo many requests\b", re.IGNORECASE),
+317  |     ),
+--------------------------------------------------------------------------------
+347  |         assert isinstance(compact_scope, str)
+     -         overrides.append(
+     -             "model_auto_compact_token_limit_scope=" + json.dumps(compact_scope)
+     -         )
+348  +         overrides.append("model_auto_compact_token_limit_scope=" + json.dumps(compact_scope))
+349  |     catalog_path = profile["model_catalog_path"]
+--------------------------------------------------------------------------------
+360  | ) -> list[str]:
+     -     if not isinstance(command, list) or not all(
+     -         isinstance(item, str) and item for item in command
+     -     ):
+361  +     if not isinstance(command, list) or not all(isinstance(item, str) and item for item in command):
+362  |         return ["codex", *_REQUIRED_CODEX_FLAGS, *codex_flags]
+--------------------------------------------------------------------------------
+371  |
+     - def _require_full_access_settings(
+     -     settings: Mapping[str, Any], settings_name: str
+     - ) -> None:
+372  + def _require_full_access_settings(settings: Mapping[str, Any], settings_name: str) -> None:
+373  |     """Refuse any outer worker invocation that could prompt or be sandboxed."""
+374  |     if settings.get("sandbox") != _REQUIRED_SANDBOX:
+     -         raise RunnerError(
+     -             f"{settings_name} sandbox must be {_REQUIRED_SANDBOX!r} for every outer workflow role"
+     -         )
+375  +         raise RunnerError(f"{settings_name} sandbox must be {_REQUIRED_SANDBOX!r} for every outer workflow role")
+376  |     if settings.get("approval_policy") != _REQUIRED_APPROVAL_POLICY:
+--------------------------------------------------------------------------------
+411  |         }:
+     -             raise RunnerError(
+     -                 "backend-failure history attempt has an unexpected schema"
+     -             )
+412  +             raise RunnerError("backend-failure history attempt has an unexpected schema")
+413  |         if not all(isinstance(attempt[key], str) and attempt[key] for key in attempt):
+414  |             raise RunnerError("backend-failure history attempt has an invalid value")
+415  |         error_hash = attempt["error_sha256"]
+     -         if len(error_hash) != 64 or any(
+     -             char not in "0123456789abcdef" for char in error_hash
+     -         ):
+416  +         if len(error_hash) != 64 or any(char not in "0123456789abcdef" for char in error_hash):
+417  |             raise RunnerError("backend-failure history error_sha256 is invalid")
+--------------------------------------------------------------------------------
+430  |     if not isinstance(raw, dict) or set(raw) != {"schema", "profiles", "roles"}:
+     -         raise RunnerError(
+     -             "subagent role-model mapping must contain only schema, profiles, and roles"
+     -         )
+431  +         raise RunnerError("subagent role-model mapping must contain only schema, profiles, and roles")
+432  |     if raw["schema"] != "orchestrator-subagent-role-model-mapping/v2":
+433  |         raise RunnerError("subagent role-model mapping schema is unsupported")
+434  |     profiles = raw["profiles"]
+435  |     roles = raw["roles"]
+     -     if (
+     -         not isinstance(profiles, dict)
+     -         or not profiles
+     -         or not isinstance(roles, dict)
+     -         or not roles
+     -     ):
+436  +     if not isinstance(profiles, dict) or not profiles or not isinstance(roles, dict) or not roles:
+437  |         raise RunnerError("subagent role-model mapping requires at least one role")
+--------------------------------------------------------------------------------
+449  |     for profile_id, value in profiles.items():
+     -         if (
+     -             not isinstance(profile_id, str)
+     -             or not profile_id
+     -             or not isinstance(value, dict)
+     -         ):
+     -             raise RunnerError(
+     -                 "launch profile names and entries must be non-empty objects"
+     -             )
+450  +         if not isinstance(profile_id, str) or not profile_id or not isinstance(value, dict):
+451  +             raise RunnerError("launch profile names and entries must be non-empty objects")
+452  |         if set(value) != profile_keys:
+453  |             raise RunnerError(f"launch profile {profile_id} has an unexpected schema")
+     -         if not all(
+     -             isinstance(value[key], str) and value[key]
+     -             for key in ("model", "reasoning_effort", "service_tier")
+     -         ):
+454  +         if not all(isinstance(value[key], str) and value[key] for key in ("model", "reasoning_effort", "service_tier")):
+455  |             raise RunnerError(f"launch profile {profile_id} has empty model settings")
+456  |         flags = value["codex_flags"]
+     -         if not isinstance(flags, list) or not all(
+     -             isinstance(flag, str) and flag for flag in flags
+     -         ):
+457  +         if not isinstance(flags, list) or not all(isinstance(flag, str) and flag for flag in flags):
+458  |             raise RunnerError(f"launch profile {profile_id} has invalid codex_flags")
+459  |         context_window = value["model_context_window"]
+460  |         compact_limit = value["model_auto_compact_token_limit"]
+461  |         compact_scope = value["model_auto_compact_token_limit_scope"]
+     -         if (context_window is None) != (compact_limit is None) or (
+     -             compact_limit is None
+     -         ) != (compact_scope is None):
+     -             raise RunnerError(
+     -                 f"launch profile {profile_id} has incomplete context settings"
+     -             )
+462  +         if (context_window is None) != (compact_limit is None) or (compact_limit is None) != (compact_scope is None):
+463  +             raise RunnerError(f"launch profile {profile_id} has incomplete context settings")
+464  |         if context_window is not None:
+--------------------------------------------------------------------------------
+469  |             ):
+     -                 raise RunnerError(
+     -                     f"launch profile {profile_id} has invalid context settings"
+     -                 )
+     -             if (
+     -                 context_window <= 0
+     -                 or compact_limit <= 0
+     -                 or compact_limit >= context_window
+     -             ):
+     -                 raise RunnerError(
+     -                     f"launch profile {profile_id} has unsafe context settings"
+     -                 )
+470  +                 raise RunnerError(f"launch profile {profile_id} has invalid context settings")
+471  +             if context_window <= 0 or compact_limit <= 0 or compact_limit >= context_window:
+472  +                 raise RunnerError(f"launch profile {profile_id} has unsafe context settings")
+473  |             if compact_scope != "total":
+     -                 raise RunnerError(
+     -                     f"launch profile {profile_id} has unsupported compaction scope"
+     -                 )
+474  +                 raise RunnerError(f"launch profile {profile_id} has unsupported compaction scope")
+475  |         catalog_path = value["model_catalog_path"]
+476  |         if catalog_path is not None:
+477  |             if not isinstance(catalog_path, str) or not catalog_path:
+     -                 raise RunnerError(
+     -                     f"launch profile {profile_id} has invalid model_catalog_path"
+     -                 )
+478  +                 raise RunnerError(f"launch profile {profile_id} has invalid model_catalog_path")
+479  |             catalog = (ROOT / catalog_path).resolve(strict=False)
+480  |             if not _inside(catalog, ROOT) or not catalog.is_file():
+     -                 raise RunnerError(
+     -                     f"launch profile {profile_id} model_catalog_path is unavailable"
+     -                 )
+481  +                 raise RunnerError(f"launch profile {profile_id} model_catalog_path is unavailable")
+482  |         normalized_profiles[profile_id] = {
+--------------------------------------------------------------------------------
+495  |         if not isinstance(role, str) or not role or not isinstance(value, dict):
+     -             raise RunnerError(
+     -                 "subagent role-model names and entries must be non-empty objects"
+     -             )
+496  +             raise RunnerError("subagent role-model names and entries must be non-empty objects")
+497  |         if set(value) != role_keys:
+     -             raise RunnerError(
+     -                 f"subagent role-model entry {role} has an unexpected schema"
+     -             )
+498  +             raise RunnerError(f"subagent role-model entry {role} has an unexpected schema")
+499  |         primary = value["primary_profile"]
+--------------------------------------------------------------------------------
+504  |         if not isinstance(primary, str) or primary not in normalized_profiles:
+     -             raise RunnerError(
+     -                 f"subagent role-model entry {role} has an invalid primary_profile"
+     -             )
+505  +             raise RunnerError(f"subagent role-model entry {role} has an invalid primary_profile")
+506  |         if gate_role is not None and (not isinstance(gate_role, str) or not gate_role):
+     -             raise RunnerError(
+     -                 f"subagent role-model entry {role} has an invalid finding_gate_role"
+     -             )
+507  +             raise RunnerError(f"subagent role-model entry {role} has an invalid finding_gate_role")
+508  |         if fallback is None:
+509  |             if threshold is not None or error_classes != []:
+     -                 raise RunnerError(
+     -                     f"subagent role-model entry {role} has fallback settings without a fallback profile"
+     -                 )
+510  +                 raise RunnerError(f"subagent role-model entry {role} has fallback settings without a fallback profile")
+511  |         else:
+     -             if (
+     -                 not isinstance(fallback, str)
+     -                 or fallback not in normalized_profiles
+     -                 or fallback == primary
+     -             ):
+     -                 raise RunnerError(
+     -                     f"subagent role-model entry {role} has an invalid fallback_profile"
+     -                 )
+512  +             if not isinstance(fallback, str) or fallback not in normalized_profiles or fallback == primary:
+513  +                 raise RunnerError(f"subagent role-model entry {role} has an invalid fallback_profile")
+514  |             if not isinstance(threshold, int) or threshold < 2:
+     -                 raise RunnerError(
+     -                     f"subagent role-model entry {role} has an invalid fallback threshold"
+     -                 )
+515  +                 raise RunnerError(f"subagent role-model entry {role} has an invalid fallback threshold")
+516  |             if (
+517  |                 not isinstance(error_classes, list)
+518  |                 or not error_classes
+519  |                 or not all(
+     -                     isinstance(item, str)
+     -                     and item in {name for name, _ in _BACKEND_ERROR_PATTERNS}
+520  +                     isinstance(item, str) and item in {name for name, _ in _BACKEND_ERROR_PATTERNS}
+521  |                     for item in error_classes
+522  |                 )
+523  |             ):
+     -                 raise RunnerError(
+     -                     f"subagent role-model entry {role} has invalid fallback error classes"
+     -                 )
+524  +                 raise RunnerError(f"subagent role-model entry {role} has invalid fallback error classes")
+525  |         primary_profile = normalized_profiles[primary]
+--------------------------------------------------------------------------------
+553  |         if requested_profile == fallback:
+     -             raise RunnerError(
+     -                 "fallback profile requires a proven backend-failure history"
+     -             )
+     -         raise RunnerError(
+     -             "requested launch profile is not allowed for this workflow role"
+     -         )
+554  +             raise RunnerError("fallback profile requires a proven backend-failure history")
+555  +         raise RunnerError("requested launch profile is not allowed for this workflow role")
+556  |     if fallback is None:
+557  |         raise RunnerError("workflow role has no fallback profile")
+558  |     if fallback_history.get("workflow_role") != workflow_role:
+     -         raise RunnerError(
+     -             "backend-failure history workflow_role does not match the dispatch"
+     -         )
+559  +         raise RunnerError("backend-failure history workflow_role does not match the dispatch")
+560  |     attempts = fallback_history["attempts"]
+--------------------------------------------------------------------------------
+579  |     if requested_profile is not None and requested_profile != fallback:
+     -         raise RunnerError(
+     -             "backend-failure fallback can select only the role's declared fallback profile"
+     -         )
+580  +         raise RunnerError("backend-failure fallback can select only the role's declared fallback profile")
+581  |     return fallback
+--------------------------------------------------------------------------------
+608  |     ):
+     -         raise RunnerError(
+     -             "fallback profile requires a new P02 handoff invocation with action=start"
+     -         )
+609  +         raise RunnerError("fallback profile requires a new P02 handoff invocation with action=start")
+610  |     profiles = expected["profiles"]
+611  |     assert isinstance(profiles, Mapping)
+612  |     profile = profiles[selected_profile]
+613  |     assert isinstance(profile, Mapping)
+     -     settings_name = (
+     -         "codex"
+     -         if raw.get("schema") == "orchestrator-coding-invocation/v1"
+     -         else "model_settings"
+     -     )
+614  +     settings_name = "codex" if raw.get("schema") == "orchestrator-coding-invocation/v1" else "model_settings"
+615  |     settings = raw.get(settings_name)
+616  |     if not isinstance(settings, Mapping):
+     -         raise RunnerError(
+     -             f"{settings_name} must be an object for workflow-role resolution"
+     -         )
+617  +         raise RunnerError(f"{settings_name} must be an object for workflow-role resolution")
+618  |     _require_full_access_settings(settings, settings_name)
+--------------------------------------------------------------------------------
+628  |     )
+     -     existing_overrides = resolved_settings.get(
+     -         "config_overrides", raw.get("config_overrides", [])
+     -     )
+629  +     existing_overrides = resolved_settings.get("config_overrides", raw.get("config_overrides", []))
+630  |     if not isinstance(existing_overrides, list) or not all(
+--------------------------------------------------------------------------------
+639  |     resolved_settings["config_overrides"] = [
+     -         item
+     -         for item in existing_overrides
+     -         if item.partition("=")[0] not in managed_override_keys
+640  +         item for item in existing_overrides if item.partition("=")[0] not in managed_override_keys
+641  |     ] + [*_REQUIRED_CONFIG_OVERRIDES, *profile_overrides]
+--------------------------------------------------------------------------------
+690  |     if unknown:
+     -         raise RunnerError(
+     -             "projection refuses unknown fields: " + ", ".join(sorted(unknown))
+     -         )
+691  +         raise RunnerError("projection refuses unknown fields: " + ", ".join(sorted(unknown)))
+692  |     present = sorted(set(resolved) & removable)
+693  |     if resolved.get("schema") is None and present:
+     -         raise RunnerError(
+     -             "candidate-only coding fields cannot appear on a schema-less firmware route"
+     -         )
+694  +         raise RunnerError("candidate-only coding fields cannot appear on a schema-less firmware route")
+695  |     if "finding_gate" in present:
+--------------------------------------------------------------------------------
+704  |             raise RunnerError("finding_gate is malformed")
+     -     if "child_environment_isolation" in present and not isinstance(
+     -         resolved["child_environment_isolation"], bool
+     -     ):
+705  +     if "child_environment_isolation" in present and not isinstance(resolved["child_environment_isolation"], bool):
+706  |         raise RunnerError("child_environment_isolation must be boolean")
+--------------------------------------------------------------------------------
+719  |         )
+     -     projected_bytes = (
+     -         json.dumps(projected, sort_keys=True, indent=2, ensure_ascii=False) + "\n"
+     -     ).encode("utf-8")
+720  +     projected_bytes = (json.dumps(projected, sort_keys=True, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
+721  |     projected_hash = _write_new_json(output_path, projected, data=projected_bytes)
+--------------------------------------------------------------------------------
+733  |         "workflow_role": workflow_role,
+     -         "launch_profile": resolved.get("codex", resolved.get("model_settings", {})).get(
+     -             "launch_profile"
+     -         ),
+734  +         "launch_profile": resolved.get("codex", resolved.get("model_settings", {})).get("launch_profile"),
+735  |         "fallback_history_sha256": fallback_history_sha256,
+--------------------------------------------------------------------------------
+752  | def _parser() -> argparse.ArgumentParser:
+     -     parser = argparse.ArgumentParser(
+     -         description="Run the pinned stable implementation harness"
+     -     )
+753  +     parser = argparse.ArgumentParser(description="Run the pinned stable implementation harness")
+754  |     parser.add_argument("--module", choices=sorted(ALLOWED_MODULES))
+--------------------------------------------------------------------------------
+771  |     """Dispatch through a temporary invocation resolved from the current role mapping."""
+     -     with tempfile.TemporaryDirectory(
+     -         prefix="stable-runner-dispatch-"
+     -     ) as temporary_root:
+772  +     with tempfile.TemporaryDirectory(prefix="stable-runner-dispatch-") as temporary_root:
+773  |         dispatch_path = Path(temporary_root) / "invocation.json"
+774  |         dispatch_path.write_text(
+     -             json.dumps(
+     -                 resolved_invocation, sort_keys=True, indent=2, ensure_ascii=False
+     -             )
+     -             + "\n",
+775  +             json.dumps(resolved_invocation, sort_keys=True, indent=2, ensure_ascii=False) + "\n",
+776  |             encoding="utf-8",
+--------------------------------------------------------------------------------
+848  |     raw_path = completed.stdout.strip()
+     -     if (
+     -         completed.returncode != 0
+     -         or not raw_path
+     -         or "\n" in raw_path
+     -         or "\r" in raw_path
+     -     ):
+     -         detail = (
+     -             completed.stderr.strip() or "Git returned no repository-local exclude path"
+     -         )
+     -         raise RunnerError(
+     -             f"cannot locate Git exclude file for temporary Codex hook: {detail}"
+     -         )
+849  +     if completed.returncode != 0 or not raw_path or "\n" in raw_path or "\r" in raw_path:
+850  +         detail = completed.stderr.strip() or "Git returned no repository-local exclude path"
+851  +         raise RunnerError(f"cannot locate Git exclude file for temporary Codex hook: {detail}")
+852  |     exclude_path = Path(raw_path)
+--------------------------------------------------------------------------------
+868  |     except OSError as exc:
+     -         raise RunnerError(
+     -             f"cannot persist Git exclusion for temporary Codex hook: {exc}"
+     -         ) from exc
+869  +         raise RunnerError(f"cannot persist Git exclusion for temporary Codex hook: {exc}") from exc
+870  |     if pattern not in {line.rstrip(b"\r") for line in verified.splitlines()}:
+--------------------------------------------------------------------------------
+907  |     if not isinstance(run_root_value, str) or not run_root_value:
+     -         raise RunnerError(
+     -             "real Codex dispatch requires run_root for bounded-test enforcement"
+     -         )
+908  +         raise RunnerError("real Codex dispatch requires run_root for bounded-test enforcement")
+909  |     run_root = Path(run_root_value).resolve(strict=True)
+--------------------------------------------------------------------------------
+956  |                 if hooks_path.exists():
+     -                     raise RunnerError(
+     -                         "could not remove ROOT-side bounded-test hook overlay"
+     -                     )
+957  +                     raise RunnerError("could not remove ROOT-side bounded-test hook overlay")
+958  |             else:
+--------------------------------------------------------------------------------
+962  |                 if hooks_path.read_bytes() != original:
+     -                     raise RunnerError(
+     -                         "could not restore original Codex hook configuration"
+     -                     )
+963  +                     raise RunnerError("could not restore original Codex hook configuration")
+964  |             if not codex_directory_preexisted:
+--------------------------------------------------------------------------------
+984  |     if missing:
+     -         raise RunnerError(
+     -             "Codex subagent prompt omits the mandatory bounded-test contract: "
+     -             + ", ".join(missing)
+     -         )
+985  +         raise RunnerError("Codex subagent prompt omits the mandatory bounded-test contract: " + ", ".join(missing))
+986  |
+--------------------------------------------------------------------------------
+1006 |             ):
+     -                 raise RunnerError(
+     -                     "backend-error classification cannot carry a dispatch or profile option"
+     -                 )
+1007 +                 raise RunnerError("backend-error classification cannot carry a dispatch or profile option")
+1008 |             try:
+--------------------------------------------------------------------------------
+1031 |         if args.fallback_history is not None:
+     -             fallback_history, fallback_history_sha256 = _read_backend_failure_history(
+     -                 args.fallback_history
+     -             )
+1032 +             fallback_history, fallback_history_sha256 = _read_backend_failure_history(args.fallback_history)
+1033 |         if args.project_invocation is not None:
+1034 |             if args.module is not None or remainder:
+1035 |                 raise RunnerError("projection mode cannot carry a module command")
+1036 |             if args.workflow_role is None:
+     -                 raise RunnerError(
+     -                     "--workflow-role is required for invocation projection"
+     -                 )
+     -             output = args.projection_output or args.project_invocation.with_name(
+     -                 "STABLE_COMPATIBLE_INVOCATION.json"
+     -             )
+     -             record = args.projection_record or args.project_invocation.with_name(
+     -                 "STABLE_COMPATIBLE_PROJECTION.json"
+     -             )
+1037 +                 raise RunnerError("--workflow-role is required for invocation projection")
+1038 +             output = args.projection_output or args.project_invocation.with_name("STABLE_COMPATIBLE_INVOCATION.json")
+1039 +             record = args.projection_record or args.project_invocation.with_name("STABLE_COMPATIBLE_PROJECTION.json")
+1040 |             result = project_invocation(
+--------------------------------------------------------------------------------
+1060 |         if args.module is None:
+     -             raise RunnerError(
+     -                 "--module is required unless --project-invocation is used"
+     -             )
+1061 +             raise RunnerError("--module is required unless --project-invocation is used")
+1062 |         dispatch_invocation: dict[str, Any] | None = None
+1063 |         if args.module == "orchestrator_harness.lane_controller":
+1064 |             if args.workflow_role is None:
+     -                 raise RunnerError(
+     -                     "--workflow-role is required for lane-controller dispatch"
+     -                 )
+1065 +                 raise RunnerError("--workflow-role is required for lane-controller dispatch")
+1066 |             if not remainder:
+     -                 raise RunnerError(
+     -                     "lane-controller dispatch requires an invocation path"
+     -                 )
+1067 +                 raise RunnerError("lane-controller dispatch requires an invocation path")
+1068 |             try:
+     -                 raw_dispatch_invocation = json.loads(
+     -                     Path(remainder[0]).read_text(encoding="utf-8")
+     -                 )
+1069 +                 raw_dispatch_invocation = json.loads(Path(remainder[0]).read_text(encoding="utf-8"))
+1070 |             except (OSError, json.JSONDecodeError) as exc:
+     -                 raise RunnerError(
+     -                     f"cannot read dispatch invocation for role resolution: {exc}"
+     -                 ) from exc
+1071 +                 raise RunnerError(f"cannot read dispatch invocation for role resolution: {exc}") from exc
+1072 |             if not isinstance(raw_dispatch_invocation, dict):
+--------------------------------------------------------------------------------
+1091 |                         "workflow_role": args.workflow_role,
+     -                         "launch_profile": dispatch_invocation.get("codex", {}).get(
+     -                             "launch_profile"
+     -                         ),
+1092 +                         "launch_profile": dispatch_invocation.get("codex", {}).get("launch_profile"),
+1093 |                         "fallback_history_sha256": fallback_history_sha256,
+--------------------------------------------------------------------------------
+1105 |         else:
+     -             result = _dispatch_resolved_invocation(
+     -                 entry, remainder, dispatch_invocation
+     -             )
+1106 +             result = _dispatch_resolved_invocation(entry, remainder, dispatch_invocation)
+1107 |         if result is None:
+1108 |             return 0
+1109 |         if isinstance(result, int):
+1110 |             return result
+     -         raise RunnerError(
+     -             f"stable module returned unsupported result type: {type(result).__name__}"
+     -         )
+1111 +         raise RunnerError(f"stable module returned unsupported result type: {type(result).__name__}")
+1112 |     except (RunnerError, OSError, ValueError) as exc:
+     |
+
+unformatted: File would be reformatted
+    --> .codex\tests\test_stable_runner.py:27:20
+     |
+26   | )
+     - RUNNER_MIGRATION = (
+     -     ROOT
+     -     / "plans"
+     -     / "general-coding-harness"
+     -     / "runtime"
+     -     / "firmware-v2"
+     -     / "runner-migration"
+     - )
+27   + RUNNER_MIGRATION = ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "runner-migration"
+28   | PENDING_S2_D1 = (
+--------------------------------------------------------------------------------
+152  |         with pytest.raises(runner.RunnerError, match="commit"):
+     -             runner.validate_checkout(
+     -                 lock_path=lock_path, repository_root=base / "wrong"
+     -             )
+153  +             runner.validate_checkout(lock_path=lock_path, repository_root=base / "wrong")
+154  |
+--------------------------------------------------------------------------------
+166  |     fake = types.ModuleType("orchestrator_harness")
+     -     fake.__file__ = str(
+     -         Path(tempfile.gettempdir()) / "wrong" / "orchestrator_harness" / "__init__.py"
+     -     )
+167  +     fake.__file__ = str(Path(tempfile.gettempdir()) / "wrong" / "orchestrator_harness" / "__init__.py")
+168  |     prior = sys.modules.get("orchestrator_harness")
+169  |     sys.modules["orchestrator_harness"] = fake
+170  |     try:
+171  |         with pytest.raises(runner.RunnerError, match="conflicting preloaded import"):
+     -             runner.import_stable_module(
+     -                 "orchestrator_harness.cli", runner.validate_checkout()
+     -             )
+172  +             runner.import_stable_module("orchestrator_harness.cli", runner.validate_checkout())
+173  |     finally:
+--------------------------------------------------------------------------------
+234  |         assert {
+     -             key: projected["codex"][key]
+     -             for key in ("model", "reasoning_effort", "service_tier")
+235  +             key: projected["codex"][key] for key in ("model", "reasoning_effort", "service_tier")
+236  |         } == _model_settings("doer-main")
+--------------------------------------------------------------------------------
+242  |         }
+     -         assert (
+     -             record["projected_invocation_sha256"]
+     -             == runner.hashlib.sha256(output.read_bytes()).hexdigest()
+     -         )
+243  +         assert record["projected_invocation_sha256"] == runner.hashlib.sha256(output.read_bytes()).hexdigest()
+244  |         assert record["workflow_role"] == "doer-main"
+--------------------------------------------------------------------------------
+254  |             )
+     -         with pytest.raises(
+     -             runner.RunnerError, match="inside the immutable stable checkout"
+     -         ):
+255  +         with pytest.raises(runner.RunnerError, match="inside the immutable stable checkout"):
+256  |             runner.project_invocation(
+--------------------------------------------------------------------------------
+280  |         invocation["finding_gate"] = {"role": gate_role, "path": "FINDINGS.json"}
+     -     resolved = runner.apply_workflow_role_allocation(
+     -         invocation, workflow_role, validate_finding_gate=True
+281  +     resolved = runner.apply_workflow_role_allocation(invocation, workflow_role, validate_finding_gate=True)
+282  +     assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+283  +         _model_settings(workflow_role)
+284  |     )
+     -     assert {
+     -         key: resolved["codex"][key]
+     -         for key in ("model", "reasoning_effort", "service_tier")
+     -     } == (_model_settings(workflow_role))
+285  |
+--------------------------------------------------------------------------------
+300  |         invocation["finding_gate"] = {"role": gate_role, "path": "FINDINGS.json"}
+     -     resolved = runner.apply_workflow_role_allocation(
+     -         invocation, workflow_role, validate_finding_gate=True
+301  +     resolved = runner.apply_workflow_role_allocation(invocation, workflow_role, validate_finding_gate=True)
+302  +     assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+303  +         _model_settings(workflow_role)
+304  |     )
+     -     assert {
+     -         key: resolved["codex"][key]
+     -         for key in ("model", "reasoning_effort", "service_tier")
+     -     } == (_model_settings(workflow_role))
+305  |
+--------------------------------------------------------------------------------
+320  |     with pytest.raises(runner.RunnerError, match="requires finding_gate role"):
+     -         runner.apply_workflow_role_allocation(
+     -             invocation, "reviewer-main", validate_finding_gate=True
+     -         )
+321  +         runner.apply_workflow_role_allocation(invocation, "reviewer-main", validate_finding_gate=True)
+322  |
+--------------------------------------------------------------------------------
+359  |         assert any(
+     -             key.startswith("GIT_CONFIG_KEY_") and setting == "core.excludesFile"
+     -             for key, setting in os.environ.items()
+360  +             key.startswith("GIT_CONFIG_KEY_") and setting == "core.excludesFile" for key, setting in os.environ.items()
+361  |         )
+--------------------------------------------------------------------------------
+418  |         assert nested.returncode == 0, nested.stderr
+     -         assert (
+     -             json.loads(nested.stdout)["hookSpecificOutput"]["permissionDecision"]
+     -             == "deny"
+     -         )
+419  +         assert json.loads(nested.stdout)["hookSpecificOutput"]["permissionDecision"] == "deny"
+420  |
+--------------------------------------------------------------------------------
+528  |         )
+     -         assert {
+     -             key: resolved["codex"][key]
+     -             for key in ("model", "reasoning_effort", "service_tier")
+     -         } == {
+     -             key: custom_profile[key]
+     -             for key in ("model", "reasoning_effort", "service_tier")
+529  +         assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == {
+530  +             key: custom_profile[key] for key in ("model", "reasoning_effort", "service_tier")
+531  |         }
+--------------------------------------------------------------------------------
+553  | )
+     - def test_workflow_role_allocation_rejects_non_full_access_invocations(
+     -     field: str, value: str
+     - ) -> None:
+554  + def test_workflow_role_allocation_rejects_non_full_access_invocations(field: str, value: str) -> None:
+555  |     runner = _load_runner()
+--------------------------------------------------------------------------------
+560  |     with pytest.raises(runner.RunnerError, match=field):
+     -         runner.apply_workflow_role_allocation(
+     -             invocation, "doer-main", validate_finding_gate=False
+     -         )
+561  +         runner.apply_workflow_role_allocation(invocation, "doer-main", validate_finding_gate=False)
+562  |
+--------------------------------------------------------------------------------
+583  |     runner = _load_runner()
+     -     deepseek = runner.apply_workflow_role_allocation(
+     -         _coding_invocation(), "coder-main", validate_finding_gate=False
+     -     )
+584  +     deepseek = runner.apply_workflow_role_allocation(_coding_invocation(), "coder-main", validate_finding_gate=False)
+585  |     deepseek_settings = deepseek["codex"]
+--------------------------------------------------------------------------------
+598  |     assert "model_context_window=1048576" in deepseek_settings["config_overrides"]
+     -     assert (
+     -         "model_auto_compact_token_limit=230000" in deepseek_settings["config_overrides"]
+     -     )
+     -     assert (
+     -         "model_auto_compact_token_limit=1" not in deepseek_settings["config_overrides"]
+     -     )
+599  +     assert "model_auto_compact_token_limit=230000" in deepseek_settings["config_overrides"]
+600  +     assert "model_auto_compact_token_limit=1" not in deepseek_settings["config_overrides"]
+601  |     assert deepseek_settings["sandbox"] == "danger-full-access"
+--------------------------------------------------------------------------------
+605  |     catalog_override = next(
+     -         item
+     -         for item in deepseek_settings["config_overrides"]
+     -         if item.startswith("model_catalog_json=")
+606  +         item for item in deepseek_settings["config_overrides"] if item.startswith("model_catalog_json=")
+607  |     )
+     -     assert ".codex/delegates/deepseek-model-catalog.json" in catalog_override.replace(
+     -         "\\", "/"
+     -     )
+608  +     assert ".codex/delegates/deepseek-model-catalog.json" in catalog_override.replace("\\", "/")
+609  |
+--------------------------------------------------------------------------------
+617  |
+     -     terra = runner.apply_workflow_role_allocation(
+     -         _coding_invocation(), "reviewer-main", validate_finding_gate=False
+     -     )
+618  +     terra = runner.apply_workflow_role_allocation(_coding_invocation(), "reviewer-main", validate_finding_gate=False)
+619  |     terra_settings = terra["codex"]
+--------------------------------------------------------------------------------
+633  |
+     - def test_backend_fallback_requires_three_consecutive_classified_deepseek_failures() -> (
+     -     None
+     - ):
+634  + def test_backend_fallback_requires_three_consecutive_classified_deepseek_failures() -> None:
+635  |     runner = _load_runner()
+--------------------------------------------------------------------------------
+666  |     runner = _load_runner()
+     -     assert (
+     -         runner.classify_backend_error("HTTP status 429: too many requests")
+     -         == "HTTP_429"
+     -     )
+     -     assert (
+     -         runner.classify_backend_error("provider returned HTTP 303 error") == "HTTP_303"
+     -     )
+667  +     assert runner.classify_backend_error("HTTP status 429: too many requests") == "HTTP_429"
+668  +     assert runner.classify_backend_error("provider returned HTTP 303 error") == "HTTP_303"
+669  |     assert runner.classify_backend_error("Rate limit exceeded") == "RATE_LIMIT"
+     -     assert (
+     -         runner.classify_backend_error("backend service unavailable") == "BACKEND_ERROR"
+     -     )
+     -     assert (
+     -         runner.classify_backend_error("ordinary product test assertion failed") is None
+     -     )
+670  +     assert runner.classify_backend_error("backend service unavailable") == "BACKEND_ERROR"
+671  +     assert runner.classify_backend_error("ordinary product test assertion failed") is None
+672  |
+--------------------------------------------------------------------------------
+678  |     runner = _load_runner()
+     -     raw_error = (
+     -         "provider request failed: HTTP 429; secret detail must not enter history"
+     -     )
+679  +     raw_error = "provider request failed: HTTP 429; secret detail must not enter history"
+680  |     error_path = tmp_path / "provider.stderr"
+--------------------------------------------------------------------------------
+727  |     assert projected["codex"]["reasoning_effort"] == "max"
+     -     assert (
+     -         projection["fallback_history_sha256"]
+     -         == hashlib.sha256(history.read_bytes()).hexdigest()
+     -     )
+728  +     assert projection["fallback_history_sha256"] == hashlib.sha256(history.read_bytes()).hexdigest()
+729  |
+--------------------------------------------------------------------------------
+832  | def test_pending_d1_migration_binds_authoritative_s2_d1() -> None:
+     -     migration = json.loads(
+     -         (RUNNER_MIGRATION / "PENDING_D1_MIGRATION.json").read_text(encoding="utf-8")
+     -     )
+833  +     migration = json.loads((RUNNER_MIGRATION / "PENDING_D1_MIGRATION.json").read_text(encoding="utf-8"))
+834  |     authoritative_bytes = PENDING_S2_D1.read_bytes()
+--------------------------------------------------------------------------------
+843  |     stable_hash = hashlib.sha256(stable_bytes).hexdigest()
+     -     projection = json.loads(
+     -         (RUNNER_MIGRATION / "PENDING_D1_STABLE_PROJECTION.json").read_text(
+     -             encoding="utf-8"
+     -         )
+     -     )
+844  +     projection = json.loads((RUNNER_MIGRATION / "PENDING_D1_STABLE_PROJECTION.json").read_text(encoding="utf-8"))
+845  |
+846  |     assert authoritative["action"] == "resume"
+847  |     assert authoritative["lane_id"] == "S2.D1"
+848  |     assert authoritative["worker_invocation_id"] == "s2-d1-001"
+     -     assert authoritative["resume_identity"]["thread_id"] == (
+     -         "019fcacb-ab71-79c0-bb93-3813ff3d900d"
+     -     )
+849  +     assert authoritative["resume_identity"]["thread_id"] == ("019fcacb-ab71-79c0-bb93-3813ff3d900d")
+850  |     assert authoritative["repository"]["branch"] == "firmware/v2-s2-d1"
+     -     assert authoritative["repository"]["base_commit"] == (
+     -         "7a28b186e91f2945ea9c59869a216fa8caf8407e"
+     -     )
+     -     assert authoritative["prompt_sha256"] == (
+     -         "f495350ca3a5b5ff15def16c28beea83714db1aafe90e733067fa0b68fc0cf1d"
+     -     )
+851  +     assert authoritative["repository"]["base_commit"] == ("7a28b186e91f2945ea9c59869a216fa8caf8407e")
+852  +     assert authoritative["prompt_sha256"] == ("f495350ca3a5b5ff15def16c28beea83714db1aafe90e733067fa0b68fc0cf1d")
+853  |     assert migration["original_invocation"]["path"].endswith(
+--------------------------------------------------------------------------------
+857  |     assert migration["resume_projection"]["candidate_source_sha256"] == candidate_hash
+     -     assert migration["resume_projection"]["stable_compatible_invocation_sha256"] == (
+     -         stable_hash
+     -     )
+858  +     assert migration["resume_projection"]["stable_compatible_invocation_sha256"] == (stable_hash)
+859  |     assert migration["preserved_resume_identity"] == {
+--------------------------------------------------------------------------------
+925  |         candidate = (
+     -             ROOT
+     -             / "plans"
+     -             / "general-coding-harness"
+     -             / "runtime"
+     -             / "firmware-v2"
+     -             / "worktrees"
+     -             / "harness-candidate"
+926  +             ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "worktrees" / "harness-candidate"
+927  |         )
+928  |         lane = (
+     -             ROOT
+     -             / "plans"
+     -             / "general-coding-harness"
+     -             / "runtime"
+     -             / "firmware-v2"
+     -             / "implementation"
+     -             / "lanes"
+     -             / "S1.A1"
+929  +             ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "implementation" / "lanes" / "S1.A1"
+930  |         )
+--------------------------------------------------------------------------------
+953  |             assert completed.returncode == 0, completed.stderr
+     -             assert (
+     -                 "stable-general-harness-runner\\\\orchestrator_harness\\\\cli.py"
+     -                 in completed.stderr
+     -             )
+954  +             assert "stable-general-harness-runner\\\\orchestrator_harness\\\\cli.py" in completed.stderr
+955  |             assert str(fake_import_root) not in completed.stderr
+--------------------------------------------------------------------------------
+980  |         run_root = Path(raw)
+     -         (run_root / ".gitignore").write_text(
+     -             ".agent-workspace/\nruntime/\n", encoding="utf-8"
+     -         )
+981  +         (run_root / ".gitignore").write_text(".agent-workspace/\nruntime/\n", encoding="utf-8")
+982  |         prompt = run_root / "prompt.md"
+--------------------------------------------------------------------------------
+1093 |             dispatch_value["codex"][key] = "earlier-materialized"
+     -         dispatch_input.write_text(
+     -             json.dumps(dispatch_value, indent=2) + "\n", encoding="utf-8"
+     -         )
+1094 +         dispatch_input.write_text(json.dumps(dispatch_value, indent=2) + "\n", encoding="utf-8")
+1095 |         hostile_cwd = (
+     -             ROOT
+     -             / "plans"
+     -             / "general-coding-harness"
+     -             / "runtime"
+     -             / "firmware-v2"
+     -             / "worktrees"
+     -             / "harness-candidate"
+1096 +             ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "worktrees" / "harness-candidate"
+1097 |         )
+--------------------------------------------------------------------------------
+1124 |             else completed.stderr + completed.stdout
+     -         )
+     -         status = json.loads(
+     -             (workspace / "controller.status.json").read_text(encoding="utf-8")
+1125 |         )
+1126 +         status = json.loads((workspace / "controller.status.json").read_text(encoding="utf-8"))
+1127 |         assert status["state"] == "CODEX_EXITED"
+--------------------------------------------------------------------------------
+1131 |         assert status["launcher_settings"]["model"] == expected_settings["model"]
+     -         assert (
+     -             status["launcher_settings"]["model_reasoning_effort"]
+     -             == expected_settings["reasoning_effort"]
+     -         )
+     -         assert (
+     -             status["launcher_settings"]["service_tier"]
+     -             == expected_settings["service_tier"]
+     -         )
+     -         observed_claims = json.loads(
+     -             (run_root / "resource-observed.json").read_text(encoding="utf-8")
+     -         )
+     -         assert observed_claims == [
+     -             hashlib.sha256(b"stable-controller-proof").hexdigest() + ".json"
+     -         ]
+1132 +         assert status["launcher_settings"]["model_reasoning_effort"] == expected_settings["reasoning_effort"]
+1133 +         assert status["launcher_settings"]["service_tier"] == expected_settings["service_tier"]
+1134 +         observed_claims = json.loads((run_root / "resource-observed.json").read_text(encoding="utf-8"))
+1135 +         assert observed_claims == [hashlib.sha256(b"stable-controller-proof").hexdigest() + ".json"]
+1136 |         assert list(resource_lock_root.iterdir()) == []
+1137 |         assert "stable-general-harness-runner" in completed.stderr
+1138 |         assert "finding_gate" not in json.loads(projected.read_text(encoding="utf-8"))
+     -         assert "child_environment_isolation" not in json.loads(
+     -             projected.read_text(encoding="utf-8")
+     -         )
+1139 +         assert "child_environment_isolation" not in json.loads(projected.read_text(encoding="utf-8"))
+1140 |         assert record["root_must_validate_before_acceptance"] is True
+     |
+
+2 files would be reformatted

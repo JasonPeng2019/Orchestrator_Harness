@@ -1,0 +1,16 @@
+{
+  "schema": "m5-isolation-audit/v1",
+  "epoch": "20260802-m5-s1-031903Z",
+  "discovery_transport": "blocking_harness_wait_stdout only",
+  "forbidden_paths_used": [],
+  "ai_evaluator_used": false,
+  "watcher_subagent_used": false,
+  "collaboration_notification_used": false,
+  "user_message_used": false,
+  "transcript_inspection_used": false,
+  "hardware_or_provider_activity": false,
+  "leases_declared": [],
+  "exact_cleanup_proven": true,
+  "watcher_clean_stop": true,
+  "watcher_observation_errors": 0
+}

@@ -1,0 +1,23 @@
+﻿{
+    "schema":  "m5-process-cleanup/v1",
+    "observed_utc":  "2026-08-02T11:24:24.1394059Z",
+    "epoch":  "20260802-m5-r1-110513Z",
+    "registered_pids":  [
+                            195128,
+                            185676,
+                            98392,
+                            168428,
+                            181464,
+                            187292,
+                            173628,
+                            193348,
+                            170020,
+                            185768,
+                            192456
+                        ],
+    "live_registered":  [
+
+                        ],
+    "all_registered_absent":  true,
+    "disposition":  "SAFE_BOUNDARY"
+}

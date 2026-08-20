@@ -1,0 +1,26 @@
+[
+    {
+        "task":  "A22",
+        "launcher_pid":  184908,
+        "invocation":  "fresh-experiments/A22_20260726-062324/.agent-workspace/atlas_a22_s1_clean_e_b14.invocation.json",
+        "started_utc":  "2026-07-31T16:46:47.0514615Z"
+    },
+    {
+        "task":  "D31",
+        "launcher_pid":  193636,
+        "invocation":  "fresh-experiments/D31_20260726-062325/.agent-workspace/boreal_d31_s1_clean_e_prep.invocation.json",
+        "started_utc":  "2026-07-31T16:46:47.0824483Z"
+    },
+    {
+        "task":  "A24",
+        "launcher_pid":  195656,
+        "invocation":  "fresh-experiments/A24_20260726-052146/.agent-workspace/cygnus_a24_s1_clean_e_prep.invocation.json",
+        "started_utc":  "2026-07-31T16:46:47.1094442Z"
+    },
+    {
+        "task":  "A26",
+        "launcher_pid":  196536,
+        "invocation":  "fresh-experiments/A26_20260726-062325/.agent-workspace/delta_a26_s1_clean_e_prep.invocation.json",
+        "started_utc":  "2026-07-31T16:46:47.1374468Z"
+    }
+]

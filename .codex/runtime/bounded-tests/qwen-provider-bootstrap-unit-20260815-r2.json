@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/scripts/orchestration/test_qwen_provider_bootstrap.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  55,
+    "expected_upper_bound_seconds":  45,
+    "cleanup_allowance_seconds":  10,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "evidence",
+    "started_at":  "2026-08-15T23:05:28.8519300+00:00",
+    "finished_at":  "2026-08-15T23:05:31.2989002+00:00",
+    "elapsed_seconds":  2.447,
+    "root_process_id":  184996,
+    "observed_process_ids":  [
+                                 184996
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\qwen-provider-bootstrap-unit-20260815-r2.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\qwen-provider-bootstrap-unit-20260815-r2.stderr.log"
+}

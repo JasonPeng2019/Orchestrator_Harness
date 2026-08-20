@@ -1,0 +1,9 @@
+usage: worktree_task.py [-h] {create,list,close} ...
+
+Manage isolated development worktrees.
+
+positional arguments:
+  {create,list,close}
+
+options:
+  -h, --help           show this help message and exit

@@ -1,0 +1,52 @@
+Phase 0, Step 0.4 complete. Final report:
+
+## 1. Canonical claude-code invocation — written + load-validated ✓
+
+`examples/coding.claude.invocation.example.json` uses the canonical `orchestrator-worker-invocation/v1` schema with `provider.id="claude-code"`:
+- `config_overrides: ["model_provider=\"ollama\""]` — the 0.3 redirect channel
+- No `service_tier` / `approval_policy` (both raise `InvocationValidationError` for claude-code)
+- `permission_mode` omitted → 0.2 default `bypassPermissions` applies (documented in the field table)
+- `model: "deepseek-v4-flash:0731-cloud"` (real model on the local Ollama)
+- `command: ["C:/Users/Jason/.local/bin/claude.exe"]` (real CLI 2.1.235)
+
+`evidence/0.4/validate_invocation.py` materializes the placeholder layout under a temp root, substitutes paths, computes real card/prompt-bundle digests via the canonical helpers, and loads through `lane_controller.load_invocation`. **`LOAD_VALIDATION=PASS`** → `evidence/0.4/invocation-load.txt`. Companion annotated walkthrough: `examples/coding.claude.invocation.example.md`.
+
+## 2. Fixture design + terminal state name
+
+`examples/disposable_claude_coding_fixture.py` — stdlib only, one Git worktree, one real claude lane via `launch_lane_controller` (public operator path, detached receipt with pid/created_utc). Never sets process-level `ANTHROPIC_*`; the redirect travels **only** through `config_overrides` → `claude_config_override_env` → post-isolation merge. Prompt: create + commit `HELLO.txt` containing `hello from claude`. `--keep DIRECTORY` support; JSON result; exit 0/1; bounded at 240 s.
+
+**Terminal state discovered:** canonical lanes use provider-neutral `PROVIDER_EXITED` (`lane_controller.py` line 2197: `exited_state = "CODEX_EXITED" if legacy_status_names else "PROVIDER_EXITED"`). `CODEX_EXITED` applies only to legacy coding-v1 lanes, which are hard-wired to codex — not to this claude lane.
+
+## 3. Live run — PASS (exit 0)
+
+Primary run (`evidence/0.4/fixture-run.log`, kept root `scratch/0.4-fixture-run`):
+- FIXTURE_EXIT=0; `terminal_state: PROVIDER_EXITED`, `provider_terminal_outcome: COMPLETED`, `provider_exit_code: 0`
+- **session_id `ea14fa65-87b3-435b-a8a6-3fe8b8b2e914`** — real, non-empty, matches across status + `PROVIDER_EXITED` event
+- Lane events (`evidence/0.4/LANE_EVENTS.jsonl`): `PROVIDER_STARTED` (pid 14320) → `PROVIDER_EXITED` (exit 0, outcome COMPLETED); `result_validation.state: MISSING` is expected (fixture writes no RESULT.json)
+- Real artifact: `HELLO.txt` = `"hello from claude\n"`, committed once (commit_count 1, `8aef2a2f`)
+
+**Decisive channel proof:** a second run with the whole ambient env scrubbed of every `ANTHROPIC_*` variable (`evidence/0.4/fixture-run-scrubbed.log`, `LANE_EVENTS.scrubbed.jsonl`) also exited 0 with a real session (`e082a04d-…`) and the committed artifact — the `config_overrides` channel alone carries the redirect. `env-channel-proof.py` reproduces the three-call merge at the boundary: scrub → translate → `apply_provider_env_overrides`, showing `ANTHROPIC_BASE_URL=http://localhost:11434`, `ANTHROPIC_AUTH_TOKEN=ollama`, `ANTHROPIC_API_KEY=""` re-injected after isolation.
+
+## 4. Issues found
+
+- **Event key is `event`, not `type`** — lane-event rows use `event` (`_event` helper in `lane_controller.py`); `type` belongs to claude's stream-json transcript. First run tripped on this (`[None, None]`), fixed in the fixture.
+- **Trailing newline in model output** — claude's `echo`-style write produced `"hello from claude\n"`; content check compares stripped, records raw bytes.
+- **Canonical isolation is unconditional** — canonical invocations always scrub the child env; this is not a bug but a design property. The 0.3 merge (line 2887–2894) makes the channel work by re-injecting the declared overrides. `provider_needs: ["CLAUDE_CONFIG_DIR", "HOME"]` on the profile keeps claude's config/home under caller control (`CLAUDE_CONFIG_DIR` survives the scrub).
+- **Transient Windows file lock** on `rm -rf scratch/` ("Device or resource busy") — rerun of cleanup; not a code issue.
+- **`~/.claude` verified untouched** by every run (mtimes predate all runs; direct CLI smoke tests used an isolated HOME).
+
+## 5. Evidence files (`evidence/0.4/`)
+
+| File | Proves |
+| --- | --- |
+| `validate_invocation.py` | Load validation harness (canonical helpers + strict loader) |
+| `invocation-load.txt` | `LOAD_VALIDATION=PASS` + full field dump |
+| `example-json.txt` | Materialized example JSON (rendered record) |
+| `env-channel-proof.py` | Boundary reproduction of the 0.3 merge |
+| `env-channel-proof.txt` | `ENV_CHANNEL_PROOF=PASS` (scrub → translate → re-inject) |
+| `fixture-run.log` | Primary live run result (exit 0, COMPLETED, session ea14fa65…) |
+| `fixture-run-scrubbed.log` | Scrubbed-env run result (exit 0, session e082a04d…) |
+| `LANE_EVENTS.jsonl` | Primary lane event log (PROVIDER_STARTED → PROVIDER_EXITED) |
+| `LANE_EVENTS.scrubbed.jsonl` | Scrubbed lane event log |
+
+Deliverables 1–3 are complete, both live runs pass, and the Ollama redirect is proven to reach the claude child through the 0.3 `config_overrides` env channel (post-isolation merge) rather than any process-level ambient variable. Nothing was committed; the branch `compat-test-copy` remains at `dd673cb` plus uncommitted example/evidence files.

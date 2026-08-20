@@ -1,0 +1,20 @@
+{
+  "epoch": "20260802-m5-q9-160750Z",
+  "attempt": "9/10",
+  "created_utc": "2026-08-02T16:07:50.435230Z",
+  "active_epoch_before_launch": null,
+  "python_baseline_sha256": "6dd6750396115274739ba8bb0970702fff1e9354bd33810be348b732eb2ac51b",
+  "runtime_policy_projection_sha256": "89bb18cb67282fe4e71c198d9a3b4a279c6cb1412710a98b9a0a720316ec0f04",
+  "harness_config_sha256": "ac738d370a044a2bd01db971b38c43ea7c08a91ed5c6dce087bdc2718662339e",
+  "watcher_config_sha256": "c0882aacd6a646908f1aa18ea7ffecc2782dcb86433a7f6377311136889372e4",
+  "allowed_runtime": [
+    "persistent root manager",
+    "one native managed harness",
+    "one deterministic diagnostic-only watcher",
+    "four external E2E worker controllers and their Codex workers"
+  ],
+  "forbidden_runtime_absent": true,
+  "evaluator_enabled": false,
+  "autonomy_audit": "PASS",
+  "safe_boundary": true
+}

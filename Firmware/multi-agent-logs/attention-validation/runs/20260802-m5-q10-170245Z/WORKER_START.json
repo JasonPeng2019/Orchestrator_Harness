@@ -1,0 +1,62 @@
+{
+    "epoch":  "20260802-m5-q10-170245Z",
+    "started_utc":  "2026-08-02T17:07:39.0719671Z",
+    "workers":  [
+                    {
+                        "doer":  "Atlas",
+                        "task":  "A22",
+                        "controller_pid":  179032,
+                        "creation_utc":  "2026-08-02T17:07:30.5899752Z",
+                        "lane_id":  "20260802-m5-q10-170245Z:Atlas:A22",
+                        "command_line":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\scripts\\orchestration\\run_persistent_lane_r9.ps1\" -RunRoot \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\" -ThreadId \"019fb877-1475-76c0-a137-2743580015de\" -PromptPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-q10-170245Z.bound.md\" -Label \"Atlas-A22\" -Doer \"Atlas\" -Task \"A22\" -Phase \"M5_PRELIVE_ASSIGNMENT_AUTHORIZATION\" -LaneId \"20260802-m5-q10-170245Z:Atlas:A22\" -StatusPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-q10-170245Z_controller.status.json\" -JsonlPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-q10-170245Z_codex.jsonl\" -StderrPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-q10-170245Z_codex.stderr.log\" -LastMessagePath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-q10-170245Z_last_message.txt\" -LaneEventLog \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-q10-170245Z\\lane-events.jsonl\"",
+                        "leases":  [
+
+                                   ],
+                        "board_tokens":  [
+
+                                         ]
+                    },
+                    {
+                        "doer":  "Boreal",
+                        "task":  "D31",
+                        "controller_pid":  2316,
+                        "creation_utc":  "2026-08-02T17:07:31.6152388Z",
+                        "lane_id":  "20260802-m5-q10-170245Z:Boreal:D31",
+                        "command_line":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\scripts\\orchestration\\run_persistent_lane_r9.ps1\" -RunRoot \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\" -ThreadId \"019fb877-1447-7693-92b1-f4bda04c6ecf\" -PromptPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-q10-170245Z.bound.md\" -Label \"Boreal-D31\" -Doer \"Boreal\" -Task \"D31\" -Phase \"M5_PRELIVE_ASSIGNMENT_AUTHORIZATION\" -LaneId \"20260802-m5-q10-170245Z:Boreal:D31\" -StatusPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-q10-170245Z_controller.status.json\" -JsonlPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-q10-170245Z_codex.jsonl\" -StderrPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-q10-170245Z_codex.stderr.log\" -LastMessagePath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-q10-170245Z_last_message.txt\" -LaneEventLog \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-q10-170245Z\\lane-events.jsonl\"",
+                        "leases":  [
+
+                                   ],
+                        "board_tokens":  [
+
+                                         ]
+                    },
+                    {
+                        "doer":  "Cygnus",
+                        "task":  "A24",
+                        "controller_pid":  196636,
+                        "creation_utc":  "2026-08-02T17:07:32.2533135Z",
+                        "lane_id":  "20260802-m5-q10-170245Z:Cygnus:A24",
+                        "command_line":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\scripts\\orchestration\\run_persistent_lane_r9.ps1\" -RunRoot \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\" -ThreadId \"019fb877-1199-79b1-a32e-34348178f111\" -PromptPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-q10-170245Z.bound.md\" -Label \"Cygnus-A24\" -Doer \"Cygnus\" -Task \"A24\" -Phase \"M5_PRELIVE_ASSIGNMENT_AUTHORIZATION\" -LaneId \"20260802-m5-q10-170245Z:Cygnus:A24\" -StatusPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-q10-170245Z_controller.status.json\" -JsonlPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-q10-170245Z_codex.jsonl\" -StderrPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-q10-170245Z_codex.stderr.log\" -LastMessagePath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-q10-170245Z_last_message.txt\" -LaneEventLog \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-q10-170245Z\\lane-events.jsonl\"",
+                        "leases":  [
+
+                                   ],
+                        "board_tokens":  [
+
+                                         ]
+                    },
+                    {
+                        "doer":  "Delta",
+                        "task":  "A26",
+                        "controller_pid":  166312,
+                        "creation_utc":  "2026-08-02T17:07:32.8393446Z",
+                        "lane_id":  "20260802-m5-q10-170245Z:Delta:A26",
+                        "command_line":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\scripts\\orchestration\\run_persistent_lane_r9.ps1\" -RunRoot \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\" -ThreadId \"019fb877-1441-7c92-84e2-cbb5bc422879\" -PromptPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-q10-170245Z.bound.md\" -Label \"Delta-A26\" -Doer \"Delta\" -Task \"A26\" -Phase \"M5_BUSY_AUTHORIZATION\" -LaneId \"20260802-m5-q10-170245Z:Delta:A26\" -StatusPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-q10-170245Z_controller.status.json\" -JsonlPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-q10-170245Z_codex.jsonl\" -StderrPath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-q10-170245Z_codex.stderr.log\" -LastMessagePath \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-q10-170245Z_last_message.txt\" -LaneEventLog \"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-q10-170245Z\\lane-events.jsonl\"",
+                        "leases":  [
+
+                                   ],
+                        "board_tokens":  [
+
+                                         ]
+                    }
+                ]
+}

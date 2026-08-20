@@ -1,0 +1,12 @@
+ERROR: angle-bracket placeholders remain: <invocation-id>
+ERROR: MI-SPRINT-RECOVERY-REPAIR ordered_actions must contain M02-A1, M02-A2, M02-A3, M02-A4, M02-A5, M02-A6, M02-A7, M02-A8 exactly once and in order
+ERROR: MI-SPRINT-RECOVERY-ASSETS ordered_actions must contain M03-A1, M03-A2, M03-A3, M03-A4, M03-A5, M03-A6, M03-A7 exactly once and in order
+ERROR: MI-SPRINT-RECOVERY-EVIDENCE ordered_actions must contain M04-A1, M04-A2, M04-A3, M04-A4, M04-A5, M04-A6, M04-A7, M04-A8 exactly once and in order
+ERROR: MI-SPRINT-RECOVERY-DECIDE ordered_actions must contain M05-A1, M05-A2, M05-A3, M05-A4, M05-A5, M05-A6, M05-A7, M05-A8, M05-A9, M05-A10 exactly once and in order
+ERROR: MI-SPRINT-RECOVERY-INTEGRATE ordered_actions must contain M06-A1, M06-A2, M06-A3, M06-A4, M06-A5, M06-A6, M06-A7, M06-A8 exactly once and in order
+ERROR: MI-SPRINT-RECOVERY-REHEARSE ordered_actions must contain M08-A1, M08-A2, M08-A3, M08-A4, M08-A5, M08-A6 exactly once and in order
+ERROR: FAST_LANE_V2 requires policy text for 'complete pool'
+ERROR: FAST_LANE_V2 requires policy text for 'motivating test'
+ERROR: GATE-SPRINT-RECOVERY PRODUCT continuation eligibility must say that only a failed/undecidable required product criterion permits continuation
+ERROR: GATE-FIRMWARE-ADMISSION OPERATION_BOUNDARY continuation must explicitly say 'No product loop'
+ERROR: GATE-FIRMWARE-RESULT PRODUCT continuation eligibility must say that only a failed/undecidable required product criterion permits continuation

@@ -1,0 +1,25 @@
+{
+  "clone_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test",
+  "controller_error": "[Errno 22] Invalid argument",
+  "elapsed_s": 9.2,
+  "event_types": [
+    "PROVIDER_STARTED",
+    "CONTROLLER_FAILED"
+  ],
+  "failure_event_errors": [
+    "[Errno 22] Invalid argument"
+  ],
+  "failure_event_types": [
+    "CONTROLLER_FAILED"
+  ],
+  "override_expansion": {
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_AUTH_TOKEN": "dead",
+    "ANTHROPIC_BASE_URL": "http://127.0.0.1:9"
+  },
+  "probe": "3.A/G21 authentic launch-failure",
+  "provider_session_id": null,
+  "removed_ambient_anthropic": [],
+  "terminal_state": "CONTROLLER_FAILED",
+  "verdict": "PASS"
+}

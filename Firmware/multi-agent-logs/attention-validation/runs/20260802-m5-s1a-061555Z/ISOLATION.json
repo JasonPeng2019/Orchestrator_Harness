@@ -1,0 +1,15 @@
+{
+  "schema": "m5-isolation/v1",
+  "epoch": "20260802-m5-s1a-061555Z",
+  "forbidden_assistance_used": false,
+  "request_discovery": "blocking_harness_wait_stdout only",
+  "reviewer_started_after_cleanup": false,
+  "transcript_inspection_during_active_sprint": false,
+  "direct_signal_inspection_during_active_sprint": false,
+  "runner_or_wrapper_used": false,
+  "watcher_evaluator_enabled": false,
+  "notes": [
+    "Worker transcripts/statuses were inspected only after invocation finish and native harness/watcher shutdown, for cleanup.",
+    "An initial record-attention call used a non-allowlisted source ID and failed; the response file already existed, then valid claim/response records were emitted before exact acknowledgement. This produced a negative response-to-ack metric for Atlas and is evidence-invalidating operator logging order."
+  ]
+}

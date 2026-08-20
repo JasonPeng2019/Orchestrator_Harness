@@ -1,0 +1,12 @@
+﻿{
+    "schema":  "manager-event-review/v1",
+    "epoch":  "20260731-s1-clean-p",
+    "event_id":  "cac7a85647cbdaa9f85c3675bde2fbe77efda5c26fb6ec48838a33aacb9a5326",
+    "type":  "MANAGER_SIGNAL",
+    "lane":  "20260731-s1-clean-p:Cygnus:A24",
+    "reviewed_utc":  "2026-08-01T00:08:40.2749603Z",
+    "signal_sha256":  "283a29c875000bdfb8e1934ed69b997d0310364614613c3729510abcf396b51d",
+    "focused_result":  "4/4 host tests PASS plus py_compile",
+    "decision":  "ACCEPT_HOST_GATE",
+    "reason":  "Fresh assignment-bound paired controller replaces O stub; dry launchers prove no provider/MCP action and exact cleanup; request/relay binding tests pass; imported Clean-M runner is the bounded reset/status/errors path with hard-coded no-flash/no-RF result flags and no flash/campaign call."
+}

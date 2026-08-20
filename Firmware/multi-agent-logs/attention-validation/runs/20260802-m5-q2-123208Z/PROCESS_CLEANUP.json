@@ -1,0 +1,35 @@
+{
+    "epoch":  "20260802-m5-q2-123208Z",
+    "verified_utc":  "2026-08-02T12:40:52.8826673Z",
+    "all_absent":  true,
+    "processes":  [
+                      {
+                          "pid":  179664,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  34616,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  189792,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  173404,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  180208,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  185284,
+                          "alive":  false
+                      },
+                      {
+                          "pid":  198596,
+                          "alive":  false
+                      }
+                  ]
+}

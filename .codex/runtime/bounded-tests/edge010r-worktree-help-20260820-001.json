@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/worktree_task.py --help",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Local help output; prior worktree helper help commands complete under one second, with ten seconds as conservative upper bound.",
+    "started_at":  "2026-08-20T16:37:02.1770304+00:00",
+    "finished_at":  "2026-08-20T16:37:03.8466106+00:00",
+    "elapsed_seconds":  1.67,
+    "root_process_id":  20948,
+    "observed_process_ids":  [
+                                 20948
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\edge010r-worktree-help-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\edge010r-worktree-help-20260820-001.stderr.log"
+}

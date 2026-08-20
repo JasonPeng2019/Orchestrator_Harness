@@ -1,0 +1,80 @@
+[
+    {
+        "pid":  175512,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T19:45:45.7348071Z"
+    },
+    {
+        "pid":  183872,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T19:45:45.7737938Z"
+    },
+    {
+        "pid":  186332,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T19:45:45.8087959Z"
+    },
+    {
+        "pid":  183364,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T19:45:45.8438064Z"
+    },
+    {
+        "pid":  180256,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T19:45:45.8897938Z"
+    },
+    {
+        "pid":  196336,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T19:45:45.9257942Z"
+    },
+    {
+        "pid":  186208,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T19:45:45.9577936Z"
+    },
+    {
+        "pid":  194004,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T19:45:45.9927945Z"
+    },
+    {
+        "pid":  188828,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T19:45:46.0267943Z"
+    },
+    {
+        "pid":  171196,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T19:45:46.0587939Z"
+    },
+    {
+        "pid":  192300,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T19:45:46.1007939Z"
+    },
+    {
+        "pid":  171844,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T19:45:46.1307940Z"
+    },
+    {
+        "pid":  176828,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T19:45:46.1637945Z"
+    }
+]

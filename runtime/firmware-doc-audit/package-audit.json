@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python Firmware/.codex/skills/run-firmware-test-suite/scripts/audit_autonomy.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  20,
+    "timeout_basis":  "Package-local static audit over documentation, policy, imported progress, and no live worktree target.",
+    "started_at":  "2026-08-14T09:45:06.9018068+00:00",
+    "finished_at":  "2026-08-14T09:45:09.2211363+00:00",
+    "elapsed_seconds":  2.319,
+    "root_process_id":  169896,
+    "observed_process_ids":  [
+                                 169896
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-doc-audit\\package-audit.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-doc-audit\\package-audit.stderr.log"
+}

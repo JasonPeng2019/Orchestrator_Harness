@@ -1,0 +1,104 @@
+{
+  "native_live": {
+    "record_kinds": [
+      "HARNESS_SCAN_COMMITTED",
+      "HARNESS_SIGNAL_OBSERVED",
+      "HARNESS_SIGNAL_OBSERVED",
+      "HARNESS_EVENT_ACTIONABLE",
+      "HARNESS_EVENT_PENDING",
+      "MANAGER_WAKE_ATTEMPTED",
+      "MANAGER_WAKE_DELIVERED"
+    ]
+  },
+  "native_nonlive": {
+    "event_id": "m5-q9-nonlive-001",
+    "forbidden_kinds_absent": true,
+    "harness_event_id": "f8bb9dfe1591eb2bf8f85084ada852331b2355644fcac27d7e0b7f79ad1a161d",
+    "ineligible_count": 1,
+    "observed_count": 1,
+    "reason": "LANE_NOT_LIVE",
+    "record_kinds": [
+      "HARNESS_SCAN_COMMITTED",
+      "HARNESS_SCAN_COMMITTED",
+      "HARNESS_SIGNAL_OBSERVED",
+      "HARNESS_EVENT_INELIGIBLE"
+    ],
+    "scan_count": 2
+  },
+  "truthful_reasons": {
+    "answered": "ALREADY_ANSWERED",
+    "invalid_lane": "INVALID_LANE_ID",
+    "nonlive": "LANE_NOT_LIVE"
+  },
+  "watcher_adversarial_variants": {
+    "actionability_contradicted": "HARNESS_DELIVERY_DELAY",
+    "duplicate": "HARNESS_DELIVERY_DELAY",
+    "mismatched_event_id": "HARNESS_DELIVERY_DELAY",
+    "mismatched_harness_event_id": "HARNESS_DELIVERY_DELAY",
+    "stale_before_observation": "HARNESS_DELIVERY_DELAY",
+    "unsupported_reason": "HARNESS_DELIVERY_DELAY"
+  },
+  "watcher_exact_native_evidence": {
+    "classification": "INSUFFICIENT_EVIDENCE",
+    "contradictory_evidence": [],
+    "epoch_id": "m5-q9-luna",
+    "event_id": "m5-q9-nonlive-001",
+    "evidence_record_ids": [
+      "6729f771-5c9d-4f19-9325-991a37773070",
+      "90448804-e4d5-406a-a127-cacdd0a0c66d",
+      "7f37ff34-31b0-4cf6-95ee-c1fedacc8c82",
+      "d2de1201-d163-478c-9197-40a14783d337"
+    ],
+    "metrics": {
+      "claim_to_decision_seconds": null,
+      "creation_to_publication_seconds": 1.0,
+      "deadline_lateness_seconds": null,
+      "explicit_blocked_seconds": null,
+      "explicit_deferral_seconds": null,
+      "observation_to_actionable_seconds": null,
+      "pending_to_manager_claim_seconds": null,
+      "publication_to_observation_seconds": 2.0,
+      "receipt_to_resume_seconds": null,
+      "response_to_ack_seconds": null,
+      "response_to_agent_receipt_seconds": null,
+      "signal_to_observation_seconds": 2.0
+    },
+    "missing_evidence": [
+      "manager signal was explicitly ineligible: LANE_NOT_LIVE"
+    ],
+    "schema": "manager-attention-report/v1",
+    "wake_evidence": {
+      "status": "NOT_APPLICABLE"
+    }
+  },
+  "watcher_live_missing_actionability": {
+    "classification": "HARNESS_DELIVERY_DELAY",
+    "contradictory_evidence": [],
+    "epoch_id": "m5-q9-luna",
+    "event_id": "m5-q9-nonlive-001",
+    "evidence_record_ids": [
+      "6729f771-5c9d-4f19-9325-991a37773070",
+      "90448804-e4d5-406a-a127-cacdd0a0c66d",
+      "7f37ff34-31b0-4cf6-95ee-c1fedacc8c82"
+    ],
+    "metrics": {
+      "claim_to_decision_seconds": null,
+      "creation_to_publication_seconds": 1.0,
+      "deadline_lateness_seconds": null,
+      "explicit_blocked_seconds": null,
+      "explicit_deferral_seconds": null,
+      "observation_to_actionable_seconds": null,
+      "pending_to_manager_claim_seconds": null,
+      "publication_to_observation_seconds": 2.0,
+      "receipt_to_resume_seconds": null,
+      "response_to_ack_seconds": null,
+      "response_to_agent_receipt_seconds": null,
+      "signal_to_observation_seconds": 2.0
+    },
+    "missing_evidence": [],
+    "schema": "manager-attention-report/v1",
+    "wake_evidence": {
+      "status": "NOT_APPLICABLE"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+# M5 S1 post-sprint evidence review - 20260802-m5-s1-031903Z
+
+Scope: durable artifacts in the three specified epoch roots only. This review is advisory and does not assign a sprint disposition.
+
+## Ranked findings
+
+1. **P0 - `FINALIZE_VALIDATION.json` correctly fails, but for a harness code defect rather than a missing root baseline.**  The canonical watcher timeline has three complete root-produced `FORMAL_REVIEW_BASELINE_ADVANCED` records: `review-baseline-001` immediately after invocation start and `review-baseline-002`/`003` after the two `MANAGER_REVIEW_STARTED` records.  However, `multi-agent-logs/orchestrator-harness/.../attention-events.jsonl` also contains two harness-produced records (event IDs `a6e1...e736a` and `2837...d5e2`) with `pending_work_snapshot.complete:false` and `selection_reason:"UNKNOWN"`.  `orchestrator_harness/cli.py` emits precisely that payload from `ack_command`, while `validate_sprint_finalize` rejects *any* baseline of this kind when incomplete.  Thus the validator's rejection is reproducible and fail-closed; the extra invalid records are a producer/contract defect, not an absence of the required complete root evidence.  The contaminated durable timeline nevertheless is malformed required logging and must not be waived by inference.
+
+2. **P1 - Watcher diagnosis reports all four real challenges as `INSUFFICIENT_EVIDENCE` despite their complete six-stage wake chains, because its current health analysis requires a `WATCHER_NOTIFICATION_SENT` path.**  The timeline proves, for Atlas, Boreal, Cygnus, and Delta, one event/wake ID each with ordered `created <= observed <= attempted == delivered <= received <= claimed`; all have matching worker receipt and useful-work-resume records.  Their root responses are before their recorded response deadlines.  Yet `attention-report.json` says each lacks a "matching on-time manager response identity."  The diagnostic-only configuration has `evaluator_enabled:false` and the isolation evidence expressly forbids watcher notification, so this expected absence should not make a production-harness wake look incomplete.  This is materially false/missing diagnostic output for this mode, even though the raw challenge evidence itself is sufficient for the six listed stages.
+
+3. **P2 - Deadline-lateness is not rendered in `CHALLENGES.json` or the watcher report.**  Each `AGENT_SIGNAL_CREATED` carries a response deadline and the correlated response publication is timestamped before it, but the challenge table only says `sufficient:true`; the watcher report leaves `deadline_lateness_seconds:null`.  This prevents the table/report from satisfying the spec's explicit challenge-table metric without a manual reconstruction.  It is an evidence-rendering gap, not evidence that the four responses missed their deadlines.
+
+## Controls and healthy evidence observed
+
+- **Quiet control:** `QUIET_CONTROL.json` preserves a 20-second `WATCH_TIMEOUT`, exit code 3, and no wake ID; it is valid.
+- **Busy control:** `BUSY_WORK_AUDIT.json` records a bounded real activity interval (03:27:06.898-03:27:57.584Z), frozen-file audit of 285 files with no mismatch, and the Delta request was created inside it. `CHALLENGES.json` records the control as valid.
+- **Harness/wake path:** the four different worker lanes have one delivered wake each, exact blocking-harness-wait transport on root receipt, claims, responses, receipts, and resumes. No failure outcome or duplicate successful wake is evident.
+- **Watcher/isolation:** the watcher was live from 03:19:28Z until cooperative stop at 03:34:29Z; its final service state is `stop-requested`, `evaluator_enabled:false`, and its attention cursor reports no observation errors/partial bytes for the six attention sources. `ISOLATION.json` records no evaluator, watcher subagent, collaboration notification, user message, transcript inspection, or forbidden discovery path.
+- **Drain/cleanup:** final scan and `PROCESS_REGISTRY.json` report complete snapshots and the exact identities for all listed worker, harness, owner, and watcher processes absent. `ISOLATION.json` records exact cleanup and clean watcher stop. No contrary durable evidence was found.
+
+## Smallest correction direction
+
+Do not alter this epoch's evidence. Separate harness-internal acknowledgement/history telemetry from the root's formal-review-baseline event, or emit a complete formal baseline snapshot if that event is genuinely intended; validate the result against the combined durable timeline.  Make diagnostic-only watcher analysis recognize the production harness delivered/received/claimed path without requiring a forbidden watcher notification, and render deadline lateness from the already correlated records.

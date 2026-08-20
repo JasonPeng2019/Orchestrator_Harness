@@ -1,0 +1,17 @@
+{
+  "schema": "m5-isolation-audit/v1",
+  "epoch": "20260802-m5-s1-023043Z",
+  "captured_utc": "2026-08-02T02:55:41.917805+00:00",
+  "discovery_transport": "blocking_harness_wait_stdout only",
+  "forbidden_paths_used": [],
+  "ai_evaluator_used": false,
+  "watcher_subagent_used": false,
+  "collaboration_notification_used": false,
+  "user_message_used": false,
+  "transcript_inspection_used": false,
+  "hardware_or_provider_activity": false,
+  "leases_declared": [],
+  "cleanup_process_registry": "PROCESS_REGISTRY.json",
+  "exact_cleanup_proven": true,
+  "limitation": "diagnostic watcher failed before tested challenges; sprint RESET"
+}

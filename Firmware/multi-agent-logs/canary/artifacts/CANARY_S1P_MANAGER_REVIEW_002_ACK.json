@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "manager-formal-review-ack/v1",
+    "epoch":  "20260731-s1-clean-p",
+    "review_file":  ".agent-workspace/CANARY_S1P_MANAGER_REVIEW_002.md",
+    "event_id":  "b0ad59a32cd44775244f57405795c58c92a6960c67968a3c8fdb09e8d6420ddb",
+    "acknowledged_utc":  "2026-08-01T00:07:18.0826513Z",
+    "baseline_before":  "2026-08-01T00:03:12.236589Z",
+    "baseline_after":  "2026-08-01T00:07:16.996439Z",
+    "advanced":  true
+}

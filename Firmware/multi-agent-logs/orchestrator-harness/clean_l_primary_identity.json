@@ -1,0 +1,17 @@
+{
+    "schema":  "canary-primary-owner/v1",
+    "epoch":  "20260731-s1-clean-l",
+    "owner":  {
+                  "created_utc":  "2026-07-31T21:33:27.6930034Z",
+                  "pid":  190016
+              },
+    "watcher":  {
+                    "created_utc":  "2026-07-31T21:33:28.5552696Z",
+                    "pid":  190468
+                },
+    "config":  "orchestrator_harness/canary-20260731-s1-clean-l.json",
+    "started_utc":  "2026-07-31T21:33:28.8354534Z",
+    "exit_reason":  "stop-file",
+    "ended_utc":  "2026-07-31T21:33:50.0926633Z",
+    "watcher_exit_code":  null
+}

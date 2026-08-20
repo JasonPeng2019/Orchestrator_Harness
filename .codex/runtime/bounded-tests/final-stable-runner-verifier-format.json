@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked ruff format --config .codex/dev/pyproject.toml --no-cache .codex/tests/test_stable_runner.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  20,
+    "expected_upper_bound_seconds":  15,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Formatting one modified test file with the repository verifier configuration is a short deterministic operation; fifteen seconds covers environment startup.",
+    "started_at":  "2026-08-14T11:18:19.8638695+00:00",
+    "finished_at":  "2026-08-14T11:18:22.1921442+00:00",
+    "elapsed_seconds":  2.328,
+    "root_process_id":  195132,
+    "observed_process_ids":  [
+                                 195132
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-stable-runner-verifier-format.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-stable-runner-verifier-format.stderr.log"
+}

@@ -1,0 +1,8 @@
+{
+    "exit_code":  3,
+    "expected_exit_code":  3,
+    "output":  "{\"data\":{\"timeout_seconds\":10.0},\"event_id\":\"WATCH_TIMEOUT\",\"identity\":\"watch:timeout\",\"observed_utc\":\"2026-08-02T13:53:13.471908+00:00\",\"severity\":\"info\",\"type\":\"WATCH_TIMEOUT\"}",
+    "start_record_id":  "8ed1baaa-70c5-4e92-a4b2-877a36c5cc02",
+    "finish_record_id":  "8ab65dc6-d63a-40d1-9d6a-c7df0d110dd4",
+    "pass":  true
+}

@@ -1,0 +1,46 @@
+All steps complete. Final report:
+
+## Step 1 — Reproduced (both halves, fail-first confirmed)
+
+**Real CLI** (`evidence/0.1/repro-flag-error.txt`):
+```
+Error: When using --print, --output-format=stream-json requires --verbose
+EXIT_CODE=1
+```
+Exit 1, exactly as described — claude-code lanes died before turn one.
+
+**Harness defect** (`evidence/0.1/repro-argv-absent.txt`): `ClaudeCodeProviderAdapter().build_argv(start_spec)` produced `['claude', '--print', '--output-format', 'stream-json', '--model', ...]` with no `--verbose`; assertion `"--verbose" not in argv` passed.
+
+## Step 2 — Fix (one-line, plus why-comment)
+`orchestrator_harness/provider.py:508`:
+```diff
+-        argv = [*spec.command, "--print", "--output-format", "stream-json"]
++        # The real Claude CLI hard-rejects --print + stream-json without
++        # --verbose (exit 1: "requires --verbose"), so it is always emitted
++        # in print/stream-json mode.
++        argv = [*spec.command, "--print", "--output-format", "stream-json", "--verbose"]
+```
+`--verbose` is now always emitted in print/stream-json mode, for both `start` and `resume`.
+
+## Step 3 — Re-test / pass
+- **Fixed argv** (`evidence/0.1/argv.txt`): start → `['claude', '--print', '--output-format', 'stream-json', '--verbose', '--model', 'deepseek-v4-flash:0731-cloud', '--permission-mode', 'bypassPermissions']`; resume → same with `--resume session-abc123` after `--verbose`. Assertions pass.
+- **Real CLI with `--verbose`**: exit code **0** (`evidence/0.1/run-exit.txt`), **no flag error**, and `{"type":"system","subtype":"init",...}` present (1 init line) in `evidence/0.1/cli-transcript.jsonl` — all 22 stdout lines are valid JSON, 1 `result` line with `subtype: success`, `is_error: false`. The only stderr was a non-fatal `[claude-code:unrecognized_model]` warning (ollama model isn't a known Claude model), saved separately at `evidence/0.1/cli-transcript.stderr.txt`.
+
+## Step 4 — Regression tests
+- New `orchestrator_harness/tests/test_compat_provider_argv.py` — `test_claude_start_argv_has_verbose` (asserts `--verbose` immediately after `stream-json` via exact full-argv equality) and `test_claude_resume_argv_keeps_resume_and_verbose` (asserts `--resume` + `--verbose`, verbose ordered before resume): **2/2 pass** (`evidence/0.1/unittest-compat-provider-argv.txt`).
+- Existing `test_s2_contract.py`: **21/21 pass** (`evidence/0.1/unittest-s2-contract.txt`). Note: its `test_claude_adapter_and_profile_use_only_synthetic_provider_facts` asserted the *old* buggy argv (no `--verbose`) via exact-list equality; I updated that expectation to include `"--verbose"` after `stream-json` — it was pinning the bug.
+- Extra safety net: `test_provider_adapter_registry` + `test_provider_adapter_public_seams`: **40/40 pass** (not saved as separate evidence — tail output shown inline).
+
+## Evidence files written (in `plans\compatibility-testing\evidence\0.1\`)
+| File | Purpose |
+|---|---|
+| `repro-flag-error.txt` | Real CLI exit-1 flag error, pre-fix |
+| `repro-argv-absent.txt` | Harness argv lacking `--verbose`, pre-fix |
+| `argv.txt` | Fixed full argv for start + resume specs |
+| `cli-transcript.jsonl` | Raw stream-json stdout from real CLI run (22 valid JSONL lines, init + success result) |
+| `cli-transcript.stderr.txt` | Stderr warning (`unrecognized_model`), non-fatal |
+| `run-exit.txt` | `EXIT_CODE=0` |
+| `unittest-compat-provider-argv.txt` | New regression test, 2/2 pass |
+| `unittest-s2-contract.txt` | Existing s2 contract suite, 21/21 pass |
+
+No commits made; work confined to the clone + evidence dir. The only other change in the working tree is the pre-existing `.gitignore` scratch-dir entry (`.subagent-scratch*/`) left as-is.

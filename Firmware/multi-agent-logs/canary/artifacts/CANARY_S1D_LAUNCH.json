@@ -1,0 +1,22 @@
+﻿{
+    "schema":  "canary-lane-launch/v1",
+    "epoch":  "20260731-s1-clean-d",
+    "started_utc":  "2026-07-31T16:10:48.1760903Z",
+    "lanes":  [
+                  {
+                      "invocation":  "fresh-experiments/A22_20260726-062324/.agent-workspace/atlas_a22_s1_clean_d_b14.invocation.json",
+                      "launcher_pid":  187108,
+                      "started_utc":  "2026-07-31T16:10:48.1300872Z"
+                  },
+                  {
+                      "invocation":  "fresh-experiments/D31_20260726-062325/.agent-workspace/boreal_d31_s1_clean_d_rst01.invocation.json",
+                      "launcher_pid":  174208,
+                      "started_utc":  "2026-07-31T16:10:48.1531011Z"
+                  },
+                  {
+                      "invocation":  "fresh-experiments/A24_20260726-052146/.agent-workspace/cygnus_a24_s1_clean_d_flash.invocation.json",
+                      "launcher_pid":  192484,
+                      "started_utc":  "2026-07-31T16:10:48.1760903Z"
+                  }
+              ]
+}

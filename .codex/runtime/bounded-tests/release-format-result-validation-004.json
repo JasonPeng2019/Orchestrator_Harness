@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/runtime/bounded-tests/validate_release_format_result_003.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Stable result-schema validation over one local JSON result and clean Git worktree normally completes in seconds.",
+    "started_at":  "2026-08-14T19:33:56.2695037+00:00",
+    "finished_at":  "2026-08-14T19:33:58.5045845+00:00",
+    "elapsed_seconds":  2.235,
+    "root_process_id":  196412,
+    "observed_process_ids":  [
+                                 196412
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-format-result-validation-004.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-format-result-validation-004.stderr.log"
+}

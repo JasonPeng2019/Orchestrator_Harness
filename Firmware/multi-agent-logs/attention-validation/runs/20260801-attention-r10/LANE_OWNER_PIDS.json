@@ -1,0 +1,30 @@
+[
+    {
+        "doer":  "Atlas",
+        "task":  "A22",
+        "owner_pid":  183668,
+        "launch":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_attention_r10_launch.ps1",
+        "status":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_attention_r10_controller.status.json"
+    },
+    {
+        "doer":  "Boreal",
+        "task":  "D31",
+        "owner_pid":  22028,
+        "launch":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_attention_r10_launch.ps1",
+        "status":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_attention_r10_controller.status.json"
+    },
+    {
+        "doer":  "Cygnus",
+        "task":  "A24",
+        "owner_pid":  170092,
+        "launch":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_attention_r10_launch.ps1",
+        "status":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_attention_r10_controller.status.json"
+    },
+    {
+        "doer":  "Delta",
+        "task":  "A26",
+        "owner_pid":  194828,
+        "launch":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_attention_r10_launch.ps1",
+        "status":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_attention_r10_controller.status.json"
+    }
+]

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project Firmware/BYO-Firmware-MCP --locked python Firmware/runtime/host-readiness/host-readiness-20260815-046/probe_mcp_stdio.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  140,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  20,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "M08 raw MCP initialize/tools-list diagnostic after Codex returned an empty visible catalog",
+    "started_at":  "2026-08-15T17:42:40.2420871+00:00",
+    "finished_at":  "2026-08-15T17:42:45.2339695+00:00",
+    "elapsed_seconds":  4.992,
+    "root_process_id":  182868,
+    "observed_process_ids":  [
+                                 182868
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-mcp-stdio-probe-046.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-mcp-stdio-probe-046.stderr.log"
+}

@@ -1,0 +1,8 @@
+{
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r9-001",
+    "manager_state":  "REASONING",
+    "decision":  "CONTINUE_ASSIGNED_R9",
+    "source_record_id":  "9f448808-e64d-4217-ab40-0f318c6e391e",
+    "response_path":  "fresh-experiments/A24_20260726-052146/.agent-workspace/manager-responses/sig-20260801-attention-r9-cygnus-a24-gate-001.json"
+}

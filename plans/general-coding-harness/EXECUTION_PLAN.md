@@ -1,7 +1,9 @@
 # General Coding Harness Execution Plan
 
-Status: archived V1 plan; non-operative. Execute only `EXECUTION_PLAN_2.md` under the live
-`goal.md`, V2 active documents, `task-card-spec.md`, and `test-cleanup.md`.
+Status: archived V1 plan; non-operative. Execute only
+`FULL-EXECUTION-SPEC_PLAN_2.md` under the live `goal.md` and `HANDOFF.md`.
+Every lane graph, large-step loop, C0-C4 route, role assignment, command, hash rule, and completion
+criterion below is historical and must not be imported into the current run.
 
 ## 0. Metadata
 

@@ -1,0 +1,6 @@
+{
+  "python_file_list_match": true,
+  "python_per_file_match": true,
+  "python_aggregate_match": true,
+  "note": "sealed checkpoint input was not modified; only prior S1b live controller status (not sealed) reconciled after S1c shutdown"
+}

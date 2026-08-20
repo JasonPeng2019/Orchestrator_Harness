@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked ruff format --config .codex/dev/pyproject.toml --no-cache .codex/scripts/verify_changed.py .codex/tests/test_verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  44,
+    "expected_upper_bound_seconds":  35,
+    "cleanup_allowance_seconds":  9,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "small formatter run; 35-second upper bound from prior runs",
+    "started_at":  "2026-08-14T11:46:17.2356387+00:00",
+    "finished_at":  "2026-08-14T11:46:21.0324319+00:00",
+    "elapsed_seconds":  3.797,
+    "root_process_id":  170816,
+    "observed_process_ids":  [
+                                 170816
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\format-verify-changed-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\format-verify-changed-20260814.stderr.log"
+}

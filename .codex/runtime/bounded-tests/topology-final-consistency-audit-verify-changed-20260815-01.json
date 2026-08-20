@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The previous topology-only changed verification completed in about 6 seconds; 60 seconds allows current changed-path selection, static checks, and focused tests, with 15 seconds bounded cleanup.",
+    "started_at":  "2026-08-15T11:12:28.7876900+00:00",
+    "finished_at":  "2026-08-15T11:12:34.6303230+00:00",
+    "elapsed_seconds":  5.843,
+    "root_process_id":  166988,
+    "observed_process_ids":  [
+                                 166988
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\topology-final-consistency-audit-verify-changed-20260815-01.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\topology-final-consistency-audit-verify-changed-20260815-01.stderr.log"
+}

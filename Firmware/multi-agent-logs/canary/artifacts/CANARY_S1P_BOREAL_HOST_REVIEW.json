@@ -1,0 +1,13 @@
+﻿{
+    "schema":  "manager-event-review/v1",
+    "epoch":  "20260731-s1-clean-p",
+    "event_id":  "187339564caf32280a5f65ce0a216eb75d302cf54bc89eb52d374e22b8b23c91",
+    "type":  "MANAGER_SIGNAL",
+    "lane":  "20260731-s1-clean-p:Boreal:D31",
+    "reviewed_utc":  "2026-08-01T00:06:31.8279802Z",
+    "signal_sha256":  "796668332153c4590ad3f6630f85fafedd14938014df5d8ce50dfcd7f6503b7a",
+    "focused_test":  "python -m unittest discover -s D31/d31-host-tools/tests -p test_clean_p_preparation.py -v",
+    "focused_result":  "6/6 PASS",
+    "decision":  "ACCEPT_HOST_GATE",
+    "reason":  "Exact O plain-text setup-plan guidance is narrowly recognized only at the opted-in initialization call; JSON compatibility and malformed/unrelated text fail-closed tests pass; fresh P gates remain absent and controller exited 0."
+}

@@ -1,0 +1,13 @@
+{
+  "verdict": "PASS",
+  "checks": {
+    "import": "ok",
+    "idle_wake_true": true,
+    "next_input_injection_false": true,
+    "profile_kind_claude": true,
+    "profile_implemented": true,
+    "routing_not_fixture": true,
+    "routing_is_claude_adapter": true,
+    "routing_profile_id": "claude/claude-v1"
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python -m pytest .codex/tests/test_verify_changed.py -q",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  112,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  22,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Focused verifier-route unit test normally completes under 30 seconds; 90 seconds allows measured setup variance and 22 seconds is below the policy-capped cleanup allowance.",
+    "started_at":  "2026-08-16T01:01:55.0139569+00:00",
+    "finished_at":  "2026-08-16T01:01:57.6138420+00:00",
+    "elapsed_seconds":  2.6,
+    "root_process_id":  203460,
+    "observed_process_ids":  [
+                                 203460
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\root-verify-routing-unit-format-20260816.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\root-verify-routing-unit-format-20260816.stderr.log"
+}

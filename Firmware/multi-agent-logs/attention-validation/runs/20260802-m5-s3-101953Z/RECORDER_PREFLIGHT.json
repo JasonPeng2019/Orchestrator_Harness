@@ -1,0 +1,17 @@
+{
+  "record_id": "69fae486-e4c6-4fc0-b69f-83440c530d8b",
+  "source_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-s3-101953Z\\inputs\\orchestrator\\main-orchestrator-a791153f79fd86f8\\attention.jsonl",
+  "source_record_exists": true,
+  "quiet_control": "PASS",
+  "quiet_event": {
+    "data": {
+      "timeout_seconds": 10.0
+    },
+    "event_id": "WATCH_TIMEOUT",
+    "identity": "watch:timeout",
+    "observed_utc": "2026-08-02T10:22:06.149308+00:00",
+    "severity": "info",
+    "type": "WATCH_TIMEOUT"
+  },
+  "note": "Tee-Object rendered stdout capture as UTF-16; recorder metadata and producer JSONL remained valid no-BOM UTF-8."
+}

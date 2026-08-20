@@ -1,0 +1,11 @@
+{
+  "schema": "m5-isolation-closeout/v1",
+  "observed_utc": "2026-08-02T10:11:48.970724Z",
+  "epoch": "20260802-m5-s2b-095108Z",
+  "native_harness_only": true,
+  "diagnostic_watcher_evaluator_enabled": false,
+  "ai_watcher_or_relay_used": false,
+  "harness_wrapper_or_runner_used": false,
+  "request_discovery": "native blocking harness wait",
+  "note": "The epoch is non-counting because manager attention procedure was incomplete/invalid and the user redirected work to prerequisite completion; no architecture inference is permitted from this attempt."
+}

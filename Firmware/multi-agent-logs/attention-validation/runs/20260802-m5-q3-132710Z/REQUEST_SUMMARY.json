@@ -1,0 +1,130 @@
+{
+  "epoch": "20260802-m5-q3-132710Z",
+  "cursor_drained": true,
+  "observation_errors": [],
+  "trusted_sources": 6,
+  "requests": [
+    {
+      "event_id": "sig-20260802-m5-q3-132710Z-atlas-a22-gate-001",
+      "classification": "INSUFFICIENT_EVIDENCE",
+      "missing_evidence": [
+        "complete explicit manager interval chain"
+      ],
+      "metrics": {
+        "attempted_to_delivered_seconds": 0.0,
+        "claim_to_decision_seconds": null,
+        "deadline_lateness_seconds": 108.515081,
+        "delivered_to_received_seconds": 12.928681,
+        "explicit_blocked_seconds": 228.610689,
+        "explicit_deferral_seconds": 142.495674,
+        "observation_to_actionable_seconds": 142.495674,
+        "pending_to_manager_claim_seconds": 25.992569,
+        "receipt_to_resume_seconds": 0.271,
+        "received_to_claim_seconds": 0.710326,
+        "response_to_ack_seconds": 0.358013,
+        "response_to_agent_receipt_seconds": 33.407554,
+        "signal_to_observation_seconds": 9.826174
+      },
+      "wake_evidence": {
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 12.928681,
+        "manager_invocation_id": "root-20260802-m5-q3-132710Z-001",
+        "manager_session_id": "root-persistent-192592",
+        "received_to_claim_seconds": 0.710326,
+        "status": "COMPLETE",
+        "wake_id": "06dc537c-49f0-44d9-b4ca-de6abfb289e3"
+      }
+    },
+    {
+      "event_id": "sig-20260802-m5-q3-132710Z-boreal-d31-gate-001",
+      "classification": "INSUFFICIENT_EVIDENCE",
+      "missing_evidence": [
+        "complete explicit manager interval chain"
+      ],
+      "metrics": {
+        "attempted_to_delivered_seconds": 0.0,
+        "claim_to_decision_seconds": null,
+        "deadline_lateness_seconds": 136.653196,
+        "delivered_to_received_seconds": 13.919725,
+        "explicit_blocked_seconds": 262.215148,
+        "explicit_deferral_seconds": 160.68211,
+        "observation_to_actionable_seconds": 160.68211,
+        "pending_to_manager_claim_seconds": 19.431008,
+        "receipt_to_resume_seconds": 7.084319,
+        "received_to_claim_seconds": 0.672088,
+        "response_to_ack_seconds": 0.353968,
+        "response_to_agent_receipt_seconds": 32.697518,
+        "signal_to_observation_seconds": 22.947943
+      },
+      "wake_evidence": {
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 13.919725,
+        "manager_invocation_id": "root-20260802-m5-q3-132710Z-001",
+        "manager_session_id": "root-persistent-192592",
+        "received_to_claim_seconds": 0.672088,
+        "status": "COMPLETE",
+        "wake_id": "9c8e7a74-d96d-4c4e-9dcb-b0784ed313b8"
+      }
+    },
+    {
+      "event_id": "sig-20260802-m5-q3-132710Z-cygnus-a24-gate-001",
+      "classification": "INSUFFICIENT_EVIDENCE",
+      "missing_evidence": [
+        "complete explicit manager interval chain"
+      ],
+      "metrics": {
+        "attempted_to_delivered_seconds": 0.0,
+        "claim_to_decision_seconds": null,
+        "deadline_lateness_seconds": 78.097019,
+        "delivered_to_received_seconds": 16.015345,
+        "explicit_blocked_seconds": 199.931092,
+        "explicit_deferral_seconds": 105.650227,
+        "observation_to_actionable_seconds": 105.650227,
+        "pending_to_manager_claim_seconds": 21.545598,
+        "receipt_to_resume_seconds": 6.536605,
+        "received_to_claim_seconds": 0.875586,
+        "response_to_ack_seconds": 0.350003,
+        "response_to_agent_receipt_seconds": 30.306092,
+        "signal_to_observation_seconds": 19.017721
+      },
+      "wake_evidence": {
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 16.015345,
+        "manager_invocation_id": "root-20260802-m5-q3-132710Z-001",
+        "manager_session_id": "root-persistent-192592",
+        "received_to_claim_seconds": 0.875586,
+        "status": "COMPLETE",
+        "wake_id": "730f698d-958e-4ad7-9f58-028781389d3d"
+      }
+    },
+    {
+      "event_id": "sig-20260802-m5-q3-132710Z-delta-a26-gate-001",
+      "classification": "NO_BLOCKING_IMPACT",
+      "missing_evidence": [],
+      "metrics": {
+        "attempted_to_delivered_seconds": 0.0,
+        "claim_to_decision_seconds": null,
+        "deadline_lateness_seconds": 0.0,
+        "delivered_to_received_seconds": 42.47835,
+        "explicit_blocked_seconds": 186.185752,
+        "explicit_deferral_seconds": 0.0,
+        "observation_to_actionable_seconds": 0.0,
+        "pending_to_manager_claim_seconds": 103.89092,
+        "receipt_to_resume_seconds": 0.333001,
+        "received_to_claim_seconds": 0.663001,
+        "response_to_ack_seconds": 0.399001,
+        "response_to_agent_receipt_seconds": 37.812509,
+        "signal_to_observation_seconds": 18.640835
+      },
+      "wake_evidence": {
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 42.47835,
+        "manager_invocation_id": "root-20260802-m5-q3-132710Z-001",
+        "manager_session_id": "root-persistent-192592",
+        "received_to_claim_seconds": 0.663001,
+        "status": "COMPLETE",
+        "wake_id": "18cebd94-a13e-4b46-aaff-71b39cf6cf6f"
+      }
+    }
+  ]
+}

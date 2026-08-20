@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python C:/Users/Jason/.codex/skills/.system/skill-creator/scripts/quick_validate.py .codex/skills/design-project-topology",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "local YAML/frontmatter validation; 30-second upper bound covers cold uv startup with 8-second policy-capped cleanup",
+    "started_at":  "2026-08-15T10:55:22.3826605+00:00",
+    "finished_at":  "2026-08-15T10:55:24.2325484+00:00",
+    "elapsed_seconds":  1.85,
+    "root_process_id":  186348,
+    "observed_process_ids":  [
+                                 186348
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\design-topology-skill-quickvalidate-20260815-01.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\design-topology-skill-quickvalidate-20260815-01.stderr.log"
+}

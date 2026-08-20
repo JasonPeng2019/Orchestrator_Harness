@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked ruff format --config .codex/dev/pyproject.toml --no-cache Firmware/.codex/skills/run-firmware-test-suite/scripts/audit_autonomy.py .codex/scripts/verify_changed.py .codex/tests/test_verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  50,
+    "expected_upper_bound_seconds":  40,
+    "cleanup_allowance_seconds":  10,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "post-repair formatter run for three small Python files; 40-second upper bound",
+    "started_at":  "2026-08-14T12:04:58.0317958+00:00",
+    "finished_at":  "2026-08-14T12:05:01.8584786+00:00",
+    "elapsed_seconds":  3.827,
+    "root_process_id":  164676,
+    "observed_process_ids":  [
+                                 164676
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\format-final-provider-contract-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\format-final-provider-contract-20260814.stderr.log"
+}

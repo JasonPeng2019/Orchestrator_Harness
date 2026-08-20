@@ -1,0 +1,26 @@
+﻿{
+    "schema":  "m5-process-cleanup/v1",
+    "epoch":  "20260802-m5-s1c-064703Z",
+    "registered":  [
+                       {
+                           "pid":  175772,
+                           "present":  false
+                       },
+                       {
+                           "pid":  194008,
+                           "present":  false
+                       },
+                       {
+                           "pid":  196396,
+                           "present":  false
+                       },
+                       {
+                           "pid":  167932,
+                           "present":  false
+                       }
+                   ],
+    "unexpected_epoch_processes":  [
+
+                                   ],
+    "exact_cleanup":  true
+}

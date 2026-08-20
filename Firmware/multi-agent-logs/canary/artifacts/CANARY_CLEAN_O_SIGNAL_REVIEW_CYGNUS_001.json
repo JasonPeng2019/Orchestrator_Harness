@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "canary-manager-signal-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:20:43.7994607Z",
+    "event_id":  "452edaec3750b12d6d0ace13570de065cd28c0f4bcab0a8b5bac71b77721f9fc",
+    "signal_id":  "20260731T231615Z-Cygnus-A24-S1O-CHECKPOINT",
+    "signal_sha256":  "dd86fd575031abec886449a15efecd2b1e27667daf998d41512a7ff68b4fa016",
+    "verdict":  "ACCEPTED_SAFE_CHECKPOINT",
+    "analysis":  "Cygnus O host preparation is green and exact signal hash matches. No provider/release/public MCP/flash/RF action occurred. Resume only after serialized provider release."
+}

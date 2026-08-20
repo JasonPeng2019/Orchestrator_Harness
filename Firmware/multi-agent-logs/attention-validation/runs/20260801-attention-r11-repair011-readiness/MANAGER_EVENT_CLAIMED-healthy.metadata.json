@@ -1,0 +1,28 @@
+{
+  "manager_session_id": "readiness-session",
+  "manager_invocation_id": "readiness-invocation",
+  "manager_state": "READING_EVENT",
+  "pending_work_snapshot": {
+    "complete": true,
+    "events": [
+      {
+        "event_id": "expired",
+        "type": "HELP",
+        "priority": 2,
+        "age_seconds": 0,
+        "agent_blocked": true,
+        "response_deadline_utc": "2026-08-01T20:50:31.574695Z"
+      },
+      {
+        "event_id": "healthy",
+        "type": "HELP",
+        "priority": 1,
+        "age_seconds": 0,
+        "agent_blocked": true,
+        "response_deadline_utc": "2026-08-01T20:50:31.574695Z"
+      }
+    ],
+    "selected_event_id": "healthy",
+    "selection_reason": "SELECT_ACTIONABLE"
+  }
+}

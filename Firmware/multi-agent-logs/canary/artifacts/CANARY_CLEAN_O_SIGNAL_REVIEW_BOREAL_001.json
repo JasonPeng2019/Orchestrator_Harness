@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "canary-manager-signal-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:24:33.9341508Z",
+    "event_id":  "56e707e7ee4df143397a1cfbd44aac6b0ca2958995da55f902e8a8b82d601fdb",
+    "signal_id":  "20260731T232117Z-Boreal-D31-S1O-CHECKPOINT",
+    "signal_sha256":  "b95064e057fd1e980bcd7da7a7d25d348d2d5f7881f1ff311fe8f17357ff31ad",
+    "verdict":  "ACCEPTED_SAFE_CHECKPOINT",
+    "analysis":  "Boreal O host preparation is green and exact signal hash matches. The later provider release was not consumed in this board-free turn. Exact O provider/helper count is zero. Resume same session for one APP-1 lifetime."
+}

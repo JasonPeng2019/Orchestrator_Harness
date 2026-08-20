@@ -1,0 +1,59 @@
+{
+  "schema": "m5-resource-cleanup/v1",
+  "observed_utc": "2026-08-02T10:33:50.423759Z",
+  "epoch": "20260802-m5-s3-101953Z",
+  "workers": [
+    {
+      "doer": "Atlas",
+      "task": "A22",
+      "state": "CODEX_EXITED",
+      "controller_pid": 194848,
+      "codex_pid": 187352,
+      "ended_utc": "2026-08-02T10:26:26.8244014Z",
+      "leases": [],
+      "board_tokens": [],
+      "mcp_servers": [],
+      "status_path": "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s3-101953Z_controller.status.json"
+    },
+    {
+      "doer": "Boreal",
+      "task": "D31",
+      "state": "CODEX_EXITED",
+      "controller_pid": 176328,
+      "codex_pid": 1968,
+      "ended_utc": "2026-08-02T10:28:57.6867798Z",
+      "leases": [],
+      "board_tokens": [],
+      "mcp_servers": [],
+      "status_path": "fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s3-101953Z_controller.status.json"
+    },
+    {
+      "doer": "Cygnus",
+      "task": "A24",
+      "state": "CODEX_EXITED",
+      "controller_pid": 191088,
+      "codex_pid": 189268,
+      "ended_utc": "2026-08-02T10:28:08.1284983Z",
+      "leases": [],
+      "board_tokens": [],
+      "mcp_servers": [],
+      "status_path": "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s3-101953Z_controller.status.json"
+    },
+    {
+      "doer": "Delta",
+      "task": "A26",
+      "state": "CODEX_EXITED",
+      "controller_pid": 99932,
+      "codex_pid": 181440,
+      "ended_utc": "2026-08-02T10:31:53.6169235Z",
+      "leases": [],
+      "board_tokens": [],
+      "mcp_servers": [],
+      "status_path": "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s3-101953Z_controller.status.json"
+    }
+  ],
+  "all_declared_resources_empty": true,
+  "hardware_actions_performed": false,
+  "provider_or_mcp_started": false,
+  "disposition": "SAFE_BOUNDARY"
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-firmware-suite-parallel",
+  "task_card_id": "CARD-PLAN2-SUITE-MANAGER-003",
+  "profile_id": "sol-medium",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\target-harness\\.agent-workspace\\PLAN2_SUITE_PARALLEL_MANAGER_PROMPT_003.md",
+      "sha256": "ebe3ba093c99a38df9745e656341fefd87f1d14bae1bbd3502b6c0360fe36e81",
+      "size": 8273
+    }
+  ],
+  "final_sha256": "ebe3ba093c99a38df9745e656341fefd87f1d14bae1bbd3502b6c0360fe36e81",
+  "final_size": 8273,
+  "bundle_sha256": "8590646bf7dee94e82a319f74229b3fbaebc62d739a232d2857c80c0e2610271"
+}

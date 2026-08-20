@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m py_compile Firmware/scripts/orchestration/target_lane_controller_bootstrap.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  20,
+    "timeout_basis":  "single bootstrap compilation is normally immediate; 30 seconds allows interpreter startup",
+    "started_at":  "2026-08-15T23:33:44.1548627+00:00",
+    "finished_at":  "2026-08-15T23:33:45.9654665+00:00",
+    "elapsed_seconds":  1.811,
+    "root_process_id":  186556,
+    "observed_process_ids":  [
+                                 186556
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\target-lane-bootstrap-compile-20260815.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\target-lane-bootstrap-compile-20260815.stderr.log"
+}

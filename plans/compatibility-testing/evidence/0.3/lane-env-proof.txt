@@ -1,0 +1,26 @@
+# Live lane proof: claude-code config_overrides -> child env channel
+
+controller.main exit_code: 0
+lane state: PROVIDER_EXITED
+provider_terminal_outcome: COMPLETED
+provider_session_id: session-env
+transcript types: system/init, result/success
+
+child ANTHROPIC_* env actually received by the provider process:
+{
+  "ANTHROPIC_API_KEY": "",
+  "ANTHROPIC_AUTH_TOKEN": "ollama",
+  "ANTHROPIC_BASE_URL": "http://localhost:11434"
+}
+
+inherited parent ANTHROPIC_AUTH_TOKEN leaked into child: NO
+
+proof checks:
+  exit_code == 0:            True
+  state PROVIDER_EXITED:      True
+  outcome COMPLETED:          True
+  init + success transcript:  True / True
+  ANTHROPIC_BASE_URL set:     True
+  ANTHROPIC_AUTH_TOKEN set:   True
+  ANTHROPIC_API_KEY empty:    True
+  no inherited secret leak:   True

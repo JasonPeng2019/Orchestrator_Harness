@@ -1,0 +1,19 @@
+{
+    "schema":  "primary-managed-harness-owner/v1",
+    "owner":  {
+                  "created_utc":  "2026-08-02T02:21:26.5520362Z",
+                  "pid":  192228
+              },
+    "config":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\verification\\m5-managed-consumer-luna\\harness-config-final.json",
+    "started_utc":  "2026-08-02T02:21:27.1254493Z",
+    "managed_owner":  {
+                          "created_utc":  "2026-08-02T02:21:27.216474Z",
+                          "pid":  193220
+                      },
+    "managed_watcher":  {
+                            "created_utc":  "2026-08-02T02:21:27.268980Z",
+                            "pid":  182240
+                        },
+    "exit_reason":  "managed-harness-exited",
+    "ended_utc":  "2026-08-02T02:24:10.5112407Z"
+}

@@ -1,0 +1,25 @@
+{
+  "epoch": "20260802-m5-q6-144500Z",
+  "created_utc": "2026-08-02T14:45:11.567509Z",
+  "qualifying_count_before": "0/3",
+  "attempt": "6/10",
+  "python_baseline_match": true,
+  "python_baseline_file_sha256": "139bfdff4132e5cc7a9c58cd03c884046d4e88652b246ed9d3265a13c4d60577",
+  "policy_baseline_match": true,
+  "boundary_validation": "PASS",
+  "forbidden_assistance": [
+    "runner",
+    "wrapper",
+    "relay",
+    "scheduler",
+    "retry controller",
+    "automated event handler",
+    "watcher subagent",
+    "AI evaluator",
+    "collaboration notification",
+    "transcript inspection",
+    "user-message discovery"
+  ],
+  "root_decision": "START",
+  "safe_boundary": true
+}

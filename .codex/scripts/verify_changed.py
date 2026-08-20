@@ -11,6 +11,14 @@ ROOT = Path(__file__).resolve().parents[2]
 SOURCE_ROOT = ROOT / "stable-general-harness-runner"
 DEV_ROOT = ROOT / ".codex" / "dev"
 FULL_VERIFY = ROOT / ".codex" / "scripts" / "verify.py"
+FIRMWARE_MCP_ROOT = ("Firmware", "BYO-Firmware-MCP")
+DESIGN_TOPOLOGY_SCRIPT_ROOT = (
+    ".codex",
+    "skills",
+    "design-project-topology",
+    "scripts",
+)
+DESIGN_TOPOLOGY_VALIDATOR = Path(*DESIGN_TOPOLOGY_SCRIPT_ROOT) / "validate_execution_plan.py"
 SCRIPT_ROOT = Path(__file__).resolve().parent
 if str(SCRIPT_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPT_ROOT))
@@ -27,11 +35,18 @@ from dev_state import (
 PYTHON_ROOTS = (
     (".codex", "scripts"),
     (".codex", "tests"),
+    DESIGN_TOPOLOGY_SCRIPT_ROOT,
+    ("Firmware", "BYO-Firmware-MCP"),
+    ("Firmware", ".codex", "skills", "run-firmware-test-suite", "scripts"),
+    ("Firmware", ".codex", "skills", "run-firmware-test-suite", "tests"),
+    ("Firmware", "scripts", "orchestration"),
     ("stable-general-harness-runner", "harness_common"),
     ("stable-general-harness-runner", "harness_watcher_implementation"),
     ("stable-general-harness-runner", "orchestrator_harness"),
 )
 MAX_TARGETED_UNITTEST_MODULES = 14
+BOUNDED_SUPERVISOR_SCRIPT = Path(".codex/scripts/Invoke-BoundedTest.ps1")
+BOUNDED_SUPERVISOR_REGRESSION = Path(".codex/tests/test_bounded_test_supervisor.py")
 
 
 @dataclass(frozen=True)
@@ -49,12 +64,17 @@ class VerificationPlan:
 
 def plan_changed_verification(root: Path, delta: VerificationDelta) -> VerificationPlan:
     changed = delta.changed_paths
-    unsupported = [path for path in changed if path.suffix.casefold() != ".py" or not _under_python_root(path)]
+    unsupported = [path for path in changed if not _has_targeted_route(path)]
     if unsupported:
         listed = ", ".join(path.as_posix() for path in unsupported[:5])
         return VerificationPlan(full_fallback_reason=f"no targeted route for: {listed}")
 
-    existing = [path for path in changed if (root / path).is_file()]
+    firmware_mcp_paths = [path for path in changed if _is_firmware_mcp_path(path)]
+    existing = [
+        path
+        for path in changed
+        if path.suffix.casefold() == ".py" and not _is_firmware_mcp_path(path) and (root / path).is_file()
+    ]
     checks: list[Check] = []
     relative_arguments = tuple(path.as_posix() for path in existing)
     if relative_arguments:
@@ -73,7 +93,10 @@ def plan_changed_verification(root: Path, delta: VerificationDelta) -> Verificat
             )
         )
         format_arguments = tuple(
-            path.as_posix() for path in existing if path.parts[:2] in {(".codex", "scripts"), (".codex", "tests")}
+            path.as_posix()
+            for path in existing
+            if path.parts[:2] in {(".codex", "scripts"), (".codex", "tests")}
+            or path.parts[: len(DESIGN_TOPOLOGY_SCRIPT_ROOT)] == DESIGN_TOPOLOGY_SCRIPT_ROOT
         )
         if format_arguments:
             checks.append(
@@ -111,10 +134,60 @@ def plan_changed_verification(root: Path, delta: VerificationDelta) -> Verificat
             )
         )
 
+    checks.extend(_firmware_mcp_checks(root, firmware_mcp_paths))
+    checks.extend(_firmware_change_loop_checks(root, changed))
+    checks.extend(_design_topology_checks(root, changed))
     checks.extend(_test_checks(root, delta))
     if not checks:
         return VerificationPlan(full_fallback_reason="changed code produced no targeted checks")
     return VerificationPlan(checks=tuple(_deduplicate_checks(checks)))
+
+
+def _firmware_mcp_checks(root: Path, changed: list[Path]) -> list[Check]:
+    if not changed:
+        return []
+    package_root = root.joinpath(*FIRMWARE_MCP_ROOT)
+    return [
+        Check(
+            "Firmware MCP Ruff",
+            ("uv", "run", "--locked", "--no-sync", "ruff", "check", "."),
+            package_root,
+        ),
+        Check(
+            "Firmware MCP Pyright",
+            ("uv", "run", "--locked", "--no-sync", "pyright"),
+            package_root,
+        ),
+        Check(
+            "Firmware MCP tests",
+            ("uv", "run", "--locked", "--no-sync", "pytest"),
+            package_root,
+        ),
+    ]
+
+
+def _firmware_change_loop_checks(root: Path, changed: tuple[Path, ...]) -> list[Check]:
+    if not any(_is_firmware_change_loop_path(path) or _is_firmware_prompt_policy_path(path) for path in changed):
+        return []
+    return [
+        Check(
+            "Firmware change-loop self-check",
+            ("bash", "Firmware/.codex/skills/change-loop/scripts/run_loop.sh", "--self-check"),
+            root,
+        )
+    ]
+
+
+def _design_topology_checks(root: Path, changed: tuple[Path, ...]) -> list[Check]:
+    if DESIGN_TOPOLOGY_VALIDATOR not in changed:
+        return []
+    return [
+        Check(
+            "design topology validator self-test",
+            (sys.executable, DESIGN_TOPOLOGY_VALIDATOR.as_posix(), "--self-test"),
+            root,
+        )
+    ]
 
 
 def _test_checks(root: Path, delta: VerificationDelta) -> list[Check]:
@@ -160,6 +233,8 @@ def _test_checks(root: Path, delta: VerificationDelta) -> list[Check]:
     changed_domains = {_source_domain(path) for path in changed}
     checks: list[Check] = []
     if "codex" in changed_domains:
+        if BOUNDED_SUPERVISOR_SCRIPT in changed:
+            codex_tests.add(BOUNDED_SUPERVISOR_REGRESSION)
         if "codex" in deleted_test_domains or not codex_tests:
             codex_tests = {Path(".codex/tests")}
         checks.append(
@@ -192,6 +267,21 @@ def _test_checks(root: Path, delta: VerificationDelta) -> list[Check]:
                 "watcher changed tests",
                 watcher_tests,
                 "harness_watcher_implementation/tests",
+            )
+        )
+    if "firmware" in changed_domains:
+        checks.append(
+            Check(
+                "firmware changed tests",
+                (
+                    sys.executable,
+                    "-m",
+                    "unittest",
+                    "discover",
+                    "-s",
+                    "Firmware/.codex/skills/run-firmware-test-suite/tests",
+                ),
+                root,
             )
         )
     return checks
@@ -301,6 +391,22 @@ def _source_domain(path: Path) -> str:
     parts = path.parts
     if parts[:2] in {(".codex", "scripts"), (".codex", "tests")}:
         return "codex"
+    if parts[:5] == (
+        "Firmware",
+        ".codex",
+        "skills",
+        "run-firmware-test-suite",
+        "scripts",
+    ) or parts[:5] == (
+        "Firmware",
+        ".codex",
+        "skills",
+        "run-firmware-test-suite",
+        "tests",
+    ):
+        return "firmware"
+    if parts[:3] == ("Firmware", "scripts", "orchestration"):
+        return "firmware"
     if parts[:2] == ("stable-general-harness-runner", "orchestrator_harness"):
         return "orchestrator"
     if parts[:2] == ("stable-general-harness-runner", "harness_watcher_implementation"):
@@ -312,6 +418,28 @@ def _source_domain(path: Path) -> str:
 
 def _under_python_root(path: Path) -> bool:
     return any(path.parts[: len(prefix)] == prefix for prefix in PYTHON_ROOTS)
+
+
+def _has_targeted_route(path: Path) -> bool:
+    return (
+        (path.suffix.casefold() == ".py" and _under_python_root(path))
+        or _is_firmware_change_loop_path(path)
+        or path == BOUNDED_SUPERVISOR_SCRIPT
+    )
+
+
+def _is_firmware_change_loop_path(path: Path) -> bool:
+    return (
+        path.parts[:5] == ("Firmware", ".codex", "skills", "change-loop", "scripts") and path.suffix.casefold() == ".sh"
+    )
+
+
+def _is_firmware_prompt_policy_path(path: Path) -> bool:
+    return path.parts == ("Firmware", "scripts", "orchestration", "prompt_policy.py")
+
+
+def _is_firmware_mcp_path(path: Path) -> bool:
+    return path.parts[: len(FIRMWARE_MCP_ROOT)] == FIRMWARE_MCP_ROOT
 
 
 def _deduplicate_checks(checks: Iterable[Check]) -> list[Check]:
@@ -334,7 +462,11 @@ def run_changed_verification(root: Path = ROOT) -> int:
         return 0
     plan = plan_changed_verification(root, delta)
     if plan.full_fallback_reason is not None:
-        return _run_full_fallback(root, plan.full_fallback_reason)
+        print(
+            f"VERIFY_CHANGED: FAIL ({plan.full_fallback_reason}; add a targeted verification route before finishing)",
+            file=sys.stderr,
+        )
+        return 1
 
     for check in plan.checks:
         print(f"\n== {check.label} ==", flush=True)

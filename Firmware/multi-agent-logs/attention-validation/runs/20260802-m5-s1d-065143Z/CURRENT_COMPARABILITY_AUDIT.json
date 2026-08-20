@@ -1,0 +1,11 @@
+{
+  "schema": "m5-current-comparability-audit/v1",
+  "epoch": "20260802-m5-s1d-065143Z",
+  "checked_utc": "2026-08-02T08:55:37.621307Z",
+  "historical_python_aggregate_sha256": "73b4b08196d68165754ed15b13d1bd8451c66b778c9f68f206bde6dda4449bfe",
+  "listed_file_count": 112,
+  "all_listed_exist": true,
+  "all_listed_match_current": true,
+  "changed_or_missing": [],
+  "scope_note": "Comparison covers only the Python runtime surface frozen for S1d. Later Markdown policy edits do not change the runtime surface."
+}

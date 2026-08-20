@@ -1,0 +1,9 @@
+{
+  "classification": "SETUP_RETRY",
+  "before_worker_launch": true,
+  "cause": "diagnostic watcher initially inherited short-lived shell owner instead of root owner",
+  "failed_watcher_pid": 186620,
+  "repair": "restart native watcher with --owner-pid 192592",
+  "production_code_changed": false,
+  "attempt_consumed": false
+}

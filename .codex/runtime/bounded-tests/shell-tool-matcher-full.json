@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  300,
+    "expected_upper_bound_seconds":  240,
+    "cleanup_allowance_seconds":  60,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "measured-authoritative-harness-gate",
+    "started_at":  "2026-08-14T06:36:00.5778434+00:00",
+    "finished_at":  "2026-08-14T06:36:04.6956541+00:00",
+    "elapsed_seconds":  4.118,
+    "root_process_id":  159580,
+    "observed_process_ids":  [
+                                 159580
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\shell-tool-matcher-full.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\shell-tool-matcher-full.stderr.log"
+}

@@ -1,0 +1,249 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+1 file already formatted
+
+== types changed Python ==
+0 errors, 0 warnings, 0 notes
+
+== compile changed Python ==
+
+== Codex changed tests ==
+.................................F...F.                                  [100%]
+================================== FAILURES ===================================
+__________ test_fallback_history_file_is_enforced_by_projection_cli ___________
+
+tmp_path = WindowsPath('C:/Users/Jason/AppData/Local/Temp/pytest-of-Jason/pytest-3040/test_fallback_history_file_is_0')
+
+    def test_fallback_history_file_is_enforced_by_projection_cli(tmp_path: Path) -> None:
+        runner = _load_runner()
+        source = tmp_path / "source.json"
+        source.write_text(json.dumps(_coding_invocation()), encoding="utf-8")
+        history = tmp_path / "backend-history.json"
+        history.write_text(
+            json.dumps(_failure_history("HTTP_429", "HTTP_303", "BACKEND_ERROR")),
+            encoding="utf-8",
+        )
+        output = tmp_path / "projected.json"
+        record = tmp_path / "projection.json"
+    
+>       assert (
+            runner.main(
+                [
+                    "--project-invocation",
+                    str(source),
+                    "--workflow-role",
+                    "doer-main",
+                    "--launch-profile",
+                    "luna-high",
+                    "--fallback-history",
+                    str(history),
+                    "--projection-output",
+                    str(output),
+                    "--projection-record",
+                    str(record),
+                ]
+            )
+            == 0
+        )
+E       AssertionError: assert 2 == 0
+E        +  where 2 = <function main at 0x000002171E6B68E0>(['--project-invocation', 'C:\\Users\\Jason\\AppData\\Local\\Temp\\pytest-of-Jason\\pytest-3040\\test_fallback_history_file_is_0\\source.json', '--workflow-role', 'doer-main', '--launch-profile', 'luna-high', ...])
+E        +    where <function main at 0x000002171E6B68E0> = <module 'stable_runner_under_test' from 'C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\scripts\\stable_runner.py'>.main
+
+.codex\tests\test_stable_runner.py:725: AssertionError
+---------------------------- Captured stderr call -----------------------------
+stable runner refused: workflow role doer-main requires finding_gate role 'test_executor', got None
+___ test_hostile_cwds_and_conflicting_pythonpath_still_prove_stable_import ____
+
+    def test_hostile_cwds_and_conflicting_pythonpath_still_prove_stable_import() -> None:
+        with tempfile.TemporaryDirectory(prefix="stable-runner-config-") as raw:
+            config_root = Path(raw)
+            suite = config_root / "suite"
+            suite.mkdir()
+            config = config_root / "config.json"
+            config.write_text(
+                json.dumps(
+                    {
+                        "suite_root": "suite",
+                        "run_globs": ["lanes/*"],
+                        "output_dir": str(config_root / "output"),
+                        "attention_logging_enabled": False,
+                        "attention_epoch_id": "proof",
+                    }
+                ),
+                encoding="utf-8",
+            )
+            fake_import_root = config_root / "conflict"
+            (fake_import_root / "orchestrator_harness").mkdir(parents=True)
+            (fake_import_root / "orchestrator_harness" / "__init__.py").write_text(
+                "raise RuntimeError('wrong package won')\n", encoding="utf-8"
+            )
+            candidate = (
+                ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "worktrees" / "harness-candidate"
+            )
+            lane = (
+                ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "implementation" / "lanes" / "S1.A1"
+            )
+            for cwd in (candidate, lane):
+                env = os.environ.copy()
+                env["PYTHONPATH"] = str(fake_import_root)
+>               completed = subprocess.run(
+                    [
+                        sys.executable,
+                        "-I",
+                        str(LAUNCHER),
+                        "--module",
+                        "orchestrator_harness.cli",
+                        "--config",
+                        str(config),
+                        "scan",
+                        "--no-write",
+                    ],
+                    check=False,
+                    cwd=cwd,
+                    env=env,
+                    capture_output=True,
+                    text=True,
+                    timeout=30,
+                )
+
+.codex\tests\test_stable_runner.py:955: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Popen: returncode: None args: ['C:\\Users\\Jason\\Documents\\Jason\\Orchest...>
+args = 'C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe -I C:\\Users\\Jason...arness.cli --config C:\\Users\\Jason\\AppData\\Local\\Temp\\stable-runner-config-mevcw_7y\\config.json scan --no-write'
+executable = None, preexec_fn = None, close_fds = False, pass_fds = ()
+cwd = 'C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\implementation\\lanes\\S1.A1'
+env = {'ALLUSERSPROFILE': 'C:\\ProgramData', 'ANSYSEMSV_ROOT252': 'C:\\Program Files\\ANSYS Inc\\ANSYS Student\\v252\\AnsysE...UGPY_PATH': 'c:\\Users\\Jason\\.vscode\\extensions\\ms-python.debugpy-2026.6.0-win32-x64\\bundled\\libs\\debugpy', ...}
+startupinfo = <subprocess.STARTUPINFO object at 0x000002171DC48140>
+creationflags = 0, shell = False, p2cread = Handle(584), p2cwrite = -1
+c2pread = 11, c2pwrite = Handle(816), errread = 12, errwrite = Handle(836)
+unused_restore_signals = True, unused_gid = None, unused_gids = None
+unused_uid = None, unused_umask = -1, unused_start_new_session = False
+unused_process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       unused_restore_signals,
+                       unused_gid, unused_gids, unused_uid,
+                       unused_umask,
+                       unused_start_new_session, unused_process_group):
+        """Execute program (MS Windows version)"""
+    
+        assert not pass_fds, "pass_fds not supported on Windows."
+    
+        if isinstance(args, str):
+            pass
+        elif isinstance(args, bytes):
+            if shell:
+                raise TypeError('bytes args is not allowed on Windows')
+            args = list2cmdline([args])
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = list2cmdline([args])
+        else:
+            args = list2cmdline(args)
+    
+        if executable is not None:
+            executable = os.fsdecode(executable)
+    
+        # Process startup details
+        if startupinfo is None:
+            startupinfo = STARTUPINFO()
+        else:
+            # bpo-34044: Copy STARTUPINFO since it is modified above,
+            # so the caller can reuse it multiple times.
+            startupinfo = startupinfo.copy()
+    
+        use_std_handles = -1 not in (p2cread, c2pwrite, errwrite)
+        if use_std_handles:
+            startupinfo.dwFlags |= _winapi.STARTF_USESTDHANDLES
+            startupinfo.hStdInput = p2cread
+            startupinfo.hStdOutput = c2pwrite
+            startupinfo.hStdError = errwrite
+    
+        attribute_list = startupinfo.lpAttributeList
+        have_handle_list = bool(attribute_list and
+                                "handle_list" in attribute_list and
+                                attribute_list["handle_list"])
+    
+        # If we were given an handle_list or need to create one
+        if have_handle_list or (use_std_handles and close_fds):
+            if attribute_list is None:
+                attribute_list = startupinfo.lpAttributeList = {}
+            handle_list = attribute_list["handle_list"] = \
+                list(attribute_list.get("handle_list", []))
+    
+            if use_std_handles:
+                handle_list += [int(p2cread), int(c2pwrite), int(errwrite)]
+    
+            handle_list[:] = self._filter_handle_list(handle_list)
+    
+            if handle_list:
+                if not close_fds:
+                    warnings.warn("startupinfo.lpAttributeList['handle_list'] "
+                                  "overriding close_fds", RuntimeWarning)
+    
+                # When using the handle_list we always request to inherit
+                # handles but the only handles that will be inherited are
+                # the ones in the handle_list
+                close_fds = False
+    
+        if shell:
+            startupinfo.dwFlags |= _winapi.STARTF_USESHOWWINDOW
+            startupinfo.wShowWindow = _winapi.SW_HIDE
+            if not executable:
+                # gh-101283: without a fully-qualified path, before Windows
+                # checks the system directories, it first looks in the
+                # application directory, and also the current directory if
+                # NeedCurrentDirectoryForExePathW(ExeName) is true, so try
+                # to avoid executing unqualified "cmd.exe".
+                comspec = os.environ.get('ComSpec')
+                if not comspec:
+                    system_root = os.environ.get('SystemRoot', '')
+                    comspec = os.path.join(system_root, 'System32', 'cmd.exe')
+                    if not os.path.isabs(comspec):
+                        raise FileNotFoundError('shell not found: neither %ComSpec% nor %SystemRoot% is set')
+                if os.path.isabs(comspec):
+                    executable = comspec
+            else:
+                comspec = executable
+    
+            args = '{} /c "{}"'.format (comspec, args)
+    
+        if cwd is not None:
+            cwd = os.fsdecode(cwd)
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        # Start the process
+        try:
+>           hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                                     # no special security
+                                     None, None,
+                                     int(not close_fds),
+                                     creationflags,
+                                     env,
+                                     cwd,
+                                     startupinfo)
+E                                    NotADirectoryError: [WinError 267] The directory name is invalid
+
+..\..\..\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\subprocess.py:1538: NotADirectoryError
+=========================== short test summary info ===========================
+FAILED .codex/tests/test_stable_runner.py::test_fallback_history_file_is_enforced_by_projection_cli
+FAILED .codex/tests/test_stable_runner.py::test_hostile_cwds_and_conflicting_pythonpath_still_prove_stable_import
+2 failed, 37 passed in 32.17s

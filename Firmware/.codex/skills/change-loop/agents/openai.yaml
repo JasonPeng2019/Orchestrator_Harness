@@ -1,0 +1,4 @@
+interface:
+  display_name: "Change Loop"
+  short_description: "Repair verified BYO-Firmware-MCP server defects"
+  default_prompt: "Use $change-loop only for a verified BYO-Firmware-MCP production defect. As the current main model, author the plan directly, obtain one read-only review, then execute through adversarial test convergence."

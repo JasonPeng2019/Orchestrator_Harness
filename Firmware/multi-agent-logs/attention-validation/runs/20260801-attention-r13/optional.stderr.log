@@ -1,0 +1,8 @@
+optional watcher exited before cooperative stop
+At C:\Users\Jason\Documents\Jason\FirmCLI_Tester\Firmware-Test-Manual\MCP-Trial-3\.agent-workspace\tools\optional_watch
+er_owner.ps1:37 char:37
++ ... .running) { throw "optional watcher exited before cooperative stop" } ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (optional watche...ooperative stop:String) [], RuntimeException
+    + FullyQualifiedErrorId : optional watcher exited before cooperative stop
+ 

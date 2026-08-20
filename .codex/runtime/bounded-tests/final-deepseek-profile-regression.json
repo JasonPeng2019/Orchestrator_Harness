@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python -m pytest -q .codex/tests/test_stable_runner.py -k launch_profiles_materialize_deepseek_and_terra_compaction_settings",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The isolated mapping-materialization assertion is a focused unit test; twenty seconds covers the project environment startup and one test.",
+    "started_at":  "2026-08-14T11:15:50.5836958+00:00",
+    "finished_at":  "2026-08-14T11:15:54.3285300+00:00",
+    "elapsed_seconds":  3.745,
+    "root_process_id":  195140,
+    "observed_process_ids":  [
+                                 195140
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-deepseek-profile-regression.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-deepseek-profile-regression.stderr.log"
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/skills/design-project-topology/scripts/validate_execution_plan.py --self-test",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Recent validator runs complete under three seconds; 30 seconds allows cold startup and 5 seconds is the short-command cleanup cap.",
+    "started_at":  "2026-08-14T02:03:45.4348686+00:00",
+    "finished_at":  "2026-08-14T02:03:47.7714203+00:00",
+    "elapsed_seconds":  2.337,
+    "root_process_id":  152252,
+    "observed_process_ids":  [
+                                 152252
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\beta-rules-validator-self-test.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\beta-rules-validator-self-test.stderr.log"
+}

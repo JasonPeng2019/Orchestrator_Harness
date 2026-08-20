@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  210,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Recent change-aware gate completed about 72 seconds; rerun after retiring the ignored disposable nested worktree that caused unsupported filesystem deltas",
+    "started_at":  "2026-08-15T17:50:34.6569416+00:00",
+    "finished_at":  "2026-08-15T17:50:36.4871647+00:00",
+    "elapsed_seconds":  1.83,
+    "root_process_id":  174564,
+    "observed_process_ids":  [
+                                 174564
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-hold-verify-changed-050.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\m08-hold-verify-changed-050.stderr.log"
+}

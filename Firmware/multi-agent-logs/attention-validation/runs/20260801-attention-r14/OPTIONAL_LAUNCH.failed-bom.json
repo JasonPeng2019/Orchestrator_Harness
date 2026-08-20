@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "python",
+    "-m",
+    "harness_watcher_implementation",
+    "--config",
+    "harness_watcher_implementation/canary-20260801-attention-r14.json",
+    "serve"
+  ],
+  "child_pid": 186024,
+  "cleanup_confirmed": true,
+  "cleanup_error": null,
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+  "error": "child identity could not be proved live",
+  "label": "attention-r14-optional",
+  "launched_utc": "2026-08-01T21:11:30.487162Z",
+  "platform": "windows",
+  "role": "watcher",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "failed"
+}

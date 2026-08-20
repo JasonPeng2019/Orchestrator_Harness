@@ -1,0 +1,30 @@
+{
+    "schema":  "manager-supervision-notification/v1",
+    "observed_utc":  "2026-08-01T19:38:46.1804930Z",
+    "lanes":  [
+                  {
+                      "resource_ambiguity":  [
+
+                                             ],
+                      "lane_id":  "20260801-attention-r9:Delta:A26",
+                      "helpers":  [
+
+                                  ],
+                      "operational_state":  "RUNNING_CODEX_PRE_GATE",
+                      "process_state":  "RUNNING_CODEX",
+                      "requests":  [
+
+                                   ]
+                  }
+              ],
+    "resource_conflicts":  [
+
+                           ],
+    "observation_errors":  [
+
+                           ],
+    "process_errors":  [
+
+                       ],
+    "note":  "Delta remains pre-gate with no R9 subagent attention stream, runtime, lease, or MCP lifetime."
+}

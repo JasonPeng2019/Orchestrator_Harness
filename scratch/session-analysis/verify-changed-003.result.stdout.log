@@ -1,0 +1,38 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+2 files already formatted
+
+== types changed Python ==
+0 errors, 0 warnings, 0 notes
+
+== compile changed Python ==
+
+== Firmware MCP Ruff ==
+F841 Local variable `orig_stdin` is assigned to but never used
+  --> mcp_client.py:40:5
+   |
+39 | async def _run(cmd, args):
+40 |     orig_stdin = sys.stdin
+   |     ^^^^^^^^^^
+41 |     params = StdioServerParameters(
+42 |         command=sys.executable,
+   |
+help: Remove assignment to unused variable `orig_stdin`
+
+F401 [*] `time` imported but unused
+  --> mcp_client.py:66:32
+   |
+64 |                 # File-based command queue: poll <cmds_file> for new JSON lines,
+65 |                 # append one result line per command to <out_file>.
+66 |                 import time as _time
+   |                                ^^^^^
+67 |                 cmds_file = os.environ.get("MCP_CMDS_FILE", "mcp_cmds.jsonl")
+68 |                 out_file = os.environ.get("MCP_OUT_FILE", "mcp_out.jsonl")
+   |
+help: Remove unused import: `time`
+
+Found 2 errors.
+[*] 1 fixable with the `--fix` option (1 hidden fix can be enabled with the `--unsafe-fixes` option).

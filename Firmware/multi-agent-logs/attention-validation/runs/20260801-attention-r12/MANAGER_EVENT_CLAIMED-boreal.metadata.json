@@ -1,0 +1,23 @@
+{
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r12-001",
+    "manager_state":  "READING_EVENT",
+    "source_record_id":  "83b89f37-2850-44cf-9c46-abbd6c594117",
+    "wake_transport":  "collaboration.send_message",
+    "continuous_from_record_id":  "b0301172-2b92-4834-808c-3a1697116212",
+    "pending_work_snapshot":  {
+                                  "complete":  true,
+                                  "events":  [
+                                                 {
+                                                     "event_id":  "sig-20260801-attention-r12-boreal-d31-gate-001",
+                                                     "type":  "HELP",
+                                                     "priority":  1,
+                                                     "age_seconds":  0,
+                                                     "agent_blocked":  true,
+                                                     "response_deadline_utc":  "2026-08-01T20:57:01.5022106Z"
+                                                 }
+                                             ],
+                                  "selected_event_id":  "sig-20260801-attention-r12-boreal-d31-gate-001",
+                                  "selection_reason":  "SELECT_ACTIONABLE"
+                              }
+}

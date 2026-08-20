@@ -1,0 +1,24 @@
+{
+  "acknowledged_event_ids": [
+    "de87d2f91e89c8fe93d22db931e9075511a2411b0db364d829b5af54c1d53710",
+    "61f3335dfdb63d0827b2c248b7987daf0857dfdecab79dbb5b79581d5f8d573b",
+    "a70b3f01d00811c97da601e3a9498e651588741419ffe027419dda8fefad1f2a",
+    "e30e3e905c173d1b2cf74ea79e3d7c6b14f05798d335a7d9224b84740ba455ef"
+  ],
+  "deferred": [],
+  "pending": {
+    "admitted_utc": "2026-08-02T04:30:39.309954Z",
+    "data": {
+      "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+      "checkpoint_sha256": "e5cefe5562f953cb44ba6b43aeea9ec9be1fb087d06b63524e3ec28b198e1520",
+      "lane_id": "20260802-m5-s1-042512Z:Boreal:D31"
+    },
+    "event_id": "27cfadd5c6e9b8ab6b77890598383b6683da91fa247300310a1ae76e5a00455a",
+    "identity": "lane:20260802-m5-s1-042512Z:Boreal:D31:checkpoint",
+    "notification": "MANAGER_ACTION_REQUIRED",
+    "observed_utc": "2026-08-02T04:31:13.770433Z",
+    "severity": "info",
+    "type": "CHECKPOINT_UPDATED"
+  },
+  "schema": "orchestrator-manager-notification/v1"
+}

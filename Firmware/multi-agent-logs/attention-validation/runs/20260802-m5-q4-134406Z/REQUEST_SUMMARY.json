@@ -1,0 +1,148 @@
+{
+  "epoch": "20260802-m5-q4-134406Z",
+  "cursor_drained": true,
+  "observation_errors": [],
+  "trusted_sources": 6,
+  "requests": [
+    {
+      "event_id": "sig-20260802-m5-q4-134406Z-atlas-a22-gate-001",
+      "watcher_classification": "BUSY_MANAGER_DELAY",
+      "missing_evidence": [],
+      "contradictory_evidence": [],
+      "metrics": {
+        "attempted_to_delivered_seconds": 0.0,
+        "claim_to_decision_seconds": null,
+        "deadline_lateness_seconds": 15.244461,
+        "delivered_to_received_seconds": 2.507041,
+        "explicit_blocked_seconds": null,
+        "explicit_deferral_seconds": 47.493854,
+        "observation_to_actionable_seconds": 47.493854,
+        "pending_to_manager_claim_seconds": 45.353333,
+        "receipt_to_resume_seconds": null,
+        "received_to_claim_seconds": 20.389654,
+        "response_to_ack_seconds": 0.348004,
+        "response_to_agent_receipt_seconds": null,
+        "signal_to_observation_seconds": 13.487168
+      },
+      "wake_evidence": {
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 2.507041,
+        "manager_invocation_id": "root-20260802-m5-q4-134406Z-001",
+        "manager_session_id": "root-persistent-192592",
+        "received_to_claim_seconds": 20.389654,
+        "status": "COMPLETE",
+        "wake_id": "9eda1245-c0b6-48d5-b436-d990563e9859"
+      },
+      "root_classification": "UNCLASSIFIABLE",
+      "terminal_reason": "Manager response lane_id was empty; worker rejected response. Atlas was force-cleaned at safe host-only boundary after response deadline; others exited safely."
+    },
+    {
+      "event_id": "sig-20260802-m5-q4-134406Z-boreal-d31-gate-001",
+      "watcher_classification": "INSUFFICIENT_EVIDENCE",
+      "missing_evidence": [
+        "complete explicit manager interval chain"
+      ],
+      "contradictory_evidence": [],
+      "metrics": {
+        "attempted_to_delivered_seconds": 0.0,
+        "claim_to_decision_seconds": null,
+        "deadline_lateness_seconds": 64.202257,
+        "delivered_to_received_seconds": 2.509999,
+        "explicit_blocked_seconds": null,
+        "explicit_deferral_seconds": 89.796425,
+        "observation_to_actionable_seconds": 89.796425,
+        "pending_to_manager_claim_seconds": 36.60768,
+        "receipt_to_resume_seconds": null,
+        "received_to_claim_seconds": 22.485562,
+        "response_to_ack_seconds": 0.327856,
+        "response_to_agent_receipt_seconds": null,
+        "signal_to_observation_seconds": 21.343669
+      },
+      "wake_evidence": {
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 2.509999,
+        "manager_invocation_id": "root-20260802-m5-q4-134406Z-001",
+        "manager_session_id": "root-persistent-192592",
+        "received_to_claim_seconds": 22.485562,
+        "status": "COMPLETE",
+        "wake_id": "09d1eaf6-b3c2-4a81-ab18-1ad4fbb13a7c"
+      },
+      "root_classification": "UNCLASSIFIABLE",
+      "terminal_reason": "Manager response lane_id was empty; worker rejected response. Atlas was force-cleaned at safe host-only boundary after response deadline; others exited safely."
+    },
+    {
+      "event_id": "sig-20260802-m5-q4-134406Z-cygnus-a24-gate-001",
+      "watcher_classification": "INSUFFICIENT_EVIDENCE",
+      "missing_evidence": [
+        "complete explicit manager interval chain"
+      ],
+      "contradictory_evidence": [],
+      "metrics": {
+        "attempted_to_delivered_seconds": 0.0,
+        "claim_to_decision_seconds": null,
+        "deadline_lateness_seconds": 46.673912,
+        "delivered_to_received_seconds": 2.47,
+        "explicit_blocked_seconds": null,
+        "explicit_deferral_seconds": 76.727324,
+        "observation_to_actionable_seconds": 76.727324,
+        "pending_to_manager_claim_seconds": 32.742635,
+        "receipt_to_resume_seconds": null,
+        "received_to_claim_seconds": 19.390496,
+        "response_to_ack_seconds": 0.317999,
+        "response_to_agent_receipt_seconds": null,
+        "signal_to_observation_seconds": 17.47303
+      },
+      "wake_evidence": {
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 2.47,
+        "manager_invocation_id": "root-20260802-m5-q4-134406Z-001",
+        "manager_session_id": "root-persistent-192592",
+        "received_to_claim_seconds": 19.390496,
+        "status": "COMPLETE",
+        "wake_id": "d0df4d16-b743-49fc-bd71-e7c8a89d7b14"
+      },
+      "root_classification": "UNCLASSIFIABLE",
+      "terminal_reason": "Manager response lane_id was empty; worker rejected response. Atlas was force-cleaned at safe host-only boundary after response deadline; others exited safely."
+    },
+    {
+      "event_id": "sig-20260802-m5-q4-134406Z-delta-a26-gate-001",
+      "watcher_classification": "INSUFFICIENT_EVIDENCE",
+      "missing_evidence": [],
+      "contradictory_evidence": [
+        "negative causal metric: explicit_deferral_seconds"
+      ],
+      "metrics": {
+        "attempted_to_delivered_seconds": 0.0,
+        "claim_to_decision_seconds": null,
+        "deadline_lateness_seconds": 0.0,
+        "delivered_to_received_seconds": 2.771,
+        "explicit_blocked_seconds": null,
+        "explicit_deferral_seconds": -21.340452,
+        "observation_to_actionable_seconds": 0.0,
+        "pending_to_manager_claim_seconds": 50.516847,
+        "receipt_to_resume_seconds": null,
+        "received_to_claim_seconds": 22.260664,
+        "response_to_ack_seconds": 0.300969,
+        "response_to_agent_receipt_seconds": null,
+        "signal_to_observation_seconds": 26.986796
+      },
+      "wake_evidence": {
+        "attempted_to_delivered_seconds": 0.0,
+        "delivered_to_received_seconds": 2.771,
+        "manager_invocation_id": "root-20260802-m5-q4-134406Z-001",
+        "manager_session_id": "root-persistent-192592",
+        "received_to_claim_seconds": 22.260664,
+        "status": "COMPLETE",
+        "wake_id": "d2069610-be59-410b-b9aa-155a88f0679f"
+      },
+      "root_classification": "UNCLASSIFIABLE",
+      "terminal_reason": "Manager response lane_id was empty; worker rejected response. Atlas was force-cleaned at safe host-only boundary after response deadline; others exited safely."
+    }
+  ],
+  "finalize_validation": {
+    "status": "FAIL",
+    "records": 222,
+    "error": "AttentionSprintError: blocking gate sig-20260802-m5-q4-134406Z-delta-a26-gate-001 lacks receipt/resume or terminal expiration"
+  },
+  "root_note": "Atlas BUSY_MANAGER_DELAY is supported by the explicit continuous bridge from Delta wait finish record 31418f42-febb-4f1c-ae34-d9f318ae3f27 to Delta claim record cea94f48-6383-40b1-ba88-1df7554cbbe7, which covers the complete Atlas overrun while root handled Delta. Boreal/Cygnus lack complete chains. Delta conservative negative-metric failure is retained."
+}

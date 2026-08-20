@@ -1,0 +1,19 @@
+{
+  "conditions": {},
+  "schema": "orchestrator-watcher-cursor/v1",
+  "snapshot": {
+    "helpers": [],
+    "lanes": [],
+    "manager_signals": [],
+    "mcps": [],
+    "observation_errors": [],
+    "observed_utc": "2026-08-02T13:14:33.278598Z",
+    "process_errors": [],
+    "process_provider": "windows-cim",
+    "process_snapshot_complete": true,
+    "requests": [],
+    "resource_conflicts": [],
+    "runs_discovered": 0,
+    "schema": "orchestrator-watcher-snapshot/v1"
+  }
+}

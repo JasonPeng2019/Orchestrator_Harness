@@ -1,0 +1,25 @@
+{
+    "schema":  "canary-manager-event-ack/v1",
+    "epoch":  "20260731-s1-clean-q",
+    "review_file":  ".agent-workspace/CANARY_S1Q_MANAGER_REVIEW_004.md",
+    "acknowledged_utc":  "2026-08-01T00:48:03.0102809Z",
+    "event":  {
+                  "admitted_utc":  "2026-08-01T00:46:10.387167Z",
+                  "data":  {
+                               "checkpoint_path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+                               "checkpoint_sha256":  "896b7c8f2f459aec8e316ea325700a08b3d48fb1af2c3f827f115fa110ef14dc",
+                               "lane_id":  "20260731-s1-clean-q:Atlas:A22"
+                           },
+                  "event_id":  "1a03570faac1e62fba2ee751609dc89d57a0387af9222abfff34962f1f47b715",
+                  "identity":  "lane:20260731-s1-clean-q:Atlas:A22:checkpoint",
+                  "notification":  "MANAGER_ACTION_REQUIRED",
+                  "observed_utc":  "2026-08-01T00:46:10.387167Z",
+                  "severity":  "info",
+                  "type":  "CHECKPOINT_UPDATED"
+              },
+    "ack_result":  {
+                       "acknowledged":  true,
+                       "event_id":  "1a03570faac1e62fba2ee751609dc89d57a0387af9222abfff34962f1f47b715",
+                       "watcher_received":  false
+                   }
+}

@@ -1,0 +1,75 @@
+{
+  "schema": "orchestrator-compat-completion-review/v1",
+  "phase": "4",
+  "title": "CX-GAP closure: implemented Claude host adapter, owned installer, and per-row tests",
+  "owner": "ROOT-IM",
+  "authored_utc": "2026-08-20",
+  "governing_directive": "User /goal: finish the phase-4 gap with build permission; reserve compute by delegating build AND test authoring to Claude-Code deepseek-v4-flash subagents under a pinned 180k autocompact envelope; ROOT acts as test orchestrator and verifies independently.",
+  "delegation_envelope": {
+    "subagent_model": "deepseek-v4-flash:0731-cloud",
+    "auto_compact_window_tokens": 180000,
+    "max_context_tokens": 200000,
+    "effort": "high",
+    "session_local_only": true,
+    "config_dir_scoped_into_clone": true,
+    "never_touched_global": [".claude", "~/.claude", "claude config set", "global settings.json"],
+    "launcher": "harness-single-worktrees/compat-test/scratch/phase4/launch_subagent.sh"
+  },
+  "build_units": [
+    {
+      "id": "BU1",
+      "subagent_run": "scratch/phase4/runs/bu1.jsonl",
+      "deliverable": "orchestrator_harness/claude_adapter.py (real ClaudeAdapter, SyntheticClaudeTransport, create_claude_adapter, run_synthetic_wake_self_test, claude_profile) + select_host_adapter('claude') routing branch in codex_adapter.py",
+      "semantic_key": "Claude Code has no in-session injection API -> next_input_injection=False; idle wake is cross-process via `claude --resume` -> idle_wake=True (A24 resume-as-wake).",
+      "root_independent_verification": "scratch/phase4/verify_bu1.py -> evidence/4.A/root-verify-bu1.json",
+      "verdict": "PASS"
+    },
+    {
+      "id": "BU2",
+      "subagent_run": "scratch/phase4/runs/bu2.jsonl",
+      "deliverable": "orchestrator_harness/claude_installer.py + packaged orchestrator_harness/assets/claude/ (hook scripts, manifest.json, settings.fragment.json) + CLI `adapter --host claude` routing in cli.py",
+      "root_independent_verification": "scratch/phase4/verify_bu2.py -> evidence/4.B/root-verify-bu2.json (clean round-trip, currency detection on tamper, preserve-modified on uninstall, foreign-hook coexistence through install+uninstall)",
+      "verdict": "PASS"
+    },
+    {
+      "id": "BU3",
+      "subagent_run": "scratch/phase4/runs/bu3.jsonl",
+      "deliverable": "orchestrator_harness/tests/test_compat_claude_adapter.py (14 tests over the 4.A/4.B rows)",
+      "root_independent_verification": "python -m pytest orchestrator_harness/tests/test_compat_claude_adapter.py -v -> 14 passed (3 subtests). Logs in evidence/4.A and evidence/4.B.",
+      "verdict": "PASS"
+    }
+  ],
+  "row_dispositions": {
+    "4.A": {
+      "N1": "TESTED-PASSED  real adapter replaces FutureHostFixture (select_host_adapter('claude') implemented, kind=claude)",
+      "N8": "TESTED-PASSED  capability-gated selection: claude->real adapter w/ idle_wake; future-host->FutureHostFixture, all-caps-false",
+      "N2": "TESTED-PASSED  DeliveryNotice sparse: identity+pending_count(2)+highest_severity, none of the forbidden payload keys",
+      "N3": "TESTED-PASSED  DeliveryReceipt transport-evidence-only: DELIVERED, adapter_profile match, event STILL pending (no ack)",
+      "N6": "TESTED-PASSED  registration replay persists beside S3 queue; notice_id survives a fresh coordinator",
+      "A24": "TESTED-PASSED  resume-as-wake: idle_wake -> DELIVERED + resume_invocation argv ['claude','--resume','session-claude']; next_input_injection False & idle_wake True pinned together",
+      "G17": "TESTED-PASSED  resume-wake attempt/deliver/fail: success records a resume call; failing transport fails closed to DELIVERY_FAILED with no resume recorded",
+      "G19": "TESTED-PASSED  finalization continuation round trip: stop_boundary True + Stop.continue transport call"
+    },
+    "4.B": {
+      "B9":  "TESTED-PASSED  install writes .claude/settings.json + owned manifest, changed>0; ambiguous owned-id -> CodexInstallRollback(cause=CodexInstallConflict), manifest absent (clean atomic rollback)",
+      "B10": "TESTED-PASSED  check reports ownership=owned, current=True; tampering a managed hook flips current->False (installed stays True)",
+      "B11": "TESTED-PASSED  upgrade idempotent on an already-current install",
+      "B12": "TESTED-PASSED  uninstall removes owned + preserves user-modified (tampered hook listed in preserved_modified and left on disk)",
+      "B13": "TESTED-PASSED  synthetic wake self-test DELIVERED, acknowledged_by_delivery False, schema orchestrator-claude-synthetic-wake/v1",
+      "B14": "TESTED-PASSED  per-boundary dispatch: post_tool_use->PostToolUse.context, turn_completed->resume, finalization->Stop.continue"
+    },
+    "4.C": {
+      "M1_M16": "REGRESSION-GREEN (reference)  Codex adapter internals unchanged; baseline in evidence/4.C/codex-reference-baseline.txt; re-confirmed this phase: test_codex_bounded_policy.py + test_s4_contract.py + test_compat_host_adapters.py = 45 passed, 95 subtests."
+    },
+    "4.D": {
+      "out_of_scope": "Unchanged: firmware/hardware, MCP (except the single bounded Phase 3.D attempt), legacy/parallel watcher generation remain N/A by explicit instruction."
+    }
+  },
+  "deviations_pinned_to_real_behavior": [
+    "G17 failure path: coordinator.deliver_at_boundary converts a transport exception into a DELIVERY_FAILED receipt (fail-closed) rather than re-raising; the test pins that safer contract. NOT a GAP - matches the provider-neutral fail-closed delivery contract.",
+    "B9 rollback: the installer wraps CodexInstallConflict in CodexInstallRollback (bounded transaction); the test asserts both layers. NOT a GAP."
+  ],
+  "gap_vs_passed_note": "Every row is TESTED-PASSED: each test both ran AND matched intended provider-neutral behavior. No completed-but-divergent result was laundered into PASSED; the two deviations above reflect stricter/safer real behavior consistent with the contract, not divergence.",
+  "regression_safety": "No forbidden file modified (claude_adapter.py verified only from BU1; host_adapters.py/models.py/notifications.py/tests untouched by the installer/test units). Full Codex+S4+host-adapter regression suite green (45 passed).",
+  "overall_verdict": "PASS"
+}

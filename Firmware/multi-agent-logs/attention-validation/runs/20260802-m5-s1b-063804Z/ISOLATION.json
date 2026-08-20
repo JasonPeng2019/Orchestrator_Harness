@@ -1,0 +1,8 @@
+{
+  "schema": "m5-isolation/v1",
+  "epoch": "20260802-m5-s1b-063804Z",
+  "forbidden_assistance_used": false,
+  "request_discovery": "blocking harness wait only",
+  "runner_or_wrapper_used": false,
+  "active_sprint_ended_immediately_after_invalid_launch_detected": true
+}

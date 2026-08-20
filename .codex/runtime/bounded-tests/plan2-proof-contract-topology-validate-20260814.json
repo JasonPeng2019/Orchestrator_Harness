@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "python .codex/skills/design-project-topology/scripts/validate_execution_plan.py plans/general-coding-harness/FULL-EXECUTION-SPEC_PLAN_2.md --mapping plans/general-coding-harness/SUBAGENT_ROLE_MODEL_MAPPING.json",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "The earlier topology validator run completed in 2.185 seconds; 20 seconds permits a cold local Python start plus this small plan/mapping validation, with the policy-minimum five-second cleanup.",
+    "started_at":  "2026-08-14T22:21:45.3928338+00:00",
+    "finished_at":  "2026-08-14T22:21:47.6381773+00:00",
+    "elapsed_seconds":  2.245,
+    "root_process_id":  171412,
+    "observed_process_ids":  [
+                                 171412
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-proof-contract-topology-validate-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-proof-contract-topology-validate-20260814.stderr.log"
+}

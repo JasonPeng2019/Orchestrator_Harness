@@ -1,21 +1,23 @@
 ﻿# Firmware Resources
 
-This is a convenient **copy library** of shared firmware-testing inputs and documentation. The
-original files remain in their existing repository locations and remain authoritative.
+This is the package-local library of shared firmware-testing inputs and background documentation.
+The canonical live catalog and skill are the sibling files under the `Firmware/` root; no parent
+repository is required.
 
 This folder contains no experiment status, build output, run evidence, runtime logs, watcher state,
 or fresh-experiment project trees.
 
 ## Start here
 
-1. Read `test-program/BYO_FIRMWARE_MCP_END_TO_END_EXPERIMENTS.md` for the complete evaluation plan,
-   fixture contract, experiment catalog, pass gates, and hardware references.
-2. Read `test-program/run-firmware-test-suite/SKILL.md` and its `references/` for the suite execution
-   procedure.
-3. Use `datasheets/`, `device-packs/`, and `fixture-and-toolchain/` as immutable inputs. Verify the
-   file hash against `SOURCE_MANIFEST.csv` before relying on a copy.
-4. Use `server-guides/` for the BYO-Firmware-MCP interfaces and setup contracts.
-5. Use `orchestration-guides/` for the native harness and diagnostic watcher.
+1. Read `../BYO_FIRMWARE_MCP_END_TO_END_EXPERIMENTS.md` for the complete evaluation plan, fixture
+   contract, experiment catalog, pass gates, and hardware references.
+2. Read `../.codex/skills/run-firmware-test-suite/SKILL.md` and its `references/` for the suite
+   execution procedure.
+3. Use `datasheets/`, `device-packs/`, and `fixture-and-toolchain/` as package-local inputs.
+4. Read `../BYO-Firmware-MCP/README.md` and `../BYO-Firmware-MCP/SERVER_GUIDE.md` for the live
+   BYO-Firmware-MCP interfaces and setup contracts. `server-guides/` is an exact checked mirror for
+   package-local reference, not a second authority.
+5. Use `../scripts/orchestration/` for current package helpers.
 
 ## Contents
 
@@ -26,8 +28,7 @@ or fresh-experiment project trees.
 - SX1261/SX1262 device PDF.
 - Waveshare LoRa module PDF.
 
-Only one hash-unique copy of each shared PDF is retained here even when many experiment folders
-contain the same bytes.
+Only one package copy of each shared PDF is retained here even when many experiments use it.
 
 ### `device-packs/`
 
@@ -45,40 +46,38 @@ These are copied package inputs, not installed package state or a package cache.
 
 ### `test-program/`
 
-- The master end-to-end experiment guide.
-- A complete copy of the `run-firmware-test-suite` skill, including its execution contracts,
-  roster, model-continuity rules, result contract, and reusable scripts.
+`design_charter.md` is the live package-local constraint for production-server repairs. The other
+catalog, skill, and orchestration-script files in this directory are historical import copies
+retained for comparison; use the root catalog, `.codex/skills/`, and `scripts/orchestration/`
+named in **Start here** for suite execution.
 
 ### `sprint-documentation/`
 
-- `current/`: current sprint specifications and checklist copies.
+- `current/`: imported M5-era sprint specifications and checklist copies; the directory name is
+  retained for provenance, not as a current-authority claim.
 - `archive/`: completed sprint, logging, watcher, and harness repair-plan copies.
 
-These are planning/reference snapshots, not live authority or proof that a sprint passed. Consult
-the original active plan and actual retained evidence before making a live decision.
+These are planning/reference snapshots, not live suite authority or proof that a sprint passed.
 
 ### `server-guides/`
 
-Shared BYO-Firmware-MCP README, operator guide, architecture, client contract, plan-tool contract,
-and CMSIS-Pack admission design.
-
-### `orchestration-guides/`
-
-Harness/watcher specifications and quick-use rules. These are documentation copies only; production
-code remains in `orchestrator_harness/`, `harness_common/`, and
-`harness_watcher_implementation/`.
+Exact checked copies of the BYO-Firmware-MCP README, operator guide, architecture, client contract,
+plan-tool contract, and CMSIS-Pack admission design. Edit the corresponding file under
+`../BYO-Firmware-MCP/` first, then refresh this mirror in the same change. The package audit rejects
+a stale or independently edited mirror.
 
 ## Copy policy
 
 - Do not write runtime output here.
-- Do not treat a copied plan as current authority.
-- Do not edit a copy and assume the source changed.
-- When intentionally refreshing a resource, copy from its authoritative source and regenerate
-  `SOURCE_MANIFEST.csv`.
+- Do not treat a historical copied plan as current authority.
+- Update the root catalog or the canonical skill under `../.codex/skills/`, not the historical
+  `test-program/` copies.
+- Update a live server document under `../BYO-Firmware-MCP/` first, then keep its
+  `server-guides/` mirror identical. Never use the mirror as an independent source of behavior.
+- When intentionally refreshing an imported resource, update `SOURCE_MANIFEST.csv` as provenance.
 - Do not copy entire `fresh-experiments/` runs, `.agent-workspace/`, logs, evidence, build trees,
   caches, virtual environments, or hardware runtime state into this library.
 
-`SOURCE_MANIFEST.csv` records the source path, destination path, byte count, and SHA-256 of every
-copied resource. Authored index/reference documents such as this README and `CONNECTED_HARDWARE.md`
-are not source-copy manifest entries.
+`SOURCE_MANIFEST.csv` is retained provenance for imported resources. Runtime use does not require
+access to any source path recorded there.
 

@@ -1,0 +1,33 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+   --> .codex\tests\test_stable_runner.py:282:103
+    |
+281 |     resolved = runner.apply_workflow_role_allocation(invocation, workflow_role, validate_finding_gate=True)
+    -     assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+    -         _model_settings(workflow_role)
+    -     )
+    -     settings = resolved["codex"]
+    -     assert settings["sandbox"] == "danger-full-access"
+    -     assert settings["approval_policy"] == "never"
+    -     assert "--dangerously-bypass-approvals-and-sandbox" in settings["command"]
+    -     assert "--ignore-user-config" in settings["command"]
+    -     assert 'approval_policy="never"' in settings["config_overrides"]
+    -     assert 'approvals_reviewer="user"' in settings["config_overrides"]
+282 +     assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+283 +         _model_settings(workflow_role)
+284 +     )
+285 +     settings = resolved["codex"]
+286 +     assert settings["sandbox"] == "danger-full-access"
+287 +     assert settings["approval_policy"] == "never"
+288 +     assert "--dangerously-bypass-approvals-and-sandbox" in settings["command"]
+289 +     assert "--ignore-user-config" in settings["command"]
+290 +     assert 'approval_policy="never"' in settings["config_overrides"]
+291 +     assert 'approvals_reviewer="user"' in settings["config_overrides"]
+292 |
+    |
+
+1 file would be reformatted

@@ -1,0 +1,11 @@
+test_final_message_returns_last_agent_message (test_codex_jsonl.CodexJsonlTests.test_final_message_returns_last_agent_message) ... ok
+test_invalid_json_reports_source_line (test_codex_jsonl.CodexJsonlTests.test_invalid_json_reports_source_line) ... ok
+test_validate_accepts_completed_turn_and_reconnect_notice (test_codex_jsonl.CodexJsonlTests.test_validate_accepts_completed_turn_and_reconnect_notice) ... ok
+test_validate_rejects_fatal_error (test_codex_jsonl.CodexJsonlTests.test_validate_rejects_fatal_error) ... ok
+test_validate_rejects_wrong_resume_thread (test_codex_jsonl.CodexJsonlTests.test_validate_rejects_wrong_resume_thread) ... ok
+test_validate_requires_turn_completion (test_codex_jsonl.CodexJsonlTests.test_validate_requires_turn_completion) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.123s
+
+OK

@@ -1,0 +1,20 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/skills/design-project-topology/scripts/validate_execution_plan.py --self-test; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; uv run --project .codex/dev --locked python .codex/skills/design-project-topology/scripts/validate_execution_plan.py plans/general-coding-harness/FULL-EXECUTION-SPEC_PLAN_2.md --mapping plans/general-coding-harness/SUBAGENT_ROLE_MODEL_MAPPING.json",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  180,
+    "heartbeat_interval_seconds":  20,
+    "timeout_basis":  "The deterministic plan-validator self-test and one plan validation normally complete within seconds; 180 seconds permits locked-environment startup without allowing a validator hang to block ROOT.",
+    "started_at":  "2026-08-13T23:22:22.9235431+00:00",
+    "finished_at":  "2026-08-13T23:22:25.3307556+00:00",
+    "elapsed_seconds":  2.407,
+    "root_process_id":  191172,
+    "observed_process_ids":  [
+                                 191172
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan-validation.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan-validation.stderr.log"
+}

@@ -1,0 +1,74 @@
+## Report — Step 0.3: `config_overrides` / `service_tier` / `approval_policy` silently dropped for claude-code (bug C17 / U4)
+
+Branch `compat-test-copy`, disposable clone only. **No commit made.** Steps 0.1/0.2 artifacts retained; this step touched only `orchestrator_harness/provider.py`, `orchestrator_harness/invocation.py`, `orchestrator_harness/lane_controller.py`, and tests.
+
+### (1) Reproduction output (`evidence/0.3/repro-silent-drop.txt`)
+
+Same canonical invocation with all three fields, two provider ids:
+
+```
+=== provider.id='claude-code'  adapter=ClaudeCodeProviderAdapter
+  argv: claude-code --print --output-format stream-json --verbose --model deepseek-v4-flash:0731-cloud --permission-mode bypassPermissions
+  carried in argv: []
+  dropped from argv: ['config_overrides', 'service_tier', 'approval_policy']
+
+=== provider.id='codex'  adapter=CodexProviderAdapter
+  argv: codex exec ... -c approval_policy="never" ... -c service_tier="standard" -c model_provider="ollama" ...
+  carried in argv: ['config_overrides', 'service_tier', 'approval_policy']
+  dropped from argv: []
+```
+
+Confirmed: claude-code accepted the fields at the invocation layer and its adapter silently dropped all three; codex carried all three via `-c`.
+
+### (2) Env-channel design (what I extended, where merged)
+
+Claude Code has no `-c` config channel, so `config_overrides` for claude-code is **honored via the child-process env channel**, merged **after** isolation/allow-list filtering:
+
+- **`ProviderLaunchSpec`** (provider.py) — new defaulted field `env_overrides: Mapping[str, str] = field(default_factory=dict)`. Backward compatible: existing positional callers unchanged; `provider_config_digest()` now includes `env_overrides` so effective config stays in the deterministic digest.
+- **Adapter-owned translation** (provider.py):
+  - `claude_config_override_env(override)` — maps the alias `model_provider="ollama"` → `{"ANTHROPIC_BASE_URL": "http://localhost:11434", "ANTHROPIC_AUTH_TOKEN": "ollama", "ANTHROPIC_API_KEY": ""}`; accepts explicit `ANTHROPIC_*` assignments verbatim (quotes stripped); **raises `ProviderAdapterError`** for anything that is neither the alias nor an `ANTHROPIC_*` env assignment — fail loud, never drop.
+  - `claude_child_env_overrides(spec)` — folds `config_overrides` + `env_overrides` into one validated `ANTHROPIC_*` map (also validates the `env_overrides` field itself).
+  - `ClaudeCodeProviderAdapter.build_argv` calls it up front so the standalone adapter contract is fail-loud too; the argv itself stays claude-shaped (no `-c`).
+- **Controller merge** (lane_controller.py):
+  - `_provider_launch_spec` now translates `invocation.config_overrides` into `spec.env_overrides` for claude-code *inside* the existing `try:` block, so a bad override surfaces as `InvocationError("provider launch settings are invalid: …")`, not an uncaught `ProviderAdapterError`.
+  - `apply_provider_env_overrides(child_env, env_overrides)` merges overrides into the **already isolated/allow-listed** child env (or `os.environ` when unisolated); called in `run()` immediately before the process boundary.
+
+Security property proven: inherited `ANTHROPIC_AUTH_TOKEN` is dropped by `isolated_coding_child_environment` and only the *declared* override reaches the child.
+
+### (3) Reject behavior (invocation layer)
+
+In `invocation._provider()` (`invocation.py`), claude-code now rejects with `InvocationValidationError` naming the offending field(s):
+
+```
+provider claude-code has no equivalent for field(s): provider.approval_policy, provider.service_tier; Claude Code has no --service-tier or --approval-policy flags
+```
+
+- Rejected: `service_tier`, `approval_policy` (both named together when both present).
+- Still accepted for claude-code: `permission_mode`, `allowed_tools`, `disallowed_tools`, `mcp_config`, `command`, `model`, `notification`, `config_overrides`.
+- Codex unchanged: all three fields stay accepted and carried via `-c`.
+
+### (4) Re-test results
+
+- `evidence/0.3/claude-argv.txt` — claude argv carries no `-c`; env channel resolves to the three `ANTHROPIC_*` entries; merged child_env after isolation = exactly those three + allow-listed `PATH`/`SYSTEMROOT`; both `service_tier` and `approval_policy` rejected at the invocation layer with the message above.
+- `evidence/0.3/codex-argv.txt` — codex argv unchanged: all three fields still carried via `-c`.
+- **Live lane proof** (`evidence/0.3/lane-env-proof.txt`) — a synthetic claude provider launched through the real `controller.main` path with `config_overrides=['model_provider="ollama"']` and an inherited secret seeded in the parent env. **ALL PROOFS PASS**: exit 0, state `PROVIDER_EXITED`, outcome `COMPLETED`, `system/init`+`result/success` transcript, child received `BASE_URL=http://localhost:11434`, `AUTH_TOKEN=ollama`, `API_KEY=""`, and the inherited secret did **not** leak.
+
+### (5) Regression results
+
+| Suite | Result |
+|---|---|
+| `test_s2_contract` + `test_lane_controller` | **29 tests, OK, exit 0** (88.9s) → `evidence/0.3/regression-s2-lane-controller.txt` |
+| `test_compat_provider_argv`, `test_compat_transcript_parse`, `test_compat_provider_allowlist`, `test_provider_adapter_registry`, `test_provider_adapter_public_seams` | **58 tests, OK, exit 0** (59.0s) → `evidence/0.3/regression-fast-compat.txt` |
+
+No other test suite builds a claude-code provider with `service_tier`/`approval_policy` (verified by grep across `tests/`; all other `service_tier`/`approval_policy` users are `codex` or the legacy firmware path) — so the new rejection cannot break them.
+
+### (6) Evidence file list (`evidence/0.3/`)
+
+- `repro-silent-drop.txt` — pre-fix: claude drops all three, codex carries all three.
+- `claude-argv.txt` — post-fix claude argv + env channel + merged child_env + per-field rejections.
+- `codex-argv.txt` — post-fix codex argv (unchanged, all three via `-c`).
+- `lane-env-proof.txt` — full-controller live lane proof (ALL PROOFS PASS).
+- `regression-s2-lane-controller.txt` — 29 tests OK.
+- `regression-fast-compat.txt` — 58 tests OK.
+
+Supporting code in the clone: new test file `orchestrator_harness/tests/test_compat_provider_allowlist.py` (11 tests, all green), repro/evidence scripts under `scratch/`. Working tree is uncommitted, as required.

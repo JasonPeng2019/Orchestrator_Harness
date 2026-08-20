@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python C:\\Users\\Jason\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py .codex/skills/verify; uv run --project .codex/dev --locked python C:\\Users\\Jason\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py .codex/skills/test-first",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  44,
+    "expected_upper_bound_seconds":  35,
+    "cleanup_allowance_seconds":  9,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "two local skill metadata validations; 35-second upper bound based on prior 3-second runs each",
+    "started_at":  "2026-08-14T11:46:38.8534515+00:00",
+    "finished_at":  "2026-08-14T11:46:41.3524672+00:00",
+    "elapsed_seconds":  2.499,
+    "root_process_id":  190976,
+    "observed_process_ids":  [
+                                 190976
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\validate-verification-skills-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\validate-verification-skills-20260814.stderr.log"
+}

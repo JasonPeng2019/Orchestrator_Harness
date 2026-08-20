@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  225,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  45,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The change-aware repository verifier is the required post-change gate. Three minutes permits its selected configuration/test checks from a cold environment; 45 seconds is the policy-capped 25 percent cleanup allowance.",
+    "started_at":  "2026-08-14T22:13:30.4279187+00:00",
+    "finished_at":  "2026-08-14T22:13:36.0978759+00:00",
+    "elapsed_seconds":  5.67,
+    "root_process_id":  161304,
+    "observed_process_ids":  [
+                                 161304
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-role-routing-verify-changed-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-role-routing-verify-changed-20260814.stderr.log"
+}

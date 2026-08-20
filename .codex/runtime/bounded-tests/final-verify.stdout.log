@@ -1,0 +1,1220 @@
+
+== ruff ==
+All checks passed!
+
+== format ==
+unformatted: File would be reformatted
+   --> .codex\scripts\bounded_test_adapter.py:1:35
+    |
+    - from __future__ import annotations
+    -
+    - import json
+    - import re
+    - import sys
+    - from pathlib import Path
+    - from typing import Any
+    -
+    - ROOT = Path(__file__).resolve().parents[2]
+    - SUPERVISOR = ROOT / ".codex" / "scripts" / "Invoke-BoundedTest.ps1"
+    - POLICY = ROOT / ".codex" / "policies" / "bounded-tests.md"
+    - SUPERVISOR_NAME = SUPERVISOR.name.casefold()
+    -
+    - CODE_TEST_PATTERNS = (
+    -     re.compile(
+    -         r"(?:^|[;&|]\s*)(?:uv\s+run\b[^;&|]*?\s+)?"
+    -         r"(?:python|python3|py)\s+-m\s+"
+    -         r"(?:pytest|unittest|compileall|py_compile|ruff)\b",
+    -         re.IGNORECASE,
+    -     ),
+    -     re.compile(
+    -         r"(?:^|[;&|]\s*)(?:uv\s+run\b[^;&|]*?\s+)?"
+    -         r"(?:pytest|ruff|basedpyright)\b",
+    -         re.IGNORECASE,
+    -     ),
+    -     re.compile(
+    -         r"(?:^|[;&|]\s*)[^;&|]*\bverify(?:_changed)?\.py\b",
+    -         re.IGNORECASE,
+    -     ),
+    -     re.compile(
+    -         r"(?:^|[;&|]\s*)[^;&|]*\b"
+    -         r"Invoke-[A-Za-z0-9_-]*(?:Test|Verify|Safeguard)"
+    -         r"[A-Za-z0-9_-]*\.ps1\b",
+    -         re.IGNORECASE,
+    -     ),
+    - )
+    -
+    -
+    - def guard_code_test(payload: dict[str, Any]) -> dict[str, Any]:
+    -     tool_input = payload.get("tool_input")
+    -     command = tool_input.get("command") if isinstance(tool_input, dict) else None
+    -     if not isinstance(command, str):
+    -         return {}
+    -     normalized = " ".join(command.split())
+    -     if re.match(r"^(?:rg|ripgrep)\b", normalized, re.IGNORECASE) and not re.search(
+    -         r"(?:;|&&)", normalized
+    -     ):
+    -         return {}
+    -     if SUPERVISOR_NAME in normalized.casefold():
+    -         return {}
+    -     if any(pattern.search(normalized) for pattern in CODE_TEST_PATTERNS):
+    -         return {
+    -             "hookSpecificOutput": {
+    -                 "hookEventName": "PreToolUse",
+    -                 "permissionDecision": "deny",
+    -                 "permissionDecisionReason": (
+    -                     "Direct code-test execution is blocked by BOUNDED-TEST-v1. "
+    -                     f"Run it through {SUPERVISOR} with a justified maximum "
+    -                     "lifetime, heartbeat interval, timeout basis, and result path."
+    -                 ),
+    -             }
+    -         }
+    -     return {}
+    -
+    -
+    - def session_context() -> dict[str, Any]:
+    -     return {
+    -         "hookSpecificOutput": {
+    -             "hookEventName": "SessionStart",
+    -             "additionalContext": (
+    -                 "The current ROOT-side orchestration infrastructure enforces "
+    -                 "BOUNDED-TEST-v1 for every "
+    -                 "code test or validation in this session. Direct execution is blocked. "
+    -                 f"Read {POLICY} and invoke {SUPERVISOR}; set the tested product "
+    -                 "worktree as -WorkingDirectory. This is a runtime Codex-adapter "
+    -                 "overlay, not WIP product code."
+    -             ),
+    -         }
+    -     }
+    -
+    -
+    - def _payload() -> dict[str, Any]:
+    -     try:
+    -         value = json.loads(sys.stdin.read() or "{}")
+    -     except json.JSONDecodeError:
+    -         return {}
+    -     return value if isinstance(value, dict) else {}
+    -
+    -
+    - def main(argv: list[str] | None = None) -> int:
+    -     args = argv if argv is not None else sys.argv[1:]
+    -     if args == ["pre-tool-use"]:
+    -         output = guard_code_test(_payload())
+    -     elif args == ["session-start"]:
+    -         _payload()
+    -         output = session_context()
+    -     else:
+    -         print(
+    -             "bounded-test-adapter: expected pre-tool-use or session-start",
+    -             file=sys.stderr,
+    -         )
+    -         return 1
+    -     print(json.dumps(output))
+    -     return 0
+    -
+    -
+    - if __name__ == "__main__":
+    -     raise SystemExit(main())
+1   + from __future__ import annotations
+2   +
+3   + import json
+4   + import re
+5   + import sys
+6   + from pathlib import Path
+7   + from typing import Any
+8   +
+9   + ROOT = Path(__file__).resolve().parents[2]
+10  + SUPERVISOR = ROOT / ".codex" / "scripts" / "Invoke-BoundedTest.ps1"
+11  + POLICY = ROOT / ".codex" / "policies" / "bounded-tests.md"
+12  + SUPERVISOR_NAME = SUPERVISOR.name.casefold()
+13  +
+14  + CODE_TEST_PATTERNS = (
+15  +     re.compile(
+16  +         r"(?:^|[;&|]\s*)(?:uv\s+run\b[^;&|]*?\s+)?"
+17  +         r"(?:python|python3|py)\s+-m\s+"
+18  +         r"(?:pytest|unittest|compileall|py_compile|ruff)\b",
+19  +         re.IGNORECASE,
+20  +     ),
+21  +     re.compile(
+22  +         r"(?:^|[;&|]\s*)(?:uv\s+run\b[^;&|]*?\s+)?"
+23  +         r"(?:pytest|ruff|basedpyright)\b",
+24  +         re.IGNORECASE,
+25  +     ),
+26  +     re.compile(
+27  +         r"(?:^|[;&|]\s*)[^;&|]*\bverify(?:_changed)?\.py\b",
+28  +         re.IGNORECASE,
+29  +     ),
+30  +     re.compile(
+31  +         r"(?:^|[;&|]\s*)[^;&|]*\b"
+32  +         r"Invoke-[A-Za-z0-9_-]*(?:Test|Verify|Safeguard)"
+33  +         r"[A-Za-z0-9_-]*\.ps1\b",
+34  +         re.IGNORECASE,
+35  +     ),
+36  + )
+37  +
+38  +
+39  + def guard_code_test(payload: dict[str, Any]) -> dict[str, Any]:
+40  +     tool_input = payload.get("tool_input")
+41  +     command = tool_input.get("command") if isinstance(tool_input, dict) else None
+42  +     if not isinstance(command, str):
+43  +         return {}
+44  +     normalized = " ".join(command.split())
+45  +     if re.match(r"^(?:rg|ripgrep)\b", normalized, re.IGNORECASE) and not re.search(r"(?:;|&&)", normalized):
+46  +         return {}
+47  +     if SUPERVISOR_NAME in normalized.casefold():
+48  +         return {}
+49  +     if any(pattern.search(normalized) for pattern in CODE_TEST_PATTERNS):
+50  +         return {
+51  +             "hookSpecificOutput": {
+52  +                 "hookEventName": "PreToolUse",
+53  +                 "permissionDecision": "deny",
+54  +                 "permissionDecisionReason": (
+55  +                     "Direct code-test execution is blocked by BOUNDED-TEST-v1. "
+56  +                     f"Run it through {SUPERVISOR} with a justified maximum "
+57  +                     "lifetime, heartbeat interval, timeout basis, and result path."
+58  +                 ),
+59  +             }
+60  +         }
+61  +     return {}
+62  +
+63  +
+64  + def session_context() -> dict[str, Any]:
+65  +     return {
+66  +         "hookSpecificOutput": {
+67  +             "hookEventName": "SessionStart",
+68  +             "additionalContext": (
+69  +                 "The current ROOT-side orchestration infrastructure enforces "
+70  +                 "BOUNDED-TEST-v1 for every "
+71  +                 "code test or validation in this session. Direct execution is blocked. "
+72  +                 f"Read {POLICY} and invoke {SUPERVISOR}; set the tested product "
+73  +                 "worktree as -WorkingDirectory. This is a runtime Codex-adapter "
+74  +                 "overlay, not WIP product code."
+75  +             ),
+76  +         }
+77  +     }
+78  +
+79  +
+80  + def _payload() -> dict[str, Any]:
+81  +     try:
+82  +         value = json.loads(sys.stdin.read() or "{}")
+83  +     except json.JSONDecodeError:
+84  +         return {}
+85  +     return value if isinstance(value, dict) else {}
+86  +
+87  +
+88  + def main(argv: list[str] | None = None) -> int:
+89  +     args = argv if argv is not None else sys.argv[1:]
+90  +     if args == ["pre-tool-use"]:
+91  +         output = guard_code_test(_payload())
+92  +     elif args == ["session-start"]:
+93  +         _payload()
+94  +         output = session_context()
+95  +     else:
+96  +         print(
+97  +             "bounded-test-adapter: expected pre-tool-use or session-start",
+98  +             file=sys.stderr,
+99  +         )
+100 +         return 1
+101 +     print(json.dumps(output))
+102 +     return 0
+103 +
+104 +
+105 + if __name__ == "__main__":
+106 +     raise SystemExit(main())
+    |
+
+unformatted: File would be reformatted
+   --> .codex\scripts\hook_runner.py:83:15
+    |
+82  | def pre_compact(_payload: dict[str, Any]) -> dict[str, Any]:
+    -     message = "Before compaction, keep a concise HANDOFF.md with status, decisions, files in flight, and the next command."
+83  +     message = (
+84  +         "Before compaction, keep a concise HANDOFF.md with status, decisions, files in flight, and the next command."
+85  +     )
+86  |     if (ROOT / "HANDOFF.md").is_file():
+--------------------------------------------------------------------------------
+113 |                 "-TimeoutBasis",
+    -                 (
+    -                     "The Codex Stop hook has a 300-second ceiling; 240 seconds "
+    -                     "reserves cleanup and response time."
+    -                 ),
+114 +                 ("The Codex Stop hook has a 300-second ceiling; 240 seconds reserves cleanup and response time."),
+115 |                 "-ResultPath",
+--------------------------------------------------------------------------------
+129 |     if result.returncode == 0:
+    -         return {
+    -             "systemMessage": "Changed-code verification passed for the current repository state."
+    -         }
+130 +         return {"systemMessage": "Changed-code verification passed for the current repository state."}
+131 |     output = (result.stdout + "\n" + result.stderr).strip()
+    |
+
+unformatted: File would be reformatted
+    --> .codex\scripts\stable_runner.py:39:27
+     |
+38   | )
+     - ROLE_MODEL_MAPPING_PATH = (
+     -     ROOT / "plans" / "general-coding-harness" / "SUBAGENT_ROLE_MODEL_MAPPING.json"
+     - )
+39   + ROLE_MODEL_MAPPING_PATH = ROOT / "plans" / "general-coding-harness" / "SUBAGENT_ROLE_MODEL_MAPPING.json"
+40   | REQUIRED_COMMIT = "4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f"
+--------------------------------------------------------------------------------
+159  |
+     - def validate_checkout(
+     -     *, lock_path: Path = LOCK_PATH, repository_root: Path | None = None
+     - ) -> dict[str, Any]:
+160  + def validate_checkout(*, lock_path: Path = LOCK_PATH, repository_root: Path | None = None) -> dict[str, Any]:
+161  |     """Validate the exact clean detached checkout and return its proof material."""
+--------------------------------------------------------------------------------
+174  |     if commit != REQUIRED_COMMIT:
+     -         raise RunnerError(
+     -             f"stable checkout commit is {commit}, expected {REQUIRED_COMMIT}"
+     -         )
+175  +         raise RunnerError(f"stable checkout commit is {commit}, expected {REQUIRED_COMMIT}")
+176  |     status = _git(stable_root, "status", "--porcelain=v1", "--untracked-files=all")
+177  |     if status.returncode != 0:
+     -         raise RunnerError(
+     -             f"cannot inspect stable checkout status: {status.stderr.strip()}"
+     -         )
+178  +         raise RunnerError(f"cannot inspect stable checkout status: {status.stderr.strip()}")
+179  |     if status.stdout:
+180  |         raise RunnerError("stable checkout is dirty")
+181  |     detached = _git(stable_root, "symbolic-ref", "--quiet", "--short", "HEAD")
+182  |     if detached.returncode == 0 and detached.stdout.strip():
+     -         raise RunnerError(
+     -             f"stable checkout is attached to branch {detached.stdout.strip()}"
+     -         )
+183  +         raise RunnerError(f"stable checkout is attached to branch {detached.stdout.strip()}")
+184  |     if detached.returncode not in {0, 1}:
+     -         raise RunnerError(
+     -             f"cannot prove stable checkout is detached: {detached.stderr.strip()}"
+     -         )
+185  +         raise RunnerError(f"cannot prove stable checkout is detached: {detached.stderr.strip()}")
+186  |     common_dir = _git_value(stable_root, "rev-parse", "--git-common-dir")
+--------------------------------------------------------------------------------
+199  |     if os.name == "nt":
+     -         values.extend(
+     -             str(Path(prefix) / "DLLs")
+     -             for prefix in (sys.base_prefix, sys.base_exec_prefix)
+     -             if prefix
+     -         )
+200  +         values.extend(str(Path(prefix) / "DLLs") for prefix in (sys.base_prefix, sys.base_exec_prefix) if prefix)
+201  |     return tuple(Path(item).resolve(strict=False) for item in values if item)
+--------------------------------------------------------------------------------
+205  |     paths = sysconfig.get_paths()
+     -     return tuple(
+     -         Path(item).resolve(strict=False)
+     -         for item in (paths.get("purelib"), paths.get("platlib"))
+     -         if item
+     -     )
+206  +     return tuple(Path(item).resolve(strict=False) for item in (paths.get("purelib"), paths.get("platlib")) if item)
+207  |
+208  |
+     - def _is_stdlib_entry(
+     -     value: str, roots: tuple[Path, ...], excluded: tuple[Path, ...] = ()
+     - ) -> bool:
+209  + def _is_stdlib_entry(value: str, roots: tuple[Path, ...], excluded: tuple[Path, ...] = ()) -> bool:
+210  |     if not value:
+--------------------------------------------------------------------------------
+230  |     original = list(sys.path)
+     -     sys.path[:] = [str(stable_root)] + [
+     -         item for item in original if _is_stdlib_entry(item, roots, excluded)
+     -     ]
+231  +     sys.path[:] = [str(stable_root)] + [item for item in original if _is_stdlib_entry(item, roots, excluded)]
+232  |     for name, module in list(sys.modules.items()):
+     -         if name != "orchestrator_harness" and not name.startswith(
+     -             "orchestrator_harness."
+     -         ):
+233  +         if name != "orchestrator_harness" and not name.startswith("orchestrator_harness."):
+234  |             continue
+235  |         origin = getattr(module, "__file__", None)
+     -         if origin is not None and not _inside(
+     -             Path(origin).resolve(strict=False), stable_root
+     -         ):
+236  +         if origin is not None and not _inside(Path(origin).resolve(strict=False), stable_root):
+237  |             raise RunnerError(f"conflicting preloaded import: {name} from {origin}")
+238  |         del sys.modules[name]
+239  |
+240  |
+     - def import_stable_module(
+     -     module_name: str, proof: Mapping[str, Any]
+     - ) -> tuple[ModuleType, dict[str, Any]]:
+241  + def import_stable_module(module_name: str, proof: Mapping[str, Any]) -> tuple[ModuleType, dict[str, Any]]:
+242  |     if module_name not in ALLOWED_MODULES:
+     -         raise RunnerError(
+     -             f"module is outside the stable runner boundary: {module_name}"
+     -         )
+243  +         raise RunnerError(f"module is outside the stable runner boundary: {module_name}")
+244  |     stable_root = Path(str(proof["stable_root"])).resolve(strict=True)
+--------------------------------------------------------------------------------
+267  | def _canonical(value: Any) -> bytes:
+     -     return (
+     -         json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+     -         + "\n"
+     -     ).encode("utf-8")
+268  +     return (json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n").encode("utf-8")
+269  |
+270  |
+     - def _write_new_json(
+     -     path: Path, value: Mapping[str, Any], *, data: bytes | None = None
+     - ) -> str:
+271  + def _write_new_json(path: Path, value: Mapping[str, Any], *, data: bytes | None = None) -> str:
+272  |     path = path.resolve(strict=False)
+--------------------------------------------------------------------------------
+296  |         return set(_COMMON_FIELDS | _CODING_FIELDS), set(_CANDIDATE_ONLY_FIELDS)
+     -     raise RunnerError(
+     -         "stable projection only accepts schema-less firmware or coding v1 inputs"
+     -     )
+297  +     raise RunnerError("stable projection only accepts schema-less firmware or coding v1 inputs")
+298  |
+--------------------------------------------------------------------------------
+304  |         "RATE_LIMIT",
+     -         re.compile(
+     -             r"\brate[ -]?limit(?:ed|ing)?\b|\btoo many requests\b", re.IGNORECASE
+     -         ),
+305  +         re.compile(r"\brate[ -]?limit(?:ed|ing)?\b|\btoo many requests\b", re.IGNORECASE),
+306  |     ),
+--------------------------------------------------------------------------------
+336  |         assert isinstance(compact_scope, str)
+     -         overrides.append(
+     -             "model_auto_compact_token_limit_scope=" + json.dumps(compact_scope)
+     -         )
+337  +         overrides.append("model_auto_compact_token_limit_scope=" + json.dumps(compact_scope))
+338  |     catalog_path = profile["model_catalog_path"]
+--------------------------------------------------------------------------------
+349  | ) -> list[str]:
+     -     if not isinstance(command, list) or not all(
+     -         isinstance(item, str) and item for item in command
+     -     ):
+350  +     if not isinstance(command, list) or not all(isinstance(item, str) and item for item in command):
+351  |         return ["codex", *codex_flags]
+--------------------------------------------------------------------------------
+386  |         }:
+     -             raise RunnerError(
+     -                 "backend-failure history attempt has an unexpected schema"
+     -             )
+387  +             raise RunnerError("backend-failure history attempt has an unexpected schema")
+388  |         if not all(isinstance(attempt[key], str) and attempt[key] for key in attempt):
+389  |             raise RunnerError("backend-failure history attempt has an invalid value")
+390  |         error_hash = attempt["error_sha256"]
+     -         if len(error_hash) != 64 or any(
+     -             char not in "0123456789abcdef" for char in error_hash
+     -         ):
+391  +         if len(error_hash) != 64 or any(char not in "0123456789abcdef" for char in error_hash):
+392  |             raise RunnerError("backend-failure history error_sha256 is invalid")
+--------------------------------------------------------------------------------
+405  |     if not isinstance(raw, dict) or set(raw) != {"schema", "profiles", "roles"}:
+     -         raise RunnerError(
+     -             "subagent role-model mapping must contain only schema, profiles, and roles"
+     -         )
+406  +         raise RunnerError("subagent role-model mapping must contain only schema, profiles, and roles")
+407  |     if raw["schema"] != "orchestrator-subagent-role-model-mapping/v2":
+408  |         raise RunnerError("subagent role-model mapping schema is unsupported")
+409  |     profiles = raw["profiles"]
+410  |     roles = raw["roles"]
+     -     if (
+     -         not isinstance(profiles, dict)
+     -         or not profiles
+     -         or not isinstance(roles, dict)
+     -         or not roles
+     -     ):
+411  +     if not isinstance(profiles, dict) or not profiles or not isinstance(roles, dict) or not roles:
+412  |         raise RunnerError("subagent role-model mapping requires at least one role")
+--------------------------------------------------------------------------------
+424  |     for profile_id, value in profiles.items():
+     -         if (
+     -             not isinstance(profile_id, str)
+     -             or not profile_id
+     -             or not isinstance(value, dict)
+     -         ):
+     -             raise RunnerError(
+     -                 "launch profile names and entries must be non-empty objects"
+     -             )
+425  +         if not isinstance(profile_id, str) or not profile_id or not isinstance(value, dict):
+426  +             raise RunnerError("launch profile names and entries must be non-empty objects")
+427  |         if set(value) != profile_keys:
+428  |             raise RunnerError(f"launch profile {profile_id} has an unexpected schema")
+     -         if not all(
+     -             isinstance(value[key], str) and value[key]
+     -             for key in ("model", "reasoning_effort", "service_tier")
+     -         ):
+429  +         if not all(isinstance(value[key], str) and value[key] for key in ("model", "reasoning_effort", "service_tier")):
+430  |             raise RunnerError(f"launch profile {profile_id} has empty model settings")
+431  |         flags = value["codex_flags"]
+     -         if not isinstance(flags, list) or not all(
+     -             isinstance(flag, str) and flag for flag in flags
+     -         ):
+432  +         if not isinstance(flags, list) or not all(isinstance(flag, str) and flag for flag in flags):
+433  |             raise RunnerError(f"launch profile {profile_id} has invalid codex_flags")
+434  |         context_window = value["model_context_window"]
+435  |         compact_limit = value["model_auto_compact_token_limit"]
+436  |         compact_scope = value["model_auto_compact_token_limit_scope"]
+     -         if (context_window is None) != (compact_limit is None) or (
+     -             compact_limit is None
+     -         ) != (compact_scope is None):
+     -             raise RunnerError(
+     -                 f"launch profile {profile_id} has incomplete context settings"
+     -             )
+437  +         if (context_window is None) != (compact_limit is None) or (compact_limit is None) != (compact_scope is None):
+438  +             raise RunnerError(f"launch profile {profile_id} has incomplete context settings")
+439  |         if context_window is not None:
+--------------------------------------------------------------------------------
+444  |             ):
+     -                 raise RunnerError(
+     -                     f"launch profile {profile_id} has invalid context settings"
+     -                 )
+     -             if (
+     -                 context_window <= 0
+     -                 or compact_limit <= 0
+     -                 or compact_limit >= context_window
+     -             ):
+     -                 raise RunnerError(
+     -                     f"launch profile {profile_id} has unsafe context settings"
+     -                 )
+445  +                 raise RunnerError(f"launch profile {profile_id} has invalid context settings")
+446  +             if context_window <= 0 or compact_limit <= 0 or compact_limit >= context_window:
+447  +                 raise RunnerError(f"launch profile {profile_id} has unsafe context settings")
+448  |             if compact_scope != "total":
+     -                 raise RunnerError(
+     -                     f"launch profile {profile_id} has unsupported compaction scope"
+     -                 )
+449  +                 raise RunnerError(f"launch profile {profile_id} has unsupported compaction scope")
+450  |         catalog_path = value["model_catalog_path"]
+451  |         if catalog_path is not None:
+452  |             if not isinstance(catalog_path, str) or not catalog_path:
+     -                 raise RunnerError(
+     -                     f"launch profile {profile_id} has invalid model_catalog_path"
+     -                 )
+453  +                 raise RunnerError(f"launch profile {profile_id} has invalid model_catalog_path")
+454  |             catalog = (ROOT / catalog_path).resolve(strict=False)
+455  |             if not _inside(catalog, ROOT) or not catalog.is_file():
+     -                 raise RunnerError(
+     -                     f"launch profile {profile_id} model_catalog_path is unavailable"
+     -                 )
+456  +                 raise RunnerError(f"launch profile {profile_id} model_catalog_path is unavailable")
+457  |         normalized_profiles[profile_id] = {
+--------------------------------------------------------------------------------
+470  |         if not isinstance(role, str) or not role or not isinstance(value, dict):
+     -             raise RunnerError(
+     -                 "subagent role-model names and entries must be non-empty objects"
+     -             )
+471  +             raise RunnerError("subagent role-model names and entries must be non-empty objects")
+472  |         if set(value) != role_keys:
+     -             raise RunnerError(
+     -                 f"subagent role-model entry {role} has an unexpected schema"
+     -             )
+473  +             raise RunnerError(f"subagent role-model entry {role} has an unexpected schema")
+474  |         primary = value["primary_profile"]
+--------------------------------------------------------------------------------
+479  |         if not isinstance(primary, str) or primary not in normalized_profiles:
+     -             raise RunnerError(
+     -                 f"subagent role-model entry {role} has an invalid primary_profile"
+     -             )
+480  +             raise RunnerError(f"subagent role-model entry {role} has an invalid primary_profile")
+481  |         if gate_role is not None and (not isinstance(gate_role, str) or not gate_role):
+     -             raise RunnerError(
+     -                 f"subagent role-model entry {role} has an invalid finding_gate_role"
+     -             )
+482  +             raise RunnerError(f"subagent role-model entry {role} has an invalid finding_gate_role")
+483  |         if fallback is None:
+484  |             if threshold is not None or error_classes != []:
+     -                 raise RunnerError(
+     -                     f"subagent role-model entry {role} has fallback settings without a fallback profile"
+     -                 )
+485  +                 raise RunnerError(f"subagent role-model entry {role} has fallback settings without a fallback profile")
+486  |         else:
+     -             if (
+     -                 not isinstance(fallback, str)
+     -                 or fallback not in normalized_profiles
+     -                 or fallback == primary
+     -             ):
+     -                 raise RunnerError(
+     -                     f"subagent role-model entry {role} has an invalid fallback_profile"
+     -                 )
+487  +             if not isinstance(fallback, str) or fallback not in normalized_profiles or fallback == primary:
+488  +                 raise RunnerError(f"subagent role-model entry {role} has an invalid fallback_profile")
+489  |             if not isinstance(threshold, int) or threshold < 2:
+     -                 raise RunnerError(
+     -                     f"subagent role-model entry {role} has an invalid fallback threshold"
+     -                 )
+490  +                 raise RunnerError(f"subagent role-model entry {role} has an invalid fallback threshold")
+491  |             if (
+492  |                 not isinstance(error_classes, list)
+493  |                 or not error_classes
+494  |                 or not all(
+     -                     isinstance(item, str)
+     -                     and item in {name for name, _ in _BACKEND_ERROR_PATTERNS}
+495  +                     isinstance(item, str) and item in {name for name, _ in _BACKEND_ERROR_PATTERNS}
+496  |                     for item in error_classes
+497  |                 )
+498  |             ):
+     -                 raise RunnerError(
+     -                     f"subagent role-model entry {role} has invalid fallback error classes"
+     -                 )
+499  +                 raise RunnerError(f"subagent role-model entry {role} has invalid fallback error classes")
+500  |         primary_profile = normalized_profiles[primary]
+--------------------------------------------------------------------------------
+528  |         if requested_profile == fallback:
+     -             raise RunnerError(
+     -                 "fallback profile requires a proven backend-failure history"
+     -             )
+     -         raise RunnerError(
+     -             "requested launch profile is not allowed for this workflow role"
+     -         )
+529  +             raise RunnerError("fallback profile requires a proven backend-failure history")
+530  +         raise RunnerError("requested launch profile is not allowed for this workflow role")
+531  |     if fallback is None:
+532  |         raise RunnerError("workflow role has no fallback profile")
+533  |     if fallback_history.get("workflow_role") != workflow_role:
+     -         raise RunnerError(
+     -             "backend-failure history workflow_role does not match the dispatch"
+     -         )
+534  +         raise RunnerError("backend-failure history workflow_role does not match the dispatch")
+535  |     attempts = fallback_history["attempts"]
+--------------------------------------------------------------------------------
+554  |     if requested_profile is not None and requested_profile != fallback:
+     -         raise RunnerError(
+     -             "backend-failure fallback can select only the role's declared fallback profile"
+     -         )
+555  +         raise RunnerError("backend-failure fallback can select only the role's declared fallback profile")
+556  |     return fallback
+--------------------------------------------------------------------------------
+583  |     ):
+     -         raise RunnerError(
+     -             "fallback profile requires a new P02 handoff invocation with action=start"
+     -         )
+584  +         raise RunnerError("fallback profile requires a new P02 handoff invocation with action=start")
+585  |     profiles = expected["profiles"]
+586  |     assert isinstance(profiles, Mapping)
+587  |     profile = profiles[selected_profile]
+588  |     assert isinstance(profile, Mapping)
+     -     settings_name = (
+     -         "codex"
+     -         if raw.get("schema") == "orchestrator-coding-invocation/v1"
+     -         else "model_settings"
+     -     )
+589  +     settings_name = "codex" if raw.get("schema") == "orchestrator-coding-invocation/v1" else "model_settings"
+590  |     settings = raw.get(settings_name)
+591  |     if not isinstance(settings, Mapping):
+     -         raise RunnerError(
+     -             f"{settings_name} must be an object for workflow-role resolution"
+     -         )
+592  +         raise RunnerError(f"{settings_name} must be an object for workflow-role resolution")
+593  |     resolved = dict(raw)
+--------------------------------------------------------------------------------
+601  |         list(profile["codex_flags"]),
+     -     )
+     -     existing_overrides = resolved_settings.get(
+     -         "config_overrides", raw.get("config_overrides", [])
+602  |     )
+603  +     existing_overrides = resolved_settings.get("config_overrides", raw.get("config_overrides", []))
+604  |     if not isinstance(existing_overrides, list) or not all(
+--------------------------------------------------------------------------------
+610  |     resolved_settings["config_overrides"] = [
+     -         item
+     -         for item in existing_overrides
+     -         if item.partition("=")[0] not in profile_override_keys
+611  +         item for item in existing_overrides if item.partition("=")[0] not in profile_override_keys
+612  |     ] + profile_overrides
+--------------------------------------------------------------------------------
+661  |     if unknown:
+     -         raise RunnerError(
+     -             "projection refuses unknown fields: " + ", ".join(sorted(unknown))
+     -         )
+662  +         raise RunnerError("projection refuses unknown fields: " + ", ".join(sorted(unknown)))
+663  |     present = sorted(set(resolved) & removable)
+664  |     if resolved.get("schema") is None and present:
+     -         raise RunnerError(
+     -             "candidate-only coding fields cannot appear on a schema-less firmware route"
+     -         )
+665  +         raise RunnerError("candidate-only coding fields cannot appear on a schema-less firmware route")
+666  |     if "finding_gate" in present:
+--------------------------------------------------------------------------------
+675  |             raise RunnerError("finding_gate is malformed")
+     -     if "child_environment_isolation" in present and not isinstance(
+     -         resolved["child_environment_isolation"], bool
+     -     ):
+676  +     if "child_environment_isolation" in present and not isinstance(resolved["child_environment_isolation"], bool):
+677  |         raise RunnerError("child_environment_isolation must be boolean")
+--------------------------------------------------------------------------------
+690  |         )
+     -     projected_bytes = (
+     -         json.dumps(projected, sort_keys=True, indent=2, ensure_ascii=False) + "\n"
+     -     ).encode("utf-8")
+691  +     projected_bytes = (json.dumps(projected, sort_keys=True, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
+692  |     projected_hash = _write_new_json(output_path, projected, data=projected_bytes)
+--------------------------------------------------------------------------------
+704  |         "workflow_role": workflow_role,
+     -         "launch_profile": resolved.get("codex", resolved.get("model_settings", {})).get(
+     -             "launch_profile"
+     -         ),
+705  +         "launch_profile": resolved.get("codex", resolved.get("model_settings", {})).get("launch_profile"),
+706  |         "fallback_history_sha256": fallback_history_sha256,
+--------------------------------------------------------------------------------
+723  | def _parser() -> argparse.ArgumentParser:
+     -     parser = argparse.ArgumentParser(
+     -         description="Run the pinned stable implementation harness"
+     -     )
+724  +     parser = argparse.ArgumentParser(description="Run the pinned stable implementation harness")
+725  |     parser.add_argument("--module", choices=sorted(ALLOWED_MODULES))
+--------------------------------------------------------------------------------
+742  |     """Dispatch through a temporary invocation resolved from the current role mapping."""
+     -     with tempfile.TemporaryDirectory(
+     -         prefix="stable-runner-dispatch-"
+     -     ) as temporary_root:
+743  +     with tempfile.TemporaryDirectory(prefix="stable-runner-dispatch-") as temporary_root:
+744  |         dispatch_path = Path(temporary_root) / "invocation.json"
+745  |         dispatch_path.write_text(
+     -             json.dumps(
+     -                 resolved_invocation, sort_keys=True, indent=2, ensure_ascii=False
+     -             )
+     -             + "\n",
+746  +             json.dumps(resolved_invocation, sort_keys=True, indent=2, ensure_ascii=False) + "\n",
+747  |             encoding="utf-8",
+--------------------------------------------------------------------------------
+842  |     if not isinstance(run_root_value, str) or not run_root_value:
+     -         raise RunnerError(
+     -             "real Codex dispatch requires run_root for bounded-test enforcement"
+     -         )
+843  +         raise RunnerError("real Codex dispatch requires run_root for bounded-test enforcement")
+844  |     run_root = Path(run_root_value).resolve(strict=True)
+--------------------------------------------------------------------------------
+890  |                 if hooks_path.exists():
+     -                     raise RunnerError(
+     -                         "could not remove ROOT-side bounded-test hook overlay"
+     -                     )
+891  +                     raise RunnerError("could not remove ROOT-side bounded-test hook overlay")
+892  |             else:
+--------------------------------------------------------------------------------
+896  |                 if hooks_path.read_bytes() != original:
+     -                     raise RunnerError(
+     -                         "could not restore original Codex hook configuration"
+     -                     )
+897  +                     raise RunnerError("could not restore original Codex hook configuration")
+898  |             if not codex_directory_preexisted:
+--------------------------------------------------------------------------------
+918  |     if missing:
+     -         raise RunnerError(
+     -             "Codex subagent prompt omits the mandatory bounded-test contract: "
+     -             + ", ".join(missing)
+     -         )
+919  +         raise RunnerError("Codex subagent prompt omits the mandatory bounded-test contract: " + ", ".join(missing))
+920  |
+--------------------------------------------------------------------------------
+940  |             ):
+     -                 raise RunnerError(
+     -                     "backend-error classification cannot carry a dispatch or profile option"
+     -                 )
+941  +                 raise RunnerError("backend-error classification cannot carry a dispatch or profile option")
+942  |             try:
+--------------------------------------------------------------------------------
+965  |         if args.fallback_history is not None:
+     -             fallback_history, fallback_history_sha256 = _read_backend_failure_history(
+     -                 args.fallback_history
+     -             )
+966  +             fallback_history, fallback_history_sha256 = _read_backend_failure_history(args.fallback_history)
+967  |         if args.project_invocation is not None:
+968  |             if args.module is not None or remainder:
+969  |                 raise RunnerError("projection mode cannot carry a module command")
+970  |             if args.workflow_role is None:
+     -                 raise RunnerError(
+     -                     "--workflow-role is required for invocation projection"
+     -                 )
+     -             output = args.projection_output or args.project_invocation.with_name(
+     -                 "STABLE_COMPATIBLE_INVOCATION.json"
+     -             )
+     -             record = args.projection_record or args.project_invocation.with_name(
+     -                 "STABLE_COMPATIBLE_PROJECTION.json"
+     -             )
+971  +                 raise RunnerError("--workflow-role is required for invocation projection")
+972  +             output = args.projection_output or args.project_invocation.with_name("STABLE_COMPATIBLE_INVOCATION.json")
+973  +             record = args.projection_record or args.project_invocation.with_name("STABLE_COMPATIBLE_PROJECTION.json")
+974  |             result = project_invocation(
+--------------------------------------------------------------------------------
+994  |         if args.module is None:
+     -             raise RunnerError(
+     -                 "--module is required unless --project-invocation is used"
+     -             )
+995  +             raise RunnerError("--module is required unless --project-invocation is used")
+996  |         dispatch_invocation: dict[str, Any] | None = None
+997  |         if args.module == "orchestrator_harness.lane_controller":
+998  |             if args.workflow_role is None:
+     -                 raise RunnerError(
+     -                     "--workflow-role is required for lane-controller dispatch"
+     -                 )
+999  +                 raise RunnerError("--workflow-role is required for lane-controller dispatch")
+1000 |             if not remainder:
+     -                 raise RunnerError(
+     -                     "lane-controller dispatch requires an invocation path"
+     -                 )
+1001 +                 raise RunnerError("lane-controller dispatch requires an invocation path")
+1002 |             try:
+     -                 raw_dispatch_invocation = json.loads(
+     -                     Path(remainder[0]).read_text(encoding="utf-8")
+     -                 )
+1003 +                 raw_dispatch_invocation = json.loads(Path(remainder[0]).read_text(encoding="utf-8"))
+1004 |             except (OSError, json.JSONDecodeError) as exc:
+     -                 raise RunnerError(
+     -                     f"cannot read dispatch invocation for role resolution: {exc}"
+     -                 ) from exc
+1005 +                 raise RunnerError(f"cannot read dispatch invocation for role resolution: {exc}") from exc
+1006 |             if not isinstance(raw_dispatch_invocation, dict):
+--------------------------------------------------------------------------------
+1025 |                         "workflow_role": args.workflow_role,
+     -                         "launch_profile": dispatch_invocation.get("codex", {}).get(
+     -                             "launch_profile"
+     -                         ),
+1026 +                         "launch_profile": dispatch_invocation.get("codex", {}).get("launch_profile"),
+1027 |                         "fallback_history_sha256": fallback_history_sha256,
+--------------------------------------------------------------------------------
+1039 |         else:
+     -             result = _dispatch_resolved_invocation(
+     -                 entry, remainder, dispatch_invocation
+     -             )
+1040 +             result = _dispatch_resolved_invocation(entry, remainder, dispatch_invocation)
+1041 |         if result is None:
+1042 |             return 0
+1043 |         if isinstance(result, int):
+1044 |             return result
+     -         raise RunnerError(
+     -             f"stable module returned unsupported result type: {type(result).__name__}"
+     -         )
+1045 +         raise RunnerError(f"stable module returned unsupported result type: {type(result).__name__}")
+1046 |     except (RunnerError, OSError, ValueError) as exc:
+     |
+
+unformatted: File would be reformatted
+   --> .codex\tests\test_hooks.py:20:23
+    |
+19  |
+    - def _run_windows_hook(
+    -     command: str, *, cwd: Path, hook_input: object
+    - ) -> subprocess.CompletedProcess[str]:
+20  + def _run_windows_hook(command: str, *, cwd: Path, hook_input: object) -> subprocess.CompletedProcess[str]:
+21  |     return subprocess.run(
+--------------------------------------------------------------------------------
+31  | def test_guard_blocks_destructive_git_and_allows_read_only_git() -> None:
+    -     blocked = hook_runner.guard_dangerous(
+    -         {"tool_input": {"command": "git reset --hard HEAD~1"}}
+    -     )
+32  +     blocked = hook_runner.guard_dangerous({"tool_input": {"command": "git reset --hard HEAD~1"}})
+33  |     assert blocked["hookSpecificOutput"]["permissionDecision"] == "deny"
+    -     assert (
+    -         hook_runner.guard_dangerous({"tool_input": {"command": "git status --short"}})
+    -         == {}
+    -     )
+34  +     assert hook_runner.guard_dangerous({"tool_input": {"command": "git status --short"}}) == {}
+35  |
+--------------------------------------------------------------------------------
+157 |     payload = json.loads((ROOT / ".codex" / "hooks.json").read_text(encoding="utf-8"))
+    -     handlers = [
+    -         handler
+    -         for groups in payload["hooks"].values()
+    -         for group in groups
+    -         for handler in group["hooks"]
+    -     ]
+158 +     handlers = [handler for groups in payload["hooks"].values() for group in groups for handler in group["hooks"]]
+159 |     assert handlers
+--------------------------------------------------------------------------------
+195 |         else:
+    -             assert (
+    -                 output["hookSpecificOutput"]["permissionDecision"] == expected_decision
+    -             )
+196 +             assert output["hookSpecificOutput"]["permissionDecision"] == expected_decision
+197 |
+198 |
+199 | def test_hook_launchers_do_not_depend_on_the_current_git_repository() -> None:
+200 |     payload = json.loads((ROOT / ".codex" / "hooks.json").read_text(encoding="utf-8"))
+    -     handlers = [
+    -         handler
+    -         for groups in payload["hooks"].values()
+    -         for group in groups
+    -         for handler in group["hooks"]
+    -     ]
+201 +     handlers = [handler for groups in payload["hooks"].values() for group in groups for handler in group["hooks"]]
+202 |     for handler in handlers:
+--------------------------------------------------------------------------------
+244 |                 command = handler["commandWindows"]
+    -                 assert (
+    -                     not command.casefold().lstrip().startswith(("powershell ", "pwsh "))
+    -                 )
+245 +                 assert not command.casefold().lstrip().startswith(("powershell ", "pwsh "))
+246 |                 assert "[Console]::In.ReadToEnd()" in command
+--------------------------------------------------------------------------------
+255 |     fresh = hook_runner.session_start({"source": "startup"})
+    -     assert (
+    -         "Project context from HANDOFF.md"
+    -         not in fresh["hookSpecificOutput"]["additionalContext"]
+    -     )
+256 +     assert "Project context from HANDOFF.md" not in fresh["hookSpecificOutput"]["additionalContext"]
+257 |     assert "Before compaction" in hook_runner.pre_compact({})["systemMessage"]
+--------------------------------------------------------------------------------
+261 |     resumed = hook_runner.session_start({"source": "resume"})
+    -     assert (
+    -         "next command: run verify" in started["hookSpecificOutput"]["additionalContext"]
+    -     )
+    -     assert (
+    -         "next command: run verify" in resumed["hookSpecificOutput"]["additionalContext"]
+    -     )
+262 +     assert "next command: run verify" in started["hookSpecificOutput"]["additionalContext"]
+263 +     assert "next command: run verify" in resumed["hookSpecificOutput"]["additionalContext"]
+264 |     assert "HANDOFF.md exists" in hook_runner.pre_compact({})["systemMessage"]
+--------------------------------------------------------------------------------
+271 |         "run",
+    -         lambda *_args, **_kwargs: (_ for _ in ()).throw(
+    -             AssertionError("verification should not run")
+    -         ),
+272 +         lambda *_args, **_kwargs: (_ for _ in ()).throw(AssertionError("verification should not run")),
+273 |     )
+274 |     assert hook_runner.verify_on_stop({}) == {}
+275 |
+276 |
+    - def test_stop_hook_skips_verifier_after_markdown_only_change(
+    -     monkeypatch, tmp_path: Path
+    - ) -> None:
+277 + def test_stop_hook_skips_verifier_after_markdown_only_change(monkeypatch, tmp_path: Path) -> None:
+278 |     monkeypatch.setattr(hook_runner, "ROOT", tmp_path)
+--------------------------------------------------------------------------------
+284 |         "run",
+    -         lambda *_args, **_kwargs: (_ for _ in ()).throw(
+    -             AssertionError("verification should not run")
+    -         ),
+285 +         lambda *_args, **_kwargs: (_ for _ in ()).throw(AssertionError("verification should not run")),
+286 |     )
+--------------------------------------------------------------------------------
+303 |     assert str(hook_runner.BOUNDED_TEST_SUPERVISOR) in calls[0]
+    -     assert (
+    -         "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py"
+    -         in calls[0]
+    -     )
+304 +     assert "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py" in calls[0]
+305 |
+--------------------------------------------------------------------------------
+324 |         "run",
+    -         lambda *_args, **_kwargs: subprocess.CompletedProcess(
+    -             [], 0, "VERIFY: PASS", ""
+    -         ),
+325 +         lambda *_args, **_kwargs: subprocess.CompletedProcess([], 0, "VERIFY: PASS", ""),
+326 |     )
+--------------------------------------------------------------------------------
+332 |         "run",
+    -         lambda *_args, **_kwargs: subprocess.CompletedProcess(
+    -             [], 1, "", "tests failed"
+    -         ),
+333 +         lambda *_args, **_kwargs: subprocess.CompletedProcess([], 1, "", "tests failed"),
+334 |     )
+    |
+
+unformatted: File would be reformatted
+   --> .codex\tests\test_stable_runner.py:27:20
+    |
+26  | )
+    - RUNNER_MIGRATION = (
+    -     ROOT
+    -     / "plans"
+    -     / "general-coding-harness"
+    -     / "runtime"
+    -     / "firmware-v2"
+    -     / "runner-migration"
+    - )
+27  + RUNNER_MIGRATION = ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "runner-migration"
+28  | PENDING_S2_D1 = (
+--------------------------------------------------------------------------------
+135 |         with pytest.raises(runner.RunnerError, match="commit"):
+    -             runner.validate_checkout(
+    -                 lock_path=lock_path, repository_root=base / "wrong"
+    -             )
+136 +             runner.validate_checkout(lock_path=lock_path, repository_root=base / "wrong")
+137 |
+--------------------------------------------------------------------------------
+149 |     fake = types.ModuleType("orchestrator_harness")
+    -     fake.__file__ = str(
+    -         Path(tempfile.gettempdir()) / "wrong" / "orchestrator_harness" / "__init__.py"
+    -     )
+150 +     fake.__file__ = str(Path(tempfile.gettempdir()) / "wrong" / "orchestrator_harness" / "__init__.py")
+151 |     prior = sys.modules.get("orchestrator_harness")
+152 |     sys.modules["orchestrator_harness"] = fake
+153 |     try:
+154 |         with pytest.raises(runner.RunnerError, match="conflicting preloaded import"):
+    -             runner.import_stable_module(
+    -                 "orchestrator_harness.cli", runner.validate_checkout()
+    -             )
+155 +             runner.import_stable_module("orchestrator_harness.cli", runner.validate_checkout())
+156 |     finally:
+--------------------------------------------------------------------------------
+217 |         assert {
+    -             key: projected["codex"][key]
+    -             for key in ("model", "reasoning_effort", "service_tier")
+218 +             key: projected["codex"][key] for key in ("model", "reasoning_effort", "service_tier")
+219 |         } == _model_settings("doer-main")
+--------------------------------------------------------------------------------
+225 |         }
+    -         assert (
+    -             record["projected_invocation_sha256"]
+    -             == runner.hashlib.sha256(output.read_bytes()).hexdigest()
+    -         )
+226 +         assert record["projected_invocation_sha256"] == runner.hashlib.sha256(output.read_bytes()).hexdigest()
+227 |         assert record["workflow_role"] == "doer-main"
+--------------------------------------------------------------------------------
+237 |             )
+    -         with pytest.raises(
+    -             runner.RunnerError, match="inside the immutable stable checkout"
+    -         ):
+238 +         with pytest.raises(runner.RunnerError, match="inside the immutable stable checkout"):
+239 |             runner.project_invocation(
+--------------------------------------------------------------------------------
+262 |         invocation["finding_gate"] = {"role": gate_role, "path": "FINDINGS.json"}
+    -     resolved = runner.apply_workflow_role_allocation(
+    -         invocation, workflow_role, validate_finding_gate=True
+263 +     resolved = runner.apply_workflow_role_allocation(invocation, workflow_role, validate_finding_gate=True)
+264 +     assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+265 +         _model_settings(workflow_role)
+266 |     )
+    -     assert {
+    -         key: resolved["codex"][key]
+    -         for key in ("model", "reasoning_effort", "service_tier")
+    -     } == (_model_settings(workflow_role))
+267 |
+--------------------------------------------------------------------------------
+282 |         invocation["finding_gate"] = {"role": gate_role, "path": "FINDINGS.json"}
+    -     resolved = runner.apply_workflow_role_allocation(
+    -         invocation, workflow_role, validate_finding_gate=True
+283 +     resolved = runner.apply_workflow_role_allocation(invocation, workflow_role, validate_finding_gate=True)
+284 +     assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == (
+285 +         _model_settings(workflow_role)
+286 |     )
+    -     assert {
+    -         key: resolved["codex"][key]
+    -         for key in ("model", "reasoning_effort", "service_tier")
+    -     } == (_model_settings(workflow_role))
+287 |
+--------------------------------------------------------------------------------
+302 |     with pytest.raises(runner.RunnerError, match="requires finding_gate role"):
+    -         runner.apply_workflow_role_allocation(
+    -             invocation, "reviewer-main", validate_finding_gate=True
+    -         )
+303 +         runner.apply_workflow_role_allocation(invocation, "reviewer-main", validate_finding_gate=True)
+304 |
+--------------------------------------------------------------------------------
+339 |         assert any(
+    -             key.startswith("GIT_CONFIG_KEY_") and setting == "core.excludesFile"
+    -             for key, setting in os.environ.items()
+340 +             key.startswith("GIT_CONFIG_KEY_") and setting == "core.excludesFile" for key, setting in os.environ.items()
+341 |         )
+--------------------------------------------------------------------------------
+409 |         )
+    -         assert {
+    -             key: resolved["codex"][key]
+    -             for key in ("model", "reasoning_effort", "service_tier")
+    -         } == {
+    -             key: custom_profile[key]
+    -             for key in ("model", "reasoning_effort", "service_tier")
+410 +         assert {key: resolved["codex"][key] for key in ("model", "reasoning_effort", "service_tier")} == {
+411 +             key: custom_profile[key] for key in ("model", "reasoning_effort", "service_tier")
+412 |         }
+--------------------------------------------------------------------------------
+450 |     runner = _load_runner()
+    -     deepseek = runner.apply_workflow_role_allocation(
+    -         _coding_invocation(), "coder-main", validate_finding_gate=False
+    -     )
+451 +     deepseek = runner.apply_workflow_role_allocation(_coding_invocation(), "coder-main", validate_finding_gate=False)
+452 |     deepseek_settings = deepseek["codex"]
+--------------------------------------------------------------------------------
+463 |     assert "model_context_window=1048576" in deepseek_settings["config_overrides"]
+    -     assert (
+    -         "model_auto_compact_token_limit=230000" in deepseek_settings["config_overrides"]
+    -     )
+    -     assert (
+    -         "model_auto_compact_token_limit=1" not in deepseek_settings["config_overrides"]
+    -     )
+464 +     assert "model_auto_compact_token_limit=230000" in deepseek_settings["config_overrides"]
+465 +     assert "model_auto_compact_token_limit=1" not in deepseek_settings["config_overrides"]
+466 |     catalog_override = next(
+    -         item
+    -         for item in deepseek_settings["config_overrides"]
+    -         if item.startswith("model_catalog_json=")
+467 +         item for item in deepseek_settings["config_overrides"] if item.startswith("model_catalog_json=")
+468 |     )
+    -     assert ".codex/delegates/deepseek-model-catalog.json" in catalog_override.replace(
+    -         "\\", "/"
+    -     )
+469 +     assert ".codex/delegates/deepseek-model-catalog.json" in catalog_override.replace("\\", "/")
+470 |
+    -     terra = runner.apply_workflow_role_allocation(
+    -         _coding_invocation(), "reviewer-main", validate_finding_gate=False
+    -     )
+471 +     terra = runner.apply_workflow_role_allocation(_coding_invocation(), "reviewer-main", validate_finding_gate=False)
+472 |     terra_settings = terra["codex"]
+--------------------------------------------------------------------------------
+478 |
+    - def test_backend_fallback_requires_three_consecutive_classified_deepseek_failures() -> (
+    -     None
+    - ):
+479 + def test_backend_fallback_requires_three_consecutive_classified_deepseek_failures() -> None:
+480 |     runner = _load_runner()
+--------------------------------------------------------------------------------
+511 |     runner = _load_runner()
+    -     assert (
+    -         runner.classify_backend_error("HTTP status 429: too many requests")
+    -         == "HTTP_429"
+    -     )
+    -     assert (
+    -         runner.classify_backend_error("provider returned HTTP 303 error") == "HTTP_303"
+    -     )
+512 +     assert runner.classify_backend_error("HTTP status 429: too many requests") == "HTTP_429"
+513 +     assert runner.classify_backend_error("provider returned HTTP 303 error") == "HTTP_303"
+514 |     assert runner.classify_backend_error("Rate limit exceeded") == "RATE_LIMIT"
+    -     assert (
+    -         runner.classify_backend_error("backend service unavailable") == "BACKEND_ERROR"
+    -     )
+    -     assert (
+    -         runner.classify_backend_error("ordinary product test assertion failed") is None
+    -     )
+515 +     assert runner.classify_backend_error("backend service unavailable") == "BACKEND_ERROR"
+516 +     assert runner.classify_backend_error("ordinary product test assertion failed") is None
+517 |
+--------------------------------------------------------------------------------
+523 |     runner = _load_runner()
+    -     raw_error = (
+    -         "provider request failed: HTTP 429; secret detail must not enter history"
+    -     )
+524 +     raw_error = "provider request failed: HTTP 429; secret detail must not enter history"
+525 |     error_path = tmp_path / "provider.stderr"
+--------------------------------------------------------------------------------
+572 |     assert projected["codex"]["reasoning_effort"] == "max"
+    -     assert (
+    -         projection["fallback_history_sha256"]
+    -         == hashlib.sha256(history.read_bytes()).hexdigest()
+    -     )
+573 +     assert projection["fallback_history_sha256"] == hashlib.sha256(history.read_bytes()).hexdigest()
+574 |
+--------------------------------------------------------------------------------
+677 | def test_pending_d1_migration_binds_authoritative_s2_d1() -> None:
+    -     migration = json.loads(
+    -         (RUNNER_MIGRATION / "PENDING_D1_MIGRATION.json").read_text(encoding="utf-8")
+    -     )
+678 +     migration = json.loads((RUNNER_MIGRATION / "PENDING_D1_MIGRATION.json").read_text(encoding="utf-8"))
+679 |     authoritative_bytes = PENDING_S2_D1.read_bytes()
+--------------------------------------------------------------------------------
+688 |     stable_hash = hashlib.sha256(stable_bytes).hexdigest()
+    -     projection = json.loads(
+    -         (RUNNER_MIGRATION / "PENDING_D1_STABLE_PROJECTION.json").read_text(
+    -             encoding="utf-8"
+    -         )
+    -     )
+689 +     projection = json.loads((RUNNER_MIGRATION / "PENDING_D1_STABLE_PROJECTION.json").read_text(encoding="utf-8"))
+690 |
+691 |     assert authoritative["action"] == "resume"
+692 |     assert authoritative["lane_id"] == "S2.D1"
+693 |     assert authoritative["worker_invocation_id"] == "s2-d1-001"
+    -     assert authoritative["resume_identity"]["thread_id"] == (
+    -         "019fcacb-ab71-79c0-bb93-3813ff3d900d"
+    -     )
+694 +     assert authoritative["resume_identity"]["thread_id"] == ("019fcacb-ab71-79c0-bb93-3813ff3d900d")
+695 |     assert authoritative["repository"]["branch"] == "firmware/v2-s2-d1"
+    -     assert authoritative["repository"]["base_commit"] == (
+    -         "7a28b186e91f2945ea9c59869a216fa8caf8407e"
+    -     )
+    -     assert authoritative["prompt_sha256"] == (
+    -         "f495350ca3a5b5ff15def16c28beea83714db1aafe90e733067fa0b68fc0cf1d"
+    -     )
+696 +     assert authoritative["repository"]["base_commit"] == ("7a28b186e91f2945ea9c59869a216fa8caf8407e")
+697 +     assert authoritative["prompt_sha256"] == ("f495350ca3a5b5ff15def16c28beea83714db1aafe90e733067fa0b68fc0cf1d")
+698 |     assert migration["original_invocation"]["path"].endswith(
+--------------------------------------------------------------------------------
+702 |     assert migration["resume_projection"]["candidate_source_sha256"] == candidate_hash
+    -     assert migration["resume_projection"]["stable_compatible_invocation_sha256"] == (
+    -         stable_hash
+    -     )
+703 +     assert migration["resume_projection"]["stable_compatible_invocation_sha256"] == (stable_hash)
+704 |     assert migration["preserved_resume_identity"] == {
+--------------------------------------------------------------------------------
+770 |         candidate = (
+    -             ROOT
+    -             / "plans"
+    -             / "general-coding-harness"
+    -             / "runtime"
+    -             / "firmware-v2"
+    -             / "worktrees"
+    -             / "harness-candidate"
+771 +             ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "worktrees" / "harness-candidate"
+772 |         )
+773 |         lane = (
+    -             ROOT
+    -             / "plans"
+    -             / "general-coding-harness"
+    -             / "runtime"
+    -             / "firmware-v2"
+    -             / "implementation"
+    -             / "lanes"
+    -             / "S1.A1"
+774 +             ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "implementation" / "lanes" / "S1.A1"
+775 |         )
+--------------------------------------------------------------------------------
+798 |             assert completed.returncode == 0, completed.stderr
+    -             assert (
+    -                 "stable-general-harness-runner\\\\orchestrator_harness\\\\cli.py"
+    -                 in completed.stderr
+    -             )
+799 +             assert "stable-general-harness-runner\\\\orchestrator_harness\\\\cli.py" in completed.stderr
+800 |             assert str(fake_import_root) not in completed.stderr
+--------------------------------------------------------------------------------
+825 |         run_root = Path(raw)
+    -         (run_root / ".gitignore").write_text(
+    -             ".agent-workspace/\nruntime/\n", encoding="utf-8"
+    -         )
+826 +         (run_root / ".gitignore").write_text(".agent-workspace/\nruntime/\n", encoding="utf-8")
+827 |         prompt = run_root / "prompt.md"
+--------------------------------------------------------------------------------
+938 |             dispatch_value["codex"][key] = "earlier-materialized"
+    -         dispatch_input.write_text(
+    -             json.dumps(dispatch_value, indent=2) + "\n", encoding="utf-8"
+    -         )
+939 +         dispatch_input.write_text(json.dumps(dispatch_value, indent=2) + "\n", encoding="utf-8")
+940 |         hostile_cwd = (
+    -             ROOT
+    -             / "plans"
+    -             / "general-coding-harness"
+    -             / "runtime"
+    -             / "firmware-v2"
+    -             / "worktrees"
+    -             / "harness-candidate"
+941 +             ROOT / "plans" / "general-coding-harness" / "runtime" / "firmware-v2" / "worktrees" / "harness-candidate"
+942 |         )
+--------------------------------------------------------------------------------
+970 |         )
+    -         status = json.loads(
+    -             (workspace / "controller.status.json").read_text(encoding="utf-8")
+    -         )
+971 +         status = json.loads((workspace / "controller.status.json").read_text(encoding="utf-8"))
+972 |         assert status["state"] == "CODEX_EXITED"
+--------------------------------------------------------------------------------
+976 |         assert status["launcher_settings"]["model"] == expected_settings["model"]
+    -         assert (
+    -             status["launcher_settings"]["model_reasoning_effort"]
+    -             == expected_settings["reasoning_effort"]
+    -         )
+    -         assert (
+    -             status["launcher_settings"]["service_tier"]
+    -             == expected_settings["service_tier"]
+    -         )
+    -         observed_claims = json.loads(
+    -             (run_root / "resource-observed.json").read_text(encoding="utf-8")
+    -         )
+    -         assert observed_claims == [
+    -             hashlib.sha256(b"stable-controller-proof").hexdigest() + ".json"
+    -         ]
+977 +         assert status["launcher_settings"]["model_reasoning_effort"] == expected_settings["reasoning_effort"]
+978 +         assert status["launcher_settings"]["service_tier"] == expected_settings["service_tier"]
+979 +         observed_claims = json.loads((run_root / "resource-observed.json").read_text(encoding="utf-8"))
+980 +         assert observed_claims == [hashlib.sha256(b"stable-controller-proof").hexdigest() + ".json"]
+981 |         assert list(resource_lock_root.iterdir()) == []
+982 |         assert "stable-general-harness-runner" in completed.stderr
+983 |         assert "finding_gate" not in json.loads(projected.read_text(encoding="utf-8"))
+    -         assert "child_environment_isolation" not in json.loads(
+    -             projected.read_text(encoding="utf-8")
+    -         )
+984 +         assert "child_environment_isolation" not in json.loads(projected.read_text(encoding="utf-8"))
+985 |         assert record["root_must_validate_before_acceptance"] is True
+    |
+
+5 files would be reformatted, 12 files already formatted

@@ -1,0 +1,15 @@
+{
+  "schema": "canary-optional-watcher-audit/v1",
+  "epoch": "20260731-s1-clean-p",
+  "classification": "PASS_FOR_THIS_NONCOUNTING_EPOCH",
+  "evaluated_polls": 10,
+  "defect_outcomes": 0,
+  "alert_outcomes": 0,
+  "durable_alerts": 0,
+  "final_stale_quarantine": {},
+  "service_exit_reason": "stop-requested",
+  "service_exited_utc": "2026-08-01T00:31:34.092759+00:00",
+  "source_events": "harness_watcher/runs/20260731-s1-clean-p/watcher/events.jsonl",
+  "source_cursor": "harness_watcher/runs/20260731-s1-clean-p/watcher/cursor.json",
+  "note": "The source stream included transient primary-harness stale observations during controller finalization. The optional watcher produced no durable alert, consistent with the Clean-O stale-quarantine repair. This watcher result does not make the overall sprint countable because the lane executions had material run-local defects."
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "bash -lc \u0027command -v python3; python3 --version; command -v python; python --version\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Interpreter discovery and version output should complete immediately; 20 seconds covers shell startup.",
+    "started_at":  "2026-08-14T09:24:02.9743873+00:00",
+    "finished_at":  "2026-08-14T09:24:05.3203131+00:00",
+    "elapsed_seconds":  2.346,
+    "root_process_id":  174100,
+    "observed_process_ids":  [
+                                 174100
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  127,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\bash-python-discovery.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\bash-python-discovery.stderr.log"
+}

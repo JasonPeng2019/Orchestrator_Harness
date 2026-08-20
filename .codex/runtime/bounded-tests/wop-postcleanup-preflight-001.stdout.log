@@ -1,0 +1,40 @@
+{
+  "artifacts": {
+    "dependency_map": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\wop-0365\\.agent-workspace\\DEPENDENCY_MAP.json",
+      "sha256": "5e3281083cb752d5614f8b36db6a35e8830cbc86c40764c505040ae53caa2e7a"
+    },
+    "invocation": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\generalization\\generalization-20260810T182017Z-0365e2613294\\stages\\WORKSPACE_OVERLAY\\lanes\\WO.P\\INVOCATION_002.json",
+      "sha256": "286783274196277f4d77b551df9ab79bf6cd8cbbb77833cc8d41e97ba42693c8"
+    },
+    "result": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\wop-0365\\.agent-workspace\\RESULT.json",
+      "sha256": "bcc52f37ca70d9eb284b8484f27085b0c890f1e52bfde5a20e8de93591597d17"
+    },
+    "task_card": {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\generalization\\generalization-20260810T182017Z-0365e2613294\\stages\\WORKSPACE_OVERLAY\\lanes\\WO.P\\TASK_CARD_002.json",
+      "sha256": "e32db16d79677c6e7ba8a2691d4215f11fe894e1cc9ea32bc64d9e6ac68ac929"
+    }
+  },
+  "disposition": "PASS",
+  "failed_predicates": [],
+  "identity": {
+    "branch": "firmware/v2-workspace-overlay-generalization-0365",
+    "commit": "9d77511786dc173dbc21181dbb1b4076e9da50c5",
+    "lane_id": "WO.P",
+    "starting_commit": "37ef1a69019057ee3210f0fae7682558768942ca",
+    "worker_invocation_id": "generalization-workspace-overlay-product-001-deepseek-handoff-001"
+  },
+  "required_evidence": [
+    {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\wop-0365\\.agent-workspace\\bounded\\overlay-policy-005.result.json",
+      "sha256": "f0ddce8de6d8b56a16b781afa5a71b606ccb9f869c18e045c00e6db49ca7bcc6"
+    },
+    {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\wop-0365\\.agent-workspace\\boundary-smoke.status.json",
+      "sha256": "e55f913a372a1edeb29d454d7f987d29d4c1e362ac5bc802c5578f2bd56a85e3"
+    }
+  ],
+  "schema": "orchestrator-handoff-preflight-result/v1"
+}

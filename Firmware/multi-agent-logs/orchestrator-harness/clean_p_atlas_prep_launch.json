@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "python.exe",
+    "-m",
+    "orchestrator_harness.lane_controller",
+    "fresh-experiments/A22_20260726-062324/.agent-workspace/atlas_a22_s1_clean_p_prep.invocation.json"
+  ],
+  "created_utc": "2026-07-31T23:59:42.916123Z",
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+  "expected_state_path": null,
+  "label": "atlas_a22_s1_clean_p_prep",
+  "launched_utc": "2026-07-31T23:59:42.915396Z",
+  "pid": 185784,
+  "platform": "windows",
+  "role": "lane-controller",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "launched"
+}

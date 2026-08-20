@@ -1,0 +1,15 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== types changed Python ==
+0 errors, 0 warnings, 0 notes
+
+== compile changed Python ==
+
+== Firmware change-loop self-check ==
+change-loop self-check: PASS (syntax, layout, prompt, neutral gate, and pending provider boundary)
+
+== firmware changed tests ==
+
+VERIFY_CHANGED: PASS (7 changed code path(s))

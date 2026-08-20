@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  225,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  45,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The required change-aware verifier previously completed its static formatting stages in under six seconds. Three minutes permits the selected tests and static checks from a cold environment after the exact-config formatting correction; 45 seconds is the policy-capped 25 percent cleanup allowance.",
+    "started_at":  "2026-08-14T22:22:20.2351299+00:00",
+    "finished_at":  "2026-08-14T22:22:22.7899951+00:00",
+    "elapsed_seconds":  2.555,
+    "root_process_id":  184444,
+    "observed_process_ids":  [
+                                 184444
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-doer-proof-contract-verify-changed-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-doer-proof-contract-verify-changed-20260814.stderr.log"
+}

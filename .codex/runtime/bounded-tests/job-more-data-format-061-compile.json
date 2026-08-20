@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe\u0027 -m py_compile orchestrator_harness/tests/test_s4_repair.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\wshrt-061",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Single-file py_compile of the formatted test; the retained interpreter compiles the full package in seconds, so 30s is a conservative upper bound with the 5s short-command cleanup allowance.",
+    "started_at":  "2026-08-16T06:58:06.6018044+00:00",
+    "finished_at":  "2026-08-16T06:58:09.5565850+00:00",
+    "elapsed_seconds":  2.955,
+    "root_process_id":  194000,
+    "observed_process_ids":  [
+                                 194000
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\job-more-data-format-061-compile.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\job-more-data-format-061-compile.stderr.log"
+}

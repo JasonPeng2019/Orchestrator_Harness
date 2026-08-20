@@ -1,0 +1,9 @@
+test_FC37_windows_job_assigned_and_list_mismatch_is_incomplete (orchestrator_harness.tests.test_s4_repair.S4RepairRegressionTests.test_FC37_windows_job_assigned_and_list_mismatch_is_incomplete) ... ok
+test_FC42_windows_job_equal_counts_require_returned_pid_bytes (orchestrator_harness.tests.test_s4_repair.S4RepairRegressionTests.test_FC42_windows_job_equal_counts_require_returned_pid_bytes) ... ok
+test_FC43_windows_job_retry_policy_is_bounded_for_oversized_and_changing_counts (orchestrator_harness.tests.test_s4_repair.S4RepairRegressionTests.test_FC43_windows_job_retry_policy_is_bounded_for_oversized_and_changing_counts) ... ok
+test_FC45_windows_job_more_data_retries_and_other_errors_fail_closed (orchestrator_harness.tests.test_s4_repair.S4RepairRegressionTests.test_FC45_windows_job_more_data_retries_and_other_errors_fail_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.242s
+
+OK

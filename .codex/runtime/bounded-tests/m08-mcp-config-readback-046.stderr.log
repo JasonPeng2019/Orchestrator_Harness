@@ -1,0 +1,6 @@
+Error: failed to load bootstrap configuration
+
+Caused by:
+    invalid type: string "[run,--project,C:/Users/Jason/Documents/Jason/Orchestrator_Harness/Firmware/BYO-Firmware-MCP,--locked,pyocd-debug-mcp]", expected a sequence
+    in `mcp_servers.byo_firmware.args`
+    

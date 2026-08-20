@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "python",
+    "-m",
+    "orchestrator_harness",
+    "--config",
+    "orchestrator_harness/canary-20260801-attention-r14.json",
+    "watch",
+    "--managed"
+  ],
+  "created_utc": "2026-08-01T21:12:54.398015Z",
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+  "expected_state_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\.agent-workspace\\ORCHESTRATOR_HARNESS\\20260801-attention-r14_primary_identity.json",
+  "label": "attention-r14-primary",
+  "launched_utc": "2026-08-01T21:12:54.396822Z",
+  "pid": 183848,
+  "platform": "windows",
+  "role": "harness",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "launched"
+}

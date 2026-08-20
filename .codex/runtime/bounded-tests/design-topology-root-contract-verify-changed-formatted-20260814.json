@@ -1,0 +1,29 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  57,
+    "expected_upper_bound_seconds":  45,
+    "cleanup_allowance_seconds":  12,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Recent change-aware verification completed in 15 seconds; 45 seconds covers static analysis, compilation, the topology validator self-test, and impacted Codex tests after formatting.",
+    "started_at":  "2026-08-14T23:35:00.1737725+00:00",
+    "finished_at":  "2026-08-14T23:35:20.7901051+00:00",
+    "elapsed_seconds":  20.616,
+    "root_process_id":  197488,
+    "observed_process_ids":  [
+                                 3712,
+                                 97700,
+                                 174512,
+                                 176144,
+                                 193908,
+                                 194940,
+                                 197488,
+                                 198532
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\design-topology-root-contract-verify-changed-formatted-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\design-topology-root-contract-verify-changed-formatted-20260814.stderr.log"
+}

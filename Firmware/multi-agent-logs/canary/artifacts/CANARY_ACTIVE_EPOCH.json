@@ -1,0 +1,26 @@
+{
+  "schema": "canary-active-epoch/v1",
+  "epoch": "20260731-s1-clean-p",
+  "status": "ATLAS_WRAP_BOREAL_ENDPOINT_RUNNING",
+  "counter_before": "0/3",
+  "counter_after": "0/3",
+  "manager": "root-current-session",
+  "target": ".agent-workspace/CANARY_S1_CLEAN_P_TARGET.md",
+  "primary_config": "orchestrator_harness/canary-20260731-s1-clean-p.json",
+  "optional_config": "harness_watcher_implementation/canary-20260731-s1-clean-p.json",
+  "created_utc": "2026-07-31T23:58:09.983135+00:00",
+  "updated_utc": "2026-08-01T00:15:39.012259+00:00",
+  "no_live_authority_reuse": true,
+  "clean_o_evidence_preserved": true,
+  "host_controllers": [
+    ".agent-workspace/ORCHESTRATOR_HARNESS/clean_p_atlas_prep_launch.json",
+    ".agent-workspace/ORCHESTRATOR_HARNESS/clean_p_boreal_prep_launch.json",
+    ".agent-workspace/ORCHESTRATOR_HARNESS/clean_p_cygnus_prep_launch.json",
+    ".agent-workspace/ORCHESTRATOR_HARNESS/clean_p_delta_prep_launch.json"
+  ],
+  "live_controller": ".agent-workspace/ORCHESTRATOR_HARNESS/clean_p_atlas_endpoint_launch.json",
+  "live_controllers": [
+    ".agent-workspace/ORCHESTRATOR_HARNESS/clean_p_atlas_endpoint_launch.json",
+    ".agent-workspace/ORCHESTRATOR_HARNESS/clean_p_boreal_endpoint_launch.json"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "recent change-aware verifier completed in about 31 seconds; 60-second upper bound includes current skill/docs edits and cold startup, with 15-second policy-capped cleanup; rerun follows validator formatting correction",
+    "started_at":  "2026-08-15T10:56:10.2056529+00:00",
+    "finished_at":  "2026-08-15T10:56:12.8904523+00:00",
+    "elapsed_seconds":  2.685,
+    "root_process_id":  171132,
+    "observed_process_ids":  [
+                                 171132
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\topology-verification-efficiency-verify-changed-20260815-02.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\topology-verification-efficiency-verify-changed-20260815-02.stderr.log"
+}

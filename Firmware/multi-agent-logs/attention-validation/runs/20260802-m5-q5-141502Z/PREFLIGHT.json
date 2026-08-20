@@ -1,0 +1,12 @@
+{
+  "epoch": "20260802-m5-q5-141502Z",
+  "created_utc": "2026-08-02T14:15:02.988091Z",
+  "qualifying_count_before": "0/3",
+  "attempt": "5/10",
+  "python_baseline_match": true,
+  "python_baseline_file_sha256": "b22152516ef20f2d7f2bcb1ade5e316517810e16494d96203268bd03bf311d60",
+  "policy_baseline_match": true,
+  "boundary_validation": "PASS",
+  "root_decision": "START",
+  "safe_boundary": true
+}

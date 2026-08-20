@@ -1,0 +1,26 @@
+{
+  "runtime_root": "harness_watcher/m5-diagnostic-luna-clean-20260801",
+  "observed_sources": [
+    {
+      "path": "C:/Users/Jason/Documents/Jason/FirmCLI_Tester/Firmware-Test-Manual/MCP-Trial-3/multi-agent-logs/verification/m5-diagnostic-watcher-luna-smoke-20260801/changed-source-clean.jsonl",
+      "role": "orchestrator",
+      "source_id": "root"
+    }
+  ],
+  "attention_logging_enabled": true,
+  "attention_producers": [
+    {
+      "role": "subagent",
+      "source_id": "luna-smoke"
+    }
+  ],
+  "poll_interval_seconds": 1,
+  "no_progress_seconds": 900,
+  "max_tail_bytes": 65536,
+  "evaluator_enabled": false,
+  "evaluator_command": [
+    "python",
+    "-c",
+    "from pathlib import Path; Path(r'C:/Users/Jason/Documents/Jason/FirmCLI_Tester/Firmware-Test-Manual/MCP-Trial-3/multi-agent-logs/verification/m5-diagnostic-watcher-luna-smoke-20260801/evaluator-sentinel').write_text('CALLED', encoding='utf-8')"
+  ]
+}

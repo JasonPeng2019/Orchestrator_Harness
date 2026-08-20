@@ -1,0 +1,14 @@
+{
+    "schema":  "m5-quiet-control/v1",
+    "epoch":  "20260802-m5-s1-052110Z",
+    "started_utc":  "2026-08-02T05:27:38.3970921Z",
+    "finished_utc":  "2026-08-02T05:28:00.8175782Z",
+    "exit_code":  3,
+    "expected_exit_code":  3,
+    "stdout_path":  "QUIET_CONTROL.stdout.json",
+    "stderr_path":  "QUIET_CONTROL.stderr.log",
+    "wake_output":  false,
+    "valid":  true,
+    "returned_type":  "WATCH_TIMEOUT",
+    "returned_event_id":  "WATCH_TIMEOUT"
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python -c \u0027import json,sys; from pathlib import Path; sys.path.insert(0, rstable-general-harness-runner ); from orchestrator_harness.git_safety import declaration_from_invocation, validate_coding_result; inv=json.loads(Path(rplans/general-coding-harness/runtime/firmware-v2/generalization/generalization-20260810T182017Z-0365e2613294/stages/RELEASE/lanes/RELEASE.FORMAT.P/INVOCATION_003.json).read_text(encoding=utf-8)); result=json.loads(Path(rplans/general-coding-harness/runtime/firmware-v2/worktrees/.harness-candidate-worktrees/plan2-release-format-001/.agent-workspace/RESULT.json).read_text(encoding=utf-8)); declaration=declaration_from_invocation(inv, Path(inv[run_root])); identity=validate_coding_result(result, lane_id=inv[lane_id], worker_invocation_id=inv[worker_invocation_id], declaration=declaration); print(identity.head_commit)\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Stable result-schema validation over one local JSON result and clean Git worktree normally completes in seconds.",
+    "started_at":  "2026-08-14T19:33:28.4259101+00:00",
+    "finished_at":  "2026-08-14T19:33:30.2155206+00:00",
+    "elapsed_seconds":  1.79,
+    "root_process_id":  151904,
+    "observed_process_ids":  [
+                                 151904
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-format-result-validation-003.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-format-result-validation-003.stderr.log"
+}

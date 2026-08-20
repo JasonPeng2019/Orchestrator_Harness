@@ -1,0 +1,2 @@
+ERROR: angle-bracket placeholders remain: <folder>, <harness-worktree>, <owned-snapshot>, <target>
+ERROR: MI-WORKSPACE-OVERLAY-PRODUCT does not use all 20 local task-card fields in order

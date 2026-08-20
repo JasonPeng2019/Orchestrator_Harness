@@ -1,0 +1,13 @@
+{
+  "timeout_event": {
+    "data": {
+      "timeout_seconds": 0.3
+    },
+    "event_id": "WATCH_TIMEOUT",
+    "identity": "watch:timeout",
+    "observed_utc": "2026-08-02T01:50:10.865223+00:00",
+    "severity": "info",
+    "type": "WATCH_TIMEOUT"
+  },
+  "wake_records": []
+}

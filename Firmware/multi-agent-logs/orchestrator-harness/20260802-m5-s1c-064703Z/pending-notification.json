@@ -1,0 +1,25 @@
+{
+  "acknowledged_event_ids": [],
+  "deferred": [],
+  "pending": {
+    "data": {
+      "codex_pid": 14700,
+      "codex_started_utc": "2026-08-02T06:43:50.529445Z",
+      "controller_pid": 186360,
+      "controller_started_utc": "2026-08-02T06:43:49.750063Z",
+      "doer": "Atlas",
+      "lane_id": "20260802-m5-s1b-063804Z:Atlas:A22",
+      "reason": "running declaration contradicts process identity",
+      "run_root": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324",
+      "state": "STALE_STATUS",
+      "task": "A22"
+    },
+    "event_id": "445d7b5ff3cbb9b7d966559f02c24be98eb00b9af5c317de46e968f28e83a656",
+    "identity": "lane:20260802-m5-s1b-063804Z:Atlas:A22:process",
+    "notification": "MANAGER_ACTION_REQUIRED",
+    "observed_utc": "2026-08-02T06:48:41.166174Z",
+    "severity": "error",
+    "type": "STALE_STATUS"
+  },
+  "schema": "orchestrator-manager-notification/v1"
+}

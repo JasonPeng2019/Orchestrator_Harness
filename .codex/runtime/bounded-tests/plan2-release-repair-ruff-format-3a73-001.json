@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe -m ruff format --check orchestrator_harness/firmware_adapter.py orchestrator_harness/tests/test_s5_capability_broker.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\woc-0365",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "CHECK-CANDIDATE-REPAIR authoritative changed-file Ruff format check",
+    "started_at":  "2026-08-14T18:22:35.9197600+00:00",
+    "finished_at":  "2026-08-14T18:22:38.0739593+00:00",
+    "elapsed_seconds":  2.154,
+    "root_process_id":  145300,
+    "observed_process_ids":  [
+                                 145300
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-ruff-format-3a73-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-ruff-format-3a73-001.stderr.log"
+}

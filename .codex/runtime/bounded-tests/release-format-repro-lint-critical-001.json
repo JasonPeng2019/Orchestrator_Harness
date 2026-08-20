@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 \u0027C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev/.venv/Scripts/python.exe\u0027 -m ruff check --select E9,F63,F7,F82 .",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-release-format-repro-001",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Focused Ruff fatal/undefined-name lint over the local tree normally completes in seconds.",
+    "started_at":  "2026-08-14T19:40:32.3306520+00:00",
+    "finished_at":  "2026-08-14T19:40:34.3391471+00:00",
+    "elapsed_seconds":  2.008,
+    "root_process_id":  4872,
+    "observed_process_ids":  [
+                                 4872
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-format-repro-lint-critical-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\release-format-repro-lint-critical-001.stderr.log"
+}

@@ -1,0 +1,3 @@
+ERROR PROVIDER_ADAPTER.md: missing provider-contract clause: No provider CLI, provider configuration, or provider-launch adapter is implemented
+ERROR PROVIDER_ADAPTER.md: adapter-pending status is missing
+AUTONOMY_AUDIT_FAIL errors=2

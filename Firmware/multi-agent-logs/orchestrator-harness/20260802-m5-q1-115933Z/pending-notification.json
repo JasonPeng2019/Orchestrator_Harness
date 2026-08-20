@@ -1,0 +1,44 @@
+{
+  "acknowledged_event_ids": [
+    "2533a0a1dba65884cdc866aba8edf18b45acd45cb14957f5f27c73df1cf65eba",
+    "81e95d2697656060ed0a3aa134ed96188035c3badeac697056296cb40bffce46",
+    "e1bdaab3f9ad85441bca649ed8b71a94361f617cdac46a7967a6721db875b5e1",
+    "6335079a3156c8b6a9a3e7700a636eac22e7a8f96308013bd3de159e6230ac1d",
+    "4a7adb4de7a51bcc6dd34920f04009074873ee71f4b32bdf7b8fe30205dd352a",
+    "db1c2fab90b1e0d32da47ad60afdd6b37919d9fbfbc69f261d8bc9bfc1858692"
+  ],
+  "deferred": [
+    {
+      "admitted_utc": "2026-08-02T12:06:34.007389Z",
+      "deadline_order": "9999-12-31T23:59:59Z",
+      "event": {
+        "data": {
+          "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+          "checkpoint_sha256": "54245b6a2111001afbbbae688f6b79fbecdecfd96b686736938c6d1bfb078501",
+          "lane_id": "20260802-m5-q1-115933Z:Delta:A26"
+        },
+        "event_id": "68391d53e8498da035c14d74e032fbacd2572a9ea88341316642869524780714",
+        "identity": "lane:20260802-m5-q1-115933Z:Delta:A26:checkpoint",
+        "severity": "info",
+        "type": "CHECKPOINT_UPDATED"
+      },
+      "identity": "lane:20260802-m5-q1-115933Z:Delta:A26:checkpoint",
+      "priority": 5
+    }
+  ],
+  "pending": {
+    "admitted_utc": "2026-08-02T12:09:08.395836Z",
+    "data": {
+      "checkpoint_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\PARALLEL_CHECKPOINT.md",
+      "checkpoint_sha256": "69bdee8d12ef4eed5a7317ff2368c50cedb95d18a4a56d9a7b1c9eddae64833b",
+      "lane_id": "20260802-m5-q1-115933Z:Cygnus:A24"
+    },
+    "event_id": "b5a3f118202bceda29b9810d7d11fd34201f31cd83f691f809074ab9192aa285",
+    "identity": "lane:20260802-m5-q1-115933Z:Cygnus:A24:checkpoint",
+    "notification": "MANAGER_ACTION_REQUIRED",
+    "observed_utc": "2026-08-02T12:10:25.433485Z",
+    "severity": "info",
+    "type": "CHECKPOINT_UPDATED"
+  },
+  "schema": "orchestrator-manager-notification/v1"
+}

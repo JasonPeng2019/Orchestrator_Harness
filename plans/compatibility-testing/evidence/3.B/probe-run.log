@@ -1,0 +1,32 @@
+{
+  "probe": "3.B watch --until-actionable live subprocess",
+  "clone_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test",
+  "python": "3.14.2",
+  "overall": "PASS",
+  "cases": [
+    {
+      "case": "positive-manager-signal-wake",
+      "returncode": 0,
+      "elapsed_s": 5.16,
+      "injected_at_s": 2.52,
+      "event_types": [
+        "MANAGER_SIGNAL"
+      ],
+      "stdout": "{\"data\":{\"correlated_request_answered\":false,\"correlated_request_id\":null,\"correlated_request_path\":null,\"created_utc\":\"2026-07-30T12:00:00Z\",\"deadline_utc\":null,\"evidence_paths\":[\"missing/secret.txt\"],\"kind\":\"HELP\",\"lane_id\":\"A00_test:Atlas:A00\",\"path\":\"C:\\\\Users\\\\Jason\\\\Documents\\\\Jason\\\\Orchestrator_Harness\\\\harness-single-worktrees\\\\compat-test\\\\scratch\\\\3B\\\\run\\\\positive\\\\suite\\\\runs\\\\A00_test\\\\.agent-workspace\\\\manager-signals\\\\wake.json\",\"phase\":null,\"run_root\":\"C:\\\\Users\\\\Jason\\\\Documents\\\\Jason\\\\Orchestrator_Harness\\\\harness-single-worktrees\\\\compat-test\\\\scratch\\\\3B\\\\run\\\\positive\\\\suite\\\\runs\\\\A00_test\",\"sha256\":\"14ae4967243c1ba4ca5ad24beaf3b66630c3b4c810dc5bab416c37b152b6c033\",\"signal_id\":\"wake\",\"summary\":\"manager input needed\",\"task\":null},\"event_id\":\"199fb379d52d10b57ca22e15036fd7eed26704fff8b5db7b1703a27785f8f115\",\"identity\":\"manager-signal:wake\",\"observed_utc\":\"2026-08-20T07:39:17.676090Z\",\"severity\":\"info\",\"type\":\"MANAGER_SIGNAL\"}\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    {
+      "case": "negative-nonactionable-no-wake",
+      "returncode": 3,
+      "elapsed_s": 8.38,
+      "injected_at_s": 2.01,
+      "event_types": [
+        "WATCH_TIMEOUT"
+      ],
+      "stdout": "{\"data\":{\"timeout_seconds\":6.0},\"event_id\":\"WATCH_TIMEOUT\",\"identity\":\"watch:timeout\",\"observed_utc\":\"2026-08-20T07:39:25.623723+00:00\",\"severity\":\"info\",\"type\":\"WATCH_TIMEOUT\"}\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    }
+  ]
+}

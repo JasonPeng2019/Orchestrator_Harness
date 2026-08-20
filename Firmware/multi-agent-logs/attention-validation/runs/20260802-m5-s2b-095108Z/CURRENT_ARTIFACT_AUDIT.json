@@ -1,0 +1,22 @@
+﻿[
+    {
+        "Path":  "fresh-experiments/A22_20260726-062324/repos/b14-board-setup-missing-args/source/app-stm-a/build-a22/app.elf",
+        "Hash":  null,
+        "Exists":  false
+    },
+    {
+        "Path":  "fresh-experiments/A24_20260726-052146/b/p/zephyr/zephyr.elf",
+        "Hash":  "650f52701da39a98eaa09feb05c88e05d0fc6829daa934e0094ecdb426cfbb67",
+        "Exists":  true
+    },
+    {
+        "Path":  "fresh-experiments/A24_20260726-052146/b/q/zephyr/zephyr.elf",
+        "Hash":  "2b01d96f4cd8cfb5e0859ff3bbb5b8e59d787277b3765039401482f2e3c0a883",
+        "Exists":  true
+    },
+    {
+        "Path":  "fresh-experiments/A26_20260726-062325/repos/i1-a26-adapter/source/app-stm-a/build-a26/app.elf",
+        "Hash":  "fa8500e663fa44340edb6cec9944b2b2efb89d32fb937ae61f1a03f275fb1177",
+        "Exists":  true
+    }
+]

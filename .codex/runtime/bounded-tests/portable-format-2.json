@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked ruff format --config .codex/dev/pyproject.toml --no-cache .codex/tests/test_hooks.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The directly preceding equivalent run established the runtime range; this bound retains cold-start headroom and policy-capped cleanup.",
+    "started_at":  "2026-08-13T23:50:45.5766053+00:00",
+    "finished_at":  "2026-08-13T23:50:47.2886330+00:00",
+    "elapsed_seconds":  1.712,
+    "root_process_id":  185220,
+    "observed_process_ids":  [
+                                 185220
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\portable-format-2.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\portable-format-2.stderr.log"
+}

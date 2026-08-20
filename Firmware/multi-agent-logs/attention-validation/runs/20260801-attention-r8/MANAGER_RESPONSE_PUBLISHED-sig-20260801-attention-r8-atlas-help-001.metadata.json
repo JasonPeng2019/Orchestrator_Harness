@@ -1,0 +1,8 @@
+{
+  "manager_session_id": "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+  "manager_invocation_id": "root-attention-r8-001",
+  "source_record_id": "76b61ede-5c5f-43b2-8f0b-208103bec37c",
+  "manager_state": "REASONING",
+  "decision": "CONTINUE_HOST_ONLY",
+  "response_path": "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\manager-responses\\sig-20260801-attention-r8-atlas-help-001.json"
+}

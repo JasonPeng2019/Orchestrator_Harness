@@ -1,0 +1,8 @@
+{"event":"CODEX_STARTED","utc":"2026-08-02T12:01:45.7440954Z","label":"m5-20260802-m5-q1-115933Z-Atlas-A22","declared_lane_id":"20260802-m5-q1-115933Z:Atlas:A22","controller_pid":190420,"codex_pid":2344}
+{"event":"CODEX_STARTED","utc":"2026-08-02T12:01:46.9380994Z","label":"m5-20260802-m5-q1-115933Z-Boreal-D31","declared_lane_id":"20260802-m5-q1-115933Z:Boreal:D31","controller_pid":195088,"codex_pid":179828}
+{"event":"CODEX_STARTED","utc":"2026-08-02T12:01:47.6150952Z","label":"m5-20260802-m5-q1-115933Z-Cygnus-A24","declared_lane_id":"20260802-m5-q1-115933Z:Cygnus:A24","controller_pid":190648,"codex_pid":194132}
+{"event":"CODEX_STARTED","utc":"2026-08-02T12:01:48.3439983Z","label":"m5-20260802-m5-q1-115933Z-Delta-A26","declared_lane_id":"20260802-m5-q1-115933Z:Delta:A26","controller_pid":189976,"codex_pid":194396}
+{"event":"CODEX_EXITED","utc":"2026-08-02T12:06:30.1023875Z","label":"m5-20260802-m5-q1-115933Z-Delta-A26","declared_lane_id":"20260802-m5-q1-115933Z:Delta:A26","thread_id":"019fb877-1441-7c92-84e2-cbb5bc422879","exit_code":null}
+{"event":"CODEX_EXITED","utc":"2026-08-02T12:07:27.2711521Z","label":"m5-20260802-m5-q1-115933Z-Boreal-D31","declared_lane_id":"20260802-m5-q1-115933Z:Boreal:D31","thread_id":"019fb877-1447-7693-92b1-f4bda04c6ecf","exit_code":null}
+{"event":"CODEX_EXITED","utc":"2026-08-02T12:09:25.7594989Z","label":"m5-20260802-m5-q1-115933Z-Atlas-A22","declared_lane_id":"20260802-m5-q1-115933Z:Atlas:A22","thread_id":"019fb877-1475-76c0-a137-2743580015de","exit_code":null}
+{"event":"CODEX_EXITED","utc":"2026-08-02T12:11:17.2640798Z","label":"m5-20260802-m5-q1-115933Z-Cygnus-A24","declared_lane_id":"20260802-m5-q1-115933Z:Cygnus:A24","thread_id":"019fb877-1199-79b1-a32e-34348178f111","exit_code":null}

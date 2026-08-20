@@ -1,0 +1,2 @@
+ERROR: MI-ATTENTION-PRACTICAL-CORRECT ordered_actions must contain M03-A1, M03-A2, M03-A3, M03-A4, M03-A5, M03-A6, M03-A7 exactly once and in order
+ERROR: Section 9 does not contain exact P01-P15 policy headings in order

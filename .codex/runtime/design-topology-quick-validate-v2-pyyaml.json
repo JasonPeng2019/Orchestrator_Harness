@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --with pyyaml python C:/Users/Jason/.codex/skills/.system/skill-creator/scripts/quick_validate.py .codex/skills/design-project-topology",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  55,
+    "expected_upper_bound_seconds":  45,
+    "cleanup_allowance_seconds":  10,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The corrected ephemeral dependency setup may resolve once before the seconds-long validation; 45 seconds gives ample installation and validation headroom.",
+    "started_at":  "2026-08-14T02:55:09.8235273+00:00",
+    "finished_at":  "2026-08-14T02:55:13.4512321+00:00",
+    "elapsed_seconds":  3.628,
+    "root_process_id":  184028,
+    "observed_process_ids":  [
+                                 184028
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\design-topology-quick-validate-v2-pyyaml.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\design-topology-quick-validate-v2-pyyaml.stderr.log"
+}

@@ -1,0 +1,24 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "TIMED_OUT",
+    "command":  "Start-Process powershell.exe -ArgumentList \u0027-NoProfile\u0027,\u0027-Command\u0027,\u0027Start-Sleep -Seconds 30\u0027 -WindowStyle Hidden; Start-Sleep -Seconds 30",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  2,
+    "heartbeat_interval_seconds":  1,
+    "timeout_basis":  "A deliberate timeout probe uses a two-second deadline to prove heartbeat, descendant termination, and cleanup verification.",
+    "started_at":  "2026-08-13T23:22:59.3446533+00:00",
+    "finished_at":  "2026-08-13T23:23:05.2479897+00:00",
+    "elapsed_seconds":  5.903,
+    "root_process_id":  8752,
+    "observed_process_ids":  [
+                                 8752,
+                                 17628,
+                                 172820,
+                                 174064,
+                                 193736
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  124,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\supervisor-timeout-probe.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\supervisor-timeout-probe.stderr.log"
+}

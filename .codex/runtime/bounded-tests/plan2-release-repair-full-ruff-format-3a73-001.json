@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe -m ruff format --check .",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\woc-0365",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Candidate release-format scope classification under repository UV tool environment",
+    "started_at":  "2026-08-14T18:23:27.2890105+00:00",
+    "finished_at":  "2026-08-14T18:23:39.9478732+00:00",
+    "elapsed_seconds":  12.659,
+    "root_process_id":  195120,
+    "observed_process_ids":  [
+                                 195120
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  2,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-full-ruff-format-3a73-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair-full-ruff-format-3a73-001.stderr.log"
+}

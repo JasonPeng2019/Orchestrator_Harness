@@ -1,0 +1,8 @@
+test_out_of_tree_wheel_resolves_one_canonical_asset_tree_and_leaves_source_clean (orchestrator_harness.tests.test_s6_public_release.S6PackageTests.test_out_of_tree_wheel_resolves_one_canonical_asset_tree_and_leaves_source_clean) ... ok
+test_package_exports_optional_firmware_seam_types (orchestrator_harness.tests.test_s6_public_release.S6PackageTests.test_package_exports_optional_firmware_seam_types) ... ok
+test_package_manifest_and_metadata_declare_shipped_release_surface (orchestrator_harness.tests.test_s6_public_release.S6PackageTests.test_package_manifest_and_metadata_declare_shipped_release_surface) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 9.516s
+
+OK

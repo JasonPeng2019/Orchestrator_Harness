@@ -1,0 +1,8 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\Jason\Documents\Jason\Orchestrator_Harness
+collected 35 items
+
+.codex\tests\test_stable_runner.py ...................................   [100%]
+
+============================= 35 passed in 25.37s =============================

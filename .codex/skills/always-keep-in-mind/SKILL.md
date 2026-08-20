@@ -133,10 +133,31 @@ case" is handled by orchestrating what exists — **not** by adding another bran
 to a `switch` statement.
 
 
----
+
+### 7. Proportionality — earn the complexity budget
+Build for normal, intended usage and target a product that works reliably for at
+least 99% of its real use. Every proposed fix, repair, guard, and edge-case
+handling path must be justified by a problem that is realistic within the
+product's actual operating model.
+
+- **Weigh the problem against the cost.** Consider how often it occurs in normal
+  use, how harmful it is when it occurs, the implementation and maintenance
+  effort, and the risk that the change creates new bugs or makes ordinary work
+  worse.
+- **Require a 4:1 expected-value margin.** Do not implement a fix unless its
+  expected normal-use benefit outweighs its combined implementation cost,
+  maintenance burden, and introduced-bug risk by at least four to one. When that
+  margin is not present, record the limitation honestly if needed and leave the
+  product simple.
+- **Do not promote extreme cases into product requirements by default.** Exotic,
+  adversarial, or highly contrived cases are worth addressing only when the real
+  trust boundary, a concrete incident, an explicit product requirement, or the
+  normal-use impact justifies their cost. A required safety or correctness
+  obligation still must be met, but choose the smallest implementation that meets
+  it.
 
 
-## 7. Operating assumptions — design for the actual case
+### 8. Operating assumptions — design for the actual case
 Build for ordinary work under the conditions this code will actually run in, not
 for exotic edge cases that won't happen — and not against a threat that can't
 reach it.
@@ -172,7 +193,7 @@ reach it.
   where reality demands it; not paranoid where it doesn't.
 
 
-## 8. No paternalistic guarding — but do catch the caller's mistakes
+### 9. No paternalistic guarding — but do catch the caller's mistakes
 The code protects **correctness**. It does **not** protect the engineer from their
 own legitimate project, and it does **not** harden trusted input against attacks
 the deployment model says cannot happen. Over-defensive guarding is a defect: it
@@ -227,7 +248,7 @@ attacker outside the threat model, or stops the user from doing something
 versus mistake: **guard the mistake, permit the intended risk.**
 
 
-### Worked example — applying a change to a mismatched target
+#### Worked example — applying a change to a mismatched target
 
 The same scenario resolved three ways. A caller invokes
 `apply_migration(connection="prod-db-01", migration="add_billing_index.sql")`. The
@@ -318,6 +339,10 @@ A change is done when all of these hold:
    fallible caller's own mistakes — a request contradicting verified state, a
    destructive step on an unverified target, an unbounded retry loop — are
    correctness guards and are expected to be present, not stripped.
+8. Its normal-use benefit justifies its complexity: the expected benefit exceeds
+   implementation cost, maintenance burden, and introduced-bug risk by at least
+   4:1, unless an explicit correctness, safety, or product requirement requires
+   the smallest effective exception.
 
 
 ---

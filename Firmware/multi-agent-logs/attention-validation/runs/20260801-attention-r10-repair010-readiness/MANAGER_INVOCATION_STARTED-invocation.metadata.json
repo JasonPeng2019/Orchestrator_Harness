@@ -1,0 +1,19 @@
+{
+  "manager_session_id": "readiness-session",
+  "manager_invocation_id": "readiness-invocation",
+  "pending_work_snapshot": {
+    "complete": true,
+    "events": [
+      {
+        "event_id": "healthy",
+        "type": "HELP",
+        "priority": 1,
+        "age_seconds": 0,
+        "agent_blocked": true,
+        "response_deadline_utc": "2026-08-01T20:22:29.414236Z"
+      }
+    ],
+    "selected_event_id": "healthy",
+    "selection_reason": "SELECT_ACTIONABLE"
+  }
+}

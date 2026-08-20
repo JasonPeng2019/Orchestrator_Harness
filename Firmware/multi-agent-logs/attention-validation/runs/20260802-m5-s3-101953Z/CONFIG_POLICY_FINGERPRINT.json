@@ -1,0 +1,49 @@
+{
+  "schema": "m5-runtime-policy-fingerprint/v1",
+  "epoch": "20260802-m5-s3-101953Z",
+  "created_utc": "2026-08-02T10:20:57.563082Z",
+  "sha256": "89bb18cb67282fe4e71c198d9a3b4a279c6cb1412710a98b9a0a720316ec0f04",
+  "matches_baseline": true,
+  "projection": {
+    "schema": "m5-runtime-policy-projection/v1",
+    "harness": {
+      "poll_interval_seconds": 1,
+      "watch_timeout_seconds": 45,
+      "manager_review_interval_seconds": 900,
+      "lane_no_progress_seconds": 1200,
+      "manager_heartbeat_timeout_seconds": 2100,
+      "request_warning_seconds": 120,
+      "request_critical_seconds": 30,
+      "process_start_tolerance_seconds": 2,
+      "max_json_bytes": 4000000,
+      "max_jsonl_tail_bytes": 512000,
+      "stable_read_retries": 4,
+      "stable_read_delay_seconds": 0.03,
+      "attention_logging_enabled": true,
+      "attention_sprint_lifetime_seconds": 1800
+    },
+    "watcher": {
+      "poll_interval_seconds": 2,
+      "no_progress_seconds": 1200,
+      "max_tail_bytes": 262144,
+      "evaluator_enabled": false,
+      "attention_logging_enabled": true,
+      "attention_lock_timeout_seconds": 5
+    },
+    "runtime_boundary": {
+      "harness": "native managed module entry point",
+      "watcher": "native deterministic diagnostic-only module entry point",
+      "request_discovery": "native blocking harness wait only",
+      "forbidden_support": [
+        "runner",
+        "harness wrapper",
+        "relay",
+        "scheduler",
+        "retry controller",
+        "automated event handler",
+        "watcher subagent",
+        "AI evaluator"
+      ]
+    }
+  }
+}

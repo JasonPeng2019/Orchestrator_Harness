@@ -1,0 +1,8 @@
+{
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r11-001",
+    "manager_state":  "READING_EVENT",
+    "source_record_id":  "fa8246e5-456f-4e0c-8206-bcd43e6e5687",
+    "wake_transport":  "collaboration.send_message",
+    "continuous_from_record_id":  "a7316456-ac43-4a35-8339-c2756572b543"
+}

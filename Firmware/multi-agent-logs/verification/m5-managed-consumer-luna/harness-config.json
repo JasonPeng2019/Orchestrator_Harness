@@ -1,0 +1,20 @@
+{
+  "suite_root": "C:/Users/Jason/Documents/Jason/FirmCLI_Tester/Firmware-Test-Manual/MCP-Trial-3/multi-agent-logs/verification/m5-managed-consumer-luna/fixture-suite",
+  "run_globs": ["runs/*"],
+  "workspace_relpath": ".agent-workspace",
+  "output_dir": "C:/Users/Jason/Documents/Jason/FirmCLI_Tester/Firmware-Test-Manual/MCP-Trial-3/multi-agent-logs/verification/m5-managed-consumer-luna/fixture-suite/multi-agent-logs/harness-output",
+  "poll_interval_seconds": 0.1,
+  "watch_timeout_seconds": 0.8,
+  "manager_review_interval_seconds": 1,
+  "lane_no_progress_seconds": 30,
+  "manager_heartbeat_timeout_seconds": 420,
+  "request_warning_seconds": 120,
+  "request_critical_seconds": 30,
+  "process_start_tolerance_seconds": 2,
+  "max_json_bytes": 4000000,
+  "max_jsonl_tail_bytes": 512000,
+  "stable_read_retries": 4,
+  "stable_read_delay_seconds": 0.03,
+  "attention_logging_enabled": true,
+  "attention_epoch_id": "m5-managed-consumer-luna"
+}

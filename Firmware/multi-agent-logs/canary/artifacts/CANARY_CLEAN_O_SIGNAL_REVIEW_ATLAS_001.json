@@ -1,0 +1,11 @@
+﻿{
+    "schema":  "canary-manager-signal-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:25:41.9002328Z",
+    "event_id":  "a21bab10215a75df9f39fea93c5e5314cb72fe9d7698e903a17780dad2cf9866",
+    "signal_id":  "sig-20260731-s1-clean-o-atlas-a22-checkpoint-live-failure-20260731T232246Z",
+    "signal_sha256":  "4b15ecc3a914e8edd01a1c910af33cb247df333d9781810213cccd858260aa5e",
+    "verdict":  "ACCEPTED_NONTERMINAL_TEST_FIXTURE_FAILURE",
+    "classification":  "RUN_LOCAL_ADAPTER_DEFECT_NOT_SERVER_OR_HARNESS",
+    "analysis":  "Exact signal/evidence confirms one O lifetime, valid provider/public MCP setup routing, then the run-local N-derived parser wrongly required JSON for the server plain-text plan guidance. No populated plan, request, board operation, retry, or residue occurred. Preserve evidence; fix only in a future fresh epoch, not this O lifetime."
+}

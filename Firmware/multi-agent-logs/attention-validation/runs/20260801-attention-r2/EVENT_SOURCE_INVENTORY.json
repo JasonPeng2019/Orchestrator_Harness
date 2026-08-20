@@ -1,0 +1,110 @@
+﻿{
+    "schema":  "attention-event-source-inventory/v1",
+    "epoch_id":  "20260801-attention-r2",
+    "status":  "SEALED_AFTER_DETACHED_READINESS_REPAIR",
+    "manager":  {
+                    "source_id":  "main-orchestrator",
+                    "transport":  "record-attention CLI",
+                    "required_kinds":  [
+                                           "MANAGER_INVOCATION_STARTED",
+                                           "MANAGER_WAIT_STARTED",
+                                           "MANAGER_WAIT_FINISHED",
+                                           "MANAGER_EVENT_CLAIMED",
+                                           "MANAGER_REVIEW_STARTED",
+                                           "MANAGER_TOOL_STARTED",
+                                           "MANAGER_TOOL_FINISHED",
+                                           "MANAGER_DECISION_RECORDED",
+                                           "MANAGER_RESPONSE_PUBLISHED",
+                                           "HARNESS_ACK_ATTEMPTED",
+                                           "HARNESS_ACK_SUCCEEDED",
+                                           "MANAGER_CHECKPOINT_COMPLETED",
+                                           "MANAGER_INVOCATION_FINISHED"
+                                       ]
+                },
+    "lanes":  [
+                  {
+                      "doer":  "Atlas",
+                      "source_id":  "Atlas",
+                      "paths":  [
+                                    "manager-signal/v1 creation",
+                                    "manager request paired to manager signal",
+                                    "checkpoint/result manager signal",
+                                    "response receipt",
+                                    "work resume"
+                                ],
+                      "required_kinds":  [
+                                             "AGENT_SIGNAL_CREATED",
+                                             "AGENT_WAIT_STARTED",
+                                             "AGENT_RESPONSE_RECEIVED",
+                                             "AGENT_WORK_RESUMED"
+                                         ]
+                  },
+                  {
+                      "doer":  "Boreal",
+                      "source_id":  "Boreal",
+                      "paths":  [
+                                    "manager-signal/v1 creation",
+                                    "manager request paired to manager signal",
+                                    "checkpoint/result manager signal",
+                                    "response receipt",
+                                    "work resume"
+                                ],
+                      "required_kinds":  [
+                                             "AGENT_SIGNAL_CREATED",
+                                             "AGENT_WAIT_STARTED",
+                                             "AGENT_RESPONSE_RECEIVED",
+                                             "AGENT_WORK_RESUMED"
+                                         ]
+                  },
+                  {
+                      "doer":  "Cygnus",
+                      "source_id":  "Cygnus",
+                      "paths":  [
+                                    "manager-signal/v1 creation",
+                                    "manager request paired to manager signal",
+                                    "checkpoint/result manager signal",
+                                    "response receipt",
+                                    "work resume"
+                                ],
+                      "required_kinds":  [
+                                             "AGENT_SIGNAL_CREATED",
+                                             "AGENT_WAIT_STARTED",
+                                             "AGENT_RESPONSE_RECEIVED",
+                                             "AGENT_WORK_RESUMED"
+                                         ]
+                  },
+                  {
+                      "doer":  "Delta",
+                      "source_id":  "Delta",
+                      "paths":  [
+                                    "manager-signal/v1 creation",
+                                    "manager request paired to manager signal",
+                                    "checkpoint/result manager signal",
+                                    "response receipt",
+                                    "work resume"
+                                ],
+                      "required_kinds":  [
+                                             "AGENT_SIGNAL_CREATED",
+                                             "AGENT_WAIT_STARTED",
+                                             "AGENT_RESPONSE_RECEIVED",
+                                             "AGENT_WORK_RESUMED"
+                                         ]
+                  }
+              ],
+    "harness":  {
+                    "source_id":  "managed-harness",
+                    "path":  "orchestrator_harness/canary-20260801-attention-r2-state/attention-events.jsonl",
+                    "required_kinds":  [
+                                           "HARNESS_SCAN_COMMITTED",
+                                           "HARNESS_SIGNAL_OBSERVED",
+                                           "HARNESS_EVENT_ACTIONABLE",
+                                           "HARNESS_EVENT_DEFERRED",
+                                           "HARNESS_EVENT_PENDING",
+                                           "HARNESS_ACK_ATTEMPTED",
+                                           "HARNESS_ACK_SUCCEEDED",
+                                           "FORMAL_REVIEW_BASELINE_ADVANCED"
+                                       ]
+                },
+    "completeness_rule":  "Every manager request must have a paired manager-signal and agent attention event; missing producer liveness or an unpaired request fails readiness/sprint sufficiency.",
+    "readiness_evidence":  "../READINESS_FAILURE_002.md + coder exact detached preflight + independent review pending"
+}

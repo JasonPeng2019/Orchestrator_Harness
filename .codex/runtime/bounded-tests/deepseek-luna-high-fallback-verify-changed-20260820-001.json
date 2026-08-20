@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  225,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  45,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Prior accepted changed-code gate completed in 72.371 supervisor seconds; 180 seconds provides more than 2x measured headroom for the added stable-runner fallback cases.",
+    "started_at":  "2026-08-20T17:55:41.0121974+00:00",
+    "finished_at":  "2026-08-20T17:55:43.1796667+00:00",
+    "elapsed_seconds":  2.167,
+    "root_process_id":  28704,
+    "observed_process_ids":  [
+                                 28704
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-luna-high-fallback-verify-changed-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-luna-high-fallback-verify-changed-20260820-001.stderr.log"
+}

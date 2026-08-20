@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --locked --no-sync ruff check .",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\BYO-Firmware-MCP",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "rerun documented no-hardware Ruff gate after the server smoke-test addition",
+    "started_at":  "2026-08-14T10:37:22.5081434+00:00",
+    "finished_at":  "2026-08-14T10:37:24.6888639+00:00",
+    "elapsed_seconds":  2.181,
+    "root_process_id":  164208,
+    "observed_process_ids":  [
+                                 164208
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-server-ruff-final.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-server-ruff-final.stderr.log"
+}

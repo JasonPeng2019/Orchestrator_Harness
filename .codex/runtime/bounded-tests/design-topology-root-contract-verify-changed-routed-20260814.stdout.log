@@ -1,0 +1,2546 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+   --> .codex\scripts\verify_changed.py:14:53
+    |
+13  | FULL_VERIFY = ROOT / ".codex" / "scripts" / "verify.py"
+    - FIRMWARE_MCP_ROOT = ("Firmware", "BYO-Firmware-MCP")
+    - DESIGN_TOPOLOGY_SCRIPT_ROOT = (
+    -     ".codex",
+    -     "skills",
+    -     "design-project-topology",
+    -     "scripts",
+    - )
+    - DESIGN_TOPOLOGY_VALIDATOR = Path(*DESIGN_TOPOLOGY_SCRIPT_ROOT) / "validate_execution_plan.py"
+    - SCRIPT_ROOT = Path(__file__).resolve().parent
+14  + FIRMWARE_MCP_ROOT = ("Firmware", "BYO-Firmware-MCP")
+15  + DESIGN_TOPOLOGY_SCRIPT_ROOT = (
+16  +     ".codex",
+17  +     "skills",
+18  +     "design-project-topology",
+19  +     "scripts",
+20  + )
+21  + DESIGN_TOPOLOGY_VALIDATOR = Path(*DESIGN_TOPOLOGY_SCRIPT_ROOT) / "validate_execution_plan.py"
+22  + SCRIPT_ROOT = Path(__file__).resolve().parent
+23  | if str(SCRIPT_ROOT) not in sys.path:
+--------------------------------------------------------------------------------
+35  | PYTHON_ROOTS = (
+    -     (".codex", "scripts"),
+    -     (".codex", "tests"),
+    -     DESIGN_TOPOLOGY_SCRIPT_ROOT,
+36  +     (".codex", "scripts"),
+37  +     (".codex", "tests"),
+38  +     DESIGN_TOPOLOGY_SCRIPT_ROOT,
+39  |     ("Firmware", "BYO-Firmware-MCP"),
+--------------------------------------------------------------------------------
+92  |         )
+    -         format_arguments = tuple(
+    -             path.as_posix()
+    -             for path in existing
+    -             if path.parts[:2] in {(".codex", "scripts"), (".codex", "tests")}
+    -             or path.parts[: len(DESIGN_TOPOLOGY_SCRIPT_ROOT)]
+    -             == DESIGN_TOPOLOGY_SCRIPT_ROOT
+    -         )
+93  +         format_arguments = tuple(
+94  +             path.as_posix()
+95  +             for path in existing
+96  +             if path.parts[:2] in {(".codex", "scripts"), (".codex", "tests")}
+97  +             or path.parts[: len(DESIGN_TOPOLOGY_SCRIPT_ROOT)] == DESIGN_TOPOLOGY_SCRIPT_ROOT
+98  +         )
+99  |         if format_arguments:
+--------------------------------------------------------------------------------
+134 |
+    -     checks.extend(_firmware_mcp_checks(root, firmware_mcp_paths))
+    -     checks.extend(_firmware_change_loop_checks(root, changed))
+    -     checks.extend(_design_topology_checks(root, changed))
+    -     checks.extend(_test_checks(root, delta))
+135 +     checks.extend(_firmware_mcp_checks(root, firmware_mcp_paths))
+136 +     checks.extend(_firmware_change_loop_checks(root, changed))
+137 +     checks.extend(_design_topology_checks(root, changed))
+138 +     checks.extend(_test_checks(root, delta))
+139 |     if not checks:
+--------------------------------------------------------------------------------
+166 |
+    - def _firmware_change_loop_checks(root: Path, changed: tuple[Path, ...]) -> list[Check]:
+167 + def _firmware_change_loop_checks(root: Path, changed: tuple[Path, ...]) -> list[Check]:
+168 |     if not any(_is_firmware_change_loop_path(path) or _is_firmware_prompt_policy_path(path) for path in changed):
+--------------------------------------------------------------------------------
+175 |         )
+    -     ]
+    -
+    -
+    - def _design_topology_checks(root: Path, changed: tuple[Path, ...]) -> list[Check]:
+    -     if DESIGN_TOPOLOGY_VALIDATOR not in changed:
+    -         return []
+    -     return [
+    -         Check(
+    -             "design topology validator self-test",
+    -             (sys.executable, DESIGN_TOPOLOGY_VALIDATOR.as_posix(), "--self-test"),
+    -             root,
+    -         )
+    -     ]
+176 +     ]
+177 +
+178 +
+179 + def _design_topology_checks(root: Path, changed: tuple[Path, ...]) -> list[Check]:
+180 +     if DESIGN_TOPOLOGY_VALIDATOR not in changed:
+181 +         return []
+182 +     return [
+183 +         Check(
+184 +             "design topology validator self-test",
+185 +             (sys.executable, DESIGN_TOPOLOGY_VALIDATOR.as_posix(), "--self-test"),
+186 +             root,
+187 +         )
+188 +     ]
+189 |
+    |
+
+unformatted: File would be reformatted
+    --> .codex\skills\design-project-topology\scripts\validate_execution_plan.py:1:35
+     |
+     - from __future__ import annotations
+     -
+     - import argparse
+     - import json
+     - import re
+     - import sys
+     - from collections import Counter
+     - from pathlib import Path
+     - from typing import Any
+     -
+     - HEADINGS = [
+     -     "## 0. Plan contract and status",
+     -     "## 1. Inputs, authority, and directive hierarchy",
+     -     "## 2. Goal, exclusions, and acceptance outcomes",
+     -     "## 3. Requirement coverage map",
+     -     "## 4. Runtime and repository truth",
+     -     "## 5. Deliverable, dependency, risk, and cost model",
+     -     "## 6. Workflow module selection manifest",
+     -     "## 7. Roles and role-model mapping boundary",
+     -     "## 8. Composed execution graph and critical path",
+     -     "## 9. Global workflow policies and exceptions",
+     -     "## 10. Lane, resource, result, and handoff manifest",
+     -     "## 11. Module instances",
+     -     "## 12. External and practical validation",
+     -     "## 13. Integration, safeguard, promotion, rollback, and retirement",
+     -     "## 14. Tolerances, unresolved decisions, and out-of-scope ledger",
+     -     "## 15. Rule application matrix",
+     -     "## 16. Structural validation result",
+     - ]
+     -
+     - POLICY_HEADINGS = [
+     -     "### P01 Ownership and decisions",
+     -     "### P02 Context and thread lifetime",
+     -     "### P03 Failure-case selection",
+     -     "### P04 Check selection and green credit",
+     -     "### P05 Review classes and invalidation",
+     -     "### P06 Parallel checks and results",
+     -     "### P07 Finding pooling and material repair",
+     -     "### P08 Test-only correction",
+     -     "### P09 Administrative recovery",
+     -     "### P10 Semantic acceptance",
+     -     "### P11 Full-safeguard scope",
+     -     "### P12 External authorization and rehearsal",
+     -     "### P13 Gate/loop sizing, health, and topology reassessment",
+     -     "### P14 Exception classes",
+     -     "### P15 Stop and live-harm containment",
+     - ]
+     -
+     - INSTANCE_FIELDS = [
+     -     "Purpose",
+     -     "Coverage",
+     -     "Selection basis",
+     -     "Owner and roles",
+     -     "Preconditions",
+     -     "Inputs",
+     -     "Local instructions",
+     -     "Outputs and results",
+     -     "Concurrency and isolation",
+     -     "Resources and side effects",
+     -     "Checks and acceptance",
+     -     "Failure and exception routes",
+     -     "Prior results and change effects",
+     -     "Repeat, join, and terminal behavior",
+     -     "Cost and critical-path effect",
+     - ]
+     -
+     - TASK_FIELDS = [
+     -     "schema/card_id/module_instance_id/deliverable_id/stage_cohort_id/gate_id/loop_id",
+     -     "workflow_role",
+     -     "objective",
+     -     "why_now",
+     -     "starting_state",
+     -     "dependencies_and_predecessor_outputs",
+     -     "working_scope",
+     -     "required_behavior",
+     -     "initial_entrypoints",
+     -     "failure_case_brief",
+     -     "ordered_actions",
+     -     "allowed_tools_capabilities_resources",
+     -     "forbidden_actions_and_boundaries",
+     -     "verification",
+     -     "deliverables_and_result_paths",
+     -     "acceptance_criteria_and_tolerances",
+     -     "completion_review_owner_and_handoff",
+     -     "failure_classification_and_routes",
+     -     "thread_resume_and_terminal_rule",
+     -     "cited_global_policy_ids_and_exception_ids",
+     - ]
+     -
+     - UNDISPATCHABLE_BARE_TASK_VALUES = {"", "N/A", "TBD", "TODO", "UNKNOWN"}
+     -
+     - MODULE_IDS = [f"M{number:02d}" for number in range(1, 11)]
+     - MODULE_ACTION_COUNTS = {
+     -     "M01": 7,
+     -     "M02": 8,
+     -     "M03": 7,
+     -     "M04": 8,
+     -     "M05": 10,
+     -     "M06": 8,
+     -     "M07": 7,
+     -     "M08": 6,
+     -     "M09": 9,
+     -     "M10": 5,
+     - }
+     - MODULE_ACTIONS = {
+     -     module_id: [f"{module_id}-A{number}" for number in range(1, count + 1)]
+     -     for module_id, count in MODULE_ACTION_COUNTS.items()
+     - }
+     - RULE_IDS = [f"R{number}" for number in range(1, 31)] + [
+     -     f"S{number}" for number in range(1, 17)
+     - ]
+     - CHECK_IDS = [f"V{number:02d}" for number in range(1, 30)]
+     - ALLOWED_CAPABILITY_STATES = {
+     -     "RUNTIME_ENFORCED",
+     -     "ORCHESTRATOR_ENFORCED",
+     -     "TARGET_TOOL_INVOKED",
+     -     "UNAVAILABLE",
+     - }
+     - ALLOWED_MODULE_DECISIONS = {"SELECTED", "OMITTED", "DEFERRED"}
+     - ALLOWED_GATE_CLASSES = {"PRODUCT", "OPERATION_BOUNDARY"}
+     -
+     - REQUIRED_TABLES: dict[str, list[tuple[str, ...]]] = {
+     -     HEADINGS[0]: [("Field", "Value")],
+     -     HEADINGS[1]: [
+     -         (
+     -             "Source",
+     -             "Authority",
+     -             "Path/reference",
+     -             "Supplies",
+     -             "Conflict rule",
+     -         ),
+     -         ("Layer", "Authority", "May define", "Must not override"),
+     -     ],
+     -     HEADINGS[2]: [
+     -         (
+     -             "Outcome ID",
+     -             "Required behavior",
+     -             "Acceptance method",
+     -             "Decision owner",
+     -             "Status",
+     -         ),
+     -         (
+     -             "Boundary ID",
+     -             "Type",
+     -             "Included/excluded/authorization condition",
+     -             "Reason",
+     -             "Owner",
+     -         ),
+     -     ],
+     -     HEADINGS[3]: [
+     -         (
+     -             "Requirement ID",
+     -             "Source",
+     -             "Deliverable ID",
+     -             "Implementation owner",
+     -             "Verification",
+     -             "Acceptance owner",
+     -             "Status",
+     -         )
+     -     ],
+     -     HEADINGS[4]: [
+     -         (
+     -             "Capability/action",
+     -             "State",
+     -             "Source of truth",
+     -             "Invocation owner",
+     -             "Preconditions",
+     -             "How confirmed",
+     -             "Fallback",
+     -         )
+     -     ],
+     -     HEADINGS[5]: [
+     -         (
+     -             "Deliverable ID",
+     -             "Behavioral output",
+     -             "Requirement IDs",
+     -             "Dependencies",
+     -             "Shared seams",
+     -             "Release unit",
+     -         ),
+     -         (
+     -             "Deliverable ID",
+     -             "Realistic failure",
+     -             "Impact",
+     -             "Coupling",
+     -             "Expected range",
+     -             "Expensive operations",
+     -             "Cheapest adequate topology",
+     -             "Why",
+     -         ),
+     -     ],
+     -     HEADINGS[6]: [
+     -         (
+     -             "Module type",
+     -             "Decision",
+     -             "Instance IDs",
+     -             "Reason",
+     -             "Prerequisite/owner if deferred",
+     -         )
+     -     ],
+     -     HEADINGS[7]: [
+     -         (
+     -             "Workflow role",
+     -             "Responsibilities",
+     -             "Pool",
+     -             "Context class",
+     -             "Write authority",
+     -             "Resources",
+     -             "Activation",
+     -             "Lifetime",
+     -         ),
+     -         ("Resolution rule", "Unknown-role behavior", "Mapping-update behavior"),
+     -     ],
+     -     HEADINGS[8]: [
+     -         (
+     -             "Edge ID",
+     -             "From/output",
+     -             "To/input",
+     -             "Condition",
+     -             "Serial/parallel",
+     -             "Join ID",
+     -             "Failure branch",
+     -         ),
+     -         (
+     -             "Parallel group",
+     -             "Shared input",
+     -             "Member instance IDs",
+     -             "Writable-root isolation",
+     -             "Launch rule",
+     -             "Join ID",
+     -             "Serial exception",
+     -         ),
+     -         (
+     -             "Path ID",
+     -             "Ordered instance/edge IDs",
+     -             "Expected range",
+     -             "Overlap",
+     -             "Expensive operations",
+     -             "Why critical",
+     -         ),
+     -         (
+     -             "Gate/loop ID",
+     -             "Gate class",
+     -             "Shared input",
+     -             "Decided behavioral outcome",
+     -             "Checking module instances",
+     -             "Shared failure family/invariants",
+     -             "Blocking scope",
+     -             "Continuation/loop eligibility",
+     -             "Default-forward edge",
+     -             "Failure return target",
+     -             "Aggregation payoff",
+     -             "Manageability proof",
+     -             "Prior-result boundary",
+     -             "Split/merge trigger",
+     -         ),
+     -     ],
+     -     HEADINGS[10]: [
+     -         (
+     -             "Lane ID",
+     -             "Module instance",
+     -             "Role",
+     -             "Activation",
+     -             "Mutable root",
+     -             "Consumer",
+     -             "Completion condition",
+     -             "Failure route",
+     -         ),
+     -         (
+     -             "Claim/lock ID",
+     -             "Resource",
+     -             "Owner",
+     -             "Activation",
+     -             "Mutable root",
+     -             "Consumer",
+     -             "Completion condition",
+     -             "Failure route",
+     -         ),
+     -         (
+     -             "Check",
+     -             "Proves",
+     -             "Dependencies",
+     -             "Result owner",
+     -             "Reuse condition",
+     -             "Rerun route",
+     -             "Result path if needed",
+     -             "Failure route",
+     -         ),
+     -         (
+     -             "Result/handoff ID",
+     -             "Producer",
+     -             "Consumer",
+     -             "Path if durable",
+     -             "Correlation needed",
+     -             "Publication rule",
+     -             "Completion condition",
+     -             "Failure route",
+     -         ),
+     -         (
+     -             "Source allocation ID",
+     -             "Mode",
+     -             "Source/worktree",
+     -             "Writer",
+     -             "Mutable root",
+     -             "Consumer",
+     -             "Completion condition",
+     -             "Failure route",
+     -         ),
+     -         (
+     -             "Retirement ID",
+     -             "Target",
+     -             "Owner",
+     -             "Activation",
+     -             "What must be retained",
+     -             "Completion condition",
+     -             "Recovery visibility",
+     -             "Failure route",
+     -         ),
+     -     ],
+     -     HEADINGS[12]: [
+     -         (
+     -             "Decision ID",
+     -             "Module type",
+     -             "Decision",
+     -             "Authority/resource",
+     -             "Synthetic proof",
+     -             "Real proof",
+     -             "Owner",
+     -             "Failure route",
+     -         )
+     -     ],
+     -     HEADINGS[13]: [
+     -         (
+     -             "Decision ID",
+     -             "Module type",
+     -             "Decision",
+     -             "Accepted input",
+     -             "Action/order",
+     -             "Checks",
+     -             "Promotion/rollback/retirement",
+     -             "Owner",
+     -         )
+     -     ],
+     -     HEADINGS[14]: [
+     -         (
+     -             "Item ID",
+     -             "Type",
+     -             "Exact condition",
+     -             "Consequence",
+     -             "Owner",
+     -             "Resolution boundary",
+     -         )
+     -     ],
+     -     HEADINGS[15]: [("Rule ID", "Plan location", "Applied behavior or justified N/A")],
+     -     HEADINGS[16]: [("Check ID", "Result", "Basis")],
+     - }
+     -
+     - POLICY_TABLE = (
+     -     "Owner",
+     -     "Trigger",
+     -     "Required action",
+     -     "Exit",
+     -     "Result/record if needed",
+     -     "Module IDs",
+     - )
+     - EXCEPTION_TABLE = (
+     -     "Exception ID",
+     -     "Affected policy",
+     -     "Exact trigger",
+     -     "Decision owner",
+     -     "Allowed alternate action",
+     -     "Required confirmation",
+     -     "Preserved results",
+     -     "Invalidated results",
+     -     "Scope",
+     -     "Expiry",
+     - )
+     - INSTANCE_RE = re.compile(
+     -     r"(?m)^###\s+(MI-[A-Z0-9][A-Z0-9_-]*)\s+-\s+(M\d{2}):\s+(.+?)\s*$"
+     - )
+     - MI_RE = re.compile(r"\bMI-[A-Z0-9][A-Z0-9_-]*\b")
+     -
+     -
+     - def normalize(value: str) -> str:
+     -     return re.sub(r"\s+", " ", value.strip().strip("`"))
+     -
+     -
+     - def table_cells(line: str) -> list[str] | None:
+     -     stripped = line.strip()
+     -     if not stripped.startswith("|") or not stripped.endswith("|"):
+     -         return None
+     -     return [normalize(cell) for cell in stripped[1:-1].split("|")]
+     -
+     -
+     - def is_separator(cells: list[str] | None) -> bool:
+     -     return bool(cells) and all(re.fullmatch(r":?-{3,}:?", cell) for cell in cells)
+     -
+     -
+     - def extract_table(body: str, header: tuple[str, ...]) -> list[list[str]] | None:
+     -     lines = body.splitlines()
+     -     expected = list(header)
+     -     for index, line in enumerate(lines):
+     -         if table_cells(line) != expected:
+     -             continue
+     -         if index + 1 >= len(lines) or not is_separator(table_cells(lines[index + 1])):
+     -             return []
+     -         rows: list[list[str]] = []
+     -         for row_line in lines[index + 2 :]:
+     -             cells = table_cells(row_line)
+     -             if cells is None:
+     -                 if rows or row_line.strip():
+     -                     break
+     -                 continue
+     -             if len(cells) != len(expected):
+     -                 rows.append(cells)
+     -                 continue
+     -             rows.append(cells)
+     -         return rows
+     -     return None
+     -
+     -
+     - def section(text: str, heading: str, next_heading: str | None) -> str:
+     -     start = text.index(heading) + len(heading)
+     -     end = text.index(next_heading, start) if next_heading else len(text)
+     -     return text[start:end]
+     -
+     -
+     - def sections(text: str) -> dict[str, str]:
+     -     return {
+     -         heading: section(
+     -             text, heading, HEADINGS[index + 1] if index + 1 < len(HEADINGS) else None
+     -         )
+     -         for index, heading in enumerate(HEADINGS)
+     -     }
+     -
+     -
+     - def duplicates(values: list[str]) -> list[str]:
+     -     return sorted(value for value, count in Counter(values).items() if count > 1)
+     -
+     -
+     - def id_column(rows: list[list[str]], pattern: str) -> list[str]:
+     -     return [row[0] for row in rows if row and re.fullmatch(pattern, row[0])]
+     -
+     -
+     - def validate_required_tables(by_section: dict[str, str]) -> list[str]:
+     -     errors: list[str] = []
+     -     for heading, headers in REQUIRED_TABLES.items():
+     -         body = by_section[heading]
+     -         for header in headers:
+     -             rows = extract_table(body, header)
+     -             if rows is None:
+     -                 errors.append(f"{heading} is missing table: {' | '.join(header)}")
+     -             elif not rows:
+     -                 errors.append(f"{heading} table has no data rows: {' | '.join(header)}")
+     -             elif any(len(row) != len(header) for row in rows):
+     -                 errors.append(
+     -                     f"{heading} table has a row with the wrong column count: {' | '.join(header)}"
+     -                 )
+     -     return errors
+     -
+     -
+     - def validate_module_manifest(body: str) -> tuple[list[str], dict[str, str]]:
+     -     errors: list[str] = []
+     -     header = REQUIRED_TABLES[HEADINGS[6]][0]
+     -     rows = extract_table(body, header) or []
+     -     seen_modules = [row[0] for row in rows if len(row) == len(header)]
+     -     if duplicates(seen_modules):
+     -         errors.append(
+     -             f"module manifest contains duplicates: {', '.join(duplicates(seen_modules))}"
+     -         )
+     -     missing = sorted(set(MODULE_IDS) - set(seen_modules))
+     -     extra = sorted(set(seen_modules) - set(MODULE_IDS))
+     -     if missing:
+     -         errors.append(f"module manifest is missing: {', '.join(missing)}")
+     -     if extra:
+     -         errors.append(f"module manifest has unknown module IDs: {', '.join(extra)}")
+     -
+     -     instance_types: dict[str, str] = {}
+     -     for row in rows:
+     -         if len(row) != len(header) or row[0] not in MODULE_IDS:
+     -             continue
+     -         module_id, decision, ids_cell = row[0], row[1].upper(), row[2]
+     -         if decision not in ALLOWED_MODULE_DECISIONS:
+     -             errors.append(f"{module_id} has invalid decision {row[1]!r}")
+     -             continue
+     -         instance_ids = MI_RE.findall(ids_cell)
+     -         if decision == "SELECTED" and not instance_ids:
+     -             errors.append(f"{module_id} is SELECTED but has no MI-* instance ID")
+     -         if decision != "SELECTED" and instance_ids:
+     -             errors.append(f"{module_id} is {decision} but declares instance IDs")
+     -         for instance_id in instance_ids:
+     -             if instance_id in instance_types:
+     -                 errors.append(
+     -                     f"module instance ID is declared more than once: {instance_id}"
+     -                 )
+     -             instance_types[instance_id] = module_id
+     -     return errors, instance_types
+     -
+     -
+     - def validate_instances(body: str, instance_types: dict[str, str]) -> list[str]:
+     -     errors: list[str] = []
+     -     matches = list(INSTANCE_RE.finditer(body))
+     -     found_ids = [match.group(1) for match in matches]
+     -     if duplicates(found_ids):
+     -         errors.append(
+     -             f"Section 11 contains duplicate module blocks: {', '.join(duplicates(found_ids))}"
+     -         )
+     -     missing = sorted(set(instance_types) - set(found_ids))
+     -     extra = sorted(set(found_ids) - set(instance_types))
+     -     if missing:
+     -         errors.append(
+     -             f"selected module instances missing from Section 11: {', '.join(missing)}"
+     -         )
+     -     if extra:
+     -         errors.append(f"Section 11 has undeclared module instances: {', '.join(extra)}")
+     -
+     -     for index, match in enumerate(matches):
+     -         instance_id, module_type = match.group(1), match.group(2)
+     -         block_end = (
+     -             matches[index + 1].start() if index + 1 < len(matches) else len(body)
+     -         )
+     -         block = body[match.end() : block_end]
+     -         if instance_types.get(instance_id) != module_type:
+     -             errors.append(
+     -                 f"{instance_id} block type {module_type} does not match manifest type "
+     -                 f"{instance_types.get(instance_id, 'UNDECLARED')}"
+     -             )
+     -         fields = re.findall(r"(?m)^####\s+(.+?)\s*$", block)
+     -         if fields != INSTANCE_FIELDS:
+     -             errors.append(
+     -                 f"{instance_id} does not use the exact 15 subheadings in order"
+     -             )
+     -         local_start = block.find("#### Local instructions")
+     -         local_end = block.find("#### Outputs and results", local_start + 1)
+     -         local_body = (
+     -             block[local_start:local_end] if local_start >= 0 and local_end >= 0 else ""
+     -         )
+     -         task_rows = extract_table(local_body, ("Field", "Value"))
+     -         if task_rows is None:
+     -             errors.append(f"{instance_id} has no local task-card Field | Value table")
+     -         else:
+     -             valid_task_rows = [row for row in task_rows if len(row) == 2]
+     -             if [row[0] for row in valid_task_rows] != TASK_FIELDS:
+     -                 errors.append(
+     -                     f"{instance_id} does not use all 20 local task-card fields in order"
+     -                 )
+     -             task_values = {row[0]: row[1] for row in valid_task_rows}
+     -             for task_field in TASK_FIELDS:
+     -                 task_value = normalize(task_values.get(task_field, "")).upper()
+     -                 if task_value in UNDISPATCHABLE_BARE_TASK_VALUES:
+     -                     errors.append(
+     -                         f"{instance_id} task field {task_field} has a bare placeholder; "
+     -                         "ROOT must supply a concrete dispatch-contract value or a reasoned N/A "
+     -                         "explicitly permitted by the selected recipe"
+     -                     )
+     -             found_actions = re.findall(
+     -                 r"\bM\d{2}-A\d+\b", task_values.get("ordered_actions", "")
+     -             )
+     -             if found_actions != MODULE_ACTIONS.get(module_type, []):
+     -                 errors.append(
+     -                     f"{instance_id} ordered_actions must contain "
+     -                     f"{', '.join(MODULE_ACTIONS.get(module_type, []))} exactly once and in order"
+     -                 )
+     -     return errors
+     -
+     -
+     - def validate_policies(body: str) -> list[str]:
+     -     errors: list[str] = []
+     -     found = re.findall(r"(?m)^###\s+P\d{2}.+?$", body)
+     -     if found != POLICY_HEADINGS:
+     -         errors.append(
+     -             "Section 9 does not contain exact P01-P15 policy headings in order"
+     -         )
+     -         return errors
+     -     for index, heading in enumerate(POLICY_HEADINGS):
+     -         start = body.index(heading) + len(heading)
+     -         end = (
+     -             body.index(POLICY_HEADINGS[index + 1], start)
+     -             if index + 1 < len(POLICY_HEADINGS)
+     -             else len(body)
+     -         )
+     -         policy_body = body[start:end]
+     -         rows = extract_table(policy_body, POLICY_TABLE)
+     -         if rows is None or not rows:
+     -             errors.append(f"{heading} has no populated policy table")
+     -         if heading.startswith("### P14"):
+     -             exception_rows = extract_table(policy_body, EXCEPTION_TABLE)
+     -             if exception_rows is None or not exception_rows:
+     -                 errors.append("P14 has no exception-class table or reasoned N/A row")
+     -     return errors
+     -
+     -
+     - def validate_gates(body: str) -> list[str]:
+     -     errors: list[str] = []
+     -     header = REQUIRED_TABLES[HEADINGS[8]][3]
+     -     rows = extract_table(body, header) or []
+     -     gate_ids = [row[0] for row in rows if len(row) == len(header) and row[0] != "N/A"]
+     -     if duplicates(gate_ids):
+     -         errors.append(
+     -             f"gate manifest contains duplicates: {', '.join(duplicates(gate_ids))}"
+     -         )
+     -
+     -     for row in rows:
+     -         if len(row) != len(header) or row[0] == "N/A":
+     -             continue
+     -         gate_id, gate_class = row[0], row[1]
+     -         if not gate_id.startswith("GATE-"):
+     -             errors.append(f"gate row has invalid ID {gate_id!r}")
+     -         if gate_class not in ALLOWED_GATE_CLASSES:
+     -             errors.append(f"{gate_id} has invalid gate class {gate_class!r}")
+     -         required_fields = (
+     -             (6, "blocking scope"),
+     -             (7, "continuation/loop eligibility"),
+     -             (8, "default-forward edge"),
+     -             (9, "failure return target"),
+     -         )
+     -         for index, label in required_fields:
+     -             if row[index].lower() in {"", "n/a", "none", "not applicable"}:
+     -                 errors.append(f"{gate_id} has no {label}")
+     -         blocking_scope = row[6].lower()
+     -         continuation = row[7].lower()
+     -         default_forward = row[8].lower()
+     -         failure_target = row[9].lower()
+     -
+     -         if not any(
+     -             token in default_forward
+     -             for token in (
+     -                 "edge",
+     -                 "advance",
+     -                 "continue",
+     -                 "accept",
+     -                 "success",
+     -                 "terminal",
+     -             )
+     -         ):
+     -             errors.append(
+     -                 f"{gate_id} default-forward edge must name an advancing successor or terminal action"
+     -             )
+     -
+     -         if gate_class == "PRODUCT":
+     -             decided_outcome = row[3].lower()
+     -             strong_product_terms = (
+     -                 "behavior",
+     -                 "contract",
+     -                 "satisf",
+     -                 "capability",
+     -                 "agree",
+     -                 "prove",
+     -             )
+     -             operation_terms = (
+     -                 "allocat",
+     -                 "integrat",
+     -                 "join",
+     -                 "deploy",
+     -                 "promot",
+     -                 "read back",
+     -                 "readback",
+     -                 "cleanup",
+     -                 "retire",
+     -             )
+     -             names_product_outcome = any(
+     -                 token in decided_outcome for token in strong_product_terms
+     -             ) or (
+     -                 "correct" in decided_outcome
+     -                 and not any(token in decided_outcome for token in operation_terms)
+     -             )
+     -             if not names_product_outcome:
+     -                 errors.append(
+     -                     f"{gate_id} PRODUCT decided outcome must name observable behavior, "
+     -                     "contract, capability, correctness, satisfaction, agreement, or proof; "
+     -                     "a pure required operation belongs to OPERATION_BOUNDARY"
+     -                 )
+     -             required_terms = ("only", "required", "product")
+     -             if not all(term in continuation for term in required_terms) or not any(
+     -                 term in continuation for term in ("fail", "undecidable")
+     -             ):
+     -                 errors.append(
+     -                     f"{gate_id} PRODUCT continuation eligibility must say that only a failed/"
+     -                     "undecidable required product criterion permits continuation"
+     -                 )
+     -             if "only" not in blocking_scope:
+     -                 errors.append(
+     -                     f"{gate_id} PRODUCT blocking scope must be explicitly limited with 'only'"
+     -                 )
+     -
+     -         if gate_class == "OPERATION_BOUNDARY":
+     -             if "only" not in blocking_scope or "never product" not in blocking_scope:
+     -                 errors.append(
+     -                     f"{gate_id} OPERATION_BOUNDARY blocking scope must say it holds only the "
+     -                     "exact operation and never product work/credit"
+     -                 )
+     -             if "no product loop" not in continuation:
+     -                 errors.append(
+     -                     f"{gate_id} OPERATION_BOUNDARY continuation must explicitly say 'No product loop'"
+     -                 )
+     -             if any(
+     -                 token in failure_target
+     -                 for token in (
+     -                     "m02",
+     -                     "material repair",
+     -                     "material return",
+     -                     "product repair",
+     -                 )
+     -             ):
+     -                 errors.append(
+     -                     f"{gate_id} OPERATION_BOUNDARY failure target must not enter product repair"
+     -                 )
+     -     return errors
+     -
+     -
+     - def validate_cross_references(
+     -     by_section: dict[str, str], instance_types: dict[str, str]
+     - ) -> list[str]:
+     -     errors: list[str] = []
+     -     req_header = REQUIRED_TABLES[HEADINGS[3]][0]
+     -     deliverable_header = REQUIRED_TABLES[HEADINGS[5]][0]
+     -     req_rows = extract_table(by_section[HEADINGS[3]], req_header) or []
+     -     deliverable_rows = extract_table(by_section[HEADINGS[5]], deliverable_header) or []
+     -     req_ids = id_column(req_rows, r"REQ-[A-Z0-9][A-Z0-9._-]*")
+     -     deliverable_ids = id_column(deliverable_rows, r"DEL-[A-Z0-9][A-Z0-9._-]*")
+     -     if not req_ids:
+     -         errors.append("requirement coverage map has no REQ-* rows")
+     -     if not deliverable_ids:
+     -         errors.append("deliverable model has no DEL-* rows")
+     -     if duplicates(req_ids):
+     -         errors.append(f"duplicate requirement IDs: {', '.join(duplicates(req_ids))}")
+     -     if duplicates(deliverable_ids):
+     -         errors.append(
+     -             f"duplicate deliverable IDs: {', '.join(duplicates(deliverable_ids))}"
+     -         )
+     -     known_deliverables = set(deliverable_ids)
+     -     for row in req_rows:
+     -         if (
+     -             len(row) == len(req_header)
+     -             and row[0].startswith("REQ-")
+     -             and row[2] not in known_deliverables
+     -         ):
+     -             errors.append(f"{row[0]} references unknown deliverable {row[2]}")
+     -
+     -     capability_rows = (
+     -         extract_table(by_section[HEADINGS[4]], REQUIRED_TABLES[HEADINGS[4]][0]) or []
+     -     )
+     -     for row in capability_rows:
+     -         if (
+     -             len(row) == 7
+     -             and row[0] != "N/A"
+     -             and row[1] not in ALLOWED_CAPABILITY_STATES
+     -         ):
+     -             errors.append(f"capability {row[0]!r} has invalid state {row[1]!r}")
+     -
+     -     selected_ids = set(instance_types)
+     -     for header in REQUIRED_TABLES[HEADINGS[8]]:
+     -         rows = extract_table(by_section[HEADINGS[8]], header) or []
+     -         for row in rows:
+     -             for instance_id in MI_RE.findall(" ".join(row)):
+     -                 if instance_id not in selected_ids:
+     -                     errors.append(
+     -                         f"Section 8 references undeclared module instance {instance_id}"
+     -                     )
+     -     return errors
+     -
+     -
+     - def validate_roles(
+     -     body: str, mapping_roles: set[str], mapping_name: str, text: str
+     - ) -> list[str]:
+     -     errors: list[str] = []
+     -     role_rows = extract_table(body, REQUIRED_TABLES[HEADINGS[7]][0]) or []
+     -     plan_roles = [row[0] for row in role_rows if len(row) == 8 and row[0] != "N/A"]
+     -     if not plan_roles:
+     -         errors.append("role table contains no workflow roles")
+     -     if duplicates(plan_roles):
+     -         errors.append(
+     -             f"role table contains duplicate roles: {', '.join(duplicates(plan_roles))}"
+     -         )
+     -     if set(plan_roles) != mapping_roles:
+     -         missing = sorted(set(plan_roles) - mapping_roles)
+     -         extra = sorted(mapping_roles - set(plan_roles))
+     -         if missing:
+     -             errors.append(f"mapping is missing plan roles: {', '.join(missing)}")
+     -         if extra:
+     -             errors.append(f"mapping has roles absent from the plan: {', '.join(extra)}")
+     -     for row in role_rows:
+     -         if len(row) != 8 or row[0] == "N/A":
+     -             continue
+     -         pool_match = re.search(r"\b(\d+)\b", row[2])
+     -         if pool_match is None or int(pool_match.group(1)) < 1:
+     -             errors.append(f"role {row[0]} has no positive pool size")
+     -     if text.lower().count(mapping_name.lower()) != 1:
+     -         errors.append(
+     -             f"plan must mention mapping filename {mapping_name!r} exactly once"
+     -         )
+     -     return errors
+     -
+     -
+     - def validate_rule_and_check_matrices(by_section: dict[str, str]) -> list[str]:
+     -     errors: list[str] = []
+     -     rule_rows = (
+     -         extract_table(by_section[HEADINGS[15]], REQUIRED_TABLES[HEADINGS[15]][0]) or []
+     -     )
+     -     rule_ids = [row[0] for row in rule_rows if len(row) == 3]
+     -     if rule_ids != RULE_IDS:
+     -         errors.append(
+     -             "Section 15 must map R1-R30 then S1-S16 exactly once and in order"
+     -         )
+     -
+     -     check_rows = (
+     -         extract_table(by_section[HEADINGS[16]], REQUIRED_TABLES[HEADINGS[16]][0]) or []
+     -     )
+     -     check_ids = [row[0] for row in check_rows if len(row) == 3]
+     -     if check_ids != CHECK_IDS:
+     -         errors.append("Section 16 must contain V01-V29 exactly once and in order")
+     -     for row in check_rows:
+     -         if len(row) == 3 and row[1] != "PASS":
+     -             errors.append(f"{row[0]} is not PASS")
+     -         if len(row) == 3 and not row[2].strip():
+     -             errors.append(f"{row[0]} has no basis")
+     -     marker_count = by_section[HEADINGS[16]].count("PLAN_STRUCTURE=VALID")
+     -     if marker_count != 1:
+     -         errors.append(f"expected one PLAN_STRUCTURE=VALID marker, found {marker_count}")
+     -     if "PLAN_STRUCTURE=INVALID" in by_section[HEADINGS[16]]:
+     -         errors.append("Section 16 still contains PLAN_STRUCTURE=INVALID")
+     -     return errors
+     -
+     -
+     - def validate(text: str, mapping_roles: set[str], mapping_name: str) -> list[str]:
+     -     errors: list[str] = []
+     -     title_matches = re.findall(r"(?m)^#\s+.+\s+-\s+Modular Execution Plan\s*$", text)
+     -     if len(title_matches) != 1:
+     -         errors.append(
+     -             f"expected one modular execution plan title, found {len(title_matches)}"
+     -         )
+     -
+     -     positions: list[int] = []
+     -     for heading in HEADINGS:
+     -         count = text.count(heading)
+     -         if count != 1:
+     -             errors.append(f"expected one {heading!r}, found {count}")
+     -         else:
+     -             positions.append(text.index(heading))
+     -     if len(positions) == len(HEADINGS) and positions != sorted(positions):
+     -         errors.append("Sections 0-16 are out of order")
+     -     if errors:
+     -         return errors
+     -
+     -     unresolved = sorted(set(re.findall(r"\{\{[^}\n]+\}\}", text)))
+     -     if unresolved:
+     -         errors.append(f"unresolved template tokens remain: {', '.join(unresolved[:5])}")
+     -     if "TEMPLATE NOTE:" in text:
+     -         errors.append("TEMPLATE NOTE lines remain in the generated plan")
+     -     angle_placeholders = sorted(set(re.findall(r"<[^>\n]+>", text)))
+     -     if angle_placeholders:
+     -         errors.append(
+     -             f"angle-bracket placeholders remain: {', '.join(angle_placeholders[:5])}"
+     -         )
+     -
+     -     by_section = sections(text)
+     -     errors.extend(validate_required_tables(by_section))
+     -     manifest_errors, instance_types = validate_module_manifest(by_section[HEADINGS[6]])
+     -     errors.extend(manifest_errors)
+     -     errors.extend(validate_instances(by_section[HEADINGS[11]], instance_types))
+     -     errors.extend(validate_policies(by_section[HEADINGS[9]]))
+     -     errors.extend(validate_gates(by_section[HEADINGS[8]]))
+     -     errors.extend(validate_cross_references(by_section, instance_types))
+     -     errors.extend(
+     -         validate_roles(by_section[HEADINGS[7]], mapping_roles, mapping_name, text)
+     -     )
+     -     errors.extend(validate_rule_and_check_matrices(by_section))
+     -
+     -     local_instructions = by_section[HEADINGS[11]].lower()
+     -     for phrase in ("as needed", "if useful", "best practice"):
+     -         if phrase in local_instructions:
+     -             errors.append(
+     -                 f"module local instructions contain banned vague phrase: {phrase!r}"
+     -             )
+     -     return errors
+     -
+     -
+     - def markdown_table(header: tuple[str, ...], rows: list[list[str]]) -> str:
+     -     lines = [
+     -         "| " + " | ".join(header) + " |",
+     -         "|" + "|".join("---" for _ in header) + "|",
+     -     ]
+     -     lines.extend("| " + " | ".join(row) + " |" for row in rows)
+     -     return "\n".join(lines)
+     -
+     -
+     - def build_self_test_plan() -> str:
+     -     parts = ["# Validator Self Test - Modular Execution Plan"]
+     -     parts += [
+     -         HEADINGS[0],
+     -         markdown_table(("Field", "Value"), [["Plan ID", "SELF-TEST"]]),
+     -     ]
+     -     parts += [
+     -         HEADINGS[1],
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[1]][0],
+     -             [["SRC-001", "goal", "mapping.json", "mapping", "user wins"]],
+     -         ),
+     -         markdown_table(REQUIRED_TABLES[HEADINGS[1]][1], [["1", "user", "goal", "N/A"]]),
+     -     ]
+     -     parts += [
+     -         HEADINGS[2],
+     -         "Goal: validate the validator.",
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[2]][0],
+     -             [["OUT-001", "valid plan", "validator pass", "orchestrator", "covered"]],
+     -         ),
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[2]][1],
+     -             [["BOUND-001", "in scope", "validation", "self test", "orchestrator"]],
+     -         ),
+     -     ]
+     -     parts += [
+     -         HEADINGS[3],
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[3]][0],
+     -             [
+     -                 [
+     -                     "REQ-001",
+     -                     "SRC-001",
+     -                     "DEL-001",
+     -                     "orchestrator",
+     -                     "CHECK-001",
+     -                     "orchestrator",
+     -                     "covered",
+     -                 ]
+     -             ],
+     -         ),
+     -         HEADINGS[4],
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[4]][0],
+     -             [
+     -                 [
+     -                     "validation",
+     -                     "ORCHESTRATOR_ENFORCED",
+     -                     "script",
+     -                     "orchestrator",
+     -                     "plan",
+     -                     "exit 0",
+     -                     "fix",
+     -                 ]
+     -             ],
+     -         ),
+     -         HEADINGS[5],
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[5]][0],
+     -             [["DEL-001", "valid plan", "REQ-001", "none", "schema", "plan"]],
+     -         ),
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[5]][1],
+     -             [
+     -                 [
+     -                     "DEL-001",
+     -                     "shape error",
+     -                     "invalid",
+     -                     "low",
+     -                     "short",
+     -                     "none",
+     -                     "M05",
+     -                     "accept",
+     -                 ]
+     -             ],
+     -         ),
+     -     ]
+     -     module_rows = [
+     -         [module_id, "OMITTED", "N/A", "not required", "N/A"] for module_id in MODULE_IDS
+     -     ]
+     -     module_rows[4] = ["M05", "SELECTED", "MI-001", "semantic acceptance", "N/A"]
+     -     parts += [HEADINGS[6], markdown_table(REQUIRED_TABLES[HEADINGS[6]][0], module_rows)]
+     -     parts += [
+     -         HEADINGS[7],
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[7]][0],
+     -             [
+     -                 [
+     -                     "orchestrator",
+     -                     "accept",
+     -                     "1",
+     -                     "bounded",
+     -                     "none",
+     -                     "none",
+     -                     "plan ready",
+     -                     "plan",
+     -                 ]
+     -             ],
+     -         ),
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[7]][1],
+     -             [["resolve at launch", "reject", "no plan edit"]],
+     -         ),
+     -     ]
+     -     parts += [HEADINGS[8]]
+     -     parts.append(
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[8]][0],
+     -             [
+     -                 [
+     -                     "EDGE-001",
+     -                     "MI-001.output",
+     -                     "terminal",
+     -                     "accepted",
+     -                     "serial",
+     -                     "N/A",
+     -                     "incomplete",
+     -                 ]
+     -             ],
+     -         )
+     -     )
+     -     parts.append(
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[8]][1],
+     -             [["N/A", "N/A", "N/A", "no parallel work", "N/A", "N/A", "N/A"]],
+     -         )
+     -     )
+     -     parts.append(
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[8]][2],
+     -             [["PATH-001", "MI-001", "short", "none", "none", "only path"]],
+     -         )
+     -     )
+     -     parts.append(
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[8]][3],
+     -             [
+     -                 [
+     -                     "GATE-001 / LOOP-001",
+     -                     "PRODUCT",
+     -                     "revision",
+     -                     "Does the required product plan behavior satisfy its acceptance contract?",
+     -                     "MI-001",
+     -                     "plan semantics",
+     -                     "DEL-001 product acceptance only",
+     -                     "only when a required product criterion fails or is genuinely undecidable",
+     -                     "accepted -> terminal",
+     -                     "same MI-001 task",
+     -                     "one decision",
+     -                     "one owner",
+     -                     "unrelated credit preserved",
+     -                     "split on independent criterion",
+     -                 ],
+     -                 [
+     -                     "GATE-002",
+     -                     "OPERATION_BOUNDARY",
+     -                     "deployment target state",
+     -                     "May the exact deployment operation start?",
+     -                     "MI-001",
+     -                     "authorization and destination state",
+     -                     "only deployment allocation; never product acceptance or credit",
+     -                     "No product loop; retry only the unresolved deployment admission action",
+     -                     "accepted product work continues to terminal",
+     -                     "same deployment admission action or stop allocation",
+     -                     "one admission check",
+     -                     "one operation owner",
+     -                     "product credit preserved",
+     -                     "split on independent resource",
+     -                 ],
+     -             ],
+     -         )
+     -     )
+     -     parts += [HEADINGS[9]]
+     -     for policy in POLICY_HEADINGS:
+     -         parts += [
+     -             policy,
+     -             markdown_table(
+     -                 POLICY_TABLE,
+     -                 [["orchestrator", "plan", "decide", "recorded", "plan", "MI-001"]],
+     -             ),
+     -         ]
+     -         if policy.startswith("### P14"):
+     -             parts.append(
+     -                 markdown_table(EXCEPTION_TABLE, [["N/A"] * len(EXCEPTION_TABLE)])
+     -             )
+     -     parts += [HEADINGS[10]]
+     -     for header in REQUIRED_TABLES[HEADINGS[10]]:
+     -         parts.append(markdown_table(header, [["N/A"] * len(header)]))
+     -     parts += [HEADINGS[11], "### MI-001 - M05: Acceptance"]
+     -     for field in INSTANCE_FIELDS:
+     -         parts += [f"#### {field}"]
+     -         if field == "Local instructions":
+     -             task_rows = [
+     -                 [task_field, f"self-test concrete {task_field}"]
+     -                 for task_field in TASK_FIELDS
+     -             ]
+     -             task_rows[TASK_FIELDS.index("workflow_role")][1] = "orchestrator"
+     -             task_rows[TASK_FIELDS.index("ordered_actions")][1] = "; ".join(
+     -                 MODULE_ACTIONS["M05"]
+     -             )
+     -             parts.append(markdown_table(("Field", "Value"), task_rows))
+     -         else:
+     -             parts.append("Self-test value.")
+     -     parts += [
+     -         HEADINGS[12],
+     -         markdown_table(REQUIRED_TABLES[HEADINGS[12]][0], [["N/A"] * 8]),
+     -         HEADINGS[13],
+     -         markdown_table(REQUIRED_TABLES[HEADINGS[13]][0], [["N/A"] * 8]),
+     -         HEADINGS[14],
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[14]][0],
+     -             [["N/A", "OUT_OF_SCOPE", "none", "none", "orchestrator", "terminal"]],
+     -         ),
+     -         HEADINGS[15],
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[15]][0],
+     -             [[rule_id, "self test", "applied"] for rule_id in RULE_IDS],
+     -         ),
+     -         HEADINGS[16],
+     -         markdown_table(
+     -             REQUIRED_TABLES[HEADINGS[16]][0],
+     -             [[check_id, "PASS", "self test"] for check_id in CHECK_IDS],
+     -         ),
+     -         "PLAN_STRUCTURE=VALID",
+     -     ]
+     -     return "\n\n".join(parts) + "\n"
+     -
+     -
+     - def run_self_test() -> list[str]:
+     -     plan = build_self_test_plan()
+     -     failures: list[str] = []
+     -     if errors := validate(plan, {"orchestrator"}, "mapping.json"):
+     -         failures.append("valid fixture failed: " + "; ".join(errors))
+     -
+     -     corruptions = {
+     -         "placeholder": plan + "\n{{UNFILLED}}\n",
+     -         "module manifest": plan.replace("| M10 | OMITTED |", "| M09 | OMITTED |", 1),
+     -         "instance schema": plan.replace(
+     -             "#### Cost and critical-path effect\n\nSelf-test value.\n", "", 1
+     -         ),
+     -         "bare ROOT dispatch field": plan.replace(
+     -             "| objective | self-test concrete objective |",
+     -             "| objective | N/A |",
+     -             1,
+     -         ),
+     -         "gate class": plan.replace(
+     -             "| GATE-001 / LOOP-001 | PRODUCT |", "| GATE-001 / LOOP-001 | ADVISORY |", 1
+     -         ),
+     -         "product gate eligibility": plan.replace(
+     -             "only when a required product criterion fails or is genuinely undecidable",
+     -             "after any gate failure",
+     -             1,
+     -         ),
+     -         "pure operation mislabeled product": plan.replace(
+     -             "Does the required product plan behavior satisfy its acceptance contract?",
+     -             "Was the exact accepted coordinate promoted and read back?",
+     -             1,
+     -         ),
+     -         "operation with correctness word mislabeled product": plan.replace(
+     -             "Does the required product plan behavior satisfy its acceptance contract?",
+     -             "Was the required product promotion correct?",
+     -             1,
+     -         ),
+     -         "operation boundary scope": plan.replace(
+     -             "only deployment allocation; never product acceptance or credit",
+     -             "the entire deployment and product",
+     -             1,
+     -         ),
+     -         "operation boundary product repair": plan.replace(
+     -             "same deployment admission action or stop allocation",
+     -             "M02 material repair",
+     -             1,
+     -         ),
+     -     }
+     -     for label, corrupted in corruptions.items():
+     -         if not validate(corrupted, {"orchestrator"}, "mapping.json"):
+     -             failures.append(f"{label} corruption was not detected")
+     -     if not validate(plan, {"different-role"}, "mapping.json"):
+     -         failures.append("mapping-role mismatch was not detected")
+     -     return failures
+     -
+     -
+     - def load_mapping(path: Path) -> tuple[set[str], list[str]]:
+     -     try:
+     -         data: Any = json.loads(path.read_text(encoding="utf-8"))
+     -     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+     -         return set(), [f"cannot read role-model mapping {path}: {exc}"]
+     -     if not isinstance(data, dict) or not isinstance(data.get("roles"), dict):
+     -         return set(), [
+     -             "role-model mapping must be a JSON object containing a roles object"
+     -         ]
+     -     roles = data["roles"]
+     -     errors = [
+     -         f"mapping role {role!r} must contain an object"
+     -         for role, value in roles.items()
+     -         if not isinstance(value, dict)
+     -     ]
+     -     if not roles:
+     -         errors.append("role-model mapping contains no roles")
+     -     return set(roles), errors
+     -
+     -
+     - def main() -> int:
+     -     parser = argparse.ArgumentParser(
+     -         description="Validate a modular execution plan's deterministic structure."
+     -     )
+     -     parser.add_argument(
+     -         "plan", nargs="?", help="generated execution plan path, or - for stdin"
+     -     )
+     -     parser.add_argument("--mapping", help="canonical role-model mapping JSON path")
+     -     parser.add_argument(
+     -         "--self-test", action="store_true", help="run validator contract tests"
+     -     )
+     -     args = parser.parse_args()
+     -
+     -     if args.self_test:
+     -         failures = run_self_test()
+     -         if failures:
+     -             for failure in failures:
+     -                 print(f"SELF-TEST ERROR: {failure}", file=sys.stderr)
+     -             return 1
+     -         print("execution plan validator self-test: PASS")
+     -         return 0
+     -
+     -     if args.plan is None or args.mapping is None:
+     -         parser.error("plan and --mapping are required unless --self-test is used")
+     -     mapping_path = Path(args.mapping)
+     -     mapping_roles, mapping_errors = load_mapping(mapping_path)
+     -     if mapping_errors:
+     -         for error in mapping_errors:
+     -             print(f"ERROR: {error}", file=sys.stderr)
+     -         return 1
+     -     try:
+     -         text = (
+     -             sys.stdin.read()
+     -             if args.plan == "-"
+     -             else Path(args.plan).read_text(encoding="utf-8")
+     -         )
+     -     except (OSError, UnicodeError) as exc:
+     -         parser.exit(2, f"cannot read plan: {exc}\n")
+     -
+     -     errors = validate(text, mapping_roles, mapping_path.name)
+     -     if errors:
+     -         for error in errors:
+     -             print(f"ERROR: {error}", file=sys.stderr)
+     -         return 1
+     -     print("execution plan validation: PASS")
+     -     return 0
+     -
+     -
+     - if __name__ == "__main__":
+     -     raise SystemExit(main())
+1    + from __future__ import annotations
+2    +
+3    + import argparse
+4    + import json
+5    + import re
+6    + import sys
+7    + from collections import Counter
+8    + from pathlib import Path
+9    + from typing import Any
+10   +
+11   + HEADINGS = [
+12   +     "## 0. Plan contract and status",
+13   +     "## 1. Inputs, authority, and directive hierarchy",
+14   +     "## 2. Goal, exclusions, and acceptance outcomes",
+15   +     "## 3. Requirement coverage map",
+16   +     "## 4. Runtime and repository truth",
+17   +     "## 5. Deliverable, dependency, risk, and cost model",
+18   +     "## 6. Workflow module selection manifest",
+19   +     "## 7. Roles and role-model mapping boundary",
+20   +     "## 8. Composed execution graph and critical path",
+21   +     "## 9. Global workflow policies and exceptions",
+22   +     "## 10. Lane, resource, result, and handoff manifest",
+23   +     "## 11. Module instances",
+24   +     "## 12. External and practical validation",
+25   +     "## 13. Integration, safeguard, promotion, rollback, and retirement",
+26   +     "## 14. Tolerances, unresolved decisions, and out-of-scope ledger",
+27   +     "## 15. Rule application matrix",
+28   +     "## 16. Structural validation result",
+29   + ]
+30   +
+31   + POLICY_HEADINGS = [
+32   +     "### P01 Ownership and decisions",
+33   +     "### P02 Context and thread lifetime",
+34   +     "### P03 Failure-case selection",
+35   +     "### P04 Check selection and green credit",
+36   +     "### P05 Review classes and invalidation",
+37   +     "### P06 Parallel checks and results",
+38   +     "### P07 Finding pooling and material repair",
+39   +     "### P08 Test-only correction",
+40   +     "### P09 Administrative recovery",
+41   +     "### P10 Semantic acceptance",
+42   +     "### P11 Full-safeguard scope",
+43   +     "### P12 External authorization and rehearsal",
+44   +     "### P13 Gate/loop sizing, health, and topology reassessment",
+45   +     "### P14 Exception classes",
+46   +     "### P15 Stop and live-harm containment",
+47   + ]
+48   +
+49   + INSTANCE_FIELDS = [
+50   +     "Purpose",
+51   +     "Coverage",
+52   +     "Selection basis",
+53   +     "Owner and roles",
+54   +     "Preconditions",
+55   +     "Inputs",
+56   +     "Local instructions",
+57   +     "Outputs and results",
+58   +     "Concurrency and isolation",
+59   +     "Resources and side effects",
+60   +     "Checks and acceptance",
+61   +     "Failure and exception routes",
+62   +     "Prior results and change effects",
+63   +     "Repeat, join, and terminal behavior",
+64   +     "Cost and critical-path effect",
+65   + ]
+66   +
+67   + TASK_FIELDS = [
+68   +     "schema/card_id/module_instance_id/deliverable_id/stage_cohort_id/gate_id/loop_id",
+69   +     "workflow_role",
+70   +     "objective",
+71   +     "why_now",
+72   +     "starting_state",
+73   +     "dependencies_and_predecessor_outputs",
+74   +     "working_scope",
+75   +     "required_behavior",
+76   +     "initial_entrypoints",
+77   +     "failure_case_brief",
+78   +     "ordered_actions",
+79   +     "allowed_tools_capabilities_resources",
+80   +     "forbidden_actions_and_boundaries",
+81   +     "verification",
+82   +     "deliverables_and_result_paths",
+83   +     "acceptance_criteria_and_tolerances",
+84   +     "completion_review_owner_and_handoff",
+85   +     "failure_classification_and_routes",
+86   +     "thread_resume_and_terminal_rule",
+87   +     "cited_global_policy_ids_and_exception_ids",
+88   + ]
+89   +
+90   + UNDISPATCHABLE_BARE_TASK_VALUES = {"", "N/A", "TBD", "TODO", "UNKNOWN"}
+91   +
+92   + MODULE_IDS = [f"M{number:02d}" for number in range(1, 11)]
+93   + MODULE_ACTION_COUNTS = {
+94   +     "M01": 7,
+95   +     "M02": 8,
+96   +     "M03": 7,
+97   +     "M04": 8,
+98   +     "M05": 10,
+99   +     "M06": 8,
+100  +     "M07": 7,
+101  +     "M08": 6,
+102  +     "M09": 9,
+103  +     "M10": 5,
+104  + }
+105  + MODULE_ACTIONS = {
+106  +     module_id: [f"{module_id}-A{number}" for number in range(1, count + 1)]
+107  +     for module_id, count in MODULE_ACTION_COUNTS.items()
+108  + }
+109  + RULE_IDS = [f"R{number}" for number in range(1, 31)] + [f"S{number}" for number in range(1, 17)]
+110  + CHECK_IDS = [f"V{number:02d}" for number in range(1, 30)]
+111  + ALLOWED_CAPABILITY_STATES = {
+112  +     "RUNTIME_ENFORCED",
+113  +     "ORCHESTRATOR_ENFORCED",
+114  +     "TARGET_TOOL_INVOKED",
+115  +     "UNAVAILABLE",
+116  + }
+117  + ALLOWED_MODULE_DECISIONS = {"SELECTED", "OMITTED", "DEFERRED"}
+118  + ALLOWED_GATE_CLASSES = {"PRODUCT", "OPERATION_BOUNDARY"}
+119  +
+120  + REQUIRED_TABLES: dict[str, list[tuple[str, ...]]] = {
+121  +     HEADINGS[0]: [("Field", "Value")],
+122  +     HEADINGS[1]: [
+123  +         (
+124  +             "Source",
+125  +             "Authority",
+126  +             "Path/reference",
+127  +             "Supplies",
+128  +             "Conflict rule",
+129  +         ),
+130  +         ("Layer", "Authority", "May define", "Must not override"),
+131  +     ],
+132  +     HEADINGS[2]: [
+133  +         (
+134  +             "Outcome ID",
+135  +             "Required behavior",
+136  +             "Acceptance method",
+137  +             "Decision owner",
+138  +             "Status",
+139  +         ),
+140  +         (
+141  +             "Boundary ID",
+142  +             "Type",
+143  +             "Included/excluded/authorization condition",
+144  +             "Reason",
+145  +             "Owner",
+146  +         ),
+147  +     ],
+148  +     HEADINGS[3]: [
+149  +         (
+150  +             "Requirement ID",
+151  +             "Source",
+152  +             "Deliverable ID",
+153  +             "Implementation owner",
+154  +             "Verification",
+155  +             "Acceptance owner",
+156  +             "Status",
+157  +         )
+158  +     ],
+159  +     HEADINGS[4]: [
+160  +         (
+161  +             "Capability/action",
+162  +             "State",
+163  +             "Source of truth",
+164  +             "Invocation owner",
+165  +             "Preconditions",
+166  +             "How confirmed",
+167  +             "Fallback",
+168  +         )
+169  +     ],
+170  +     HEADINGS[5]: [
+171  +         (
+172  +             "Deliverable ID",
+173  +             "Behavioral output",
+174  +             "Requirement IDs",
+175  +             "Dependencies",
+176  +             "Shared seams",
+177  +             "Release unit",
+178  +         ),
+179  +         (
+180  +             "Deliverable ID",
+181  +             "Realistic failure",
+182  +             "Impact",
+183  +             "Coupling",
+184  +             "Expected range",
+185  +             "Expensive operations",
+186  +             "Cheapest adequate topology",
+187  +             "Why",
+188  +         ),
+189  +     ],
+190  +     HEADINGS[6]: [
+191  +         (
+192  +             "Module type",
+193  +             "Decision",
+194  +             "Instance IDs",
+195  +             "Reason",
+196  +             "Prerequisite/owner if deferred",
+197  +         )
+198  +     ],
+199  +     HEADINGS[7]: [
+200  +         (
+201  +             "Workflow role",
+202  +             "Responsibilities",
+203  +             "Pool",
+204  +             "Context class",
+205  +             "Write authority",
+206  +             "Resources",
+207  +             "Activation",
+208  +             "Lifetime",
+209  +         ),
+210  +         ("Resolution rule", "Unknown-role behavior", "Mapping-update behavior"),
+211  +     ],
+212  +     HEADINGS[8]: [
+213  +         (
+214  +             "Edge ID",
+215  +             "From/output",
+216  +             "To/input",
+217  +             "Condition",
+218  +             "Serial/parallel",
+219  +             "Join ID",
+220  +             "Failure branch",
+221  +         ),
+222  +         (
+223  +             "Parallel group",
+224  +             "Shared input",
+225  +             "Member instance IDs",
+226  +             "Writable-root isolation",
+227  +             "Launch rule",
+228  +             "Join ID",
+229  +             "Serial exception",
+230  +         ),
+231  +         (
+232  +             "Path ID",
+233  +             "Ordered instance/edge IDs",
+234  +             "Expected range",
+235  +             "Overlap",
+236  +             "Expensive operations",
+237  +             "Why critical",
+238  +         ),
+239  +         (
+240  +             "Gate/loop ID",
+241  +             "Gate class",
+242  +             "Shared input",
+243  +             "Decided behavioral outcome",
+244  +             "Checking module instances",
+245  +             "Shared failure family/invariants",
+246  +             "Blocking scope",
+247  +             "Continuation/loop eligibility",
+248  +             "Default-forward edge",
+249  +             "Failure return target",
+250  +             "Aggregation payoff",
+251  +             "Manageability proof",
+252  +             "Prior-result boundary",
+253  +             "Split/merge trigger",
+254  +         ),
+255  +     ],
+256  +     HEADINGS[10]: [
+257  +         (
+258  +             "Lane ID",
+259  +             "Module instance",
+260  +             "Role",
+261  +             "Activation",
+262  +             "Mutable root",
+263  +             "Consumer",
+264  +             "Completion condition",
+265  +             "Failure route",
+266  +         ),
+267  +         (
+268  +             "Claim/lock ID",
+269  +             "Resource",
+270  +             "Owner",
+271  +             "Activation",
+272  +             "Mutable root",
+273  +             "Consumer",
+274  +             "Completion condition",
+275  +             "Failure route",
+276  +         ),
+277  +         (
+278  +             "Check",
+279  +             "Proves",
+280  +             "Dependencies",
+281  +             "Result owner",
+282  +             "Reuse condition",
+283  +             "Rerun route",
+284  +             "Result path if needed",
+285  +             "Failure route",
+286  +         ),
+287  +         (
+288  +             "Result/handoff ID",
+289  +             "Producer",
+290  +             "Consumer",
+291  +             "Path if durable",
+292  +             "Correlation needed",
+293  +             "Publication rule",
+294  +             "Completion condition",
+295  +             "Failure route",
+296  +         ),
+297  +         (
+298  +             "Source allocation ID",
+299  +             "Mode",
+300  +             "Source/worktree",
+301  +             "Writer",
+302  +             "Mutable root",
+303  +             "Consumer",
+304  +             "Completion condition",
+305  +             "Failure route",
+306  +         ),
+307  +         (
+308  +             "Retirement ID",
+309  +             "Target",
+310  +             "Owner",
+311  +             "Activation",
+312  +             "What must be retained",
+313  +             "Completion condition",
+314  +             "Recovery visibility",
+315  +             "Failure route",
+316  +         ),
+317  +     ],
+318  +     HEADINGS[12]: [
+319  +         (
+320  +             "Decision ID",
+321  +             "Module type",
+322  +             "Decision",
+323  +             "Authority/resource",
+324  +             "Synthetic proof",
+325  +             "Real proof",
+326  +             "Owner",
+327  +             "Failure route",
+328  +         )
+329  +     ],
+330  +     HEADINGS[13]: [
+331  +         (
+332  +             "Decision ID",
+333  +             "Module type",
+334  +             "Decision",
+335  +             "Accepted input",
+336  +             "Action/order",
+337  +             "Checks",
+338  +             "Promotion/rollback/retirement",
+339  +             "Owner",
+340  +         )
+341  +     ],
+342  +     HEADINGS[14]: [
+343  +         (
+344  +             "Item ID",
+345  +             "Type",
+346  +             "Exact condition",
+347  +             "Consequence",
+348  +             "Owner",
+349  +             "Resolution boundary",
+350  +         )
+351  +     ],
+352  +     HEADINGS[15]: [("Rule ID", "Plan location", "Applied behavior or justified N/A")],
+353  +     HEADINGS[16]: [("Check ID", "Result", "Basis")],
+354  + }
+355  +
+356  + POLICY_TABLE = (
+357  +     "Owner",
+358  +     "Trigger",
+359  +     "Required action",
+360  +     "Exit",
+361  +     "Result/record if needed",
+362  +     "Module IDs",
+363  + )
+364  + EXCEPTION_TABLE = (
+365  +     "Exception ID",
+366  +     "Affected policy",
+367  +     "Exact trigger",
+368  +     "Decision owner",
+369  +     "Allowed alternate action",
+370  +     "Required confirmation",
+371  +     "Preserved results",
+372  +     "Invalidated results",
+373  +     "Scope",
+374  +     "Expiry",
+375  + )
+376  + INSTANCE_RE = re.compile(r"(?m)^###\s+(MI-[A-Z0-9][A-Z0-9_-]*)\s+-\s+(M\d{2}):\s+(.+?)\s*$")
+377  + MI_RE = re.compile(r"\bMI-[A-Z0-9][A-Z0-9_-]*\b")
+378  +
+379  +
+380  + def normalize(value: str) -> str:
+381  +     return re.sub(r"\s+", " ", value.strip().strip("`"))
+382  +
+383  +
+384  + def table_cells(line: str) -> list[str] | None:
+385  +     stripped = line.strip()
+386  +     if not stripped.startswith("|") or not stripped.endswith("|"):
+387  +         return None
+388  +     return [normalize(cell) for cell in stripped[1:-1].split("|")]
+389  +
+390  +
+391  + def is_separator(cells: list[str] | None) -> bool:
+392  +     return bool(cells) and all(re.fullmatch(r":?-{3,}:?", cell) for cell in cells)
+393  +
+394  +
+395  + def extract_table(body: str, header: tuple[str, ...]) -> list[list[str]] | None:
+396  +     lines = body.splitlines()
+397  +     expected = list(header)
+398  +     for index, line in enumerate(lines):
+399  +         if table_cells(line) != expected:
+400  +             continue
+401  +         if index + 1 >= len(lines) or not is_separator(table_cells(lines[index + 1])):
+402  +             return []
+403  +         rows: list[list[str]] = []
+404  +         for row_line in lines[index + 2 :]:
+405  +             cells = table_cells(row_line)
+406  +             if cells is None:
+407  +                 if rows or row_line.strip():
+408  +                     break
+409  +                 continue
+410  +             if len(cells) != len(expected):
+411  +                 rows.append(cells)
+412  +                 continue
+413  +             rows.append(cells)
+414  +         return rows
+415  +     return None
+416  +
+417  +
+418  + def section(text: str, heading: str, next_heading: str | None) -> str:
+419  +     start = text.index(heading) + len(heading)
+420  +     end = text.index(next_heading, start) if next_heading else len(text)
+421  +     return text[start:end]
+422  +
+423  +
+424  + def sections(text: str) -> dict[str, str]:
+425  +     return {
+426  +         heading: section(text, heading, HEADINGS[index + 1] if index + 1 < len(HEADINGS) else None)
+427  +         for index, heading in enumerate(HEADINGS)
+428  +     }
+429  +
+430  +
+431  + def duplicates(values: list[str]) -> list[str]:
+432  +     return sorted(value for value, count in Counter(values).items() if count > 1)
+433  +
+434  +
+435  + def id_column(rows: list[list[str]], pattern: str) -> list[str]:
+436  +     return [row[0] for row in rows if row and re.fullmatch(pattern, row[0])]
+437  +
+438  +
+439  + def validate_required_tables(by_section: dict[str, str]) -> list[str]:
+440  +     errors: list[str] = []
+441  +     for heading, headers in REQUIRED_TABLES.items():
+442  +         body = by_section[heading]
+443  +         for header in headers:
+444  +             rows = extract_table(body, header)
+445  +             if rows is None:
+446  +                 errors.append(f"{heading} is missing table: {' | '.join(header)}")
+447  +             elif not rows:
+448  +                 errors.append(f"{heading} table has no data rows: {' | '.join(header)}")
+449  +             elif any(len(row) != len(header) for row in rows):
+450  +                 errors.append(f"{heading} table has a row with the wrong column count: {' | '.join(header)}")
+451  +     return errors
+452  +
+453  +
+454  + def validate_module_manifest(body: str) -> tuple[list[str], dict[str, str]]:
+455  +     errors: list[str] = []
+456  +     header = REQUIRED_TABLES[HEADINGS[6]][0]
+457  +     rows = extract_table(body, header) or []
+458  +     seen_modules = [row[0] for row in rows if len(row) == len(header)]
+459  +     if duplicates(seen_modules):
+460  +         errors.append(f"module manifest contains duplicates: {', '.join(duplicates(seen_modules))}")
+461  +     missing = sorted(set(MODULE_IDS) - set(seen_modules))
+462  +     extra = sorted(set(seen_modules) - set(MODULE_IDS))
+463  +     if missing:
+464  +         errors.append(f"module manifest is missing: {', '.join(missing)}")
+465  +     if extra:
+466  +         errors.append(f"module manifest has unknown module IDs: {', '.join(extra)}")
+467  +
+468  +     instance_types: dict[str, str] = {}
+469  +     for row in rows:
+470  +         if len(row) != len(header) or row[0] not in MODULE_IDS:
+471  +             continue
+472  +         module_id, decision, ids_cell = row[0], row[1].upper(), row[2]
+473  +         if decision not in ALLOWED_MODULE_DECISIONS:
+474  +             errors.append(f"{module_id} has invalid decision {row[1]!r}")
+475  +             continue
+476  +         instance_ids = MI_RE.findall(ids_cell)
+477  +         if decision == "SELECTED" and not instance_ids:
+478  +             errors.append(f"{module_id} is SELECTED but has no MI-* instance ID")
+479  +         if decision != "SELECTED" and instance_ids:
+480  +             errors.append(f"{module_id} is {decision} but declares instance IDs")
+481  +         for instance_id in instance_ids:
+482  +             if instance_id in instance_types:
+483  +                 errors.append(f"module instance ID is declared more than once: {instance_id}")
+484  +             instance_types[instance_id] = module_id
+485  +     return errors, instance_types
+486  +
+487  +
+488  + def validate_instances(body: str, instance_types: dict[str, str]) -> list[str]:
+489  +     errors: list[str] = []
+490  +     matches = list(INSTANCE_RE.finditer(body))
+491  +     found_ids = [match.group(1) for match in matches]
+492  +     if duplicates(found_ids):
+493  +         errors.append(f"Section 11 contains duplicate module blocks: {', '.join(duplicates(found_ids))}")
+494  +     missing = sorted(set(instance_types) - set(found_ids))
+495  +     extra = sorted(set(found_ids) - set(instance_types))
+496  +     if missing:
+497  +         errors.append(f"selected module instances missing from Section 11: {', '.join(missing)}")
+498  +     if extra:
+499  +         errors.append(f"Section 11 has undeclared module instances: {', '.join(extra)}")
+500  +
+501  +     for index, match in enumerate(matches):
+502  +         instance_id, module_type = match.group(1), match.group(2)
+503  +         block_end = matches[index + 1].start() if index + 1 < len(matches) else len(body)
+504  +         block = body[match.end() : block_end]
+505  +         if instance_types.get(instance_id) != module_type:
+506  +             errors.append(
+507  +                 f"{instance_id} block type {module_type} does not match manifest type "
+508  +                 f"{instance_types.get(instance_id, 'UNDECLARED')}"
+509  +             )
+510  +         fields = re.findall(r"(?m)^####\s+(.+?)\s*$", block)
+511  +         if fields != INSTANCE_FIELDS:
+512  +             errors.append(f"{instance_id} does not use the exact 15 subheadings in order")
+513  +         local_start = block.find("#### Local instructions")
+514  +         local_end = block.find("#### Outputs and results", local_start + 1)
+515  +         local_body = block[local_start:local_end] if local_start >= 0 and local_end >= 0 else ""
+516  +         task_rows = extract_table(local_body, ("Field", "Value"))
+517  +         if task_rows is None:
+518  +             errors.append(f"{instance_id} has no local task-card Field | Value table")
+519  +         else:
+520  +             valid_task_rows = [row for row in task_rows if len(row) == 2]
+521  +             if [row[0] for row in valid_task_rows] != TASK_FIELDS:
+522  +                 errors.append(f"{instance_id} does not use all 20 local task-card fields in order")
+523  +             task_values = {row[0]: row[1] for row in valid_task_rows}
+524  +             for task_field in TASK_FIELDS:
+525  +                 task_value = normalize(task_values.get(task_field, "")).upper()
+526  +                 if task_value in UNDISPATCHABLE_BARE_TASK_VALUES:
+527  +                     errors.append(
+528  +                         f"{instance_id} task field {task_field} has a bare placeholder; "
+529  +                         "ROOT must supply a concrete dispatch-contract value or a reasoned N/A "
+530  +                         "explicitly permitted by the selected recipe"
+531  +                     )
+532  +             found_actions = re.findall(r"\bM\d{2}-A\d+\b", task_values.get("ordered_actions", ""))
+533  +             if found_actions != MODULE_ACTIONS.get(module_type, []):
+534  +                 errors.append(
+535  +                     f"{instance_id} ordered_actions must contain "
+536  +                     f"{', '.join(MODULE_ACTIONS.get(module_type, []))} exactly once and in order"
+537  +                 )
+538  +     return errors
+539  +
+540  +
+541  + def validate_policies(body: str) -> list[str]:
+542  +     errors: list[str] = []
+543  +     found = re.findall(r"(?m)^###\s+P\d{2}.+?$", body)
+544  +     if found != POLICY_HEADINGS:
+545  +         errors.append("Section 9 does not contain exact P01-P15 policy headings in order")
+546  +         return errors
+547  +     for index, heading in enumerate(POLICY_HEADINGS):
+548  +         start = body.index(heading) + len(heading)
+549  +         end = body.index(POLICY_HEADINGS[index + 1], start) if index + 1 < len(POLICY_HEADINGS) else len(body)
+550  +         policy_body = body[start:end]
+551  +         rows = extract_table(policy_body, POLICY_TABLE)
+552  +         if rows is None or not rows:
+553  +             errors.append(f"{heading} has no populated policy table")
+554  +         if heading.startswith("### P14"):
+555  +             exception_rows = extract_table(policy_body, EXCEPTION_TABLE)
+556  +             if exception_rows is None or not exception_rows:
+557  +                 errors.append("P14 has no exception-class table or reasoned N/A row")
+558  +     return errors
+559  +
+560  +
+561  + def validate_gates(body: str) -> list[str]:
+562  +     errors: list[str] = []
+563  +     header = REQUIRED_TABLES[HEADINGS[8]][3]
+564  +     rows = extract_table(body, header) or []
+565  +     gate_ids = [row[0] for row in rows if len(row) == len(header) and row[0] != "N/A"]
+566  +     if duplicates(gate_ids):
+567  +         errors.append(f"gate manifest contains duplicates: {', '.join(duplicates(gate_ids))}")
+568  +
+569  +     for row in rows:
+570  +         if len(row) != len(header) or row[0] == "N/A":
+571  +             continue
+572  +         gate_id, gate_class = row[0], row[1]
+573  +         if not gate_id.startswith("GATE-"):
+574  +             errors.append(f"gate row has invalid ID {gate_id!r}")
+575  +         if gate_class not in ALLOWED_GATE_CLASSES:
+576  +             errors.append(f"{gate_id} has invalid gate class {gate_class!r}")
+577  +         required_fields = (
+578  +             (6, "blocking scope"),
+579  +             (7, "continuation/loop eligibility"),
+580  +             (8, "default-forward edge"),
+581  +             (9, "failure return target"),
+582  +         )
+583  +         for index, label in required_fields:
+584  +             if row[index].lower() in {"", "n/a", "none", "not applicable"}:
+585  +                 errors.append(f"{gate_id} has no {label}")
+586  +         blocking_scope = row[6].lower()
+587  +         continuation = row[7].lower()
+588  +         default_forward = row[8].lower()
+589  +         failure_target = row[9].lower()
+590  +
+591  +         if not any(
+592  +             token in default_forward
+593  +             for token in (
+594  +                 "edge",
+595  +                 "advance",
+596  +                 "continue",
+597  +                 "accept",
+598  +                 "success",
+599  +                 "terminal",
+600  +             )
+601  +         ):
+602  +             errors.append(f"{gate_id} default-forward edge must name an advancing successor or terminal action")
+603  +
+604  +         if gate_class == "PRODUCT":
+605  +             decided_outcome = row[3].lower()
+606  +             strong_product_terms = (
+607  +                 "behavior",
+608  +                 "contract",
+609  +                 "satisf",
+610  +                 "capability",
+611  +                 "agree",
+612  +                 "prove",
+613  +             )
+614  +             operation_terms = (
+615  +                 "allocat",
+616  +                 "integrat",
+617  +                 "join",
+618  +                 "deploy",
+619  +                 "promot",
+620  +                 "read back",
+621  +                 "readback",
+622  +                 "cleanup",
+623  +                 "retire",
+624  +             )
+625  +             names_product_outcome = any(token in decided_outcome for token in strong_product_terms) or (
+626  +                 "correct" in decided_outcome and not any(token in decided_outcome for token in operation_terms)
+627  +             )
+628  +             if not names_product_outcome:
+629  +                 errors.append(
+630  +                     f"{gate_id} PRODUCT decided outcome must name observable behavior, "
+631  +                     "contract, capability, correctness, satisfaction, agreement, or proof; "
+632  +                     "a pure required operation belongs to OPERATION_BOUNDARY"
+633  +                 )
+634  +             required_terms = ("only", "required", "product")
+635  +             if not all(term in continuation for term in required_terms) or not any(
+636  +                 term in continuation for term in ("fail", "undecidable")
+637  +             ):
+638  +                 errors.append(
+639  +                     f"{gate_id} PRODUCT continuation eligibility must say that only a failed/"
+640  +                     "undecidable required product criterion permits continuation"
+641  +                 )
+642  +             if "only" not in blocking_scope:
+643  +                 errors.append(f"{gate_id} PRODUCT blocking scope must be explicitly limited with 'only'")
+644  +
+645  +         if gate_class == "OPERATION_BOUNDARY":
+646  +             if "only" not in blocking_scope or "never product" not in blocking_scope:
+647  +                 errors.append(
+648  +                     f"{gate_id} OPERATION_BOUNDARY blocking scope must say it holds only the "
+649  +                     "exact operation and never product work/credit"
+650  +                 )
+651  +             if "no product loop" not in continuation:
+652  +                 errors.append(f"{gate_id} OPERATION_BOUNDARY continuation must explicitly say 'No product loop'")
+653  +             if any(
+654  +                 token in failure_target
+655  +                 for token in (
+656  +                     "m02",
+657  +                     "material repair",
+658  +                     "material return",
+659  +                     "product repair",
+660  +                 )
+661  +             ):
+662  +                 errors.append(f"{gate_id} OPERATION_BOUNDARY failure target must not enter product repair")
+663  +     return errors
+664  +
+665  +
+666  + def validate_cross_references(by_section: dict[str, str], instance_types: dict[str, str]) -> list[str]:
+667  +     errors: list[str] = []
+668  +     req_header = REQUIRED_TABLES[HEADINGS[3]][0]
+669  +     deliverable_header = REQUIRED_TABLES[HEADINGS[5]][0]
+670  +     req_rows = extract_table(by_section[HEADINGS[3]], req_header) or []
+671  +     deliverable_rows = extract_table(by_section[HEADINGS[5]], deliverable_header) or []
+672  +     req_ids = id_column(req_rows, r"REQ-[A-Z0-9][A-Z0-9._-]*")
+673  +     deliverable_ids = id_column(deliverable_rows, r"DEL-[A-Z0-9][A-Z0-9._-]*")
+674  +     if not req_ids:
+675  +         errors.append("requirement coverage map has no REQ-* rows")
+676  +     if not deliverable_ids:
+677  +         errors.append("deliverable model has no DEL-* rows")
+678  +     if duplicates(req_ids):
+679  +         errors.append(f"duplicate requirement IDs: {', '.join(duplicates(req_ids))}")
+680  +     if duplicates(deliverable_ids):
+681  +         errors.append(f"duplicate deliverable IDs: {', '.join(duplicates(deliverable_ids))}")
+682  +     known_deliverables = set(deliverable_ids)
+683  +     for row in req_rows:
+684  +         if len(row) == len(req_header) and row[0].startswith("REQ-") and row[2] not in known_deliverables:
+685  +             errors.append(f"{row[0]} references unknown deliverable {row[2]}")
+686  +
+687  +     capability_rows = extract_table(by_section[HEADINGS[4]], REQUIRED_TABLES[HEADINGS[4]][0]) or []
+688  +     for row in capability_rows:
+689  +         if len(row) == 7 and row[0] != "N/A" and row[1] not in ALLOWED_CAPABILITY_STATES:
+690  +             errors.append(f"capability {row[0]!r} has invalid state {row[1]!r}")
+691  +
+692  +     selected_ids = set(instance_types)
+693  +     for header in REQUIRED_TABLES[HEADINGS[8]]:
+694  +         rows = extract_table(by_section[HEADINGS[8]], header) or []
+695  +         for row in rows:
+696  +             for instance_id in MI_RE.findall(" ".join(row)):
+697  +                 if instance_id not in selected_ids:
+698  +                     errors.append(f"Section 8 references undeclared module instance {instance_id}")
+699  +     return errors
+700  +
+701  +
+702  + def validate_roles(body: str, mapping_roles: set[str], mapping_name: str, text: str) -> list[str]:
+703  +     errors: list[str] = []
+704  +     role_rows = extract_table(body, REQUIRED_TABLES[HEADINGS[7]][0]) or []
+705  +     plan_roles = [row[0] for row in role_rows if len(row) == 8 and row[0] != "N/A"]
+706  +     if not plan_roles:
+707  +         errors.append("role table contains no workflow roles")
+708  +     if duplicates(plan_roles):
+709  +         errors.append(f"role table contains duplicate roles: {', '.join(duplicates(plan_roles))}")
+710  +     if set(plan_roles) != mapping_roles:
+711  +         missing = sorted(set(plan_roles) - mapping_roles)
+712  +         extra = sorted(mapping_roles - set(plan_roles))
+713  +         if missing:
+714  +             errors.append(f"mapping is missing plan roles: {', '.join(missing)}")
+715  +         if extra:
+716  +             errors.append(f"mapping has roles absent from the plan: {', '.join(extra)}")
+717  +     for row in role_rows:
+718  +         if len(row) != 8 or row[0] == "N/A":
+719  +             continue
+720  +         pool_match = re.search(r"\b(\d+)\b", row[2])
+721  +         if pool_match is None or int(pool_match.group(1)) < 1:
+722  +             errors.append(f"role {row[0]} has no positive pool size")
+723  +     if text.lower().count(mapping_name.lower()) != 1:
+724  +         errors.append(f"plan must mention mapping filename {mapping_name!r} exactly once")
+725  +     return errors
+726  +
+727  +
+728  + def validate_rule_and_check_matrices(by_section: dict[str, str]) -> list[str]:
+729  +     errors: list[str] = []
+730  +     rule_rows = extract_table(by_section[HEADINGS[15]], REQUIRED_TABLES[HEADINGS[15]][0]) or []
+731  +     rule_ids = [row[0] for row in rule_rows if len(row) == 3]
+732  +     if rule_ids != RULE_IDS:
+733  +         errors.append("Section 15 must map R1-R30 then S1-S16 exactly once and in order")
+734  +
+735  +     check_rows = extract_table(by_section[HEADINGS[16]], REQUIRED_TABLES[HEADINGS[16]][0]) or []
+736  +     check_ids = [row[0] for row in check_rows if len(row) == 3]
+737  +     if check_ids != CHECK_IDS:
+738  +         errors.append("Section 16 must contain V01-V29 exactly once and in order")
+739  +     for row in check_rows:
+740  +         if len(row) == 3 and row[1] != "PASS":
+741  +             errors.append(f"{row[0]} is not PASS")
+742  +         if len(row) == 3 and not row[2].strip():
+743  +             errors.append(f"{row[0]} has no basis")
+744  +     marker_count = by_section[HEADINGS[16]].count("PLAN_STRUCTURE=VALID")
+745  +     if marker_count != 1:
+746  +         errors.append(f"expected one PLAN_STRUCTURE=VALID marker, found {marker_count}")
+747  +     if "PLAN_STRUCTURE=INVALID" in by_section[HEADINGS[16]]:
+748  +         errors.append("Section 16 still contains PLAN_STRUCTURE=INVALID")
+749  +     return errors
+750  +
+751  +
+752  + def validate(text: str, mapping_roles: set[str], mapping_name: str) -> list[str]:
+753  +     errors: list[str] = []
+754  +     title_matches = re.findall(r"(?m)^#\s+.+\s+-\s+Modular Execution Plan\s*$", text)
+755  +     if len(title_matches) != 1:
+756  +         errors.append(f"expected one modular execution plan title, found {len(title_matches)}")
+757  +
+758  +     positions: list[int] = []
+759  +     for heading in HEADINGS:
+760  +         count = text.count(heading)
+761  +         if count != 1:
+762  +             errors.append(f"expected one {heading!r}, found {count}")
+763  +         else:
+764  +             positions.append(text.index(heading))
+765  +     if len(positions) == len(HEADINGS) and positions != sorted(positions):
+766  +         errors.append("Sections 0-16 are out of order")
+767  +     if errors:
+768  +         return errors
+769  +
+770  +     unresolved = sorted(set(re.findall(r"\{\{[^}\n]+\}\}", text)))
+771  +     if unresolved:
+772  +         errors.append(f"unresolved template tokens remain: {', '.join(unresolved[:5])}")
+773  +     if "TEMPLATE NOTE:" in text:
+774  +         errors.append("TEMPLATE NOTE lines remain in the generated plan")
+775  +     angle_placeholders = sorted(set(re.findall(r"<[^>\n]+>", text)))
+776  +     if angle_placeholders:
+777  +         errors.append(f"angle-bracket placeholders remain: {', '.join(angle_placeholders[:5])}")
+778  +
+779  +     by_section = sections(text)
+780  +     errors.extend(validate_required_tables(by_section))
+781  +     manifest_errors, instance_types = validate_module_manifest(by_section[HEADINGS[6]])
+782  +     errors.extend(manifest_errors)
+783  +     errors.extend(validate_instances(by_section[HEADINGS[11]], instance_types))
+784  +     errors.extend(validate_policies(by_section[HEADINGS[9]]))
+785  +     errors.extend(validate_gates(by_section[HEADINGS[8]]))
+786  +     errors.extend(validate_cross_references(by_section, instance_types))
+787  +     errors.extend(validate_roles(by_section[HEADINGS[7]], mapping_roles, mapping_name, text))
+788  +     errors.extend(validate_rule_and_check_matrices(by_section))
+789  +
+790  +     local_instructions = by_section[HEADINGS[11]].lower()
+791  +     for phrase in ("as needed", "if useful", "best practice"):
+792  +         if phrase in local_instructions:
+793  +             errors.append(f"module local instructions contain banned vague phrase: {phrase!r}")
+794  +     return errors
+795  +
+796  +
+797  + def markdown_table(header: tuple[str, ...], rows: list[list[str]]) -> str:
+798  +     lines = [
+799  +         "| " + " | ".join(header) + " |",
+800  +         "|" + "|".join("---" for _ in header) + "|",
+801  +     ]
+802  +     lines.extend("| " + " | ".join(row) + " |" for row in rows)
+803  +     return "\n".join(lines)
+804  +
+805  +
+806  + def build_self_test_plan() -> str:
+807  +     parts = ["# Validator Self Test - Modular Execution Plan"]
+808  +     parts += [
+809  +         HEADINGS[0],
+810  +         markdown_table(("Field", "Value"), [["Plan ID", "SELF-TEST"]]),
+811  +     ]
+812  +     parts += [
+813  +         HEADINGS[1],
+814  +         markdown_table(
+815  +             REQUIRED_TABLES[HEADINGS[1]][0],
+816  +             [["SRC-001", "goal", "mapping.json", "mapping", "user wins"]],
+817  +         ),
+818  +         markdown_table(REQUIRED_TABLES[HEADINGS[1]][1], [["1", "user", "goal", "N/A"]]),
+819  +     ]
+820  +     parts += [
+821  +         HEADINGS[2],
+822  +         "Goal: validate the validator.",
+823  +         markdown_table(
+824  +             REQUIRED_TABLES[HEADINGS[2]][0],
+825  +             [["OUT-001", "valid plan", "validator pass", "orchestrator", "covered"]],
+826  +         ),
+827  +         markdown_table(
+828  +             REQUIRED_TABLES[HEADINGS[2]][1],
+829  +             [["BOUND-001", "in scope", "validation", "self test", "orchestrator"]],
+830  +         ),
+831  +     ]
+832  +     parts += [
+833  +         HEADINGS[3],
+834  +         markdown_table(
+835  +             REQUIRED_TABLES[HEADINGS[3]][0],
+836  +             [
+837  +                 [
+838  +                     "REQ-001",
+839  +                     "SRC-001",
+840  +                     "DEL-001",
+841  +                     "orchestrator",
+842  +                     "CHECK-001",
+843  +                     "orchestrator",
+844  +                     "covered",
+845  +                 ]
+846  +             ],
+847  +         ),
+848  +         HEADINGS[4],
+849  +         markdown_table(
+850  +             REQUIRED_TABLES[HEADINGS[4]][0],
+851  +             [
+852  +                 [
+853  +                     "validation",
+854  +                     "ORCHESTRATOR_ENFORCED",
+855  +                     "script",
+856  +                     "orchestrator",
+857  +                     "plan",
+858  +                     "exit 0",
+859  +                     "fix",
+860  +                 ]
+861  +             ],
+862  +         ),
+863  +         HEADINGS[5],
+864  +         markdown_table(
+865  +             REQUIRED_TABLES[HEADINGS[5]][0],
+866  +             [["DEL-001", "valid plan", "REQ-001", "none", "schema", "plan"]],
+867  +         ),
+868  +         markdown_table(
+869  +             REQUIRED_TABLES[HEADINGS[5]][1],
+870  +             [
+871  +                 [
+872  +                     "DEL-001",
+873  +                     "shape error",
+874  +                     "invalid",
+875  +                     "low",
+876  +                     "short",
+877  +                     "none",
+878  +                     "M05",
+879  +                     "accept",
+880  +                 ]
+881  +             ],
+882  +         ),
+883  +     ]
+884  +     module_rows = [[module_id, "OMITTED", "N/A", "not required", "N/A"] for module_id in MODULE_IDS]
+885  +     module_rows[4] = ["M05", "SELECTED", "MI-001", "semantic acceptance", "N/A"]
+886  +     parts += [HEADINGS[6], markdown_table(REQUIRED_TABLES[HEADINGS[6]][0], module_rows)]
+887  +     parts += [
+888  +         HEADINGS[7],
+889  +         markdown_table(
+890  +             REQUIRED_TABLES[HEADINGS[7]][0],
+891  +             [
+892  +                 [
+893  +                     "orchestrator",
+894  +                     "accept",
+895  +                     "1",
+896  +                     "bounded",
+897  +                     "none",
+898  +                     "none",
+899  +                     "plan ready",
+900  +                     "plan",
+901  +                 ]
+902  +             ],
+903  +         ),
+904  +         markdown_table(
+905  +             REQUIRED_TABLES[HEADINGS[7]][1],
+906  +             [["resolve at launch", "reject", "no plan edit"]],
+907  +         ),
+908  +     ]
+909  +     parts += [HEADINGS[8]]
+910  +     parts.append(
+911  +         markdown_table(
+912  +             REQUIRED_TABLES[HEADINGS[8]][0],
+913  +             [
+914  +                 [
+915  +                     "EDGE-001",
+916  +                     "MI-001.output",
+917  +                     "terminal",
+918  +                     "accepted",
+919  +                     "serial",
+920  +                     "N/A",
+921  +                     "incomplete",
+922  +                 ]
+923  +             ],
+924  +         )
+925  +     )
+926  +     parts.append(
+927  +         markdown_table(
+928  +             REQUIRED_TABLES[HEADINGS[8]][1],
+929  +             [["N/A", "N/A", "N/A", "no parallel work", "N/A", "N/A", "N/A"]],
+930  +         )
+931  +     )
+932  +     parts.append(
+933  +         markdown_table(
+934  +             REQUIRED_TABLES[HEADINGS[8]][2],
+935  +             [["PATH-001", "MI-001", "short", "none", "none", "only path"]],
+936  +         )
+937  +     )
+938  +     parts.append(
+939  +         markdown_table(
+940  +             REQUIRED_TABLES[HEADINGS[8]][3],
+941  +             [
+942  +                 [
+943  +                     "GATE-001 / LOOP-001",
+944  +                     "PRODUCT",
+945  +                     "revision",
+946  +                     "Does the required product plan behavior satisfy its acceptance contract?",
+947  +                     "MI-001",
+948  +                     "plan semantics",
+949  +                     "DEL-001 product acceptance only",
+950  +                     "only when a required product criterion fails or is genuinely undecidable",
+951  +                     "accepted -> terminal",
+952  +                     "same MI-001 task",
+953  +                     "one decision",
+954  +                     "one owner",
+955  +                     "unrelated credit preserved",
+956  +                     "split on independent criterion",
+957  +                 ],
+958  +                 [
+959  +                     "GATE-002",
+960  +                     "OPERATION_BOUNDARY",
+961  +                     "deployment target state",
+962  +                     "May the exact deployment operation start?",
+963  +                     "MI-001",
+964  +                     "authorization and destination state",
+965  +                     "only deployment allocation; never product acceptance or credit",
+966  +                     "No product loop; retry only the unresolved deployment admission action",
+967  +                     "accepted product work continues to terminal",
+968  +                     "same deployment admission action or stop allocation",
+969  +                     "one admission check",
+970  +                     "one operation owner",
+971  +                     "product credit preserved",
+972  +                     "split on independent resource",
+973  +                 ],
+974  +             ],
+975  +         )
+976  +     )
+977  +     parts += [HEADINGS[9]]
+978  +     for policy in POLICY_HEADINGS:
+979  +         parts += [
+980  +             policy,
+981  +             markdown_table(
+982  +                 POLICY_TABLE,
+983  +                 [["orchestrator", "plan", "decide", "recorded", "plan", "MI-001"]],
+984  +             ),
+985  +         ]
+986  +         if policy.startswith("### P14"):
+987  +             parts.append(markdown_table(EXCEPTION_TABLE, [["N/A"] * len(EXCEPTION_TABLE)]))
+988  +     parts += [HEADINGS[10]]
+989  +     for header in REQUIRED_TABLES[HEADINGS[10]]:
+990  +         parts.append(markdown_table(header, [["N/A"] * len(header)]))
+991  +     parts += [HEADINGS[11], "### MI-001 - M05: Acceptance"]
+992  +     for field in INSTANCE_FIELDS:
+993  +         parts += [f"#### {field}"]
+994  +         if field == "Local instructions":
+995  +             task_rows = [[task_field, f"self-test concrete {task_field}"] for task_field in TASK_FIELDS]
+996  +             task_rows[TASK_FIELDS.index("workflow_role")][1] = "orchestrator"
+997  +             task_rows[TASK_FIELDS.index("ordered_actions")][1] = "; ".join(MODULE_ACTIONS["M05"])
+998  +             parts.append(markdown_table(("Field", "Value"), task_rows))
+999  +         else:
+1000 +             parts.append("Self-test value.")
+1001 +     parts += [
+1002 +         HEADINGS[12],
+1003 +         markdown_table(REQUIRED_TABLES[HEADINGS[12]][0], [["N/A"] * 8]),
+1004 +         HEADINGS[13],
+1005 +         markdown_table(REQUIRED_TABLES[HEADINGS[13]][0], [["N/A"] * 8]),
+1006 +         HEADINGS[14],
+1007 +         markdown_table(
+1008 +             REQUIRED_TABLES[HEADINGS[14]][0],
+1009 +             [["N/A", "OUT_OF_SCOPE", "none", "none", "orchestrator", "terminal"]],
+1010 +         ),
+1011 +         HEADINGS[15],
+1012 +         markdown_table(
+1013 +             REQUIRED_TABLES[HEADINGS[15]][0],
+1014 +             [[rule_id, "self test", "applied"] for rule_id in RULE_IDS],
+1015 +         ),
+1016 +         HEADINGS[16],
+1017 +         markdown_table(
+1018 +             REQUIRED_TABLES[HEADINGS[16]][0],
+1019 +             [[check_id, "PASS", "self test"] for check_id in CHECK_IDS],
+1020 +         ),
+1021 +         "PLAN_STRUCTURE=VALID",
+1022 +     ]
+1023 +     return "\n\n".join(parts) + "\n"
+1024 +
+1025 +
+1026 + def run_self_test() -> list[str]:
+1027 +     plan = build_self_test_plan()
+1028 +     failures: list[str] = []
+1029 +     if errors := validate(plan, {"orchestrator"}, "mapping.json"):
+1030 +         failures.append("valid fixture failed: " + "; ".join(errors))
+1031 +
+1032 +     corruptions = {
+1033 +         "placeholder": plan + "\n{{UNFILLED}}\n",
+1034 +         "module manifest": plan.replace("| M10 | OMITTED |", "| M09 | OMITTED |", 1),
+1035 +         "instance schema": plan.replace("#### Cost and critical-path effect\n\nSelf-test value.\n", "", 1),
+1036 +         "bare ROOT dispatch field": plan.replace(
+1037 +             "| objective | self-test concrete objective |",
+1038 +             "| objective | N/A |",
+1039 +             1,
+1040 +         ),
+1041 +         "gate class": plan.replace("| GATE-001 / LOOP-001 | PRODUCT |", "| GATE-001 / LOOP-001 | ADVISORY |", 1),
+1042 +         "product gate eligibility": plan.replace(
+1043 +             "only when a required product criterion fails or is genuinely undecidable",
+1044 +             "after any gate failure",
+1045 +             1,
+1046 +         ),
+1047 +         "pure operation mislabeled product": plan.replace(
+1048 +             "Does the required product plan behavior satisfy its acceptance contract?",
+1049 +             "Was the exact accepted coordinate promoted and read back?",
+1050 +             1,
+1051 +         ),
+1052 +         "operation with correctness word mislabeled product": plan.replace(
+1053 +             "Does the required product plan behavior satisfy its acceptance contract?",
+1054 +             "Was the required product promotion correct?",
+1055 +             1,
+1056 +         ),
+1057 +         "operation boundary scope": plan.replace(
+1058 +             "only deployment allocation; never product acceptance or credit",
+1059 +             "the entire deployment and product",
+1060 +             1,
+1061 +         ),
+1062 +         "operation boundary product repair": plan.replace(
+1063 +             "same deployment admission action or stop allocation",
+1064 +             "M02 material repair",
+1065 +             1,
+1066 +         ),
+1067 +     }
+1068 +     for label, corrupted in corruptions.items():
+1069 +         if not validate(corrupted, {"orchestrator"}, "mapping.json"):
+1070 +             failures.append(f"{label} corruption was not detected")
+1071 +     if not validate(plan, {"different-role"}, "mapping.json"):
+1072 +         failures.append("mapping-role mismatch was not detected")
+1073 +     return failures
+1074 +
+1075 +
+1076 + def load_mapping(path: Path) -> tuple[set[str], list[str]]:
+1077 +     try:
+1078 +         data: Any = json.loads(path.read_text(encoding="utf-8"))
+1079 +     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+1080 +         return set(), [f"cannot read role-model mapping {path}: {exc}"]
+1081 +     if not isinstance(data, dict) or not isinstance(data.get("roles"), dict):
+1082 +         return set(), ["role-model mapping must be a JSON object containing a roles object"]
+1083 +     roles = data["roles"]
+1084 +     errors = [
+1085 +         f"mapping role {role!r} must contain an object" for role, value in roles.items() if not isinstance(value, dict)
+1086 +     ]
+1087 +     if not roles:
+1088 +         errors.append("role-model mapping contains no roles")
+1089 +     return set(roles), errors
+1090 +
+1091 +
+1092 + def main() -> int:
+1093 +     parser = argparse.ArgumentParser(description="Validate a modular execution plan's deterministic structure.")
+1094 +     parser.add_argument("plan", nargs="?", help="generated execution plan path, or - for stdin")
+1095 +     parser.add_argument("--mapping", help="canonical role-model mapping JSON path")
+1096 +     parser.add_argument("--self-test", action="store_true", help="run validator contract tests")
+1097 +     args = parser.parse_args()
+1098 +
+1099 +     if args.self_test:
+1100 +         failures = run_self_test()
+1101 +         if failures:
+1102 +             for failure in failures:
+1103 +                 print(f"SELF-TEST ERROR: {failure}", file=sys.stderr)
+1104 +             return 1
+1105 +         print("execution plan validator self-test: PASS")
+1106 +         return 0
+1107 +
+1108 +     if args.plan is None or args.mapping is None:
+1109 +         parser.error("plan and --mapping are required unless --self-test is used")
+1110 +     mapping_path = Path(args.mapping)
+1111 +     mapping_roles, mapping_errors = load_mapping(mapping_path)
+1112 +     if mapping_errors:
+1113 +         for error in mapping_errors:
+1114 +             print(f"ERROR: {error}", file=sys.stderr)
+1115 +         return 1
+1116 +     try:
+1117 +         text = sys.stdin.read() if args.plan == "-" else Path(args.plan).read_text(encoding="utf-8")
+1118 +     except (OSError, UnicodeError) as exc:
+1119 +         parser.exit(2, f"cannot read plan: {exc}\n")
+1120 +
+1121 +     errors = validate(text, mapping_roles, mapping_path.name)
+1122 +     if errors:
+1123 +         for error in errors:
+1124 +             print(f"ERROR: {error}", file=sys.stderr)
+1125 +         return 1
+1126 +     print("execution plan validation: PASS")
+1127 +     return 0
+1128 +
+1129 +
+1130 + if __name__ == "__main__":
+1131 +     raise SystemExit(main())
+     |
+
+unformatted: File would be reformatted
+   --> .codex\tests\test_verify_changed.py:55:74
+    |
+54  |
+    - def test_codex_script_change_selects_only_changed_static_and_codex_tests(
+55  + def test_codex_script_change_selects_only_changed_static_and_codex_tests(
+56  |     tmp_path: Path,
+--------------------------------------------------------------------------------
+79  |     assert "harness_watcher_implementation/tests" not in joined
+    -     assert str(verify_changed.FULL_VERIFY) not in joined
+    -
+    -
+    - def test_design_topology_validator_selects_static_and_embedded_self_test(
+    -     tmp_path: Path,
+    - ) -> None:
+    -     relative = verify_changed.DESIGN_TOPOLOGY_VALIDATOR.as_posix()
+    -     _write(tmp_path, relative, "VALUE = 1\n")
+    -     delta = VerificationDelta(
+    -         manifest={relative: "new"},
+    -         changed_paths=(verify_changed.DESIGN_TOPOLOGY_VALIDATOR,),
+    -     )
+    -
+    -     plan = verify_changed.plan_changed_verification(tmp_path, delta)
+    -
+    -     assert plan.full_fallback_reason is None
+    -     checks = {check.label: check for check in plan.checks}
+    -     assert set(checks) == {
+    -         "ruff changed Python",
+    -         "format changed development Python",
+    -         "types changed Python",
+    -         "compile changed Python",
+    -         "design topology validator self-test",
+    -     }
+    -     assert checks["design topology validator self-test"].argv == (
+    -         sys.executable,
+    -         relative,
+    -         "--self-test",
+    -     )
+80  +     assert str(verify_changed.FULL_VERIFY) not in joined
+81  +
+82  +
+83  + def test_design_topology_validator_selects_static_and_embedded_self_test(
+84  +     tmp_path: Path,
+85  + ) -> None:
+86  +     relative = verify_changed.DESIGN_TOPOLOGY_VALIDATOR.as_posix()
+87  +     _write(tmp_path, relative, "VALUE = 1\n")
+88  +     delta = VerificationDelta(
+89  +         manifest={relative: "new"},
+90  +         changed_paths=(verify_changed.DESIGN_TOPOLOGY_VALIDATOR,),
+91  +     )
+92  +
+93  +     plan = verify_changed.plan_changed_verification(tmp_path, delta)
+94  +
+95  +     assert plan.full_fallback_reason is None
+96  +     checks = {check.label: check for check in plan.checks}
+97  +     assert set(checks) == {
+98  +         "ruff changed Python",
+99  +         "format changed development Python",
+100 +         "types changed Python",
+101 +         "compile changed Python",
+102 +         "design topology validator self-test",
+103 +     }
+104 +     assert checks["design topology validator self-test"].argv == (
+105 +         sys.executable,
+106 +         relative,
+107 +         "--self-test",
+108 +     )
+109 |
+    |
+
+3 files would be reformatted

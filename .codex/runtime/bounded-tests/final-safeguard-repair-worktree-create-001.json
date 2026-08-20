@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev --locked python C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/scripts/worktree_task.py create plan2-final-safeguard-argv-repair-001 --branch firmware/v2-final-safeguard-argv-repair-0365 --owner coder-main",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  19,
+    "expected_upper_bound_seconds":  15,
+    "cleanup_allowance_seconds":  4,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "measured-prior-worktree-create-3s",
+    "started_at":  "2026-08-14T20:53:47.4906536+00:00",
+    "finished_at":  "2026-08-14T20:53:51.1912568+00:00",
+    "elapsed_seconds":  3.701,
+    "root_process_id":  6480,
+    "observed_process_ids":  [
+                                 6480
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-safeguard-repair-worktree-create-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-safeguard-repair-worktree-create-001.stderr.log"
+}

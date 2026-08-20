@@ -1,0 +1,22 @@
+.........................F.........                                      [100%]
+================================== FAILURES ===================================
+___ test_launch_profiles_materialize_deepseek_and_terra_compaction_settings ___
+
+    def test_launch_profiles_materialize_deepseek_and_terra_compaction_settings() -> None:
+        runner = _load_runner()
+        deepseek = runner.apply_workflow_role_allocation(_coding_invocation(), "coder-main", validate_finding_gate=False)
+        deepseek_settings = deepseek["codex"]
+        assert deepseek_settings["launch_profile"] == "deepseek-v4-flash-0731"
+        assert deepseek_settings["model"] == "deepseek-v4-flash:0731-cloud"
+        assert deepseek_settings["reasoning_effort"] == "max"
+        assert "service_tier" not in deepseek_settings
+        assert deepseek_settings["command"] == ["codex", "--dangerously-bypass-hook-trust"]
+        assert "model_context_window=1048576" not in deepseek_settings["config_overrides"]
+        assert "model_auto_compact_token_limit=230000" not in deepseek_settings["config_overrides"]
+>       assert "model_auto_compact_token_limit=1" not in deepseek_settings["config_overrides"]
+E       AssertionError: assert 'model_auto_compact_token_limit=1' not in ['model_auto_compact_token_limit=1']
+
+.codex\tests\test_stable_runner.py:576: AssertionError
+=========================== short test summary info ===========================
+FAILED .codex/tests/test_stable_runner.py::test_launch_profiles_materialize_deepseek_and_terra_compaction_settings
+1 failed, 34 passed in 24.94s

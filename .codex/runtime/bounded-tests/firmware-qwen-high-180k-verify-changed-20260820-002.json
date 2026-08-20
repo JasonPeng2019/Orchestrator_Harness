@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  720,
+    "expected_upper_bound_seconds":  600,
+    "cleanup_allowance_seconds":  120,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Change-aware verifier normally completes within ten minutes; two-minute policy-capped cleanup allowance.",
+    "started_at":  "2026-08-20T17:32:14.3350773+00:00",
+    "finished_at":  "2026-08-20T17:32:25.7492624+00:00",
+    "elapsed_seconds":  11.414,
+    "root_process_id":  21844,
+    "observed_process_ids":  [
+                                 21844
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-qwen-high-180k-verify-changed-20260820-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-qwen-high-180k-verify-changed-20260820-002.stderr.log"
+}

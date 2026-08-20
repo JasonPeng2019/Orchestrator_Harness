@@ -1,0 +1,62 @@
+{
+    "epoch":  "20260802-m5-q6-144500Z",
+    "started_utc":  "2026-08-02T14:46:44.2024721Z",
+    "workers":  [
+                    {
+                        "doer":  "Atlas",
+                        "task":  "A22",
+                        "controller_pid":  197056,
+                        "creation_utc":  "2026-08-02T14:46:41.5717695Z",
+                        "lane_id":  "20260802-m5-q6-144500Z:Atlas:A22",
+                        "command":  "run_persistent_lane_r9.ps1",
+                        "leases":  [
+
+                                   ],
+                        "board_tokens":  [
+
+                                         ]
+                    },
+                    {
+                        "doer":  "Boreal",
+                        "task":  "D31",
+                        "controller_pid":  193196,
+                        "creation_utc":  "2026-08-02T14:46:42.2931887Z",
+                        "lane_id":  "20260802-m5-q6-144500Z:Boreal:D31",
+                        "command":  "run_persistent_lane_r9.ps1",
+                        "leases":  [
+
+                                   ],
+                        "board_tokens":  [
+
+                                         ]
+                    },
+                    {
+                        "doer":  "Cygnus",
+                        "task":  "A24",
+                        "controller_pid":  194020,
+                        "creation_utc":  "2026-08-02T14:46:42.9174113Z",
+                        "lane_id":  "20260802-m5-q6-144500Z:Cygnus:A24",
+                        "command":  "run_persistent_lane_r9.ps1",
+                        "leases":  [
+
+                                   ],
+                        "board_tokens":  [
+
+                                         ]
+                    },
+                    {
+                        "doer":  "Delta",
+                        "task":  "A26",
+                        "controller_pid":  184848,
+                        "creation_utc":  "2026-08-02T14:46:43.5527828Z",
+                        "lane_id":  "20260802-m5-q6-144500Z:Delta:A26",
+                        "command":  "run_persistent_lane_r9.ps1",
+                        "leases":  [
+
+                                   ],
+                        "board_tokens":  [
+
+                                         ]
+                    }
+                ]
+}

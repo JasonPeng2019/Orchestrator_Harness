@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  280,
+    "expected_upper_bound_seconds":  250,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The whole-repository verifier reached its Codex integration suite in approximately 240 seconds on the preceding run; 250 seconds allows measured variation and thirty seconds bounds cleanup.",
+    "started_at":  "2026-08-14T11:16:02.6078901+00:00",
+    "finished_at":  "2026-08-14T11:16:05.0426321+00:00",
+    "elapsed_seconds":  2.435,
+    "root_process_id":  178336,
+    "observed_process_ids":  [
+                                 178336
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-root-verifier-model-roster-rerun.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-root-verifier-model-roster-rerun.stderr.log"
+}

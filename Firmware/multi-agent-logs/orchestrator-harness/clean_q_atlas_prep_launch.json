@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python",
+    "-m",
+    "orchestrator_harness.lane_controller",
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3/fresh-experiments/A22_20260726-062324/.agent-workspace/atlas_a22_s1_clean_q_prep.invocation.json"
+  ],
+  "child_pid": 185988,
+  "cleanup_confirmed": true,
+  "cleanup_error": null,
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324",
+  "error": "child identity could not be proved live",
+  "label": "clean_q_atlas_prep",
+  "launched_utc": "2026-08-01T00:39:38.447290Z",
+  "platform": "windows",
+  "role": "lane-controller",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "failed"
+}

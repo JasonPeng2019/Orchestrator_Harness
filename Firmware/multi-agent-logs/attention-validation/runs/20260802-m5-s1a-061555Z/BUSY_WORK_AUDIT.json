@@ -1,0 +1,11 @@
+{
+  "schema": "m5-busy-manager-audit/v1",
+  "epoch": "20260802-m5-s1a-061555Z",
+  "activity_id": "busy-control-001",
+  "started_utc": "2026-08-02T06:27:51.013618Z",
+  "trigger_created_utc": "2026-08-02T06:27:51.015615Z",
+  "finished_utc": "2026-08-02T06:28:21.017151Z",
+  "unique_files_checked": 112,
+  "hash_checks": 140000,
+  "mismatches": []
+}

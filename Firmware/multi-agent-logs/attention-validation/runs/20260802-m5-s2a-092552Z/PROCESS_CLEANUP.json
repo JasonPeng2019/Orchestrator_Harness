@@ -1,0 +1,75 @@
+{
+  "schema": "m5-process-cleanup/v1",
+  "epoch": "20260802-m5-s2a-092552Z",
+  "checked_utc": "2026-08-02T09:48:21.620135Z",
+  "processes": [
+    {
+      "role": "harness",
+      "pid": 194968,
+      "creation": "/Date(1785662787780)/",
+      "present_after_cleanup": false
+    },
+    {
+      "role": "harness",
+      "pid": 186488,
+      "creation": "/Date(1785662788001)/",
+      "present_after_cleanup": false
+    },
+    {
+      "role": "watcher",
+      "pid": 79348,
+      "creation": "windows-filetime:134301363913105813",
+      "present_after_cleanup": false
+    },
+    {
+      "role": "controller-Atlas",
+      "pid": 171616,
+      "creation": "2026-08-02T09:27:36.7238122Z",
+      "present_after_cleanup": false
+    },
+    {
+      "role": "codex-Atlas",
+      "pid": 186220,
+      "creation": "2026-08-02T09:27:37.6033856Z",
+      "present_after_cleanup": false
+    },
+    {
+      "role": "controller-Boreal",
+      "pid": 188600,
+      "creation": "2026-08-02T09:27:37.4852904Z",
+      "present_after_cleanup": false
+    },
+    {
+      "role": "codex-Boreal",
+      "pid": 169372,
+      "creation": "2026-08-02T09:27:38.4604091Z",
+      "present_after_cleanup": false
+    },
+    {
+      "role": "controller-Cygnus",
+      "pid": 189308,
+      "creation": "2026-08-02T09:27:38.2016495Z",
+      "present_after_cleanup": false
+    },
+    {
+      "role": "codex-Cygnus",
+      "pid": 195324,
+      "creation": "2026-08-02T09:27:39.1695959Z",
+      "present_after_cleanup": false
+    },
+    {
+      "role": "controller-Delta",
+      "pid": 190276,
+      "creation": "2026-08-02T09:27:38.9211395Z",
+      "present_after_cleanup": false
+    },
+    {
+      "role": "codex-Delta",
+      "pid": 188512,
+      "creation": "2026-08-02T09:27:40.6128442Z",
+      "present_after_cleanup": false
+    }
+  ],
+  "live_registered": [],
+  "exact_cleanup": true
+}

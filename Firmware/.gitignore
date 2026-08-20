@@ -1,0 +1,10 @@
+# Runtime-supplied product worktree and generated campaign state
+target-harness/
+target-harness*/
+fresh-experiments/
+runtime/
+
+# Mutable epoch/runtime data below the retained package policy directory
+.agent-workspace/epochs/
+.agent-workspace/server-repair-runtime/
+.agent-workspace/server-snapshots/

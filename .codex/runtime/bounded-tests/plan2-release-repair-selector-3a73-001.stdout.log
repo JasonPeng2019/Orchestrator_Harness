@@ -1,0 +1,200 @@
+{
+  "changed_domains": [],
+  "changed_paths": [
+    "orchestrator_harness/firmware_adapter.py",
+    "orchestrator_harness/tests/test_s5_capability_broker.py"
+  ],
+  "intent": "affected",
+  "invalidated_credit_ids": [],
+  "preserved_credit_ids": [],
+  "producer_must_not_run": [
+    "S6.RELEASE.ACCUMULATED-SAFEGUARD"
+  ],
+  "registry_fingerprint": "600406fc51197f2c808bafdb3b83b181223e5f9f50acf4926e680e5c8fc7fd00",
+  "rejected_credit_ids": [],
+  "schema": "orchestrator-check-selection/v1",
+  "selected": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "orchestrator_harness.tests.test_s6_public_release.S6SelectorTests"
+      ],
+      "decisive": true,
+      "dependency_domains": [
+        "selector"
+      ],
+      "dependency_fingerprint": "d60dc8bd6e9360373f21703dc3d010222b062a6378b6dc3da1247ee79ea51d9d",
+      "dependency_paths": [
+        ".gitignore",
+        "orchestrator_harness/release_checks.py",
+        "orchestrator_harness/tests/test_s6_public_release.py",
+        "tools/Invoke-CandidateSafeguard.ps1",
+        "tools/CandidateSafeguard.Core.psm1"
+      ],
+      "estimated_duration_seconds": 1.0,
+      "external_requirements": [],
+      "name": "stable selector and credit contract",
+      "output_contract": "orchestrator-check-credit/v1",
+      "platform_requirements": [],
+      "producer": "S6.P",
+      "selection_reason": "missing-credit",
+      "stable_id": "S6.FAST.SELECTOR",
+      "tier": "fast"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "orchestrator_harness.tests.test_s6_public_release.S6DocumentationTests"
+      ],
+      "decisive": false,
+      "dependency_domains": [
+        "docs"
+      ],
+      "dependency_fingerprint": "6256ec8a965d0910d0139a5dd5e03774552bb367645d1aaed1db881c24fd21d5",
+      "dependency_paths": [
+        "README.md",
+        "QUICK_START.md",
+        "QUICK_RULES.md",
+        "orchestrator_harness/README.md",
+        "examples/public-coding-launch.example.md",
+        "examples/release-selection.example.json",
+        "orchestrator_harness/tests/test_s6_public_release.py"
+      ],
+      "estimated_duration_seconds": 1.0,
+      "external_requirements": [],
+      "name": "public release documentation contract",
+      "output_contract": "orchestrator-check-credit/v1",
+      "platform_requirements": [],
+      "producer": "S6.P",
+      "selection_reason": "missing-credit",
+      "stable_id": "S6.FAST.DOCS",
+      "tier": "fast"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "orchestrator_harness.tests.test_s6_public_release.S6PackageTests"
+      ],
+      "decisive": false,
+      "dependency_domains": [
+        "package"
+      ],
+      "dependency_fingerprint": "f229e853ba41d3fa3741082fd831810f7cab9812effa6ded91dc6be555ccffc1",
+      "dependency_paths": [
+        "orchestrator_harness/pyproject.toml",
+        "orchestrator_harness/release_assets.py",
+        "orchestrator_harness/assets/release/manifest.json",
+        "orchestrator_harness/tests/test_s6_public_release.py"
+      ],
+      "estimated_duration_seconds": 1.0,
+      "external_requirements": [],
+      "input_scopes": [
+        {
+          "kind": "tree",
+          "path": "orchestrator_harness",
+          "required": true
+        },
+        {
+          "kind": "tree",
+          "path": "harness_common",
+          "required": true
+        },
+        {
+          "kind": "tree",
+          "path": "examples",
+          "required": true
+        },
+        {
+          "kind": "tree",
+          "path": "release_evidence_templates",
+          "required": true
+        }
+      ],
+      "name": "package resource and metadata contract",
+      "output_contract": "orchestrator-check-credit/v1",
+      "platform_requirements": [],
+      "producer": "S6.P",
+      "selection_reason": "missing-credit",
+      "stable_id": "S6.FAST.PACKAGE",
+      "tier": "fast"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "orchestrator_harness.tests.test_s6_public_release.S6LocalIsolationTests"
+      ],
+      "decisive": false,
+      "dependency_domains": [
+        "isolation-local"
+      ],
+      "dependency_fingerprint": "9f0e6f0c8f3ff7a66178010b99f5b3aebfc117366e12528c6cb2242e3363f1a5",
+      "dependency_paths": [
+        "orchestrator_harness/public_launch.py",
+        "orchestrator_harness/operator_launch.py",
+        "orchestrator_harness/lane_controller.py",
+        "orchestrator_harness/invocation.py",
+        "orchestrator_harness/provider.py",
+        "orchestrator_harness/process_supervisor.py",
+        "orchestrator_harness/processes.py",
+        "orchestrator_harness/git_safety.py",
+        "orchestrator_harness/resource_locks.py",
+        "orchestrator_harness/lane_lifecycle.py",
+        "orchestrator_harness/models.py",
+        "orchestrator_harness/mutation.py",
+        "orchestrator_harness/stable_io.py",
+        "orchestrator_harness/profile.py",
+        "orchestrator_harness/prompt_bundle.py",
+        "orchestrator_harness/resume.py",
+        "orchestrator_harness/task.py",
+        "orchestrator_harness/cli.py",
+        "orchestrator_harness/config.py",
+        "orchestrator_harness/discovery.py",
+        "harness_common/process_identity.py",
+        "orchestrator_harness/tests/real_agent_test.py",
+        "orchestrator_harness/tests/wsl_identity.py",
+        "orchestrator_harness/tests/support/wsl_real_agent_driver.py",
+        "orchestrator_harness/tests/support/wsl_codex_provider.py",
+        "orchestrator_harness/tests/support/wsl_public_route_entry.py",
+        "orchestrator_harness/tests/support/wsl_guarded_entry.py",
+        "orchestrator_harness/tests/support/cgroup_exec.py",
+        "orchestrator_harness/tests/support/allowlist_connect_proxy.py",
+        "orchestrator_harness/install_wsl_codex.ps1",
+        "orchestrator_harness/tests/test_s6_public_release.py"
+      ],
+      "estimated_duration_seconds": 2.0,
+      "external_requirements": [],
+      "name": "deterministic isolation helper contract",
+      "output_contract": "orchestrator-check-credit/v1",
+      "platform_requirements": [],
+      "producer": "S6.P",
+      "selection_reason": "missing-credit",
+      "stable_id": "S6.FAST.LOCAL-ISOLATION",
+      "tier": "fast"
+    }
+  ],
+  "selected_ids": [
+    "S6.FAST.SELECTOR",
+    "S6.FAST.DOCS",
+    "S6.FAST.PACKAGE",
+    "S6.FAST.LOCAL-ISOLATION"
+  ],
+  "selector_module": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\woc-0365\\orchestrator_harness\\release_checks.py",
+  "source": {
+    "branch": "firmware/v2-workspace-overlay-check-generalization-0365",
+    "git_common_dir": "c:\\users\\jason\\documents\\jason\\orchestrator_harness\\.git\\modules\\harness-in-progress",
+    "source_root": "c:\\users\\jason\\documents\\jason\\orchestrator_harness\\plans\\general-coding-harness\\runtime\\woc-0365",
+    "tip": "3a73a7b6c0caaff15f51832b1d4ddae63f62c7b8"
+  }
+}

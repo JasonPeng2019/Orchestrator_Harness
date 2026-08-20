@@ -1,0 +1,8 @@
+{"event":"CODEX_STARTED","utc":"2026-08-02T17:07:32.0140782Z","label":"Atlas-A22","declared_lane_id":"20260802-m5-q10-170245Z:Atlas:A22","controller_pid":179032,"codex_pid":197736}
+{"event":"CODEX_STARTED","utc":"2026-08-02T17:07:32.8889712Z","label":"Boreal-D31","declared_lane_id":"20260802-m5-q10-170245Z:Boreal:D31","controller_pid":2316,"codex_pid":186840}
+{"event":"CODEX_STARTED","utc":"2026-08-02T17:07:34.4744716Z","label":"Cygnus-A24","declared_lane_id":"20260802-m5-q10-170245Z:Cygnus:A24","controller_pid":196636,"codex_pid":194928}
+{"event":"CODEX_STARTED","utc":"2026-08-02T17:07:35.0417294Z","label":"Delta-A26","declared_lane_id":"20260802-m5-q10-170245Z:Delta:A26","controller_pid":166312,"codex_pid":149120}
+{"event":"CODEX_EXITED","utc":"2026-08-02T17:12:07.7319707Z","label":"Delta-A26","declared_lane_id":"20260802-m5-q10-170245Z:Delta:A26","thread_id":"019fb877-1441-7c92-84e2-cbb5bc422879","exit_code":null}
+{"event":"CODEX_EXITED","utc":"2026-08-02T17:14:10.3345191Z","label":"Cygnus-A24","declared_lane_id":"20260802-m5-q10-170245Z:Cygnus:A24","thread_id":"019fb877-1199-79b1-a32e-34348178f111","exit_code":null}
+{"event":"CODEX_EXITED","utc":"2026-08-02T17:15:32.1866628Z","label":"Boreal-D31","declared_lane_id":"20260802-m5-q10-170245Z:Boreal:D31","thread_id":"019fb877-1447-7693-92b1-f4bda04c6ecf","exit_code":null}
+{"event":"CODEX_EXITED","utc":"2026-08-02T17:21:51.2489587Z","label":"Atlas-A22","declared_lane_id":"20260802-m5-q10-170245Z:Atlas:A22","thread_id":"019fb877-1475-76c0-a137-2743580015de","exit_code":null}

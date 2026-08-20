@@ -1,0 +1,80 @@
+[
+    {
+        "pid":  189312,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:09:34.5281753Z"
+    },
+    {
+        "pid":  148648,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:09:34.5661738Z"
+    },
+    {
+        "pid":  188072,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:09:34.5991793Z"
+    },
+    {
+        "pid":  194644,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:09:34.6304096Z"
+    },
+    {
+        "pid":  194464,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:09:34.6684065Z"
+    },
+    {
+        "pid":  183668,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:09:34.7024058Z"
+    },
+    {
+        "pid":  196484,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:09:34.7334069Z"
+    },
+    {
+        "pid":  22028,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:09:34.7654059Z"
+    },
+    {
+        "pid":  154660,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:09:34.7994054Z"
+    },
+    {
+        "pid":  170092,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:09:34.8323929Z"
+    },
+    {
+        "pid":  184808,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:09:34.8614056Z"
+    },
+    {
+        "pid":  194828,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:09:34.8954370Z"
+    },
+    {
+        "pid":  185972,
+        "state":  "ABSENT",
+        "process_name":  null,
+        "observed_utc":  "2026-08-01T20:09:34.9284065Z"
+    }
+]

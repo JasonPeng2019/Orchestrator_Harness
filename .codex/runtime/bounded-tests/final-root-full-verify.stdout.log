@@ -1,0 +1,45 @@
+
+== ruff ==
+All checks passed!
+
+== format ==
+18 files already formatted
+
+== types ==
+0 errors, 0 warnings, 0 notes
+
+== compile ==
+
+== orchestrator tests ==
+
+== watcher tests ==
+{"disabled": true}
+{"error": "[Errno 2] No such file or directory: 'C:\\\\Users\\\\Jason\\\\AppData\\\\Local\\\\Temp\\\\tmpllho7dl3\\\\missing.json'"}
+{"error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"}
+{"error": "metadata must be an object"}
+{"record_id": "ec9c11d3-9ffe-49e1-a147-9292b6bdda06", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpc0l6o23p\\readiness\\inputs\\subagent\\lane-d93244e7b08131ef\\attention.jsonl"}
+{"record_id": "a1300250-3e79-4e8a-b21c-82cfd3488512", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpc0l6o23p\\readiness\\inputs\\orchestrator\\root-4813494d137e1631\\attention.jsonl"}
+{"record_id": "11111111-1111-4111-8111-111111111111", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp65ts93p4\\inline\\inputs\\subagent\\lane-d93244e7b08131ef\\attention.jsonl"}
+{"record_id": "11111111-1111-4111-8111-111111111111", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmp65ts93p4\\file\\inputs\\subagent\\lane-d93244e7b08131ef\\attention.jsonl"}
+{"record_id": "a02e824e-4229-4e3c-bf1f-3de0dddf40da", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpv3ewh4yg\\baseline\\inputs\\orchestrator\\root-4813494d137e1631\\attention.jsonl"}
+{"error": "record kind is not permitted for producer role"}
+{"record_id": "af92e1f1-b50f-4184-b4f7-15d61895b3cb", "path": "C:\\Users\\Jason\\AppData\\Local\\Temp\\tmpu5s8tii3\\runtime\\inputs\\subagent\\lane-d93244e7b08131ef\\attention.jsonl"}
+
+== Codex integration tests ==
+..........................F............................................. [ 45%]
+........................................................................ [ 91%]
+..............                                                           [100%]
+================================== FAILURES ===================================
+__________ test_verify_skill_keeps_full_gate_separate_from_stop_gate __________
+
+    def test_verify_skill_keeps_full_gate_separate_from_stop_gate() -> None:
+        skill = (ROOT / ".codex" / "skills" / "verify" / "SKILL.md").read_text(encoding="utf-8")
+        assert ".codex/scripts/verify.py" in skill
+        assert ".codex/scripts/verify_changed.py" in skill
+>       assert "never replaces this skill" in skill
+E       assert 'never replaces this skill' in "---\nname: harness-verify\ndescription: Run the repository's enforced Ruff, BasedPyright, compilation, and test gate ...py\n```\n\nUse `--full` only when that broader gate is required and watcher retention or lifecycle behavior changed.\n"
+
+.codex\tests\test_codex_configuration.py:62: AssertionError
+=========================== short test summary info ===========================
+FAILED .codex/tests/test_codex_configuration.py::test_verify_skill_keeps_full_gate_separate_from_stop_gate
+1 failed, 157 passed in 54.52s

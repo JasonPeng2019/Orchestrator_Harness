@@ -1,0 +1,17 @@
+
+== ruff ==
+All checks passed!
+
+== format ==
+unformatted: File would be reformatted
+   --> .codex\tests\test_bounded_test_supervisor.py:132:74
+    |
+131 |     assert not path.exists()
+    -     assert "CleanupAllowanceSeconds=120 is excessive" in completed.stderr
+    -     assert "30 seconds" in completed.stderr
+132 +     assert "CleanupAllowanceSeconds=120 is excessive" in completed.stderr
+133 +     assert "30 seconds" in completed.stderr
+134 |
+    |
+
+1 file would be reformatted, 17 files already formatted

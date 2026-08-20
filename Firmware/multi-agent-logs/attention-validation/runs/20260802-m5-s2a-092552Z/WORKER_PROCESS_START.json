@@ -1,0 +1,38 @@
+﻿[
+    {
+        "doer":  "Atlas",
+        "task":  "A22",
+        "controller_pid":  171616,
+        "controller_creation_utc":  "2026-08-02T09:27:36.7238122Z",
+        "codex_pid":  186220,
+        "codex_creation_utc":  "2026-08-02T09:27:37.6033856Z",
+        "state":  "RUNNING_CODEX"
+    },
+    {
+        "doer":  "Boreal",
+        "task":  "D31",
+        "controller_pid":  188600,
+        "controller_creation_utc":  "2026-08-02T09:27:37.4852904Z",
+        "codex_pid":  169372,
+        "codex_creation_utc":  "2026-08-02T09:27:38.4604091Z",
+        "state":  "RUNNING_CODEX"
+    },
+    {
+        "doer":  "Cygnus",
+        "task":  "A24",
+        "controller_pid":  189308,
+        "controller_creation_utc":  "2026-08-02T09:27:38.2016495Z",
+        "codex_pid":  195324,
+        "codex_creation_utc":  "2026-08-02T09:27:39.1695959Z",
+        "state":  "RUNNING_CODEX"
+    },
+    {
+        "doer":  "Delta",
+        "task":  "A26",
+        "controller_pid":  190276,
+        "controller_creation_utc":  "2026-08-02T09:27:38.9211395Z",
+        "codex_pid":  188512,
+        "codex_creation_utc":  "2026-08-02T09:27:40.6128442Z",
+        "state":  "RUNNING_CODEX"
+    }
+]

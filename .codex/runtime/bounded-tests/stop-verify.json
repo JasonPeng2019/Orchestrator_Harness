@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  240,
+    "expected_upper_bound_seconds":  210,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The Codex Stop hook has a 300-second ceiling; 240 seconds reserves cleanup and response time.",
+    "started_at":  "2026-08-18T02:25:48.0525656+00:00",
+    "finished_at":  "2026-08-18T02:25:49.5560228+00:00",
+    "elapsed_seconds":  1.503,
+    "root_process_id":  20740,
+    "observed_process_ids":  [
+                                 20740
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\stop-verify.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\stop-verify.stderr.log"
+}

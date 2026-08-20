@@ -1,0 +1,11 @@
+﻿{
+    "schema":  "canary-manager-signal-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:36:47.1478687Z",
+    "event_id":  "fe34b5d7f818ebdabfbae6865b6e510a8db16b4b5978daea0e4c375b90014f2c",
+    "signal_id":  "20260731T233117Z-Cygnus-A24-S1O-CHECKPOINT",
+    "signal_sha256":  "8c1738d9e5966ee0613b4828c294bac580f68939dba5113a425851ba261ac75a",
+    "verdict":  "ACCEPTED_NONTERMINAL_TEST_FIXTURE_FAILURE",
+    "classification":  "RUN_LOCAL_CONTROLLER_STUB_NOT_SERVER_OR_HARNESS",
+    "analysis":  "Exact checkpoint and evidence confirm the assigned O entry command ran once but the run-local controller raised its manager-gated implementation guard before any provider, MCP, setup, request, board, flash, or RF action. No retry occurred; exact no-op and delayed absence proofs are clean. Preserve evidence; no production server or primary-harness defect."
+}

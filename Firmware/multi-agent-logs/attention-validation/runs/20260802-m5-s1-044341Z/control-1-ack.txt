@@ -1,0 +1,7 @@
+{
+  "acknowledged": true,
+  "event_id": "9adc6ec55b7443614a17e850c01812c8b609cbd008b4f796bf25d64cdab81e23",
+  "watcher_received": false
+}
+
+STDERR:

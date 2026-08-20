@@ -1,0 +1,30 @@
+﻿[
+    {
+        "doer":  "Atlas",
+        "pid":  11924,
+        "invocation":  "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_h_hil.invocation.json",
+        "stdout":  ".agent-workspace\\ORCHESTRATOR_HARNESS\\CLEAN_H_Atlas_controller.stdout.log",
+        "stderr":  ".agent-workspace\\ORCHESTRATOR_HARNESS\\CLEAN_H_Atlas_controller.stderr.log"
+    },
+    {
+        "doer":  "Boreal",
+        "pid":  58004,
+        "invocation":  "fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_s1_clean_h_hil.invocation.json",
+        "stdout":  ".agent-workspace\\ORCHESTRATOR_HARNESS\\CLEAN_H_Boreal_controller.stdout.log",
+        "stderr":  ".agent-workspace\\ORCHESTRATOR_HARNESS\\CLEAN_H_Boreal_controller.stderr.log"
+    },
+    {
+        "doer":  "Cygnus",
+        "pid":  178032,
+        "invocation":  "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_s1_clean_h_hil.invocation.json",
+        "stdout":  ".agent-workspace\\ORCHESTRATOR_HARNESS\\CLEAN_H_Cygnus_controller.stdout.log",
+        "stderr":  ".agent-workspace\\ORCHESTRATOR_HARNESS\\CLEAN_H_Cygnus_controller.stderr.log"
+    },
+    {
+        "doer":  "Delta",
+        "pid":  185744,
+        "invocation":  "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_s1_clean_h_bind.invocation.json",
+        "stdout":  ".agent-workspace\\ORCHESTRATOR_HARNESS\\CLEAN_H_Delta_controller.stdout.log",
+        "stderr":  ".agent-workspace\\ORCHESTRATOR_HARNESS\\CLEAN_H_Delta_controller.stderr.log"
+    }
+]

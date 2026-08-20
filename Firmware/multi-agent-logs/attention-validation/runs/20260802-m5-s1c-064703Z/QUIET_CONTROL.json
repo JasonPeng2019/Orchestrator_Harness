@@ -1,0 +1,9 @@
+{
+  "schema": "m5-quiet-control/v1",
+  "epoch": "20260802-m5-s1c-064703Z",
+  "timeout_seconds": 15,
+  "returncode": 0,
+  "type": "STALE_STATUS",
+  "wake_id": "c626ae2b-ad23-4a46-8a7d-da8fa2850087",
+  "valid": false
+}

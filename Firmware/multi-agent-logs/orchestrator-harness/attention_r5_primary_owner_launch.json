@@ -1,0 +1,28 @@
+{
+  "schema": "orchestrator-operator-launch/v1",
+  "label": "attention_r5_primary_owner",
+  "role": "harness-owner",
+  "platform": "windows",
+  "pid": 184496,
+  "created_utc": "2026-08-01T17:54:37.045628+00:00",
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+  "argv": [
+    "powershell.exe",
+    "-NoProfile",
+    "-NonInteractive",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    ".agent-workspace/ORCHESTRATOR_HARNESS/clean_l_primary_owner.ps1",
+    "-SuiteRoot",
+    "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+    "-Config",
+    "orchestrator_harness/canary-20260801-attention-r5.json",
+    "-Epoch",
+    "20260801-attention-r5",
+    "-IntervalSeconds",
+    "60"
+  ],
+  "expected_state_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\.agent-workspace\\ORCHESTRATOR_HARNESS\\clean_r5_primary_identity.json",
+  "status": "launched_via_powershell_start_process"
+}

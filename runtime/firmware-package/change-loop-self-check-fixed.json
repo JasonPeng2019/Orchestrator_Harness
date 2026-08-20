@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "bash .codex/skills/change-loop/scripts/run_loop.sh --self-check",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  20,
+    "timeout_basis":  "Change-loop self-check creates a temporary repository and exercises syntax, gates, JSONL parsing, prompt binding, and thread reuse; 120 seconds is a conservative local bound.",
+    "started_at":  "2026-08-14T09:25:44.3209364+00:00",
+    "finished_at":  "2026-08-14T09:25:48.8245849+00:00",
+    "elapsed_seconds":  4.504,
+    "root_process_id":  162948,
+    "observed_process_ids":  [
+                                 162948
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\change-loop-self-check-fixed.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\change-loop-self-check-fixed.stderr.log"
+}

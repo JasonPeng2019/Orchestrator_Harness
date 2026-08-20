@@ -1,0 +1,1 @@
+worktree-task: Command '['git', 'worktree', 'remove', 'C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-release-format-repro-001']' returned non-zero exit status 255.

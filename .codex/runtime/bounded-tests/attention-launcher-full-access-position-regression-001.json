@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python -m pytest -q .codex/tests/test_stable_runner.py -k \u0027workflow_roles_resolve_current_mapping or launch_profiles_materialize_deepseek_and_terra_compaction_settings or disposable_controller_refreshes_role_at_dispatch\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  56,
+    "expected_upper_bound_seconds":  45,
+    "cleanup_allowance_seconds":  11,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Three focused stable-runner regressions normally finish well under 30 seconds; 45 seconds includes locked environment startup, and 11 seconds is the policy-capped cleanup allowance.",
+    "started_at":  "2026-08-15T00:38:25.6576093+00:00",
+    "finished_at":  "2026-08-15T00:38:40.0087591+00:00",
+    "elapsed_seconds":  14.351,
+    "root_process_id":  34908,
+    "observed_process_ids":  [
+                                 34908
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\attention-launcher-full-access-position-regression-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\attention-launcher-full-access-position-regression-001.stderr.log"
+}

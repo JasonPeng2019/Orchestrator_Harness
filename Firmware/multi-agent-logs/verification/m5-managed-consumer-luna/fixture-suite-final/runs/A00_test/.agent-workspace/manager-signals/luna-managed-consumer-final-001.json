@@ -1,0 +1,14 @@
+{
+  "schema": "manager-signal/v1",
+  "signal_id": "luna-managed-consumer-final-001",
+  "kind": "HELP",
+  "created_utc": "2026-08-02T02:23:25.346166Z",
+  "deadline_utc": "2099-01-01T00:00:00Z",
+  "lane_id": "m5-managed-consumer-luna-final:Atlas:A00",
+  "agent_blocked": true,
+  "task": "A00",
+  "phase": "managed-consumer-smoke",
+  "summary": "isolated managed consumer wake",
+  "evidence_paths": [],
+  "attention_epoch_id": "m5-managed-consumer-luna-final"
+}

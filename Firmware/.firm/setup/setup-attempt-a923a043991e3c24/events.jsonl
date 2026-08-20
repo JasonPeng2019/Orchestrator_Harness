@@ -1,0 +1,7 @@
+{"code":"setup/input-verified","phase":"input","recorded_at":"2026-08-16T07:54:33.642088Z","state":"verified"}
+{"code":"setup/live-preflight-complete","phase":"preflight","recorded_at":"2026-08-16T07:54:33.649039Z","state":"verified"}
+{"code":"setup/selections-resolved","phase":"selection","recorded_at":"2026-08-16T07:54:33.655035Z","state":"verified"}
+{"code":"setup/exact-target-detected","phase":"target_resolution","recorded_at":"2026-08-16T07:54:33.660036Z","state":"verified"}
+{"code":"setup/target-support-present","phase":"target_support","recorded_at":"2026-08-16T07:54:33.663742Z","state":"verified"}
+{"code":"setup/core-profile-committed-after-connect","phase":"connection","recorded_at":"2026-08-16T07:54:33.670738Z","state":"verified"}
+{"code":"setup/validation-failed","phase":"validation","recorded_at":"2026-08-16T07:54:33.673743Z","state":"failed"}

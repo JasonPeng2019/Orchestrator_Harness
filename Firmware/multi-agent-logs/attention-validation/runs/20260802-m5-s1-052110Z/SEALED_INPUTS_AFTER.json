@@ -1,0 +1,65 @@
+{
+    "all_match":  true,
+    "files":  [
+                  {
+                      "path":  "multi-agent-logs/orchestrator-harness/20260802-m5-s1-052110Z/config.json",
+                      "expected":  "2700fb5e22046dcd9aeb162dc07b673051a33a6cb02a2192c484f2b95bef83bb",
+                      "actual":  "2700fb5e22046dcd9aeb162dc07b673051a33a6cb02a2192c484f2b95bef83bb",
+                      "match":  true
+                  },
+                  {
+                      "path":  "harness_watcher/20260802-m5-s1-052110Z/config.json",
+                      "expected":  "c8a62c2110e563cdd3062ce6555c323639ef0887c557945b9fa8a4381a7e9546",
+                      "actual":  "c8a62c2110e563cdd3062ce6555c323639ef0887c557945b9fa8a4381a7e9546",
+                      "match":  true
+                  },
+                  {
+                      "path":  "active-working-spec/m5-three-sprint-wake-test.md",
+                      "expected":  "00fb4840d4e24052b91f63b3d5c1868a5d6ad465245b96004cbc8711707925ea",
+                      "actual":  "00fb4840d4e24052b91f63b3d5c1868a5d6ad465245b96004cbc8711707925ea",
+                      "match":  true
+                  },
+                  {
+                      "path":  ".agent-workspace/AUTONOMOUS_EXECUTION_POLICY.md",
+                      "expected":  "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68",
+                      "actual":  "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68",
+                      "match":  true
+                  },
+                  {
+                      "path":  ".agent-workspace/AUTONOMY_REQUIREMENT_MATRIX.md",
+                      "expected":  "3c33b4c448b7c8d234e7e6704b90d8c69984ce060a4c4c3c71876f7aec621256",
+                      "actual":  "3c33b4c448b7c8d234e7e6704b90d8c69984ce060a4c4c3c71876f7aec621256",
+                      "match":  true
+                  },
+                  {
+                      "path":  "multi-agent-logs/server-snapshots/server-snapshot-20260802-m5-s1-052110Z.json",
+                      "expected":  "49ba8659c77f7432e0d81e24c1db431c4b1b2ec6a9eaa29753f6a951fec01130",
+                      "actual":  "49ba8659c77f7432e0d81e24c1db431c4b1b2ec6a9eaa29753f6a951fec01130",
+                      "match":  true
+                  },
+                  {
+                      "path":  "fresh-experiments/A22_20260726-062324/.agent-workspace/ATTENTION_R14_CHECKPOINT.md",
+                      "expected":  "58a4500d11278a5003cd1896506c8ffe8678931d96a45517cc99cda4a5d62671",
+                      "actual":  "58a4500d11278a5003cd1896506c8ffe8678931d96a45517cc99cda4a5d62671",
+                      "match":  true
+                  },
+                  {
+                      "path":  "fresh-experiments/D31_20260726-062325/.agent-workspace/ATTENTION_R14_CHECKPOINT.md",
+                      "expected":  "6d7fbe6e6320fbc4f7aa130a4289f6d5cd2af744d857343a022f1e343b02f126",
+                      "actual":  "6d7fbe6e6320fbc4f7aa130a4289f6d5cd2af744d857343a022f1e343b02f126",
+                      "match":  true
+                  },
+                  {
+                      "path":  "fresh-experiments/A24_20260726-052146/.agent-workspace/ATTENTION_R14_CHECKPOINT.md",
+                      "expected":  "4656a2145f11693ccd9da37199d122c4d37da31b7ce864bd1008f9553c046a74",
+                      "actual":  "4656a2145f11693ccd9da37199d122c4d37da31b7ce864bd1008f9553c046a74",
+                      "match":  true
+                  },
+                  {
+                      "path":  "fresh-experiments/A26_20260726-062325/.agent-workspace/ATTENTION_R14_CHECKPOINT.md",
+                      "expected":  "8d4d81ee40db92ffdd66e3093d14b0c20701f9e7ec5ef64d941ff4f7827ee9ff",
+                      "actual":  "8d4d81ee40db92ffdd66e3093d14b0c20701f9e7ec5ef64d941ff4f7827ee9ff",
+                      "match":  true
+                  }
+              ]
+}

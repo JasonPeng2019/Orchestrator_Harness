@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python scratch\\session-analysis\\dump_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Manifest walk of repo; prior delta computation took 1.6s; worst credible 2 min",
+    "started_at":  "2026-08-18T02:28:21.3611862+00:00",
+    "finished_at":  "2026-08-18T02:28:22.5253601+00:00",
+    "elapsed_seconds":  1.164,
+    "root_process_id":  5308,
+    "observed_process_ids":  [
+                                 5308
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\dump-changed-001.result.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\dump-changed-001.result.stderr.log"
+}

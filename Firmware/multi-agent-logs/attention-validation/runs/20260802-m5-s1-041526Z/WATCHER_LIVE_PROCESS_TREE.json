@@ -1,0 +1,62 @@
+{
+  "captured_utc": "2026-08-02T04:15:54.804035+00:00",
+  "processes": [
+    {
+      "pid": 178700,
+      "created_utc": "2026-08-02T04:15:52.715905+00:00",
+      "name": "powershell.exe",
+      "cmdline": [
+        "powershell",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\scripts\\orchestration\\optional_watcher_owner.ps1",
+        "-SuiteRoot",
+        "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+        "-Config",
+        "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-s1-041526Z\\config.json",
+        "-StopFile",
+        "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-s1-041526Z\\stop.token",
+        "-IdentityFile",
+        "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-s1-041526Z\\owner-identity.json"
+      ]
+    },
+    {
+      "pid": 179440,
+      "created_utc": "2026-08-02T04:15:53.124577+00:00",
+      "name": "conhost.exe",
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ]
+    },
+    {
+      "pid": 183716,
+      "created_utc": "2026-08-02T04:15:54.648784+00:00",
+      "name": "python.exe",
+      "cmdline": [
+        "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\BYO-Firmware-MCP\\.venv/Scripts\\python.exe",
+        "-m",
+        "harness_watcher_implementation",
+        "--config",
+        "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-s1-041526Z\\config.json",
+        "status"
+      ]
+    },
+    {
+      "pid": 178732,
+      "created_utc": "2026-08-02T04:15:54.673781+00:00",
+      "name": "python.exe",
+      "cmdline": [
+        "C:\\Users\\Jason\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+        "-m",
+        "harness_watcher_implementation",
+        "--config",
+        "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\harness_watcher\\20260802-m5-s1-041526Z\\config.json",
+        "status"
+      ]
+    }
+  ],
+  "forbidden_children": []
+}

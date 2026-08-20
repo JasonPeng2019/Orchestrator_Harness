@@ -1,0 +1,15 @@
+{
+  "schema": "m5-isolation/v1",
+  "epoch": "20260802-m5-s1d-065143Z",
+  "forbidden_assistance_used": false,
+  "request_discovery": "blocking_harness_wait_stdout only",
+  "reviewer_started_after_cleanup": true,
+  "transcript_inspection_during_active_sprint": false,
+  "direct_signal_inspection_during_active_sprint": false,
+  "runner_or_wrapper_used": false,
+  "watcher_evaluator_enabled": false,
+  "notes": [
+    "The reviewer was launched only after the diagnostic watcher stopped and all registered sprint processes were absent.",
+    "The process registry contains only root, native harness/watcher, and four external E2E worker/controller pairs."
+  ]
+}

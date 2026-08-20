@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/.codex/skills/run-firmware-test-suite/scripts/audit_autonomy.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  20,
+    "expected_upper_bound_seconds":  15,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The deterministic package audit previously completed in under three seconds; fifteen seconds allows filesystem variation and five seconds bounds cleanup.",
+    "started_at":  "2026-08-14T11:35:04.6237299+00:00",
+    "finished_at":  "2026-08-14T11:35:07.3636894+00:00",
+    "elapsed_seconds":  2.74,
+    "root_process_id":  161996,
+    "observed_process_ids":  [
+                                 161996
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-firmware-audit.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-firmware-audit.stderr.log"
+}

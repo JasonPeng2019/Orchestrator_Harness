@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m unittest discover -s Firmware/.codex/skills/run-firmware-test-suite/tests -p test_audit_autonomy.py -v",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Three standard-library audit discovery tests use temporary files and should complete in seconds; 30 seconds includes startup headroom.",
+    "started_at":  "2026-08-14T09:29:02.2359226+00:00",
+    "finished_at":  "2026-08-14T09:29:05.7073967+00:00",
+    "elapsed_seconds":  3.471,
+    "root_process_id":  173780,
+    "observed_process_ids":  [
+                                 173780
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\audit-unit.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\audit-unit.stderr.log"
+}

@@ -1,0 +1,22 @@
+{
+  "epoch": "20260802-m5-s2a-092552Z",
+  "created_utc": "2026-08-02T09:35:41.178321Z",
+  "hashes": {
+    "delegated_authorization": "1cbbe4d0f1b1064818a05ccf73b6793f729ef3b16bbffc91ec1852a76390507d",
+    "server_manifest": "49ba8659c77f7432e0d81e24c1db431c4b1b2ec6a9eaa29753f6a951fec01130",
+    "A22": "1bee2ebab6fb5df17f0c5bf7b1ca8cf84ad2bc5b6a28710e4088c9575f4622f6",
+    "A24": "481edd8494809806b14672e4d4754b9a03ff68e75cb2bdbe1c66b2d763d1b75b",
+    "D31": "bd6cd1a901b60fda625a2a5fd2eff39ab0ce4f19c1b7f1877521f4c9d4b2c3d6"
+  },
+  "resource_decision": {
+    "concurrent_next_live": [
+      "A22 STM-A",
+      "D31 STM-B",
+      "A24 paired nRF"
+    ],
+    "deferred": [
+      "A26 STM-A until A22 release"
+    ]
+  },
+  "live_authority_granted": false
+}

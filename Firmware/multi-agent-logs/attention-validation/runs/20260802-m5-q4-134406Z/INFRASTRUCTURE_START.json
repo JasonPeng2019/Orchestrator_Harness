@@ -1,0 +1,37 @@
+{
+    "epoch":  "20260802-m5-q4-134406Z",
+    "started_utc":  "2026-08-02T13:51:46.2361804Z",
+    "harness_pid":  178568,
+    "harness_creation_utc":  "2026-08-02T13:51:40.7847215Z",
+    "harness_command":  "\"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\BYO-Firmware-MCP\\.venv/Scripts\\python.exe\" -m orchestrator_harness --config C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\multi-agent-logs\\orchestrator-harness\\20260802-m5-q4-134406Z\\config.json watch --managed ",
+    "watcher_start":  {
+                          "started":  true,
+                          "pid":  193196,
+                          "owner":  {
+                                        "pid":  192592,
+                                        "created_utc":  "windows-filetime:134300974063275151"
+                                    }
+                      },
+    "watcher_status":  {
+                           "running":  true,
+                           "state":  {
+                                         "evaluator_enabled":  false,
+                                         "exit_reason":  null,
+                                         "owner":  {
+                                                       "created_utc":  "windows-filetime:134300974063275151",
+                                                       "pid":  192592
+                                                   },
+                                         "schema":  "harness-watcher-service/v1",
+                                         "started_utc":  "2026-08-02T13:51:43.180146+00:00",
+                                         "startup_status":  "READY",
+                                         "startup_token":  "bba4136f-a8c1-42f9-9019-1864864bc102",
+                                         "stop_requested":  false,
+                                         "watcher":  {
+                                                         "created_utc":  "windows-filetime:134301523032211293",
+                                                         "pid":  193196
+                                                     }
+                                     }
+                       },
+    "watcher_evaluator_enabled":  false,
+    "root_owner_pid":  192592
+}

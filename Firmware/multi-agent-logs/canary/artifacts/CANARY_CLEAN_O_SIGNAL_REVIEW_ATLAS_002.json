@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "canary-manager-signal-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:28:00.4982613Z",
+    "event_id":  "92b3c782b534720ac311246a1a529afc2d94796b02d29852c532038b9087db96",
+    "signal_id":  "sig-20260731-s1-clean-o-atlas-a22-first-public-artifact-185388-1785540091575",
+    "signal_sha256":  "6131c560655c69786aadb6ed5defcab198b999b82035992c624ed5aee7b3a0e5",
+    "verdict":  "ACCEPTED_ALREADY_CONSUMED_FEEDBACK",
+    "analysis":  "Atlas first-public-artifact feedback is exact and was already used to release Boreal after exact Atlas cleanup. It remains useful audit evidence but requires no new action."
+}

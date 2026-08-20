@@ -1,0 +1,237 @@
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_attention_practical.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_attention_practical.py:157:37 - error: Operator "/" not supported for types "Path | Unbound" and "Literal['wake-harness']"
+    Operator "/" not supported for types "Unbound" and "Literal['wake-harness']" when expected type is "Path | Unknown" (reportOperatorIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_attention_practical.py:157:37 - error: "destination" is possibly unbound (reportPossiblyUnboundVariable)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_attention_practical.py:158:35 - error: Operator "/" not supported for types "Path | Unbound" and "Literal['wake-watcher']"
+    Operator "/" not supported for types "Unbound" and "Literal['wake-watcher']" when expected type is "Path | Unknown" (reportOperatorIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_attention_practical.py:158:35 - error: "destination" is possibly unbound (reportPossiblyUnboundVariable)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_attention_practical.py:159:35 - error: Operator "/" not supported for types "Path | Unbound" and "Literal['quiet-harness']"
+    Operator "/" not supported for types "Unbound" and "Literal['quiet-harness']" when expected type is "Path | Unknown" (reportOperatorIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_attention_practical.py:159:35 - error: "destination" is possibly unbound (reportPossiblyUnboundVariable)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_attention_practical.py:160:36 - error: Operator "/" not supported for types "Path | Unbound" and "Literal['quiet-watcher']"
+    Operator "/" not supported for types "Unbound" and "Literal['quiet-watcher']" when expected type is "Path | Unknown" (reportOperatorIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_attention_practical.py:160:36 - error: "destination" is possibly unbound (reportPossiblyUnboundVariable)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_attention_practical.py:162:6 - error: Operator "/" not supported for types "Path | Unbound" and "Literal['wake-result.json']"
+    Operator "/" not supported for types "Unbound" and "Literal['wake-result.json']" (reportOperatorIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_attention_practical.py:162:7 - error: "destination" is possibly unbound (reportPossiblyUnboundVariable)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_attention_practical.py:163:6 - error: Operator "/" not supported for types "Path | Unbound" and "Literal['quiet-result.json']"
+    Operator "/" not supported for types "Unbound" and "Literal['quiet-result.json']" (reportOperatorIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_attention_practical.py:163:7 - error: "destination" is possibly unbound (reportPossiblyUnboundVariable)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_canary.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_canary.py:65:22 - error: Arguments missing for parameters "attention_logging_enabled", "attention_epoch_id" (reportCallIssue)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_lifecycle_canary.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_lifecycle_canary.py:37:79 - error: Cannot access attribute "get" for class "object"
+    Attribute "get" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_lifecycle_canary.py:62:67 - error: Cannot access attribute "get" for class "object"
+    Attribute "get" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_lifecycle_canary.py:62:137 - error: Cannot access attribute "get" for class "object"
+    Attribute "get" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_lifecycle_canary.py:62:216 - error: Cannot access attribute "get" for class "object"
+    Attribute "get" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_lifecycle_canary.py:63:60 - error: Cannot access attribute "get" for class "object"
+    Attribute "get" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_lifecycle_canary.py:63:116 - error: Cannot access attribute "get" for class "object"
+    Attribute "get" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\run_lifecycle_canary.py:64:52 - error: Cannot access attribute "get" for class "object"
+    Attribute "get" is unknown (reportAttributeAccessIssue)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:83:41 - error: "status" is possibly unbound (reportPossiblyUnboundVariable)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:189:51 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:244:50 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:246:57 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:493:26 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:493:45 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:494:63 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:496:50 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:502:50 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:515:51 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:516:41 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:530:33 - error: Argument of type "object" cannot be assigned to parameter "config" of type "HarnessConfig" in function "ack_command"
+    "object" is not assignable to "HarnessConfig" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:530:107 - error: Argument of type "(_: HarnessConfig) -> RejectingStore" cannot be assigned to parameter "store_factory" of type "(HarnessConfig) -> SafeOutput" in function "ack_command"
+    Type "(_: HarnessConfig) -> RejectingStore" is not assignable to type "(HarnessConfig) -> SafeOutput"
+      Function return type "RejectingStore" is incompatible with type "SafeOutput"
+        "RejectingStore" is not assignable to "SafeOutput" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:706:74 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:707:62 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:710:53 - error: Argument of type "Unknown | None" cannot be assigned to parameter "packet" of type "dict[str, Any]" in function "evaluate"
+    Type "Unknown | None" is not assignable to type "dict[str, Any]"
+      "None" is not assignable to "dict[str, Any]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:712:26 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:726:54 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:730:20 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:735:53 - error: Argument of type "Unknown | None" cannot be assigned to parameter "packet" of type "dict[str, Any]" in function "evaluate"
+    Type "Unknown | None" is not assignable to type "dict[str, Any]"
+      "None" is not assignable to "dict[str, Any]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:746:18 - error: Expected mapping for dictionary unpack operator (reportGeneralTypeIssues)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\harness_watcher_implementation\tests\test_watcher_smoke.py:746:45 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\active_management.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\active_management.py:172:16 - error: No overloads for "max" match the provided arguments (reportCallIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\active_management.py:172:31 - error: Argument of type "(item: dict[str, Any]) -> (datetime | None)" cannot be assigned to parameter "key" of type "(_T@max) -> SupportsRichComparison" in function "max"
+    Type "(item: dict[str, Any]) -> (datetime | None)" is not assignable to type "(dict[str, Any]) -> SupportsRichComparison"
+      Function return type "datetime | None" is incompatible with type "SupportsRichComparison"
+        Type "datetime | None" is not assignable to type "SupportsRichComparison"
+          Type "None" is not assignable to type "SupportsRichComparison"
+            "None" is incompatible with protocol "SupportsDunderLT[Any]"
+            "None" is incompatible with protocol "SupportsDunderGT[Any]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\active_management.py:304:13 - error: No overloads for "__init__" match the provided arguments (reportCallIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\active_management.py:304:18 - error: Argument of type "Any | None" cannot be assigned to parameter "iterable" of type "Iterable[list[bytes]]" in function "__init__"
+    Type "Any | None" is not assignable to type "Iterable[list[bytes]]"
+      "None" is incompatible with protocol "Iterable[list[bytes]]"
+        "__iter__" is not present (reportArgumentType)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\discovery.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\discovery.py:174:12 - error: Operator "<" not supported for types "datetime | None" and "datetime | None"
+    Operator "<" not supported for types "datetime" and "None"
+    Operator "<" not supported for types "None" and "datetime"
+    Operator "<" not supported for types "None" and "None" (reportOperatorIssue)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\notifications.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\notifications.py:340:34 - error: Argument of type "Unknown | None" cannot be assigned to parameter "key" of type "str" in function "get"
+    Type "Unknown | None" is not assignable to type "str"
+      "None" is not assignable to "str" (reportArgumentType)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\processes.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\processes.py:112:24 - error: "sysconf" is not a known attribute of module "os" (reportAttributeAccessIssue)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\reconcile.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\reconcile.py:525:23 - error: Argument of type "Unknown | None" cannot be assigned to parameter "x" of type "ConvertibleToInt" in function "__new__"
+    Type "Unknown | None" is not assignable to type "ConvertibleToInt"
+      Type "None" is not assignable to type "ConvertibleToInt"
+        "None" is not assignable to "str"
+        "None" is incompatible with protocol "Buffer"
+          "__buffer__" is not present
+        "None" is incompatible with protocol "SupportsInt"
+          "__int__" is not present
+        "None" is incompatible with protocol "SupportsIndex"
+    ... (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\reconcile.py:525:23 - error: Argument of type "Unknown | None" cannot be assigned to parameter "x" of type "ConvertibleToInt" in function "__new__"
+    Type "Unknown | None" is not assignable to type "ConvertibleToInt"
+      Type "None" is not assignable to type "ConvertibleToInt"
+        "None" is not assignable to "str"
+        "None" is incompatible with protocol "Buffer"
+          "__buffer__" is not present
+        "None" is incompatible with protocol "SupportsInt"
+          "__int__" is not present
+        "None" is incompatible with protocol "SupportsIndex" (reportArgumentType)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support.py:2:12 - error: "reportImplicitRelativeImport" is an unknown diagnostic rule for pyright comment
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support\cgroup_exec.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support\cgroup_exec.py:15:11 - error: "geteuid" is not a known attribute of module "os" (reportAttributeAccessIssue)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support\wsl_real_agent_driver.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support\wsl_real_agent_driver.py:2:12 - error: "reportImplicitRelativeImport" is an unknown diagnostic rule for pyright comment
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support\wsl_real_agent_driver.py:571:11 - error: "geteuid" is not a known attribute of module "os" (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support\wsl_real_agent_driver.py:620:8 - error: "chown" is not a known attribute of module "os" (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support\wsl_real_agent_driver.py:621:8 - error: "chown" is not a known attribute of module "os" (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support\wsl_real_agent_driver.py:623:12 - error: "chown" is not a known attribute of module "os" (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support\wsl_real_agent_driver.py:625:16 - error: "chown" is not a known attribute of module "os" (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support\wsl_real_agent_driver.py:627:16 - error: "chown" is not a known attribute of module "os" (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support\wsl_real_agent_driver.py:863:12 - error: "chown" is not a known attribute of module "os" (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\support\wsl_real_agent_driver.py:892:12 - error: "chown" is not a known attribute of module "os" (reportAttributeAccessIssue)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_active_manager_watch_smoke.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_active_manager_watch_smoke.py:3:12 - error: "reportImplicitRelativeImport" is an unknown diagnostic rule for pyright comment
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_active_manager_watch_smoke.py:231:41 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_active_manager_watch_smoke.py:246:37 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_active_manager_watch_smoke.py:249:46 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_active_manager_watch_smoke.py:343:48 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_active_manager_watch_smoke.py:352:48 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_active_manager_watch_smoke.py:398:43 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_active_manager_watch_smoke.py:547:30 - error: Argument of type "str | None" cannot be assigned to parameter "event_id" of type "str" in function "ack_command"
+    Type "str | None" is not assignable to type "str"
+      "None" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_active_manager_watch_smoke.py:655:44 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_active_manager_watch_smoke.py:730:55 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_active_manager_watch_smoke.py:754:49 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_active_manager_watch_smoke.py:822:44 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py:62:14 - error: Argument of type "dict[object, dict[str, object]]" cannot be assigned to parameter "conditions" of type "dict[str, dict[str, Any]]" in function "admit_deferred_handoffs"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py:63:69 - error: Argument of type "set[object]" cannot be assigned to parameter "newly_observed_event_ids" of type "set[str] | None" in function "admit_deferred_handoffs"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py:73:40 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py:85:63 - error: Argument of type "dict[object, dict[str, Unknown]]" cannot be assigned to parameter "conditions" of type "dict[str, dict[str, Any]]" in function "select_actionable_with_deferred"
+    "dict[object, dict[str, Unknown]]" is not assignable to "dict[str, dict[str, Any]]"
+      Type parameter "_KT@dict" is invariant, but "object" is not the same as "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py:92:45 - error: Argument of type "dict[object, dict[str, object]]" cannot be assigned to parameter "conditions" of type "dict[str, dict[str, Any]]" in function "admit_deferred_handoffs"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py:92:153 - error: Argument of type "set[object]" cannot be assigned to parameter "newly_observed_event_ids" of type "set[str] | None" in function "admit_deferred_handoffs"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py:109:40 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py:115:14 - error: Argument of type "dict[object, dict[str, object]]" cannot be assigned to parameter "conditions" of type "dict[str, dict[str, Any]]" in function "admit_deferred_handoffs"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py:143:40 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py:153:40 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py:182:41 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py:183:31 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_m_handoffs.py:230:44 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_n.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_n.py:19:26 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_n.py:19:70 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_n.py:19:132 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_n.py:24:26 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_n.py:24:70 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_n.py:31:26 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_n.py:31:74 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_n.py:38:36 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_n.py:40:26 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_n.py:40:68 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_clean_n.py:75:12 - error: Argument of type "Config" cannot be assigned to parameter "config" of type "HarnessConfig" in function "observe"
+    "Config" is not assignable to "HarnessConfig" (reportArgumentType)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_config_store.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_config_store.py:2:12 - error: "reportImplicitRelativeImport" is an unknown diagnostic rule for pyright comment
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_discovery.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_discovery.py:2:12 - error: "reportImplicitRelativeImport" is an unknown diagnostic rule for pyright comment
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_events_cli.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_events_cli.py:2:12 - error: "reportImplicitRelativeImport" is an unknown diagnostic rule for pyright comment
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_integration_processes.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_integration_processes.py:2:12 - error: "reportImplicitRelativeImport" is an unknown diagnostic rule for pyright comment
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_lane_controller.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_lane_controller.py:35:20 - error: Cannot assign to attribute "run" for class "LaneControllerTests*"
+    Type "Path" is not assignable to type "(result: TestResult | None = None) -> (TestResult | None)" (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_lane_controller.py:36:26 - error: Operator "/" not supported for types "(result: TestResult | None = None) -> (TestResult | None)" and "Literal['.agent-workspace']" (reportOperatorIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_lane_controller.py:49:23 - error: Operator "/" not supported for types "(result: TestResult | None = None) -> (TestResult | None)" and "Literal['bound-prompt.md']" (reportOperatorIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_lane_controller.py:145:22 - error: Operator "/" not supported for types "(result: TestResult | None = None) -> (TestResult | None)" and "Literal['raw.md']" (reportOperatorIssue)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:2:12 - error: "reportImplicitRelativeImport" is an unknown diagnostic rule for pyright comment
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:147:36 - error: Argument of type "Store" cannot be assigned to parameter "store" of type "SafeOutput" in function "_deliver_blocking_wake"
+    "Store" is not assignable to "SafeOutput" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:160:81 - error: Argument of type "Store" cannot be assigned to parameter "store" of type "SafeOutput" in function "_consume_managed_notification"
+    "Store" is not assignable to "SafeOutput" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:160:104 - error: Argument of type "() -> None" cannot be assigned to parameter "process_provider" of type "() -> ProcessSnapshot" in function "_consume_managed_notification"
+    Type "() -> None" is not assignable to type "() -> ProcessSnapshot"
+      Function return type "None" is incompatible with type "ProcessSnapshot"
+        "None" is not assignable to "ProcessSnapshot" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:174:79 - error: Argument of type "Store" cannot be assigned to parameter "store" of type "SafeOutput" in function "_managed_consumer_runtime"
+    "Store" is not assignable to "SafeOutput" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:186:47 - error: Argument of type "Store" cannot be assigned to parameter "store" of type "SafeOutput" in function "_consume_managed_notification"
+    "Store" is not assignable to "SafeOutput" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:186:70 - error: Argument of type "() -> None" cannot be assigned to parameter "process_provider" of type "() -> ProcessSnapshot" in function "_consume_managed_notification"
+    Type "() -> None" is not assignable to type "() -> ProcessSnapshot"
+      Function return type "None" is incompatible with type "ProcessSnapshot"
+        "None" is not assignable to "ProcessSnapshot" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:194:92 - error: Argument of type "Store" cannot be assigned to parameter "store" of type "SafeOutput" in function "_consume_managed_notification"
+    "Store" is not assignable to "SafeOutput" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:194:117 - error: Argument of type "() -> None" cannot be assigned to parameter "process_provider" of type "() -> ProcessSnapshot" in function "_consume_managed_notification"
+    Type "() -> None" is not assignable to type "() -> ProcessSnapshot"
+      Function return type "None" is incompatible with type "ProcessSnapshot"
+        "None" is not assignable to "ProcessSnapshot" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:271:44 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:272:42 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:317:42 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:469:44 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:470:39 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:492:75 - error: "object" is not iterable
+    "__iter__" method not defined (reportGeneralTypeIssues)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:526:48 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:537:44 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:558:47 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:575:44 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:589:44 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:623:48 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_manager_notifications.py:652:56 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_operator_launch.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_operator_launch.py:81:69 - error: "created_utc" is not a known attribute of "None" (reportOptionalMemberAccess)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_processes.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_processes.py:2:12 - error: "reportImplicitRelativeImport" is an unknown diagnostic rule for pyright comment
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_reconcile.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_reconcile.py:2:12 - error: "reportImplicitRelativeImport" is an unknown diagnostic rule for pyright comment
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\test_reconcile.py:593:23 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\wsl_cleanup_guard_test.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\stable-general-harness-runner\orchestrator_harness\tests\wsl_cleanup_guard_test.py:2:12 - error: "reportImplicitRelativeImport" is an unknown diagnostic rule for pyright comment
+133 errors, 0 warnings, 0 informations

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python scratch\\session-analysis\\compute_delta.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Manifest walk of repo with ~100k files; prior verifier runs complete in seconds; worst credible 2 min",
+    "started_at":  "2026-08-18T02:26:57.9579345+00:00",
+    "finished_at":  "2026-08-18T02:26:59.5411352+00:00",
+    "elapsed_seconds":  1.583,
+    "root_process_id":  19800,
+    "observed_process_ids":  [
+                                 19800
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\compute-delta-001.result.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\scratch\\session-analysis\\compute-delta-001.result.stderr.log"
+}

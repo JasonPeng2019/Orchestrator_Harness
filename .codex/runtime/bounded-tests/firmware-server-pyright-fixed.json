@@ -1,0 +1,24 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --locked --no-sync pyright",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\BYO-Firmware-MCP",
+    "maximum_lifetime_seconds":  70,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  10,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "verify the documented BYO Firmware MCP Pyright command uses the new package-local scope",
+    "started_at":  "2026-08-14T10:36:02.1031896+00:00",
+    "finished_at":  "2026-08-14T10:36:19.1938610+00:00",
+    "elapsed_seconds":  17.091,
+    "root_process_id":  170712,
+    "observed_process_ids":  [
+                                 9680,
+                                 15204,
+                                 170712
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-server-pyright-fixed.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-server-pyright-fixed.stderr.log"
+}

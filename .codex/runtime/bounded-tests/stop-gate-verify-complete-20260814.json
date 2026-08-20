@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  113,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  23,
+    "heartbeat_interval_seconds":  20,
+    "timeout_basis":  "The current Plan handoff requires a change-aware verifier before the next dispatch; prior selected gates completed in 31-36 seconds, while 90 seconds covers current runner and focused test changes with Windows variance.",
+    "started_at":  "2026-08-15T02:14:21.0865583+00:00",
+    "finished_at":  "2026-08-15T02:14:25.7377612+00:00",
+    "elapsed_seconds":  4.651,
+    "root_process_id":  166988,
+    "observed_process_ids":  [
+                                 166988
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\stop-gate-verify-complete-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\stop-gate-verify-complete-20260814.stderr.log"
+}

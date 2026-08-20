@@ -1,0 +1,20 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  900,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The repository gate runs Ruff, formatting, BasedPyright, compilation, and multiple test suites; recent complete gates take several minutes, so 900 seconds provides about twice the observed envelope while guaranteeing orchestration recovery.",
+    "started_at":  "2026-08-13T23:23:32.9737783+00:00",
+    "finished_at":  "2026-08-13T23:23:35.3255060+00:00",
+    "elapsed_seconds":  2.352,
+    "root_process_id":  178396,
+    "observed_process_ids":  [
+                                 178396
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-verify.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-verify.stderr.log"
+}

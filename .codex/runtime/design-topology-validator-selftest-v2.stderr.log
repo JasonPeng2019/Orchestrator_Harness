@@ -1,0 +1,1 @@
+SELF-TEST ERROR: valid fixture failed: ## 1. Inputs, authority, and directive hierarchy table has a row with the wrong column count: Source | Authority | Path/reference | Supplies | Conflict rule

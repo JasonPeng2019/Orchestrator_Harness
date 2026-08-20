@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m harness_watcher_implementation --config \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\target-harness\\runtime\\harness-watcher\\20260815-plan2-a21-001\\watcher.json\u0027 status",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\target-harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "one watcher status read after A21 source reload",
+    "started_at":  "2026-08-15T23:47:28.6736770+00:00",
+    "finished_at":  "2026-08-15T23:47:31.3729689+00:00",
+    "elapsed_seconds":  2.699,
+    "root_process_id":  202844,
+    "observed_process_ids":  [
+                                 202844
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\a21-watcher-reload-status-20260815-r1.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\a21-watcher-reload-status-20260815-r1.stderr.log"
+}

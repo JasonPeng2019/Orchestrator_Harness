@@ -1,0 +1,2 @@
+argv: ['claude', '--print', '--output-format', 'stream-json', '--model', 'deepseek-v4-flash:0731-cloud', '--permission-mode', 'bypassPermissions']
+RESULT: REPRODUCED (--verbose ABSENT from start argv)

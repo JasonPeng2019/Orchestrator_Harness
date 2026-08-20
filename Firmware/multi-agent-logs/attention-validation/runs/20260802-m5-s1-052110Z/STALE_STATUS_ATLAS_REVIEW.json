@@ -1,0 +1,12 @@
+{
+    "schema":  "m5-transient-status-review/v1",
+    "epoch":  "20260802-m5-s1-052110Z",
+    "event_id":  "02458f06fe4d04173586f980929fb0e34e4c5d0f53bd7954d398f1a851e49d1d",
+    "reviewed_utc":  "2026-08-02T05:37:31.0635301Z",
+    "reported_state":  "STALE_STATUS",
+    "current_status_state":  "CODEX_EXITED",
+    "current_status_ended_utc":  "2026-08-02T05:36:41.2075836Z",
+    "controller_live":  false,
+    "codex_live":  false,
+    "disposition":  "acknowledge-transient-observation; require next scan not repeat"
+}

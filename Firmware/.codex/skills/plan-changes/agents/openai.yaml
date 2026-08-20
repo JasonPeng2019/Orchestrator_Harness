@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan Changes"
+  short_description: "Turn change lists into testable plans"
+  default_prompt: "Use $plan-changes only for a verified BYO-Firmware-MCP production-code repair. As the current main model, inspect the repository and author the concrete plan directly; never delegate planning to a subagent."

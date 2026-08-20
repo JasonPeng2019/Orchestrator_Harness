@@ -14,19 +14,27 @@ uv sync --locked
 Register this stdio command in any MCP-compatible client:
 
 ```text
-uv run --project <absolute-path-to-BYO-Server> --locked pyocd-debug-mcp
+uv run --project "<absolute-path-to-BYO-Firmware-MCP>" --locked pyocd-debug-mcp
 ```
 
-For example:
+For Codex, replace the quoted placeholder with this checkout's absolute path:
 
 ```text
-codex mcp add byo-firmware -- uv run --project C:\Users\Jason\Documents\Jason\FirmCLI_Tester\BYO-Firmware-MCP --locked pyocd-debug-mcp
+codex mcp add byo-firmware -- uv run --project "<absolute-path-to-BYO-Firmware-MCP>" --locked pyocd-debug-mcp
 ```
-
--> For the user Jason, using codex, where the server is stored at \FirmCLI_Tester\BYO-Firmware-MCP, this is the registration command.
 
 The server is client-neutral and never launches a client workflow or silently connects to hardware. See
 [SERVER_GUIDE.md](SERVER_GUIDE.md) for the full setup and tool workflow.
+
+## Firmware-suite repair path
+
+When an end-to-end experiment produces a possible server failure, preserve the exact MCP sequence,
+response, and run evidence first. From the parent `Firmware/` package, use
+`.codex/skills/run-firmware-test-suite/` to classify it. Only a manager-verified production-code
+defect may be changed: read `../Firmware resources/test-program/design_charter.md`, have the current
+main/orchestrating model use `$plan-changes` to author one narrow plan, then use `$change-loop` for
+the serialized implementation and regression path. Do not use this production-repair path for
+firmware, fixture, SDK, host, evidence, documentation-only, or metadata-only issues.
 
 ## Firmware MCP capabilities
 

@@ -1,0 +1,15 @@
+{
+  "schema": "canary-final-supervision/v1",
+  "epoch": "20260731-s1-clean-m",
+  "captured_utc": "2026-07-31T22:18:09.032166+00:00",
+  "active_lane_controllers": [],
+  "active_lane_codex": [],
+  "active_helpers_or_mcp": [],
+  "primary_watcher_expected": [
+    166056,
+    194608
+  ],
+  "optional_watcher_expected": 174288,
+  "pending_notification": null,
+  "note": "process lists populated from exact CIM scan in companion JSON"
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "python .codex/skills/design-project-topology/scripts/validate_plan_topology.py plans/general-coding-harness/FULL-EXECUTION-SPEC_PLAN_2.md",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  20,
+    "expected_upper_bound_seconds":  15,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The Plan 2 topology validator previously completed in seconds; fifteen seconds allows parsing variation and five seconds bounds cleanup.",
+    "started_at":  "2026-08-14T11:38:02.7365872+00:00",
+    "finished_at":  "2026-08-14T11:38:04.9555888+00:00",
+    "elapsed_seconds":  2.219,
+    "root_process_id":  173908,
+    "observed_process_ids":  [
+                                 173908
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  2,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-plan-topology.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deepseek-qwen-tier-plan-topology.stderr.log"
+}

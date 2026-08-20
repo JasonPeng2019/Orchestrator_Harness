@@ -1,0 +1,41 @@
+{
+  "argv_has_mcp_config": true,
+  "argv_snapshot": [
+    "C:\\Users\\Jason\\.local\\bin\\claude.EXE",
+    "--print",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--model",
+    "deepseek-v4-flash:0731-cloud",
+    "--permission-mode",
+    "bypassPermissions",
+    "--allowedTools",
+    "Read",
+    "--allowedTools",
+    "Bash",
+    "--allowedTools",
+    "mcp__marker__record_marker",
+    "--mcp-config",
+    "{\"mcpServers\":{\"marker\":{\"args\":[\"C:\\\\Users\\\\Jason\\\\Documents\\\\Jason\\\\Orchestrator_Harness\\\\harness-single-worktrees\\\\compat-test\\\\scratch\\\\3D_mcp\\\\mcp_marker_server.py\"],\"command\":\"C:\\\\Users\\\\Jason\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe\",\"env\":{\"MCP_MARKER_PATH\":\"C:\\\\Users\\\\Jason\\\\Documents\\\\Jason\\\\Orchestrator_Harness\\\\harness-single-worktrees\\\\compat-test\\\\scratch\\\\3D_mcp\\\\run1\\\\mcp_marker.txt\"}}}}"
+  ],
+  "bounded_attempt": true,
+  "events": [
+    {
+      "event": "PROVIDER_STARTED",
+      "lane_id": null,
+      "session": null
+    },
+    {
+      "event": "PROVIDER_EXITED",
+      "lane_id": null,
+      "session": null
+    }
+  ],
+  "lane_state": "PROVIDER_EXITED",
+  "marker_matches": true,
+  "marker_value": "MCP-3D-OK",
+  "marker_written": true,
+  "provider_session_id": "89009abf-5b25-42d1-8632-c036e8f7cf61",
+  "provider_terminal_outcome": "COMPLETED"
+}

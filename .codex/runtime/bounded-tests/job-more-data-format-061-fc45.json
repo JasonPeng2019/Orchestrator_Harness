@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe\u0027 -m unittest -v orchestrator_harness.tests.test_s4_repair.S4RepairRegressionTests.test_FC45_windows_job_more_data_retries_and_other_errors_fail_closed",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\wshrt-061",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Focused unittest of the exact FC45 regression method; the module imports the harness package and runs one mocked inventory test that completes in seconds, so 60s is a conservative upper bound with the 15s cleanup allowance.",
+    "started_at":  "2026-08-16T06:58:06.8058489+00:00",
+    "finished_at":  "2026-08-16T06:58:11.0872306+00:00",
+    "elapsed_seconds":  4.281,
+    "root_process_id":  177032,
+    "observed_process_ids":  [
+                                 177032
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\job-more-data-format-061-fc45.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\job-more-data-format-061-fc45.stderr.log"
+}

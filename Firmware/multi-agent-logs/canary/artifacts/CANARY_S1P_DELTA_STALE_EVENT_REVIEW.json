@@ -1,0 +1,12 @@
+{
+  "schema": "manager-event-review/v1",
+  "epoch": "20260731-s1-clean-p",
+  "event_id": "f6c83183f25d0d8aee98739446184e8bbf5b3a16402a0bd9a4ad8d791e17ffbc",
+  "reviewed_utc": "2026-08-01T00:31:01.692110+00:00",
+  "classification": "TRANSIENT_CONTROLLER_FINALIZATION",
+  "current_controller_state": "CODEX_EXITED",
+  "codex_exit_code": 0,
+  "current_exact_processes_absent": true,
+  "action": "ACK_ONLY",
+  "reason": "Primary harness truthfully sampled the narrow interval after controller/Codex process exit and before the controller status rewrite. Current durable status is CODEX_EXITED with exit 0 and exact identities absent."
+}

@@ -1,0 +1,11 @@
+﻿{
+    "busy_started_utc":  "2026-08-02T09:35:03.1026877Z",
+    "activity_id":  "busy-manager-assignment-audit-001",
+    "trigger_path":  "fresh-experiments/A26_20260726-062325/.agent-workspace/m5/20260802-m5-s2a-092552Z/BUSY_TRIGGER",
+    "busy_finished_utc":  "2026-08-02T09:35:49.2458886Z",
+    "evidence":  [
+                     "multi-agent-logs/attention-validation/runs/20260802-m5-s2a-092552Z/MANAGER_ASSIGNMENT_AUDIT.md",
+                     "multi-agent-logs/attention-validation/runs/20260802-m5-s2a-092552Z/MANAGER_ASSIGNMENT_AUDIT.json"
+                 ],
+    "genuine_manager_work":  true
+}

@@ -1,0 +1,1 @@
+worktree-task: Command '['git', 'worktree', 'add', '-b', 'firmware/v2-release-lint-review-0365', 'C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\.plan2-release-lint-contract-001-worktrees\\plan2-release-lint-review-001', 'HEAD']' returned non-zero exit status 128.

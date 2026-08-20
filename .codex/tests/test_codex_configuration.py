@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import json
-import tomllib
 from pathlib import Path
+
+import tomllib
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -16,7 +17,7 @@ def test_all_expected_skills_are_registered_and_present() -> None:
         "skills/test-first",
         "skills/api-design",
         "skills/worktree",
-        "skills/plan-harness-workflow",
+        "skills/design-project-topology",
     }
     assert configured == expected
     for relative in expected:
@@ -24,15 +25,22 @@ def test_all_expected_skills_are_registered_and_present() -> None:
         assert (ROOT / ".codex" / relative / "agents" / "openai.yaml").is_file()
 
 
+def test_new_root_sessions_receive_the_requested_compaction_limit() -> None:
+    config = tomllib.loads((ROOT / ".codex" / "config.toml").read_text(encoding="utf-8"))
+    assert config["model_auto_compact_token_limit"] == 280000
+    assert config["model_auto_compact_token_limit_scope"] == "total"
+
+
 def test_skill_invocation_policy_is_intentional() -> None:
     automatic = {"verify", "checkpoint", "worktree"}
-    explicit = {"test-first", "api-design", "plan-harness-workflow"}
+    explicit = {"test-first", "api-design", "design-project-topology"}
     for name in automatic:
         metadata = (ROOT / ".codex" / "skills" / name / "agents" / "openai.yaml").read_text(encoding="utf-8")
         assert "allow_implicit_invocation: true" in metadata
     for name in explicit:
         metadata = (ROOT / ".codex" / "skills" / name / "agents" / "openai.yaml").read_text(encoding="utf-8")
         assert "allow_implicit_invocation: false" in metadata
+    assert "skills/plan-harness-workflow" not in (ROOT / ".codex" / "config.toml").read_text(encoding="utf-8")
 
 
 def test_skill_commands_point_to_the_consolidated_environment() -> None:
@@ -63,5 +71,9 @@ def test_hook_catalog_contains_every_installed_action() -> None:
         for group in groups
         for handler in group["hooks"]
     ]
-    assert all(".codex/dev" in command for command in commands)
-    assert all(".codex/scripts/hook_runner.py" in command for command in commands)
+    assert all(
+        (".codex/dev" in command and ".codex/scripts/hook_runner.py" in command)
+        or ".codex/scripts/bounded_test_adapter.py" in command
+        for command in commands
+    )
+    assert any(".codex/scripts/bounded_test_adapter.py" in command for command in commands)

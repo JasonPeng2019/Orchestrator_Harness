@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/.agent-workspace/epochs/20260816-plan2-suite-005/build_manager_invocation_006.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "One local prompt-bundle and invocation materialization; prior equivalent operations completed within three seconds.",
+    "started_at":  "2026-08-16T09:26:49.0609623+00:00",
+    "finished_at":  "2026-08-16T09:26:51.1943806+00:00",
+    "elapsed_seconds":  2.133,
+    "root_process_id":  200864,
+    "observed_process_ids":  [
+                                 200864
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\build-suite005-manager-invocation-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\build-suite005-manager-invocation-001.stderr.log"
+}

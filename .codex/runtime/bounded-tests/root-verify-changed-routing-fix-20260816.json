@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  240,
+    "expected_upper_bound_seconds":  210,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Repository Stop-hook changed-verification policy establishes a 210-second execution ceiling; 30 seconds is the documented cleanup reserve under the 300-second hook ceiling.",
+    "started_at":  "2026-08-16T01:01:07.3191885+00:00",
+    "finished_at":  "2026-08-16T01:01:10.4371603+00:00",
+    "elapsed_seconds":  3.118,
+    "root_process_id":  109320,
+    "observed_process_ids":  [
+                                 109320
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\root-verify-changed-routing-fix-20260816.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\root-verify-changed-routing-fix-20260816.stderr.log"
+}

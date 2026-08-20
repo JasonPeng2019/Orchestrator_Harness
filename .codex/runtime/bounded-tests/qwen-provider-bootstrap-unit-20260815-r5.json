@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m pytest -q Firmware/scripts/orchestration/test_qwen_provider_bootstrap.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "focused adapter unit test previously completed in under two seconds; 60 seconds allows environment startup",
+    "started_at":  "2026-08-15T23:20:42.2197642+00:00",
+    "finished_at":  "2026-08-15T23:20:45.2649342+00:00",
+    "elapsed_seconds":  3.045,
+    "root_process_id":  91320,
+    "observed_process_ids":  [
+                                 91320
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\qwen-provider-bootstrap-unit-20260815-r5.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\qwen-provider-bootstrap-unit-20260815-r5.stderr.log"
+}

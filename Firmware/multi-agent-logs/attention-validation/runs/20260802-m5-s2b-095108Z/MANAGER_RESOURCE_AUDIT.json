@@ -1,0 +1,32 @@
+{
+  "schema": "m5-manager-resource-audit/v1",
+  "epoch": "20260802-m5-s2b-095108Z",
+  "created_utc": "2026-08-02T09:58:08.366705Z",
+  "activity_id": "busy-manager-resource-audit-001",
+  "verified_hashes": {
+    "A22": "fa75fe4394d434c5b25e42aa191ea8e0a2e0bb37494b3f698fdbcf16a3fa49f8",
+    "D31": "60a78e7b08bf5eed5141bc917b039e5f75b371bfb6b3a038741c03a730cc65d5",
+    "A24": "3477aeaa0748bcce45dc2efed41497ccf03c4c54f0750bb45ea750b2a300f3c0",
+    "A26_input": "7f23f1e071716d2201f3199313dc6cfad1bedee0ba97824eac6e4bc8641620f3",
+    "delegated_authorization": "1cbbe4d0f1b1064818a05ccf73b6793f729ef3b16bbffc91ec1852a76390507d",
+    "server_snapshot": "49ba8659c77f7432e0d81e24c1db431c4b1b2ec6a9eaa29753f6a951fec01130"
+  },
+  "current_live_authority": false,
+  "resource_schedule": [
+    {
+      "order": 1,
+      "parallel": [
+        "A22:STM-A/probe/COM12",
+        "D31:STM-B/probe/COM17",
+        "A24:NRF-A+NRF-B/probes/COM16+COM15"
+      ],
+      "constraint": "fresh lifetimes and current returned routes only"
+    },
+    {
+      "order": 2,
+      "after": "A22 releases STM-A",
+      "lane": "A26:STM-A/probe/COM12"
+    }
+  ],
+  "decision": "Preserve host-only checkpoints; authorize no live action in this sprint."
+}

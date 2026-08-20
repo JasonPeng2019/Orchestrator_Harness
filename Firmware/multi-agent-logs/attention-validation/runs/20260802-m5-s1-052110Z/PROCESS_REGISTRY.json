@@ -1,0 +1,96 @@
+{
+    "schema":  "m5-process-registry/v1",
+    "epoch":  "20260802-m5-s1-052110Z",
+    "created_utc":  "2026-08-02T05:22:23.1371878Z",
+    "root_manager":  {
+                         "creation_utc":  "2026-08-01T22:36:46.3275151Z",
+                         "pid":  192592
+                     },
+    "processes":  [
+                      {
+                          "role":  "native-harness-managed-owner",
+                          "pid":  184352,
+                          "parent_pid":  186608,
+                          "creation_utc":  "2026-08-02T05:25:33.1670470Z",
+                          "command":  "\"C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\BYO-Firmware-MCP\\.venv/Scripts\\python.exe\" -m orchestrator_harness --config multi-agent-logs\\orchestrator-harness\\20260802-m5-s1-052110Z\\config.json watch --managed",
+                          "allowed":  true
+                      },
+                      {
+                          "role":  "native-harness-managed-watcher",
+                          "pid":  176480,
+                          "parent_pid":  184352,
+                          "creation_utc":  "2026-08-02T05:25:33.1839100Z",
+                          "command":  "\"C:\\Users\\Jason\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\"  -m orchestrator_harness --config multi-agent-logs\\orchestrator-harness\\20260802-m5-s1-052110Z\\config.json watch --managed",
+                          "allowed":  true
+                      },
+                      {
+                          "role":  "native-diagnostic-watcher",
+                          "pid":  156928,
+                          "parent_pid":  195552,
+                          "creation_utc":  "2026-08-02T05:26:25.9648990Z",
+                          "command":  "\"C:\\Users\\Jason\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\"  -m harness_watcher_implementation --config harness_watcher\\20260802-m5-s1-052110Z\\config.json serve --startup-token 729fb8b8-eb82-4242-a53c-c963616ef0ce",
+                          "allowed":  true
+                      },
+                      {
+                          "role":  "external-controller-Atlas",
+                          "pid":  189388,
+                          "creation_utc":  "2026-08-02T05:29:08.0063716Z",
+                          "command":  "documented run_persistent_lane_r9.ps1 controller",
+                          "allowed":  true
+                      },
+                      {
+                          "role":  "external-codex-worker-Atlas",
+                          "pid":  191424,
+                          "creation_utc":  "2026-08-02T05:29:08.7477058Z",
+                          "command":  "codex exec resume 019fb877-1475-76c0-a137-2743580015de --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy=\"never\" -c approvals_reviewer=\"user\" -m gpt-5.6-luna -c model_reasoning_effort=\"high\" -c service_tier=\"default\" --json --output-last-message C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_20260802-m5-s1-052110Z_last_message.txt",
+                          "allowed":  true
+                      },
+                      {
+                          "role":  "external-controller-Boreal",
+                          "pid":  164248,
+                          "creation_utc":  "2026-08-02T05:29:15.7351042Z",
+                          "command":  "documented run_persistent_lane_r9.ps1 controller",
+                          "allowed":  true
+                      },
+                      {
+                          "role":  "external-codex-worker-Boreal",
+                          "pid":  190396,
+                          "creation_utc":  "2026-08-02T05:29:16.5346602Z",
+                          "command":  "codex exec resume 019fb877-1447-7693-92b1-f4bda04c6ecf --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy=\"never\" -c approvals_reviewer=\"user\" -m gpt-5.6-luna -c model_reasoning_effort=\"high\" -c service_tier=\"default\" --json --output-last-message C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_20260802-m5-s1-052110Z_last_message.txt",
+                          "allowed":  true
+                      },
+                      {
+                          "role":  "external-controller-Cygnus",
+                          "pid":  84944,
+                          "creation_utc":  "2026-08-02T05:29:28.3950004Z",
+                          "command":  "documented run_persistent_lane_r9.ps1 controller",
+                          "allowed":  true
+                      },
+                      {
+                          "role":  "external-codex-worker-Cygnus",
+                          "pid":  178596,
+                          "creation_utc":  "2026-08-02T05:29:29.0975636Z",
+                          "command":  "codex exec resume 019fb877-1199-79b1-a32e-34348178f111 --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy=\"never\" -c approvals_reviewer=\"user\" -m gpt-5.6-luna -c model_reasoning_effort=\"high\" -c service_tier=\"default\" --json --output-last-message C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_20260802-m5-s1-052110Z_last_message.txt",
+                          "allowed":  true
+                      },
+                      {
+                          "role":  "external-controller-Delta",
+                          "pid":  180304,
+                          "creation_utc":  "2026-08-02T05:29:36.0786188Z",
+                          "command":  "documented run_persistent_lane_r9.ps1 controller",
+                          "allowed":  true
+                      },
+                      {
+                          "role":  "external-codex-worker-Delta",
+                          "pid":  168124,
+                          "creation_utc":  "2026-08-02T05:29:36.7113119Z",
+                          "command":  "codex exec resume 019fb877-1441-7c92-84e2-cbb5bc422879 --dangerously-bypass-approvals-and-sandbox --ignore-user-config --skip-git-repo-check -c approval_policy=\"never\" -c approvals_reviewer=\"user\" -m gpt-5.6-luna -c model_reasoning_effort=\"high\" -c service_tier=\"default\" --json --output-last-message C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_20260802-m5-s1-052110Z_last_message.txt",
+                          "allowed":  true
+                      }
+                  ],
+    "cleanup_utc":  "2026-08-02T05:42:39.6496819Z",
+    "remaining":  [
+
+                  ],
+    "exact_cleanup":  true
+}

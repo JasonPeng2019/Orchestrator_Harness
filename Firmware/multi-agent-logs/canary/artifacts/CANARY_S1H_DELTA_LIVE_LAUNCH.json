@@ -1,0 +1,7 @@
+﻿{
+    "launched_utc":  "2026-07-31T19:11:39.3489471Z",
+    "epoch":  "20260731-s1-clean-h",
+    "lane_id":  "20260731-s1-clean-h:Delta:A26",
+    "controller_pid":  195548,
+    "invocation":  "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_s1_clean_h_live.invocation.json"
+}

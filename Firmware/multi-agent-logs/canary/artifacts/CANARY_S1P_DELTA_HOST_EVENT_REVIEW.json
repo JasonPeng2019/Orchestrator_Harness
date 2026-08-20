@@ -1,0 +1,11 @@
+﻿{
+    "schema":  "manager-event-review/v1",
+    "epoch":  "20260731-s1-clean-p",
+    "event_id":  "795e6389fc0bb129e7a92ebad4702c985b503e9d521b2e0855a424055a997a21",
+    "type":  "CHECKPOINT_UPDATED",
+    "lane":  "20260731-s1-clean-p:Delta:A26",
+    "reviewed_utc":  "2026-08-01T00:03:55.4905913Z",
+    "checkpoint_sha256":  "54ca2cc56a86dfa6be7d84bcb6f89243b014dc3709abad61676cdba5b0575c25",
+    "decision":  "ACCEPT_HOST_CHECKPOINT_FOR_FOCUSED_MANAGER_REVIEW",
+    "reason":  "Delta exited 0 at BUILT_WAITING_FOR_LEASE; no board/MCP leases or live endpoint action; live release remains withheld."
+}

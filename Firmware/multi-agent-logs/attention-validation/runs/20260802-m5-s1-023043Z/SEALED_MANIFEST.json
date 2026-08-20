@@ -1,0 +1,1502 @@
+{
+  "schema": "m5-sprint-manifest/v1",
+  "epoch": "20260802-m5-s1-023043Z",
+  "sprint_number": 1,
+  "counter_before": "0/3",
+  "created_utc": "2026-08-02T02:30:44.458067Z",
+  "manager_session_id": "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+  "manager_invocation_id": "root-20260802-m5-s1-023043Z-001",
+  "bounded_lifetime_seconds": 900,
+  "heartbeat_timeout_seconds": 1200,
+  "formal_review_interval_seconds": 150,
+  "diagnostic_only": true,
+  "forbidden_wake_paths": [
+    "AI evaluator",
+    "watcher subagent",
+    "collaboration notification",
+    "user message",
+    "transcript inspection"
+  ],
+  "runs": [
+    {
+      "run": "A22_20260726-062324",
+      "doer": "Atlas",
+      "task": "A22",
+      "thread_id": "019fb877-1475-76c0-a137-2743580015de",
+      "work": "Correct the retained later-request epoch binding in the current B14 continuation, run focused host tests, and prepare the exact fresh B14 pre-live plan without starting MCP or hardware.",
+      "label": "atlas_a22_m5_s1_023043",
+      "event_id": "sig-20260802-m5-s1-023043Z-atlas-a22-prep-001",
+      "prompt": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_m5_s1_023043.bound.md",
+      "response_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\manager-responses\\20260802-m5-s1-023043Z-Atlas-A22-prep.json",
+      "trigger_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\m5\\20260802-m5-s1-023043Z\\BUSY_TRIGGER"
+    },
+    {
+      "run": "D31_20260726-062325",
+      "doer": "Boreal",
+      "task": "D31",
+      "thread_id": "019fb877-1447-7693-92b1-f4bda04c6ecf",
+      "work": "Validate the current APP-1 continuation controller and exact preserved setup boundary, run focused host tests, and prepare the fresh STM-B APP-1 pre-live plan without starting MCP or hardware.",
+      "label": "boreal_d31_m5_s1_023043",
+      "event_id": "sig-20260802-m5-s1-023043Z-boreal-d31-prep-001",
+      "prompt": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_m5_s1_023043.bound.md",
+      "response_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\manager-responses\\20260802-m5-s1-023043Z-Boreal-D31-prep.json",
+      "trigger_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\D31_20260726-062325\\.agent-workspace\\m5\\20260802-m5-s1-023043Z\\BUSY_TRIGGER"
+    },
+    {
+      "run": "A24_20260726-052146",
+      "doer": "Cygnus",
+      "task": "A24",
+      "thread_id": "019fb877-1199-79b1-a32e-34348178f111",
+      "work": "Validate the paired no-flash/no-RF SX1262 continuation controller and retained artifacts, run focused host tests, and prepare the exact NRF-A/NRF-B pre-live plan without starting MCP or hardware.",
+      "label": "cygnus_a24_m5_s1_023043",
+      "event_id": "sig-20260802-m5-s1-023043Z-cygnus-a24-prep-001",
+      "prompt": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_m5_s1_023043.bound.md",
+      "response_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\manager-responses\\20260802-m5-s1-023043Z-Cygnus-A24-prep.json",
+      "trigger_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A24_20260726-052146\\.agent-workspace\\m5\\20260802-m5-s1-023043Z\\BUSY_TRIGGER"
+    },
+    {
+      "run": "A26_20260726-062325",
+      "doer": "Delta",
+      "task": "A26",
+      "thread_id": "019fb877-1441-7c92-84e2-cbb5bc422879",
+      "work": "Validate the retained corrected +8/+1/+1/+0 continuation and artifact inputs, run focused host tests, and prepare the exact STM-A pre-live plan without starting MCP or hardware.",
+      "label": "delta_a26_m5_s1_023043",
+      "event_id": "sig-20260802-m5-s1-023043Z-delta-a26-prep-001",
+      "prompt": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_m5_s1_023043.bound.md",
+      "response_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\manager-responses\\20260802-m5-s1-023043Z-Delta-A26-prep.json",
+      "trigger_path": "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A26_20260726-062325\\.agent-workspace\\m5\\20260802-m5-s1-023043Z\\BUSY_TRIGGER"
+    }
+  ],
+  "frozen_files": [
+    {
+      "path": ".agent-workspace/AUTONOMOUS_EXECUTION_POLICY.md",
+      "size": 3190,
+      "sha256": "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68"
+    },
+    {
+      "path": ".agent-workspace/AUTONOMOUS_EXECUTION_POLICY.sha256",
+      "size": 97,
+      "sha256": "f721b6bb0876abcc2b3ec456b6912268e11943748b5ac59546df7316fa29452f"
+    },
+    {
+      "path": ".agent-workspace/SUITE_COORDINATION.md",
+      "size": 1736,
+      "sha256": "b8a053201d99e21d6b169225550741c6fee91ed44f44e6a16d8c07694a4f346b"
+    },
+    {
+      "path": ".codex/skills/run-firmware-test-suite/SKILL.md",
+      "size": 51225,
+      "sha256": "5010b40f011b2e56e606a48899dc2a90eaf367b78b2bff49ea4cfc7b12653a35"
+    },
+    {
+      "path": "active-working-spec/m5-three-sprint-wake-test.md",
+      "size": 25969,
+      "sha256": "6154e785a51de0db81dbb3cab9d150fadb6d78cdb1a6ff65dc39278e48a4b24e"
+    },
+    {
+      "path": "fresh-experiments/A22_20260726-062324/.agent-workspace/ATTENTION_R14_CHECKPOINT.md",
+      "size": 2778,
+      "sha256": "58a4500d11278a5003cd1896506c8ffe8678931d96a45517cc99cda4a5d62671"
+    },
+    {
+      "path": "fresh-experiments/A24_20260726-052146/.agent-workspace/ATTENTION_R14_CHECKPOINT.md",
+      "size": 2109,
+      "sha256": "4656a2145f11693ccd9da37199d122c4d37da31b7ce864bd1008f9553c046a74"
+    },
+    {
+      "path": "fresh-experiments/A26_20260726-062325/.agent-workspace/ATTENTION_R14_CHECKPOINT.md",
+      "size": 2057,
+      "sha256": "8d4d81ee40db92ffdd66e3093d14b0c20701f9e7ec5ef64d941ff4f7827ee9ff"
+    },
+    {
+      "path": "fresh-experiments/D31_20260726-062325/.agent-workspace/ATTENTION_R14_CHECKPOINT.md",
+      "size": 3113,
+      "sha256": "6d7fbe6e6320fbc4f7aa130a4289f6d5cd2af744d857343a022f1e343b02f126"
+    },
+    {
+      "path": "harness_common/__init__.py",
+      "size": 76,
+      "sha256": "6688b3582081db1a34def7c0dcd11ea9bb1576f03d189fdbb2cc296caac6232f"
+    },
+    {
+      "path": "harness_common/process_identity.py",
+      "size": 2047,
+      "sha256": "b24d125b2c5b5a4529e64cb7b4524adf3c08ff2a33ca02a8857a35d3a530fbd7"
+    },
+    {
+      "path": "harness_watcher_implementation/__init__.py",
+      "size": 123,
+      "sha256": "dcb71cf34c4963892bec39eb700988f6b33abc91e75cdbe719cb64aeec29f3eb"
+    },
+    {
+      "path": "harness_watcher_implementation/__main__.py",
+      "size": 11827,
+      "sha256": "43dc914a8572e059e3baf4f3b25b154610f5ed9a1df73fda10308ebf4881f6ad"
+    },
+    {
+      "path": "harness_watcher_implementation/attention.py",
+      "size": 72222,
+      "sha256": "d877ed285a522ea3e8ed7e460eb28c657e2668608c598c65d67fbdc1f38f1bf5"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-b.json",
+      "size": 1094,
+      "sha256": "86223e1f4103505437f22f90a5da948753d7f67ddfd49575f9cec0796fce5839"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-c.json",
+      "size": 1051,
+      "sha256": "3f6076c7fb1941e81dd53d98829b818826435742b877ca35d907958dd1fe4c4f"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-d.json",
+      "size": 1119,
+      "sha256": "f95030db974c86105056809da54153da759ef4332dbccf0890cf3d84722c0cc2"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-e.json",
+      "size": 970,
+      "sha256": "d438140d62399e87c23698be14cc6a32e8e25c7e24a4f0480b2e7d164d3fe0fe"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-f.json",
+      "size": 952,
+      "sha256": "634a790b2954b03610cbd78b5bfd80846ae38a9c4ffdec5aeb32a3a7a76ce808"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-g.json",
+      "size": 952,
+      "sha256": "6738e6814bb17278e56aebe2c82c911870328a7b3080f2a7f7d3d8e44348f206"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-h.json",
+      "size": 1119,
+      "sha256": "c674f4e1f2b100abf7799ef47c281230c647a13fc42ff8ae8a84896423e1ebbf"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-i.json",
+      "size": 1076,
+      "sha256": "ebd023f07da3b7fa475c3cd3add03d62dc1ddb322ed23ff0ad81d5ffcca68051"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-j.json",
+      "size": 1119,
+      "sha256": "b0c9738a188a047b04a7796804ae82ce25c9e53e19a9e647cf6cd776f588bbb0"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-k.json",
+      "size": 1119,
+      "sha256": "b8d66c5808e1e40386bfa9b8b56b996b186ea38e0b71bae1777c08064d132dc5"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-l.json",
+      "size": 1076,
+      "sha256": "ff8df42268b1f1b1c0540009b42bc6f6cb24fea6fc81447d88768f40063708e5"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-m.json",
+      "size": 1076,
+      "sha256": "c198f2a48df1dff9373e3a853434a85e23e3e1b1ab8f94ab0f32e91bb33a70a7"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-n.json",
+      "size": 1076,
+      "sha256": "e845c5e2eb03b2957c8e8452c1435d9f1a8c590510fa55681c1856cf423fa1e5"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-o.json",
+      "size": 1076,
+      "sha256": "c16f660ee48b98cb16e51b27ea299823f0ac6b509ee9abadb88706473ba70f35"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-p.json",
+      "size": 1119,
+      "sha256": "413f78f8049f653ced2ee6521090479d1a0dd2ad9e63bed41e3bb5c1941ad438"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-clean-q.json",
+      "size": 1076,
+      "sha256": "5287a8a67bf0b9134ebf9d4d23bac4b190ab3a72a5d73511e069f2d0c1029c41"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1-success-a.json",
+      "size": 1096,
+      "sha256": "3e755e06cc41a0cd2efd9f857d0a9175d678c65292b62ec8c537ca1a4a6f211b"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260731-s1.json",
+      "size": 1086,
+      "sha256": "3a81e58af85a54bf11662082c282a5b8a08e01d3460354954cfcc1f3b0923a40"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r.json",
+      "size": 1883,
+      "sha256": "294bbf4f4d413d6ae462ecaa30cfbd013cbd7034e44ea1fb9ab8ca46eebd186d"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r10.json",
+      "size": 1996,
+      "sha256": "9382cd151b0d3c1e598100b83a9694cd5092e149ddbb7ae1083288a9b8628e2e"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r11.json",
+      "size": 2009,
+      "sha256": "4a15b257593e24250932ea9aec6e75ab3de1ffd823cec24ca8de779d268c4ac1"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r12.json",
+      "size": 2009,
+      "sha256": "f0a83c9b0aeaf8fac006fd67f2995ea19a9955f263526ef8d023d9d8648f33e0"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r13.json",
+      "size": 2009,
+      "sha256": "247d1c8a25870c384a2bc6e25c030e2eeed6fc5860435889ece9e26132df7ba3"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r14.json",
+      "size": 2011,
+      "sha256": "a39684fe169c5ed93501e8fea3241541d431da94fe0e79fcaeffcccc82a244f5"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r2.json",
+      "size": 1886,
+      "sha256": "28e48f739b81db887542c35963820a1885cedb61a12671d49caf4e357896fff6"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r3.json",
+      "size": 1886,
+      "sha256": "025716ab98b6507639e750a789e52c604f9991dec366721d13ed919b124bee77"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r4.json",
+      "size": 1992,
+      "sha256": "09407db6d9d7db33c359bb5ac5053e6167e10a897548efddfbd1ae7e3866cb32"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r5.json",
+      "size": 1992,
+      "sha256": "02a09e3b0136b0cf9c38da6457447c6f70dd3f57dc1b3d78df674b92c5d06144"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r6.json",
+      "size": 1992,
+      "sha256": "83cc3901cf289980d00e1bf9557e999146499bd05984ff8e7fa048c3ab4b7791"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r7-repair007-readiness.json",
+      "size": 693,
+      "sha256": "005ee9c0fcc6e1836616d35e3fc881757f271c24f5e2a0dd59c48e1b346cb07c"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r7.json",
+      "size": 1992,
+      "sha256": "ba9e2c35b40b6e62fc55662f02015c1b2fd80065db7bf77ba5cc84ce2ebd6623"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r8.json",
+      "size": 1992,
+      "sha256": "e56888fdb966d08b3a7126c3db55614fc934a44dab447b598d24cb15a2c92d04"
+    },
+    {
+      "path": "harness_watcher_implementation/canary-20260801-attention-r9.json",
+      "size": 1992,
+      "sha256": "5df7bad12bd58fff5e04c777957674f83ac96821cda36254bb76a9edc1c8ecaf"
+    },
+    {
+      "path": "harness_watcher_implementation/config.example.json",
+      "size": 1351,
+      "sha256": "d35f74362a82cd0a0c5c7d394c57539149f350b76a0c4acf21a02cc54b0df165"
+    },
+    {
+      "path": "harness_watcher_implementation/config.py",
+      "size": 5282,
+      "sha256": "bb08606de760716248c4b5379d5017567f5c2753e7f0867c7cc9c0f41258adab"
+    },
+    {
+      "path": "harness_watcher_implementation/evaluator.py",
+      "size": 5013,
+      "sha256": "45209e479737d469543e6536303792318fc85752c30123ff82d348cdb9466298"
+    },
+    {
+      "path": "harness_watcher_implementation/logging.py",
+      "size": 1346,
+      "sha256": "8440f4889a3f52394cb9b20353216c03dc4af150271a5c47a1fe4a17a4059fba"
+    },
+    {
+      "path": "harness_watcher_implementation/poller.py",
+      "size": 14569,
+      "sha256": "d197eafc40dbeeb9147844e99b126e073601e4cdd1c63c4274ec897c1be7e6c5"
+    },
+    {
+      "path": "harness_watcher_implementation/settings.py",
+      "size": 104,
+      "sha256": "1c1ab0e2b5147bee2ae642fdedfb417eb824dd6693de36c44f9ea8c1fb782e6a"
+    },
+    {
+      "path": "harness_watcher_implementation/state.py",
+      "size": 2853,
+      "sha256": "8d1e6fb1b2115ac9f94dd836b3e5840c75e6018cda9fb532a437b31507160337"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/__init__.py",
+      "size": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/run_attention_practical.py",
+      "size": 22155,
+      "sha256": "fb2414f89a844b79d5a934cc7e4b91e0a606466439127a2932bc6f3657c4968e"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/run_canary.py",
+      "size": 8792,
+      "sha256": "0b752e911cf23faf91bf5b5c0ce9dbf3a3dbadf0c685ea8966799edd2ad2814b"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/run_defect_canary.py",
+      "size": 3045,
+      "sha256": "c5c710749ae9a00defeca5d4bd94b00491ae82975c4ef7cf1a7ccd1b4f7c8155"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/run_lifecycle_canary.py",
+      "size": 3664,
+      "sha256": "c60cdfb2d142d553dace744a2c48a531e64a486192d7c9532ff613338bfb6233"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/test_attention.py",
+      "size": 47518,
+      "sha256": "44745fb65ced5b73ca13c05e90f70e207c2547ea8d52f19068bbfbd63cc387fc"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/test_attention_ingestion.py",
+      "size": 11104,
+      "sha256": "a8011e24b369c4a231bfd4c79060fab3bdde07b876458bc18964ca4466b1cf6c"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/test_attention_practical_retention.py",
+      "size": 1877,
+      "sha256": "00c67791be000a33601b2947a5ea312649d45cb1750504838837b030846d1c5a"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/test_attention_recorder_cli.py",
+      "size": 6651,
+      "sha256": "04bb0f3c9db448cadf6d177ffadfc8b278697c77f110da175f04e22a9e6dd838"
+    },
+    {
+      "path": "harness_watcher_implementation/tests/test_watcher_smoke.py",
+      "size": 44872,
+      "sha256": "b5fa268bf37a42af43f95a97e574d92fa813e44d9bd86c956061e71cfbf2ca66"
+    },
+    {
+      "path": "harness_watcher_implementation/verdict.schema.json",
+      "size": 809,
+      "sha256": "1e4486123e599961358df76a98d32ed6b13026620824ceab26d67a0406511b99"
+    },
+    {
+      "path": "logging_additions_spec_2.md",
+      "size": 5293,
+      "sha256": "25ab415b7d561adea3bfe2ad082cdc617dcc2748eb2fadf7e24e6ad42add76f5"
+    },
+    {
+      "path": "manager_wake_test.md",
+      "size": 17076,
+      "sha256": "4f324f878f5c2f7cfb3a288d10b426e3d792574f313a32d6717e427a82b6a7de"
+    },
+    {
+      "path": "orchestrator_harness/__init__.py",
+      "size": 192,
+      "sha256": "667605e7eb1adade5d41c36b2a702923e783f3dccdff4422ea6b4b8dc5046f98"
+    },
+    {
+      "path": "orchestrator_harness/__main__.py",
+      "size": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "orchestrator_harness/active_management.py",
+      "size": 22744,
+      "sha256": "45a0982a6606b9122e2cddbd0aad25ec6676a6e1b916bc9232b96230675de605"
+    },
+    {
+      "path": "orchestrator_harness/attention_sprint.py",
+      "size": 7588,
+      "sha256": "4ed3adcdf811db38e6e0b764fae569c0f2f0bfd3cfc0c1b083341c8d3af0a1d5"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-b-state/active-management-history.json",
+      "size": 1490,
+      "sha256": "c71dc02696fe7c3cb55041227bf478ea82fd2535b738dd1b25dde85a60e3826e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-b-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "249ff6a754fca4a8c9cf42c2b3a659ae4d526e40d14c7358faa4be8465691a21"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-b-state/pending-notification.json",
+      "size": 476,
+      "sha256": "46c06675dc98257779eb2591aba6f526d8870465d84e3ca6255d418130ae3bff"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-b-state/snapshot.json",
+      "size": 114010,
+      "sha256": "79f58cb7a87502502989c547399810a92f30d91094a6ffc737813938c921a366"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-b.json",
+      "size": 1088,
+      "sha256": "34ef3f05a60c89f49f73a7df951b6729853c05e7742779b029e547aeaab58016"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-c-state/active-management-history.json",
+      "size": 2821,
+      "sha256": "adf6cc3bef72f424addd84c90ba34b3dc62a08f5726b8897673df9faa6abc6ec"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-c-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "0ee8602570ef3b86e42fa779d1473363570dda24d1b757b6958ae2f0037dedb3"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-c-state/pending-notification.json",
+      "size": 681,
+      "sha256": "ba6cf7fbc1a32aba18881819d0206485f15318a14d69e1b69bf7f8b7d0c38644"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-c-state/snapshot.json",
+      "size": 143933,
+      "sha256": "aa72c099fa8b9cad691a2d1a78fa328ed8f39e99698db5ec88233a506ba04f2e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-c.json",
+      "size": 1058,
+      "sha256": "5caf6854e7fa9a3ee0f5394cdeac12b21e3eab301e7551f8eca2666c50a4eb82"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-d-state/active-management-history.json",
+      "size": 2377,
+      "sha256": "a659ad81236f18a99dfe6abbb4c6215657cabfc125c3c13eab1706285f8e0239"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-d-state/managed-watch-runtime.json",
+      "size": 586,
+      "sha256": "fecaf3920e033d105c5b635a97fbfbb7e06b26fcde8a079df5ee6f172ddbfe3e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-d-state/pending-notification.json",
+      "size": 603,
+      "sha256": "cab6ffb1d65b6a6606132815f77e3125aec54f0d1fe7cf23eada0239e4d56142"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-d-state/snapshot.json",
+      "size": 183624,
+      "sha256": "a89f7a30ad0dc11cacf58a6df3d8515cc9ae942b0274af9e667b7ba7e1a8c09a"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-d.json",
+      "size": 1088,
+      "sha256": "837ef98565ce5268a6edee2e22b8db2ceefbdd68a03659d2805985adbdd5bfac"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-e-state/active-management-history.json",
+      "size": 1933,
+      "sha256": "04ee0ef3332aded85492a8b90d3124ffbf249c5e443d17c6e9bf01dfbd4ced2c"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-e-state/managed-watch-runtime.json",
+      "size": 587,
+      "sha256": "79746ef845aa72474f22c69e848d1a5b8b99776f933bc7580abfc88bcd19325a"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-e-state/pending-notification.json",
+      "size": 2091,
+      "sha256": "fa781be9a59bdbeb5b739199f8005c90381404589faaf48e8a676eba4efa7963"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-e-state/snapshot.json",
+      "size": 221580,
+      "sha256": "2c426ca873b7f315c8ec8927e84e4ac049d7f05518c0fda103319797308b099a"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-e.json",
+      "size": 1088,
+      "sha256": "3e08fdb6cb87c3a6a59902cd4a2fe496121870512cf2ab5f7c82e42970b7bf18"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-f-repair-state/active-management-history.json",
+      "size": 1365,
+      "sha256": "f8e937d9e0378675043f1235083488c575a0694237f3d4fb04b5a3ccbc65408e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-f-repair-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "d48874c14aa4e9a83dea38484b8dcd74bec19092a39648b883c7c5de27aec5b3"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-f-repair-state/pending-notification.json",
+      "size": 2643,
+      "sha256": "0cce5dc4400ea77744315e13f829275952f244905efbd08a5f27db318d26969a"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-f-repair-state/snapshot.json",
+      "size": 362576,
+      "sha256": "ee6c06822bf8279b3795a8ea113684b406c9a2340f80c141bea13947e5c0c86f"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-f-repair-verify-state/snapshot.json",
+      "size": 362581,
+      "sha256": "786ff4dec36ce268ebeb73219025534a6fcbbc6eeb255e364e3c9d49ed5c830d"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-f-repair-verify.json",
+      "size": 757,
+      "sha256": "1c68f299a969d1f06002e4311ae5a7bd0ccbacd56f05e005d0855b2e73545bb1"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-f-repair.json",
+      "size": 750,
+      "sha256": "75e806721cb0392f4cf62a581bd718464431f995d19d4e1a8ca8dcf5036edee1"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-f-state/active-management-history.json",
+      "size": 1932,
+      "sha256": "346b350f29aa0b139a4b5c0a45df956f9cb2edcc32517ec5112833713e1c0758"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-f-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "f5f27ca09aac3bcd50cd63bbecd3f01da21f8eb66ea7a7cbe47c95c91ede1b0a"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-f-state/pending-notification.json",
+      "size": 684,
+      "sha256": "6fafad4db3beb80dcf4e7eacd3c3112a65ecd631deb8beaa58d01855097c0197"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-f-state/snapshot.json",
+      "size": 244933,
+      "sha256": "270d321f38a954d07922a809c813415dfdf2e00b1d917d74d7d514d022676716"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-f.json",
+      "size": 1058,
+      "sha256": "f8c6a6faac1f72de45937b2a5e9b6a782443e6964063a58351d0bdc7b553beda"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-g-state/active-management-history.json",
+      "size": 2237,
+      "sha256": "04199cf72b6da340628de5aea46f7fe93d74f07f5ee7ef7e432ef0754c5ecc14"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-g-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "57bf84046b405cd5a923e5b4612ce5672d6e21281705ebd03d77fe7cda02b2be"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-g-state/pending-notification.json",
+      "size": 396,
+      "sha256": "8c5251477602c7fd430c6cf3d37d949d7c26dd9821b590020152dcc1faa5f122"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-g-state/snapshot.json",
+      "size": 375852,
+      "sha256": "ea89de9819bf470c186efd46e5c5c93c798d2ffa70aefdb1c48e49061eabc356"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-g.json",
+      "size": 1058,
+      "sha256": "2068d4c3c425b85582d0792e5c09671b2b6c6a57aaf9412319372fc7b17903bf"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-h-state/active-management-history.json",
+      "size": 2240,
+      "sha256": "3797c6fdceee5ac8d249be495bd51c492ea7109295812d0effe8b4b50b01b189"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-h-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "a747b04180c9ed4bc42154dec6b71222891948b23cbabc22c9a5ea613382cce1"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-h-state/pending-notification.json",
+      "size": 945,
+      "sha256": "084940330d237f9b39d4e1936d3d9494ae36b4158aa108017295005de53e21ae"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-h-state/snapshot.json",
+      "size": 437613,
+      "sha256": "5b1741707a51f88b1730e687e4384a077be39f933169417f1b566fc9a7077ca8"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-h.json",
+      "size": 1088,
+      "sha256": "2eab466df163885f6dd64c1a0a092f7b83704686aae860a5ace9638c11d4f854"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-i-state/active-management-history.json",
+      "size": 2683,
+      "sha256": "4458933480130bf75875f24a2aca5725469a72d13ad2843a6c951b8a5b7a4a32"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-i-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "17a46cd845d64261cb8e3fbc208e3c61e95672ed17a07995e8f2860b21f43117"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-i-state/pending-notification.json",
+      "size": 396,
+      "sha256": "529fce94f4f805fd7e856c2c4d79b11a13e2cb7c4862acb558bc53dbbff1649f"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-i-state/snapshot.json",
+      "size": 478184,
+      "sha256": "73be6dd5fc897c8a35334fd8ef4a3996f82567827056b12bcaf64e02f25d512d"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-i.json",
+      "size": 1058,
+      "sha256": "e595a80c0877732b82e0183d97456f27fbff2f4e0f5b97c080cb29aace55e5c7"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-j-state/active-management-history.json",
+      "size": 130,
+      "sha256": "86afc7d993aa8a0dd7f11779ab076ccae80bde1113e46a9d5ad2554294d2d472"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-j-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "b3bd54edea1535c08b9d095e54446556bfc825a89b217db5e928556ef6fabe31"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-j-state/snapshot.json",
+      "size": 467450,
+      "sha256": "e9f42daf1befc9da9e1b37568078ba8171e4c92c3d08d9cc4586e3bedd22653a"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-j.json",
+      "size": 1088,
+      "sha256": "d56b8b172e9c674c609574ef7c38924cb06c74b0a280ad3d4dbb0bfb37ccd23b"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-k-state/active-management-history.json",
+      "size": 1933,
+      "sha256": "00690e0fb44de75a21c64c6cab0679b3fce02cf1eec5bb4857f220126b82c0c8"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-k-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "db502deeb27687424b958d86921c21ff0303d06bd6589c9e2fa046a1398de7c3"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-k-state/pending-notification.json",
+      "size": 1476,
+      "sha256": "175bc9ca6f1f6bb3dacb9ff1f776a861a48374784c214fb5a1050a115fbc54ba"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-k-state/snapshot.json",
+      "size": 558128,
+      "sha256": "189c1b131b6606c3b87a75117f4574a4a8b42eb0f903ba9fb45bf85d915011f2"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-k.json",
+      "size": 1088,
+      "sha256": "766a01fe587fdefa649e8b6e1ab3edd61b524816d6338e1855df4303e176af3e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-l-state/active-management-history.json",
+      "size": 130,
+      "sha256": "86afc7d993aa8a0dd7f11779ab076ccae80bde1113e46a9d5ad2554294d2d472"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-l-state/managed-watch-runtime.json",
+      "size": 569,
+      "sha256": "53370211b27ffe737b73a1522f0fc2cdc13245431b6859cbe75338edf9c970e8"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-l-state/snapshot.json",
+      "size": 613947,
+      "sha256": "81338e294f9cce02d74589ec1f4a92f0d65152faea04e8e6e9566466d08d0cc0"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-l.json",
+      "size": 1058,
+      "sha256": "f3514fd4c9cc956b9b11bd8a4ebefba2349d3c0e7cc05f8dac4dd33d5a6d95a1"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-m-state/active-management-history.json",
+      "size": 1931,
+      "sha256": "35a11d2c8888dfe45a676a8b89c2e65888cf5baaaa7686cd16486d2dae9dd56c"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-m-state/managed-watch-runtime-pre-recovery.json",
+      "size": 526,
+      "sha256": "36ee3bbc679578b61b158e66fdd36c66ea932bbcea57a89fd761c310be3a763f"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-m-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "669502e18ab276b16dcdf30fc31809e5b7cd8e6374b1663492e059dafea46dd4"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-m-state/pending-notification.json",
+      "size": 1044,
+      "sha256": "7d4ace2083c1b18258d60c493a3a013852c0d1e439d03b6333f2b8c3cc4db934"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-m-state/snapshot.json",
+      "size": 648972,
+      "sha256": "c6b706fbba7de488aa1e39523392a3eede63d5dc75d4ff5ae54bb7818cf127cf"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-m.json",
+      "size": 1058,
+      "sha256": "08200c0a4918427c2e0f35b41f073e7044a186873f671d44dc2a1e9da7512465"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-n-state/active-management-history.json",
+      "size": 1931,
+      "sha256": "eee3e00799f88e5e7ed0a17df1339800a77e8ce8cd09a13ab33be26e44304f2e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-n-state/managed-watch-runtime.json",
+      "size": 587,
+      "sha256": "e3552ded8349e6b51af15565c945f6b44df1dd2721087f32373030ae44b131d9"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-n-state/pending-notification.json",
+      "size": 4485,
+      "sha256": "a75b9b585f938e37845867ea1e1fcb3cb96f3ad80f64acc7fb86ec722b7bc8a4"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-n-state/snapshot.json",
+      "size": 654646,
+      "sha256": "0a8bfbf50e61678288190fbc349fa61cfaff4274762530c19109b99c86183f4e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-n.json",
+      "size": 1058,
+      "sha256": "edef4767bfc7b08db2dab9eb1b451ee4e01cea963df0d00b8a453890eb4fa398"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-o-state/active-management-history.json",
+      "size": 1931,
+      "sha256": "72b049976e54e73b108181d5b222f07edce0b4712a3881769367d026f12f97b9"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-o-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "234eb855cebeb2f77aee7edb3b6d34da6e99c086cf42f040b7d4f4237b94aa8d"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-o-state/pending-notification.json",
+      "size": 1710,
+      "sha256": "11c49568c6642384e1d4223f9a73170b2bb16be638a9067c61c949b90ad1c35b"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-o-state/snapshot.json",
+      "size": 697324,
+      "sha256": "5e818e16712ee07899b32234e00a2994883ce4c37b632bf6d78533e7f46fc447"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-o.json",
+      "size": 1059,
+      "sha256": "bff0658b940943bb74ef4ab3cb7013bb6619b66461c75563a92ff276be76288d"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-p-state/active-management-history.json",
+      "size": 1931,
+      "sha256": "36e2cdd9700121b508a22c461dc4aecbc49999bf13ca22a3acaeefc8867a1289"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-p-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "622c1f776fe662f832848cbb7e5112836c8de6c627add704735659d26f29c87c"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-p-state/pending-notification.json",
+      "size": 4598,
+      "sha256": "1fa1bf5ff8dd9c6a5cf4a85754f2081a815eb5fc9963683931641cd3d61bfd44"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-p-state/snapshot.json",
+      "size": 746576,
+      "sha256": "8427f110206c90cc519f5a5d09d311dba835a7ea801be1515b8b2250c2d30ecf"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-p.json",
+      "size": 1090,
+      "sha256": "f8877e98a8497adb422ee116d77b9286415a2f15deda1d667de297d70dc655a8"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-q-state/active-management-history.json",
+      "size": 1931,
+      "sha256": "892cb447cebb06738069f35240e72e8d23c9895cfac1ac51ab02143176592b7e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-q-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "5e68a9c505d42bc5d5724fa48eab699a0af9b3ef1e77e8cacf0915283e28d5e7"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-q-state/pending-notification.json",
+      "size": 6593,
+      "sha256": "6492a3f69843fc83e1f29a2f81aeaa25b29aae33fa3001311445203f60e5ab5d"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-q-state/snapshot.json",
+      "size": 762372,
+      "sha256": "cf6a5b04cebdcc7d6b722f9b948e298400a87dd27d83da5e9a86c95299152683"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-clean-q.json",
+      "size": 1058,
+      "sha256": "213ea8179b6f869ab10536e1df238ed56b2d7dffea1fefeead1cbf2fd898b191"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-state/active-management-history.json",
+      "size": 1933,
+      "sha256": "38628ec6a4671bdfb8284ff08d2d2fabbab927f1c3da2ba0f78e2035308bb3b5"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "791c356b62688a17d45cb33007fc0c9b2a489addf8d6b217bf757d07d316b3bd"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-state/pending-notification.json",
+      "size": 772,
+      "sha256": "cae6d2b483d4161e8635352786129f3ce8ac529a084f8f3225161637aba32c46"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-state/snapshot.json",
+      "size": 73755,
+      "sha256": "5b13a3a82f167dcb54fa22d1f165e12d3fcfc65424e96eeebf4e45daf8719739"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-success-a-state/active-management-history.json",
+      "size": 1942,
+      "sha256": "1314f0fdb397307aea803cee3a3ff142080592fb9fa1915f4da80d5be28c54c8"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-success-a-state/managed-watch-runtime.json",
+      "size": 587,
+      "sha256": "818a5ccbaa3653366faeec43b8d210e60cf2599a47a254688c274ad11aa8b6f8"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-success-a-state/pending-notification.json",
+      "size": 1331,
+      "sha256": "416549bfa218338742c554b5cd72d5adfc473e4ffec33ef35866c6746fd735f2"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-success-a-state/snapshot.json",
+      "size": 95494,
+      "sha256": "fd0468ca16270e19972b9b18deb1e9eb3c1077e49833070b965cf57891d8e5f6"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1-success-a.json",
+      "size": 1090,
+      "sha256": "fa7def9462c007d6883bbf8bb7dd78a33b7b3c1b59a860f08ab6b5a73c38d583"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260731-s1.json",
+      "size": 1079,
+      "sha256": "e34e34f25d1613e72ea8354e3acae3e4b491e97b9e6df76979bdce29a81c031b"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r-state/active-management-history.json",
+      "size": 130,
+      "sha256": "86afc7d993aa8a0dd7f11779ab076ccae80bde1113e46a9d5ad2554294d2d472"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r-state/managed-watch-runtime.json",
+      "size": 550,
+      "sha256": "a91f51a4607387ab5743beae8d27094a3a9695eb239e620ea9883bb35cc1bbfd"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r-state/pending-notification.json",
+      "size": 124,
+      "sha256": "117af4bcd268e6ae0bb3f756c1bf4b03071680127b331ae199baaabab2433b5c"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r-state/snapshot.json",
+      "size": 762335,
+      "sha256": "31648f5c24b7795c86e8e555d5ef2e94d754c10367474ce14e3c4c3920fabcc1"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r.json",
+      "size": 1176,
+      "sha256": "d3e3828740498b4ccc984592b20c3c4a533a562b8cc8ba88af21bdda7b76027e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r10-state/active-management-history.json",
+      "size": 1943,
+      "sha256": "6e679b0b265e0d9981189e130ca21366dbbf0083dabc78237d305dede9c07885"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r10-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "ffac4ebeef08bf033904543195f2de39c577b680eeff342ed4af2a9f6f37c1d1"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r10-state/pending-notification.json",
+      "size": 20406,
+      "sha256": "b87a997c96dd121e94b4bf424a5d73a638bbcacc8d653d1476ff6d2b794a13b9"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r10-state/snapshot.json",
+      "size": 907143,
+      "sha256": "928b44bca5d6914e7ca15d515bae68604edec59aef2b19f55b66b08dfa70a418"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r10.json",
+      "size": 1180,
+      "sha256": "3fc049587de8266ec30e074d21f3310b2e6ddce5c1f3e27ee920c7330edfc322"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r11-state/active-management-history.json",
+      "size": 1945,
+      "sha256": "f300503699239c9734de9bdffcdb3d9f27c9dbd857b259abe66e5191e027a53b"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r11-state/managed-watch-runtime.json",
+      "size": 599,
+      "sha256": "50bb5e47d83f5fa74475a46f5dfedcaa44f60b3976534b3e4232fda2bf22f09e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r11-state/pending-notification.json",
+      "size": 15903,
+      "sha256": "03e398fb3f63e5b3747eb39bec783cd94e86b05e03f5df51942d10e908d65553"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r11-state/snapshot.json",
+      "size": 929651,
+      "sha256": "1812c6e9403c555de8a10195a605f3e0282b8c61fc3188b48bdc1672a18ac10d"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r11.json",
+      "size": 1179,
+      "sha256": "f7a4619ad78975d516de839069238f3874e3428f705c517f5a52bdab6c1b7b88"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r12-state/active-management-history.json",
+      "size": 1943,
+      "sha256": "938cc0494f041f4cd61da68269fbf5d05fc480482456c1301795e2d902f4dff3"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r12-state/managed-watch-runtime.json",
+      "size": 589,
+      "sha256": "8b025ff51aa530431b05f47252e91171ad2bea0387fb5b9e197d4fd203132fc6"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r12-state/pending-notification.json",
+      "size": 20225,
+      "sha256": "a82b39420bbc54d0d14f3fd3fca31fa743431a5491499d3efaa5369fb2832044"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r12-state/snapshot.json",
+      "size": 952975,
+      "sha256": "0946e72c7b5ab20fab991e9c9605266f034e4cf00ef2b5d6000f3739e70b9318"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r12.json",
+      "size": 1226,
+      "sha256": "8bc61fe306ae588335b7746683f3b4b7028d7c554a727c323a038d1e41788d6e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r13-state/active-management-history.json",
+      "size": 1943,
+      "sha256": "95557f6e689b6c5fcf6564a25b41e039dcebed1b68456398be6824f49c55f48c"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r13-state/managed-watch-runtime.json",
+      "size": 589,
+      "sha256": "771fae42c5b8ba008a80a07222b16588909d61c6fc06fa6b9925ba75bf35740a"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r13-state/pending-notification.json",
+      "size": 18263,
+      "sha256": "ab3023115ed5856bcc76b191303bf1f68dac0324910d10cf5ee9cb65c75c8d26"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r13-state/snapshot.json",
+      "size": 977554,
+      "sha256": "1225fb115c30c8dcee577c05894eb348ae784071b2fd37e8339989cb162df64e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r13.json",
+      "size": 1226,
+      "sha256": "9a3690526b206e5a5664b6db601b6fe14b98b456609a702c74679d82b4a7866b"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r14-state/active-management-history.json",
+      "size": 1943,
+      "sha256": "fda366b24fb014b7d19a3b5c54c7c68efaeb5060ab3521e190c85ffa19f8f368"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r14-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "768b8fcae25c209a75035044d289a8a7c591cc99d7c3298d57b51878397442d6"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r14-state/pending-notification.json",
+      "size": 22527,
+      "sha256": "de7e82a9cd45958a7fc41c05c9f3baa67c7ff88569d1ef755d3d474dde79563a"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r14-state/snapshot.json",
+      "size": 1002237,
+      "sha256": "2610ae87e9ae7f1e0a0eb2fa1762a3c62de66ee6c792271609cad1b4b71fd8d4"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r14.json",
+      "size": 1228,
+      "sha256": "f703291b748ebe150007c6aaca44d4498847aca322eb257adee8093b5fde9da6"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r2-state/active-management-history.json",
+      "size": 130,
+      "sha256": "86afc7d993aa8a0dd7f11779ab076ccae80bde1113e46a9d5ad2554294d2d472"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r2-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "8c46af2f796c218e476ffa8b81d38d09c393bc58bb59094a9f1cc9869ce43ede"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r2-state/pending-notification.json",
+      "size": 124,
+      "sha256": "117af4bcd268e6ae0bb3f756c1bf4b03071680127b331ae199baaabab2433b5c"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r2-state/snapshot.json",
+      "size": 762030,
+      "sha256": "dbe599d84ef2edb4ca8f3dafd5c71de06ab9edc97098e141e5b1afb13496949a"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r2.json",
+      "size": 1178,
+      "sha256": "65790e8178c1b76c9ce3dfa97ab21ccdf5f38b5fcc5b193b7480a4eea08b45c2"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r3-state/active-management-history.json",
+      "size": 1939,
+      "sha256": "fadf46882c7e405003eab54adc7f16523339c9a25064acfad0a45470cae82742"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r3-state/managed-watch-runtime.json",
+      "size": 551,
+      "sha256": "3bb3fed980be99b83ed8a204f93d951202597a5da2e10aa00bfe686a64d30309"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r3-state/pending-notification.json",
+      "size": 3900,
+      "sha256": "3e117f5e7a124cb5eb5f7a5542480880fa35149af461fb3c0aae7c0673280e16"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r3-state/snapshot.json",
+      "size": 766933,
+      "sha256": "18430ae181a13895e64bfd7157d5a960dc7081a21bf5de778dfeecfff0a629c9"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r3.json",
+      "size": 1178,
+      "sha256": "9586d790258a9238f01c64bd816dc396971e4714dd1cb1614737ab16941e6a1e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r4-state/active-management-history.json",
+      "size": 1939,
+      "sha256": "b01afedc50122fe1c46bf71d0c7a8730c69d9c60e7c44893a4fdc9406fb7686e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r4-state/managed-watch-runtime.json",
+      "size": 586,
+      "sha256": "b6bb36903e936746b63a7dadc01092e4288b8d14a8b486ed19ea740c70926195"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r4-state/pending-notification.json",
+      "size": 9451,
+      "sha256": "8575a84361a635e3e17c98c78897b48f59dea5c80f03b49b1c6246e4022f752b"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r4-state/snapshot.json",
+      "size": 784848,
+      "sha256": "e354528647c22bd031691a94a72bd57ce3529d27ea7156856625455f41eac812"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r4.json",
+      "size": 1178,
+      "sha256": "84ad3c9efce643bef5cd36d3f76f1a3920f43b854bff98d3a56e9ca47429e383"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r5-state/active-management-history.json",
+      "size": 602,
+      "sha256": "80f5211da8ef4f46677d5f8cbd5ef2ab7423c163ce00efc1b479b01d200e8638"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r5-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "4ecf596c9792aca76de9c8ce1243e328897d4f53ba7444348874b4885a2893c2"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r5-state/pending-notification.json",
+      "size": 2732,
+      "sha256": "bbb02f960afefd7a55d3c87dc98141faa07db32a1c7cafc335c5892603b085c1"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r5-state/snapshot.json",
+      "size": 787777,
+      "sha256": "c5942278e87ee3828b215fc7da217a2b8a444e1e68cf983635d012d06e07d418"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r5.json",
+      "size": 1178,
+      "sha256": "6325bc9fcd4289439f127af9892302640839fa0df2431b24401a881e220ad041"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r6-state/active-management-history.json",
+      "size": 130,
+      "sha256": "86afc7d993aa8a0dd7f11779ab076ccae80bde1113e46a9d5ad2554294d2d472"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r6-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "b59e561a52f19a6771238dfae16b6f72aa52b2e4926af637d24ebb719c7e0682"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r6-state/pending-notification.json",
+      "size": 124,
+      "sha256": "117af4bcd268e6ae0bb3f756c1bf4b03071680127b331ae199baaabab2433b5c"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r6-state/snapshot.json",
+      "size": 790742,
+      "sha256": "4561c637070e5a4933380cbcc5a5b053326f148ef1fa51fbf3da7c47504c950c"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r6.json",
+      "size": 1178,
+      "sha256": "73de40cc1780add23fb2cb421f01dccd711d69d431ab64d7a5a7b6a939132ece"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r7-state/active-management-history.json",
+      "size": 1940,
+      "sha256": "93c8d10656dbef46a145b5dfae7757d62f1ee788b052a79774b45a1c2c593f94"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r7-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "352a293dffaf1dd86b42a17592708c690a993c20011da1509deb7a8d23f89b47"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r7-state/pending-notification.json",
+      "size": 21318,
+      "sha256": "d0e83d1517bd1141255d6dec14e28595cc1d965777edae8b52b46a859beebcbf"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r7-state/snapshot.json",
+      "size": 833325,
+      "sha256": "015d3d2759f368e847bb9d56acd01e0b52c0c26bd95a6d4e0011bb2306394543"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r7.json",
+      "size": 1178,
+      "sha256": "a1e5acdff8885497e235443186d4d1c0f0381b85a7bff6b080de6cb9eb7e9300"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r8-state/active-management-history.json",
+      "size": 1939,
+      "sha256": "6452a46f191eb0e3b0b6d9553003e0fbb41f341d6efd36ef7cd32214f9f91d72"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r8-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "a8e2883b1738b2ba18070f0f8193a986015f41a692779bcd9ee4bf8e3dd1b699"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r8-state/pending-notification.json",
+      "size": 19628,
+      "sha256": "19075398b9cb350d0aa7a2f05c270ccbef4608e7f77e17d52254607112acebb5"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r8-state/snapshot.json",
+      "size": 860882,
+      "sha256": "543f0a3a8fd3a6933371c135fc3cd68e4ddd924f52da9c96bffd8b8e28deb81e"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r8.json",
+      "size": 1178,
+      "sha256": "65c3071d14517831baea68f9f637be11e0b7c60ec942a6ee5d75dbeefba19f43"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r9-state/active-management-history.json",
+      "size": 1939,
+      "sha256": "b5c05ec58d914fa2106add19fbb08d341cf923348d9d284a92eb6eb841633eaa"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r9-state/managed-watch-runtime.json",
+      "size": 588,
+      "sha256": "2cbe5fbb7b30f6736801455eb3105f7ed5ba63894bb352720a2aa2c8deee5460"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r9-state/pending-notification.json",
+      "size": 16221,
+      "sha256": "ddf9ea874cabe8f1363ff54fcedc93daaf687ef07cf66fc08f4e3a0c4acb9bf5"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r9-state/snapshot.json",
+      "size": 881358,
+      "sha256": "60e2924948025ed120b8ef8570cfe10a8b06444169145c2ed358716d6d6a09c4"
+    },
+    {
+      "path": "orchestrator_harness/canary-20260801-attention-r9.json",
+      "size": 1178,
+      "sha256": "a3fee39bf26dff106efdf95cc04d41fcd3e7ad4a538bcb1fd403d2067031ed61"
+    },
+    {
+      "path": "orchestrator_harness/cli.py",
+      "size": 34328,
+      "sha256": "2abf70fd743b8714db9effa6a18a6ca99395cc63b56420a14dfa8cb93789898a"
+    },
+    {
+      "path": "orchestrator_harness/config.example.json",
+      "size": 701,
+      "sha256": "79dbfbc28792932dcdad6bac8c93c15e9e2903f3a631724ef30a5efabdaad95b"
+    },
+    {
+      "path": "orchestrator_harness/config.py",
+      "size": 7356,
+      "sha256": "bc8bc01b3492cc0f38fd5957f225b8e47ce4ad443acc77dd0d1c9d0ba36c57f5"
+    },
+    {
+      "path": "orchestrator_harness/discovery.py",
+      "size": 14003,
+      "sha256": "b471b204fcdfda13f8ac2015c520806e378e060e17690c7687c7cacb585073fd"
+    },
+    {
+      "path": "orchestrator_harness/events.py",
+      "size": 12173,
+      "sha256": "1c03fd542eec647da696bcec16e7c782e4193fa51ce8d7b7136cb528ee867451"
+    },
+    {
+      "path": "orchestrator_harness/lane_controller.py",
+      "size": 17445,
+      "sha256": "73848d47487eced7b7338277a6a7ebc5da46e0e314fc188221726f2f50a225d2"
+    },
+    {
+      "path": "orchestrator_harness/models.py",
+      "size": 2071,
+      "sha256": "34fee5f9c8cebd302ecf69c0a0623d581ed64975c725c23bfeda806834fd7afe"
+    },
+    {
+      "path": "orchestrator_harness/notifications.py",
+      "size": 16142,
+      "sha256": "b5f2e8248e8a9105cccf074cb6764df50d4669daf4b3e5eb214531aa5fabdc5c"
+    },
+    {
+      "path": "orchestrator_harness/operator_launch.py",
+      "size": 6679,
+      "sha256": "59120497a71c023aba143e609d8195d461206e90eec82373f4c11e27bc1ff0c2"
+    },
+    {
+      "path": "orchestrator_harness/processes.py",
+      "size": 4972,
+      "sha256": "a0c538de5eeb05a77f0b6b245df8ccab3e690220235df1208b842a87f90833f4"
+    },
+    {
+      "path": "orchestrator_harness/reconcile.py",
+      "size": 48669,
+      "sha256": "b6d82e5ca305a864184097bf870cccf9052e771f00ef1a3c5f6dfaabd0909c81"
+    },
+    {
+      "path": "orchestrator_harness/stable_io.py",
+      "size": 32577,
+      "sha256": "02971a1617a654e4485cb6cb4a209bc9365dedc1963ff95f4eec4d91fe374d7b"
+    },
+    {
+      "path": "orchestrator_harness/suite-restart-watch.json",
+      "size": 1046,
+      "sha256": "3ddb96ea1c9ffaa7edc736b20c92c3e1921a539a64306b09fb5c082fbd89a223"
+    },
+    {
+      "path": "orchestrator_harness/tests/__init__.py",
+      "size": 48,
+      "sha256": "305c19227738cd9fcf0402a6c282d9751c8bf6b21406215911fbd910cd751df7"
+    },
+    {
+      "path": "orchestrator_harness/tests/real_agent_test.py",
+      "size": 3200,
+      "sha256": "ca263c8984252251c9a6a8ea70f9fcccd1cb2917463333201276c2a3513df911"
+    },
+    {
+      "path": "orchestrator_harness/tests/support/allowlist_connect_proxy.py",
+      "size": 4856,
+      "sha256": "13f2a126dcda93433815aef8a195097ac16d8fda84c0d8d7b7f3d0c6593b8cfd"
+    },
+    {
+      "path": "orchestrator_harness/tests/support/cgroup_exec.py",
+      "size": 1029,
+      "sha256": "b8192f006bfbf876b7e550cef8dafb0760234db8ad9ce83e79221f5219b4d4a2"
+    },
+    {
+      "path": "orchestrator_harness/tests/support/synthetic_agent_helper.py",
+      "size": 3833,
+      "sha256": "64c38bd898f52b71df80e1e1c6e0679ea374d429505f6ff7b03ff4affa6ef441"
+    },
+    {
+      "path": "orchestrator_harness/tests/support/wsl_cleanup_fixture_driver.py",
+      "size": 1086,
+      "sha256": "7280d84156687043dd8d67b80f5b28dd96bba0cd946eb9af97b0492cddb73640"
+    },
+    {
+      "path": "orchestrator_harness/tests/support/wsl_guarded_entry.py",
+      "size": 2029,
+      "sha256": "b3a0e9d035c1740e56885a957d3490720362cf893f50437c46a8e5643d614802"
+    },
+    {
+      "path": "orchestrator_harness/tests/support/wsl_real_agent_driver.py",
+      "size": 36057,
+      "sha256": "c701f619c1f4c44900ccf25fcc44276658840917f4d04530ac4ab2f98f25ff6e"
+    },
+    {
+      "path": "orchestrator_harness/tests/support.py",
+      "size": 7737,
+      "sha256": "8a3d902848615a2eced96eb92ed910a6ecaaf11aca2b260e3728936b8ea446f1"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_active_manager_watch_smoke.py",
+      "size": 40144,
+      "sha256": "375c5839f57c9aaa0b08ccbf1636098dda41d0acca90616fe4694210d9d38f8d"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_attention_scan_continuity.py",
+      "size": 3855,
+      "sha256": "518c5382ab2c88b6fe784ffc30b4e2ab82a2f1458b5378e3160e377ed969f14a"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_attention_signal_correlation.py",
+      "size": 4594,
+      "sha256": "4690c55c5ac053f9af450c206eb088996c4c145c003f300b831d34870e506d36"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_attention_sprint.py",
+      "size": 3696,
+      "sha256": "c861a71cf7851fb30b057ea091698f0335b4f2e81cc9ce52dc38dff3b145f3ce"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_clean_m_handoffs.py",
+      "size": 10217,
+      "sha256": "c1429eee490912297e13022be5384d8650beb9648d33b80d3515449201af199a"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_clean_n.py",
+      "size": 8265,
+      "sha256": "75e8d57876b3714ca39163d2ef57fefb1206aa4a3f7e5e7cab5d69bcfcb0ead4"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_config_store.py",
+      "size": 6509,
+      "sha256": "7969afa2a50f4e7e46c4140d98c1baee69fee877e5fc84835bb6daba6e71beda"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_events_cli.py",
+      "size": 10797,
+      "sha256": "e0528af1c06dce393e795d07899002cb77026890bbba771598a0ff66f84c1a02"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_integration_processes.py",
+      "size": 3685,
+      "sha256": "6b4dc101f0c48a2ba23ba144fac41e70c84329461e0ec8d4738a3565ed47b27b"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_lane_controller.py",
+      "size": 9008,
+      "sha256": "0c1c7b15554a54b91c6f538ef21a25373010706e4cbb557927dbaa2f0f73b517"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_manager_notifications.py",
+      "size": 29285,
+      "sha256": "d2389beb277fd198d2d54ac54613261a7d86d5571c0c92f73b769979d25b6262"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_manager_notifications_adversarial.py",
+      "size": 3696,
+      "sha256": "f7334fd434c80064a01b8a9928eba654756e70ce526816881d409f4e2715f013"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_operator_launch.py",
+      "size": 4278,
+      "sha256": "845ca64555ad1a34be6e136390cfe1f656a954c5fb8758156288b722d422068c"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_primary_owner_script.py",
+      "size": 1768,
+      "sha256": "126ae1d78be05abceb2ff6d9c7ea63f4bc4e15941006d25ad01716e5da0c9fda"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_processes.py",
+      "size": 2313,
+      "sha256": "8da5734e3e5e8cd25804171187e0d6f4d3ea6e24603777924ece21ad431cb533"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_real_agent_isolation.py",
+      "size": 5761,
+      "sha256": "be2538e46e79d3080dcef0e9ddd6f45d61a6212a0383446ed43bf16ac69a7367"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_real_manager_notification.py",
+      "size": 9963,
+      "sha256": "3e66cb2e47ec9398afb8b09985ebd98c3df2a3e781a655aeb170e4a261d41625"
+    },
+    {
+      "path": "orchestrator_harness/tests/test_reconcile.py",
+      "size": 57116,
+      "sha256": "218bdc6a9740e71691a578a0c9ab84c0a77419aae7034e5d2cde082bc7a3eae9"
+    },
+    {
+      "path": "orchestrator_harness/tests/wsl_cleanup_guard_test.py",
+      "size": 1635,
+      "sha256": "eb470134bf7c6d3ab3d2fc269af742eddda1736d240112abb6b9be063060c58b"
+    },
+    {
+      "path": "orchestrator_harness/watcher_integration.py",
+      "size": 1791,
+      "sha256": "97e80aba939527a979d5614c9a41b70b6284ee37804b0f7da2e1ba54f4084fa1"
+    },
+    {
+      "path": "scripts/orchestration/build_server_snapshot.py",
+      "size": 2356,
+      "sha256": "0af3fe239ab81fa848d64d559fb1c7ed6d20b8adca46277a42c2e97f4dbb8d0f"
+    },
+    {
+      "path": "scripts/orchestration/canary_supervision_pass.py",
+      "size": 4773,
+      "sha256": "610b7f47dbd53fad15a1f187a3ea9ec19a70c3dc291fefeeffb0283d13fa8230"
+    },
+    {
+      "path": "scripts/orchestration/optional_watcher_owner.ps1",
+      "size": 2750,
+      "sha256": "5d48ba1d82d3fef9d7cdde0aebfae164b791339be45c0aecec0b8799a1bba1d5"
+    },
+    {
+      "path": "scripts/orchestration/primary_harness_owner.ps1",
+      "size": 2412,
+      "sha256": "56f3a9776b156a6b67af083dd610a70f42361c34d012c868b4f5b4aa3405ad19"
+    },
+    {
+      "path": "scripts/orchestration/prompt_policy.py",
+      "size": 2571,
+      "sha256": "e68c294b73926514716a9d8b12c7a198976c4160d78123371a1f28075860b13d"
+    },
+    {
+      "path": "scripts/orchestration/run_persistent_lane_r9.ps1",
+      "size": 3354,
+      "sha256": "947670ad699b677d576d1c83507412955e0face403c4061e2015e6a583d3b9a6"
+    }
+  ],
+  "server_snapshot": "multi-agent-logs/server-snapshots/20260802-m5-s1-023043Z.json",
+  "config_hashes": {
+    "harness": "5fff91ab741abb6fd242ace92afaf1c91bd2826df919e4117a2eb435a41c8961",
+    "watcher": "2753ac72fe5a17848310cae33edaaff97fa681d61f177b77ffcd36851d013e2f"
+  }
+}

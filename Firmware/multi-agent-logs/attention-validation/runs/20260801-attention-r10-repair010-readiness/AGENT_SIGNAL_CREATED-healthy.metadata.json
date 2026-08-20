@@ -1,0 +1,5 @@
+{
+  "lane_id": "readiness:lane:test",
+  "agent_blocked": true,
+  "response_deadline_utc": "2026-08-01T20:22:29.414236Z"
+}

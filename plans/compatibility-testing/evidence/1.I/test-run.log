@@ -1,0 +1,11 @@
+test_u10_secret_values_are_redacted_before_any_persist (orchestrator_harness.tests.test_compat_provider_contract.ProviderContractCompatTests.test_u10_secret_values_are_redacted_before_any_persist) ... ok
+test_u11_evidence_and_handoff_shape_without_secret (orchestrator_harness.tests.test_compat_provider_contract.ProviderContractCompatTests.test_u11_evidence_and_handoff_shape_without_secret) ... ok
+test_u5_builtin_adapters_share_the_contract_shape (orchestrator_harness.tests.test_compat_provider_contract.ProviderContractCompatTests.test_u5_builtin_adapters_share_the_contract_shape) ... ok
+test_u7_incomplete_adapter_is_rejected_at_registration (orchestrator_harness.tests.test_compat_provider_contract.ProviderContractCompatTests.test_u7_incomplete_adapter_is_rejected_at_registration) ... ok
+test_u8_unsupported_operation_is_graceful_not_crash (orchestrator_harness.tests.test_compat_provider_contract.ProviderContractCompatTests.test_u8_unsupported_operation_is_graceful_not_crash) ... ok
+test_u9_config_digest_is_stable_and_field_sensitive (orchestrator_harness.tests.test_compat_provider_contract.ProviderContractCompatTests.test_u9_config_digest_is_stable_and_field_sensitive) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK

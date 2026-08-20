@@ -1,0 +1,3 @@
+ERROR README.md: missing resume-boundary clause: never launch Q11
+ERROR README.md: Q10 manager-evidence cause is missing
+AUTONOMY_AUDIT_FAIL errors=2

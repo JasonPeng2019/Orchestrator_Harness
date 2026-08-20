@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m unittest discover -s Firmware/.codex/skills/run-firmware-test-suite/tests -p test_*.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  20,
+    "expected_upper_bound_seconds":  15,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The focused Firmware skill tests completed in about four seconds during the roster update; fifteen seconds permits ordinary startup variation.",
+    "started_at":  "2026-08-14T11:11:09.8359290+00:00",
+    "finished_at":  "2026-08-14T11:11:12.9249173+00:00",
+    "elapsed_seconds":  3.089,
+    "root_process_id":  187192,
+    "observed_process_ids":  [
+                                 187192
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-firmware-skill-unit.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\final-firmware-skill-unit.stderr.log"
+}

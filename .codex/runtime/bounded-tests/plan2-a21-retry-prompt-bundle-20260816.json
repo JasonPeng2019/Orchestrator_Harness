@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python Firmware/.agent-workspace/epochs/20260816-plan2-a21-002/build_prompt_bundle.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  37,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  7,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The prompt-bundle helper imports one local module and hashes one small file; 30 seconds covers cold environment setup and 7 seconds is within the policy cleanup cap.",
+    "started_at":  "2026-08-16T04:01:44.8063123+00:00",
+    "finished_at":  "2026-08-16T04:01:47.0062309+00:00",
+    "elapsed_seconds":  2.2,
+    "root_process_id":  189168,
+    "observed_process_ids":  [
+                                 189168
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-a21-retry-prompt-bundle-20260816.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-a21-retry-prompt-bundle-20260816.stderr.log"
+}

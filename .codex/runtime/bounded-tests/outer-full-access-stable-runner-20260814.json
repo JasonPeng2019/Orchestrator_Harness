@@ -1,0 +1,29 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python -m pytest .codex/tests/test_stable_runner.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Focused stable-runner tests previously complete in roughly 25-30 seconds; 60 seconds allows the added full-access regression coverage and normal Windows variance.",
+    "started_at":  "2026-08-15T00:26:07.6271959+00:00",
+    "finished_at":  "2026-08-15T00:26:36.1951751+00:00",
+    "elapsed_seconds":  28.568,
+    "root_process_id":  170256,
+    "observed_process_ids":  [
+                                 152404,
+                                 170036,
+                                 170256,
+                                 174304,
+                                 187120,
+                                 190860,
+                                 191032,
+                                 198752
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\outer-full-access-stable-runner-20260814.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\outer-full-access-stable-runner-20260814.stderr.log"
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .codex/skills/run-firmware-test-suite/scripts/audit_autonomy.py --require-target",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "The prior Firmware package audit completed in 1.62 seconds; 30 seconds provides target and manifest inspection headroom for this provider-allocation documentation change.",
+    "started_at":  "2026-08-20T16:24:04.6750315+00:00",
+    "finished_at":  "2026-08-20T16:24:09.2873324+00:00",
+    "elapsed_seconds":  4.612,
+    "root_process_id":  15260,
+    "observed_process_ids":  [
+                                 15260
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-sol-low-provider-audit-20260820-006.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-sol-low-provider-audit-20260820-006.stderr.log"
+}

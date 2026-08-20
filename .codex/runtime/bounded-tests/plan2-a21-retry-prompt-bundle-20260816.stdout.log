@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-a21-firmware-sprint",
+  "task_card_id": "CARD-PLAN2-A21-MANAGER-002",
+  "profile_id": "sol-medium",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\target-harness\\.agent-workspace\\PLAN2_A21_RETRY_MANAGER_PROMPT.md",
+      "sha256": "da686206222fd23ad75e08e8422c7b88709db6c771c3f006c18962b4b2bc73e9",
+      "size": 3877
+    }
+  ],
+  "final_sha256": "da686206222fd23ad75e08e8422c7b88709db6c771c3f006c18962b4b2bc73e9",
+  "final_size": 3877,
+  "bundle_sha256": "0b2c885b1d328f1de7c21264d2fb82f4b55de76f033da2b16aff3a0b00b1459e"
+}

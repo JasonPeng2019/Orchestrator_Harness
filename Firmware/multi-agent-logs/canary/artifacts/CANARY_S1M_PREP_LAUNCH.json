@@ -1,0 +1,26 @@
+﻿[
+    {
+        "doer":  "Atlas",
+        "pid":  192224,
+        "created_utc":  "2026-07-31T21:37:33.4522621Z",
+        "invocation":  "fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_m_prep.invocation.json"
+    },
+    {
+        "doer":  "Boreal",
+        "pid":  178916,
+        "created_utc":  "2026-07-31T21:37:33.5887927Z",
+        "invocation":  "fresh-experiments\\D31_20260726-062325\\.agent-workspace\\boreal_d31_s1_clean_m_prep.invocation.json"
+    },
+    {
+        "doer":  "Cygnus",
+        "pid":  178192,
+        "created_utc":  "2026-07-31T21:37:33.6790200Z",
+        "invocation":  "fresh-experiments\\A24_20260726-052146\\.agent-workspace\\cygnus_a24_s1_clean_m_prep.invocation.json"
+    },
+    {
+        "doer":  "Delta",
+        "pid":  196292,
+        "created_utc":  "2026-07-31T21:37:33.7921147Z",
+        "invocation":  "fresh-experiments\\A26_20260726-062325\\.agent-workspace\\delta_a26_s1_clean_m_prep.invocation.json"
+    }
+]

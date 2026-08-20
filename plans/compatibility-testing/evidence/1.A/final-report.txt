@@ -1,0 +1,42 @@
+All evidence is in place. Here is the final report.
+
+## Phase 1, Area 1.A — Invocation schema & validation unit tests (detection-only)
+
+New module: `orchestrator_harness/tests/test_compat_invocation_rules.py` (19 test methods, canonical baseline copied verbatim from `test_s2_contract._canonical`, one mutation per test).
+
+| Feature | Status | What was verified |
+|---|---|---|
+| C2 `action` ∈ {start,resume} | **PASS** | `action:"foo"` → `InvocationValidationError`; valid `start` and `resume` accepted |
+| C3 resume needs non-empty session id | **PASS** | `action:"resume"` with missing `resume` block and with `session_id:""` → error |
+| C4 `start` cannot carry `resume` block | **PASS** | `resume:{...}` on a `start` → "cannot contain resume" |
+| C5 `provider.notification` boolean | **PASS** | `"yes"` → error; `true`/`false` accepted |
+| C6 `profile.role` matches role | **PASS** | mismatch → "profile.role does not match" |
+| C7 `profile.provider` matches `provider.id` | **PASS** | mismatch → error |
+| C8 `profile.model` matches `provider.model` | **PASS** | mismatch → error |
+| C9 `prompt_bundle` schema/version | **PASS** | wrong schema string / `version:2` → error |
+| C10 `resume_identity` must be an object | **PASS** | coding-v1 `resume_identity:"..."` → error; valid object adapts; canonical `resume` shares the object guard |
+| C11 unknown schema string | **PASS** | `schema:"bogus/v1"` → rejected by both `adapt_invocation` and `load_invocation` |
+| C16 ambiguous coding aliases | **PASS** | `_reject_ambiguous_coding_aliases` (unit) + `load_invocation` both reject `codex`+`codex_settings` and `resume_identity`+`resume` |
+| C18 output-path safety/uniqueness | **PASS** (note) | duplicate → `InvocationValidationError`; `../` traversal → rejected at `load_invocation` via `_safe_path`. Note: the traversal guard lives in `_safe_path`/`_load_canonical_invocation`, not in `_validate_canonical_output_paths` as the plan implies — end-to-end rejection confirmed |
+| C19 SHA-256 hex digest | **PASS** | 63-char / non-hex → error; 64-hex accepted; uppercase normalized to lowercase |
+| C20 string-list no-duplicates | **PASS** (note) | `allowed_tools:["Read","Read"]` → error at parse and via `load_invocation`. Note: the plan names `lane_controller._string_list`, which intentionally allows duplicates; the no-duplicates guard actually lives in `invocation._strings` — canonical route rejects end-to-end because parse runs first |
+| C21 `isolated_coding_child_environment` | **PASS** | env keeps only declared allow-list vars (PATH, PYTHONUTF8); strips `MCP_`/`CREDENTIAL_`/`SECRET_`/`TOKEN_`/`TARGET_` prefixes; non-declared creds (ANTHROPIC_API_KEY, GITHUB_TOKEN) dropped |
+| C22 prior acceptance read/persist | **PASS** | `_read_canonical_prior_status` round-trips; `_persist_canonical_acceptance` sets ACCEPTED on top-level + `resume_identity`; re-persist is byte-identical |
+| C23 resume-admission path & claims | **PASS** | default path `workspace/RESUME_ADMISSION.json`; relative path confined to workspace; escaping path → `InvocationError`; top-level + nested ACCEPTED claims → True; tampered claims → False |
+| C24 operation classification & handoff-identity | **PASS** + **FINDING** | launch/resume classified supported; handoff identity stable (`implementer`/`card-1`). **FINDING F1A-C24-1**: unknown operation raises `ProviderAdapterError` — the unsupported-record branch in `_classify_provider_operations` (`lane_controller.py:1692-1699`) is dead code because `unsupported_operation_result` itself raises (`provider.py:909`); test documents the actual raise |
+| C13/C14/C1 guards | **PASS** | C1 closed shape (unknown field / missing required field → error); C13 repository closed shape (extra field → error); C14 `repository.worktree_root` ≠ `run_root` → `InvocationError` |
+
+### Findings (recorded in `evidence/FINDINGS.md`)
+- **F1A-C24-1** (severity: note) — `_classify_provider_operations` never emits an unsupported-operation record: fabricated input `["teleport"]`, expected an unsupported record per the branch at `lane_controller.py:1692-1699`, observed `ProviderAdapterError("unknown provider operation")` raised at `provider.py:909`. The dead branch cannot fire from validated invocations today (the requested-operation list is always within `PROVIDER_OPERATION_NAMES`). No mutation is silently accepted.
+
+### Commands run (all from the disposable clone)
+```bash
+cd "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/harness-single-worktrees/compat-test"
+PYTHONPATH="$PWD:$PWD/.." python -m unittest orchestrator_harness.tests.test_compat_invocation_rules -v   # → evidence/1.A/test-run.log
+PYTHONPATH="$PWD:$PWD/.." python -m unittest orchestrator_harness.tests.test_s2_contract -v                # → evidence/1.A/s2-regression.log
+```
+
+### Tally
+- **New module:** 19 tests run, **19 passed, 0 failed** (`Ran 19 tests … OK`, ~0.3 s).
+- **s2 regression:** 21 tests run, **21 passed, 0 failed** (`Ran 21 tests in 102.277s … OK`) — shared fixtures undisturbed.
+- No harness source file modified; the only repo change is the new test module (`git status` confirms nothing else of mine touched the tree).

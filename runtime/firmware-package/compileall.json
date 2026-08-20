@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m compileall -q Firmware/.codex/skills/run-firmware-test-suite Firmware/scripts/orchestration",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Four small helper modules compiled previously in seconds; 30 seconds covers local filesystem headroom.",
+    "started_at":  "2026-08-14T09:20:36.8545745+00:00",
+    "finished_at":  "2026-08-14T09:20:39.6926189+00:00",
+    "elapsed_seconds":  2.838,
+    "root_process_id":  198400,
+    "observed_process_ids":  [
+                                 198400
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\compileall.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\runtime\\firmware-package\\compileall.stderr.log"
+}

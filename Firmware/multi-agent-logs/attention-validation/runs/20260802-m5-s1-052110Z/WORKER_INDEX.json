@@ -1,0 +1,49 @@
+{
+    "epoch":  "20260802-m5-s1-052110Z",
+    "workers":  [
+                    {
+                        "doer":  "Atlas",
+                        "task":  "A22",
+                        "run_root":  "fresh-experiments/A22_20260726-062324",
+                        "thread_id":  "019fb877-1475-76c0-a137-2743580015de",
+                        "event_id":  "sig-20260802-m5-s1-052110Z-atlas-a22-gate-001",
+                        "raw_prompt":  "fresh-experiments/A22_20260726-062324/.agent-workspace/atlas_a22_20260802-m5-s1-052110Z.raw.md",
+                        "bound_prompt":  "fresh-experiments/A22_20260726-062324/.agent-workspace/atlas_a22_20260802-m5-s1-052110Z.bound.md",
+                        "response_path":  "fresh-experiments/A22_20260726-062324/.agent-workspace/manager-responses/20260802-m5-s1-052110Z-Atlas-A22-gate.json",
+                        "status_path":  "fresh-experiments/A22_20260726-062324/.agent-workspace/atlas_a22_20260802-m5-s1-052110Z_controller.status.json"
+                    },
+                    {
+                        "doer":  "Boreal",
+                        "task":  "D31",
+                        "run_root":  "fresh-experiments/D31_20260726-062325",
+                        "thread_id":  "019fb877-1447-7693-92b1-f4bda04c6ecf",
+                        "event_id":  "sig-20260802-m5-s1-052110Z-boreal-d31-gate-001",
+                        "raw_prompt":  "fresh-experiments/D31_20260726-062325/.agent-workspace/boreal_d31_20260802-m5-s1-052110Z.raw.md",
+                        "bound_prompt":  "fresh-experiments/D31_20260726-062325/.agent-workspace/boreal_d31_20260802-m5-s1-052110Z.bound.md",
+                        "response_path":  "fresh-experiments/D31_20260726-062325/.agent-workspace/manager-responses/20260802-m5-s1-052110Z-Boreal-D31-gate.json",
+                        "status_path":  "fresh-experiments/D31_20260726-062325/.agent-workspace/boreal_d31_20260802-m5-s1-052110Z_controller.status.json"
+                    },
+                    {
+                        "doer":  "Cygnus",
+                        "task":  "A24",
+                        "run_root":  "fresh-experiments/A24_20260726-052146",
+                        "thread_id":  "019fb877-1199-79b1-a32e-34348178f111",
+                        "event_id":  "sig-20260802-m5-s1-052110Z-cygnus-a24-gate-001",
+                        "raw_prompt":  "fresh-experiments/A24_20260726-052146/.agent-workspace/cygnus_a24_20260802-m5-s1-052110Z.raw.md",
+                        "bound_prompt":  "fresh-experiments/A24_20260726-052146/.agent-workspace/cygnus_a24_20260802-m5-s1-052110Z.bound.md",
+                        "response_path":  "fresh-experiments/A24_20260726-052146/.agent-workspace/manager-responses/20260802-m5-s1-052110Z-Cygnus-A24-gate.json",
+                        "status_path":  "fresh-experiments/A24_20260726-052146/.agent-workspace/cygnus_a24_20260802-m5-s1-052110Z_controller.status.json"
+                    },
+                    {
+                        "doer":  "Delta",
+                        "task":  "A26",
+                        "run_root":  "fresh-experiments/A26_20260726-062325",
+                        "thread_id":  "019fb877-1441-7c92-84e2-cbb5bc422879",
+                        "event_id":  "sig-20260802-m5-s1-052110Z-delta-a26-gate-001",
+                        "raw_prompt":  "fresh-experiments/A26_20260726-062325/.agent-workspace/delta_a26_20260802-m5-s1-052110Z.raw.md",
+                        "bound_prompt":  "fresh-experiments/A26_20260726-062325/.agent-workspace/delta_a26_20260802-m5-s1-052110Z.bound.md",
+                        "response_path":  "fresh-experiments/A26_20260726-062325/.agent-workspace/manager-responses/20260802-m5-s1-052110Z-Delta-A26-gate.json",
+                        "status_path":  "fresh-experiments/A26_20260726-062325/.agent-workspace/delta_a26_20260802-m5-s1-052110Z_controller.status.json"
+                    }
+                ]
+}

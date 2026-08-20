@@ -1,0 +1,88 @@
+﻿{
+    "schema":  "canary-manager-review/v1",
+    "epoch":  "20260731-s1-clean-o",
+    "reviewed_utc":  "2026-07-31T23:25:09.0394922Z",
+    "pending_event_id":  "7a9dbe195be9fe77ba83e25befd440f3f5981df6207f0ff64b15ab008a663a24",
+    "pending_type":  "STALE_STATUS",
+    "verdict":  "ACKNOWLEDGED_CLEARED_EXIT_TRANSITION",
+    "analysis":  "Atlas endpoint controller now records CODEX_EXITED exit 0 after the safe one-lifetime checkpoint and exact owned-process absence. The stale event was the bounded interval between Codex exit and controller final status. No retry or residual process exists.",
+    "current_status":  {
+                           "board_tokens":  [
+                                                "STM-A"
+                                            ],
+                           "codex_created_utc":  "2026-07-31T23:20:15.281194Z",
+                           "codex_pid":  189800,
+                           "codex_started_utc":  "2026-07-31T23:20:15.281194Z",
+                           "controller_created_utc":  "2026-07-31T23:20:14.014736Z",
+                           "controller_pid":  97416,
+                           "controller_started_utc":  "2026-07-31T23:20:14.014736Z",
+                           "declared_lane_id":  "20260731-s1-clean-o:Atlas:A22",
+                           "doer":  "Atlas",
+                           "ended_utc":  "2026-07-31T23:24:51.124617Z",
+                           "exit_code":  0,
+                           "jsonl_path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_o_endpoint_codex.jsonl",
+                           "last_message_path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_o_endpoint_last_message.txt",
+                           "launcher_settings":  {
+                                                     "action":  "resume",
+                                                     "approval_policy":  "never",
+                                                     "approvals_reviewer":  "user",
+                                                     "argv":  [
+                                                                  "codex",
+                                                                  "exec",
+                                                                  "resume",
+                                                                  "019fb877-1475-76c0-a137-2743580015de",
+                                                                  "--dangerously-bypass-approvals-and-sandbox",
+                                                                  "--ignore-user-config",
+                                                                  "--skip-git-repo-check",
+                                                                  "-c",
+                                                                  "approval_policy=\"never\"",
+                                                                  "-c",
+                                                                  "approvals_reviewer=\"user\"",
+                                                                  "-m",
+                                                                  "gpt-5.6-luna",
+                                                                  "-c",
+                                                                  "model_reasoning_effort=\"high\"",
+                                                                  "-c",
+                                                                  "service_tier=\"default\"",
+                                                                  "--json",
+                                                                  "--output-last-message",
+                                                                  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_o_endpoint_last_message.txt"
+                                                              ],
+                                                     "ephemeral":  false,
+                                                     "jsonl":  true,
+                                                     "model":  "gpt-5.6-luna",
+                                                     "model_reasoning_effort":  "high",
+                                                     "sandbox":  "danger-full-access",
+                                                     "service_tier":  "default"
+                                                 },
+                           "leases":  [
+                                          "doer:Atlas",
+                                          "workspace:A22",
+                                          "launcher:Atlas",
+                                          "board:STM-A",
+                                          "probe:066FFF514988525067233337",
+                                          "serial:COM12",
+                                          "runtime:a22-b14-s1-clean-o",
+                                          "server:a22_b14_s1o_mcp"
+                                      ],
+                           "mcp_servers":  [
+                                               "a22_b14_s1o_mcp"
+                                           ],
+                           "phase":  "S1O_B14_ENDPOINT",
+                           "policy_path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\.agent-workspace\\AUTONOMOUS_EXECUTION_POLICY.md",
+                           "policy_sha256":  "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68",
+                           "prompt_path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_o_endpoint.bound.md",
+                           "prompt_sha256":  "828aec95e347d4f9248fe7d1dcfee010e5463a2682376a8fed7f2cce0334b871",
+                           "schema":  "orchestrator-lane-controller/v1",
+                           "server_snapshot":  {
+                                                   "diff":  "99942141bb0bbe730ceb0ea4b30916bf8ed657bb",
+                                                   "head":  "f003f84a7df51cd8595a3203c62e225b21da2a22",
+                                                   "tree":  "ca3a326e8ba6a3e0d14724a4f9fded286700790cfebc722352223d1b18e4c36a"
+                                               },
+                           "started_utc":  "2026-07-31T23:20:15.273814Z",
+                           "state":  "CODEX_EXITED",
+                           "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\fresh-experiments\\A22_20260726-062324\\.agent-workspace\\atlas_a22_s1_clean_o_endpoint_codex.stderr.log",
+                           "task":  "A22",
+                           "thread_id":  "019fb877-1475-76c0-a137-2743580015de"
+                       }
+}

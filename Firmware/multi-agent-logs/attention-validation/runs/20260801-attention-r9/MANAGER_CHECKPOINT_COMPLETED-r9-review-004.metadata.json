@@ -1,0 +1,9 @@
+{
+    "manager_session_id":  "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+    "manager_invocation_id":  "root-attention-r9-001",
+    "activity_id":  "r9-review-004",
+    "manager_state":  "CHECKPOINTING",
+    "formal_review_due_utc":  "2026-08-01T19:34:12.768660Z",
+    "decision":  "CONTINUE_DELTA_ONLY",
+    "response_path":  ".agent-workspace/attention-validation/20260801-attention-r9/FORMAL_REVIEW_004.md"
+}

@@ -1,0 +1,9 @@
+usage: python -m harness_watcher_implementation [-h] [--config CONFIG]
+                                                {poll,status,stop,serve,record-attention,start} ...
+
+positional arguments:
+  {poll,status,stop,serve,record-attention,start}
+
+options:
+  -h, --help            show this help message and exit
+  --config CONFIG

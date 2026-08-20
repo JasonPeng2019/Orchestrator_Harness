@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .codex/skills/run-firmware-test-suite/scripts/fresh_test.py create --help",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  20,
+    "timeout_basis":  "help is side-effect-free and normally immediate; 30 seconds allows interpreter startup",
+    "started_at":  "2026-08-15T23:26:25.1856042+00:00",
+    "finished_at":  "2026-08-15T23:26:26.9542600+00:00",
+    "elapsed_seconds":  1.769,
+    "root_process_id":  180272,
+    "observed_process_ids":  [
+                                 180272
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\fresh-test-create-help-20260815.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\fresh-test-create-help-20260815.stderr.log"
+}

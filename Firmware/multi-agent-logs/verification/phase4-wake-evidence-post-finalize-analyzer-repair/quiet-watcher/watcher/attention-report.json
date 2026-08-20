@@ -1,0 +1,1 @@
+{"classification_counts":{"ACKNOWLEDGEMENT_ONLY_DELAY":0,"BUSY_MANAGER_DELAY":0,"HARNESS_DELIVERY_DELAY":0,"IDLE_OR_ABSENT_MANAGER_DELAY":0,"INSUFFICIENT_EVIDENCE":0,"NO_BLOCKING_IMPACT":0},"cursor_drained":true,"events":[],"generated_utc":"2026-08-02T03:53:44.278953+00:00","observation_errors":[],"schema":"manager-attention-report/v1","trusted_coverage":{}}

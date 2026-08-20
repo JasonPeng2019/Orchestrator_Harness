@@ -1,0 +1,19 @@
+{
+  "manager_session_id": "019fbbc1-63ba-7140-ab1d-46bf412596e9",
+  "manager_invocation_id": "root-20260802-m5-s1d-065143Z-001",
+  "manager_state": "READING_EVENT",
+  "pending_work_snapshot": {
+    "complete": true,
+    "events": [
+      {
+        "event_id": "3634d78c5f1c4de2bde57f24d789b476066ebbc00f9fcb8623859ccb87999a4d",
+        "agent_blocked": false,
+        "priority": 3,
+        "age_seconds": 0,
+        "type": "STALE_STATUS"
+      }
+    ],
+    "selected_event_id": "3634d78c5f1c4de2bde57f24d789b476066ebbc00f9fcb8623859ccb87999a4d",
+    "selection_reason": "SELECT_ACTIONABLE"
+  }
+}

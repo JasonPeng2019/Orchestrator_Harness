@@ -1,0 +1,192 @@
+{
+  "schema": "m5-challenges/v1",
+  "epoch_id": "20260802-m5-s1-052110Z",
+  "timeline_path": "harness_watcher/20260802-m5-s1-052110Z/watcher/attention-timeline.jsonl",
+  "challenge_count": 4,
+  "challenges": [
+    {
+      "worker": {
+        "doer": "Atlas",
+        "task": "A22",
+        "lane_id": "20260802-m5-s1-052110Z:Atlas:A22",
+        "thread_id": "019fb877-1475-76c0-a137-2743580015de",
+        "status_path": "fresh-experiments/A22_20260726-062324/.agent-workspace/atlas_a22_20260802-m5-s1-052110Z_controller.status.json"
+      },
+      "request": {
+        "event_id": "sig-20260802-m5-s1-052110Z-atlas-a22-gate-001",
+        "kind": "HELP",
+        "agent_blocked": true,
+        "response_deadline_utc": "2026-08-02T05:42:59.3182881Z"
+      },
+      "timestamps_utc": {
+        "agent_signal_created": "2026-08-02T05:33:54.947442+00:00",
+        "harness_signal_observed": "2026-08-02T05:33:55.994443Z",
+        "manager_wake_attempted": "2026-08-02T05:34:36.876938Z",
+        "manager_wake_delivered": "2026-08-02T05:34:36.876938Z",
+        "manager_wake_received": "2026-08-02T05:34:39.416942+00:00",
+        "manager_wait_finished": "2026-08-02T05:34:39.696515+00:00",
+        "manager_event_claimed": "2026-08-02T05:34:57.270778+00:00",
+        "manager_response_published": "2026-08-02T05:35:09.575793+00:00",
+        "harness_ack_succeeded": "2026-08-02T05:35:09.910397Z",
+        "agent_response_received": "2026-08-02T05:35:47.312645+00:00",
+        "agent_work_resumed": "2026-08-02T05:35:55.814425+00:00"
+      },
+      "wake": {
+        "wake_id": "5c33e045-06a8-4766-96e8-be71d42cf02e",
+        "component": "orchestrator_harness.watch_until_actionable",
+        "transport": "blocking_harness_wait_stdout"
+      },
+      "metrics_seconds": {
+        "signal_to_observation": 1.047001,
+        "observation_to_attempt": 40.882495,
+        "delivery_to_receipt": 2.540004,
+        "receipt_to_claim": 17.853836,
+        "claim_to_response": 12.305015,
+        "response_to_worker_receipt": 37.736852,
+        "deadline_lateness": 0
+      },
+      "six_stage_order_valid": true,
+      "response_before_deadline": true,
+      "classification": "WAITING_MANAGER_WAKE",
+      "isolation": "blocking_harness_wait_stdout; no forbidden discovery path recorded"
+    },
+    {
+      "worker": {
+        "doer": "Boreal",
+        "task": "D31",
+        "lane_id": "20260802-m5-s1-052110Z:Boreal:D31",
+        "thread_id": "019fb877-1447-7693-92b1-f4bda04c6ecf",
+        "status_path": "fresh-experiments/D31_20260726-062325/.agent-workspace/boreal_d31_20260802-m5-s1-052110Z_controller.status.json"
+      },
+      "request": {
+        "event_id": "sig-20260802-m5-s1-052110Z-boreal-d31-gate-001",
+        "kind": "HELP",
+        "agent_blocked": true,
+        "response_deadline_utc": "2026-08-02T05:41:05.8062039Z"
+      },
+      "timestamps_utc": {
+        "agent_signal_created": "2026-08-02T05:31:36.987612+00:00",
+        "harness_signal_observed": "2026-08-02T05:31:42.066260Z",
+        "manager_wake_attempted": "2026-08-02T05:32:19.334872Z",
+        "manager_wake_delivered": "2026-08-02T05:32:19.334872Z",
+        "manager_wake_received": "2026-08-02T05:33:16.362953+00:00",
+        "manager_wait_finished": "2026-08-02T05:33:16.657957+00:00",
+        "manager_event_claimed": "2026-08-02T05:33:16.971954+00:00",
+        "manager_response_published": "2026-08-02T05:33:17.280952+00:00",
+        "harness_ack_succeeded": "2026-08-02T05:33:22.773044Z",
+        "agent_response_received": "2026-08-02T05:33:43.775445+00:00",
+        "agent_work_resumed": "2026-08-02T05:35:35.655971+00:00"
+      },
+      "wake": {
+        "wake_id": "fc8b8bc0-f0e2-4657-b055-f75661439304",
+        "component": "orchestrator_harness.watch_until_actionable",
+        "transport": "blocking_harness_wait_stdout"
+      },
+      "metrics_seconds": {
+        "signal_to_observation": 5.078648,
+        "observation_to_attempt": 37.268612,
+        "delivery_to_receipt": 57.028081,
+        "receipt_to_claim": 0.609001,
+        "claim_to_response": 0.308998,
+        "response_to_worker_receipt": 26.494493,
+        "deadline_lateness": 0
+      },
+      "six_stage_order_valid": true,
+      "response_before_deadline": true,
+      "classification": "WAITING_MANAGER_WAKE",
+      "isolation": "blocking_harness_wait_stdout; no forbidden discovery path recorded"
+    },
+    {
+      "worker": {
+        "doer": "Cygnus",
+        "task": "A24",
+        "lane_id": "20260802-m5-s1-052110Z:Cygnus:A24",
+        "thread_id": "019fb877-1199-79b1-a32e-34348178f111",
+        "status_path": "fresh-experiments/A24_20260726-052146/.agent-workspace/cygnus_a24_20260802-m5-s1-052110Z_controller.status.json"
+      },
+      "request": {
+        "event_id": "sig-20260802-m5-s1-052110Z-cygnus-a24-gate-001",
+        "kind": "HELP",
+        "agent_blocked": true,
+        "response_deadline_utc": "2026-08-02T05:42:35.3477342Z"
+      },
+      "timestamps_utc": {
+        "agent_signal_created": "2026-08-02T05:33:13.2549572Z",
+        "harness_signal_observed": "2026-08-02T05:33:22.240043Z",
+        "manager_wake_attempted": "2026-08-02T05:33:38.200775Z",
+        "manager_wake_delivered": "2026-08-02T05:33:38.200775Z",
+        "manager_wake_received": "2026-08-02T05:33:40.858976+00:00",
+        "manager_wait_finished": "2026-08-02T05:33:41.124981+00:00",
+        "manager_event_claimed": "2026-08-02T05:33:55.438442+00:00",
+        "manager_response_published": "2026-08-02T05:34:22.634555+00:00",
+        "harness_ack_succeeded": "2026-08-02T05:34:22.962556Z",
+        "agent_response_received": "2026-08-02T05:34:35.0149388Z",
+        "agent_work_resumed": "2026-08-02T05:34:35.0149388Z"
+      },
+      "wake": {
+        "wake_id": "d300b70d-6788-45d5-bead-9b30c89e8553",
+        "component": "orchestrator_harness.watch_until_actionable",
+        "transport": "blocking_harness_wait_stdout"
+      },
+      "metrics_seconds": {
+        "signal_to_observation": 8.985086,
+        "observation_to_attempt": 15.960732,
+        "delivery_to_receipt": 2.658201,
+        "receipt_to_claim": 14.579466,
+        "claim_to_response": 27.196113,
+        "response_to_worker_receipt": 12.380383,
+        "deadline_lateness": 0
+      },
+      "six_stage_order_valid": true,
+      "response_before_deadline": true,
+      "classification": "WAITING_MANAGER_WAKE",
+      "isolation": "blocking_harness_wait_stdout; no forbidden discovery path recorded"
+    },
+    {
+      "worker": {
+        "doer": "Delta",
+        "task": "A26",
+        "lane_id": "20260802-m5-s1-052110Z:Delta:A26",
+        "thread_id": "019fb877-1441-7c92-84e2-cbb5bc422879",
+        "status_path": "fresh-experiments/A26_20260726-062325/.agent-workspace/delta_a26_20260802-m5-s1-052110Z_controller.status.json"
+      },
+      "request": {
+        "event_id": "sig-20260802-m5-s1-052110Z-delta-a26-gate-001",
+        "kind": "HELP",
+        "agent_blocked": true,
+        "response_deadline_utc": "2026-08-02T05:46:09.804Z"
+      },
+      "timestamps_utc": {
+        "agent_signal_created": "2026-08-02T05:36:10.606148+00:00",
+        "harness_signal_observed": "2026-08-02T05:36:47.080336Z",
+        "manager_wake_attempted": "2026-08-02T05:37:46.493844Z",
+        "manager_wake_delivered": "2026-08-02T05:37:46.493844Z",
+        "manager_wake_received": "2026-08-02T05:37:48.868845+00:00",
+        "manager_wait_finished": "2026-08-02T05:37:49.148845+00:00",
+        "manager_event_claimed": "2026-08-02T05:38:06.981408+00:00",
+        "manager_response_published": "2026-08-02T05:38:07.273390+00:00",
+        "harness_ack_succeeded": "2026-08-02T05:38:07.602392Z",
+        "agent_response_received": "2026-08-02T05:38:32.861409+00:00",
+        "agent_work_resumed": "2026-08-02T05:38:33.131406+00:00"
+      },
+      "wake": {
+        "wake_id": "ce7427bc-2d6a-40aa-98ac-600f37fea801",
+        "component": "orchestrator_harness.watch_until_actionable",
+        "transport": "blocking_harness_wait_stdout"
+      },
+      "metrics_seconds": {
+        "signal_to_observation": 36.474188,
+        "observation_to_attempt": 59.413508,
+        "delivery_to_receipt": 2.375001,
+        "receipt_to_claim": 18.112563,
+        "claim_to_response": 0.291982,
+        "response_to_worker_receipt": 25.588019,
+        "deadline_lateness": 0
+      },
+      "six_stage_order_valid": true,
+      "response_before_deadline": true,
+      "classification": "BUSY_MANAGER_CONTROL",
+      "isolation": "blocking_harness_wait_stdout; no forbidden discovery path recorded"
+    }
+  ]
+}

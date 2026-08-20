@@ -1,0 +1,110 @@
+{
+  "schema": "m5-freeze-audit/v1",
+  "epoch": "20260802-m5-s1a-061555Z",
+  "checked_utc": "2026-08-02T06:33:30.161652Z",
+  "python_file_list_match": true,
+  "python_per_file_match": true,
+  "python_aggregate_match": true,
+  "sealed_inputs": [
+    {
+      "path": "multi-agent-logs/orchestrator-harness/20260802-m5-s1a-061555Z/config.json",
+      "exists": true,
+      "expected_bytes": 1024,
+      "actual_bytes": 1024,
+      "expected_sha256": "1789237f22175c377f1120d630429b1bf5468cae8d4bcb459b4ad2bc37f1684d",
+      "actual_sha256": "1789237f22175c377f1120d630429b1bf5468cae8d4bcb459b4ad2bc37f1684d",
+      "match": true
+    },
+    {
+      "path": "harness_watcher/20260802-m5-s1a-061555Z/config.json",
+      "exists": true,
+      "expected_bytes": 1920,
+      "actual_bytes": 1920,
+      "expected_sha256": "15230202005fc8d5c8f34f67d65231dfe13b144e230bb6e4b06dec42531617bd",
+      "actual_sha256": "15230202005fc8d5c8f34f67d65231dfe13b144e230bb6e4b06dec42531617bd",
+      "match": true
+    },
+    {
+      "path": "active-working-spec/m5-three-sprint-wake-test.md",
+      "exists": true,
+      "expected_bytes": 31300,
+      "actual_bytes": 31300,
+      "expected_sha256": "00fb4840d4e24052b91f63b3d5c1868a5d6ad465245b96004cbc8711707925ea",
+      "actual_sha256": "00fb4840d4e24052b91f63b3d5c1868a5d6ad465245b96004cbc8711707925ea",
+      "match": true
+    },
+    {
+      "path": "active-working-spec/m5-watcher-causal-metrics-repair.md",
+      "exists": true,
+      "expected_bytes": 2789,
+      "actual_bytes": 2789,
+      "expected_sha256": "ab1a0ef786b3369ffc1d5fbfe104d82ca8561d6d81fc0288ed600125f05f7fec",
+      "actual_sha256": "ab1a0ef786b3369ffc1d5fbfe104d82ca8561d6d81fc0288ed600125f05f7fec",
+      "match": true
+    },
+    {
+      "path": ".agent-workspace/AUTONOMOUS_EXECUTION_POLICY.md",
+      "exists": true,
+      "expected_bytes": 3190,
+      "actual_bytes": 3190,
+      "expected_sha256": "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68",
+      "actual_sha256": "fcb25396d58af7ee6e7ffc931142b830e8a1b28ea3e5c197a1ca1e3d6248aa68",
+      "match": true
+    },
+    {
+      "path": ".agent-workspace/AUTONOMY_REQUIREMENT_MATRIX.md",
+      "exists": true,
+      "expected_bytes": 1449,
+      "actual_bytes": 1449,
+      "expected_sha256": "3c33b4c448b7c8d234e7e6704b90d8c69984ce060a4c4c3c71876f7aec621256",
+      "actual_sha256": "3c33b4c448b7c8d234e7e6704b90d8c69984ce060a4c4c3c71876f7aec621256",
+      "match": true
+    },
+    {
+      "path": "multi-agent-logs/server-snapshots/server-snapshot-20260802-m5-s1a-061555Z.json",
+      "exists": true,
+      "expected_bytes": 14675,
+      "actual_bytes": 14675,
+      "expected_sha256": "49ba8659c77f7432e0d81e24c1db431c4b1b2ec6a9eaa29753f6a951fec01130",
+      "actual_sha256": "49ba8659c77f7432e0d81e24c1db431c4b1b2ec6a9eaa29753f6a951fec01130",
+      "match": true
+    },
+    {
+      "path": "fresh-experiments/A22_20260726-062324/.agent-workspace/m5/20260802-m5-s1r1-055644Z/M5_S1R1_LIVE_ENTRY_AUTHORIZATION_CHECKPOINT.md",
+      "exists": true,
+      "expected_bytes": 3620,
+      "actual_bytes": 3620,
+      "expected_sha256": "f4f3dbff6f107d2912977d8b565254697799ef84938ffdb79b80b518857dac0b",
+      "actual_sha256": "f4f3dbff6f107d2912977d8b565254697799ef84938ffdb79b80b518857dac0b",
+      "match": true
+    },
+    {
+      "path": "fresh-experiments/D31_20260726-062325/.agent-workspace/m5/20260802-m5-s1r1-055644Z/M5_S1R1_LIVE_ENTRY_AUTHORIZATION_CHECKPOINT.md",
+      "exists": true,
+      "expected_bytes": 6050,
+      "actual_bytes": 6050,
+      "expected_sha256": "7023c2d77fc71552b9bccf8feef22cb892c20d20b78fd97140a9944adbf2e56d",
+      "actual_sha256": "7023c2d77fc71552b9bccf8feef22cb892c20d20b78fd97140a9944adbf2e56d",
+      "match": true
+    },
+    {
+      "path": "fresh-experiments/A24_20260726-052146/.agent-workspace/m5/20260802-m5-s1r1-055644Z/M5_S1R1_LIVE_ENTRY_AUTHORIZATION_CHECKPOINT.md",
+      "exists": true,
+      "expected_bytes": 5959,
+      "actual_bytes": 5959,
+      "expected_sha256": "bfa0ceb113f374ab73c0a2152b0fbf8c5ea2de3dfddf58579bd7f396aa26af7a",
+      "actual_sha256": "bfa0ceb113f374ab73c0a2152b0fbf8c5ea2de3dfddf58579bd7f396aa26af7a",
+      "match": true
+    },
+    {
+      "path": "fresh-experiments/A26_20260726-062325/.agent-workspace/m5/20260802-m5-s1r1-055644Z/M5_S1_LIVE_ENTRY_AUTHORIZATION_CHECKPOINT.md",
+      "exists": true,
+      "expected_bytes": 3565,
+      "actual_bytes": 3565,
+      "expected_sha256": "3df0b6f763cf598c2e60e86cb03779e8616d6967e1ddb22226d3584ac1c7871e",
+      "actual_sha256": "3df0b6f763cf598c2e60e86cb03779e8616d6967e1ddb22226d3584ac1c7871e",
+      "match": true
+    }
+  ],
+  "all_sealed_inputs_match": true
+}

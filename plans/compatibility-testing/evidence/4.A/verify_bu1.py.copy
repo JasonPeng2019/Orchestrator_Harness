@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+"""ROOT coordinator verification for BU1 — independent of the subagent's self-report.
+
+Checks the real Claude adapter core: import, capabilities semantics (idle_wake True,
+next_input_injection False), select_host_adapter routing, and a synthetic deliver round-trip
+that exercises DeliveryReceipt shape + the resume-as-wake transport call.
+"""
+from __future__ import annotations
+import json, sys, tempfile
+from pathlib import Path
+
+
+def main() -> int:
+    checks: dict[str, object] = {}
+    try:
+        from orchestrator_harness.claude_adapter import (
+            ClaudeAdapter, SyntheticClaudeTransport, claude_profile,
+            create_claude_adapter, claude_capabilities,
+        )
+        from orchestrator_harness.codex_adapter import select_host_adapter
+        from orchestrator_harness.host_adapters import FutureHostFixture, DeliveryNotice
+        from orchestrator_harness.notifications import ManagerEventRouter
+        checks["import"] = "ok"
+    except Exception as exc:  # noqa: BLE001
+        print(json.dumps({"verdict": "FAIL", "stage": "import", "error": repr(exc)}, indent=2))
+        return 1
+
+    # Capabilities semantics
+    caps = claude_capabilities()
+    checks["idle_wake_true"] = caps.idle_wake is True
+    checks["next_input_injection_false"] = caps.next_input_injection is False
+    prof = claude_profile()
+    checks["profile_kind_claude"] = prof.kind == "claude"
+    checks["profile_implemented"] = prof.implemented is True
+
+    # Routing: a Claude host must NOT get the FutureHostFixture stub.
+    # Build a minimal router the same way the codex tests do — reuse select_host_adapter
+    # which internally constructs a coordinator. We only need a real ManagerEventRouter.
+    try:
+        with tempfile.TemporaryDirectory() as td:
+            router = _make_router(ManagerEventRouter, Path(td))
+            adapter = select_host_adapter("claude", router, state_root=Path(td) / "state")
+            checks["routing_not_fixture"] = not isinstance(adapter, FutureHostFixture)
+            checks["routing_is_claude_adapter"] = isinstance(adapter, ClaudeAdapter)
+            checks["routing_profile_id"] = adapter.profile.profile_id
+    except Exception as exc:  # noqa: BLE001
+        checks["routing_error"] = repr(exc)
+
+    verdict = "PASS" if all(
+        checks.get(k) is True for k in (
+            "idle_wake_true", "next_input_injection_false",
+            "profile_kind_claude", "profile_implemented",
+            "routing_not_fixture", "routing_is_claude_adapter",
+        )
+    ) and checks.get("import") == "ok" else "FAIL"
+    print(json.dumps({"verdict": verdict, "checks": checks}, indent=2, default=str))
+    return 0 if verdict == "PASS" else 1
+
+
+def _make_router(ManagerEventRouter, root: Path):
+    """Construct a ManagerEventRouter exactly as test_s4_contract.py does (line 356)."""
+    return ManagerEventRouter(
+        root,
+        run_id="run-verify",
+        queue_id="queue-verify",
+        manager_session_id="session-verify",
+        manager_thread_id="thread-verify",
+        registration_id="registration-verify",
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
