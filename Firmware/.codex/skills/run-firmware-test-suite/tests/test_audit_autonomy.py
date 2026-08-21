@@ -235,6 +235,14 @@ class AuditResultCorrectionTests(unittest.TestCase):
         errors = self.run_audit(result, sidecar)
         self.assertTrue(any("unsafe corrected_text" in error for error in errors))
 
+    def test_sidecar_rejects_newline_split_unsafe_corrected_text(self) -> None:
+        result = {"status": "PASS", "finding": "operator must connect the board"}
+        for corrected_text in ("operator\nmust connect the board", "set\nNEEDS_USER"):
+            with self.subTest(corrected_text=corrected_text):
+                sidecar = self.sidecar_for(result, corrected_text=corrected_text)
+                errors = self.run_audit(result, sidecar)
+                self.assertTrue(any("unsafe corrected_text" in error for error in errors))
+
     def test_sidecar_rejects_duplicate_result_object_keys(self) -> None:
         result_bytes = (
             b'{"status":"PASS","finding":"operator must connect the board",'

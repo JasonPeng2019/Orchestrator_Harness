@@ -607,7 +607,8 @@ def _correction_text_violations(text: str) -> set[str]:
     """Use strict clause-local blocker checks for sidecar replacement text."""
 
     violations: set[str] = set()
-    for line in text.splitlines():
+    normalized = " ".join(text.split())
+    for line in normalized.splitlines():
         for clause in re.split(r"[;,.!?:]\s*", line):
             if BLOCKER_STATUS_RE.search(clause):
                 violations.add("blocker status")
