@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import importlib.util
 import json
 import sys
@@ -139,6 +140,113 @@ class AuditDocumentationTests(unittest.TestCase):
                 "server-document mirror differs from live source: BYO-Firmware-MCP/SERVER_GUIDE.md",
                 errors,
             )
+
+
+class AuditResultCorrectionTests(unittest.TestCase):
+    def run_audit(
+        self,
+        result: dict[str, object],
+        sidecar: dict[str, object] | None = None,
+    ) -> list[str]:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            run = root / "fresh-experiments" / "A21_sidecar"
+            workspace = run / ".agent-workspace"
+            workspace.mkdir(parents=True)
+            (workspace / "RESULT.schema.json").write_text(
+                json.dumps({"properties": {"status": {"enum": ["PASS", "SERVER_FAILURE"]}}}),
+                encoding="utf-8",
+            )
+            result_bytes = json.dumps(result, indent=2).encode("utf-8")
+            (workspace / "RESULT.json").write_bytes(result_bytes)
+            if sidecar is not None:
+                (workspace / "RESULT_AUDIT_CORRECTION.json").write_text(
+                    json.dumps(sidecar, indent=2),
+                    encoding="utf-8",
+                )
+            errors: list[str] = []
+            MODULE.check_run(errors, run, "A21", "CHECKPOINTED")
+            return errors
+
+    def sidecar_for(
+        self,
+        result: dict[str, object],
+        *,
+        pointer: str = "/finding",
+        original_value: str = "operator must connect the board",
+        corrected_text: str = "Historical out-of-authority wording recorded.",
+    ) -> dict[str, object]:
+        result_bytes = json.dumps(result, indent=2).encode("utf-8")
+        return {
+            "schema": MODULE.RESULT_AUDIT_CORRECTION_SCHEMA,
+            "source_result_sha256": hashlib.sha256(result_bytes).hexdigest(),
+            "created_by_epoch": "suite011",
+            "entries": [
+                {
+                    "json_pointer": pointer,
+                    "original_value_sha256": hashlib.sha256(
+                        original_value.encode("utf-8")
+                    ).hexdigest(),
+                    "disposition": MODULE.RESULT_AUDIT_CORRECTION_DISPOSITION,
+                    "corrected_text": corrected_text,
+                }
+            ],
+        }
+
+    def test_result_action_is_rejected_without_sidecar(self) -> None:
+        errors = self.run_audit(
+            {"status": "PASS", "finding": "operator must connect the board"}
+        )
+        self.assertTrue(any("operator action" in error for error in errors))
+
+    def test_valid_hash_bound_sidecar_accepts_historical_result(self) -> None:
+        result = {"status": "PASS", "finding": "operator must connect the board"}
+        self.assertEqual([], self.run_audit(result, self.sidecar_for(result)))
+
+    def test_sidecar_rejects_stale_result_hash(self) -> None:
+        result = {"status": "PASS", "finding": "operator must connect the board"}
+        sidecar = self.sidecar_for(result)
+        sidecar["source_result_sha256"] = "0" * 64
+        errors = self.run_audit(result, sidecar)
+        self.assertTrue(any("source hash does not match" in error for error in errors))
+
+    def test_sidecar_rejects_wrong_value_hash_and_pointer(self) -> None:
+        result = {"status": "PASS", "finding": "operator must connect the board"}
+        sidecar = self.sidecar_for(result, pointer="/missing", original_value="wrong")
+        errors = self.run_audit(result, sidecar)
+        self.assertTrue(any("JSON pointer is invalid" in error for error in errors))
+        self.assertTrue(any("no correction entry" in error for error in errors))
+
+    def test_sidecar_rejects_unsafe_corrected_text(self) -> None:
+        result = {"status": "PASS", "finding": "operator must connect the board"}
+        sidecar = self.sidecar_for(result, corrected_text="user must connect the board")
+        errors = self.run_audit(result, sidecar)
+        self.assertTrue(any("unsafe corrected_text" in error for error in errors))
+
+    def test_sidecar_rejects_unaccounted_second_offending_string(self) -> None:
+        result = {
+            "status": "PASS",
+            "finding": "operator must connect the board",
+            "second_finding": "user should attach the cable",
+        }
+        sidecar = self.sidecar_for(result)
+        errors = self.run_audit(result, sidecar)
+        self.assertTrue(any("/second_finding has no correction entry" in error for error in errors))
+
+    def test_sidecar_rejects_open_shape_and_duplicate_entries(self) -> None:
+        result = {"status": "PASS", "finding": "operator must connect the board"}
+        open_sidecar = self.sidecar_for(result)
+        open_sidecar["unexpected"] = True
+        errors = self.run_audit(result, open_sidecar)
+        self.assertTrue(any("open or invalid shape" in error for error in errors))
+
+        duplicate_sidecar = self.sidecar_for(result)
+        duplicate_sidecar["entries"] = [
+            duplicate_sidecar["entries"][0],
+            duplicate_sidecar["entries"][0],
+        ]
+        errors = self.run_audit(result, duplicate_sidecar)
+        self.assertTrue(any("duplicates JSON pointer" in error for error in errors))
 
 
 if __name__ == "__main__":

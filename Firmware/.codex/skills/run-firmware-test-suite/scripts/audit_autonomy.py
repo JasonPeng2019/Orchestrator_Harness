@@ -12,6 +12,18 @@ SKILL_ROOT = ROOT / ".codex" / "skills" / "run-firmware-test-suite"
 POLICY_SHA256 = "be10f776c27fa8ffb46b8d395ac791ee0d73c235cf8a0d079fc960612a00f126"
 APPENDIX_IDS = {"D35", "R37", "R38"}
 ALLOWED_RESULT_STATUSES = {"PASS", "SERVER_FAILURE"}
+BLOCKER_STATUS_RE = re.compile(
+    r"\b(return|report|write|set)\b.*\b(NEEDS_USER|INFRA_BLOCKED)\b",
+    re.IGNORECASE,
+)
+BLOCKER_NEGATION_RE = re.compile(r"\b(never|do not|invalid|prohibit)\b", re.IGNORECASE)
+OPERATOR_ACTION_RE = re.compile(
+    r"\b(operator|user)\s+(must|should|needs? to)\b",
+    re.IGNORECASE,
+)
+SHA256_RE = re.compile(r"[0-9a-f]{64}")
+RESULT_AUDIT_CORRECTION_SCHEMA = "firmware-result-audit-correction/v1"
+RESULT_AUDIT_CORRECTION_DISPOSITION = "OUT_OF_AUTHORITY_FINDING"
 MATRIX_IDS = {
     "S13",
     "A20",
@@ -581,6 +593,271 @@ def check_cross_document_contract(errors: list[str]) -> None:
         )
 
 
+def _operational_violations(text: str) -> set[str]:
+    violations: set[str] = set()
+    for line in text.splitlines():
+        if BLOCKER_STATUS_RE.search(line) and not BLOCKER_NEGATION_RE.search(line):
+            violations.add("blocker status")
+        if OPERATOR_ACTION_RE.search(line):
+            violations.add("operator action")
+    return violations
+
+
+def _scan_operational_text(errors: list[str], label: str, text: str) -> None:
+    """Apply the existing line-based operational-file rules to one file."""
+
+    for number, line in enumerate(text.splitlines(), 1):
+        if BLOCKER_STATUS_RE.search(line) and not BLOCKER_NEGATION_RE.search(line):
+            fail(errors, f"{label}:{number}: blocker status")
+        if OPERATOR_ACTION_RE.search(line):
+            fail(errors, f"{label}:{number}: operator action")
+
+
+def _escape_json_pointer_token(token: str) -> str:
+    return token.replace("~", "~0").replace("/", "~1")
+
+
+def _decode_json_pointer_token(token: str) -> str:
+    if re.search(r"~(?:[^01]|$)", token):
+        raise ValueError("invalid escape in JSON pointer")
+    return token.replace("~1", "/").replace("~0", "~")
+
+
+def _resolve_json_pointer(document: object, pointer: str) -> object:
+    if pointer == "":
+        return document
+    if not pointer.startswith("/"):
+        raise ValueError("JSON pointer must be empty or start with '/'")
+
+    current = document
+    for raw_token in pointer[1:].split("/"):
+        token = _decode_json_pointer_token(raw_token)
+        if isinstance(current, dict):
+            if token not in current:
+                raise KeyError(token)
+            current = current[token]
+        elif isinstance(current, list):
+            if token == "-" or not re.fullmatch(r"0|[1-9][0-9]*", token):
+                raise KeyError(token)
+            index = int(token)
+            if index >= len(current):
+                raise KeyError(token)
+            current = current[index]
+        else:
+            raise KeyError(token)
+    return current
+
+
+def _iter_json_strings(
+    value: object,
+    pointer: str = "",
+    *,
+    include_object_keys: bool = True,
+) -> list[tuple[str, str, str]]:
+    """Return ``(kind, pointer, text)`` for JSON strings and object keys."""
+
+    strings: list[tuple[str, str, str]] = []
+    if isinstance(value, str):
+        strings.append(("value", pointer, value))
+    elif isinstance(value, dict):
+        for key, child in value.items():
+            child_pointer = f"{pointer}/{_escape_json_pointer_token(key)}"
+            if include_object_keys:
+                strings.append(("key", pointer, key))
+            strings.extend(
+                _iter_json_strings(
+                    child,
+                    child_pointer,
+                    include_object_keys=include_object_keys,
+                )
+            )
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            strings.extend(
+                _iter_json_strings(
+                    child,
+                    f"{pointer}/{index}",
+                    include_object_keys=include_object_keys,
+                )
+            )
+    return strings
+
+
+def _load_json_without_duplicate_keys(text: str) -> object:
+    def reject_duplicate_keys(pairs: list[tuple[str, object]]) -> dict[str, object]:
+        result: dict[str, object] = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"duplicate JSON object key: {key}")
+            result[key] = value
+        return result
+
+    return json.loads(text, object_pairs_hook=reject_duplicate_keys)
+
+
+def _result_string_violations(
+    errors: list[str],
+    run_name: str,
+    result: object,
+    *,
+    emit: bool,
+) -> dict[str, tuple[str, set[str]]]:
+    offending: dict[str, tuple[str, set[str]]] = {}
+    for kind, pointer, text in _iter_json_strings(result):
+        violations = _operational_violations(text)
+        if not violations:
+            continue
+        if kind != "value":
+            for violation in sorted(violations):
+                fail(
+                    errors,
+                    f"{run_name}/RESULT.json object key {text!r}: {violation}",
+                )
+            continue
+        offending[pointer] = (text, violations)
+        if emit:
+            for violation in sorted(violations):
+                fail(errors, f"{run_name}/RESULT.json{pointer}: {violation}")
+    return offending
+
+
+def _scan_sidecar_strings(errors: list[str], run_name: str, sidecar: object) -> None:
+    for kind, pointer, text in _iter_json_strings(sidecar):
+        # corrected_text is checked below with a dedicated message so it is not
+        # reported twice; all other sidecar strings remain operational files.
+        if kind == "value" and pointer.startswith("/entries/") and pointer.endswith("/corrected_text"):
+            continue
+        for violation in sorted(_operational_violations(text)):
+            fail(errors, f"{run_name}/RESULT_AUDIT_CORRECTION.json{pointer}: {violation}")
+
+
+def _check_result_audit_correction(
+    errors: list[str],
+    run: Path,
+    result_path: Path,
+) -> tuple[bool, bool]:
+    """Validate a hash-bound result correction and return checked-file flags."""
+
+    workspace = result_path.parent
+    sidecar_path = workspace / "RESULT_AUDIT_CORRECTION.json"
+    if not sidecar_path.exists():
+        return False, False
+
+    run_name = run.name
+    if not result_path.is_file():
+        fail(
+            errors,
+            f"{run_name}: RESULT_AUDIT_CORRECTION.json requires readable RESULT.json",
+        )
+        return False, False
+
+    result_bytes: bytes | None = None
+    try:
+        result_bytes = result_path.read_bytes()
+        result = json.loads(result_bytes.decode("utf-8-sig"))
+    except (OSError, UnicodeError, json.JSONDecodeError, TypeError) as exc:
+        fail(errors, f"{run_name}: RESULT_AUDIT_CORRECTION.json cannot read RESULT.json: {exc}")
+        result_checked = False
+    else:
+        result_checked = True
+        result_offenses = _result_string_violations(errors, run_name, result, emit=False)
+
+    try:
+        sidecar_text = read_text(sidecar_path)
+        sidecar = _load_json_without_duplicate_keys(sidecar_text)
+    except (OSError, UnicodeError, json.JSONDecodeError, TypeError, ValueError) as exc:
+        fail(errors, f"{run_name}: invalid RESULT_AUDIT_CORRECTION.json: {exc}")
+        return result_checked, False
+
+    sidecar_checked = True
+    _scan_sidecar_strings(errors, run_name, sidecar)
+    expected_keys = {
+        "schema",
+        "source_result_sha256",
+        "created_by_epoch",
+        "entries",
+    }
+    if not isinstance(sidecar, dict) or set(sidecar) != expected_keys:
+        fail(errors, f"{run_name}: RESULT_AUDIT_CORRECTION.json has an open or invalid shape")
+        return result_checked, sidecar_checked
+
+    if sidecar["schema"] != RESULT_AUDIT_CORRECTION_SCHEMA:
+        fail(errors, f"{run_name}: RESULT_AUDIT_CORRECTION.json schema is invalid")
+    source_hash = sidecar["source_result_sha256"]
+    if not isinstance(source_hash, str) or SHA256_RE.fullmatch(source_hash) is None:
+        fail(errors, f"{run_name}: RESULT_AUDIT_CORRECTION.json source hash is not lowercase SHA-256")
+    elif result_checked and result_bytes is not None:
+        actual_hash = hashlib.sha256(result_bytes).hexdigest()
+        if source_hash != actual_hash:
+            fail(
+                errors,
+                f"{run_name}: RESULT_AUDIT_CORRECTION.json source hash does not match RESULT.json",
+            )
+
+    created_by_epoch = sidecar["created_by_epoch"]
+    if not isinstance(created_by_epoch, str) or not created_by_epoch.strip():
+        fail(errors, f"{run_name}: RESULT_AUDIT_CORRECTION.json created_by_epoch is empty")
+
+    entries = sidecar["entries"]
+    if not isinstance(entries, list) or not entries:
+        fail(errors, f"{run_name}: RESULT_AUDIT_CORRECTION.json entries must be non-empty")
+        return result_checked, sidecar_checked
+
+    entry_keys = {
+        "json_pointer",
+        "original_value_sha256",
+        "disposition",
+        "corrected_text",
+    }
+    pointers: dict[str, tuple[int, dict[str, object]]] = {}
+    for index, entry in enumerate(entries):
+        if not isinstance(entry, dict) or set(entry) != entry_keys:
+            fail(errors, f"{run_name}: correction entry {index} has an open or invalid shape")
+            continue
+        pointer = entry["json_pointer"]
+        if not isinstance(pointer, str):
+            fail(errors, f"{run_name}: correction entry {index} has an invalid JSON pointer")
+        elif pointer in pointers:
+            fail(errors, f"{run_name}: correction entry {index} duplicates JSON pointer {pointer!r}")
+        else:
+            pointers[pointer] = (index, entry)
+
+        original_hash = entry["original_value_sha256"]
+        if not isinstance(original_hash, str) or SHA256_RE.fullmatch(original_hash) is None:
+            fail(errors, f"{run_name}: correction entry {index} has an invalid value hash")
+        if entry["disposition"] != RESULT_AUDIT_CORRECTION_DISPOSITION:
+            fail(errors, f"{run_name}: correction entry {index} has an invalid disposition")
+        corrected_text = entry["corrected_text"]
+        if not isinstance(corrected_text, str) or not corrected_text.strip():
+            fail(errors, f"{run_name}: correction entry {index} has empty corrected_text")
+        elif _operational_violations(corrected_text):
+            fail(errors, f"{run_name}: correction entry {index} has unsafe corrected_text")
+
+    if not result_checked:
+        return result_checked, sidecar_checked
+
+    for pointer, (index, entry) in pointers.items():
+        try:
+            value = _resolve_json_pointer(result, pointer)
+        except (KeyError, TypeError, ValueError) as exc:
+            fail(errors, f"{run_name}: correction entry {index} JSON pointer is invalid: {exc}")
+            continue
+        if not isinstance(value, str):
+            fail(errors, f"{run_name}: correction entry {index} JSON pointer does not resolve to a string")
+            continue
+        value_hash = hashlib.sha256(value.encode("utf-8")).hexdigest()
+        if entry["original_value_sha256"] != value_hash:
+            fail(errors, f"{run_name}: correction entry {index} original value hash does not match")
+        if pointer not in result_offenses:
+            fail(errors, f"{run_name}: correction entry {index} points to a non-offending result string")
+
+    for pointer, (text, violations) in result_offenses.items():
+        if pointer not in pointers:
+            fail(errors, f"{run_name}: RESULT.json{pointer} has no correction entry")
+
+    return result_checked, sidecar_checked
+
+
 def check_run(
     errors: list[str],
     run: Path,
@@ -637,6 +914,7 @@ def check_run(
         except (OSError, UnicodeError, json.JSONDecodeError, TypeError) as exc:
             fail(errors, f"{run.name}: unreadable RESULT: {exc}")
 
+    result_checked, sidecar_checked = _check_result_audit_correction(errors, run, result_path)
     operational_name = re.compile(
         r"(PROMPT|CHECKPOINT|WAITING|RESOURCE_ASSIGNMENT|RUN_STATE|RESULT)",
         re.IGNORECASE,
@@ -648,24 +926,12 @@ def check_run(
             or prompt.suffix.lower() in {".jsonl", ".log"}
         ):
             continue
+        if prompt == result_path and result_checked:
+            continue
+        if prompt == workspace / "RESULT_AUDIT_CORRECTION.json" and sidecar_checked:
+            continue
         text = read_text(prompt)
-        for number, line in enumerate(text.splitlines(), 1):
-            if re.search(
-                r"\b(return|report|write|set)\b.*\b(NEEDS_USER|INFRA_BLOCKED)\b",
-                line,
-                re.IGNORECASE,
-            ) and not re.search(
-                r"\b(never|do not|invalid|prohibit)\b",
-                line,
-                re.IGNORECASE,
-            ):
-                fail(errors, f"{run.name}/{prompt.name}:{number}: blocker status")
-            if re.search(
-                r"\b(operator|user)\s+(must|should|needs? to)\b",
-                line,
-                re.IGNORECASE,
-            ):
-                fail(errors, f"{run.name}/{prompt.name}:{number}: operator action")
+        _scan_operational_text(errors, f"{run.name}/{prompt.name}", text)
 
     print(f"RUN_OK {run.name} state={status}")
 
