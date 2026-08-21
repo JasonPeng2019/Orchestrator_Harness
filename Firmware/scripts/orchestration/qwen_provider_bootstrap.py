@@ -10,11 +10,14 @@ from __future__ import annotations
 # pyright: reportMissingImports=false
 # The provider API is imported dynamically from the selected disposable target worktree.
 
+import argparse
 import json
 import os
 import shutil
 import sys
+from dataclasses import replace
 from pathlib import Path
+from typing import Any
 
 
 PACKAGE_ROOT = Path(__file__).resolve().parents[2]
@@ -33,10 +36,18 @@ def resolve_target_root(value: str | None = None) -> Path:
 TARGET_ROOT = resolve_target_root()
 QWEN_SETTINGS = PACKAGE_ROOT / ".qwen" / "settings.json"
 QWEN_HOME = QWEN_SETTINGS.parent
+QWEN_PROVIDER_ID = "qwen-code"
+QWEN_COMMAND = ("qwen",)
 if str(TARGET_ROOT) not in sys.path:
     sys.path.insert(0, str(TARGET_ROOT))
 
-from orchestrator_harness.lane_controller import main as lane_controller_main
+from orchestrator_harness.lane_controller import (
+    InvocationError,
+    LaneLifecycleError,
+    ProcessBoundaryUnsupported,
+    load_invocation as lane_controller_load_invocation,
+    run as lane_controller_run,
+)
 from orchestrator_harness.provider import (
     BaseProviderAdapter,
     ProviderAdapterError,
@@ -166,6 +177,19 @@ class QwenCodeProviderAdapter(BaseProviderAdapter):
         return redact_command(argv)
 
 
+def load_invocation(path: Path) -> Any:
+    """Load through the target controller, binding only its legacy route to Qwen."""
+
+    invocation = lane_controller_load_invocation(path)
+    if invocation.invocation_schema is None:
+        return replace(
+            invocation,
+            provider_id=QWEN_PROVIDER_ID,
+            codex_command=list(QWEN_COMMAND),
+        )
+    return invocation
+
+
 def register_qwen_code() -> None:
     """Register exactly one truthful external adapter in this process."""
 
@@ -197,7 +221,14 @@ def main(argv: list[str] | None = None) -> int:
     if not TARGET_ROOT.is_dir():
         raise SystemExit(f"missing package-local target harness: {TARGET_ROOT}")
     register_qwen_code()
-    return lane_controller_main(argv)
+    parser = argparse.ArgumentParser(description="Launch one observable Qwen firmware lane turn")
+    parser.add_argument("invocation", type=Path)
+    args = parser.parse_args(argv)
+    try:
+        return lane_controller_run(load_invocation(args.invocation))
+    except (InvocationError, LaneLifecycleError, ProcessBoundaryUnsupported) as exc:
+        print(f"lane-controller invocation error: {exc}", file=sys.stderr)
+        return 2
 
 
 if __name__ == "__main__":

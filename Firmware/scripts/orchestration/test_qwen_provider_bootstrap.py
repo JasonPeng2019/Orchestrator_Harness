@@ -5,6 +5,7 @@ from __future__ import annotations
 import importlib.util
 import json
 import unittest
+from dataclasses import dataclass
 from pathlib import Path
 from unittest import mock
 
@@ -16,7 +17,44 @@ MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
 
 
+@dataclass(frozen=True)
+class _InvocationFixture:
+    invocation_schema: str | None
+    provider_id: str
+    codex_command: list[str]
+
+
 class QwenProviderBootstrapTests(unittest.TestCase):
+    def test_schema_less_binding_selects_qwen_and_canonical_is_unchanged(self) -> None:
+        legacy = _InvocationFixture(None, "codex", ["codex"])
+        canonical = _InvocationFixture(
+            "orchestrator-worker-invocation/v1", "codex", ["codex"]
+        )
+        with mock.patch.object(
+            MODULE, "lane_controller_load_invocation", return_value=legacy
+        ):
+            bound = MODULE.load_invocation(Path("legacy.invocation.json"))
+        self.assertEqual("qwen-code", bound.provider_id)
+        self.assertEqual(["qwen"], bound.codex_command)
+        self.assertIsNot(legacy, bound)
+
+        with mock.patch.object(
+            MODULE, "lane_controller_load_invocation", return_value=canonical
+        ):
+            unchanged = MODULE.load_invocation(Path("canonical.invocation.json"))
+        self.assertIs(canonical, unchanged)
+
+        with (
+            mock.patch.object(MODULE, "TARGET_ROOT", Path(".")),
+            mock.patch.object(MODULE, "register_qwen_code"),
+            mock.patch.object(
+                MODULE, "lane_controller_load_invocation", return_value=canonical
+            ),
+            mock.patch.object(MODULE, "lane_controller_run", return_value=7) as run,
+        ):
+            self.assertEqual(7, MODULE.main(["canonical.invocation.json"]))
+        run.assert_called_once_with(canonical)
+
     def test_deepseek_effort_and_auto_compaction_are_package_local(self) -> None:
         settings = json.loads(MODULE.QWEN_SETTINGS.read_text(encoding="utf-8"))
         deepseek = next(
