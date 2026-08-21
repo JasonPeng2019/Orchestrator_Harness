@@ -603,6 +603,19 @@ def _operational_violations(text: str) -> set[str]:
     return violations
 
 
+def _correction_text_violations(text: str) -> set[str]:
+    """Use strict clause-local blocker checks for sidecar replacement text."""
+
+    violations: set[str] = set()
+    for line in text.splitlines():
+        for clause in re.split(r"[;,.!?:]\s*", line):
+            if BLOCKER_STATUS_RE.search(clause):
+                violations.add("blocker status")
+        if OPERATOR_ACTION_RE.search(line):
+            violations.add("operator action")
+    return violations
+
+
 def _scan_operational_text(errors: list[str], label: str, text: str) -> None:
     """Apply the existing line-based operational-file rules to one file."""
 
@@ -754,8 +767,8 @@ def _check_result_audit_correction(
     result_bytes: bytes | None = None
     try:
         result_bytes = result_path.read_bytes()
-        result = json.loads(result_bytes.decode("utf-8-sig"))
-    except (OSError, UnicodeError, json.JSONDecodeError, TypeError) as exc:
+        result = _load_json_without_duplicate_keys(result_bytes.decode("utf-8-sig"))
+    except (OSError, UnicodeError, json.JSONDecodeError, TypeError, ValueError) as exc:
         fail(errors, f"{run_name}: RESULT_AUDIT_CORRECTION.json cannot read RESULT.json: {exc}")
         result_checked = False
     else:
@@ -830,7 +843,7 @@ def _check_result_audit_correction(
         corrected_text = entry["corrected_text"]
         if not isinstance(corrected_text, str) or not corrected_text.strip():
             fail(errors, f"{run_name}: correction entry {index} has empty corrected_text")
-        elif _operational_violations(corrected_text):
+        elif _correction_text_violations(corrected_text):
             fail(errors, f"{run_name}: correction entry {index} has unsafe corrected_text")
 
     if not result_checked:

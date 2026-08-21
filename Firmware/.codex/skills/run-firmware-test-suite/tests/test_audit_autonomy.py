@@ -147,6 +147,7 @@ class AuditResultCorrectionTests(unittest.TestCase):
         self,
         result: dict[str, object],
         sidecar: dict[str, object] | None = None,
+        result_bytes: bytes | None = None,
     ) -> list[str]:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
@@ -157,8 +158,12 @@ class AuditResultCorrectionTests(unittest.TestCase):
                 json.dumps({"properties": {"status": {"enum": ["PASS", "SERVER_FAILURE"]}}}),
                 encoding="utf-8",
             )
-            result_bytes = json.dumps(result, indent=2).encode("utf-8")
-            (workspace / "RESULT.json").write_bytes(result_bytes)
+            source_bytes = (
+                result_bytes
+                if result_bytes is not None
+                else json.dumps(result, indent=2).encode("utf-8")
+            )
+            (workspace / "RESULT.json").write_bytes(source_bytes)
             if sidecar is not None:
                 (workspace / "RESULT_AUDIT_CORRECTION.json").write_text(
                     json.dumps(sidecar, indent=2),
@@ -212,16 +217,52 @@ class AuditResultCorrectionTests(unittest.TestCase):
 
     def test_sidecar_rejects_wrong_value_hash_and_pointer(self) -> None:
         result = {"status": "PASS", "finding": "operator must connect the board"}
-        sidecar = self.sidecar_for(result, pointer="/missing", original_value="wrong")
-        errors = self.run_audit(result, sidecar)
+        wrong_hash = self.sidecar_for(result, original_value="wrong")
+        errors = self.run_audit(result, wrong_hash)
+        self.assertTrue(any("original value hash does not match" in error for error in errors))
+
+        bad_pointer = self.sidecar_for(result, pointer="/missing")
+        errors = self.run_audit(result, bad_pointer)
         self.assertTrue(any("JSON pointer is invalid" in error for error in errors))
         self.assertTrue(any("no correction entry" in error for error in errors))
 
     def test_sidecar_rejects_unsafe_corrected_text(self) -> None:
         result = {"status": "PASS", "finding": "operator must connect the board"}
-        sidecar = self.sidecar_for(result, corrected_text="user must connect the board")
+        sidecar = self.sidecar_for(
+            result,
+            corrected_text="Do not defer; set NEEDS_USER.",
+        )
         errors = self.run_audit(result, sidecar)
         self.assertTrue(any("unsafe corrected_text" in error for error in errors))
+
+    def test_sidecar_rejects_duplicate_result_object_keys(self) -> None:
+        result_bytes = (
+            b'{"status":"PASS","finding":"operator must connect the board",'
+            b'"finding":"user should attach the cable"}\n'
+        )
+        sidecar = {
+            "schema": MODULE.RESULT_AUDIT_CORRECTION_SCHEMA,
+            "source_result_sha256": hashlib.sha256(result_bytes).hexdigest(),
+            "created_by_epoch": "suite011",
+            "entries": [
+                {
+                    "json_pointer": "/finding",
+                    "original_value_sha256": hashlib.sha256(
+                        b"user should attach the cable"
+                    ).hexdigest(),
+                    "disposition": MODULE.RESULT_AUDIT_CORRECTION_DISPOSITION,
+                    "corrected_text": "Historical wording recorded.",
+                }
+            ],
+        }
+        errors = self.run_audit({}, sidecar, result_bytes=result_bytes)
+        self.assertTrue(
+            any(
+                "cannot read RESULT.json" in error
+                and "duplicate JSON object key" in error
+                for error in errors
+            )
+        )
 
     def test_sidecar_rejects_unaccounted_second_offending_string(self) -> None:
         result = {
