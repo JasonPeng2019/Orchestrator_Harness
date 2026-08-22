@@ -341,5 +341,30 @@ On 2026-08-22, the retained checkout formerly named `firmware-v2-harness-runner`
 clean submodule checkout, `harness-v2-firmware-runner`, was added from that same baseline on
 `origin/working/firmware/v2-candidate`.  Make all subsequent firmware-v2 runner changes in
 `harness-v2-firmware-runner`; retain `firmware-v1.5-harness-runner` as the preserved v1.5 line. The
-v1.5 checkout and `origin/working/firmware/v1.5-candidate` remain at `3bf43c3` with their local
-historical note/build artifacts untouched.
+The local v1.5 checkout remains at `3bf43c3` with its historical note/build artifacts untouched.
+Its remote `origin/working/firmware/v1.5-candidate` was subsequently fast-forwarded to the accepted
+neutral-cache merge `f6f6c86403515bed644f1e08cee5bc9740db313a`. The v2 remote also used that commit as
+its rollback base.
+
+## V2 legacy firmware removal
+
+On 2026-08-22, ROOT accepted and published
+`09e5786e338d9ebcf71230c8ad327808b2ec229b` (`Remove legacy firmware routes`) to
+`origin/working/firmware/v2-candidate`; remote readback matched exactly. The v2 runner now has one
+lane-management/controller lifecycle. It accepts the provider-neutral canonical invocation and the
+retained coding-v1 adapter, and it no longer contains the schema-less firmware lane, capability
+broker, firmware campaign pack, or direct firmware hardware adapter.
+
+Generic `exclusive_resources`, Codex/Claude/Qwen providers, optional neutral super-cache, hooks,
+events, resume, and external firmware MCP isolation remain. Provider implementations and
+`resource_locks.py` are unchanged from `f6f6c86`. The surviving v2 overview is
+`harness-v2-firmware-runner/final_v2-harness_overview.md`.
+
+Changed-file Ruff, baseline-aware BasedPyright, and compilation passed with cleanup verified at
+`.codex/runtime/bounded-tests/legacy-bulk-removal/mi03/root-static-004.json`. Focused affected
+surfaces passed 120 tests plus 75 subtests; the core pool passed 149 tests plus 28 subtests. The
+broader pool also exposed three unchanged baseline assertions: a one-second Windows resource-lock
+timing test, a pre-existing reconciliation terminal-result expectation, and an older Claude argv
+expectation missing the adapter's existing `--verbose` flag. These were classified outside the
+removal rather than silently rewritten. The completed execution record is
+`plans/legacy-bulk-removal/PLAN.md`.

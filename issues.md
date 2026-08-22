@@ -2,6 +2,11 @@
 
 ## Legacy firmware launches are blocked by universal overlay-receipt enforcement
 
+**V2 resolution (2026-08-22):** Superseded. The neutral-cache correction made super-cache optional,
+and commit `09e5786e338d9ebcf71230c8ad327808b2ec229b` then removed the schema-less legacy firmware
+route entirely from v2. There is therefore no v2 legacy launch to repair or exempt. V1.5 remains
+the preserved historical line; this section is retained as historical diagnosis only.
+
 **Introduced in:** `firmware-v2-harness-runner` commit
 `4ed577cb39bdb7330290496e5c0f6b29595a7210` and therefore present in the
 published `working/firmware/v2-candidate` tip `3bf43c306cab8c1f8999ad4c637b37146b5dec8d`.
