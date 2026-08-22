@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.agent-workspace\\epochs\\20260820-plan2-release-command-resolution-test-032\\compute_bundle.py\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Equivalent prompt-bundle computation completed in under two seconds; 20 seconds permits interpreter startup and local I/O.",
+    "started_at":  "2026-08-21T02:26:08.0204803+00:00",
+    "finished_at":  "2026-08-21T02:26:09.6479504+00:00",
+    "elapsed_seconds":  1.627,
+    "root_process_id":  24420,
+    "observed_process_ids":  [
+                                 24420
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-command-resolution-test032-bundle-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-command-resolution-test032-bundle-20260820-001.stderr.log"
+}

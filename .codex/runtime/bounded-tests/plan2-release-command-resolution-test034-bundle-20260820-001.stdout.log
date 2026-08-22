@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-release-command-resolution-test",
+  "task_card_id": "CARD-PLAN2-RELEASE-COMMAND-RESOLUTION-TEST-034",
+  "profile_id": "luna-high",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\p2-crtest-034\\.agent-workspace\\PLAN2_RELEASE_COMMAND_RESOLUTION_TEST_DOER_PROMPT_034.md",
+      "sha256": "7d80d6f7c1e4fe1a61c0f764ae475f75e54a4d0a7df2e5d5d775e9315963d0d4",
+      "size": 1812
+    }
+  ],
+  "final_sha256": "7d80d6f7c1e4fe1a61c0f764ae475f75e54a4d0a7df2e5d5d775e9315963d0d4",
+  "final_size": 1812,
+  "bundle_sha256": "f7cd9f062ad6e9e28ec8d2958f6697cd71c44e1e436cc331f66d4b6a55b09df9"
+}

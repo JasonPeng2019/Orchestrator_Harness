@@ -1,0 +1,77 @@
+{
+  "attempt_id": "validation-27f266adfc885c63",
+  "board_id": "nrf_b",
+  "code": "validation/backend-unavailable",
+  "created_at": "2026-08-21T15:00:54.841635Z",
+  "message": "The debug backend could not establish the bounded validation connection: Worker open failed: ProbeError: J-Link is already open. The five-second provider budget is enforced by the parent process. If a worker does not return, the server terminates that worker, invalidates only the affected connection, and requires that board to reconnect and revalidate before retrying.",
+  "observed": {
+    "board_id": "nrf_b",
+    "inventory": {
+      "probes": [
+        {
+          "description": "STM32 STLink",
+          "probe_family": "stlink",
+          "probe_id": "0668FF514988525067213913",
+          "usb_serial": "0668FF514988525067213913"
+        },
+        {
+          "description": "STM32 STLink",
+          "probe_family": "stlink",
+          "probe_id": "066FFF514988525067233337",
+          "usb_serial": "066FFF514988525067233337"
+        },
+        {
+          "description": "Segger J-Link OB-SAM3U128-V2-NordicSem",
+          "probe_family": "jlink",
+          "probe_id": "683710208",
+          "usb_serial": "683710208"
+        },
+        {
+          "description": "Segger J-Link OB-SAM3U128-V2-NordicSem",
+          "probe_family": "jlink",
+          "probe_id": "683854191",
+          "usb_serial": "683854191"
+        }
+      ]
+    },
+    "probe_identity": "683854191",
+    "probe_identity_scope": "hardware-stable"
+  },
+  "profile_unchanged": true,
+  "report_type": "validation",
+  "schema_version": 1,
+  "steps": [
+    {
+      "details": {
+        "map_reason": "Profile and current safety map agree.",
+        "profile": "nrf_b.yaml"
+      },
+      "name": "Load profile and safety map",
+      "number": 1,
+      "outcome": "passed"
+    },
+    {
+      "details": {},
+      "name": "Enumerate debug probes",
+      "number": 2,
+      "outcome": "passed"
+    },
+    {
+      "details": {
+        "identity_scope": "hardware-stable",
+        "probe_id": "683854191",
+        "probe_identity": "683854191"
+      },
+      "name": "Resolve intended stable hardware probe identity",
+      "number": 3,
+      "outcome": "passed"
+    },
+    {
+      "details": {},
+      "name": "Confirm verified target support",
+      "number": 4,
+      "outcome": "passed"
+    }
+  ],
+  "terminal_status": "validation_blocked"
+}

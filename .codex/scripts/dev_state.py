@@ -59,6 +59,7 @@ CODE_SUFFIXES = frozenset(
     }
 )
 SKIP_PARTS = {
+    "archive",
     ".git",
     ".pytest_cache",
     ".ruff_cache",
@@ -68,7 +69,7 @@ SKIP_PARTS = {
     "references",
     "runtime",
 }
-TOP_LEVEL_VIEW_ONLY_ROOTS = frozenset({"user-display-wip-harness-runner-(used-owned)"})
+TOP_LEVEL_VIEW_ONLY_ROOTS = frozenset({"firmware-v2-harness-runner"})
 
 
 class SnapshotError(RuntimeError):

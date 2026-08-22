@@ -1,0 +1,513 @@
+unformatted: File would be reformatted
+   --> orchestrator_harness\cli.py:149:15
+    |
+148 |     previous = prior.get("conditions") if isinstance(prior, Mapping) else None
+    -     timeout = (
+    -         config.watch_timeout_seconds if timeout_seconds is None else timeout_seconds
+    -     )
+149 +     timeout = config.watch_timeout_seconds if timeout_seconds is None else timeout_seconds
+150 |     deadline = monotonic() + timeout
+151 |     while True:
+    -         snapshot, observed = observe(
+    -             config, process_provider=process_provider, clock=clock
+    -         )
+152 +         snapshot, observed = observe(config, process_provider=process_provider, clock=clock)
+153 |         conditions = _diagnostic_conditions(snapshot)
+--------------------------------------------------------------------------------
+193 |     previous = prior.get("conditions") if isinstance(prior, Mapping) else None
+    -     timeout = (
+    -         config.watch_timeout_seconds if timeout_seconds is None else timeout_seconds
+    -     )
+194 +     timeout = config.watch_timeout_seconds if timeout_seconds is None else timeout_seconds
+195 |     deadline = monotonic() + timeout
+196 |     while True:
+    -         snapshot, observed = observe(
+    -             config, process_provider=process_provider, clock=clock
+    -         )
+197 +         snapshot, observed = observe(config, process_provider=process_provider, clock=clock)
+198 |         conditions = _diagnostic_conditions(snapshot)
+--------------------------------------------------------------------------------
+229 |     )
+    -     parser.add_argument(
+    -         "--config", default=str(Path(__file__).resolve().parent / "config.example.json")
+    -     )
+230 +     parser.add_argument("--config", default=str(Path(__file__).resolve().parent / "config.example.json"))
+231 |     subparsers = parser.add_subparsers(dest="command", required=True)
+--------------------------------------------------------------------------------
+250 |         preflight.add_argument(f"--{name}", required=True, type=Path)
+    -     preflight.add_argument(
+    -         "--required-evidence", action="append", default=[], type=Path
+    -     )
+    -     adapter = subparsers.add_parser(
+    -         "adapter", help="install or inspect a project-local host adapter"
+    -     )
+251 +     preflight.add_argument("--required-evidence", action="append", default=[], type=Path)
+252 +     adapter = subparsers.add_parser("adapter", help="install or inspect a project-local host adapter")
+253 |     adapter_modes = adapter.add_subparsers(dest="adapter_action", required=True)
+--------------------------------------------------------------------------------
+267 |     ) -> None:
+    -         view = parent.add_parser(
+    -             "view", help="allocate an exact retained-ref immutable source view"
+    -         )
+268 +         view = parent.add_parser("view", help="allocate an exact retained-ref immutable source view")
+269 |         modes = view.add_subparsers(dest="view_action", required=True)
+--------------------------------------------------------------------------------
+307 |
+    -     workspace = subparsers.add_parser(
+    -         "workspace", help="provider-neutral workspace overlay lifecycle"
+    -     )
+308 +     workspace = subparsers.add_parser("workspace", help="provider-neutral workspace overlay lifecycle")
+309 |     workspace_modes = workspace.add_subparsers(dest="workspace_action", required=True)
+    -     super_cache = workspace_modes.add_parser(
+    -         "super-cache", help="manage the editable harness super-cache"
+    -     )
+    -     super_cache_modes = super_cache.add_subparsers(
+    -         dest="super_cache_action", required=True
+    -     )
+    -     ingest = super_cache_modes.add_parser(
+    -         "ingest", help="refresh super-cache to exactly the source folder contents"
+    -     )
+310 +     super_cache = workspace_modes.add_parser("super-cache", help="manage the editable harness super-cache")
+311 +     super_cache_modes = super_cache.add_subparsers(dest="super_cache_action", required=True)
+312 +     ingest = super_cache_modes.add_parser("ingest", help="refresh super-cache to exactly the source folder contents")
+313 |     ingest.add_argument("--source", required=True, type=Path, dest="source_folder")
+314 |     ingest.add_argument("--harness-worktree", required=True, type=Path)
+    -     prepare = workspace_modes.add_parser(
+    -         "prepare", help="prepare one identified worktree from current cache contents"
+    -     )
+315 +     prepare = workspace_modes.add_parser("prepare", help="prepare one identified worktree from current cache contents")
+316 |     prepare.add_argument("--super-cache", required=True, type=Path)
+--------------------------------------------------------------------------------
+327 |             if args.host != "codex":
+    -                 raise CodexAdapterError(
+    -                     "only the implemented codex host supports this command"
+    -                 )
+328 +                 raise CodexAdapterError("only the implemented codex host supports this command")
+329 |             if args.adapter_action == "install":
+--------------------------------------------------------------------------------
+337 |             elif args.adapter_action == "self-test":
+    -                 _print_json(
+    -                     synthetic_wake_self_test(
+    -                         args.project_root, queue_root=args.queue_root
+    -                     )
+    -                 )
+338 +                 _print_json(synthetic_wake_self_test(args.project_root, queue_root=args.queue_root))
+339 |             else:
+    -                 _print_json(
+    -                     run_codex_hook(args.boundary, project_root=args.project_root)
+    -                 )
+340 +                 _print_json(run_codex_hook(args.boundary, project_root=args.project_root))
+341 |             return EXIT_OK
+--------------------------------------------------------------------------------
+411 |             return watch_until_actionable(config, timeout_seconds=args.timeout)
+    -         return watch_until_event(
+    -             config, no_write=args.no_write, timeout_seconds=args.timeout
+    -         )
+412 +         return watch_until_event(config, no_write=args.no_write, timeout_seconds=args.timeout)
+413 |     except (ConfigError, PathSafetyError, OSError, ValueError) as exc:
+    |
+
+unformatted: File would be reformatted
+   --> orchestrator_harness\operator_launch.py:65:24
+    |
+64  |
+    - def _creation_identity(
+    -     pid: int, *, attempts: int = 12, delay_seconds: float = 0.05
+    - ) -> str | None:
+65  + def _creation_identity(pid: int, *, attempts: int = 12, delay_seconds: float = 0.05) -> str | None:
+66  |     for _ in range(attempts):
+--------------------------------------------------------------------------------
+94  |             continue
+    -         if (
+    -             observed.created_utc is None
+    -             or iso_utc(observed.created_utc) != record["created_utc"]
+    -         ):
+95  +         if observed.created_utc is None or iso_utc(observed.created_utc) != record["created_utc"]:
+96  |             stale.append(key)
+--------------------------------------------------------------------------------
+112 |             return True, None
+    -         if (
+    -             query.process.created_utc is None
+    -             or iso_utc(query.process.created_utc) != created_utc
+    -         ):
+113 +         if query.process.created_utc is None or iso_utc(query.process.created_utc) != created_utc:
+114 |             return False, "POSIX process identity was reused"
+--------------------------------------------------------------------------------
+120 |                 return True, None
+    -             if (
+    -                 current.process.created_utc is None
+    -                 or iso_utc(current.process.created_utc) != created_utc
+    -             ):
+121 +             if current.process.created_utc is None or iso_utc(current.process.created_utc) != created_utc:
+122 |                 return False, "POSIX process identity changed during cleanup"
+--------------------------------------------------------------------------------
+128 |
+    - def _spawn_posix_detached(
+    -     argv: Sequence[str], cwd: Path, environment: dict[str, str]
+    - ) -> int:
+129 + def _spawn_posix_detached(argv: Sequence[str], cwd: Path, environment: dict[str, str]) -> int:
+130 |     """Spawn through a native double-fork handoff.
+--------------------------------------------------------------------------------
+159 |                             write_fd,
+    -                             f"ERROR {type(exc).__name__}: {exc}".encode(
+    -                                 "utf-8", "replace"
+    -                             ),
+160 +                             f"ERROR {type(exc).__name__}: {exc}".encode("utf-8", "replace"),
+161 |                         )
+--------------------------------------------------------------------------------
+257 |
+    - def _terminate_windows_exact(
+    -     process_handle: object, pid: int
+    - ) -> tuple[bool, str | None]:
+258 + def _terminate_windows_exact(process_handle: object, pid: int) -> tuple[bool, str | None]:
+259 |     import _winapi  # type: ignore[import-not-found]
+--------------------------------------------------------------------------------
+305 |     """
+    -     if (
+    -         not isinstance(label, str)
+    -         or not label.strip()
+    -         or not isinstance(role, str)
+    -         or not role.strip()
+    -     ):
+306 +     if not isinstance(label, str) or not label.strip() or not isinstance(role, str) or not role.strip():
+307 |         raise ValueError("label and role are required")
+--------------------------------------------------------------------------------
+311 |     cwd_path = _validate_path(str(cwd), directory=True)
+    -     expected = (
+    -         Path(expected_state_path).resolve(strict=False) if expected_state_path else None
+    -     )
+312 +     expected = Path(expected_state_path).resolve(strict=False) if expected_state_path else None
+313 |     _reserve_receipt(receipt_path)
+314 |     launched_at = _utc_now()
+315 |     if environment is not None and any(
+    -         not isinstance(key, str) or not isinstance(value, str)
+    -         for key, value in environment.items()
+316 +         not isinstance(key, str) or not isinstance(value, str) for key, value in environment.items()
+317 |     ):
+--------------------------------------------------------------------------------
+325 |     created_utc: str | None = None
+    -     ownership_strategy = (
+    -         "windows-native-detached-no-wait"
+    -         if os.name == "nt"
+    -         else "posix-double-fork-system-reaped"
+    -     )
+326 +     ownership_strategy = "windows-native-detached-no-wait" if os.name == "nt" else "posix-double-fork-system-reaped"
+327 |     try:
+--------------------------------------------------------------------------------
+331 |             flags = _windows_creation_flags(_winapi, breakaway=True)
+    -             process_handle, thread_handle, pid, created_utc, flags = (
+    -                 _create_windows_native(argv, cwd_path, inherited_environment)
+332 +             process_handle, thread_handle, pid, created_utc, flags = _create_windows_native(
+333 +                 argv, cwd_path, inherited_environment
+334 |             )
+--------------------------------------------------------------------------------
+381 |         if os.name == "nt" and process_handle is not None and pid is not None:
+    -             cleanup_confirmed, cleanup_error = _terminate_windows_exact(
+    -                 process_handle, pid
+    -             )
+382 +             cleanup_confirmed, cleanup_error = _terminate_windows_exact(process_handle, pid)
+383 |         elif pid is not None and created_utc is not None:
+--------------------------------------------------------------------------------
+419 | def _parser() -> argparse.ArgumentParser:
+    -     parser = argparse.ArgumentParser(
+    -         description="Launch one detached manager-owned process"
+    -     )
+420 +     parser = argparse.ArgumentParser(description="Launch one detached manager-owned process")
+421 |     parser.add_argument("--receipt", required=True)
+    |
+
+unformatted: File would be reformatted
+   --> orchestrator_harness\processes.py:91:32
+    |
+90  |     except Exception as exc:
+    -         return ProcessSnapshot(
+    -             False, (), (f"CIM invocation failed: {exc}",), "windows-cim"
+    -         )
+91  +         return ProcessSnapshot(False, (), (f"CIM invocation failed: {exc}",), "windows-cim")
+92  |     if completed.returncode != 0:
+--------------------------------------------------------------------------------
+121 |             )
+    -         errors = (
+    -             (f"{missing_time} process records lack creation time",)
+    -             if missing_time
+    -             else ()
+    -         )
+    -         return ProcessSnapshot(
+    -             True, tuple(sorted(processes, key=lambda p: p.pid)), errors, "windows-cim"
+    -         )
+122 +         errors = (f"{missing_time} process records lack creation time",) if missing_time else ()
+123 +         return ProcessSnapshot(True, tuple(sorted(processes, key=lambda p: p.pid)), errors, "windows-cim")
+124 |     except Exception as exc:
+    -         return ProcessSnapshot(
+    -             False, (), (f"invalid CIM output: {exc}",), "windows-cim"
+    -         )
+125 +         return ProcessSnapshot(False, (), (f"invalid CIM output: {exc}",), "windows-cim")
+126 |
+--------------------------------------------------------------------------------
+164 |             None,
+    -             (
+    -                 f"CIM identity query returned {completed.returncode}: {completed.stderr.strip()}",
+    -             ),
+165 +             (f"CIM identity query returned {completed.returncode}: {completed.stderr.strip()}",),
+166 |         )
+--------------------------------------------------------------------------------
+266 |         return ProcessQuery(False, None, ("unsupported process platform",))
+    -     if (
+    -         expected_parent_pid is not None
+    -         and query.parent_matches(expected_parent_pid) is False
+    -     ):
+267 +     if expected_parent_pid is not None and query.parent_matches(expected_parent_pid) is False:
+268 |         return ProcessQuery(
+--------------------------------------------------------------------------------
+342 |     valid_group = process_group_id is None or (
+    -         isinstance(process_group_id, int)
+    -         and not isinstance(process_group_id, bool)
+    -         and process_group_id > 0
+343 +         isinstance(process_group_id, int) and not isinstance(process_group_id, bool) and process_group_id > 0
+344 |     )
+345 |     valid_session = session_id is None or (
+    -         isinstance(session_id, int)
+    -         and not isinstance(session_id, bool)
+    -         and session_id > 0
+346 +         isinstance(session_id, int) and not isinstance(session_id, bool) and session_id > 0
+347 |     )
+    -     valid_root = root_pid is None or (
+    -         isinstance(root_pid, int) and not isinstance(root_pid, bool) and root_pid > 0
+    -     )
+348 +     valid_root = root_pid is None or (isinstance(root_pid, int) and not isinstance(root_pid, bool) and root_pid > 0)
+349 |     if not valid_group or not valid_session or not valid_root:
+--------------------------------------------------------------------------------
+380 |             boundary_identity or f"pgid:{process_group_id}",
+    -             errors=tuple(
+    -                 getattr(snapshot, "errors", ("process snapshot is incomplete",))
+    -             ),
+381 +             errors=tuple(getattr(snapshot, "errors", ("process snapshot is incomplete",))),
+382 |             source="/proc",
+--------------------------------------------------------------------------------
+395 |         errors.append(f"provider root {root_pid} lacks a creation identity")
+    -     elif (
+    -         current_root is not None
+    -         and (current_root.pid, iso_utc(current_root.created_utc) or "") != root_key
+    -     ):
+396 +     elif current_root is not None and (current_root.pid, iso_utc(current_root.created_utc) or "") != root_key:
+397 |         errors.append(f"provider root {root_pid} creation identity was reused")
+--------------------------------------------------------------------------------
+407 |     for item in snapshot.processes:
+    -         if (
+    -             process_group_id is not None and item.process_group_id == process_group_id
+    -         ) or (session_id is not None and item.session_id == session_id):
+408 +         if (process_group_id is not None and item.process_group_id == process_group_id) or (
+409 +             session_id is not None and item.session_id == session_id
+410 +         ):
+411 |             select(item)
+--------------------------------------------------------------------------------
+428 |             parent = by_pid.get(item.ppid)
+    -             if (
+    -                 parent is None
+    -                 or (parent.pid, iso_utc(parent.created_utc) or "") not in selected
+    -             ):
+    -                 errors.append(
+    -                     f"descendant PID {item.pid} has no exact owned parent observation"
+    -                 )
+429 +             if parent is None or (parent.pid, iso_utc(parent.created_utc) or "") not in selected:
+430 +                 errors.append(f"descendant PID {item.pid} has no exact owned parent observation")
+431 |                 continue
+--------------------------------------------------------------------------------
+443 |             else:
+    -                 errors.append(
+    -                     f"adopted PID {item.pid} is outside the known ownership history"
+    -                 )
+444 +                 errors.append(f"adopted PID {item.pid} is outside the known ownership history")
+445 |
+--------------------------------------------------------------------------------
+450 |         for item in snapshot.processes:
+    -             if (
+    -                 item.ppid == root_pid
+    -                 and (item.pid, iso_utc(item.created_utc) or "") not in known_by_key
+    -             ):
+    -                 errors.append(
+    -                     f"unobserved descendant PID {item.pid} cannot be attributed after root exit"
+    -                 )
+451 +             if item.ppid == root_pid and (item.pid, iso_utc(item.created_utc) or "") not in known_by_key:
+452 +                 errors.append(f"unobserved descendant PID {item.pid} cannot be attributed after root exit")
+453 |
+    |
+
+unformatted: File would be reformatted
+   --> orchestrator_harness\tests\test_manager_notifications_adversarial.py:35:20
+    |
+34  |         value.update(updates)
+    -         write_json(
+    -             self.fixture.workspace() / "manager-signals" / f"{signal_id}.json", value
+    -         )
+35  +         write_json(self.fixture.workspace() / "manager-signals" / f"{signal_id}.json", value)
+36  |
+--------------------------------------------------------------------------------
+66  |         )
+    -         self.assertEqual(
+    -             "MANAGER_SIGNAL_READ_ERROR", snapshot["observation_errors"][0]["code"]
+    -         )
+67  +         self.assertEqual("MANAGER_SIGNAL_READ_ERROR", snapshot["observation_errors"][0]["code"])
+68  |
+--------------------------------------------------------------------------------
+72  |         before = signal_path.read_bytes()
+    -         missing_evidence = (
+    -             self.fixture.suite_root / "runs" / "outside" / "missing" / "secret.txt"
+    -         )
+73  +         missing_evidence = self.fixture.suite_root / "runs" / "outside" / "missing" / "secret.txt"
+74  |
+--------------------------------------------------------------------------------
+82  |         self.assertFalse(missing_evidence.exists())
+    -         self.assertEqual(
+    -             ["missing/secret.txt"], snapshot["manager_signals"][0]["evidence_paths"]
+    -         )
+    -         self.assertFalse(
+    -             (
+    -                 self.fixture.suite_root
+    -                 / ".agent-workspace"
+    -                 / "pending-notification.json"
+    -             ).exists()
+    -         )
+83  +         self.assertEqual(["missing/secret.txt"], snapshot["manager_signals"][0]["evidence_paths"])
+84  +         self.assertFalse((self.fixture.suite_root / ".agent-workspace" / "pending-notification.json").exists())
+85  |
+86  |     def test_identical_duplicate_signal_files_are_one_condition(self) -> None:
+87  |         self._write_signal("same")
+88  |         duplicate = self.fixture.workspace() / "manager-signals" / "same-copy.json"
+    -         duplicate.write_bytes(
+    -             (self.fixture.workspace() / "manager-signals" / "same.json").read_bytes()
+    -         )
+89  +         duplicate.write_bytes((self.fixture.workspace() / "manager-signals" / "same.json").read_bytes())
+90  |
+--------------------------------------------------------------------------------
+105 |         signals = self.fixture.workspace() / "manager-signals"
+    -         (signals / ".sig-atomic.tmp.json").write_bytes(
+    -             (signals / "atomic.json").read_bytes()
+    -         )
+106 +         (signals / ".sig-atomic.tmp.json").write_bytes((signals / "atomic.json").read_bytes())
+107 |
+--------------------------------------------------------------------------------
+120 |
+    -         self.assertEqual(
+    -             ["atomic"], [item["signal_id"] for item in first["manager_signals"]]
+    -         )
+121 +         self.assertEqual(["atomic"], [item["signal_id"] for item in first["manager_signals"]])
+122 |         self.assertEqual(["manager-signal:atomic"], list(first_events))
+    |
+
+unformatted: File would be reformatted
+   --> orchestrator_harness\tests\test_operator_launch.py:40:19
+    |
+39  |             time.sleep(0.05)
+    -         self.fail(
+    -             f"detached reaper ownership did not drain: {detached_owner_snapshot()}"
+    -         )
+40  +         self.fail(f"detached reaper ownership did not drain: {detached_owner_snapshot()}")
+41  |
+--------------------------------------------------------------------------------
+142 |                 patch.dict(sys.modules, {"_winapi": winapi}),
+    -                 patch.object(
+    -                     operator_launch, "_creation_identity", side_effect=creation_identity
+    -                 ),
+    -                 patch.object(
+    -                     operator_launch, "_resume_windows_thread", side_effect=resume_thread
+    -                 ),
+143 +                 patch.object(operator_launch, "_creation_identity", side_effect=creation_identity),
+144 +                 patch.object(operator_launch, "_resume_windows_thread", side_effect=resume_thread),
+145 |             ):
+--------------------------------------------------------------------------------
+221 |             self.assertEqual(calls[0], failure["creationflags"])
+    -             self.assertEqual(
+    -                 "windows-native-detached-no-wait", failure["ownership_strategy"]
+    -             )
+222 +             self.assertEqual("windows-native-detached-no-wait", failure["ownership_strategy"])
+223 |
+--------------------------------------------------------------------------------
+288 |             self.assertFalse(detached_owner_snapshot())
+    -             self.assertEqual(
+    -                 0, len([item for item in caught if item.category is ResourceWarning])
+    -             )
+289 +             self.assertEqual(0, len([item for item in caught if item.category is ResourceWarning]))
+290 |             self.assertIsNone(process_snapshot().by_pid.get(result["pid"]))
+--------------------------------------------------------------------------------
+306 |                 results = list(executor.map(launch, range(4)))
+    -             self.assertEqual(
+    -                 4, len({(item["pid"], item["created_utc"]) for item in results})
+    -             )
+307 +             self.assertEqual(4, len({(item["pid"], item["created_utc"]) for item in results}))
+308 |             self.assertLessEqual(len(detached_owner_snapshot()), 4)
+--------------------------------------------------------------------------------
+328 |             (repo / "task.txt").write_text("route\n", encoding="utf-8")
+    -             subprocess.run(
+    -                 ("git", "add", "task.txt"), cwd=repo, check=True, capture_output=True
+    -             )
+329 +             subprocess.run(("git", "add", "task.txt"), cwd=repo, check=True, capture_output=True)
+330 |             subprocess.run(
+--------------------------------------------------------------------------------
+370 |             while time.monotonic() < deadline:
+    -                 value = (
+    -                     json.loads(status.read_text(encoding="utf-8"))
+    -                     if status.exists()
+    -                     else {}
+    -                 )
+    -                 receipt_value = (
+    -                     json.loads(receipt.read_text(encoding="utf-8"))
+    -                     if receipt.exists()
+    -                     else {}
+    -                 )
+371 +                 value = json.loads(status.read_text(encoding="utf-8")) if status.exists() else {}
+372 +                 receipt_value = json.loads(receipt.read_text(encoding="utf-8")) if receipt.exists() else {}
+373 |                 terminal = (
+--------------------------------------------------------------------------------
+382 |                 )
+    -                 if (
+    -                     terminal
+    -                     and process_snapshot().by_pid.get(receipt_value.get("pid")) is None
+    -                 ):
+383 +                 if terminal and process_snapshot().by_pid.get(receipt_value.get("pid")) is None:
+384 |                     break
+385 |                 time.sleep(0.1)
+386 |             self.assertEqual("CODEX_EXITED", value.get("state"), value)
+387 |             self.assertEqual(receipt_value.get("pid"), value.get("controller_pid"))
+    -             self.assertEqual(
+    -                 receipt_value.get("created_utc"), value.get("controller_created_utc")
+    -             )
+388 +             self.assertEqual(receipt_value.get("created_utc"), value.get("controller_created_utc"))
+389 |             self.assertIsNone(process_snapshot().by_pid.get(receipt_value.get("pid")))
+    |
+
+unformatted: File would be reformatted
+   --> orchestrator_harness\tests\test_processes.py:39:27
+    |
+38  |         self.assertFalse(snapshot.parent_matches(11, 1))
+    -         self.assertIsNone(
+    -             ProcessSnapshot(
+    -                 False, snapshot.processes, ("partial",), "linux-proc"
+    -             ).parent_matches(99, 10)
+    -         )
+39  +         self.assertIsNone(ProcessSnapshot(False, snapshot.processes, ("partial",), "linux-proc").parent_matches(99, 10))
+40  |
+--------------------------------------------------------------------------------
+59  |         self.assertIn("ProcessId = 11", captured["argv"][-1])
+    -         self.assertNotIn(
+    -             "Get-CimInstance Win32_Process | ForEach-Object", captured["argv"][-1]
+    -         )
+60  +         self.assertNotIn("Get-CimInstance Win32_Process | ForEach-Object", captured["argv"][-1])
+61  |         self.assertEqual(WINDOWS_CREATE_NO_WINDOW, captured["kwargs"]["creationflags"])
+--------------------------------------------------------------------------------
+73  |                     "name": "python.exe",
+    -                     "command_line_b64": base64.b64encode(b"python worker.py").decode(
+    -                         "ascii"
+    -                     ),
+74  +                     "command_line_b64": base64.b64encode(b"python worker.py").decode("ascii"),
+75  |                     "created_utc": "2026-07-30T12:00:00Z",
+--------------------------------------------------------------------------------
+130 |             "name": "child.exe",
+    -             "command_line_b64": base64.b64encode(command_line.encode("utf-8")).decode(
+    -                 "ascii"
+    -             ),
+131 +             "command_line_b64": base64.b64encode(command_line.encode("utf-8")).decode("ascii"),
+132 |             "created_utc": "2026-07-30T12:00:00Z",
+    |
+
+6 files would be reformatted

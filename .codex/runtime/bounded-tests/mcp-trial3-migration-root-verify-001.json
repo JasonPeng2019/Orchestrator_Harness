@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The prior closure gate completed targeted lint, type, compilation, and 58 tests; 120 seconds provides measured-startup and verification headroom, with the policy-capped 30-second cleanup.",
+    "started_at":  "2026-08-21T23:36:20.0160327+00:00",
+    "finished_at":  "2026-08-21T23:36:23.5831159+00:00",
+    "elapsed_seconds":  3.567,
+    "root_process_id":  29648,
+    "observed_process_ids":  [
+                                 29648
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\mcp-trial3-migration-root-verify-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\mcp-trial3-migration-root-verify-001.stderr.log"
+}

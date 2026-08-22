@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "python \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260821-plan2-suite-012-manager-014\\.agent-workspace\\diagnose_import_014.py\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Local Python import and cwd print only; expected below one second with ten seconds conservative headroom.",
+    "started_at":  "2026-08-21T15:42:05.6494587+00:00",
+    "finished_at":  "2026-08-21T15:42:06.8219307+00:00",
+    "elapsed_seconds":  1.172,
+    "root_process_id":  30192,
+    "observed_process_ids":  [
+                                 30192
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite012-manager-child-import-20260821-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite012-manager-child-import-20260821-001.stderr.log"
+}

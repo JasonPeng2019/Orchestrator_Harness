@@ -1,0 +1,30 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6SafeguardTests",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-candidate-check-015",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "S6.AFFECTED.SAFEGUARD declared 2.0s; powershell platform req; prior suites ran far over declared (SELECTOR 248s, PUBLIC-E2E 62.7s) so 120s bound with 30s cleanup.",
+    "started_at":  "2026-08-20T23:45:43.2555337+00:00",
+    "finished_at":  "2026-08-20T23:46:17.5170943+00:00",
+    "elapsed_seconds":  34.262,
+    "root_process_id":  8740,
+    "observed_process_ids":  [
+                                 8740,
+                                 10828,
+                                 12952,
+                                 15996,
+                                 20516,
+                                 21536,
+                                 22128,
+                                 28840,
+                                 30564
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-check015-S6-AFFECTED-SAFEGUARD-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-check015-S6-AFFECTED-SAFEGUARD-20260820-001.stderr.log"
+}

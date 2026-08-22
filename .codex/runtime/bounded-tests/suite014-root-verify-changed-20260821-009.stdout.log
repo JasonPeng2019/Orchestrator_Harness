@@ -1,0 +1,51 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+2 files already formatted
+
+== types changed Python ==
+0 errors, 0 warnings, 0 notes
+
+== compile changed Python ==
+
+== Firmware MCP Ruff ==
+All checks passed!
+
+== Firmware MCP Pyright ==
+0 errors, 0 warnings, 0 informations
+
+== Firmware MCP tests ==
+============================= test session starts =============================
+platform win32 -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP
+configfile: pyproject.toml
+plugins: anyio-4.14.2
+collected 6 items
+
+tests\test_import_smoke.py .                                             [ 16%]
+tests\test_probe_identity_guard.py .....                                 [100%]
+
+============================== 6 passed in 4.24s ==============================
+
+== Codex changed tests ==
+.................                                                        [100%]
+17 passed in 0.68s
+
+== firmware changed tests ==
+RUN_OK A21_sidecar state=CHECKPOINTED
+RUN_OK A21_sidecar state=CHECKPOINTED
+RUN_OK A21_sidecar state=CHECKPOINTED
+RUN_OK A21_sidecar state=CHECKPOINTED
+RUN_OK A21_sidecar state=CHECKPOINTED
+RUN_OK A21_sidecar state=CHECKPOINTED
+RUN_OK A21_sidecar state=CHECKPOINTED
+RUN_OK A21_sidecar state=CHECKPOINTED
+RUN_OK A21_sidecar state=CHECKPOINTED
+RUN_OK A21_sidecar state=CHECKPOINTED
+RUN_OK A21_sidecar state=CHECKPOINTED
+RUN_OK S12_terminal state=SERVER_FAILURE
+RUN_OK A21_sidecar state=CHECKPOINTED
+
+VERIFY_CHANGED: PASS (9 changed code path(s))

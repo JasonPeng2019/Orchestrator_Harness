@@ -1,0 +1,4 @@
+E902 The system cannot find the file specified. (os error 2)
+--> orchestrator_harness\assets\claude\orchestrator_harness_notification.py:1:1
+
+Found 1 error.

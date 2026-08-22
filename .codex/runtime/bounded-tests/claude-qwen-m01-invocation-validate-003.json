@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "python C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\stable-harness\\claude-qwen-parity-001\\validate_cp01_invocation.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\stable-general-harness-runner",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Parsing one local stable-harness invocation normally completes in under a second; 60 seconds covers interpreter startup and Windows filesystem contention, with 15 seconds policy-capped cleanup.",
+    "started_at":  "2026-08-22T06:49:40.0677360+00:00",
+    "finished_at":  "2026-08-22T06:49:41.5939717+00:00",
+    "elapsed_seconds":  1.526,
+    "root_process_id":  28544,
+    "observed_process_ids":  [
+                                 28544
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-m01-invocation-validate-003.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-m01-invocation-validate-003.stderr.log"
+}

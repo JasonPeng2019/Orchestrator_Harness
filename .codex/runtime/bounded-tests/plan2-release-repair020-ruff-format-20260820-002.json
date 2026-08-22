@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev --locked python -m ruff format --check .",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-release-safeguard-repair-020",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The full candidate format check previously completed in seconds; after formatting the allowed S6 file, this run isolates any remaining repository-wide baseline divergence.",
+    "started_at":  "2026-08-21T00:21:01.8175818+00:00",
+    "finished_at":  "2026-08-21T00:21:03.1652641+00:00",
+    "elapsed_seconds":  1.348,
+    "root_process_id":  28468,
+    "observed_process_ids":  [
+                                 28468
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-ruff-format-20260820-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-ruff-format-20260820-002.stderr.log"
+}

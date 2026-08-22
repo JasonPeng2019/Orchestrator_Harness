@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  210,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The same change-aware gate completed a prior code-bearing run in 47.395 seconds; 180 seconds allows cold tool startup plus Ruff, BasedPyright, compilation, and the selected dev-state regression test, with 30 seconds policy-capped cleanup.",
+    "started_at":  "2026-08-21T21:25:29.7844038+00:00",
+    "finished_at":  "2026-08-21T21:25:33.4472997+00:00",
+    "elapsed_seconds":  3.663,
+    "root_process_id":  13004,
+    "observed_process_ids":  [
+                                 13004
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deduplicate-wip-submodule-verify-changed-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deduplicate-wip-submodule-verify-changed-001.stderr.log"
+}

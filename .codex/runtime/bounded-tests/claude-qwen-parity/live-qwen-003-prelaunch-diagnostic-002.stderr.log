@@ -1,0 +1,9 @@
+#< CLIXML
+Traceback (most recent call last):
+  File "<stdin>", line 20, in <module>
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\firmware-v2-harness-runner-parity\orchestrator_harness\provider.py", line 768, in build_argv
+    self._validate_unsupported_options(spec)
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\firmware-v2-harness-runner-parity\orchestrator_harness\provider.py", line 720, in _validate_unsupported_options
+    raise ProviderAdapterError(
+orchestrator_harness.provider.ProviderAdapterError: qwen-code does not support provider option(s): id, model
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04"><Obj S="progress" RefId="0"><TN RefId="0"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N="SourceId">1</I64><PR N="Record"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj></Objs>

@@ -9,6 +9,10 @@ are what "missing" now means. This file is the human-readable companion to
 `active_docs/claude_listed_Features.md` (the 346-row inventory) and
 `plans/compatibility-testing/evidence/FINDINGS.md` (per-finding evidence).
 
+> **Active compatibility follow-through.** The documented Claude fixes and gaps remain active
+> until their source changes are merged into `firmware-v2-harness-runner`. They do not reopen the
+> closed Firmware hardware campaign.
+
 Scope: `orchestrator_harness`, tested read-only/detection-only against the real `claude` CLI
 v2.1.233 (pointed at a local Ollama backend for live lanes) and against synthetic fixtures for the
 provider-neutral logic. `Firmware/target-harness` itself was **never modified** — all source fixes
@@ -22,8 +26,8 @@ live in the disposable clone described below.
 |---|---|---|
 | Original launch blockers (§A) | 4 | **FIXED** in clone `compat-test-copy`; **not merged** to `Firmware/target-harness` |
 | Host-adapter / delivery subsystem (§B, formerly the big "CX-GAP") | 30 rows | **IMPLEMENTED** in Phase 4 (real `ClaudeAdapter`) |
-| Genuinely-absent features / divergences from intended design (§C) | 18 GAP rows | **RECORDED, not fixed** — detection-only phases record, they don't patch |
-| Live rows not yet authentically reproduced on the weak Ollama backend (§D) | 8 rows | reachable by coaching / accepted synthetically per user decision |
+| Design recommendations for shared code (§C) | 12 DESIGN-REC rows (was 18 GAP; 6 promoted to parity passes 2026-08-20) | **RECORDED, not fixed** — these are shared-code shortfalls relative to an old plan doc, identical for both providers, not compatibility gaps. The sole genuine Codex-vs-Claude gap is U15 (unclosable). |
+| Live rows not authentically reproduced on the weak Ollama backend (§D) | 7 rows | **CLOSED 2026-08-20 via Phase 5 producer-seam (5.B)** — `TESTED-PASSED (5.B, producer-seam)`, weaker than a live pass; G10 remains synthetic/accepted |
 | Firmware + MCP (§E) | — | **OUT OF SCOPE** per instruction (MCP later shown to work live, see §D note) |
 
 The important correction versus the old version of this file: **there is no longer a "Claude lane
@@ -85,64 +89,82 @@ Root re-ran `pytest test_compat_claude_adapter.py` → 14 passed / 3 subtests, a
 
 ---
 
-## C. The genuinely-missing features & design-intent divergences (18 GAP rows)
+## C. Design recommendations for shared code (12 rows) — NOT compatibility gaps
 
-These are the *actual* "missing implementation" items as of the current testing. Phases 1–2 are
-detection-only unit tests over the real Codex-era modules; a **GAP** means the test ran and pinned
-the actual behavior, and that behavior diverges from what the Codex-era plan intended. Full
-evidence per row: `plans/compatibility-testing/evidence/FINDINGS.md`. **Nothing here is a launch
-blocker; nothing here was patched** (only phase 0 changed code).
+**There is exactly one Codex-vs-Claude code gap, and it is U15 (see the historical note below).**
+Everything in this section is a **design recommendation**, not a gap. Phases 1–2 are detection-only
+unit tests over the real Codex-era modules; each row below pins a place where the *shared*,
+provider-neutral implementation does less than — or differs from — an old plan/design doc. Because
+this is shared code (no `claude_adapter`/`codex_adapter` split), Codex and Claude behave **identically**,
+so none of it is a provider gap. These are recorded as features worth adding or plan docs worth
+correcting. Full evidence per row: `plans/compatibility-testing/evidence/FINDINGS.md`. **Nothing here
+is a launch blocker; nothing here was patched** (only phase 0 changed code).
 
-Read the two sub-buckets differently — most of these are the harness being *safer* than the plan,
-not a hole a Claude consumer falls into.
+Read the two sub-buckets differently — most are the harness being *safer* than an old plan, not a
+hole a Claude consumer falls into.
 
-### C.1 — Capabilities genuinely absent (a real "product would have this" gap)
+> **Why these are design recommendations, not gaps (2026-08-20).** Under the operator rule that *the
+> Claude code must mirror the exact mechanism Codex uses*, every former GAP row was re-examined.
+> Six — **E19, K8, Q1, Q17, L4, L7** — were promoted to `TESTED-PASSED (parity)` (shared code, Claude
+> already runs Codex's exact mechanism; RESOLVED-PARITY in FINDINGS.md). The 12 rows below were
+> reclassified **GAP → DESIGN-REC**: they are shared-code shortfalls relative to an old plan doc, not
+> provider divergences. The sole remaining GAP in the whole inventory is **U15**, which is unclosable
+> upstream. (A39/T3's finding is additionally **stale** — the ordered recovery ledger it reports
+> missing exists in `harness_watcher_implementation/state.py`; re-test pending.)
 
-| Row | Finding | What's actually missing |
+### C.1 — Design recommendations: capabilities worth adding (shared code, "a product would have this")
+
+| Row | Finding | Recommended capability (absent in shared code today) |
 |---|---|---|
 | **A34** | F2E-A34-1 | `release_assets.py` is **read-only manifest accessors only** (`release_manifest`, `manifest_asset_paths`, `read_package_asset`). There is **no packaging/digest engine** — no `build_package`, no archive builder, no content digest over the declared asset set. The packaging half of the intended "public release surface" simply does not exist. |
-| **A39 / T3** | F2G-A39-1 | No ordered `STOP_ASSIGNING → … → RESOLVED` **recovery ledger**. `watcher_recovery_projection` is a stateless open/acknowledged/resolved filter+label pass with **no ordering guard**; a lone `resolved` record (never `open`) is admitted unchanged, and `STOP_ASSIGNING` isn't even in `WATCHER_RECOVERY_STATES` (those records are silently dropped). The ordered-admission state machine the plan describes is absent. |
+| **A39 / T3** | F2G-A39-1 | **STALE FINDING — re-test pending (2026-08-20).** The finding tested `watcher_integration.watcher_recovery_projection` (a stateless open/acknowledged/resolved filter with no ordering guard) and concluded the ordered ledger is absent. But `harness_watcher_implementation/state.py` **does** implement it: `ORDER = (STOP_ASSIGNING, CHECKPOINT_REQUESTED, PAUSED, REPAIRED, RESUMED, RESOLVED)`, a `transition()` with an "out of order" guard (`raise ValueError`), and `recovery_history`. The intended feature exists in a different module than the test observed; re-test against `state.py` before final disposition. (Shared watcher code — not a Claude-vs-Codex gap regardless.) |
 | **G18** | F1F-G18-1 | `HARNESS_SCAN_COMMITTED` is a declared taxonomy kind but **no producer in this worktree emits it**. The "exactly once per scan commit" marker is observable only at the record-contract level (`make_source_record` → one record); the emission path likely lives in the out-of-worktree watcher runtime. |
 | **B2** | F1B-B2-1 | `scan --no-write` is **parsed but ignored** — a pure no-op (`scan_command` has no `no_write` parameter and never persists in any mode). Harmless (scan never writes) but misleading: a user could believe the flag is what makes scan safe. |
 | **C24** | F1A-C24-1 | The unsupported-operation *record* branch in `_classify_provider_operations` is **dead code** — `unsupported_operation_result` raises `ProviderAdapterError` first. Latent only: `_requested_provider_operations` only ever emits validated operations, so the dead path can't fire from real input today. |
 | **F24** | F1E-F24-1 | The result-validation memo (`_RESULT_VALIDATION_CACHE`) covers the **coding-result path only**; the task-result path (`_validate_task_result_cached`) is not memoized and re-validates every pass. A missing optimization, not a correctness gap. |
 
-### C.2 — Present but *narrower / stricter / safer* than the plan text (divergence, not a hole)
+### C.2 — Design recommendations: shared behavior narrower / stricter / safer than an old plan doc
 
-These are recorded as GAPs (intended-vs-actual divergence) but in every case the harness is
-**stricter, safer, or fail-closed** relative to the plan — a Claude consumer is protected, not
-exposed.
+These are **design recommendations, not gaps** — in every case the shared code is **stricter, safer,
+or fail-closed** relative to an old plan doc, and behaves identically for Codex and Claude. A
+consumer is protected, not exposed; adopt or drop the plan-doc expectation as you prefer.
 
-| Row | Finding | Divergence (all fail-closed / safer) |
+| Row | Finding | Shared behavior vs. old plan doc (all fail-closed / safer) |
 |---|---|---|
-| **E19** | F1D-E19-1 | The RUNNING_CODEX/RUNNING_PROVIDER operational-state gate is scoped to conflict detection only; discovery-level result acceptance does **not** reject a valid result offered under `EXITED`/`PROVIDER_EXITED`. (Malformed results are still rejected.) |
 | **E20** | F1D-E20-1 | No ">1 candidate result JSON" ambiguity rejection — only the canonical `RESULT.json` is read; a second result-shaped JSON is silently ignored (deterministic, canonical wins). |
 | **F3** | F1E-F3-1 | Lane elevates to `WAITING_RELAY` only on `RELAY_READY`; a `RELAY_UNBOUND` request leaves the lane `RUNNING_CODEX` (the request itself is still classified `RELAY_UNBOUND`, so no state is lost). |
 | **G1** | F1F-G1-1 | `REQUEST_EXPIRY_WARNING` is selectable only for `WARNING`/`CRITICAL` buckets; an `EXPIRED`-bucket request is emitted but never selected (it has already passed its warning window). |
 | **G5** | F1F-G5-1 | `OBSERVATION_ERROR` is emitted for any error but actionable only when a lane/request is live; a lone malformed signal is emitted-but-unselected. |
-| **K8** | F1G-K8-1 | Conflicting legacy `resume_thread_id` vs canonical `resume_identity.thread_id` **fail closed** with `InvocationValidationError`, not the plan's "canonical wins" precedence. |
-| **Q1** | F1K-Q1-1 | Out-of-range config numbers are **rejected** with `ConfigError`, not silently clamped to bounds. |
-| **Q17** | F1K-Q17-1 | `prompt.py` has **no template constants** — it is a pure re-export shim; `compose_prompt_bundle` concatenates component bytes verbatim with no placeholder substitution. |
 | **I4** | F2A-I4-1 | `verify_overlay_receipt` is a structural/identity prelaunch check that never reads materialized worktree bytes; byte-integrity is enforced at `restore_worktree` (the destructive boundary), which reports `BLOCKED` "later edit detected". |
-| **L4** | F2B-L4-1 | `CapabilityPermit` has **no** use-count field — bounded single-use is broker-enforced via terminal-result caching + `REPLAY_MISMATCH`/`APPROVAL_REPLAY` refusal (no mutable per-permit state to corrupt). |
-| **L7** | F2B-L7-1 | An adapter's `CapabilityAdapterUnavailable` from `observe` is **caught** → `DENIED` (`SNAPSHOT_UNAVAILABLE`); the typed exception doesn't propagate to the caller. No permit constructed, `dispatch_calls` stays 0. |
+
+*(E19, K8, Q1, Q17, L4, L7 were formerly in this table — promoted to `TESTED-PASSED (parity)` on
+2026-08-20; see the parity note above.)*
 
 (P7/P11, F2C-P7P11-1, are the same shape — retirement refuses fail-closed via an `outcome=="VISIBLE"`
 blocked result rather than raising — but were accepted as TESTED-PASSED-with-note, not counted in
-the 18.)
+the GAP total.)
 
 ---
 
-## D. Live rows not yet authentically reproduced on the weak Ollama backend
+## D. Live rows not authentically reproduced on the weak Ollama backend — CLOSED via Phase 5 (5.B)
 
-These depend on model *output content*, not CLI mechanics, so the fast/weak
-`deepseek-v4-flash:0731-cloud` backend can't always drive them in a single cold turn. Per user
-decision (2026-08-20), they are reachable by **orchestrator coaching** (`claude --resume
-<session_id> "<corrective prompt>"` continues the same transcript with no committed-RESULT
-precondition — see P3-INT-1) across multiple turns until the worker emits a valid committed
-`RESULT.json`; the multi-turn run exercises the steady-state/relay/lifecycle/ack events as
-byproducts. Rows: **F15, G8–G13, G15, G16, G32-live**. Coaching turns spend live Ollama quota, so
-STOP-on-429 applies.
+These 7 event-emission rows (**G8, G9, G11, G12, G13, G15, G16**) were the sole non-PA, non-OOS
+NOT-TESTED residue after phases 0–4. Their classifiers passed in phase 1, but the events never
+emitted on a live lane in phase 3: a single cold Ollama turn emits only
+PROVIDER_STARTED/PROVIDER_EXITED and never reaches the multi-lane / relay / subordinate-process /
+harness-lifecycle states that make these producers fire.
+
+**Phase 5 (2026-08-20) closed all 7 via the 5.B producer-seam path.** The decision gate preferred a
+live **5.A** pass (coaching a multi-turn Ollama lane into these states), but the weak
+`deepseek-v4-flash:0731-cloud` backend cannot sustain them within the time box, so the plan's 5.B
+fallback was taken: the **real producer call sites** were driven in-process and asserted to emit —
+`events.conditions_from_snapshot`/`diff_conditions` (G8/G9/G11/G13), `models.RequestFacts.operator_summary`
+(G12), and `attention.make_source_record` (G15/G16). Each row is now
+`TESTED-PASSED (5.B, producer-seam)` — this proves the producer→event wiring, is **explicitly weaker
+than a live pass, and is never presented as live**; a future live run may upgrade them. MCP_*
+variants of G8/G13 stay OOS. Test: `orchestrator_harness/tests/test_compat_live_emission.py`
+(7 passed, in the clone, uncommitted like the phase-0 fixes). Evidence:
+`plans/compatibility-testing/evidence/5.B/`.
 
 Two items cannot be provoked authentically on this backend and are accepted **synthetically**
 (explicitly labeled fake) per user decision:
@@ -215,3 +237,9 @@ Claude's `parse_transcript_line` never produces a `CANCELLED` provider event (on
 consumer (`lane_controller.py`) treats `FAILED` and `CANCELLED` identically, so this has no
 observed functional effect for Claude lanes — it only reduces the precision of a human reading raw
 evidence after the fact. Recorded (inventory U15, NOTED), not counted as a failure.
+
+**This is the sole genuine Codex-vs-Claude provider divergence, and it is unclosable.** Mirroring
+Codex's mechanism is impossible here because the source event does not exist: the Claude CLI emits
+no `turn.cancelled`-equivalent line, so the parser has no input to map to `CANCELLED`. It is an
+upstream-CLI limitation, not a harness defect, and would only become closable if the Claude CLI
+began emitting a cancellation event. Accepted 2026-08-20.

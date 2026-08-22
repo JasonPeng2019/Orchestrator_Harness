@@ -1,0 +1,32 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked ruff check --config \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\pyproject.toml\u0027 --no-cache orchestrator_harness/invocation.py orchestrator_harness/tests/test_qwen_provider.py orchestrator_harness/tests/test_compat_provider_allowlist.py orchestrator_harness/tests/test_provider_adapter_registry.py; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked basedpyright --project pyrightconfig.json orchestrator_harness/invocation.py orchestrator_harness/tests/test_qwen_provider.py orchestrator_harness/tests/test_compat_provider_allowlist.py orchestrator_harness/tests/test_provider_adapter_registry.py; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; python -m py_compile orchestrator_harness/invocation.py orchestrator_harness/tests/test_qwen_provider.py orchestrator_harness/tests/test_compat_provider_allowlist.py orchestrator_harness/tests/test_provider_adapter_registry.py; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; python -m unittest orchestrator_harness.tests.test_qwen_provider orchestrator_harness.tests.test_compat_provider_allowlist orchestrator_harness.tests.test_provider_adapter_registry -v",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-parity-implementation",
+    "maximum_lifetime_seconds":  113,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  23,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "ROOT repair acceptance: prior comparable scoped provider/parser gate completed in 13 seconds; 90 seconds permits cold locked-environment overhead and static tools, plus policy-capped 23-second cleanup.",
+    "started_at":  "2026-08-22T09:23:38.9600037+00:00",
+    "finished_at":  "2026-08-22T09:24:32.4076714+00:00",
+    "elapsed_seconds":  53.448,
+    "root_process_id":  1900,
+    "observed_process_ids":  [
+                                 1900,
+                                 7484,
+                                 7892,
+                                 11156,
+                                 12576,
+                                 13168,
+                                 16796,
+                                 18480,
+                                 20384,
+                                 26064,
+                                 28272
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\qwen-provider-normalization-root-acceptance-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\qwen-provider-normalization-root-acceptance-001.stderr.log"
+}

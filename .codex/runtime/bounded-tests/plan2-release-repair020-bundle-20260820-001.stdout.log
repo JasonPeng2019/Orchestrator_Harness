@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-release-safeguard-repair",
+  "task_card_id": "CARD-PLAN2-RELEASE-SAFEGUARD-REPAIR-020",
+  "profile_id": "luna-max",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-release-safeguard-repair-020\\.agent-workspace\\PLAN2_RELEASE_SAFEGUARD_REPAIR_CODER_PROMPT_020.md",
+      "sha256": "cfeb06ea50375209973d8ad2b92316a4d8b3dc4369c1a8703ba7f3650727f8e4",
+      "size": 3720
+    }
+  ],
+  "final_sha256": "cfeb06ea50375209973d8ad2b92316a4d8b3dc4369c1a8703ba7f3650727f8e4",
+  "final_size": 3720,
+  "bundle_sha256": "419a304c7315107326c5fad4cbfccd946d3b223dc90a6bb566ec9f19de1634ee"
+}

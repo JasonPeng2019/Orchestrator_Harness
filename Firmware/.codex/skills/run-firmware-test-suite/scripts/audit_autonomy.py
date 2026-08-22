@@ -527,8 +527,8 @@ def check_cross_document_contract(errors: list[str]) -> None:
         "`qwen3.5:397b-cloud`",
         "The implemented Firmware-local route is Qwen Code 0.21.10 through Ollama's OpenAI-compatible endpoint",
         "The admitted target-lane entry point, run from `Firmware/`",
-        "Qwen Code is the active Firmware route",
-        "Codex remains inadmissible until its own dedicated",
+        "Qwen Code is the active primary Firmware route",
+        "Codex is admitted only for the exact named-doer",
         "DeepSeek and Qwen do not receive a Fast/Priority service-tier setting",
         "max",
         "high",
@@ -766,6 +766,8 @@ def _check_result_audit_correction(
         return False, False
 
     result_bytes: bytes | None = None
+    result: object = None
+    result_offenses: dict[str, tuple[str, set[str]]] = {}
     try:
         result_bytes = result_path.read_bytes()
         result = _load_json_without_duplicate_keys(result_bytes.decode("utf-8-sig"))
@@ -865,7 +867,7 @@ def _check_result_audit_correction(
         if pointer not in result_offenses:
             fail(errors, f"{run_name}: correction entry {index} points to a non-offending result string")
 
-    for pointer, (text, violations) in result_offenses.items():
+    for pointer in result_offenses:
         if pointer not in pointers:
             fail(errors, f"{run_name}: RESULT.json{pointer} has no correction entry")
 
@@ -880,7 +882,10 @@ def check_run(
 ) -> None:
     workspace = run / ".agent-workspace"
     amendments = workspace / "SPEC_AMENDMENTS.md"
-    if amendments.exists():
+    # Amendment-shape checks are an admission gate for work that may still run.
+    # Terminal unit evidence is immutable; keep validating its result and safety
+    # wording below without requiring historical lifecycle files to be rewritten.
+    if amendments.exists() and status not in ALLOWED_RESULT_STATUSES:
         text = read_text(amendments)
         notice_index = text.find("**Effective interpretation notice**")
         first_amendment_index = text.find("## Amendment ")

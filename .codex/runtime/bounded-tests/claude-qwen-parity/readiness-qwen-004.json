@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "qwen --version",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-live-qwen",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Qwen CLI version readiness is a no-prompt local command; prior readiness completed under 10 seconds, with 30 seconds for cold startup and 8 seconds policy-capped cleanup.",
+    "started_at":  "2026-08-22T09:29:29.7610306+00:00",
+    "finished_at":  "2026-08-22T09:29:31.5516340+00:00",
+    "elapsed_seconds":  1.791,
+    "root_process_id":  26216,
+    "observed_process_ids":  [
+                                 26216
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\readiness-qwen-004.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\readiness-qwen-004.stderr.log"
+}

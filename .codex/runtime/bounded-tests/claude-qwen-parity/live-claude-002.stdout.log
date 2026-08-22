@@ -1,0 +1,23 @@
+{
+  "base_commit": "76119551c437a01dbded85132a58ea38cd209046",
+  "cleanup": "retained by --keep",
+  "commit_count": 1,
+  "config_overrides": [
+    "model_provider=\"ollama\""
+  ],
+  "head_commit": "4989133127a2102158fb2f93474be4db07dd6dd7",
+  "hello_content": "hello from claude\n",
+  "lane_event_count": 2,
+  "lane_event_types": [
+    "PROVIDER_STARTED",
+    "PROVIDER_EXITED"
+  ],
+  "model": "deepseek-v4-flash:0731-cloud",
+  "provider_exit_code": 0,
+  "provider_id": "claude-code",
+  "provider_pid": 27428,
+  "provider_session_id": "e4f7ee34-4a9f-4394-8a19-5df9000e3d24",
+  "provider_terminal_outcome": "COMPLETED",
+  "schema": "orchestrator-disposable-claude-fixture/v1",
+  "terminal_state": "PROVIDER_EXITED"
+}

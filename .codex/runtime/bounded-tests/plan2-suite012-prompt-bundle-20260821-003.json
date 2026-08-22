@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "python \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260821-plan2-suite-012-manager-014\\.agent-workspace\\compose_prompt_bundle_014.py\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\target-harness",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Pure local one-file SHA-256 and canonical JSON composition; measured equivalent operations complete below one second, with ten seconds conservative headroom.",
+    "started_at":  "2026-08-21T15:38:58.3199430+00:00",
+    "finished_at":  "2026-08-21T15:38:59.5081137+00:00",
+    "elapsed_seconds":  1.188,
+    "root_process_id":  1940,
+    "observed_process_ids":  [
+                                 1940
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite012-prompt-bundle-20260821-003.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite012-prompt-bundle-20260821-003.stderr.log"
+}

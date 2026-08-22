@@ -6,6 +6,12 @@
 
 # Nested/embedded git repos and worktree scratch state - not tracked in this repo
 harness-single-worktrees/
-plans/general-coding-harness/runtime/
+archive/firmware-v2-campaign/general-coding-harness/runtime/
 Firmware/BYO-Firmware-MCP/
 Firmware/target-harness*/
+
+# Claude runtime state emitted when compatibility probes retain their fixture root.
+# The committed evidence keeps the deliberate config snapshot and proof artifacts,
+# but not machine-specific project memory or session caches.
+plans/compatibility-testing/evidence/*/fixture-root/claude-config-dir/projects/
+plans/compatibility-testing/evidence/*/fixture-root/claude-config-dir/sessions/

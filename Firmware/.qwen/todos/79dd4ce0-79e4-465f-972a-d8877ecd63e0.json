@@ -1,0 +1,31 @@
+{
+  "planId": "f35665e2-33e1-447a-b8b8-2ff1360ee47d",
+  "todos": [
+    {
+      "content": "Verify restart boundary: fresh MCP identity, persisted .firm tree intact, setup status shows absent runtime authority",
+      "id": "t1",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-002: attempt stale captured authority once, then reconnect/revalidate with fresh authority",
+      "id": "t2",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-003: logical disconnect subject, prove peer isolation with paired before/after status",
+      "id": "t3",
+      "status": "in_progress"
+    },
+    {
+      "content": "REQ-004: valid plan + full-session permission, restart MCP, prove both cleared with persisted setup intact",
+      "id": "t4",
+      "status": "pending"
+    },
+    {
+      "content": "Final state: logical disconnect both, no permission/plan, processes stopped; write RESULT.json + TEST_REPORT.md",
+      "id": "t5",
+      "status": "pending"
+    }
+  ],
+  "sessionId": "79dd4ce0-79e4-465f-972a-d8877ecd63e0"
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "python Firmware/scripts/orchestration/test_qwen_provider_bootstrap.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\.Orchestrator_Harness-worktrees\\plan2-suite010-qwen-legacy-fastlane-052",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Accepted prior focused adapter tests are short deterministic unittest runs; 10 seconds allows substantial headroom and 5 seconds is the policy minimum cleanup allowance.",
+    "started_at":  "2026-08-21T12:20:46.7193878+00:00",
+    "finished_at":  "2026-08-21T12:20:49.6422124+00:00",
+    "elapsed_seconds":  2.923,
+    "root_process_id":  21844,
+    "observed_process_ids":  [
+                                 21844
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\.Orchestrator_Harness-worktrees\\plan2-suite010-qwen-legacy-fastlane-052\\.codex\\runtime\\bounded-tests\\fastlane-qwen-legacy-052-focused-baseline.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\.Orchestrator_Harness-worktrees\\plan2-suite010-qwen-legacy-fastlane-052\\.codex\\runtime\\bounded-tests\\fastlane-qwen-legacy-052-focused-baseline.stderr.log"
+}

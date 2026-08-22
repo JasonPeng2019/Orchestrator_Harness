@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  240,
+    "expected_upper_bound_seconds":  210,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The repository Stop hook assigns this change-aware verification gate a 240-second total bound; 210 seconds covers Ruff, BasedPyright, compilation, and focused tests with 30 seconds for cleanup.",
+    "started_at":  "2026-08-21T19:03:59.4026231+00:00",
+    "finished_at":  "2026-08-21T19:04:08.9175188+00:00",
+    "elapsed_seconds":  9.515,
+    "root_process_id":  18172,
+    "observed_process_ids":  [
+                                 18172
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\suite014-root-verify-changed-20260821-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\suite014-root-verify-changed-20260821-001.stderr.log"
+}

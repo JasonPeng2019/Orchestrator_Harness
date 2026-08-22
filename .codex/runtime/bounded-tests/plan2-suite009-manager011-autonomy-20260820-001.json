@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .codex/skills/run-firmware-test-suite/scripts/audit_autonomy.py --require-target",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "The same require-target autonomy audit completed in 1.886 seconds for suite008; 30 seconds preserves the accepted plan bound.",
+    "started_at":  "2026-08-21T06:28:34.7825310+00:00",
+    "finished_at":  "2026-08-21T06:28:40.4554263+00:00",
+    "elapsed_seconds":  5.673,
+    "root_process_id":  23252,
+    "observed_process_ids":  [
+                                 23252
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite009-manager011-autonomy-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite009-manager011-autonomy-20260820-001.stderr.log"
+}

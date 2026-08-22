@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev --locked python -m compileall -q orchestrator_harness harness_watcher_implementation",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-release-safeguard-repair-020",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "The release registry compile unit covers orchestrator_harness and harness_watcher_implementation; prior repository compile runs complete in under five seconds, with 30 seconds headroom.",
+    "started_at":  "2026-08-21T00:21:57.5121748+00:00",
+    "finished_at":  "2026-08-21T00:22:00.4848107+00:00",
+    "elapsed_seconds":  2.973,
+    "root_process_id":  19832,
+    "observed_process_ids":  [
+                                 19832
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-compile-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-compile-20260820-001.stderr.log"
+}

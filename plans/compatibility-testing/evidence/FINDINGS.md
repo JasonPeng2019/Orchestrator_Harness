@@ -6,10 +6,25 @@ is a **valid, recorded outcome** — the plan convention is to record, not "fix 
 
 Format: one row per finding. `Severity`: blocker / defect / gap / note.
 
+> **RESOLVED-PARITY (2026-08-20).** Six findings — **F1D-E19-1, F1G-K8-1, F2B-L4-1, F2B-L7-1,
+> F1K-Q1-1, F1K-Q17-1** — were re-dispositioned from GAP to `TESTED-PASSED (parity)` in
+> `active_docs/claude_listed_Features.md`. Rationale: each was tested against a **shared**
+> `orchestrator_harness` module (there is no `claude_adapter`/`codex_adapter` split for config
+> loading, invocation validation, the capability broker, or prompt composition), so the Claude
+> provider already runs Codex's exact mechanism. The recorded "divergence" was between the plan
+> **text** and the shared implementation — not between the two providers. Per the operator decision
+> that the Claude code must mirror Codex's exact mechanism, that condition is already satisfied here.
+> The detail sections below are retained as-is for the historical record; they remain accurate about
+> *what the code does* — only the disposition (GAP → parity pass) changed. **U15-CANCELLED** remains
+> the sole genuine Codex-vs-Claude provider divergence and is unclosable (upstream CLI emits no
+> cancel event). **F2G-A39-1** is flagged **stale** — the ordered recovery ledger it reports missing
+> exists in `harness_watcher_implementation/state.py` (`ORDER`/`transition`/out-of-order guard); the
+> test observed `watcher_integration.watcher_recovery_projection` instead. Re-test pending.
+
 | ID | Phase/Step | Feature | Severity | Summary | Evidence |
 |---|---|---|---|---|---|
 | F1A-C24-1 | 1 / 1.A | C24 `_classify_provider_operations` | note | unknown-operation branch is dead code: it raises `ProviderAdapterError` instead of emitting the intended unsupported-operation record | evidence/1.A |
-| F1D-E19-1 | 1 / 1.D | E19 `_trustworthy_live_status` state gate | note | the RUNNING_CODEX/RUNNING_PROVIDER gate is scoped to conflict detection; discovery-level result acceptance does not reject a result offered under `EXITED`/`PROVIDER_EXITED` | evidence/1.D |
+| F1D-E19-1 | 1 / 1.D | E19 `_trustworthy_live_status` state gate | note | **[RESOLVED-PARITY 2026-08-20 → TESTED-PASSED]** the RUNNING_CODEX/RUNNING_PROVIDER gate is scoped to conflict detection; discovery-level result acceptance does not reject a result offered under `EXITED`/`PROVIDER_EXITED` | evidence/1.D |
 | F1D-E20-1 | 1 / 1.D | E20 result-candidate ambiguity | note | no "more than one candidate result JSON" ambiguity rejection exists; `RESULT.json` is the single canonical result path and a second result-shaped JSON is silently ignored (only the >256 bound in `active_declaration_conflicts` fires) | evidence/1.D |
 | F1E-F3-1 | 1 / 1.E | F3 `WAITING_RELAY` elevation | note | lane elevates to `WAITING_RELAY` only when a matching request is `RELAY_READY`; a request that is `RELAY_UNBOUND` (relay file exists but cannot bind) leaves the lane in `RUNNING_CODEX`, not `WAITING_RELAY` | evidence/1.E |
 | F1E-F24-1 | 1 / 1.E | F24 result-validation memo | note | the validation memo (`_RESULT_VALIDATION_CACHE`) covers only the coding-result path (`_validate_coding_result_cached`); the task-result path (`_validate_task_result_cached`) is not memoized and re-validates on every pass | evidence/1.E |
@@ -17,12 +32,12 @@ Format: one row per finding. `Severity`: blocker / defect / gap / note.
 | F1F-G1-1 | 1 / 1.F | G1 `REQUEST_EXPIRY_WARNING` selectability | note | an expiry request with `expiry_bucket:"EXPIRED"` is emitted (severity error) but never selectable — `_priority` returns 1 only for buckets WARNING/CRITICAL (`notifications.py:1697-1703`) | evidence/1.F |
 | F1F-G5-1 | 1 / 1.F | G5 `OBSERVATION_ERROR` selectability | note | `OBSERVATION_ERROR` is emitted for any `observation_errors` entry but is actionable (priority 2) only when `_active_lanes(snapshot)` or a LIVE request exists (`notifications.py:1727-1735`); a lone malformed signal is emitted-but-unselected | evidence/1.F |
 | F1B-B2-1 | 1 / 1.B | B2 `scan --no-write` flag | note | the `scan --no-write` flag is parsed (`cli.py:243`) but the scan dispatch calls `scan_command(config)` with no `no_write` argument (`cli.py:439`) and `scan_command` has no such parameter (`cli.py:82`); the flag is a pure no-op (the no-write guarantee holds only vacuously — one-shot scan never persists in any mode) | evidence/1.B |
-| F1G-K8-1 | 1 / 1.G | K8 resume thread-ID precedence | note | the plan describes "canonical `resume_identity.thread_id` wins per documented precedence"; the real coding-v1 adapter instead fails **closed** — when both `resume_thread_id` and `resume_identity.thread_id` are present and differ it raises `InvocationValidationError("conflicting requested resume thread IDs")` (`invocation.py:716-722`) rather than silently letting either win | evidence/1.G |
-| F1K-Q1-1 | 1 / 1.K | Q1 `load_config` numeric bounds | note | the plan describes out-of-range config numbers "clamp to bounds"; the real `_number`/`_integer` helpers (`config.py:62,74`) **reject** them — an out-of-range value raises `ConfigError("{key} must be >= {minimum}")` rather than being silently clamped (stricter/safer) | evidence/1.K |
-| F1K-Q17-1 | 1 / 1.K | Q17 `prompt.py` template constants | note | the plan describes asserting "documented template constants / templates" in `prompt.py`; the module contains **no** template constants — it is a pure compatibility re-export shim (7-name `__all__`, object-identity re-exports of `prompt_bundle`), and `compose_prompt_bundle` performs verbatim ordered concatenation with no placeholder substitution | evidence/1.K |
+| F1G-K8-1 | 1 / 1.G | K8 resume thread-ID precedence | note | **[RESOLVED-PARITY 2026-08-20 → TESTED-PASSED]** the plan describes "canonical `resume_identity.thread_id` wins per documented precedence"; the real coding-v1 adapter instead fails **closed** — when both `resume_thread_id` and `resume_identity.thread_id` are present and differ it raises `InvocationValidationError("conflicting requested resume thread IDs")` (`invocation.py:716-722`) rather than silently letting either win | evidence/1.G |
+| F1K-Q1-1 | 1 / 1.K | Q1 `load_config` numeric bounds | note | **[RESOLVED-PARITY 2026-08-20 → TESTED-PASSED]** the plan describes out-of-range config numbers "clamp to bounds"; the real `_number`/`_integer` helpers (`config.py:62,74`) **reject** them — an out-of-range value raises `ConfigError("{key} must be >= {minimum}")` rather than being silently clamped (stricter/safer) | evidence/1.K |
+| F1K-Q17-1 | 1 / 1.K | Q17 `prompt.py` template constants | note | **[RESOLVED-PARITY 2026-08-20 → TESTED-PASSED]** the plan describes asserting "documented template constants / templates" in `prompt.py`; the module contains **no** template constants — it is a pure compatibility re-export shim (7-name `__all__`, object-identity re-exports of `prompt_bundle`), and `compose_prompt_bundle` performs verbatim ordered concatenation with no placeholder substitution | evidence/1.K |
 | F2A-I4-1 | 2 / 2.A | I4/A9 `verify_overlay_receipt` byte-integrity | note | the plan's I4 says "corrupt one materialized byte and re-verify [via `verify_overlay_receipt`] → verification fails"; reality: `verify_overlay_receipt` is a structural/identity prelaunch check (REQ-O41) that **never reads materialized worktree bytes** — byte-integrity is enforced at `restore_worktree` (exact `post_prepare_bytes` comparison, `workspace_overlay.py:789-795`). A corrupted worktree byte still verifies `True`; only `restore_worktree` reports `BLOCKED` "later edit detected" | evidence/2.A |
-| F2B-L4-1 | 2 / 2.B | L4 bounded single-use grant | note | the plan describes a per-permit bounded-use counter; reality: `CapabilityPermit` is an immutable value with **no** `use_count`/`uses_remaining` field — bounded use is broker-enforced via (a) idempotent terminal-result reuse for an exact retry (`dispatch_calls` stays 1) and (b) replay refusal — `REPLAY_MISMATCH` when the request identity is reused under changed semantics, durable `APPROVAL_REPLAY` when a consumed approval's provenance changes (`_used_approvals` seam) | evidence/2.B |
-| F2B-L7-1 | 2 / 2.B | L7 missing-adapter fail-closed | note | the plan says pointing at a missing adapter raises `CapabilityAdapterUnavailable` to the caller; reality: the broker **catches** an adapter's `CapabilityAdapterUnavailable` raised from `observe` and returns a `DENIED` result with reason `SNAPSHOT_UNAVAILABLE` (`capability_broker.py:1400-1406`) — the typed exception does not propagate out of `execute`. No permit is constructed and `dispatch_calls` stays 0 (fail-closed, safer than the plan text) | evidence/2.B |
+| F2B-L4-1 | 2 / 2.B | L4 bounded single-use grant | note | **[RESOLVED-PARITY 2026-08-20 → TESTED-PASSED]** the plan describes a per-permit bounded-use counter; reality: `CapabilityPermit` is an immutable value with **no** `use_count`/`uses_remaining` field — bounded use is broker-enforced via (a) idempotent terminal-result reuse for an exact retry (`dispatch_calls` stays 1) and (b) replay refusal — `REPLAY_MISMATCH` when the request identity is reused under changed semantics, durable `APPROVAL_REPLAY` when a consumed approval's provenance changes (`_used_approvals` seam) | evidence/2.B |
+| F2B-L7-1 | 2 / 2.B | L7 missing-adapter fail-closed | note | **[RESOLVED-PARITY 2026-08-20 → TESTED-PASSED]** the plan says pointing at a missing adapter raises `CapabilityAdapterUnavailable` to the caller; reality: the broker **catches** an adapter's `CapabilityAdapterUnavailable` raised from `observe` and returns a `DENIED` result with reason `SNAPSHOT_UNAVAILABLE` (`capability_broker.py:1400-1406`) — the typed exception does not propagate out of `execute`. No permit is constructed and `dispatch_calls` stays 0 (fail-closed, safer than the plan text) | evidence/2.B |
 | F2C-P7P11-1 | 2 / 2.C | P7/P11 retirement refusal shape | note | the plan phrases P7 (mismatched lane binding) and P11 (missing process proof) as "rejected", implying a raised exception; reality: `retire_terminal_lane` refuses **fail-closed by returning a blocked result** (`outcome == "VISIBLE"`, lane left present) rather than raising — P7 reason `ARCHIVE_EVIDENCE_INCOMPLETE:canonical lifecycle registry root is missing or unsafe` (and `_validate_lane_binding` itself returns `(None, "LANE_BINDING_FOREIGN_WORKTREE")` for a forged `lane_id`), P11 reason `PROCESS_SNAPSHOT_INCOMPLETE` when `process_snapshot` is unproved. Both are correct fail-closed behavior; the note only records that the refusal is an outcome field, not an exception | evidence/2.C |
 | F4A-G17-1 | 4 / 4.A | G17 resume-wake failure path | note | the plan phrases the WAKE_FAILED path as the transport raising to the caller; reality: `DeliveryCoordinator.deliver_at_boundary` **converts** a transport exception into a `DELIVERY_FAILED` receipt (fail-closed, `host_adapters.py:1004`) rather than re-raising, and no `resume_invocation` is recorded. `test_G17` pins that safer provider-neutral contract — TESTED-PASSED, not a divergence | evidence/4.A |
 | F4B-B9-1 | 4 / 4.B | B9 install rollback wrapping | note | the plan phrases an ambiguous owned-id install as raising `CodexInstallConflict`; reality: the bounded installer wraps it as `CodexInstallRollback` (`__cause__` = `CodexInstallConflict`) so the transaction is visibly atomic, and the manifest is absent afterward. `test_B9` asserts both layers — TESTED-PASSED, stricter/safer than the plan text | evidence/4.B |
@@ -483,8 +498,11 @@ anywhere on the module surface or in the shipped manifest keys. The accessors ar
 well-behaved and fail-closed (schema guard rejects malformed manifests; traversal
 and bogus-relative/directory paths are refused), but the packaging/digest half of
 A34 is simply absent. Severity `note`: the shipped behavior is safe and correct for
-what it does; it is narrower than the intended deliverable. Per the outcome rule
-this is a **GAP** (intended-vs-actual divergence), not a pass.
+what it does; it is narrower than the intended deliverable. Reclassified
+2026-08-20: this is a **DESIGN-REC** (design recommendation for shared code), **not a
+GAP** — it is a shared-code shortfall relative to an old plan doc, behaves identically
+for Codex and Claude, and is not a Codex-vs-Claude provider divergence. The only genuine
+provider gap in the inventory is U15.
 
 **Code under test:** `orchestrator_harness/release_assets.py` (`release_manifest`,
 `manifest_asset_paths`, `read_package_asset`; `__all__`).
@@ -515,9 +533,14 @@ labeled `open`/`acknowledged`/`resolved` in input order; `actionable` = only `op
 ids; a lone `resolved` record (never previously `open`) is admitted unchanged;
 `STOP_ASSIGNING` is not in `WATCHER_RECOVERY_STATES` so those records are silently
 dropped. Output is exactly `{schema, states, actionable}` — no queue events. Severity
-`note`: the shipped projection is safe and internally consistent, but the ordered
-admission ledger the plan intended is absent → **GAP** (intended-vs-actual
-divergence), not a pass. (A31 condition merging in the same module is a genuine PASS.)
+`note`: the shipped projection is safe and internally consistent. Reclassified
+2026-08-20: **DESIGN-REC**, **not a GAP** — a shared-code recommendation, identical for
+both providers, not a Codex-vs-Claude provider divergence (the only provider gap is U15).
+**STALE FINDING:** this tested only the stateless `watcher_recovery_projection`; an
+ordered `STOP_ASSIGNING → … → RESOLVED` ledger with an out-of-order guard **does** exist
+in `harness_watcher_implementation/state.py` (`ORDER`, `transition()` raising
+`ValueError("recovery transition out of order")`, `recovery_history`) — re-test pending.
+(A31 condition merging in the same module is a genuine PASS.)
 
 **Code under test:** `orchestrator_harness/watcher_integration.py`
 (`watcher_recovery_projection`, `WATCHER_RECOVERY_STATES`).

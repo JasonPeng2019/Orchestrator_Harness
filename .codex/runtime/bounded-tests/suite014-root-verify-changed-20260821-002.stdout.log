@@ -1,0 +1,312 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== types changed Python ==
+0 errors, 0 warnings, 0 notes
+
+== compile changed Python ==
+
+== Firmware MCP Ruff ==
+All checks passed!
+
+== Firmware MCP Pyright ==
+0 errors, 0 warnings, 0 informations
+
+== Firmware MCP tests ==
+============================= test session starts =============================
+platform win32 -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP
+configfile: pyproject.toml
+plugins: anyio-4.14.2
+collected 6 items
+
+tests\test_import_smoke.py .                                             [ 16%]
+tests\test_probe_identity_guard.py FFFFF                                 [100%]
+
+================================== FAILURES ===================================
+_______ test_wrong_stable_probe_is_refused_before_hardware_or_authority _______
+
+tmp_path = WindowsPath('C:/Users/Jason/AppData/Local/Temp/pytest-of-Jason/pytest-3052/test_wrong_stable_probe_is_ref0')
+
+    def test_wrong_stable_probe_is_refused_before_hardware_or_authority(tmp_path: Path) -> None:
+        bindings = [ProbeIdentity("j-link", "683710208")]
+>       validator, calls, profile_path = make_validator(tmp_path, bindings)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_probe_identity_guard.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tmp_path = WindowsPath('C:/Users/Jason/AppData/Local/Temp/pytest-of-Jason/pytest-3052/test_wrong_stable_probe_is_ref0')
+bindings = [ProbeIdentity(probe_family='j-link', usb_serial='683710208')]
+
+    def make_validator(
+        tmp_path: Path,
+        bindings: list[ProbeIdentity],
+    ) -> tuple[BoardValidator, Calls, Path]:
+        calls = Calls()
+        profile = make_profile(tmp_path)
+        original = profile.source_path.read_bytes()
+    
+        def connect(_profile: BoardProfile, _probe: ValidationProbe, _timeout: float) -> object:
+            calls.connect += 1
+            return object()
+    
+        def read(_connection: object, _address: int, _width: int, _timeout: float) -> int:
+            calls.read += 1
+            return 0x12345678
+    
+        def close(_connection: object) -> None:
+            calls.close += 1
+    
+        def stamp(*_args: str | None) -> bool:
+            calls.stamp += 1
+            return True
+    
+>       validator = BoardValidator(
+            Profiles(profile),  # type: ignore[arg-type]
+            Reports(tmp_path),  # type: ignore[arg-type]
+            ValidationBackend(
+                inventory=lambda: ValidationInventory(
+                    probes=(
+                        ValidationProbe("probe-a", "J-Link A", "j-link", "683710208"),
+                        ValidationProbe("probe-b", "J-Link B", "j-link", "683854191"),
+                    )
+                ),
+                target_supported=lambda _target: True,
+                connect=connect,
+                read_memory=read,
+                capture_serial=lambda *_args: "",
+                close=close,
+            ),
+            hooks=ValidationHooks(
+                load_safety_map=lambda _profile: SafetyMapSnapshot(True, True, "map-digest"),
+                stamp_session=stamp,
+                record_mismatch=lambda *_args: False,
+            ),
+            confirmed_probe_bindings=lambda _board_id: tuple(bindings),
+        )
+E       TypeError: BoardValidator.__init__() got an unexpected keyword argument 'confirmed_probe_bindings'
+
+tests\test_probe_identity_guard.py:94: TypeError
+________ test_correct_confirmed_probe_continues_normal_live_validation ________
+
+tmp_path = WindowsPath('C:/Users/Jason/AppData/Local/Temp/pytest-of-Jason/pytest-3052/test_correct_confirmed_probe_c0')
+
+    def test_correct_confirmed_probe_continues_normal_live_validation(tmp_path: Path) -> None:
+>       validator, calls, _profile_path = make_validator(
+            tmp_path, [ProbeIdentity("j-link", "683710208")]
+        )
+
+tests\test_probe_identity_guard.py:143: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tmp_path = WindowsPath('C:/Users/Jason/AppData/Local/Temp/pytest-of-Jason/pytest-3052/test_correct_confirmed_probe_c0')
+bindings = [ProbeIdentity(probe_family='j-link', usb_serial='683710208')]
+
+    def make_validator(
+        tmp_path: Path,
+        bindings: list[ProbeIdentity],
+    ) -> tuple[BoardValidator, Calls, Path]:
+        calls = Calls()
+        profile = make_profile(tmp_path)
+        original = profile.source_path.read_bytes()
+    
+        def connect(_profile: BoardProfile, _probe: ValidationProbe, _timeout: float) -> object:
+            calls.connect += 1
+            return object()
+    
+        def read(_connection: object, _address: int, _width: int, _timeout: float) -> int:
+            calls.read += 1
+            return 0x12345678
+    
+        def close(_connection: object) -> None:
+            calls.close += 1
+    
+        def stamp(*_args: str | None) -> bool:
+            calls.stamp += 1
+            return True
+    
+>       validator = BoardValidator(
+            Profiles(profile),  # type: ignore[arg-type]
+            Reports(tmp_path),  # type: ignore[arg-type]
+            ValidationBackend(
+                inventory=lambda: ValidationInventory(
+                    probes=(
+                        ValidationProbe("probe-a", "J-Link A", "j-link", "683710208"),
+                        ValidationProbe("probe-b", "J-Link B", "j-link", "683854191"),
+                    )
+                ),
+                target_supported=lambda _target: True,
+                connect=connect,
+                read_memory=read,
+                capture_serial=lambda *_args: "",
+                close=close,
+            ),
+            hooks=ValidationHooks(
+                load_safety_map=lambda _profile: SafetyMapSnapshot(True, True, "map-digest"),
+                stamp_session=stamp,
+                record_mismatch=lambda *_args: False,
+            ),
+            confirmed_probe_bindings=lambda _board_id: tuple(bindings),
+        )
+E       TypeError: BoardValidator.__init__() got an unexpected keyword argument 'confirmed_probe_bindings'
+
+tests\test_probe_identity_guard.py:94: TypeError
+________ test_no_confirmed_binding_preserves_existing_probe_validation ________
+
+tmp_path = WindowsPath('C:/Users/Jason/AppData/Local/Temp/pytest-of-Jason/pytest-3052/test_no_confirmed_binding_pres0')
+
+    def test_no_confirmed_binding_preserves_existing_probe_validation(tmp_path: Path) -> None:
+>       validator, calls, _profile_path = make_validator(tmp_path, [])
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_probe_identity_guard.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tmp_path = WindowsPath('C:/Users/Jason/AppData/Local/Temp/pytest-of-Jason/pytest-3052/test_no_confirmed_binding_pres0')
+bindings = []
+
+    def make_validator(
+        tmp_path: Path,
+        bindings: list[ProbeIdentity],
+    ) -> tuple[BoardValidator, Calls, Path]:
+        calls = Calls()
+        profile = make_profile(tmp_path)
+        original = profile.source_path.read_bytes()
+    
+        def connect(_profile: BoardProfile, _probe: ValidationProbe, _timeout: float) -> object:
+            calls.connect += 1
+            return object()
+    
+        def read(_connection: object, _address: int, _width: int, _timeout: float) -> int:
+            calls.read += 1
+            return 0x12345678
+    
+        def close(_connection: object) -> None:
+            calls.close += 1
+    
+        def stamp(*_args: str | None) -> bool:
+            calls.stamp += 1
+            return True
+    
+>       validator = BoardValidator(
+            Profiles(profile),  # type: ignore[arg-type]
+            Reports(tmp_path),  # type: ignore[arg-type]
+            ValidationBackend(
+                inventory=lambda: ValidationInventory(
+                    probes=(
+                        ValidationProbe("probe-a", "J-Link A", "j-link", "683710208"),
+                        ValidationProbe("probe-b", "J-Link B", "j-link", "683854191"),
+                    )
+                ),
+                target_supported=lambda _target: True,
+                connect=connect,
+                read_memory=read,
+                capture_serial=lambda *_args: "",
+                close=close,
+            ),
+            hooks=ValidationHooks(
+                load_safety_map=lambda _profile: SafetyMapSnapshot(True, True, "map-digest"),
+                stamp_session=stamp,
+                record_mismatch=lambda *_args: False,
+            ),
+            confirmed_probe_bindings=lambda _board_id: tuple(bindings),
+        )
+E       TypeError: BoardValidator.__init__() got an unexpected keyword argument 'confirmed_probe_bindings'
+
+tests\test_probe_identity_guard.py:94: TypeError
+______ test_multiple_active_probe_bindings_fail_closed_without_guessing _______
+
+tmp_path = WindowsPath('C:/Users/Jason/AppData/Local/Temp/pytest-of-Jason/pytest-3052/test_multiple_active_probe_bin0')
+
+    def test_multiple_active_probe_bindings_fail_closed_without_guessing(tmp_path: Path) -> None:
+        bindings = [
+            ProbeIdentity("j-link", "683710208"),
+            ProbeIdentity("j-link", "683854191"),
+        ]
+>       validator, calls, profile_path = make_validator(tmp_path, bindings)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_probe_identity_guard.py:168: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tmp_path = WindowsPath('C:/Users/Jason/AppData/Local/Temp/pytest-of-Jason/pytest-3052/test_multiple_active_probe_bin0')
+bindings = [ProbeIdentity(probe_family='j-link', usb_serial='683710208'), ProbeIdentity(probe_family='j-link', usb_serial='683854191')]
+
+    def make_validator(
+        tmp_path: Path,
+        bindings: list[ProbeIdentity],
+    ) -> tuple[BoardValidator, Calls, Path]:
+        calls = Calls()
+        profile = make_profile(tmp_path)
+        original = profile.source_path.read_bytes()
+    
+        def connect(_profile: BoardProfile, _probe: ValidationProbe, _timeout: float) -> object:
+            calls.connect += 1
+            return object()
+    
+        def read(_connection: object, _address: int, _width: int, _timeout: float) -> int:
+            calls.read += 1
+            return 0x12345678
+    
+        def close(_connection: object) -> None:
+            calls.close += 1
+    
+        def stamp(*_args: str | None) -> bool:
+            calls.stamp += 1
+            return True
+    
+>       validator = BoardValidator(
+            Profiles(profile),  # type: ignore[arg-type]
+            Reports(tmp_path),  # type: ignore[arg-type]
+            ValidationBackend(
+                inventory=lambda: ValidationInventory(
+                    probes=(
+                        ValidationProbe("probe-a", "J-Link A", "j-link", "683710208"),
+                        ValidationProbe("probe-b", "J-Link B", "j-link", "683854191"),
+                    )
+                ),
+                target_supported=lambda _target: True,
+                connect=connect,
+                read_memory=read,
+                capture_serial=lambda *_args: "",
+                close=close,
+            ),
+            hooks=ValidationHooks(
+                load_safety_map=lambda _profile: SafetyMapSnapshot(True, True, "map-digest"),
+                stamp_session=stamp,
+                record_mismatch=lambda *_args: False,
+            ),
+            confirmed_probe_bindings=lambda _board_id: tuple(bindings),
+        )
+E       TypeError: BoardValidator.__init__() got an unexpected keyword argument 'confirmed_probe_bindings'
+
+tests\test_probe_identity_guard.py:94: TypeError
+_______ test_production_adapter_ignores_corrupt_non_authoritative_cache _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001D3C2762FF0>
+
+    def test_production_adapter_ignores_corrupt_non_authoritative_cache(
+        monkeypatch: pytest.MonkeyPatch,
+    ) -> None:
+        from pyocd_debug_mcp import server
+    
+        class CorruptCache:
+            def load_records(self) -> list[object]:
+                raise AttachmentCacheError("corrupt hint")
+    
+        monkeypatch.setattr(server, "_attachment_cache", CorruptCache())
+    
+>       assert server._confirmed_probe_bindings("nrf_a") == ()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'pyocd_debug_mcp.server' has no attribute '_confirmed_probe_bindings'
+
+tests\test_probe_identity_guard.py:201: AttributeError
+=========================== short test summary info ===========================
+FAILED tests/test_probe_identity_guard.py::test_wrong_stable_probe_is_refused_before_hardware_or_authority
+FAILED tests/test_probe_identity_guard.py::test_correct_confirmed_probe_continues_normal_live_validation
+FAILED tests/test_probe_identity_guard.py::test_no_confirmed_binding_preserves_existing_probe_validation
+FAILED tests/test_probe_identity_guard.py::test_multiple_active_probe_bindings_fail_closed_without_guessing
+FAILED tests/test_probe_identity_guard.py::test_production_adapter_ignores_corrupt_non_authoritative_cache
+========================= 5 failed, 1 passed in 8.14s =========================

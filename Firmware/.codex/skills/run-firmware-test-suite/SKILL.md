@@ -115,7 +115,9 @@ the suite and owns firmware/MCP-server decisions, and is neither a doer nor a re
 
 ## Sprint completion and interruption
 
-An interruption is not a sprint result. Keep the same logical sprint ID, sealed specification,
+The test orchestrator owns each logical lane and sprint until it completes. It must recover an
+affected lane itself and must not return that lane or sprint to ROOT merely because an execution
+issue occurred. An interruption is not a sprint result. Keep the same logical sprint ID, sealed specification,
 verified checkpoints, completed evidence, and accumulated findings. If a manager, provider, or
 lane invocation cannot continue, verify its exact process tree and any live action are absent or
 contained, publish a continuity handoff, and issue fresh runtime authority for the first affected
@@ -123,12 +125,20 @@ action. Release or reassign a stale claim only after complete old-owner/process 
 otherwise hold only that exact resource. Continue every unrelated dependency-ready lane.
 
 Administrative/provider failures, malformed calls, doer mistakes, specification/fixture/server
-faults, and harness defects do not terminalize the sprint. Correct the affected suite-owned fact or
-record a terminal unit finding and continue every feasible unit. If a harness defect is observed,
-record it but do not launch harness repair during the sprint. First publish one
-`COMPLETED_WITH_FINDINGS` handoff containing the full pool; ROOT reviews and repairs that pool
-after completion. A clean accepted sprint publishes `COMPLETED_CLEAN`. Use `INCOMPLETE` only for
-explicit user cancellation, withdrawn authority, or live harm that cannot be isolated safely.
+faults, and possible harness errors do not terminalize the sprint. Correct the affected suite-owned
+fact or record a terminal unit finding and continue every feasible unit. Record each possible
+harness error as a suspected harness finding containing its affected lane/unit, evidence, observed
+behavior, expected behavior, containment, whether other work continued, and cleanup/uncertainty.
+Do not diagnose it as a defect or launch review/repair during the sprint. Publish one
+`COMPLETED_WITH_FINDINGS` handoff containing the complete pool; ROOT alone classifies and repairs
+confirmed defects after completion. A clean accepted sprint publishes `COMPLETED_CLEAN`. Use
+`INCOMPLETE` only for explicit user cancellation or withdrawn authority.
+
+After a completed sprint, wait at the inter-sprint boundary while ROOT reviews the complete pool.
+If ROOT confirms a harness defect, reset/no-count the sprint and start the next sprint only from the
+accepted repaired harness. If ROOT rejects the suspicion or assigns it to the suite, do not reset the
+streak automatically; use ROOT's completed-sprint verdict. Plan 2 completes only after three
+consecutive completed accepted sprints that ROOT classifies as harness-clean.
 
 ## WIP harness and deterministic watcher
 

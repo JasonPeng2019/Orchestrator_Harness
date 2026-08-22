@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .agent-workspace/epochs/20260820-plan2-suite-008-review-011/compute_reviewer_bundle.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Prompt bundle generation is a local hash/JSON operation and the preceding suite manager bundle completed in under two seconds; 20 seconds is conservative.",
+    "started_at":  "2026-08-20T22:39:54.1452189+00:00",
+    "finished_at":  "2026-08-20T22:39:55.9101161+00:00",
+    "elapsed_seconds":  1.765,
+    "root_process_id":  14780,
+    "observed_process_ids":  [
+                                 14780
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-review011-bundle-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-review011-bundle-20260820-001.stderr.log"
+}

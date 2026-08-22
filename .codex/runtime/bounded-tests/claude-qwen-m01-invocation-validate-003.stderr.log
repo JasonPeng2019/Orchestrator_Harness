@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.codex\runtime\stable-harness\claude-qwen-parity-001\validate_cp01_invocation.py", line 3, in <module>
+    from orchestrator_harness.lane_controller import load_invocation
+ModuleNotFoundError: No module named 'orchestrator_harness'

@@ -1,0 +1,24 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+  --> .codex\scripts\dev_state.py:71:70
+   |
+70 | }
+   - TOP_LEVEL_VIEW_ONLY_ROOTS = frozenset({"firmware-v2-harness-runner"})
+71 + TOP_LEVEL_VIEW_ONLY_ROOTS = frozenset({"firmware-v2-harness-runner"})
+72 |
+   |
+
+unformatted: File would be reformatted
+   --> .codex\tests\test_hooks.py:639:48
+    |
+638 |         "evidence/reproducer.c",
+    -         "firmware-v2-harness-runner/viewer.py",
+639 +         "firmware-v2-harness-runner/viewer.py",
+640 |     ):
+    |
+
+2 files would be reformatted

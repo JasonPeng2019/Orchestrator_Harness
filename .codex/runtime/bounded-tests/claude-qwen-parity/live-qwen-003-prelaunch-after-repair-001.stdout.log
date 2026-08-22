@@ -1,0 +1,4 @@
+LOAD=PASS qwen-code qwen-hello
+CANONICAL_PREFLIGHT=PASS
+ARGV=PASS ['C:\\Users\\Jason\\AppData\\Local\\qwen-code\\bin\\qwen.CMD', '--approval-mode=yolo', '--model', 'deepseek-v4-flash:0731-cloud', '--output-format', 'stream-json']
+EVIDENCE=PASS 858b2f7ca06585ea710335835eedb95b60fcf53b2df2388c61b445ed26be9160

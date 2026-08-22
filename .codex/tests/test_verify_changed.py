@@ -71,6 +71,7 @@ def test_manifest_excludes_linked_worktrees_and_legacy_entries(tmp_path: Path) -
         "value = 4\n",
     )
     _write(tmp_path, "scratch/session-analysis/analyze_session.py", "value = 5\n")
+    _write(tmp_path, "archive/firmware-v2-campaign/session-analysis/analyze_session.py", "value = 6\n")
 
     manifest = repository_manifest(tmp_path)
     assert set(manifest) == {"source.py"}
@@ -86,6 +87,7 @@ def test_manifest_excludes_linked_worktrees_and_legacy_entries(tmp_path: Path) -
         "legacy-worktree-entry"
     )
     state["files"]["scratch/search_fw_blobs.py"] = "legacy-scratch-entry"
+    state["files"]["archive/firmware-v2-campaign/session-analysis/analyze_session.py"] = "legacy-archive-entry"
     state_path.write_text(json.dumps(state), encoding="utf-8")
 
     assert linked.is_file()
@@ -275,29 +277,34 @@ def test_firmware_mcp_change_uses_its_package_checks(tmp_path: Path) -> None:
         "Firmware MCP tests",
     }
     assert all(check.cwd == tmp_path / "Firmware" / "BYO-Firmware-MCP" for check in checks.values())
+    project_python = (
+        tmp_path
+        / "Firmware"
+        / "BYO-Firmware-MCP"
+        / ".venv"
+        / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
+    )
     assert checks["Firmware MCP Ruff"].argv == (
-        "uv",
-        "run",
-        "--locked",
-        "--no-sync",
+        str(project_python),
+        "-m",
         "ruff",
         "check",
         ".",
     )
     assert checks["Firmware MCP Pyright"].argv == (
-        "uv",
-        "run",
-        "--locked",
-        "--no-sync",
+        str(project_python),
+        "-m",
         "pyright",
+        "--pythonpath",
+        str(project_python),
     )
     assert checks["Firmware MCP tests"].argv == (
-        "uv",
-        "run",
-        "--locked",
-        "--no-sync",
+        str(project_python),
+        "-m",
         "pytest",
     )
+    expected_environment = (("VIRTUAL_ENV", str(tmp_path / "Firmware" / "BYO-Firmware-MCP" / ".venv")),)
+    assert all(check.env_overrides == expected_environment for check in checks.values())
 
 
 def test_deleted_codex_test_runs_the_codex_test_root(tmp_path: Path) -> None:

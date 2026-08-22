@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked python \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\scripts\\worktree_task.py\u0027 create p2-crtest-032 --branch plan2/release-command-resolution-test-032 --owner doer-main",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\harness-candidate",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Equivalent candidate worktree attachment completed in under three seconds; 60 seconds permits Windows checkout and local I/O headroom.",
+    "started_at":  "2026-08-21T02:27:58.5146917+00:00",
+    "finished_at":  "2026-08-21T02:28:00.6857913+00:00",
+    "elapsed_seconds":  2.171,
+    "root_process_id":  25256,
+    "observed_process_ids":  [
+                                 25256
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-command-resolution-test032-worktree-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-command-resolution-test032-worktree-20260820-001.stderr.log"
+}

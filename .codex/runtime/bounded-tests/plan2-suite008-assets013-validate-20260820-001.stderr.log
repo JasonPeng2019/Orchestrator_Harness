@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.agent-workspace\epochs\20260820-plan2-suite-008-assets-013\validate_doer_invocation.py", line 11, in <module>
+    from scripts.orchestration.qwen_provider_bootstrap import register_qwen_code
+ModuleNotFoundError: No module named 'scripts'

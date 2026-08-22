@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  225,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  45,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The prior changed-code gate completed 99 focused tests in about 72 seconds; 180 seconds plus policy-capped cleanup covers the current small audit change. The prior launcher was externally cut off by the tool timeout before producing a supervisor result; this invocation supplies the declared lifetime.",
+    "started_at":  "2026-08-20T20:17:44.5298157+00:00",
+    "finished_at":  "2026-08-20T20:17:47.0928479+00:00",
+    "elapsed_seconds":  2.563,
+    "root_process_id":  27828,
+    "observed_process_ids":  [
+                                 27828
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-v3924-verify-changed-20260820-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-v3924-verify-changed-20260820-002.stderr.log"
+}

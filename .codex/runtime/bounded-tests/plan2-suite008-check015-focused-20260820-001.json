@@ -1,0 +1,27 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m unittest orchestrator_harness.tests.test_operator_launch orchestrator_harness.tests.test_manager_notifications_adversarial orchestrator_harness.tests.test_processes -v",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-candidate-check-015",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Focused suite-008 candidate check: operator_launch real detached subprocesses plus fully mocked adversarial/processes modules; 120s conservative upper bound with 30s cleanup allowance within the 25% cap (same scope as assets-014 r2).",
+    "started_at":  "2026-08-20T23:32:54.9201589+00:00",
+    "finished_at":  "2026-08-20T23:33:23.7438237+00:00",
+    "elapsed_seconds":  28.824,
+    "root_process_id":  10720,
+    "observed_process_ids":  [
+                                 10720,
+                                 14124,
+                                 16908,
+                                 25604,
+                                 28820,
+                                 30704
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-check015-focused-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-check015-focused-20260820-001.stderr.log"
+}

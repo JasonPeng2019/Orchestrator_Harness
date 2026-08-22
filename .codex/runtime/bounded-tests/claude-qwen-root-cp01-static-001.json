@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "$paths = @(\n  \u0027orchestrator_harness/cli.py\u0027,\n  \u0027orchestrator_harness/codex_adapter.py\u0027,\n  \u0027orchestrator_harness/invocation.py\u0027,\n  \u0027orchestrator_harness/lane_controller.py\u0027,\n  \u0027orchestrator_harness/provider.py\u0027,\n  \u0027orchestrator_harness/claude_adapter.py\u0027,\n  \u0027orchestrator_harness/claude_installer.py\u0027,\n  \u0027orchestrator_harness/assets/claude/orchestrator_harness_post_tool_use.py\u0027,\n  \u0027orchestrator_harness/assets/claude/orchestrator_harness_stop.py\u0027,\n  \u0027orchestrator_harness/tests/test_compat_claude_adapter.py\u0027,\n  \u0027orchestrator_harness/tests/test_compat_provider_allowlist.py\u0027,\n  \u0027orchestrator_harness/tests/test_compat_provider_argv.py\u0027,\n  \u0027orchestrator_harness/tests/test_compat_transcript_parse.py\u0027,\n  \u0027examples/disposable_claude_coding_fixture.py\u0027\n)\nuv run --project .codex/dev --locked ruff check --config .codex/dev/pyproject.toml --no-cache @paths\nif ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }\nuv run --project .codex/dev --locked basedpyright --project pyrightconfig.json @paths\nif ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }\nuv run --project .codex/dev --locked python -m py_compile @paths\nexit $LASTEXITCODE",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-parity-implementation",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "ROOT CP-01 changed-Python static gate; observed focused execution is under 25 seconds and 120 seconds covers Ruff, BasedPyright, compilation, and dependency startup with 30 seconds cleanup",
+    "started_at":  "2026-08-22T07:12:40.0927798+00:00",
+    "finished_at":  "2026-08-22T07:12:41.7421307+00:00",
+    "elapsed_seconds":  1.649,
+    "root_process_id":  27604,
+    "observed_process_ids":  [
+                                 27604
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  2,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp01-static-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp01-static-001.stderr.log"
+}

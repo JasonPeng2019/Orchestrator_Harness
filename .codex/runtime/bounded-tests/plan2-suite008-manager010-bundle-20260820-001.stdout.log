@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-firmware-suite-recovery",
+  "task_card_id": "CARD-PLAN2-SUITE-MANAGER-010",
+  "profile_id": "sol-low",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260820-plan2-suite-008-resume-010-manager\\.agent-workspace\\PLAN2_SUITE_RECOVERY_MANAGER_PROMPT_010.md",
+      "sha256": "308be41526bfbdc691df0ecaeb563343bb6f516f8af8ec5c525efdb3147fff1b",
+      "size": 3355
+    }
+  ],
+  "final_sha256": "308be41526bfbdc691df0ecaeb563343bb6f516f8af8ec5c525efdb3147fff1b",
+  "final_size": 3355,
+  "bundle_sha256": "21f42d8a53267c0145e1f3bc1c6deea03647647f818a714fef19a2ac32498d19"
+}

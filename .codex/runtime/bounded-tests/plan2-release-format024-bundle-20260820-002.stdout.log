@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-release-safeguard-format",
+  "task_card_id": "CARD-PLAN2-RELEASE-SAFEGUARD-FORMAT-024",
+  "profile_id": "deepseek-v4-flash-0731-high",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-release-safeguard-assets-021\\.agent-workspace\\PLAN2_RELEASE_SAFEGUARD_FORMAT_DOER_PROMPT_024.md",
+      "sha256": "afc390a13adebf948d2c8de82cf6fb16ada2f9ef6c8449ff1d4d48f50f2b31ad",
+      "size": 1679
+    }
+  ],
+  "final_sha256": "afc390a13adebf948d2c8de82cf6fb16ada2f9ef6c8449ff1d4d48f50f2b31ad",
+  "final_size": 1679,
+  "bundle_sha256": "0408d2809d777182f736cdae4555d9e429e5640ae89199046563591ef49f3350"
+}

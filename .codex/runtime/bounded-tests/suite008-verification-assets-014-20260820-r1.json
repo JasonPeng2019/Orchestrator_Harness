@@ -1,0 +1,28 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m unittest orchestrator_harness.tests.test_operator_launch orchestrator_harness.tests.test_manager_notifications_adversarial orchestrator_harness.tests.test_processes -v",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-verification-assets-recovery-014",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The three focused unittest modules: operator_launch exercises real detached subprocesses with 2s sleeps and a 60s-deadline public-route poll (typically 5-10s); the adversarial and processes modules are fully mocked. 120s is a conservative observed upper bound with a 30s cleanup allowance within the 25% cap.",
+    "started_at":  "2026-08-20T23:21:43.3838717+00:00",
+    "finished_at":  "2026-08-20T23:22:13.0978041+00:00",
+    "elapsed_seconds":  29.714,
+    "root_process_id":  22872,
+    "observed_process_ids":  [
+                                 2420,
+                                 2864,
+                                 6396,
+                                 9936,
+                                 19700,
+                                 22872,
+                                 27312
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\suite008-verification-assets-014-20260820-r1.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\suite008-verification-assets-014-20260820-r1.stderr.log"
+}

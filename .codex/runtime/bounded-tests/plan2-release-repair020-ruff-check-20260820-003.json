@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev --locked python -m ruff check --select E9,F63,F7,F82 .",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-release-safeguard-repair-020",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The release registry requires Ruff E9,F63,F7,F82; the parent repository dev environment is the established locked runner and prior local release checks complete within 20 seconds.",
+    "started_at":  "2026-08-21T00:20:20.0505304+00:00",
+    "finished_at":  "2026-08-21T00:20:22.7297110+00:00",
+    "elapsed_seconds":  2.679,
+    "root_process_id":  9144,
+    "observed_process_ids":  [
+                                 9144
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-ruff-check-20260820-003.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-ruff-check-20260820-003.stderr.log"
+}

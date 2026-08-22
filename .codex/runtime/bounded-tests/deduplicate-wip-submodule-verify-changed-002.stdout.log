@@ -1,0 +1,348 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+   --> .codex\scripts\dev_state.py:95:33
+    |
+94  |         except OSError as exc:
+    -             raise SnapshotError(
+    -                 f"cannot read verification input {relative.as_posix()}: {exc}"
+    -             ) from exc
+95  +             raise SnapshotError(f"cannot read verification input {relative.as_posix()}: {exc}") from exc
+96  |         manifest[relative.as_posix()] = digest
+--------------------------------------------------------------------------------
+160 |         or not isinstance(previous, dict)
+    -         or not all(
+    -             isinstance(path, str) and isinstance(digest, str)
+    -             for path, digest in previous.items()
+    -         )
+161 +         or not all(isinstance(path, str) and isinstance(digest, str) for path, digest in previous.items())
+162 |     ):
+--------------------------------------------------------------------------------
+166 |         for path, digest in previous.items()
+    -         if not _is_linked_worktree_member(root, Path(path))
+    -         and not _skip_path(Path(path))
+167 +         if not _is_linked_worktree_member(root, Path(path)) and not _skip_path(Path(path))
+168 |     }
+    -     changed = sorted(
+    -         path
+    -         for path in set(previous) | set(manifest)
+    -         if previous.get(path) != manifest.get(path)
+    -     )
+    -     return VerificationDelta(
+    -         manifest=manifest, changed_paths=tuple(Path(path) for path in changed)
+    -     )
+169 +     changed = sorted(path for path in set(previous) | set(manifest) if previous.get(path) != manifest.get(path))
+170 +     return VerificationDelta(manifest=manifest, changed_paths=tuple(Path(path) for path in changed))
+171 |
+--------------------------------------------------------------------------------
+187 |             for name in sorted(directory_names)
+    -             if not _skip_path(relative_directory / name)
+    -             and not _is_linked_worktree(current / name)
+188 +             if not _skip_path(relative_directory / name) and not _is_linked_worktree(current / name)
+189 |         ]
+    |
+
+unformatted: File would be reformatted
+   --> .codex\tests\test_hooks.py:43:44
+    |
+42  |                 "launcher_categories": {
+    -                     "python_script": python
+    -                     if python is not None
+    -                     else ["python", "python3", "py"],
+43  +                     "python_script": python if python is not None else ["python", "python3", "py"],
+44  |                     "powershell_file": ["powershell", "pwsh"],
+--------------------------------------------------------------------------------
+53  |
+    - def _run_windows_hook(
+    -     command: str, *, cwd: Path, hook_input: object
+    - ) -> subprocess.CompletedProcess[str]:
+54  + def _run_windows_hook(command: str, *, cwd: Path, hook_input: object) -> subprocess.CompletedProcess[str]:
+55  |     return subprocess.run(
+--------------------------------------------------------------------------------
+65  | def test_guard_blocks_destructive_git_and_allows_read_only_git() -> None:
+    -     blocked = hook_runner.guard_dangerous(
+    -         {"tool_input": {"command": "git reset --hard HEAD~1"}}
+    -     )
+66  +     blocked = hook_runner.guard_dangerous({"tool_input": {"command": "git reset --hard HEAD~1"}})
+67  |     assert blocked["hookSpecificOutput"]["permissionDecision"] == "deny"
+    -     assert (
+    -         hook_runner.guard_dangerous({"tool_input": {"command": "git status --short"}})
+    -         == {}
+    -     )
+68  +     assert hook_runner.guard_dangerous({"tool_input": {"command": "git status --short"}}) == {}
+69  |
+--------------------------------------------------------------------------------
+179 |
+    -     assert (
+    -         guard_code_test(
+    -             {"tool_input": {"command": "python task.py"}}, policy_root=tmp_path
+    -         )
+    -         == {}
+    -     )
+    -     result = guard_code_test(
+    -         {"tool_input": {"command": "custom-python task.py"}}, policy_root=tmp_path
+    -     )
+180 +     assert guard_code_test({"tool_input": {"command": "python task.py"}}, policy_root=tmp_path) == {}
+181 +     result = guard_code_test({"tool_input": {"command": "custom-python task.py"}}, policy_root=tmp_path)
+182 |     assert result["hookSpecificOutput"]["permissionDecision"] == "deny"
+--------------------------------------------------------------------------------
+244 |     )
+    -     assert (
+    -         guard_code_test({"cwd": str(ROOT), "tool_input": {"command": stable_launch}})
+    -         == {}
+    -     )
+245 +     assert guard_code_test({"cwd": str(ROOT), "tool_input": {"command": stable_launch}}) == {}
+246 |
+--------------------------------------------------------------------------------
+257 |     _write_bounded_policy(tmp_path)
+    -     (tmp_path / ".codex" / "policies" / "bounded-launchers.json").write_text(
+    -         "not json", encoding="utf-8"
+    -     )
+    -     malformed = guard_code_test(
+    -         {"tool_input": {"command": "python task.py"}}, policy_root=tmp_path
+    -     )
+258 +     (tmp_path / ".codex" / "policies" / "bounded-launchers.json").write_text("not json", encoding="utf-8")
+259 +     malformed = guard_code_test({"tool_input": {"command": "python task.py"}}, policy_root=tmp_path)
+260 |     assert malformed["hookSpecificOutput"]["permissionDecision"] == "deny"
+    -     assert (
+    -         "configuration error"
+    -         in malformed["hookSpecificOutput"]["permissionDecisionReason"]
+    -     )
+261 +     assert "configuration error" in malformed["hookSpecificOutput"]["permissionDecisionReason"]
+262 |
+263 |     (tmp_path / ".codex" / "policies" / "bounded-launchers.json").unlink()
+    -     missing = guard_code_test(
+    -         {"tool_input": {"command": "python task.py"}}, policy_root=tmp_path
+    -     )
+264 +     missing = guard_code_test({"tool_input": {"command": "python task.py"}}, policy_root=tmp_path)
+265 |     assert missing["hookSpecificOutput"]["permissionDecision"] == "deny"
+--------------------------------------------------------------------------------
+278 |     assert missing["hookSpecificOutput"]["permissionDecision"] == "deny"
+    -     assert (
+    -         "configuration error"
+    -         in missing["hookSpecificOutput"]["permissionDecisionReason"]
+    -     )
+279 +     assert "configuration error" in missing["hookSpecificOutput"]["permissionDecisionReason"]
+280 |
+--------------------------------------------------------------------------------
+284 |     shutil.copy2(ROOT / ".codex" / "policies" / "bounded-launchers.json", policies)
+    -     (policies / "bounded-exclusions.gitignore").write_text(
+    -         "task.py\n", encoding="utf-8"
+    -     )
+285 +     (policies / "bounded-exclusions.gitignore").write_text("task.py\n", encoding="utf-8")
+286 |     (plain_root / "task.py").write_text("# fixture\n", encoding="utf-8")
+--------------------------------------------------------------------------------
+291 |     assert failed_git["hookSpecificOutput"]["permissionDecision"] == "deny"
+    -     assert (
+    -         "git could not evaluate"
+    -         in failed_git["hookSpecificOutput"]["permissionDecisionReason"]
+    -     )
+292 +     assert "git could not evaluate" in failed_git["hookSpecificOutput"]["permissionDecisionReason"]
+293 |
+--------------------------------------------------------------------------------
+307 |     assert result["hookSpecificOutput"]["permissionDecision"] == "deny"
+    -     assert (
+    -         "configuration error"
+    -         in result["hookSpecificOutput"]["permissionDecisionReason"]
+    -     )
+308 +     assert "configuration error" in result["hookSpecificOutput"]["permissionDecisionReason"]
+309 |
+--------------------------------------------------------------------------------
+340 |         assert result["hookSpecificOutput"]["permissionDecision"] == "deny"
+    -         assert (
+    -             "configuration error"
+    -             in result["hookSpecificOutput"]["permissionDecisionReason"]
+    -         )
+341 +         assert "configuration error" in result["hookSpecificOutput"]["permissionDecisionReason"]
+342 |
+343 |     _write_bounded_policy(tmp_path)
+    -     (tmp_path / ".codex" / "policies" / "bounded-exclusions.gitignore").write_bytes(
+    -         b"\xff"
+    -     )
+344 +     (tmp_path / ".codex" / "policies" / "bounded-exclusions.gitignore").write_bytes(b"\xff")
+345 |     invalid_text = guard_code_test(
+--------------------------------------------------------------------------------
+371 |         tmp_path,
+    -         exclusions=(
+    -             "**/lane-launchers/*\n!**/lane-launchers/bounded.py\ntools/lane launchers/\n"
+    -         ),
+372 +         exclusions=("**/lane-launchers/*\n!**/lane-launchers/bounded.py\ntools/lane launchers/\n"),
+373 |     )
+--------------------------------------------------------------------------------
+479 |     )
+    -     backslash_result = guard_code_test(
+    -         {"cwd": str(ROOT), "tool_input": {"command": backslash_before_quote}}
+    -     )
+480 +     backslash_result = guard_code_test({"cwd": str(ROOT), "tool_input": {"command": backslash_before_quote}})
+481 |     assert backslash_result["hookSpecificOutput"]["permissionDecision"] == "deny"
+--------------------------------------------------------------------------------
+489 |     )
+    -     assert (
+    -         guard_code_test({"cwd": str(ROOT), "tool_input": {"command": quoted_separator}})
+    -         == {}
+    -     )
+490 +     assert guard_code_test({"cwd": str(ROOT), "tool_input": {"command": quoted_separator}}) == {}
+491 |
+492 |     multiline = "python .codex/scripts/stable_runner.py invocation.json\npython .codex/scripts/verify.py"
+    -     multiline_result = guard_code_test(
+    -         {"cwd": str(ROOT), "tool_input": {"command": multiline}}
+    -     )
+493 +     multiline_result = guard_code_test({"cwd": str(ROOT), "tool_input": {"command": multiline}})
+494 |     assert multiline_result["hookSpecificOutput"]["permissionDecision"] == "deny"
+--------------------------------------------------------------------------------
+499 |     ):
+    -         search_result = guard_code_test(
+    -             {"cwd": str(ROOT), "tool_input": {"command": search_chain}}
+    -         )
+500 +         search_result = guard_code_test({"cwd": str(ROOT), "tool_input": {"command": search_chain}})
+501 |         assert search_result["hookSpecificOutput"]["permissionDecision"] == "deny"
+--------------------------------------------------------------------------------
+514 |     with ThreadPoolExecutor(max_workers=8) as pool:
+    -         results = list(
+    -             pool.map(
+    -                 lambda _: guard_code_test(payload, policy_root=tmp_path), range(40)
+    -             )
+    -         )
+515 +         results = list(pool.map(lambda _: guard_code_test(payload, policy_root=tmp_path), range(40)))
+516 |
+517 |     assert results == [{}] * 40
+518 |
+519 |
+    - def test_guard_leaves_direct_executables_and_read_only_script_mentions_outside_boundary() -> (
+    -     None
+    - ):
+520 + def test_guard_leaves_direct_executables_and_read_only_script_mentions_outside_boundary() -> None:
+521 |     allowed_commands = (
+--------------------------------------------------------------------------------
+546 |     shutil.copy2(ROOT / ".codex" / "policies" / "bounded-launchers.json", policy_dir)
+    -     shutil.copy2(
+    -         ROOT / ".codex" / "policies" / "bounded-exclusions.gitignore", policy_dir
+    -     )
+547 +     shutil.copy2(ROOT / ".codex" / "policies" / "bounded-exclusions.gitignore", policy_dir)
+548 |     nested = portable_root / "src"
+--------------------------------------------------------------------------------
+648 |     payload = json.loads((ROOT / ".codex" / "hooks.json").read_text(encoding="utf-8"))
+    -     handlers = [
+    -         handler
+    -         for groups in payload["hooks"].values()
+    -         for group in groups
+    -         for handler in group["hooks"]
+    -     ]
+649 +     handlers = [handler for groups in payload["hooks"].values() for group in groups for handler in group["hooks"]]
+650 |     assert handlers
+--------------------------------------------------------------------------------
+709 |         else:
+    -             assert (
+    -                 output["hookSpecificOutput"]["permissionDecision"] == expected_decision
+    -             )
+710 +             assert output["hookSpecificOutput"]["permissionDecision"] == expected_decision
+711 |
+--------------------------------------------------------------------------------
+736 |         else:
+    -             assert (
+    -                 output["hookSpecificOutput"]["permissionDecision"] == expected_decision
+    -             )
+737 +             assert output["hookSpecificOutput"]["permissionDecision"] == expected_decision
+738 |
+739 |
+740 | def test_hook_launchers_do_not_depend_on_the_current_git_repository() -> None:
+741 |     payload = json.loads((ROOT / ".codex" / "hooks.json").read_text(encoding="utf-8"))
+    -     handlers = [
+    -         handler
+    -         for groups in payload["hooks"].values()
+    -         for group in groups
+    -         for handler in group["hooks"]
+    -     ]
+742 +     handlers = [handler for groups in payload["hooks"].values() for group in groups for handler in group["hooks"]]
+743 |     for handler in handlers:
+--------------------------------------------------------------------------------
+797 |                 command = handler["commandWindows"]
+    -                 assert (
+    -                     not command.casefold().lstrip().startswith(("powershell ", "pwsh "))
+    -                 )
+798 +                 assert not command.casefold().lstrip().startswith(("powershell ", "pwsh "))
+799 |                 assert "[Console]::In.ReadToEnd()" in command
+--------------------------------------------------------------------------------
+808 |     fresh = hook_runner.session_start({"source": "startup"})
+    -     assert (
+    -         "Project context from HANDOFF.md"
+    -         not in fresh["hookSpecificOutput"]["additionalContext"]
+    -     )
+809 +     assert "Project context from HANDOFF.md" not in fresh["hookSpecificOutput"]["additionalContext"]
+810 |     assert "Before compaction" in hook_runner.pre_compact({})["systemMessage"]
+--------------------------------------------------------------------------------
+814 |     resumed = hook_runner.session_start({"source": "resume"})
+    -     assert (
+    -         "next command: run verify" in started["hookSpecificOutput"]["additionalContext"]
+    -     )
+    -     assert (
+    -         "next command: run verify" in resumed["hookSpecificOutput"]["additionalContext"]
+    -     )
+815 +     assert "next command: run verify" in started["hookSpecificOutput"]["additionalContext"]
+816 +     assert "next command: run verify" in resumed["hookSpecificOutput"]["additionalContext"]
+817 |     assert "HANDOFF.md exists" in hook_runner.pre_compact({})["systemMessage"]
+--------------------------------------------------------------------------------
+824 |         "run",
+    -         lambda *_args, **_kwargs: (_ for _ in ()).throw(
+    -             AssertionError("verification should not run")
+    -         ),
+825 +         lambda *_args, **_kwargs: (_ for _ in ()).throw(AssertionError("verification should not run")),
+826 |     )
+827 |     assert hook_runner.verify_on_stop({}) == {}
+828 |
+829 |
+    - def test_stop_hook_is_inactive_when_portable_copy_has_no_harness_plan(
+    -     monkeypatch, tmp_path: Path
+    - ) -> None:
+830 + def test_stop_hook_is_inactive_when_portable_copy_has_no_harness_plan(monkeypatch, tmp_path: Path) -> None:
+831 |     monkeypatch.setattr(hook_runner, "HARNESS_PLAN", tmp_path / "missing-plan.md")
+832 |     monkeypatch.setattr(
+833 |         hook_runner.subprocess,
+834 |         "run",
+    -         lambda *_args, **_kwargs: (_ for _ in ()).throw(
+    -             AssertionError("verification should not run")
+    -         ),
+835 +         lambda *_args, **_kwargs: (_ for _ in ()).throw(AssertionError("verification should not run")),
+836 |     )
+--------------------------------------------------------------------------------
+840 |
+    - def test_stop_hook_skips_verifier_after_markdown_only_change(
+    -     monkeypatch, tmp_path: Path
+    - ) -> None:
+841 + def test_stop_hook_skips_verifier_after_markdown_only_change(monkeypatch, tmp_path: Path) -> None:
+842 |     monkeypatch.setattr(hook_runner, "ROOT", tmp_path)
+--------------------------------------------------------------------------------
+848 |         "run",
+    -         lambda *_args, **_kwargs: (_ for _ in ()).throw(
+    -             AssertionError("verification should not run")
+    -         ),
+849 +         lambda *_args, **_kwargs: (_ for _ in ()).throw(AssertionError("verification should not run")),
+850 |     )
+--------------------------------------------------------------------------------
+867 |     assert str(hook_runner.BOUNDED_TEST_SUPERVISOR) in calls[0]
+    -     assert (
+    -         "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py"
+    -         in calls[0]
+    -     )
+868 +     assert "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py" in calls[0]
+869 |
+--------------------------------------------------------------------------------
+888 |         "run",
+    -         lambda *_args, **_kwargs: subprocess.CompletedProcess(
+    -             [], 0, "VERIFY: PASS", ""
+    -         ),
+889 +         lambda *_args, **_kwargs: subprocess.CompletedProcess([], 0, "VERIFY: PASS", ""),
+890 |     )
+--------------------------------------------------------------------------------
+896 |         "run",
+    -         lambda *_args, **_kwargs: subprocess.CompletedProcess(
+    -             [], 1, "", "tests failed"
+    -         ),
+897 +         lambda *_args, **_kwargs: subprocess.CompletedProcess([], 1, "", "tests failed"),
+898 |     )
+    |
+
+2 files would be reformatted

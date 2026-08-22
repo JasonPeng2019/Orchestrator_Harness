@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  210,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The only prior failure after formatting was caused by using the root Ruff config; the edited files now match the gate-specific development config. A prior code-bearing verification completed in 47.395 seconds; 180 seconds permits cold startup and all selected checks, with 30 seconds policy-capped cleanup.",
+    "started_at":  "2026-08-21T21:27:18.5368522+00:00",
+    "finished_at":  "2026-08-21T21:27:45.0366735+00:00",
+    "elapsed_seconds":  26.5,
+    "root_process_id":  30804,
+    "observed_process_ids":  [
+                                 30804
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deduplicate-wip-submodule-verify-changed-003.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deduplicate-wip-submodule-verify-changed-003.stderr.log"
+}

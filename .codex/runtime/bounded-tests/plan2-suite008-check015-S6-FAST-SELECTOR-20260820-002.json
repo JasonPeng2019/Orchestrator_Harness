@@ -1,0 +1,32 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6SelectorTests",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-candidate-check-015",
+    "maximum_lifetime_seconds":  375,
+    "expected_upper_bound_seconds":  300,
+    "cleanup_allowance_seconds":  75,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "S6.FAST.SELECTOR declared 1.0s but measured 212.7s in the prior postjoin run; 300s preserves measured headroom with 75s cleanup.",
+    "started_at":  "2026-08-20T23:36:43.5928082+00:00",
+    "finished_at":  "2026-08-20T23:40:51.6882900+00:00",
+    "elapsed_seconds":  248.095,
+    "root_process_id":  29248,
+    "observed_process_ids":  [
+                                 2784,
+                                 3400,
+                                 4032,
+                                 8508,
+                                 13080,
+                                 17696,
+                                 19924,
+                                 27772,
+                                 28544,
+                                 29248,
+                                 29828
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-check015-S6-FAST-SELECTOR-20260820-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-check015-S6-FAST-SELECTOR-20260820-002.stderr.log"
+}

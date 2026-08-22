@@ -1,5 +1,9 @@
 # Missing / broken Qwen Code support in the WIP target harness
 
+> **Active compatibility follow-through.** The documented Qwen fixes and gaps remain active until
+> their source changes are merged into `firmware-v2-harness-runner`. They do not reopen the closed
+> Firmware hardware campaign.
+
 Scope: `orchestrator_harness` at commit `055a5bd` (branch `firmware/v2-candidate`),
 copied to `harness-single-worktrees/qwencode-test` (branch `qwencode-test-copy`).
 The exact commit being actively developed was **never edited** — all execution
@@ -11,6 +15,21 @@ Only items that were **actually executed and observed to fail** are listed under
 "Failed". Everything else that was executed is listed under "Passed" for
 completeness; nothing below is inferred without a real run backing it up.
 
+> **2026-08-21 correction — the goal was a qwen-code CLI mirror of the codex
+> implementation, and an earlier pass over-listed "gaps."** Tracing the actual code
+> in `harness-single-worktrees/qwencode-test` shows most of the listed "gaps" are
+> **not qwen-vs-codex gaps at all**: they are a **codex-only host-adapter / delivery
+> subsystem** that is *identically unbuilt for claude* in this worktree
+> (`AdapterCapabilities` in `host_adapters.py` has only `codex()` and
+> `future_fixture()` factories — no `claude()`, no `qwen()`; both non-codex
+> providers get `FutureHostFixture`). Those are **design recommendations**, mirroring
+> `missing_claude_implementation.md` §C — not compatibility gaps. After correction
+> there are **two genuine qwen-vs-codex defects**: (1) the generic override channel
+> silently dropped (§Real defect below), and (2) the terminal `CANCELLED` outcome
+> collapsed to `FAILED` (§Second real defect below — low severity but closeable, and
+> a real audit divergence from codex). The rest are design-recs and one missing
+> convenience file.
+
 ## Explicit scope exclusion (per instruction)
 
 Firmware-specific functionality (`firmware_campaign.py`, `firmware_adapter.py`,
@@ -21,43 +40,9 @@ policy-bound firmware invocation path) and anything MCP-server-related
 finding that they work — they were out of scope per instruction. The user may
 simtest on the MCP server; that is noted as a gap, not a pass.
 
-## Failed (tested, and broken / a real qwen-vs-codex gap)
+## Real defect #1 — generic override channel silently dropped (C17/U4 → F1.2.7)
 
-### 1. No push "finish" notification reaches the manager — qwen must poll (KEY gap)
-The qwen adapter registers with `notification=False` (see
-`qwen_provider_bootstrap.py`), so `notification_mode("qwen-code")` resolves to
-`SAFE_BOUNDARY_ONLY` with no wake text. This is asserted deterministically in
-`test_qwen_adapter_registers_with_notification_false`. Unlike codex (which
-registers `notification=True` → `WAKE`), a qwen lane that finishes produces **no
-push "finish" signal** to the manager. The manager must poll
-(`watch --until-actionable` / `--until-event`) rather than receive an immediate
-wake. This is the single most important qwen-vs-codex behavioral difference.
-
-**This is an implementable gap, not a design constraint.** qwen-code has a full
-hooks mechanism (`qwen hooks`; events `Stop`, `SessionEnd`, `SubagentStop`,
-`Notification` with matcher type `idle_prompt`, etc.) that could back a
-push-wake host adapter — the wake target is the orchestrator agent's idle
-session, which qwen can wake via its `Notification`/`idle_prompt` hook. The
-harness simply has **no qwen host adapter / hook binding built** (qwen gets the
-same `FutureHostFixture` stub as claude). So the gap is a missing capability,
-not a structural impossibility. Any manager that relies on codex's push wake
-will silently stall on qwen lanes unless it polls.
-
-### 2. Overlay control data dirties the worktree and fails the result gate unless ignored
-When a super-cache overlay is materialized into a subagent worktree
-(`prepare_worktree(role="subagent")`), the materialized files
-(`instructions.md`, `config/settings.txt`) are **untracked** and make the
-worktree dirty. The result gate (`validate_task_result_repository`) rejects a
-dirty tree with `CODING_RESULT_INVALID` ("task result requires a clean project
-worktree"). This is provider-neutral behavior, but it is a real footgun for qwen
-lanes that use overlays: the overlay files must be git-ignored (and the ignore
-rule committed) before the lane can produce a valid result. The test
-`test_overlay_super_cache_into_subagent_worktree` had to append
-`instructions.md`/`config/` to the worktree `.gitignore` and commit it to get a
-clean tree. This is not a qwen-specific defect, but it is a coordination gap that
-surfaced in the multi-agent overlay scenario and is worth documenting.
-
-### 3. Generic override channel silently dropped for qwen-code (C17/U4 — same gap as claude)
+### Generic override channel silently dropped for qwen-code (C17/U4 → F1.2.7)
 `invocation.py`'s `_provider()` validator (`invocation.py:380-420`) applies the
 same optional-field allow-list to every `provider.id` — it never checks whether
 a field is meaningful for the selected provider. A qwen invocation that sets
@@ -65,7 +50,10 @@ a field is meaningful for the selected provider. A qwen invocation that sets
 `allowed_tools`/`disallowed_tools`/`mcp_config` passes validation with zero
 error or warning, then the qwen adapter's `build_argv`
 (`qwen_provider_bootstrap.py`) silently drops them all — it only uses
-`command`/`model`/`action`/`session_id`. Confirmed by direct execution:
+`command`/`model`/`action`/`session_id`. **This is a divergence on the exact code
+path codex exercises**: codex's `build_argv` honors `config_overrides` via
+`-c <override>` (`provider.py:426`); qwen's ignores them. Confirmed by direct
+execution:
 
 ```
 QWEN argv: ['qwen', 'exec', '--approval-mode=yolo', '--model',
@@ -77,24 +65,93 @@ QWEN argv: ['qwen', 'exec', '--approval-mode=yolo', '--model',
   # are all silently dropped
 ```
 
-This is the exact same generic-override-channel gap claude-code has (Claude's
-finding §3). Concretely, the mechanism the earlier Codex/DeepSeek probe used to
-redirect a lane to an alternate model endpoint
-(`config_overrides: ["model_provider=\"ollama\""]`) has **no qwen equivalent** —
-there is no generic-override channel into qwen's argv at all. Asserted in
+**Fix = reject-loud** (the qwen-side of claude's blocker #3). Raise
+`InvocationValidationError` for the fields qwen cannot honor: qwen-code has **no
+`-c` equivalent** (its config is settings.json-based), and the Ollama redirect the
+earlier probe achieved with `config_overrides: ["model_provider=\"ollama\""]` is
+**already delivered** by the adapter's own `_route_argv` (`--openai-base-url` from
+package-local settings). So there is nothing for qwen to *honor* — the correct
+behavior is to reject the fields loudly instead of accepting-then-dropping them.
+Asserted (current defective behavior) in
 `test_qwen_build_argv_silently_drops_override_fields` and
 `test_qwen_invocation_validator_accepts_override_fields`.
 
-### 4. No working example/fixture exists for a qwen-provider lane (A17 — same gap as claude)
-The one "complete local example" advertised by the README/QUICK_START,
-`examples/disposable_coding_fixture.py`, is hardcoded to the legacy Codex-only
-`"codex": {...}` invocation shape (`codex_command`, `fixture_codex.jsonl`, etc.
-— grepped, no `qwen` hits anywhere under `examples/`). There is no
-`examples/*qwen*` file in the package. Building a working qwen-code invocation
-requires the separate, more complex canonical
-`orchestrator-worker-invocation/v1` schema directly from `invocation.py`. This
-is the same gap claude-code has (Claude's finding §4). Asserted in
-`test_no_qwen_example_fixture_exists`.
+## Design recommendations (NOT qwen-vs-codex gaps — codex-only subsystem or provider-neutral)
+
+These were previously listed as "failed / gaps." Tracing the code shows each is a
+**recommendation**, not a compatibility gap — identical to how
+`missing_claude_implementation.md` §C reclassified the claude side.
+
+### D1. No push "finish" notification / host adapter — build one (implementable, not a gap)
+The qwen adapter registers `notification=False`, so `notification_mode("qwen-code")`
+resolves to `SAFE_BOUNDARY_ONLY` with no wake text
+(`test_qwen_adapter_registers_with_notification_false`), and qwen gets the
+`FutureHostFixture` stub (all `AdapterCapabilities` False). A finishing qwen lane
+produces no push wake; the manager must poll (`watch --until-actionable` /
+`--until-event`).
+
+**But this is not a qwen-vs-codex gap** — it is a **codex-only subsystem that is
+identically unbuilt for claude** in this worktree. `host_adapters.py` exposes only
+`AdapterCapabilities.codex()` (all True) and `.future_fixture()` (all False); there
+is **no `claude()` and no `qwen()`**. So on the entire push-wake surface claude and
+qwen are byte-identical. The claude side of this subsystem was later built in
+Phase 4 in a *separate* clone (`compat-test-copy`); it is **not present or merged
+here**. Recommendation: build a qwen host adapter the same way — qwen-code has a
+full hooks mechanism (`qwen hooks`; `Stop`, `SessionEnd`, `SubagentStop`,
+`Notification`/`idle_prompt`) that can wake the orchestrator's idle session. Until
+then, any manager relying on codex's push wake must poll qwen lanes. (Inventory
+rows F1.2.8, F5.2.1–6, F5.3.1–2 — DESIGN-REC.)
+
+### D2. Overlay control data dirties the worktree (provider-neutral, identical for codex)
+When a super-cache overlay is materialized into a subagent worktree
+(`prepare_worktree(role="subagent")`), the materialized files (`instructions.md`,
+`config/settings.txt`) are untracked and make the worktree dirty, so the result
+gate (`validate_task_result_repository`) rejects it with `CODING_RESULT_INVALID`.
+The test had to git-ignore + commit those paths for a clean tree. This is
+**provider-neutral** — codex behaves identically — so it is a shared-code footgun
+worth documenting, **not a qwen defect**.
+
+### D3. No qwen example/fixture (A17) — a missing convenience file, not a capability gap
+`examples/disposable_coding_fixture.py` is codex-only (`codex_command`,
+`fixture_codex.jsonl`; no `qwen` hits under `examples/`). There is no
+`examples/*qwen*` file. But a working qwen invocation is fully achievable **today**
+via the canonical `orchestrator-worker-invocation/v1` schema from `invocation.py`
+(the qwen suite builds exactly that). So the fixture is a **nicety**, not a missing
+capability. (Claude also lacked one until a fixture was authored as its blocker #4.)
+Asserted in `test_no_qwen_example_fixture_exists`. Low priority.
+
+## Second real defect (low severity, closeable) — terminal `CANCELLED` collapsed to `FAILED`
+
+qwen's `parse_transcript_line`/`terminal_outcome` map a cancelled/interrupted run
+to **FAILED** (no terminating result line + non-zero exit → FAILED) and never emit
+`CANCELLED`. **Codex, on the same cancel path, records a distinct `CANCELLED`**:
+`turn.cancelled` → `ProviderEvent(kind="CANCELLED")` → `terminal_outcome` returns
+`"CANCELLED"` (`provider.py:447,458,465`). Since the goal is to mirror codex, this
+divergence on a path codex exercises **is a real gap**, not a design-rec — an
+earlier draft wrongly filed it as "not a gap" by treating downstream mootness as if
+it erased the divergence, which is exactly the completed-but-divergent laundering
+the GAP-vs-PASSED rule forbids.
+
+- **Closeable** (unlike claude's unclosable U15): qwen-code's own bundled
+  `structured-output.md` states a SIGINT/interrupt exits **130** and normally emits
+  **no result line** ("treat the exit code as the source of truth"); qwen-code's
+  protocol vocabulary also includes an `interrupt` control subtype (and an exit-53
+  max-turns path). So qwen **has** a distinguishable cancellation signal — the
+  Claude CLI emits none at all, which is what makes U15 genuinely unclosable. Fix:
+  map exit-130 / `interrupt` → `CANCELLED` in `terminal_outcome`.
+- **Low severity, not moot.** Every downstream *branch decision* already treats
+  `FAILED` and `CANCELLED` identically — same controller exit code
+  (`lane_controller.py:3208`), same notification priority (`notifications.py:1762`),
+  same reconcile grouping (`reconcile.py:191-206`) — so there is no control-flow
+  consequence today. But the stack models CANCELLED as first-class
+  (`lane_controller` closed vocabulary `3143-3153`; `reconcile.py` distinct
+  `provider_cancelled` `194`; `notifications.py` distinct `cancelled` `1760`), so a
+  cancelled qwen lane persists as `provider_failed` where codex persists
+  `provider_cancelled` — a real audit / state-fidelity divergence from codex.
+
+The success and current FAILED-collapse branches are both covered by
+`test_qwen_parse_and_terminal_map_failure_branch`; a corrected mapping needs a new
+assertion that exit-130 yields `CANCELLED`.
 
 ## Passed (tested, worked correctly)
 

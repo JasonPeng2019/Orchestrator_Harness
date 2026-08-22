@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-release-candidate-evidence",
+  "task_card_id": "CARD-PLAN2-RELEASE-CANDIDATE-CHECK-022",
+  "profile_id": "deepseek-high-doer",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-release-candidate-check-022\\.agent-workspace\\PLAN2_RELEASE_CANDIDATE_CHECK_DOER_PROMPT_022.md",
+      "sha256": "c09862cb055ec1f38c2015d162f62e06127467417b3d8360715ebc6042291397",
+      "size": 1438
+    }
+  ],
+  "final_sha256": "c09862cb055ec1f38c2015d162f62e06127467417b3d8360715ebc6042291397",
+  "final_size": 1438,
+  "bundle_sha256": "195c8969fe328def5e82f4772424928b52ef55c03907989df27e002284d404b1"
+}

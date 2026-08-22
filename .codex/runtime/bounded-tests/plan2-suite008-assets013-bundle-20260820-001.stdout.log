@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-verification-asset-correction",
+  "task_card_id": "CARD-PLAN2-SUITE008-ASSETS-013",
+  "profile_id": "deepseek-high-doer",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-verification-assets-013\\.agent-workspace\\PLAN2_SUITE008_VERIFICATION_ASSET_PROMPT_013.md",
+      "sha256": "3215b63a7b1ccdd8a14eac2cd16987d59744f900d6629e90b9a58ded376bca87",
+      "size": 3477
+    }
+  ],
+  "final_sha256": "3215b63a7b1ccdd8a14eac2cd16987d59744f900d6629e90b9a58ded376bca87",
+  "final_size": 3477,
+  "bundle_sha256": "f389c0ea8aee39948da96eed9850e8282b14f88852ddac99188f8ae3ec422acf"
+}

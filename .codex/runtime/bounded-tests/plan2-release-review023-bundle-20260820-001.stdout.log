@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-release-candidate-review",
+  "task_card_id": "CARD-PLAN2-RELEASE-CANDIDATE-REVIEW-023",
+  "profile_id": "terra-xhigh",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-release-candidate-review-023\\.agent-workspace\\PLAN2_RELEASE_CANDIDATE_REVIEW_PROMPT_023.md",
+      "sha256": "0f1135e6fda1fe87a3f04edacf947e114bbd389cc3bec86f25ae963215dea4d2",
+      "size": 1368
+    }
+  ],
+  "final_sha256": "0f1135e6fda1fe87a3f04edacf947e114bbd389cc3bec86f25ae963215dea4d2",
+  "final_size": 1368,
+  "bundle_sha256": "ce61792f9947522360a7cff8cd8843deecb4109cdb9915c1fcb9a15d13ce2720"
+}

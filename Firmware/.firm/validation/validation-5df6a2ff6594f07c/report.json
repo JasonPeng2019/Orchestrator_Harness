@@ -1,0 +1,53 @@
+{
+  "attempt_id": "validation-5df6a2ff6594f07c",
+  "board_id": "stm_a",
+  "code": "validation/probe-selection-required",
+  "created_at": "2026-08-21T14:59:27.182123Z",
+  "message": "Ask which friendly probe is connected to the intended board.",
+  "observed": {
+    "board_id": "stm_a",
+    "inventory": {
+      "probes": [
+        {
+          "description": "STM32 STLink NUCLEO-L476RG",
+          "probe_family": "stlink",
+          "probe_id": "0668FF514988525067213913",
+          "usb_serial": "0668FF514988525067213913"
+        },
+        {
+          "description": "Segger J-Link OB-SAM3U128-V2-NordicSem",
+          "probe_family": "jlink",
+          "probe_id": "683710208",
+          "usb_serial": "683710208"
+        },
+        {
+          "description": "Segger J-Link OB-SAM3U128-V2-NordicSem",
+          "probe_family": "jlink",
+          "probe_id": "683854191",
+          "usb_serial": "683854191"
+        }
+      ]
+    }
+  },
+  "profile_unchanged": true,
+  "report_type": "validation",
+  "schema_version": 1,
+  "steps": [
+    {
+      "details": {
+        "map_reason": "Profile and current safety map agree.",
+        "profile": "stm_a.yaml"
+      },
+      "name": "Load profile and safety map",
+      "number": 1,
+      "outcome": "passed"
+    },
+    {
+      "details": {},
+      "name": "Enumerate debug probes",
+      "number": 2,
+      "outcome": "passed"
+    }
+  ],
+  "terminal_status": "validation_needs_user_input"
+}

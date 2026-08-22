@@ -1,5 +1,83 @@
 # Current delegated hardware authorization
 
+## 2026-08-21 Plan 2 suite-014 manager-016
+
+Status: `AUTHORIZED_FOR_20260821_PLAN2_SUITE_014_MANAGER_016`
+
+The controlling user instruction dispatches logical sprint `plan2-firmware-suite-014`, sequence
+index 14, and authorizes the standing connected four-board delegation for ordinary non-destructive
+setup, validation, logical disconnect/reconnect, fresh plans and permissions, debug, UART, and
+server-controlled actions. Every live action requires this epoch's fresh manager/process/server
+identity, isolated artifact root, exact lease, current MCP lifetime, ordinary server plan and
+permission, and confirmed electronic target identity.
+
+The authorization excludes physical cable, power, or wiring changes; bootloader replacement; mass
+erase; protection changes; unlock; and destructive recovery. It revives no prior process, MCP
+lifetime, lease, claim, plan, permission, validation stamp, readiness grant, or hardware authority.
+Suite-014 selects exactly S10, S11, S13, and D36 from genuinely fresh run roots. S12 is excluded
+because its unchanged non-elevated-host-policy blocker remains; Q40 is excluded because its
+unchanged qualifying-source/clean-baseline prerequisite remains absent.
+
+## 2026-08-21 Plan 2 suite-013 manager-015
+
+Status: `AUTHORIZED_FOR_20260821_PLAN2_SUITE_013_MANAGER_015`
+
+The controlling user instruction dispatches logical sprint `plan2-firmware-suite-013`, sequence
+index 13, and authorizes the standing connected four-board delegation for ordinary non-destructive
+setup, validation, logical disconnect/reconnect, fresh plans and permissions, debug, UART, and
+server-controlled actions. Every live action requires this epoch's fresh exact lease, isolated MCP
+and process identity, server plan and ordinary permission, and confirmed electronic target identity.
+
+The authorization excludes physical cable, power, or wiring changes; bootloader replacement; mass
+erase; protection changes; unlock; and destructive recovery. It revives no prior process, lease,
+MCP lifetime, plan, permission, claim, validation stamp, readiness grant, or hardware authority.
+Suite-013 executes exactly S10, S11, S13, and D36 from fresh run roots. S12 is excluded because its
+unchanged non-elevated-host-policy blocker remains, and Q40 is excluded because its unchanged
+qualifying-source/clean-baseline prerequisite remains absent.
+
+## 2026-08-21 Plan 2 suite-012 manager-014
+
+Status: `AUTHORIZED_FOR_20260821_PLAN2_SUITE_012_MANAGER_014`
+
+The controlling user instruction dispatches logical sprint `plan2-firmware-suite-012`, sequence
+index 12, and authorizes the standing connected four-board delegation for ordinary non-destructive
+setup, validation, logical disconnect/reconnect, fresh plans and permissions, debug, UART, and
+server-controlled actions. Every live action requires this epoch's fresh exact lease, MCP/process
+identity, electronic target identity, and ordinary server plan/permission gate.
+
+The authorization excludes physical cable, power, or wiring changes; bootloader replacement; mass
+erase; protection changes; unlock; and destructive recovery. It revives no prior process, lease,
+MCP lifetime, plan, permission, claim, validation stamp, or hardware authority. Suite-012 executes
+exactly S10, S11, S13, D36, and Q40 with genuinely fresh run roots and evidence; S12 is excluded.
+
+## 2026-08-21 Plan 2 suite-011 manager-013
+
+Status: `AUTHORIZED_FOR_20260821_PLAN2_SUITE_011_MANAGER_013`
+
+The controlling user instruction dispatches logical sprint `plan2-firmware-suite-011`, sequence
+index 11, and explicitly authorizes the standing connected four-board delegation for ordinary
+non-destructive setup, validation, logical disconnect/reconnect, fresh plans and permissions,
+debug, UART, and server-controlled actions. Every live action requires this fresh epoch's exact
+lease, MCP/process identity, electronic target identity, and ordinary server plan/permission gate.
+
+The authorization excludes physical cable, power, or wiring changes; bootloader replacement; mass
+erase; protection changes; unlock; and destructive recovery. It creates no authority for any
+prior process, lease, MCP lifetime, plan, permission, claim, validation stamp, or result. Suite-011
+must use new observations for S10/S11/S12/S13/D36 and may use autonomous USB remap/replay only when
+it performs no physical detach or operator-timed action.
+
+## 2026-08-20 Plan 2 suite-008 resume-010
+
+The controlling user instruction explicitly resumes Plan 2 through completion and freshly confirms
+that all necessary hardware is connected. It authorizes the new suite-008 recovery manager to use
+the declared connected four-board fixture for the catalog's ordinary non-destructive build, flash,
+reset, debug, UART, I2C, BLE, and low-power LoRa actions, subject to each action's actual server
+plan, ordinary permission, exact lease, and verified target identity. It does not authorize
+rewiring, cable/power changes, bootloader replacement, mass erase, protection changes, unlock, or
+destructive recovery. This is fresh authority for epoch
+`20260820-plan2-suite-008-resume-010`; it does not revive any historical process, plan, permission,
+lease, claim, or provider session.
+
 ## Current interpretation for the next Plan 2 invocation
 
 Status: `USER_DELEGATION_RECORDED_EPOCH_AUTHORITY_STOPPED`

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m orchestrator_harness.operator_launch --receipt \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.agent-workspace\\epochs\\20260821-plan2-suite-011-manager-013\\MANAGER_013_LAUNCH.json\u0027 --label \u0027Plan 2 Suite011 Firmware manager\u0027 --role \u0027acceptance-orchestrator\u0027 --cwd \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260821-plan2-suite-011-manager-013\u0027 --expected-state-path \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260821-plan2-suite-011-manager-013\\.agent-workspace\\plan2_suite_manager_013.status.json\u0027 -- python -m orchestrator_harness.lane_controller \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.agent-workspace\\epochs\\20260821-plan2-suite-011-manager-013\\INVOCATION_013.json\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260821-plan2-suite-011-manager-013",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "The corrected suite010 detached operator launch completed in 2.638 seconds; twenty seconds covers Windows creation, identity verification, and receipt persistence.",
+    "started_at":  "2026-08-21T13:28:58.7549169+00:00",
+    "finished_at":  "2026-08-21T13:29:01.3479267+00:00",
+    "elapsed_seconds":  2.593,
+    "root_process_id":  25640,
+    "observed_process_ids":  [
+                                 25640
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite011-manager-operator-launch-20260821-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite011-manager-operator-launch-20260821-001.stderr.log"
+}

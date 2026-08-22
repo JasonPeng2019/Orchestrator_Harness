@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked python -m unittest orchestrator_harness.tests.test_operator_launch.OperatorLaunchTests.test_access_denied_retries_without_breakaway_and_publishes_before_resume orchestrator_harness.tests.test_operator_launch.OperatorLaunchTests.test_non_access_denied_native_error_attempts_once_and_writes_failed_receipt",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-launch-fastlane-047",
+    "maximum_lifetime_seconds":  37,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  7,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "FAST_LANE_V2 two mocked native-launch motivating unittests correction; deterministic local temp-file tests with no child process or external service",
+    "started_at":  "2026-08-21T05:58:37.6730097+00:00",
+    "finished_at":  "2026-08-21T05:58:39.8296170+00:00",
+    "elapsed_seconds":  2.157,
+    "root_process_id":  23940,
+    "observed_process_ids":  [
+                                 23940
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-launch-fastlane-047-correction-tests-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-launch-fastlane-047-correction-tests-001.stderr.log"
+}

@@ -1,0 +1,30 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/worktree_task.py create plan2-suite010-qwen-legacy-fastlane-052 --owner suite010_qwen_legacy_fastlane_052",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Historical repository worktree helper creates complete within seconds; 120 seconds allows locked uv environment startup and Git worktree creation headroom.",
+    "started_at":  "2026-08-21T12:10:27.4292813+00:00",
+    "finished_at":  "2026-08-21T12:12:14.1507954+00:00",
+    "elapsed_seconds":  106.722,
+    "root_process_id":  10748,
+    "observed_process_ids":  [
+                                 400,
+                                 5068,
+                                 10748,
+                                 14424,
+                                 21304,
+                                 28260,
+                                 29568,
+                                 30212,
+                                 30836
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite010-qwen-legacy-worktree-20260821-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite010-qwen-legacy-worktree-20260821-001.stderr.log"
+}

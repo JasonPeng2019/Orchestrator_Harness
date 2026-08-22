@@ -1,0 +1,2 @@
+warning: `--locked` has no effect when used outside of a project
+C:\Users\Jason\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\python.exe: can't open file 'C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-parity-implementation\\.codex\\scripts\\verify_changed.py': [Errno 2] No such file or directory

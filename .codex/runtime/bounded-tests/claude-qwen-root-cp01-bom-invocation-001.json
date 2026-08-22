@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked python \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\stable-harness\\claude-qwen-parity-001\\validate_cp01_bom_invocation.py\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "CP-01 BOM-repair invocation parse; local schema validation with 30 seconds for shared locked environment startup and 8 seconds policy-capped cleanup",
+    "started_at":  "2026-08-22T07:41:08.8625842+00:00",
+    "finished_at":  "2026-08-22T07:41:11.8019342+00:00",
+    "elapsed_seconds":  2.939,
+    "root_process_id":  30780,
+    "observed_process_ids":  [
+                                 30780
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp01-bom-invocation-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp01-bom-invocation-001.stderr.log"
+}

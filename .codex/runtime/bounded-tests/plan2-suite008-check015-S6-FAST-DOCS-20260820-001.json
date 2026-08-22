@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6DocumentationTests",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-candidate-check-015",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "S6.FAST.DOCS declared 1.0s; prior postjoin run measured 3.8s; 30s bound with 8s cleanup.",
+    "started_at":  "2026-08-20T23:41:17.5630847+00:00",
+    "finished_at":  "2026-08-20T23:41:19.4318408+00:00",
+    "elapsed_seconds":  1.869,
+    "root_process_id":  15960,
+    "observed_process_ids":  [
+                                 15960
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-check015-S6-FAST-DOCS-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-check015-S6-FAST-DOCS-20260820-001.stderr.log"
+}

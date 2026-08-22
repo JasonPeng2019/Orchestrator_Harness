@@ -1,0 +1,31 @@
+{
+  "planId": "b9c375ab-47d1-4238-a0be-ef3ff5677f31",
+  "todos": [
+    {
+      "content": "REQ-001: Board-free scope matrix (altered param, wrong board, wrong session, tool mismatch refusals + audits)",
+      "id": "req001",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-002: Fresh live setup — harmless success, scope refusal, bounded safe started failure with distinct audits",
+      "id": "req002",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-003: Permission scope/consumption — one-time consumed by matching action; full-session cannot cross tool/board",
+      "id": "req003",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-004: Freshness/recovery — stale plan after safety refresh; stale + conversational-only recovery refusal",
+      "id": "req004",
+      "status": "completed"
+    },
+    {
+      "content": "Write evidence, RESULT.json, TEST_REPORT.md, truthful RUN_STATE; final logical disconnect",
+      "id": "finalize",
+      "status": "completed"
+    }
+  ],
+  "sessionId": "477ebf66-4214-44ad-aa62-7fa32edb9b7a"
+}

@@ -1,0 +1,31 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6SafeguardTests.test_safeguard_run_streams_native_stderr_and_checkpoints_next_unit orchestrator_harness.tests.test_s6_public_release.S6SafeguardTests.test_safeguard_run_records_native_failure_and_continues_next_unit",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-release-safeguard-repair-020",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The prior run reached the real candidate selector before timeout; the corrected two-unit registry fixture is expected under 60 seconds with 15 seconds cleanup headroom.",
+    "started_at":  "2026-08-21T00:18:01.2343193+00:00",
+    "finished_at":  "2026-08-21T00:18:24.5426431+00:00",
+    "elapsed_seconds":  23.308,
+    "root_process_id":  7480,
+    "observed_process_ids":  [
+                                 1824,
+                                 7480,
+                                 9448,
+                                 9772,
+                                 13408,
+                                 14348,
+                                 14532,
+                                 23448,
+                                 23492,
+                                 27904
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-focused-native-20260820-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-focused-native-20260820-002.stderr.log"
+}

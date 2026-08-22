@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev --locked python C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\scripts\\worktree_task.py create plan2-suite008-unicode-fastlane-049 --branch plan2/suite008-unicode-fastlane-049 --owner coder-main",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\target-harness",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Local git worktree creation completed in 2.403 seconds for repair 047; 30 seconds provides over 12x measured headroom.",
+    "started_at":  "2026-08-21T06:07:54.3861392+00:00",
+    "finished_at":  "2026-08-21T06:07:57.2834447+00:00",
+    "elapsed_seconds":  2.897,
+    "root_process_id":  16316,
+    "observed_process_ids":  [
+                                 16316
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-unicode-fastlane-worktree-049-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-unicode-fastlane-worktree-049-20260820-001.stderr.log"
+}

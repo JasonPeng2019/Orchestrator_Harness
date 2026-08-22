@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .agent-workspace/epochs/20260820-plan2-suite-008-resume-010/compute_manager_bundle.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Prompt bundle generation is a local hash/JSON operation and historically completes in seconds; 20 seconds is conservative.",
+    "started_at":  "2026-08-20T22:10:50.3240505+00:00",
+    "finished_at":  "2026-08-20T22:10:52.1157588+00:00",
+    "elapsed_seconds":  1.792,
+    "root_process_id":  26300,
+    "observed_process_ids":  [
+                                 26300
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-manager010-bundle-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-manager010-bundle-20260820-001.stderr.log"
+}

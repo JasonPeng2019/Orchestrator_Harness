@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.firmware-v2-harness-runner-worktrees\claude-qwen-live-qwen\orchestrator_harness\lane_controller.py", line 790, in _load_canonical_invocation
+    canonical = parse_canonical_invocation(raw)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.firmware-v2-harness-runner-worktrees\claude-qwen-live-qwen\orchestrator_harness\invocation.py", line 505, in parse_canonical_invocation
+    provider_id, provider_model, provider_options = _provider(raw.get("provider"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.firmware-v2-harness-runner-worktrees\claude-qwen-live-qwen\orchestrator_harness\invocation.py", line 430, in _provider
+    raise InvocationValidationError(
+orchestrator_harness.invocation.InvocationValidationError: provider qwen-code cannot honor field(s): provider.allowed_tools; Qwen Code has no equivalent native launch fields
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.codex\runtime\bounded-tests\claude-qwen-parity\parse_live_qwen_invocation.py", line 8, in <module>
+    invocation = load_invocation(
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.firmware-v2-harness-runner-worktrees\claude-qwen-live-qwen\orchestrator_harness\lane_controller.py", line 969, in load_invocation
+    invocation = _load_canonical_invocation(raw)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.firmware-v2-harness-runner-worktrees\claude-qwen-live-qwen\orchestrator_harness\lane_controller.py", line 955, in _load_canonical_invocation
+    raise InvocationError(str(exc)) from exc
+orchestrator_harness.lane_controller.InvocationError: provider qwen-code cannot honor field(s): provider.allowed_tools; Qwen Code has no equivalent native launch fields

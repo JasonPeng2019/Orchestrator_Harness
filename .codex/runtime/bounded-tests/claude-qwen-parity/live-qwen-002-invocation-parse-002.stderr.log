@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.codex\runtime\bounded-tests\claude-qwen-parity\parse_live_qwen_invocation.py", line 3, in <module>
+    from orchestrator_harness.lane_controller import load_invocation
+ModuleNotFoundError: No module named 'orchestrator_harness'

@@ -1,0 +1,31 @@
+{
+  "planId": "f930ac6c-35bd-48e9-8a3d-f3db226e9a82",
+  "todos": [
+    {
+      "content": "REQ-001: Fresh derivation for STM-A (handshake, setup_overview, load_setup_tool, board_setup-plan, board_setup) with artifact-root verification",
+      "id": "req1a",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-001: Fresh derivation for STM-B (same sequence, independent)",
+      "id": "req1b",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-002: Intentional wrong-identical-board selection for STM-A, preserve refusal, follow continue_setup repair",
+      "id": "req2",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-003: Readiness & lifecycle for both boards (safety_refresh, validate, get_setup_status, connect, get_board_info, disconnect)",
+      "id": "req3",
+      "status": "completed"
+    },
+    {
+      "content": "Write schema-valid RESULT.json, TEST_REPORT.md, and exact raw evidence",
+      "id": "final",
+      "status": "completed"
+    }
+  ],
+  "sessionId": "a87cb296-8e86-4f84-80db-351885b92408"
+}

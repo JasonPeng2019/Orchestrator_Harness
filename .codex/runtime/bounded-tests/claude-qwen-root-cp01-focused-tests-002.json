@@ -1,0 +1,26 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m unittest orchestrator_harness.tests.test_compat_provider_argv orchestrator_harness.tests.test_compat_transcript_parse orchestrator_harness.tests.test_compat_provider_allowlist orchestrator_harness.tests.test_compat_claude_adapter -v",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-parity-implementation",
+    "maximum_lifetime_seconds":  60,
+    "expected_upper_bound_seconds":  50,
+    "cleanup_allowance_seconds":  10,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "ROOT CP-01 four focused deterministic modules; prior observed duration was 20.246 seconds, allowing 50 seconds plus 10 seconds cleanup",
+    "started_at":  "2026-08-22T07:12:02.5427607+00:00",
+    "finished_at":  "2026-08-22T07:12:20.8346496+00:00",
+    "elapsed_seconds":  18.292,
+    "root_process_id":  13076,
+    "observed_process_ids":  [
+                                 2876,
+                                 7428,
+                                 13076,
+                                 26732,
+                                 28080
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp01-focused-tests-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp01-focused-tests-002.stderr.log"
+}

@@ -1,0 +1,152 @@
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\claude_installer.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\claude_installer.py:804:73 - error: "decode" is not a known attribute of "None" (reportOptionalMemberAccess)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\provider.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\provider.py:672:33 - error: Object of type "None" cannot be used as iterable value (reportOptionalIterable)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:108:51 - error: "run_id" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:109:40 - error: "pending_count" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:110:48 - error: "highest_severity" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:111:29 - error: "as_record" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:133:51 - error: "outcome" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:134:66 - error: "adapter_profile" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:150:37 - error: "notice_id" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:150:57 - error: "notice_id" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:160:51 - error: "outcome" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:161:55 - error: Cannot access attribute "resume_invocations" for class "ClaudeTransport"
+    Attribute "resume_invocations" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:162:44 - error: Cannot access attribute "resume_invocations" for class "ClaudeTransport"
+    Attribute "resume_invocations" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:183:51 - error: "outcome" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:185:78 - error: Cannot access attribute "calls" for class "ClaudeTransport"
+    Attribute "calls" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:187:55 - error: Cannot access attribute "resume_invocations" for class "ClaudeTransport"
+    Attribute "resume_invocations" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:207:60 - error: "as_record" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:213:57 - error: "outcome" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:227:51 - error: Cannot access attribute "calls" for class "ClaudeTransport"
+    Attribute "calls" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_claude_adapter.py:358:59 - error: Cannot access attribute "calls" for class "ClaudeTransport"
+    Attribute "calls" is unknown (reportAttributeAccessIssue)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:137:17 - error: "__delitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:146:17 - error: "__delitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:147:17 - error: "__delitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:156:17 - error: "__delitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:174:17 - error: "__delitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:175:17 - error: "__delitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:198:17 - error: "__delitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:199:17 - error: "__delitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:200:13 - error: "__setitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:220:17 - error: "__delitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:221:17 - error: "__delitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:222:13 - error: "__setitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:291:52 - error: Object of type "None" is not subscriptable (reportOptionalSubscript)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:292:31 - error: Argument of type "dict[str, str] | None" cannot be assigned to parameter "container" of type "Iterable[Any] | Container[Any]" in function "assertIn"
+    Type "dict[str, str] | None" is not assignable to type "Iterable[Any] | Container[Any]"
+      Type "None" is not assignable to type "Iterable[Any] | Container[Any]"
+        "None" is incompatible with protocol "Iterable[Any]"
+          "__iter__" is not present
+        "None" is incompatible with protocol "Container[Any]"
+          "__contains__" is not present (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:323:17 - error: "__delitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:324:17 - error: "__delitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_allowlist.py:325:13 - error: "__setitem__" method not defined on type "object" (reportIndexIssue)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "action" of type "str" in function "__init__"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "command" of type "tuple[str, ...]" in function "__init__"
+    "object" is not assignable to "tuple[str, ...]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "model" of type "str" in function "__init__"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "reasoning_effort" of type "str" in function "__init__"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "service_tier" of type "str" in function "__init__"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "session_id" of type "str | None" in function "__init__"
+    Type "object" is not assignable to type "str | None"
+      "object" is not assignable to "str"
+      "object" is not assignable to "None" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "run_root" of type "Path" in function "__init__"
+    "object" is not assignable to "Path" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "last_message_path" of type "Path" in function "__init__"
+    "object" is not assignable to "Path" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "config_overrides" of type "tuple[str, ...]" in function "__init__"
+    "object" is not assignable to "tuple[str, ...]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "sandbox" of type "str" in function "__init__"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "approval_policy" of type "str" in function "__init__"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "worker_invocation_id" of type "str | None" in function "__init__"
+    Type "object" is not assignable to type "str | None"
+      "object" is not assignable to "str"
+      "object" is not assignable to "None" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "permission_mode" of type "str | None" in function "__init__"
+    Type "object" is not assignable to type "str | None"
+      "object" is not assignable to "str"
+      "object" is not assignable to "None" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "allowed_tools" of type "tuple[str, ...]" in function "__init__"
+    "object" is not assignable to "tuple[str, ...]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "disallowed_tools" of type "tuple[str, ...]" in function "__init__"
+    "object" is not assignable to "tuple[str, ...]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "mcp_config" of type "str | Mapping[str, Any] | list[Any] | None" in function "__init__"
+    Type "object" is not assignable to type "str | Mapping[str, Any] | list[Any] | None"
+      "object" is not assignable to "str"
+      "object" is not assignable to "Mapping[str, Any]"
+      "object" is not assignable to "list[Any]"
+      "object" is not assignable to "None" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "provider_options" of type "Mapping[str, Any]" in function "__init__"
+    "object" is not assignable to "Mapping[str, Any]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_provider_argv.py:31:33 - error: Argument of type "object" cannot be assigned to parameter "env_overrides" of type "Mapping[str, str]" in function "__init__"
+    "object" is not assignable to "Mapping[str, str]" (reportArgumentType)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "action" of type "str" in function "__init__"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "command" of type "tuple[str, ...]" in function "__init__"
+    "object" is not assignable to "tuple[str, ...]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "model" of type "str" in function "__init__"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "reasoning_effort" of type "str" in function "__init__"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "service_tier" of type "str" in function "__init__"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "session_id" of type "str | None" in function "__init__"
+    Type "object" is not assignable to type "str | None"
+      "object" is not assignable to "str"
+      "object" is not assignable to "None" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "run_root" of type "Path" in function "__init__"
+    "object" is not assignable to "Path" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "last_message_path" of type "Path" in function "__init__"
+    "object" is not assignable to "Path" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "config_overrides" of type "tuple[str, ...]" in function "__init__"
+    "object" is not assignable to "tuple[str, ...]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "sandbox" of type "str" in function "__init__"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "approval_policy" of type "str" in function "__init__"
+    "object" is not assignable to "str" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "worker_invocation_id" of type "str | None" in function "__init__"
+    Type "object" is not assignable to type "str | None"
+      "object" is not assignable to "str"
+      "object" is not assignable to "None" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "permission_mode" of type "str | None" in function "__init__"
+    Type "object" is not assignable to type "str | None"
+      "object" is not assignable to "str"
+      "object" is not assignable to "None" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "allowed_tools" of type "tuple[str, ...]" in function "__init__"
+    "object" is not assignable to "tuple[str, ...]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "disallowed_tools" of type "tuple[str, ...]" in function "__init__"
+    "object" is not assignable to "tuple[str, ...]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "mcp_config" of type "str | Mapping[str, Any] | list[Any] | None" in function "__init__"
+    Type "object" is not assignable to type "str | Mapping[str, Any] | list[Any] | None"
+      "object" is not assignable to "str"
+      "object" is not assignable to "Mapping[str, Any]"
+      "object" is not assignable to "list[Any]"
+      "object" is not assignable to "None" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "provider_options" of type "Mapping[str, Any]" in function "__init__"
+    "object" is not assignable to "Mapping[str, Any]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:40:33 - error: Argument of type "object" cannot be assigned to parameter "env_overrides" of type "Mapping[str, str]" in function "__init__"
+    "object" is not assignable to "Mapping[str, str]" (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:74:51 - error: "kind" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:75:45 - error: "kind" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:91:45 - error: "kind" is not a known attribute of "None" (reportOptionalMemberAccess)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness\tests\test_compat_transcript_parse.py:103:48 - error: "kind" is not a known attribute of "None" (reportOptionalMemberAccess)
+77 errors, 0 warnings, 0 notes

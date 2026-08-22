@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .codex/skills/design-project-topology/scripts/validate_execution_plan.py active_docs/claude_qwen_runner_integration_plan.md --mapping active_docs/SUBAGENT_ROLE_MODEL_MAPPING.json",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Local structural parsing of one plan and mapping is normally near-instant; 60 seconds covers Windows process startup and repository contention, with 15 seconds policy-capped cleanup.",
+    "started_at":  "2026-08-22T06:10:38.0490232+00:00",
+    "finished_at":  "2026-08-22T06:10:39.7838772+00:00",
+    "elapsed_seconds":  1.735,
+    "root_process_id":  30580,
+    "observed_process_ids":  [
+                                 30580
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-plan-validate-004.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-plan-validate-004.stderr.log"
+}

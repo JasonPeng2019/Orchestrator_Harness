@@ -1,0 +1,4 @@
+{"name":"Load profile and safety map","outcome":"passed","recorded_at":"2026-08-21T06:57:03.460336Z","step":1}
+{"name":"Enumerate debug probes","outcome":"passed","recorded_at":"2026-08-21T06:57:03.468077Z","step":2}
+{"name":"Resolve intended stable hardware probe identity","outcome":"passed","recorded_at":"2026-08-21T06:57:03.475067Z","step":3}
+{"name":"Confirm verified target support","outcome":"passed","recorded_at":"2026-08-21T06:57:03.480067Z","step":4}

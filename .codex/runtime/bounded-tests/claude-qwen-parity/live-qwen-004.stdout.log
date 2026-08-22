@@ -1,0 +1,16 @@
+{
+  "base_commit": "8a4b14b755fd7eafb4a17dcc4b5fabfbed30b3e5",
+  "head_commit": "9e9f1b454950ed138282144cab2470ec7d243dcf",
+  "hello_content": "hello from qwen\n",
+  "lane_event_types": [
+    "PROVIDER_STARTED",
+    "PROVIDER_EXITED"
+  ],
+  "model": "deepseek-v4-flash:0731-cloud",
+  "provider_exit_code": 0,
+  "provider_id": "qwen-code",
+  "provider_session_id": "3bcd7539-dd23-4865-a792-6660b3587163",
+  "provider_terminal_outcome": "COMPLETED",
+  "schema": "orchestrator-disposable-qwen-live/v1",
+  "terminal_state": "PROVIDER_EXITED"
+}

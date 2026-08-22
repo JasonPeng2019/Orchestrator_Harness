@@ -1,0 +1,41 @@
+{
+  "planId": "229175e3-3a73-4b6c-bc8e-c081c078256e",
+  "todos": [
+    {
+      "content": "Handshake with BYO firmware MCP server; learn safe operating workflow",
+      "id": "t1",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-001: board-free scope matrix — fixed/flexible populated plans; altered parameter, wrong board, wrong session, tool mismatch refusals; audit not-started/not-consumed",
+      "id": "t2",
+      "status": "completed"
+    },
+    {
+      "content": "Write evidence for REQ-001 under .agent-workspace/evidence/",
+      "id": "t3",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-002: pre-start refusal vs started failure on freshly set-up NRF-A",
+      "id": "t4",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-003: one-time and full-session permission scope/consumption",
+      "id": "t5",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-004: safety refresh + stale plan refusal + target recovery refusal",
+      "id": "t6",
+      "status": "completed"
+    },
+    {
+      "content": "Final cleanup (disconnect, board unchanged), write RESULT.json + TEST_REPORT.md",
+      "id": "t7",
+      "status": "completed"
+    }
+  ],
+  "sessionId": "7fdf0def-2040-4897-bac7-2891a7f2c9e4"
+}

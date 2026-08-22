@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoProfile -ExecutionPolicy Bypass -File \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-final-frozen-tip-static-001.ps1\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-parity-implementation",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Final frozen-tip static gate combines the previously measured Claude, Qwen, and registry suites with static checks; 120 seconds covers one cold combined run and 30 seconds is the policy-capped cleanup allowance.",
+    "started_at":  "2026-08-22T08:40:30.3981980+00:00",
+    "finished_at":  "2026-08-22T08:40:33.6932043+00:00",
+    "elapsed_seconds":  3.295,
+    "root_process_id":  18192,
+    "observed_process_ids":  [
+                                 18192
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-final-frozen-tip-static-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-final-frozen-tip-static-001.stderr.log"
+}

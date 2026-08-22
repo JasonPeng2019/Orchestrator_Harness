@@ -1,0 +1,54 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+2 files already formatted
+
+== types changed Python ==
+0 errors, 0 warnings, 0 notes
+
+== compile changed Python ==
+
+== Firmware MCP Ruff ==
+All checks passed!
+
+== Firmware MCP Pyright ==
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\kernel\finalizers.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\kernel\finalizers.py:9:6 - error: Import "pydantic" could not be resolved (reportMissingImports)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\kernel\operations.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\kernel\operations.py:26:8 - error: Import "anyio" could not be resolved (reportMissingImports)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\kernel\processes.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\kernel\processes.py:20:8 - warning: Import "psutil" could not be resolved from source (reportMissingModuleSource)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\kernel\registry.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\kernel\registry.py:12:6 - error: Import "mcp.server.fastmcp" could not be resolved (reportMissingImports)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\kernel\registry.py:13:6 - error: Import "mcp.server.fastmcp.exceptions" could not be resolved (reportMissingImports)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\kernel\registry.py:14:6 - error: Import "mcp.server.lowlevel" could not be resolved (reportMissingImports)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\kernel\registry.py:15:6 - error: Import "mcp.server.stdio" could not be resolved (reportMissingImports)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\kernel\registry.py:16:6 - error: Import "mcp.shared.exceptions" could not be resolved (reportMissingImports)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\kernel\registry.py:17:6 - error: Import "mcp.types" could not be resolved (reportMissingImports)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\local_env.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\local_env.py:11:14 - error: Import "dotenv" could not be resolved (reportMissingImports)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\pack_index_repair.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\pack_index_repair.py:31:8 - error: Import "httpx" could not be resolved (reportMissingImports)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\pack_provision.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\pack_provision.py:359:16 - error: Import "httpx" could not be resolved (reportMissingImports)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\server.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\server.py:30:6 - error: Import "elftools.common.exceptions" could not be resolved (reportMissingImports)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\setup_flow\datasheet_evidence.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\setup_flow\datasheet_evidence.py:137:14 - error: Import "pypdf" could not be resolved (reportMissingImports)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\setup_flow\datasheet_evidence.py:138:14 - error: Import "pypdf" could not be resolved (reportMissingImports)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\tools\batch.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\tools\batch.py:9:6 - error: Import "mcp.server.fastmcp.exceptions" could not be resolved (reportMissingImports)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\tools\batch.py:10:6 - error: Import "pydantic" could not be resolved (reportMissingImports)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\tools\handshake.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\tools\handshake.py:7:6 - error: Import "mcp.server.fastmcp" could not be resolved (reportMissingImports)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\tools\memory.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\tools\memory.py:12:6 - error: Import "elftools.common.exceptions" could not be resolved (reportMissingImports)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\tools\misc.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\tools\misc.py:9:6 - error: Import "pydantic" could not be resolved (reportMissingImports)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\tools\plans.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\tools\plans.py:9:6 - error: Import "mcp.server.fastmcp" could not be resolved (reportMissingImports)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\tools\plans.py:10:6 - error: Import "mcp.server.fastmcp.utilities.func_metadata" could not be resolved (reportMissingImports)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\BYO-Firmware-MCP\src\pyocd_debug_mcp\tools\plans.py:11:6 - error: Import "pydantic" could not be resolved (reportMissingImports)
+22 errors, 1 warning, 0 informations

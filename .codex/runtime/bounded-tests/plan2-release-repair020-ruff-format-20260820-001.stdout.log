@@ -1,0 +1,324 @@
+unformatted: File would be reformatted
+   --> harness_watcher_implementation\tests\test_watcher_smoke.py:816:26
+    |
+815 |             patch.object(runner.os, "name", "nt"),
+    -             patch.object(
+    -                 runner.subprocess, "CREATE_NO_WINDOW", no_window, create=True
+    -             ),
+816 +             patch.object(runner.subprocess, "CREATE_NO_WINDOW", no_window, create=True),
+817 |             patch.object(
+    |
+
+unformatted: File would be reformatted
+    --> orchestrator_harness\tests\test_s6_public_release.py:3720:43
+     |
+3719 |
+     - class S6SafeguardTests(unittest.TestCase):
+     -     def _run_native_safeguard_fixture(
+     -         self, raw_path: Path, *, first_exit_code: int
+     -     ) -> tuple[subprocess.CompletedProcess[str], Path, Path]:
+     -         root = raw_path / "candidate"
+     -         shutil.copytree(
+     -             REPOSITORY_ROOT,
+     -             root,
+     -             ignore=shutil.ignore_patterns(
+     -                 ".git",
+     -                 ".agent-workspace",
+     -                 "__pycache__",
+     -                 "*.pyc",
+     -                 ".ruff_cache",
+     -                 "runtime",
+     -             ),
+     -         )
+     -         repository = TemporaryGitRepository.create(
+     -             root, branch="firmware/v2-candidate"
+     -         )
+     -         marker = raw_path / "next-unit-ran.txt"
+     -         marker_literal = str(marker).replace("'", "''")
+     -         (root / "stderr-unit.ps1").write_text(
+     -             "Write-Output 'NATIVE-STDOUT-FIRST'\n"
+     -             "[Console]::Error.WriteLine('NATIVE-STDERR-FIRST')\n"
+     -             f"exit {first_exit_code}\n",
+     -             encoding="utf-8",
+     -         )
+     -         (root / "next-unit.ps1").write_text(
+     -             "Write-Output 'NATIVE-STDOUT-NEXT'\n"
+     -             "[Console]::Error.WriteLine('NATIVE-STDERR-NEXT')\n"
+     -             f"Set-Content -LiteralPath '{marker_literal}' -Value 'next-ran'\n"
+     -             "exit 0\n",
+     -             encoding="utf-8",
+     -         )
+     -         release_module = root / "orchestrator_harness" / "release_checks.py"
+     -         fixture_registry = """
+     -
+     - if os.environ.get("S6_NATIVE_STDERR_FIXTURE") == "1":
+     -     CHECK_REGISTRY = (
+     -         CheckSpec(
+     -             "TEST.NATIVE-STDERR",
+     -             "native stderr fixture",
+     -             "release",
+     -             ("powershell", "-NoProfile", "-File", "stderr-unit.ps1"),
+     -             (),
+     -             ("stderr-unit.ps1",),
+     -         ),
+     -         CheckSpec(
+     -             "TEST.NATIVE-NEXT",
+     -             "native next fixture",
+     -             "release",
+     -             ("powershell", "-NoProfile", "-File", "next-unit.ps1"),
+     -             (),
+     -             ("next-unit.ps1",),
+     -         ),
+     -     )
+     - """
+     -         release_module_text = release_module.read_text(encoding="utf-8")
+     -         release_module.write_text(
+     -             release_module_text.replace(
+     -                 '\nif __name__ == "__main__":',
+     -                 fixture_registry + '\nif __name__ == "__main__":',
+     -                 1,
+     -             ),
+     -             encoding="utf-8",
+     -         )
+     -         repository.git("add", ".")
+     -         repository.git("commit", "-m", "native stderr safeguard fixture")
+     -
+     -         checkpoint = raw_path / "checkpoint.json"
+     -         environment = dict(os.environ)
+     -         environment["S6_NATIVE_STDERR_FIXTURE"] = "1"
+     -         completed = subprocess.run(
+     -             [
+     -                 "powershell",
+     -                 "-NoProfile",
+     -                 "-ExecutionPolicy",
+     -                 "Bypass",
+     -                 "-File",
+     -                 str(root / "tools" / "Invoke-CandidateSafeguard.ps1"),
+     -                 "-RepositoryRoot",
+     -                 str(root),
+     -                 "-ExpectedBranch",
+     -                 "firmware/v2-candidate",
+     -                 "-ExpectedTip",
+     -                 repository.head,
+     -                 "-Run",
+     -                 "-CreditFile",
+     -                 str(checkpoint),
+     -             ],
+     -             cwd=REPOSITORY_ROOT,
+     -             env=environment,
+     -             capture_output=True,
+     -             text=True,
+     -             check=False,
+     -             creationflags=_WINDOWLESS_CREATION_FLAGS,
+     -         )
+     -         return completed, checkpoint, marker
+     -
+     -     def test_safeguard_is_portable_exact_root_bound_and_selector_owned(self) -> None:
+     -         script = (
+     -             REPOSITORY_ROOT / "tools" / "Invoke-CandidateSafeguard.ps1"
+3720 + class S6SafeguardTests(unittest.TestCase):
+3721 +     def _run_native_safeguard_fixture(
+3722 +         self, raw_path: Path, *, first_exit_code: int
+3723 +     ) -> tuple[subprocess.CompletedProcess[str], Path, Path]:
+3724 +         root = raw_path / "candidate"
+3725 +         shutil.copytree(
+3726 +             REPOSITORY_ROOT,
+3727 +             root,
+3728 +             ignore=shutil.ignore_patterns(
+3729 +                 ".git",
+3730 +                 ".agent-workspace",
+3731 +                 "__pycache__",
+3732 +                 "*.pyc",
+3733 +                 ".ruff_cache",
+3734 +                 "runtime",
+3735 +             ),
+3736 +         )
+3737 +         repository = TemporaryGitRepository.create(root, branch="firmware/v2-candidate")
+3738 +         marker = raw_path / "next-unit-ran.txt"
+3739 +         marker_literal = str(marker).replace("'", "''")
+3740 +         (root / "stderr-unit.ps1").write_text(
+3741 +             "Write-Output 'NATIVE-STDOUT-FIRST'\n"
+3742 +             "[Console]::Error.WriteLine('NATIVE-STDERR-FIRST')\n"
+3743 +             f"exit {first_exit_code}\n",
+3744 +             encoding="utf-8",
+3745 +         )
+3746 +         (root / "next-unit.ps1").write_text(
+3747 +             "Write-Output 'NATIVE-STDOUT-NEXT'\n"
+3748 +             "[Console]::Error.WriteLine('NATIVE-STDERR-NEXT')\n"
+3749 +             f"Set-Content -LiteralPath '{marker_literal}' -Value 'next-ran'\n"
+3750 +             "exit 0\n",
+3751 +             encoding="utf-8",
+3752 +         )
+3753 +         release_module = root / "orchestrator_harness" / "release_checks.py"
+3754 +         fixture_registry = """
+3755 +
+3756 + if os.environ.get("S6_NATIVE_STDERR_FIXTURE") == "1":
+3757 +     CHECK_REGISTRY = (
+3758 +         CheckSpec(
+3759 +             "TEST.NATIVE-STDERR",
+3760 +             "native stderr fixture",
+3761 +             "release",
+3762 +             ("powershell", "-NoProfile", "-File", "stderr-unit.ps1"),
+3763 +             (),
+3764 +             ("stderr-unit.ps1",),
+3765 +         ),
+3766 +         CheckSpec(
+3767 +             "TEST.NATIVE-NEXT",
+3768 +             "native next fixture",
+3769 +             "release",
+3770 +             ("powershell", "-NoProfile", "-File", "next-unit.ps1"),
+3771 +             (),
+3772 +             ("next-unit.ps1",),
+3773 +         ),
+3774 +     )
+3775 + """
+3776 +         release_module_text = release_module.read_text(encoding="utf-8")
+3777 +         release_module.write_text(
+3778 +             release_module_text.replace(
+3779 +                 '\nif __name__ == "__main__":',
+3780 +                 fixture_registry + '\nif __name__ == "__main__":',
+3781 +                 1,
+3782 +             ),
+3783 +             encoding="utf-8",
+3784 +         )
+3785 +         repository.git("add", ".")
+3786 +         repository.git("commit", "-m", "native stderr safeguard fixture")
+3787 +
+3788 +         checkpoint = raw_path / "checkpoint.json"
+3789 +         environment = dict(os.environ)
+3790 +         environment["S6_NATIVE_STDERR_FIXTURE"] = "1"
+3791 +         completed = subprocess.run(
+3792 +             [
+3793 +                 "powershell",
+3794 +                 "-NoProfile",
+3795 +                 "-ExecutionPolicy",
+3796 +                 "Bypass",
+3797 +                 "-File",
+3798 +                 str(root / "tools" / "Invoke-CandidateSafeguard.ps1"),
+3799 +                 "-RepositoryRoot",
+3800 +                 str(root),
+3801 +                 "-ExpectedBranch",
+3802 +                 "firmware/v2-candidate",
+3803 +                 "-ExpectedTip",
+3804 +                 repository.head,
+3805 +                 "-Run",
+3806 +                 "-CreditFile",
+3807 +                 str(checkpoint),
+3808 +             ],
+3809 +             cwd=REPOSITORY_ROOT,
+3810 +             env=environment,
+3811 +             capture_output=True,
+3812 +             text=True,
+3813 +             check=False,
+3814 +             creationflags=_WINDOWLESS_CREATION_FLAGS,
+3815 +         )
+3816 +         return completed, checkpoint, marker
+3817 +
+3818 +     def test_safeguard_is_portable_exact_root_bound_and_selector_owned(self) -> None:
+3819 +         script = (
+3820 +             REPOSITORY_ROOT / "tools" / "Invoke-CandidateSafeguard.ps1"
+3821 |         ).read_text(encoding="utf-8")
+--------------------------------------------------------------------------------
+3843 |         self.assertIn("--git-common-dir", script)
+     -         self.assertIn("--untracked-files=all", core)
+     -
+     -     def test_safeguard_run_streams_native_stderr_and_checkpoints_next_unit(self) -> None:
+     -         with tempfile.TemporaryDirectory(
+     -             prefix="orchestrator-s6-native-stderr-pass-"
+     -         ) as raw:
+     -             completed, checkpoint, marker = self._run_native_safeguard_fixture(
+     -                 Path(raw), first_exit_code=0
+     -             )
+     -             self.assertEqual(
+     -                 0, completed.returncode, completed.stdout + completed.stderr
+     -             )
+     -             output = completed.stdout + completed.stderr
+     -             self.assertIn("NATIVE-STDOUT-FIRST", output)
+     -             self.assertIn("NATIVE-STDERR-FIRST", output)
+     -             self.assertIn("NATIVE-STDOUT-NEXT", output)
+     -             self.assertIn("NATIVE-STDERR-NEXT", output)
+     -             self.assertTrue(marker.is_file())
+     -             record = json.loads(checkpoint.read_text(encoding="utf-8"))
+     -             self.assertEqual(
+     -                 ["TEST.NATIVE-STDERR", "TEST.NATIVE-NEXT"],
+     -                 [item["stable_id"] for item in record["credits"]],
+     -             )
+     -             self.assertEqual([], record["dispositions"])
+     -
+     -     def test_safeguard_run_records_native_failure_and_continues_next_unit(self) -> None:
+     -         with tempfile.TemporaryDirectory(
+     -             prefix="orchestrator-s6-native-stderr-fail-"
+     -         ) as raw:
+     -             completed, checkpoint, marker = self._run_native_safeguard_fixture(
+     -                 Path(raw), first_exit_code=7
+     -             )
+     -             self.assertNotEqual(0, completed.returncode)
+     -             self.assertTrue(marker.is_file())
+     -             record = json.loads(checkpoint.read_text(encoding="utf-8"))
+     -             self.assertEqual(
+     -                 "TEST.NATIVE-STDERR", record["dispositions"][0]["stable_id"]
+     -             )
+     -             self.assertEqual("FAIL", record["dispositions"][0]["status"])
+     -             self.assertEqual(
+     -                 "ordinary nonzero exit code 7", record["dispositions"][0]["reason"]
+     -             )
+     -             self.assertEqual(
+     -                 ["TEST.NATIVE-NEXT"],
+     -                 [item["stable_id"] for item in record["credits"]],
+     -             )
+     -
+     -     def test_non_candidate_branch_is_rejected_before_selector_or_checks(self) -> None:
+3844 +         self.assertIn("--untracked-files=all", core)
+3845 +
+3846 +     def test_safeguard_run_streams_native_stderr_and_checkpoints_next_unit(
+3847 +         self,
+3848 +     ) -> None:
+3849 +         with tempfile.TemporaryDirectory(
+3850 +             prefix="orchestrator-s6-native-stderr-pass-"
+3851 +         ) as raw:
+3852 +             completed, checkpoint, marker = self._run_native_safeguard_fixture(
+3853 +                 Path(raw), first_exit_code=0
+3854 +             )
+3855 +             self.assertEqual(
+3856 +                 0, completed.returncode, completed.stdout + completed.stderr
+3857 +             )
+3858 +             output = completed.stdout + completed.stderr
+3859 +             self.assertIn("NATIVE-STDOUT-FIRST", output)
+3860 +             self.assertIn("NATIVE-STDERR-FIRST", output)
+3861 +             self.assertIn("NATIVE-STDOUT-NEXT", output)
+3862 +             self.assertIn("NATIVE-STDERR-NEXT", output)
+3863 +             self.assertTrue(marker.is_file())
+3864 +             record = json.loads(checkpoint.read_text(encoding="utf-8"))
+3865 +             self.assertEqual(
+3866 +                 ["TEST.NATIVE-STDERR", "TEST.NATIVE-NEXT"],
+3867 +                 [item["stable_id"] for item in record["credits"]],
+3868 +             )
+3869 +             self.assertEqual([], record["dispositions"])
+3870 +
+3871 +     def test_safeguard_run_records_native_failure_and_continues_next_unit(self) -> None:
+3872 +         with tempfile.TemporaryDirectory(
+3873 +             prefix="orchestrator-s6-native-stderr-fail-"
+3874 +         ) as raw:
+3875 +             completed, checkpoint, marker = self._run_native_safeguard_fixture(
+3876 +                 Path(raw), first_exit_code=7
+3877 +             )
+3878 +             self.assertNotEqual(0, completed.returncode)
+3879 +             self.assertTrue(marker.is_file())
+3880 +             record = json.loads(checkpoint.read_text(encoding="utf-8"))
+3881 +             self.assertEqual(
+3882 +                 "TEST.NATIVE-STDERR", record["dispositions"][0]["stable_id"]
+3883 +             )
+3884 +             self.assertEqual("FAIL", record["dispositions"][0]["status"])
+3885 +             self.assertEqual(
+3886 +                 "ordinary nonzero exit code 7", record["dispositions"][0]["reason"]
+3887 +             )
+3888 +             self.assertEqual(
+3889 +                 ["TEST.NATIVE-NEXT"],
+3890 +                 [item["stable_id"] for item in record["credits"]],
+3891 +             )
+3892 +
+3893 +     def test_non_candidate_branch_is_rejected_before_selector_or_checks(self) -> None:
+3894 |         with tempfile.TemporaryDirectory(
+     |
+
+2 files would be reformatted, 143 files already formatted

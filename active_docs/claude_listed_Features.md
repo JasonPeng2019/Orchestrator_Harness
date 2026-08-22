@@ -7,6 +7,11 @@ testing was performed for this revision — every row that was TESTED-PASSED or 
 the prior revision keeps that exact status; every new row surfaced by this deeper pass is
 NOT-TESTED with a reason.
 
+> **Active compatibility follow-through.** This inventory and its related Claude work remain
+> active until their source changes are merged into `firmware-v2-harness-runner`. They do not
+> reopen the closed Firmware hardware campaign. See
+> [`final_v2-firmware_harness_overview.md`](../firmware-v2-harness-runner/final_v2-firmware_harness_overview.md).
+
 "Time-boxed" (TB) = deliberately skipped rather than exhaustively tested, not inherently
 untestable. **TB-SC** = a TB row that was short-circuited by the round: its testing was blocked
 or made pointless by the 4 confirmed failures (no working Claude lane launch, untrustworthy lane
@@ -37,8 +42,9 @@ CLI). So the wake half is implementable for Claude, just with a different mechan
 resume-based re-entry loop) rather than App Server injection — the gap is that no delivery
 coordinator wires resume-as-wake together, not that the mechanism is impossible.
 
-Compiled from: `plans/general-coding-harness/EXECUTION_PLAN.md` (C1-C128 checklist),
-`plans/general-coding-harness/FULL-EXECUTION-SPEC_PLAN_2.md` (module instances MI-*),
+Compiled from the archived Plan 2 campaign records:
+`../archive/firmware-v2-campaign/general-coding-harness/EXECUTION_PLAN.md` (C1-C128 checklist),
+`../archive/firmware-v2-campaign/general-coding-harness/FULL-EXECUTION-SPEC_PLAN_2.md` (module instances MI-*),
 `Portable_Watcher_Repo/orchestrator_harness/SPEC.md` and
 `Portable_Watcher_Repo/harness_watcher_implementation/SPEC.md` (R1-R8 / watcher requirements,
 older generation of the same design), `README.md`, `QUICK_START.md`,
@@ -54,19 +60,21 @@ every remaining module for `raise \w*Error(`, ALL-CAPS string constants, and top
 **A test completing is NOT a pass.** Running a test only *produces a result*; that result is
 either a pass or a gap/fail. "Passed" means a **positive** outcome — we got what we wanted: the
 feature behaves exactly as the intended (Codex-era) design specified. If the test ran fine but the
-observed behavior diverges from the intended behavior, that is a **GAP**, never a pass — even when
-the divergence is "harmless" or the harness is stricter/safer than intended. Do not launder a
-completed-but-divergent test into TESTED-PASSED.
+observed behavior diverges, distinguish two cases: a true **Codex-vs-Claude provider divergence**
+(the Claude path differs from the Codex path) is a **GAP**; a shortfall in *shared* provider-neutral
+code relative to an old plan doc — where Codex and Claude behave identically — is a **DESIGN-REC**
+(design recommendation), not a gap. Neither is laundered into TESTED-PASSED.
 
 Use exactly these Status values:
 
 | Status | Meaning — when to use it |
 |---|---|
 | **TESTED-PASSED** | A test ran **and** the actual behavior matches the intended Codex-era behavior. Positive result. |
-| **GAP** | A test ran **and** revealed a divergence between intended (Codex) behavior and actual (Claude/current) behavior — absent, weaker, or observably different, *including* stricter/safer. Not a pass. Cite the finding id (`F1x-…`/`F2x-…`) + a one-line divergence in the cell; full evidence in `plans/compatibility-testing/evidence/FINDINGS.md`. |
+| **GAP** | A test ran **and** revealed a true **Codex-vs-Claude provider divergence** — the Claude path behaves differently from the Codex path in a way a consumer observes. Reserved for genuine provider gaps. Cite the finding id + a one-line divergence; full evidence in `plans/compatibility-testing/evidence/FINDINGS.md`. **As of 2026-08-20 exactly one row qualifies: U15.** |
+| **DESIGN-REC** | A test ran and the shared (provider-neutral) implementation does less than, or differs from, an old plan/design document — but the behavior is identical for Codex and Claude (it is shared code), so it is **not** a provider gap. These are recorded as **design recommendations** (a feature to add or a plan doc to correct), never as compatibility gaps. Cite the finding id + a one-line note. |
 | **TESTED-FAILED** | The feature is broken / a confirmed defect (traces to a phase-0 finding). |
 | **NOT-TESTED** | No test was run yet. Tag with the reason code (PA / OOS / CX / TB-*). |
-| **NOTED** | Legacy pre-phase-1 label = an observed gap not counted as pass or fail. Prefer GAP for new rows. |
+| **NOTED** | Legacy pre-phase-1 label. Prefer DESIGN-REC (shared-code shortfall) or GAP (true provider divergence) for new rows. |
 
 If you are a future agent running these tests: never write TESTED-PASSED just because a test module
 went green on its own assertions. A test that *pins a divergence* is green **because** it correctly
@@ -78,24 +86,34 @@ captured the gap — that is a GAP row, not a pass.
 |---|---:|
 | Total features inventoried (this revision) | **346** |
 | Total features inventoried (prior revision) | 61 |
-| Rows tagged TESTED-PASSED (feature behaves as intended; some rows confirm the same underlying test action from a different angle; **7 of these were the phase-0 blockers — fixed & re-verified PASS in the compat-test clone, fix uncommitted/unmerged**) | 225 |
-| Rows tagged **GAP** (feature *was* tested, but actual behavior diverges from the intended Codex-era behavior — a recorded finding, **NOT** a pass; see below and the FINDINGS ledger) | 19 |
+| Rows tagged TESTED-PASSED (feature behaves as intended; some rows confirm the same underlying test action from a different angle; **7 of these were the phase-0 blockers — fixed & re-verified PASS in the compat-test clone, fix uncommitted/unmerged**; **7 more are Phase-5 producer-seam passes — G8, G9, G11, G12, G13, G15, G16, `TESTED-PASSED (5.B, producer-seam)`, explicitly weaker than a live pass**; **6 more are 2026-08-20 parity re-dispositions — E19, K8, L4, L7, Q1, Q17, `TESTED-PASSED (parity)`, formerly GAP, confirmed to run Codex's exact shared mechanism**) | 238 |
+| Rows tagged **GAP** (a genuine Codex-vs-Claude provider divergence — reserved for real compatibility gaps; as of 2026-08-20 only **U15**, and it is unclosable upstream) | 1 |
+| Rows tagged **DESIGN-REC** (shared/provider-neutral code does less than an old plan doc, but behaves identically for Codex and Claude — a **design recommendation**, not a provider gap; formerly mislabeled GAP) | 12 |
 | Rows tagged TESTED-FAILED | 0 — the 7 phase-0 failures (A1, A17, C17, U1–U4, from the 4 findings in `missing_claude_implementation.md`) were fixed & re-verified PASS in the compat-test clone and are now counted under TESTED-PASSED with a "fix uncommitted/unmerged" caveat; the authoritative target still exhibits the original failures until the fix is merged |
-| Rows tagged NOT-TESTED | 102 |
+| Rows tagged NOT-TESTED | 95 |
 | Rows tagged NOTED | 0 — the former legacy row (U15) is now folded into GAP per the gap/pass/not-tested taxonomy |
 
-**GAP is a distinct outcome, not a pass.** Phases 1–2 are detection-only unit tests over the real
-(Codex-era) `orchestrator_harness` modules. A GAP row means the test ran and pinned the *actual*
-behavior, and that behavior differs from what the Codex-era design/plan intended for this feature —
-sometimes the intended capability is absent or weaker (e.g. `scan --no-write` no-op, no
-result-ambiguity rejection, `prompt.py` has no template constants), sometimes the harness is
-*stricter/safer* than intended (e.g. config bounds reject instead of clamp, resume-thread conflict
-fails closed instead of "canonical wins"). Either way it is an intended-vs-actual divergence a
-Claude-side consumer could observe, so it is **not** marked TESTED-PASSED. The 19 GAP rows are:
-B2, C24, E19, E20, F3, F24, G1, G5, G18, I4, K8, L4, L7, Q1, Q17, A34, A39, T3, U15 — each carries its finding id
-(`F1x-…`/`F2x-…`/`U15-CANCELLED`) and a one-line divergence summary in its Status cell; full evidence is in
-`plans/compatibility-testing/evidence/FINDINGS.md`. (U15 is a benign provider difference — Claude's CLI
-emits no cancel event — formerly tracked as NOTED.)
+**The only GAP is a genuine provider divergence; everything else is a design recommendation.**
+Phases 1–2 are detection-only unit tests over the real (Codex-era) `orchestrator_harness` modules.
+Under the operator decision that *the Claude code must mirror the exact mechanism Codex uses*, every
+former GAP row was re-examined for whether it is a true **provider divergence** (Codex behaves one
+way, Claude another) or merely a shortfall in **shared, provider-neutral code** relative to an old
+plan doc — where Codex and Claude behave identically. Result:
+
+- **The sole GAP row is U15**, the one genuine Codex-vs-Claude divergence, and it is **unclosable
+  upstream** — the Claude CLI emits no `turn.cancelled`-equivalent event, so the parser cannot
+  produce `CANCELLED`. Accepted, not a harness defect.
+- **12 former GAP rows are now `DESIGN-REC` (design recommendations), not gaps** — B2, C24, E20, F3,
+  F24, G1, G5, G18, I4, A34, A39, T3. Each is shared code that does less than, or differs from, an
+  old plan doc, but behaves identically for both providers (there is no `claude_adapter`/
+  `codex_adapter` split for any of them). They are recorded as features to add or plan docs to
+  correct — never as compatibility gaps. (A39/T3's finding is additionally **stale**: the ordered
+  recovery ledger it reported missing exists in `harness_watcher_implementation/state.py`; the test
+  looked at the wrong module and a re-test is pending.)
+- **6 rows earlier moved GAP → `TESTED-PASSED (parity)`** — E19, K8, L4, L7, Q1, Q17 — shared code
+  where Claude already runs Codex's exact mechanism (FINDINGS.md: RESOLVED-PARITY).
+
+Full evidence per row: `plans/compatibility-testing/evidence/FINDINGS.md`.
 
 **Phase-1/2 detection testing was executed this revision** (parent Opus 4.8 / high; test-authoring
 subagents `deepseek-v4-flash:0731-cloud` @ `--effort high`, coordinator-verified). This supersedes
@@ -110,13 +128,13 @@ the prior revision's "no new testing performed" note. Test modules live under
 > `claude config set` / `~/.claude` / global settings. Full recipe: `plans/compatibility-testing/README-claude-code.md`
 > §3 "MANDATORY subagent launch envelope"; rationale in memory `subagent-launch-local-only`.
 
-NOT-TESTED breakdown by reason (102 rows):
+NOT-TESTED breakdown by reason (95 rows):
 | Reason | Count |
 |---|---:|
 | PA — Provider-agnostic, already verified in the earlier Codex/DeepSeek session | 72 |
 | OOS — Out of scope per explicit firmware/MCP/legacy-watcher exclusion | 23 |
 | CX — Codex-only mechanism, structurally has no Claude-provider equivalent to exercise | 0 (Phase 4 built the Claude host adapter; all 30 former CX-GAP rows are now TESTED-PASSED — see taxonomy note) |
-| Live-not-materialized — event **classifier** logic exists, but the event never emitted on a real lane in 3.A: a single Ollama controller turn emits only PROVIDER_STARTED/PROVIDER_EXITED, and these rows (G8, G9, G11, G12, G13, G15, G16) were not in the phase-1 in-process batch either. Not fabricated, not flipped to PASS — recorded per the plan's live-emission caveat. **These 7 are the sole NOT-TESTED rows that are neither PA nor OOS and genuinely should be tested → deferred to [Phase 5](../plans/compatibility-testing/phase-5-residual-live-event-emission.md), which drives their live producers.** (All former TB-NS/TB-NS-V/TB-SC rows are now resolved: phase-1/2 pure-logic rows → TESTED-PASSED; F15/G21/V7/G32 → TESTED-PASSED via phase 3; G10 → synthetic/accepted.) | 7 |
+| Live-not-materialized — **closed by [Phase 5](../plans/compatibility-testing/phase-5-residual-live-event-emission.md) (2026-08-20).** These 7 rows (G8, G9, G11, G12, G13, G15, G16) were the sole non-PA, non-OOS residue: their event **classifier** logic passed in phase 1, but the event never emitted on a real lane in 3.A (a single Ollama controller turn emits only PROVIDER_STARTED/PROVIDER_EXITED). Phase 5's decision gate found the weak Ollama backend cannot sustain the multi-lane/relay/subordinate-process/harness-lifecycle states a live **5.A** pass needs within the time box, so all 7 were closed via the **5.B producer-seam** path — driving the real producer call sites (`events.conditions_from_snapshot`/`diff_conditions`, `models.RequestFacts.operator_summary`, `attention.make_source_record`) in-process and asserting emission. Each is now `TESTED-PASSED (5.B, producer-seam)` — explicitly weaker than a live pass, never presented as live; MCP_* variants stay OOS. Evidence: `evidence/5.B/`. | 0 |
 
 See `missing_claude_implementation.md` for full evidence (argv diffs, live CLI transcripts, event-log
 excerpts) behind every TESTED-FAILED row. The "14 real test actions" figure is unchanged from the
@@ -176,11 +194,14 @@ dispositions in `coverage-matrix.md`.
 The **live half of TB-SC** (authentic event wiring on real lanes — F15, G8–G13, G15, G16, G21,
 G32-live, V7) ran in phase 3 once the phase-0 gate (0.5) passed. Outcome: **F15, G21, G32-live, V7
 → TESTED-PASSED** (authentic live evidence in `evidence/3.A`/`3.B`); **G10 → synthetic/accepted**;
-**G8, G9, G11, G12, G13, G15, G16 → live emission did not materialize** on the Ollama backend (a
-single controller turn emits only PROVIDER_STARTED/PROVIDER_EXITED), so they stay NOT-TESTED and are
-honestly recorded rather than fabricated — and are the sole non-PA, non-OOS residue, now carried
-forward to **[Phase 5](../plans/compatibility-testing/phase-5-residual-live-event-emission.md)**,
-which drives their live producers. No TB-NS / TB-NS-V / TB-SC row remains open.
+**G8, G9, G11, G12, G13, G15, G16 → live emission did not materialize** on the Ollama backend in
+phase 3 (a single controller turn emits only PROVIDER_STARTED/PROVIDER_EXITED), so they were carried
+forward to **[Phase 5](../plans/compatibility-testing/phase-5-residual-live-event-emission.md)**.
+**Phase 5 (2026-08-20) closed all 7 via the 5.B producer-seam path** — the Ollama backend cannot
+sustain the multi-lane/relay/subordinate-process/harness-lifecycle states a live 5.A pass needs, so
+each producer call site was driven in-process and asserted to emit; the 7 rows are now
+`TESTED-PASSED (5.B, producer-seam)` (explicitly weaker than a live pass, never presented as live).
+No TB-NS / TB-NS-V / TB-SC row remains open, and no non-PA/non-OOS NOT-TESTED row remains.
 
 ---
 
@@ -332,13 +353,12 @@ disposable git worktree** — nothing is committed or merged upstream.
   (`provider.py`, `invocation.py`, `lane_controller.py`, `tests/test_s2_contract.py`, `.gitignore`);
   the Phase 4 files and phase-1/2 `test_compat_*.py` modules appear as untracked (`??`).
 
-> **Not to be confused with the first-round scratch checkouts** (which do **not** carry any of these
-> fixes): `harness-single-worktrees/claude-test` is the original **read-only probing clone**
-> (standalone `.git`, stock source — where the 4 phase-0 blockers were first *discovered* against
-> the real CLI), and `harness-single-worktrees/claude-probe-lanes/{lane-a,lane-b}` are the two
-> now-orphaned concurrency **probe lanes** launched from it (they hold `HELLO FROM LANE A/B` probe
-> files — evidence for A10/V2/V3/V4/V8 — but their backing worktree metadata is gone). The live
-> fix work is only in `compat-test`.
+> **Historical scratch copies removed.** `claude-test` was a read-only probing clone (where the
+> four phase-0 blockers were first observed against the real CLI); its two disposable concurrency
+> probe-lane copies supplied the original A10/V2/V3/V4/V8 evidence. They carried no delivered
+> source, are unnecessary after closure, and are intentionally absent. They are not a checkout or
+> launch route. The preserved historical evidence is under `plans/compatibility-testing/evidence/`;
+> the historical source for the documented Claude fixes is `compat-test`.
 
 ---
 
@@ -358,7 +378,7 @@ disposable git worktree** — nothing is committed or merged upstream.
 | A10 | Parallel Git lanes: isolated branch + worktree per subagent | `git_safety.py`, `lane_controller.py` | TESTED-PASSED (2 concurrent real lanes, no cross-contamination) |
 | A11 | Git identity verification before launch (repo, worktree root, branch, base commit) | `git_safety.py: inspect_repository, declaration_from_invocation` | TESTED-PASSED (both lane invocations validated before launch) |
 | A12 | Duplicate active worktree/branch detection | `git_safety.py: active_declaration_conflicts` | TESTED-PASSED (1.D — same feature as E7) |
-| A13 | Result validation for merge-readiness (branch-tip, clean tree, outcome shape) | `git_safety.py: validate_coding_result` | TESTED-PASSED (1.D — same feature as E14–E17; E19 state-gate scope is GAP **F1D-E19-1**) |
+| A13 | Result validation for merge-readiness (branch-tip, clean tree, outcome shape) | `git_safety.py: validate_coding_result` | TESTED-PASSED (1.D — same feature as E14–E17; E19 state-gate is now TESTED-PASSED parity, formerly F1D-E19-1) |
 | A14 | Invalid-result durable evidence + clearing on correction | `git_safety.py: invalid_result_evidence` | NOT-TESTED — PA |
 | A15 | Integration merge of multiple lane branches into one worktree + project checks | `README.md "Split, merge, accept"` | NOT-TESTED — PA |
 | A16 | Cleanup of lane worktrees/branches/runtime state after merge | `README.md "Cleanup"` | NOT-TESTED — PA |
@@ -379,12 +399,12 @@ disposable git worktree** — nothing is committed or merged upstream.
 | A31 | Watcher recovery projection / condition merging for the harness-owned diagnostic observer | `watcher_integration.py` | TESTED-PASSED (2.G; condition merging keyed by identity with dedup/last-write-wins + cleared-drops-out, recovery projection labels open/ack/resolved, actionable=open only) |
 | A32 | Release-check selection engine (dependency-fingerprinted, scope-matched test/check selection) | `release_checks.py: select_checks, resolve_input_scope` | NOT-TESTED — PA |
 | A33 | Release checkpoint merge / credit / disposition recording | `release_checks.py: write_checkpoint, merge_checkpoint_results, credit_record` | NOT-TESTED — PA |
-| A34 | Public release surface / release-manifest asset packaging | `release_assets.py` | GAP — **F2E-A34-1** (2.E; module is read-only manifest accessors only — no packaging/digest engine A34 intended) |
+| A34 | Public release surface / release-manifest asset packaging | `release_assets.py` | DESIGN-REC — **F2E-A34-1** (2.E; module is read-only manifest accessors only — no packaging/digest engine A34 intended) |
 | A35 | Operator launch: detached long-lived owner/watcher/lane-controller process with exact PID+creation identity | `operator_launch.py` | TESTED-PASSED (2.D / O7 — records exact PID+created_utc identity) |
 | A36 | Public launch helper (`launch_lane_controller`) as an embeddable entry point for external callers | `public_launch.py` | TESTED-PASSED (used implicitly) |
 | A37 | Legacy MCP-Trial-3-generation watcher: R1 suite-local discovery of controller/request/relay/checkpoint/result files | `Portable_Watcher_Repo/.../SPEC.md R1` | NOT-TESTED — OOS |
 | A38 | Watcher evaluator (`gpt-5.6-terra` classification of harness defects, `evaluator_enabled` flag) | `harness_watcher_implementation/evaluator.py`, `settings.py` | NOT-TESTED — OOS |
-| A39 | Watcher alert delivery / recovery ledger (`STOP_ASSIGNING → ... → RESOLVED`) | `harness_watcher_implementation/*`, `notifications.py` | GAP — **F2G-A39-1** (2.G; no ordered STOP_ASSIGNING→…→RESOLVED ledger — module is a stateless open/ack/resolved projection with no ordering guard) |
+| A39 | Watcher alert delivery / recovery ledger (`STOP_ASSIGNING → ... → RESOLVED`) | `harness_watcher_implementation/*`, `notifications.py` | DESIGN-REC — **F2G-A39-1** (2.G) — **STALE FINDING, re-test pending (2026-08-20).** The finding tested `watcher_integration.watcher_recovery_projection` (a stateless projection) and concluded no ordered ledger exists — but `harness_watcher_implementation/state.py` DOES implement the ordered ledger: `ORDER = (STOP_ASSIGNING, CHECKPOINT_REQUESTED, PAUSED, REPAIRED, RESUMED, RESOLVED)`, a `transition()` with an "out of order" guard (`raise ValueError`), and `recovery_history`. The intended feature appears to exist in a different module than the test looked at; needs a re-test against `state.py` before it can be re-dispositioned. Not a Claude-vs-Codex gap regardless (shared watcher code). |
 | A40 | Firmware/hardware capability path (leases, relays, boards, probes, MCP hardware tools) | `firmware_adapter.py`, `firmware_campaign.py`, `capability_broker.py` firmware adapters | NOT-TESTED — OOS |
 | A41 | MCP server integration / `--mcp-config` traffic | `invocation.py` provider field, `provider.py` | NOT-TESTED — OOS |
 
@@ -393,7 +413,7 @@ disposable git worktree** — nothing is committed or merged upstream.
 | # | Feature | Source module(s) | Status |
 |---|---|---|---|
 | B1 | `scan` (one-shot snapshot compute + print) | `cli.py` | TESTED-PASSED (1.B `test_compat_cli_subcommands`; scan prints reconciled snapshot, EXIT_OK, no persistence) |
-| B2 | `scan --no-write` (diagnostic-only, no snapshot/event mutation) | `cli.py` | GAP — **F1B-B2-1** (1.B; `scan --no-write` is parsed but ignored — a pure no-op; the intended write-suppression flag does nothing, harmless only because scan never persists) |
+| B2 | `scan --no-write` (diagnostic-only, no snapshot/event mutation) | `cli.py` | DESIGN-REC — **F1B-B2-1** (1.B; `scan --no-write` is parsed but ignored — a pure no-op; the intended write-suppression flag does nothing, harmless only because scan never persists) |
 | B3 | `watch --once` (single reconcile pass) | `cli.py` | TESTED-PASSED (1.B; `watch --once` = exactly one reconcile pass, cursor persisted) |
 | B4 | `watch --until-event` (block until any new event) | `cli.py` | TESTED-PASSED (1.B; `--until-event` returns on fabricated STALE_STATUS, not EXIT_TIMEOUT) |
 | B5 | `watch --until-actionable` (block until manager-actionable event or timeout) | `cli.py` | TESTED-PASSED (A23) |
@@ -439,7 +459,7 @@ disposable git worktree** — nothing is committed or merged upstream.
 | C21 | Isolated coding child-environment construction | `invocation.py: isolated_coding_child_environment` | TESTED-PASSED (1.A) |
 | C22 | Prior canonical acceptance-status read/persist | `invocation.py: _read_canonical_prior_status, _persist_canonical_acceptance` | TESTED-PASSED (1.A) |
 | C23 | Canonical resume-admission path & amendment-claims validation | `invocation.py: _canonical_resume_admission_path, _canonical_resume_claims_accepted` | TESTED-PASSED (1.A) |
-| C24 | Provider-operation classification & handoff-identity derivation | `invocation.py: _classify_provider_operations, _provider_handoff_identity` | GAP — **F1A-C24-1** (1.A; the intended unsupported-operation *record* is never emitted — `unsupported_operation_result` raises `ProviderAdapterError` first, so the record-producing branch is dead code; latent, cannot fire from validated input today) |
+| C24 | Provider-operation classification & handoff-identity derivation | `invocation.py: _classify_provider_operations, _provider_handoff_identity` | DESIGN-REC — **F1A-C24-1** (1.A; the intended unsupported-operation *record* is never emitted — `unsupported_operation_result` raises `ProviderAdapterError` first, so the record-producing branch is dead code; latent, cannot fire from validated input today) |
 
 ## D. Task & result lifecycle validation (`task.py`)
 
@@ -488,8 +508,8 @@ disposable git worktree** — nothing is committed or merged upstream.
 | E16 | Coding-result per-check shape validation (name-or-command required, outcome enum) | `git_safety.py` | TESTED-PASSED (1.D) |
 | E17 | Task-result branch-match + commit-must-equal-branch-tip checks (dirty/stale-tree rejection) | `git_safety.py` | TESTED-PASSED (1.D; branch-match + commit-tip; dirty/stale-tree rejected) |
 | E18 | `CODING_RESULT_INVALID` durable evidence emission + clearing on correction | `git_safety.py: invalid_result_evidence` | TESTED-PASSED (1.D; CODING_RESULT_INVALID evidence emitted + cleared on correction) |
-| E19 | Operational-state gate restricting result acceptance to `RUNNING_CODEX`/`RUNNING_PROVIDER` | `git_safety.py` | GAP — **F1D-E19-1** (1.D; the operational-state gate is scoped to conflict detection only — discovery-level result acceptance does NOT reject a result offered under EXITED/PROVIDER_EXITED) |
-| E20 | Too-many-JSON-candidates ambiguity rejection under a result workspace | `git_safety.py` | GAP — **F1D-E20-1** (1.D; no >1-candidate ambiguity rejection — a second result-shaped JSON is silently ignored; only the canonical `RESULT.json` is read) |
+| E19 | Operational-state gate restricting result acceptance to `RUNNING_CODEX`/`RUNNING_PROVIDER` | `git_safety.py` | TESTED-PASSED (parity, 2026-08-20) — Claude runs Codex's exact shared mechanism: `_trustworthy_live_status` cross-checks the claimed running state (`RUNNING_CODEX` and `RUNNING_PROVIDER` treated identically; `provider_pid` falls back to `codex_pid`) against the live OS process tree. Formerly GAP **F1D-E19-1**; re-dispositioned per operator decision that the Claude adapter must mirror Codex's mechanism — and here it does, because the gate is shared code, not a provider-specific path. The finding was plan-text-vs-implementation, not Claude-vs-Codex. Retained in FINDINGS.md as RESOLVED-PARITY. |
+| E20 | Too-many-JSON-candidates ambiguity rejection under a result workspace | `git_safety.py` | DESIGN-REC — **F1D-E20-1** (1.D; no >1-candidate ambiguity rejection — a second result-shaped JSON is silently ignored; only the canonical `RESULT.json` is read) |
 
 ## F. Reconcile.py operational-state classification
 
@@ -497,7 +517,7 @@ disposable git worktree** — nothing is committed or merged upstream.
 |---|---|---|---|
 | F1 | `RUNNING_CODEX` / `RUNNING_PROVIDER` live-process state | `reconcile.py` | NOT-TESTED — PA |
 | F2 | `WAITING_RESOURCE` (blocked on a resource claim) | `reconcile.py` | NOT-TESTED — PA (A20) |
-| F3 | `WAITING_RELAY` (blocked on manager relay) | `reconcile.py` | GAP — **F1E-F3-1** (1.E; lane elevates to WAITING_RELAY only on RELAY_READY — a RELAY_UNBOUND request leaves the lane RUNNING_CODEX, narrower than intended) |
+| F3 | `WAITING_RELAY` (blocked on manager relay) | `reconcile.py` | DESIGN-REC — **F1E-F3-1** (1.E; lane elevates to WAITING_RELAY only on RELAY_READY — a RELAY_UNBOUND request leaves the lane RUNNING_CODEX, narrower than intended) |
 | F4 | `HELPER_RUNNING`/`HELPER_EXITED`/`HELPER_STATE_UNKNOWN` helper-process tri-state | `reconcile.py` | TESTED-PASSED (1.E; helper tri-state HELPER_RUNNING/EXITED/STATE_UNKNOWN) |
 | F5 | `MCP_RUNNING`/`MCP_EXITED`/`MCP_STATE_UNKNOWN` MCP-process tri-state | `reconcile.py` | NOT-TESTED — OOS |
 | F6 | `STALE_STATUS` (status file older than liveness bound) | `reconcile.py` | NOT-TESTED — PA |
@@ -518,7 +538,7 @@ disposable git worktree** — nothing is committed or merged upstream.
 | F21 | Reparse-point/symlink signal-file rejection | `discovery.py: _is_reparse_or_link` | NOT-TESTED — PA |
 | F22 | UTC-timestamp format validation on discovered records | `discovery.py: _is_utc_timestamp` | TESTED-PASSED (1.E; `_is_utc_timestamp` Z/+00:00 accepted; naive/offset/garbage rejected) |
 | F23 | Git-state fingerprinting (dirty/clean worktree identity) | `discovery.py: _git_state_fingerprint` | NOT-TESTED — PA |
-| F24 | Memoized coding/task-result validation cache | `discovery.py: _validate_coding_result_cached, _validate_task_result_cached` | GAP — **F1E-F24-1** (1.E; the validation memo covers the coding-result path only — the task-result path is not memoized; missing optimization, not a correctness gap) |
+| F24 | Memoized coding/task-result validation cache | `discovery.py: _validate_coding_result_cached, _validate_task_result_cached` | DESIGN-REC — **F1E-F24-1** (1.E; the validation memo covers the coding-result path only — the task-result path is not memoized; missing optimization, not a correctness gap) |
 | F25 | Declared-lifetime-record enumeration (manifest-driven) | `discovery.py: _declared_lifetime_records, _manifest_declarations` | NOT-TESTED — PA |
 | F26 | `discover_run` / `discover_suite` full suite-local reconciliation entry points | `discovery.py` | NOT-TESTED — PA (B38) |
 
@@ -526,24 +546,24 @@ disposable git worktree** — nothing is committed or merged upstream.
 
 | # | Feature | Source module(s) | Status |
 |---|---|---|---|
-| G1 | Actionable manager-facing event class (RELAY_READY, REQUEST_AMBIGUOUS, RELAY_UNBOUND, REQUEST_EXPIRY_WARNING) | `notifications.py` | GAP — **F1F-G1-1** (1.F; an EXPIRED-bucket expiry request is emitted but never selectable — `_priority` is actionable only for WARNING/CRITICAL, narrower than the intended blanket 'actionable') |
+| G1 | Actionable manager-facing event class (RELAY_READY, REQUEST_AMBIGUOUS, RELAY_UNBOUND, REQUEST_EXPIRY_WARNING) | `notifications.py` | DESIGN-REC — **F1F-G1-1** (1.F; an EXPIRED-bucket expiry request is emitted but never selectable — `_priority` is actionable only for WARNING/CRITICAL, narrower than the intended blanket 'actionable') |
 | G2 | Duplicate-controller/coding-branch/coding-worktree conflict events | `notifications.py` | TESTED-PASSED (1.F; DUPLICATE_*/RESOURCE_CONFLICT emitted) |
 | G3 | `CODING_RESULT_INVALID` / `COORDINATION_FAILED` failure events | `notifications.py` | TESTED-PASSED (1.F; CODING_RESULT_INVALID + COORDINATION_FAILED emitted) |
 | G4 | Resource-contention events (RESOURCE_CLAIM_STALE, RESOURCE_CONFLICT, RESOURCE_WAIT, RESOURCE_AMBIGUOUS) | `notifications.py` | NOT-TESTED — PA (A20) |
-| G5 | Process-health events (STALE_STATUS, PROCESS_STATE_UNKNOWN, PROCESS_INVENTORY_INCOMPLETE, OBSERVATION_ERROR) | `notifications.py` | GAP — **F1F-G5-1** (1.F; OBSERVATION_ERROR is emitted for any error but actionable only when a lane/request is live — a lone malformed signal is emitted-but-unselected) |
+| G5 | Process-health events (STALE_STATUS, PROCESS_STATE_UNKNOWN, PROCESS_INVENTORY_INCOMPLETE, OBSERVATION_ERROR) | `notifications.py` | DESIGN-REC — **F1F-G5-1** (1.F; OBSERVATION_ERROR is emitted for any error but actionable only when a lane/request is live — a lone malformed signal is emitted-but-unselected) |
 | G6 | `MANAGER_SIGNAL` actionable event | `notifications.py` | TESTED-PASSED (1.F; MANAGER_SIGNAL actionable) |
 | G7 | Provider-lifecycle events (CODEX_STARTED/_EXITED, PROVIDER_STARTED/_EXITED, CONTROLLER_EXITED) | `notifications.py` | TESTED-PASSED (PROVIDER_STARTED/PROVIDER_EXITED observed live) |
-| G8 | Subordinate-process events (HELPER_EXITED/_STATE_UNKNOWN, MCP_EXITED/_STATE_UNKNOWN) | `notifications.py` | NOT-TESTED — live emission did not materialize in 3.A (a single controller turn emits only PROVIDER_STARTED/PROVIDER_EXITED; no subordinate helper/MCP process was spawned to produce these); not in the phase-1 in-process batch. **→ Phase 5 (5.A.1).** MCP portion additionally OOS. |
-| G9 | `PROVIDER_WAIT` / `LANE_STATE_UNKNOWN` | `notifications.py` | NOT-TESTED — live emission did not materialize in 3.A (single-turn controller run never entered a provider-wait/unknown-lane state); not in the phase-1 in-process batch. **→ Phase 5 (5.A.2).** |
+| G8 | Subordinate-process events (HELPER_EXITED/_STATE_UNKNOWN, MCP_EXITED/_STATE_UNKNOWN) | `notifications.py` | TESTED-PASSED (5.B, producer-seam) — HELPER_EXITED + HELPER_STATE_UNKNOWN driven through `events.conditions_from_snapshot` and asserted emitted (`test_compat_live_emission.py::test_g8_*`). Live 5.A not reached on the Ollama backend (no subordinate helper spawned); weaker than a live pass. MCP_* variants stay OOS. Evidence: `evidence/5.B/`. |
+| G9 | `PROVIDER_WAIT` / `LANE_STATE_UNKNOWN` | `notifications.py` | TESTED-PASSED (5.B, producer-seam) — both PROVIDER_WAIT and LANE_STATE_UNKNOWN driven through `events.conditions_from_snapshot` and asserted emitted (`test_g9_*`). Live 5.A not reached (single-turn run never entered these states); weaker than a live pass. Evidence: `evidence/5.B/`. |
 | G10 | Stall-detection events (MANAGER_REVIEW_DUE, LANE_NO_PROGRESS, LANE_STAGE_REPEAT) | `notifications.py` | TESTED-PASSED (synthetic, user-accepted 2026-08-20) — exercised via injected/synthetic events; live stall producers were removed in the S4 refactor so no authentic producer remains to emit them. |
-| G11 | Non-actionable observed-state events (CONTROLLER_ACTIVE, LANE_WAITING_RESOURCE, LANE_WAITING_RELAY, RESULT_ACCEPTANCE_PENDING, RESOURCE_RELEASE_POSSIBLE, REQUEST_STALE) | `notifications.py` | NOT-TESTED — live emission did not materialize in 3.A; not in the phase-1 in-process batch. **→ Phase 5 (5.A.3).** |
-| G12 | Relay-observation events (RELAYED, RELAYED_INACTIVE, RELAYED_AMBIGUOUS) | `notifications.py` | NOT-TESTED — live emission did not materialize in 3.A; not in the phase-1 in-process batch. **→ Phase 5 (5.A.4).** |
-| G13 | Steady-state events (HELPER_ACTIVE, MCP_ACTIVE, CONDITION_CLEARED) | `notifications.py` | NOT-TESTED — live emission did not materialize in 3.A; not in the phase-1 in-process batch. **→ Phase 5 (5.A.5).** MCP_ACTIVE portion additionally OOS. |
+| G11 | Non-actionable observed-state events (CONTROLLER_ACTIVE, LANE_WAITING_RESOURCE, LANE_WAITING_RELAY, RESULT_ACCEPTANCE_PENDING, RESOURCE_RELEASE_POSSIBLE, REQUEST_STALE) | `notifications.py` | TESTED-PASSED (5.B, producer-seam) — all six observed-state events driven through `events.conditions_from_snapshot` and asserted emitted (`test_g11_*`). Live 5.A not reached (no multi-lane/resource contention on Ollama); weaker than a live pass. Evidence: `evidence/5.B/`. |
+| G12 | Relay-observation events (RELAYED, RELAYED_INACTIVE, RELAYED_AMBIGUOUS) | `notifications.py` | TESTED-PASSED (5.B, producer-seam) — `models.RequestFacts.operator_summary` verified to classify all three relay verdicts, then driven through `events.conditions_from_snapshot` and asserted emitted (`test_g12_*`). Live 5.A not reached (no relay binding exercised on Ollama); weaker than a live pass. Evidence: `evidence/5.B/`. |
+| G13 | Steady-state events (HELPER_ACTIVE, MCP_ACTIVE, CONDITION_CLEARED) | `notifications.py` | TESTED-PASSED (5.B, producer-seam) — HELPER_ACTIVE via `conditions_from_snapshot` and CONDITION_CLEARED via `events.diff_conditions` (condition-disappearance) asserted emitted (`test_g13_*`). Live 5.A not reached; weaker than a live pass. MCP_ACTIVE stays OOS. Evidence: `evidence/5.B/`. |
 | G14 | Diagnostic/telemetry event class (RAW_OUTPUT, WORKER_OUTPUT, DIAGNOSTIC, PROVIDER_TELEMETRY, HEARTBEAT) | `notifications.py` | TESTED-PASSED (implicit — real entries observed in `LANE_EVENTS.jsonl`) |
-| G15 | Harness-internal event-lifecycle tracking (HARNESS_SIGNAL_OBSERVED, HARNESS_EVENT_INELIGIBLE/_ACTIONABLE/_PENDING/_DEFERRED) | `notifications.py` | NOT-TESTED — live emission did not materialize in 3.A; not in the phase-1 in-process batch. **→ Phase 5 (5.A.6).** |
-| G16 | Harness ack tracking (HARNESS_ACK_ATTEMPTED/_SUCCEEDED) | `notifications.py` | NOT-TESTED — live emission did not materialize in 3.A; not in the phase-1 in-process batch. **→ Phase 5 (5.A.7).** |
+| G15 | Harness-internal event-lifecycle tracking (HARNESS_SIGNAL_OBSERVED, HARNESS_EVENT_INELIGIBLE/_ACTIONABLE/_PENDING/_DEFERRED) | `notifications.py` | TESTED-PASSED (5.B, producer-seam) — all five lifecycle kinds emitted through the real producer `harness_watcher_implementation.attention.make_source_record` (with the required per-kind metadata: ineligibility reason, pending-work snapshot) and asserted (`test_g15_*`). Live 5.A not reached; weaker than a live pass. Evidence: `evidence/5.B/`. |
+| G16 | Harness ack tracking (HARNESS_ACK_ATTEMPTED/_SUCCEEDED) | `notifications.py` | TESTED-PASSED (5.B, producer-seam) — both ack kinds emitted through `attention.make_source_record` and asserted (`test_g16_*`). Live 5.A not reached (no ack round-trip on the Ollama lane); weaker than a live pass. Evidence: `evidence/5.B/`. |
 | G17 | Harness wake-delivery tracking (HARNESS_WAKE_ATTEMPTED/_DELIVERED/_FAILED) | `notifications.py` | TESTED-PASSED (Phase 4 — resume-wake attempt/deliver/fail; `test_G17`) |
-| G18 | `HARNESS_SCAN_COMMITTED` atomic scan-commit marker | `notifications.py` | GAP — **F1F-G18-1** (1.F; HARNESS_SCAN_COMMITTED is declared in the taxonomy but NO producer in this worktree emits it — the once-per-scan marker is observable only at contract level) |
+| G18 | `HARNESS_SCAN_COMMITTED` atomic scan-commit marker | `notifications.py` | DESIGN-REC — **F1F-G18-1** (1.F; HARNESS_SCAN_COMMITTED is declared in the taxonomy but NO producer in this worktree emits it — the once-per-scan marker is observable only at contract level) |
 | G19 | Manager-wake events (MANAGER_WAKE_RECEIVED, MANAGER_WAIT_FINISHED, MANAGER_WAKE_ATTEMPTED/_DELIVERED/_FAILED) | `notifications.py` | TESTED-PASSED (Phase 4 — manager finalization round trip; `test_G19`) |
 | G20 | `WATCH_TIMEOUT` bounded-wait exhaustion event | `notifications.py` | TESTED-PASSED (A23) |
 | G21 | Launch-failure events (LAUNCH_FAILED, CONTROLLER_FAILED, CONTROLLER_INTERRUPTED) | `notifications.py` | TESTED-PASSED (3.A) — authentic `launch_lane_controller` launch against a provider that never establishes a session wrote a genuine launch-failure-class event to the shared `LANE_EVENTS.jsonl`: `PROVIDER_STARTED` then `CONTROLLER_FAILED` (`[Errno 22] Invalid argument`), `provider_session_id` null, terminal state `CONTROLLER_FAILED`, 9.2s, quota-free. The classifier is provider-neutral (matches intended Codex-era grouping). Scope: `CONTROLLER_FAILED` observed live; the `LAUNCH_FAILED`/`CONTROLLER_INTERRUPTED` sibling variants remain proven only in-process (phase-1 unit suite). Evidence: `evidence/3.A/`. |
@@ -582,7 +602,7 @@ disposable git worktree** — nothing is committed or merged upstream.
 | I1 | `ingest_super_cache` mirrored-content ingestion | `workspace_overlay.py` | TESTED-PASSED (A6) |
 | I2 | `prepare_worktree` bounded materialization into subagent worktree | `workspace_overlay.py` | TESTED-PASSED (A7) |
 | I3 | `restore_worktree` exact-byte reversal on retirement | `workspace_overlay.py` | TESTED-PASSED (A8) |
-| I4 | `verify_overlay_receipt` independent receipt verification | `workspace_overlay.py` | GAP — **F2A-I4-1** (2.A; `verify_overlay_receipt` is a structural/identity prelaunch check that never reads materialized worktree bytes — byte-integrity is enforced only at `restore_worktree`, not verify) |
+| I4 | `verify_overlay_receipt` independent receipt verification | `workspace_overlay.py` | DESIGN-REC — **F2A-I4-1** (2.A; `verify_overlay_receipt` is a structural/identity prelaunch check that never reads materialized worktree bytes — byte-integrity is enforced only at `restore_worktree`, not verify) |
 | I5 | Append-only copy plan + collision detection (`OverlayCollisionError`) | `workspace_overlay.py: _build_plan, _validate_append_targets` | TESTED-PASSED (2.A) |
 | I6 | Exact-byte content-match verification of mirrored super-cache | `workspace_overlay.py: _verify_contents_match` | TESTED-PASSED (implicit, via successful round-trip) |
 | I7 | Reparse-point / regular-directory-only enforcement | `workspace_overlay.py: _is_reparse, _regular_directory` | TESTED-PASSED (2.A; junctions available on host, not skipped) |
@@ -622,7 +642,7 @@ disposable git worktree** — nothing is committed or merged upstream.
 | K5 | Amendment review-card payload load + digest validation | `resume.py: _review_card_payload, _review_path_digest` | TESTED-PASSED (1.G) |
 | K6 | Amendment diff-command safety validation | `resume.py: _validate_review_diff_command` | TESTED-PASSED (1.G) |
 | K7 | Amendment job-identity derivation | `resume.py: _review_job_identity` | TESTED-PASSED (1.G) |
-| K8 | `resume_thread_id` (legacy) vs. `resume_identity.thread_id` (canonical) field-precedence distinction | `invocation.py`, `resume.py` | GAP — **F1G-K8-1** (1.G; conflicting legacy vs canonical resume thread IDs fail CLOSED with InvocationValidationError, not the intended 'canonical wins' precedence — safer, but divergent) |
+| K8 | `resume_thread_id` (legacy) vs. `resume_identity.thread_id` (canonical) field-precedence distinction | `invocation.py`, `resume.py` | TESTED-PASSED (parity, 2026-08-20) — Claude runs Codex's exact shared mechanism: `adapt_coding_v1` fails closed on conflicting legacy-vs-canonical resume thread IDs (`InvocationValidationError`), rather than silently picking one. Formerly GAP **F1G-K8-1**; re-dispositioned per operator decision — the conflict guard is shared invocation code, identical for both providers. Plan-text-vs-implementation, not Claude-vs-Codex. Retained in FINDINGS.md as RESOLVED-PARITY. |
 | K9 | `decide_resume_or_handoff` shared resume-vs-handoff decision logic | `provider.py` | TESTED-PASSED (implicit, exercised by the real `--resume` path) |
 | K10 | Handoff preflight: invocation-file / amendment-identity / required-evidence gate | `handoff_preflight.py: preflight_handoff` | TESTED-PASSED (1.G; handoff preflight blocks each missing piece distinctly) |
 
@@ -633,10 +653,10 @@ disposable git worktree** — nothing is committed or merged upstream.
 | L1 | `CapabilityRequest` construction | `capability_broker.py` | TESTED-PASSED (2.B `test_compat_capability_broker`; closed shape + reason codes) |
 | L2 | `CapabilitySnapshot` point-in-time capability-state capture | `capability_broker.py` | TESTED-PASSED (2.B; frozen/MappingProxy immutability + byte-stable snapshot) |
 | L3 | `CapabilityApproval` mediated approval gate | `capability_broker.py` | TESTED-PASSED (2.B; admits on bound approval, denies non-approve at parse + broker, 0 dispatch) |
-| L4 | `CapabilityPermit` bounded-use grant | `capability_broker.py` | GAP — **F2B-L4-1** (2.B; `CapabilityPermit` has no use-count field — bounded single-use is broker-enforced via terminal-result caching + REPLAY_MISMATCH/APPROVAL_REPLAY refusal, not a per-permit counter) |
+| L4 | `CapabilityPermit` bounded-use grant | `capability_broker.py` | TESTED-PASSED (parity, 2026-08-20) — Claude runs Codex's exact shared mechanism: the broker enforces bounded single-use via terminal-result caching + `REPLAY_MISMATCH`/`APPROVAL_REPLAY` refusal (an equivalent, replay-detecting guarantee), not a per-permit counter. Formerly GAP **F2B-L4-1**; re-dispositioned per operator decision — one shared broker, no provider-specific path. Plan-described-mechanism-vs-equivalent-implementation, not Claude-vs-Codex. Retained in FINDINGS.md as RESOLVED-PARITY. |
 | L5 | `AdapterResult` / `CleanupEvidence` / `CapabilityResult` outcome+cleanup pipeline | `capability_broker.py` | TESTED-PASSED (2.B; RESULT/CLEANUP schema + sha256 provenance; banned private-material aliases fail closed) |
 | L6 | `CapabilityBroker` orchestration of request → approval → permit → adapter → cleanup | `capability_broker.py` | TESTED-PASSED (2.B; A25 full end-to-end ordering claim/arm/cleanup→release, no authority leak into public record) |
-| L7 | `CapabilityDenied` / `CapabilityAdapterUnavailable` failure-closed paths | `capability_broker.py` | GAP — **F2B-L7-1** (2.B; adapter `CapabilityAdapterUnavailable` from `observe` is CAUGHT → DENIED `SNAPSHOT_UNAVAILABLE` — the typed exception does not propagate to the caller as intended; fail-closed, but divergent) |
+| L7 | `CapabilityDenied` / `CapabilityAdapterUnavailable` failure-closed paths | `capability_broker.py` | TESTED-PASSED (parity, 2026-08-20) — Claude runs Codex's exact shared mechanism: the broker catches an adapter's `CapabilityAdapterUnavailable` from `observe` and returns DENIED with reason code `SNAPSHOT_UNAVAILABLE` (deny-by-default; no permit constructed). Formerly GAP **F2B-L7-1**; re-dispositioned per operator decision — one shared broker, no provider-specific path; `claude_adapter.py` never touches capability logic. Plan-text-vs-implementation, not Claude-vs-Codex. Retained in FINDINGS.md as RESOLVED-PARITY. |
 | L8 | Canonical JSON + SHA-256 hashing utilities | `capability_broker.py: canonical_json_bytes, canonical_sha256` | TESTED-PASSED (B33, indirect; re-exercised in 2.B) |
 | L9 | Process-identity binding for a capability requester | `capability_broker.py: _process_identity, current_process_identity` | NOT-TESTED — PA |
 | L10 | `FakeCapabilityAdapter` reference/test adapter | `capability_broker.py` | TESTED-PASSED (2.B; supports/observe field mapping, fail_dispatch→FAIL+released, cleanup_proved=False→UNCERTAIN+retained) |
@@ -711,7 +731,7 @@ disposable git worktree** — nothing is committed or merged upstream.
 
 | # | Feature | Source module(s) | Status |
 |---|---|---|---|
-| Q1 | `HarnessConfig` load with numeric-bound clamping | `config.py: load_config, _number, _integer` | GAP — **F1K-Q1-1** (1.K; out-of-range config numbers are REJECTED with ConfigError, not clamped to bounds as intended — stricter/safer, but divergent) |
+| Q1 | `HarnessConfig` load with numeric-bound clamping | `config.py: load_config, _number, _integer` | TESTED-PASSED (parity, 2026-08-20) — Claude runs Codex's exact shared mechanism: `_number`/`_integer` reject out-of-range values with `ConfigError` (throw-and-halt so operator misconfig is never silently masked) rather than clamping. Formerly GAP **F1K-Q1-1**; re-dispositioned per operator decision — the config loader is shared, identical for both providers. Plan-text-vs-implementation, not Claude-vs-Codex. Retained in FINDINGS.md as RESOLVED-PARITY. |
 | Q2 | Declared-relative-path validation in config | `config.py: _declared_relative_paths` | TESTED-PASSED (1.K) |
 | Q3 | `RuntimeProfile` denied-name / capability-name / env-name validation | `profile.py` | TESTED-PASSED (B17, partial — construction used, denial paths not independently probed) |
 | Q4 | `build_child_environment` profile-scoped subprocess environment construction | `profile.py` | TESTED-PASSED (2.H; declared+base-allowed vars kept, undeclared/denied/inherited-secrets cleared and sorted, construction fail-closed on denied grant + unregistered provider; no fail-open breach in any casing) |
@@ -727,7 +747,7 @@ disposable git worktree** — nothing is committed or merged upstream.
 | Q14 | Prompt-bundle safe-component-path enforcement | `prompt_bundle.py: _safe_component_path` | TESTED-PASSED (1.K; symlink sub-case skipped on Windows) |
 | Q15 | `bundle_from_record` reconstruction of a prompt bundle from a persisted record | `prompt_bundle.py` | TESTED-PASSED (1.K) |
 | Q16 | Shared dataclass/schema surface (`ProcessInfo`, `RequestFacts`, `StableBytes`, `ObservationError`, UTC time helpers) | `models.py` | TESTED-PASSED (implicit, exercised throughout; B43) |
-| Q17 | `prompt.py` prompt-construction constants/templates | `prompt.py` | GAP — **F1K-Q17-1** (1.K; `prompt.py` has NO template constants — it is a pure re-export shim; `compose_prompt_bundle` concatenates verbatim with no placeholder substitution) |
+| Q17 | `prompt.py` prompt-construction constants/templates | `prompt.py` | TESTED-PASSED (parity, 2026-08-20) — Claude runs Codex's exact shared mechanism: `prompt.py` re-exports `prompt_bundle`, and `compose_prompt_bundle` assembles a prompt by ordered verbatim byte-concatenation of pre-made components with an integrity re-check — no templating/placeholder substitution, for either provider. Formerly GAP **F1K-Q17-1**; re-dispositioned per operator decision — mirroring Codex means NOT adding a templating layer to Claude alone, since Codex has none. Plan-premise-vs-implementation, not Claude-vs-Codex. Retained in FINDINGS.md as RESOLVED-PARITY. |
 | Q18 | Suite-local run/controller/request/relay/checkpoint file discovery | `discovery.py: discover_run, discover_suite` | NOT-TESTED — PA (B38, dup of F26) |
 | Q19 | Discovery record-kind classification + declared-lifetime-record enumeration | `discovery.py` | NOT-TESTED — PA (dup of F19/F25) |
 | Q20 | Discovery observation-cache invalidation on file-signature change | `discovery.py: _clear_observation_caches, _file_signature, _cache_put` | NOT-TESTED — PA |
@@ -759,7 +779,7 @@ disposable git worktree** — nothing is committed or merged upstream.
 |---|---|---|---|
 | T1 | R1 suite-local discovery of controller/request/relay/checkpoint/result files (older generation) | `Portable_Watcher_Repo/orchestrator_harness/SPEC.md` | NOT-TESTED — OOS (superseded by `discovery.py`) |
 | T2 | Watcher evaluator (AI-judge classification, `evaluator_enabled` flag, off by default) | `harness_watcher_implementation/evaluator.py`, `settings.py` | NOT-TESTED — OOS |
-| T3 | Watcher alert/recovery ledger (`STOP_ASSIGNING` → … → `RESOLVED`) | `harness_watcher_implementation/*` | GAP — **F2G-A39-1** (2.G; see A39 — no ordered-admission ledger exists) |
+| T3 | Watcher alert/recovery ledger (`STOP_ASSIGNING` → … → `RESOLVED`) | `harness_watcher_implementation/*` | DESIGN-REC — **F2G-A39-1** (2.G; see A39 — **STALE, re-test pending**: the ordered ledger DOES exist in `harness_watcher_implementation/state.py`; the finding tested the wrong module) |
 | T4 | WSL2/bubblewrap real-agent dry-run containment spec | `Portable_Watcher_Repo/.../SPEC.md` R-series | NOT-TESTED — OOS |
 | T5 | Host-only unit/integration test list (older SPEC.md) | `Portable_Watcher_Repo/.../SPEC.md` | NOT-TESTED — OOS |
 | T6 | Attention-sprint historical record decoding | `attention_sprint.py: decode_historical_attention_record` | TESTED-PASSED (2.F; see A30 — 22-test decode + fail-closed suite) |
@@ -782,7 +802,7 @@ disposable git worktree** — nothing is committed or merged upstream.
 | U12 | `notification_mode` (SAFE_BOUNDARY_ONLY vs. WAKE) per-provider capability declaration | `provider.py` | TESTED-PASSED (implicit — Claude's SAFE_BOUNDARY_ONLY mode confirmed via A23) |
 | U13 | `decide_resume_or_handoff` shared resume/handoff decision | `provider.py` | TESTED-PASSED (K9, dup) |
 | U14 | Transcript line parsing → provider-neutral terminal outcome (STARTED/COMPLETED/FAILED/CANCELLED) | `provider.py: parse_transcript_line` | TESTED-PASSED for STARTED/COMPLETED (real Claude `system/init` and `result/success` lines) |
-| U15 | Claude `parse_transcript_line` never produces a `CANCELLED` outcome, unlike Codex's explicit `turn.cancelled` handling | `provider.py` | GAP — **U15-CANCELLED** (observed divergence, benign: the Claude CLI emits no `turn.cancelled`-equivalent event, so the parser cannot produce `CANCELLED`; behavior differs from the Codex-era design but is not a defect. Formerly labeled NOTED. See [missing_claude_implementation.md "Noted but not counted as a failure"](missing_claude_implementation.md#noted-but-not-counted-as-a-failure)) |
+| U15 | Claude `parse_transcript_line` never produces a `CANCELLED` outcome, unlike Codex's explicit `turn.cancelled` handling | `provider.py` | GAP — **U15-CANCELLED** (the **only** GAP row — the sole genuine Codex-vs-Claude provider divergence, and unclosable: the Claude CLI emits no `turn.cancelled`-equivalent event, so the parser has no input to map to `CANCELLED` — an upstream CLI limitation, not a harness defect. Accepted 2026-08-20; cannot be mirrored to Codex's behavior because the source event does not exist. Formerly NOTED. See [missing_claude_implementation.md](missing_claude_implementation.md#noted-but-not-counted-as-a-failure)) |
 | U16 | Session/thread identity persistence (`session_id`) into status + events | `lane_controller.py`, `provider.py` | TESTED-PASSED (real Claude `session_id` recorded in `LANE_EVENTS.jsonl`) |
 
 ## V. Lane controller: launch, concurrency, evidence (`lane_controller.py`)

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "claude --version",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-live-claude",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Claude CLI version readiness is a no-prompt local command; prior readiness completed under 10 seconds, with 30 seconds for cold startup and 8 seconds policy-capped cleanup.",
+    "started_at":  "2026-08-22T09:31:36.6368795+00:00",
+    "finished_at":  "2026-08-22T09:31:41.5346316+00:00",
+    "elapsed_seconds":  4.898,
+    "root_process_id":  8904,
+    "observed_process_ids":  [
+                                 8904
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\readiness-claude-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\readiness-claude-002.stderr.log"
+}

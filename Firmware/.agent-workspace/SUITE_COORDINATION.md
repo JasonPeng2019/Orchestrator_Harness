@@ -1,31 +1,48 @@
 # Current suite coordination
 
-Current ROOT update: `2026-08-20`
-State: `PLAN2_EDGE_010R_DISPATCH_READY`
+Suite-010 terminal update: `2026-08-21`  
+State: `COMPLETED_WITH_FINDINGS`
 
-- Plan 2 v3.9.23 preserves M07/M08 credit and reuses the existing M02-M06 repair pipeline. Before
-  another live manager, implement and pass the single four-case `CHECK-SPRINT-CONTINUATION` and
-  its affected exact-target M08 rerun. No dedicated recovery module, gate, controller, or status
-  protocol exists. The harness-clean streak is `0/3`.
-- Suite008 is stopped and historical. Direct PID inspection on 2026-08-20 found the recorded
+- Sole terminal handoff: `.agent-workspace/epochs/20260821-plan2-suite-010-manager-012/TERMINAL_SPRINT_HANDOFF.md`.
+- Required admission correction passed under `AUTONOMY_AUDIT_CORRECTED_002` with `--require-target`; original suite-009 evidence remains preserved.
+- Complete selected pool: A20/A21/A24/A25 `FAIL`, Q40 `PASS`, D30/D32/D34/Q41 `BLOCKED`.
+- No suite-010 worker, reviewer, watcher, MCP lifetime, plan, permission, lease, claim, or hardware action was created. Target remains clean at `5ab4b1f2f9170c3e57c35883bcb1ad22a2d04815` / `17e67a7affd2d16e1b1104e1df3dec22bfa198eb`.
+- Sprint 011 was not started; control returns to ROOT.
+
+
+Recovery-010 terminal update: `2026-08-20T22:36:00Z`  
+State: `SUITE008_COMPLETED_WITH_FINDINGS`
+
+- Sole terminal handoff: `.agent-workspace/epochs/20260820-plan2-suite-008-resume-010/TERMINAL_SPRINT_HANDOFF.md`.
+- A21 responder identity/order gate passed, but bounded REQ-003 traffic failed; A25's corrected one-call route returned no `nrf_b` profile. D30/D34 board-free checkpoints remain valid; their live dependency edges are blocked.
+- All recovery doer/provider/watcher identities are absent, fresh canonical claims are empty, and the accepted target remains clean at `dd673cb304501bfc2228b8c44f41df45a0c8608f` / `c18ccd0bc88de9c8fae1f98652a12fb5c1a951ae`.
+- Two possible target-v2 behaviors are recorded only as suspected harness findings for ROOT classification. This manager did not start another indexed sprint.
+
+Current ROOT update: `2026-08-20`
+State: `PLAN2_EDGE_011_FIRMWARE_RESUME_READY`
+
+- Plan 2 v3.9.25 preserves M07/M08 credit and resumes directly at `EDGE-011` and the unfinished
+  logical Firmware sprint. No continuation product repair, verification asset, or affected M08
+  rerun is pending. The harness-clean streak is `0/3`.
+- Suite008's runtime epoch is stopped, but its logical sprint and verified semantic checkpoints are
+  the continuation input. Direct PID inspection on 2026-08-20 found the recorded
   manager `191900`, Sol `199628`, watcher `187868`, A21 controller/provider `198392`/`201268`, and
   A25 controller/provider `202348`/`199208` absent. This proves process absence only; it does not
   fabricate claim release, checkpoint acceptance, or completion.
 - No manager epoch, provider session, server plan/permission, lease, claim authority, MCP action, or
-  hardware action is live. Recorded user delegation does not revive Suite-008 authority. Do not
-  launch a replacement manager from this file.
+  hardware action is live. Recorded user delegation does not revive Suite-008 authority. ROOT's
+  dispatch of `PLAN2_SUITE_RECOVERY_MANAGER_PROMPT_009.md` creates fresh runtime authority.
 - ROOT-IM reconciled the retained `055a5bd...` boundary through empty final review 062, proof 063,
   and integration/readback 064. The clean detached target and `firmware/v2-candidate` at
   `dd673cb304501bfc2228b8c44f41df45a0c8608f`, tree
-  `c18ccd0bc88de9c8fae1f98652a12fb5c1a951ae`, are the exact bound repair base. `EDGE-010R` is
-  ready for the separately dispatched focused repair; the live manager remains gated.
-- The no-hardware check uses generated state only under
-  `tmp/plan2-no-hardware-recovery/{invocation_id}/`: manager/provider replacement, safe stale-claim
-  recovery, correctable lane faults, and completed harness-finding pooling. It performs no MCP tool
-  or hardware action.
-- After it passes, an interruption keeps the same logical sprint. Replace dead runtime authority,
-  preserve verified checkpoints, safely release/reassign a stale claim only after exact absence
-  proof, hold uncertainty to its exact resource, and continue every unrelated eligible lane.
+  `c18ccd0bc88de9c8fae1f98652a12fb5c1a951ae`, are the exact accepted Firmware sprint input.
+- The test orchestrator owns every logical lane and sprint until completion. It recovers affected
+  lanes across provider replacement, preserves verified checkpoints, continues unrelated eligible
+  work, and never returns or terminalizes a logical lane/sprint merely because an execution issue
+  occurred. It records possible harness errors as suspected findings with evidence, affected
+  lane/unit, observed and expected behavior, containment, continuation, and cleanup facts. ROOT
+  neither intervenes nor diagnoses mid-sprint; it classifies the complete pool after completion and
+  authorizes only justified between-sprint repairs.
 
 ## Historical Suite-008 last live snapshot
 
@@ -124,8 +141,8 @@ State: `TERMINAL_INCOMPLETE_ROOT_OWNED_CONTINUATION_AND_RETAINED_BOUNDARY_BARRIE
   task-card artifact accepted by the amendment validator.
 - A25's corrected task-local relaunch is stopped with no provider and zero claims acquired. The
   earlier interrupted controller left 22 fail-closed `INVENTORY_UNKNOWN` claim records whose
-  retained-boundary evidence is incomplete. They remain exact input to the focused continuation
-  contract and may be released/reassigned only after its complete absence proof; they were not
+  retained-boundary evidence is incomplete. They remain exact input to the resumed lane and may be
+  released/reassigned only after complete exact absence proof; they were not
   deleted or rewritten.
 - Every recorded delegated controller/provider exact identity is absent; no matching MCP/helper
   remains. The evaluator-disabled watcher stopped cooperatively and its exact identity is absent.
@@ -329,12 +346,14 @@ hardware sequence.
 
 ## Current Plan 2 indexed clean sequence
 
-Plan 2 v3.9.23 starts at `0/3`. Each predeclared catalog scenario receives a stable
+Plan 2 v3.9.25 starts at `0/3`. Each predeclared catalog scenario receives a stable
 `logical_sprint_id` and `sprint_sequence_index`; one replaceable manager epoch may host several and
 launch every dependency-ready resource-compatible lane. Apply completed results by index, not
-arrival order. A completed accepted sprint with `harness_error_observed=false` adds one. A sprint
-that observed a harness error still completes, seals the full finding pool, resets to `0/3`, and
-earns no credit; ROOT reviews/repairs only after that terminal handoff. Server/firmware/
+arrival order. A completed accepted sprint that ROOT classifies harness-clean adds one. A sprint
+with suspected harness findings still completes and seals the full pool. ROOT reviews only after
+that terminal handoff: a confirmed harness defect resets to `0/3` and receives any accepted repair
+before the next indexed sprint; a rejected suspicion or suite-owned issue does not automatically
+reset. Server/firmware/
 specification/fixture/doer defects are corrected or terminally recorded in the same sprint, while
 every feasible unrelated lane continues. Runtime interruption replaces the invocation and authority;
 it does not create a new sprint or terminal failure. The only normal terminal statuses are
@@ -362,21 +381,21 @@ any hardware action and therefore earns no sprint credit.
 - A replacement manager may adopt the sealed specification as a checkpoint, but it must create new
   provider sessions and all new live authority. It must not claim conversation or lease continuity.
 
-## Next suite-wide scheduling pass (prepared; blocked on focused continuation proof)
+## Next suite-wide scheduling pass (prepared at EDGE-011)
 
-Only after Plan 2's existing repair/evidence/decision/integration path and affected M08 accept
-`CHECK-SPRINT-CONTINUATION`, the replacement logical manager evaluates all remaining main-suite
-tasks and launches every eligible
+ROOT dispatches the prepared replacement logical manager against accepted target `dd673cb...`.
+The manager first reconciles suite-008's verified semantic checkpoints, resumes every unfinished
+lane from its first unresolved action under fresh runtime/action authority, and launches every eligible
 nonconflicting lane in one scheduling pass:
 
-- Boreal: adopt A21 `SPEC_REVIEWED`, then launch the A21 implementation/HIL route when its fresh STM
-  lease and reviewer continuity/replacement are valid.
-- Delta: start A25 board-free specification/build work immediately; its Nordic HIL may overlap A21
-  because the fixture resources are disjoint.
-- Atlas: start D30 board-free specification/preparation; advance to D32 only through the declared
+- Boreal: continue A21 from the first unresolved responder byte-identity/order gate; revalidate only
+  affected electronic state before any newly authorized live action.
+- Delta: retry the malformed A25 `setup_overview` call with the corrected invocation shape and
+  continue its remaining Nordic validation under fresh authority.
+- Atlas: reuse the valid D30 board-free checkpoint, advance to D32 only through its declared
   handoff/dependency edge, and retain Q41 for its later dependency point.
-- Cygnus: start D34 specification and isolated host preparation; its HIL waits only on A21 and the
-  declared Nordic baseline, not on unrelated board-free work.
+- Cygnus: reuse the valid D34 board-free checkpoint; its HIL waits only on A21 and the declared
+  Nordic baseline, not on unrelated board-free work.
 - The manager advances Q40 indexing whenever its declared inputs are ready and assigns any missing
   branch only to an idle named doer.
 
@@ -474,3 +493,29 @@ After `EDGE-011` and before launching work, append the new invocation and record
 Keep new manager logs below `.agent-workspace/epochs/<epoch>/`, harness observations below
 `runtime/orchestrator-harness/<epoch>/`, watcher state below
 `target-harness/runtime/harness-watcher/<epoch>/`, and run-specific state inside its run.
+
+## 2026-08-21 plan2-firmware-suite-012 manager-014 terminal record
+
+- Authority: manager PID 31484, creation `windows-filetime:134318005537080841`; all prior runtime authority treated dead; suite-012 standing four-board non-destructive delegation used.
+- Target: clean `5ab4b1f2f9170c3e57c35883bcb1ad22a2d04815` / tree `17e67a7affd2d16e1b1104e1df3dec22bfa198eb`.
+- Units: S10 GREEN, S11 GREEN with suspected target finding, S13 GREEN, D36 GREEN, Q40 accepted SERVER_FAILURE source/baseline finding.
+- Terminal disposition: `COMPLETED_WITH_FINDINGS`; handoff at `.agent-workspace/epochs/20260821-plan2-suite-012-manager-014/TERMINAL_SPRINT_HANDOFF.md`.
+- Cleanup: watcher cooperatively stopped; all suite controller/provider/MCP/helper identities absent; boards logically disconnected; claims/leases/permissions/plans terminal.
+
+## 2026-08-21 plan2-firmware-suite-013 manager-015 terminal record
+
+- Admission selected exactly S10, S11, S13, and D36. S12 was excluded for unchanged non-elevated
+  host policy; Q40 was excluded for the still-absent qualifying-source/baseline prerequisite.
+- S10 and S11 each ended schema-valid, independently reviewed `SERVER_FAILURE` after two genuinely
+  fresh exact-current server lifetimes returned an empty debug-connection inventory while serial
+  choices exposed the expected boards. No setup or hardware action became possible.
+- S11 preserved both Nordic electronic identities. The mandatory intentional other-probe case was
+  truthfully `NOT_REACHED`, received no credit, and remains part of the finding impact.
+- S13 and D36 completed fresh board-free work and ended schema-valid, independently reviewed
+  dependency-contained `SERVER_FAILURE`; no historical setup was substituted and no live case was
+  credited.
+- Terminal disposition: `COMPLETED_WITH_FINDINGS`. Sole handoff:
+  `.agent-workspace/epochs/20260821-plan2-suite-013-manager-015/TERMINAL_SPRINT_HANDOFF.md`.
+- Watcher stopped cooperatively; worker/provider/MCP/helper boundaries are absent, hardware remained
+  logically disconnected, and claims/plans/permissions/leases are terminal. Suite 014 was not
+  started.

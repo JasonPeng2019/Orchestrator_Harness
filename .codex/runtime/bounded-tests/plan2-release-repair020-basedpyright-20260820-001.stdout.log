@@ -1,0 +1,8 @@
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\plans\general-coding-harness\runtime\firmware-v2\worktrees\.harness-candidate-worktrees\plan2-release-safeguard-repair-020\orchestrator_harness\tests\test_s4_repair.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\plans\general-coding-harness\runtime\firmware-v2\worktrees\.harness-candidate-worktrees\plan2-release-safeguard-repair-020\orchestrator_harness\tests\test_s4_repair.py:1784:28 - error: Argument of type "object" cannot be assigned to parameter "dst" of type "_CVoidPLike" in function "__call__"
+    Type "object" is not assignable to type "_CVoidPLike"
+      "object" is not assignable to "_PointerLike"
+      "object" is not assignable to "Array[Any]"
+      "object" is not assignable to "_CArgObject"
+      "object" is not assignable to "int" (reportArgumentType)
+1 error, 0 warnings, 0 notes

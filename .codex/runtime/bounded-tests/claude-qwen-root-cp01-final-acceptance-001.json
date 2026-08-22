@@ -1,0 +1,26 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "$toolProject = \u0027C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev\u0027\n$paths = @(\u0027orchestrator_harness/cli.py\u0027,\u0027orchestrator_harness/codex_adapter.py\u0027,\u0027orchestrator_harness/invocation.py\u0027,\u0027orchestrator_harness/lane_controller.py\u0027,\u0027orchestrator_harness/provider.py\u0027,\u0027orchestrator_harness/claude_adapter.py\u0027,\u0027orchestrator_harness/claude_installer.py\u0027,\u0027orchestrator_harness/assets/claude/orchestrator_harness_post_tool_use.py\u0027,\u0027orchestrator_harness/assets/claude/orchestrator_harness_stop.py\u0027,\u0027orchestrator_harness/tests/test_compat_claude_adapter.py\u0027,\u0027orchestrator_harness/tests/test_compat_provider_allowlist.py\u0027,\u0027orchestrator_harness/tests/test_compat_provider_argv.py\u0027,\u0027orchestrator_harness/tests/test_compat_transcript_parse.py\u0027,\u0027examples/disposable_claude_coding_fixture.py\u0027)\nuv run --project $toolProject --locked ruff check --config $toolProject/pyproject.toml --no-cache @paths\nif ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }\nuv run --project $toolProject --locked basedpyright --project pyrightconfig.json @paths\nif ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }\npython -m py_compile @paths\nif ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }\npython -m unittest orchestrator_harness.tests.test_compat_provider_argv orchestrator_harness.tests.test_compat_transcript_parse orchestrator_harness.tests.test_compat_provider_allowlist orchestrator_harness.tests.test_compat_claude_adapter -v\nexit $LASTEXITCODE",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-parity-implementation",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "ROOT final CP-01 acceptance: four measured components total under 40 seconds (Ruff 4, BasedPyright/compile 13, focused suite 23); 60 seconds includes credible startup headroom and 15 seconds is policy-capped cleanup",
+    "started_at":  "2026-08-22T07:44:30.2048409+00:00",
+    "finished_at":  "2026-08-22T07:44:58.3806332+00:00",
+    "elapsed_seconds":  28.176,
+    "root_process_id":  15032,
+    "observed_process_ids":  [
+                                 6680,
+                                 12732,
+                                 15032,
+                                 17420,
+                                 22572
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp01-final-acceptance-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp01-final-acceptance-001.stderr.log"
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "subagent-role-model-mapping/v1",
+  "roles": {
+    "PARITY_IMPLEMENTER": {
+      "provider": "codex",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "xhigh",
+      "service_tier": "standard",
+      "config_overrides": [
+        "model_context_window=272000",
+        "model_auto_compact_token_limit=120000",
+        "model_auto_compact_token_limit_scope=\"total\""
+      ]
+    },
+    "CLAUDE_TEST_ORCHESTRATOR": {
+      "provider": "claude-code",
+      "model": "claude-opus-4-8",
+      "reasoning_effort": "low",
+      "service_tier": "standard"
+    },
+    "CLAUDE_CLI_DOER": {
+      "provider": "claude-code",
+      "model": "sonnet",
+      "reasoning_effort": "low",
+      "service_tier": "standard"
+    },
+    "QWEN_TEST_ORCHESTRATOR": {
+      "provider": "qwen-code",
+      "model": "deepseek-v4-flash:0731-cloud",
+      "reasoning_effort": "high",
+      "service_tier": "standard"
+    },
+    "QWEN_DOER": {
+      "provider": "qwen-code",
+      "model": "deepseek-v4-flash:0731-cloud",
+      "reasoning_effort": "high",
+      "service_tier": "standard"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.agent-workspace\epochs\20260820-plan2-suite-008-assets-013\validate_doer_invocation.py", line 14, in <module>
+    register_qwen_code(firmware_root / "target-harness")
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: register_qwen_code() takes 0 positional arguments but 1 was given

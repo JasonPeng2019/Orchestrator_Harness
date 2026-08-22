@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m py_compile Firmware/scripts/orchestration/qwen_provider_bootstrap.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\.Orchestrator_Harness-worktrees\\plan2-suite010-qwen-legacy-fastlane-052",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "The baseline focused adapter process completed in 2.923 seconds including supervisor startup; compilation is a smaller deterministic stdlib operation, so 10 seconds is a conservative bound with the policy-minimum 5-second cleanup allowance.",
+    "started_at":  "2026-08-21T12:26:57.6741125+00:00",
+    "finished_at":  "2026-08-21T12:26:59.3341200+00:00",
+    "elapsed_seconds":  1.66,
+    "root_process_id":  10532,
+    "observed_process_ids":  [
+                                 10532
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\fastlane-qwen-legacy-052-compile-final.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\fastlane-qwen-legacy-052-compile-final.stderr.log"
+}

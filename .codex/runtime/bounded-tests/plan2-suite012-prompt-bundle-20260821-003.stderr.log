@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\runtime\orchestrator-worktrees\20260821-plan2-suite-012-manager-014\.agent-workspace\compose_prompt_bundle_014.py", line 4, in <module>
+    from orchestrator_harness.prompt_bundle import prompt_bundle_record_from_paths
+ModuleNotFoundError: No module named 'orchestrator_harness'

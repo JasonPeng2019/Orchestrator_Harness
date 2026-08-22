@@ -1,0 +1,54 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== format changed development Python ==
+unformatted: File would be reformatted
+  --> .codex\scripts\dev_state.py:61:15
+   |
+60 | )
+   - SKIP_PARTS = {
+   -     "archive",
+   -     ".git",
+61 + SKIP_PARTS = {
+62 +     "archive",
+63 +     ".git",
+64 |     ".pytest_cache",
+   |
+
+unformatted: File would be reformatted
+  --> .codex\scripts\hook_runner.py:16:16
+   |
+15 | STOP_VERIFY_RESULT = ROOT / ".codex" / "runtime" / "bounded-tests" / "stop-verify.json"
+   - HARNESS_PLAN = (
+   -     ROOT
+   -     / "archive"
+   -     / "firmware-v2-campaign"
+   -     / "general-coding-harness"
+   -     / "FULL-EXECUTION-SPEC_PLAN_2.md"
+   - )
+16 + HARNESS_PLAN = ROOT / "archive" / "firmware-v2-campaign" / "general-coding-harness" / "FULL-EXECUTION-SPEC_PLAN_2.md"
+17 |
+   |
+
+unformatted: File would be reformatted
+  --> .codex\tests\test_verify_changed.py:73:83
+   |
+72 |     )
+   -     _write(tmp_path, "scratch/session-analysis/analyze_session.py", "value = 5\n")
+   -     _write(tmp_path, "archive/firmware-v2-campaign/session-analysis/analyze_session.py", "value = 6\n")
+73 +     _write(tmp_path, "scratch/session-analysis/analyze_session.py", "value = 5\n")
+74 +     _write(tmp_path, "archive/firmware-v2-campaign/session-analysis/analyze_session.py", "value = 6\n")
+75 |
+--------------------------------------------------------------------------------
+88 |     )
+   -     state["files"]["scratch/search_fw_blobs.py"] = "legacy-scratch-entry"
+   -     state["files"]["archive/firmware-v2-campaign/session-analysis/analyze_session.py"] = (
+   -         "legacy-archive-entry"
+   -     )
+89 +     state["files"]["scratch/search_fw_blobs.py"] = "legacy-scratch-entry"
+90 +     state["files"]["archive/firmware-v2-campaign/session-analysis/analyze_session.py"] = "legacy-archive-entry"
+91 |     state_path.write_text(json.dumps(state), encoding="utf-8")
+   |
+
+3 files would be reformatted

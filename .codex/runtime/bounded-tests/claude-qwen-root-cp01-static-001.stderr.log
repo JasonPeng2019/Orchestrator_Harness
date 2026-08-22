@@ -1,0 +1,3 @@
+warning: `--locked` has no effect when used outside of a project
+error: Failed to spawn: `ruff`
+  Caused by: program not found

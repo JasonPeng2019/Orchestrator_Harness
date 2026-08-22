@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "$toolProject = \u0027C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev\u0027\n$paths = @(\u0027orchestrator_harness/cli.py\u0027,\u0027orchestrator_harness/codex_adapter.py\u0027,\u0027orchestrator_harness/invocation.py\u0027,\u0027orchestrator_harness/lane_controller.py\u0027,\u0027orchestrator_harness/provider.py\u0027,\u0027orchestrator_harness/claude_adapter.py\u0027,\u0027orchestrator_harness/claude_installer.py\u0027,\u0027orchestrator_harness/assets/claude/orchestrator_harness_post_tool_use.py\u0027,\u0027orchestrator_harness/assets/claude/orchestrator_harness_stop.py\u0027,\u0027orchestrator_harness/tests/test_compat_claude_adapter.py\u0027,\u0027orchestrator_harness/tests/test_compat_provider_allowlist.py\u0027,\u0027orchestrator_harness/tests/test_compat_provider_argv.py\u0027,\u0027orchestrator_harness/tests/test_compat_transcript_parse.py\u0027,\u0027examples/disposable_claude_coding_fixture.py\u0027)\nuv run --project $toolProject --locked basedpyright --project pyrightconfig.json @paths\nexit $LASTEXITCODE",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\compat-test",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Reference classification for CP-01 BasedPyright diagnostics; same 14-file Claude parity scope and measured 15-second target run, bounded at 120 seconds plus 30 seconds cleanup",
+    "started_at":  "2026-08-22T07:28:09.9167761+00:00",
+    "finished_at":  "2026-08-22T07:28:22.1755538+00:00",
+    "elapsed_seconds":  12.259,
+    "root_process_id":  23072,
+    "observed_process_ids":  [
+                                 23072
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp01-reference-types-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp01-reference-types-001.stderr.log"
+}

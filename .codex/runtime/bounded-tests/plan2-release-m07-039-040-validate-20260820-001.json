@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .agent-workspace/epochs/20260820-plan2-release-m07-039-040/validate_invocations.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Two invocation adaptations and one local Qwen registration complete in under two seconds in matching lanes; 20 seconds is conservative.",
+    "started_at":  "2026-08-21T03:50:43.3769892+00:00",
+    "finished_at":  "2026-08-21T03:50:44.8710385+00:00",
+    "elapsed_seconds":  1.494,
+    "root_process_id":  26532,
+    "observed_process_ids":  [
+                                 26532
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-m07-039-040-validate-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-m07-039-040-validate-20260820-001.stderr.log"
+}

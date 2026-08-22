@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\BYO-Firmware-MCP\\.venv\\Scripts\\python.exe C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.agent-workspace\\firmware_mcp_interpreter_diagnostic_001.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\BYO-Firmware-MCP",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Read-only interpreter/module-path diagnostic with no imports beyond standard library; prior Python startup diagnostics complete in under two seconds.",
+    "started_at":  "2026-08-21T19:12:14.2116968+00:00",
+    "finished_at":  "2026-08-21T19:12:15.7134471+00:00",
+    "elapsed_seconds":  1.502,
+    "root_process_id":  12892,
+    "observed_process_ids":  [
+                                 12892
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-mcp-interpreter-diagnostic-20260821-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-mcp-interpreter-diagnostic-20260821-002.stderr.log"
+}

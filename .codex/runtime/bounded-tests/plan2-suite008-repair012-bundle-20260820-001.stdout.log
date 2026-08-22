@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-post-sprint-harness-repair",
+  "task_card_id": "CARD-PLAN2-SUITE008-REPAIR-012",
+  "profile_id": "luna-max",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-harness-repair-012\\.agent-workspace\\PLAN2_SUITE008_HARNESS_REPAIR_CODER_PROMPT_012.md",
+      "sha256": "5ae3ed6e3b3d9c7e86b91fe8ebe11e0ef1f5ba9c2eb770d1d1521912b3706c9d",
+      "size": 4818
+    }
+  ],
+  "final_sha256": "5ae3ed6e3b3d9c7e86b91fe8ebe11e0ef1f5ba9c2eb770d1d1521912b3706c9d",
+  "final_size": 4818,
+  "bundle_sha256": "bdb0ea8390b1d7bf9bc5d4225fa1a91d68dfe10d606d14fa0c348b08f5322e85"
+}

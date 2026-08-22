@@ -1,0 +1,12 @@
+{
+  "board_id": "nrf_a",
+  "closed_at": "2026-08-21T11:39:38.216561Z",
+  "connection_id": "probe:683710208",
+  "created_at": "2026-08-21T11:18:39.444456Z",
+  "event_count": 6,
+  "log_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.firm\\runs\\20260821T111839Z-282c7c8d\\logs\\events.jsonl",
+  "probe_uid": "683710208",
+  "recover_completed": false,
+  "route_used": "pyocd-native",
+  "session_id": "20260821T111839Z-282c7c8d"
+}

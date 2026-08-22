@@ -1,0 +1,17 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.2, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\Jason\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\compat-test\orchestrator_harness
+configfile: pyproject.toml
+plugins: anyio-4.12.1
+collecting ... collected 7 items
+
+orchestrator_harness\tests\test_compat_live_emission.py::Phase5ResidualEmissionTests::test_g11_observed_state_producers_emit PASSED [ 14%]
+orchestrator_harness\tests\test_compat_live_emission.py::Phase5ResidualEmissionTests::test_g12_relay_operator_summaries_classify_and_emit PASSED [ 28%]
+orchestrator_harness\tests\test_compat_live_emission.py::Phase5ResidualEmissionTests::test_g13_helper_active_and_condition_cleared_producers_emit PASSED [ 42%]
+orchestrator_harness\tests\test_compat_live_emission.py::Phase5ResidualEmissionTests::test_g15_harness_signal_and_event_lifecycle_producers_emit PASSED [ 57%]
+orchestrator_harness\tests\test_compat_live_emission.py::Phase5ResidualEmissionTests::test_g16_harness_ack_attempt_and_success_producers_emit PASSED [ 71%]
+orchestrator_harness\tests\test_compat_live_emission.py::Phase5ResidualEmissionTests::test_g8_helper_exited_and_state_unknown_producers_emit PASSED [ 85%]
+orchestrator_harness\tests\test_compat_live_emission.py::Phase5ResidualEmissionTests::test_g9_provider_wait_and_lane_state_unknown_producers_emit PASSED [100%]
+
+============================== 7 passed in 0.29s ==============================

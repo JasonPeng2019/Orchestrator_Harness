@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "python -c \"import json; from pathlib import Path; from orchestrator_harness.prompt_bundle import compose_prompt_bundle; p=Path(r\u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260821-plan2-suite-010-manager-012\\\\.agent-workspace\\\\PLAN2_SUITE_MANAGER_PROMPT_012.md\u0027); b=compose_prompt_bundle(workflow_id=\u0027plan-2-firmware-suite\u0027, task_card_id=\u0027CARD-PLAN2-SUITE-MANAGER-012\u0027, profile_id=\u0027sol-low\u0027, components=[(\u0027task\u0027,p.read_bytes())]); print(json.dumps(b.manifest_record(component_paths=[str(p)]),indent=2))\"",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260821-plan2-suite-010-manager-012",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Deterministic local hashing and JSON composition previously completes in under two seconds; ten seconds is conservative.",
+    "started_at":  "2026-08-21T12:36:24.2588135+00:00",
+    "finished_at":  "2026-08-21T12:36:26.7116712+00:00",
+    "elapsed_seconds":  2.453,
+    "root_process_id":  27932,
+    "observed_process_ids":  [
+                                 27932
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite010-manager-bundle-20260821-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite010-manager-bundle-20260821-001.stderr.log"
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .agent-workspace/epochs/20260820-plan2-suite-008-assets-013/compute_doer_bundle.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Prompt bundle generation is a local hash/JSON operation and all preceding bundle generations completed in under two seconds; 20 seconds is conservative.",
+    "started_at":  "2026-08-20T23:06:36.8395316+00:00",
+    "finished_at":  "2026-08-20T23:06:38.2050348+00:00",
+    "elapsed_seconds":  1.366,
+    "root_process_id":  9580,
+    "observed_process_ids":  [
+                                 9580
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-assets013-bundle-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-assets013-bundle-20260820-001.stderr.log"
+}

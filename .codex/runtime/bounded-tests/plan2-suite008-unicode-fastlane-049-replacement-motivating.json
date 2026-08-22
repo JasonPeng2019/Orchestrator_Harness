@@ -1,0 +1,25 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m unittest orchestrator_harness.tests.test_manager_notifications_adversarial.ManagerNotificationAdversarialTests.test_actionable_watch_is_ascii_safe_on_cp1252_console",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-unicode-fastlane-049",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  1,
+    "timeout_basis":  "FAST_LANE_V2 deterministic host-only motivating unittest; accepted focused-test bound allows fixture setup, reconcile, cursor commit, and CP-1252 stream check",
+    "started_at":  "2026-08-21T06:13:01.1009220+00:00",
+    "finished_at":  "2026-08-21T06:13:03.9730076+00:00",
+    "elapsed_seconds":  2.872,
+    "root_process_id":  8968,
+    "observed_process_ids":  [
+                                 5360,
+                                 6680,
+                                 8968,
+                                 15928
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\AppData\\Local\\Temp\\plan2-suite008-unicode-fastlane-049-replacement-motivating.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\AppData\\Local\\Temp\\plan2-suite008-unicode-fastlane-049-replacement-motivating.stderr.log"
+}

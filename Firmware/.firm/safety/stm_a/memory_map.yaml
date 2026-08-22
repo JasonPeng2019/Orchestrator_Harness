@@ -17,7 +17,7 @@ source_digests:
   semantic_profile: c2d83ae40e0977a7f3a63452c071e80021113a0ae5bf431e0ec6a20ac342061c
   device_support: dac62e363457b2660d0b5bea0602b378791041b958c17fd3eb7b008137916796
   datasheet_evidence: 7747c15a3cb633d4a4cba6f7d22b7f6521ac3eb473bd48f1de1b32d8ef6b54f3
-  deployment_policy: 803a69caa48080f6a3c69939c7f21cfdd66ca074b2dff38652c90ef598bcc9e4
+  deployment_policy: 7777f4eec0e05154b017578e12c929a3b8d76784eea36d2a07846b8dc18a0f5f
   map_generator_schema: 213c6326a5f338c074ebec3a2e119b3747c80e3dda719f8547c5e4a4d786fb7a
 geometry:
   physical_flash:
@@ -1570,7 +1570,7 @@ geometry:
 partitions:
   application:
     start: 134217728
-    end: 134223872
+    end: 134248448
   bootloader: null
 deployment_policy:
   kind: artifact_application_allocation
@@ -1581,20 +1581,44 @@ deployment_policy:
     end: 134221824
   - start: 134221824
     end: 134223872
+  - start: 134223872
+    end: 134225920
+  - start: 134225920
+    end: 134227968
+  - start: 134227968
+    end: 134230016
+  - start: 134230016
+    end: 134232064
+  - start: 134232064
+    end: 134234112
+  - start: 134234112
+    end: 134236160
+  - start: 134236160
+    end: 134238208
+  - start: 134238208
+    end: 134240256
+  - start: 134240256
+    end: 134242304
+  - start: 134242304
+    end: 134244352
+  - start: 134244352
+    end: 134246400
+  - start: 134246400
+    end: 134248448
   driver_proof_digest: 1c6571d3dad93810a8554b3ea537740720a752b69ab1b5bffa1177f7f04dc797
-  creation_map_digest: e353fc13d2eaa4a594d3aaac0550cb041b7f586f78465040eeb3c1106bdcaa2c
-  creation_artifact_digest: a5ca205c49f16733b64252d8b44768c2b573114a699bb2ad007fb0a5e38e78fa
-  parent_allocation_digest: null
-  allocation_digest: 92c01c9178356068460172501797f331d6508bdc57389f638f58da17a0e11c81
+  creation_map_digest: 12aaed763c822f5d8c4074e6a40fcdedfa58158ca467d04e2f498a3104a64619
+  creation_artifact_digest: 33d0e4d613b0bbe59881c6752e4b43c151b2f1d50e49d2dd44edd922ef9d4455
+  parent_allocation_digest: 9de017f600054b09da212291fa1805e5ac8da4019c43f253a0e117609ce1a87f
+  allocation_digest: cdacb664d0f0a1bbad3f06ec28920c0b56236356379d540741e0b356a5415e4f
 regions:
 - name: artifact-defined application allocation
   kind: application_flash
   start: 134217728
-  end: 134223872
+  end: 134248448
   executable: false
   provenance:
   - authority: derived
-    source_id: 92c01c9178356068460172501797f331d6508bdc57389f638f58da17a0e11c81
+    source_id: cdacb664d0f0a1bbad3f06ec28920c0b56236356379d540741e0b356a5415e4f
     detail: server-derived artifact erase-sector allocation
 - name: 'pack flash: Flash'
   kind: physical_flash

@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-firmware-suite",
+  "task_card_id": "CARD-PLAN2-SUITE-MANAGER-011",
+  "profile_id": "sol-low",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260820-plan2-suite-009-manager-011\\.agent-workspace\\PLAN2_SUITE_MANAGER_PROMPT_011.md",
+      "sha256": "b20f909e5b830acee53a3d79faa678909128333101a27d2b44ee8b3274718326",
+      "size": 4154
+    }
+  ],
+  "final_sha256": "b20f909e5b830acee53a3d79faa678909128333101a27d2b44ee8b3274718326",
+  "final_size": 4154,
+  "bundle_sha256": "4da17811ccb43dd96431c8a2df2cb27dbc7c7978e8a2f8fb0e9704b23dc7c50c"
+}

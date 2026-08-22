@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev --locked python C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\scripts\\worktree_task.py create plan2-suite008-candidate-review-016 --branch plan2/suite008-candidate-review-016 --owner reviewer-main",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\target-harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The same local worktree helper completed adjacent 172-file worktrees in about 2.5 seconds; 60 seconds retains more than twentyfold measured headroom.",
+    "started_at":  "2026-08-20T23:27:08.8892388+00:00",
+    "finished_at":  "2026-08-20T23:27:11.0454727+00:00",
+    "elapsed_seconds":  2.156,
+    "root_process_id":  14264,
+    "observed_process_ids":  [
+                                 14264
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-review016-worktree-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-review016-worktree-20260820-001.stderr.log"
+}

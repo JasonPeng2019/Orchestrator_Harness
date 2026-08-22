@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\stable-harness\\claude-qwen-parity-001\\launch_cp01_repair_lane.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\stable-general-harness-runner",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The detached CP-01 repair operator launch validates and records one resumed child identity; 60 seconds covers process creation and receipt write on Windows, with 15 seconds policy-capped cleanup. The resumed agent session is lane-managed and not test-bounded.",
+    "started_at":  "2026-08-22T07:09:08.8147161+00:00",
+    "finished_at":  "2026-08-22T07:09:11.5242540+00:00",
+    "elapsed_seconds":  2.71,
+    "root_process_id":  24068,
+    "observed_process_ids":  [
+                                 24068
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-cp01-repair-lane-launch-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-cp01-repair-lane-launch-001.stderr.log"
+}

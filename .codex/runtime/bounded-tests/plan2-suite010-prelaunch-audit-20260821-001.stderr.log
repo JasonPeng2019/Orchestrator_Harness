@@ -1,0 +1,3 @@
+ERROR A21_REVIEWER_20260820-plan2-suite-009: missing RUN_STATE.json and historical STATUS.md
+ERROR A21_20260820-plan2-suite-009/RESULT.json:84: operator action
+AUTONOMY_AUDIT_FAIL errors=2

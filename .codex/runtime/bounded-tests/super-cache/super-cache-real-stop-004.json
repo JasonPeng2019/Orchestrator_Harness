@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\super-cache\\verify-real-stop-cache-001.ps1\u0027 -HarnessRoot \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\firmware-v2-harness-runner-parity\u0027 -DevRoot \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 -FixtureRoot \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\super-cache\\fixture-real-stop-004\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\firmware-v2-harness-runner-parity",
+    "maximum_lifetime_seconds":  125,
+    "expected_upper_bound_seconds":  100,
+    "cleanup_allowance_seconds":  25,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The prior real cache attempt showed the driver did not match the controller cwd. The corrected fresh fixture runs both checks from the prepared worktree with a 100-second upper bound and 25 seconds cleanup.",
+    "started_at":  "2026-08-22T10:13:46.4229535+00:00",
+    "finished_at":  "2026-08-22T10:13:55.1743196+00:00",
+    "elapsed_seconds":  8.751,
+    "root_process_id":  26420,
+    "observed_process_ids":  [
+                                 26420
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\super-cache\\super-cache-real-stop-004.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\super-cache\\super-cache-real-stop-004.stderr.log"
+}

@@ -1,0 +1,6 @@
+RUNNING pid=27740 elapsed_seconds=0 remaining_seconds=720
+RUNNING pid=27740 elapsed_seconds=61 remaining_seconds=659 stdout_bytes=0 stderr_bytes=0 observed_processes=4
+RUNNING pid=27740 elapsed_seconds=122 remaining_seconds=598 stdout_bytes=0 stderr_bytes=0 observed_processes=4
+RUNNING pid=27740 elapsed_seconds=182 remaining_seconds=538 stdout_bytes=0 stderr_bytes=0 observed_processes=4
+RUNNING pid=27740 elapsed_seconds=243 remaining_seconds=477 stdout_bytes=0 stderr_bytes=0 observed_processes=4
+FAILED exit_code=1 elapsed_seconds=256.31 result=C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.codex\runtime\bounded-tests\claude-qwen-parity\live-qwen-002.json cleanup_verified=True

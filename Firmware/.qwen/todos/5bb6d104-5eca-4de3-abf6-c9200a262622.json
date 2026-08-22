@@ -1,0 +1,31 @@
+{
+  "planId": "581809f1-5442-43c7-bbee-a488a6b1b26b",
+  "todos": [
+    {
+      "content": "MCP handshake + inventory; verify four-board live identity baseline",
+      "id": "t1",
+      "status": "in_progress"
+    },
+    {
+      "content": "REQ-001: one setup_overview for all four friendly names, choose identities, validate all four",
+      "id": "t2",
+      "status": "pending"
+    },
+    {
+      "content": "REQ-002: capture DEVPKEY_Device_LocationPaths snapshot, MCP disconnect all four, serial exact composite disable/enable, recapture snapshot, revalidate all four",
+      "id": "t3",
+      "status": "pending"
+    },
+    {
+      "content": "REQ-003: per-board get_setup_status + disconnect + post-disconnect status + final present-device snapshot",
+      "id": "t4",
+      "status": "pending"
+    },
+    {
+      "content": "Write RESULT.json + TEST_REPORT.md with raw evidence preserved",
+      "id": "t5",
+      "status": "pending"
+    }
+  ],
+  "sessionId": "5bb6d104-5eca-4de3-abf6-c9200a262622"
+}

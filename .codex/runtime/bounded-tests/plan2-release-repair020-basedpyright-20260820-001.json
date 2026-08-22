@@ -1,0 +1,28 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev --locked python -m basedpyright --project pyrightconfig.json",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-release-safeguard-repair-020",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The retained release registry BasedPyright check targets the candidate baseline; prior locked type checks complete within two minutes, with 30 seconds policy-capped cleanup.",
+    "started_at":  "2026-08-21T00:21:21.9133397+00:00",
+    "finished_at":  "2026-08-21T00:21:43.9718910+00:00",
+    "elapsed_seconds":  22.059,
+    "root_process_id":  30596,
+    "observed_process_ids":  [
+                                 3244,
+                                 15356,
+                                 22800,
+                                 24260,
+                                 25128,
+                                 30536,
+                                 30596
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-basedpyright-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-basedpyright-20260820-001.stderr.log"
+}

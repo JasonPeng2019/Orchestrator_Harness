@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.codex\runtime\bounded-tests\claude-qwen-parity\parse_live_qwen_invocation.py", line 13, in <module>
+    print(invocation.provider.provider_id)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Invocation' object has no attribute 'provider'. Did you mean: 'provider_id'?

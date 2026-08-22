@@ -1,0 +1,53 @@
+F401 [*] `io` imported but unused
+  --> orchestrator_harness\tests\test_workspace_overlay.py:15:8
+   |
+13 | import base64
+14 | import hashlib
+15 | import io
+   |        ^^
+16 | import json
+17 | import os
+   |
+help: Remove unused import: `io`
+   |
+14 | import hashlib
+   - import io
+15 | import json
+   |
+
+F401 [*] `contextlib.redirect_stdout` imported but unused
+  --> orchestrator_harness\tests\test_workspace_overlay.py:23:24
+   |
+21 | import tempfile
+22 | import unittest
+23 | from contextlib import redirect_stdout
+   |                        ^^^^^^^^^^^^^^^
+24 | from dataclasses import replace
+25 | from pathlib import Path
+   |
+help: Remove unused import: `contextlib.redirect_stdout`
+   |
+22 | import unittest
+   - from contextlib import redirect_stdout
+23 | from dataclasses import replace
+   |
+
+F401 [*] `orchestrator_harness.tests.support.TemporaryGitRepository` imported but unused
+  --> orchestrator_harness\tests\test_workspace_overlay.py:34:48
+   |
+32 | from orchestrator_harness.models import ProcessSnapshot
+33 | from orchestrator_harness.mutation import MutationError, MutationReceipt, TargetState
+34 | from orchestrator_harness.tests.support import TemporaryGitRepository
+   |                                                ^^^^^^^^^^^^^^^^^^^^^^
+35 | from orchestrator_harness.workspace_overlay import (
+36 |     DECLARATION_NAME,
+   |
+help: Remove unused import: `orchestrator_harness.tests.support.TemporaryGitRepository`
+   |
+33 | from orchestrator_harness.mutation import MutationError, MutationReceipt, TargetState
+   - from orchestrator_harness.tests.support import TemporaryGitRepository
+34 | from orchestrator_harness.workspace_overlay import (
+   |
+
+Found 3 errors.
+[*] 3 fixable with the `--fix` option.

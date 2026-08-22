@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "powershell -NoProfile -ExecutionPolicy Bypass -File \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-harness\\20260820-plan2-release-safeguard-018\\safeguard-doer-018\\run-candidate-safeguard.ps1\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-release-safeguard-018",
+    "maximum_lifetime_seconds":  2520,
+    "expected_upper_bound_seconds":  2400,
+    "cleanup_allowance_seconds":  120,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Plan-2-M07-release-safeguard-018 accepted cold bound: S6.RELEASE.ACCUMULATED-SAFEGUARD estimated 2400s",
+    "started_at":  "2026-08-20T23:58:30.8951774+00:00",
+    "finished_at":  "2026-08-20T23:58:32.8327353+00:00",
+    "elapsed_seconds":  1.938,
+    "root_process_id":  29024,
+    "observed_process_ids":  [
+                                 29024
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-release-safeguard-018-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-release-safeguard-018-002.stderr.log"
+}

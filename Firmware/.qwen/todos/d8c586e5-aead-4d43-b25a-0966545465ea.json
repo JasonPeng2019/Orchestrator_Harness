@@ -1,0 +1,31 @@
+{
+  "planId": "bc42eb71-8754-41fa-9f9c-57141ae54c1c",
+  "todos": [
+    {
+      "content": "REQ-001: Fresh setup for NRF-A (probe 683710208/COM16) via handshake→overview→setup-tool→plan→setup",
+      "id": "t1",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-001: Fresh setup for NRF-B (probe 683854191/COM15) via same sequence",
+      "id": "t2",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-002: Intentional wrong-board selection once, retain refusal, follow server-directed repair",
+      "id": "t3",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-003: Safety refresh, validate, status, connect, board-info, logical disconnect for both",
+      "id": "t4",
+      "status": "completed"
+    },
+    {
+      "content": "Write RESULT.json + TEST_REPORT.md with terminal status and full evidence",
+      "id": "t5",
+      "status": "completed"
+    }
+  ],
+  "sessionId": "d8c586e5-aead-4d43-b25a-0966545465ea"
+}

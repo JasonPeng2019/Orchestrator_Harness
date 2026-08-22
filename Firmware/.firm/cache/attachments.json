@@ -32,6 +32,39 @@
       "uart_pid": 14155,
       "uart_usb_serial": "0668FF514988525067213913",
       "uart_vid": 1155
+    },
+    {
+      "board_id": "nrf_b",
+      "confirmed": true,
+      "confirmed_at": "2026-08-21T07:00:34.249446Z",
+      "probe_family": "jlink",
+      "probe_usb_serial": "683854191",
+      "revoked_at": null,
+      "uart_pid": 4133,
+      "uart_usb_serial": "000683854191",
+      "uart_vid": 4966
+    },
+    {
+      "board_id": "nrf_a_2",
+      "confirmed": true,
+      "confirmed_at": "2026-08-21T08:26:26.296076Z",
+      "probe_family": "jlink",
+      "probe_usb_serial": "683710208",
+      "revoked_at": null,
+      "uart_pid": 4133,
+      "uart_usb_serial": "000683710208",
+      "uart_vid": 4966
+    },
+    {
+      "board_id": "nrf_b_2",
+      "confirmed": true,
+      "confirmed_at": "2026-08-21T08:28:11.974951Z",
+      "probe_family": "jlink",
+      "probe_usb_serial": "683854191",
+      "revoked_at": null,
+      "uart_pid": 4133,
+      "uart_usb_serial": "000683854191",
+      "uart_vid": 4966
     }
   ],
   "schema_version": 1

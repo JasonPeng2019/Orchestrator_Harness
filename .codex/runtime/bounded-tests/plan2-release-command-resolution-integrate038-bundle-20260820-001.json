@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .agent-workspace/epochs/20260820-plan2-release-command-resolution-integrate-038/compute_bundle.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Prompt bundle generation is a local hash and JSON operation; matching bundle generation completes in under two seconds, so 20 seconds is conservative.",
+    "started_at":  "2026-08-21T03:45:00.8583241+00:00",
+    "finished_at":  "2026-08-21T03:45:02.9223616+00:00",
+    "elapsed_seconds":  2.064,
+    "root_process_id":  7336,
+    "observed_process_ids":  [
+                                 7336
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-command-resolution-integrate038-bundle-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-command-resolution-integrate038-bundle-20260820-001.stderr.log"
+}

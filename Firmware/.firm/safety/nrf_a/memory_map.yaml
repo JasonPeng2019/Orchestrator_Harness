@@ -17,7 +17,7 @@ source_digests:
   semantic_profile: f1981e1bba53f86628552cb8e08e25c9b966729e7dea6ffac2310a12dbdce4ce
   device_support: 87fb0b9644f24aa3a86de6edb6b6edd0278499fff7ca7df0a43c00496fb906fa
   datasheet_evidence: 7d33f48b65a87ea2391d73b8c1160915aa3bec7f4500e685612b5264319614ee
-  deployment_policy: a47fe260f1a3ac3d3c30652d905a3ea5ac5a790858fe2ce8f9aa5e4d2b4132cd
+  deployment_policy: 595772c177b173acdf258459ec39a53c32e678d85f439adfe619c2571b00b2b1
   map_generator_schema: 213c6326a5f338c074ebec3a2e119b3747c80e3dda719f8547c5e4a4d786fb7a
 geometry:
   physical_flash:
@@ -802,11 +802,122 @@ geometry:
       end: 1048576
       bank: internal
 partitions:
-  application: null
+  application:
+    start: 0
+    end: 192512
   bootloader: null
 deployment_policy:
-  kind: none
+  kind: artifact_application_allocation
+  sectors:
+  - start: 0
+    end: 4096
+  - start: 4096
+    end: 8192
+  - start: 8192
+    end: 12288
+  - start: 12288
+    end: 16384
+  - start: 16384
+    end: 20480
+  - start: 20480
+    end: 24576
+  - start: 24576
+    end: 28672
+  - start: 28672
+    end: 32768
+  - start: 32768
+    end: 36864
+  - start: 36864
+    end: 40960
+  - start: 40960
+    end: 45056
+  - start: 45056
+    end: 49152
+  - start: 49152
+    end: 53248
+  - start: 53248
+    end: 57344
+  - start: 57344
+    end: 61440
+  - start: 61440
+    end: 65536
+  - start: 65536
+    end: 69632
+  - start: 69632
+    end: 73728
+  - start: 73728
+    end: 77824
+  - start: 77824
+    end: 81920
+  - start: 81920
+    end: 86016
+  - start: 86016
+    end: 90112
+  - start: 90112
+    end: 94208
+  - start: 94208
+    end: 98304
+  - start: 98304
+    end: 102400
+  - start: 102400
+    end: 106496
+  - start: 106496
+    end: 110592
+  - start: 110592
+    end: 114688
+  - start: 114688
+    end: 118784
+  - start: 118784
+    end: 122880
+  - start: 122880
+    end: 126976
+  - start: 126976
+    end: 131072
+  - start: 131072
+    end: 135168
+  - start: 135168
+    end: 139264
+  - start: 139264
+    end: 143360
+  - start: 143360
+    end: 147456
+  - start: 147456
+    end: 151552
+  - start: 151552
+    end: 155648
+  - start: 155648
+    end: 159744
+  - start: 159744
+    end: 163840
+  - start: 163840
+    end: 167936
+  - start: 167936
+    end: 172032
+  - start: 172032
+    end: 176128
+  - start: 176128
+    end: 180224
+  - start: 180224
+    end: 184320
+  - start: 184320
+    end: 188416
+  - start: 188416
+    end: 192512
+  driver_proof_digest: 8218cbb6cc092f63b2c5bf0d26f9986f60d9e7ce1d1adf3676097cf8d7d0bdc3
+  creation_map_digest: 0d52d6f6691b9548c41305f1e2ad11907332627b81c839ae7d1558379d2dcb23
+  creation_artifact_digest: 2544e38a3cce4caf1f8b0341526364baf1b8208ce95e2dbd9de0c12cb5d26837
+  parent_allocation_digest: 1391742d8f433203d0e0a534029e676d738ca1a09e1e0ed0a0624e24d200f04c
+  allocation_digest: 316cd7093772ee155a4173e83caa7f0d6e578b45c9cfabf6df7abc0927d21ce2
 regions:
+- name: artifact-defined application allocation
+  kind: application_flash
+  start: 0
+  end: 192512
+  executable: false
+  provenance:
+  - authority: derived
+    source_id: 316cd7093772ee155a4173e83caa7f0d6e578b45c9cfabf6df7abc0927d21ce2
+    detail: server-derived artifact erase-sector allocation
 - name: 'pack flash: IROM1'
   kind: physical_flash
   start: 0

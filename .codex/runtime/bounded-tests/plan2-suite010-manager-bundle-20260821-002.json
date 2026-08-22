@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -c \"import json; from pathlib import Path; from orchestrator_harness.prompt_bundle import PromptComponent,compose_prompt_bundle; p=Path(r\u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260821-plan2-suite-010-manager-012\\\\.agent-workspace\\\\PLAN2_SUITE_MANAGER_PROMPT_012.md\u0027); b=compose_prompt_bundle(workflow_id=\u0027plan-2-firmware-suite\u0027, task_card_id=\u0027CARD-PLAN2-SUITE-MANAGER-012\u0027, profile_id=\u0027sol-low\u0027, components=[PromptComponent(\u0027task\u0027,p.read_bytes(),p)]); print(json.dumps(b.to_record(),indent=2))\"",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260821-plan2-suite-010-manager-012",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "The prior run reached the local bundle API in 2.453 seconds; after correcting the method name and supplying the required path, ten seconds remains conservative.",
+    "started_at":  "2026-08-21T12:36:52.7497053+00:00",
+    "finished_at":  "2026-08-21T12:36:54.4222767+00:00",
+    "elapsed_seconds":  1.673,
+    "root_process_id":  28540,
+    "observed_process_ids":  [
+                                 28540
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite010-manager-bundle-20260821-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite010-manager-bundle-20260821-002.stderr.log"
+}

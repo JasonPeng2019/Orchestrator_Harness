@@ -1,0 +1,9 @@
+test_coding_examples_and_documented_commands_are_present (orchestrator_harness.tests.test_general_coding_docs.GeneralCodingDocumentationTests.test_coding_examples_and_documented_commands_are_present) ... ok
+test_documented_harness_examples_parse (orchestrator_harness.tests.test_general_coding_docs.GeneralCodingDocumentationTests.test_documented_harness_examples_parse) ... ok
+test_legacy_firmware_compatibility_is_explicit_and_scoped (orchestrator_harness.tests.test_general_coding_docs.GeneralCodingDocumentationTests.test_legacy_firmware_compatibility_is_explicit_and_scoped) ... ok
+test_schema_less_firmware_invocation_still_parses (orchestrator_harness.tests.test_general_coding_docs.GeneralCodingDocumentationTests.test_schema_less_firmware_invocation_still_parses) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.097s
+
+OK

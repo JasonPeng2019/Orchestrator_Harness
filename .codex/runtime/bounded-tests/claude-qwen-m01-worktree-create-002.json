@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev --locked python C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\scripts\\worktree_task.py create claude-qwen-parity-implementation --branch codex/claude-qwen-parity-implementation --owner PARITY_IMPLEMENTER",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\firmware-v2-harness-runner",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "Creating one local Git worktree normally completes in seconds; 60 seconds covers uv startup and Windows Git worktree registration, with 15 seconds policy-capped cleanup.",
+    "started_at":  "2026-08-22T06:46:56.1158422+00:00",
+    "finished_at":  "2026-08-22T06:46:58.6794192+00:00",
+    "elapsed_seconds":  2.564,
+    "root_process_id":  13260,
+    "observed_process_ids":  [
+                                 13260
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-m01-worktree-create-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-m01-worktree-create-002.stderr.log"
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev --locked python C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\scripts\\worktree_task.py create plan2-suite008-verification-assets-013 --branch plan2/suite008-verification-assets-013 --owner doer-main",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\target-harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The same repository worktree helper checked out the adjacent 172-file repair worktree in 2.441 seconds; 60 seconds includes ample local I/O headroom.",
+    "started_at":  "2026-08-20T23:05:59.3595025+00:00",
+    "finished_at":  "2026-08-20T23:06:01.8310844+00:00",
+    "elapsed_seconds":  2.472,
+    "root_process_id":  29260,
+    "observed_process_ids":  [
+                                 29260
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-assets013-worktree-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-assets013-worktree-20260820-001.stderr.log"
+}

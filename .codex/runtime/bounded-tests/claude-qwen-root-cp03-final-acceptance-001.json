@@ -1,0 +1,25 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked ruff check --config \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\pyproject.toml\u0027 --no-cache orchestrator_harness/qwen_adapter.py orchestrator_harness/qwen_installer.py orchestrator_harness/codex_adapter.py orchestrator_harness/cli.py orchestrator_harness/__init__.py examples/disposable_qwen_coding_fixture.py orchestrator_harness/assets/qwen/orchestrator_harness_notification.py orchestrator_harness/assets/qwen/orchestrator_harness_post_tool_use.py orchestrator_harness/assets/qwen/orchestrator_harness_stop.py orchestrator_harness/tests/test_compat_qwen_adapter.py orchestrator_harness/tests/test_qwen_provider.py orchestrator_harness/tests/test_provider_adapter_registry.py; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked basedpyright --project pyrightconfig.json orchestrator_harness/qwen_adapter.py orchestrator_harness/qwen_installer.py orchestrator_harness/codex_adapter.py orchestrator_harness/cli.py orchestrator_harness/__init__.py examples/disposable_qwen_coding_fixture.py orchestrator_harness/assets/qwen/orchestrator_harness_notification.py orchestrator_harness/assets/qwen/orchestrator_harness_post_tool_use.py orchestrator_harness/assets/qwen/orchestrator_harness_stop.py orchestrator_harness/tests/test_compat_qwen_adapter.py orchestrator_harness/tests/test_qwen_provider.py orchestrator_harness/tests/test_provider_adapter_registry.py; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; python -m py_compile orchestrator_harness/qwen_adapter.py orchestrator_harness/qwen_installer.py orchestrator_harness/codex_adapter.py orchestrator_harness/cli.py orchestrator_harness/__init__.py examples/disposable_qwen_coding_fixture.py orchestrator_harness/assets/qwen/orchestrator_harness_notification.py orchestrator_harness/assets/qwen/orchestrator_harness_post_tool_use.py orchestrator_harness/assets/qwen/orchestrator_harness_stop.py orchestrator_harness/tests/test_compat_qwen_adapter.py orchestrator_harness/tests/test_qwen_provider.py orchestrator_harness/tests/test_provider_adapter_registry.py; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; python -m unittest orchestrator_harness.tests.test_compat_qwen_adapter orchestrator_harness.tests.test_qwen_provider orchestrator_harness.tests.test_provider_adapter_registry -v",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-parity-implementation",
+    "maximum_lifetime_seconds":  113,
+    "expected_upper_bound_seconds":  90,
+    "cleanup_allowance_seconds":  23,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "CP-03 ROOT acceptance combines the measured 4.7-second focused provider-free suite, prior 10-second type/compile gate, prior 3.6-second Ruff gate, and registry coverage; 90 seconds allows cold locked-environment overhead and 23 seconds is the policy-capped cleanup allowance.",
+    "started_at":  "2026-08-22T08:38:15.7808044+00:00",
+    "finished_at":  "2026-08-22T08:38:28.8188849+00:00",
+    "elapsed_seconds":  13.038,
+    "root_process_id":  27136,
+    "observed_process_ids":  [
+                                 16484,
+                                 18592,
+                                 27136,
+                                 30652
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp03-final-acceptance-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp03-final-acceptance-001.stderr.log"
+}

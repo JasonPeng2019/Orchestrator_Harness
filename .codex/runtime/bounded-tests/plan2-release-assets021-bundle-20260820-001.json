@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.agent-workspace\\epochs\\20260820-plan2-release-safeguard-assets-021\\compute_bundle.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "A single local prompt-bundle hash calculation previously completed in 1.4 seconds; 20 seconds includes interpreter startup headroom.",
+    "started_at":  "2026-08-21T00:25:55.3393647+00:00",
+    "finished_at":  "2026-08-21T00:25:57.0029993+00:00",
+    "elapsed_seconds":  1.664,
+    "root_process_id":  30476,
+    "observed_process_ids":  [
+                                 30476
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-assets021-bundle-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-assets021-bundle-20260820-001.stderr.log"
+}

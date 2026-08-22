@@ -1,0 +1,36 @@
+{
+  "planId": "faf9d8c0-5d0c-4900-93b4-76111b188ff8",
+  "todos": [
+    {
+      "content": "REQ-001: one four-name setup_overview with exact connection assignments; validate all four strictly sequentially",
+      "id": "t1",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-002: capture DEVPKEY_Device_LocationPaths + COM before-snapshot; MCP logical disconnect all four",
+      "id": "t2",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-002: serial exact Disable-PnpDevice/Enable-PnpDevice per composite device, ≤30s wait each — host refused (non-elevated); truthful non-PASS evidence preserved",
+      "id": "t3",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-002: after-snapshot, before/after comparison, rerun setup overview, validate all four sequentially",
+      "id": "t4",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-003: per-board get_setup_status, disconnect, post-disconnect status, final present-device snapshot",
+      "id": "t5",
+      "status": "completed"
+    },
+    {
+      "content": "Owned-process cleanup, schema-valid RESULT.json + TEST_REPORT.md",
+      "id": "t6",
+      "status": "completed"
+    }
+  ],
+  "sessionId": "a3059fcb-4dc4-42b6-9096-ae19cfcb89cd"
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.codex\runtime\bounded-tests\claude-qwen-parity\run_live_qwen.py", line 55, in <module>
+    status = fixture._finish_controller(receipt)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.firmware-v2-harness-runner-worktrees\claude-qwen-live-qwen\examples\disposable_claude_coding_fixture.py", line 285, in _finish_controller
+    return _wait_for_status(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.firmware-v2-harness-runner-worktrees\claude-qwen-live-qwen\examples\disposable_claude_coding_fixture.py", line 253, in _wait_for_status
+    raise FixtureError(f"timed out waiting for status condition in {path}")
+disposable_claude_coding_fixture.FixtureError: timed out waiting for status condition in C:\Users\Jason\Documents\Jason\Orchestrator_Harness\.firmware-v2-harness-runner-worktrees\claude-qwen-live-qwen\.agent-workspace\live-qwen-fixture\worktrees\lane-qwen\.agent-workspace\worker_controller.status.json

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev --locked python -m ruff format --check orchestrator_harness/tests/test_s6_public_release.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-release-safeguard-repair-020",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The changed S6 test file was just formatted by locked Ruff; this scoped check verifies it without touching forbidden pre-existing files.",
+    "started_at":  "2026-08-21T00:20:54.8629430+00:00",
+    "finished_at":  "2026-08-21T00:20:56.1424485+00:00",
+    "elapsed_seconds":  1.28,
+    "root_process_id":  16816,
+    "observed_process_ids":  [
+                                 16816
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-ruff-format-file-check-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-ruff-format-file-check-20260820-001.stderr.log"
+}

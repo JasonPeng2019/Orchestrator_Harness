@@ -1,0 +1,25 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "python \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\parse_live_qwen_invocation.py\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-live-qwen",
+    "maximum_lifetime_seconds":  19,
+    "expected_upper_bound_seconds":  15,
+    "cleanup_allowance_seconds":  4,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Read-only corrected Qwen live-card parse; 15 seconds covers validation and 4 seconds is policy-capped cleanup.",
+    "started_at":  "2026-08-22T09:04:38.1756576+00:00",
+    "finished_at":  "2026-08-22T09:04:51.5536777+00:00",
+    "elapsed_seconds":  13.378,
+    "root_process_id":  10768,
+    "observed_process_ids":  [
+                                 10768,
+                                 15932,
+                                 17532,
+                                 25436
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\live-qwen-003-invocation-parse-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\live-qwen-003-invocation-parse-001.stderr.log"
+}

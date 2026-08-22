@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  210,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "Prior successful change-aware verification completed in 47.395 seconds; 180 seconds allows cold tool startup and the selected Ruff, BasedPyright, compilation, and targeted-test checks, with 30 seconds policy-capped cleanup.",
+    "started_at":  "2026-08-21T20:08:37.9220287+00:00",
+    "finished_at":  "2026-08-21T20:08:42.7100766+00:00",
+    "elapsed_seconds":  4.788,
+    "root_process_id":  28056,
+    "observed_process_ids":  [
+                                 28056
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-close-verify-changed-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-close-verify-changed-002.stderr.log"
+}

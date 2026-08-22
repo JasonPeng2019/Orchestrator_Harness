@@ -1,0 +1,26 @@
+{
+  "planId": "863f5691-6457-45ec-814b-df1897a97264",
+  "todos": [
+    {
+      "content": "REQ-001: Independent fresh setup for NRF-A and NRF-B (handshake → overview → setup-tool → populated plan → setup)",
+      "id": "req1",
+      "status": "in_progress"
+    },
+    {
+      "content": "REQ-002: Identical-board repair — intentionally select wrong Nordic board once, retain refusal, server-directed continuation",
+      "id": "req2",
+      "status": "pending"
+    },
+    {
+      "content": "REQ-003: Validation and lifecycle — safety refresh, validate, status, connect, board-info, disconnect for both",
+      "id": "req3",
+      "status": "pending"
+    },
+    {
+      "content": "Write schema-valid RESULT.json + TEST_REPORT.md with raw evidence preserved",
+      "id": "report",
+      "status": "pending"
+    }
+  ],
+  "sessionId": "b4d57724-a350-4141-be4c-54801da3541c"
+}

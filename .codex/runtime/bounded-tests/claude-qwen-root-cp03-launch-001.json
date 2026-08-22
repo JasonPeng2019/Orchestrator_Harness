@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked python \u0027.codex\\runtime\\stable-harness\\claude-qwen-parity-001\\launch_cp03_lane.py\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "CP-03 persistent lane launch handoff; 30 seconds covers locked environment process setup and 8 seconds is policy-capped cleanup; provider session remains lane-managed after launch",
+    "started_at":  "2026-08-22T08:04:01.8102792+00:00",
+    "finished_at":  "2026-08-22T08:04:05.1805907+00:00",
+    "elapsed_seconds":  3.37,
+    "root_process_id":  31072,
+    "observed_process_ids":  [
+                                 31072
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp03-launch-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp03-launch-001.stderr.log"
+}

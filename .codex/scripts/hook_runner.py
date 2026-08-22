@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[2]
 VERIFY_CHANGED = ROOT / ".codex" / "scripts" / "verify_changed.py"
 BOUNDED_TEST_SUPERVISOR = ROOT / ".codex" / "scripts" / "Invoke-BoundedTest.ps1"
 STOP_VERIFY_RESULT = ROOT / ".codex" / "runtime" / "bounded-tests" / "stop-verify.json"
-HARNESS_PLAN = ROOT / "plans" / "general-coding-harness" / "FULL-EXECUTION-SPEC_PLAN_2.md"
+HARNESS_PLAN = ROOT / "archive" / "firmware-v2-campaign" / "general-coding-harness" / "FULL-EXECUTION-SPEC_PLAN_2.md"
 
 DESTRUCTIVE_PATTERNS = (
     (

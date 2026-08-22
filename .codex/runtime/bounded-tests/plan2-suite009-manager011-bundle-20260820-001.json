@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/.agent-workspace/epochs/20260820-plan2-suite-009-manager-011/compute_manager_bundle.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  2,
+    "timeout_basis":  "The identical suite-008 prompt-bundle computation is a single local file read and hash; 10 seconds is generous local-I/O headroom.",
+    "started_at":  "2026-08-21T06:26:56.9778960+00:00",
+    "finished_at":  "2026-08-21T06:26:58.8974264+00:00",
+    "elapsed_seconds":  1.92,
+    "root_process_id":  17832,
+    "observed_process_ids":  [
+                                 17832
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite009-manager011-bundle-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite009-manager011-bundle-20260820-001.stderr.log"
+}

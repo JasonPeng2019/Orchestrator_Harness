@@ -1,0 +1,106 @@
+Found 104 matches for pattern "REQ-|requirements.*id|RESULT\.json" in path "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness" (filter: "*.py"):
+---
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\examples\disposable_coding_fixture.py:152:            workspace / "RESULT.json",
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\examples\disposable_coding_fixture.py:401:        beta / ".agent-workspace" / "RESULT.json",
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\codex_adapter.py:1780:            # REQ-O38: every rejected installed Stop invokes the real
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\codex_bounded_policy.py:3:REQ-O43 product counterpart of SRC-010: an editable launcher JSON plus one
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\discovery.py:826:    result_path = workspace / "RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\harness_watcher_implementation\tests\run_attention_practical.py:211:        (destination / "wake-result.json").write_text(
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\harness_watcher_implementation\tests\run_attention_practical.py:214:        (destination / "quiet-result.json").write_text(
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\harness_watcher_implementation\tests\run_canary.py:237:        (destination / "result.json").write_text(
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\harness_watcher_implementation\tests\run_defect_canary.py:76:        (DESTINATION / "result.json").write_text(
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\harness_watcher_implementation\tests\run_lifecycle_canary.py:111:    (DEST / "result.json").write_text(
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\harness_watcher_implementation\tests\test_attention_practical_retention.py:26:            wake = json.loads((evidence / "wake-result.json").read_text())
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\harness_watcher_implementation\tests\test_attention_practical_retention.py:27:            quiet = json.loads((evidence / "quiet-result.json").read_text())
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py:264:        _canonical_output_path_key(workspace / "RESULT.json"): "RESULT.json",
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py:623:        or outputs["status"].name == "RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py:1321:        invocation.workspace / "RESULT.json",
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py:1365:            "canonical task advancement artifacts exist without a valid RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py:1463:    path = invocation.workspace / "RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py:1509:    path = invocation.workspace / "RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py:1828:        """REQ-O35: one declared same-role handoff with no fabricated continuity."""
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py:2070:        # REQ-O35: run the real adapter resume decision before any adapter
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py:2123:        # REQ-O33: construct only the provider-neutral launch specification
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py:2402:        # REQ-O35: an unsupported or identity-mismatched resume preserves the
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\lane_controller.py:2427:        # REQ-O33: an unsupported requested operation returns an actionable
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\provider.py:28:# The exact content-free, non-preemptive wake text required by REQ-O38.
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\provider.py:310:    """REQ-O36 evidence: identity, capabilities, digest, and redacted provenance."""
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\provider.py:673:            # REQ-O38: the one exact content-free, non-preemptive wake sentence.
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\provider.py:981:        # REQ-O38: recheck byte equality at every selection.  A live adapter
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\provider.py:1013:    """REQ-O35: resume when supported and identity matches, else declared handoff.
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\release_checks.py:196:            self.external_requirements, f"{self.stable_id}.external_requirements"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\release_checks.py:199:            self.platform_requirements, f"{self.stable_id}.platform_requirements"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\release_checks.py:624:            external_requirements=("WSL2", "Codex provider", "ephemeral auth"),
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\real_agent_test.py:281:            "controller_result": _artifact_fact(workspace / "RESULT.json"),
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\real_agent_test.py:328:    identity fields and a SHA-256 of the discarded RESULT.json; provider
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\real_agent_test.py:976:        record_path = staging_path / "REAL_AGENT_TEST_RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\real_agent_test.py:1008:            "record_name": "REAL_AGENT_TEST_RESULT.json",
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\real_agent_test.py:1430:message Complete public route task. Then write .agent-workspace/RESULT.json
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\real_agent_test.py:1743:        result_path = repo / ".agent-workspace" / "RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\workspace_overlay.py:3:REQ-O40..REQ-O42: contents-only refresh of an ordinary editable
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\workspace_overlay.py:860:    """Prelaunch lane-controller verification (REQ-O41).
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\support\synthetic_agent_helper.py:84:                    workspace / "synthetic-helper-result.json",
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_codex_bounded_policy.py:1:"""Focused provider-owned bounded-policy tests for REQ-O43.
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_coding_lane_controller.py:262:        # REQ-O35: identity-mismatched resume emits a declared same-role
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_discovery.py:114:            workspace / "RESULT.json",
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_discovery.py:201:        result_path = workspace / "RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_firmware_route_compatibility.py:212:            write_json(coding_workspace / "RESULT.json", {"status": "PASS"})
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_firmware_route_compatibility.py:225:                firmware_workspace / "RESULT.json",
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_general_coding_integration.py:91:                    workspace / ".agent-workspace" / "RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_git_results.py:248:            self.root / "RESULT.json", "x" * 900, sha256="hash"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_git_results.py:312:        result_path = self.workspace / "RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_git_results.py:330:        write_json(self.workspace / "RESULT.json", {"status": "PASS"})
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_git_results.py:339:        write_json(firmware_workspace / "RESULT.json", {"status": "PASS"})
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_handoff_preflight.py:57:        self.result_path = self.workspace / "RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_provider_adapter_public_seams.py:3:REQ-O31..REQ-O38 through the real controller boundary, real resume
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_provider_adapter_public_seams.py:960:        # 0 and a shape-valid RESULT.json yields truthful CONTROLLER_FAILED
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_provider_adapter_public_seams.py:996:            # The child writes the shape-valid RESULT.json during its run so
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_provider_adapter_public_seams.py:999:            result_file = self.root / "result.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_provider_adapter_public_seams.py:1021:                    str(self.workspace / "RESULT.json"),
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_provider_adapter_registry.py:3:REQ-O31..REQ-O36: a small versioned registry admits a separately registered
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_reconcile.py:135:        write_json(self.fixture.workspace() / "RESULT.json", {"status": "PASS"})
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_reconcile.py:305:            "request_id": "req-1",
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_reconcile.py:328:            "request_id": "manager-req-1",
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_reconcile.py:353:            "relay": {"path": ".agent-workspace/manager-relays/manager-req-1.json"},
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_reconcile.py:355:        path = workspace / "manager-requests" / "manager-req-1.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_reconcile.py:367:        relay = self.fixture.workspace() / "manager-relays" / "manager-req-1.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s2_contract.py:654:            "RESULT.json",
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s2_contract.py:1075:            (root / "run" / ".agent-workspace" / "RESULT.json").write_text(
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s2_contract.py:1104:            # REQ-O35: identity-mismatched resume emits a declared same-role
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s2_contract.py:1183:            (workspace / "RESULT.json").write_text(json.dumps(result), encoding="utf-8")
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s2_contract.py:1229:            result_bytes = (workspace / "RESULT.json").read_bytes()
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s2_contract.py:1358:            (root / "run" / ".agent-workspace" / "RESULT.json").write_text(
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s2_contract.py:1409:                    (workspace / "RESULT.json").write_text("not-json", encoding="utf-8")
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s2_contract.py:1413:                    (workspace / "RESULT.json").write_text(
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s2_contract.py:1722:            (workspace / "RESULT.json").write_bytes(result_bytes)
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s2_contract.py:1903:            (workspace / "RESULT.json").write_bytes(result_bytes)
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:1735:                self.assertEqual(("REAL_AGENT_TEST_RESULT.json",), retained)
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:1778:                result_path = workspace / "RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:1940:                self.assertEqual(("REAL_AGENT_TEST_RESULT.json",), retained)
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2110:                        self.assertEqual(("REAL_AGENT_TEST_RESULT.json",), retained)
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2169:                self.assertEqual(("REAL_AGENT_TEST_RESULT.json",), retained)
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2285:                self.assertFalse((outside / "REAL_AGENT_TEST_RESULT.json").exists())
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2293:                self.assertEqual(("REAL_AGENT_TEST_RESULT.json",), retained)
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2366:                self.assertEqual(("REAL_AGENT_TEST_RESULT.json",), retained)
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2448:                self.assertFalse((precreated / "REAL_AGENT_TEST_RESULT.json").exists())
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2499:                self.assertFalse((outside / "REAL_AGENT_TEST_RESULT.json").exists())
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2529:                    record_path = staging_path / "REAL_AGENT_TEST_RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2561:                    _is_directory_link(staging_path / "REAL_AGENT_TEST_RESULT.json")
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2566:                self.assertFalse((outside / "REAL_AGENT_TEST_RESULT.json").exists())
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2571:                        evidence_root / attempt_name / "REAL_AGENT_TEST_RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2576:                    record_link = staging_path / "REAL_AGENT_TEST_RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2658:                self.assertEqual(("REAL_AGENT_TEST_RESULT.json",), retained)
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2739:                self.assertEqual(("REAL_AGENT_TEST_RESULT.json",), retained)
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2847:                        evidence_root / attempt_name / "REAL_AGENT_TEST_RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:2918:                    {"REAL_AGENT_TEST_RESULT.json", "attacker.txt"},
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:3009:                    ["REAL_AGENT_TEST_RESULT.json"],
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:3013:                    staging_path / "REAL_AGENT_TEST_RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:3032:                        evidence_root / attempt_name / "REAL_AGENT_TEST_RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:3110:                                            published / "REAL_AGENT_TEST_RESULT.json"
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_s6_public_release.py:3668:                    (workspace / "RESULT.json").read_text(encoding="utf-8")
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_workspace_overlay.py:1:"""Focused workspace-overlay lifecycle tests for REQ-O40..REQ-O42.
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_workspace_overlay.py:85:    # ---- REQ-O40: ingest ----
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_workspace_overlay.py:183:    # ---- REQ-O41: prepare ----
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_workspace_overlay.py:425:    # ---- REQ-O42: restore ----
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_workspace_overlay.py:525:    # ---- REQ-O41: prelaunch verification ----
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\target-harness\orchestrator_harness\tests\test_workspace_overlay.py:732:                str(self.root / "result.json"),

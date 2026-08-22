@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "$py = \u0027C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev/.venv/Scripts/python.exe\u0027; \u0026 $py -m basedpyright --project pyrightconfig.json orchestrator_harness/operator_launch.py orchestrator_harness/cli.py orchestrator_harness/processes.py orchestrator_harness/tests/test_operator_launch.py orchestrator_harness/tests/test_manager_notifications_adversarial.py orchestrator_harness/tests/test_processes.py; exit $LASTEXITCODE",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-candidate-check-015",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "BasedPyright with repository pyrightconfig.json and retained baseline on six changed files; registry S6.RELEASE.BASEDPYRIGHT estimates 30s; 30s+5s bound.",
+    "started_at":  "2026-08-20T23:34:58.8183142+00:00",
+    "finished_at":  "2026-08-20T23:35:03.5933126+00:00",
+    "elapsed_seconds":  4.775,
+    "root_process_id":  21412,
+    "observed_process_ids":  [
+                                 21412
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-check015-basedpyright-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-check015-basedpyright-20260820-001.stderr.log"
+}

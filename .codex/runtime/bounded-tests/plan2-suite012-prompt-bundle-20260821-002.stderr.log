@@ -1,0 +1,4 @@
+  File "<string>", line 5
+    root = Path(rC:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\runtime\orchestrator-worktrees\20260821-plan2-suite-012-manager-014)
+                  ^
+SyntaxError: invalid syntax

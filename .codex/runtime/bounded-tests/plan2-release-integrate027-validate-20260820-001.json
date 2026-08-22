@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.agent-workspace\\epochs\\20260820-plan2-release-candidate-integrate-027\\validate_invocation.py\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Invocation canonicalization is local metadata validation; prior operations completed in under two seconds.",
+    "started_at":  "2026-08-21T01:29:56.0014549+00:00",
+    "finished_at":  "2026-08-21T01:29:57.5948992+00:00",
+    "elapsed_seconds":  1.593,
+    "root_process_id":  17556,
+    "observed_process_ids":  [
+                                 17556
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-integrate027-validate-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-integrate027-validate-20260820-001.stderr.log"
+}

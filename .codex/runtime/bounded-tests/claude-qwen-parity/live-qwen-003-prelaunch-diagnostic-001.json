@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "$source = \u0027\u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\firmware-v2-harness-runner-parity\u0027\u0027\n$invocation = \u0027\u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-live-qwen\\.agent-workspace\\live-qwen-fixture-003\\worktrees\\lane-qwen\\.agent-workspace\\invocation.json\u0027\u0027\n@\u0027\u0027\nimport sys\nfrom pathlib import Path\nsys.path.insert(0, sys.argv[1])\nimport orchestrator_harness.lane_controller as c\np = Path(sys.argv[2])\ni = c.load_invocation(p)\nprint(\u0027\u0027LOAD=PASS\u0027\u0027, i.provider_id, i.lane_id)\ng = c.inspect_repository(i.repository)\nprint(\u0027\u0027REPOSITORY=PASS\u0027\u0027, g.head_commit, g.branch)\nc._canonical_prior_task_preflight(i, None, prior_status_path=i.status_path, thread=None, starting_commit=g.head_commit, git_identity=g)\nprint(\u0027\u0027CANONICAL_PREFLIGHT=PASS\u0027\u0027)\nprint(\u0027\u0027ACTIVE_CONFLICTS=\u0027\u0027, c.active_declaration_conflicts(i.repository, current_status_path=i.status_path))\nlaunch = c._provider_launch_spec(i, None)\nprint(\u0027\u0027LAUNCH_SPEC=PASS\u0027\u0027)\nops = c._requested_provider_operations(i, launch)\nprint(\u0027\u0027OPERATIONS=\u0027\u0027, ops)\nclassified = c._classify_provider_operations(i.provider_id, ops)\nprint(\u0027\u0027CLASSIFIED=\u0027\u0027, classified)\na = c.provider_adapter(i.provider_id)\nargv = a.build_argv(launch)\nprint(\u0027\u0027ARGV=PASS\u0027\u0027, argv)\ne = c.build_provider_evidence(i.provider_id, spec=launch, argv=argv, worker_invocation_id=i.worker_invocation_id or i.label or \u0027\u0027unidentified-worker\u0027\u0027, session_id=None)\nprint(\u0027\u0027EVIDENCE=PASS\u0027\u0027, e.configuration_digest)\n\u0027\u0027@ | python - $source $invocation",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Read-only canonical prelaunch diagnostic: deterministic local parsing and validation; 30s expected plus policy-capped 8s cleanup.",
+    "started_at":  "2026-08-22T09:14:04.7966389+00:00",
+    "finished_at":  "2026-08-22T09:14:18.2394145+00:00",
+    "elapsed_seconds":  13.443,
+    "root_process_id":  26228,
+    "observed_process_ids":  [
+                                 26228
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\live-qwen-003-prelaunch-diagnostic-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\live-qwen-003-prelaunch-diagnostic-001.stderr.log"
+}

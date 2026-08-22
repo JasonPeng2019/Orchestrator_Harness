@@ -1,0 +1,31 @@
+{
+  "planId": "7adf219d-ea2b-40d9-96ea-2a99c656e586",
+  "todos": [
+    {
+      "content": "R1: initialization_handshake + setup_overview for STM-A/STM-B; verify exact probe/VCOM identity",
+      "id": "r1",
+      "status": "completed"
+    },
+    {
+      "content": "R2: Fresh setup per shard (load_setup_tool, board_setup-plan, board_setup) with local PDF + UART need",
+      "id": "r2",
+      "status": "completed"
+    },
+    {
+      "content": "R3: Intentional cross-probe misselection; server must refuse; supported repair to exact binding",
+      "id": "r3",
+      "status": "completed"
+    },
+    {
+      "content": "R4: safety_refresh, validate, get_setup_status, connect, get_board_info, disconnect for both boards",
+      "id": "r4",
+      "status": "completed"
+    },
+    {
+      "content": "R5: Preserve evidence, write RESULT.json + TEST_REPORT.md, final disconnected state",
+      "id": "r5",
+      "status": "completed"
+    }
+  ],
+  "sessionId": "8319bc1f-5201-45e8-ba85-7e4757fbce1d"
+}

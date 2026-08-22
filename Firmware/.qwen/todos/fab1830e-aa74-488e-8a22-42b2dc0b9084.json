@@ -1,0 +1,31 @@
+{
+  "planId": "f98ca788-511b-49f7-9ada-3dab309b2ff7",
+  "todos": [
+    {
+      "content": "REQ-001: Fresh isolated handshake + planning for STM-A and STM-B (handshake, setup_overview, load_setup_tool, board_setup-plan, board_setup) from distinct empty roots",
+      "id": "req1",
+      "status": "in_progress"
+    },
+    {
+      "content": "REQ-002: Identical-board negative (wrong probe refusal) + server-directed repair for one board",
+      "id": "req2",
+      "status": "pending"
+    },
+    {
+      "content": "REQ-003: Safety/identity/readiness/lifecycle per board (board_safety_refresh, board_validate, get_setup_status, connect, get_board_info, disconnect)",
+      "id": "req3",
+      "status": "pending"
+    },
+    {
+      "content": "REQ-004: Isolation proof, run-local evidence, final disconnect/cleanup, lease terminal",
+      "id": "req4",
+      "status": "pending"
+    },
+    {
+      "content": "Write schema-valid RESULT.json + TEST_REPORT.md with terminal status",
+      "id": "result",
+      "status": "pending"
+    }
+  ],
+  "sessionId": "fab1830e-aa74-488e-8a22-42b2dc0b9084"
+}

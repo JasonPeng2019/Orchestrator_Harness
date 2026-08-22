@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python Firmware/scripts/orchestration/test_qwen_provider_bootstrap.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\.Orchestrator_Harness-worktrees\\plan2-suite010-qwen-legacy-fastlane-052",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "The prior focused launch-shape correction is now fixed; the baseline missing-target run completed in 2.923 seconds and this deterministic host-only unittest has a conservative 10-second bound with the policy-minimum 5-second cleanup allowance.",
+    "started_at":  "2026-08-21T12:27:36.0006068+00:00",
+    "finished_at":  "2026-08-21T12:27:37.8134955+00:00",
+    "elapsed_seconds":  1.813,
+    "root_process_id":  29312,
+    "observed_process_ids":  [
+                                 29312
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\fastlane-qwen-legacy-052-focused-final-r2.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\fastlane-qwen-legacy-052-focused-final-r2.stderr.log"
+}

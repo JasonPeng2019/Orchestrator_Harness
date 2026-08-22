@@ -1,0 +1,36 @@
+{
+  "planId": "fa25a3c5-30f4-4722-a861-e9a5e261922b",
+  "todos": [
+    {
+      "content": "Handshake + setup_overview: fresh exact Nordic probe/VCOM identities, raw evidence",
+      "id": "req1",
+      "status": "completed"
+    },
+    {
+      "content": "Fresh setup NRF-A (683710208/COM16) via load_setup_tool → board_setup-plan → board_setup",
+      "id": "req2a",
+      "status": "completed"
+    },
+    {
+      "content": "Fresh setup NRF-B (683854191/COM15) via load_setup_tool → board_setup-plan → board_setup",
+      "id": "req2b",
+      "status": "completed"
+    },
+    {
+      "content": "Intentional other-probe mismatch: explicit validation/probe-identity-mismatch + server-directed recovery",
+      "id": "req3",
+      "status": "completed"
+    },
+    {
+      "content": "Both intended bindings: safety refresh, validation, setup status, connect, board info, disconnect",
+      "id": "req4",
+      "status": "completed"
+    },
+    {
+      "content": "Audit, evidence hashes, terminal cleanup, RESULT.json + TEST_REPORT.md",
+      "id": "req5",
+      "status": "completed"
+    }
+  ],
+  "sessionId": "b30f84a6-d93a-459a-af32-6d428b98b978"
+}

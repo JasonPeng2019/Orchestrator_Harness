@@ -1,0 +1,1 @@
+worktree-task: Command '['git', 'worktree', 'add', '-b', 'plan2-suite010-qwen-legacy-fastlane-052', 'C:\\Users\\Jason\\Documents\\Jason\\.Orchestrator_Harness-worktrees\\plan2-suite010-qwen-legacy-fastlane-052', 'HEAD']' returned non-zero exit status 128.

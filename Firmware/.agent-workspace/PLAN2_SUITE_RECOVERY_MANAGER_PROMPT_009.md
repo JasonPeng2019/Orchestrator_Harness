@@ -1,11 +1,11 @@
 # Plan 2 continuation-aware suite manager prompt 009
 
-Status: `READY_FOR_ROOT_DISPATCH_AFTER_EDGE_011`
+Status: `READY_FOR_ROOT_DISPATCH_AT_EDGE_011`
 
-Do not execute this prompt, start a manager/provider, acquire a claim or lease, call MCP, or access
-hardware until ROOT-IM records accepted Plan 2 v3.9.23 `CHECK-SPRINT-CONTINUATION`, affected
-exact-target M08 evidence, and `EDGE-011` for the exact target. This file is a future dispatch input,
-not live authority.
+ROOT-IM may dispatch this prompt at Plan 2 `EDGE-011` against accepted target
+`dd673cb304501bfc2228b8c44f41df45a0c8608f`, tree
+`c18ccd0bc88de9c8fae1f98652a12fb5c1a951ae`. This file is the prepared dispatch input, not live
+authority by itself; the actual dispatch supplies the fresh manager identity and action authority.
 
 When ROOT-IM later dispatches it, act as the Firmware suite's logical acceptance/test orchestrator.
 Resolve the concrete provider/model/effort only from `PROVIDER_ADAPTER.md`; this prompt does not
@@ -43,7 +43,9 @@ orchestrator; they do not self-dispatch successors or decide integration.
 
 ## Interruption and findings
 
-An interruption is not a sprint result. Replace dead runtime identities, preserve the same logical
+You own every logical lane and sprint until it completes. Do not return a lane or sprint to ROOT
+merely because its provider, doer, call, ordering, fixture, server, or harness action encountered an
+error. An interruption is not a sprint result. Replace dead runtime identities, preserve the same logical
 sprint ID/index and verified checkpoints, and issue fresh authority before later live work. Release
 or reassign a stale claim only after complete proof that its exact old owner and process are absent.
 If absence is uncertain, hold that exact resource and continue unrelated work.
@@ -53,27 +55,36 @@ and specification, fixture, server, or firmware faults do not end the sprint. Co
 suite-owned fact when feasible or record the affected unit finding, then continue every feasible
 unit. A corrected call or retry must have a changed, documented condition.
 
-A verified target-v2 harness defect also does not stop the sprint and does not start a mid-sprint
-repair. Record it permanently in the sprint pool, isolate only the unsafe exact action/resource,
-and finish every feasible unit. ROOT reviews and repairs the complete harness-finding pool only
-after the sprint publishes its terminal handoff.
+A possible target-v2 harness error does not stop the sprint and does not start a mid-sprint review
+or repair. Record it as a **suspected harness finding**, never as a confirmed defect. Each record
+must contain the affected lane/unit, evidence/result paths, observed behavior, expected behavior,
+containment taken, whether unrelated feasible work continued, and cleanup or remaining uncertainty.
+Safely contain only the affected action/resource and finish every feasible unit. ROOT does not
+intervene, diagnose, or repair during the sprint. After the terminal handoff, ROOT reviews the one
+complete suspected-harness pool and decides which findings, if any, are genuine harness defects.
+Do not start the next indexed sprint until ROOT returns an accepted repair coordinate or explicitly
+confirms that no harness repair was warranted.
 
 ## Terminal handoff
 
 Publish exactly one terminal result for each logical sprint:
 
-- `COMPLETED_CLEAN` when all declared units are terminal and no harness finding was observed.
+- `COMPLETED_CLEAN` when all declared units are terminal and the finding pool contains no suspected
+  harness issue requiring ROOT review.
 - `COMPLETED_WITH_FINDINGS` when all feasible units are terminal and the complete finding pool is
   published, including any harness finding and isolated blocked unit.
 
-Use `INCOMPLETE` only for explicit user cancellation, withdrawn authority, or live harm that cannot
-be safely isolated. Manager/provider loss, a stale claim, a malformed non-mutating call, or a
-recoverable suite-owned or harness fault is not `INCOMPLETE`.
+Use `INCOMPLETE` only for explicit user cancellation or withdrawn authority. Manager/provider loss,
+a stale claim, a malformed call, blocked or uncertain work, and suite-owned or suspected harness
+faults are not `INCOMPLETE`; give each feasible unit a truthful terminal disposition instead.
 
 The handoff records the stable sprint ID/index, hosting invocation IDs, preserved checkpoints,
-fresh-authority IDs, unit results, full finding pool, harness-error flag, and exact cleanup. ROOT
-alone performs post-sprint harness review/repair and applies indexed streak credit. Do not wait for
-or act on that review inside the sprint.
+fresh-authority IDs, unit results, full suspected-harness finding records, and exact cleanup. ROOT
+alone decides `harness_error_observed` after completion, performs any justified repair, and applies
+indexed streak credit. Only a ROOT-confirmed harness defect resets/no-counts; a rejected suspicion
+or suite-owned issue does not automatically reset the streak. A clean accepted sprint advances it.
+Plan 2 completes only after `3/3` consecutive clean sprints. Do not wait for or act on ROOT's review
+inside the completed sprint.
 
 All existing hardware safety limits remain unchanged. No rewiring, power/cable changes, bootloader
 replacement, mass erase, protection change, unlock, or destructive recovery is authorized.

@@ -1,0 +1,96 @@
+
+== ruff changed Python ==
+All checks passed!
+
+== types changed Python ==
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\scripts\audit_autonomy.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\scripts\audit_autonomy.py:855:43 - error: "result" is possibly unbound (reportPossiblyUnboundVariable)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\scripts\audit_autonomy.py:865:27 - error: "result_offenses" is possibly unbound (reportPossiblyUnboundVariable)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\scripts\audit_autonomy.py:868:20 - error: "result_offenses" is possibly unbound (reportPossiblyUnboundVariable)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:23:16 - error: Cannot assign to attribute "ROOT" for class "ModuleType"
+    Attribute "ROOT" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:28:20 - error: Cannot assign to attribute "ROOT" for class "ModuleType"
+    Attribute "ROOT" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:118:16 - error: Cannot assign to attribute "ROOT" for class "ModuleType"
+    Attribute "ROOT" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:123:20 - error: Cannot assign to attribute "ROOT" for class "ModuleType"
+    Attribute "ROOT" is unknown (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:226:45 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "run_audit"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:226:70 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "sidecar_for"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:230:36 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "sidecar_for"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:232:33 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "run_audit"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:237:39 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "sidecar_for"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:238:33 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "run_audit"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:241:40 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "sidecar_for"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:242:33 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "run_audit"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:249:13 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "sidecar_for"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:252:33 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "run_audit"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:259:44 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "sidecar_for"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:260:41 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "run_audit"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:298:36 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "sidecar_for"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:299:33 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "run_audit"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:304:41 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "sidecar_for"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:306:33 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "run_audit"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:309:46 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "sidecar_for"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:311:13 - error: "__getitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:312:13 - error: "__getitem__" method not defined on type "object" (reportIndexIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.codex\skills\run-firmware-test-suite\tests\test_audit_autonomy.py:314:33 - error: Argument of type "dict[str, str]" cannot be assigned to parameter "result" of type "dict[str, object]" in function "run_audit"
+    "dict[str, str]" is not assignable to "dict[str, object]"
+      Type parameter "_VT@dict" is invariant, but "str" is not the same as "object"
+      Consider switching from "dict" to "Mapping" which is covariant in the value type (reportArgumentType)
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\scripts\orchestration\qwen_provider_bootstrap.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\scripts\orchestration\qwen_provider_bootstrap.py:46:5 - error: "LaneLifecycleError" is unknown import symbol (reportAttributeAccessIssue)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\scripts\orchestration\qwen_provider_bootstrap.py:47:5 - error: "ProcessBoundaryUnsupported" is unknown import symbol (reportAttributeAccessIssue)
+29 errors, 0 warnings, 0 notes

@@ -1,0 +1,1 @@
+ERROR: MI-FIRMWARE-HOST-READINESS ordered_actions must contain M08-A1, M08-A2, M08-A3, M08-A4, M08-A5, M08-A6 exactly once and in order

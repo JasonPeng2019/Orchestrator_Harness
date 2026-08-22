@@ -1,0 +1,9 @@
+python.exe : test_changed_input_plus_failed_union_starts_at_earliest_member (orchestrator_harness.tests.test_s6_public_
+release.S6SelectorTests.test_changed_input_plus_failed_union_starts_at_earliest_member) ... ok
+At C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.target-harness-worktrees\plan2-suite008-release-safegu
+ard-018\tools\CandidateSafeguard.Core.psm1:182 char:17
++                 & python @arguments 2>&1 | ForEach-Object { Write-Hos ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_changed_in..._member) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

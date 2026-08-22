@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-release-command-resolution-repair",
+  "task_card_id": "CARD-PLAN2-RELEASE-COMMAND-RESOLUTION-REPAIR-030",
+  "profile_id": "luna-max",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\p2-cmdres-030\\.agent-workspace\\PLAN2_RELEASE_COMMAND_RESOLUTION_REPAIR_CODER_PROMPT_030.md",
+      "sha256": "9969c975434a736b590b6c49f308901e685d761059f9c19a5ab3e8b72eabdda0",
+      "size": 2395
+    }
+  ],
+  "final_sha256": "9969c975434a736b590b6c49f308901e685d761059f9c19a5ab3e8b72eabdda0",
+  "final_size": 2395,
+  "bundle_sha256": "d70449bbeda3d82e42364943f08ae5fab90cfe3298a70929deada1447c7b4d0b"
+}

@@ -6,13 +6,15 @@ import json
 import sys
 import tempfile
 import unittest
+from collections.abc import Mapping
 from pathlib import Path
+from typing import Any, cast
 
 SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "audit_autonomy.py"
 SPEC = importlib.util.spec_from_file_location("firmware_audit_autonomy", SCRIPT)
 if SPEC is None or SPEC.loader is None:
     raise RuntimeError(f"cannot load {SCRIPT}")
-MODULE = importlib.util.module_from_spec(SPEC)
+MODULE = cast(Any, importlib.util.module_from_spec(SPEC))
 sys.modules[SPEC.name] = MODULE
 SPEC.loader.exec_module(MODULE)
 
@@ -145,8 +147,8 @@ class AuditDocumentationTests(unittest.TestCase):
 class AuditResultCorrectionTests(unittest.TestCase):
     def run_audit(
         self,
-        result: dict[str, object],
-        sidecar: dict[str, object] | None = None,
+        result: Mapping[str, object],
+        sidecar: Mapping[str, object] | None = None,
         result_bytes: bytes | None = None,
     ) -> list[str]:
         with tempfile.TemporaryDirectory() as raw:
@@ -175,12 +177,12 @@ class AuditResultCorrectionTests(unittest.TestCase):
 
     def sidecar_for(
         self,
-        result: dict[str, object],
+        result: Mapping[str, object],
         *,
         pointer: str = "/finding",
         original_value: str = "operator must connect the board",
         corrected_text: str = "Historical out-of-authority wording recorded.",
-    ) -> dict[str, object]:
+    ) -> dict[str, Any]:
         result_bytes = json.dumps(result, indent=2).encode("utf-8")
         return {
             "schema": MODULE.RESULT_AUDIT_CORRECTION_SCHEMA,
@@ -203,6 +205,23 @@ class AuditResultCorrectionTests(unittest.TestCase):
             {"status": "PASS", "finding": "operator must connect the board"}
         )
         self.assertTrue(any("operator action" in error for error in errors))
+
+    def test_terminal_unit_does_not_require_historical_amendment_rewrite(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            run = Path(raw) / "fresh-experiments" / "S12_terminal"
+            workspace = run / ".agent-workspace"
+            workspace.mkdir(parents=True)
+            (workspace / "SPEC_AMENDMENTS.md").write_text(
+                "# Signed specification amendments\n\n## Amendment 001 — historical\n",
+                encoding="utf-8",
+            )
+            (workspace / "RESULT.schema.json").write_text(
+                json.dumps({"properties": {"status": {"enum": ["PASS", "SERVER_FAILURE"]}}}),
+                encoding="utf-8",
+            )
+            errors: list[str] = []
+            MODULE.check_run(errors, run, "S12", "SERVER_FAILURE")
+            self.assertEqual([], errors)
 
     def test_valid_hash_bound_sidecar_accepts_historical_result(self) -> None:
         result = {"status": "PASS", "finding": "operator must connect the board"}

@@ -1,0 +1,1 @@
+worktree-task: Command '['git', 'worktree', 'add', '-b', 'plan2/release-command-resolution-repair-030', 'C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-release-command-resolution-repair-030', 'HEAD']' returned non-zero exit status 128.

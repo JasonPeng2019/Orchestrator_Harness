@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\.Orchestrator_Harness-worktrees\plan2-suite010-qwen-legacy-fastlane-052\Firmware\scripts\orchestration\test_qwen_provider_bootstrap.py", line 16, in <module>
+    SPEC.loader.exec_module(MODULE)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "C:\Users\Jason\Documents\Jason\.Orchestrator_Harness-worktrees\plan2-suite010-qwen-legacy-fastlane-052\Firmware\scripts\orchestration\qwen_provider_bootstrap.py", line 39, in <module>
+    from orchestrator_harness.lane_controller import main as lane_controller_main
+ModuleNotFoundError: No module named 'orchestrator_harness'

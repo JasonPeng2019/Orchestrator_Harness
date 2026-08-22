@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked ruff check --config \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\pyproject.toml\u0027 --no-cache orchestrator_harness/lane_controller.py orchestrator_harness/provider.py orchestrator_harness/tests/test_workspace_overlay.py; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked basedpyright --project pyrightconfig.json orchestrator_harness/lane_controller.py orchestrator_harness/provider.py orchestrator_harness/tests/test_workspace_overlay.py; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; python -m py_compile orchestrator_harness/lane_controller.py orchestrator_harness/provider.py orchestrator_harness/tests/test_workspace_overlay.py; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; python -m unittest orchestrator_harness.tests.test_workspace_overlay orchestrator_harness.tests.test_provider_adapter_registry orchestrator_harness.tests.test_qwen_provider -v",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\firmware-v2-harness-runner-parity",
+    "maximum_lifetime_seconds":  225,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  45,
+    "heartbeat_interval_seconds":  20,
+    "timeout_basis":  "Focused cache/controller/provider gate; prior comparable static and provider test gates completed under 60 seconds, with 180 seconds for cold type-check and PowerShell fixture overhead plus policy-capped 45-second cleanup.",
+    "started_at":  "2026-08-22T09:48:24.7562237+00:00",
+    "finished_at":  "2026-08-22T09:48:28.3644619+00:00",
+    "elapsed_seconds":  3.608,
+    "root_process_id":  28984,
+    "observed_process_ids":  [
+                                 28984
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\super-cache\\super-cache-focused-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\super-cache\\super-cache-focused-001.stderr.log"
+}

@@ -1,0 +1,83 @@
+test_cli_lane_retire_accepts_overlay_receipt (orchestrator_harness.tests.test_workspace_overlay.OverlayCliTests.test_cli_lane_retire_accepts_overlay_receipt) ... ok
+test_cli_workspace_super_cache_ingest_and_prepare (orchestrator_harness.tests.test_workspace_overlay.OverlayCliTests.test_cli_workspace_super_cache_ingest_and_prepare) ... ok
+test_prelaunch_verification_allows_completed_matching_receipt (orchestrator_harness.tests.test_workspace_overlay.OverlayLaneSeamTests.test_prelaunch_verification_allows_completed_matching_receipt) ... ok
+test_prelaunch_verification_rejects_wrong_role_before_process_start (orchestrator_harness.tests.test_workspace_overlay.OverlayLaneSeamTests.test_prelaunch_verification_rejects_wrong_role_before_process_start) ... lane-controller invocation error: overlay receipt is not completed for this prepared worktree: overlay receipt role 'orchestrator' is not 'subagent'
+ok
+test_prelaunch_verification_requires_receipt_before_process_start (orchestrator_harness.tests.test_workspace_overlay.OverlayLaneSeamTests.test_prelaunch_verification_requires_receipt_before_process_start) ... lane-controller invocation error: a completed overlay receipt is required before provider launch
+ok
+test_prepared_cache_runs_for_all_provider_orchestrators (orchestrator_harness.tests.test_workspace_overlay.OverlayLaneSeamTests.test_prepared_cache_runs_for_all_provider_orchestrators) ... FAIL
+test_prepared_cache_runs_for_all_provider_subagents (orchestrator_harness.tests.test_workspace_overlay.OverlayLaneSeamTests.test_prepared_cache_runs_for_all_provider_subagents) ... FAIL
+test_retirement_blocks_and_stays_visible_when_restore_finds_later_edit (orchestrator_harness.tests.test_workspace_overlay.OverlayLaneSeamTests.test_retirement_blocks_and_stays_visible_when_restore_finds_later_edit) ... ok
+test_retirement_rejects_foreign_orchestrator_receipt_before_restoration (orchestrator_harness.tests.test_workspace_overlay.OverlayLaneSeamTests.test_retirement_rejects_foreign_orchestrator_receipt_before_restoration) ... ok
+test_retirement_restores_matching_subagent_receipt (orchestrator_harness.tests.test_workspace_overlay.OverlayLaneSeamTests.test_retirement_restores_matching_subagent_receipt) ... ok
+test_retirement_restores_prepared_overlay_and_records_restoration (orchestrator_harness.tests.test_workspace_overlay.OverlayLaneSeamTests.test_retirement_restores_prepared_overlay_and_records_restoration) ... ok
+test_direct_cache_edits_remain_allowed_between_ingestions (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_direct_cache_edits_remain_allowed_between_ingestions) ... ok
+test_empty_append_preimage_receipt_verifies_and_restores (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_empty_append_preimage_receipt_verifies_and_restores) ... ok
+test_empty_created_file_receipt_verifies_and_restores (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_empty_created_file_receipt_verifies_and_restores) ... ok
+test_ingest_refreshes_exact_contents_not_the_container (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_ingest_refreshes_exact_contents_not_the_container) ... ok
+test_ingest_rejects_reparse_points_without_reporting_complete (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_ingest_rejects_reparse_points_without_reporting_complete) ... ok
+test_ingest_rejects_unsafe_source_and_destination_relationships (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_ingest_rejects_unsafe_source_and_destination_relationships) ... ok
+test_prepare_appends_declared_exact_bytes_without_separators (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_prepare_appends_declared_exact_bytes_without_separators) ... ok
+test_prepare_creates_missing_paths_and_merges_directories (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_prepare_creates_missing_paths_and_merges_directories) ... ok
+test_prepare_rejects_collision_before_any_mutation (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_prepare_rejects_collision_before_any_mutation) ... ok
+test_prepare_rejects_non_utf8_or_missing_append_target_before_mutation (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_prepare_rejects_non_utf8_or_missing_append_target_before_mutation) ... ok
+test_prepare_rejects_unsafe_roles_and_overlapping_directories (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_prepare_rejects_unsafe_roles_and_overlapping_directories) ... ok
+test_prepare_rolls_back_partially_applied_target_mutation (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_prepare_rolls_back_partially_applied_target_mutation) ... ok
+test_prepare_rolls_back_when_receipt_cannot_be_published (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_prepare_rolls_back_when_receipt_cannot_be_published) ... ok
+test_prepare_writes_minimal_no_hash_receipt_for_both_roles (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_prepare_writes_minimal_no_hash_receipt_for_both_roles) ... ok
+test_reingest_replaces_prior_contents (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_reingest_replaces_prior_contents) ... ok
+test_restore_blocks_on_missing_malformed_or_mismatched_receipt (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_restore_blocks_on_missing_malformed_or_mismatched_receipt) ... ok
+test_restore_blocks_when_target_worktree_is_missing (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_restore_blocks_when_target_worktree_is_missing) ... ok
+test_restore_exact_clean_returns_original_state (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_restore_exact_clean_returns_original_state) ... ok
+test_restore_keeps_created_directory_with_later_work_visible (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_restore_keeps_created_directory_with_later_work_visible) ... C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\firmware-v2-harness-runner-parity\orchestrator_harness\workspace_overlay.py:826: ResourceWarning: unclosed scandir iterator <nt.ScandirIterator object at 0x0000022F2DA89070>
+  if next(os.scandir(directory_path), None) is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_restore_preserves_later_edit_and_blocks (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_restore_preserves_later_edit_and_blocks) ... ok
+test_verify_absent_receipt_is_allowed (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_verify_absent_receipt_is_allowed) ... ok
+test_verify_present_receipt_requires_completed_matching_target_and_role (orchestrator_harness.tests.test_workspace_overlay.OverlayModuleTests.test_verify_present_receipt_requires_completed_matching_target_and_role) ... ok
+test_builtin_adapters_preserve_supported_behavior (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_builtin_adapters_preserve_supported_behavior) ... ok
+test_builtin_cannot_be_unregistered_and_foreign_can (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_builtin_cannot_be_unregistered_and_foreign_can) ... ok
+test_builtin_registry_is_versioned_and_truthful (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_builtin_registry_is_versioned_and_truthful) ... ok
+test_evidence_binds_identity_version_capabilities_digest_and_provenance (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_evidence_binds_identity_version_capabilities_digest_and_provenance) ... ok
+test_foreign_adapter_is_admitted_by_invocation_and_profile (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_foreign_adapter_is_admitted_by_invocation_and_profile) ... ok
+test_foreign_adapter_registers_and_is_selectable_without_core_edits (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_foreign_adapter_registers_and_is_selectable_without_core_edits) ... ok
+test_inherited_base_redact_argv_is_rejected_before_selection (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_inherited_base_redact_argv_is_rejected_before_selection) ... ok
+test_last_message_path_is_owned_by_the_codex_adapter (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_last_message_path_is_owned_by_the_codex_adapter) ... ok
+test_notification_true_requires_a_real_delivery_seam (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_notification_true_requires_a_real_delivery_seam) ... ok
+test_provenance_redaction_is_deterministic (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_provenance_redaction_is_deterministic) ... ok
+test_redact_argv_is_a_required_adapter_contract_method (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_redact_argv_is_a_required_adapter_contract_method) ... ok
+test_resume_or_handoff_matrix_never_fabricates_continuity (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_resume_or_handoff_matrix_never_fabricates_continuity) ... ok
+test_structured_handoff_is_explicit_and_same_role (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_structured_handoff_is_explicit_and_same_role) ... ok
+test_unregistered_provider_is_rejected_by_invocation_and_profile (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_unregistered_provider_is_rejected_by_invocation_and_profile) ... ok
+test_unsupported_operation_returns_actionable_classified_result (orchestrator_harness.tests.test_provider_adapter_registry.ProviderAdapterRegistryTests.test_unsupported_operation_returns_actionable_classified_result) ... ok
+test_canonical_provider_options_exclude_identity_fields (orchestrator_harness.tests.test_qwen_provider.QwenProviderTests.test_canonical_provider_options_exclude_identity_fields) ... ok
+test_interrupt_and_exit_130_are_cancelled (orchestrator_harness.tests.test_qwen_provider.QwenProviderTests.test_interrupt_and_exit_130_are_cancelled) ... ok
+test_native_registry_and_canonical_runner_path (orchestrator_harness.tests.test_qwen_provider.QwenProviderTests.test_native_registry_and_canonical_runner_path) ... ok
+test_start_and_resume_stream_json_argv (orchestrator_harness.tests.test_qwen_provider.QwenProviderTests.test_start_and_resume_stream_json_argv) ... ok
+test_unsupported_invocation_fields_reject_loudly (orchestrator_harness.tests.test_qwen_provider.QwenProviderTests.test_unsupported_invocation_fields_reject_loudly) ... ok
+
+======================================================================
+FAIL: test_prepared_cache_runs_for_all_provider_orchestrators (orchestrator_harness.tests.test_workspace_overlay.OverlayLaneSeamTests.test_prepared_cache_runs_for_all_provider_orchestrators)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\firmware-v2-harness-runner-parity\orchestrator_harness\tests\test_workspace_overlay.py", line 984, in test_prepared_cache_runs_for_all_provider_orchestrators
+    self._assert_prepared_providers("orchestrator")
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\firmware-v2-harness-runner-parity\orchestrator_harness\tests\test_workspace_overlay.py", line 972, in _assert_prepared_providers
+    self.assertEqual(0, controller.run(invocation), provider_id)
+AssertionError: 0 != 1 : claude-code
+
+======================================================================
+FAIL: test_prepared_cache_runs_for_all_provider_subagents (orchestrator_harness.tests.test_workspace_overlay.OverlayLaneSeamTests.test_prepared_cache_runs_for_all_provider_subagents)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\firmware-v2-harness-runner-parity\orchestrator_harness\tests\test_workspace_overlay.py", line 981, in test_prepared_cache_runs_for_all_provider_subagents
+    self._assert_prepared_providers("subagent")
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\firmware-v2-harness-runner-parity\orchestrator_harness\tests\test_workspace_overlay.py", line 972, in _assert_prepared_providers
+    self.assertEqual(0, controller.run(invocation), provider_id)
+AssertionError: 0 != 1 : claude-code
+
+----------------------------------------------------------------------
+Ran 53 tests in 212.597s
+
+FAILED (failures=2)

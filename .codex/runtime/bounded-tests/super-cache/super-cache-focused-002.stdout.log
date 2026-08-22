@@ -1,0 +1,15 @@
+All checks passed!
+c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\firmware-v2-harness-runner-parity\orchestrator_harness\tests\test_workspace_overlay.py
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\firmware-v2-harness-runner-parity\orchestrator_harness\tests\test_workspace_overlay.py:959:39 - error: Argument of type "object" cannot be assigned to parameter "container" of type "Iterable[Any] | Container[Any]" in function "assertIn"
+    Type "object" is not assignable to type "Iterable[Any] | Container[Any]"
+      "object" is incompatible with protocol "Iterable[Any]"
+        "__iter__" is not present
+      "object" is incompatible with protocol "Container[Any]"
+        "__contains__" is not present (reportArgumentType)
+  c:\Users\Jason\Documents\Jason\Orchestrator_Harness\harness-single-worktrees\firmware-v2-harness-runner-parity\orchestrator_harness\tests\test_workspace_overlay.py:960:36 - error: Argument of type "object" cannot be assigned to parameter "container" of type "Iterable[Any] | Container[Any]" in function "assertIn"
+    Type "object" is not assignable to type "Iterable[Any] | Container[Any]"
+      "object" is incompatible with protocol "Iterable[Any]"
+        "__iter__" is not present
+      "object" is incompatible with protocol "Container[Any]"
+        "__contains__" is not present (reportArgumentType)
+2 errors, 0 warnings, 0 notes

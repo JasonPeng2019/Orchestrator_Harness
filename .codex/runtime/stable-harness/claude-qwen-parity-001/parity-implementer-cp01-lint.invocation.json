@@ -1,0 +1,38 @@
+{
+  "schema": "orchestrator-coding-invocation/v1",
+  "action": "resume",
+  "resume_thread_id": "01a0283c-9f64-70d0-9c1e-9719c567b33d",
+  "runtime_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/runtime/stable-harness/claude-qwen-parity-001",
+  "resource_lock_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/runtime/stable-harness/claude-qwen-parity-001/coding-resource-locks",
+  "run_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation",
+  "repository": {
+    "common_dir": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.git/modules/current-wip-harness-runner",
+    "worktree_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation",
+    "branch": "compat/claude-qwen-runner-parity",
+    "base_commit": "cb5b568d5fc3f63a1fe037312894e9736a2f2db1",
+    "merge_inputs": []
+  },
+  "prompt_path": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation/.agent-workspace/parity-implementer-cp01-lint.md",
+  "prompt_sha256": "45b936f62192d696b55d4282da3454f9bf055d9fa75674dbe516753bdc13c729",
+  "output_paths": {
+    "status": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation/.agent-workspace/parity-implementer-cp01.status.json",
+    "jsonl": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation/.agent-workspace/parity-implementer-cp01-lint.codex.jsonl",
+    "stderr": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation/.agent-workspace/parity-implementer-cp01-lint.codex.stderr.log",
+    "last_message": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation/.agent-workspace/parity-implementer-cp01-lint.last_message.txt"
+  },
+  "event_log_path": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/runtime/stable-harness/claude-qwen-parity-001/LANE_EVENTS.jsonl",
+  "lane_id": "claude-qwen-parity-implementer",
+  "worker_invocation_id": "claude-qwen-parity-cp01-001",
+  "task": "Repair only the exact CP-01 Ruff findings after ROOT validation.",
+  "phase": "implementation-cp01-lint",
+  "exclusive_resources": ["runner-worktree:claude-qwen-parity-implementation"],
+  "codex": {
+    "command": ["codex"],
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "xhigh",
+    "service_tier": "standard",
+    "sandbox": "danger-full-access",
+    "approval_policy": "never",
+    "config_overrides": ["model_context_window=272000", "model_auto_compact_token_limit=120000", "model_auto_compact_token_limit_scope=\"total\""]
+  }
+}

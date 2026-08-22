@@ -1,0 +1,6 @@
+C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.target-harness-worktrees\plan2-suite008-release-safeguard
+-018\tools\Invoke-CandidateSafeguard.ps1 : A positional parameter cannot be found that accepts argument 
+'orchestrator_harness/processes.py'.
+    + CategoryInfo          : InvalidArgument: (:) [Invoke-CandidateSafeguard.ps1], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Invoke-CandidateSafeguard.ps1
+ 

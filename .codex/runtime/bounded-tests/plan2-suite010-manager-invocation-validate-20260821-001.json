@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -c \"import json; from pathlib import Path; from orchestrator_harness.invocation import adapt_invocation; p=Path(r\u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.agent-workspace\\epochs\\20260821-plan2-suite-010-manager-012\\INVOCATION_012.json\u0027); c=adapt_invocation(json.loads(p.read_text(encoding=\u0027utf-8\u0027))); print(json.dumps({\u0027lane_id\u0027:c.lane_id,\u0027worker_invocation_id\u0027:c.worker_invocation_id,\u0027cohort_id\u0027:c.cohort_id,\u0027prompt_bundle_sha256\u0027:c.prompt_bundle_sha256,\u0027provider_id\u0027:c.provider_id},sort_keys=True))\"",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260821-plan2-suite-010-manager-012",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "The equivalent suite009 deterministic invocation parse completed well within ten seconds; this performs only local JSON and prompt identity validation.",
+    "started_at":  "2026-08-21T12:37:39.2714178+00:00",
+    "finished_at":  "2026-08-21T12:37:40.9039147+00:00",
+    "elapsed_seconds":  1.632,
+    "root_process_id":  25940,
+    "observed_process_ids":  [
+                                 25940
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite010-manager-invocation-validate-20260821-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite010-manager-invocation-validate-20260821-001.stderr.log"
+}

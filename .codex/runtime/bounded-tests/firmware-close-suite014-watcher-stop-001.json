@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 \u0027C:\\Users\\Jason\\AppData\\Local\\Programs\\Python\\Python314\\python.exe\u0027 -m harness_watcher_implementation --config \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.agent-workspace\\epochs\\20260821-plan2-suite-014-manager-016\\watcher-config.json\u0027 stop",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\target-harness",
+    "maximum_lifetime_seconds":  25,
+    "expected_upper_bound_seconds":  20,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Local watcher stop updates one service file; the existing watcher service checks it once per second. 20 seconds includes startup and the observed service protocol; 5 seconds is the policy-capped cleanup allowance.",
+    "started_at":  "2026-08-21T19:46:18.8721073+00:00",
+    "finished_at":  "2026-08-21T19:46:20.3590223+00:00",
+    "elapsed_seconds":  1.487,
+    "root_process_id":  27536,
+    "observed_process_ids":  [
+                                 27536
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-close-suite014-watcher-stop-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-close-suite014-watcher-stop-001.stderr.log"
+}

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\runtime\orchestrator-worktrees\20260821-plan2-suite-012-manager-014\.agent-workspace\diagnose_import_014.py", line 3, in <module>
+    import orchestrator_harness
+ModuleNotFoundError: No module named 'orchestrator_harness'

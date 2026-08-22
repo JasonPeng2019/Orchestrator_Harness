@@ -1,149 +1,317 @@
 # HANDOFF
 
-## Goal and current status
+## Firmware target — closed
 
-Plan 2 v3.9.23 is the sole execution contract. The user has authorized the declared four-board
-fixture and requires three consecutive index-ordered, completed, accepted logical sprints with no
-WIP target-v2 harness error before promotion. The harness-clean streak is `0/3`.
+Closed by direct user decision on 2026-08-21. The working firmware-enabled WIP harness is
+published at [`harness-single` / `working/firmware/v2-candidate`](https://github.com/JasonPeng2019/harness-single/tree/working/firmware/v2-candidate),
+commit `cb5b568d5fc3f63a1fe037312894e9736a2f2db1`. The code baseline is
+`5ab4b1f2f9170c3e57c35883bcb1ad22a2d04815`, tree
+`17e67a7affd2d16e1b1104e1df3dec22bfa198eb`; `cb5b568` adds only the final closure docs.
 
-ROOT-IM has reconciled the retained `055a5bd137039eaa1917e4a859a3d5bf30eb6444`
-watcher-repair boundary with its accepted descendant. Final review 062 has no findings at
-`dd673cb304501bfc2228b8c44f41df45a0c8608f`; proof 063 and integration 064 passed; and both the
-clean detached target and `firmware/v2-candidate` read back at that exact commit and tree
-`c18ccd0bc88de9c8fae1f98652a12fb5c1a951ae`. That commit/tree is the bound base for the focused
-continuation repair. M07 and unchanged M08 credit remain accepted.
+The retained WIP checkout is a real submodule at that exact published commit:
 
-Suites 003-008 are stopped. No manager, provider, watcher, claim authority, plan, permission, lease,
-MCP action, hardware action, or epoch-specific live-action authority is live. The user's fixture
-delegation remains recorded but cannot revive a stopped epoch or bypass fresh action authority. The
-next work is the focused continuation repair/check described below, not another live manager.
+- `firmware-v2-harness-runner`
 
-`EDGE-010R` M02 implementation is terminal in isolated target worktree
-`Firmware/.target-harness-worktrees/plan2-edge010r-continuation-repair` on branch
-`plan2/edge010r-continuation-repair`. The mapped `coder-main` produced clean commit
-`b0c1e57a42af70ad80e006f9a84a5dfd0acd6051`, tree
-`3a86200214e9b29676d7ac2368dbf91709443374`, with exact parent `dd673cb...`, then returned to ROOT
-through `.agent-workspace/HANDOFF_REPAIR_EDGE010R_069.md`. ROOT froze that tip for independent
-verification; it is not accepted or integrated yet. The terminated lane owns no resource claim,
-MCP server, lease, hardware capability, or successor authority.
+The source overview is
+[`firmware-v2-harness-runner/final_v2-firmware_harness_overview.md`](firmware-v2-harness-runner/final_v2-firmware_harness_overview.md).
+It states the supported harness surface, firmware compatibility route, responsibilities that remain
+with a manager/caller, and the limits of the closure.
 
-## Completed and verified
+## Truthful completion boundary
 
-- Exact base reconciliation evidence is retained at
-  `plans/general-coding-harness/runtime/wshrr-062/.agent-workspace/FINDINGS.json`,
-  `plans/general-coding-harness/runtime/wshrt-063/.agent-workspace/HANDOFF_PROOF_063.md`, and
-  `plans/general-coding-harness/runtime/wshri-064/.agent-workspace/HANDOFF_INTEGRATION_064.md`.
-- M07 completed all 16 checkpointed safeguard units with cleanup verified; final review passed.
-- M08 proved the accepted target's disposable provider/watch/watcher/MCP connection lifecycle and
-  the static/raw 39-name catalog without an MCP tool or hardware action; all owned state cleaned.
-- The Firmware-local Qwen Code/Ollama bridge passed focused unit and no-tool target-lane smokes for
-  the admitted DeepSeek/Qwen route. Codex is not an admitted Firmware route.
-- A21 attempt 001 sealed its specification, produced distinct firmware, and electronically
-  validated STM-A. The server safely refused the first flash because the stack pointer exceeded
-  verified RAM; the corrected 96 KiB build was not republished before stop. STM-B is now present.
-- A21 attempt 002 reached Qwen-approved `SPEC_REVIEWED`. Its watcher start exposed the unnecessary
-  Windows Job Object breakaway flag. The mapped coder/reviewer/doer/integration route repaired it;
-  native start/READY/status/cooperative-stop and all 52 affected watcher tests passed.
-- Suites 003-008 then repeatedly preserved useful checkpoints but ended on stale claims, unavailable
-  exact sessions, launch/validator or ROOT-clarification drift, malformed calls/order mistakes, and
-  manager/provider exits. Direct inspection on 2026-08-20 found the recorded suite008 manager, Sol,
-  watcher, A21 controller/provider, and A25 controller/provider PIDs absent.
-- M02 commit `b0c1e57...` adds only an evidence-bound route through existing claim/controller seams:
-  a replacement may reclaim one exact armed claim only after a closed membership record plus a
-  fresh complete inventory proves the exact old owner and every recorded process absent. Malformed,
-  contradictory, reused, live, or unknown evidence preserves that exact claim. Final resource-lock,
-  lane-controller, reconcile, focused recovery, and compilation checks passed. The retained broad
-  S4 timeout/support observation is recorded in `HANDOFF_REPAIR_EDGE010R_069.md`; it did not erase
-  the passing focused pool or authorize integration.
+The harness source is delivered and no Firmware manager, provider, watcher, MCP, controller, or
+hardware action remains live. Suite 14 was stopped for project closure and is not a clean result.
+The historical three-clean-sprint tally ended at `0/3`; closure is a user delivery decision, not
+fabricated test credit. Suite 8’s two target-harness defects were repaired; suites 9–13 found no
+further confirmed target-harness defect.
 
-## Failure being prevented
+All Plan 2 campaign material is preserved under
+`archive/firmware-v2-campaign/general-coding-harness/`. It is completed/historical and must not be
+used to restart Plan 2, a Firmware sprint, a repair, or promotion.
 
-`HANDOFF_SPRINT_FAILURE.md` is the regression record. Six of eight epochs had no harness defect, yet
-all eight stopped because the plan required old runtime identities/leases to remain valid and had no
-safe continuation rule after containment. Only a21-002 and suite-003 contained genuine harness
-defects. The bad behavior was terminalizing the whole sprint before it could finish and pool facts.
+## Active compatibility follow-through
 
-The corrected rule is intentionally small:
+The compatibility testing plans, the restored `harness-single-worktrees/{compat-test,qwencode-test}`
+worktrees, and the related Claude/Qwen feature documents under `active_docs/` remain active. Their
+source changes have not yet been merged into `firmware-v2-harness-runner`. This is compatibility
+integration work only; it does not reopen the closed Firmware hardware campaign.
 
-- A logical sprint is not a manager epoch or provider session. It keeps its ID/index, sealed spec,
-  verified checkpoints, completed evidence, and accumulated findings across invocation replacement.
-- On interruption, replace dead runtime identities, issue fresh authority for the next live action,
-  safely release/reassign a stale claim only after complete exact old-owner/process absence proof,
-  and let uncertainty hold only that exact resource. Continue every unrelated eligible lane.
-- Administrative/provider failures, malformed calls, doer/specification/fixture/server faults, and
-  harness defects do not end the sprint. Correct the affected suite-owned fact or record its unit
-  finding, and continue all feasible work.
-- A harness defect does not start a mid-sprint repair. The sprint first publishes
-  `COMPLETED_WITH_FINDINGS` with the full pool; ROOT then reviews/repairs the batch through the
-  existing harness path. It earns no clean credit and resets the streak. A clean accepted sprint
-  publishes `COMPLETED_CLEAN` and may earn credit.
-- `INCOMPLETE` is reserved for explicit user cancellation, withdrawn authority, or live harm that
-  cannot be isolated safely.
+## Cleanup and preserved history
 
-## Immediate next step
+Removed 79 inactive Git worktrees after confirming they were clean. At the user's subsequent
+request, the three historical source worktrees `Firmware/target-harness` and
+`harness-single-worktrees/{compat-test,qwencode-test}` were restored. The disposable
+`claude-test` and `claude-probe-lanes/{lane-a,lane-b}` copies were also briefly restored for audit,
+then removed as unnecessary historical-only scratch copies. A Windows path-length cleanup issue
+was resolved with repository-local Git `core.longpaths=true`; no product source was changed.
+Generated runtime/evidence directories remain as historical files. The retained
+`.git/modules/harness-in-progress` directory keeps the local archive refs and display-checkout
+stash recoverable and backs the three restored historical source worktrees.
 
-Do not launch a live manager. Continue the single existing-module path. `MI-HARNESS-REPAIR` has
-returned terminally; ROOT must now separately dispatch `MI-VERIFICATION-ASSET-CORRECT` against the
-frozen M02 tip:
+`compat-test` and `qwencode-test` are restored from their local archive commits. The removed
+Claude scratch copies are not a valid checkout or launch route; their historical evidence remains
+under `plans/compatibility-testing/evidence/`.
 
-`EDGE-010R -> MI-HARNESS-REPAIR -> MI-VERIFICATION-ASSET-CORRECT ->
-MI-CANDIDATE-EVIDENCE -> MI-CANDIDATE-DECIDE -> MI-CANDIDATE-INTEGRATE -> affected M07/M08`.
+Meaningful dirty material was retained locally before removal:
 
-The one new proof surface is `CHECK-SPRINT-CONTINUATION`, with four no-hardware cases calibrated to
-suites 004-008: runtime replacement/checkpoint continuity; safe stale-claim recovery with exact
-resource isolation; correctable lane faults without sprint terminalization; and genuine harness
-failure completing with a full post-sprint pool/no clean credit. Generated runtime state belongs
-only below `tmp/plan2-no-hardware-recovery/{invocation_id}/` and is disposable. The check must prove
-zero MCP-tool/server-plan/permission/lease/hardware events and exact cleanup.
+- `archive/compat-test-preclose-20260821` at `7a37c0a`
+- `archive/qwencode-test-preclose-20260821` at `9e91618`
+- `archive/pac-evidence-preclose-20260821` at `7adb3d0`
+- the prior duplicate checkout is in the named local stash `archive user-display before firmware v2 closure 2026-08-21`
 
-Only the accepted integrated check plus affected exact-target M08 result exposes `EDGE-011`. The
-future dispatch input is
-`Firmware/.agent-workspace/PLAN2_SUITE_RECOVERY_MANAGER_PROMPT_009.md`; it remains blocked until
-then. Historical manager prompts remain evidence, not live inputs.
+These archives are deliberately local and were not promoted into the delivered WIP branch.
 
-## Role allocation
+## Current files and next action
 
-Resolve Plan 2 roles only through
-`plans/general-coding-harness/SUBAGENT_ROLE_MODEL_MAPPING.json` and Firmware suite roles only
-through `Firmware/PROVIDER_ADAPTER.md`. The current mappings retain the requested split between
-the acceptance orchestrator, execution/test-scaffolding doers, and substantial coding roles; no
-prompt or handoff duplicates their concrete model settings.
+This root repository retains pre-existing dirty state outside the closure documentation. The
+closure edits and their supporting evidence are retained under `archive/firmware-v2-campaign/`.
+No further Firmware command is authorized. Compatibility work remains authorized only within its
+active plans and restored worktrees; any other future work should begin as a separately directed
+project from the published WIP branch.
 
-The five named Firmware application/test doers (Atlas, Boreal, Cygnus, Delta, and Nova) now use
-DeepSeek V4 Flash at high reasoning with an exact 180,000-token auto-compaction trigger. The
-Firmware bootstrap binds these settings through its process-local package `.qwen` home and does not
-change user-wide Qwen configuration.
+On 2026-08-21, the active submodule checkout was renamed from
+`current-wip-harness-runner` to `firmware-v2-harness-runner`; its published commit remains
+`cb5b568d5fc3f63a1fe037312894e9736a2f2db1`. The closed campaign plans, campaign-only Firmware
+documents, session analysis, and V1 topology prompts were moved beneath `archive/`. The changed-code
+gate then passed (Ruff, format, BasedPyright, compilation, and 58 targeted tests); its receipt is
+`.codex/runtime/bounded-tests/archive-cleanup-verify-changed-002.json`. No full product test sweep
+was run for this documentation/submodule/archive operation, and the WIP source code was not changed.
 
-Plan 2 `doer-main` and Atlas through Nova now retain the unchanged DeepSeek route through two
-consecutive eligible backend-connection failures. A third consecutive `HTTP_429`, `HTTP_303`,
-`RATE_LIMIT`, or `BACKEND_ERROR` selects a fresh `luna-high` (`gpt-5.6-luna`, high reasoning)
-invocation through the existing structured handoff while preserving the logical role, task card,
-verified checkpoints, evidence, and first unresolved action. Plan 2 resolves the fallback in its
-sole role mapping. Firmware resolves it in `PROVIDER_ADAPTER.md`; the direct-Luna Codex fallback
-still requires its declared no-hardware target-lane smoke before first use.
+## Active Claude/Qwen runner integration
 
-Session reuse is now an explicit default without becoming a dependency. One coder-main provider
-session is retained idle and resumed by new ROOT cards through every compatible correction in its
-originating unaccepted candidate gate, then retired when that gate accepts. Atlas through Nova retain
-their named provider sessions across completed sprints when available and unchanged. An unavailable
-or remapped session always takes the correlated replacement path with preserved checkpoints,
-evidence, and first unresolved work; it never blocks a ready edge or terminalizes a sprint.
+The authorized Claude/Qwen compatibility integration is in progress only in the isolated worktree
+`.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation`, branch
+`compat/claude-qwen-runner-parity`, based on published commit `cb5b568`. The top-level
+`firmware-v2-harness-runner` checkout remains untouched.
 
-## Boundaries
+CP-01 (the selected Claude parity port) is currently assigned to the persistent
+`PARITY_IMPLEMENTER` lane. Its task card, lane state, and output are contained beneath that
+worktree's untracked `.agent-workspace/`; ROOT must inspect the terminal handoff and independently
+validate its exact scoped changes before dispatching CP-02. The live integration plan is
+`active_docs/claude_qwen_runner_integration_plan.md` and its role mapping is
+`active_docs/SUBAGENT_ROLE_MODEL_MAPPING.json`.
 
-- Use only Firmware-local configuration and the package-local target. Do not modify global Codex or
-  Qwen configuration or substitute the parent checkout.
-- Preserve the dirty parent checkout and all historical records. Do not impersonate or reuse a
-  stopped process/session/lease as live authority. This does not prohibit verified semantic
-  checkpoint continuity under a fresh invocation.
-- Every live action still requires the server's actual plan, permission, exact lease, and verified
-  target identity. No rewiring, power/cable changes, bootloader replacement, mass erase, protection
-  change, unlock, or destructive recovery is authorized.
-- BOUNDED-TEST-v1 remains mandatory for every covered command; provider sessions remain lane-managed.
+At the current CP-01 checkpoint, the worker has staged the Claude runner port (provider behavior,
+adapter/installer assets, examples, and focused tests) in that isolated worktree and is executing
+its producer-owned bounded checks. This is implementation progress only: ROOT has not yet reviewed
+or accepted the diff, and no Qwen checkpoint has been dispatched.
 
-## Current verification boundary
+CP-01's producer proof then found one reproducible packaging defect: the imported Claude hook files
+contain two extra trailing blank lines, so their canonical bytes no longer match the unchanged
+manifest SHA-256 values; four installer tests fail closed as designed. ROOT independently confirmed
+that the only difference from the reconciled Claude reference is those trailing lines. A repair turn
+may remove only those lines, must prove the two canonical asset hashes equal the manifest entries,
+then rerun the failed adapter/installer module before ROOT revalidates CP-01. No Qwen work is
+authorized during this repair.
 
-The previous over-scoped six-module recovery branch, R1-R6 matrix, three-way disposition taxonomy,
-extra gate, and EDGE-REC admission chain are removed. The next verification boundary is M03's one
-four-case no-hardware continuation asset against frozen tip `b0c1e57...`, followed by independent
-M04 evidence/decision before any integration and affected M08. Nothing was pushed.
+The exact CP-01 repair turn has been resumed in the same persistent `PARITY_IMPLEMENTER` thread
+after its invocation identity/configuration was independently parsed. Its separate task card is
+`parity-implementer-cp01-repair.md` under the isolated worktree's `.agent-workspace/`; its source
+write contract is limited to removing those trailing blank lines. ROOT still owns review and the
+decision to dispatch any subsequent checkpoint.
+
+The hash repair and ROOT's four-module focused suite then passed (32 tests), but ROOT's changed-file
+Ruff check found 24 mechanical violations in the ported/touched CP-01 Python files. The next and
+final CP-01 repair is limited to resolving those named lint findings with no behavior change, then
+proving the same static check and focused suite. Qwen work remains blocked until ROOT accepts that
+evidence.
+
+That final mechanical CP-01 lint repair is now running in the same persistent implementer thread,
+after ROOT parsed its resume invocation. It has a disjoint task card
+`parity-implementer-cp01-lint.md` and may edit only the explicitly listed CP-01 Python files to
+remove the recorded Ruff violations; its required proof is a fresh Ruff result and focused-suite
+result. ROOT has not accepted CP-01 or authorized CP-02.
+
+The lint turn stopped on a single remaining exact Ruff finding:
+`orchestrator_harness/lane_controller.py:1764` shadows the imported `dataclasses.field` with a
+loop variable. Its bounded Ruff receipt is
+`runtime/cp01-lint-results/20260822-cp01-ruff-01.json`. The next repair must rename only that loop
+variable and its local uses, rerun the 14-path Ruff proof and the focused CP-01 suite, then return
+to ROOT. No Qwen work is authorized.
+
+That exact final one-variable correction has been launched in the same persistent implementer
+thread after ROOT parsed its resume invocation. Its task card is
+`parity-implementer-cp01-lint-final.md`; ROOT awaits its fresh Ruff and focused-suite receipts
+before CP-01 acceptance or any Qwen dispatch.
+
+The final lint turn then passed its 14-path Ruff proof and the 32-test CP-01 focused suite. ROOT's
+next type/compile gate stopped before compilation with 77 BasedPyright diagnostics across the
+ported Claude implementation and its focused tests; receipt:
+`.codex/runtime/bounded-tests/claude-qwen-root-cp01-types-compile-001.json`. A same-scope
+read-only classification run on the reconciled Claude reference reproduced the same 77 diagnostics
+(`claude-qwen-root-cp01-reference-types-001.json`), so this is an inherited source-quality gap,
+not a target-only regression. It remains blocking under the active rules: ROOT must give the
+implementer an exact type-repair/no-behavior-change contract, then rerun the target type/compile
+gate and focused suite before accepting CP-01. No Qwen checkpoint is authorized.
+
+ROOT has now parsed and launched that exact type-only repair in the same persistent
+`PARITY_IMPLEMENTER` thread. The task card is `parity-implementer-cp01-types.md`; it permits only
+six named Claude source/test files, forbids baseline/config/suppression changes, and explicitly
+preserves the already-correct installer loops. Invocation validation passed at
+`.codex/runtime/bounded-tests/claude-qwen-root-cp01-type-invocation-001.json`; the lane-launch
+receipt is `claude-qwen-root-cp01-type-launch-001.json`. ROOT awaits its bounded Ruff,
+BasedPyright/compile, and focused-suite receipts before CP-01 acceptance or CP-02 dispatch.
+
+That type-only turn passed its producer Ruff, type/compile, and focused-suite receipts, but ROOT's
+post-turn semantic comparison found one remaining functional parity defect in
+`claude_installer.py`: the source checks the three visible mojibake code points `ï»¿`, whereas the
+reconciled Claude implementation checks one actual UTF-8 BOM character. The target would therefore
+fail to reject a BOM-bearing packaged asset. CP-01 is still unaccepted. ROOT must dispatch one
+line-only correction in the persistent implementer lane, prove that exact sentinel and rerun the
+affected static/focused checks; CP-02 remains unauthorized.
+
+ROOT has parsed and launched that final one-line BOM repair in the same persistent
+`PARITY_IMPLEMENTER` thread. The only permitted source edit is the installer sentinel, expressed as
+the unambiguous Python escape `"\ufeff"`; its separate task card forbids all other source, test,
+asset, baseline, and Qwen changes. Invocation validation passed at
+`claude-qwen-root-cp01-bom-invocation-001.json` and the lane launch at
+`claude-qwen-root-cp01-bom-launch-001.json`. ROOT must independently inspect the corrected code
+point and validate the resulting receipts before CP-01 acceptance or CP-02 dispatch.
+
+CP-01 is accepted. ROOT verified the escaped sentinel evaluates to exactly U+FEFF, inspected the
+worker's constrained six-file type repair and one-line BOM repair, and ran a fresh full 14-path
+acceptance command: Ruff, BasedPyright, `py_compile`, and all four focused Claude modules passed
+(32 tests), cleanup verified. The ROOT receipt is
+`.codex/runtime/bounded-tests/claude-qwen-root-cp01-final-acceptance-001.json`. No Qwen source has
+yet been changed; CP-02 may now be dispatched as the next separate, ROOT-owned checkpoint.
+
+CP-02 is now running in the same persistent `PARITY_IMPLEMENTER` lane on the isolated runner
+worktree. Its scope is native Qwen registration/argv/resume/transcript/cancellation behavior and
+reject-loud invocation validation with deterministic focused tests only; Firmware bootstrap,
+MCP/settings imports, and all Qwen host/installer/example/documentation surfaces remain expressly
+deferred to CP-03. ROOT has not accepted any CP-02 source change or authorized CP-03.
+
+CP-02 is accepted. The native built-in `qwen-code` provider now owns its `qwen exec` default,
+stream-JSON start/resume argv, native transcript parsing, interrupt/exit-130 `CANCELLED` identity,
+and reject-loud validation for unrepresentable fields. ROOT verified the scope contains no Firmware
+bootstrap, MCP/settings import, or CP-03 host/installer surface and ran a fresh Ruff, BasedPyright,
+compile, focused Qwen, and provider-registry acceptance gate; it passed with cleanup verified at
+`.codex/runtime/bounded-tests/claude-qwen-root-cp02-final-acceptance-001.json`. CP-03 may now be
+separately dispatched; no source has been integrated into the top-level runner checkout.
+
+CP-03 has been dispatched to the same persistent implementer lane under a separate task card. It
+may add only the Qwen runner-owned host adapter, owned project-local installer/assets, fixture,
+example, public documentation, and deterministic sparse delivery/installer tests; it may not
+import Firmware/MCP/settings material or run a real provider. The launch receipt is
+`.codex/runtime/bounded-tests/claude-qwen-root-cp03-launch-001.json`. ROOT awaits the terminal
+checkpoint evidence before final frozen-tip verification and integration.
+
+ROOT review found one CP-03 Qwen configuration defect before acceptance: Qwen's `Stop` hook group
+must be matcherless. The prior attempted repair dispatch used a new worker identity and was rejected
+before a worker turn started; its temporary launcher/diagnostic artifacts were removed. The same
+persistent implementer lane is now being resumed with its original `claude-qwen-parity-cp01-001`
+identity for this one Qwen fragment/installer/test correction only. The top-level runner remains
+untouched; ROOT must review the terminal receipt and rerun the scoped acceptance gate before CP-03
+can be accepted.
+
+CP-03 is accepted. ROOT inspected the three-file matcherless-Stop correction against Qwen's
+documented event shape, verified no Qwen Firmware/MCP imports, and ran a fresh independent scoped
+gate: Ruff, BasedPyright, compilation, and the Qwen adapter/provider/registry tests all passed with
+cleanup verified at `.codex/runtime/bounded-tests/claude-qwen-root-cp03-final-acceptance-001.json`.
+All CP-01 through CP-03 source remains only in the isolated compatibility worktree; ROOT may now
+run final frozen-tip parity verification before deciding any integration action.
+
+Final frozen-tip static parity verification passed after correcting one nonexistent asset path in
+the check command (the first combined command did not run a product check). The fresh full scoped
+Claude/Qwen/provider-registry Ruff, BasedPyright, compilation, and focused test gate passed with
+cleanup verified at `.codex/runtime/bounded-tests/claude-qwen-root-final-frozen-tip-static-002.json`.
+The repository-wide change-aware script cannot target this isolated runner worktree because it is
+hard-wired to `stable-general-harness-runner`; no `VERIFY_CHANGED: PASS` claim is made. The next
+authorized step is only the plan's disposable-provider readiness check.
+
+The accepted frozen parity bytes were snapshotted locally as commit `2b9e9ec` on
+`compat/claude-qwen-runner-parity` in the isolated runner worktree. This is not an integration into
+the top-level runner checkout. The commit is the exact source coordinate for the two disposable
+provider-lane readiness checks.
+
+MI-READINESS created two disjoint disposable runner worktrees at commit `2b9e9ec` and recorded
+no-prompt CLI readiness receipts for Claude and Qwen under
+`.codex/runtime/bounded-tests/claude-qwen-parity/readiness-{claude,qwen}.json`; both passed with
+cleanup verified. The first serial MI-LIVE attempt, Claude, also passed at
+`.codex/runtime/bounded-tests/claude-qwen-parity/live-claude.json`: the integrated controller
+started the real Claude CLI, observed a session and `COMPLETED` terminal outcome, and its disposable
+doer created and committed the exact required `HELLO.txt`. The Qwen live lane is the one remaining
+required live provider attempt; do not change runner source before it.
+
+The first Qwen live attempt was interrupted by the outer execution timeout before its bounded
+supervisor could emit a terminal receipt or controller status. No Qwen provider process remains and
+no runner source changed. It is a provider-test support interruption, not a product result; a fresh
+Qwen readiness record, unique disposable fixture root, lane/result identifiers, and one new
+authorized attempt are required before any Qwen live claim.
+
+The fresh Qwen live card was then corrected to remove the intentionally unsupported
+`provider.allowed_tools` field; a read-only canonical parse accepted that corrected card. Its
+subsequent detached controller attempt again produced neither controller status nor transcript and
+timed out at the fixture's 240-second observation limit, while the bounded supervisor cleaned up.
+This is a Qwen live-lane launch/support gap, not a static/provider-contract product finding: the
+frozen branch's native-Qwen provider, installer, and focused tests remain accepted. Do not retry
+this live lane without a separately repaired/observable stable launch path. Claude live integration
+is complete; Qwen live proof is explicitly unfinished.
+
+The accepted runner copy required by the direct request now exists at
+`harness-single-worktrees/firmware-v2-harness-runner-parity`, on local branch
+`integration/claude-qwen-runner-parity` at commit `2b9e9ec`. Its clean readback matches the
+accepted isolated parity source. The top-level `firmware-v2-harness-runner` checkout remains
+untouched at `cb5b568`.
+
+ROOT subsequently diagnosed the apparent Qwen live-lane “support gap” as a deterministic
+canonical-provider normalization defect, not an Ollama timeout: the canonical invocation's
+mandatory `provider.id` and `provider.model` were retained in adapter-only `provider_options`.
+The Qwen adapter then correctly rejected those generic keys before lifecycle admission or first
+status publication. A read-only prelaunch diagnostic recorded the exact failure at
+`.codex/runtime/bounded-tests/claude-qwen-parity/live-qwen-003-prelaunch-diagnostic-002.json`.
+The persistent `PARITY_IMPLEMENTER` Luna lane is dispatched for only the parser-boundary
+normalization and one deterministic regression test in the isolated implementation worktree;
+ROOT will independently inspect, test, and accept or reject that repair before copying a revised
+tip or authorizing another Qwen provider attempt. The top-level target and accepted durable copy
+remain untouched.
+
+ROOT accepted the resulting two-file repair at commit `9f38371` after a fresh scoped Ruff,
+BasedPyright, compilation, and 31-test Qwen/provider/parser gate passed with cleanup verified at
+`.codex/runtime/bounded-tests/claude-qwen-parity/qwen-provider-normalization-root-acceptance-001.json`.
+The dedicated `harness-single-worktrees/firmware-v2-harness-runner-parity` copy was then
+fast-forwarded to that same accepted commit; the top-level target was not changed. A read-only
+replay of the formerly failing Qwen canonical card passed its parser/prelaunch/argv construction
+at `.codex/runtime/bounded-tests/claude-qwen-parity/live-qwen-003-prelaunch-after-repair-001.json`.
+The fresh real-Qwen fixture then passed at
+`.codex/runtime/bounded-tests/claude-qwen-parity/live-qwen-004.json`: native `qwen exec` started,
+reported a real provider session, exited `COMPLETED` with code 0, created and committed the exact
+`HELLO_QWEN.txt` content, and the bounded supervisor verified cleanup. A final fresh Claude live
+proof remains necessary on this new shared-parser commit before terminal acceptance.
+
+Final terminal verification is complete. The fresh Claude proof at
+`.codex/runtime/bounded-tests/claude-qwen-parity/live-claude-002.json` also passed on commit
+`9f38371`: the real Claude CLI through its Ollama configuration reported a provider session,
+`COMPLETED`/exit 0, and committed the exact `HELLO.txt` content. The equivalent Qwen proof is
+`live-qwen-004.json` and records native `qwen exec`, a real session, `COMPLETED`/exit 0, and the
+committed exact Qwen artifact. The dedicated durable copy is clean on
+`integration/claude-qwen-runner-parity` at `9f383712438d57cfcd8aea6b85c7fb284c7ecf3a`; the isolated
+implementation branch is at that same accepted commit. The top-level
+`firmware-v2-harness-runner` checkout remains clean, detached, and exactly at the original
+`cb5b568d5fc3f63a1fe037312894e9736a2f2db1`. The requested compatibility integration is therefore
+complete without modifying the top-level target.
+
+## Active super-cache repair
+
+The current compatibility candidate at
+`harness-single-worktrees/firmware-v2-harness-runner-parity` has a scoped super-cache repair in
+progress, separate from the closed Firmware campaign.  It makes a completed prepared-worktree
+receipt mandatory before provider launch; applies Codex hook trust only to prepared worktrees;
+and runs the deployed cache Stop verifier at baseline and after provider cleanup, treating its
+`{"continue":false}` response as a lane failure.  The checked-in `super-cache/` supplies the
+15-second SessionStart/PreToolUse settings, the `^(Bash|shell_command)$` matcher, the 300-second
+Stop setting, and a Stop script that discovers sibling-worktree virtual environments while
+excluding harness output from its snapshot.
+
+Focused static/controller/provider verification passed with cleanup verified at
+`.codex/runtime/bounded-tests/super-cache/super-cache-focused-007.json` (55 tests).  A separate
+fresh disposable prepared-lane proof passed at
+`.codex/runtime/bounded-tests/super-cache/super-cache-real-stop-004.json`: a lane without a local
+`.venv` discovered its sibling worktree tools and the deployed verifier passed both Ruff and
+Pyright after a one-file Python change.  The deterministic controller tests cover the Codex,
+Claude Code, and Qwen Code adapter paths for both orchestrator and subagent overlay roles.  The
+verified source change is committed as `4ed577cb39bdb7330290496e5c0f6b29595a7210` (`Fix prepared
+super-cache provider gates`).  On 2026-08-22, ROOT fast-forwarded the checked-out
+`firmware-v2-harness-runner` to that commit and pushed it to
+`origin/working/firmware/v2-candidate`; a post-push fetch confirmed local HEAD and the remote ref
+match exactly.

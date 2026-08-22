@@ -1,5 +1,16 @@
 # Phase 5 — Residual live event emission (the 7 rows phases 0–4 missed)
 
+> **STATUS: COMPLETE (2026-08-20) via the 5.B producer-seam path.** All 7 rows
+> (G8, G9, G11, G12, G13, G15, G16) are now `TESTED-PASSED (5.B, producer-seam)`.
+> The decision gate below resolved to 5.B: the Ollama backend cannot sustain the
+> multi-lane/relay/subordinate-process/harness-lifecycle states a live 5.A pass
+> needs within the time box, so each producer call site was driven in-process and
+> asserted to emit. Test: `orchestrator_harness/tests/test_compat_live_emission.py`
+> (7 passed). Evidence + caveats: [`evidence/5.B/`](evidence/5.B/README.md).
+> These passes are explicitly weaker than a live 5.A pass and are never presented
+> as live; a future live run may upgrade them. 5.C bookkeeping (inventory cells,
+> coverage-matrix Result cells, the "Live-not-materialized" count → 0) is done.
+
 > **Scope.** After phases 0–4, exactly **7** feature rows remain NOT-TESTED for a reason that
 > is *neither* provider-agnostic (PA, deliberately not re-run) *nor* out-of-scope (OOS,
 > excluded by instruction). They **should** be tested — the classifier logic exists in
@@ -46,10 +57,16 @@ Two honest ways to close these, in preference order:
 **Any row that 5.A and 5.B both fail to reach stays NOT-TESTED with the honest reason** — do
 not fabricate, do not flip to PASS. Record the blocker in `evidence/5.x/`.
 
-> Launch every subagent with the **session-local Ollama envelope** in
-> [`../phase0-5-claude-launch.md`](../phase0-5-claude-launch.md) — never `~/.claude`, never
-> `claude config set`, `CLAUDE_CONFIG_DIR` into the disposable clone, `--effort high`. Rationale
-> in memory `subagent-launch-local-only`.
+> **Subagent launch envelope (identical to phases 0–4).** Every phase-5 build/test subagent is
+> a `deepseek-v4-flash:0731-cloud` session launched **session-local** with the pinned envelope in
+> [`../phase0-5-claude-launch.md`](../phase0-5-claude-launch.md):
+> - `--effort high` (explicit on the command line — never `max`/`xhigh`, never inherited)
+> - **`CLAUDE_CODE_AUTO_COMPACT_WINDOW=180000`** (fixed 180k-token auto-compact pin)
+> - **`CLAUDE_CODE_MAX_CONTEXT_TOKENS=200000`** (context ceiling)
+> - `CLAUDE_CONFIG_DIR` into the disposable clone — never `~/.claude`, never `claude config set`,
+>   never global settings
+>
+> Rationale in memory `subagent-launch-local-only`.
 
 ---
 

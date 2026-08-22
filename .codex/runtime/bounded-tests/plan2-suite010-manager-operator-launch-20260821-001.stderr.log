@@ -1,0 +1,8 @@
+usage: python.exe -m orchestrator_harness.operator_launch [-h]
+                                                          --receipt RECEIPT
+                                                          --label LABEL
+                                                          --role ROLE
+                                                          --cwd CWD
+                                                          [--expected-state-path EXPECTED_STATE_PATH]
+                                                          ...
+python.exe -m orchestrator_harness.operator_launch: error: the following arguments are required: --receipt, --label, --role, --cwd

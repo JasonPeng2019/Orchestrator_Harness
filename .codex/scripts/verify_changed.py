@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ast
+import os
 import subprocess
 import sys
 from collections.abc import Iterable
@@ -54,6 +55,7 @@ class Check:
     label: str
     argv: tuple[str, ...]
     cwd: Path
+    env_overrides: tuple[tuple[str, str], ...] = ()
 
 
 @dataclass(frozen=True)
@@ -147,21 +149,26 @@ def _firmware_mcp_checks(root: Path, changed: list[Path]) -> list[Check]:
     if not changed:
         return []
     package_root = root.joinpath(*FIRMWARE_MCP_ROOT)
+    project_python = package_root / ".venv" / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
+    package_environment = (("VIRTUAL_ENV", str(package_root / ".venv")),)
     return [
         Check(
             "Firmware MCP Ruff",
-            ("uv", "run", "--locked", "--no-sync", "ruff", "check", "."),
+            (str(project_python), "-m", "ruff", "check", "."),
             package_root,
+            package_environment,
         ),
         Check(
             "Firmware MCP Pyright",
-            ("uv", "run", "--locked", "--no-sync", "pyright"),
+            (str(project_python), "-m", "pyright", "--pythonpath", str(project_python)),
             package_root,
+            package_environment,
         ),
         Check(
             "Firmware MCP tests",
-            ("uv", "run", "--locked", "--no-sync", "pytest"),
+            (str(project_python), "-m", "pytest"),
             package_root,
+            package_environment,
         ),
     ]
 
@@ -172,7 +179,11 @@ def _firmware_change_loop_checks(root: Path, changed: tuple[Path, ...]) -> list[
     return [
         Check(
             "Firmware change-loop self-check",
-            ("bash", "Firmware/.codex/skills/change-loop/scripts/run_loop.sh", "--self-check"),
+            (
+                "bash",
+                "Firmware/.codex/skills/change-loop/scripts/run_loop.sh",
+                "--self-check",
+            ),
             root,
         )
     ]
@@ -444,9 +455,9 @@ def _is_firmware_mcp_path(path: Path) -> bool:
 
 def _deduplicate_checks(checks: Iterable[Check]) -> list[Check]:
     result: list[Check] = []
-    seen: set[tuple[tuple[str, ...], Path]] = set()
+    seen: set[tuple[tuple[str, ...], Path, tuple[tuple[str, str], ...]]] = set()
     for check in checks:
-        identity = (check.argv, check.cwd)
+        identity = (check.argv, check.cwd, check.env_overrides)
         if identity not in seen:
             seen.add(identity)
             result.append(check)
@@ -470,7 +481,11 @@ def run_changed_verification(root: Path = ROOT) -> int:
 
     for check in plan.checks:
         print(f"\n== {check.label} ==", flush=True)
-        result = subprocess.run(check.argv, cwd=check.cwd, check=False)
+        env = None
+        if check.env_overrides:
+            env = os.environ.copy()
+            env.update(check.env_overrides)
+        result = subprocess.run(check.argv, cwd=check.cwd, env=env, check=False)
         if result.returncode != 0:
             print(f"\nVERIFY_CHANGED: FAIL ({check.label})", file=sys.stderr)
             return result.returncode

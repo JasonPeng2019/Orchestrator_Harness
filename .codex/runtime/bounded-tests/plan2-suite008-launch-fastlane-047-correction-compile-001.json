@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked python -m py_compile orchestrator_harness/operator_launch.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-launch-fastlane-047",
+    "maximum_lifetime_seconds":  37,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  7,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "FAST_LANE_V2 single-file production py_compile correction; local source-only compilation bound with startup headroom",
+    "started_at":  "2026-08-21T05:58:26.6540666+00:00",
+    "finished_at":  "2026-08-21T05:58:28.1566947+00:00",
+    "elapsed_seconds":  1.503,
+    "root_process_id":  27232,
+    "observed_process_ids":  [
+                                 27232
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-launch-fastlane-047-correction-compile-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-launch-fastlane-047-correction-compile-001.stderr.log"
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "$env:PYTHONPATH = C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\qwencode-test; python Firmware/scripts/orchestration/test_qwen_provider_bootstrap.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\.Orchestrator_Harness-worktrees\\plan2-suite010-qwen-legacy-fastlane-052",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "The baseline missing-target run completed in 2.923 seconds; the focused adapter unittest is deterministic and host-only, so 10 seconds is a conservative bound with the policy-minimum 5-second cleanup allowance.",
+    "started_at":  "2026-08-21T12:27:07.4200471+00:00",
+    "finished_at":  "2026-08-21T12:27:09.1986596+00:00",
+    "elapsed_seconds":  1.779,
+    "root_process_id":  25056,
+    "observed_process_ids":  [
+                                 25056
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\fastlane-qwen-legacy-052-focused-final.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\fastlane-qwen-legacy-052-focused-final.stderr.log"
+}

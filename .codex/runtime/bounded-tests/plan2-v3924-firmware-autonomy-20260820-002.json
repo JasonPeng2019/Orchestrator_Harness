@@ -1,0 +1,27 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python .codex/skills/run-firmware-test-suite/scripts/audit_autonomy.py --require-target",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Firmware autonomy audit completed in 6.173 seconds previously; 30 seconds is conservative after correcting its two stale phrase assertions.",
+    "started_at":  "2026-08-20T20:17:02.9199688+00:00",
+    "finished_at":  "2026-08-20T20:17:06.0055558+00:00",
+    "elapsed_seconds":  3.086,
+    "root_process_id":  16968,
+    "observed_process_ids":  [
+                                 16512,
+                                 16968,
+                                 24960,
+                                 26440,
+                                 27908,
+                                 30364
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-v3924-firmware-autonomy-20260820-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-v3924-firmware-autonomy-20260820-002.stderr.log"
+}

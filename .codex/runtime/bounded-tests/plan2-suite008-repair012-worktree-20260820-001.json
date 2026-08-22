@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev --locked python C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\scripts\\worktree_task.py create plan2-suite008-harness-repair-012 --branch plan2/suite008-harness-repair-012 --owner coder-main",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\target-harness",
+    "maximum_lifetime_seconds":  75,
+    "expected_upper_bound_seconds":  60,
+    "cleanup_allowance_seconds":  15,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The repository worktree helper performs one local Git worktree checkout of the accepted 172-file target; the immediately preceding detached checkout completed in 6.3 seconds, so 60 seconds includes ample local I/O headroom.",
+    "started_at":  "2026-08-20T22:48:17.9936199+00:00",
+    "finished_at":  "2026-08-20T22:48:20.4342377+00:00",
+    "elapsed_seconds":  2.441,
+    "root_process_id":  26348,
+    "observed_process_ids":  [
+                                 26348
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-repair012-worktree-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-repair012-worktree-20260820-001.stderr.log"
+}

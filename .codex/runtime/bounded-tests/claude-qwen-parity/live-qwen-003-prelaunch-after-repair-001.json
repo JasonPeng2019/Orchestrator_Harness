@@ -1,0 +1,27 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "$source = \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-parity-implementation\u0027; $invocation = \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-live-qwen\\.agent-workspace\\live-qwen-fixture-003\\worktrees\\lane-qwen\\.agent-workspace\\invocation.json\u0027; $code = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String(\u0027aW1wb3J0IHN5cwpmcm9tIHBhdGhsaWIgaW1wb3J0IFBhdGgKc3lzLnBhdGguaW5zZXJ0KDAsIHN5cy5hcmd2WzFdKQppbXBvcnQgb3JjaGVzdHJhdG9yX2hhcm5lc3MubGFuZV9jb250cm9sbGVyIGFzIGMKcCA9IFBhdGgoc3lzLmFyZ3ZbMl0pCmkgPSBjLmxvYWRfaW52b2NhdGlvbihwKQpwcmludCgnTE9BRD1QQVNTJywgaS5wcm92aWRlcl9pZCwgaS5sYW5lX2lkKQpnID0gYy5pbnNwZWN0X3JlcG9zaXRvcnkoaS5yZXBvc2l0b3J5KQpjLl9jYW5vbmljYWxfcHJpb3JfdGFza19wcmVmbGlnaHQoaSwgTm9uZSwgcHJpb3Jfc3RhdHVzX3BhdGg9aS5zdGF0dXNfcGF0aCwgdGhyZWFkPU5vbmUsIHN0YXJ0aW5nX2NvbW1pdD1nLmhlYWRfY29tbWl0LCBnaXRfaWRlbnRpdHk9ZykKcHJpbnQoJ0NBTk9OSUNBTF9QUkVGTElHSFQ9UEFTUycpCmlmIGMuYWN0aXZlX2RlY2xhcmF0aW9uX2NvbmZsaWN0cyhpLnJlcG9zaXRvcnksIGN1cnJlbnRfc3RhdHVzX3BhdGg9aS5zdGF0dXNfcGF0aCk6CiAgICByYWlzZSBTeXN0ZW1FeGl0KCd1bmV4cGVjdGVkIGFjdGl2ZSBkZWNsYXJhdGlvbiBjb25mbGljdCcpCmxhdW5jaCA9IGMuX3Byb3ZpZGVyX2xhdW5jaF9zcGVjKGksIE5vbmUpCmEgPSBjLnByb3ZpZGVyX2FkYXB0ZXIoaS5wcm92aWRlcl9pZCkKYXJndiA9IGEuYnVpbGRfYXJndihsYXVuY2gpCnByaW50KCdBUkdWPVBBU1MnLCBhcmd2KQplID0gYy5idWlsZF9wcm92aWRlcl9ldmlkZW5jZShpLnByb3ZpZGVyX2lkLCBzcGVjPWxhdW5jaCwgYXJndj1hcmd2LCB3b3JrZXJfaW52b2NhdGlvbl9pZD1pLndvcmtlcl9pbnZvY2F0aW9uX2lkIG9yIGkubGFiZWwgb3IgJ3VuaWRlbnRpZmllZC13b3JrZXInLCBzZXNzaW9uX2lkPU5vbmUpCnByaW50KCdFVklERU5DRT1QQVNTJywgZS5jb25maWd1cmF0aW9uX2RpZ2VzdCk=\u0027)); $code | python - $source $invocation",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "Read-only post-repair canonical prelaunch diagnostic: deterministic local parsing and adapter argv construction; 30 seconds expected plus policy-capped 8-second cleanup.",
+    "started_at":  "2026-08-22T09:26:19.5196037+00:00",
+    "finished_at":  "2026-08-22T09:26:34.4065967+00:00",
+    "elapsed_seconds":  14.887,
+    "root_process_id":  2884,
+    "observed_process_ids":  [
+                                 2884,
+                                 12148,
+                                 16236,
+                                 24728,
+                                 25860,
+                                 28788
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\live-qwen-003-prelaunch-after-repair-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\live-qwen-003-prelaunch-after-repair-001.stderr.log"
+}

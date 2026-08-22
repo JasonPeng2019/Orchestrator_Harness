@@ -1,0 +1,29 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/worktree_task.py close bounded-hook-powershell-command",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "The repository worktree helper performs one local Git status check, worktree removal, and metadata deletion. Its earlier list/close operations complete in seconds; 30 seconds covers filesystem cleanup and 8 seconds is the policy-capped cleanup allowance.",
+    "started_at":  "2026-08-21T19:57:14.2801758+00:00",
+    "finished_at":  "2026-08-21T19:57:29.4891301+00:00",
+    "elapsed_seconds":  15.209,
+    "root_process_id":  22712,
+    "observed_process_ids":  [
+                                 10976,
+                                 16404,
+                                 17436,
+                                 19260,
+                                 22712,
+                                 23804,
+                                 24816,
+                                 27348
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-close-root-worktree-helper-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\firmware-close-root-worktree-helper-001.stderr.log"
+}

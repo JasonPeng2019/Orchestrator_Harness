@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.agent-workspace\epochs\20260820-plan2-release-safeguard-assets-021\validate_invocation.py", line 15, in <module>
+    canonical = adapt_invocation(json.loads(invocation_path.read_text(encoding="utf-8")))
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\plans\general-coding-harness\runtime\firmware-v2\worktrees\harness-candidate\orchestrator_harness\invocation.py", line 876, in adapt_invocation
+    return parse_canonical_invocation(raw)
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\plans\general-coding-harness\runtime\firmware-v2\worktrees\harness-candidate\orchestrator_harness\invocation.py", line 470, in parse_canonical_invocation
+    provider_id, provider_model, provider_options = _provider(raw.get("provider"))
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\plans\general-coding-harness\runtime\firmware-v2\worktrees\harness-candidate\orchestrator_harness\invocation.py", line 401, in _provider
+    raise InvocationValidationError(
+        f"provider.id is not a registered provider: {provider_id}"
+    )
+orchestrator_harness.invocation.InvocationValidationError: provider.id is not a registered provider: qwen-code

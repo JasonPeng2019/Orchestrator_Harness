@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked python \u0027.codex\\runtime\\stable-harness\\claude-qwen-parity-001\\launch_cp02_lane.py\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "CP-02 lane launch handoff under shared locked environment; provider session is lane-managed after launch",
+    "started_at":  "2026-08-22T07:46:33.6325822+00:00",
+    "finished_at":  "2026-08-22T07:46:37.1379218+00:00",
+    "elapsed_seconds":  3.505,
+    "root_process_id":  340,
+    "observed_process_ids":  [
+                                 340
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp02-launch-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp02-launch-001.stderr.log"
+}

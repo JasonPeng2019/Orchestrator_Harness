@@ -1,0 +1,31 @@
+{
+  "planId": "2f54756a-2ab9-413a-a74d-02b2844f2985",
+  "todos": [
+    {
+      "content": "REQ-002: get_setup_status before connect/validate — persisted evidence must not grant runtime authority",
+      "id": "req002",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-003: stale get_board_info (prior-lifetime context) must fail before read/stamp/readiness; preserve raw refusal",
+      "id": "req003",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-004: fresh connect + board_validate with exact identity; fresh plan/permission/unlocked-tool authority",
+      "id": "req004",
+      "status": "in_progress"
+    },
+    {
+      "content": "REQ-005: logical disconnect STM-A; STM-B stays valid; prove isolation",
+      "id": "req005",
+      "status": "pending"
+    },
+    {
+      "content": "Preserve raw evidence; write PARALLEL_CHECKPOINT.md requesting manager-owned restart (no RESULT.json)",
+      "id": "checkpoint",
+      "status": "pending"
+    }
+  ],
+  "sessionId": "b714cfad-af95-4400-b9f7-eb329e7ccb49"
+}

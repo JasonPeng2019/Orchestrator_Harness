@@ -1,0 +1,370 @@
+F841 Local variable `status_path` is assigned to but never used
+   --> examples\disposable_claude_coding_fixture.py:352:5
+    |
+351 |     receipt = _start_controller(invocation)
+352 |     status_path = lane / ".agent-workspace" / "worker_controller.status.json"
+    |     ^^^^^^^^^^^
+353 |     status = _finish_controller(receipt)
+    |
+help: Remove assignment to unused variable `status_path`
+
+F401 [*] `typing.Sequence` imported but unused
+  --> orchestrator_harness\claude_adapter.py:16:34
+   |
+14 | from abc import ABC, abstractmethod
+15 | from pathlib import Path
+16 | from typing import Any, Mapping, Sequence
+   |                                  ^^^^^^^^
+17 |
+18 | from .host_adapters import (
+   |
+help: Remove unused import: `typing.Sequence`
+   |
+15 | from pathlib import Path
+   - from typing import Any, Mapping, Sequence
+16 + from typing import Any, Mapping
+17 |
+   |
+
+F401 [*] `uuid` imported but unused
+  --> orchestrator_harness\claude_installer.py:17:8
+   |
+15 | import hashlib
+16 | import json
+17 | import uuid
+   |        ^^^^
+18 | from importlib import resources
+19 | from pathlib import Path
+   |
+help: Remove unused import: `uuid`
+   |
+16 | import json
+   - import uuid
+17 | from importlib import resources
+   |
+
+F401 [*] `.host_adapters.DeliveryNotice` imported but unused
+  --> orchestrator_harness\claude_installer.py:36:5
+   |
+34 | from .host_adapters import (
+35 |     DeliveryCoordinator,
+36 |     DeliveryNotice,
+   |     ^^^^^^^^^^^^^^
+37 |     DeliveryReceipt,
+38 |     FutureHostFixture,
+   |
+help: Remove unused import: `.host_adapters.DeliveryNotice`
+   |
+35 |     DeliveryCoordinator,
+   -     DeliveryNotice,
+36 |     DeliveryReceipt,
+   |
+
+F841 Local variable `settings_path` is assigned to but never used
+   --> orchestrator_harness\claude_installer.py:602:5
+    |
+600 |     packaged = packaged_claude_assets()
+601 |     manifest_path = guard.path(CLAUDE_INSTALL_MANIFEST_RELATIVE, require_parent=True)
+602 |     settings_path = guard.path(CLAUDE_SETTINGS_RELATIVE, require_parent=True)
+    |     ^^^^^^^^^^^^^
+603 |     existing_manifest = _load_install_manifest(manifest_path, guard=guard)
+604 |     existing_revision: str | None = None
+    |
+help: Remove assignment to unused variable `settings_path`
+
+F841 Local variable `revision` is assigned to but never used
+   --> orchestrator_harness\claude_installer.py:744:5
+    |
+742 |             "project_trust": "unverified",
+743 |         }
+744 |     revision = _validate_manifest_identity(manifest, project, guard=guard)
+    |     ^^^^^^^^
+745 |     manifest_path = guard.path(CLAUDE_INSTALL_MANIFEST_RELATIVE, require_parent=True)
+746 |     if not _manifest_is_unchanged(manifest_path, manifest, guard=guard):
+    |
+help: Remove assignment to unused variable `revision`
+
+B007 Loop control variable `data` not used within loop body
+   --> orchestrator_harness\claude_installer.py:767:23
+    |
+765 |     originals = {relative: state.content for relative, state in original_states.items()}
+766 |     try:
+767 |         for relative, data in packaged.items():
+    |                       ^^^^
+768 |             expected = expected_assets.get(relative.as_posix())
+769 |             if _hash(originals[relative]) == expected:
+    |
+help: Rename unused `data` to `_data`
+
+F401 [*] `.models.parse_utc` imported but unused
+  --> orchestrator_harness\cli.py:42:21
+   |
+40 | from .handoff_preflight import preflight_handoff
+41 | from .lane_lifecycle import allocate_immutable_source_view, retire_terminal_lane
+42 | from .models import parse_utc, utc_now
+   |                     ^^^^^^^^^
+43 | from .notifications import ManagerEventRouter
+44 | from .processes import process_snapshot
+   |
+help: Remove unused import: `.models.parse_utc`
+   |
+41 | from .lane_lifecycle import allocate_immutable_source_view, retire_terminal_lane
+   - from .models import parse_utc, utc_now
+42 + from .models import utc_now
+43 | from .notifications import ManagerEventRouter
+   |
+
+F401 [*] `dataclasses.dataclass` imported but unused
+  --> orchestrator_harness\codex_adapter.py:17:25
+   |
+15 | import uuid
+16 | from abc import ABC, abstractmethod
+17 | from dataclasses import dataclass
+   |                         ^^^^^^^^^
+18 | from datetime import datetime
+19 | from importlib import resources
+   |
+help: Remove unused import: `dataclasses.dataclass`
+   |
+16 | from abc import ABC, abstractmethod
+   - from dataclasses import dataclass
+17 | from datetime import datetime
+   |
+
+F401 [*] `datetime.datetime` imported but unused
+  --> orchestrator_harness\codex_adapter.py:18:22
+   |
+16 | from abc import ABC, abstractmethod
+17 | from dataclasses import dataclass
+18 | from datetime import datetime
+   |                      ^^^^^^^^
+19 | from importlib import resources
+20 | from pathlib import Path
+   |
+help: Remove unused import: `datetime.datetime`
+   |
+17 | from dataclasses import dataclass
+   - from datetime import datetime
+18 | from importlib import resources
+   |
+
+F401 [*] `.host_adapters.DELIVERY_RECEIPT_SCHEMA` imported but unused
+  --> orchestrator_harness\codex_adapter.py:26:5
+   |
+24 |     AdapterCapabilities,
+25 |     DELIVERY_NOTICE_SCHEMA,
+26 |     DELIVERY_RECEIPT_SCHEMA,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^
+27 |     DeliveryCoordinator,
+28 |     DeliveryNotice,
+   |
+help: Remove unused import
+   |
+25 |     DELIVERY_NOTICE_SCHEMA,
+   -     DELIVERY_RECEIPT_SCHEMA,
+26 |     DeliveryCoordinator,
+--------------------------------------------------------------------------------
+32 |     HostProfile,
+   -     UnsupportedHostAdapterError,
+33 | )
+   |
+
+F401 [*] `.host_adapters.UnsupportedHostAdapterError` imported but unused
+  --> orchestrator_harness\codex_adapter.py:34:5
+   |
+32 |     HostAdapterError,
+33 |     HostProfile,
+34 |     UnsupportedHostAdapterError,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+35 | )
+36 | from .models import iso_utc, parse_utc, utc_now
+   |
+help: Remove unused import
+   |
+25 |     DELIVERY_NOTICE_SCHEMA,
+   -     DELIVERY_RECEIPT_SCHEMA,
+26 |     DeliveryCoordinator,
+--------------------------------------------------------------------------------
+32 |     HostProfile,
+   -     UnsupportedHostAdapterError,
+33 | )
+   |
+
+F401 [*] `.models.parse_utc` imported but unused
+  --> orchestrator_harness\codex_adapter.py:36:30
+   |
+34 |     UnsupportedHostAdapterError,
+35 | )
+36 | from .models import iso_utc, parse_utc, utc_now
+   |                              ^^^^^^^^^
+37 | from .mutation import (
+38 |     MutationConflict,
+   |
+help: Remove unused import: `.models.parse_utc`
+   |
+35 | )
+   - from .models import iso_utc, parse_utc, utc_now
+36 + from .models import iso_utc, utc_now
+37 | from .mutation import (
+   |
+
+F841 Local variable `hooks_path` is assigned to but never used
+    --> orchestrator_harness\codex_adapter.py:1162:5
+     |
+1160 |     packaged = packaged_codex_assets()
+1161 |     manifest_path = guard.path(INSTALL_MANIFEST_RELATIVE, require_parent=True)
+1162 |     hooks_path = guard.path(HOOKS_RELATIVE, require_parent=True)
+     |     ^^^^^^^^^^
+1163 |     existing_manifest = _load_install_manifest(manifest_path, guard=guard)
+1164 |     existing_revision: str | None = None
+     |
+help: Remove assignment to unused variable `hooks_path`
+
+B007 Loop control variable `data` not used within loop body
+    --> orchestrator_harness\codex_adapter.py:1326:23
+     |
+1324 |     originals = {relative: state.content for relative, state in original_states.items()}
+1325 |     try:
+1326 |         for relative, data in packaged.items():
+     |                       ^^^^
+1327 |             expected = expected_assets.get(relative.as_posix())
+1328 |             if _hash(originals[relative]) == expected:
+     |
+help: Rename unused `data` to `_data`
+
+F841 Local variable `adapter` is assigned to but never used
+    --> orchestrator_harness\codex_adapter.py:1732:5
+     |
+1730 |         registration_generation=binding["registration_generation"],
+1731 |     )
+1732 |     adapter = CodexAdapter(transport, coordinator)
+     |     ^^^^^^^
+1733 |     coordinator.restore()
+1734 |     notice = coordinator.notice_for_wake()
+     |
+help: Remove assignment to unused variable `adapter`
+
+F401 [*] `.prompt_bundle.PromptBundleError` imported but unused
+  --> orchestrator_harness\invocation.py:18:50
+   |
+16 | from typing import Any, Mapping
+17 |
+18 | from .prompt_bundle import PROMPT_BUNDLE_SCHEMA, PromptBundleError, bundle_from_record
+   |                                                  ^^^^^^^^^^^^^^^^^
+19 | from .provider import provider_adapter, provider_registry
+20 | from .stable_io import canonical_json
+   |
+help: Remove unused import
+   |
+17 |
+   - from .prompt_bundle import PROMPT_BUNDLE_SCHEMA, PromptBundleError, bundle_from_record
+18 + from .prompt_bundle import PROMPT_BUNDLE_SCHEMA
+19 | from .provider import provider_adapter, provider_registry
+   |
+
+F401 [*] `.prompt_bundle.bundle_from_record` imported but unused
+  --> orchestrator_harness\invocation.py:18:69
+   |
+16 | from typing import Any, Mapping
+17 |
+18 | from .prompt_bundle import PROMPT_BUNDLE_SCHEMA, PromptBundleError, bundle_from_record
+   |                                                                     ^^^^^^^^^^^^^^^^^^
+19 | from .provider import provider_adapter, provider_registry
+20 | from .stable_io import canonical_json
+   |
+help: Remove unused import
+   |
+17 |
+   - from .prompt_bundle import PROMPT_BUNDLE_SCHEMA, PromptBundleError, bundle_from_record
+18 + from .prompt_bundle import PROMPT_BUNDLE_SCHEMA
+19 | from .provider import provider_adapter, provider_registry
+   |
+
+F401 [*] `.provider.ProviderAdapter` imported but unused
+  --> orchestrator_harness\lane_controller.py:56:5
+   |
+54 |     PROVIDER_OPERATION_NAMES,
+55 |     PROVIDER_TERMINAL_OUTCOMES,
+56 |     ProviderAdapter,
+   |     ^^^^^^^^^^^^^^^
+57 |     ProviderAdapterError,
+58 |     ProviderEvent,
+   |
+help: Remove unused import
+   |
+55 |     PROVIDER_TERMINAL_OUTCOMES,
+   -     ProviderAdapter,
+56 |     ProviderAdapterError,
+57 |     ProviderEvent,
+   -     ProviderEvidence,
+58 |     ProviderHandoff,
+   |
+
+F401 [*] `.provider.ProviderEvidence` imported but unused
+  --> orchestrator_harness\lane_controller.py:59:5
+   |
+57 |     ProviderAdapterError,
+58 |     ProviderEvent,
+59 |     ProviderEvidence,
+   |     ^^^^^^^^^^^^^^^^
+60 |     ProviderHandoff,
+61 |     ProviderLaunchSpec,
+   |
+help: Remove unused import
+   |
+55 |     PROVIDER_TERMINAL_OUTCOMES,
+   -     ProviderAdapter,
+56 |     ProviderAdapterError,
+57 |     ProviderEvent,
+   -     ProviderEvidence,
+58 |     ProviderHandoff,
+   |
+
+F841 Local variable `allowed_tools` is assigned to but never used
+   --> orchestrator_harness\lane_controller.py:886:9
+    |
+884 |         }:
+885 |             raise InvocationValidationError("provider approval_policy is invalid")
+886 |         allowed_tools = _string_list(
+    |         ^^^^^^^^^^^^^
+887 |             provider_options.get("allowed_tools", []), "provider.allowed_tools"
+888 |         )
+    |
+help: Remove assignment to unused variable `allowed_tools`
+
+F841 Local variable `disallowed_tools` is assigned to but never used
+   --> orchestrator_harness\lane_controller.py:889:9
+    |
+887 |             provider_options.get("allowed_tools", []), "provider.allowed_tools"
+888 |         )
+889 |         disallowed_tools = _string_list(
+    |         ^^^^^^^^^^^^^^^^
+890 |             provider_options.get("disallowed_tools", []), "provider.disallowed_tools"
+891 |         )
+    |
+help: Remove assignment to unused variable `disallowed_tools`
+
+F402 Import `field` from line 19 shadowed by loop variable
+    --> orchestrator_harness\lane_controller.py:1198:9
+     |
+1196 |         "resources",
+1197 |     )
+1198 |     for field in identity_fields:
+     |         ^^^^^
+1199 |         if invocation.action == "start" and field == "session_id":
+1200 |             continue
+     |
+
+F402 Import `field` from line 19 shadowed by loop variable
+    --> orchestrator_harness\lane_controller.py:1766:9
+     |
+1764 |         "exclusive_resources": list(invocation.canonical.resources),
+1765 |     }
+1766 |     for field, value in (
+     |         ^^^^^
+1767 |         ("repository_common_dir", repository.get("common_dir")),
+1768 |         ("worktree_root", repository.get("worktree_root")),
+     |
+
+Found 24 errors.
+[*] 13 fixable with the `--fix` option (7 hidden fixes can be enabled with the `--unsafe-fixes` option).

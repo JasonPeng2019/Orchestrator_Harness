@@ -43,11 +43,11 @@ if str(TARGET_ROOT) not in sys.path:
 
 from orchestrator_harness.lane_controller import (
     InvocationError,
-    LaneLifecycleError,
-    ProcessBoundaryUnsupported,
     load_invocation as lane_controller_load_invocation,
     run as lane_controller_run,
 )
+from orchestrator_harness.lane_lifecycle import LaneLifecycleError
+from orchestrator_harness.process_supervisor import ProcessBoundaryUnsupported
 from orchestrator_harness.provider import (
     BaseProviderAdapter,
     ProviderAdapterError,
@@ -83,21 +83,25 @@ class QwenCodeProviderAdapter(BaseProviderAdapter):
         if not isinstance(servers, dict) or not servers:
             raise ProviderAdapterError("package-local Qwen MCP route is missing")
         artifact_root = os.environ.get("BYO_MCP_ARTIFACT_ROOT", "").strip()
+        mcp_cwd = os.environ.get("BYO_MCP_CWD", "").strip() or str(PACKAGE_ROOT)
+        pyocd_cli = os.environ.get("PYOCD_CLI", "").strip()
         mcp_servers: dict[str, dict[str, object]] = {}
         for name, server in servers.items():
             if not isinstance(name, str) or not isinstance(server, dict):
                 continue
-            routed: dict[str, object] = {**server, "cwd": str(PACKAGE_ROOT)}
-            if artifact_root:
+            routed: dict[str, object] = {**server, "cwd": mcp_cwd}
+            if artifact_root or pyocd_cli:
                 declared_env = server.get("env", {})
                 if not isinstance(declared_env, dict):
                     raise ProviderAdapterError(
                         f"package-local Qwen MCP route {name!r} has malformed env"
                     )
-                routed["env"] = {
-                    **declared_env,
-                    "BYO_MCP_ARTIFACT_ROOT": artifact_root,
-                }
+                routed_env = {**declared_env}
+                if artifact_root:
+                    routed_env["BYO_MCP_ARTIFACT_ROOT"] = artifact_root
+                if pyocd_cli:
+                    routed_env["PYOCD_CLI"] = pyocd_cli
+                routed["env"] = routed_env
             mcp_servers[name] = routed
         if len(mcp_servers) != len(servers):
             raise ProviderAdapterError("package-local Qwen MCP route is malformed")

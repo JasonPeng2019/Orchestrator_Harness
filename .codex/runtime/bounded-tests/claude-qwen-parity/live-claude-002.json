@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python examples/disposable_claude_coding_fixture.py --keep \u0027.agent-workspace\\live-claude-fixture-002\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-live-claude",
+    "maximum_lifetime_seconds":  600,
+    "expected_upper_bound_seconds":  480,
+    "cleanup_allowance_seconds":  120,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The disposable Claude fixture declares a 480-second real-provider observation contract; prior successful run completed in 40 seconds, and 120 seconds is the policy-capped cleanup allowance.",
+    "started_at":  "2026-08-22T09:31:56.9042633+00:00",
+    "finished_at":  "2026-08-22T09:32:24.9490761+00:00",
+    "elapsed_seconds":  28.045,
+    "root_process_id":  17440,
+    "observed_process_ids":  [
+                                 17440
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\live-claude-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-parity\\live-claude-002.stderr.log"
+}

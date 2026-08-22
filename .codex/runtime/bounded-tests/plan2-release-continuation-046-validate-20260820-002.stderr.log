@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\Jason\Documents\Jason\Orchestrator_Harness\Firmware\.agent-workspace\epochs\20260820-plan2-release-safeguard-continuation-046\validate_invocation.py", line 24, in <module>
+    print(loaded.prompt_bundle.bundle_sha256)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'mappingproxy' object has no attribute 'bundle_sha256'

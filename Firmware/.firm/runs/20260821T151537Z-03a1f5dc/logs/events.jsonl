@@ -1,0 +1,1 @@
+{"board_id": "stm_b", "details": {}, "duration_ms": 16, "error_code": null, "event_id": "evt-e0b60430d2eb", "normalized_args": {"board_id": "stm_b"}, "outcome_kind": "success", "probe_uid": "0668FF514988525067213913", "route_used": "pyocd-native", "session_id": "20260821T151537Z-03a1f5dc", "timestamp": "2026-08-21T15:18:14.999636Z", "tool_name": "disconnect"}

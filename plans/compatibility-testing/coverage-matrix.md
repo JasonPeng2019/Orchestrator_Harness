@@ -51,12 +51,12 @@ disposition, so nothing is silently dropped. Update the **Result** column as ste
 | A31 | TB‑NS‑V | 2.G | PASS (19 tests; condition merging dedup/last-write-wins + recovery projection) |
 | A32 | PA | Appendix A | |
 | A33 | PA | Appendix A | |
-| A34 | TB‑NS‑V | 2.E | GAP — F2E-A34-1 (read-only accessors only; no packaging/digest engine) (10 tests) |
+| A34 | TB‑NS‑V | 2.E | DESIGN-REC — F2E-A34-1 (read-only accessors only; no packaging/digest engine) — shared-code recommendation, not a provider gap (10 tests) |
 | A35 | TB‑NS‑V | 2.D (O7) | PASS @2.D |
 | A36 | PASSED | Done | PASS |
 | A37 | OOS | 4.D | N/A |
 | A38 | OOS | 4.D | N/A |
-| A39 | TB‑NS‑V | 2.G | GAP — F2G-A39-1 (no ordered STOP_ASSIGNING→…→RESOLVED ledger) |
+| A39 | TB‑NS‑V | 2.G | DESIGN-REC — F2G-A39-1 (STALE: ordered ledger DOES exist in harness_watcher_implementation/state.py; re-test pending) — not a provider gap |
 | A40 | OOS | 4.D | N/A |
 | A41 | OOS | 4.D | N/A |
 
@@ -121,7 +121,7 @@ disposition, so nothing is silently dropped. Update the **Result** column as ste
 | E8–E13 | PA | Appendix A | |
 | E14–E17 | TB‑SC | 1.D | PASS |
 | E18 | PA | 1.D / Appendix A | PASS |
-| E19 | TB‑SC | 1.D | PASS (finding F1D‑E19‑1: state gate not applied to result acceptance, note) |
+| E19 | TB‑SC | 1.D | PASS (parity 2026-08-20: shared `_trustworthy_live_status` gate treats RUNNING_CODEX/RUNNING_PROVIDER identically — Claude mirrors Codex; F1D‑E19‑1 RESOLVED-PARITY) |
 | E20 | TB‑NS | 1.D | PASS (finding F1D‑E20‑1: no >1‑candidate ambiguity rejection, note) |
 
 ## F. Reconcile / discovery classification (F1–F26)
@@ -154,9 +154,9 @@ disposition, so nothing is silently dropped. Update the **Result** column as ste
 | G4 | PA | Appendix A | |
 | G5, G6 | TB‑NS | 1.F | PASS (G5 finding F1F‑G5‑1: OBSERVATION_ERROR selectable only when lane/request live, note; G6 MANAGER_SIGNAL actionable) |
 | G7 | PASSED | Done | PASS |
-| G8–G13 | TB‑SC | 3.A | |
+| G8–G13 | TB‑SC | 3.A → 5.B | PASS (5.B producer-seam, 2026-08-20): G8 HELPER_EXITED/_STATE_UNKNOWN, G9 PROVIDER_WAIT/LANE_STATE_UNKNOWN, G11 six observed-state events, G12 RELAYED/_INACTIVE/_AMBIGUOUS, G13 HELPER_ACTIVE/CONDITION_CLEARED — all driven through the real producers and asserted emitted (`test_compat_live_emission.py`); weaker than a live 5.A pass; MCP_* stay OOS. G10 unchanged (synthetic/accepted). Evidence: `evidence/5.B/`. |
 | G14 | PASSED | Done | PASS |
-| G15, G16 | TB‑SC | 3.A | |
+| G15, G16 | TB‑SC | 3.A → 5.B | PASS (5.B producer-seam, 2026-08-20): G15 HARNESS_SIGNAL_OBSERVED + HARNESS_EVENT_INELIGIBLE/_ACTIONABLE/_PENDING/_DEFERRED and G16 HARNESS_ACK_ATTEMPTED/_SUCCEEDED emitted through the real producer `attention.make_source_record` and asserted (`test_compat_live_emission.py`); weaker than a live 5.A pass. Evidence: `evidence/5.B/`. |
 | G17 | CX‑GAP | 4.A | ✅ PASS (test_compat_claude_adapter::test_G17) |
 | G18 | TB‑NS | 1.F | PASS (finding F1F‑G18‑1: kind declared, no in‑repo emitter; single record at contract level, note) |
 | G19 | CX‑GAP | 4.A | ✅ PASS (test_compat_claude_adapter::test_G19) |
@@ -182,7 +182,7 @@ disposition, so nothing is silently dropped. Update the **Result** column as ste
 | I1 | PASSED | Done | PASS |
 | I2 | PASSED | Done | PASS |
 | I3 | PASSED | Done | PASS |
-| I4 | TB‑NS‑V | 2.A | FINDING (F2A-I4-1) — verify is structural/identity-only; byte-integrity enforced at restore |
+| I4 | TB‑NS‑V | 2.A | DESIGN-REC — F2A-I4-1 (verify is structural/identity-only; byte-integrity enforced at restore) — shared-code recommendation, not a provider gap |
 | I5 | TB‑NS‑V | 2.A | PASS |
 | I6 | PASSED | Done | PASS |
 | I7 | TB‑NS‑V | 2.A | PASS (junctions available on host; not skipped) |
@@ -199,7 +199,7 @@ disposition, so nothing is silently dropped. Update the **Result** column as ste
 | ID | Prior tag | Plan location | Result |
 |---|---|---|---|
 | K1 | PASSED | Done | PASS |
-| K2–K8 | TB‑NS | 1.G | PASS (K8 → F1G-K8-1: conflict fails closed, not "canonical wins") |
+| K2–K8 | TB‑NS | 1.G | PASS (K8 → parity 2026-08-20: shared invocation conflict-guard, Claude mirrors Codex; F1G-K8-1 RESOLVED-PARITY) |
 | K9 | PASSED | Done | PASS |
 | K10 | TB‑NS | 1.G | PASS (handoff preflight blocks each missing piece distinctly) |
 
@@ -209,10 +209,10 @@ disposition, so nothing is silently dropped. Update the **Result** column as ste
 | L1 | TB‑NS‑V | 2.B | PASS (closed-shape request + reason codes) |
 | L2 | TB‑NS‑V | 2.B | PASS (frozen snapshot, MappingProxy nesting, byte-stable round trip) |
 | L3 | TB‑NS‑V | 2.B | PASS (approval gate admits bound / denies non-approve, no permit on deny) |
-| L4 | TB‑NS‑V | 2.B | FINDING F2B-L4-1 (bounded use is broker-enforced replay refusal, not a per-permit counter) |
+| L4 | TB‑NS‑V | 2.B | PASS (parity 2026-08-20: shared broker enforces single-use via replay refusal — Claude mirrors Codex; F2B-L4-1 RESOLVED-PARITY) |
 | L5 | TB‑NS‑V | 2.B | PASS (result/cleanup pipeline; value objects fail closed on authority-alias material) |
 | L6 | TB‑NS‑V | 2.B | PASS (end-to-end orchestration, claim→arm→cleanup→release ordering, no authority leak) |
-| L7 | TB‑NS‑V | 2.B | FINDING F2B-L7-1 (missing adapter → DENIED SNAPSHOT_UNAVAILABLE, not raised) |
+| L7 | TB‑NS‑V | 2.B | PASS (parity 2026-08-20: shared broker denies-by-default on missing adapter — Claude mirrors Codex; F2B-L7-1 RESOLVED-PARITY) |
 | L8 | PASSED | Done | PASS |
 | L9 | PA | Appendix A | |
 | L10 | TB‑NS‑V | 2.B | PASS (FakeCapabilityAdapter contract: supports/observe, fail_dispatch→FAIL+release, cleanup_proved=False→UNCERTAIN+retain) |
@@ -259,14 +259,14 @@ disposition, so nothing is silently dropped. Update the **Result** column as ste
 ## Q. Config / profile / prompt / stable I/O (Q1–Q20)
 | ID | Prior tag | Plan location | Result |
 |---|---|---|---|
-| Q1, Q2 | TB‑NS | 1.K | ⚠️ Q1 FINDING F1K-Q1-1 (rejects, not clamps); Q2 ✅ PASS (test_compat_config_bundle) |
+| Q1, Q2 | TB‑NS | 1.K | ✅ Q1 PASS (parity 2026-08-20: shared config loader rejects out-of-range — Claude mirrors Codex; F1K-Q1-1 RESOLVED-PARITY); Q2 ✅ PASS (test_compat_config_bundle) |
 | Q3 | PASSED | Done | PASS |
 | Q4 | TB‑NS‑V | 2.H | PASS (5 tests; declared kept, secrets/undeclared cleared, construction fail-closed, no fail-open) |
 | Q5–Q11 | PA | Appendix A | |
 | Q12, Q13 | PASSED | Done | PASS |
 | Q14, Q15 | TB‑NS | 1.K | ✅ PASS (test_compat_config_bundle; Q14 symlink sub-case skipped on Windows) |
 | Q16 | PASSED | Done | PASS |
-| Q17 | TB‑NS | 1.K | ⚠️ FINDING F1K-Q17-1 (re-export shim, no template constants) |
+| Q17 | TB‑NS | 1.K | ✅ PASS (parity 2026-08-20: shared prompt_bundle verbatim concatenation, no templating either provider — Claude mirrors Codex; F1K-Q17-1 RESOLVED-PARITY) |
 | Q18–Q20 | PA | Appendix A | |
 
 ## R. Firmware/hardware (R1–R8) · S. MCP (S1–S3)
@@ -282,7 +282,7 @@ disposition, so nothing is silently dropped. Update the **Result** column as ste
 |---|---|---|---|
 | T1 | OOS | 4.D | N/A |
 | T2 | OOS | 4.D | N/A |
-| T3 | TB‑NS‑V | 2.G | GAP — F2G-A39-1 (see A39) |
+| T3 | TB‑NS‑V | 2.G | DESIGN-REC — F2G-A39-1 (see A39; STALE finding) — not a provider gap |
 | T4, T5 | OOS | 4.D | N/A |
 | T6 | TB‑NS‑V | 2.F | PASS @2.F (A30) |
 

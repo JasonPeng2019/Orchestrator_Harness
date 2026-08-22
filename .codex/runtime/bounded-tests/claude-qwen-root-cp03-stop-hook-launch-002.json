@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked python -m orchestrator_harness.operator_launch --receipt \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\stable-harness\\claude-qwen-parity-001\\parity-implementer-cp03-stop-hook.launch.json\u0027 --label \u0027LANE-IMPLEMENTER-CP03-STOP-HOOK-001\u0027 --role \u0027PARITY_IMPLEMENTER\u0027 --cwd \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\stable-general-harness-runner\u0027 --expected-state-path \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.firmware-v2-harness-runner-worktrees\\claude-qwen-parity-implementation\\.agent-workspace\\parity-implementer-cp01.status.json\u0027 -- \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\.venv\\Scripts\\python.exe\u0027 -m orchestrator_harness.lane_controller \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\stable-harness\\claude-qwen-parity-001\\parity-implementer-cp03-stop-hook.invocation.json\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\stable-general-harness-runner",
+    "maximum_lifetime_seconds":  38,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  8,
+    "heartbeat_interval_seconds":  10,
+    "timeout_basis":  "CP-03 one-file Qwen hook-shape repair lane launch from the installed stable harness directory; 30 seconds covers locked environment process setup and 8 seconds is policy-capped cleanup; provider session remains lane-managed after launch",
+    "started_at":  "2026-08-22T08:33:38.9070582+00:00",
+    "finished_at":  "2026-08-22T08:33:42.5577142+00:00",
+    "elapsed_seconds":  3.651,
+    "root_process_id":  14996,
+    "observed_process_ids":  [
+                                 14996
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp03-stop-hook-launch-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\claude-qwen-root-cp03-stop-hook-launch-002.stderr.log"
+}

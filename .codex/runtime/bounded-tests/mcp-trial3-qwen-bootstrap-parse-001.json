@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "\u0026 \u0027C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3\\BYO-Firmware-MCP\\.venv\\Scripts\\python.exe\u0027 -c \"from pathlib import Path; import json; compile(Path(\u0027scripts/orchestration/qwen_provider_bootstrap.py\u0027).read_text(encoding=\u0027utf-8\u0027), \u0027qwen_provider_bootstrap.py\u0027, \u0027exec\u0027); json.loads(Path(\u0027.qwen/settings.json\u0027).read_text(encoding=\u0027utf-8\u0027)); print(\u0027qwen bootstrap syntax and settings JSON: OK\u0027)\"",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\FirmCLI_Tester\\Firmware-Test-Manual\\MCP-Trial-3",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Static compile and JSON parse have no external I/O; ten seconds includes slow Windows interpreter startup and five seconds is the policy minimum cleanup.",
+    "started_at":  "2026-08-21T23:32:04.1168301+00:00",
+    "finished_at":  "2026-08-21T23:32:06.1706617+00:00",
+    "elapsed_seconds":  2.054,
+    "root_process_id":  18928,
+    "observed_process_ids":  [
+                                 18928
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\mcp-trial3-qwen-bootstrap-parse-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\mcp-trial3-qwen-bootstrap-parse-001.stderr.log"
+}

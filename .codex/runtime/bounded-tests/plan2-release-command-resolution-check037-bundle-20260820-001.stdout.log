@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-release-command-resolution-m04",
+  "task_card_id": "CARD-PLAN2-RELEASE-COMMAND-RESOLUTION-CHECK-037",
+  "profile_id": "luna-high",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\p2-crcheck-037\\.agent-workspace\\PLAN2_RELEASE_COMMAND_RESOLUTION_CHECK_FALLBACK_PROMPT_037.md",
+      "sha256": "df9af6f34ddf360f62a45902990ea563f612219bef759d9395473aced8bd731b",
+      "size": 1648
+    }
+  ],
+  "final_sha256": "df9af6f34ddf360f62a45902990ea563f612219bef759d9395473aced8bd731b",
+  "final_size": 1648,
+  "bundle_sha256": "3241ac66f8ee989695be5adf4b5e484b7ef3f1bcfec9ea680f31aaf3993a196a"
+}

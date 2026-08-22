@@ -1,13 +1,10 @@
 {
   "mcpServers": {
     "byo-firmware": {
-      "command": "uv",
+      "command": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\BYO-Firmware-MCP\\.venv\\Scripts\\python.exe",
       "args": [
-        "run",
-        "--project",
-        "BYO-Firmware-MCP",
-        "--locked",
-        "pyocd-debug-mcp"
+        "-m",
+        "pyocd_debug_mcp.server"
       ],
       "timeout": 180000,
       "trust": true

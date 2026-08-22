@@ -1,0 +1,12 @@
+unformatted: File would be reformatted
+   --> harness_watcher_implementation\tests\test_watcher_smoke.py:816:26
+    |
+815 |             patch.object(runner.os, "name", "nt"),
+    -             patch.object(
+    -                 runner.subprocess, "CREATE_NO_WINDOW", no_window, create=True
+    -             ),
+816 +             patch.object(runner.subprocess, "CREATE_NO_WINDOW", no_window, create=True),
+817 |             patch.object(
+    |
+
+1 file would be reformatted, 144 files already formatted

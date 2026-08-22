@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "$ruff = \u0027C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/dev/.venv/Scripts/ruff.exe\u0027; \u0026 $ruff check --select E9,F63,F7,F82 orchestrator_harness/operator_launch.py orchestrator_harness/cli.py orchestrator_harness/processes.py orchestrator_harness/tests/test_operator_launch.py orchestrator_harness/tests/test_manager_notifications_adversarial.py orchestrator_harness/tests/test_processes.py; exit $LASTEXITCODE",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-candidate-check-015",
+    "maximum_lifetime_seconds":  35,
+    "expected_upper_bound_seconds":  30,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "Ruff critical-select (E9,F63,F7,F82) on six changed files; calibrated 30s+5s like job-more-data-final-proof-063-ruff-check.",
+    "started_at":  "2026-08-20T23:33:39.2414001+00:00",
+    "finished_at":  "2026-08-20T23:33:40.4671485+00:00",
+    "elapsed_seconds":  1.226,
+    "root_process_id":  8380,
+    "observed_process_ids":  [
+                                 8380
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-check015-ruff-check-20260820-001.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite008-check015-ruff-check-20260820-001.stderr.log"
+}

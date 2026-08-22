@@ -1,0 +1,1 @@
+VERIFY_CHANGED: FAIL (no targeted route for: .agent-workspace/firmware_mcp_interpreter_diagnostic_001.py; add a targeted verification route before finishing)

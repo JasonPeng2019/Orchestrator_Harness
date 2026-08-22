@@ -1,0 +1,1 @@
+{"board_id": "nrf_a", "details": {}, "duration_ms": 32, "error_code": null, "event_id": "evt-b6dcae3fc9a2", "normalized_args": {"board_id": "nrf_a"}, "outcome_kind": "success", "probe_uid": "683710208", "route_used": "pyocd-native", "session_id": "20260821T150405Z-e67f96eb", "timestamp": "2026-08-21T15:04:25.849163Z", "tool_name": "disconnect"}

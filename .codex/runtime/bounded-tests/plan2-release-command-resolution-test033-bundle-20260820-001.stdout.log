@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-release-command-resolution-test",
+  "task_card_id": "CARD-PLAN2-RELEASE-COMMAND-RESOLUTION-TEST-033",
+  "profile_id": "deepseek-v4-flash-0731-high",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\p2-crtest-033\\.agent-workspace\\PLAN2_RELEASE_COMMAND_RESOLUTION_TEST_DOER_PROMPT_033.md",
+      "sha256": "9ebb6dd75240b5679b0e422504d833a626e45ea95c1c08f3128626164dbf072f",
+      "size": 1774
+    }
+  ],
+  "final_sha256": "9ebb6dd75240b5679b0e422504d833a626e45ea95c1c08f3128626164dbf072f",
+  "final_size": 1774,
+  "bundle_sha256": "91f5300eca830a83a6e3ef43b32357346ba9455bc1efc6adc28974dee5e25248"
+}

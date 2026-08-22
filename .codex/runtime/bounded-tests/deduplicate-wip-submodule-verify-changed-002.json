@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project .codex/dev --locked python .codex/scripts/verify_changed.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness",
+    "maximum_lifetime_seconds":  210,
+    "expected_upper_bound_seconds":  180,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The formatting correction is the changed condition after the prior verifier stopped at its format gate. The same change-aware verifier previously completed its code-bearing route in 47.395 seconds; 180 seconds permits cold startup and all selected checks, with 30 seconds policy-capped cleanup.",
+    "started_at":  "2026-08-21T21:26:09.7114109+00:00",
+    "finished_at":  "2026-08-21T21:26:12.6745512+00:00",
+    "elapsed_seconds":  2.963,
+    "root_process_id":  16712,
+    "observed_process_ids":  [
+                                 16712
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deduplicate-wip-submodule-verify-changed-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\deduplicate-wip-submodule-verify-changed-002.stderr.log"
+}

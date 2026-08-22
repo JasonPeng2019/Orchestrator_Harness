@@ -636,7 +636,7 @@ def test_snapshot_ignores_generated_and_view_only_code(tmp_path: Path) -> None:
     for relative in (
         "runtime/generated.py",
         "evidence/reproducer.c",
-        "user-display-wip-harness-runner-(used-owned)/viewer.py",
+        "firmware-v2-harness-runner/viewer.py",
     ):
         path = tmp_path / relative
         path.parent.mkdir(parents=True, exist_ok=True)

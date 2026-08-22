@@ -1,0 +1,7 @@
+test_safeguard_run_streams_native_stderr_and_checkpoints_next_unit (orchestrator_harness.tests.test_s6_public_release.S6SafeguardTests.test_safeguard_run_streams_native_stderr_and_checkpoints_next_unit) ... ok
+test_safeguard_run_records_native_failure_and_continues_next_unit (orchestrator_harness.tests.test_s6_public_release.S6SafeguardTests.test_safeguard_run_records_native_failure_and_continues_next_unit) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 21.770s
+
+OK

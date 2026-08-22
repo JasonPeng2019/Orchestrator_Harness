@@ -1,0 +1,15 @@
+{
+  "attempt_id": "validation-2daebed5de7f243d",
+  "board_id": "nrf_b_2",
+  "code": "validation/profile-missing",
+  "created_at": "2026-08-21T08:24:47.206658Z",
+  "message": "Board profile not found: nrf_b_2",
+  "observed": {
+    "board_id": "nrf_b_2"
+  },
+  "profile_unchanged": true,
+  "report_type": "validation",
+  "schema_version": 1,
+  "steps": [],
+  "terminal_status": "validation_incomplete"
+}

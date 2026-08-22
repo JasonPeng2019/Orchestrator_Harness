@@ -1,0 +1,30 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m unittest -v orchestrator_harness.tests.test_s6_public_release.S6SafeguardTests",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\plans\\general-coding-harness\\runtime\\firmware-v2\\worktrees\\.harness-candidate-worktrees\\plan2-release-safeguard-repair-020",
+    "maximum_lifetime_seconds":  150,
+    "expected_upper_bound_seconds":  120,
+    "cleanup_allowance_seconds":  30,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The final S6Safeguard class run previously completed in 53.849 seconds after the allowed test formatting; 120 seconds retains measured headroom.",
+    "started_at":  "2026-08-21T00:22:26.4196849+00:00",
+    "finished_at":  "2026-08-21T00:23:21.8007750+00:00",
+    "elapsed_seconds":  55.381,
+    "root_process_id":  30652,
+    "observed_process_ids":  [
+                                 7440,
+                                 13256,
+                                 14456,
+                                 25180,
+                                 28596,
+                                 29960,
+                                 30504,
+                                 30564,
+                                 30652
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-safeguard-class-20260820-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-release-repair020-safeguard-class-20260820-002.stderr.log"
+}

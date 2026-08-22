@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m orchestrator_harness.operator_launch --receipt \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.agent-workspace\\epochs\\20260821-plan2-suite-012-manager-014\\MANAGER_014_LAUNCH_002.json\u0027 --label \u0027Plan 2 Suite012 Firmware manager\u0027 --role acceptance-orchestrator --cwd \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\target-harness\u0027 --expected-state-path \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260821-plan2-suite-012-manager-014\\.agent-workspace\\plan2_suite_manager_014.status.json\u0027 python -m orchestrator_harness.lane_controller \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.agent-workspace\\epochs\\20260821-plan2-suite-012-manager-014\\INVOCATION_014.json\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\target-harness",
+    "maximum_lifetime_seconds":  15,
+    "expected_upper_bound_seconds":  10,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  5,
+    "timeout_basis":  "The operator launcher only validates inputs, creates one detached controller, writes its receipt, and returns; prior launches complete below two seconds, with ten seconds conservative headroom. The detached manager lifecycle is owned by the lane controller, not this bound.",
+    "started_at":  "2026-08-21T15:42:30.6244732+00:00",
+    "finished_at":  "2026-08-21T15:42:32.9957990+00:00",
+    "elapsed_seconds":  2.371,
+    "root_process_id":  29276,
+    "observed_process_ids":  [
+                                 29276
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite012-manager-launch-20260821-002.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\plan2-suite012-manager-launch-20260821-002.stderr.log"
+}

@@ -1,0 +1,36 @@
+{
+  "planId": "5415e24b-ffcf-4d37-abf8-e03798a23d04",
+  "todos": [
+    {
+      "content": "Req 1 (board-free): capture fixed/flexible plan definitions, required params, permission scope, consumption rules, refusal remedies, audit fields from public MCP schemas",
+      "id": "req1",
+      "status": "completed"
+    },
+    {
+      "content": "Req 2 (board-free): exercise wrong-board, wrong-session, altered-parameter calls; each must refuse pre-start with specific remedy, no permission leakage",
+      "id": "req2",
+      "status": "completed"
+    },
+    {
+      "content": "Req 3 (board-free half): capture pre-start refusal vs post-start failure distinction in audit fields",
+      "id": "req3a",
+      "status": "completed"
+    },
+    {
+      "content": "Flush board-free evidence; check RESOURCE_ASSIGNMENT.md; checkpoint if no lease",
+      "id": "checkpoint",
+      "status": "completed"
+    },
+    {
+      "content": "Live (leased): post-start bounded failure, one-time/full-session permission consumption, stale/conversational approval rejection, safety-map refresh, audit correlation",
+      "id": "req3b-6",
+      "status": "pending"
+    },
+    {
+      "content": "Write RESULT.json + TEST_REPORT.md with terminal status",
+      "id": "result",
+      "status": "pending"
+    }
+  ],
+  "sessionId": "78040c76-90e7-4455-b5ea-bcab5aa365c4"
+}

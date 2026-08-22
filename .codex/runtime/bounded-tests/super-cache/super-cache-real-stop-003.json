@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "\u0026 \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\super-cache\\verify-real-stop-cache-001.ps1\u0027 -HarnessRoot \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\firmware-v2-harness-runner-parity\u0027 -DevRoot \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 -FixtureRoot \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\super-cache\\fixture-real-stop-003\u0027",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\firmware-v2-harness-runner-parity",
+    "maximum_lifetime_seconds":  125,
+    "expected_upper_bound_seconds":  100,
+    "cleanup_allowance_seconds":  25,
+    "heartbeat_interval_seconds":  15,
+    "timeout_basis":  "The initial proof exposed and corrected only its CLI module entry point. This fresh fixture runs two one-file static checks through a discovered sibling-worktree environment under the same 100-second bound plus 25-second cleanup.",
+    "started_at":  "2026-08-22T10:12:51.4420754+00:00",
+    "finished_at":  "2026-08-22T10:12:58.0060534+00:00",
+    "elapsed_seconds":  6.564,
+    "root_process_id":  17236,
+    "observed_process_ids":  [
+                                 17236
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\super-cache\\super-cache-real-stop-003.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\super-cache\\super-cache-real-stop-003.stderr.log"
+}

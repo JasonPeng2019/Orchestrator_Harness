@@ -1,0 +1,20 @@
+F401 [*] `.models.parse_utc` imported but unused
+  --> orchestrator_harness\cli.py:34:21
+   |
+32 | from .handoff_preflight import preflight_handoff
+33 | from .lane_lifecycle import allocate_immutable_source_view, retire_terminal_lane
+34 | from .models import parse_utc, utc_now
+   |                     ^^^^^^^^^
+35 | from .processes import process_snapshot
+36 | from .reconcile import reconcile
+   |
+help: Remove unused import: `.models.parse_utc`
+   |
+33 | from .lane_lifecycle import allocate_immutable_source_view, retire_terminal_lane
+   - from .models import parse_utc, utc_now
+34 + from .models import utc_now
+35 | from .processes import process_snapshot
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

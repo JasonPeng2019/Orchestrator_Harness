@@ -1,0 +1,36 @@
+{
+  "planId": "401d4a89-c07d-4bfc-94be-ff5927d0907b",
+  "todos": [
+    {
+      "content": "Verify sealed inputs, hashes, leases, and MCP handshake",
+      "id": "t1",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-001: Fresh derivation for STM-A (handshake, overview, setup-tool, plan, setup) in empty APP-1 dir",
+      "id": "t2",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-001: Fresh derivation for STM-B in separate empty APP-1 dir",
+      "id": "t3",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-002: Intentional wrong-identical-board choice in one shard, bounded refusal, server-directed repair",
+      "id": "t4",
+      "status": "completed"
+    },
+    {
+      "content": "REQ-003: Safety refresh, validate, status, connect, board-info, disconnect for both",
+      "id": "t5",
+      "status": "completed"
+    },
+    {
+      "content": "Write RESULT.json + TEST_REPORT.md with raw evidence, terminal PASS",
+      "id": "t6",
+      "status": "completed"
+    }
+  ],
+  "sessionId": "f0786c10-d43a-4a37-b8a7-9bfe73211424"
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "PASSED",
+    "command":  "python -m py_compile orchestrator_harness/cli.py",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.target-harness-worktrees\\plan2-suite008-unicode-fastlane-049",
+    "maximum_lifetime_seconds":  10,
+    "expected_upper_bound_seconds":  5,
+    "cleanup_allowance_seconds":  5,
+    "heartbeat_interval_seconds":  1,
+    "timeout_basis":  "FAST_LANE_V2 single changed production file compile; local Python startup and py_compile are bounded to five seconds",
+    "started_at":  "2026-08-21T06:12:45.1518659+00:00",
+    "finished_at":  "2026-08-21T06:12:46.7291288+00:00",
+    "elapsed_seconds":  1.577,
+    "root_process_id":  25512,
+    "observed_process_ids":  [
+                                 25512
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  0,
+    "stdout_path":  "C:\\Users\\Jason\\AppData\\Local\\Temp\\plan2-suite008-unicode-fastlane-049-replacement-compile.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\AppData\\Local\\Temp\\plan2-suite008-unicode-fastlane-049-replacement-compile.stderr.log"
+}

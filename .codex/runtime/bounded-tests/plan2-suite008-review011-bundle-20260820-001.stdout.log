@@ -1,0 +1,19 @@
+{
+  "schema": "orchestrator-prompt-bundle/v1",
+  "version": 1,
+  "workflow_id": "plan-2-firmware-sprint-evidence-review",
+  "task_card_id": "CARD-PLAN2-SUITE008-REVIEW-011",
+  "profile_id": "terra-xhigh",
+  "components": [
+    {
+      "id": "task",
+      "ordinal": 0,
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\runtime\\orchestrator-worktrees\\20260820-plan2-suite-008-review-011\\.agent-workspace\\PLAN2_SUITE008_EVIDENCE_REVIEWER_PROMPT_011.md",
+      "sha256": "ec215bc12603a32024c0432e12761b1f2f3cdc18d952bd779758d9331ae22bfa",
+      "size": 3887
+    }
+  ],
+  "final_sha256": "ec215bc12603a32024c0432e12761b1f2f3cdc18d952bd779758d9331ae22bfa",
+  "final_size": 3887,
+  "bundle_sha256": "3cf61f8743fa54e43e4cfc6549909f619123d5523674c381bce5f904b14c0b22"
+}

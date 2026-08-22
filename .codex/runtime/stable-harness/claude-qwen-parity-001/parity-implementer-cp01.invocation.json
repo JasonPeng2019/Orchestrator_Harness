@@ -1,0 +1,43 @@
+{
+  "schema": "orchestrator-coding-invocation/v1",
+  "action": "start",
+  "runtime_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/runtime/stable-harness/claude-qwen-parity-001",
+  "resource_lock_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/runtime/stable-harness/claude-qwen-parity-001/coding-resource-locks",
+  "run_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation",
+  "repository": {
+    "common_dir": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.git/modules/current-wip-harness-runner",
+    "worktree_root": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation",
+    "branch": "compat/claude-qwen-runner-parity",
+    "base_commit": "cb5b568d5fc3f63a1fe037312894e9736a2f2db1",
+    "merge_inputs": []
+  },
+  "prompt_path": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation/.agent-workspace/parity-implementer-cp01.md",
+  "prompt_sha256": "7fdd695f375276cf0ecbf24e00e657262ec19effe02d599aa19125f1e2e7efda",
+  "output_paths": {
+    "status": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation/.agent-workspace/parity-implementer-cp01.status.json",
+    "jsonl": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation/.agent-workspace/parity-implementer-cp01.codex.jsonl",
+    "stderr": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation/.agent-workspace/parity-implementer-cp01.codex.stderr.log",
+    "last_message": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.firmware-v2-harness-runner-worktrees/claude-qwen-parity-implementation/.agent-workspace/parity-implementer-cp01.last_message.txt"
+  },
+  "event_log_path": "C:/Users/Jason/Documents/Jason/Orchestrator_Harness/.codex/runtime/stable-harness/claude-qwen-parity-001/LANE_EVENTS.jsonl",
+  "lane_id": "claude-qwen-parity-implementer",
+  "worker_invocation_id": "claude-qwen-parity-cp01-001",
+  "task": "Implement and hand off only CP-01: selected Claude runner parity.",
+  "phase": "implementation-cp01",
+  "exclusive_resources": [
+    "runner-worktree:claude-qwen-parity-implementation"
+  ],
+  "codex": {
+    "command": ["codex"],
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "xhigh",
+    "service_tier": "standard",
+    "sandbox": "danger-full-access",
+    "approval_policy": "never",
+    "config_overrides": [
+      "model_context_window=272000",
+      "model_auto_compact_token_limit=120000",
+      "model_auto_compact_token_limit_scope=\"total\""
+    ]
+  }
+}

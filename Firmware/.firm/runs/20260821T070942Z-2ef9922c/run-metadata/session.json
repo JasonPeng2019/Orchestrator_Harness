@@ -1,0 +1,12 @@
+{
+  "board_id": "stm_a",
+  "closed_at": "2026-08-21T10:17:33.188464Z",
+  "connection_id": "probe:066fff514988525067233337",
+  "created_at": "2026-08-21T07:09:42.461262Z",
+  "event_count": 133,
+  "log_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\Firmware\\.firm\\runs\\20260821T070942Z-2ef9922c\\logs\\events.jsonl",
+  "probe_uid": "066FFF514988525067233337",
+  "recover_completed": false,
+  "route_used": "pyocd-native",
+  "session_id": "20260821T070942Z-2ef9922c"
+}

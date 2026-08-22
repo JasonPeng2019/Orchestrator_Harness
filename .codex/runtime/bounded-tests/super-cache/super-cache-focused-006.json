@@ -1,0 +1,33 @@
+{
+    "schema":  "bounded-test-result-v1",
+    "status":  "FAILED",
+    "command":  "uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked ruff check --config \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\\pyproject.toml\u0027 --no-cache orchestrator_harness/lane_controller.py orchestrator_harness/provider.py orchestrator_harness/tests/test_workspace_overlay.py orchestrator_harness/tests/test_provider_adapter_registry.py; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; uv run --project \u0027C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\dev\u0027 --locked basedpyright --project pyrightconfig.json orchestrator_harness/lane_controller.py orchestrator_harness/provider.py orchestrator_harness/tests/test_workspace_overlay.py orchestrator_harness/tests/test_provider_adapter_registry.py; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; python -m py_compile orchestrator_harness/lane_controller.py orchestrator_harness/provider.py orchestrator_harness/tests/test_workspace_overlay.py orchestrator_harness/tests/test_provider_adapter_registry.py; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; python -m unittest orchestrator_harness.tests.test_workspace_overlay orchestrator_harness.tests.test_provider_adapter_registry orchestrator_harness.tests.test_qwen_provider -v",
+    "working_directory":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\harness-single-worktrees\\firmware-v2-harness-runner-parity",
+    "maximum_lifetime_seconds":  358,
+    "expected_upper_bound_seconds":  300,
+    "cleanup_allowance_seconds":  58,
+    "heartbeat_interval_seconds":  30,
+    "timeout_basis":  "The prior focused cache/controller/provider gate took 198 seconds; the two additional targeted cache proofs retain a 300-second measured upper bound with 58 seconds policy-capped cleanup.",
+    "started_at":  "2026-08-22T10:03:19.3909650+00:00",
+    "finished_at":  "2026-08-22T10:06:50.9211379+00:00",
+    "elapsed_seconds":  211.53,
+    "root_process_id":  12604,
+    "observed_process_ids":  [
+                                 424,
+                                 10748,
+                                 12352,
+                                 12604,
+                                 14472,
+                                 15432,
+                                 15564,
+                                 16680,
+                                 24380,
+                                 26996,
+                                 27036,
+                                 31416
+                             ],
+    "cleanup_verified":  true,
+    "exit_code":  1,
+    "stdout_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\super-cache\\super-cache-focused-006.stdout.log",
+    "stderr_path":  "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator_Harness\\.codex\\runtime\\bounded-tests\\super-cache\\super-cache-focused-006.stderr.log"
+}
