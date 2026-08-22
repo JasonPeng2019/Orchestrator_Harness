@@ -315,3 +315,31 @@ super-cache provider gates`).  On 2026-08-22, ROOT fast-forwarded the checked-ou
 `firmware-v2-harness-runner` to that commit and pushed it to
 `origin/working/firmware/v2-candidate`; a post-push fetch confirmed local HEAD and the remote ref
 match exactly.
+
+On 2026-08-22, ROOT corrected the v2 line from the accepted `9f38371` compatibility tip. The
+super-cache is now optional and contains no repository-owned payload: callers explicitly ingest a
+selected source folder, prepare a lane, and supply the receipt only when they use that overlay.
+Supplied receipts are verified before provider construction against the exact worktree and
+orchestrator/subagent role. The controller no longer requires a cached Stop verifier or infers hook
+trust from cache use. Root-workspace Quick Rules and Codex/Claude/Qwen adapter hooks remain separate
+explicit installation features. README setup text now describes those independent commands.
+
+The accepted content commit is `2e92fd861c9d4a07c23d6ffc31da587da575912b`. A content-identical
+merge commit, `f6f6c86403515bed644f1e08cee5bc9740db313a`, preserves the published v2 history while
+superseding its bundled-cache changes and was pushed by fast-forward to
+`origin/working/firmware/v2-candidate`. Ruff, BasedPyright, compilation, overlay, controller, and
+provider-focused checks passed. The real Codex proof at
+`.codex/runtime/bounded-tests/super-cache-neutral-live-codex-001.json` ingested one caller-selected
+file, verified its receipt, completed a real Codex worker commit, restored only the overlay file,
+and proved provider/resource cleanup.
+
+## Firmware runner layout
+
+On 2026-08-22, the retained checkout formerly named `firmware-v2-harness-runner` was renamed to
+`firmware-v1.5-harness-runner` and its current committed baseline was pushed to
+`origin/working/firmware/v1.5-candidate` at `3bf43c306cab8c1f8999ad4c637b37146b5dec8d`.  A new,
+clean submodule checkout, `harness-v2-firmware-runner`, was added from that same baseline on
+`origin/working/firmware/v2-candidate`.  Make all subsequent firmware-v2 runner changes in
+`harness-v2-firmware-runner`; retain `firmware-v1.5-harness-runner` as the preserved v1.5 line. The
+v1.5 checkout and `origin/working/firmware/v1.5-candidate` remain at `3bf43c3` with their local
+historical note/build artifacts untouched.

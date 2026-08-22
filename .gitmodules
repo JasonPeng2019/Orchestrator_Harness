@@ -2,11 +2,15 @@
 	path = frozen-harness-to-use
 	url = https://github.com/JasonPeng2019/harness-single.git
 	branch = frozen-v1
-[submodule "firmware-v2-harness-runner"]
-	path = firmware-v2-harness-runner
+[submodule "firmware-v1.5-harness-runner"]
+	path = firmware-v1.5-harness-runner
 	url = https://github.com/JasonPeng2019/harness-single.git
-	branch = working/firmware/v2-candidate
+	branch = working/firmware/v1.5-candidate
 [submodule "stable-general-harness-runner"]
 	path = stable-general-harness-runner
 	url = https://github.com/JasonPeng2019/harness-single.git
 	branch = progress/v1.1
+[submodule "harness-v2-firmware-runner"]
+	path = harness-v2-firmware-runner
+	url = https://github.com/JasonPeng2019/harness-single.git
+	branch = working/firmware/v2-candidate
