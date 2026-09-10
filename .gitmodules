@@ -1,0 +1,12 @@
+[submodule "Codex_Claude_Setup"]
+	path = Codex_Claude_Setup
+	url = https://github.com/JasonPeng2019/Codex_Claude_Setup.git
+[submodule "harness-single"]
+	path = harness-single
+	url = https://github.com/JasonPeng2019/harness-single
+[submodule "frozen-harness"]
+	path = frozen-harness
+	url = https://github.com/JasonPeng2019/harness-single
+[submodule "BYO-Firmware-MCP"]
+	path = BYO-Firmware-MCP
+	url = https://github.com/JasonPeng2019/BYO-Firmware-MCP
