@@ -16,3 +16,6 @@ __pycache__/
 
 # Personal, machine-specific Claude Code overrides; never shared repository policy.
 .claude/settings.local.json
+
+# Historical project records are retained locally outside version control.
+/archive/

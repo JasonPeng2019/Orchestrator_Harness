@@ -1,4 +1,0 @@
-model_auto_compact_token_limit = 280000
-
-[features]
-hooks = true
