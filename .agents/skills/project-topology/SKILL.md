@@ -1,9 +1,23 @@
 ---
 name: project-topology
 description: Build and validate a significant project execution workflow and plan, including justified roles, dependencies, independently gated STEP-* units, verification, repair returns, resources, and integration. Use only when the user explicitly wants to design or build a substantial workflow/plan for executing a project. Do not use for general coding, ordinary task execution, questions, diagnosis, implementation, or merely deciding how to perform routine work. At Tier 4, scan for and prefer a suitable subagent harness, but retain a no-harness fallback. This skill plans work without executing it.
+disable-model-invocation: true
+user-invocable: true
 ---
 
 # Build a significant project execution topology
+
+## Multi-agent workspace orchestration
+
+Prefer direct ROOT-to-worker dispatch. At Tier 4, a justified bounded lane may
+use `ROOT -> lane sub-orchestrator -> workers`: ROOT delegates explicit local
+authority, the lane sub-orchestrator authors and directs its worker contracts,
+and ROOT accepts the terminal lane result. The formal compiler and validator
+support `ROOT_DIRECT_WORKERS` and `ROOT_WITH_LANE_SUB_ORCHESTRATORS`, with one
+global ROOT and at most two orchestration tiers. Verify the selected runtime's
+delegation capabilities before binding this hierarchy; installed launch helpers
+alone do not establish them. The four-agent planning review panel remains global
+and flat, with all four approvals and final ROOT acceptance across every lane.
 
 ## Admission boundary
 
@@ -19,6 +33,77 @@ subagents alone do not justify coordination.
 
 ## Inspect before routing
 
+### Freeze the requested outcome and authority
+
+Before selecting a tier, state the user's actual deliverable, acceptance claims,
+non-goals, requested tier/constraints and already-authorized execution. Background
+project or research documents constrain the requested deliverable; they do not
+silently expand it into a larger campaign. Trace every material stage and gate to
+a requested outcome, binding requirement or justified necessary dependency.
+
+### Review plan conformance and simplicity at every admitted tier
+
+Apply [Adversarial plan review](references/plan-conformance-review.md) to every
+Level 1-4 plan, including compact/no-harness plans. Require four distinct independent
+reviewer agents: SCOPE_AUTHORITY, TOPOLOGY_SIMPLICITY, VERIFICATION and
+EXECUTION_RESOURCES. Each gives an explicit scoped PASS/BLOCK with evidence; all
+four must approve the final revision before ROOT can accept. ROOT cannot override
+a BLOCK. The reference defines group boundaries, bounded follow-up, cross-group
+changes, requested-tier conflicts and executor handoff. Scale review depth to the
+plan; this panel adds no execution lanes or execution tier.
+
+### Require a justified acceptance design at every admitted tier
+
+Before expanding checks, measurements or matrices, apply
+[Acceptance design](references/acceptance-design.md): necessity of the evidence and
+environment, multiplicity of repetitions/combinations, and proportionality of the
+acceptance system itself. Required coverage remains binding; neither a representative
+probe nor a complete matrix is automatically sufficient. Use the
+[review assignment template](assets/plan-review-assignment.md) for each focused
+reviewer, with its concrete inspection duties and evidence-backed PASS/BLOCK return.
+The four groups own complementary decisions; add no fifth review or execution lane.
+Record concise assessments in compact plans and the specified per-STEP audit fields
+in formal plans. Apply conditional guidance only when relevant, without prescribing
+a universal test architecture or importing formal machinery into smaller tiers.
+
+### Assign test-scope and scheduling checks to their review groups
+
+For every admitted plan, apply [Test-scope audit](references/test-scope-audit.md)
+after drafting its suites and matrices and before final validation. A separate
+read-only VERIFICATION reviewer audits all proposed verification surfaces for sufficient coverage,
+over-specified oracles, redundant combinations, and repeated full suites. Functional coverage takes priority over reducing test count: the reviewer checks
+actual assertions and missing failure/recovery boundaries as well as duplication.
+The plan writer adjudicates criticism, adds or strengthens missing proof, and trims
+only justified excess; ROOT owns the final scope. Preserve every binding requirement and every existing workflow rule
+unless a specific conflict is established through the governing authority.
+
+This is a narrow exception to this skill's no-dispatch planning boundary: launch
+only the four focused reviewers of the draft planning artifacts, never the planned
+execution workers or product tests. Reuse valid group reviews under the shared
+identity/revision rules instead of adding duplicate audits. This planning review does not by itself require a higher
+execution tier. The reference defines bounded feedback and the incomplete route
+when independent review is unavailable.
+
+For substantial plan revisions driven by execution incidents, read
+[execution efficiency](references/execution-efficiency.md). Compile applicable
+fixes into the existing owning policies and modules, using the latest corrected
+evidence; do not convert historical estimates into guaranteed savings or add
+runtime automation claims without implementation proof.
+
+For every substantial post-step matrix at Levels 3 and 4, and at Level 2 when
+verification cost, stateful resources, dependencies or repair risk warrant it, apply
+[Matrix execution](references/matrix-execution.md) and its reusable binding template.
+Require concurrent isolated coordinates, immediate exit on incompatible terminal
+states, complete failure collection, an explicit dependency graph, cause-group
+repairs, affected-only reruns and reviewed coordinate/total wall-clock budgets.
+The independent EXECUTION_RESOURCES reviewer rejects unnecessary serialization,
+long terminal-state waits and repair-after-each-test loops. Preserve functional
+coverage; test-process concurrency does not add writers or escalate the level.
+
+That reference owns test scheduling and its review criteria, including local versus
+live resource limits. Fill its concrete command/capacity binding in existing plan
+fields and include it in the EXECUTION_RESOURCES audit; do not duplicate the contract.
+
 Evaluate:
 
 - independently deliverable outcomes;
@@ -32,6 +117,24 @@ Evaluate:
 - available native subagents or a suitable command-line agent.
 
 ## Choose the level by execution capacity, not by project size
+
+Workspace installation paths: the canonical skill is `.agents/skills/project-topology/`
+and its Claude mirror is `.claude/skills/project-topology/`. Source-project examples in
+the shipped blocks use `.codex/skills/project-topology/`; when binding a command here,
+substitute the installed `.agents/skills/project-topology/` prefix (or the Claude mirror).
+Include `.agents/` in the harness scan alongside the directories listed below.
+
+For Tier 3 and Tier 4, read [Shipped execution blocks](references/execution-blocks.md) when constructing
+the plan. Bind the applicable packaged helpers and project adapters to existing stages/cards. Prefer
+an equivalent host implementation; do not make each project rebuild readiness, isolation, result
+recording, or repair-selection machinery. Select the smallest sufficient blocks from observed risks.
+The skill ships executable mechanics, not an application-specific simulator or an OS sandbox.
+Planning may validate profiles and skill helpers; it must not execute the planned product or live work.
+
+Record which dependencies can be checked early, an early executable path through risky shared seams,
+review/retest invalidation boundaries, supporting-tool payoff, expected critical path, and the event
+that triggers reassessment. Preserve user-selected models and accepted work. The shared reference
+defines the contracts once; Tier 4's existing rules and fixed package remain authoritative.
 
 In this skill, **level** and **tier** mean the same thing. The tier is not a
 measure of how many files, tickets, or agents exist. It is a decision about how
@@ -71,6 +174,11 @@ one agent can produce and verify the correct result without an unacceptable
 chance of a major mistake.
 
 ### Tier 1: one agent owns the complete delivery
+
+The planning panel still checks acceptance necessity, multiplicity and
+proportionality. For a small coherent verification route, a short claim/check and
+environment rationale, explanation of any repetitions, and justification of the
+simple existing approach suffice. These planning checks do not add execution roles.
 
 Choose Tier 1 when one agent can safely own discovery, decisions,
 implementation, integration, and verification in one coherent pass. The work
@@ -261,7 +369,7 @@ and repair cycles make an informal multi-lane plan too fragile.
 At Tier 4, a suitable subagent harness is preferred. Before choosing the
 execution shape, scan the repository and its documented tooling for one. Inspect
 the repository instructions, Claude and Codex configuration, `.agent/`,
-`.agents/`, and `.claude/` directories, workflow or automation folders, agent
+`.codex/`, and `.claude/` directories, workflow or automation folders, agent
 skills, scripts, CI definitions, templates, and project documentation. Do not
 treat a directory or script named "agent" or "harness" as sufficient evidence.
 Determine whether it actually provides useful control for the planned work:
@@ -430,6 +538,40 @@ Do not keep a task multi-agent merely because it was initially described that
 way. Never create a role registry, model map, roster, lock service, module graph,
 or plan validator for ordinary repository work.
 
+## Preserve progress across worker recovery
+
+For every plan with worker lanes, read
+[Worker continuity and recovery](references/worker-continuity-and-recovery.md).
+Plan two narrow same-thread correction attempts after an initial malformed or missing result when
+the runtime supports verified continuity, stopping early when the result becomes valid. Give the
+second attempt even if the first repeats the error or makes no progress. Persistent malformed output
+or nonprogress warrants a fresh lane only after both attempts fail; unavailable or unsafe continuity
+still requires earlier reconciliation. Carry retained work and attempt history into recovery from
+the first unresolved action. Preserve accepted work and native
+compaction; a report defect must not cause a full implementation, review, or test replay.
+Compile this behavior into the plan's existing recovery rules without adding a coordinator or
+relaxing its required gates. This remains planning guidance; do not launch recovery workers here.
+
+For recurring failures, plan prevention as well as recovery: repair authoritative launch
+configuration and prove the required headless tool action; use a shared native result emitter and
+preflight; and require replacement assignments to retain useful discovery and name what changed
+after nonprogress. Preserve worker-authored judgments and existing independent-review obligations.
+
+## Keep plan changes local
+
+Apply [Change locality](references/change-locality.md): one authoritative owner per
+fact, stable public contracts, and references or generated views instead of manually
+synchronized copies. A private step/instance change must not require rewriting
+unrelated steps. Shared authority, interface and capacity changes still reach their
+real consumers. Distinguish full structural checking from affected semantic review
+and runtime evidence invalidation; rebuilding a view does not reopen completed work.
+
+For new formal Level 4 plans, use the
+[normalized authoring compiler](references/level-4-design-project-topology/references/normalized-authoring.md).
+Its separate source owns step-local instances and reusable defaults; the exact
+expanded Markdown package remains the validated execution view. Compact Levels 1-4
+retain simple owners and references without adopting this source/compiler machinery.
+
 ## Delegation contract
 
 Every delegated task represented in the plan states:
@@ -455,6 +597,9 @@ Reason: <one or two observed reasons>
 Execution: <single agent, delegated reads, isolated writers, or staged plan>
 Construction: <out-of-scope / significant plan / named reference>
 Verification: <focused, relevant, or full strategy>
+Acceptance design (Levels 1-4): <claim/boundary/environment necessity; repetition or combination rationale; simpler adequate choice and material cost basis>
+Plan review (Levels 1-4): <four group identities/verdicts and final revision, evidence, unresolved findings, aggregate PASS / BLOCK / PENDING>
+Execution handoff (Levels 1-4): <authorized actions, conditional operations and stopping point>
 Harness recommendation (Level 4 only): <named harness to use, or "none found; use the no-harness Tier 4 path">
 ```
 

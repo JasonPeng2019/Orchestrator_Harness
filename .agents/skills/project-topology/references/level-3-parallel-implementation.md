@@ -6,7 +6,25 @@ migrations, or release decision, plan one writer or use Level 4 staging instead.
 This reference defines the topology; it does not launch writers, create
 worktrees, or implement the deliverables.
 
+Keep local task facts with their owner under [Change locality](change-locality.md).
+Reference the public contract from other lanes rather than restating private check
+or dispatch inventories. Do not introduce the formal source compiler at this tier.
+Scope later review/evidence invalidation to actual changed dependencies.
+
+Apply [Acceptance design](acceptance-design.md) before selecting or expanding
+verification. Bind the required claim/observation, why the environment is needed,
+what repetitions or combinations add, and the simpler adequate acceptance design.
+Use the [planning-review assignment](../assets/plan-review-assignment.md) for the
+four scoped reviewers; record their actual assessments in the existing verification
+section. Material later changes return to affected groups, not a new blanket audit.
+
 ## Prove the split before planning parallel writers
+
+The [plan-conformance review](plan-conformance-review.md) must challenge the
+requested outcome before accepting the lane split. A requested Tier 3 label does
+not authorize expanding product scope or inventing independent deliverables.
+Assign these checks to SCOPE_AUTHORITY and TOPOLOGY_SIMPLICITY in the planning
+panel; they do not replace or add an execution assurance lane.
 
 Write a compact ownership table before delegation:
 
@@ -40,6 +58,40 @@ actually independent.
    worker claims.
 7. Require the future executor to retire temporary worktrees only after
    inspecting status and never discard dirty work.
+
+## Bind reusable execution blocks
+
+Every substantial post-step matrix must bind [Matrix execution](matrix-execution.md)
+and its template in the existing verification/task-card fields. Serial integration
+does not serialize independent tests on a stable snapshot. Specify concurrency and
+isolation, terminal-state exits, complete collection, dependency graph, cause-group
+repairs, affected reruns and reviewed coordinate/total budgets. Include these in the
+EXECUTION_RESOURCES planning review, with VERIFICATION retaining coverage review;
+do not create another execution assurance lane for it.
+
+Use [the shipped blocks](execution-blocks.md) inside the existing ownership rows and task cards.
+Before release to writers, classify document/pack/fixture/authority dependencies and name their
+consumers. Only current live identities wait until allocation; unresolved external prerequisites
+must be visible early and cannot hold unrelated implementation. Missing adapters get one scoped owner.
+
+For stateful test startup, bind effective writable paths and child inheritance to an executable
+startup/shutdown proof before broad checks. For costly live acceptance, bind one real public-transport
+rehearsal against a deterministic backend and one early path through fresh setup, commit, reconnect,
+and protected use. A canned session model alone does not prove those boundaries.
+
+Choose the host runner or packaged blocks plus thin adapters before commissioning a new framework.
+Share mechanics without sharing independent oracles. Preserve accepted implementations on a resumed
+plan; optimization does not authorize rebuilding the runner or replaying completed stages.
+
+Name review milestones and what changes invalidate them; pool compatible repairs and rerun affected
+checks. Full gates need a release/invalidation reason, not a reporting milestone. Put ranges and their
+basis on the critical path, observe actual progress, and reassess after an overrun before another
+expensive cycle. Do not hard-timeout agents. After integration, keep ROOT and only the roles whose
+remaining outputs are consumed. Independent local checks need not wait for serial integration.
+
+Reuse one factual result per consumer and summarize it in handoffs. `execution_blocks.py` supplies
+mechanical profile validation, scoped readiness, environment mapping, footprint comparison, check
+selection, and result recording; it does not make semantic acceptance decisions.
 
 ## Return contract
 

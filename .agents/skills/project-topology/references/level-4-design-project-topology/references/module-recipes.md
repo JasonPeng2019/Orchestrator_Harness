@@ -24,6 +24,59 @@ extract its internal substeps into extra top-level modules or silently omit them
 
 ## 1. Universal instance contract
 
+Under [normalized authoring](normalized-authoring.md), reusable recipe definitions
+and permitted defaults belong to the module library; configured instances, their
+bindings and local dispatch lifecycle belong to their owning step. A change for
+one instance must not alter the shared recipe for unrelated consumers. The compiler
+expands inherited fields into the complete concrete governing/member cards required
+below and derives their inventories. Inheritance cannot omit required actions,
+weaken authority or leave a worker to decide missing task meaning. Change a shared
+recipe only when the intended behavior really changes for its actual consumers.
+
+Every substantial post-step checking matrix implements
+[Matrix execution](../../matrix-execution.md) through existing actions/cards:
+M03 defines the coordinate oracles and terminal predicates; M04/M07/M09 run ready
+independent coordinates concurrently with isolated resources, honor explicit graph
+edges, exit incompatible terminal waits and collect all feasible results before
+repair. M08, when selected, proves changed fragile controls. M05 groups failures by
+evidenced cause, assigns one coherent repair per group and selects only invalidated
+coordinates/dependents for rerun, preserving compatible credit. Bind per-coordinate
+and total budgets and have EXECUTION_RESOURCES reject unnecessary serial
+execution, terminal-state waits and per-test repair loops. An ordinary coordinate
+failure does not invoke M09-A7's whole-attempt stop authority; R23 still controls
+unsafe stops. No new action IDs, modules or policy definitions are introduced.
+
+Compile the accepted [test-scope audit](../../test-scope-audit.md) into existing
+owning actions: M03 materializes the accepted scenario/oracle families; M04 and
+M07 consume justified check/review selections; M08 verifies new or changed concrete
+controls through their executable decision/cleanup boundary before expensive use;
+M09 executes only the authorized matrix. ROOT's M05 decisions separate product
+correctness, provider compatibility and control validity. Workers return a proposed
+new scope or stronger oracle to ROOT instead of silently enlarging the campaign.
+This supplements the recipes below without removing any required action, review,
+readiness or acceptance obligation, and does not add a scope audit at every runtime
+gate. Changed evidence scope is reviewed only for the affected delta.
+
+Carry the reviewed [acceptance design](../../acceptance-design.md) into existing
+actions/cards. M03-A2 translates the accepted claim, boundary, environment and
+repetition rationale; M03-A6 checks authored observations against it. M04/M07/M09
+consume the justified selection, not an automatically expanded cross-product.
+When M08 is selected, its readiness result covers only the boundary actually proved.
+M05 distinguishes product evidence from invalid setup/measurement and maps actual
+changed dependencies before retaining credit or selecting reruns. A material change
+to the evidence method/scope or costly dependency goes to the owning authority and
+affected planning-review groups before dependent expensive execution. Keep this a
+focused delta check in existing stages; do not add a panel at every test or force
+fixture determinism, external probes, new harness layers or component splits.
+
+Apply [execution efficiency](../../execution-efficiency.md) to applicable actions:
+M03-A2/A5 map changed controls to executable tests; M05-A3/A7 compare contract,
+observation and oracle and preserve compatible repair groups; M08 rehearses
+changed control branches and queue recovery; M09 binds command advancement,
+checkpoint reconciliation and terminal publication. Keep cross-cutting supervision,
+native-error diagnosis and administrative recovery in their owning P policies.
+Specialize these obligations inside existing actions/cards, not extra MIs.
+
 Every selected `MI-*` instance uses this local compilation sequence:
 
 1. **Bind the work.** Name module type, owning step entry path (`NORMAL`,

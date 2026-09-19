@@ -1,0 +1,27 @@
+{
+  "plan_version": "3.6-addendum-3-local-test-concurrency",
+  "scope": "Planning amendment only; execution remains paused until explicit user resume",
+  "independent_review": {
+    "thread": "01a0b323-6e2d-7d02-95b4-b08dad69d629",
+    "initial": "REVISE",
+    "dispositions": ["F1 ACCEPT-ADD frozen ignored-asset provisioning and accepted candidate chain", "F2 ACCEPT-REPLACE static command/cwd/environment bindings"],
+    "focused_followup": "SHIP",
+    "native_result_state": "VALID",
+    "native_result_sha256": "65e839fd6ec3ab92dec5931d542d8f23989de10e50bf3ae18e3f422f56a9a77b",
+    "review_worktree_clean": true,
+    "controller_state": "CODEX_EXITED"
+  },
+  "checks": [
+    {"command": "python -X utf8 .agents/skills/project-topology/references/level-4-design-project-topology/scripts/validate_execution_plan.py master_planning/harness-v2-tier4/addendum-3 --mapping master_planning/SUBAGENT_ROLE_MODEL_MAPPING.json", "exit_code": 0, "result": "execution plan validation: PASS"},
+    {"command": "git diff --check -- master_planning/harness-v2-tier4/addendum-3 goal.md HANDOFF.md", "exit_code": 0, "result": "PASS; line-ending conversion notices only"}
+  ],
+  "preservation": {
+    "basis": "preservation-before.json SHA-256 comparison",
+    "all_six_step_files_unchanged": true,
+    "unchanged_modules": ["M01", "M02", "M03", "M05", "M06", "M10"],
+    "user_role_mapping_unchanged": true,
+    "accepted_progress": "STEP001-005 and Series9 ledger597 at 68 PASS / 28 FAIL retained"
+  },
+  "product_execution_launched": false,
+  "product_tests_run_for_this_amendment": false
+}

@@ -5,7 +5,24 @@ without creating competing writers. The planned primary agent owns all future
 implementation, integration, and final decisions. This reference defines the
 plan; it does not launch investigators or perform the implementation.
 
+Keep local task facts with their owner under [Change locality](change-locality.md).
+Reference the public contract from other lanes rather than restating private check
+or dispatch inventories. Do not introduce the formal source compiler at this tier.
+Scope later review/evidence invalidation to actual changed dependencies.
+
+Apply [Acceptance design](acceptance-design.md) before selecting or expanding
+verification. Bind the required claim/observation, why the environment is needed,
+what repetitions or combinations add, and the simpler adequate acceptance design.
+Use the [planning-review assignment](../assets/plan-review-assignment.md) for the
+four scoped reviewers; record their actual assessments in the existing verification
+section. Material later changes return to affected groups, not a new blanket audit.
+
 ## Build the topology
+
+Before acceptance, include [plan conformance and simplicity](plan-conformance-review.md)
+through the four-group independent planning panel, including the test-scope audit.
+Challenge whether the support lane addresses the requested delivery, preserves one
+implementation owner, and avoids making optional live work a delivery prerequisite.
 
 1. State the primary outcome and the decision the extra evidence will inform.
 2. Split only read-only lanes that are genuinely independent: for example,
@@ -33,6 +50,14 @@ plan; it does not launch investigators or perform the implementation.
    verification selected from the combined evidence.
 
 ## Useful shapes
+
+When verification includes a substantial costly or stateful matrix, apply
+[Matrix execution](matrix-execution.md) and embed its compact binding in the existing
+verification section. One delivery owner can schedule isolated independent test
+processes concurrently, collect all failures and repair by cause group. This does
+not authorize parallel implementation writers, worktrees or another coordinator.
+Have the EXECUTION_RESOURCES reviewer assess the graph, terminal exits, isolation,
+rerun selection and wall-clock budgets. Ordinary short checks need no matrix template.
 
 | Need | Shape |
 | --- | --- |

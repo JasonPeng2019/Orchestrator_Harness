@@ -26,6 +26,13 @@ Do not start the next pass until the current completion test passes.
 
 ## 1. Universal pass protocol
 
+For applicable execution risks, apply the pass-to-owner mapping and semantic
+acceptance examples in [execution efficiency](../../execution-efficiency.md).
+This applies to prospective runtime repair-card generation as well as initial
+compilation: preserve adjudicated mechanism groups and distinguish manual policy
+from implemented supervision. Pass 16 must assess these semantics separately
+from structural validation; do not add a second authoritative plan sidecar.
+
 For every pass:
 
 1. Copy its `Inputs` list into working notes and bind every item to its source path or existing
@@ -54,6 +61,28 @@ dispatch, or an exact deterministic rule the worker can apply without judgment a
 never silently delegates goals, desired behavior, change/protected scope, test meaning, oracle,
 acceptance, conflict resolution, retry/new-attempt authority, or graph routing to a worker. Review/audit
 alone may form independent findings, and only inside its owning authority's investigation contract.
+
+## Authoring and regeneration across all passes
+
+Use [normalized authoring](normalized-authoring.md) for new formal plans. The passes
+still determine the same semantics; their emitted tables are compiler projections.
+Pass 1 reserves separate source, output and mapping coordinates. Passes 7/9 place
+configured instances and local dispatches under their owning step while retaining
+shared recipes/defaults in the library. Passes 10/13 author real public edges,
+shared capacities and lifecycle facts once; derive indexes, role children, local
+lane/handoff rows and consumer inventories. Do not infer lifecycle facts from prose.
+
+Pass 15 assesses change locality as well as execution cost: changing a private
+instance must not require editing unrelated source owners. Pass 16 compiles a draft,
+obtains the four real scoped reviews on the final candidate and checks source/output
+freshness plus full structural closure. Never generate semantic V PASSs, sign review
+records or reuse stale approvals merely because compilation succeeds. Keep actual
+review evidence and its source binding at the review owner. Later edits repeat only
+affected semantic review while retaining the full inexpensive structural check.
+
+An instruction below to write an exact package artifact describes its expanded
+owner and output shape. It does not override the normalized source ownership rule.
+Legacy packages retain the old editable ownership until migrated successfully.
 
 ## 2. Pass 1 - Freeze request and destinations
 
@@ -294,6 +323,15 @@ alone may form independent findings, and only inside its owning authority's inve
 - dependencies form an explainable acyclic production order or name a deliberate feedback boundary.
 
 ## 7. Pass 6 - Model risk, failure cases, and cost
+
+Before committing to proof paths or modules, apply
+[Acceptance design](../../acceptance-design.md) to each prospective acceptance
+activity/equivalent family. Bind claim, observation and boundary, environment
+necessity, distinct evidence from repetitions/combinations, and a simpler adequate
+choice or concrete reason to retain the proposed design. Include material costs of
+the acceptance system itself. This extends the existing owning proof/cost contract,
+not a universal test architecture. Unresolved material justification returns to its
+owning input/decision rather than becoming a large matrix by default.
 
 ### Inputs
 
@@ -672,7 +710,20 @@ alone may form independent findings, and only inside its owning authority's inve
 5. Reject exceptions that merely make an ordinary route vague or bypass acceptance/authority.
 6. Make P02 state that the role/card/results stay continuous inside one unaccepted logical task,
    persistent invocation reuse is preferred rather than mandatory, and a user-directed allocation
-   change or unavailable resume uses identified structured handoff without invalidating credit. Make
+   change or unavailable resume uses identified structured handoff without invalidating credit.
+   Apply the shared [worker recovery reference](../../worker-continuity-and-recovery.md): P02 must
+   name runtime result validation, verified resume identities, two same-thread correction attempts
+   after the initial missing/malformed result even without first-attempt progress, measurable
+   progress/stall criteria, exact owned cleanup, and fresh/split same-role recovery. P09 must keep
+   report-only correction separate from product repair and block only exact consumers. A completed
+   card may end while its thread remains reusable for a new correction card; a missing report is
+   itself enough to classify and dispatch that correction. Preserve current role selection and
+   independent-review boundaries; malformed results alone never qualify fallback. Make
+   recurring permission/configuration failures route once to the authoritative configuration owner
+   with a disposable exact-tool-action/readiness/output/cleanup proof. Require a shared native
+   result emitter/preflight when observed handoff errors justify it, with worker-authored semantics
+   and invocation-derived identities. Replacement cards retain discovery and state what changed
+   after nonprogress. Make
    P04/P07/P08/P09/P10/P11/P12/P13 state that non-product faults block only exact consumers, satisfied
    successors advance immediately, product continuation needs a failed/undecidable required criterion,
    and any continuation executes from the earliest failed, unresolved, change-affected, or uncertain
@@ -722,6 +773,8 @@ alone may form independent findings, and only inside its owning authority's inve
 ### Complete only when
 
 - every policy has all six fields and named consumers;
+- P02/P09 cover the shared worker recovery reference's semantic cases using inspected runtime
+  capabilities, with accepted progress preserved and no unbounded replacement cycle;
 - every policy has a concrete mapped owner, trigger, mandatory action, and exit; `P04` itself owns the
   checkpoint/FAST_LANE_V2 protocol and `P07` itself owns complete-pool and Series 1/2 join behavior;
 - every exception has all ten fields and bounded expiry;
@@ -785,6 +838,12 @@ Section 10 category tables remain optional when that category truly has no item.
 
 ## 15. Pass 14 - Compile external, integration, and terminal behavior
 
+For selected external profiles/attempts, consume Pass 6's recorded necessity and
+multiplicity rationale. Requiring real proof of a claim does not select every
+profile/feature/environment combination. Each material distinction or repeated
+measurement must serve the accepted claim or binding requirement; do not replace
+required external evidence with synthetic credit or impose a universal canary cap.
+
 ### Inputs
 
 - selected M06-M09 instances, graph, authority, resources, readiness inputs, release units,
@@ -831,6 +890,14 @@ Section 10 category tables remain optional when that category truly has no item.
 
 ## 16. Pass 15 - Price and simplify the graph
 
+Price and challenge the acceptance design as well as delivery coordination. Where
+material, include construction, operation, cleanup, maintenance, interpretation/
+repair and rerun dependencies. Compare a simpler adequate alternative, or justify
+why the existing checks already suffice without extra machinery. Preserve required
+claims and genuinely invalidated reruns. Record the decision in existing cost/proof
+fields for TOPOLOGY_SIMPLICITY, VERIFICATION and EXECUTION_RESOURCES to inspect;
+elapsed runtime or matrix cardinality alone does not decide proportionality.
+
 ### Inputs
 
 - complete draft graph/modules/lanes/gates/resources; and
@@ -876,6 +943,47 @@ Section 10 category tables remain optional when that category truly has no item.
 - all requirements and correctness/safety boundaries remain covered.
 
 ## 17. Pass 16 - Fill, cross-check, and validate
+
+Dispatch each group with the [review assignment](../../../assets/plan-review-assignment.md),
+its raw authority sources, frozen candidate and acceptance surfaces. Require actual
+necessity/multiplicity judgments from VERIFICATION, governing-claim traceability
+from SCOPE_AUTHORITY, and structure/cost proportionality from TOPOLOGY_SIMPLICITY
+and EXECUTION_RESOURCES. Record their three assessments or specific reviewed-family
+references in every Section 16 per-STEP audit row, covering all entry paths. An
+unjustified acceptance design remains BLOCK despite complete V rows. Missing,
+pending or bare verdict-only assessment cells fail structural validation; populated
+cells still require semantic review. No new module or fixed STEP/card field is added.
+
+First include [adversarial plan conformance](../../plan-conformance-review.md) in
+the four-group independent panel. Compare the original request and authorizations
+with the complete plan, not just the verification inventory. Challenge unsupported
+outcomes/stages, unnecessary coordination, invalid lane splits, applicable skill
+rules, material verification costs and any path from planning into unauthorized
+execution. Resolve material findings and record the final Plan review verdict in
+the existing audit metadata before claiming PLAN_STRUCTURE=VALID. Keep the formal
+schema intact; a valid graph for an inflated outcome is not an acceptable plan.
+
+For substantial matrices priced in Pass 15, include the
+[matrix execution contract](../../matrix-execution.md) in EXECUTION_RESOURCES review:
+actual runner/control binding, isolation and concurrency, dependency graph,
+incompatible terminal exits, complete result collection, cause-group repair,
+affected reruns, and coordinate/total wall-clock budgets. Reject unnecessary
+serialization, long terminal waits and repair-after-each-test loops. Check these
+semantics in existing owning fields; structural validation does not prove runner
+capabilities or scheduling efficiency.
+
+Before this pass can complete, apply the independent
+[test-scope audit](../../test-scope-audit.md) to the suites and matrices priced in
+Pass 15, including every STEP's normal and repair-entry selections and cross-step
+duplication. The same frozen draft package is input to all four reviewers. Keep
+one writer, collect the independent group findings, update owning selections, and
+obtain the bounded focused follow-ups or unchanged-scope confirmations prescribed
+by the reference. All four reviewers must approve the final revision; ROOT cannot
+override BLOCK and accepts only mutually consistent approvals. Record metadata,
+group approvals and per-STEP coverage in the three Section 16 audit tables before claiming PLAN_STRUCTURE=VALID. A missing review or
+unresolved material coverage issue leaves the package incomplete even if its other
+V checks pass. This bounded planning review is the explicit exception to the
+prohibition on launching the authored workflow; it adds no execution module.
 
 ### Inputs
 

@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "python",
+    "-B",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-2/.plans/addendum3-v3.6-local-concurrency/review.py",
+    "followup"
+  ],
+  "created_utc": "2026-09-18T06:17:33.222379Z",
+  "creationflags": 150994944,
+  "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2",
+  "expected_state_path": null,
+  "label": "LANE-PLANNING-V36-FOLLOWUP",
+  "launched_utc": "2026-09-18T06:17:33.221107Z",
+  "pid": 50684,
+  "platform": "windows",
+  "role": "REVIEWER",
+  "schema": "orchestrator-operator-launch/v1",
+  "status": "launched"
+}

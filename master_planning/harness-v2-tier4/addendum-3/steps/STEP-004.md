@@ -15,6 +15,12 @@
 
 JOIN-001 activates only when RESULT-PRODUCT-ACCEPTANCE and RESULT-ASSET-ACCEPTANCE identify clean accepted revisions from the same admitted base. LANE-INTEGRATE alone may mutate WT-INTEGRATE. It must not resolve content conflicts, redefine tests, repair product behavior, alter accepted inputs, push, publish, or promote.
 
+Version 3.7 does not integrate decision820's custom-control delta. If STEP-003 later
+accepts a focused deterministic test or direct-canary descriptor/parser correction,
+JOIN-001 pairs only that admitted DEL-002 input with the retained accepted DEL-001
+input. Preserve the original accepted integration and rollback evidence; EDGE-005
+rechecks only actual consumers named by the changed-input map.
+
 ## Normal and FAST_LANE_V2 entry flows
 
 ### FAST_LANE_V2 — canonical usage

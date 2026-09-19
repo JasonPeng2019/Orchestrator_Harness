@@ -1,0 +1,13 @@
+{
+  "at": "2026-09-18T02:31:16.187198+00:00",
+  "operation": "Refresh authorized run-local Claude OAuth credentials from the user newly authenticated normal Claude configuration",
+  "credential_material_logged": false,
+  "changed": true,
+  "other_settings_preserved": true,
+  "auth_status": {
+    "exit_code": 0,
+    "loggedIn": true,
+    "authMethod": "claude.ai",
+    "apiProvider": "firstParty"
+  }
+}

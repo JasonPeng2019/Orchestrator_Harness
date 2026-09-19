@@ -1,31 +1,57 @@
-# Finish Harness v2 Tier 4 Addendum 3 end to end
+# Harness v2 STEP-006 Tier-2 execution goal
 
-Act as ROOT and execute the validated Level 4 plan at `master_planning/harness-v2-tier4/addendum-3/` to completion. Treat its `plan-workflow.md`, `global-rules.md`, `steps/`, `modules/`, and `validation.md` as the operative workflow. Treat `new_harness_docs/master_docs/harness-master-spec.md` Parts I-XIX, amended by all eight documents in `new_harness_docs/tweaks/`, as the normative product contract. The objective is one accepted Addendum 3 candidate that implements every required operational tweak, completes the repeated reviewer and source-audit loops, and passes the complete executable Windows feature/provider/profile matrix without weakening the accepted baseline.
+## Objective
 
-Start from `HANDOFF.md`. Addendum 2 and the post-update subagent smoke run are historical evidence, not active execution state. Preserve `.agent-runtime/harness-v2-tier4-addendum-2-epoch-001/`, `.agent-runtime/addendum-3-subagent-smoke-20260909-001/`, all retained Addendum 2 evidence/worktrees, and the unrelated prunable historical hook-proof record. Do not resume or write into those runtimes. Use these fresh identities after STEP-001 admission verifies them:
+Finish all remaining STEP-006 acceptance work through
+`master_planning/HARNESS-V2-STEP-006-TIER2-CLOSURE.md`, preserving completed
+STEP-001 through STEP-005 and the accepted joint candidate. Close every
+Windows-host native claim; macOS/Linux are the only permitted platform
+exception.
 
-- Epoch ID: `harness-v2-tier4-addendum-3-epoch-001`
-- Runtime root: `.agent-runtime/harness-v2-tier4-addendum-3-epoch-001`
-- Worktree parent: `w/addendum-3-epoch-001`
-- Target base: clean `harness-single` branch `working/firmware/v2-candidate` at `f4328b177177a3aa71bf5f064b88ad6033b3d903`
-- Frozen control plane: clean `frozen-harness` at `4699d27bd5bf7c0b41bbed9ddb6b0b7d019e215f`
+## Status
 
-This goal is the user's execution direction and supplies the authority needed to finish the plan locally. ROOT may create workspace-confined runtime state, branches, linked worktrees, task cards, invocations, results, disposable repositories, and caches; launch the currently mapped primary agents and the already-authorized applicable Windows provider targets; edit the Addendum 3 product, tests, assets, packaging, and operator documentation; run the required checks and real Windows scenarios; create the local commits required by the declared isolated lanes; integrate accepted tips into the dedicated integration worktree; review, accept, retire, and clean up completed work. This authority does not include push, publication, deployment, promotion outside the workspace, credential disclosure, modification of `frozen-harness`, modification of the user-owned role mapping, or contact with external parties. Reuse recorded provider authorization only after confirming that its target and scope still match; request user input only for a genuinely new external credential or irreversible action that this goal does not authorize.
+`COMPLETE - ACCEPTED`. All 29 mandatory Windows-host claims are `PROVED`;
+there are zero `INCOMPLETE` and zero `FAILED` claims. Independent Checkpoint B
+approved the corrected Claude ROOT Stop observation. All authorized execution,
+verification, review, and cleanup are finished.
 
-Begin with STEP-001 NORMAL and `MI-NORMAL-ADMISSION`. Re-read the repository instructions, this goal, `HANDOFF.md`, the Addendum 3 composition root and global rules, STEP-001, M01, frozen-harness `QUICK_RULES.md` and `QUICK_START.md`, `.agent/bounded-commands.txt`, and `master_planning/SUBAGENT_ROLE_MODEL_MAPPING.json`. Revalidate the Addendum 3 package, confirm the target and frozen revisions and cleanliness, confirm all eight tweak sources and REQ-001 through REQ-021 remain covered, confirm BOUND-009 through BOUND-019, resolve every proposed path beneath this workspace, and record SATISFIED admission evidence before construction begins.
+## Final coordinate
 
-After admission, use unchanged `frozen-harness` as the only multi-agent execution control plane. Do not use built-in collaboration subagents, invent another scheduler or relay, import frozen-harness into the product, or edit frozen-harness. Create each branch and worktree from the admitted base only when its declared step activates. Keep overlapping writers disjoint, use the declared dedicated integration worktree, and keep every runtime, configuration, prompt, cache, result, disposable repository, and worktree inside this repository workspace.
+- Delivery worktree: `w/step006-tier2/delivery`
+- Branch: `tier2/step006-closure`
+- Accepted base: `a8d0382073377f3b7fc49ea426a30ef8d8429951`
+- Plan revision: `T2-R4`
+- Final continuation: `CLAUDE-ROOT-GAP-R1`
+- Candidate tracked binary diff SHA-256:
+  `63A6879734BE015E6A357F0EB44759AE55D10B47C2A5DA6C4FFA718B03561A24`
+- Final verdict SHA-256:
+  `E382A35A5AFC106280619112E62A2A91D73363513EFB4D6A7D0DF74A1FE39E40`
+- Final claim-results SHA-256:
+  `37A46F9E7CAA7D60D0541B83BBF15ECB77A908364D1195DD7BC8B02EE9E97942`
+- Published repository: `harness-single`
+- Published branch: `origin/working/firmware/v2-candidate`
+- Published commit: `a5ba87314562c71e30232d0f43782313fb5c027b`
 
-Before every lane, module, and launch, reread the current role entry in `master_planning/SUBAGENT_ROLE_MODEL_MAPPING.json`, launch its primary first, and read back the effective provider, model, reasoning effort, and configuration overrides. In particular, confirm `model_auto_compact_token_limit=280000` for PRODUCT_WRITER, CHECKER, INTEGRATOR, and PRACTICAL_EXECUTOR while the mapping continues to require it. A fallback is eligible only for the single launch under BOUND-005 after all concrete in-scope primary workarounds have been attempted and recorded; retry the primary at the next lane, module, or launch.
+## Completion evidence
 
-Preserve the verified Windows launch practices from the smoke run. Pass external-provider prompts through structured launcher arguments as one argv element. Give DeepSeek high-effort evidence/result lanes an explicit Windows-safe output helper or equally concrete write command when needed, while preserving the worker's independent judgment and the declared result contract. Do not mistake a prompt-construction or output-serialization failure for provider fallback eligibility.
+The native Claude ROOT process was refused while its exact manager event was
+pending, stayed live, and reached another native Stop boundary only after the
+event became `COMPLETE`. It then exited successfully. The affected 34 tests
+passed, the prior 56-test focused verification remains valid because no product
+source changed, all exact process identities are absent, leases are empty, and
+the disposable runtime is removed.
 
-Follow the declared graph and cards exactly. Use NORMAL for initial work. For a qualifying small deterministic repair, use that step's complete FAST_LANE_V2_SERIES_1 path, then join it through the current progress bound's FAST_LANE_V2_SERIES_2 path. Preserve unaffected accepted credit and rerun only checks whose consumed inputs changed. ROOT retains task meaning, routing, classification, acceptance, integration authority, checkpoints, and retirement. Refresh `HANDOFF.md` after every completed MI module and whenever a checkpoint is required.
+## Remaining execution
 
-Complete all implementation and independent acceptance assets, integrate only accepted tips, and run STEP-005 through repeated independent audit and reviewer loops until the follow-up audit has no undispositioned valid finding. For each valid finding, implement the smallest required repair through its declared owner, review it independently, integrate it, and rerun the affected checks. Ordinary worker, command, test, review, serialization, process, or cleanup failures do not end the goal; classify them and follow the declared repair, retry, resume, or exact-operation return route.
+None for STEP-006 on Windows. macOS/Linux host execution remains the explicitly
+permitted platform gap.
 
-Run the exhaustive real Windows feature matrix required by CHECK-PLATFORM-WINDOWS and CHECK-LIVE-1 through CHECK-LIVE-16 across every applicable provider and profile. Retain actual prompts, provider/model/session identity, transcript and tool activity, changed files, results, hooks and queues, ROOT responses, lifecycle transitions, process cleanup, and the Observed / Not observed / Deviation classification required by the plan. A mock, synthetic rehearsal, file-existence check, or authentication probe is not live product proof. Any actual product or Windows failure remains failed or incomplete until repaired and rerun.
+## Boundaries
 
-Native macOS and native-storage Linux execution are the only accepted unavailable gaps. Compile their complete matrix rows and record every unexecuted cell under `GAP-NATIVE-MACOS` and `GAP-NATIVE-LINUX`, including the missing runner/storage fact and the exact native evidence required to close it later. Do not wait for, repeatedly request, or fabricate those runners. Their absence must not block implementation, reviewer loops, source audits, integration, full Windows acceptance, cleanup, EDGE-007, or the terminal Addendum 3 handoff. Keep `cross_platform_qualification` INCOMPLETE and never describe Windows or Windows-mounted WSL evidence as native macOS/Linux proof.
+Do not make another commit, push, publication, or deployment without a new user
+instruction. Preserve the terminal evidence under
+`.agent-runtime/harness-v2-step006-tier2-003/` and the published commit above.
 
-Continue until EDGE-007 produces a truthful `RESULT-FINAL-ACCEPTANCE`, the implementation/static verdict and the complete Windows matrix are accepted, both native-platform gap ledgers are durable, all temporary Addendum 3 processes and claims are closed, and every disposable worktree is safely retired or an exact cleanup uncertainty is recorded. Finish with the accepted integrated revision, test and audit evidence, Windows verdict, separate macOS/Linux gap status, and cleanup disposition. Do not stop merely because work is lengthy, a context compacts, or a recoverable step fails.
+## Next action
+
+No run resumption is required.

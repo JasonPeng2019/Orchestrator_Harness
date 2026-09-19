@@ -1,0 +1,48 @@
+{
+  "schema": "orchestrator-coding-invocation/v1",
+  "action": "resume",
+  "runtime_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\harness-v2-tier4-addendum-3-epoch-001",
+  "resource_lock_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\harness-v2-tier4-addendum-3-epoch-001\\coding-resource-locks",
+  "run_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-control-final-integrate-5",
+  "repository": {
+    "common_dir": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.git\\modules\\harness-single",
+    "worktree_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-control-final-integrate-5",
+    "branch": "tier4-addendum3/live-control-final-integrate-5-001",
+    "base_commit": "cb01e41533b337d3dd344b89313f1c9062ee69f8",
+    "merge_inputs": []
+  },
+  "prompt_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-control-final-integrate-5\\.agent-workspace\\resume-preparation-prompt.md",
+  "prompt_sha256": "5b2e99834333cde17e8f47773e7f82fc5963f4785ed86d3550212620ab366528",
+  "output_paths": {
+    "status": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-control-final-integrate-5\\.agent-workspace\\recovery-controller.status.json",
+    "jsonl": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-control-final-integrate-5\\.agent-workspace\\recovery-codex.jsonl",
+    "stderr": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-control-final-integrate-5\\.agent-workspace\\recovery-codex.stderr.log",
+    "last_message": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-control-final-integrate-5\\.agent-workspace\\recovery-last-message.txt",
+    "result": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-control-final-integrate-5\\.agent-workspace\\RESULT.json"
+  },
+  "event_log_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\harness-v2-tier4-addendum-3-epoch-001\\LANE_EVENTS.jsonl",
+  "lane_id": "LANE-LIVE-CONTROL-FINAL-INTEGRATE-5-RECOVERY",
+  "worker_invocation_id": "INVOCATION-LIVE-CONTROL-FINAL-INTEGRATE-5-RECOVERY-001",
+  "task": "Install exact reviewed final control bundle after P02 containment",
+  "phase": "live-control-final-integrate-5",
+  "exclusive_resources": [
+    "DEL-001-LIVE-CONTROL-INTEGRATION"
+  ],
+  "codex": {
+    "command": [
+      "codex",
+      "--oss",
+      "--local-provider",
+      "ollama"
+    ],
+    "model": "deepseek-v4-flash:0731-cloud",
+    "reasoning_effort": "high",
+    "service_tier": "priority",
+    "sandbox": "danger-full-access",
+    "approval_policy": "never",
+    "config_overrides": [
+      "model_auto_compact_token_limit=280000"
+    ]
+  },
+  "resume_thread_id": "01a0a53d-616a-7e62-a38e-3f92e65a8937"
+}

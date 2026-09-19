@@ -1,0 +1,78 @@
+{
+  "prepared_at_utc": "2026-09-16T10:29:22.253114+00:00",
+  "status": "PREPARED_FOR_NONLIVE_REPORT_RECOVERY_NOT_LIVE_ADMISSION",
+  "checkpoint": "18h13m38s",
+  "candidate": "cb01e41533b337d3dd344b89313f1c9062ee69f8",
+  "candidate_worktree": "w\\addendum-3-epoch-001\\live-control-final-integrate-5",
+  "tracked_status": "",
+  "frozen_revision": "b8e1f7769d9fdc5a693151a0067522e07fc2ab40",
+  "recovery_259": {
+    "recorded_state": "RUNNING_CODEX",
+    "native_result_exists": false,
+    "handoff_exists": false,
+    "thread_id": "01a0a53d-616a-7e62-a38e-3f92e65a8937",
+    "session_path": "C:\\Users\\Jason\\.codex\\sessions\\2026\\09\\15\\rollout-2026-09-15T09-24-18-01a0a53d-616a-7e62-a38e-3f92e65a8937.jsonl",
+    "resume_contract_valid": true,
+    "mapping_matches_current_primary": true,
+    "active_declaration_conflicts": []
+  },
+  "process_inventory_complete": true,
+  "process_termination_proof": ".plans/addendum3-claim-reconciliation.json",
+  "remaining_claims": 0,
+  "asset_hashes": {
+    "driver/build_manifests.py": "c07bc3a13261918334982a1081f9e09bb5ad1792c35173d2786fdfcf92faaf2c",
+    "driver/cleanup-cell.py": "dd33ee9d4e69b7327dceeb41ac440803b6caafdb2e645b5293821e0d1c20e924",
+    "driver/evidence_archive.py": "40dbab97aae82ea90498bec74a134362dac096c78d04b9394c88dc8c12f34fe4",
+    "driver/run-cell.py": "445947c6f7ad52d158015f9e598cbe8c9f4dddc37bc42239a99b8e27ff580909",
+    "driver/scenario15-draft.py": "d8c56b8f6473d001ded87b7e6a622c06c38e7a8fd59f73e483be0e06409f8160",
+    "driver/test_cell_evidence.py": "27900f830316f0a348ef5829f085bbce67d3a3f0bbb8f6c260c85ba14c6b88c5",
+    "driver/test_evidence_archive.py": "0dfbf52c1ef086c08ab0384ee952de9051e5050713e29bcbd50280e60059fa3f",
+    "driver/test_live_control_repair.py": "2f107df815741993875bbc60f58567a16e5c3673db03965eafa0498308dc5bed",
+    "driver/test_series2_preserved_classifications.py": "b38432be5e8396c89cc0a9fc428585aae58964f28e12d2ec7b00fbd6bc31d887",
+    "driver/validate_cell_controls.py": "e277a0fa0feed6a87872fa60d7ff537ed9a789934c4c2a893a0f0e7c12878d9e",
+    "driver/validate_manifests.py": "7453f3c6a1b67079b07916edef7b361b95903b56ce76443a1034e4e5487e7a0d",
+    "manifests/windows-claude-code-managed-normal-001.json": "c1c131c3df637472b065f5900381c78468e6df67dbdbeb65733596c1600d3ebc",
+    "manifests/windows-claude-code-plain-normal-001.json": "c3a9bf4fc65e2407c9a0c0111790821515d8305e82893229d4a0ddb9debc8498",
+    "manifests/windows-codex-managed-normal-001.json": "d0da94aeb0b1f3dd7d9e3c2cbe5f38c98bf66fd701ad8c2521fe5e570bbc2b8c",
+    "manifests/windows-codex-plain-normal-001.json": "fda90c69afdcf68b7119f8a12fc24b075364c7d524b9b6841181d2938ec4c1ad",
+    "manifests/windows-qwen-code-managed-normal-001.json": "8cd3d8c5714e0639788193eb3964c908d545e93d4f9c0e4d222eb4281984240d",
+    "manifests/windows-qwen-code-plain-normal-001.json": "6ad17a3272f6406944e29de05c04b5b003139453be3a51f09f451e716113ea14"
+  },
+  "reviewed_replacements": {
+    "driver/run-cell.py": "445947c6f7ad52d158015f9e598cbe8c9f4dddc37bc42239a99b8e27ff580909",
+    "driver/test_live_control_repair.py": "2f107df815741993875bbc60f58567a16e5c3673db03965eafa0498308dc5bed",
+    "driver/validate_cell_controls.py": "e277a0fa0feed6a87872fa60d7ff537ed9a789934c4c2a893a0f0e7c12878d9e"
+  },
+  "unchanged_seed_assets": 14,
+  "accepted_bundle": "92ec9546aa436612dd336c1ea6430b34dbd6e528ef239e8fda733dccec661619",
+  "checks": [
+    {
+      "command": "python -B -m unittest test_live_control_repair test_cell_evidence test_series2_preserved_classifications test_evidence_archive",
+      "cwd": "w\\addendum-3-epoch-001\\live-control-final-integrate-5\\.agent-workspace\\live-matrix\\driver",
+      "exit_code": 0,
+      "tests": 32,
+      "elapsed_test_seconds": 2.228,
+      "outcome": "PASS",
+      "attribution": "ROOT resume preparation; observed native command output"
+    },
+    {
+      "command": "python -B validate_cell_controls.py",
+      "cwd": "w\\addendum-3-epoch-001\\live-control-final-integrate-5\\.agent-workspace\\live-matrix\\driver",
+      "exit_code": 0,
+      "outcome": "PASS",
+      "attribution": "ROOT resume preparation; structural/control proof only"
+    }
+  ],
+  "archive": "w\\addendum-3-epoch-001\\live-control-final-integrate-5\\.agent-workspace\\resume-preparation-archive",
+  "prepared_invocation": ".plans\\addendum3-resume.invocation.json",
+  "pending": [
+    "Recheck exact liveness, current role mapping and consumed asset identities before launch",
+    "Resume same thread and publish missing domain handoff/RESULT; ROOT accepts integration separately",
+    "M08 maps executable typed/control/public-transport/storage/queue evidence and returns only missing properties to M03",
+    "Separate M09 current target/credential-home admission before live work"
+  ],
+  "effects": "No provider launched, no process killed, no frozen/product source modified; one exact terminated-owner claim natively reclaimed after archival; old status/logs retained",
+  "plan_validation": "PASS: packaged structural validator on Addendum 3 version 3.2",
+  "independent_plan_review": "Three binding gaps resolved; follow-up Series2 tool scope and ROOT dispatch authority clarified",
+  "whitespace_check": "PASS: HANDOFF.md and active Addendum 3 diff; line-ending notices only"
+}

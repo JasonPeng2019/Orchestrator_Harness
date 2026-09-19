@@ -1,0 +1,3977 @@
+{
+  "observed_at": "2026-09-18T02:29:19.805095+00:00",
+  "reason": "User requested stop if stalled; Qwen plain checkpoint unchanged since 01:54:14 UTC; CHECK11 attempt records 1800-second deadline failure; interrupt-resume is retired after provider_exited_no_result.",
+  "known_roots": [
+    {
+      "pid": 32880,
+      "created_utc": "2026-09-18T00:44:48.643639Z"
+    },
+    {
+      "pid": 33944,
+      "created_utc": "2026-09-18T00:44:52.591583Z"
+    }
+  ],
+  "target_identities": [
+    {
+      "creation_time": "windows-filetime:134341660390396532",
+      "kind": "monitor",
+      "pid": 44360,
+      "target": "codex-managed-check-live-11-series9-019-correction1-failure-routes-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660711277615",
+      "kind": "monitor",
+      "pid": 50604,
+      "target": "codex-managed-check-live-11-series9-019-correction1-provider-exit-no-result-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341661032460615",
+      "kind": "monitor",
+      "pid": 7908,
+      "target": "codex-managed-check-live-11-series9-019-correction1-status-transcript-contradiction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341661039250234",
+      "kind": "controller-fixture",
+      "lane_id": "status-transcript-contradiction",
+      "pid": 37828,
+      "target": "codex-managed-check-live-11-series9-019-correction1-status-transcript-contradiction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341661644502420",
+      "kind": "controller-fixture",
+      "lane_id": "cleanup-unproven",
+      "pid": 2680,
+      "target": "codex-managed-check-live-11-series9-019-correction1-failure-routes-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341661936556566",
+      "kind": "monitor",
+      "pid": 58284,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341661945555763",
+      "kind": "controller",
+      "lane_id": "interrupt-resume",
+      "pid": 57608,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341661948867795",
+      "kind": "provider",
+      "lane_id": "interrupt-resume",
+      "pid": 56776,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341661948867795",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 56776,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "attempt": 1,
+      "creation_time": "windows-filetime:134341661948867795",
+      "kind": "interrupted-provider",
+      "lane_id": "interrupt-resume",
+      "pid": 56776,
+      "process_group_id": null,
+      "provider_session_id": null,
+      "session_id": null,
+      "state": "running",
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663162625305",
+      "kind": "controller",
+      "lane_id": "interrupt-resume",
+      "pid": 54892,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663165952573",
+      "kind": "provider",
+      "lane_id": "interrupt-resume",
+      "pid": 57460,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663361062812",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 9428,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663498538899",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 10136,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663548833777",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 16488,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663393631086",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 16560,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663174974157",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 19092,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663397434005",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 22908,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663263739951",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 24988,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663557456701",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 29120,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663452467571",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 30924,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663561461413",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 44100,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663396093516",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 45624,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663560316000",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 45776,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663256831501",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 45836,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663315419508",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 46476,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663587269964",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 49864,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663258546429",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 53876,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663362293861",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 55720,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663353536164",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 55752,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663454429692",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 56120,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663449816438",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 56504,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663500629562",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 56756,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663358748308",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 56996,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341663165952573",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 57460,
+      "target": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664714131874",
+      "kind": "monitor",
+      "pid": 45304,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664723817006",
+      "kind": "controller",
+      "lane_id": "behavior-worker",
+      "pid": 44604,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664726713560",
+      "kind": "provider",
+      "lane_id": "behavior-worker",
+      "pid": 41728,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664726713560",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 41728,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665022676199",
+      "kind": "check16-root-provider",
+      "pid": 24608,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665022676199",
+      "kind": "check16-root-descendant",
+      "pid": 24608,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665032699142",
+      "kind": "check16-root-descendant",
+      "pid": 10848,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665032482399",
+      "kind": "check16-root-descendant",
+      "pid": 44164,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665030496705",
+      "kind": "check16-root-descendant",
+      "pid": 56264,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665035350909",
+      "kind": "check16-root-descendant",
+      "pid": 14156,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665035479845",
+      "kind": "check16-root-descendant",
+      "pid": 28544,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665035444896",
+      "kind": "check16-root-descendant",
+      "pid": 29496,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665035295944",
+      "kind": "check16-root-descendant",
+      "pid": 51900,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665104534168",
+      "kind": "check16-root-descendant",
+      "pid": 23584,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665103712311",
+      "kind": "check16-root-descendant",
+      "pid": 57512,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665108141173",
+      "kind": "check16-root-descendant",
+      "pid": 13308,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665110450787",
+      "kind": "check16-root-descendant",
+      "pid": 13884,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665132531585",
+      "kind": "check16-root-descendant",
+      "pid": 57016,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665135168936",
+      "kind": "check16-root-descendant",
+      "pid": 13852,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664940691018",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 5448,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664741954875",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 7996,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665603440716",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 10636,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664742230703",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 12988,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664742026323",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 13804,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664742084557",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 13852,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664742076840",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 15668,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665380942239",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 17112,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664822059642",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 21552,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665599038001",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 22232,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664816448571",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 23292,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665385902226",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 23352,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665500561397",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 24964,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664928094622",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 25356,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665222520706",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 27516,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664742170867",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 29028,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665508202511",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 33320,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664974649430",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 34076,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665644943089",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 34632,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664742112415",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 35436,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665509129445",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 35436,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665605489294",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 35568,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664976868825",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 40160,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665308222049",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 41472,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665210956278",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 41660,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665145281585",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 42448,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664933287477",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 43104,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664824322563",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 43692,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665229744744",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 43816,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665437452299",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 44916,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665230796066",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 46168,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665269113627",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 46476,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664741890243",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 47360,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665506081674",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 47596,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665216892914",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 48048,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665219287114",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 50768,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664923261950",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 50956,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665442050593",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 51712,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665563553889",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 53320,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665561509376",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 54084,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665227476717",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 54640,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665016427346",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 54692,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665387962489",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 55472,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665647049703",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 55636,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664938505244",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 55812,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665647994763",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 55944,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665264499980",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 56296,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664736071159",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 56880,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341664817069227",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57268,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665019349344",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 58284,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665941325097",
+      "kind": "check16-root-provider",
+      "pid": 54208,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665941325097",
+      "kind": "check16-root-descendant",
+      "pid": 54208,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665952201948",
+      "kind": "check16-root-descendant",
+      "pid": 12800,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665952305117",
+      "kind": "check16-root-descendant",
+      "pid": 15404,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665952407730",
+      "kind": "check16-root-descendant",
+      "pid": 21132,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665952431489",
+      "kind": "check16-root-descendant",
+      "pid": 46580,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665949955138",
+      "kind": "check16-root-descendant",
+      "pid": 52096,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665954643954",
+      "kind": "check16-root-descendant",
+      "pid": 17116,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665954559190",
+      "kind": "check16-root-descendant",
+      "pid": 20980,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665954636748",
+      "kind": "check16-root-descendant",
+      "pid": 31228,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665954805706",
+      "kind": "check16-root-descendant",
+      "pid": 51428,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665954441711",
+      "kind": "check16-root-descendant",
+      "pid": 54940,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341665954766914",
+      "kind": "check16-root-descendant",
+      "pid": 57564,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341666059936333",
+      "kind": "check16-root-descendant",
+      "pid": 54084,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341666060897445",
+      "kind": "check16-root-descendant",
+      "pid": 56748,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341666064214206",
+      "kind": "check16-root-descendant",
+      "pid": 53316,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341666066600445",
+      "kind": "check16-root-descendant",
+      "pid": 18620,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341666078091831",
+      "kind": "check16-root-descendant",
+      "pid": 54996,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341666080580890",
+      "kind": "check16-root-descendant",
+      "pid": 40760,
+      "target": "codex-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659755598317",
+      "kind": "monitor",
+      "pid": 44532,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "attempt": 6,
+      "creation_time": "windows-filetime:134341659768340886",
+      "kind": "sixth-invalid-provider",
+      "lane_id": "bounded-invalid",
+      "pid": 21252,
+      "state": "running",
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659765281011",
+      "kind": "controller",
+      "lane_id": "bounded-invalid",
+      "pid": 29844,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659768340886",
+      "kind": "provider",
+      "lane_id": "bounded-invalid",
+      "pid": 21252,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660083681026",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 5136,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660156257919",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 9544,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660077528855",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 17056,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659768340886",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 21252,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660027749768",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 32792,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659992700759",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 34408,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660041122238",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 35908,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659876746273",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 39752,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659994029846",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 41392,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660081562559",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 41956,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660043307326",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 42812,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659930676279",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 43464,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660095896422",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 44744,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659916203669",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 47672,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660023810782",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 47844,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659777451136",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 48712,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659789655571",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 49496,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660137478843",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 49864,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659934682793",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 50204,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659877298508",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 51320,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659990469861",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 52348,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659933273229",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 53256,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660139749112",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 54232,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660029741937",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 54328,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660084843318",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 54504,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341659975917080",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 56692,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341660030628919",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57564,
+      "target": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341669679077854",
+      "kind": "monitor",
+      "pid": 13912,
+      "target": "codex-plain-check-live-11-series9-019-correction1-failure-routes-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341670001333351",
+      "kind": "monitor",
+      "pid": 18560,
+      "target": "codex-plain-check-live-11-series9-019-correction1-provider-exit-no-result-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341670323854109",
+      "kind": "monitor",
+      "pid": 46436,
+      "target": "codex-plain-check-live-11-series9-019-correction1-status-transcript-contradiction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341670330615796",
+      "kind": "controller-fixture",
+      "lane_id": "status-transcript-contradiction",
+      "pid": 55436,
+      "target": "codex-plain-check-live-11-series9-019-correction1-status-transcript-contradiction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341670935851208",
+      "kind": "controller-fixture",
+      "lane_id": "cleanup-unproven",
+      "pid": 33788,
+      "target": "codex-plain-check-live-11-series9-019-correction1-failure-routes-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341671226686642",
+      "kind": "monitor",
+      "pid": 47752,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341671235998901",
+      "kind": "controller",
+      "lane_id": "interrupt-resume",
+      "pid": 57056,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341671239283090",
+      "kind": "provider",
+      "lane_id": "interrupt-resume",
+      "pid": 45368,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341671239283090",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 45368,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "attempt": 1,
+      "creation_time": "windows-filetime:134341671239283090",
+      "kind": "interrupted-provider",
+      "lane_id": "interrupt-resume",
+      "pid": 45368,
+      "process_group_id": null,
+      "provider_session_id": null,
+      "session_id": null,
+      "state": "running",
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672454402199",
+      "kind": "controller",
+      "lane_id": "interrupt-resume",
+      "pid": 31052,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672457609802",
+      "kind": "provider",
+      "lane_id": "interrupt-resume",
+      "pid": 43620,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672537741906",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 6700,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672530544165",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 27488,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672729473787",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 34136,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672538681124",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 34672,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672694350525",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 40080,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672466141578",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 40996,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672661692549",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 41620,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672732041081",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 42636,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672457609802",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 43620,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672601636646",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 46496,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672609942842",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 47668,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672531670164",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 48728,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672604397260",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 49760,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672607862398",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 51428,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672611134288",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 55892,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672665224557",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 56488,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672535599568",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 56868,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672664047570",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 58180,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341672701111472",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 58284,
+      "target": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341673349699775",
+      "kind": "monitor",
+      "pid": 49808,
+      "target": "codex-plain-check-live-11-series9-019-correction1-failure-routes-plain-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341673355718385",
+      "kind": "controller-fixture",
+      "lane_id": "plain-cleanup-unproven",
+      "pid": 26136,
+      "target": "codex-plain-check-live-11-series9-019-correction1-failure-routes-plain-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341674029582535",
+      "kind": "monitor",
+      "pid": 29924,
+      "target": "codex-plain-check-live-16-series9-019-correction1-behavior-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341666268565322",
+      "kind": "monitor",
+      "pid": 10688,
+      "target": "codex-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341666278541496",
+      "kind": "controller",
+      "lane_id": "bounded-invalid",
+      "pid": 30820,
+      "target": "codex-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341666910929000",
+      "kind": "provider",
+      "lane_id": "bounded-invalid",
+      "pid": 54504,
+      "target": "codex-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341666919245599",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 33788,
+      "target": "codex-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341666910929000",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 54504,
+      "target": "codex-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341666971980992",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 55284,
+      "target": "codex-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341666970960804",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57536,
+      "target": "codex-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341667112181819",
+      "kind": "monitor",
+      "pid": 57104,
+      "target": "codex-plain-check-live-8-series9-019-correction1-provider-start-failure-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341667428658772",
+      "kind": "monitor",
+      "pid": 27752,
+      "target": "codex-plain-check-live-8-series9-019-correction1-provider-auth-failure-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341667748839767",
+      "kind": "monitor",
+      "pid": 16560,
+      "target": "codex-plain-check-live-8-series9-019-correction1-native-resume-unavailable-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341668369855428",
+      "kind": "monitor",
+      "pid": 57664,
+      "target": "codex-plain-check-live-8-series9-019-correction1-cleanup-unproven-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341668699592593",
+      "kind": "controller",
+      "lane_id": "bounded-invalid",
+      "pid": 51892,
+      "target": "codex-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341669057157365",
+      "kind": "provider",
+      "lane_id": "bounded-invalid",
+      "pid": 13896,
+      "target": "codex-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341669057157365",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 13896,
+      "target": "codex-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341669064832386",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 31668,
+      "target": "codex-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341669156095133",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 46436,
+      "target": "codex-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341675009169350",
+      "kind": "monitor",
+      "pid": 46172,
+      "target": "qwen-code-managed-check-live-11-series9-019-correction1-failure-routes-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341675331342900",
+      "kind": "monitor",
+      "pid": 41412,
+      "target": "qwen-code-managed-check-live-11-series9-019-correction1-provider-exit-no-result-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341675652843028",
+      "kind": "monitor",
+      "pid": 33364,
+      "target": "qwen-code-managed-check-live-11-series9-019-correction1-status-transcript-contradiction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341675660082666",
+      "kind": "controller-fixture",
+      "lane_id": "status-transcript-contradiction",
+      "pid": 51152,
+      "target": "qwen-code-managed-check-live-11-series9-019-correction1-status-transcript-contradiction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341676265605199",
+      "kind": "controller-fixture",
+      "lane_id": "cleanup-unproven",
+      "pid": 3996,
+      "target": "qwen-code-managed-check-live-11-series9-019-correction1-failure-routes-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341676555082699",
+      "kind": "monitor",
+      "pid": 40040,
+      "target": "qwen-code-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341676564214802",
+      "kind": "controller",
+      "lane_id": "interrupt-resume",
+      "pid": 15188,
+      "target": "qwen-code-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341676567374036",
+      "kind": "provider",
+      "lane_id": "interrupt-resume",
+      "pid": 17484,
+      "target": "qwen-code-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341676567374036",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 17484,
+      "target": "qwen-code-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "attempt": 1,
+      "creation_time": "windows-filetime:134341676567374036",
+      "kind": "interrupted-provider",
+      "lane_id": "interrupt-resume",
+      "pid": 17484,
+      "process_group_id": null,
+      "provider_session_id": null,
+      "session_id": null,
+      "state": "running",
+      "target": "qwen-code-managed-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695583523906",
+      "kind": "monitor",
+      "pid": 56896,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695595748059",
+      "kind": "controller",
+      "lane_id": "behavior-worker",
+      "pid": 55804,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695600186230",
+      "kind": "provider",
+      "lane_id": "behavior-worker",
+      "pid": 55292,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695600186230",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 55292,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696189507794",
+      "kind": "check16-root-provider",
+      "pid": 58092,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696189507794",
+      "kind": "check16-root-descendant",
+      "pid": 58092,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696202786433",
+      "kind": "check16-root-descendant",
+      "pid": 51600,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696201319349",
+      "kind": "check16-root-descendant",
+      "pid": 54128,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696200729154",
+      "kind": "check16-root-descendant",
+      "pid": 56144,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696220509710",
+      "kind": "check16-root-descendant",
+      "pid": 2064,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696241026615",
+      "kind": "check16-root-descendant",
+      "pid": 54968,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696260644001",
+      "kind": "check16-root-descendant",
+      "pid": 19648,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696260318026",
+      "kind": "check16-root-descendant",
+      "pid": 29296,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696260847376",
+      "kind": "check16-root-descendant",
+      "pid": 46144,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696263490635",
+      "kind": "check16-root-descendant",
+      "pid": 38020,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696263222596",
+      "kind": "check16-root-descendant",
+      "pid": 44400,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696265889442",
+      "kind": "check16-root-descendant",
+      "pid": 9452,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696265719033",
+      "kind": "check16-root-descendant",
+      "pid": 19216,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696266633889",
+      "kind": "check16-root-descendant",
+      "pid": 17720,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696266821033",
+      "kind": "check16-root-descendant",
+      "pid": 47876,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696291842161",
+      "kind": "check16-root-descendant",
+      "pid": 13272,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696291788365",
+      "kind": "check16-root-descendant",
+      "pid": 57264,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696293745149",
+      "kind": "check16-root-descendant",
+      "pid": 44888,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696296028627",
+      "kind": "check16-root-descendant",
+      "pid": 51988,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696294111192",
+      "kind": "check16-root-descendant",
+      "pid": 57112,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696297431755",
+      "kind": "check16-root-descendant",
+      "pid": 53152,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696297482333",
+      "kind": "check16-root-descendant",
+      "pid": 57324,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696326407612",
+      "kind": "check16-root-descendant",
+      "pid": 39260,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696326701522",
+      "kind": "check16-root-descendant",
+      "pid": 15404,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696329835948",
+      "kind": "check16-root-descendant",
+      "pid": 14460,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696329785583",
+      "kind": "check16-root-descendant",
+      "pid": 45724,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695948247274",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 1928,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696371711314",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 2744,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696486258537",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 3996,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695788025526",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 4264,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696426921913",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 7668,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696371663081",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 7908,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695948150189",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 11568,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695825604466",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 11704,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696524965446",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 12404,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695753879462",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 12804,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696043280448",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 12976,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696409330111",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 14008,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696518481955",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 14612,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695827619888",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 15044,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696521223526",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 15404,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696342650766",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 15748,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695784233137",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 16932,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695754017693",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 17056,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696378810186",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 17404,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695674650431",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 17720,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696401616082",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 19484,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695786084100",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 19964,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695611271425",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 20468,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695754085410",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 21928,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695755807549",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 21948,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695784150444",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 22396,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695914232105",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 25092,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696518527337",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 25344,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696372689828",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 25540,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695719006505",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 25956,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696044147760",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 27052,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695648432772",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 28308,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695784261574",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 28816,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695792174421",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 28996,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696524921955",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 30508,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695921638470",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 30800,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695674485181",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 31304,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695784334972",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 32360,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696401928631",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 33256,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696542257728",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 33744,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696521379149",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 34384,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696517825338",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 34624,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695914184396",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 35224,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696576054142",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 35568,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696426869782",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 35896,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696043549666",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 36036,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696021282911",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 37292,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695783948105",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 38352,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695829674130",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 39464,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696486024455",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 39612,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696405452763",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 39924,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695787986429",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 40040,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696372019264",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 40352,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695825416111",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 40596,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695753827126",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 41844,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696342597266",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 42672,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695719060014",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 45092,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696517638040",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 45092,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696492147347",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 45440,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696401755166",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 46644,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695948459959",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 47000,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696575877610",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 47084,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695755903434",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 48332,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696401469193",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 48652,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695825722522",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 49412,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695629796324",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 50480,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695949179361",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 51136,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696405503546",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 53292,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695784072506",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 53408,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696485923919",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 53456,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696546154882",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 53768,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695785924245",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 53940,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695827583830",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 54248,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695834172321",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 54588,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696378757246",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 54776,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696522825266",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 55232,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696043226386",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 55372,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696546199419",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 55372,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696518033512",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 55412,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696485868223",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 55464,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696530058627",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 55684,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695955494592",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 55700,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695784418511",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 55888,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695754201006",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 56004,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696371797842",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 56036,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696486924631",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 56120,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695948104764",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 56128,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695829625100",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 56144,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696401791428",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 56400,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695785952741",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 56660,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695754263467",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 56672,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695758086088",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 56808,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695918084760",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 56860,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696542314567",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 56880,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695825808712",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57008,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696401418250",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57128,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695825480126",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57144,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696492093206",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57416,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695610710841",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57456,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695955442393",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57496,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695758027169",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57584,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695918568550",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57680,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696021345802",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57716,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696528877032",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57744,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695784005742",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57804,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695921689887",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57960,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695825517925",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 57996,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695612964784",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 58016,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696577618534",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 58228,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696043367697",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 58244,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341695917906347",
+      "kind": "provider-boundary",
+      "lane_id": "behavior-worker",
+      "pid": 58352,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696821200141",
+      "kind": "check16-root-provider",
+      "pid": 42440,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696821200141",
+      "kind": "check16-root-descendant",
+      "pid": 42440,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696830897814",
+      "kind": "check16-root-descendant",
+      "pid": 44660,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696831514823",
+      "kind": "check16-root-descendant",
+      "pid": 56704,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696833105372",
+      "kind": "check16-root-descendant",
+      "pid": 57028,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696849785286",
+      "kind": "check16-root-descendant",
+      "pid": 28184,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696867700308",
+      "kind": "check16-root-descendant",
+      "pid": 15488,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696890260849",
+      "kind": "check16-root-descendant",
+      "pid": 50836,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696890020656",
+      "kind": "check16-root-descendant",
+      "pid": 51580,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696893377987",
+      "kind": "check16-root-descendant",
+      "pid": 23020,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696893261224",
+      "kind": "check16-root-descendant",
+      "pid": 57728,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696897464196",
+      "kind": "check16-root-descendant",
+      "pid": 21588,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696898504686",
+      "kind": "check16-root-descendant",
+      "pid": 52956,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696911740613",
+      "kind": "check16-root-descendant",
+      "pid": 41392,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696911784096",
+      "kind": "check16-root-descendant",
+      "pid": 42560,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696913694163",
+      "kind": "check16-root-descendant",
+      "pid": 46448,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696914018651",
+      "kind": "check16-root-descendant",
+      "pid": 27428,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696916106817",
+      "kind": "check16-root-descendant",
+      "pid": 46580,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696917441760",
+      "kind": "check16-root-descendant",
+      "pid": 55364,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696917508945",
+      "kind": "check16-root-descendant",
+      "pid": 55472,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696951588181",
+      "kind": "check16-root-descendant",
+      "pid": 47064,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341696951871829",
+      "kind": "check16-root-descendant",
+      "pid": 50264,
+      "target": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674374121706",
+      "kind": "monitor",
+      "pid": 33396,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "attempt": 6,
+      "creation_time": "windows-filetime:134341674387472687",
+      "kind": "sixth-invalid-provider",
+      "lane_id": "bounded-invalid",
+      "pid": 54976,
+      "state": "running",
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674384043232",
+      "kind": "controller",
+      "lane_id": "bounded-invalid",
+      "pid": 56912,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674387472687",
+      "kind": "provider",
+      "lane_id": "bounded-invalid",
+      "pid": 54976,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674516056882",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 1028,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674445949314",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 2392,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674563184260",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 3404,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674613210123",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 5128,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674576678739",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 8944,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674517887139",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 9236,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674530993824",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 9452,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674592133930",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 9484,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674611711585",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 10772,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674576837403",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 11428,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674619297041",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 12120,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674582846828",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 12416,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674491993936",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 12608,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674445826145",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 13804,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674545224162",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 13816,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674545997781",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 16268,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674443999789",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 16776,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674577008974",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 19108,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674492165207",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 19408,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674582890019",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 20680,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674480270776",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 21588,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674592311268",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 23352,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674609350466",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 23388,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674395583179",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 23544,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674618459895",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 25076,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674512258063",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 25220,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674615045811",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 27280,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674449952437",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 34600,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674527829794",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 34900,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674410801959",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 37708,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674425826188",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 37788,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674396095952",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 40172,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674545376876",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 41152,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674545330936",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 41732,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674495922032",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 42788,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674534501508",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 45140,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674517941677",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 45636,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674473557461",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 45884,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674595430166",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 48504,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674550713708",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 48572,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674516101749",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 49068,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674528000304",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 49384,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674530951817",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 49680,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674609393370",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 50796,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674480228218",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 51652,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674491832198",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 52976,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674397267376",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 53280,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674630768458",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 54416,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674514831390",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 54500,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674626756924",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 54788,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674387472687",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 54976,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674495877145",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 55372,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674625106795",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 55596,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674512301149",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 55700,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674593566000",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 55796,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674614996876",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 55836,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674623881876",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 56512,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674473802045",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 56652,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674611873987",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 56688,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674624046078",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 56788,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674626805072",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 56956,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674550670028",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57032,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674514689654",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57040,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674595488174",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57116,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674473611791",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57232,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674473963512",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57236,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674545270807",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57668,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674563227248",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57920,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341674613259609",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 58252,
+      "target": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341700564946027",
+      "kind": "monitor",
+      "pid": 50236,
+      "target": "qwen-code-plain-check-live-11-series9-019-correction1-failure-routes-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341700887743893",
+      "kind": "monitor",
+      "pid": 36452,
+      "target": "qwen-code-plain-check-live-11-series9-019-correction1-provider-exit-no-result-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341701209977893",
+      "kind": "monitor",
+      "pid": 56556,
+      "target": "qwen-code-plain-check-live-11-series9-019-correction1-status-transcript-contradiction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341701217538020",
+      "kind": "controller-fixture",
+      "lane_id": "status-transcript-contradiction",
+      "pid": 35528,
+      "target": "qwen-code-plain-check-live-11-series9-019-correction1-status-transcript-contradiction-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341701821230407",
+      "kind": "controller-fixture",
+      "lane_id": "cleanup-unproven",
+      "pid": 47892,
+      "target": "qwen-code-plain-check-live-11-series9-019-correction1-failure-routes-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341702112976544",
+      "kind": "monitor",
+      "pid": 48832,
+      "target": "qwen-code-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341702123436662",
+      "kind": "controller",
+      "lane_id": "interrupt-resume",
+      "pid": 53872,
+      "target": "qwen-code-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341702126842204",
+      "kind": "provider",
+      "lane_id": "interrupt-resume",
+      "pid": 27468,
+      "target": "qwen-code-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341702126842204",
+      "kind": "provider-boundary",
+      "lane_id": "interrupt-resume",
+      "pid": 27468,
+      "target": "qwen-code-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "attempt": 1,
+      "creation_time": "windows-filetime:134341702126842204",
+      "kind": "interrupted-provider",
+      "lane_id": "interrupt-resume",
+      "pid": 27468,
+      "process_group_id": null,
+      "provider_session_id": null,
+      "session_id": null,
+      "state": "running",
+      "target": "qwen-code-plain-check-live-11-series9-019-correction1-interrupt-resume-managed"
+    },
+    {
+      "creation_time": "windows-filetime:134341721112566039",
+      "kind": "monitor",
+      "pid": 48052,
+      "target": "qwen-code-plain-check-live-16-series9-019-correction1-behavior-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697141847430",
+      "kind": "monitor",
+      "pid": 53252,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697152510857",
+      "kind": "controller",
+      "lane_id": "bounded-invalid",
+      "pid": 54336,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697808442056",
+      "kind": "provider",
+      "lane_id": "bounded-invalid",
+      "pid": 57264,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697817778088",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 16276,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697881638783",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 19736,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697882697309",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 31020,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697882050808",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 38680,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697884449518",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 41180,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697881684853",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 44700,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697888549608",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 47072,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697881882196",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 47648,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697868048611",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 47980,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697818997127",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 50768,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697848057505",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 54376,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697817311553",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 55700,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697833089876",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 55852,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697868189028",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57000,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697808442056",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57264,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697884493889",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57504,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341697935466668",
+      "kind": "monitor",
+      "pid": 21588,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-provider-start-failure-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341698253623419",
+      "kind": "monitor",
+      "pid": 56048,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-provider-auth-failure-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341698576020835",
+      "kind": "monitor",
+      "pid": 45484,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-native-resume-unavailable-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341698895140069",
+      "kind": "monitor",
+      "pid": 22396,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-cleanup-unproven-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699526154958",
+      "kind": "controller",
+      "lane_id": "bounded-invalid",
+      "pid": 46964,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699530174552",
+      "kind": "provider",
+      "lane_id": "bounded-invalid",
+      "pid": 34236,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699981746260",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 2188,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699671997785",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 4464,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700033935440",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 5540,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699633486563",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 7996,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699948585067",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 10264,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700060267748",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 10980,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699707239781",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 15332,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699981928289",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 15656,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700107527248",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 15992,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700100653179",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 16776,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699785991396",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 20148,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700036332325",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 20376,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699738836859",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 20468,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700101033992",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 22016,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699633434167",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 23068,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700103190766",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 23204,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699590090415",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 23520,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699540955507",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 25044,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700101754424",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 26244,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699588733957",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 27188,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700033891028",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 27560,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700034396062",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 28544,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699588358341",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 30120,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700060029852",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 30676,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699981875625",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 31380,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699588562205",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 32284,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699948632300",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 33112,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700076706154",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 33192,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699530174552",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 34236,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700103135707",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 35984,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699733790614",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 38672,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700062247256",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 43128,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699981696846",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 43548,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700059865413",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 44884,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699707188314",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 47732,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699540370222",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 49440,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700100712097",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 51592,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700108626655",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 51924,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699733591808",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 52720,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699554261830",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 53880,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699733395109",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 53932,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700100826643",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 54068,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700076649695",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 54204,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699671940059",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 55436,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700036394428",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 55452,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699786050755",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 55532,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699636856602",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57384,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341700062194929",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57416,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699739868510",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57436,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699589985320",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57644,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699569537572",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57700,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699734589104",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57788,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699734521572",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 57900,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    },
+    {
+      "creation_time": "windows-filetime:134341699542196681",
+      "kind": "provider-boundary",
+      "lane_id": "bounded-invalid",
+      "pid": 58272,
+      "target": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain"
+    }
+  ],
+  "targets": [
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\179a946fc349\\h",
+      "label": "codex-managed-check-live-11-series9-019-correction1-failure-routes-managed",
+      "profile": "managed",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\179a946fc349",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\179a946fc349\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\28b40d602ac5\\h",
+      "label": "codex-managed-check-live-11-series9-019-correction1-provider-exit-no-result-managed",
+      "profile": "managed",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\28b40d602ac5",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\28b40d602ac5\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\b03c2087f16a\\h",
+      "label": "codex-managed-check-live-11-series9-019-correction1-status-transcript-contradiction-managed",
+      "profile": "managed",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\b03c2087f16a",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\b03c2087f16a\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\6c6d0d1aebd6\\h",
+      "label": "codex-managed-check-live-11-series9-019-correction1-interrupt-resume-managed",
+      "profile": "managed",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\6c6d0d1aebd6",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\6c6d0d1aebd6\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\f68cad1f3be7\\h",
+      "label": "codex-managed-check-live-16-series9-019-correction1-behavior-managed",
+      "profile": "managed",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\f68cad1f3be7",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\f68cad1f3be7\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\87384d2dcdc7\\h",
+      "label": "codex-managed-check-live-8-series9-019-correction1-invalid-correction-managed",
+      "profile": "managed",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\87384d2dcdc7",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\87384d2dcdc7\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\0a86f2a84837\\h",
+      "label": "codex-plain-check-live-11-series9-019-correction1-failure-routes-managed",
+      "profile": "managed",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\0a86f2a84837",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\0a86f2a84837\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\736395cb7596\\h",
+      "label": "codex-plain-check-live-11-series9-019-correction1-provider-exit-no-result-managed",
+      "profile": "managed",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\736395cb7596",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\736395cb7596\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\44425d595c0e\\h",
+      "label": "codex-plain-check-live-11-series9-019-correction1-status-transcript-contradiction-managed",
+      "profile": "managed",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\44425d595c0e",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\44425d595c0e\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\fafa1c3cedfe\\h",
+      "label": "codex-plain-check-live-11-series9-019-correction1-interrupt-resume-managed",
+      "profile": "managed",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\fafa1c3cedfe",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\fafa1c3cedfe\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\e4a5d8c9d3ba\\h",
+      "label": "codex-plain-check-live-11-series9-019-correction1-failure-routes-plain-plain",
+      "profile": "plain",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\e4a5d8c9d3ba",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\e4a5d8c9d3ba\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\1bf2373007f1\\h",
+      "label": "codex-plain-check-live-16-series9-019-correction1-behavior-plain",
+      "profile": "plain",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\1bf2373007f1",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\1bf2373007f1\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\66a0816e3d21\\h",
+      "label": "codex-plain-check-live-8-series9-019-correction1-invalid-correction-plain",
+      "profile": "plain",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\66a0816e3d21",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\66a0816e3d21\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\d6e4e4c204d5\\h",
+      "label": "codex-plain-check-live-8-series9-019-correction1-provider-start-failure-plain",
+      "profile": "plain",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\d6e4e4c204d5",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\d6e4e4c204d5\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\80048ced8532\\h",
+      "label": "codex-plain-check-live-8-series9-019-correction1-provider-auth-failure-plain",
+      "profile": "plain",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\80048ced8532",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\80048ced8532\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\c80d1e496ac5\\h",
+      "label": "codex-plain-check-live-8-series9-019-correction1-native-resume-unavailable-plain",
+      "profile": "plain",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\c80d1e496ac5",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\c80d1e496ac5\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\a6b0813bf970\\h",
+      "label": "codex-plain-check-live-8-series9-019-correction1-cleanup-unproven-plain",
+      "profile": "plain",
+      "provider": "codex",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\a6b0813bf970",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\a6b0813bf970\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\a111f6a39f23\\h",
+      "label": "qwen-code-managed-check-live-11-series9-019-correction1-failure-routes-managed",
+      "profile": "managed",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\a111f6a39f23",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\a111f6a39f23\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\d14610922324\\h",
+      "label": "qwen-code-managed-check-live-11-series9-019-correction1-provider-exit-no-result-managed",
+      "profile": "managed",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\d14610922324",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\d14610922324\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\2e086284726b\\h",
+      "label": "qwen-code-managed-check-live-11-series9-019-correction1-status-transcript-contradiction-managed",
+      "profile": "managed",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\2e086284726b",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\2e086284726b\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\789049147b0e\\h",
+      "label": "qwen-code-managed-check-live-11-series9-019-correction1-interrupt-resume-managed",
+      "profile": "managed",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\789049147b0e",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\789049147b0e\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\35e2b52140f8\\h",
+      "label": "qwen-code-managed-check-live-16-series9-019-correction1-behavior-managed",
+      "profile": "managed",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\35e2b52140f8",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\35e2b52140f8\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\5db7f1fb981b\\h",
+      "label": "qwen-code-managed-check-live-8-series9-019-correction1-invalid-correction-managed",
+      "profile": "managed",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\5db7f1fb981b",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\5db7f1fb981b\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\1734acd6f034\\h",
+      "label": "qwen-code-plain-check-live-11-series9-019-correction1-failure-routes-managed",
+      "profile": "managed",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\1734acd6f034",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\1734acd6f034\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\d22f0a20e565\\h",
+      "label": "qwen-code-plain-check-live-11-series9-019-correction1-provider-exit-no-result-managed",
+      "profile": "managed",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\d22f0a20e565",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\d22f0a20e565\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\0ae215921b13\\h",
+      "label": "qwen-code-plain-check-live-11-series9-019-correction1-status-transcript-contradiction-managed",
+      "profile": "managed",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\0ae215921b13",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\0ae215921b13\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\aa8bbda817df\\h",
+      "label": "qwen-code-plain-check-live-11-series9-019-correction1-interrupt-resume-managed",
+      "profile": "managed",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\aa8bbda817df",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\aa8bbda817df\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\513d2ec6eca8\\h",
+      "label": "qwen-code-plain-check-live-16-series9-019-correction1-behavior-plain",
+      "profile": "plain",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\513d2ec6eca8",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\513d2ec6eca8\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\1ba7d8c9c52f\\h",
+      "label": "qwen-code-plain-check-live-8-series9-019-correction1-invalid-correction-plain",
+      "profile": "plain",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\1ba7d8c9c52f",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\1ba7d8c9c52f\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\da15621104d2\\h",
+      "label": "qwen-code-plain-check-live-8-series9-019-correction1-provider-start-failure-plain",
+      "profile": "plain",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\da15621104d2",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\da15621104d2\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\56af0a5d52b6\\h",
+      "label": "qwen-code-plain-check-live-8-series9-019-correction1-provider-auth-failure-plain",
+      "profile": "plain",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\56af0a5d52b6",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\56af0a5d52b6\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\c26a776fd3da\\h",
+      "label": "qwen-code-plain-check-live-8-series9-019-correction1-native-resume-unavailable-plain",
+      "profile": "plain",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\c26a776fd3da",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\c26a776fd3da\\w"
+    },
+    {
+      "harness": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\e273c163d981\\h",
+      "label": "qwen-code-plain-check-live-8-series9-019-correction1-cleanup-unproven-plain",
+      "profile": "plain",
+      "provider": "qwen-code",
+      "root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\e273c163d981",
+      "workspace": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\a3-matrix\\e273c163d981\\w"
+    }
+  ]
+}

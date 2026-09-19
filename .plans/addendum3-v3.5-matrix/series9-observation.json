@@ -1,0 +1,81 @@
+{
+  "observed_at": "2026-09-18T02:17:09.358526+00:00",
+  "profiles": [
+    {
+      "provider": "codex",
+      "profile": "managed",
+      "result": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-execution-series9\\.agent-workspace\\live-matrix\\results\\result-windows-codex-managed-series9-019-correction1.json",
+      "terminal_file": true,
+      "selected": [
+        {
+          "name": "CHECK-LIVE-8",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T00:47:17.352904+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-11",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T00:54:29.603010+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-16",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T00:57:04.696895+00:00"
+        }
+      ]
+    },
+    {
+      "provider": "codex",
+      "profile": "plain",
+      "result": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-execution-series9\\.agent-workspace\\live-matrix\\results\\result-windows-codex-plain-series9-019-correction1.json",
+      "terminal_file": true,
+      "selected": [
+        {
+          "name": "CHECK-LIVE-8",
+          "outcome": "PASS",
+          "attempted_at": "2026-09-18T01:02:46.196137+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-11",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T01:10:01.252122+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-16",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T01:10:35.431189+00:00"
+        }
+      ]
+    },
+    {
+      "provider": "qwen-code",
+      "profile": "managed",
+      "result": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-execution-series9\\.agent-workspace\\live-matrix\\results\\result-windows-qwen-code-managed-series9-019-correction1.json",
+      "terminal_file": true,
+      "selected": [
+        {
+          "name": "CHECK-LIVE-8",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T01:11:39.120660+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-11",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T01:45:56.115345+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-16",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T01:48:32.000394+00:00"
+        }
+      ]
+    },
+    {
+      "provider": "qwen-code",
+      "profile": "plain",
+      "result": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-execution-series9\\.agent-workspace\\live-matrix\\results\\result-windows-qwen-code-plain-series9-019-correction1.json",
+      "terminal_file": false,
+      "selected": []
+    }
+  ]
+}

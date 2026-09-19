@@ -1,0 +1,40 @@
+{
+  "schema": "orchestrator-coding-invocation/v1",
+  "action": "start",
+  "runtime_root": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-2/.plans/addendum3-v3.6-local-concurrency",
+  "resource_lock_root": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-2/.plans/addendum3-v3.6-local-concurrency/coding-resource-locks",
+  "run_root": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-2/w/addendum-3-epoch-001/planning-v36-review",
+  "repository": {
+    "common_dir": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-2/.git/modules/harness-single",
+    "worktree_root": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-2/w/addendum-3-epoch-001/planning-v36-review",
+    "branch": "planning/addendum3-v36-review",
+    "base_commit": "cb01e41533b337d3dd344b89313f1c9062ee69f8",
+    "merge_inputs": []
+  },
+  "prompt_path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-2/w/addendum-3-epoch-001/planning-v36-review/.agent-workspace/prompt.md",
+  "prompt_sha256": "3d04fb8ac608b21a6267588521efacec107fc6e0d59b2c6bbe01f9eb9a01c0a4",
+  "output_paths": {
+    "status": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-2/w/addendum-3-epoch-001/planning-v36-review/.agent-workspace/controller.status.json",
+    "jsonl": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-2/w/addendum-3-epoch-001/planning-v36-review/.agent-workspace/codex.jsonl",
+    "stderr": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-2/w/addendum-3-epoch-001/planning-v36-review/.agent-workspace/codex.stderr.log",
+    "last_message": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-2/w/addendum-3-epoch-001/planning-v36-review/.agent-workspace/last_message.txt",
+    "result": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-2/w/addendum-3-epoch-001/planning-v36-review/.agent-workspace/RESULT.json"
+  },
+  "event_log_path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-2/.plans/addendum3-v3.6-local-concurrency/LANE_EVENTS.jsonl",
+  "lane_id": "LANE-PLANNING-V36-REVIEW",
+  "worker_invocation_id": "INVOCATION-PLANNING-V36-REVIEW-001",
+  "task": "Read-only remaining-plan local-test scheduling audit",
+  "phase": "planning-review",
+  "exclusive_resources": [],
+  "codex": {
+    "command": [
+      "codex"
+    ],
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "xhigh",
+    "config_overrides": [],
+    "sandbox": "danger-full-access",
+    "approval_policy": "never",
+    "service_tier": "priority"
+  }
+}

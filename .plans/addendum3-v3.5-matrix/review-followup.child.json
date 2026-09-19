@@ -1,0 +1,1 @@
+{"pid": 11908, "provider": "Claude Code CLI", "model": "claude-opus-4-8", "reasoning_effort": "high", "tools": ["Read", "Glob", "Grep"]}

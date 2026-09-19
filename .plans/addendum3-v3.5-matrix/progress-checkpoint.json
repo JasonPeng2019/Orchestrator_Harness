@@ -1,0 +1,109 @@
+{
+  "recorded_at": "2026-09-18T02:33:52.722928+00:00",
+  "status": "PAUSED_BY_USER_AFTER_STALLED_WAIT",
+  "run_started_by_this_planning_task": false,
+  "attempt_id": "ATTEMPT-FL2-S2-LIVE-WINDOWS-019",
+  "candidate": "cb01e41533b337d3dd344b89313f1c9062ee69f8",
+  "selected_rows": 12,
+  "raw_outcomes": {
+    "PASS": 2,
+    "FAIL": 10
+  },
+  "preserved_classifications": 84,
+  "profiles": [
+    {
+      "provider": "codex",
+      "profile": "managed",
+      "result": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-execution-series9\\.agent-workspace\\live-matrix\\results\\result-windows-codex-managed-series9-019-correction1.json",
+      "rows": [
+        {
+          "name": "CHECK-LIVE-8",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T00:47:17.352904+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-11",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T00:54:29.603010+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-16",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T00:57:04.696895+00:00"
+        }
+      ]
+    },
+    {
+      "provider": "codex",
+      "profile": "plain",
+      "result": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-execution-series9\\.agent-workspace\\live-matrix\\results\\result-windows-codex-plain-series9-019-correction1.json",
+      "rows": [
+        {
+          "name": "CHECK-LIVE-8",
+          "outcome": "PASS",
+          "attempted_at": "2026-09-18T01:02:46.196137+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-11",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T01:10:01.252122+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-16",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T01:10:35.431189+00:00"
+        }
+      ]
+    },
+    {
+      "provider": "qwen-code",
+      "profile": "managed",
+      "result": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-execution-series9\\.agent-workspace\\live-matrix\\results\\result-windows-qwen-code-managed-series9-019-correction1.json",
+      "rows": [
+        {
+          "name": "CHECK-LIVE-8",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T01:11:39.120660+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-11",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T01:45:56.115345+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-16",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T01:48:32.000394+00:00"
+        }
+      ]
+    },
+    {
+      "provider": "qwen-code",
+      "profile": "plain",
+      "result": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\w\\addendum-3-epoch-001\\live-execution-series9\\.agent-workspace\\live-matrix\\results\\result-windows-qwen-code-plain-series9-019-correction1.json",
+      "rows": [
+        {
+          "name": "CHECK-LIVE-8",
+          "outcome": "PASS",
+          "attempted_at": "2026-09-18T01:54:14.649090+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-11",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T02:28:29.314792+00:00"
+        },
+        {
+          "name": "CHECK-LIVE-16",
+          "outcome": "FAIL",
+          "attempted_at": "2026-09-18T02:29:03.885713+00:00"
+        }
+      ]
+    }
+  ],
+  "remaining_exact_target_identities": [],
+  "outer_claim_present": false,
+  "process_stop_evidence": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.plans\\addendum3-v3.5-matrix\\stop-verification.json",
+  "observer_complete": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\.agent-runtime\\harness-v2-tier4-addendum-3-epoch-001\\live-allocation-019\\observer\\observations\\COMPLETE.json",
+  "next_action": "On later authorized resume, finish observer/executor correlation and cleanup accounting, one complete pool and M05 decision. No matrix replay or new run before scoped controls and readiness.",
+  "acceptance": "Raw results retained, no new M09/M05 semantic acceptance or product PASS claimed."
+}

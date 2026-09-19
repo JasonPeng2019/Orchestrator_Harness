@@ -17,6 +17,59 @@ authoritative file.
 
 ## 1. Authoring rules
 
+These skeletons specify the expanded runtime package and legacy format. For new
+formal plans use [normalized authoring](normalized-authoring.md) and the executable
+source compiler. Populate each decision at its source owner; generate reciprocal
+indexes and fully expanded cards instead of hand-maintaining them in these tables.
+Steps own local instances, library definitions own shared recipes/defaults, and
+review records retain actual independent judgments. Do not add source/state files
+inside the exact generated package envelope. An old instruction to "fill" a table
+means bind its source inputs and compile the table, not create a second authority.
+
+The [plan-conformance review](../../plan-conformance-review.md) and test-scope audit
+use four distinct independent reviewer groups with unanimous final approval. Use
+the expanded Audit field / Value rows and group-approval table in
+[test-scope audit](../../test-scope-audit.md), including outcome/non-goals,
+scope/authority, topology/simplicity, verification/budgets, execution authorization
+boundary and final Plan review verdict. Keep their authoritative facts in existing
+plan-workflow.md scope/authority, cost and external-operation fields. Section 16
+records review evidence and dispositions, not a new runtime permission source.
+
+For every selected acceptance activity or equivalent family, bind
+[Acceptance design](../../acceptance-design.md) in existing claim/oracle, Inputs,
+Local instructions, cost and invalidation fields. Explain environment necessity,
+repetition/combination rationale and the simpler adequate design or justified
+retention. Use the [review assignment](../../../assets/plan-review-assignment.md)
+for concrete independent review duties. In Section 16's existing per-STEP table,
+populate Necessity assessment, Multiplicity assessment and Proportionality assessment
+with actual group judgments/references covering all three entry paths. Do not add
+these as fields to fixed module or task-card tables.
+
+For every substantial post-step matrix, use
+[Matrix execution](../../matrix-execution.md) and the
+[matrix binding template](../../../assets/matrix-execution-binding.md).
+Map its prompts into the owning module/card's existing Inputs, Outputs, Isolation
+and lifecycle, Critical-path effect and Local instructions fields, referencing
+shared bindings once. Do not append fields to fixed tables or require a new package
+file. The same obligation applies to normal and repair-entry matrices. Record the
+review of scheduling, terminal exits, collection, cause-group repair, affected reruns
+and coordinate/total budgets in the existing Section 16 scope-audit tables.
+
+Apply [Test-scope audit](../../test-scope-audit.md) before finalizing the package.
+Under validation.md Section 16, include its exact metadata, group-approval and
+per-STEP evidence-audit table schemas, populated from four actual independent
+reviews, writer dispositions and ROOT acceptance. These three mandatory audit tables
+extend the validation schema; existing artifact headings, V01-V30 rows, module
+recipes and fixed STEP paths remain intact. No N/A sentinel is permitted in any
+of these tables. The deterministic validator rejects missing or unaccepted audit records;
+semantic sufficiency and reviewer authenticity still require direct inspection.
+
+For applicable execution risks, use [execution efficiency](../../execution-efficiency.md)
+to specialize the existing owner fields, policies and module actions. Record
+semantic validation separately from structural PASS and leave unavailable runtime
+enforcement explicit. Do not add new required artifacts or duplicate policy prose
+in every card.
+
 1. Create the exact package from `artifact-architecture.md`: `plan-workflow.md`, `global-rules.md`,
    `validation.md`, one `steps/<STEP-ID>.md` per gated step, and exactly `modules/M01.md` through
    `modules/M10.md`. Keep the
@@ -380,6 +433,19 @@ scope, test meaning, oracle, acceptance, or routing. Require a separate owning-a
 for any nontrivial conflict, changed proof meaning, new attempt, or follow-up edge; route any
 cross-lane or global issue to ROOT.
 
+TEMPLATE NOTE: Apply [Worker continuity and recovery](../../worker-continuity-and-recovery.md).
+State the runtime's terminal validity check, verified identities for same-thread report correction,
+two same-thread correction attempts after the initial missing/malformed result, measurable
+progress/stall criteria, and fresh/split same-role handoff when continuity is unavailable/unsafe or
+both attempts fail. The second attempt must not require first-attempt progress; an identical first
+validator error does not justify a fresh lane. Retain accepted work, native compaction, mapping and
+review independence. A correction requires a new owning-authority card, not necessarily a new
+thread; missing output is enough to initiate correction without fabricating a terminal handoff.
+Keep result failure distinct from fallback eligibility and avoid a universal agent-session timeout.
+For repeated configuration failures, require a scoped configuration repair and a disposable probe
+of the real required tool action, output and cleanup. Replacement cards must explain the changed
+assignment or prerequisite while carrying retained discovery forward.
+
 | Owner | Trigger | Required action | Exit | Result/record if needed | Module IDs |
 |---|---|---|---|---|---|
 | {{OWNER}} | {{TRIGGER}} | {{MANDATORY_ACTION}} | {{EXIT_CONDITION}} | {{OPTIONAL_PATH_RECORD_OR_NA}} | {{MI_IDS_OR_NA}} |
@@ -434,6 +500,13 @@ progress-bound step before Series 2 resumes checkpointed verification.
 | {{OWNER}} | {{TRIGGER}} | {{MANDATORY_ACTION}} | {{EXIT_CONDITION}} | {{OPTIONAL_PATH_RECORD_OR_NA}} | {{MI_IDS_OR_NA}} |
 
 ### P09 Administrative recovery
+
+TEMPLATE NOTE: Cite P02 for worker-result recovery. Correct only required report facts using retained
+evidence; do not repeat unaffected product checks or rewrite observed FAIL/BLOCKED outcomes to PASS.
+Missing or malformed reports hold only their direct consumers and never count as successful launches.
+When repeated envelope errors justify it, require a shared native emitter with invocation-derived
+identity, worker-authored facts, preflight, atomic publication and validated readback. Keep the
+existing domain handoff and its validation separate; schema validity never proves its findings.
 
 | Owner | Trigger | Required action | Exit | Result/record if needed | Module IDs |
 |---|---|---|---|---|---|
@@ -937,7 +1010,7 @@ routing authority.
 | V20 | Concurrent result writers have disjoint roots or one correct shared append lock. |
 | V21 | Context bounds include necessary seams and every non-maximal entrypoint score is justified. |
 | V22 | Failure cases are realistic, requirement-linked, oracle-backed, and not generic hardening. |
-| V23 | Test/support/report failures, including a failed strict test-only correction/rerun, return to classification, block only exact consumers, never become material repair without a failed or undecidable product criterion, and activate every independently satisfied successor. |
+| V23 | Test/support/report failures, including a failed strict test-only correction/rerun, return to classification, block only exact consumers, never become material repair without a failed or undecidable product criterion, and activate every independently satisfied successor. Manually exercise the shared worker recovery cases: narrow same-thread report correction, valid failed outcome, stalled correction, unavailable/drifted continuity, and intentionally malformed live-test evidence; verify bounded recovery preserves truth and accepted work. |
 | V24 | Every STEP defines exactly one concrete gate declaring `PRODUCT` or `OPERATION_BOUNDARY` according to the fact its failure disproves, exact blocking scope, continuation/loop eligibility, default-forward edge, and return/block target; the step contract, Section 6 index, and Section 8 gate index agree; no pure allocation/join/deployment/promotion/readback/cleanup/retirement failure is labeled PRODUCT while accepted behavior remains intact; each gate passes aggregation/manageability and explains why it is neither smaller nor larger. |
 | V25 | A product loop is entered only for a failed/genuinely undecidable required product criterion; continuation executes from the earliest failed, unresolved, affected, or uncertain action/check in the same logical role/task, reuses the active invocation only when available and still selected or records a structured handoff, preserves unaffected credit, prospectively splits/merges unaccepted work, and never reopens unrelated accepted work. |
 | V26 | Cleanup never deletes unpreserved, dirty, live, ambiguous, or unretained state. |

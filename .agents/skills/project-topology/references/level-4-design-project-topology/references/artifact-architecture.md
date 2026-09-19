@@ -7,6 +7,29 @@ configured instances of the existing M01-M10 macro-modules into three explicit e
 process has one authoritative definition; dependents cite its stable reference instead of copying or
 paraphrasing it.
 
+## Authoring authority versus expanded execution views
+
+For new formal plans, [normalized authoring](normalized-authoring.md) owns the
+editable definitions and generates the exact package described below. The table
+schemas and contracts in this reference continue to define the expanded runtime
+view and the supported legacy format; they do not require duplicate source entry.
+
+| Concern | Editable source owner | Generated views |
+|---|---|---|
+| Shared requirements, role semantics/parents, cross-step graph, shared resource contracts | Root source | Root tables, reciprocal role children and shared manifests |
+| Step public boundary, gate, three entry paths and local configured instances | One step source | Step file, composition union, root step/gate indexes and module-instance views |
+| One member dispatch and its meaningful lifecycle data | Its step-local instance/member | Complete member card, MI member inventory, lane and terminal-handoff rows |
+| Reusable module interface, invariant recipe and permitted defaults | Module library/default source | Expanded M01-M10 library and concretely bound cards |
+| Policy behavior | Policy source; consumers cite its ID | Policy behavior plus derived reverse consumer index |
+| Independent review and semantic rule/check decisions | Review source and actual reviewer evidence | Validation tables; never compiler-invented PASS |
+| Concrete agent allocation | Existing canonical mapping JSON | Consumed directly, never copied into plan semantics |
+
+A private instance variation is not a shared module-type edit. Generated module
+files may contain several steps' instances for runtime readability; the editable
+instances belong to their individual steps. Reuse defaults explicitly without
+changing meaning for unrelated instances. Fully expanded dispatch contracts remain
+mandatory; inheritance is an authoring convenience, not missing runtime instructions.
+
 ## Contents
 
 1. Package layout
@@ -21,6 +44,10 @@ paraphrasing it.
 10. Change rules
 
 ## 1. Package layout
+
+The following exact layout is the generated execution package. The separate
+authoring-source directory is defined by normalized-authoring.md and is not an
+extra runtime package artifact.
 
 Emit this exact directory shape at the requested plan destination:
 
@@ -95,6 +122,26 @@ Never make a lower layer redefine an upper layer. Never make an upper layer repe
 internal process merely to explain it.
 
 ## 3. Single-source ownership
+
+[Acceptance design](../../acceptance-design.md) decisions remain in existing owning
+scope, proof, cost and dependency fields. The Section 16 per-STEP audit summarizes
+necessity, multiplicity and proportionality assessments by the assigned reviewers;
+it does not redefine execution policy or duplicate the activity inventory. The
+dispatch template is an authoring aid, not another required output package file.
+
+The [plan-conformance review](../../plan-conformance-review.md) extends the existing
+Section 16 audit metadata with outcome, scope/authority, topology/simplicity,
+verification/budget and execution-boundary assessments and a final verdict. It
+records four distinct independent group approvals bound to the final revision,
+with shared finding references and bounded per-group follow-up. Plan scope and
+permissions remain in their existing owning artifacts; the audit is not execution
+authorization and introduces no new package file, policy or runtime role.
+
+The planning-time [test-scope audit](../../test-scope-audit.md) adds review results
+and per-STEP coverage references to validation.md Section 16. That file records
+the audit, dispositions and acceptance only. Suite selections and runtime scope
+continue to live in their existing owning manifests/cards; the audit creates no
+additional package file, runtime role or policy authority.
 
 | Concern | Sole authoritative location | Other artifacts may contain |
 |---|---|---|
@@ -293,6 +340,14 @@ must also reject paraphrased duplicate policy/module process and authority prose
 prove equivalent. The exact canonical FAST_LANE_V2 usage block is the sole intentional prose copy.
 
 ## 10. Change rules
+
+For normalized source, classify changes at source owners first. The table below
+describes the expanded/legacy locations of those facts, not a list of files to
+hand-edit after compilation. In particular, a private MI/member edit changes its
+step source, a shared recipe edit changes its library source, and all reciprocal
+indexes are regenerated. Do not edit global source for a private addition unless
+it actually changes a shared contract. See the normalized guide for build/check
+and impact commands.
 
 Classify each edit before changing artifacts:
 

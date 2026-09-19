@@ -1,9 +1,21 @@
 ---
 name: design-project-topology
 description: "Compile and structurally validate a significant project execution workflow and plan whose independent gated STEP-* building blocks each define a project-specific NORMAL path using MI-NORMAL-* instances, a distinct lightweight FAST_LANE_V2_SERIES_1 repair/exit path using MI-FL2-S1-* instances, and a distinct lightweight FAST_LANE_V2_SERIES_2 progress-bound re-entry path using MI-FL2-S2-* instances from fixed M01-M10 modules. Use only when the user explicitly asks to build a substantial modular workflow or execution plan with roles, gates, verification, repair returns, handoffs, resources, or integration. Do not use for general coding, ordinary task execution, diagnosis, or implementing the planned project."
+disable-model-invocation: true
+user-invocable: true
 ---
 
 # Compile a modular project topology
+
+For new formal plans, first read
+[Normalized authoring](references/normalized-authoring.md). Author the versioned
+source and use [compile_topology.py](scripts/compile_topology.py) to produce the
+expanded execution package. Source owners replace manually synchronized indexes;
+the exact expanded contracts and all safety rules below remain binding. Legacy
+Markdown packages remain supported; migrate conservatively before adopting source
+ownership. This source/output distinction governs every later instruction to edit,
+fill or own a package field: edit its source owner, regenerate the projection, and
+never keep both independently authoritative.
 
 Act as a deterministic plan compiler:
 
@@ -20,6 +32,47 @@ validate those design artifacts only.
 This compiler is design-only. Do not invoke it merely because a coding task is large or benefits from
 ordinary planning; the requested deliverable must itself be a significant execution workflow or plan.
 
+The sole planning-time exception to the agent-launch prohibition above is the
+four independent read-only groups in [plan review](../plan-conformance-review.md),
+including the [test-scope audit](../test-scope-audit.md). Read both references
+even when this compiler is invoked directly. After drafting all suites/matrices,
+obtain all four approvals, resolve findings and accept the final evidence scope before
+Pass 16 validation. This permits review of planning artifacts only; it does not
+launch the authored workflow or execute product tests. Its three result tables extend
+validation.md Section 16; preserve M01-M10, P01-P15, R/S rules, V01-V30 and all
+existing STEP/fast-lane contracts. Establish functional adequacy before optimizing
+cost; missing assertions, realistic boundary proof and required adverse/recovery
+coverage require additions or stronger tests. Cost criticism cannot waive a binding requirement.
+
+Read [Matrix execution](../matrix-execution.md) for every substantial post-step
+matrix, including normal and both repair-entry selections. Bind its concurrent
+isolated execution, coordinate terminal exits, complete collection, dependency
+graph, cause-group repair, affected reruns and reviewed wall-clock budgets in the
+existing module/card fields. Assign its rejection criteria to EXECUTION_RESOURCES
+and affected functional evidence to VERIFICATION. Its template is an authoring aid, not a new package schema or scheduler.
+
+Read [Matrix execution](../matrix-execution.md) for every substantial post-step
+matrix, including normal and both repair-entry selections. It owns scheduling and
+review criteria; map its concrete binding template into existing module/card fields
+and the EXECUTION_RESOURCES review. The template adds no package schema or runtime scheduler.
+
+All four distinct reviewer agents must apply their assigned portions of
+[Adversarial plan review](../plan-conformance-review.md), including on direct
+compiler invocation. Freeze the requested outcome before decomposition; challenge
+stage traceability, skill conformance, topology/simplicity, costs and authority
+before accepting the expanded Section 16 audit record. Planning acceptance never
+makes a live operation authorized. Include the reference's executor handoff in
+existing scope/authority and external-operation fields; add no package artifact.
+
+Before selecting evidence and expanding matrices, apply
+[Acceptance design](../acceptance-design.md) and instantiate the
+[review assignment](../../assets/plan-review-assignment.md) for each group. The
+compiler must carry necessity, multiplicity and proportionality from proof design
+through external-profile selection, cost simplification and final review. Record
+the three explicit per-STEP audit assessments in Section 16, covering NORMAL and
+both repair-entry paths. This adds no STEP/card field, module, package artifact or
+universal testing architecture; structural validity never overrides a review BLOCK.
+
 ## Inputs
 
 Require:
@@ -29,7 +82,7 @@ Require:
 - project path, runtime/orchestrator path, and operative documentation;
 - available slots, workflow roles, and concrete launch choices for the single role-agent mapping;
 - the existing canonical role-agent mapping path, or authority to create one beside the plan;
-- output directory;
+- separate authoring-source and generated execution-package directories;
 - costly, scarce, destructive, or external resources.
 
 If required inputs are absent, ask one consolidated question. Treat a reference plan as an outcome inventory, not a mandatory decomposition.
@@ -64,6 +117,11 @@ Read current authoritative files first. Read history only to resolve a named amb
 
 ## Read the packaged compiler resources
 
+For repair, fragile-control, repeated-command or recovery workflows, also apply
+[execution efficiency](../execution-efficiency.md). Its ownership table extends
+the existing compiler passes and M03/M05/M08/M09 obligations without changing the
+package schema, module count, worker-continuity contract or authority boundaries.
+
 Read these files completely before drafting. They are parts of this compiler, not examples to copy selectively:
 
 1. [references/artifact-architecture.md](references/artifact-architecture.md) - the exact ownership,
@@ -83,11 +141,57 @@ Read these files completely before drafting. They are parts of this compiler, no
 7. The current project's authoritative sources identified by the truth audit. Live project facts
    override defaults or assumptions, but they never change this skill's grammar or global rules.
 
+The source compiler provides projection freshness, ownership and impact checks;
+it never manufactures semantic review, runtime evidence or authority. Its build/check
+path uses this workspace's existing strict validator, preserving the Generic/Multi
+orchestration distinction. A direct legacy-validator PASS alone cannot certify that
+generated output still matches its source.
+
 Use [scripts/validate_execution_plan.py](scripts/validate_execution_plan.py) only after semantic
 composition and manual validation. The script proves document shape and decidable cross-references;
 it cannot prove that a risk is realistic, a module is worth its cost, or an acceptance oracle is sound.
 
+Also read [Worker continuity and recovery](../worker-continuity-and-recovery.md), including when
+this compiler is invoked directly. Compile its two same-thread correction attempts after an initial
+missing/malformed result into P02/P09: the second must not depend on first-attempt progress. Retain
+the reference's continuity exceptions, progress/stall detection and fresh-lane handoff. Validate its semantic cases before
+declaring the plan ready; table-shape validation alone cannot establish correct recovery routing.
+When recurring failures justify it, also compile the reference's scoped configuration repair,
+disposable tool-action proof, native result emission/preflight, and changed-assignment requirement
+into P02/P09 and the exact owning prerequisite. Do not treat authentication as permission proof or
+make fresh workers rediscover a known failed assignment.
+
 ## Compiler contract
+
+### Bind shipped execution mechanics without expanding the package
+
+Read [Shipped execution blocks](../execution-blocks.md) when this compiler is used directly or through
+the parent skill. R3, R14-R22 and S7-S12 already require proportional infrastructure, bounded review
+surfaces, retained check credit, rehearsal, and critical-path pricing. Use the packaged mechanics to
+make those controls concrete; do not create parallel policies or another M-module library.
+
+During Passes 4/6, classify prerequisites checkable before dispatch versus live facts, and map each
+gap to its exact consumer. Bind effective storage roots and child inheritance, not merely the name of
+a temporary directory. During Passes 7/9, select an existing host tool or a packaged block plus a thin
+adapter before commissioning a new runner. Schedule an early fresh-state-to-protected-use proof for
+coupled lifecycle seams. M08 rehearsals exercise the actual public transport/serialization with a
+deterministic backend; canned caller-shaped responses alone are insufficient proof of that transport.
+
+Use existing M01 prerequisite results, M03 verification assets, M08 readiness, M09 attempt lifecycle,
+M04/M07 scoped checking, and M05 semantic decisions. Bind helper commands and adapter gaps inside the
+existing Inputs, Outputs, Isolation and lifecycle, Critical-path effect, and Local instructions fields.
+Any profile is an ordinary referenced tool input, not a new mandatory package artifact. Shipped helpers
+are TARGET_TOOL_INVOKED mechanics; they are not runtime enforcement or a replacement supervisor.
+
+During Passes 11/15, distinguish a changed fixture/parser from changed product authority, batch
+compatible findings, preserve unrelated credit, and keep review at declared boundaries. Include actual
+elapsed observations in existing results when reassessment consumes them; do not add a timing database
+or total overlapping worker durations as wall clock. R30 remains the sole finite-command deadline
+policy. Reuse verified immutable artifacts, recheck live authority/state, and retire terminal lanes.
+
+This binding adds no schema, module, rule ID, or waiver. Keep M01-M10, P01-P15, V01-V30, all three STEP
+entries, and FAST_LANE_V2 contracts intact. Existing structural validation remains required for formal
+outputs; profile validation and executable helper tests prove only the new mechanical contracts.
 
 Every emitted plan uses the exact directory layout and per-artifact grammar defined by
 `artifact-architecture.md` and `execution-plan-template.md`. `plan-workflow.md` is the sole composition
@@ -312,6 +416,15 @@ only when ROOT explicitly assigns that breadth and supplies the governing set.
 
 **R13 — Prevent and recover malformed reports cheaply.** Add a deterministic read-only report preflight only when repeated structural handoff faults justify its cost and the inspected harness or target project actually provides it. The preflight may decide only parse/schema, declared paths, required fields, clean-tip, diff, and explicitly required outputs; it cannot decide product behavior or semantic acceptance. A producer corrects `REPORT_ONLY_ERROR` while its turn is active without changing code or rerunning product checks unless the missing product fact genuinely requires it. The owning orchestration authority records an administrative error and advances whenever the product criteria remain decidable; a lane sub-orchestrator returns any effect outside its lane to ROOT. Re-enter the same logical role/task only when an exact required fact is missing or ambiguous. Do not add revisions, hashes, immutable records, or separate evidence artifacts merely to make a report preflight possible.
 
+Under R9/R10/R13, a missing or malformed required terminal report should first receive a narrow
+correction card in the same resumable thread, with verified runtime identities and retained work.
+An incomplete report does not need a fabricated terminal handoff before that correction can be
+dispatched: the owning authority uses the observed failure and available state. Apply the shared
+worker-continuity reference's bounded attempts, stall criteria and fresh/split recovery route.
+R13's administrative continuation never labels an invalid launch successful or bypasses an exact
+consumer's required result. Report-only recovery does not activate a product repair loop or repeat
+unaffected review/testing, and does not independently qualify a model/provider fallback.
+
 ### Review, testing, and repair
 
 **R14 — Complete and pool before repair.** Each reviewer, test selection, observer, and deterministic
@@ -367,6 +480,9 @@ progress or when a global input reaches every selected unit. For hardware/practi
 only after the consumed target/resource state is verified unchanged. Run an accumulated safeguard only
 to the extent remaining or invalidated units require it; its initial cold pass remains a complete
 release unit when risk warrants it. Apply `references/incremental-verification.md`.
+
+Interpret declared order under
+[Matrix execution](../matrix-execution.md#preserve-checkpoint-recovery-and-ownership-boundaries).
 
 **R20 — Preflight only fragile expensive runners.** Before an expensive selection that depends on a
 custom runner or child process, use one side-effect-free disposable fake to prove the inputs, arguments,
@@ -921,10 +1037,17 @@ architecture, template, validator, and self-tests together.
 
 1. Perform the template's semantic checks manually against the goal, sources, and selected graph.
    Record an honest `PASS` or `FAIL` basis in `validation.md`; this does not require another evidence artifact.
-2. Run the validator from the project root:
+2. Run the validator from the project root. In this workspace, use the installed canonical copy:
 
 ```powershell
 python .agents/skills/project-topology/references/level-4-design-project-topology/scripts/validate_execution_plan.py <plan-directory> --mapping <mapping-path>
+```
+
+   The source-project installation uses the equivalent command below. Select the installed
+   path; these are alternative locations for the same validator.
+
+```powershell
+python .codex/skills/project-topology/references/level-4-design-project-topology/scripts/validate_execution_plan.py <plan-directory> --mapping <mapping-path>
 ```
 
 3. Fix every reported structural or cross-reference error, then rerun both affected semantic checks

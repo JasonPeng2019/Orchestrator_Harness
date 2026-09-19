@@ -15,6 +15,14 @@
 
 EDGE-002 activates from the same accepted target base and frozen interpretation set as STEP-002. LANE-VERIFY-ASSETS may write only the independent acceptance-test, crash/concurrency fixture, platform-runner, and disposable live-fixture paths declared in M03. It must not modify production source, public policy, expected behavior, locked configuration, existing product branch, or frozen-harness.
 
+Under version 3.7, decision820's unconsumed matrix-control delta does not return to
+STEP-003 because the proportional completion path has no consumer for that custom
+apparatus. The existing NORMAL path remains available only for an actual uncovered
+deterministic product assertion or a fixed direct-canary descriptor/terminal-record
+parser gap. Its accepted DEL-002 correction exits through EDGE-004; JOIN-001 reuses
+the retained accepted DEL-001 input. Original STEP-003 acceptance and unchanged
+asset-campaign credit remain intact; P04 governs exact invalidation.
+
 ## Normal and FAST_LANE_V2 entry flows
 
 ### FAST_LANE_V2 — canonical usage
@@ -39,7 +47,7 @@ required FAST_LANE_V2 row or its configured contract.
 
 | Entry flow | Status and activation | Consumes | Ordered distinct MI-* path | Produces and exit | Destination or continuation | Checkpoint and invalidation rule | Concrete saved work | Failure/fallback route |
 |---|---|---|---|---|---|---|---|---|
-| NORMAL | Activates from EDGE-002 | Admitted base, normative claim/oracle matrix, and verification conventions | MI-NORMAL-VERIFY-ASSETS, MI-NORMAL-ASSET-CAMPAIGN, MI-NORMAL-ASSET-VERDICT | Accepted DEL-002 tip or one classified route | EDGE-004 on acceptance | Preserve asset PASS only while scenario, oracle, test source, runner, configuration, and environment remain unchanged | Original full independent-asset path; no fast-lane claim | LOOP-ASSETS for admitted strict test-only correction or exact product-finding handoff |
+| NORMAL | Activates from EDGE-002 or from a current actual deterministic assertion or direct-canary descriptor/parser gap named by ROOT | Admitted base, normative claim/oracle matrix, exact missing evidence, and verification conventions | MI-NORMAL-VERIFY-ASSETS, MI-NORMAL-ASSET-CAMPAIGN, MI-NORMAL-ASSET-VERDICT | Accepted DEL-002 tip or one classified route | EDGE-004 on acceptance | Preserve asset PASS only while scenario, oracle, test source, runner, configuration, and environment remain unchanged | Original full independent-asset path; no fast-lane claim | LOOP-ASSETS for admitted strict test-only correction or exact product-finding handoff |
 | FAST_LANE_V2_SERIES_1 | Configured; activates when a complete pool establishes one scoped deterministic DEL-002 asset correction objective with a known motivating test and unchanged protected contracts | Complete pool, scoped correction objective, motivating test, frozen accepted baseline, and current checkpoint | MI-FL2-S1-ASSET-PATCH, MI-FL2-S1-ASSET-REVIEW, MI-FL2-S1-ASSET-INTEGRATE | Accepted repaired DEL-002 asset output after independent review and integration, with changed-input map and smoke credit | Later current progress bound FAST_LANE_V2_SERIES_2 selected by ROOT | Changed-source compile and motivating test run once as reusable smoke credit; declared changed inputs invalidate only dependent credit | Avoids reconstructing the complete oracle matrix and rerunning the broad asset campaign | If semantics, impact, or rigor is uncertain—or any fast result fails—use NORMAL asset correction and campaign |
 | FAST_LANE_V2_SERIES_2 | Configured; activates when STEP-003 is the current progress bound and all accepted Series 1 exits for this repair set are integrated | All accepted Series 1 exits, prior checkpoint, deterministic changed-input map, and protected baseline | MI-FL2-S2-ASSET-RECONCILE, MI-FL2-S2-ASSET-VERDICT | Updated DEL-002 checkpoint and accepted asset output or classified route | Return to the normal successor EDGE-004 after remaining required checks pass | Join accepted Series 1 exits, calculate invalidation, preserve unaffected PASS credit, and run remaining failed, unresolved, affected, uncertain, or uncredited units from the earliest required unit | Avoids a full asset discovery and oracle-review restart | If reconciliation is indeterminate or remaining checks fail, return to NORMAL M05 classification without replaying unaffected assets |
 

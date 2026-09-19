@@ -1,0 +1,12 @@
+{
+  "watch_timeout_seconds": 45,
+  "run_globs": [
+    "w/addendum-3-epoch-001/planning-v35-review"
+  ],
+  "attention_epoch_id": "addendum3-v35-planning-review",
+  "suite_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2",
+  "workspace_relpath": ".agent-workspace",
+  "output_dir": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-2\\runtime\\addendum3-v35-planning-review",
+  "attention_logging_enabled": false,
+  "poll_interval_seconds": 1
+}
