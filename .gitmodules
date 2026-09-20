@@ -4,6 +4,7 @@
 [submodule "harness-single"]
 	path = harness-single
 	url = https://github.com/JasonPeng2019/harness-single
+	branch = main
 [submodule "BYO-Firmware-MCP"]
 	path = BYO-Firmware-MCP
 	url = https://github.com/JasonPeng2019/BYO-Firmware-MCP
