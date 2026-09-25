@@ -118,6 +118,18 @@ product acceptances: Lane 1 branch
 paused state. Continue to use `a1d0712`, `fa0c326`, and `2886328` as the
 accepted/candidate product identities stated above.
 
+The workspace transfer is published to
+`https://github.com/JasonPeng2019/Orchestrator_Harness.git` branch `memory`.
+That branch includes the top-level hidden folders and the user-authorized
+`.secrets` files. Registered submodule transfer refs are
+`Codex_Claude_Setup:memory` at `7eb73ba` and `harness-single:memory` at
+`79d7aee`; the clean Harness-Memory-Base and Harness-Memory-Planning `main`
+refs were confirmed current. Per-lane harness configurations are pushed to
+`harness-single` branches `transfer/lane-1-harness` (`5d7e05e`),
+`transfer/lane-2-harness` (`643229f`), `transfer/lane-3-harness` (`3fa4b22`),
+and `transfer/lane-4-harness` (`e046ca0`). Historical product workbranches were
+not pushed; the active/accepted product branches named in this handoff were.
+
 Pause verification: lane 1 force-stopped `5782af1b...`; its provider PID is
 absent, active lanes are zero, and its partial privacy correction is preserved
 without RESULT in `context.py`, `preparation.py`, `privacy.py`, `runtime.py`,
