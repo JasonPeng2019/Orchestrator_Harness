@@ -10,3 +10,67 @@
 [submodule "Harness-Memory-Base"]
 	path = references/Harness-Memory-Base
 	url = https://github.com/JasonPeng2019/Harness-Memory-Base
+[submodule "Experimental-Agent-Workspace"]
+	path = Experimental-Agent-Workspace
+	url = https://github.com/JasonPeng2019/Codex_Claude_Setup.git
+	branch = Tester
+[submodule "lane-harness-1"]
+	path = development/dogfood/lane-harnesses/lane-1
+	url = https://github.com/JasonPeng2019/harness-single.git
+	branch = transfer/lane-1-harness
+[submodule "lane-harness-2"]
+	path = development/dogfood/lane-harnesses/lane-2
+	url = https://github.com/JasonPeng2019/harness-single.git
+	branch = transfer/lane-2-harness
+[submodule "lane-harness-3"]
+	path = development/dogfood/lane-harnesses/lane-3
+	url = https://github.com/JasonPeng2019/harness-single.git
+	branch = transfer/lane-3-harness
+[submodule "lane-harness-4"]
+	path = development/dogfood/lane-harnesses/lane-4
+	url = https://github.com/JasonPeng2019/harness-single.git
+	branch = transfer/lane-4-harness
+[submodule "lane-product-1"]
+	path = development/product/lane-roots/lane-1
+	url = https://github.com/JasonPeng2019/Harness-Memory-Base.git
+	branch = lane/step-05-level-zero-continuity
+[submodule "lane-product-2"]
+	path = development/product/lane-roots/lane-2
+	url = https://github.com/JasonPeng2019/Harness-Memory-Base.git
+	branch = lane/step-05-level-zero-continuity
+[submodule "lane-product-3"]
+	path = development/product/lane-roots/lane-3
+	url = https://github.com/JasonPeng2019/Harness-Memory-Base.git
+	branch = lane/step-05-level-zero-continuity
+[submodule "lane-product-4"]
+	path = development/product/lane-roots/lane-4
+	url = https://github.com/JasonPeng2019/Harness-Memory-Base.git
+	branch = lane/step-05-level-zero-continuity
+[submodule "product-worktree-example"]
+	path = development/product/worktree_example
+	url = https://github.com/JasonPeng2019/Harness-Memory-Base.git
+	branch = main
+[submodule "fallback-bindings-harness"]
+	path = development/test-runs/fallback-bindings-20260921/harness
+	url = https://github.com/JasonPeng2019/harness-single.git
+	branch = working/memory-v1
+[submodule "fallback-bindings-workspace"]
+	path = development/test-runs/fallback-bindings-20260921/workspace
+	url = https://github.com/JasonPeng2019/harness-single.git
+	branch = working/memory-v1
+[submodule "preferred-bindings-harness"]
+	path = development/test-runs/preferred-bindings-20260921/harness
+	url = https://github.com/JasonPeng2019/harness-single.git
+	branch = working/memory-v1
+[submodule "preferred-bindings-ollama-harness"]
+	path = development/test-runs/preferred-bindings-20260921/ollama-harness
+	url = https://github.com/JasonPeng2019/harness-single.git
+	branch = working/memory-v1
+[submodule "preferred-bindings-ollama-workspace"]
+	path = development/test-runs/preferred-bindings-20260921/ollama-workspace
+	url = https://github.com/JasonPeng2019/harness-single.git
+	branch = working/memory-v1
+[submodule "preferred-bindings-workspace"]
+	path = development/test-runs/preferred-bindings-20260921/workspace
+	url = https://github.com/JasonPeng2019/harness-single.git
+	branch = working/memory-v1
