@@ -1,0 +1,141 @@
+{
+  "schema": "harness-repair-review/v1",
+  "review_id": "EXC-BUILDER-BUG-review",
+  "reviewed_at": "2026-09-21T08:50:14.6387564Z",
+  "verdict": "REVISE",
+  "scope": {
+    "repository": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/references/harness-single",
+    "target": "current working diff",
+    "files": [
+      "orchestrator_harness/bootstrap.py",
+      "orchestrator_harness/tests/test_v2_materialization.py"
+    ],
+    "observed_working_tree_scope": [
+      " M orchestrator_harness/bootstrap.py",
+      " M orchestrator_harness/tests/test_v2_materialization.py"
+    ],
+    "inspection": [
+      "Read the unstaged diff and nearby bootstrap, setup, configuration, and test context.",
+      "git diff --check for the two target files exited 0.",
+      "No tests were run, as directed; ROOT-reported green results were not independently reproduced.",
+      "Reviewed Git show-ref and worktree command semantics against the official Git documentation."
+    ]
+  },
+  "intended_outcome": "After a failed git worktree add -b, remove only the branch and worktree proven to belong to that exact attempt; preserve pre-existing or unrelated state; use exact-target Git cleanup; report incomplete recovery; retain public error codes and normal successful behavior.",
+  "findings": [
+    {
+      "id": "F-001",
+      "severity": "critical",
+      "status": "confirmed",
+      "location": [
+        "orchestrator_harness/bootstrap.py:141-172",
+        "orchestrator_harness/bootstrap.py:95-107"
+      ],
+      "title": "The preflight absence check does not prove that post-failure state was created by this attempt.",
+      "evidence": [
+        "The path and ref are observed before the add at bootstrap.py:141-153, then git worktree add -b is invoked later at :155-163.",
+        "On any nonzero add result, :169-172 invokes destructive rollback solely because the earlier ref probe returned 1.",
+        "Rollback removes the named path at :95-97 and deletes any subsequently existing refs/heads/<branch> at :102-107; neither action verifies an attempt-owned Git identity.",
+        "A concurrent actor can create the branch or register a worktree after the preflight and before the failed add. The add then fails because that state exists, and this code deletes the unrelated branch or worktree. Git's documented -b behavior refusing an existing branch makes this interleaving directly relevant."
+      ],
+      "consequence": "This violates the core safety condition. A failed bootstrap can force-delete another actor's unmerged branch and remove that actor's exact-path worktree, rather than only recovering the Windows long-path attempt.",
+      "smallest_useful_correction": "Acquire and record branch/worktree ownership atomically before any destructive recovery, then condition deletion on the recorded identity still matching. If an exact-attempt proof cannot be established, fail closed and report incomplete rollback rather than remove the ref or path. Verify the target worktree through Git metadata before removing it."
+    },
+    {
+      "id": "F-002",
+      "severity": "high",
+      "status": "confirmed",
+      "location": [
+        "orchestrator_harness/bootstrap.py:95-100"
+      ],
+      "title": "Rollback performs a repository-wide worktree prune, not only exact-target cleanup.",
+      "evidence": [
+        "After the exact-path worktree remove, bootstrap.py:98 runs git worktree prune without a path or ownership filter.",
+        "Git documents worktree prune as pruning worktree information in the repository's entire $GIT_DIR/worktrees area, so it can remove stale administrative entries belonging to other worktrees."
+      ],
+      "consequence": "A single failed lane can mutate unrelated worktree metadata, including records intentionally retained for a temporarily unavailable worktree. That exceeds the requested exact-target recovery scope even though it avoids a broad filesystem deletion.",
+      "smallest_useful_correction": "Do not run global prune in this rollback path. Use git worktree remove --force only for a Git-verified attempt-owned target; if residual metadata cannot be safely removed by an exact-target operation, retain it and report rollback as incomplete."
+    },
+    {
+      "id": "F-003",
+      "severity": "high",
+      "status": "confirmed",
+      "location": [
+        "orchestrator_harness/bootstrap.py:209-221",
+        "orchestrator_harness/bootstrap.py:404-415",
+        "orchestrator_harness/tests/test_v2_materialization.py:953-994"
+      ],
+      "title": "Managed materialization rejects a valid, already-materialized ROOT hook binding.",
+      "evidence": [
+        "replace_if_matches accepts a worker overwrite only when the target bytes equal the raw root-catalog file at bootstrap.py:212-219; the map is built from raw root payload files at :404-409.",
+        "setup.py:548-584 explicitly supports a ROOT binding that has been materialized with the exact harness_root and runtime_root. Such a valid tracked binding copied into a worktree differs from the raw root template and also differs from the worker binding, so bootstrap.py:210-221 raises BOOTSTRAP_CACHE_COLLISION.",
+        "The new replacement test at test_v2_materialization.py:953-994 uses a raw root byte string, while the config test at :886-950 covers config and hooks but not an accepted materialized binding."
+      ],
+      "consequence": "A supported product configuration can make a normal managed bootstrap fail during overlay materialization, despite unchanged public success behavior being required.",
+      "smallest_useful_correction": "Recognize the valid materialized ROOT binding through the same setup validation/materialization contract before allowing the worker payload replacement; continue rejecting foreign or user-modified bindings. Add a regression using a base worktree containing the valid materialized binding."
+    },
+    {
+      "id": "F-004",
+      "severity": "medium",
+      "status": "confirmed",
+      "location": [
+        "orchestrator_harness/bootstrap.py:72-81",
+        "orchestrator_harness/bootstrap.py:164-181",
+        "orchestrator_harness/bootstrap.py:558-573"
+      ],
+      "title": "An exception while starting a rollback Git command loses the required incomplete-rollback report.",
+      "evidence": [
+        "_run_git directly calls subprocess.run without converting OSError at bootstrap.py:72-81.",
+        "The immediate failure path calls _rollback_bootstrap_worktree without a protective catch at :169-172, so a rollback-launch exception bypasses the constructed rollback_suffix and original add error at :174-181.",
+        "run_bootstrap then treats the worktree as not created and returns the raw generic exception because rollback_failure_summary exits at :558-560, rather than reporting incomplete rollback."
+      ],
+      "consequence": "A recovery failure such as a later Git executable or process-launch error can conceal both the failed add and the fact that cleanup was not completed.",
+      "smallest_useful_correction": "Catch rollback invocation exceptions inside _git_worktree_add, preserve the original add diagnostic, and append an explicit rollback incomplete diagnostic. Cover that exception path in the focused tests."
+    }
+  ],
+  "contract_coverage": [
+    {
+      "criterion": "Remove only a branch proven absent before and created by the exact failed attempt",
+      "status": "unmet",
+      "evidence": "bootstrap.py:145-172 proves only an earlier absence, not exact-attempt creation; F-001."
+    },
+    {
+      "criterion": "Preserve a pre-existing branch",
+      "status": "partial",
+      "evidence": "An initially existing ref skips the rollback branch deletion at bootstrap.py:153 and :169-172, and test_v2_materialization.py:65-82 covers that narrow case. A ref created after the probe is still deleted; F-001."
+    },
+    {
+      "criterion": "Use ordinary exact-target Git worktree cleanup without affecting unrelated worktrees",
+      "status": "unmet",
+      "evidence": "The remove command is exact-path at bootstrap.py:95-97, but the unscoped prune at :98 expands the operation to all stale worktree metadata; F-002."
+    },
+    {
+      "criterion": "Report incomplete rollback",
+      "status": "partial",
+      "evidence": "Nonzero prune, failed branch deletion, surviving branch, and surviving path create notes at bootstrap.py:99-131. A rollback subprocess exception escapes the immediate path without the required report; F-004."
+    },
+    {
+      "criterion": "Preserve existing public error codes and normal successful behavior",
+      "status": "partial",
+      "evidence": "The failure code remains BOOTSTRAP_REQUEST_INVALID at bootstrap.py:179-181 and the success result remains BOOTSTRAP_OK at :697-705, but a supported managed configuration regresses to BOOTSTRAP_CACHE_COLLISION; F-003."
+    },
+    {
+      "criterion": "Use Git return codes and branch names safely",
+      "status": "partial",
+      "evidence": "show-ref's ordinary 0-present and 1-missing semantics are handled at bootstrap.py:148-153, and branch deletion uses -- at :107. Those correct argument/return-code details do not supply the missing ownership proof in F-001."
+    }
+  ],
+  "questions": [],
+  "optional_improvements": [
+    {
+      "location": "orchestrator_harness/bootstrap.py:94-132",
+      "improvement": "Include the Git return code in rollback diagnostics and use Git's porcelain worktree listing for post-cleanup evidence instead of relying only on Path.exists()."
+    }
+  ],
+  "verification_gaps": [
+    "The mocked failure test at test_v2_materialization.py:20-63 does not model a branch or worktree appearing after the preflight, and it does not assert the exact remove/prune command sequence or state transition proving ownership.",
+    "No focused test asserts the returned public code and rollback incomplete summary for prune failure, branch-delete failure, surviving target path, or a subprocess exception during immediate rollback.",
+    "No test exercises the motivating real Git checkout failure on Windows long paths, nor an actual Git worktree cleanup record; the review did not run tests by instruction.",
+    "No test places a setup-accepted materialized ROOT binding in the base worktree before managed bootstrap, leaving F-003 unguarded."
+  ]
+}

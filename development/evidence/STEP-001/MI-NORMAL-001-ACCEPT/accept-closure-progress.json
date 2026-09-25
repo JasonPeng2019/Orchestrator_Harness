@@ -1,0 +1,76 @@
+{
+  "schema": "memory-harness-accept-closure-progress/v1",
+  "module_instance_id": "MI-NORMAL-001-ACCEPT",
+  "recorded_at": "2026-09-21T12:22:27.4188488Z",
+  "status": "COMPLETE",
+  "verdict": "ACCEPTED",
+  "verdict_action": "PRESERVED_NOT_REISSUED",
+  "verdict_scope": "Pre-integration product/harness facts only. STEP-001 remains active and its later integration, readiness, real-observation, and final-gate credit remains unearned.",
+  "prior_records_preserved_immutable": {
+    "root_verdict": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/root-verdict.json",
+      "sha256": "c38723d6021551ea3c066a1d468ee6fa087cd8aae5f208f7b267549793a74b8a"
+    },
+    "accept_progress": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/accept-progress.json",
+      "sha256": "5e327ad6af466c2966907c48e75625f8bd4b3b3ce5f4e1454c07c827d2e01cd2"
+    }
+  },
+  "mechanical_member": {
+    "reused": "The original accepted M05 mechanical pool remains the factual shape/hash collector; no unchanged fact collection was replayed.",
+    "lane_id": "normal-001-accept-pool",
+    "run_id": "0551f7ced6e848068526e58c7c92d49b",
+    "native_result_hash": "044c07472eaf29d298df7264ff0bc7bb23646a2eb0a1e9402d2159d01b24a963"
+  },
+  "root_closure": {
+    "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/check-001-credit-closure.json",
+    "sha256": "c93d7f8e613a4f82d3d8856eb5529ee0ad98b570e2846d79bc71f3a33a11f699",
+    "finding": "CHECK-001",
+    "classification": "strict test-only",
+    "impact": "NONBLOCKING_TEST_ERROR",
+    "disposition": "CLOSED",
+    "remaining_held_credit": []
+  },
+  "closure_basis": {
+    "correction_checkpoint_sha256": "a9875a29e53bf16f685cbaf685d0c8af411de25b717900548f27b78447a93f7b",
+    "affected_m04_pool_sha256": "668e662c850b8717c2ab7f3ad023634bdbf70cc43f5168aeae0960fb80ade733",
+    "affected_m04_checkpoint_sha256": "b5218b622d2dbd0226190827c515a5545cd44601ee0c0a29ad7a98cd606082ac",
+    "affected_routine_check": "CHECKS_PASS",
+    "independent_review": "CLOSED / CLEAN / zero findings",
+    "all_consumed_hashes_match": true
+  },
+  "credit_map": {
+    "preserved": "All unaffected credit in the existing root verdict remains accepted without replay.",
+    "restored": [
+      "MI-NORMAL-001-ASSETS verification.owned_descendant_cleanup",
+      "CONTROL-READY strict cleanup-safety credit",
+      "corrected-file hashes and consuming evidence joins",
+      "M04 review closure for CHECK-001"
+    ],
+    "still_invalidated": [],
+    "still_held": [],
+    "not_yet_earned": [
+      "M06 integrated coordinate",
+      "M08 readiness observation",
+      "M09 real native/service observation and cleanup",
+      "MI-NORMAL-001-GATE final STEP-001 verdict"
+    ]
+  },
+  "scope_readback": {
+    "product_main_head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "product_main_clean": true,
+    "canonical_harness_head": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+    "canonical_harness_clean": true,
+    "dogfood_config_sha256": "254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14",
+    "product_or_harness_change_in_closure": false,
+    "new_native_lane_required": false,
+    "new_native_lane_reason": "No new mechanical collection or implementation was required; ROOT consumed the accepted correction and affected M04 pool under M05 semantic authority."
+  },
+  "runtime": {
+    "state": "CLOSED",
+    "product_worktrees_remaining": ["main"]
+  },
+  "successor_hold": "RELEASED_FOR_MI-NORMAL-001-INTEGRATE_ONLY",
+  "next_module": "MI-NORMAL-001-INTEGRATE",
+  "next_action": "Author and dispatch the separate M06 integration card against the accepted pre-integration coordinate."
+}

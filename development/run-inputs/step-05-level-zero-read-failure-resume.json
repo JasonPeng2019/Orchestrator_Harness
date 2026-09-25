@@ -1,0 +1,17 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-05-level-zero-read-failure-correction",
+  "branch": "lane/step-05-level-zero-continuity",
+  "base_commit": "b06ea450f0bea98ad9bc9166a41d789591a09d44",
+  "task": "Resume the exact rejected STEP-05 Level 0 lane from b06ea45. Preserve its valid captured-configuration, deadline, spent-cost, and supersession behavior and the setup-installed unstaged .codex/hooks edits. Correct one reproduced replay defect: the new _durable_preparation currently catches every get_preparation exception and returns None; if a durable read fails transiently on an already-superseded packet, apply_level_zero re-enters planning and repeats optional search. ROOT reproduced one optional query on the first correction and a second query on replay after a one-call OSError; a durable-read failure is not proof of no prior correction. Add a focused failing regression for that exact store-read failure, then make the smallest fail-closed correction: an unreadable or missing required durable preparation must block or return an explicit safe no-memory disposition, never perform another optional call or replenish budget. Keep the no-store behavior and ordinary successful replay intact. Do not broaden into general restart identity, old database migration, all-off entry, or later steps. Rerun the direct contract-corrections and affected deadline tests, commit only this correction, and write truthful RESULT.json through the existing lane protocol. Product root: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/goal.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-05-preparation-preserves-budget-and-legacy-state.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-01-preparation-continuity-stays-bounded-and-compatible.md.",
+  "acceptance_criteria": [
+    "A one-call durable read failure on replay of an already-superseded packet cannot trigger a second optional search or a new allowance.",
+    "Normal durable replay still returns no_memory_continuation; the accepted b06ea45 configuration continuity and no-store path remain intact.",
+    "Focused tests pass on the committed result, with no claim that all of STEP-05 is complete."
+  ],
+  "deliverables": [
+    "One focused red/green durable-read-failure replay regression and a narrow fail-closed guard correction.",
+    "One same-lane correction commit after b06ea45 and valid native RESULT.json for ROOT review."
+  ],
+  "reason_for_acceptance_and_deliverables": "ROOT reproduced a second optional query when a transient read error was treated as missing durable ownership. This is the same STEP-05 replay-safety outcome and does not require broader database or harness changes."
+}

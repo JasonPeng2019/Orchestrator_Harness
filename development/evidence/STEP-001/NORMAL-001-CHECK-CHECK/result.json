@@ -1,0 +1,1251 @@
+{
+  "schema": "memory-harness-check-result/v1",
+  "status": "COMPLETE",
+  "recommendation": "CHECKS_PASS",
+  "recommendation_scope": "Factual check recommendation only. This lane does not accept, repair, or dispatch; ROOT owns acceptance.",
+  "recorded_at": "2026-09-21T10:42:42.283605Z",
+  "identity": {
+    "module_instance_id": "MI-NORMAL-001-CHECK",
+    "card_id": "CARD-NORMAL-001-CHECK-CHECK",
+    "deliverable_id": "DEL-001",
+    "stage_cohort_id": "COHORT-001",
+    "gate_id": "GATE-001",
+    "loop_id": "LOOP-001",
+    "workflow_role": "routine",
+    "ordered_actions_executed": [
+      "M04-A1",
+      "M04-A4",
+      "M04-A5",
+      "M04-A7"
+    ]
+  },
+  "native_identities": {
+    "lane_id": "normal-001-check-check",
+    "run_id": "a211f3d79e4a44b3b9676615befbd4ae",
+    "epoch_id": "b456e7d1497742cc8022dc6b22ccc529",
+    "worktree": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\product\\worktree_example\\.harness-runtime\\worktrees\\b456e7d1497742cc8022dc6b22ccc529\\normal-001-check-check",
+    "provider": "codex",
+    "model": "deepseek-v4.1-flash:cloud",
+    "launcher": "ollama",
+    "reasoning_effort": "high",
+    "service_tier": "normal",
+    "controller_launcher_argv": [
+      "python",
+      "-m",
+      "orchestrator_harness.controller",
+      "normal-001-check-check"
+    ],
+    "provider_launch_command_observed": "ollama launch codex --model deepseek-v4.1-flash:cloud --yes -- exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check -c approval_policy=\"never\" -c model_reasoning_effort=\"high\" -c service_tier=\"normal\" --dangerously-bypass-hook-trust -c features.hooks=true ... --json --output-last-message <lane>/.agent-workspace/last-message.txt --cd <lane> -",
+    "overlay_profile": "managed",
+    "overlay_provider_payload": "adapter-payloads/codex",
+    "invocation_content_hash": "6e355b7dc7e4a00239860114d6f3af32a8262c50e31bf4829702ee637cd3a20f",
+    "invocation_content_hash_recomputed": "6e355b7dc7e4a00239860114d6f3af32a8262c50e31bf4829702ee637cd3a20f",
+    "invocation_content_hash_match": true,
+    "result_path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\product\\worktree_example\\.harness-runtime\\worktrees\\b456e7d1497742cc8022dc6b22ccc529\\normal-001-check-check\\RESULT.json"
+  },
+  "frozen_input_identities": {
+    "repository_root": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3",
+    "product_P": {
+      "path": "development/product/worktree_example",
+      "branch": "main",
+      "expected_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "actual_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "clean": true
+    },
+    "canonical_harness": {
+      "path": "references/harness-single",
+      "expected_tip": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "actual_tip": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "clean": true
+    },
+    "accepted_checkpoints": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ADMIT/admission-progress.json",
+      "sha256": "80c299f93cb51a91a83e8640d5aacbdb5a175ad3b78248685fb6d6f7c2cde976"
+    },
+    "accepted_checkpoints_build": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-BUILD/build-progress.json",
+      "sha256": "ddbacee5af752b38cdaa82922586454e0f9c3c81a9847c2830a52ebd79bbdebf"
+    },
+    "accepted_checkpoints_assets": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/assets-progress.json",
+      "sha256": "c07df57e1d45faadb8caef2cdf55b8d62dec1ecb28405a507011b8fca452198d"
+    },
+    "accepted_m03_member_evidence": {
+      "result_json": {
+        "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-EXEC/result.json",
+        "sha256": "13b309641ae5e7a772ff5bfdfe7cafa14414a41a74a6b00c7bb641728006c8ed"
+      },
+      "native_result_json": {
+        "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-EXEC/native-result.json",
+        "sha256": "eb1c1f8b938dc03ee15aea4adc5b7073294289f5abb7628c364bf88c0c8edb2c"
+      },
+      "completion_review_json": {
+        "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-EXEC/completion-review.json",
+        "sha256": "6776a7aa2630ed5a85d43477f80cd70b9dab94c693d0535e30e8782ca12f222c"
+      },
+      "orchestrator_acceptance_json": {
+        "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-EXEC/orchestrator-acceptance.json",
+        "sha256": "e50ae65beacd5749e905bfe70e8196f1607c4a223232e0d3e6fd8f469dc020b4"
+      }
+    },
+    "consumed_source_assets": {
+      "resolver": {
+        "path": "development/test-tools/resolve-role.py",
+        "sha256": "5da5f8a73cc93215a55afb854484c97b50f1d497f6d6d4710757ca43d3468e78"
+      },
+      "resolver_tests": {
+        "path": "development/test-tools/tests/test_resolve_role.py",
+        "sha256": "dbbaa21fd3d340e8d2b0735a0d45a5d895f5cb707478cfef9309a49ff53c9969"
+      },
+      "control_tests": {
+        "path": "development/test-tools/tests/test_fixture_controls.py",
+        "sha256": "3851ed4bf4e208bf4ded0ffbf1e4fb28206cddaac5734e7f7246940f3731571a"
+      },
+      "fixture_manifest": {
+        "path": "development/test-tools/tests/fixtures/fixture_manifest.json",
+        "sha256": "6b584b939833125fb3069657c0da0bc700909cd675961ff6a30efe89f40b3f8c"
+      },
+      "control_child": {
+        "path": "development/test-tools/tests/fixtures/control_child.py",
+        "sha256": "e5fb9f90aa2173fc5f2507ce3d55dd3ec4c8b4e5141411295f65f8a33011a18a"
+      },
+      "role_mapping": {
+        "path": ".plans/SUBAGENT_ROLE_MODEL_MAPPING.json",
+        "sha256": "c882dc2dab0f2375069c4ed527a2db85a0366f608c1caea62a60a4e26d149bda"
+      }
+    },
+    "deployed_configuration": {
+      "harness_config": {
+        "path": "development/dogfood/harness/harness-config.json",
+        "sha256": "254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14"
+      },
+      "resource_manifest": {
+        "path": "development/dogfood/harness/resource-manifest.json",
+        "sha256": "4c3bfe2a33a309fa9139f07d78bf4e1f877769f6fc046f1078df5da390e39bf9"
+      },
+      "config_identity": "8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5"
+    }
+  },
+  "environment_controls": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONWARNINGS": "error::ResourceWarning",
+    "exact_selected_command_text_unchanged": true,
+    "note": "Both controls are environment-only; the exact selected command text was not altered."
+  },
+  "collection_window": {
+    "started_at": "2026-09-21T10:36:15Z",
+    "finished_at": "2026-09-21T10:36:43Z",
+    "checkpoint_count": 39
+  },
+  "checkpoints": [
+    {
+      "checkpoint_id": "CHECK-01",
+      "unit": "A_exact_selected",
+      "kind": "command",
+      "command": "python -m unittest discover -s development/test-tools/tests -p test_*.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3",
+      "env_controls": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONWARNINGS": "error::ResourceWarning"
+      },
+      "started_at": "2026-09-21T10:36:15Z",
+      "finished_at": "2026-09-21T10:36:24Z",
+      "elapsed_seconds": 9.15204,
+      "expected": "Exit 0; exercises stdlib resolver/isolation/control tests; PYTHONDONTWRITEBYTECODE=1 and PYTHONWARNINGS=error::ResourceWarning promote ResourceWarning to error; exact command text unchanged.",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "tests_run": 15,
+      "result": "PASS",
+      "stdout": "{\"behavior\":\"lost_handle_reconciliation\",\"checkpoint_preserved_after_producer_exit\":true,\"pid_from_child_checkpoint\":17208,\"process_absent_after_complete\":true,\"status_after_reconciliation\":\"complete\",\"status_before_reconciliation\":\"running\"}\n{\"behavior\":\"owned_descendant_cleanup\",\"cleanup_command\":\"taskkill /PID 67136 /T /F\",\"cleanup_exit_code\":0,\"cleanup_output\":\"SUCCESS: The process with PID 64396 (child process of PID 67136) has been terminated.\\nSUCCESS: The process with PID 67136 (child process of PID 64372) has been terminated.\",\"descendant_absent_after_cleanup\":true,\"descendant_pid\":67136,\"descendant_present_before_cleanup\":true,\"owner_exit_code\":0,\"parent_absent_after_owner_exit\":true,\"parent_pid\":64372}\n{\"behavior\":\"early_terminal_slow_success_ready_refill\",\"checkpoint\":{\"exit_code\":0,\"mode\":\"success\",\"pid\":17092,\"status\":\"complete\"},\"checkpoint_preserved_after_producer_exit\":true,\"complete_exit_statuses\":[0,2,0],\"early_terminal_exit_code\":2,\"ready_refill_exit_code\":0,\"slow_success_exit_code\":0,\"slow_was_running_before_refill\":true}\n{\"behavior\":\"heavy_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-HEAVY-PARSE-AND-CLAMP\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}\n{\"behavior\":\"middle_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-MIDDLE-PARSE-NUMBERS\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}\n{\"behavior\":\"routine_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-ROUTINE-ABOVE-HIGH\",\"intended_failure_excerpt\":\"AssertionError: 12 != 10 : GAP-ROUTINE-ABOVE-HIGH: above-high input must return the high bound\",\"prerequisite_exit_code\":0}\n",
+      "stderr": "...............\n----------------------------------------------------------------------\nRan 15 tests in 8.985s\n\nOK\n"
+    },
+    {
+      "checkpoint_id": "CHECK-02",
+      "unit": "B_control_ready",
+      "kind": "command",
+      "command": "python -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3",
+      "env_controls": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONWARNINGS": "error::ResourceWarning"
+      },
+      "started_at": "2026-09-21T10:36:24Z",
+      "finished_at": "2026-09-21T10:36:31Z",
+      "elapsed_seconds": 7.181667,
+      "expected": "Manifest qualification command control_ready exits 0 (8 tests).",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "tests_run": 8,
+      "result": "PASS",
+      "stdout": "{\"behavior\":\"lost_handle_reconciliation\",\"checkpoint_preserved_after_producer_exit\":true,\"pid_from_child_checkpoint\":12668,\"process_absent_after_complete\":true,\"status_after_reconciliation\":\"complete\",\"status_before_reconciliation\":\"running\"}\n{\"behavior\":\"owned_descendant_cleanup\",\"cleanup_command\":\"taskkill /PID 63192 /T /F\",\"cleanup_exit_code\":0,\"cleanup_output\":\"SUCCESS: The process with PID 52624 (child process of PID 63192) has been terminated.\\nSUCCESS: The process with PID 63192 (child process of PID 18556) has been terminated.\",\"descendant_absent_after_cleanup\":true,\"descendant_pid\":63192,\"descendant_present_before_cleanup\":true,\"owner_exit_code\":0,\"parent_absent_after_owner_exit\":true,\"parent_pid\":18556}\n{\"behavior\":\"early_terminal_slow_success_ready_refill\",\"checkpoint\":{\"exit_code\":0,\"mode\":\"success\",\"pid\":11816,\"status\":\"complete\"},\"checkpoint_preserved_after_producer_exit\":true,\"complete_exit_statuses\":[0,2,0],\"early_terminal_exit_code\":2,\"ready_refill_exit_code\":0,\"slow_success_exit_code\":0,\"slow_was_running_before_refill\":true}\n{\"behavior\":\"heavy_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-HEAVY-PARSE-AND-CLAMP\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}\n{\"behavior\":\"middle_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-MIDDLE-PARSE-NUMBERS\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}\n{\"behavior\":\"routine_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-ROUTINE-ABOVE-HIGH\",\"intended_failure_excerpt\":\"AssertionError: 12 != 10 : GAP-ROUTINE-ABOVE-HIGH: above-high input must return the high bound\",\"prerequisite_exit_code\":0}\n",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 7.035s\n\nOK\n"
+    },
+    {
+      "checkpoint_id": "CHECK-03",
+      "unit": "C_resolver_suite",
+      "kind": "command",
+      "command": "python -m unittest discover -s development/test-tools/tests -p test_resolve_role.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3",
+      "env_controls": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONWARNINGS": "error::ResourceWarning"
+      },
+      "started_at": "2026-09-21T10:36:31Z",
+      "finished_at": "2026-09-21T10:36:33Z",
+      "elapsed_seconds": 2.394497,
+      "expected": "Manifest qualification command resolver_suite exits 0 (7 tests).",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "tests_run": 7,
+      "result": "PASS",
+      "stdout": "",
+      "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 2.271s\n\nOK\n"
+    },
+    {
+      "checkpoint_id": "CHECK-04",
+      "unit": "D_ordinary_combined",
+      "kind": "command",
+      "command": "python -m unittest discover -s development/test-tools/tests -p test*.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3",
+      "env_controls": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONWARNINGS": "error::ResourceWarning"
+      },
+      "started_at": "2026-09-21T10:36:33Z",
+      "finished_at": "2026-09-21T10:36:43Z",
+      "elapsed_seconds": 9.268447,
+      "expected": "Manifest qualification command ordinary_combined_discovery exits 0 (15 tests).",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "tests_run": 15,
+      "result": "PASS",
+      "stdout": "{\"behavior\":\"lost_handle_reconciliation\",\"checkpoint_preserved_after_producer_exit\":true,\"pid_from_child_checkpoint\":7952,\"process_absent_after_complete\":true,\"status_after_reconciliation\":\"complete\",\"status_before_reconciliation\":\"running\"}\n{\"behavior\":\"owned_descendant_cleanup\",\"cleanup_command\":\"taskkill /PID 68468 /T /F\",\"cleanup_exit_code\":0,\"cleanup_output\":\"SUCCESS: The process with PID 46144 (child process of PID 68468) has been terminated.\\nSUCCESS: The process with PID 68468 (child process of PID 60284) has been terminated.\",\"descendant_absent_after_cleanup\":true,\"descendant_pid\":68468,\"descendant_present_before_cleanup\":true,\"owner_exit_code\":0,\"parent_absent_after_owner_exit\":true,\"parent_pid\":60284}\n{\"behavior\":\"early_terminal_slow_success_ready_refill\",\"checkpoint\":{\"exit_code\":0,\"mode\":\"success\",\"pid\":21580,\"status\":\"complete\"},\"checkpoint_preserved_after_producer_exit\":true,\"complete_exit_statuses\":[0,2,0],\"early_terminal_exit_code\":2,\"ready_refill_exit_code\":0,\"slow_success_exit_code\":0,\"slow_was_running_before_refill\":true}\n{\"behavior\":\"heavy_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-HEAVY-PARSE-AND-CLAMP\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}\n{\"behavior\":\"middle_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-MIDDLE-PARSE-NUMBERS\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}\n{\"behavior\":\"routine_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-ROUTINE-ABOVE-HIGH\",\"intended_failure_excerpt\":\"AssertionError: 12 != 10 : GAP-ROUTINE-ABOVE-HIGH: above-high input must return the high bound\",\"prerequisite_exit_code\":0}\n",
+      "stderr": "...............\n----------------------------------------------------------------------\nRan 15 tests in 9.116s\n\nOK\n"
+    },
+    {
+      "checkpoint_id": "CHECK-05-routine",
+      "unit": "E_routine_prereq",
+      "kind": "command",
+      "command": "python test_prerequisites.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\routine",
+      "env_controls": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONWARNINGS": "error::ResourceWarning"
+      },
+      "started_at": "2026-09-21T10:36:43Z",
+      "finished_at": "2026-09-21T10:36:43Z",
+      "elapsed_seconds": 0.091,
+      "expected": "Manifest prerequisite command exits 0 so the base shows prerequisite PASS before any pre-task gap (5 tests).",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "tests_run": 5,
+      "result": "PASS",
+      "stdout": "",
+      "stderr": "test_below_low_returns_low (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_below_low_returns_low) ... ok\ntest_high_endpoint_is_unchanged (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_high_endpoint_is_unchanged) ... ok\ntest_interior_value_is_unchanged (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_interior_value_is_unchanged) ... ok\ntest_low_endpoint_is_unchanged (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_low_endpoint_is_unchanged) ... ok\ntest_rejects_low_greater_than_high (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_rejects_low_greater_than_high) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "checkpoint_id": "CHECK-06-routine",
+      "unit": "F_routine_designated",
+      "kind": "command",
+      "command": "python test_task.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\routine",
+      "env_controls": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONWARNINGS": "error::ResourceWarning"
+      },
+      "started_at": "2026-09-21T10:36:43Z",
+      "finished_at": "2026-09-21T10:36:43Z",
+      "elapsed_seconds": 0.088507,
+      "expected": "Designated pre-task command exits 1 with only its own intended gap and no other base's gap id; asset check, not a product failure.",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "tests_run": 1,
+      "result": "EXPECTED_FAIL",
+      "stdout": "",
+      "stderr": "test_above_high_returns_high (__main__._build_suite.<locals>.ClampAboveHighTests.test_above_high_returns_high) ... FAIL\n\n======================================================================\nFAIL: test_above_high_returns_high (__main__._build_suite.<locals>.ClampAboveHighTests.test_above_high_returns_high)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\routine\\test_task.py\", line 12, in test_above_high_returns_high\n    self.assertEqual(\nAssertionError: 12 != 10 : GAP-ROUTINE-ABOVE-HIGH: above-high input must return the high bound\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "checkpoint_id": "CHECK-05-middle",
+      "unit": "E_middle_prereq",
+      "kind": "command",
+      "command": "python test_prerequisites.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle",
+      "env_controls": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONWARNINGS": "error::ResourceWarning"
+      },
+      "started_at": "2026-09-21T10:36:43Z",
+      "finished_at": "2026-09-21T10:36:43Z",
+      "elapsed_seconds": 0.091001,
+      "expected": "Manifest prerequisite command exits 0 so the base shows prerequisite PASS before any pre-task gap (6 tests).",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "tests_run": 6,
+      "result": "PASS",
+      "stdout": "",
+      "stderr": "test_above_high_returns_high (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_above_high_returns_high) ... ok\ntest_below_low_returns_low (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_below_low_returns_low) ... ok\ntest_high_endpoint_is_unchanged (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_high_endpoint_is_unchanged) ... ok\ntest_interior_value_is_unchanged (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_interior_value_is_unchanged) ... ok\ntest_low_endpoint_is_unchanged (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_low_endpoint_is_unchanged) ... ok\ntest_rejects_low_greater_than_high (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_rejects_low_greater_than_high) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "checkpoint_id": "CHECK-06-middle",
+      "unit": "F_middle_designated",
+      "kind": "command",
+      "command": "python test_task.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle",
+      "env_controls": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONWARNINGS": "error::ResourceWarning"
+      },
+      "started_at": "2026-09-21T10:36:43Z",
+      "finished_at": "2026-09-21T10:36:43Z",
+      "elapsed_seconds": 0.092,
+      "expected": "Designated pre-task command exits 1 with only its own intended gap and no other base's gap id; asset check, not a product failure.",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "tests_run": 3,
+      "result": "EXPECTED_FAIL",
+      "stdout": "",
+      "stderr": "test_parse_numbers_accepts_signed_integers_with_whitespace (__main__._build_suite.<locals>.ParseNumbersTaskTests.test_parse_numbers_accepts_signed_integers_with_whitespace) ... FAIL\ntest_parse_numbers_rejects_empty_input (__main__._build_suite.<locals>.ParseNumbersTaskTests.test_parse_numbers_rejects_empty_input) ... FAIL\ntest_parse_numbers_rejects_noninteger_token (__main__._build_suite.<locals>.ParseNumbersTaskTests.test_parse_numbers_rejects_noninteger_token) ... FAIL\n\n======================================================================\nFAIL: test_parse_numbers_accepts_signed_integers_with_whitespace (__main__._build_suite.<locals>.ParseNumbersTaskTests.test_parse_numbers_accepts_signed_integers_with_whitespace)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle\\test_task.py\", line 11, in test_parse_numbers_accepts_signed_integers_with_whitespace\n    from clamp import parse_numbers\nImportError: cannot import name 'parse_numbers' from 'clamp' (C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle\\clamp.py)\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle\\test_task.py\", line 13, in test_parse_numbers_accepts_signed_integers_with_whitespace\n    self.fail(f\"GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: {error}\")\nAssertionError: GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: cannot import name 'parse_numbers' from 'clamp' (C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle\\clamp.py)\n\n======================================================================\nFAIL: test_parse_numbers_rejects_empty_input (__main__._build_suite.<locals>.ParseNumbersTaskTests.test_parse_numbers_rejects_empty_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle\\test_task.py\", line 22, in test_parse_numbers_rejects_empty_input\n    from clamp import parse_numbers\nImportError: cannot import name 'parse_numbers' from 'clamp' (C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle\\clamp.py)\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle\\test_task.py\", line 24, in test_parse_numbers_rejects_empty_input\n    self.fail(f\"GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: {error}\")\nAssertionError: GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: cannot import name 'parse_numbers' from 'clamp' (C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle\\clamp.py)\n\n======================================================================\nFAIL: test_parse_numbers_rejects_noninteger_token (__main__._build_suite.<locals>.ParseNumbersTaskTests.test_parse_numbers_rejects_noninteger_token)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle\\test_task.py\", line 33, in test_parse_numbers_rejects_noninteger_token\n    from clamp import parse_numbers\nImportError: cannot import name 'parse_numbers' from 'clamp' (C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle\\clamp.py)\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle\\test_task.py\", line 35, in test_parse_numbers_rejects_noninteger_token\n    self.fail(f\"GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: {error}\")\nAssertionError: GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: cannot import name 'parse_numbers' from 'clamp' (C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle\\clamp.py)\n\n----------------------------------------------------------------------\nRan 3 tests in 0.003s\n\nFAILED (failures=3)\n"
+    },
+    {
+      "checkpoint_id": "CHECK-05-heavy",
+      "unit": "E_heavy_prereq",
+      "kind": "command",
+      "command": "python test_prerequisites.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy",
+      "env_controls": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONWARNINGS": "error::ResourceWarning"
+      },
+      "started_at": "2026-09-21T10:36:43Z",
+      "finished_at": "2026-09-21T10:36:43Z",
+      "elapsed_seconds": 0.095,
+      "expected": "Manifest prerequisite command exits 0 so the base shows prerequisite PASS before any pre-task gap (9 tests).",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "tests_run": 9,
+      "result": "PASS",
+      "stdout": "",
+      "stderr": "test_above_high_returns_high (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_above_high_returns_high) ... ok\ntest_below_low_returns_low (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_below_low_returns_low) ... ok\ntest_high_endpoint_is_unchanged (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_high_endpoint_is_unchanged) ... ok\ntest_interior_value_is_unchanged (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_interior_value_is_unchanged) ... ok\ntest_low_endpoint_is_unchanged (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_low_endpoint_is_unchanged) ... ok\ntest_rejects_low_greater_than_high (__main__._build_suite.<locals>.ClampPrerequisiteTests.test_rejects_low_greater_than_high) ... ok\ntest_accepts_signed_integers_with_whitespace (__main__._build_suite.<locals>.ParseNumbersPrerequisiteTests.test_accepts_signed_integers_with_whitespace) ... ok\ntest_rejects_empty_input (__main__._build_suite.<locals>.ParseNumbersPrerequisiteTests.test_rejects_empty_input) ... ok\ntest_rejects_noninteger_token (__main__._build_suite.<locals>.ParseNumbersPrerequisiteTests.test_rejects_noninteger_token) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "checkpoint_id": "CHECK-06-heavy",
+      "unit": "F_heavy_designated",
+      "kind": "command",
+      "command": "python test_task.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy",
+      "env_controls": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONWARNINGS": "error::ResourceWarning"
+      },
+      "started_at": "2026-09-21T10:36:43Z",
+      "finished_at": "2026-09-21T10:36:43Z",
+      "elapsed_seconds": 0.102,
+      "expected": "Designated pre-task command exits 1 with only its own intended gap and no other base's gap id; asset check, not a product failure.",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "tests_run": 3,
+      "result": "EXPECTED_FAIL",
+      "stdout": "",
+      "stderr": "test_fixed_mixed_boundary_input (__main__._build_suite.<locals>.ParseAndClampTaskTests.test_fixed_mixed_boundary_input) ... FAIL\ntest_invalid_bounds_raise_value_error (__main__._build_suite.<locals>.ParseAndClampTaskTests.test_invalid_bounds_raise_value_error) ... FAIL\ntest_invalid_tokens_raise_value_error (__main__._build_suite.<locals>.ParseAndClampTaskTests.test_invalid_tokens_raise_value_error) ... FAIL\n\n======================================================================\nFAIL: test_fixed_mixed_boundary_input (__main__._build_suite.<locals>.ParseAndClampTaskTests.test_fixed_mixed_boundary_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy\\test_task.py\", line 11, in test_fixed_mixed_boundary_input\n    from clamp import parse_and_clamp\nImportError: cannot import name 'parse_and_clamp' from 'clamp' (C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy\\clamp.py)\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy\\test_task.py\", line 13, in test_fixed_mixed_boundary_input\n    self.fail(f\"GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: {error}\")\nAssertionError: GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: cannot import name 'parse_and_clamp' from 'clamp' (C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy\\clamp.py)\n\n======================================================================\nFAIL: test_invalid_bounds_raise_value_error (__main__._build_suite.<locals>.ParseAndClampTaskTests.test_invalid_bounds_raise_value_error)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy\\test_task.py\", line 22, in test_invalid_bounds_raise_value_error\n    from clamp import parse_and_clamp\nImportError: cannot import name 'parse_and_clamp' from 'clamp' (C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy\\clamp.py)\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy\\test_task.py\", line 24, in test_invalid_bounds_raise_value_error\n    self.fail(f\"GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: {error}\")\nAssertionError: GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: cannot import name 'parse_and_clamp' from 'clamp' (C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy\\clamp.py)\n\n======================================================================\nFAIL: test_invalid_tokens_raise_value_error (__main__._build_suite.<locals>.ParseAndClampTaskTests.test_invalid_tokens_raise_value_error)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy\\test_task.py\", line 33, in test_invalid_tokens_raise_value_error\n    from clamp import parse_and_clamp\nImportError: cannot import name 'parse_and_clamp' from 'clamp' (C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy\\clamp.py)\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy\\test_task.py\", line 35, in test_invalid_tokens_raise_value_error\n    self.fail(f\"GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: {error}\")\nAssertionError: GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: cannot import name 'parse_and_clamp' from 'clamp' (C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy\\clamp.py)\n\n----------------------------------------------------------------------\nRan 3 tests in 0.003s\n\nFAILED (failures=3)\n"
+    },
+    {
+      "checkpoint_id": "CHECK-07-routine",
+      "unit": "K_routine_discovery_isolation",
+      "kind": "command",
+      "command": "C:\\Users\\Jason\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m unittest discover -s . -p test_task.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\routine",
+      "env_controls": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONWARNINGS": "error::ResourceWarning"
+      },
+      "started_at": "2026-09-21T10:36:43Z",
+      "finished_at": "2026-09-21T10:36:43Z",
+      "elapsed_seconds": 0.108001,
+      "expected": "Task-base discovery from its own directory collects 0 tests and exits 5 (NO TESTS RAN); the base is not importable/poisoning.",
+      "expected_exit_code": 5,
+      "actual_exit_code": 5,
+      "tests_run": 0,
+      "result": "PASS",
+      "stdout": "",
+      "stderr": "\n----------------------------------------------------------------------\nRan 0 tests in 0.000s\n\nNO TESTS RAN\n"
+    },
+    {
+      "checkpoint_id": "CHECK-07-middle",
+      "unit": "K_middle_discovery_isolation",
+      "kind": "command",
+      "command": "C:\\Users\\Jason\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m unittest discover -s . -p test_task.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\middle",
+      "env_controls": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONWARNINGS": "error::ResourceWarning"
+      },
+      "started_at": "2026-09-21T10:36:43Z",
+      "finished_at": "2026-09-21T10:36:43Z",
+      "elapsed_seconds": 0.100999,
+      "expected": "Task-base discovery from its own directory collects 0 tests and exits 5 (NO TESTS RAN); the base is not importable/poisoning.",
+      "expected_exit_code": 5,
+      "actual_exit_code": 5,
+      "tests_run": 0,
+      "result": "PASS",
+      "stdout": "",
+      "stderr": "\n----------------------------------------------------------------------\nRan 0 tests in 0.000s\n\nNO TESTS RAN\n"
+    },
+    {
+      "checkpoint_id": "CHECK-07-heavy",
+      "unit": "K_heavy_discovery_isolation",
+      "kind": "command",
+      "command": "C:\\Users\\Jason\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m unittest discover -s . -p test_task.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\task_bases\\heavy",
+      "env_controls": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONWARNINGS": "error::ResourceWarning"
+      },
+      "started_at": "2026-09-21T10:36:43Z",
+      "finished_at": "2026-09-21T10:36:43Z",
+      "elapsed_seconds": 0.104,
+      "expected": "Task-base discovery from its own directory collects 0 tests and exits 5 (NO TESTS RAN); the base is not importable/poisoning.",
+      "expected_exit_code": 5,
+      "actual_exit_code": 5,
+      "tests_run": 0,
+      "result": "PASS",
+      "stdout": "",
+      "stderr": "\n----------------------------------------------------------------------\nRan 0 tests in 0.000s\n\nNO TESTS RAN\n"
+    },
+    {
+      "checkpoint_id": "CHECK-14",
+      "unit": "M03_ASSET_SHA256 development/test-tools/tests/test_fixture_controls.py",
+      "kind": "hash",
+      "expected": "3851ed4bf4e208bf4ded0ffbf1e4fb28206cddaac5734e7f7246940f3731571a",
+      "actual": "3851ed4bf4e208bf4ded0ffbf1e4fb28206cddaac5734e7f7246940f3731571a",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-15",
+      "unit": "M03_ASSET_SHA256 development/test-tools/tests/fixtures/control_child.py",
+      "kind": "hash",
+      "expected": "e5fb9f90aa2173fc5f2507ce3d55dd3ec4c8b4e5141411295f65f8a33011a18a",
+      "actual": "e5fb9f90aa2173fc5f2507ce3d55dd3ec4c8b4e5141411295f65f8a33011a18a",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-16",
+      "unit": "M03_ASSET_SHA256 development/test-tools/tests/fixtures/fixture_manifest.json",
+      "kind": "hash",
+      "expected": "6b584b939833125fb3069657c0da0bc700909cd675961ff6a30efe89f40b3f8c",
+      "actual": "6b584b939833125fb3069657c0da0bc700909cd675961ff6a30efe89f40b3f8c",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-17",
+      "unit": "M03_ASSET_SHA256 development/test-tools/tests/fixtures/task_bases/routine/clamp.py",
+      "kind": "hash",
+      "expected": "32b3cf1d64c48c789e69ef27645950dc2b00828a72bed37837f488f47fce0706",
+      "actual": "32b3cf1d64c48c789e69ef27645950dc2b00828a72bed37837f488f47fce0706",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-18",
+      "unit": "M03_ASSET_SHA256 development/test-tools/tests/fixtures/task_bases/routine/test_prerequisites.py",
+      "kind": "hash",
+      "expected": "ddf4763d4bd25a3b7d83e182d511ffea67372c6fe327ca852fc8f627b07b047f",
+      "actual": "ddf4763d4bd25a3b7d83e182d511ffea67372c6fe327ca852fc8f627b07b047f",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-19",
+      "unit": "M03_ASSET_SHA256 development/test-tools/tests/fixtures/task_bases/routine/test_task.py",
+      "kind": "hash",
+      "expected": "44e3b426aab1c166b16e147d90976e21b28d8c221815bbb8c388c408d9697e62",
+      "actual": "44e3b426aab1c166b16e147d90976e21b28d8c221815bbb8c388c408d9697e62",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-20",
+      "unit": "M03_ASSET_SHA256 development/test-tools/tests/fixtures/task_bases/middle/clamp.py",
+      "kind": "hash",
+      "expected": "7b9ef67516fa3d17025841374284ef7772ce1e3d55e69dc9ab1523dc554ec775",
+      "actual": "7b9ef67516fa3d17025841374284ef7772ce1e3d55e69dc9ab1523dc554ec775",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-21",
+      "unit": "M03_ASSET_SHA256 development/test-tools/tests/fixtures/task_bases/middle/test_prerequisites.py",
+      "kind": "hash",
+      "expected": "ca452b381797a8e5c0c61d9bb5ecc79e8e8373bef782ca051fae12604c5b768e",
+      "actual": "ca452b381797a8e5c0c61d9bb5ecc79e8e8373bef782ca051fae12604c5b768e",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-22",
+      "unit": "M03_ASSET_SHA256 development/test-tools/tests/fixtures/task_bases/middle/test_task.py",
+      "kind": "hash",
+      "expected": "db2e4c95f01e24196af36b44aff4e10a40b66268031423f17422783e37568fc6",
+      "actual": "db2e4c95f01e24196af36b44aff4e10a40b66268031423f17422783e37568fc6",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-23",
+      "unit": "M03_ASSET_SHA256 development/test-tools/tests/fixtures/task_bases/heavy/clamp.py",
+      "kind": "hash",
+      "expected": "1301e81e98aaaadfd00686eb8ee22b5ef96a73056001959bfc735264d95ccfc1",
+      "actual": "1301e81e98aaaadfd00686eb8ee22b5ef96a73056001959bfc735264d95ccfc1",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-24",
+      "unit": "M03_ASSET_SHA256 development/test-tools/tests/fixtures/task_bases/heavy/parse_numbers.py",
+      "kind": "hash",
+      "expected": "11bb5098be85dcca1b1c7e2a7120422afb000ad6cac2a227d9530a3fe8865741",
+      "actual": "11bb5098be85dcca1b1c7e2a7120422afb000ad6cac2a227d9530a3fe8865741",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-25",
+      "unit": "M03_ASSET_SHA256 development/test-tools/tests/fixtures/task_bases/heavy/test_prerequisites.py",
+      "kind": "hash",
+      "expected": "7681b30bd288e90b18f76e12958a946849173ea160bdc5650ec68c2cb6b42d92",
+      "actual": "7681b30bd288e90b18f76e12958a946849173ea160bdc5650ec68c2cb6b42d92",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-26",
+      "unit": "M03_ASSET_SHA256 development/test-tools/tests/fixtures/task_bases/heavy/test_task.py",
+      "kind": "hash",
+      "expected": "c229ed999deb5b14c05cd26814b83a6585bdeb98ba72dda58f3747d20f5c3cae",
+      "actual": "c229ed999deb5b14c05cd26814b83a6585bdeb98ba72dda58f3747d20f5c3cae",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-27",
+      "unit": "M03 native result canonical content_hash",
+      "kind": "hash",
+      "expected": "71fc0d9d9bf41e12b5830d9a40e24a17cc769c5756ce57e3771b92f2664ebb47",
+      "actual": "71fc0d9d9bf41e12b5830d9a40e24a17cc769c5756ce57e3771b92f2664ebb47",
+      "algorithm": "sha256(canonical_json(record minus content_hash), sort_keys, separators=(',',':'), ensure_ascii=False)",
+      "result": "PASS",
+      "outcome": "PASS",
+      "report_status": "REVIEWABLE"
+    },
+    {
+      "checkpoint_id": "CHECK-28",
+      "unit": "M03_STABLE_EVIDENCE_SHA256 test_author_report",
+      "kind": "hash",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\evidence\\STEP-001\\NORMAL-001-ASSETS-EXEC\\result.json",
+      "expected": "13b309641ae5e7a772ff5bfdfe7cafa14414a41a74a6b00c7bb641728006c8ed",
+      "actual": "13b309641ae5e7a772ff5bfdfe7cafa14414a41a74a6b00c7bb641728006c8ed",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-29",
+      "unit": "M03_STABLE_EVIDENCE_SHA256 native_result",
+      "kind": "hash",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\evidence\\STEP-001\\NORMAL-001-ASSETS-EXEC\\native-result.json",
+      "expected": "eb1c1f8b938dc03ee15aea4adc5b7073294289f5abb7628c364bf88c0c8edb2c",
+      "actual": "eb1c1f8b938dc03ee15aea4adc5b7073294289f5abb7628c364bf88c0c8edb2c",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-30",
+      "unit": "M03_STABLE_EVIDENCE_SHA256 completion_review",
+      "kind": "hash",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\evidence\\STEP-001\\NORMAL-001-ASSETS-EXEC\\completion-review.json",
+      "expected": "6776a7aa2630ed5a85d43477f80cd70b9dab94c693d0535e30e8782ca12f222c",
+      "actual": "6776a7aa2630ed5a85d43477f80cd70b9dab94c693d0535e30e8782ca12f222c",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-31",
+      "unit": "M03_STABLE_EVIDENCE_SHA256 acceptance",
+      "kind": "hash",
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\evidence\\STEP-001\\NORMAL-001-ASSETS-EXEC\\orchestrator-acceptance.json",
+      "expected": "e50ae65beacd5749e905bfe70e8196f1607c4a223232e0d3e6fd8f469dc020b4",
+      "actual": "e50ae65beacd5749e905bfe70e8196f1607c4a223232e0d3e6fd8f469dc020b4",
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-32",
+      "unit": "M03 derived canonical review/acceptance hashes",
+      "kind": "hash",
+      "completion_review": {
+        "declared_content_hash": "ae0317d08e92ec654b02693e9ca09d01fb0bf01904192b2dbda9531ba49e4374",
+        "recomputed_content_hash": "ae0317d08e92ec654b02693e9ca09d01fb0bf01904192b2dbda9531ba49e4374",
+        "match": true,
+        "result_hash": "71fc0d9d9bf41e12b5830d9a40e24a17cc769c5756ce57e3771b92f2664ebb47",
+        "result_hash_matches_native": true,
+        "review_outcome": "PASS"
+      },
+      "acceptance": {
+        "declared_content_hash": "6c63964afd26815c98cde5af53a00ae099e2b1019422cbf3eca82b70cb6c1703",
+        "recomputed_content_hash": "6c63964afd26815c98cde5af53a00ae099e2b1019422cbf3eca82b70cb6c1703",
+        "match": true,
+        "result_hash": "71fc0d9d9bf41e12b5830d9a40e24a17cc769c5756ce57e3771b92f2664ebb47",
+        "review_ref": "ae0317d08e92ec654b02693e9ca09d01fb0bf01904192b2dbda9531ba49e4374",
+        "review_ref_matches_review": true,
+        "approval": "ACCEPTED"
+      },
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-33",
+      "unit": "Frozen tips and clean state",
+      "kind": "state",
+      "product": {
+        "rev_parse": {
+          "argv": [
+            "git",
+            "rev-parse",
+            "HEAD"
+          ],
+          "exit_code": 0,
+          "stdout": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+          "stderr": ""
+        },
+        "status_porcelain_branch": {
+          "argv": [
+            "git",
+            "status",
+            "--porcelain=v1",
+            "-b"
+          ],
+          "exit_code": 0,
+          "stdout": "## main",
+          "stderr": ""
+        },
+        "log1": {
+          "argv": [
+            "git",
+            "log",
+            "--oneline",
+            "-1"
+          ],
+          "exit_code": 0,
+          "stdout": "a54ad14 Sync managed lane bootstrap repair",
+          "stderr": ""
+        }
+      },
+      "canonical": {
+        "rev_parse": {
+          "argv": [
+            "git",
+            "rev-parse",
+            "HEAD"
+          ],
+          "exit_code": 0,
+          "stdout": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+          "stderr": ""
+        },
+        "status_porcelain_branch": {
+          "argv": [
+            "git",
+            "status",
+            "--porcelain=v1",
+            "-b"
+          ],
+          "exit_code": 0,
+          "stdout": "## working/memory-v1...origin/working/memory-v1 [ahead 1]",
+          "stderr": ""
+        },
+        "log1": {
+          "argv": [
+            "git",
+            "log",
+            "--oneline",
+            "-1"
+          ],
+          "exit_code": 0,
+          "stdout": "f6948fb Fix managed lane bootstrap blockers",
+          "stderr": ""
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-34",
+      "unit": "Deployed config identity and file hash",
+      "kind": "hash",
+      "path": "development/dogfood/harness/harness-config.json",
+      "config_file_sha256_expected": "254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14",
+      "config_file_sha256_actual": "254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14",
+      "config_identity_expected": "8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5",
+      "config_identity_actual": "8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5",
+      "basis": "orchestrator_harness.config.compute_config_identity over {root_workspace, managed_coordination, resource_manifest, runtime_record_schema_version:1}",
+      "resource_manifest": {
+        "path": "development/dogfood/harness/resource-manifest.json",
+        "sha256": "4c3bfe2a33a309fa9139f07d78bf4e1f877769f6fc046f1078df5da390e39bf9"
+      },
+      "runtime_records": {
+        "epoch_state": "8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5",
+        "monitor_MONITOR_json": "8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5"
+      },
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-35",
+      "unit": "Product lane commit/source diff beyond managed overlays",
+      "kind": "state",
+      "lane": {
+        "rev_parse": {
+          "argv": [
+            "git",
+            "rev-parse",
+            "HEAD"
+          ],
+          "exit_code": 0,
+          "stdout": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+          "stderr": ""
+        },
+        "status_porcelain_branch": {
+          "argv": [
+            "git",
+            "status",
+            "--porcelain=v1",
+            "-b"
+          ],
+          "exit_code": 0,
+          "stdout": "## lane/normal-001-check-check\n M .codex/hooks/orchestrator_harness_post_tool_use.py\n M .codex/hooks/orchestrator_harness_stop.py\n?? .agent-workspace/\n?? .codex/skills/lane-assignment/\n?? .codex/skills/manager-notify/",
+          "stderr": ""
+        },
+        "log3": {
+          "argv": [
+            "git",
+            "log",
+            "--oneline",
+            "-3"
+          ],
+          "exit_code": 0,
+          "stdout": "a54ad14 Sync managed lane bootstrap repair\n9c9d57e Establish refreshed harness baseline\ne5df4ec Initialize memory-enabled harness product",
+          "stderr": ""
+        },
+        "diff_stat_vs_base": {
+          "argv": [
+            "git",
+            "diff",
+            "--stat",
+            "a54ad14a8f59409ee1e88c2473e3617c123f20b8"
+          ],
+          "exit_code": 0,
+          "stdout": ".codex/hooks/orchestrator_harness_post_tool_use.py | 82 ++++++++++++++++++----\n .codex/hooks/orchestrator_harness_stop.py          | 68 ++++++++++++++----\n 2 files changed, 120 insertions(+), 30 deletions(-)",
+          "stderr": ""
+        },
+        "log_base_ahead": {
+          "argv": [
+            "git",
+            "log",
+            "--oneline",
+            "a54ad14a8f59409ee1e88c2473e3617c123f20b8..HEAD"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      },
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-36",
+      "unit": "Requested/resolved/actual routine binding readback (this lane)",
+      "kind": "state",
+      "requested": {
+        "provider": "codex",
+        "cli": "codex",
+        "model": "deepseek-v4.1-flash:cloud",
+        "launch_config": {
+          "reasoning_effort": "high",
+          "service_tier": "normal",
+          "launcher": "ollama"
+        },
+        "fallback_policy": {
+          "owner": "root",
+          "reset_for_each_new_launch": true,
+          "advance_only_on": [
+            "oauth_error",
+            "usage_cap_reached"
+          ],
+          "on_other_error": "retain_current_candidate_and_apply_plan_bounded_recovery",
+          "transition": "record_failure_cleanup_current_invocation_then_launch_next_candidate",
+          "fallbacks": [
+            {
+              "provider": "codex",
+              "cli": "codex",
+              "model": "gpt-5.6-luna",
+              "launch_config": {
+                "reasoning_effort": "high",
+                "service_tier": "normal"
+              }
+            }
+          ]
+        }
+      },
+      "resolved": {
+        "exit_code": 0,
+        "stdout": "[\"--provider\",\"codex\",\"--model\",\"deepseek-v4.1-flash:cloud\",\"--provider-option\",\"reasoning_effort=high\",\"--provider-option\",\"service_tier=normal\",\"--provider-option\",\"launcher=ollama\"]",
+        "stderr": "",
+        "parsed": [
+          "--provider",
+          "codex",
+          "--model",
+          "deepseek-v4.1-flash:cloud",
+          "--provider-option",
+          "reasoning_effort=high",
+          "--provider-option",
+          "service_tier=normal",
+          "--provider-option",
+          "launcher=ollama"
+        ]
+      },
+      "actual_this_lane": {
+        "invocation_provider": {
+          "id": "codex",
+          "launch_config": {
+            "launcher": "ollama",
+            "reasoning_effort": "high",
+            "service_tier": "normal"
+          },
+          "model": "deepseek-v4.1-flash:cloud"
+        },
+        "invocation_lane_id": "normal-001-check-check",
+        "invocation_run_id": "a211f3d79e4a44b3b9676615befbd4ae",
+        "invocation_launcher": {
+          "argv": [
+            "python",
+            "-m",
+            "orchestrator_harness.controller",
+            "normal-001-check-check"
+          ],
+          "entry": "python -m orchestrator_harness.controller"
+        },
+        "card_base_commit": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+        "card_branch": "lane/normal-001-check-check",
+        "card_workflow_role": "routine",
+        "overlay_profile": "managed",
+        "overlay_run_id": "a211f3d79e4a44b3b9676615befbd4ae",
+        "binding_role": "worker",
+        "binding_run_id": "a211f3d79e4a44b3b9676615befbd4ae",
+        "invocation_content_hash_declared": "6e355b7dc7e4a00239860114d6f3af32a8262c50e31bf4829702ee637cd3a20f",
+        "invocation_content_hash_recomputed": "6e355b7dc7e4a00239860114d6f3af32a8262c50e31bf4829702ee637cd3a20f",
+        "invocation_content_hash_match": true
+      },
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-37",
+      "unit": "Unauthorized benchmark/learner execution absence",
+      "kind": "state",
+      "commands_executed_in_this_check": [
+        "python -m unittest discover -s development/test-tools/tests -p test_*.py",
+        "python -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py",
+        "python -m unittest discover -s development/test-tools/tests -p test_resolve_role.py",
+        "python -m unittest discover -s development/test-tools/tests -p test*.py",
+        "python test_prerequisites.py",
+        "python test_task.py",
+        "python test_prerequisites.py",
+        "python test_task.py",
+        "python test_prerequisites.py",
+        "python test_task.py",
+        "C:\\Users\\Jason\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m unittest discover -s . -p test_task.py",
+        "C:\\Users\\Jason\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m unittest discover -s . -p test_task.py",
+        "C:\\Users\\Jason\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m unittest discover -s . -p test_task.py"
+      ],
+      "benchmark_adapters_or_tasks_run": false,
+      "scored_cohorts_or_subsets_run": false,
+      "learner_implementation_present": false,
+      "live_service_campaign_run": false,
+      "vendored_benchmark_presence_only": [
+        "development/product/worktree_example/harness/vendor/everos/benchmarks/{adapters,configs,data,metrics}"
+      ],
+      "harness_release_checks_invoked": false,
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-38",
+      "unit": "Bytecode hygiene / generated artifacts",
+      "kind": "state",
+      "pyc_total_repo": 3465,
+      "pyc_created_at_or_after_check_start": 0,
+      "pre_existing": [
+        [
+          "2026-09-21T10:34:04Z",
+          "development\\product\\worktree_example\\.harness-runtime\\worktrees\\b456e7d1497742cc8022dc6b22ccc529\\normal-001-check-check\\.agent-workspace\\__pycache__\\result-stop-check.cpython-312.pyc"
+        ],
+        [
+          "2026-09-21T09:36:33Z",
+          "development\\test-tools\\tests\\__pycache__\\test_resolve_role.cpython-312.pyc"
+        ],
+        [
+          "2026-09-21T09:18:37Z",
+          "development\\dogfood\\harness\\orchestrator_harness\\provider_adapters\\codex\\__pycache__\\launcher_binding.cpython-312.pyc"
+        ],
+        [
+          "2026-09-21T09:18:36Z",
+          "development\\product\\worktree_example\\harness\\orchestrator_harness\\provider_adapters\\codex\\__pycache__\\launcher_binding.cpython-312.pyc"
+        ],
+        [
+          "2026-09-21T09:11:18Z",
+          "development\\dogfood\\harness\\orchestrator_harness\\__pycache__\\leases.cpython-312.pyc"
+        ],
+        [
+          "2026-09-21T09:11:18Z",
+          "development\\dogfood\\harness\\orchestrator_harness\\__pycache__\\controller.cpython-312.pyc"
+        ]
+      ],
+      "result": "PASS"
+    },
+    {
+      "checkpoint_id": "CHECK-39",
+      "unit": "Consumed frozen input file hashes",
+      "kind": "hash",
+      "admission_progress": {
+        "path": "development/evidence/STEP-001/MI-NORMAL-001-ADMIT/admission-progress.json",
+        "sha256": "80c299f93cb51a91a83e8640d5aacbdb5a175ad3b78248685fb6d6f7c2cde976"
+      },
+      "build_progress": {
+        "path": "development/evidence/STEP-001/MI-NORMAL-001-BUILD/build-progress.json",
+        "sha256": "ddbacee5af752b38cdaa82922586454e0f9c3c81a9847c2830a52ebd79bbdebf"
+      },
+      "assets_progress": {
+        "path": "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/assets-progress.json",
+        "sha256": "c07df57e1d45faadb8caef2cdf55b8d62dec1ecb28405a507011b8fca452198d"
+      },
+      "resolver": {
+        "path": "development/test-tools/resolve-role.py",
+        "sha256": "5da5f8a73cc93215a55afb854484c97b50f1d497f6d6d4710757ca43d3468e78"
+      },
+      "resolver_tests": {
+        "path": "development/test-tools/tests/test_resolve_role.py",
+        "sha256": "dbbaa21fd3d340e8d2b0735a0d45a5d895f5cb707478cfef9309a49ff53c9969"
+      },
+      "control_tests": {
+        "path": "development/test-tools/tests/test_fixture_controls.py",
+        "sha256": "3851ed4bf4e208bf4ded0ffbf1e4fb28206cddaac5734e7f7246940f3731571a"
+      },
+      "fixture_manifest": {
+        "path": "development/test-tools/tests/fixtures/fixture_manifest.json",
+        "sha256": "6b584b939833125fb3069657c0da0bc700909cd675961ff6a30efe89f40b3f8c"
+      },
+      "control_child": {
+        "path": "development/test-tools/tests/fixtures/control_child.py",
+        "sha256": "e5fb9f90aa2173fc5f2507ce3d55dd3ec4c8b4e5141411295f65f8a33011a18a"
+      },
+      "role_mapping": {
+        "path": ".plans/SUBAGENT_ROLE_MODEL_MAPPING.json",
+        "sha256": "c882dc2dab0f2375069c4ed527a2db85a0366f608c1caea62a60a4e26d149bda"
+      },
+      "check_card_check": {
+        "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/CARD-NORMAL-001-CHECK-CHECK.json",
+        "sha256": "87e284dd2a30a000a176a9cb43eab8f5a36db24cb6b4222debc0a4d6e38e94f8"
+      },
+      "check_card_review": {
+        "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/CARD-NORMAL-001-CHECK-REVIEW.json",
+        "sha256": "1962c20ce00fb0655e8287df3ce9462ff51ad7896cf7944fb4c7a582effd1de0"
+      },
+      "result": "PASS"
+    }
+  ],
+  "control_ready_machine_readbacks": {
+    "CHECK-01_exact_selected": [
+      "{\"behavior\":\"lost_handle_reconciliation\",\"checkpoint_preserved_after_producer_exit\":true,\"pid_from_child_checkpoint\":17208,\"process_absent_after_complete\":true,\"status_after_reconciliation\":\"complete\",\"status_before_reconciliation\":\"running\"}",
+      "{\"behavior\":\"owned_descendant_cleanup\",\"cleanup_command\":\"taskkill /PID 67136 /T /F\",\"cleanup_exit_code\":0,\"cleanup_output\":\"SUCCESS: The process with PID 64396 (child process of PID 67136) has been terminated.\\nSUCCESS: The process with PID 67136 (child process of PID 64372) has been terminated.\",\"descendant_absent_after_cleanup\":true,\"descendant_pid\":67136,\"descendant_present_before_cleanup\":true,\"owner_exit_code\":0,\"parent_absent_after_owner_exit\":true,\"parent_pid\":64372}",
+      "{\"behavior\":\"early_terminal_slow_success_ready_refill\",\"checkpoint\":{\"exit_code\":0,\"mode\":\"success\",\"pid\":17092,\"status\":\"complete\"},\"checkpoint_preserved_after_producer_exit\":true,\"complete_exit_statuses\":[0,2,0],\"early_terminal_exit_code\":2,\"ready_refill_exit_code\":0,\"slow_success_exit_code\":0,\"slow_was_running_before_refill\":true}",
+      "{\"behavior\":\"heavy_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-HEAVY-PARSE-AND-CLAMP\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}",
+      "{\"behavior\":\"middle_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-MIDDLE-PARSE-NUMBERS\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}",
+      "{\"behavior\":\"routine_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-ROUTINE-ABOVE-HIGH\",\"intended_failure_excerpt\":\"AssertionError: 12 != 10 : GAP-ROUTINE-ABOVE-HIGH: above-high input must return the high bound\",\"prerequisite_exit_code\":0}"
+    ],
+    "CHECK-02_control_ready": [
+      "{\"behavior\":\"lost_handle_reconciliation\",\"checkpoint_preserved_after_producer_exit\":true,\"pid_from_child_checkpoint\":12668,\"process_absent_after_complete\":true,\"status_after_reconciliation\":\"complete\",\"status_before_reconciliation\":\"running\"}",
+      "{\"behavior\":\"owned_descendant_cleanup\",\"cleanup_command\":\"taskkill /PID 63192 /T /F\",\"cleanup_exit_code\":0,\"cleanup_output\":\"SUCCESS: The process with PID 52624 (child process of PID 63192) has been terminated.\\nSUCCESS: The process with PID 63192 (child process of PID 18556) has been terminated.\",\"descendant_absent_after_cleanup\":true,\"descendant_pid\":63192,\"descendant_present_before_cleanup\":true,\"owner_exit_code\":0,\"parent_absent_after_owner_exit\":true,\"parent_pid\":18556}",
+      "{\"behavior\":\"early_terminal_slow_success_ready_refill\",\"checkpoint\":{\"exit_code\":0,\"mode\":\"success\",\"pid\":11816,\"status\":\"complete\"},\"checkpoint_preserved_after_producer_exit\":true,\"complete_exit_statuses\":[0,2,0],\"early_terminal_exit_code\":2,\"ready_refill_exit_code\":0,\"slow_success_exit_code\":0,\"slow_was_running_before_refill\":true}",
+      "{\"behavior\":\"heavy_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-HEAVY-PARSE-AND-CLAMP\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}",
+      "{\"behavior\":\"middle_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-MIDDLE-PARSE-NUMBERS\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}",
+      "{\"behavior\":\"routine_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-ROUTINE-ABOVE-HIGH\",\"intended_failure_excerpt\":\"AssertionError: 12 != 10 : GAP-ROUTINE-ABOVE-HIGH: above-high input must return the high bound\",\"prerequisite_exit_code\":0}"
+    ],
+    "CHECK-04_ordinary_combined": [
+      "{\"behavior\":\"lost_handle_reconciliation\",\"checkpoint_preserved_after_producer_exit\":true,\"pid_from_child_checkpoint\":7952,\"process_absent_after_complete\":true,\"status_after_reconciliation\":\"complete\",\"status_before_reconciliation\":\"running\"}",
+      "{\"behavior\":\"owned_descendant_cleanup\",\"cleanup_command\":\"taskkill /PID 68468 /T /F\",\"cleanup_exit_code\":0,\"cleanup_output\":\"SUCCESS: The process with PID 46144 (child process of PID 68468) has been terminated.\\nSUCCESS: The process with PID 68468 (child process of PID 60284) has been terminated.\",\"descendant_absent_after_cleanup\":true,\"descendant_pid\":68468,\"descendant_present_before_cleanup\":true,\"owner_exit_code\":0,\"parent_absent_after_owner_exit\":true,\"parent_pid\":60284}",
+      "{\"behavior\":\"early_terminal_slow_success_ready_refill\",\"checkpoint\":{\"exit_code\":0,\"mode\":\"success\",\"pid\":21580,\"status\":\"complete\"},\"checkpoint_preserved_after_producer_exit\":true,\"complete_exit_statuses\":[0,2,0],\"early_terminal_exit_code\":2,\"ready_refill_exit_code\":0,\"slow_success_exit_code\":0,\"slow_was_running_before_refill\":true}",
+      "{\"behavior\":\"heavy_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-HEAVY-PARSE-AND-CLAMP\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}",
+      "{\"behavior\":\"middle_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-MIDDLE-PARSE-NUMBERS\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}",
+      "{\"behavior\":\"routine_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-ROUTINE-ABOVE-HIGH\",\"intended_failure_excerpt\":\"AssertionError: 12 != 10 : GAP-ROUTINE-ABOVE-HIGH: above-high input must return the high bound\",\"prerequisite_exit_code\":0}"
+    ],
+    "CHECK-05/06_routine": [],
+    "CHECK-05/06_middle": [],
+    "CHECK-05/06_heavy": []
+  },
+  "expected_vs_actual": [
+    {
+      "check": "exact selected command exit",
+      "expected": 0,
+      "actual": 0,
+      "equal": true
+    },
+    {
+      "check": "exact selected command tests",
+      "expected": 15,
+      "actual": 15,
+      "equal": true
+    },
+    {
+      "check": "control_ready tests",
+      "expected": 8,
+      "actual": 8,
+      "equal": true
+    },
+    {
+      "check": "resolver_suite tests",
+      "expected": 7,
+      "actual": 7,
+      "equal": true
+    },
+    {
+      "check": "ordinary combined discovery tests",
+      "expected": 15,
+      "actual": 15,
+      "equal": true
+    },
+    {
+      "check": "routine prerequisite exit",
+      "expected": 0,
+      "actual": 0,
+      "equal": true
+    },
+    {
+      "check": "routine designated pre-task exit",
+      "expected": 1,
+      "actual": 1,
+      "equal": true
+    },
+    {
+      "check": "routine intended gap only",
+      "expected": "GAP-ROUTINE-ABOVE-HIGH only",
+      "actual": "GAP-ROUTINE-ABOVE-HIGH",
+      "equal": true
+    },
+    {
+      "check": "middle prerequisite exit",
+      "expected": 0,
+      "actual": 0,
+      "equal": true
+    },
+    {
+      "check": "middle designated pre-task exit",
+      "expected": 1,
+      "actual": 1,
+      "equal": true
+    },
+    {
+      "check": "middle intended gap only",
+      "expected": "GAP-MIDDLE-PARSE-NUMBERS only",
+      "actual": "GAP-MIDDLE-PARSE-NUMBERS",
+      "equal": true
+    },
+    {
+      "check": "heavy prerequisite exit",
+      "expected": 0,
+      "actual": 0,
+      "equal": true
+    },
+    {
+      "check": "heavy designated pre-task exit",
+      "expected": 1,
+      "actual": 1,
+      "equal": true
+    },
+    {
+      "check": "heavy intended gap only",
+      "expected": "GAP-HEAVY-PARSE-AND-CLAMP only",
+      "actual": "GAP-HEAVY-PARSE-AND-CLAMP",
+      "equal": true
+    },
+    {
+      "check": "task-base discovery isolation exit (routine/middle/heavy)",
+      "expected": [
+        5,
+        5,
+        5
+      ],
+      "actual": [
+        5,
+        5,
+        5
+      ],
+      "equal": true
+    },
+    {
+      "check": "M03 accepted asset hashes verified",
+      "expected": 13,
+      "actual": 13,
+      "equal": true
+    },
+    {
+      "check": "M03 stable evidence hashes verified",
+      "expected": 4,
+      "actual": 4,
+      "equal": true
+    },
+    {
+      "check": "M03 native result canonical content_hash",
+      "expected": "71fc0d9d9bf41e12b5830d9a40e24a17cc769c5756ce57e3771b92f2664ebb47",
+      "actual": "71fc0d9d9bf41e12b5830d9a40e24a17cc769c5756ce57e3771b92f2664ebb47",
+      "equal": true
+    },
+    {
+      "check": "M03 completion review canonical content_hash",
+      "expected": "ae0317d08e92ec654b02693e9ca09d01fb0bf01904192b2dbda9531ba49e4374",
+      "actual": "ae0317d08e92ec654b02693e9ca09d01fb0bf01904192b2dbda9531ba49e4374",
+      "equal": true
+    },
+    {
+      "check": "M03 acceptance canonical content_hash",
+      "expected": "6c63964afd26815c98cde5af53a00ae099e2b1019422cbf3eca82b70cb6c1703",
+      "actual": "6c63964afd26815c98cde5af53a00ae099e2b1019422cbf3eca82b70cb6c1703",
+      "equal": true
+    },
+    {
+      "check": "acceptance.review_ref == completion_review.content_hash",
+      "expected": "ae0317d08e92ec654b02693e9ca09d01fb0bf01904192b2dbda9531ba49e4374",
+      "actual": "ae0317d08e92ec654b02693e9ca09d01fb0bf01904192b2dbda9531ba49e4374",
+      "equal": true
+    },
+    {
+      "check": "product tip",
+      "expected": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "actual": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "equal": true
+    },
+    {
+      "check": "product main clean",
+      "expected": "## main",
+      "actual": "## main",
+      "equal": true
+    },
+    {
+      "check": "canonical tip",
+      "expected": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "actual": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "equal": true
+    },
+    {
+      "check": "deployed config identity",
+      "expected": "8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5",
+      "actual": "8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5",
+      "equal": true
+    },
+    {
+      "check": "deployed harness-config.json byte sha256",
+      "expected": "254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14",
+      "actual": "254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14",
+      "equal": true
+    },
+    {
+      "check": "routine requested==resolved==actual binding",
+      "expected": [
+        "--provider",
+        "codex",
+        "--model",
+        "deepseek-v4.1-flash:cloud",
+        "--provider-option",
+        "reasoning_effort=high",
+        "--provider-option",
+        "service_tier=normal",
+        "--provider-option",
+        "launcher=ollama"
+      ],
+      "actual": [
+        "--provider",
+        "codex",
+        "--model",
+        "deepseek-v4.1-flash:cloud",
+        "--provider-option",
+        "reasoning_effort=high",
+        "--provider-option",
+        "service_tier=normal",
+        "--provider-option",
+        "launcher=ollama"
+      ],
+      "equal": true
+    },
+    {
+      "check": "lane commits ahead of base",
+      "expected": 0,
+      "actual": 0,
+      "equal": true
+    },
+    {
+      "check": "bytecode created by this check",
+      "expected": 0,
+      "actual": 0,
+      "equal": true
+    }
+  ],
+  "commands_declared_by_manifest_and_invoked": {
+    "manifest_qualification_commands": [
+      "python -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py",
+      "python -m unittest discover -s development/test-tools/tests -p test_resolve_role.py",
+      "python -m unittest discover -s development/test-tools/tests -p test*.py"
+    ],
+    "manifest_prerequisite_commands": [
+      "python test_prerequisites.py (routine)",
+      "python test_prerequisites.py (middle)",
+      "python test_prerequisites.py (heavy)"
+    ],
+    "manifest_designated_pre_task_commands": [
+      "python test_task.py (routine)",
+      "python test_task.py (middle)",
+      "python test_task.py (heavy)"
+    ]
+  },
+  "requirement_credit": {
+    "REQ-001": "Admission/build/asset prerequisite readback only; no memory-product behavior credit claimed or observed. Actual all-off native lifecycle remains M09.",
+    "REQ-027": "Confirmed by execution the M03-owned finite subprocess controls: early incompatible terminal exit, independent slow success with ready refill, complete exit statuses, lost-handle reconciliation, preserved checkpoint, and lingering owned-descendant cleanup with exact taskkill exit readback. Outer/inner delegation-chain, collision and nested-capacity credit remains M08/M09.",
+    "REQ-028": "Requested routine allocation (.plans/SUBAGENT_ROLE_MODEL_MAPPING.json) resolved through development/test-tools/resolve-role.py against frozen references/harness-single reproduces exactly the declared actual routine resolution with no substitution; this lane's invocation.json agrees on provider/model/launcher/effort/tier. Native coverage is claimed only for the role actually launched (routine); no fallback selected or exercised.",
+    "REQ-029": "No benchmark adapter/task/subset/scored cohort, post-closeout run, or learner implementation was executed or added in this check. Vendored benchmark trees are present but unexercised.",
+    "CONTROL-READY": "Preselected CONTROL-READY surface passed with ResourceWarning promoted to error: control suite 8 PASS, resolver suite 7 PASS, combined discovery 15 PASS, three prerequisites PASS with only intended pre-task gaps, real owned-descendant cleanup proven. Actual ROOT control-boundary consumption remains M08."
+  },
+  "retained_claims": [
+    "Frozen input identity unchanged: product tip a54ad14a8f59409ee1e88c2473e3617c123f20b8 clean; canonical tip f6948fb2673661b6c2cfb69cf47b23a198b3f5f8 clean; this lane has zero commits ahead of base and no source diff beyond managed native overlays.",
+    "All 13 accepted M03 asset hashes and all 4 stable M03 evidence file hashes recomputed byte-identical; M03 native result canonical content_hash, completion-review hash and acceptance hash recompute exactly and are internally linked (review_ref / result_hash).",
+    "Exact selected command, three manifest qualification commands, three prerequisites, three designated pre-task commands and three discovery-isolation readbacks published with command, cwd, environment controls, timestamps, exit codes, test counts and verbatim stdout/stderr.",
+    "Deployed configuration identity 8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5 recomputed from the deployed two-key config plus empty resource manifest and matches the runtime epoch-state and monitor records and the accepted admission checkpoint.",
+    "No generated bytecode left behind by this check; the only test-tools bytecode and the runtime-managed result-stop-check bytecode predate the check window."
+  ],
+  "uncredited_claims": [
+    "No product behavior, acceptance or repair credit; these are factual check outputs only.",
+    "No live-model or service credit beyond this lane's own launch; native all-off observations remain M09.",
+    "No REQ-027 nested-capacity/collision-fixture credit; remains M08/M09.",
+    "No REQ-028 fallback-selection credit: fallback policy was read but no fallback was selected or exercised.",
+    "Disposable probe development/test-runs/normal-001-build-exec-probe/stdlib_control_probe.py (sha256 6e366ad049740b69f0e0947f1e1f956a62a807b9729334ac4060dc194204e39a) remains an M02 non-acceptance asset and is not credited here."
+  ],
+  "protected_scope": {
+    "source_tests_fixtures_plans_checkpoints_git_state_runtime_records_modified": false,
+    "commits_made": false,
+    "written_paths": [
+      "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\evidence\\STEP-001\\NORMAL-001-CHECK-CHECK\\result.json",
+      "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\product\\worktree_example\\.harness-runtime\\worktrees\\b456e7d1497742cc8022dc6b22ccc529\\normal-001-check-check\\RESULT.json"
+    ],
+    "product_P": {
+      "tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "status_porcelain": "## main",
+      "clean": true
+    },
+    "canonical_harness": {
+      "tip": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "status_porcelain": "## working/memory-v1...origin/working/memory-v1 [ahead 1]",
+      "clean": true
+    },
+    "lane_worktree": {
+      "tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "commits_ahead_of_base": 0,
+      "changes_present": [
+        "M .codex/hooks/orchestrator_harness_post_tool_use.py",
+        "M .codex/hooks/orchestrator_harness_stop.py",
+        "?? .agent-workspace/",
+        "?? .codex/skills/lane-assignment/",
+        "?? .codex/skills/manager-notify/"
+      ],
+      "classification": "managed native overlay only (ROOT-installed hook payload adaptations and lane workspace), not check-authored source"
+    },
+    "generated_bytecode_remaining": 0,
+    "benchmark_or_learner_source_added": false,
+    "harness_or_product_source_unchanged": true
+  },
+  "unresolved": []
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-05-level-zero-continuity",
+  "branch": "lane/step-05-level-zero-continuity",
+  "base_commit": "a64ebfa9135960ad817752d447588feb5d782d80",
+  "task": "Implement only the first bounded STEP-05 slice: a late Level 0 correction must continue the original preparation's captured configuration, exact decision, and remaining deadline even if a new PreparationService instance has different current defaults. In src/memory_harness/preparation.py, apply_level_zero currently calls _resolve(None) and can take a new service config rather than the recorded preparation config. Add a focused failing regression in the existing contract-corrections tests using a restarted service with conflicting feature/strategy settings and a spent fake clock; then make the smallest fix so the one corrected ordinary packet keeps original feature gates, shared deadline/spent cost, supersession lineage, and no second optional search on repeated Level 0. Preserve accepted STEP-04/APC, ranking, adapters, and legacy behavior. Do not expand this slice into general restart identity, database migration, all-off entry, context dispatch, or later plan steps; those remain future STEP-05/06 work. Run the direct contract-corrections and any directly affected deadline selectors, commit only this slice, and write truthful RESULT.json for ROOT review. Product root: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/goal.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-05-preparation-preserves-budget-and-legacy-state.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-01-preparation-continuity-stays-bounded-and-compatible.md.",
+  "acceptance_criteria": [
+    "A restarted service with conflicting defaults cannot change the original preparation's feature gates or strategy during its one Level 0 correction.",
+    "The correction retains the same decision, deadline, spent cost, and supersession lineage; repeated Level 0 cannot launch another optional search or refresh the budget.",
+    "Focused direct tests pass on the committed result, with accepted STEP-04 untouched and no claim that all of STEP-05 is complete."
+  ],
+  "deliverables": [
+    "A focused red/green Level 0 restart regression and the smallest preparation correction.",
+    "One native lane commit and valid RESULT.json for ROOT review."
+  ],
+  "reason_for_acceptance_and_deliverables": "The existing late-correction path re-resolves current service defaults, so a restarted service can loosen feature policy despite the recorded packet. This small slice closes that concrete continuity gap before broader STEP-05 restart and compatibility work."
+}

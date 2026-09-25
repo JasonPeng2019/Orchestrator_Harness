@@ -1,0 +1,18 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-04-slice-procedure-revision-selection",
+  "task": "Implement only the STEP-04 search-local procedure revision selection rule on the accepted commit 202cb87e491de30a2b00386f21e0bae4c0da3f64. In src/memory_harness/search.py, duplicate sightings of the same logical revision must still merge provenance without a relevance bonus; among eligible competing revisions of one logical procedure, deliver at most one. Follow the governing default scope specificity order and the accepted TrustedProcedureService.resolve_atlas policy: a narrower authorized scope wins before discovery score, with deterministic ties. Keep nonselected revisions visible as rejected candidates with an explicit selection reason, and do not let a rejected or invalid revision suppress an independently eligible one. Add focused red-then-green tests using two revisions with conflicting score/specificity and duplicate sightings of one revision, plus an unrelated procedure to prove independent selection. Run the directly affected search/preparation tests and the existing deadline module; do not rerun the full local suite merely for this narrow change. Do not change source authority gates, EverOS/Atlas/local store adapters, APC, template behavior, harness bootstrap/prompt wiring, migration, STEP-05/06, or references/harness-single. Commit one source-coherent correction and write a truthful RESULT.json. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-04-prepare-and-dispatch-with-memory.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-01-bounded-preparation-selects-eligible-memory.md.",
+  "acceptance_criteria": [
+    "At most one eligible revision per logical procedure is selected across stores, preferring the narrower authorized scope before score and using deterministic ties.",
+    "Duplicate sightings of one revision merge provenance without a score bonus; competing nonselected revisions remain in the trace with a clear rejected disposition and reason.",
+    "Focused new regression tests fail before and pass after the change, and directly affected preparation and deadline tests pass."
+  ],
+  "deliverables": [
+    "Focused procedure-selection regression tests in the existing preparation test area.",
+    "One narrow implementation commit beyond 202cb87e491de30a2b00386f21e0bae4c0da3f64.",
+    "A valid RESULT.json stating the exact checks and outcome."
+  ],
+  "reason_for_acceptance_and_deliverables": "These tests and the narrow search change prove the required one-revision delivery rule without conflating it with the separate source-adapter and authority work still ahead.",
+  "branch": "lane/step-04-slice-procedure-revision-selection",
+  "base_commit": "202cb87e491de30a2b00386f21e0bae4c0da3f64"
+}

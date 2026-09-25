@@ -1,0 +1,18 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-04-slice-search-deadline-correction",
+  "task": "Correct rejected commit 6b87d95ab29200b56cb8a9980cf0387749ecc68c in the same lane with one follow-up commit. Preserve its valid blocking-store and lazy-materialization work, but close the material whole-stage deadline hole ROOT reproduced. Current defect: _attempt invokes _normalize/trust/scoring on the caller thread, so a 2.0-second blocking normalizer holds BoundedSearch.run for 2.0 seconds even when stage_seconds=0.1; it merely labels the attempt timed-out afterward. _normalize_and_rank/dedup/final selection also run outside the real absolute stage bound. Required behavior: the same real monotonic absolute stage deadline must bound store invocation, full iterable materialization, every candidate's normalization/trust/scoring, final dedup/ranking, capacity selection, and result publication. Blocking normalization or ranking must return control at the deadline, and late background work must be unable to mutate any returned/shared result. Keep daemon/cancellable ownership so abandoned work cannot keep the process alive. Add real wall-clock regressions for a blocking _normalize and blocking _normalize_and_rank (or equivalent production seams), each proving a roughly 0.1-second stage returns well before a 2-second blocker; retain the existing callable, lazy-iterator, fairness, and controlled-clock tests. Do not expand into trust-policy changes, procedure ranking semantics, bootstrap wiring, APC, durable recovery/migration, launch, STEP-05/06, or references/harness-single. Rerun the focused deadline module, all preparation tests, and the complete product-local suite. Commit the correction beyond 6b87d95 and emit RESULT.json; do not report PASS if the exact ROOT reproduction still exceeds its real deadline.",
+  "acceptance_criteria": [
+    "With stage_seconds set to 0.1, blocking normalization and blocking finalization each return control well before a 2.0-second blocker finishes.",
+    "Store invocation, result materialization, normalization, trust and scoring, final ranking, capacity selection, and publication share one real monotonic stage deadline.",
+    "Late background work cannot mutate a returned result or keep the process alive, and the focused deadline, preparation, and product-local tests pass."
+  ],
+  "deliverables": [
+    "One correction commit beyond 6b87d95ab29200b56cb8a9980cf0387749ecc68c containing the bounded production behavior.",
+    "Real-wall-clock regression tests for blocking normalization and finalization.",
+    "A valid RESULT.json that reports the actual focused and local verification."
+  ],
+  "reason_for_acceptance_and_deliverables": "The criteria directly exercise the reproduced unbounded phases, while the implementation, regressions, and result provide the code and reviewable evidence needed to decide the correction without expanding its scope.",
+  "branch": "lane/step-04-slice-retrieval-contract",
+  "base_commit": "6b87d95ab29200b56cb8a9980cf0387749ecc68c"
+}

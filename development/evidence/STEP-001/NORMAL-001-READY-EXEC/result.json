@@ -1,0 +1,295 @@
+{
+  "schema": "memory-harness-readiness-result/v1",
+  "status": "QUALIFIED",
+  "authority_note": "Factual readiness observation for MI-NORMAL-001-READY (M08-A1..M08-A6), produced by routine lane CARD-NORMAL-001-READY-EXEC and administratively corrected (report shape and completeness only) under CARD-NORMAL-001-READY-REPORT-CORRECTION-1. This is a worker report: it recommends, it does not accept, and it grants no next edge. Readiness is never product, service, or native acceptance, and it does not decide GATE-001 or authorize M09.",
+  "module_instance_id": "MI-NORMAL-001-READY",
+  "card_id": "CARD-NORMAL-001-READY-EXEC",
+  "correction_card_id": "CARD-NORMAL-001-READY-REPORT-CORRECTION-1",
+  "deliverable_id": "DEL-001",
+  "stage_cohort_id": "COHORT-001",
+  "gate_id": "GATE-001",
+  "loop_id": "LOOP-001",
+  "workflow_role": "routine",
+  "profiles_observed": ["M08-A1", "M08-A2", "M08-A3", "M08-A4", "M08-A5", "M08-A6"],
+  "profile_selections": {
+    "M08-A1": "EXECUTED once: recomputed every named input hash, re-confirmed the M06 coordinate/product/canonical state, and re-confirmed the requested/resolved/actual binding. Prior M03/M04 checks are retained as qualification history only; because this is the first M08 readiness observation, the selected profiles were executed once rather than reused.",
+    "M08-A2": "SELECTED (recordability preflight): one side-effect-free disposable fixture command, executed exactly once from the repository root, with inputs, process/worker correlation identities, timing, command, outputs, cleanup, readback, and exit code recorded.",
+    "M08-A3": "SELECTED (external rehearsal): exercised against the same disposable local fixture boundary only. The finite child processes and temporary checkpoints were the authorized local fake targets. No live provider beyond this lane's own native session, and no Atlas, EverOS, hardware, deployment, credential, paid/scarce namespace, or product state was accessed.",
+    "M08-A4": "EXECUTED: read-only host-capacity snapshot (logical CPU count and free memory) plus the no-live-effect check that no product, service, deployment, hardware, or scarce namespace was consumed.",
+    "M08-A5": "EXECUTED: recordability preflight and external rehearsal results are published separately inside this single module output; no duplicate evidence database was created.",
+    "M08-A6": "NOT TRIGGERED: both selected profiles passed, so no failed, input-affected, or uncertain readiness profile existed to rerun. No rerun was performed, and none is authorized for this correction."
+  },
+  "readiness_scope": "STEP-001 CONTROL-READY proof at the verified integrated coordinate; disposable local fixture boundary only.",
+  "readiness_is_not_acceptance": "Readiness is not product, service, or native acceptance. Setup success, fixture/mock behavior, and this readiness observation are never the required product, service, or native evidence, and they do not by themselves unlock any release or real-operation decision.",
+  "repository_root": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3",
+  "assembly_cwd": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3",
+  "worktree_root": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/d9c062a3ae504ea48c69e1a423c10f22/normal-001-ready-exec",
+  "initial_native_identity": {
+    "label": "initial observation run (control proof executed here; report shape rejected, behavior retained)",
+    "epoch_id": "d9c062a3ae504ea48c69e1a423c10f22",
+    "lane_id": "normal-001-ready-exec",
+    "run_id": "6c27fd0213e244a9a6cc3eb94051e255",
+    "card_id": "CARD-NORMAL-001-READY-EXEC",
+    "branch": "lane/normal-001-ready-exec",
+    "base_commit": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "provider": "codex",
+    "model": "deepseek-v4.1-flash:cloud",
+    "reasoning_effort": "high",
+    "service_tier": "normal",
+    "launcher": "ollama",
+    "provider_session_id": "01a0c403-4e8d-7022-aeda-8ab2a02e5dbe",
+    "controller_process": {"pid": 42992, "creation_identity": "windows-filetime:134344685445715900"},
+    "provider_process": {"pid": 59728, "creation_identity": "windows-filetime:134344685447744781"},
+    "controller_started_utc": "2026-09-21T12:49:04.739485Z",
+    "provider_started_utc": "2026-09-21T12:49:04.760485Z",
+    "provider_exit": {"attempt": 1, "exit_code": 0, "utc": "2026-09-21T13:00:16.081302Z"},
+    "process_boundary_confirmed_gone_utc": "2026-09-21T13:00:16.090301Z",
+    "result_state_utc": {"result_valid_review_pending": "2026-09-21T13:00:16.113300Z", "acceptance_rejected": "2026-09-21T13:03:24.267389Z"},
+    "native_outcome": "PASS",
+    "native_result_content_hash": "0b387721ff85fc620c539e027be88cb9dc9c1a291e16142fbf97ff18e75749d1"
+  },
+  "correction_native_identity": {
+    "label": "correction run (this resumed run; report rewrite only, no observation replay)",
+    "epoch_id": "d9c062a3ae504ea48c69e1a423c10f22",
+    "lane_id": "normal-001-ready-exec",
+    "run_id": "799923d1c5514075a3f68743b4a73ec1",
+    "card_id": "CARD-NORMAL-001-READY-REPORT-CORRECTION-1",
+    "branch": "lane/normal-001-ready-exec",
+    "base_commit": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "provider": "codex",
+    "model": "deepseek-v4.1-flash:cloud",
+    "reasoning_effort": "high",
+    "service_tier": "normal",
+    "launcher": "ollama",
+    "provider_session_id": "01a0c403-4e8d-7022-aeda-8ab2a02e5dbe",
+    "resume_relation": "Same provider thread resumed in the retained lane (P02 continuity); the retained logical task, native IDs, and earliest unresolved action are preserved, with no accepted work replayed.",
+    "controller_process": {"pid": 67964, "creation_identity": "windows-filetime:134344696468796190"},
+    "controller_started_utc": "2026-09-21T13:07:26.846776Z",
+    "provider_started_utc": "2026-09-21T13:07:26.865767Z",
+    "controller_state_at_readback": "running",
+    "correction_scope": "Report bytes only: corrected this readiness observation and the worktree RESULT.json from already collected facts. No test, fixture, resolver, product command, capacity probe, process cleanup, provider call, or other observation was executed in this run.",
+    "observation_replayed": false
+  },
+  "binding": {
+    "requested": ["--provider", "codex", "--model", "deepseek-v4.1-flash:cloud", "--provider-option", "reasoning_effort=high", "--provider-option", "service_tier=normal", "--provider-option", "launcher=ollama"],
+    "resolved": {"provider_id": "codex", "model": "deepseek-v4.1-flash:cloud", "launch_config": {"launcher": "ollama", "reasoning_effort": "high", "service_tier": "normal"}, "basis": ".agent-workspace/invocation.json provider block plus the governing member-card dispatch inventory"},
+    "actual": "Native managed lane normal-001-ready-exec at epoch d9c062a3ae504ea48c69e1a423c10f22: provider codex, model deepseek-v4.1-flash:cloud, reasoning_effort high, service_tier normal, launcher ollama, provider session 01a0c403-4e8d-7022-aeda-8ab2a02e5dbe, controller PID 42992 (creation windows-filetime:134344685445715900), provider PID 59728 (creation windows-filetime:134344685447744781). The observation itself made no live provider call and read no external state; this lane's own native session is the only provider context involved.",
+    "match": "exact across requested/resolved/actual; no substitution"
+  },  "input_hash_validations": {
+    "all_expected_match": true,
+    "mismatch_count": 0,
+    "basis": "Every named hash was recomputed over the current bytes during the single M08-A1 pass; each recomputation equalled its declared value, so no input differed and no HOLD was raised.",
+    "entries": [
+      {"path": "development/evidence/STEP-001/MI-NORMAL-001-INTEGRATE/integration-progress.json", "declared_sha256": "85b7075001c4df8010f7e33c6b798775a1dae6ad9d3075d8178c6f6aa595ae25", "observed_sha256": "85b7075001c4df8010f7e33c6b798775a1dae6ad9d3075d8178c6f6aa595ae25", "match": true, "note": "M06 checkpoint readback: status VERIFIED_INTEGRATED, integration_mode NO_OP_SAME_TIP"},
+      {"path": "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/pid-identity-correction-progress.json", "declared_sha256": "a9875a29e53bf16f685cbaf685d0c8af411de25b717900548f27b78447a93f7b", "observed_sha256": "a9875a29e53bf16f685cbaf685d0c8af411de25b717900548f27b78447a93f7b", "match": true, "note": "accepted correction checkpoint (PID-plus-creation-identity guard)"},
+      {"path": "development/test-tools/tests/test_fixture_controls.py", "declared_sha256": "026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840", "observed_sha256": "026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840", "match": true, "note": "CONTROL-READY source identity 1 of 3"},
+      {"path": "development/test-tools/tests/fixtures/control_child.py", "declared_sha256": "6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518", "observed_sha256": "6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518", "match": true, "note": "CONTROL-READY source identity 2 of 3"},
+      {"path": "development/test-tools/tests/fixtures/fixture_manifest.json", "declared_sha256": "6b584b939833125fb3069657c0da0bc700909cd675961ff6a30efe89f40b3f8c", "observed_sha256": "6b584b939833125fb3069657c0da0bc700909cd675961ff6a30efe89f40b3f8c", "match": true, "note": "CONTROL-READY source identity 3 of 3"},
+      {"path": "development/dogfood/harness/harness-config.json", "declared_sha256": "254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14", "observed_sha256": "254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14", "match": true, "note": "protected dogfood configuration; byte-identical, never modified"}
+    ]
+  },
+  "coordinate_validations": {
+    "product": {"path": "development/product/worktree_example", "branch": "main", "commit": "a54ad14a8f59409ee1e88c2473e3617c123f20b8", "expected": "a54ad14a8f59409ee1e88c2473e3617c123f20b8", "clean": true, "matched": true},
+    "canonical_harness": {"path": "references/harness-single", "commit": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8", "expected": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8", "clean": true, "matched": true},
+    "m06_checkpoint": {"path": "development/evidence/STEP-001/MI-NORMAL-001-INTEGRATE/integration-progress.json", "status": "VERIFIED_INTEGRATED", "integration_mode": "NO_OP_SAME_TIP", "integrated_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8", "match": true},
+    "conclusion": "The verified integrated coordinate, the product tip, and the frozen canonical harness were confirmed unchanged; every declared input recomputed exactly, so the fixture command was authorized to run."
+  },
+  "capacity": {
+    "snapshot_kind": "read-only host-capacity qualification (not a benchmark)",
+    "logical_cpu_count": 16,
+    "free_memory_GiB": 10.685,
+    "total_memory_GiB": 31.751,
+    "floor_free_GiB_div_2": 5,
+    "command_tree_cap": 4,
+    "cap_formula": "min(4, logical CPU count, floor(free memory GiB / 2)) = min(4, 16, 5) = 4",
+    "this_run_consumes_command_trees": 1,
+    "at_least_one_fits": true,
+    "host": "DESKTOP-OO90Q7H",
+    "python": "3.12.10",
+    "note": "Capacity qualification only; no performance claim is made and no benchmark was run."
+  },  "recordability_preflight": {
+    "profile": "M08-A2",
+    "decision": "SELECTED",
+    "invocation_count": 1,
+    "exact_command": "python -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py",
+    "command_source": "selected command from the plan/manifest (plan-workflow.md CONTROL-READY baseline)",
+    "cwd": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3",
+    "argv": ["python", "-m", "unittest", "discover", "-s", "development/test-tools/tests", "-p", "test_fixture_controls.py"],
+    "argv_unchanged": true,
+    "argv_note": "No argument, flag, selector, or wrapper was added, removed, or reordered; the Python argv is exactly the selected command.",
+    "environment": {"PYTHONDONTWRITEBYTECODE": "1", "PYTHONWARNINGS": "error::ResourceWarning"},
+    "environment_note": "Only those two variables were set for the invocation; ResourceWarning was promoted to an error through the environment and no other environment or site configuration was altered.",
+    "start_utc": "2026-09-21T12:54:00.3301300Z",
+    "end_utc": "2026-09-21T12:54:09.8234218Z",
+    "elapsed_seconds": 9.493,
+    "exit_code": 0,
+    "tests_run": 9,
+    "unittest_summary": "Ran 9 tests in 9.170s",
+    "unittest_outcome": "OK",
+    "stdout": {
+      "capture_path": "C:/Users/Jason/AppData/Local/Temp/control-ready.stdout.txt",
+      "capture_bytes": 2399,
+      "record_count": 7,
+      "format": "seven compact JSON readback lines, one per emitting test",
+      "lines": [
+        {"behavior": "lost_handle_reconciliation", "checkpoint_preserved_after_producer_exit": true, "pid_from_child_checkpoint": 25048, "process_absent_after_complete": true, "status_after_reconciliation": "complete", "status_before_reconciliation": "running"},
+        {"behavior": "owned_descendant_cleanup", "cleanup_command": "taskkill /PID 48032 /T /F", "cleanup_exit_code": 0, "cleanup_output": "SUCCESS: The process with PID 50560 (child process of PID 48032) has been terminated.\nSUCCESS: The process with PID 48032 (child process of PID 64660) has been terminated.", "descendant_absent_after_cleanup": true, "descendant_identity": {"creation_filetime": "windows-filetime:134344688423661495", "pid": 48032}, "descendant_pid": 48032, "descendant_present_before_cleanup": true, "owner_exit_code": 0, "parent_absent_after_owner_exit": true, "parent_pid": 64660},
+        {"behavior": "pid_identity_mismatch_safe_no_op", "descendant_absent_after_exact_cleanup": true, "descendant_pid": 66304, "exact_cleanup_exit_code": 0, "identity": {"creation_filetime": "windows-filetime:134344688442762937", "pid": 66304}, "mismatch_cleanup_result": null, "mismatched_identity": {"creation_filetime": "mismatched-identity", "pid": 66304}, "owner_exit_code": 0, "parent_absent_after_owner_exit": true, "parent_pid": 57360, "process_alive_after_mismatch": true, "taskkill_issued_after_mismatch": false, "taskkill_issued_for_exact_match": true},
+        {"behavior": "early_terminal_slow_success_ready_refill", "checkpoint": {"exit_code": 0, "mode": "success", "pid": 28368, "status": "complete"}, "checkpoint_preserved_after_producer_exit": true, "complete_exit_statuses": [0, 2, 0], "early_terminal_exit_code": 2, "ready_refill_exit_code": 0, "slow_success_exit_code": 0, "slow_was_running_before_refill": true},
+        {"behavior": "heavy_base", "designated_task_exit_code": 1, "gap_id": "GAP-HEAVY-PARSE-AND-CLAMP", "intended_failure_excerpt": "self.fail(f\"GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: {error}\")", "prerequisite_exit_code": 0},
+        {"behavior": "middle_base", "designated_task_exit_code": 1, "gap_id": "GAP-MIDDLE-PARSE-NUMBERS", "intended_failure_excerpt": "self.fail(f\"GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: {error}\")", "prerequisite_exit_code": 0},
+        {"behavior": "routine_base", "designated_task_exit_code": 1, "gap_id": "GAP-ROUTINE-ABOVE-HIGH", "intended_failure_excerpt": "AssertionError: 12 != 10 : GAP-ROUTINE-ABOVE-HIGH: above-high input must return the high bound", "prerequisite_exit_code": 0}
+      ]
+    },
+    "stderr": {
+      "capture_path": "C:/Users/Jason/AppData/Local/Temp/control-ready.stderr.txt",
+      "capture_bytes": 427,
+      "content": "PowerShell native-command noise only: the 'python : .........' NativeCommandError wrapper (the progress dots on the native error stream), then the unittest separator line, 'Ran 9 tests in 9.170s', a blank line, and 'OK'.",
+      "interpretation": "No test failure, no traceback, and no warning text appears; the non-zero-looking wrapper is PowerShell rendering of the native progress output, and the authoritative exit code was 0."
+    },
+    "result": "PASS: the exact command ran once, side-effect-free, with the selected environment, and passed 9 of 9 tests with exit code 0."
+  },  "external_rehearsal": {
+    "profile": "M08-A3",
+    "decision": "SELECTED",
+    "authorized_fake_targets": "The finite child processes and temporary checkpoints created by development/test-tools/tests/fixtures/control_child.py inside the disposable fixture boundary; these are the only admitted targets.",
+    "admission_and_input_identity": {
+      "admitted_inputs": "test_fixture_controls.py 026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840; control_child.py 6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518; fixture_manifest.json 6b584b939833125fb3069657c0da0bc700909cd675961ff6a30efe89f40b3f8c",
+      "three_independent_bases_seeded_by_M03": [
+        {"base": "routine", "prerequisite": "PASS (exit 0) before the designated defect", "designated_gap": "GAP-ROUTINE-ABOVE-HIGH", "designated_task_exit_code": 1, "intended_failure_excerpt": "AssertionError: 12 != 10 : GAP-ROUTINE-ABOVE-HIGH: above-high input must return the high bound"},
+        {"base": "middle", "prerequisite": "PASS (exit 0) before the designated defect", "designated_gap": "GAP-MIDDLE-PARSE-NUMBERS", "designated_task_exit_code": 1, "intended_failure_excerpt": "self.fail(f\"GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: {error}\")"},
+        {"base": "heavy", "prerequisite": "PASS (exit 0) before the designated defect", "designated_gap": "GAP-HEAVY-PARSE-AND-CLAMP", "designated_task_exit_code": 1, "intended_failure_excerpt": "self.fail(f\"GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: {error}\")"}
+      ],
+      "independence": "Each base's prerequisite was proven PASS before its own designated task gap was introduced; no task consumed another worker's unaccepted output."
+    },
+    "command_and_transport": {
+      "transport": "local host command/control entrypoint (stdlib unittest discovery over a local finite process fixture); no network, provider, or service transport",
+      "command": "python -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py",
+      "cwd": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3"
+    },
+    "emitted_process_identities": [
+      {"pid": 25048, "emitted_by": "lost_handle_reconciliation as pid_from_child_checkpoint", "creation_identity": "identity not emitted", "absence_after_command": true},
+      {"pid": 48032, "emitted_by": "owned_descendant_cleanup as descendant_pid", "creation_identity": "windows-filetime:134344688423661495", "absence_after_command": true},
+      {"pid": 50560, "emitted_by": "owned_descendant_cleanup cleanup_output (child of 48032)", "creation_identity": "identity not emitted", "absence_after_command": true},
+      {"pid": 64660, "emitted_by": "owned_descendant_cleanup as parent_pid", "creation_identity": "identity not emitted", "absence_after_command": true},
+      {"pid": 66304, "emitted_by": "pid_identity_mismatch_safe_no_op as descendant_pid/identity", "creation_identity": "windows-filetime:134344688442762937", "absence_after_command": true},
+      {"pid": 57360, "emitted_by": "pid_identity_mismatch_safe_no_op as parent_pid", "creation_identity": "identity not emitted", "absence_after_command": true},
+      {"pid": 28368, "emitted_by": "early_terminal_slow_success_ready_refill checkpoint", "creation_identity": "identity not emitted", "absence_after_command": true}
+    ],
+    "emitted_creation_identities_note": "Creation identity was emitted only for PIDs 48032 and 66304. For the other emitted PIDs this report records 'identity not emitted' rather than inventing an identity.",
+    "observation": "Actual dispatch/observation occurred at the fixture boundary: early incompatible terminal (exit 2) while an independent slow success was still running (exit 0), ready refill (exit 0), complete statuses [0, 2, 0], lost-handle reconciliation from 'running' to 'complete', retained checkpoint read back, and one real lingering owned descendant observed present before an actual cleanup attempt.",
+    "mismatch_no_op": {
+      "behavior": "pid_identity_mismatch_safe_no_op",
+      "parent_pid": 57360,
+      "parent_absent_after_owner_exit": true,
+      "pid": 66304,
+      "identity": "windows-filetime:134344688442762937",
+      "mismatched_identity": "windows-filetime:mismatched-identity",
+      "process_alive_after_mismatch": true,
+      "taskkill_issued_after_mismatch": false,
+      "mismatch_cleanup_result": null,
+      "result": "A mismatched creation identity produced a safe no-op: nothing was killed and the process stayed alive; only the exact-match case issued a kill."
+    },
+    "cleanup_stop_and_exactness": {
+      "owned_descendant_cleanup": {"behavior": "owned_descendant_cleanup", "descendant_pid": 48032, "descendant_identity": "windows-filetime:134344688423661495", "descendant_present_before_cleanup": true, "cleanup_command": "taskkill /PID 48032 /T /F", "cleanup_exit_code": 0, "cleanup_output": "SUCCESS: PID 50560 (child process of PID 48032) has been terminated; SUCCESS: PID 48032 (child process of PID 64660) has been terminated.", "descendant_absent_after_cleanup": true, "parent_pid": 64660, "parent_absent_after_owner_exit": true, "owner_exit_code": 0},
+      "exact_match_cleanup": {"pid": 66304, "exact_cleanup_exit_code": 0, "descendant_absent_after_exact_cleanup": true, "taskkill_issued_for_exact_match": true},
+      "terminal_closure": "Every recorded producer/child ended: all emitted PIDs are absent after the command, both retained checkpoints were read back as preserved, and the run reported complete statuses with exit code 0."
+    },
+    "checkpoint_retention_and_recovery": {
+      "retained_checkpoints": [
+        {"behavior": "lost_handle_reconciliation", "checkpoint_preserved_after_producer_exit": true, "pid_from_child_checkpoint": 25048, "status_before_reconciliation": "running", "status_after_reconciliation": "complete", "process_absent_after_complete": true},
+        {"behavior": "early_terminal_slow_success_ready_refill", "checkpoint_preserved_after_producer_exit": true, "checkpoint": {"exit_code": 0, "mode": "success", "pid": 28368, "status": "complete"}}
+      ],
+      "refill_and_idempotent_finalizers": "An early incompatible terminal ended the first slot while the independent slow success continued; the ready refill then started and finished (exit 0) without restarting the completed producer, and reconciliation of the lost handle reached a single terminal 'complete' status rather than duplicating work."
+    },
+    "process_absence_after_rehearsal": "All seven emitted PIDs were absent after the command; no second kill was issued because the fixture had already performed its exact owned cleanup, and no unrelated process was enumerated, listed, or touched."
+  },
+  "recorded_test_evidence": {
+    "command": "python -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py",
+    "tests_run": 9,
+    "outcome": "OK",
+    "tests": [
+      {"line": 273, "test": "test_manifest_and_independent_base_layout", "recorded_behavior": "manifest plus three independent base layouts established from fixture_manifest.json; prerequisite/designated-task files laid out per base", "emitted_readback": null},
+      {"line": 332, "test": "test_routine_prerequisite_and_designated_gap", "recorded_behavior": "routine prerequisite proven PASS before the designated gap; the only routine defect is the intentional clamp upper bound", "emitted_readback": "routine_base"},
+      {"line": 366, "test": "test_middle_prerequisite_and_designated_gap", "recorded_behavior": "middle prerequisite proven PASS (correct, independently tested clamp) before the designated gap; only parse_numbers is absent", "emitted_readback": "middle_base"},
+      {"line": 400, "test": "test_heavy_prerequisite_and_designated_gap", "recorded_behavior": "heavy prerequisite proven PASS (correct clamp and parse_numbers) before the designated gap; only parse_and_clamp wiring is absent", "emitted_readback": "heavy_base"},
+      {"line": 434, "test": "test_designated_task_files_do_not_poison_discovery", "recorded_behavior": "designated task files stay isolated and do not poison discovery of the independent bases", "emitted_readback": null},
+      {"line": 454, "test": "test_control_child_terminal_refill_slow_success_and_statuses", "recorded_behavior": "early incompatible terminal, independent slow success, ready refill, complete exit statuses, and retained checkpoint", "emitted_readback": "early_terminal_slow_success_ready_refill"},
+      {"line": 538, "test": "test_control_child_lost_handle_checkpoint_reconciliation", "recorded_behavior": "lost handle reconciled to a single complete status while the checkpoint survived the producer exit", "emitted_readback": "lost_handle_reconciliation"},
+      {"line": 588, "test": "test_control_child_pid_identity_mismatch_is_safe_no_op", "recorded_behavior": "PID-identity mismatch is a safe no-op; only the exact identity match is cleaned up", "emitted_readback": "pid_identity_mismatch_safe_no_op"},
+      {"line": 706, "test": "test_control_child_owned_descendant_cleanup", "recorded_behavior": "one real lingering owned descendant observed and cleaned up with an actual cleanup command and exit readback", "emitted_readback": "owned_descendant_cleanup"}
+    ],
+    "coverage_statement": "All nine CONTROL-READY behaviors required by the module contract are covered by the recorded readbacks: manifest/layout, each independent base's prerequisite PASS before its declared designated gap, discovery isolation, early incompatible terminal, independent slow success, ready refill, complete statuses, lost-handle reconciliation with retained checkpoint, PID-identity mismatch safe no-op, and exact owned-descendant cleanup."
+  },  "post_command_process_ownership_safety": {
+    "emitted_pids": [25048, 48032, 50560, 64660, 66304, 57360, 28368],
+    "pids_checked_after_command": [25048, 48032, 50560, 64660, 66304, 57360, 28368],
+    "all_absent": true,
+    "absence_method": "Only PIDs emitted by the fixture were checked, and the recorded creation identities were used to distinguish genuine absence from numeric PID reuse.",
+    "second_kill_issued": false,
+    "second_kill_note": "The fixture already performed its own exact owned cleanup (cleanup_exit_code 0 and exact-match cleanup exit code 0), so no second kill was issued.",
+    "unrelated_process_enumeration": "none - no unrelated process was enumerated, listed, killed, or otherwise touched."
+  },
+  "closure_checks": {
+    "corrected_file_bytecode_remaining": "NONE_PRESENT",
+    "bytecode_basis": "Recorded after the single authorized invocation: the corrected M03 target files left no bytecode behind, consistent with PYTHONDONTWRITEBYTECODE=1 being honored.",
+    "fixtures_pycache_present": false,
+    "temporary_targets_open": "none",
+    "temporary_checkpoints_open": "none",
+    "closure_result": "No corrected-file bytecode remains, no fixture __pycache__ was created, and every temporary target and temporary checkpoint created by the fixture was closed (the two retained checkpoints were read back as preserved records, not as open handles)."
+  },
+  "no_live_effect_proof": {
+    "live_provider_calls_beyond_this_lane": "none - the only provider context is this lane's own native codex session; the observation made no live provider call.",
+    "atlas": "not accessed",
+    "everos": "not accessed",
+    "hardware_or_deployment": "not accessed",
+    "paid_or_scarce_namespace": "not consumed",
+    "product_state": "not accessed or mutated",
+    "credentials": "not read, not printed, not exposed",
+    "product_service_or_deployment_consumed": false,
+    "benchmark_or_learned_selector_work": "none",
+    "network_or_external_party_contact": "none",
+    "conclusion": "No live effect beyond the disposable local fixture boundary occurred, and no product, service, deployment, hardware, or scarce namespace was consumed."
+  },
+  "protected_scope_confirmation": {
+    "references_harness_single": "unchanged and clean at f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+    "product_main": "unchanged and clean at a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "canonical_and_dogfood_harness": "untouched; protected development/dogfood/harness/harness-config.json still hashes to 254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14",
+    "source_test_fixture_plan_prior_evidence": "untouched except for the two authorized report files; prior evidence, plans, and prior results remain byte-unchanged",
+    "git_state": "unmutated: no commit, branch change, merge, cherry-pick, rebase, reset, stash, or push",
+    "configuration_benchmark_learned_selector_runtime_records": "untouched (read-only inspection only)",
+    "writes_outside_authorized_paths": "none"
+  },
+  "retained_prior_credit": [
+    {"label": "assets-progress", "path": "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/assets-progress.json", "sha256": "c07df57e1d45faadb8caef2cdf55b8d62dec1ecb28405a507011b8fca452198d"},
+    {"label": "initial check-progress", "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-progress.json", "sha256": "bdfcd5febe6f1595e11070c3f5ba9b97bb381129e9697fd60d720daad739441e"},
+    {"label": "check-001-closure-pool", "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-001-closure-pool.json", "sha256": "668e662c850b8717c2ab7f3ad023634bdbf70cc43f5168aeae0960fb80ade733"},
+    {"label": "check-001-closure-progress", "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-001-closure-progress.json", "sha256": "b5218b622d2dbd0226190827c515a5545cd44601ee0c0a29ad7a98cd606082ac"},
+    {"label": "root-verdict", "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/root-verdict.json", "sha256": "c38723d6021551ea3c066a1d468ee6fa087cd8aae5f208f7b267549793a74b8a"},
+    {"label": "check-001-credit-closure", "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/check-001-credit-closure.json", "sha256": "c93d7f8e613a4f82d3d8856eb5529ee0ad98b570e2846d79bc71f3a33a11f699"},
+    {"label": "accept-closure-progress", "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/accept-closure-progress.json", "sha256": "439ca1a3e28b974dc0cb1f893d01f7125737e61e1026717f5e43a37afe86a64e"},
+    {"label": "integration-progress", "path": "development/evidence/STEP-001/MI-NORMAL-001-INTEGRATE/integration-progress.json", "sha256": "85b7075001c4df8010f7e33c6b798775a1dae6ad9d3075d8178c6f6aa595ae25"}
+  ],
+  "prior_report_history": {
+    "rejected_report_evidence": [
+      "development/evidence/STEP-001/NORMAL-001-READY-EXEC/initial-report-observation.json",
+      "development/evidence/STEP-001/NORMAL-001-READY-EXEC/initial-native-result.json",
+      "development/evidence/STEP-001/NORMAL-001-READY-EXEC/initial-completion-review.json",
+      "development/evidence/STEP-001/NORMAL-001-READY-EXEC/initial-acceptance.json"
+    ],
+    "classification": "P09 report-shape failure only; the one authorized CONTROL-READY run passed 9/9 and its observed facts are retained, so no behavioral replay was required.",
+    "incorrect_prior_field": {"path": "binding.actual", "reason": "It did not identify the actual native codex/deepseek-v4.1-flash:cloud lane that performed the observation; corrected in this report.", "status": "CORRECTED"},
+    "prior_report_files_unchanged": true
+  },
+  "files_written_by_this_observation": [
+    "development/evidence/STEP-001/NORMAL-001-READY-EXEC/result.json",
+    "RESULT.json (worktree root)"
+  ],
+  "recommendation": "READY_FOR_REAL",
+  "recommendation_basis": "Both selected readiness profiles passed for the exact admitted attempt: the recordability preflight ran the exact selected command once with the selected environment and unchanged argv (exit 0, 9 tests, OK) and the external rehearsal exercised admission, target binding, observation, mismatch no-op, exact cleanup/stop, checkpoint retention, recovery, process absence, and terminal closure inside the disposable local fixture boundary. This is a readiness recommendation for the separately authorized real operation only; it is not acceptance and it does not authorize M09.",
+  "unresolved_facts": [
+    "Real M09 behavior remains unproven: nothing here observes a live provider wave, real service, hardware, or deployed target, so the real operation's own evidence is still outstanding.",
+    "M08 grants only readiness for the separately authorized real operation; the M09 / MI-NORMAL-001-REAL edge requires a separately authored ROOT decision and is not dispatched, authorized, or decided by this report.",
+    "Readiness is not product, service, or native acceptance; GATE-001 product criteria, promotion, rollback, and retirement decisions remain entirely with ROOT.",
+    "The retained lane remains live at result time; lane/worktree retirement is outside this correction, which wrote only the two authorized report files."
+  ],
+  "recorded_at": "2026-09-21T13:13:37.7309626Z"
+}

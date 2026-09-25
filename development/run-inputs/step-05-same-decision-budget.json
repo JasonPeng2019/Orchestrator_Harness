@@ -1,0 +1,17 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-05-same-decision-budget",
+  "branch": "lane/step-05-same-decision-budget",
+  "base_commit": "cc5b4f2d03626b393581c231303f5d79a4627cf2",
+  "task": "Implement only the next bounded STEP-05 slice: a repeated prepare for the same exact logical decision, task, plan, route, and captured configuration must not renew its trusted deadline or spent budget. ROOT reproduced current behavior with FakeClock: first prepare(deadline=1300) at t=1000, then the same decision calls prepare(deadline=1400) at t=1100; the deadline changes 1300 -> 1400 and remaining time resets 300 -> 300. Add a focused failing regression for that re-entry. The original durable cutoff must remain authoritative; a newly supplied earlier trusted cutoff may tighten it but never extend it, and the spent cost must reflect elapsed time. A failure to read existing same-decision durable preparations is not proof of no prior budget and must fail closed before optional calls. Keep the no-store first-call behavior and accepted Level 0, APC, retrieval, and migration behavior. Scope to same-decision deadline recovery in preparation.py and the directly necessary store/contract seam only; do not redesign decision identity for changed configurations, route correction, all-off entry, old database migration, or later steps. Run direct contract-corrections, bounded-preparation, and search-deadline selectors plus tests affected by changed code, commit only this slice, and write truthful RESULT.json for ROOT review. Product root: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/goal.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-05-preparation-preserves-budget-and-legacy-state.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-01-preparation-continuity-stays-bounded-and-compatible.md.",
+  "acceptance_criteria": [
+    "A second same-decision prepare cannot extend the original absolute deadline or reset spent time, whether it supplies a later explicit deadline or omits one.",
+    "A shorter later trusted deadline may tighten the bound; an unreadable existing durable budget cannot silently become a fresh full allowance or start optional work.",
+    "Focused affected tests pass on a committed result; accepted STEP-04 and the prior STEP-05 Level 0 slice remain intact, with no claim that all of STEP-05 is complete."
+  ],
+  "deliverables": [
+    "Focused red/green same-decision deadline and unreadable-budget regressions with a narrow recovery correction.",
+    "One native lane commit after cc5b4f2 and a valid RESULT.json for ROOT review."
+  ],
+  "reason_for_acceptance_and_deliverables": "The current explicit-deadline branch bypasses durable recovery, and the recovery helper can mistake a read failure for no prior budget. These allow a restarted same decision to regain optional time. This slice closes that specific budget behavior before changed-configuration identity and compatibility work."
+}

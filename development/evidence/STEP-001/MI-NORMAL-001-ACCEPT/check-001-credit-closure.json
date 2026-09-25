@@ -1,0 +1,131 @@
+{
+  "schema": "memory-harness-accept-credit-closure/v1",
+  "module_instance_id": "MI-NORMAL-001-ACCEPT",
+  "finding_id": "CHECK-001",
+  "recorded_at": "2026-09-21T12:21:22.1267422Z",
+  "status": "CLOSED",
+  "verdict": "ACCEPTED",
+  "verdict_action": "PRESERVE_EXISTING_VERDICT",
+  "verdict_meaning": "This record closes the exact credit held by the existing pre-integration ACCEPTED verdict. It does not issue a second verdict, broaden the accepted scope, or claim STEP-001 completion.",
+  "inputs": {
+    "existing_root_verdict": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/root-verdict.json",
+      "sha256": "c38723d6021551ea3c066a1d468ee6fa087cd8aae5f208f7b267549793a74b8a",
+      "verdict": "ACCEPTED",
+      "prior_status": "P08_CORRECTION_OPEN"
+    },
+    "existing_accept_progress": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/accept-progress.json",
+      "sha256": "5e327ad6af466c2966907c48e75625f8bd4b3b3ce5f4e1454c07c827d2e01cd2"
+    },
+    "accepted_correction_checkpoint": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/pid-identity-correction-progress.json",
+      "sha256": "a9875a29e53bf16f685cbaf685d0c8af411de25b717900548f27b78447a93f7b"
+    },
+    "affected_check_pool": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-001-closure-pool.json",
+      "sha256": "668e662c850b8717c2ab7f3ad023634bdbf70cc43f5168aeae0960fb80ade733",
+      "join_count": 1
+    },
+    "affected_check_checkpoint": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-001-closure-progress.json",
+      "sha256": "b5218b622d2dbd0226190827c515a5545cd44601ee0c0a29ad7a98cd606082ac"
+    }
+  },
+  "root_independent_readback": {
+    "corrected_source_hashes": {
+      "development/test-tools/tests/test_fixture_controls.py": "026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840",
+      "development/test-tools/tests/fixtures/control_child.py": "6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518"
+    },
+    "affected_pool_status": "COMPLETE",
+    "affected_pool_join_count": 1,
+    "routine_result": "CHECKS_PASS",
+    "independent_review": "CLOSED / CLEAN / zero findings",
+    "all_affected_pool_byte_hashes_match": true,
+    "product_main": {
+      "head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "clean": true
+    },
+    "canonical_harness": {
+      "head": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "clean": true
+    }
+  },
+  "credit_resolution": [
+    {
+      "originally_invalidated": "MI-NORMAL-001-ASSETS verification.owned_descendant_cleanup",
+      "resolution": "RESTORED",
+      "basis": "The correction records each owned descendant's PID plus native creation identity while alive; the affected checker proves exact-match owned-tree cleanup and process absence."
+    },
+    {
+      "originally_invalidated": "CONTROL-READY strict cleanup-safety credit",
+      "resolution": "RESTORED",
+      "basis": "Every PID-based force-kill now re-reads and exactly matches the recorded creation identity, while absent, unknown, or mismatching identity is a safe no-op; focused and full affected checks pass."
+    },
+    {
+      "originally_invalidated": "hashes and evidence joins consuming either corrected test file",
+      "resolution": "RESTORED",
+      "basis": "Corrected source hashes, correction evidence, affected checker evidence, and reviewer evidence all recompute and the affected M04 pool joins them exactly once."
+    },
+    {
+      "originally_invalidated": "M04 review closure for CHECK-001",
+      "resolution": "RESTORED",
+      "basis": "The independent reviewer reports closure_decision CLOSED, recommendation CLEAN, and no remaining findings."
+    }
+  ],
+  "finding_disposition": {
+    "classification": "strict test-only",
+    "impact": "NONBLOCKING_TEST_ERROR",
+    "policy": "P08",
+    "result": "CLOSED",
+    "product_or_harness_defect": false,
+    "product_or_harness_repair": false,
+    "remaining_held_credit": []
+  },
+  "preserved_credit": [
+    "M01 admission and native lifecycle evidence",
+    "M02 unchanged product-tip decision and resolver evidence",
+    "M03 task-base, manifest, and unaffected control observations",
+    "M04 routine/review facts outside CHECK-001",
+    "REQ-001 pre-product scope evidence",
+    "REQ-028 recorded binding evidence",
+    "REQ-029 no-benchmark/no-learner evidence",
+    "product main a54ad14a8f59409ee1e88c2473e3617c123f20b8 and canonical harness f6948fb2673661b6c2cfb69cf47b23a198b3f5f8"
+  ],
+  "administrative_faults_preserved": [
+    {
+      "id": "ACCEPT-POOL-TIMESTAMP-001",
+      "disposition": "NO_REPLAY",
+      "product_impact": false
+    },
+    {
+      "id": "CHECK-001-CLOSURE-PREFERRED-USAGE-CAP",
+      "disposition": "DECLARED_FALLBACK_COMPLETED_TASK",
+      "product_impact": false,
+      "harness_defect": false
+    }
+  ],
+  "scope_protection": {
+    "product_source_changed": false,
+    "canonical_harness_changed": false,
+    "dogfood_harness_changed": false,
+    "acceptance_meaning_changed": false,
+    "oracle_weakened": false,
+    "benchmark_or_learned_selector_work": false
+  },
+  "not_yet_earned": [
+    "M06 integrated coordinate",
+    "M08 readiness observation",
+    "M09 real native/service observation and cleanup",
+    "MI-NORMAL-001-GATE final STEP-001 verdict"
+  ],
+  "successor_release": {
+    "released": "MI-NORMAL-001-INTEGRATE",
+    "basis": "The exact P08 correction and affected M04 consumer are closed; no held pre-integration credit remains.",
+    "does_not_release": [
+      "M08",
+      "M09",
+      "MI-NORMAL-001-GATE"
+    ]
+  }
+}

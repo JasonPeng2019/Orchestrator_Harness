@@ -1,0 +1,17 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-04-slice-everos-skill-hit-discovery",
+  "task": "On accepted product commit 429660bb9b684afed6bb4f727426ab5bd7158f5b, add one read-only scoped EverOS skill-hit query to the existing EverOSAdapter in src/memory_harness/experience.py, following its accepted search_case_candidates public-surface pattern. The small caller contract is search_skill_candidates(query: str, top_k: int = 100) returning scoped raw skill mappings as discovery only. Sanitize the query, verify the bound MemoryRoot, use exact owner/application/project public search filters without a session filter, reject invalid top_k or malformed whole responses, and omit one malformed or foreign skill without discarding unrelated scoped hits. Do not write local state or promote raw EverOS presence, similarity, or Step-02 skill approval into procedural guidance. Add focused deterministic tests for a valid scoped hit, foreign/malformed neighbors, query/root/response failures, and the absence of a session filter. Run only the new and directly affected EverOS adapter/experience tests. Commit one narrow result beyond 429660b and write a truthful RESULT.json. Do not add a SearchStore, procedure trust rejoin, new approval policy, Atlas path, APC, handoff/prompt wiring, STEP-05/06, or references/harness-single changes in this slice. Product root: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-04-prepare-and-dispatch-with-memory.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-01-bounded-preparation-selects-eligible-memory.md.",
+  "acceptance_criteria": [
+    "A sanitized bounded public EverOS query returns only raw skill hits with exact owner/application/project scope; it performs no session-scoped search or local write.",
+    "A malformed or foreign hit is omitted independently; invalid query/root, top_k, or whole-response shape fails without creating optional guidance.",
+    "Existing case search and Step-02 reconciliation remain unchanged, and focused directly affected tests pass."
+  ],
+  "deliverables": [
+    "One documented read-only EverOSAdapter skill-hit query and focused deterministic tests.",
+    "One narrow commit beyond 429660bb9b684afed6bb4f727426ab5bd7158f5b and a valid RESULT.json with actual checks."
+  ],
+  "reason_for_acceptance_and_deliverables": "The accepted EverOS adapter can query cases but has no scoped read-only skill-hit discovery for later exact Step-02/Step-03 trust rejoin. This slice establishes only that public discovery boundary; a separate follow-up will decide whether a hit has durable approved procedural authority.",
+  "branch": "lane/step-04-slice-everos-skill-hit-discovery",
+  "base_commit": "429660bb9b684afed6bb4f727426ab5bd7158f5b"
+}

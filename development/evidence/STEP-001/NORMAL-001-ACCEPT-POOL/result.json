@@ -1,0 +1,976 @@
+{
+  "schema": "memory-harness-accept-pool-result/v1",
+  "status": "COMPLETE",
+  "module_instance_id": "MI-NORMAL-001-ACCEPT",
+  "campaign_id": "NORMAL-001-ACCEPT-POOL",
+  "scope": "M05-A1 (validate predecessor result shape and hash/receipt joins) and M05-A2 (mechanically deduplicate equivalent facts, preserve all facts and dissent). No semantic sufficiency judgement, no classification of CHECK-001, no repair-route selection, no product verdict, no acceptance decision, no test execution, no dispatch.",
+  "recorded_at": "2026-09-21T11:12:00Z",
+  "native_identity": {
+    "lane_id": "normal-001-accept-pool",
+    "run_id": "0551f7ced6e848068526e58c7c92d49b",
+    "invocation_id": "INVOCATION-NORMAL-001-ACCEPT-POOL",
+    "card_id": "CARD-NORMAL-001-ACCEPT-POOL",
+    "module_instance_id": "MI-NORMAL-001-ACCEPT",
+    "deliverable_id": "DEL-001",
+    "stage_cohort_id": "COHORT-001",
+    "gate_id": "GATE-001",
+    "loop_id": "LOOP-001",
+    "workflow_role": "routine",
+    "branch": "lane/normal-001-accept-pool",
+    "base_commit": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "worktree": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\product\\worktree_example\\.harness-runtime\\worktrees\\2cda5d1ba8c443c493b2d19d3d875368\\normal-001-accept-pool",
+    "overlay_profile": "managed",
+    "overlay_provider_payload": "adapter-payloads/codex",
+    "provider": "codex",
+    "model": "deepseek-v4.1-flash:cloud",
+    "launcher": "ollama",
+    "reasoning_effort": "high",
+    "service_tier": "normal",
+    "declared_actual_routine_resolution": [
+      "--provider",
+      "codex",
+      "--model",
+      "deepseek-v4.1-flash:cloud",
+      "--provider-option",
+      "reasoning_effort=high",
+      "--provider-option",
+      "service_tier=normal",
+      "--provider-option",
+      "launcher=ollama"
+    ],
+    "provider_launch_command_observed_in_lane_events": "ollama launch codex --model deepseek-v4.1-flash:cloud --yes -- exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check -c approval_policy=\"never\" -c model_reasoning_effort=\"high\" -c service_tier=\"normal\" --dangerously-bypass-hook-trust -c features.hooks=true ... --json --output-last-message <lane>/.agent-workspace/last-message.txt --cd <lane> -"
+  },
+  "frozen_input_hashes": {
+    "repository_root": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3",
+    "campaign_pool": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/campaign-pool.json",
+      "declared_sha256": "a587e8d69318ffd37fad1d06d8ab7d7499105868b4ead615f8c33d44e28f7548",
+      "recomputed_byte_sha256": "a587e8d69318ffd37fad1d06d8ab7d7499105868b4ead615f8c33d44e28f7548",
+      "match": true
+    },
+    "checkpoint": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-progress.json",
+      "declared_sha256": "bdfcd5febe6f1595e11070c3f5ba9b97bb381129e9697fd60d720daad739441e",
+      "recomputed_byte_sha256": "bdfcd5febe6f1595e11070c3f5ba9b97bb381129e9697fd60d720daad739441e",
+      "match": true
+    },
+    "product_P": {
+      "path": "development/product/worktree_example",
+      "branch": "main",
+      "expected_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "observed_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "status_porcelain": "",
+      "clean": true
+    },
+    "canonical_harness": {
+      "path": "references/harness-single",
+      "expected_tip": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "observed_tip": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "status_porcelain": "",
+      "clean": true
+    }
+  },
+  "read_scope": {
+    "files_read": [
+      "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/assets-progress.json",
+      "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/result.json",
+      "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/native-result.json",
+      "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/completion-review.json",
+      "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/orchestrator-acceptance.json",
+      "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/result.json",
+      "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/native-result.json",
+      "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/completion-review.json",
+      "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/orchestrator-acceptance.json",
+      "development/evidence/STEP-001/MI-NORMAL-001-CHECK/campaign-pool.json",
+      "development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-progress.json",
+      "development/evidence/STEP-001/MI-NORMAL-001-CHECK/CARD-NORMAL-001-CHECK-CHECK.json",
+      "development/evidence/STEP-001/MI-NORMAL-001-CHECK/CARD-NORMAL-001-CHECK-REVIEW.json"
+    ],
+    "note": "Read only the M04 campaign pool, the M04 checkpoint, every evidence file directly referenced by the pool, and the two M04 task cards (identities only). No new product/harness/source area inspected; no test or other campaign executed."
+  },
+  "file_byte_hash_validations": [
+    {
+      "label": "assets",
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/assets-progress.json",
+      "declared_sha256": "c07df57e1d45faadb8caef2cdf55b8d62dec1ecb28405a507011b8fca452198d",
+      "recomputed_byte_sha256": "c07df57e1d45faadb8caef2cdf55b8d62dec1ecb28405a507011b8fca452198d",
+      "match": true
+    },
+    {
+      "label": "checkReport",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/result.json",
+      "declared_sha256": "199c4bc1a0329a8289bdc576b08ee1fde8d7953c6e7152473a54183e0361fd8b",
+      "recomputed_byte_sha256": "199c4bc1a0329a8289bdc576b08ee1fde8d7953c6e7152473a54183e0361fd8b",
+      "match": true
+    },
+    {
+      "label": "checkNative",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/native-result.json",
+      "declared_sha256": "42beb385215d8708b4c64117517ffcbce54cb3ef835ac1faa17ea41c75630ef1",
+      "recomputed_byte_sha256": "42beb385215d8708b4c64117517ffcbce54cb3ef835ac1faa17ea41c75630ef1",
+      "match": true
+    },
+    {
+      "label": "checkCr",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/completion-review.json",
+      "declared_sha256": "64956e8787e96e1b582a89a62d77bbff780d0989215d44d8a453a57c5cb34e7f",
+      "recomputed_byte_sha256": "64956e8787e96e1b582a89a62d77bbff780d0989215d44d8a453a57c5cb34e7f",
+      "match": true
+    },
+    {
+      "label": "checkAcc",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/orchestrator-acceptance.json",
+      "declared_sha256": "d9c89c331347459a10656b2031667801f9ab930b87c1fb8c0309f098b4b3901b",
+      "recomputed_byte_sha256": "d9c89c331347459a10656b2031667801f9ab930b87c1fb8c0309f098b4b3901b",
+      "match": true
+    },
+    {
+      "label": "reviewReport",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/result.json",
+      "declared_sha256": "df7bbdcd5e63f1cae145620c276afda14dcd8e6dcf47d2b91b169e019316863b",
+      "recomputed_byte_sha256": "df7bbdcd5e63f1cae145620c276afda14dcd8e6dcf47d2b91b169e019316863b",
+      "match": true
+    },
+    {
+      "label": "reviewNative",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/native-result.json",
+      "declared_sha256": "5a150f30d46e7f52436eea197486c4843e2a405fc4f1f0a0cc193319761b1c24",
+      "recomputed_byte_sha256": "5a150f30d46e7f52436eea197486c4843e2a405fc4f1f0a0cc193319761b1c24",
+      "match": true
+    },
+    {
+      "label": "reviewCr",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/completion-review.json",
+      "declared_sha256": "2d53ee528b991b979c4dd6934a1e0032d6d081d218a3443b10f53cfc785a9632",
+      "recomputed_byte_sha256": "2d53ee528b991b979c4dd6934a1e0032d6d081d218a3443b10f53cfc785a9632",
+      "match": true
+    },
+    {
+      "label": "reviewAcc",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/orchestrator-acceptance.json",
+      "declared_sha256": "f2ee65cb208a0c72cc65900c7b670dd3c082444ffdd14fd03cba10295fed93c6",
+      "recomputed_byte_sha256": "f2ee65cb208a0c72cc65900c7b670dd3c082444ffdd14fd03cba10295fed93c6",
+      "match": true
+    },
+    {
+      "label": "pool",
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/campaign-pool.json",
+      "declared_sha256": "a587e8d69318ffd37fad1d06d8ab7d7499105868b4ead615f8c33d44e28f7548",
+      "recomputed_byte_sha256": "a587e8d69318ffd37fad1d06d8ab7d7499105868b4ead615f8c33d44e28f7548",
+      "match": true
+    },
+    {
+      "label": "prog",
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-progress.json",
+      "declared_sha256": "bdfcd5febe6f1595e11070c3f5ba9b97bb381129e9697fd60d720daad739441e",
+      "recomputed_byte_sha256": "bdfcd5febe6f1595e11070c3f5ba9b97bb381129e9697fd60d720daad739441e",
+      "match": true
+    },
+    {
+      "label": "cardCheck",
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/CARD-NORMAL-001-CHECK-CHECK.json",
+      "declared_sha256": "87e284dd2a30a000a176a9cb43eab8f5a36db24cb6b4222debc0a4d6e38e94f8",
+      "recomputed_byte_sha256": "87e284dd2a30a000a176a9cb43eab8f5a36db24cb6b4222debc0a4d6e38e94f8",
+      "match": true
+    },
+    {
+      "label": "cardReview",
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/CARD-NORMAL-001-CHECK-REVIEW.json",
+      "declared_sha256": "1962c20ce00fb0655e8287df3ce9462ff51ad7896cf7944fb4c7a582effd1de0",
+      "recomputed_byte_sha256": "1962c20ce00fb0655e8287df3ce9462ff51ad7896cf7944fb4c7a582effd1de0",
+      "match": true
+    }
+  ],
+  "canonical_content_hash_validations": [
+    {
+      "record": "check native-result.json",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/native-result.json",
+      "schema": "result/v1",
+      "declared_content_hash": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b",
+      "recomputed_canonical_content_hash": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b",
+      "match": true
+    },
+    {
+      "record": "check completion-review.json",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/completion-review.json",
+      "schema": "completion-review/v1",
+      "declared_content_hash": "e2a459abd727d617da708bdb83e1d08cdb7a11cd5b2c3129d8ad0772b41143cf",
+      "recomputed_canonical_content_hash": "e2a459abd727d617da708bdb83e1d08cdb7a11cd5b2c3129d8ad0772b41143cf",
+      "match": true
+    },
+    {
+      "record": "check orchestrator-acceptance.json",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/orchestrator-acceptance.json",
+      "schema": "orchestrator-acceptance/v1",
+      "declared_content_hash": "c2637b7a98ddbade228fc7e300aee25145fc1fd36fa3b73bc5a3c690862c080a",
+      "recomputed_canonical_content_hash": "c2637b7a98ddbade228fc7e300aee25145fc1fd36fa3b73bc5a3c690862c080a",
+      "match": true
+    },
+    {
+      "record": "review native-result.json",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/native-result.json",
+      "schema": "result/v1",
+      "declared_content_hash": "0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691",
+      "recomputed_canonical_content_hash": "0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691",
+      "match": true
+    },
+    {
+      "record": "review completion-review.json",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/completion-review.json",
+      "schema": "completion-review/v1",
+      "declared_content_hash": "040c3b1b0fad1fd5d25d5c14f42daba788913ac8c487f43fa419012a38d823ae",
+      "recomputed_canonical_content_hash": "040c3b1b0fad1fd5d25d5c14f42daba788913ac8c487f43fa419012a38d823ae",
+      "match": true
+    },
+    {
+      "record": "review orchestrator-acceptance.json",
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/orchestrator-acceptance.json",
+      "schema": "orchestrator-acceptance/v1",
+      "declared_content_hash": "8eaffefed32d40e9fb06361ac8c9f3b8c8e7f7e26ee1a1492f42e1a0b6d9bb50",
+      "recomputed_canonical_content_hash": "8eaffefed32d40e9fb06361ac8c9f3b8c8e7f7e26ee1a1492f42e1a0b6d9bb50",
+      "match": true
+    }
+  ],
+  "canonicalization_method": "SHA-256 over UTF-8 JSON of the record with content_hash removed, keys sorted recursively, separators (\",\", \":\"), ensure_ascii=False.",
+  "shape_validations": [
+    {
+      "label": "campaign_pool.schema",
+      "expected": "memory-harness-check-campaign-pool/v1",
+      "actual": "memory-harness-check-campaign-pool/v1",
+      "pass": true
+    },
+    {
+      "label": "campaign_pool.status",
+      "expected": "COMPLETE",
+      "actual": "COMPLETE",
+      "pass": true
+    },
+    {
+      "label": "campaign_pool.module_instance_id",
+      "expected": "MI-NORMAL-001-CHECK",
+      "actual": "MI-NORMAL-001-CHECK",
+      "pass": true
+    },
+    {
+      "label": "campaign_pool.campaign_id",
+      "expected": "NORMAL-001-CHECK",
+      "actual": "NORMAL-001-CHECK",
+      "pass": true
+    },
+    {
+      "label": "campaign_pool.join_count",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "label": "checkpoint.schema",
+      "expected": "memory-harness-check-progress/v1",
+      "actual": "memory-harness-check-progress/v1",
+      "pass": true
+    },
+    {
+      "label": "checkpoint.status",
+      "expected": "COMPLETE",
+      "actual": "COMPLETE",
+      "pass": true
+    },
+    {
+      "label": "check report schema/status",
+      "expected": "memory-harness-check-result/v1 COMPLETE",
+      "actual": "memory-harness-check-result/v1 COMPLETE",
+      "pass": true
+    },
+    {
+      "label": "review report schema/status",
+      "expected": "memory-harness-review-result/v1 COMPLETE",
+      "actual": "memory-harness-review-result/v1 COMPLETE",
+      "pass": true
+    },
+    {
+      "label": "native record schema (both)",
+      "expected": "result/v1",
+      "actual": "result/v1/result/v1",
+      "pass": true
+    },
+    {
+      "label": "completion-review schema (both)",
+      "expected": "completion-review/v1",
+      "actual": "completion-review/v1/completion-review/v1",
+      "pass": true
+    },
+    {
+      "label": "acceptance schema (both)",
+      "expected": "orchestrator-acceptance/v1",
+      "actual": "orchestrator-acceptance/v1/orchestrator-acceptance/v1",
+      "pass": true
+    },
+    {
+      "label": "task card schema (both)",
+      "expected": "project-task-card/v1",
+      "actual": "project-task-card/v1/project-task-card/v1",
+      "pass": true
+    },
+    {
+      "label": "acceptance approval (both)",
+      "expected": "ACCEPTED",
+      "actual": "ACCEPTED/ACCEPTED",
+      "pass": true
+    }
+  ],
+  "identity_and_join_validations": [
+    {
+      "label": "pool.frozen_input.product_tip == frozen product tip == this card base_commit",
+      "expected": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "actual": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "pass": true
+    },
+    {
+      "label": "pool.frozen_input.canonical_harness_tip == frozen canonical tip",
+      "expected": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "actual": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "pass": true
+    },
+    {
+      "label": "checkpoint frozen tips == pool frozen tips",
+      "expected": "a54ad14a8f59409ee1e88c2473e3617c123f20b8 / f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "actual": "a54ad14a8f59409ee1e88c2473e3617c123f20b8 / f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "pass": true
+    },
+    {
+      "label": "pool.module_instance_id == checkpoint.module_instance_id",
+      "expected": "MI-NORMAL-001-CHECK",
+      "actual": "MI-NORMAL-001-CHECK",
+      "pass": true
+    },
+    {
+      "label": "pool.campaign_id vs checkpoint module id namespace (NORMAL-001-CHECK/MI-NORMAL-001-CHECK)",
+      "expected": "NORMAL-001-CHECK / MI-NORMAL-001-CHECK",
+      "actual": "NORMAL-001-CHECK / MI-NORMAL-001-CHECK",
+      "pass": true
+    },
+    {
+      "label": "two-member completeness (exactly CHECK and REVIEW, both COMPLETE)",
+      "expected": "CHECK,REVIEW both COMPLETE",
+      "actual": "CHECK:COMPLETE REVIEW:COMPLETE",
+      "pass": true
+    },
+    {
+      "label": "checkpoint join shape",
+      "expected": "join_count=1 member_count=2 complete disagreement_preserved no_repairs",
+      "actual": "{\"join_count\":1,\"member_count\":2,\"all_feasible_members_complete\":true,\"disagreement_preserved\":true,\"repairs_performed\":false,\"campaign_acceptance_decision\":\"NOT_DECIDED_IN_M04\"}",
+      "pass": true
+    },
+    {
+      "label": "CHECK member result_content_hash == native content_hash",
+      "expected": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b",
+      "actual": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b / ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b",
+      "pass": true
+    },
+    {
+      "label": "REVIEW member result_content_hash == native content_hash",
+      "expected": "0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691",
+      "actual": "0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691 / 0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691",
+      "pass": true
+    },
+    {
+      "label": "checkpoint native_execution hashes == pool member hashes",
+      "expected": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b,0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691",
+      "actual": "0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691,ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b",
+      "pass": true
+    },
+    {
+      "label": "pool.parallel_launch_readback lane/run set == checkpoint native_execution lane/run set",
+      "expected": "same set",
+      "actual": "normal-001-check-check/a211f3d79e4a44b3b9676615befbd4ae normal-001-check-review/ff3b8cef1da046d9adacc75c75ee55bb || normal-001-check-check/a211f3d79e4a44b3b9676615befbd4ae normal-001-check-review/ff3b8cef1da046d9adacc75c75ee55bb",
+      "pass": true
+    },
+    {
+      "label": "acceptance.result_hash == native content_hash (both)",
+      "expected": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b,0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691",
+      "actual": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b,0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691",
+      "pass": true
+    },
+    {
+      "label": "acceptance.review_ref == completion-review content_hash (both)",
+      "expected": "match",
+      "actual": "e2a459abd727d617da708bdb83e1d08cdb7a11cd5b2c3129d8ad0772b41143cf,040c3b1b0fad1fd5d25d5c14f42daba788913ac8c487f43fa419012a38d823ae",
+      "pass": true
+    },
+    {
+      "label": "completion-review.result_hash == native content_hash (both)",
+      "expected": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b,0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691",
+      "actual": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b,0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691",
+      "pass": true
+    },
+    {
+      "label": "lane_id consistent across native/CR/acceptance (both)",
+      "expected": "normal-001-check-check / normal-001-check-review",
+      "actual": "normal-001-check-check normal-001-check-check normal-001-check-check normal-001-check-review normal-001-check-review normal-001-check-review",
+      "pass": true
+    },
+    {
+      "label": "run_id consistent across native/CR/acceptance (both)",
+      "expected": "a211f3d79e4a44b3b9676615befbd4ae / ff3b8cef1da046d9adacc75c75ee55bb",
+      "actual": "a211f3d79e4a44b3b9676615befbd4ae / ff3b8cef1da046d9adacc75c75ee55bb",
+      "pass": true
+    },
+    {
+      "label": "task_card_hash consistent CR vs acceptance (both)",
+      "expected": "match",
+      "actual": "2537ee17a0a3af79cca5b0d28573ec9694310d87c3cb39f2fb2b36ba822087fc,2fa3891fca60d2ae2e35c098cc2d1ee21e62abed4e62812781b44b8630af4586",
+      "pass": true
+    },
+    {
+      "label": "task_card_id consistent CR vs acceptance (both)",
+      "expected": "CARD-NORMAL-001-CHECK-CHECK / CARD-NORMAL-001-CHECK-REVIEW",
+      "actual": "CARD-NORMAL-001-CHECK-CHECK / CARD-NORMAL-001-CHECK-REVIEW",
+      "pass": true
+    },
+    {
+      "label": "commit == frozen product tip (both members, both records)",
+      "expected": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "actual": "a54ad14a8f59409ee1e88c2473e3617c123f20b8,a54ad14a8f59409ee1e88c2473e3617c123f20b8,a54ad14a8f59409ee1e88c2473e3617c123f20b8,a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "pass": true
+    },
+    {
+      "label": "report recommendation preserved into pool (CHECK)",
+      "expected": "CHECKS_PASS",
+      "actual": "CHECKS_PASS -> CHECKS_PASS",
+      "pass": true
+    },
+    {
+      "label": "report recommendation preserved into pool (REVIEW)",
+      "expected": "FINDINGS",
+      "actual": "FINDINGS -> FINDINGS",
+      "pass": true
+    },
+    {
+      "label": "native_outcome preserved (both)",
+      "expected": "PASS/PASS",
+      "actual": "PASS/PASS/PASS/PASS",
+      "pass": true
+    },
+    {
+      "label": "finding count (pool / report / member declaration)",
+      "expected": "1/1/1",
+      "actual": "1/1/1",
+      "pass": true
+    },
+    {
+      "label": "disagreement count / preserved / decision owner",
+      "expected": "1/true/MI-NORMAL-001-ACCEPT",
+      "actual": "1/true/MI-NORMAL-001-ACCEPT",
+      "pass": true
+    },
+    {
+      "label": "campaign acceptance not decided in M04",
+      "expected": "NOT_DECIDED_IN_M04",
+      "actual": "NOT_DECIDED_IN_M04 / NOT_DECIDED_IN_M04",
+      "pass": true
+    },
+    {
+      "label": "repairs_performed empty (pool [] / checkpoint false)",
+      "expected": "[]/false",
+      "actual": "[]/false",
+      "pass": true
+    },
+    {
+      "label": "next-module handoff (pool == checkpoint == MI-NORMAL-001-ACCEPT)",
+      "expected": "MI-NORMAL-001-ACCEPT",
+      "actual": "MI-NORMAL-001-ACCEPT / MI-NORMAL-001-ACCEPT",
+      "pass": true
+    },
+    {
+      "label": "upstream assets-progress next_module == MI-NORMAL-001-CHECK",
+      "expected": "MI-NORMAL-001-CHECK",
+      "actual": "MI-NORMAL-001-CHECK",
+      "pass": true
+    },
+    {
+      "label": "credit_map shape (reused / challenged / invalidated / unrun)",
+      "expected": "5/1/0/0",
+      "actual": "5/1/0/0",
+      "pass": true
+    },
+    {
+      "label": "checkpoint open_finding id/severity == pool joined finding",
+      "expected": "CHECK-001/HIGH",
+      "actual": "CHECK-001/HIGH",
+      "pass": true
+    },
+    {
+      "label": "upstream assets-progress status ACCEPTED",
+      "expected": "ACCEPTED",
+      "actual": "ACCEPTED",
+      "pass": true
+    },
+    {
+      "label": "checkpoint cleanup: active_lanes 0, monitor absent",
+      "expected": "0/true",
+      "actual": "0/true",
+      "pass": true
+    },
+    {
+      "label": "joined finding id/severity/reported_classification preserved from review report",
+      "expected": "CHECK-001/HIGH/strict_m03_test_only_defect",
+      "actual": "CHECK-001/HIGH/strict_m03_test_only_defect",
+      "pass": true
+    },
+    {
+      "label": "joined finding violated_requirement_or_invariant preserved verbatim",
+      "expected": "REQ-027 / CONTROL-READY exact-owned-descendant cleanup safety: a force-kill must remain scoped to the recorded fixture descendant, including cleanup retries/finalizers.",
+      "actual": "REQ-027 / CONTROL-READY exact-owned-descendant cleanup safety: a force-kill must remain scoped to the recorded fixture descendant, including cleanup retries/finalizers.",
+      "pass": true
+    },
+    {
+      "label": "joined finding concrete_trigger preserved verbatim (source-linked summary; see report for full text)",
+      "expected": "preserved",
+      "actual": "preserved",
+      "pass": true
+    },
+    {
+      "label": "joined finding smallest owner preserved as source-linked faithful summary",
+      "expected": "M03 only: <fixture-only route> (review wording)",
+      "actual": "M03 test assets only; no production helper or frozen-harness change. (pool wording)",
+      "pass": true,
+      "equivalence": "faithful_summary_not_byte_identical"
+    },
+    {
+      "label": "joined finding disposition",
+      "expected": "UNDECIDED_M05",
+      "actual": "UNDECIDED_M05",
+      "pass": true
+    },
+    {
+      "label": "checkpoint open_finding.disposition",
+      "expected": "PENDING_MI_NORMAL_001_ACCEPT",
+      "actual": "PENDING_MI_NORMAL_001_ACCEPT",
+      "pass": true
+    },
+    {
+      "label": "checker member carries no finding_count key",
+      "expected": "true",
+      "actual": "true",
+      "pass": true
+    },
+    {
+      "label": "disagreement subject",
+      "expected": "strict owned-descendant cleanup proof",
+      "actual": "strict owned-descendant cleanup proof",
+      "pass": true
+    }
+  ],
+  "shape_and_join_summary": {
+    "shape_validations_total": 14,
+    "shape_validations_passed": 14,
+    "identity_and_join_validations_total": 40,
+    "identity_and_join_validations_passed": 40,
+    "byte_hash_validations_total": 13,
+    "byte_hash_validations_passed": 13,
+    "canonical_content_hash_validations_total": 6,
+    "canonical_content_hash_validations_passed": 6,
+    "all_passed": true,
+    "note": "Shape and join validity only. Shape validity is not product success and states nothing about semantic sufficiency."
+  },
+  "mechanical_duplicate_groups": [
+    {
+      "group_id": "DUP-01",
+      "equivalence": "byte-identical",
+      "members": [
+        "CHECK-01_exact_selected",
+        "CHECK-02_control_ready",
+        "CHECK-04_ordinary_combined"
+      ],
+      "identical": false,
+      "shared_content": [
+        "{\"behavior\":\"lost_handle_reconciliation\",\"checkpoint_preserved_after_producer_exit\":true,\"pid_from_child_checkpoint\":17208,\"process_absent_after_complete\":true,\"status_after_reconciliation\":\"complete\",\"status_before_reconciliation\":\"running\"}",
+        "{\"behavior\":\"owned_descendant_cleanup\",\"cleanup_command\":\"taskkill /PID 67136 /T /F\",\"cleanup_exit_code\":0,\"cleanup_output\":\"SUCCESS: The process with PID 64396 (child process of PID 67136) has been terminated.\\nSUCCESS: The process with PID 67136 (child process of PID 64372) has been terminated.\",\"descendant_absent_after_cleanup\":true,\"descendant_pid\":67136,\"descendant_present_before_cleanup\":true,\"owner_exit_code\":0,\"parent_absent_after_owner_exit\":true,\"parent_pid\":64372}",
+        "{\"behavior\":\"early_terminal_slow_success_ready_refill\",\"checkpoint\":{\"exit_code\":0,\"mode\":\"success\",\"pid\":17092,\"status\":\"complete\"},\"checkpoint_preserved_after_producer_exit\":true,\"complete_exit_statuses\":[0,2,0],\"early_terminal_exit_code\":2,\"ready_refill_exit_code\":0,\"slow_success_exit_code\":0,\"slow_was_running_before_refill\":true}",
+        "{\"behavior\":\"heavy_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-HEAVY-PARSE-AND-CLAMP\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}",
+        "{\"behavior\":\"middle_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-MIDDLE-PARSE-NUMBERS\",\"intended_failure_excerpt\":\"self.fail(f\\\"GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: {error}\\\")\",\"prerequisite_exit_code\":0}",
+        "{\"behavior\":\"routine_base\",\"designated_task_exit_code\":1,\"gap_id\":\"GAP-ROUTINE-ABOVE-HIGH\",\"intended_failure_excerpt\":\"AssertionError: 12 != 10 : GAP-ROUTINE-ABOVE-HIGH: above-high input must return the high bound\",\"prerequisite_exit_code\":0}"
+      ],
+      "note": "The same six CONTROL-READY machine readback lines re-observed by three separate command units. Byte-identical, so grouped as one fact with three observing units; no distinct fact merged."
+    },
+    {
+      "group_id": "DUP-02",
+      "equivalence": "identity-equivalent (all empty)",
+      "members": [
+        "CHECK-05/06_routine",
+        "CHECK-05/06_middle",
+        "CHECK-05/06_heavy"
+      ],
+      "identical": true,
+      "shared_content": [],
+      "note": "All three per-base readback lists are empty; identity-equivalent empty facts."
+    },
+    {
+      "group_id": "DUP-03",
+      "equivalence": "identity-equivalent (same frozen product tip value)",
+      "members": [
+        "campaign_pool.frozen_input.product_tip",
+        "checkpoint.frozen_product_tip",
+        "check completion-review.commit",
+        "check orchestrator-acceptance.commit",
+        "review completion-review.commit",
+        "review orchestrator-acceptance.commit",
+        "CARD-NORMAL-001-CHECK-CHECK.base_commit",
+        "CARD-NORMAL-001-CHECK-REVIEW.base_commit"
+      ],
+      "identical": true,
+      "shared_value": "a54ad14a8f59409ee1e88c2473e3617c123f20b8"
+    },
+    {
+      "group_id": "DUP-04",
+      "equivalence": "identity-equivalent (same frozen canonical harness tip value)",
+      "members": [
+        "campaign_pool.frozen_input.canonical_harness_tip",
+        "checkpoint.frozen_canonical_harness_tip"
+      ],
+      "identical": true,
+      "shared_value": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8"
+    },
+    {
+      "group_id": "DUP-05",
+      "equivalence": "identity-equivalent (same CHECK member result content hash)",
+      "members": [
+        "campaign_pool.complete_result_set[CHECK].result_content_hash",
+        "checkpoint.native_execution.members[routine].result_content_hash",
+        "check native-result.content_hash",
+        "check completion-review.result_hash",
+        "check orchestrator-acceptance.result_hash"
+      ],
+      "identical": true,
+      "shared_value": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b"
+    },
+    {
+      "group_id": "DUP-06",
+      "equivalence": "identity-equivalent (same REVIEW member result content hash)",
+      "members": [
+        "campaign_pool.complete_result_set[REVIEW].result_content_hash",
+        "checkpoint.native_execution.members[reviewer].result_content_hash",
+        "review native-result.content_hash",
+        "review completion-review.result_hash",
+        "review orchestrator-acceptance.result_hash"
+      ],
+      "identical": true,
+      "shared_value": "0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691"
+    },
+    {
+      "group_id": "DUP-07",
+      "equivalence": "identity-equivalent (same declared byte hash for the same file)",
+      "members": [
+        "campaign_pool.frozen_input.assets_progress.sha256",
+        "check report frozen_input_identities.accepted_checkpoints_assets.sha256",
+        "review report consumed_evidence[assets-progress.json].sha256"
+      ],
+      "identical": true,
+      "shared_value": "c07df57e1d45faadb8caef2cdf55b8d62dec1ecb28405a507011b8fca452198d"
+    },
+    {
+      "group_id": "DUP-08",
+      "equivalence": "identity-equivalent (same declared byte hash for the same shared inspected source file)",
+      "members": [
+        "check report checkpoints[CHECK-39] (resolver, resolver_tests, control_tests, fixture_manifest, control_child)",
+        "review report exact_files_inspected (same five paths)"
+      ],
+      "identical": true,
+      "shared_values": {
+        "development/test-tools/resolve-role.py": "5da5f8a73cc93215a55afb854484c97b50f1d497f6d6d4710757ca43d3468e78",
+        "development/test-tools/tests/test_resolve_role.py": "dbbaa21fd3d340e8d2b0735a0d45a5d895f5cb707478cfef9309a49ff53c9969",
+        "development/test-tools/tests/test_fixture_controls.py": "3851ed4bf4e208bf4ded0ffbf1e4fb28206cddaac5734e7f7246940f3731571a",
+        "development/test-tools/tests/fixtures/fixture_manifest.json": "6b584b939833125fb3069657c0da0bc700909cd675961ff6a30efe89f40b3f8c",
+        "development/test-tools/tests/fixtures/control_child.py": "e5fb9f90aa2173fc5f2507ce3d55dd3ec4c8b4e5141411295f65f8a33011a18a"
+      }
+    },
+    {
+      "group_id": "DUP-09",
+      "equivalence": "identity-equivalent (same declared byte hash for the same upstream M03 evidence file)",
+      "members": [
+        "assets-progress.evidence.*.sha256",
+        "review report consumed_evidence hashes for the four NORMAL-001-ASSETS-EXEC files"
+      ],
+      "identical": true,
+      "shared_values": {
+        "test_author_report": "13b309641ae5e7a772ff5bfdfe7cafa14414a41a74a6b00c7bb641728006c8ed",
+        "native_result": "eb1c1f8b938dc03ee15aea4adc5b7073294289f5abb7628c364bf88c0c8edb2c",
+        "completion_review": "6776a7aa2630ed5a85d43477f80cd70b9dab94c693d0535e30e8782ca12f222c",
+        "acceptance": "e50ae65beacd5749e905bfe70e8196f1607c4a223232e0d3e6fd8f469dc020b4"
+      }
+    }
+  ],
+  "not_merged": [
+    {
+      "pair": [
+        "CHECK executable observation (selected command exit 0, 15 tests, recommendation CHECKS_PASS)",
+        "CHECK-001 finding (HIGH, reported_classification strict_m03_test_only_defect, disposition UNDECIDED_M05)"
+      ],
+      "reason": "Distinct source facts from distinct members carrying opposing reported positions; not byte- or identity-equivalent. Preserved separately and deliberately NOT merged.",
+      "merged": false
+    },
+    {
+      "pair": [
+        "checker_position on REQ-027 (confirmed by execution)",
+        "reviewer_position on REQ-027 (does not prove exact ownership)"
+      ],
+      "reason": "Preserved disagreement between members; not merged and not adjudicated.",
+      "merged": false
+    },
+    {
+      "pair": [
+        "REQ-001 / REQ-028 / REQ-029 statements in check report vs review report"
+      ],
+      "reason": "Both members address the same requirements but their statements are not byte- or identity-equivalent; kept as separate per-member facts.",
+      "merged": false
+    }
+  ],
+  "preserved_facts": {
+    "member_CHECK": {
+      "member": "CHECK",
+      "status": "COMPLETE",
+      "recommendation": "CHECKS_PASS",
+      "native_outcome": "PASS",
+      "result_content_hash": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b",
+      "selected_command": "python -m unittest discover -s development/test-tools/tests -p test_*.py",
+      "selected_command_exit_code": 0,
+      "selected_command_tests_run": 15,
+      "unit_checkpoint_count": 39,
+      "recommendation_scope_verbatim": "Factual check recommendation only. This lane does not accept, repair, or dispatch; ROOT owns acceptance.",
+      "requirement_credit_verbatim": {
+        "REQ-001": "Admission/build/asset prerequisite readback only; no memory-product behavior credit claimed or observed. Actual all-off native lifecycle remains M09.",
+        "REQ-027": "Confirmed by execution the M03-owned finite subprocess controls: early incompatible terminal exit, independent slow success with ready refill, complete exit statuses, lost-handle reconciliation, preserved checkpoint, and lingering owned-descendant cleanup with exact taskkill exit readback. Outer/inner delegation-chain, collision and nested-capacity credit remains M08/M09.",
+        "REQ-028": "Requested routine allocation (.plans/SUBAGENT_ROLE_MODEL_MAPPING.json) resolved through development/test-tools/resolve-role.py against frozen references/harness-single reproduces exactly the declared actual routine resolution with no substitution; this lane's invocation.json agrees on provider/model/launcher/effort/tier. Native coverage is claimed only for the role actually launched (routine); no fallback selected or exercised.",
+        "REQ-029": "No benchmark adapter/task/subset/scored cohort, post-closeout run, or learner implementation was executed or added in this check. Vendored benchmark trees are present but unexercised.",
+        "CONTROL-READY": "Preselected CONTROL-READY surface passed with ResourceWarning promoted to error: control suite 8 PASS, resolver suite 7 PASS, combined discovery 15 PASS, three prerequisites PASS with only intended pre-task gaps, real owned-descendant cleanup proven. Actual ROOT control-boundary consumption remains M08."
+      },
+      "retained_claims_verbatim": [
+        "Frozen input identity unchanged: product tip a54ad14a8f59409ee1e88c2473e3617c123f20b8 clean; canonical tip f6948fb2673661b6c2cfb69cf47b23a198b3f5f8 clean; this lane has zero commits ahead of base and no source diff beyond managed native overlays.",
+        "All 13 accepted M03 asset hashes and all 4 stable M03 evidence file hashes recomputed byte-identical; M03 native result canonical content_hash, completion-review hash and acceptance hash recompute exactly and are internally linked (review_ref / result_hash).",
+        "Exact selected command, three manifest qualification commands, three prerequisites, three designated pre-task commands and three discovery-isolation readbacks published with command, cwd, environment controls, timestamps, exit codes, test counts and verbatim stdout/stderr.",
+        "Deployed configuration identity 8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5 recomputed from the deployed two-key config plus empty resource manifest and matches the runtime epoch-state and monitor records and the accepted admission checkpoint.",
+        "No generated bytecode left behind by this check; the only test-tools bytecode and the runtime-managed result-stop-check bytecode predate the check window."
+      ],
+      "uncredited_claims_verbatim": [
+        "No product behavior, acceptance or repair credit; these are factual check outputs only.",
+        "No live-model or service credit beyond this lane's own launch; native all-off observations remain M09.",
+        "No REQ-027 nested-capacity/collision-fixture credit; remains M08/M09.",
+        "No REQ-028 fallback-selection credit: fallback policy was read but no fallback was selected or exercised.",
+        "Disposable probe development/test-runs/normal-001-build-exec-probe/stdlib_control_probe.py (sha256 6e366ad049740b69f0e0947f1e1f956a62a807b9729334ac4060dc194204e39a) remains an M02 non-acceptance asset and is not credited here."
+      ],
+      "unresolved_verbatim": [],
+      "checkpoint_verification_verbatim": {
+        "exact_selected_command": "python -m unittest discover -s development/test-tools/tests -p test_*.py",
+        "exact_selected_command_exit_code": 0,
+        "exact_selected_command_tests_run": 15,
+        "control_ready_tests_passed": 8,
+        "resolver_tests_passed": 7,
+        "combined_tests_passed": 15,
+        "asset_hashes_verified": 13,
+        "stable_evidence_hashes_verified": 4,
+        "native_result_hashes_recomputed": true,
+        "completion_review_hashes_recomputed": true,
+        "orchestrator_acceptance_hashes_recomputed": true,
+        "product_and_canonical_clean": true
+      },
+      "declared_execution_readback": {
+        "control_ready_tests_passed": 8,
+        "resolver_tests_passed": 7,
+        "combined_tests_passed": 15,
+        "asset_hashes_verified": 13,
+        "stable_evidence_hashes_verified": 4,
+        "product_and_canonical_clean": true
+      }
+    },
+    "member_REVIEW": {
+      "member": "REVIEW",
+      "status": "COMPLETE",
+      "recommendation": "FINDINGS",
+      "native_outcome": "PASS",
+      "result_content_hash": "0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691",
+      "finding_count": 1,
+      "review_type": "INITIAL_IMPLEMENTATION",
+      "root_acceptance_verbatim": "NOT_DECIDED",
+      "requirement_invariant_map_verbatim": [
+        {
+          "id": "REQ-001",
+          "status": "MET_WITH_SCOPE_LIMIT",
+          "evidence": [
+            "MI-NORMAL-001-BUILD/build-progress.json: accepted_tip=a54ad14, changed_paths=[]",
+            "MI-NORMAL-001-ASSETS/assets-progress.json: requirement_credit.REQ-001"
+          ],
+          "review_statement": "The reviewed assets are pre-product test fixtures; neither checkpoint claims memory-product behavior credit."
+        },
+        {
+          "id": "REQ-027",
+          "status": "PARTIAL_STRICT_M03_DEFECT",
+          "evidence": [
+            "development/test-tools/tests/fixtures/control_child.py:84-117",
+            "development/test-tools/tests/test_fixture_controls.py:108-127, 490-554",
+            "MI-NORMAL-001-ASSETS/assets-progress.json: verification.owned_descendant_cleanup"
+          ],
+          "review_statement": "The finite fixtures supply lost-handle and descendant seams, but the cleanup path has no durable identity check for the PID it force-kills; see CHECK-001. No broader harness behavior is credited or rejected."
+        },
+        {
+          "id": "REQ-028",
+          "status": "MET_FOR_RECORDED_NATIVE_BINDINGS",
+          "evidence": [
+            ".agent-workspace/invocation.json: provider.id, provider.model, provider.launch_config",
+            "MI-NORMAL-001-ASSETS/assets-progress.json: native_execution",
+            "development/test-tools/resolve-role.py:122-163",
+            "development/test-tools/tests/test_resolve_role.py:99-135"
+          ],
+          "review_statement": "The reviewer invocation exactly records codex/gpt-5.6-terra/reasoning_effort=max/service_tier=normal, and M03 records its actual test_author binding. This review did not execute the resolver or launch a provider."
+        },
+        {
+          "id": "REQ-029",
+          "status": "MET_WITH_SCOPE_LIMIT",
+          "evidence": [
+            "MI-NORMAL-001-BUILD/build-progress.json: requirement_credit.REQ-029",
+            "MI-NORMAL-001-ASSETS/assets-progress.json: requirement_credit.REQ-029"
+          ],
+          "review_statement": "The accepted M01-M03 evidence expressly records no benchmark or learned-selector work; this review makes no additional selector claim."
+        },
+        {
+          "id": "CONTROL-READY",
+          "status": "PARTIAL",
+          "evidence": [
+            "development/test-tools/tests/fixtures/fixture_manifest.json:29-44",
+            "development/test-tools/tests/test_fixture_controls.py:175-554",
+            "MI-NORMAL-001-ASSETS/assets-progress.json: verification.control_ready"
+          ],
+          "review_statement": "Manifest commands, direct-run designated gaps, and consumers are coherent for the finite closure, except that CHECK-001 prevents a strict cleanup-safety proof."
+        }
+      ],
+      "findings_verbatim": [
+        {
+          "id": "CHECK-001",
+          "severity": "HIGH",
+          "classification": "strict_m03_test_only_defect",
+          "violated_requirement_or_invariant": "REQ-027 / CONTROL-READY exact-owned-descendant cleanup safety: a force-kill must remain scoped to the recorded fixture descendant, including cleanup retries/finalizers.",
+          "source_links": [
+            "development/test-tools/tests/test_fixture_controls.py:74-89",
+            "development/test-tools/tests/test_fixture_controls.py:108-127",
+            "development/test-tools/tests/test_fixture_controls.py:520-554",
+            "development/test-tools/tests/fixtures/control_child.py:84-117"
+          ],
+          "concrete_trigger": "After line 520 successfully taskkills the recorded descendant and lines 528-531 observe it absent, the operating system can reuse descendant_pid before the finally block at lines 550-554. _cleanup_pids then treats any process at that numeric PID as the fixture process and invokes taskkill /PID <pid> /T /F. The same PID-only finalizer is also used by the slow-success and lost-handle cases.",
+          "consequence": "An unrelated process and its descendant tree can be force-terminated. A passing readback establishes only numeric-PID absence/presence, not that every force-kill was still owned by this fixture, so it cannot supply the claimed strict exact-owned-descendant cleanup proof.",
+          "smallest_owning_route": "M03 only: strengthen control_child.py and test_fixture_controls.py to carry and verify a durable descendant identity (for example a nonce plus creation identity/validated command) immediately before each taskkill, and make a non-matching finalizer a safe no-op. Do not add an M02 production helper or change the frozen harness for this fixture-only repair.",
+          "evidence_claim_affected": "MI-NORMAL-001-ASSETS/assets-progress.json: verification.owned_descendant_cleanup = 'Exact recorded PID tree terminated; absence read back'."
+        }
+      ],
+      "classification_summary_verbatim": {
+        "material_producer_defect": [],
+        "strict_m03_test_only_defect": [
+          "CHECK-001"
+        ],
+        "operational_report_fault": [],
+        "no_finding": [
+          "Manifest command strings and consumer assertions cohere with the named fixture layout.",
+          "Routine, middle, and heavy bases are separately laid out and carry the intended designated gaps in the inspected source.",
+          "The lost-handle case records a child PID/checkpoint and observes its completion without retaining the Popen handle.",
+          "M02's no-helper decision is consistent with accepted_tip=a54ad14, changed_paths=[], and the stdlib-only fixture mechanisms.",
+          "The four accepted M03 member-evidence hashes match the assets checkpoint."
+        ]
+      },
+      "gaps_and_nonclaims_verbatim": [
+        "No tests, worker launches, provider launches, repairs, commits, or acceptance decisions were performed by this reviewer.",
+        "Pass counts and runtime behavior are reported only as accepted M01-M03 evidence; they were not re-executed in this review.",
+        "Per ROOT correction event b43835119fdd4cc6b75b9289a7e08c90, discovery stopped after the named fixture/resolver surface and frozen checkpoint integrity readback. The current canonical repair files were not re-opened in this pass; no harness finding is made because no reproduced blocker or direct invalidation was established.",
+        "This report does not turn unperformed M08/M09 work, style preferences, or deferred canonical-harness edge cases into defects.",
+        "Recommendation is evidence-based review advice only and is not ROOT acceptance."
+      ]
+    },
+    "joined_finding_verbatim": [
+      {
+        "id": "CHECK-001",
+        "source_member": "REVIEW",
+        "severity": "HIGH",
+        "reported_classification": "strict_m03_test_only_defect",
+        "violated_requirement_or_invariant": "REQ-027 / CONTROL-READY exact-owned-descendant cleanup safety: a force-kill must remain scoped to the recorded fixture descendant, including cleanup retries/finalizers.",
+        "concrete_trigger": "The accepted fixture finalizer rechecks only a numeric PID before taskkill. After the intended descendant exits, PID reuse can make the finalizer target an unrelated process tree.",
+        "affected_credit": "MI-NORMAL-001-ASSETS verification.owned_descendant_cleanup",
+        "smallest_reported_owner": "M03 test assets only; no production helper or frozen-harness change.",
+        "root_source_readback": "The cited implementation uses _pid_exists(pid) followed by taskkill /PID pid /T /F and repeats descendant_pid in finally; no durable process identity is checked.",
+        "disposition": "UNDECIDED_M05"
+      }
+    ],
+    "disagreement_verbatim": [
+      {
+        "subject": "strict owned-descendant cleanup proof",
+        "checker_position": "All selected executable controls and declared hashes pass; CHECKS_PASS.",
+        "reviewer_position": "Passing numeric-PID readback does not prove every cleanup kill remained scoped to the original process; FINDINGS.",
+        "preserved": true,
+        "decision_owner": "MI-NORMAL-001-ACCEPT"
+      }
+    ],
+    "credit_map_verbatim": {
+      "reused_unchanged_pass": [
+        "REQ-001 pre-product boundary evidence",
+        "REQ-028 recorded role-resolution evidence",
+        "REQ-029 no benchmark or learned-selector work",
+        "all 13 M03 asset byte hashes and four stable M03 evidence hashes",
+        "15-test selected command execution"
+      ],
+      "challenged_pending_m05": [
+        "REQ-027 / CONTROL-READY exact-owned-descendant cleanup safety proof"
+      ],
+      "invalidated_in_m04": [],
+      "unrun_required_units": []
+    },
+    "checkpoint_open_finding_verbatim": {
+      "id": "CHECK-001",
+      "severity": "HIGH",
+      "reported_classification": "strict_m03_test_only_defect",
+      "affected_requirement": "REQ-027",
+      "affected_claim": "exact-owned-descendant cleanup safety",
+      "trigger": "The test fixture finalizer verifies only numeric PID presence immediately before taskkill, so PID reuse can retarget cleanup after the intended process exits.",
+      "smallest_reported_owner": "M03 test assets",
+      "harness_change_requested": false,
+      "disposition": "PENDING_MI_NORMAL_001_ACCEPT"
+    },
+    "checkpoint_unresolved_verbatim": [
+      "M05 must adjudicate CHECK-001 and route any accepted strict test-only correction to the M03 asset owner without changing the frozen harness."
+    ],
+    "campaign_acceptance_decision": "NOT_DECIDED_IN_M04",
+    "repairs_performed": [],
+    "next_module": "MI-NORMAL-001-ACCEPT"
+  },
+  "missing_or_malformed_facts": [],
+  "missing_or_malformed_facts_note": "Every shape, byte-hash, canonical content-hash, member-identity, join, count, and handoff field expected from the frozen pool and checkpoint was present, well-formed, and matched. Nothing missing or malformed. All 40 join validations and all 14 shape validations passed.",
+  "protected_scope_readback": {
+    "writes_made": [
+      "development/evidence/STEP-001/NORMAL-001-ACCEPT-POOL/result.json",
+      "RESULT.json (worktree root)"
+    ],
+    "source_tests_fixtures_plans_prior_evidence_git_runtime_or_other_lane_outputs_modified": false,
+    "commits_made": false,
+    "lane_worktree": {
+      "tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "commits_ahead_of_base": 0,
+      "status_porcelain": [
+        " M .codex/hooks/orchestrator_harness_post_tool_use.py",
+        " M .codex/hooks/orchestrator_harness_stop.py",
+        "?? .agent-workspace/",
+        "?? .codex/skills/lane-assignment/",
+        "?? .codex/skills/manager-notify/"
+      ],
+      "classification": "managed native overlays only (ROOT-installed hook payload adaptations and lane workspace); no source diff beyond managed overlays"
+    },
+    "product_P": {
+      "tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "status_porcelain": "",
+      "clean": true
+    },
+    "canonical_harness": {
+      "tip": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "status_porcelain": "",
+      "clean": true
+    },
+    "tests_executed_by_this_lane": false,
+    "other_campaigns_executed": false
+  },
+  "recommendation": "READY_FOR_ROOT",
+  "recommendation_scope": "Mechanical assembly complete and internally consistent: both declared member facts, the single unadjudicated finding (CHECK-001), and the single preserved disagreement are carried forward unchanged for ROOT. This is not a verdict, classification, sufficiency judgement, repair-route selection, or acceptance decision."
+}

@@ -1,0 +1,19 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[submodule "Codex_Claude_Setup"]
+	url = https://github.com/JasonPeng2019/Codex_Claude_Setup.git
+	active = true
+[submodule "harness-single"]
+	url = https://github.com/JasonPeng2019/harness-single.git
+	active = true
+[submodule "Harness-Memory-Planning"]
+	url = https://github.com/JasonPeng2019/Harness-Memory-Planning
+	active = true
+[submodule "Harness-Memory-Base"]
+	url = https://github.com/JasonPeng2019/Harness-Memory-Base
+	active = true

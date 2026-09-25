@@ -1,0 +1,207 @@
+{
+  "schema": "memory-harness-assets-correction-result/v1",
+  "status": "REVIEWABLE",
+  "recorded_at": "2026-09-21T11:37:35.770618Z",
+  "identity": {
+    "module_instance_id": "MI-NORMAL-001-ASSETS",
+    "card_id": "CARD-NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION",
+    "invocation_id": "INVOCATION-NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION",
+    "lane_id": "normal-001-assets-pid-identity-correction",
+    "run_id": "3021675fc3bf41afb300e7ef7b34edbb",
+    "gate_id": "GATE-001",
+    "deliverable_id": "DEL-001",
+    "stage_cohort_id": "COHORT-001",
+    "loop_id": "LOOP-001",
+    "workflow_role": "test_author",
+    "provider": "codex",
+    "model": "glm-5.3:cloud",
+    "reasoning_effort": "xhigh",
+    "service_tier": "normal",
+    "launcher": "ollama"
+  },
+  "correction": {
+    "finding_id": "CHECK-001",
+    "governing_policy": "P08",
+    "governing_recipe_action": "M05-A8",
+    "objective": "Require exact process-incarnation identity before every PID-based force-kill.",
+    "red_test_id": "test_control_child_pid_identity_mismatch_is_safe_no_op",
+    "implementation": [
+      "Capture durable process identity immediately after each directly spawned process starts.",
+      "Record the owned descendant's durable identity in the owner checkpoint.",
+      "Re-read the process creation identity immediately before each PID-based force-kill.",
+      "Return a safe no-op when identity is missing, unprovable, absent, or mismatching.",
+      "Preserve exact owned-tree taskkill /T /F behavior on an exact identity match."
+    ]
+  },
+  "source_files": [
+    {
+      "path": "development/test-tools/tests/test_fixture_controls.py",
+      "before_sha256": "3851ed4bf4e208bf4ded0ffbf1e4fb28206cddaac5734e7f7246940f3731571a",
+      "after_sha256": "026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840",
+      "before_bytes": 20948,
+      "after_bytes": 29961
+    },
+    {
+      "path": "development/test-tools/tests/fixtures/control_child.py",
+      "before_sha256": "e5fb9f90aa2173fc5f2507ce3d55dd3ec4c8b4e5141411295f65f8a33011a18a",
+      "after_sha256": "6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518",
+      "before_bytes": 4819,
+      "after_bytes": 7186
+    }
+  ],
+  "commands": [
+    {
+      "name": "red_regression_and_affected_cleanup",
+      "command": "python -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py -k test_control_child_pid_identity_mismatch_is_safe_no_op -k test_control_child_owned_descendant_cleanup",
+      "exit_code": 1,
+      "status": "EXPECTED_RED",
+      "tests_run": 2,
+      "failures": 1,
+      "observed": "The red regression failed because the PID-only cleanup killed the owned live fixture and issued taskkill /PID <pid> /T /F despite the deliberately mismatching identity; test_control_child_owned_descendant_cleanup passed in the same red run.",
+      "failure_test_id": "test_control_child_pid_identity_mismatch_is_safe_no_op"
+    },
+    {
+      "name": "green_regression_and_affected_cleanup",
+      "command": "python -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py -k test_control_child_pid_identity_mismatch_is_safe_no_op -k test_control_child_owned_descendant_cleanup",
+      "exit_code": 0,
+      "status": "PASS",
+      "tests_run": 2,
+      "failures": 0,
+      "errors": 0,
+      "selected_test_ids": [
+        "test_control_child_pid_identity_mismatch_is_safe_no_op",
+        "test_control_child_owned_descendant_cleanup"
+      ]
+    },
+    {
+      "name": "affected_control_file_resource_warning_strict",
+      "command": "python -W error::ResourceWarning -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "tests_run": 9,
+      "failures": 0,
+      "errors": 0,
+      "resource_warnings_observed": 0
+    }
+  ],
+  "durable_identity": {
+    "format": {
+      "pid": "integer process identifier",
+      "creation_filetime": "windows-filetime:<unsigned 64-bit FILETIME> on this Windows run"
+    },
+    "example": {
+      "pid": 31552,
+      "creation_filetime": "windows-filetime:134344639686618989"
+    },
+    "capture": "Captured while the fixture process was known alive and recorded in the owner checkpoint.",
+    "guard": "Immediately before every PID-based force-kill, the current creation identity is re-read and compared for exact equality.",
+    "fail_closed": "Missing, unprovable, absent, or mismatching identity returns None and does not call taskkill or kill."
+  },
+  "readbacks": {
+    "mismatch_safe_no_op": {
+      "behavior": "pid_identity_mismatch_safe_no_op",
+      "mismatched_identity": {
+        "creation_filetime": "mismatched-identity",
+        "pid": 31552
+      },
+      "mismatch_cleanup_result": null,
+      "process_alive_after_mismatch": true,
+      "taskkill_issued_after_mismatch": false,
+      "exact_cleanup_exit_code": 0,
+      "taskkill_issued_for_exact_match": true,
+      "descendant_absent_after_exact_cleanup": true
+    },
+    "exact_match_owned_cleanup": {
+      "behavior": "owned_descendant_cleanup",
+      "cleanup_command": "taskkill /PID 25248 /T /F",
+      "cleanup_exit_code": 0,
+      "descendant_identity": {
+        "creation_filetime": "windows-filetime:134344639669381597",
+        "pid": 25248
+      },
+      "descendant_present_before_cleanup": true,
+      "descendant_absent_after_cleanup": true,
+      "owner_exit_code": 0,
+      "parent_absent_after_owner_exit": true
+    }
+  },
+  "protected_scope": {
+    "only_allowed_source_paths_changed": true,
+    "allowed_source_paths": [
+      "development/test-tools/tests/test_fixture_controls.py",
+      "development/test-tools/tests/fixtures/control_child.py"
+    ],
+    "report_paths": [
+      "development/evidence/STEP-001/NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/result.json",
+      "RESULT.json"
+    ],
+    "unchanged_accepted_assets_verified": [
+      "development/test-tools/tests/test_resolve_role.py",
+      "development/test-tools/tests/fixtures/fixture_manifest.json",
+      "development/test-tools/tests/fixtures/task_bases/routine/clamp.py",
+      "development/test-tools/tests/fixtures/task_bases/routine/test_prerequisites.py",
+      "development/test-tools/tests/fixtures/task_bases/routine/test_task.py",
+      "development/test-tools/tests/fixtures/task_bases/middle/clamp.py",
+      "development/test-tools/tests/fixtures/task_bases/middle/test_prerequisites.py",
+      "development/test-tools/tests/fixtures/task_bases/middle/test_task.py",
+      "development/test-tools/tests/fixtures/task_bases/heavy/clamp.py",
+      "development/test-tools/tests/fixtures/task_bases/heavy/parse_numbers.py",
+      "development/test-tools/tests/fixtures/task_bases/heavy/test_prerequisites.py",
+      "development/test-tools/tests/fixtures/task_bases/heavy/test_task.py"
+    ],
+    "product": {
+      "path": "development/product/worktree_example",
+      "branch": "main",
+      "commit": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "clean": true
+    },
+    "canonical_harness": {
+      "path": "references/harness-single",
+      "branch": "working/memory-v1",
+      "commit": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "clean": true
+    },
+    "commit_performed": false,
+    "package_dependency_added": false,
+    "scheduler_or_runner_added": false,
+    "broad_process_enumeration_added": false,
+    "harness_identity_helper_imported": false,
+    "earlier_evidence_modified": false,
+    "test_generated_bytecode_removed": true
+  },
+  "changed_paths": [
+    "development/test-tools/tests/test_fixture_controls.py",
+    "development/test-tools/tests/fixtures/control_child.py",
+    "development/evidence/STEP-001/NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/result.json",
+    "RESULT.json"
+  ],
+  "credit": {
+    "preserved": [
+      "M01 admission and native lifecycle evidence",
+      "M02 unchanged product-tip decision and seven resolver checks",
+      "M03 task-base prerequisite and designated-gap observations",
+      "M03 manifest structure outside cleanup identity fields",
+      "M04 routine checker executable PASS observations except the strict ownership interpretation of cleanup",
+      "REQ-001 pre-product scope evidence",
+      "REQ-028 recorded binding evidence",
+      "REQ-029 no-benchmark/no-learner evidence",
+      "product main a54ad14 and canonical harness f6948fb identities"
+    ],
+    "invalidated_before_correction": [
+      "MI-NORMAL-001-ASSETS verification.owned_descendant_cleanup",
+      "CONTROL-READY strict cleanup-safety credit",
+      "the hashes and evidence joins that consume either corrected test file",
+      "M04 review closure for CHECK-001"
+    ],
+    "repaired_evidence_available": [
+      "exact process-incarnation mismatch is a demonstrated safe no-op",
+      "exact-match owned descendant cleanup succeeds and absence is read back"
+    ],
+    "acceptance_decided": false
+  },
+  "unresolved": [
+    "CHECK-001's affected check/review path and MI-NORMAL-001-ACCEPT credit-map closure remain to be completed by their owning roles."
+  ],
+  "status_reason": "The focused regression failed for the intended missing guard before implementation; both affected tests passed after implementation; the complete affected control file passed with ResourceWarning promoted to error; mismatching identity was a safe no-op; exact-match cleanup succeeded; only the authorized source and report paths changed; product main and canonical harness remained clean.",
+  "content_hash": "6d02ba2961d973d233d8b5ecf8b24638394ca75b491e0af270178b188dd723b7"
+}

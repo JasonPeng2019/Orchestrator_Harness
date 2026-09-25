@@ -1,0 +1,94 @@
+{
+  "schema": "memory-harness-assets-correction-progress/v1",
+  "module_instance_id": "MI-NORMAL-001-ASSETS",
+  "finding_id": "CHECK-001",
+  "recorded_at": "2026-09-21T11:42:12.7191394Z",
+  "status": "ACCEPTED_AWAITING_AFFECTED_CHECK",
+  "route": "P08 strict test-only return from MI-NORMAL-001-ACCEPT",
+  "accepted_product_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+  "product_tip_changed": false,
+  "canonical_harness_tip": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+  "harness_changed": false,
+  "changed_source_paths": [
+    {
+      "path": "development/test-tools/tests/test_fixture_controls.py",
+      "before_sha256": "3851ed4bf4e208bf4ded0ffbf1e4fb28206cddaac5734e7f7246940f3731571a",
+      "after_sha256": "026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840"
+    },
+    {
+      "path": "development/test-tools/tests/fixtures/control_child.py",
+      "before_sha256": "e5fb9f90aa2173fc5f2507ce3d55dd3ec4c8b4e5141411295f65f8a33011a18a",
+      "after_sha256": "6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518"
+    }
+  ],
+  "test_first": {
+    "red": "2 selected tests ran; mismatch regression failed for the intended PID-only kill while existing owned-descendant cleanup passed",
+    "green_worker": "2 selected tests PASS; affected control file 9 PASS with ResourceWarning promoted to error",
+    "green_root": "2 selected tests PASS in 4.082 seconds; affected control file 9 PASS in 8.846 seconds with ResourceWarning promoted to error",
+    "safe_regression": "Only an owned fixture process was used. Mismatching creation identity caused no taskkill and the process remained alive; exact identity then terminated it successfully."
+  },
+  "implementation": {
+    "identity": "PID plus native creation identity captured while alive",
+    "windows_identity": "GetProcessTimes creation FILETIME through Python stdlib ctypes",
+    "guard": "Re-read immediately before every PID-based force-kill and require exact equality",
+    "fail_closed": "Absent, unknown, or mismatching identity is a safe no-op",
+    "tree_cleanup_preserved": "taskkill /PID <pid> /T /F on exact match"
+  },
+  "native_execution": {
+    "epoch_id": "43b710e459b04c8ab4f52a0598bddf2b",
+    "lane_id": "normal-001-assets-pid-identity-correction",
+    "run_id": "3021675fc3bf41afb300e7ef7b34edbb",
+    "workflow_role": "test_author",
+    "provider": "codex",
+    "model": "glm-5.3:cloud",
+    "reasoning_effort": "xhigh",
+    "service_tier": "normal",
+    "launcher": "ollama",
+    "native_outcome": "PASS",
+    "result_hash": "370330b909de569b5acf843a7690f89d62ed1cd27009ad9c4d62185ccdd275ed",
+    "root_review": "PASS",
+    "root_approval": "ACCEPTED"
+  },
+  "evidence": {
+    "card": {
+      "path": "CARD-NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION.json",
+      "sha256": "da6c5b52b92924d5f77ca7dcd5432340d2c50c6e8022fb241148aa38f2389496"
+    },
+    "test_author_report": {
+      "path": "../NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/result.json",
+      "sha256": "5c99288addceb2baa956abb0cdf10836fdbc1043ee97a1d0862849536500a64c",
+      "content_hash": "6d02ba2961d973d233d8b5ecf8b24638394ca75b491e0af270178b188dd723b7"
+    },
+    "native_result": {
+      "path": "../NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/native-result.json",
+      "sha256": "93bb8ab47e5b8103c1d33be4c10386465b7f92d4879ea63d0d4cdf8be9e45fab"
+    },
+    "completion_review": {
+      "path": "../NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/completion-review.json",
+      "sha256": "57921be679611b3178309a262f58e4e1c198285c418ac58a0d4b23d34b9310c5"
+    },
+    "acceptance": {
+      "path": "../NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/orchestrator-acceptance.json",
+      "sha256": "70d847b918671faad56660a8899a076065158b55c958731a3cc37ec7b490597a"
+    }
+  },
+  "preserved_credit": "All unaffected M01-M04 facts remain accepted exactly as mapped by MI-NORMAL-001-ACCEPT/root-verdict.json.",
+  "affected_credit": "The corrected-file hashes, CONTROL-READY exact cleanup-safety claim, and CHECK-001 review closure must now be rechecked.",
+  "cleanup": {
+    "lane_retired": true,
+    "controller_pid": 8552,
+    "controller_process_absent": true,
+    "provider_pid": 58144,
+    "provider_process_absent": true,
+    "monitor_pid": 36944,
+    "monitor_process_absent": true,
+    "runtime_state": "CLOSED",
+    "managed_overlay_removed": true,
+    "worktree_removed_without_force": true,
+    "branch_removed_without_force": true,
+    "generated_correction_bytecode_remaining": 0,
+    "product_main_clean": true,
+    "canonical_reference_clean": true
+  },
+  "next_action": "Dispatch only CHECK-001's affected routine check and independent review, then return to MI-NORMAL-001-ACCEPT."
+}

@@ -1,0 +1,75 @@
+{
+  "schema": "memory-harness-accept-progress/v1",
+  "module_instance_id": "MI-NORMAL-001-ACCEPT",
+  "recorded_at": "2026-09-21T11:19:32.4112611Z",
+  "status": "P08_CORRECTION_DISPATCH_READY",
+  "verdict": "ACCEPTED",
+  "verdict_meaning": "The product/harness facts at this pre-integration boundary are independently decidable and accepted. CHECK-001 is a strict test-only NONBLOCKING_TEST_ERROR; its exact consumer is held for the mandatory P08 correction without reopening product or harness work.",
+  "mechanical_member": {
+    "lane_id": "normal-001-accept-pool",
+    "run_id": "0551f7ced6e848068526e58c7c92d49b",
+    "epoch_id": "2cda5d1ba8c443c493b2d19d3d875368",
+    "workflow_role": "routine",
+    "provider": "codex",
+    "model": "deepseek-v4.1-flash:cloud",
+    "native_outcome": "PASS",
+    "result_hash": "044c07472eaf29d298df7264ff0bc7bb23646a2eb0a1e9402d2159d01b24a963",
+    "root_review": "PASS",
+    "root_approval": "ACCEPTED",
+    "report_timestamp_note": "The durable member report recorded_at is later than native completed_at; native/filesystem/hash evidence decides the facts and no replay is authorized."
+  },
+  "root_decision": {
+    "path": "root-verdict.json",
+    "sha256": "c38723d6021551ea3c066a1d468ee6fa087cd8aae5f208f7b267549793a74b8a",
+    "finding": "CHECK-001",
+    "classification": "strict test-only",
+    "impact": "NONBLOCKING_TEST_ERROR",
+    "route": "P08 exact correction to the same MI-NORMAL-001-ASSETS test_author role"
+  },
+  "correction_card": {
+    "path": "../MI-NORMAL-001-ASSETS/CARD-NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION.json",
+    "sha256": "da6c5b52b92924d5f77ca7dcd5432340d2c50c6e8022fb241148aa38f2389496",
+    "authorized_source_paths": [
+      "development/test-tools/tests/test_fixture_controls.py",
+      "development/test-tools/tests/fixtures/control_child.py"
+    ],
+    "product_or_harness_write_authorized": false
+  },
+  "evidence": {
+    "member_report": {
+      "path": "../NORMAL-001-ACCEPT-POOL/result.json",
+      "sha256": "30f8eb89acb88d3c3828a5bc73cc912df1bfeca0ae5d9c25df69cc772d7d27e2"
+    },
+    "native_result": {
+      "path": "../NORMAL-001-ACCEPT-POOL/native-result.json",
+      "sha256": "b055fddceb8a43e1b09c79009a1c99edec113fd54a2a5d2c4077a2d688d7786c"
+    },
+    "completion_review": {
+      "path": "../NORMAL-001-ACCEPT-POOL/completion-review.json",
+      "sha256": "414e85cf74bea8bcdae3beeb6b417dc4002ecb9a2a449bd20ced196ecfbb21b6"
+    },
+    "acceptance": {
+      "path": "../NORMAL-001-ACCEPT-POOL/orchestrator-acceptance.json",
+      "sha256": "87ad4596499a555aeeed718890c9d4ddd29260094f784f4a014cdff226104e0d"
+    }
+  },
+  "preserved_credit": "All unaffected M01-M04 facts listed in root-verdict.json remain accepted.",
+  "invalidated_credit": "Only exact-owned-descendant cleanup safety, corrected-file hashes/joins, and CHECK-001 review closure require repetition.",
+  "successor_hold": "Do not dispatch MI-NORMAL-001-INTEGRATE until the exact correction and affected check path return and close this credit map.",
+  "cleanup": {
+    "lane_retired": true,
+    "controller_pid": 43148,
+    "controller_process_absent": true,
+    "provider_pid": 64060,
+    "provider_process_absent": true,
+    "monitor_pid": 7040,
+    "monitor_process_absent": true,
+    "runtime_state": "CLOSED",
+    "managed_overlay_removed": true,
+    "worktree_removed_without_force": true,
+    "branch_removed_without_force": true,
+    "product_main_clean": true,
+    "canonical_reference_clean": true
+  },
+  "next_action": "Dispatch CARD-NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION through a fresh native harness epoch."
+}

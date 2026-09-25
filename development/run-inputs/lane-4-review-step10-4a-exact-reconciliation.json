@@ -1,0 +1,19 @@
+{
+  "schema": "project-task-card/v1",
+  "task": "Perform a fresh, read-only behavioral review of exact product commit 4d049f3aaeccdb324e8ff4f53e5f22a8200ab318, the bounded lane-4 STEP-10-4A exact-identity/readback/fault slice. Work only in the harness-created review worktree based on C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/lane-roots/lane-4. Read C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md and the exact standalone step C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/lane-4-atlas-procedures/STEP-10-4-atlas-procedure-effects.md before judging. Review the diff cc5b4f2d03626b393581c231303f5d79a4627cf2..4d049f3aaeccdb324e8ff4f53e5f22a8200ab318 in src/memory_harness/atlas.py, src/memory_harness/procedures.py, and tests/local/procedures/test_atlas_external_reconciliation.py plus necessary nearby accepted Atlas tests/contracts. Check correctness of exact readback, classification of definite pre-submit failure versus post-submit uncertainty, stable operation/remote identity, no blind retry, fencing, compatibility, concurrency implications, and test-oracle strength. Look for raw adapter exceptions that bypass durable state, cases that misclassify an uncertain write as blocked or a definite non-write as ambiguous, and paths that acknowledge incomplete lifecycle evidence. Run the focused new module and directly affected existing Atlas procedure selector read-only. Do not edit, stage, commit, or create product files; only the harness-required RESULT.json may be written. Return findings first, ordered by consequence, with exact file:line evidence, contract impact, and smallest correction. Separate confirmed defects, questions, and verification gaps. Use outcome PASS only for a SHIP verdict with no material defect; use FAIL for REVISE and BLOCKED only for a true missing-authority/fundamental blocker. Keep lane-1 outcome/operation joins, network joins, and live Atlas proof explicitly pending rather than inventing them.",
+  "acceptance_criteria": [
+    "The reviewer inspects the exact committed diff and relevant nearby Atlas/procedure contracts against STEP-10-4's bounded exact-identity/readback/fault criteria.",
+    "The review reports SHIP, REVISE, or BLOCK with concrete file:line findings and distinguishes defects from questions or optional improvements.",
+    "Focused and directly affected existing Atlas procedure tests are run read-only with exact commands and observed outcomes.",
+    "No product file is edited, staged, or committed; the review branch remains at 4d049f3aaeccdb324e8ff4f53e5f22a8200ab318 and only harness artifacts are written.",
+    "Lane-1 joins, network enforcement, live Atlas, benchmark, and learned-selector boundaries remain unclaimed."
+  ],
+  "deliverables": [
+    "A structured independent review verdict and evidence in RESULT.json.",
+    "Exact focused and neighboring verification results.",
+    "A clean unchanged product branch tip or a precise smallest-correction recommendation for each material defect."
+  ],
+  "reason_for_acceptance_and_deliverables": "This independent read-only pass is proportionate to remote-effect uncertainty and prevents a passing test suite from masking unsafe retry or acknowledgement semantics. It can accept the bounded checkpoint slice or return a narrow correction without expanding into lane-1 integration, network policy, or live-service proof.",
+  "branch": "lane4/review-step10-4a-exact-reconciliation",
+  "base_commit": "4d049f3aaeccdb324e8ff4f53e5f22a8200ab318"
+}

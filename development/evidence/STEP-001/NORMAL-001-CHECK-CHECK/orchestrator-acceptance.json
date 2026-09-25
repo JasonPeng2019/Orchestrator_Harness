@@ -1,0 +1,15 @@
+{
+  "accepted_by": "ROOT",
+  "approval": "ACCEPTED",
+  "commit": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+  "content_hash": "c2637b7a98ddbade228fc7e300aee25145fc1fd36fa3b73bc5a3c690862c080a",
+  "decided_at": "2026-09-21T10:47:58.941435Z",
+  "lane_id": "normal-001-check-check",
+  "result_hash": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b",
+  "result_id": "a211f3d79e4a44b3b9676615befbd4ae",
+  "review_ref": "e2a459abd727d617da708bdb83e1d08cdb7a11cd5b2c3129d8ad0772b41143cf",
+  "run_id": "a211f3d79e4a44b3b9676615befbd4ae",
+  "schema": "orchestrator-acceptance/v1",
+  "task_card_hash": "2537ee17a0a3af79cca5b0d28573ec9694310d87c3cb39f2fb2b36ba822087fc",
+  "task_card_id": "CARD-NORMAL-001-CHECK-CHECK"
+}

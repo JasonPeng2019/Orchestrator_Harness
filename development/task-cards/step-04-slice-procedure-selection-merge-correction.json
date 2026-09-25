@@ -1,0 +1,18 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-04-slice-procedure-selection-merge-correction",
+  "task": "Continue the existing STEP-04 procedure-revision-selection lane from rejected candidate commit 63cf01ae7cb3d79440b20b6f2db30a4ba7cf3a98. Preserve its valid one-revision winner rule and focused tests, but correct only the same-revision duplicate merge in src/memory_harness/search.py. ROOT independently reproduced two defects: (1) revision rev-a seen first at shared score 0.8 and then at local score 0.1 retains shared specificity, so a competing project rev-b at 0.7 wins although the local rev-a should win; (2) eligible local rev-a at 0.2 followed by a revoked sighting of the same revision at 0.99 is boosted to 0.99 and beats independently eligible local rev-b at 0.8. Add red-then-green focused regressions for both, including reversed sighting order where useful. For eligible duplicate sightings of one revision, select its representative by narrower authorized specificity before score, then a deterministic tie; merge provenance without adding or borrowing a relevance score from a broader sighting. A rejected/invalid duplicate may remain attributable in the trace but must not change the eligible representative's score, specificity, source identity, payload, or winner. Keep competing nonselected revisions rejected and visible. Run the focused procedure-selection file plus directly affected preparation/deadline checks, not the full suite. Commit one narrow correction beyond 63cf01a and write a truthful RESULT.json. Do not change the separate source authority/freshness gates, real store adapters, APC, templates, harness wiring, migration, STEP-05/06, or references/harness-single. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-04-prepare-and-dispatch-with-memory.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-01-bounded-preparation-selects-eligible-memory.md.",
+  "acceptance_criteria": [
+    "Eligible sightings of the same revision use the narrower authorized specificity before score, deterministically across sighting orders, while merging provenance without a relevance bonus.",
+    "An ineligible duplicate cannot affect the eligible representative's ranking inputs or suppress an independently eligible competing revision; the rejection remains attributable.",
+    "The two reproduced cases fail before and pass after the correction, and focused procedure-selection and directly affected preparation/deadline tests pass."
+  ],
+  "deliverables": [
+    "Focused regressions for mixed-scope eligible duplicates and revoked high-score duplicates.",
+    "One source-coherent correction commit beyond 63cf01ae7cb3d79440b20b6f2db30a4ba7cf3a98.",
+    "A valid RESULT.json with the actual red and green checks."
+  ],
+  "reason_for_acceptance_and_deliverables": "Both defects arise in the exact duplicate-merging seam of the rejected selection slice. The regressions and narrow fix close only that behavior, preserving valid procedure selection work without expanding into the subsequent authority or adapter slices.",
+  "branch": "lane/step-04-slice-procedure-revision-selection",
+  "base_commit": "63cf01ae7cb3d79440b20b6f2db30a4ba7cf3a98"
+}

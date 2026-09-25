@@ -1,0 +1,116 @@
+{
+  "schema": "memory-harness-integration-progress/v1",
+  "module_instance_id": "MI-NORMAL-001-INTEGRATE",
+  "recorded_at": "2026-09-21T12:44:01.5698463Z",
+  "status": "VERIFIED_INTEGRATED",
+  "produces": "MI-NORMAL-001-INTEGRATE.verified integrated coordinate",
+  "integration_mode": "NO_OP_SAME_TIP",
+  "integrated_coordinate": {
+    "product_path": "development/product/worktree_example",
+    "branch": "main",
+    "prejoin_base": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "rollback_base": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "accepted_product_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "integrated_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "same_tip": true,
+    "commits_ahead": 0,
+    "changed_paths": [],
+    "changed_input_map": {},
+    "promotion": "OMITTED"
+  },
+  "accepted_input": {
+    "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/accept-closure-progress.json",
+    "sha256": "439ca1a3e28b974dc0cb1f893d01f7125737e61e1026717f5e43a37afe86a64e",
+    "verdict": "ACCEPTED",
+    "held_credit": []
+  },
+  "task_card": {
+    "path": "development/evidence/STEP-001/MI-NORMAL-001-INTEGRATE/CARD-NORMAL-001-INTEGRATE-EXEC.json",
+    "sha256": "cde3efc964399a7a296d5d1f672c7d869620d037cb25367c0b0ca16bdceff3e4",
+    "native_content_hash": "3786675ca33434f75565eaf1329d6fa525e367fbd338df5d45ded29ff96bf6c0"
+  },
+  "native_execution": {
+    "epoch_id": "4f10e566b5ed4bbb8ee4d8df3cc4e4e4",
+    "lane_id": "normal-001-integrate-exec",
+    "run_id": "37cee34a632846aa8c7ee616b14eb21a",
+    "workflow_role": "writer",
+    "provider": "codex",
+    "model": "deepseek-v4.1-flash:cloud",
+    "reasoning_effort": "max",
+    "service_tier": "normal",
+    "launcher": "ollama",
+    "native_outcome": "PASS",
+    "result_content_hash": "2f02643292e7e023a1bb6cf7df1014bbb0eddbbb33d2e907bb8fa2dc273455d1",
+    "root_review": "PASS",
+    "root_approval": "ACCEPTED"
+  },
+  "evidence": {
+    "writer_report": {
+      "path": "development/evidence/STEP-001/NORMAL-001-INTEGRATE-EXEC/result.json",
+      "sha256": "9100574055d1a85bc20b2fc2d5e1fe93d2dac6b4e2fefe9d1d165039e01d4fa7"
+    },
+    "native_result": {
+      "path": "development/evidence/STEP-001/NORMAL-001-INTEGRATE-EXEC/native-result.json",
+      "sha256": "35cd0c90b9526ee768f1be80142c8a6fedfe48ff1d20aa007c89920871d07229",
+      "runtime_original_sha256": "dcf54ec22c27fa77e7de93eadd00cc965ab0de0033d02e734f95b21740b59c7c",
+      "copy_note": "The durable JSON is text- and canonical-content-identical; apply_patch normalized the runtime file's CRLF line endings to LF.",
+      "canonical_content_hash": "2f02643292e7e023a1bb6cf7df1014bbb0eddbbb33d2e907bb8fa2dc273455d1"
+    },
+    "completion_review": {
+      "path": "development/evidence/STEP-001/NORMAL-001-INTEGRATE-EXEC/completion-review.json",
+      "sha256": "b21ee258d6a32897bf599e30b4ceda3d2ac2c057ff1c8be507e614d5085b4605",
+      "canonical_content_hash": "7131bddda3e9c38d491f1e3588c8981714c44469092cf04b1e2f7afc866f5b07"
+    },
+    "orchestrator_acceptance": {
+      "path": "development/evidence/STEP-001/NORMAL-001-INTEGRATE-EXEC/orchestrator-acceptance.json",
+      "sha256": "96e5e590ed871a8827cd7b46c0ccd83a8508d88f3094c83b71daab419cc88636",
+      "canonical_content_hash": "68c16b5600cf2a9662dcf200fbb8ce23deb180880f1ac23d025541e49daee17e"
+    }
+  },
+  "verification": {
+    "accepted_input_hashes_recomputed": 9,
+    "accepted_input_hash_mismatches": 0,
+    "native_result_content_hash_recomputed": true,
+    "destination_clean_before_join": true,
+    "destination_clean_after_join": true,
+    "lane_same_tip": true,
+    "lane_commits_ahead": 0,
+    "staged_changes": [],
+    "product_source_changes": [],
+    "managed_overlay_files_matched": "9/9",
+    "integration_conflicts": [],
+    "changed_seams": [],
+    "checks_run": [],
+    "check_credit_reuse": "All accepted M03/M04 smoke/check inputs are unchanged; M06-A4 therefore reuses their PASS credit instead of rerunning a suite.",
+    "product_main_clean": true,
+    "canonical_harness_clean": true,
+    "protected_config_sha256": "254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14"
+  },
+  "scope_protection": {
+    "merge_cherry_pick_rebase_reset_commit": false,
+    "product_source_changed": false,
+    "canonical_harness_changed": false,
+    "dogfood_harness_changed": false,
+    "tests_or_plans_changed": false,
+    "promotion_performed": false,
+    "benchmark_or_learned_selector_work": false
+  },
+  "cleanup": {
+    "lane_retired": true,
+    "runtime_state": "CLOSED",
+    "active_epoch_marker_absent": true,
+    "provider_pid": 54004,
+    "provider_process_absent": true,
+    "controller_pid": 66208,
+    "controller_process_absent": true,
+    "monitor_pid": 62972,
+    "monitor_process_absent": true,
+    "managed_overlay_removed": true,
+    "worktree_removed_without_force": true,
+    "branch_removed_without_force": true,
+    "product_worktrees_remaining": ["main"]
+  },
+  "unresolved": [],
+  "next_module": "MI-NORMAL-001-READY",
+  "next_action": "Author the separate M08 readiness card against this verified integrated coordinate."
+}

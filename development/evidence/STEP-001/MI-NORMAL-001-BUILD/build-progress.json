@@ -1,0 +1,94 @@
+{
+  "schema": "memory-harness-build-progress/v1",
+  "module_instance_id": "MI-NORMAL-001-BUILD",
+  "recorded_at": "2026-09-21T09:50:54.7378056Z",
+  "status": "ACCEPTED",
+  "produces": "MI-NORMAL-001-BUILD.reviewable production tip",
+  "starting_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+  "accepted_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+  "tip_changed": false,
+  "commit_created": null,
+  "changed_paths": [],
+  "decision": {
+    "result": "no_helper_earned",
+    "reason": "The exact finite CONTROL-READY fixture behaviors are expressible with Python stdlib process, JSON, and PID readback facilities plus Windows taskkill for a specifically owned child tree. Adding a production helper would duplicate those capabilities.",
+    "scope_boundary": "No harness, product, scheduler, runner, M03 test asset, benchmark, or learned-selector code was added or changed."
+  },
+  "native_execution": {
+    "lane_id": "normal-001-build-exec",
+    "run_id": "b5c03ad02022407bb1a2b3a1090518fd",
+    "epoch_id": "77574f69003e45a49701a47083c346c2",
+    "workflow_role": "writer",
+    "provider": "codex",
+    "model": "deepseek-v4.1-flash:cloud",
+    "reasoning_effort": "max",
+    "service_tier": "normal",
+    "launcher": "ollama",
+    "native_outcome": "PASS",
+    "result_hash": "5cc91bdffebd07a3688c0c0e42eaf93fb6bca31c52f3cd7b01e8350f680bba88",
+    "result_hash_verified": true,
+    "root_review": "PASS",
+    "root_approval": "ACCEPTED"
+  },
+  "verification": {
+    "resolver_contract_tests": "7 passed",
+    "worker_probe": "PASS",
+    "root_probe_rerun": "PASS (exit 0)",
+    "behaviors": [
+      "early incompatible terminal exit",
+      "independent slow success with ready refill",
+      "complete exit statuses",
+      "lost-handle PID reconciliation",
+      "preserved JSON checkpoint",
+      "lingering owned-descendant cleanup and absence readback"
+    ],
+    "product_source_diff": "none",
+    "lane_commits_ahead_of_base": 0
+  },
+  "evidence": {
+    "writer_report": {
+      "path": "../NORMAL-001-BUILD-EXEC/result.json",
+      "sha256": "32876bb27183bd9096d20f78ec00182dc9af88ad5eaed0a5b413ec96f67e1bab"
+    },
+    "native_result": {
+      "path": "../NORMAL-001-BUILD-EXEC/native-result.json",
+      "sha256": "81c5a4206e90e4d0da4892fd484f9718e06aab95a4058a1d2cb2fff2f577e589"
+    },
+    "completion_review": {
+      "path": "../NORMAL-001-BUILD-EXEC/completion-review.json",
+      "sha256": "b0d184f1aaa3fd1c74f1e0ef8168f25bc90eda7d49992fabad2108871f42b0b8"
+    },
+    "acceptance": {
+      "path": "../NORMAL-001-BUILD-EXEC/orchestrator-acceptance.json",
+      "sha256": "2f2b276662e908bfee2197639752a1bc4683d77976a30c61e05d6c11225b8ec6"
+    },
+    "disposable_probe": {
+      "path": "../../../test-runs/normal-001-build-exec-probe/stdlib_control_probe.py",
+      "sha256": "6e366ad049740b69f0e0947f1e1f956a62a807b9729334ac4060dc194204e39a",
+      "acceptance_asset": false
+    }
+  },
+  "cleanup": {
+    "lane_retired": true,
+    "provider_pid": 66164,
+    "provider_process_absent": true,
+    "monitor_pid": 68072,
+    "monitor_process_absent": true,
+    "runtime_state": "CLOSED",
+    "epoch_lifecycle": "closed",
+    "managed_overlay_removed": true,
+    "worktree_removed_without_force": true,
+    "branch_removed_without_force": true,
+    "product_main_clean": true,
+    "canonical_reference_clean": true
+  },
+  "requirement_credit": {
+    "REQ-001": "Production-tip preparation only; no memory-product behavior credit claimed.",
+    "REQ-027": "Finite control seams were probed only to decide helper necessity; full host-control evidence remains for M03/M08.",
+    "REQ-028": "Requested, resolved, and actual writer binding matched without substitution.",
+    "REQ-029": "No benchmark or learned-selector work was executed.",
+    "CONTROL-READY": "Helper necessity resolved; independent executable fixture-control tests remain owned by M03."
+  },
+  "unresolved": [],
+  "next_module": "MI-NORMAL-001-ASSETS"
+}

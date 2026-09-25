@@ -1,0 +1,17 @@
+{
+  "commit": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+  "content_hash": "e2a459abd727d617da708bdb83e1d08cdb7a11cd5b2c3129d8ad0772b41143cf",
+  "evidence": [
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\evidence\\STEP-001\\NORMAL-001-CHECK-CHECK\\result.json"
+  ],
+  "lane_id": "normal-001-check-check",
+  "result_hash": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b",
+  "result_id": "a211f3d79e4a44b3b9676615befbd4ae",
+  "review_outcome": "PASS",
+  "review_summary": "M04 routine checker completed its bounded factual scope. ROOT recomputed native result hash ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b and durable report SHA-256 199c4bc1a0329a8289bdc576b08ee1fde8d7953c6e7152473a54183e0361fd8b; exact selected discovery passed 15 tests, all declared controls/hashes matched, and no source or product change occurred. This accepts the checker member only; campaign classification remains deferred until the independent reviewer joins.",
+  "reviewed_at": "2026-09-21T10:47:58.941435Z",
+  "run_id": "a211f3d79e4a44b3b9676615befbd4ae",
+  "schema": "completion-review/v1",
+  "task_card_hash": "2537ee17a0a3af79cca5b0d28573ec9694310d87c3cb39f2fb2b36ba822087fc",
+  "task_card_id": "CARD-NORMAL-001-CHECK-CHECK"
+}

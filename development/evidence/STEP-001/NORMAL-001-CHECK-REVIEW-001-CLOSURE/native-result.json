@@ -1,0 +1,34 @@
+{
+  "completed_at": "2026-09-21T12:02:26.6616736Z",
+  "content_hash": "c3535764dbe9a6a459c5fff12c309ef02b68084d7328cc325e13bef01fb6bdb0",
+  "evidence": [
+    {
+      "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW-001-CLOSURE/result.json",
+      "sha256": "e443df6ed2e6828db4bc6800c5e069fc51fad9609742b981ee5644786a8aadfd",
+      "schema": "memory-harness-review-correction-result/v1",
+      "original_finding_id": "CHECK-001",
+      "closure_decision": "CLOSED"
+    },
+    {
+      "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/result.json",
+      "sha256": "df7bbdcd5e63f1cae145620c276afda14dcd8e6dcf47d2b91b169e019316863b"
+    },
+    {
+      "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/MI-NORMAL-001-ASSETS/pid-identity-correction-progress.json",
+      "sha256": "a9875a29e53bf16f685cbaf685d0c8af411de25b717900548f27b78447a93f7b"
+    },
+    {
+      "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/test-tools/tests/test_fixture_controls.py",
+      "sha256": "026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840"
+    },
+    {
+      "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/test-tools/tests/fixtures/control_child.py",
+      "sha256": "6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518"
+    }
+  ],
+  "lane_id": "normal-001-check-review-001-closure",
+  "outcome": "PASS",
+  "run_id": "cd643deb65f04350b5d4abc6b4eecf37",
+  "schema": "result/v1",
+  "summary": "CHECK-001 P08 test-only closure review completed: CLOSED with no findings; recommendation CLEAN is advice only and ROOT acceptance is not decided."
+}

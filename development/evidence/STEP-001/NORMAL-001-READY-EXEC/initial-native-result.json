@@ -1,0 +1,16 @@
+{
+  "completed_at": "2026-09-21T12:58:49Z",
+  "content_hash": "0b387721ff85fc620c539e027be88cb9dc9c1a291e16142fbf97ff18e75749d1",
+  "evidence": [
+    "development/evidence/STEP-001/NORMAL-001-READY-EXEC/result.json",
+    "control-ready run exit_code=0 tests_run=9 outcome=OK elapsed_seconds=9.493",
+    "inputs verified: 85b7075001c4df8010f7e33c6b798775a1dae6ad9d3075d8178c6f6aa595ae25; a9875a29e53bf16f685cbaf685d0c8af411de25b717900548f27b78447a93f7b; 026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840; 6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518; 6b584b939833125fb3069657c0da0bc700909cd675961ff6a30efe89f40b3f8c; 254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14",
+    "coordinate development/product/worktree_example main a54ad14a8f59409ee1e88c2473e3617c123f20b8; canonical references/harness-single f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+    "pids all absent: 25048,48032,50560,64660,66304,57360,28368; command_tree_cap=4 of 16 cpu / 10.685 GiB free"
+  ],
+  "lane_id": "normal-001-ready-exec",
+  "outcome": "PASS",
+  "run_id": "6c27fd0213e244a9a6cc3eb94051e255",
+  "schema": "result/v1",
+  "summary": "Executed the single authorized STEP-001 CONTROL-READY proof at the verified integrated coordinate and produced a complete truthful readiness observation (memory-harness-readiness-result/v1 status QUALIFIED). All named inputs hashed as declared (M06 checkpoint, correction checkpoint, three CONTROL-READY sources, protected dogfood config); no input differed, so no HOLD was triggered. Ran the exact selected command once from the repository root with PYTHONDONTWRITEBYTECODE=1 and ResourceWarning promoted via PYTHONWARNINGS=error::ResourceWarning and unchanged argv: exit code 0, 9 tests, OK, 9.170s. All nine fixture behaviors recorded (manifest/layout, per-base prerequisite PASS before designated gap for routine/middle/heavy, discovery isolation, early incompatible terminal, independent slow success, ready refill, complete statuses, lost-handle reconciliation with retained checkpoint, PID-identity mismatch safe no-op, exact owned-descendant cleanup). Rehearsal stayed inside the disposable local fixture boundary with no live provider, Atlas, EverOS, hardware, deployment, credential, paid-namespace, or product-state access. All seven fixture-emitted PIDs are absent with recorded creation identity; no second kill was issued and no unrelated process was enumerated or touched. No corrected-file bytecode remains and no temporary target or checkpoint is left open. Capacity qualified (16 logical CPUs, 10.685 GiB free, command-tree cap 4, at least one fits). Modified no source, test, fixture, plan, prior evidence, Git state, harness, runtime record, benchmark, or learned-selector file, and committed nothing. Readiness is not product, service, or native acceptance."
+}

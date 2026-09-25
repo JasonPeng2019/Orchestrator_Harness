@@ -1,0 +1,12 @@
+{
+  "schema": "result/v1",
+  "lane_id": "exc-builder-bug-review-001",
+  "run_id": "5a4063b2a1e64bd999049d31f889750d",
+  "outcome": "PASS",
+  "summary": "Fresh read-only review completed with verdict REVISE and four confirmed defects.",
+  "evidence": [
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/MI-NORMAL-001-ADMIT/EXC-BUILDER-BUG-review.json"
+  ],
+  "completed_at": "2026-09-21T08:53:38.583539Z",
+  "content_hash": "03b3b0559d0b492321daf6d617e6baf6430d98d05ece706f6e5895947800e47a"
+}

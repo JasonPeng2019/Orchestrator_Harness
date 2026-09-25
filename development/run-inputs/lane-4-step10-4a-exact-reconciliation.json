@@ -1,0 +1,19 @@
+{
+  "schema": "project-task-card/v1",
+  "task": "Implement the first bounded, independently executable lane-4 slice of STEP-10-4: deterministic Atlas/procedure exact-remote-identity, readback, and lost-acknowledgement fault behavior. Work only in the harness-created product worktree rooted from C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/lane-roots/lane-4. Read the governing plan C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md and exact standalone step C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/lane-4-atlas-procedures/STEP-10-4-atlas-procedure-effects.md before editing. Use test-first development: add focused deterministic tests under lane-4-owned tests/local/procedures/test_atlas_external_reconciliation.py that first expose any missing behavior, then make the smallest complete change in only src/memory_harness/atlas.py, src/memory_harness/atlas_adapters.py, and/or src/memory_harness/procedures.py. Prove stable exact Atlas document/operation identity, authoritative readback after writes, source-backed idempotency or exact reconciliation after a lost acknowledgement, and truthful ambiguous/blocked state without a blind duplicate submission. Preserve accepted trust, approval, designation, withdrawal, revocation, privacy, and eligibility semantics. Do not edit contracts.py, store.py, config.py, runtime.py, another lane's tests/files, plans, harness source, or shared interfaces. Do not invent lane-1 operation/outcome or requested/effective-network shapes. Do not use live Atlas, credentials, benchmark workloads, or learned-selector work. Run the new focused module and directly affected existing Atlas procedure tests. Commit the accepted code/test result on this branch and write a valid RESULT.json with exact commands/results and any remaining cross-lane/live boundary explicitly pending.",
+  "acceptance_criteria": [
+    "A new lane-owned deterministic test module proves exact Atlas remote identity/readback and lost-acknowledgement handling for a bounded publication or procedure lifecycle path.",
+    "An ambiguous effect is not reported acknowledged and is not blindly resubmitted under a fresh identity; reconciliation uses exact readback or demonstrated source-backed idempotency.",
+    "Existing approval, designation, withdrawal, revocation, privacy, and eligibility behavior remains compatible, with the new focused module and directly affected existing Atlas procedure tests passing.",
+    "Only lane-4-owned Atlas/procedure service, adapter, and focused test files change; shared lane-1 contracts/state and live/joined claims remain untouched and explicitly pending.",
+    "The worker commits the complete bounded result and provides a valid RESULT.json tied to the clean branch tip with factual red/green and neighboring-test evidence."
+  ],
+  "deliverables": [
+    "Focused tests/local/procedures/test_atlas_external_reconciliation.py deterministic regression coverage.",
+    "The smallest necessary changes in lane-4-owned Atlas/procedure source files.",
+    "One committed product branch tip plus RESULT.json containing exact verification evidence and pending-boundary notes."
+  ],
+  "reason_for_acceptance_and_deliverables": "This bounded slice establishes the checkpoint's independently testable exact-identity/readback/fault boundary without guessing lane 1's evolving durable operation or network interfaces. Focused red-to-green evidence and neighboring Atlas tests are sufficient for this slice; outcome linkage, requested/effective network gating, and live Atlas eligibility remain separate later boundaries.",
+  "branch": "lane4/step10-4a-exact-reconciliation",
+  "base_commit": "cc5b4f2d03626b393581c231303f5d79a4627cf2"
+}

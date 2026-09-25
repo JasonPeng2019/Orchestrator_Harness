@@ -1,0 +1,48 @@
+{
+  "schema": "memory-harness-provider-failure/v1",
+  "recorded_at": "2026-09-21T11:46:33.8003608Z",
+  "module_instance_id": "MI-NORMAL-001-CHECK",
+  "card_id": "CARD-NORMAL-001-CHECK-CHECK-001-CLOSURE",
+  "invocation_id": "INVOCATION-NORMAL-001-CHECK-CHECK-001-CLOSURE",
+  "epoch_id": "e84a79e25f31478ab4f0e386ca36426d",
+  "lane_id": "normal-001-check-check-001-closure",
+  "run_id": "c84e5f6767e5419bbb0959692b531f56",
+  "preferred_binding": {
+    "provider": "codex",
+    "model": "deepseek-v4.1-flash:cloud",
+    "reasoning_effort": "high",
+    "service_tier": "normal",
+    "launcher": "ollama"
+  },
+  "failure_class": "usage_cap_reached",
+  "observed": "Ollama returned session usage limit / rate limit exceeded before the worker performed any task action; five reconnects ended in turn.failed and provider exit 1.",
+  "task_result_produced": false,
+  "source_or_evidence_write_observed": false,
+  "cleanup_proven": true,
+  "provider_pid": 60556,
+  "provider_process_boundary_absent": true,
+  "fallback_authorization": "The routine mapping explicitly permits fallback candidate 1 only on oauth_error or usage_cap_reached. ROOT selected fallback 1 after preserving this failed invocation.",
+  "fallback_resolution": [
+    "--provider",
+    "codex",
+    "--model",
+    "gpt-5.6-luna",
+    "--provider-option",
+    "reasoning_effort=high",
+    "--provider-option",
+    "service_tier=normal"
+  ],
+  "evidence_hashes": {
+    "runtime_controller_status": "1dbf4f7e7aa8e60716c10f3076ebd0840db89399655f383353b5174741767cdc",
+    "durable_controller_status": "1dbf4f7e7aa8e60716c10f3076ebd0840db89399655f383353b5174741767cdc",
+    "runtime_controller_events": "ae098761cec28b32d13c822359e26a5669099b9aed04359984e6e01f9be2898b",
+    "durable_controller_events_lf_normalized": "14638388926bac14306b90aa0e6f1751d036b5acf761dd9a33d9363c1be90c5c",
+    "controller_events_copy_note": "The durable JSONL is line-for-line identical; apply_patch normalized runtime CRLF line endings to LF.",
+    "runtime_provider_transcript": "dfc1a7de31db76f75ebaea80d9bf8b878d758d18eb66f2417c38bfe1f9894662",
+    "durable_provider_transcript": "dfc1a7de31db76f75ebaea80d9bf8b878d758d18eb66f2417c38bfe1f9894662",
+    "runtime_provider_stderr": "af9eca97db06ebd2543eb6dd98208fbdf27b5562721d27249550939d18f1fd8e",
+    "runtime_last_message": "ee2de658b984f3b59c2b1944609e4e76574280b453f8c6c1c87af15faa7af2ef",
+    "durable_last_message_newline_normalized": "9042140663ab077c7e6df65a79013b6391c8141bb1ec0fa0049d9ae159ceb416"
+  },
+  "disposition": "Retain the failed preferred lane as historical operational evidence; refill the released routine slot with one fresh invocation using declared fallback 1. No harness, product, test, or acceptance change."
+}

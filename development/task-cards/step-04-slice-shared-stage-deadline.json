@@ -1,0 +1,18 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-04-slice-shared-stage-deadline",
+  "task": "Continue the existing STEP-04 retrieval-contract lane from commit 6d88b3e7843cbe16d6a9ea53966cedf8e12efa29. ROOT rejected that result after reproducing one remaining bound defect: with an injected clock fixed at 1000.0, a 0.1-second stage spent about 0.08 seconds materializing a store and then another 0.08 seconds normalizing it, returned after 0.157 real seconds, and marked the attempt completed. In src/memory_harness/search.py, normalization remaining allowance is computed from self.clock() rather than the real stage/slice deadline. Add a focused regression that fails on this exact two-phase real-time overrun before changing production code, then make store materialization, normalization, and finalization consume one real monotonic absolute stage deadline. Keep the injected clock for logical trace/budget behavior where required, but do not let it replenish real phase allowance. Preserve all valid work from 6d88b3e, including bounded daemon isolation and existing tests. Run the focused deadline module and only directly affected preparation checks, commit one narrow correction beyond 6d88b3e, and write a truthful RESULT.json. Do not change trust/ranking policy, APC, bootstrap wiring, migration, STEP-05/06, or references/harness-single. Governing files outside this product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-04-prepare-and-dispatch-with-memory.md, and C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-01-bounded-preparation-selects-eligible-memory.md.",
+  "acceptance_criteria": [
+    "A regression with a static injected clock proves store materialization and normalization share one real stage allowance; a 0.1-second stage returns near that deadline instead of taking the sum of two phase allowances.",
+    "Expired or late normalization is recorded truthfully and cannot publish candidates or mutate a returned packet; existing blocking-store, blocking-normalizer, blocking-finalizer, and fairness behavior remains valid.",
+    "The focused deadline module passes after the correction, and directly affected preparation checks pass."
+  ],
+  "deliverables": [
+    "One focused regression that fails on commit 6d88b3e before the fix.",
+    "One narrow production correction commit beyond 6d88b3e.",
+    "A valid RESULT.json reporting the red and green checks actually run."
+  ],
+  "reason_for_acceptance_and_deliverables": "The reproduced overrun is the only rejected behavior in this slice. A failing-then-passing real-time regression and narrow correction demonstrate one shared deadline without reopening valid work or adding unrelated validation.",
+  "branch": "lane/step-04-slice-retrieval-contract",
+  "base_commit": "6d88b3e7843cbe16d6a9ea53966cedf8e12efa29"
+}

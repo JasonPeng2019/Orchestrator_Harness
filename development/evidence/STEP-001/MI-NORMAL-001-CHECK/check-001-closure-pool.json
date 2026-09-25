@@ -1,0 +1,180 @@
+{
+  "schema": "memory-harness-check-correction-pool/v1",
+  "module_instance_id": "MI-NORMAL-001-CHECK",
+  "campaign_id": "NORMAL-001-CHECK-CHECK-001-CLOSURE",
+  "review_class": "AFFECTED_REPAIR",
+  "finding_id": "CHECK-001",
+  "status": "COMPLETE",
+  "joined_at": "2026-09-21T12:14:08.6229046Z",
+  "join_count": 1,
+  "frozen_inputs": {
+    "product_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "canonical_harness_tip": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+    "original_campaign_pool": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/campaign-pool.json",
+      "sha256": "a587e8d69318ffd37fad1d06d8ab7d7499105868b4ead615f8c33d44e28f7548"
+    },
+    "root_verdict": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/root-verdict.json",
+      "sha256": "c38723d6021551ea3c066a1d468ee6fa087cd8aae5f208f7b267549793a74b8a"
+    },
+    "accepted_correction_checkpoint": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/pid-identity-correction-progress.json",
+      "sha256": "a9875a29e53bf16f685cbaf685d0c8af411de25b717900548f27b78447a93f7b"
+    },
+    "corrected_source_hashes": {
+      "development/test-tools/tests/test_fixture_controls.py": "026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840",
+      "development/test-tools/tests/fixtures/control_child.py": "6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518"
+    },
+    "epoch_id": "e84a79e25f31478ab4f0e386ca36426d"
+  },
+  "parallel_launch_readback": {
+    "independent_roles_launched_before_first_wait": true,
+    "initial_members": [
+      {
+        "role": "routine",
+        "lane_id": "normal-001-check-check-001-closure",
+        "run_id": "c84e5f6767e5419bbb0959692b531f56",
+        "binding": "codex/deepseek-v4.1-flash:cloud/high/normal via ollama"
+      },
+      {
+        "role": "reviewer",
+        "lane_id": "normal-001-check-review-001-closure",
+        "run_id": "cd643deb65f04350b5d4abc6b4eecf37",
+        "binding": "codex/gpt-5.6-terra/max/normal"
+      }
+    ],
+    "routine_refill": {
+      "reason": "The preferred routine provider reached its account usage cap before task work; the declared fallback was dispatched only after that operational failure was preserved.",
+      "lane_id": "normal-001-check-check-001-closure-fallback-1",
+      "run_id": "f09b147d57a541a29336495df22a4fca",
+      "binding": "codex/gpt-5.6-luna/high/normal"
+    }
+  },
+  "operational_attempts": [
+    {
+      "lane_id": "normal-001-check-check-001-closure",
+      "run_id": "c84e5f6767e5419bbb0959692b531f56",
+      "classification": "usage_cap_reached",
+      "task_result_produced": false,
+      "task_facts_contributed": false,
+      "cleanup_proven": true,
+      "disposition": "P09 administrative evidence retained; declared fallback 1 supplied the routine member.",
+      "evidence": {
+        "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK-001-CLOSURE-PREFERRED-FAILURE/failure.json",
+        "sha256": "eb3433357aa5f5d18fa44b9b5433f32b4eee670a1700aec6f3ab969699b5efb3"
+      }
+    }
+  ],
+  "complete_result_set": [
+    {
+      "member": "CHECK",
+      "status": "COMPLETE",
+      "recommendation": "CHECKS_PASS",
+      "native_outcome": "PASS",
+      "lane_id": "normal-001-check-check-001-closure-fallback-1",
+      "run_id": "f09b147d57a541a29336495df22a4fca",
+      "report_content_hash": "817baf0f52d71656a4ec6cde77b73e247e99c4afab02f56de67cc2fbe7af6ac8",
+      "native_result_content_hash": "0749200e42dd04e87247c8292e04615a7922a829c4d51d4c7c1c1632dc9344ac",
+      "affected_commands": [
+        {
+          "scope": "mismatch regression plus exact owned cleanup",
+          "tests_run": 2,
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "scope": "strict affected control file with ResourceWarning promoted to error",
+          "tests_run": 9,
+          "exit_code": 0,
+          "result": "PASS"
+        }
+      ],
+      "evidence": {
+        "report": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK-001-CLOSURE-FALLBACK-1/result.json",
+          "sha256": "d97cf0bfc3d71e252d1d360fbb36b892878262f8794384d6fb4de2fa116f5ecf"
+        },
+        "native_result": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK-001-CLOSURE-FALLBACK-1/native-result.json",
+          "sha256": "f1d3cdd1e981fac07841d7b3583149a4a2e78ecd9e200bdd29a790fd98ad8ed6"
+        },
+        "completion_review": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK-001-CLOSURE-FALLBACK-1/completion-review.json",
+          "sha256": "462fc0a663a39b4a9fa4155f69cf89c1c0cd312b4a4377ca619e5958468d3cac",
+          "canonical_content_hash": "7b7957b7b3980874d3a7765d65fd791d54ab836b8e774810851de34fe86f0105"
+        },
+        "orchestrator_acceptance": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK-001-CLOSURE-FALLBACK-1/orchestrator-acceptance.json",
+          "sha256": "fbae9acf2384fa405204694fb8611150a3b607e8b8245178cabd5b7a8fa1f930",
+          "canonical_content_hash": "6480f809a45fc1c2a2d1c6459521ed5acafe68f6d3815480882a41bd20682660"
+        }
+      }
+    },
+    {
+      "member": "REVIEW",
+      "status": "COMPLETE",
+      "closure_decision": "CLOSED",
+      "recommendation": "CLEAN",
+      "native_outcome": "PASS",
+      "lane_id": "normal-001-check-review-001-closure",
+      "run_id": "cd643deb65f04350b5d4abc6b4eecf37",
+      "finding_count": 0,
+      "native_result_content_hash": "c3535764dbe9a6a459c5fff12c309ef02b68084d7328cc325e13bef01fb6bdb0",
+      "evidence": {
+        "report": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW-001-CLOSURE/result.json",
+          "sha256": "e443df6ed2e6828db4bc6800c5e069fc51fad9609742b981ee5644786a8aadfd"
+        },
+        "native_result": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW-001-CLOSURE/native-result.json",
+          "sha256": "a32dcf983b2245d1c8cba6c358d71e1b83ec34353daf0352d7f8c9c122df962b"
+        },
+        "completion_review": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW-001-CLOSURE/completion-review.json",
+          "sha256": "ff0e445a2f04d4992badb6a45ed7c203da31a96cc41ddaa0b7415351f4fc5e91",
+          "canonical_content_hash": "59564140676ab6577c900770365c3fb5dc8caa81878bc94ecb501d649efb2b81"
+        },
+        "orchestrator_acceptance": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW-001-CLOSURE/orchestrator-acceptance.json",
+          "sha256": "b444ca267ceb80d34815a9d1167f2ffef86102e5b67d529172163fc9f2a238e6",
+          "canonical_content_hash": "e3a4828058c37c5e69ccb3c197ece42f455efee03cb3795893cf238151e94dc9"
+        }
+      }
+    }
+  ],
+  "joined_findings": [
+    {
+      "id": "CHECK-001",
+      "original_disposition": "NONBLOCKING_TEST_ERROR",
+      "correction_scope": "strict M03 test-only PID plus creation-identity guard",
+      "routine_check": "CHECKS_PASS",
+      "independent_review": "CLOSED",
+      "remaining_findings": [],
+      "disposition": "CLOSED_READY_FOR_M05_CREDIT_MAP"
+    }
+  ],
+  "disagreements": [],
+  "credit_map": {
+    "preserved_unchanged": [
+      "All original M01 admission facts",
+      "All original M02 unchanged product-tip and resolver facts",
+      "All original M03 task-base, manifest, and non-cleanup observations",
+      "All original M04 facts outside CHECK-001, including REQ-001, REQ-028, and REQ-029",
+      "Product main a54ad14a8f59409ee1e88c2473e3617c123f20b8 and canonical harness f6948fb2673661b6c2cfb69cf47b23a198b3f5f8"
+    ],
+    "affected_credit_restored_for_m05_decision": [
+      "REQ-027 / CONTROL-READY exact-owned-descendant cleanup safety",
+      "Corrected PID-plus-creation-identity source hashes",
+      "Owned-live mismatch safe no-op and exact-match real cleanup",
+      "Affected strict 9-test control-file PASS",
+      "Independent CHECK-001 closure review"
+    ],
+    "invalidated": [],
+    "unrun_required_units": []
+  },
+  "repairs_performed_in_m04": [],
+  "campaign_acceptance_decision": "NOT_DECIDED_IN_M04",
+  "next_module": "MI-NORMAL-001-ACCEPT",
+  "next_action": "Close only CHECK-001's held credit against the existing ACCEPTED root verdict; do not issue a second product verdict."
+}

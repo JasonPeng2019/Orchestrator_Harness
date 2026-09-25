@@ -1,0 +1,17 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-04-native-apc-partial-git-add-correction",
+  "branch": "lane/step-04-slice-native-apc-child",
+  "base_commit": "14b81278b3fe1974f9f5cd1743fa1b820820bc7f",
+  "task": "Resume the exact rejected STEP-04 APC lane from 14b8127. Preserve its valid credential scrub, one captured bootstrap allowance, and unresolved handling for failures after a successful git add; preserve unstaged setup-installed .codex/hooks edits. Correct one remaining ownership defect at the failed git-worktree-add boundary. A failed git worktree add can leave an attempt-created partial worktree or branch when its internal cleanup is incomplete. Today _git_worktree_add raises before run_bootstrap sets worktree_created, so close_failed_attempt reports rollback_proven=true and the APC bridge records terminal refused despite a surviving exact path. Reproduce this with a focused failing native APC regression that leaves the partial artifact and shows the current refused/no-identity operation; then make the smallest correction so proven absence or successful cleanup remains terminal, but any unproven attempt-created path/branch is reported with exact identity and stored as unresolved, blocking blind retry. Do not classify a pre-existing branch/path as owned by this attempt, do not recursively delete it, and do not alter unrelated bootstrap/native lifecycle behavior. Run direct APC and affected harness tests, commit only the correction, and write truthful RESULT.json through the existing lane protocol. Do not implement later steps or change references/harness-single. Product root: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/goal.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-04-apc-child-produces-reviewable-proposal.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-02-apc-child-produces-a-reviewable-plan.md.",
+  "acceptance_criteria": [
+    "A failed git worktree add with incomplete cleanup retains exact attempt-owned path or branch as unresolved on the durable APC operation, not terminal refused; retry cannot blindly relaunch.",
+    "A failed add with proven absence or successful cleanup remains a terminal no-child refusal, and pre-existing resources are not claimed or deleted.",
+    "Focused direct APC and affected harness checks pass on the final commit; the result states actual checks without claiming parent-plan acceptance."
+  ],
+  "deliverables": [
+    "One focused red/green regression for failed git add with residual ownership and a narrow correction to propagate its actual cleanup proof.",
+    "One same-lane correction commit after 14b8127 and a valid native RESULT.json for ROOT review."
+  ],
+  "reason_for_acceptance_and_deliverables": "ROOT reproduced a partial git-add failure leaving the exact APC worktree while run_bootstrap reported rollback proven and the durable operation became refused with no launch identity. This is the same STEP-04 exact-ownership behavior, not a broader harness redesign."
+}

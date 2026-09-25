@@ -1,0 +1,16 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-04-slice-everos-skill-call-gate",
+  "task": "On accepted product commit 75daf401dca4107e1294a55a5ae8b0543e221564, add only the future EverOS generated-skill SearchStore call gate in search.py and preparation.py. Introduce one finite source_kind (everos_generated_skill) for a procedure store that performs a real remote call; require requires_network=True for that marker. Before a store query starts, enable that marker only when generated_skill_use is true and network_mode is not restricted_local. atlas_shared_retrieval alone must not enable it, and disabling it must not change accepted local generated, local curated, Atlas, caller, or EverOS case-store gates. Add a few direct tests with a recording store that prove the actual query is suppressed or started under those configurations; do not implement a remote adapter or reprove local procedure trust. Run only the new gate tests and directly affected existing gate tests, not the full local suite. Commit one narrow result beyond 75daf40 and write a truthful RESULT.json. Do not add durable lookup changes, remote skill/procedure joining, APC, dispatch, STEP-05/06, or references/harness-single changes. Product root: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-04-prepare-and-dispatch-with-memory.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-01-bounded-preparation-selects-eligible-memory.md.",
+  "acceptance_criteria": [
+    "A future EverOS generated-skill procedure store is admitted only with generated_skill_use=true outside restricted_local; a disabled path makes no remote query, regardless of atlas_shared_retrieval.",
+    "The source marker cannot declare a local/non-network call, and existing local/Atlas/case store gates retain their observed behavior with focused tests passing."
+  ],
+  "deliverables": [
+    "One small source marker and preparation call gate with direct recording-store tests.",
+    "One narrow commit beyond 75daf401dca4107e1294a55a5ae8b0543e221564 and a valid RESULT.json with actual checks."
+  ],
+  "reason_for_acceptance_and_deliverables": "The accepted skill query and durable lookup are discovery primitives only. The later remote SearchStore must not make its task-path call when generated-skill use is off or restricted-local mode is active; isolating this gate keeps the trust-join assignment focused on delivery.",
+  "branch": "lane/step-04-slice-everos-skill-call-gate",
+  "base_commit": "75daf401dca4107e1294a55a5ae8b0543e221564"
+}

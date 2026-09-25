@@ -1,0 +1,29 @@
+{
+  "completed_at": "2026-09-21T11:09:22.048Z",
+  "content_hash": "044c07472eaf29d298df7264ff0bc7bb23646a2eb0a1e9402d2159d01b24a963",
+  "evidence": [
+    {
+      "path": "development/evidence/STEP-001/NORMAL-001-ACCEPT-POOL/result.json",
+      "sha256": "30f8eb89acb88d3c3828a5bc73cc912df1bfeca0ae5d9c25df69cc772d7d27e2",
+      "media_type": "application/json",
+      "schema": "memory-harness-accept-pool-result/v1"
+    },
+    {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/campaign-pool.json",
+      "sha256": "a587e8d69318ffd37fad1d06d8ab7d7499105868b4ead615f8c33d44e28f7548",
+      "media_type": "application/json",
+      "schema": "memory-harness-check-campaign-pool/v1"
+    },
+    {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-progress.json",
+      "sha256": "bdfcd5febe6f1595e11070c3f5ba9b97bb381129e9697fd60d720daad739441e",
+      "media_type": "application/json",
+      "schema": "memory-harness-check-progress/v1"
+    }
+  ],
+  "lane_id": "normal-001-accept-pool",
+  "outcome": "PASS",
+  "run_id": "0551f7ced6e848068526e58c7c92d49b",
+  "schema": "result/v1",
+  "summary": "M05-A1/M05-A2 mechanical pool validation assembled and reported. All 13 declared byte SHA-256 values across the frozen M04 campaign pool, M04 checkpoint, and the nine pool-referenced evidence files recomputed identically (13/13); all six native-result, completion-review, and orchestrator-acceptance canonical content hashes recomputed exactly, with result_hash/review_ref acceptance linkage intact for both members. 14/14 schema and member-identity checks and 40/40 join checks passed: two-member completeness (CHECK recommendation CHECKS_PASS / native PASS; REVIEW recommendation FINDINGS / native PASS), join_count=1, finding count 1, disagreement count 1 preserved with decision owner MI-NORMAL-001-ACCEPT, next-module handoff MI-NORMAL-001-ACCEPT. Nine mechanically equivalent duplicate groups were identified and grouped; the passing executable observation was deliberately not merged with CHECK-001. Every source fact, both member positions, and the dissent are preserved unchanged. No classification of CHECK-001, no semantic sufficiency judgement, no repair-route selection, no product verdict, no acceptance decision, no test execution, and no dispatch were performed. Report recommendation READY_FOR_ROOT. No source, test, fixture, plan, prior evidence, Git state, runtime record, or other lane output was modified; the lane has no commit and no source diff beyond managed overlays."
+}

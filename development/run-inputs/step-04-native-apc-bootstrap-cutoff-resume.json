@@ -1,0 +1,17 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-04-native-apc-bootstrap-cutoff-correction",
+  "branch": "lane/step-04-slice-native-apc-child",
+  "base_commit": "bb98650ec1261be051de0fa7b11b5fcbdab4d974",
+  "task": "Resume the exact rejected STEP-04 APC lane from bb98650. Preserve its valid credential-scrub fail-closed behavior, shared effective deadline delivery, native pre-effect guards, binding preflight, retirement/reconciliation, tests, and setup-installed .codex/hooks edits; do not stage those hook edits. Correct only two confirmed remaining behavior gaps. First, run_bootstrap must capture/check the caller's allowance at function entry, before potentially blocking config/provider validation, so a slow preflight cannot renew the cutoff and create a late worktree after the APC caller has stopped waiting. Second, when bootstrap rollback of a created worktree is incomplete or unproven, the APC adapter/bridge must retain exact lane/worktree identity as unresolved instead of recording a terminal proven-no-child refusal; proven rollback may remain terminal. Add focused failing regressions for slow preflight and unproven rollback, then make the smallest correction and rerun direct APC and affected harness selectors. An OS operation already started inside the allowance need not be preempted, but its late acknowledgement must stay exactly unresolved and never permit a blind duplicate launch; do not build another scheduler/launcher or broaden native lifecycle behavior. Commit only the correction and write truthful RESULT.json through the existing lane protocol. Do not implement later plan steps or change references/harness-single. Product root: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/goal.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-04-apc-child-produces-reviewable-proposal.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-02-apc-child-produces-a-reviewable-plan.md.",
+  "acceptance_criteria": [
+    "A slow bootstrap preflight cannot extend the caller's effective APC cutoff or start a new worktree after it.",
+    "Unproven rollback preserves exact unresolved ownership; only proven no-child/cleanup outcomes become terminal, with no blind duplicate launch.",
+    "Focused direct and affected harness tests pass on the final commit; the result reports actual checks and any limitation without claiming parent-plan acceptance."
+  ],
+  "deliverables": [
+    "A narrow bootstrap/adapter correction with direct regressions for slow preflight and incomplete rollback.",
+    "One same-lane correction commit after bb98650 and a valid native RESULT.json for ROOT review."
+  ],
+  "reason_for_acceptance_and_deliverables": "The prior correction passed focused tests but its bootstrap allowance was captured after preflight and its unproven rollback was reported as a terminal refusal. This follow-up closes those two behavior gaps without reopening valid APC work or expanding harness scope."
+}

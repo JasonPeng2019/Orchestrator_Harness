@@ -1,0 +1,109 @@
+{
+  "schema": "memory-harness-check-progress/v1",
+  "module_instance_id": "MI-NORMAL-001-CHECK",
+  "recorded_at": "2026-09-21T10:58:39.8754272Z",
+  "status": "COMPLETE",
+  "produces": "MI-NORMAL-001-CHECK.complete campaign pool",
+  "frozen_product_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+  "frozen_canonical_harness_tip": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+  "native_execution": {
+    "epoch_id": "b456e7d1497742cc8022dc6b22ccc529",
+    "parallel_launch_before_wait": true,
+    "members": [
+      {
+        "role": "reviewer",
+        "lane_id": "normal-001-check-review",
+        "run_id": "ff3b8cef1da046d9adacc75c75ee55bb",
+        "provider": "codex",
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "max",
+        "service_tier": "normal",
+        "native_outcome": "PASS",
+        "report_recommendation": "FINDINGS",
+        "result_content_hash": "0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691"
+      },
+      {
+        "role": "routine",
+        "lane_id": "normal-001-check-check",
+        "run_id": "a211f3d79e4a44b3b9676615befbd4ae",
+        "provider": "codex",
+        "model": "deepseek-v4.1-flash:cloud",
+        "launcher": "ollama",
+        "reasoning_effort": "high",
+        "service_tier": "normal",
+        "native_outcome": "PASS",
+        "report_recommendation": "CHECKS_PASS",
+        "result_content_hash": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b"
+      }
+    ]
+  },
+  "join": {
+    "join_count": 1,
+    "member_count": 2,
+    "all_feasible_members_complete": true,
+    "disagreement_preserved": true,
+    "repairs_performed": false,
+    "campaign_acceptance_decision": "NOT_DECIDED_IN_M04"
+  },
+  "verification": {
+    "exact_selected_command": "python -m unittest discover -s development/test-tools/tests -p test_*.py",
+    "exact_selected_command_exit_code": 0,
+    "exact_selected_command_tests_run": 15,
+    "control_ready_tests_passed": 8,
+    "resolver_tests_passed": 7,
+    "combined_tests_passed": 15,
+    "asset_hashes_verified": 13,
+    "stable_evidence_hashes_verified": 4,
+    "native_result_hashes_recomputed": true,
+    "completion_review_hashes_recomputed": true,
+    "orchestrator_acceptance_hashes_recomputed": true,
+    "product_and_canonical_clean": true
+  },
+  "open_finding": {
+    "id": "CHECK-001",
+    "severity": "HIGH",
+    "reported_classification": "strict_m03_test_only_defect",
+    "affected_requirement": "REQ-027",
+    "affected_claim": "exact-owned-descendant cleanup safety",
+    "trigger": "The test fixture finalizer verifies only numeric PID presence immediately before taskkill, so PID reuse can retarget cleanup after the intended process exits.",
+    "smallest_reported_owner": "M03 test assets",
+    "harness_change_requested": false,
+    "disposition": "PENDING_MI_NORMAL_001_ACCEPT"
+  },
+  "evidence": {
+    "campaign_pool": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/campaign-pool.json",
+      "sha256": "a587e8d69318ffd37fad1d06d8ab7d7499105868b4ead615f8c33d44e28f7548"
+    },
+    "checker_report": {
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/result.json",
+      "sha256": "199c4bc1a0329a8289bdc576b08ee1fde8d7953c6e7152473a54183e0361fd8b"
+    },
+    "reviewer_report": {
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/result.json",
+      "sha256": "df7bbdcd5e63f1cae145620c276afda14dcd8e6dcf47d2b91b169e019316863b"
+    }
+  },
+  "cleanup": {
+    "runtime_state": "CLOSED",
+    "epoch_lifecycle": "closed",
+    "active_lanes": 0,
+    "provider_and_controller_pids_absent": [
+      63100,
+      59312,
+      61328,
+      64156
+    ],
+    "monitor_pid": 68044,
+    "monitor_absent": true,
+    "lane_worktrees_removed": true,
+    "lane_branches_removed": true,
+    "remaining_product_worktrees": [
+      "main"
+    ]
+  },
+  "unresolved": [
+    "M05 must adjudicate CHECK-001 and route any accepted strict test-only correction to the M03 asset owner without changing the frozen harness."
+  ],
+  "next_module": "MI-NORMAL-001-ACCEPT"
+}

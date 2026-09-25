@@ -1,0 +1,12 @@
+[submodule "Codex_Claude_Setup"]
+	path = references/Codex_Claude_Setup
+	url = https://github.com/JasonPeng2019/Codex_Claude_Setup.git
+[submodule "harness-single"]
+	path = references/harness-single
+	url = https://github.com/JasonPeng2019/harness-single.git
+[submodule "Harness-Memory-Planning"]
+	path = references/Harness-Memory-Planning
+	url = https://github.com/JasonPeng2019/Harness-Memory-Planning
+[submodule "Harness-Memory-Base"]
+	path = references/Harness-Memory-Base
+	url = https://github.com/JasonPeng2019/Harness-Memory-Base

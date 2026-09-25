@@ -1,0 +1,112 @@
+{
+  "schema": "memory-harness-accept-verdict/v1",
+  "module_instance_id": "MI-NORMAL-001-ACCEPT",
+  "recorded_at": "2026-09-21T11:16:23.3037934Z",
+  "status": "P08_CORRECTION_OPEN",
+  "verdict": "ACCEPTED",
+  "verdict_scope": "The frozen product and harness observations are independently decidable and accepted for this pre-integration boundary. This is not STEP-001 product acceptance: M06, M08, M09, and the final M05 gate remain open. The exact consumer of the defective test-only cleanup claim is held until the P08 correction returns.",
+  "inputs": {
+    "campaign_pool": {
+      "path": "../MI-NORMAL-001-CHECK/campaign-pool.json",
+      "sha256": "a587e8d69318ffd37fad1d06d8ab7d7499105868b4ead615f8c33d44e28f7548"
+    },
+    "campaign_checkpoint": {
+      "path": "../MI-NORMAL-001-CHECK/check-progress.json",
+      "sha256": "bdfcd5febe6f1595e11070c3f5ba9b97bb381129e9697fd60d720daad739441e"
+    },
+    "mechanical_pool_report": {
+      "path": "../NORMAL-001-ACCEPT-POOL/result.json",
+      "sha256": "30f8eb89acb88d3c3828a5bc73cc912df1bfeca0ae5d9c25df69cc772d7d27e2",
+      "native_content_hash": "044c07472eaf29d298df7264ff0bc7bb23646a2eb0a1e9402d2159d01b24a963"
+    }
+  },
+  "root_adjudication": [
+    {
+      "id": "CHECK-001",
+      "follow_up_class": "strict test-only",
+      "impact": "NONBLOCKING_TEST_ERROR",
+      "finding_admissibility": "ADMITTED",
+      "disposition": "P08_EXACT_CORRECTION",
+      "governing_requirement": "REQ-027 / CONTROL-READY exact-owned-descendant cleanup safety",
+      "observed_trigger": "The fixture finalizer can re-use a numeric descendant PID after the intended process exits and can therefore issue taskkill against a different process incarnation.",
+      "realistic_consequence": "An unrelated process tree could be force-terminated by the test fixture. Passing tests do not establish process-incarnation ownership for every cleanup attempt.",
+      "product_decidability": "Independent M01-M04 observations still decide the frozen product and harness behavior. CHECK-001 is confined to newly authored M03 test assets and does not demonstrate a product or frozen-harness defect.",
+      "required_route": "Return once to the same MI-NORMAL-001-ASSETS test_author role under P08; strengthen only the cleanup identity oracle, then repeat only CHECK-001's affected control/review path before returning to this M05 instance.",
+      "source_links": [
+        "development/test-tools/tests/test_fixture_controls.py:74",
+        "development/test-tools/tests/test_fixture_controls.py:108",
+        "development/test-tools/tests/test_fixture_controls.py:124",
+        "development/test-tools/tests/test_fixture_controls.py:490",
+        "development/test-tools/tests/fixtures/control_child.py:84"
+      ]
+    },
+    {
+      "id": "ACCEPT-POOL-TIMESTAMP-001",
+      "follow_up_class": "administrative/support",
+      "impact": "NONBLOCKING_TEST_ERROR",
+      "finding_admissibility": "RECORDED_FROM_EXISTING_FACTS",
+      "disposition": "NO_REPLAY",
+      "observed_trigger": "The pool report's recorded_at is later than its native completed_at.",
+      "product_decidability": "Native completion, filesystem time, byte hashes, and canonical record hashes independently establish the member facts.",
+      "required_route": "Preserve the timestamp note; do not replay tests, product work, or the pool member."
+    }
+  ],
+  "strict_test_only_eligibility": {
+    "eligible": true,
+    "only_test_files": [
+      "development/test-tools/tests/test_fixture_controls.py",
+      "development/test-tools/tests/fixtures/control_child.py"
+    ],
+    "product_source_change_authorized": false,
+    "harness_change_authorized": false,
+    "locked_config_or_runner_change_authorized": false,
+    "acceptance_meaning_change_authorized": false,
+    "oracle_rule": "The corrected oracle must be equal or stronger: cleanup may target only the recorded process incarnation; an absent, unknown, or mismatching identity must be a safe no-op.",
+    "deterministic_regression": "A live fixture process paired with a deliberately nonmatching creation identity must remain alive and must not cause taskkill; the same process paired with its exact identity must then be cleanly terminated and observed absent. No unrelated process is used as a target.",
+    "eligibility_basis": "CHECK-001 identifies a known incorrect M03 artifact while product behavior remains independently decidable, satisfying P08."
+  },
+  "credit_map": {
+    "preserved": [
+      "M01 admission and native lifecycle evidence",
+      "M02 unchanged product-tip decision and seven resolver checks",
+      "M03 task-base prerequisite and designated-gap observations",
+      "M03 manifest structure outside cleanup identity fields",
+      "M04 routine checker executable PASS observations except the strict ownership interpretation of cleanup",
+      "REQ-001 pre-product scope evidence",
+      "REQ-028 recorded binding evidence",
+      "REQ-029 no-benchmark/no-learner evidence",
+      "product main a54ad14 and canonical harness f6948fb identities"
+    ],
+    "invalidated": [
+      "MI-NORMAL-001-ASSETS verification.owned_descendant_cleanup",
+      "CONTROL-READY strict cleanup-safety credit",
+      "the hashes and evidence joins that consume either corrected test file",
+      "M04 review closure for CHECK-001"
+    ],
+    "not_yet_earned": [
+      "M06 integrated coordinate",
+      "M08 readiness observation",
+      "M09 real native/service observation and cleanup",
+      "MI-NORMAL-001-GATE final STEP-001 verdict"
+    ]
+  },
+  "correction_route": {
+    "policy": "P08",
+    "owner_module_instance_id": "MI-NORMAL-001-ASSETS",
+    "workflow_role": "test_author",
+    "card": "../MI-NORMAL-001-ASSETS/CARD-NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION.json",
+    "return_path": "MI-NORMAL-001-ASSETS exact correction -> CHECK-001 affected check/review -> MI-NORMAL-001-ACCEPT credit-map closure",
+    "successor_hold": "MI-NORMAL-001-INTEGRATE is not dispatched until the correction and exact affected check path close."
+  },
+  "scope_protection": {
+    "canonical_harness": "references/harness-single remains frozen at f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+    "product": "development/product/worktree_example remains clean at a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "explicitly_forbidden": [
+      "any references/harness-single edit",
+      "any dogfood harness edit",
+      "any product source edit",
+      "new scheduler, runner, package, service, benchmark, or learned selector",
+      "broad process enumeration or cleanup"
+    ]
+  }
+}

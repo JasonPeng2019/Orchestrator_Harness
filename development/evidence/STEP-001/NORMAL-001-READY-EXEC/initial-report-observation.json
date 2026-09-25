@@ -1,0 +1,26 @@
+{
+  "schema": "memory-harness-readiness-report-observation/v1",
+  "observed_report": "development/evidence/STEP-001/NORMAL-001-READY-EXEC/result.json",
+  "observed_byte_sha256": "ff9ea7def54bc06f11edf63df45161d992344936e30724d302030fea42021fc0",
+  "native_result_content_hash": "0b387721ff85fc620c539e027be88cb9dc9c1a291e16142fbf97ff18e75749d1",
+  "classification": "P09_REPORT_SHAPE_FAILURE",
+  "behavioral_credit_retained": true,
+  "rerun_authorized": false,
+  "missing_required_fields": [
+    "native_identities",
+    "complete_input_validations",
+    "complete_per_test_and_readback_evidence",
+    "stdout_and_stderr",
+    "recordability_preflight",
+    "external_rehearsal",
+    "emitted_pid_creation_identities",
+    "no_live_effect_proof",
+    "retained_prior_credit",
+    "recommendation",
+    "unresolved_facts"
+  ],
+  "incorrect_field": {
+    "path": "binding.actual",
+    "reason": "It did not identify the actual native codex/deepseek-v4.1-flash:cloud lane that performed the observation."
+  }
+}

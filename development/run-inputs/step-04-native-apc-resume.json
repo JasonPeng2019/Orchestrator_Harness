@@ -1,0 +1,17 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-04-native-apc-correction-remaining-plan",
+  "branch": "lane/step-04-slice-native-apc-child",
+  "base_commit": "cd6c223ed97de5b8d419505b3c39b15e62a81736",
+  "task": "Continue the existing unaccepted APC-child lane in its dirty worktree; preserve commit cd6c223 and all valid partial corrective edits. Do not restart the accepted search, adapter, trust, or template work. Review the current correction against the four reproduced defects from the rejected first pass: (1) the APC child's actual controller/provider environment must exclude memory-control credentials without changing legacy/all-off behavior; (2) the explicit lower-capability apc_adaptation_binding CLI/provider/model/effort must match the selected native adapter before queueing, with two supported configurations and no silent substitution; (3) bootstrap, launch, queue, collection, validation, and cleanup must remain inside one absolute adaptation deadline, including blocking native calls; (4) a prepared child lane after failed launch must be retired when safe, or remain visibly unresolved rather than blindly retried. Use the smallest correction at the APC bridge/child and narrow candidate-harness launch seam, with direct focused tests. If the dirty correction is already sufficient, verify it rather than rewriting it. Preserve setup-installed .codex/hooks edits but do not stage them as part of the APC correction. Commit only the completed correction and write a truthful RESULT.json through the existing lane protocol. Do not implement parent context/dispatch, later plan steps, a second launcher/reviewer, or references/harness-single changes. Product root: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/goal.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-04-apc-child-produces-reviewable-proposal.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-02-apc-child-produces-a-reviewable-plan.md.",
+  "acceptance_criteria": [
+    "A real product-harness APC child uses the exact supplied supported binding and a scrubbed control environment; ordinary legacy/all-off execution remains intact.",
+    "One absolute deadline covers child launch through cleanup, and an ambiguous or failed effect preserves exact ownership without duplicate launch or false parent acceptance.",
+    "Focused direct and affected harness tests pass on the final correction; actual checks and any unresolved limitation are reported truthfully."
+  ],
+  "deliverables": [
+    "The smallest completed correction to the existing APC adapter/bridge, narrow launch seam, and focused regressions, retaining valid dirty work.",
+    "One correction commit after cd6c223 and a valid native RESULT.json for ROOT review."
+  ],
+  "reason_for_acceptance_and_deliverables": "The first APC commit was rejected for four concrete authority, deadline, and lifecycle defects. This same-lane correction closes only those defects and returns reviewable source and native evidence without reopening accepted work or adding another harness layer."
+}

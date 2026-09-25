@@ -1,0 +1,9 @@
+{
+  "schema": "resource-manifest/v1",
+  "resources": [
+    {
+      "id": "ollama-provider-home",
+      "exclusive": true
+    }
+  ]
+}

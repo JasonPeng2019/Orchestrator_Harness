@@ -1,0 +1,214 @@
+{
+  "schema": "memory-harness-review-result/v1",
+  "status": "COMPLETE",
+  "review_type": "INITIAL_IMPLEMENTATION",
+  "module_instance_id": "MI-NORMAL-001-CHECK",
+  "reviewed_at": "2026-09-21T10:45:13.9973169Z",
+  "reviewer_native_identity": {
+    "repository_root": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3",
+    "worktree": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/b456e7d1497742cc8022dc6b22ccc529/normal-001-check-review",
+    "lane_id": "normal-001-check-review",
+    "branch": "lane/normal-001-check-review",
+    "head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "base_commit": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "run_id": "ff3b8cef1da046d9adacc75c75ee55bb",
+    "invocation_id": "INVOCATION-NORMAL-001-CHECK-REVIEW",
+    "card_id": "CARD-NORMAL-001-CHECK-REVIEW",
+    "workflow_role": "reviewer",
+    "actual_resolution": [
+      "--provider",
+      "codex",
+      "--model",
+      "gpt-5.6-terra",
+      "--provider-option",
+      "reasoning_effort=max",
+      "--provider-option",
+      "service_tier=normal"
+    ]
+  },
+  "frozen_input_identities": {
+    "product_native_base": {
+      "path": "development/product/worktree_example",
+      "branch": "main",
+      "commit": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "clean_at_readback": true
+    },
+    "canonical_harness": {
+      "path": "references/harness-single",
+      "branch": "working/memory-v1",
+      "commit": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "clean_at_readback": true
+    },
+    "accepted_native_executions": {
+      "admit": {
+        "lane_id": "normal-001-admit-exec",
+        "run_id": "6e88f977cb2145319da2793c9d03c703",
+        "epoch_id": "c1fc85e7500b402689848be335a4381c",
+        "provider": "codex",
+        "model": "deepseek-v4.1-flash:cloud"
+      },
+      "build": {
+        "lane_id": "normal-001-build-exec",
+        "run_id": "b5c03ad02022407bb1a2b3a1090518fd",
+        "epoch_id": "77574f69003e45a49701a47083c346c2",
+        "provider": "codex",
+        "model": "deepseek-v4.1-flash:cloud"
+      },
+      "assets": {
+        "lane_id": "normal-001-assets-exec",
+        "run_id": "5ec7231226504c05a59271057681ca2a",
+        "epoch_id": "79473686146a479ab1341dc8a11c678f",
+        "provider": "codex",
+        "model": "glm-5.3:cloud"
+      }
+    }
+  },
+  "consumed_evidence": [
+    {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ADMIT/admission-progress.json",
+      "sha256": "80c299f93cb51a91a83e8640d5aacbdb5a175ad3b78248685fb6d6f7c2cde976",
+      "fields_used": ["status", "source", "canonical_repair", "role_resolution", "native_readback", "requirement_credit"]
+    },
+    {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-BUILD/build-progress.json",
+      "sha256": "ddbacee5af752b38cdaa82922586454e0f9c3c81a9847c2830a52ebd79bbdebf",
+      "fields_used": ["status", "accepted_tip", "changed_paths", "decision", "verification", "native_execution", "requirement_credit"]
+    },
+    {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/assets-progress.json",
+      "sha256": "c07df57e1d45faadb8caef2cdf55b8d62dec1ecb28405a507011b8fca452198d",
+      "fields_used": ["status", "fixture_contract", "native_execution", "verification", "evidence", "requirement_credit"]
+    },
+    {
+      "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-EXEC/result.json",
+      "sha256": "13b309641ae5e7a772ff5bfdfe7cafa14414a41a74a6b00c7bb641728006c8ed",
+      "inspection": "integrity hash readback matched assets-progress.evidence.test_author_report.sha256"
+    },
+    {
+      "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-EXEC/native-result.json",
+      "sha256": "eb1c1f8b938dc03ee15aea4adc5b7073294289f5abb7628c364bf88c0c8edb2c",
+      "inspection": "integrity hash readback matched assets-progress.evidence.native_result.sha256"
+    },
+    {
+      "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-EXEC/completion-review.json",
+      "sha256": "6776a7aa2630ed5a85d43477f80cd70b9dab94c693d0535e30e8782ca12f222c",
+      "inspection": "integrity hash readback matched assets-progress.evidence.completion_review.sha256"
+    },
+    {
+      "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-EXEC/orchestrator-acceptance.json",
+      "sha256": "e50ae65beacd5749e905bfe70e8196f1607c4a223232e0d3e6fd8f469dc020b4",
+      "inspection": "integrity hash readback matched assets-progress.evidence.acceptance.sha256"
+    }
+  ],
+  "exact_files_inspected": [
+    {"path": "development/test-tools/resolve-role.py", "sha256": "5da5f8a73cc93215a55afb854484c97b50f1d497f6d6d4710757ca43d3468e78"},
+    {"path": "development/test-tools/tests/test_resolve_role.py", "sha256": "dbbaa21fd3d340e8d2b0735a0d45a5d895f5cb707478cfef9309a49ff53c9969"},
+    {"path": "development/test-tools/tests/test_fixture_controls.py", "sha256": "3851ed4bf4e208bf4ded0ffbf1e4fb28206cddaac5734e7f7246940f3731571a"},
+    {"path": "development/test-tools/tests/fixtures/control_child.py", "sha256": "e5fb9f90aa2173fc5f2507ce3d55dd3ec4c8b4e5141411295f65f8a33011a18a"},
+    {"path": "development/test-tools/tests/fixtures/fixture_manifest.json", "sha256": "6b584b939833125fb3069657c0da0bc700909cd675961ff6a30efe89f40b3f8c"},
+    {"path": "development/test-tools/tests/fixtures/task_bases/routine/clamp.py", "sha256": "32b3cf1d64c48c789e69ef27645950dc2b00828a72bed37837f488f47fce0706"},
+    {"path": "development/test-tools/tests/fixtures/task_bases/routine/test_prerequisites.py", "sha256": "ddf4763d4bd25a3b7d83e182d511ffea67372c6fe327ca852fc8f627b07b047f"},
+    {"path": "development/test-tools/tests/fixtures/task_bases/routine/test_task.py", "sha256": "44e3b426aab1c166b16e147d90976e21b28d8c221815bbb8c388c408d9697e62"},
+    {"path": "development/test-tools/tests/fixtures/task_bases/middle/clamp.py", "sha256": "7b9ef67516fa3d17025841374284ef7772ce1e3d55e69dc9ab1523dc554ec775"},
+    {"path": "development/test-tools/tests/fixtures/task_bases/middle/test_prerequisites.py", "sha256": "ca452b381797a8e5c0c61d9bb5ecc79e8e8373bef782ca051fae12604c5b768e"},
+    {"path": "development/test-tools/tests/fixtures/task_bases/middle/test_task.py", "sha256": "db2e4c95f01e24196af36b44aff4e10a40b66268031423f17422783e37568fc6"},
+    {"path": "development/test-tools/tests/fixtures/task_bases/heavy/clamp.py", "sha256": "1301e81e98aaaadfd00686eb8ee22b5ef96a73056001959bfc735264d95ccfc1"},
+    {"path": "development/test-tools/tests/fixtures/task_bases/heavy/parse_numbers.py", "sha256": "11bb5098be85dcca1b1c7e2a7120422afb000ad6cac2a227d9530a3fe8865741"},
+    {"path": "development/test-tools/tests/fixtures/task_bases/heavy/test_prerequisites.py", "sha256": "7681b30bd288e90b18f76e12958a946849173ea160bdc5650ec68c2cb6b42d92"},
+    {"path": "development/test-tools/tests/fixtures/task_bases/heavy/test_task.py", "sha256": "c229ed999deb5b14c05cd26814b83a6585bdeb98ba72dda58f3747d20f5c3cae"}
+  ],
+  "requirement_invariant_map": [
+    {
+      "id": "REQ-001",
+      "status": "MET_WITH_SCOPE_LIMIT",
+      "evidence": ["MI-NORMAL-001-BUILD/build-progress.json: accepted_tip=a54ad14, changed_paths=[]", "MI-NORMAL-001-ASSETS/assets-progress.json: requirement_credit.REQ-001"],
+      "review_statement": "The reviewed assets are pre-product test fixtures; neither checkpoint claims memory-product behavior credit."
+    },
+    {
+      "id": "REQ-027",
+      "status": "PARTIAL_STRICT_M03_DEFECT",
+      "evidence": ["development/test-tools/tests/fixtures/control_child.py:84-117", "development/test-tools/tests/test_fixture_controls.py:108-127, 490-554", "MI-NORMAL-001-ASSETS/assets-progress.json: verification.owned_descendant_cleanup"],
+      "review_statement": "The finite fixtures supply lost-handle and descendant seams, but the cleanup path has no durable identity check for the PID it force-kills; see CHECK-001. No broader harness behavior is credited or rejected."
+    },
+    {
+      "id": "REQ-028",
+      "status": "MET_FOR_RECORDED_NATIVE_BINDINGS",
+      "evidence": [".agent-workspace/invocation.json: provider.id, provider.model, provider.launch_config", "MI-NORMAL-001-ASSETS/assets-progress.json: native_execution", "development/test-tools/resolve-role.py:122-163", "development/test-tools/tests/test_resolve_role.py:99-135"],
+      "review_statement": "The reviewer invocation exactly records codex/gpt-5.6-terra/reasoning_effort=max/service_tier=normal, and M03 records its actual test_author binding. This review did not execute the resolver or launch a provider."
+    },
+    {
+      "id": "REQ-029",
+      "status": "MET_WITH_SCOPE_LIMIT",
+      "evidence": ["MI-NORMAL-001-BUILD/build-progress.json: requirement_credit.REQ-029", "MI-NORMAL-001-ASSETS/assets-progress.json: requirement_credit.REQ-029"],
+      "review_statement": "The accepted M01-M03 evidence expressly records no benchmark or learned-selector work; this review makes no additional selector claim."
+    },
+    {
+      "id": "CONTROL-READY",
+      "status": "PARTIAL",
+      "evidence": ["development/test-tools/tests/fixtures/fixture_manifest.json:29-44", "development/test-tools/tests/test_fixture_controls.py:175-554", "MI-NORMAL-001-ASSETS/assets-progress.json: verification.control_ready"],
+      "review_statement": "Manifest commands, direct-run designated gaps, and consumers are coherent for the finite closure, except that CHECK-001 prevents a strict cleanup-safety proof."
+    }
+  ],
+  "findings": [
+    {
+      "id": "CHECK-001",
+      "severity": "HIGH",
+      "classification": "strict_m03_test_only_defect",
+      "violated_requirement_or_invariant": "REQ-027 / CONTROL-READY exact-owned-descendant cleanup safety: a force-kill must remain scoped to the recorded fixture descendant, including cleanup retries/finalizers.",
+      "source_links": [
+        "development/test-tools/tests/test_fixture_controls.py:74-89",
+        "development/test-tools/tests/test_fixture_controls.py:108-127",
+        "development/test-tools/tests/test_fixture_controls.py:520-554",
+        "development/test-tools/tests/fixtures/control_child.py:84-117"
+      ],
+      "concrete_trigger": "After line 520 successfully taskkills the recorded descendant and lines 528-531 observe it absent, the operating system can reuse descendant_pid before the finally block at lines 550-554. _cleanup_pids then treats any process at that numeric PID as the fixture process and invokes taskkill /PID <pid> /T /F. The same PID-only finalizer is also used by the slow-success and lost-handle cases.",
+      "consequence": "An unrelated process and its descendant tree can be force-terminated. A passing readback establishes only numeric-PID absence/presence, not that every force-kill was still owned by this fixture, so it cannot supply the claimed strict exact-owned-descendant cleanup proof.",
+      "smallest_owning_route": "M03 only: strengthen control_child.py and test_fixture_controls.py to carry and verify a durable descendant identity (for example a nonce plus creation identity/validated command) immediately before each taskkill, and make a non-matching finalizer a safe no-op. Do not add an M02 production helper or change the frozen harness for this fixture-only repair.",
+      "evidence_claim_affected": "MI-NORMAL-001-ASSETS/assets-progress.json: verification.owned_descendant_cleanup = 'Exact recorded PID tree terminated; absence read back'."
+    }
+  ],
+  "classification_summary": {
+    "material_producer_defect": [],
+    "strict_m03_test_only_defect": ["CHECK-001"],
+    "operational_report_fault": [],
+    "no_finding": [
+      "Manifest command strings and consumer assertions cohere with the named fixture layout.",
+      "Routine, middle, and heavy bases are separately laid out and carry the intended designated gaps in the inspected source.",
+      "The lost-handle case records a child PID/checkpoint and observes its completion without retaining the Popen handle.",
+      "M02's no-helper decision is consistent with accepted_tip=a54ad14, changed_paths=[], and the stdlib-only fixture mechanisms.",
+      "The four accepted M03 member-evidence hashes match the assets checkpoint."
+    ]
+  },
+  "gaps_and_nonclaims": [
+    "No tests, worker launches, provider launches, repairs, commits, or acceptance decisions were performed by this reviewer.",
+    "Pass counts and runtime behavior are reported only as accepted M01-M03 evidence; they were not re-executed in this review.",
+    "Per ROOT correction event b43835119fdd4cc6b75b9289a7e08c90, discovery stopped after the named fixture/resolver surface and frozen checkpoint integrity readback. The current canonical repair files were not re-opened in this pass; no harness finding is made because no reproduced blocker or direct invalidation was established.",
+    "This report does not turn unperformed M08/M09 work, style preferences, or deferred canonical-harness edge cases into defects.",
+    "Recommendation is evidence-based review advice only and is not ROOT acceptance."
+  ],
+  "protected_scope_confirmation": {
+    "readback": {
+      "review_lane_head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "review_lane_staged_diff": [],
+      "review_lane_source_diff": [],
+      "managed_overlay_paths_only": [
+        ".codex/hooks/orchestrator_harness_post_tool_use.py",
+        ".codex/hooks/orchestrator_harness_stop.py",
+        ".agent-workspace/",
+        ".codex/skills/lane-assignment/",
+        ".codex/skills/manager-notify/"
+      ],
+      "product_main_head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "product_main_clean": true,
+      "canonical_harness_head": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "canonical_harness_clean": true
+    },
+    "reviewer_writes": [
+      "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/result.json",
+      "worktree-root RESULT.json (required after this report)"
+    ],
+    "confirmation": "No source commit, staged change, or source diff was introduced by the reviewer; the observed lane differences are managed native overlays."
+  },
+  "recommendation": "FINDINGS",
+  "root_acceptance": "NOT_DECIDED"
+}

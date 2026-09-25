@@ -1,0 +1,2 @@
+# Local credentials and connection strings. Never commit these files.
+.secrets/

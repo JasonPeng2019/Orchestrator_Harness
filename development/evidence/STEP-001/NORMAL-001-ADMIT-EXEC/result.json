@@ -1,0 +1,535 @@
+{
+  "authority_note": "Factual admission readback evidence produced by the routine EXEC member. This is not ROOT acceptance and does not decide the next edge.",
+  "byte_equality_detail": {
+    "deployed_files_excluding_git": 272,
+    "extra_kinds": [
+      "__pycache__/*.pyc bytecode"
+    ],
+    "extra_vs_tracked_count": 16,
+    "frozen_full_tree_files": 286,
+    "match": 255,
+    "mismatch": 1,
+    "mismatched_paths": [
+      "harness-config.json"
+    ],
+    "missing": 0,
+    "tracked_total": 256
+  },
+  "capacity": {
+    "evidence": "active-lanes.json lists exactly one lane; MONITOR.json watched_lane_count=1",
+    "process_counts_not_used_for_capacity": true,
+    "second_active_lane_exists": false,
+    "serialized_capacity": 1,
+    "shared_ollama_profile": true
+  },
+  "card_id": "CARD-NORMAL-001-ADMIT-EXEC",
+  "commands": [
+    {
+      "cmd": "git -C references/harness-single rev-parse HEAD",
+      "exit_code": 0
+    },
+    {
+      "cmd": "git -C references/harness-single rev-parse --abbrev-ref HEAD",
+      "exit_code": 0
+    },
+    {
+      "cmd": "git -C references/harness-single status --porcelain=v1",
+      "exit_code": 0,
+      "porcelain_lines": 0
+    },
+    {
+      "cmd": "git -C references/harness-single ls-files",
+      "exit_code": 0,
+      "tracked_files": 256
+    },
+    {
+      "cmd": "git -C development/product/worktree_example rev-parse HEAD",
+      "exit_code": 0
+    },
+    {
+      "cmd": "git -C development/product/worktree_example rev-parse --abbrev-ref HEAD",
+      "exit_code": 0
+    },
+    {
+      "cmd": "git -C development/product/worktree_example status --porcelain=v1",
+      "exit_code": 0,
+      "porcelain_lines": 0
+    },
+    {
+      "cmd": "git -C development/product/worktree_example ls-files",
+      "exit_code": 0,
+      "tracked_files": 1531
+    },
+    {
+      "cmd": "git -C development/dogfood/harness rev-parse HEAD",
+      "exit_code": 128,
+      "note": "B has no independent git history; resolves inside the root superproject whose HEAD is unresolvable"
+    },
+    {
+      "cmd": "SHA256 per-file comparison: 256 frozen tracked files vs same relative paths under development/dogfood/harness",
+      "exit_code": 0,
+      "match": 255,
+      "mismatch": 1,
+      "missing": 0
+    },
+    {
+      "cmd": "python development/test-tools/resolve-role.py --mapping .plans/SUBAGENT_ROLE_MODEL_MAPPING.json --harness-root development/dogfood/harness routine",
+      "exit_code": 0
+    },
+    {
+      "cmd": "python development/test-tools/resolve-role.py --mapping .plans/SUBAGENT_ROLE_MODEL_MAPPING.json --harness-root development/product/worktree_example/harness routine",
+      "exit_code": 0
+    },
+    {
+      "cmd": "read .harness-runtime/RUNTIME_STATE.json",
+      "exit_code": 0
+    },
+    {
+      "cmd": "read .harness-runtime/CURRENT_EPOCH.json",
+      "exit_code": 0
+    },
+    {
+      "cmd": "read .harness-runtime/epochs/c1fc85e7500b402689848be335a4381c/epoch-state.json",
+      "exit_code": 0
+    },
+    {
+      "cmd": "read .harness-runtime/epochs/c1fc85e7500b402689848be335a4381c/active-lanes.json",
+      "exit_code": 0
+    },
+    {
+      "cmd": "read .harness-runtime/epochs/c1fc85e7500b402689848be335a4381c/lanes/normal-001-admit-exec/lane.json",
+      "exit_code": 0
+    },
+    {
+      "cmd": "read .harness-runtime/monitor/MONITOR.json",
+      "exit_code": 0
+    },
+    {
+      "cmd": "read .harness-runtime/resources/RESOURCE_MANIFEST.json",
+      "exit_code": 0
+    },
+    {
+      "cmd": "read .harness-runtime/manager/QUEUE.json",
+      "exit_code": 0
+    },
+    {
+      "cmd": "read development/dogfood/harness/harness-config.json",
+      "exit_code": 0
+    },
+    {
+      "cmd": "read development/dogfood/harness/resource-manifest.json",
+      "exit_code": 0
+    },
+    {
+      "cmd": "scratch create/read/delete under development/evidence/STEP-001/NORMAL-001-ADMIT-EXEC",
+      "exit_code": 0
+    },
+    {
+      "cmd": "git -C <worktree> status --porcelain=v1",
+      "exit_code": 0,
+      "porcelain_lines": 5
+    },
+    {
+      "cmd": "python .agent-workspace/lane-queue.py acknowledge --event-id fc94b75d64f54552ab2190ec0df4ae19",
+      "exit_code": 0
+    }
+  ],
+  "finding_credit_map": [
+    {
+      "admission_fact": "Frozen source and product baseline identities are exact and clean; deployed builder matches frozen source byte-for-byte except the local two-key config; runtime is OPEN on a fresh active epoch with a healthy identity-matching monitor; one serialized native lane is active. No product behavior was implemented or tested by this member.",
+      "requirement": "REQ-001"
+    },
+    {
+      "admission_fact": "Ownership boundary is observable in records only: the epoch is launcher-owned, the lane record is separate from controller status, and no outer/inner delegation was exercised by this member.",
+      "requirement": "REQ-027"
+    },
+    {
+      "admission_fact": "The routine role resolves to the exact requested binding (codex / deepseek-v4.1-flash:cloud / ollama / high / normal) through resolve-role.py with exit code 0, and that exact binding is the one recorded as launched for this lane. No substitution PASS is claimed.",
+      "requirement": "REQ-028"
+    },
+    {
+      "admission_fact": "Only admission readback was performed: no benchmark adapter, task, subset, scored cohort, or learner work was executed.",
+      "requirement": "REQ-029"
+    }
+  ],
+  "identities": {
+    "config_identity_expected": "8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5",
+    "config_identity_observed": "8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5",
+    "controller_launcher_argv": [
+      "python",
+      "-m",
+      "orchestrator_harness.controller",
+      "normal-001-admit-exec"
+    ],
+    "controller_launcher_entry": "python -m orchestrator_harness.controller",
+    "controller_status": {
+      "acceptance_advancement": null,
+      "cleanup_proven": false,
+      "controller_state": "running",
+      "process_boundary": {
+        "creation_time": "windows-filetime:134344554790540362",
+        "kind": "windows-job",
+        "root_pid": 67616
+      },
+      "result_state": "absent",
+      "schema": "controller-status/v1",
+      "updated_at": "2026-09-21T09:11:19.723940Z"
+    },
+    "deployed_builder": {
+      "files_excluding_git": 272,
+      "independent_git_repo": false,
+      "local_config_exclusion": "harness-config.json",
+      "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/dogfood/harness"
+    },
+    "frozen_source": {
+      "branch": "working/memory-v1",
+      "clean": true,
+      "head": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/references/harness-single",
+      "tracked_files": 256
+    },
+    "invocation_record": {
+      "content_hash": "a1ef544cc6aeb0dfef26433480bc70ff0723b03548b63cd6243df1d44546bf59",
+      "created_at": "2026-09-21T09:11:13.708627Z",
+      "env": {},
+      "exclusive_resources": [],
+      "schema": "controller-invocation/v1"
+    },
+    "lane_record": {
+      "lane_id": "normal-001-admit-exec",
+      "launch_pending": false,
+      "lifecycle": "running",
+      "process": {
+        "creation_time": "windows-filetime:134344554788302603",
+        "pid": 68464
+      },
+      "run_id": "6e88f977cb2145319da2793c9d03c703",
+      "schema": "lane/v1"
+    },
+    "manager_queue": {
+      "epoch_id": "c1fc85e7500b402689848be335a4381c",
+      "events": 0,
+      "queue_id": "94083717bdab411fbe0c6c9977e6bb27"
+    },
+    "monitor": {
+      "config_identity": "8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5",
+      "health": "healthy",
+      "identity_matches_expected": true,
+      "last_heartbeat_at": "2026-09-21T09:18:39.766644Z",
+      "pid": 54508,
+      "schema": "monitor/v1",
+      "started_at": "2026-09-21T09:09:39.098782Z",
+      "stop_requested": false,
+      "watched_lane_count": 1
+    },
+    "overlay_receipt": {
+      "applied_at": "2026-09-21T09:11:13.701628Z",
+      "base_cache_ref": "super-cache/workspace",
+      "profile": "managed",
+      "provider_payload": "adapter-payloads/codex"
+    },
+    "product_baseline_expected": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "product_root": {
+      "branch": "main",
+      "clean": true,
+      "head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example",
+      "tracked_files": 1531
+    },
+    "provider": {
+      "id": "codex",
+      "launch_config": {
+        "launcher": "ollama",
+        "reasoning_effort": "high",
+        "service_tier": "normal"
+      },
+      "model": "deepseek-v4.1-flash:cloud"
+    },
+    "repository_root": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3",
+    "runtime": {
+      "epoch_id": "c1fc85e7500b402689848be335a4381c",
+      "epoch_lane_mode": "managed",
+      "epoch_lifecycle": "active",
+      "epoch_opened_at": "2026-09-21T09:11:11.932544Z",
+      "epoch_ownership": "launcher",
+      "queue_id": "94083717bdab411fbe0c6c9977e6bb27",
+      "runtime_state": "OPEN",
+      "runtime_state_updated_at": "2026-09-21T09:09:39.055795Z"
+    },
+    "runtime_resource_manifest": {
+      "resources": [],
+      "schema": "resource-manifest/v1"
+    }
+  },
+  "invocation_id": "INVOCATION-NORMAL-001-ADMIT-EXEC",
+  "lane_id": "normal-001-admit-exec",
+  "module_instance_id": "MI-NORMAL-001-ADMIT",
+  "observations": [
+    {
+      "actual": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "check": "frozen_source_head",
+      "equal": true,
+      "expected": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8"
+    },
+    {
+      "actual": "clean (0 porcelain lines)",
+      "check": "frozen_source_clean",
+      "equal": true,
+      "expected": "clean (0 porcelain lines)"
+    },
+    {
+      "actual": 256,
+      "check": "frozen_tracked_file_count",
+      "equal": true,
+      "expected": 256
+    },
+    {
+      "actual": "missing=0, mismatch=1 (harness-config.json), match=255",
+      "check": "deployed_tracked_byte_equality",
+      "equal": true,
+      "expected": "256 tracked frozen files byte-match B except harness-config.json"
+    },
+    {
+      "actual": 0,
+      "check": "deployed_missing_count",
+      "equal": true,
+      "expected": 0
+    },
+    {
+      "actual": 0,
+      "check": "deployed_mismatch_count_excluding_local_config",
+      "equal": true,
+      "expected": 0
+    },
+    {
+      "actual": "harness-config.json is the sole differing tracked file",
+      "check": "deployed_local_config_mismatch",
+      "equal": true,
+      "expected": "harness-config.json is the sole permitted difference"
+    },
+    {
+      "actual": "16 extra files, all non-source __pycache__/*.pyc bytecode",
+      "check": "deployed_extra_files",
+      "equal": true,
+      "expected": "no extra tracked source",
+      "note": "extras are untracked bytecode caches, not tracked source"
+    },
+    {
+      "actual": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "check": "product_baseline_head",
+      "equal": true,
+      "expected": "a54ad14a8f59409ee1e88c2473e3617c123f20b8"
+    },
+    {
+      "actual": "clean (0 porcelain lines)",
+      "check": "product_main_clean",
+      "equal": true,
+      "expected": "clean (0 porcelain lines)"
+    },
+    {
+      "actual": [
+        "root_workspace",
+        "managed_coordination"
+      ],
+      "check": "b_config_two_keys",
+      "equal": true,
+      "expected": [
+        "root_workspace",
+        "managed_coordination"
+      ]
+    },
+    {
+      "actual": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example",
+      "check": "b_root_binding",
+      "equal": true,
+      "expected": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example"
+    },
+    {
+      "actual": "zero resources",
+      "check": "b_resource_manifest",
+      "equal": true,
+      "expected": "zero resources"
+    },
+    {
+      "actual": "OPEN",
+      "check": "runtime_state",
+      "equal": true,
+      "expected": "OPEN"
+    },
+    {
+      "actual": "c1fc85e7500b402689848be335a4381c",
+      "check": "current_epoch_id",
+      "equal": true,
+      "expected": "c1fc85e7500b402689848be335a4381c"
+    },
+    {
+      "actual": "lifecycle=active, opened_at=2026-09-21T09:11:11.932544Z",
+      "check": "epoch_fresh_active",
+      "equal": true,
+      "expected": "active epoch opened at/after lane dispatch boundary"
+    },
+    {
+      "actual": "8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5",
+      "check": "config_identity",
+      "equal": true,
+      "expected": "8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5"
+    },
+    {
+      "actual": "healthy",
+      "check": "monitor_health",
+      "equal": true,
+      "expected": "healthy"
+    },
+    {
+      "actual": true,
+      "check": "monitor_identity_matches_config",
+      "equal": true,
+      "expected": true
+    },
+    {
+      "actual": [
+        "--provider",
+        "codex",
+        "--model",
+        "deepseek-v4.1-flash:cloud",
+        "--provider-option",
+        "reasoning_effort=high",
+        "--provider-option",
+        "service_tier=normal",
+        "--provider-option",
+        "launcher=ollama"
+      ],
+      "check": "resolve_role_argv",
+      "equal": true,
+      "expected": [
+        "--provider",
+        "codex",
+        "--model",
+        "deepseek-v4.1-flash:cloud",
+        "--provider-option",
+        "reasoning_effort=high",
+        "--provider-option",
+        "service_tier=normal",
+        "--provider-option",
+        "launcher=ollama"
+      ]
+    },
+    {
+      "actual": {
+        "id": "codex",
+        "launch_config": {
+          "launcher": "ollama",
+          "reasoning_effort": "high",
+          "service_tier": "normal"
+        },
+        "model": "deepseek-v4.1-flash:cloud"
+      },
+      "check": "lane_provider_identity",
+      "equal": true,
+      "expected": {
+        "id": "codex",
+        "launch_config": {
+          "launcher": "ollama",
+          "reasoning_effort": "high",
+          "service_tier": "normal"
+        },
+        "model": "deepseek-v4.1-flash:cloud"
+      }
+    },
+    {
+      "actual": 1,
+      "check": "active_lane_count",
+      "equal": true,
+      "expected": 1
+    },
+    {
+      "actual": "normal-001-admit-exec",
+      "check": "single_active_lane_identity",
+      "equal": true,
+      "expected": "normal-001-admit-exec"
+    },
+    {
+      "actual": true,
+      "check": "worktree_readable",
+      "equal": true,
+      "expected": true
+    },
+    {
+      "actual": true,
+      "check": "scratch_roundtrip",
+      "equal": true,
+      "expected": true
+    },
+    {
+      "actual": "deleted; directory empty",
+      "check": "scratch_cleanup",
+      "equal": true,
+      "expected": "deleted and directory empty"
+    }
+  ],
+  "recorded_at": "2026-09-21T09:19:44.007924Z",
+  "role_resolution": {
+    "actual_argv": [
+      "--provider",
+      "codex",
+      "--model",
+      "deepseek-v4.1-flash:cloud",
+      "--provider-option",
+      "reasoning_effort=high",
+      "--provider-option",
+      "service_tier=normal",
+      "--provider-option",
+      "launcher=ollama"
+    ],
+    "cross_check_equal": true,
+    "cross_check_harness_root": "development/product/worktree_example/harness",
+    "dispatched_role": "routine",
+    "equal": true,
+    "exit_code": 0,
+    "expected_argv": [
+      "--provider",
+      "codex",
+      "--model",
+      "deepseek-v4.1-flash:cloud",
+      "--provider-option",
+      "reasoning_effort=high",
+      "--provider-option",
+      "service_tier=normal",
+      "--provider-option",
+      "launcher=ollama"
+    ],
+    "harness_root": "development/dogfood/harness",
+    "mapping": ".plans/SUBAGENT_ROLE_MODEL_MAPPING.json"
+  },
+  "run_id": "6e88f977cb2145319da2793c9d03c703",
+  "schema": "memory-harness-admission-readback/v1",
+  "scratch_proof": {
+    "created": true,
+    "deleted": true,
+    "directory": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/NORMAL-001-ADMIT-EXEC",
+    "directory_empty_after_cleanup": true,
+    "exists_after_create": true,
+    "exists_after_delete": false,
+    "file": "scratch-67fac1ba05dd4fff922e228751adbbe6.txt",
+    "read_back_matched_payload": true,
+    "worktree_read_confirmed": true
+  },
+  "status": "SATISFIED",
+  "unresolved": [
+    "The root superproject HEAD is unresolvable (git exit 128) because the repository uses submodule-style entries; recorded as a fact, and B itself has no independent git history.",
+    "Non-source __pycache__ bytecode composition differs between frozen source and B (14 frozen-only .pyc, 16 B-only .pyc); this is outside the tracked-source byte-equality claim and is not a tracked-file difference."
+  ],
+  "worktree_content": {
+    "branch": "lane/normal-001-admit-exec",
+    "changed_paths": [
+      ".codex/hooks/orchestrator_harness_post_tool_use.py",
+      ".codex/hooks/orchestrator_harness_stop.py",
+      ".agent-workspace/",
+      ".codex/skills/lane-assignment/",
+      ".codex/skills/manager-notify/"
+    ],
+    "head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "note": "Runtime-staged hook/bootstrap artifacts only; this member wrote no tracked product source.",
+    "porcelain_lines": 5
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schema": "memory-harness-assets-progress/v1",
+  "module_instance_id": "MI-NORMAL-001-ASSETS",
+  "recorded_at": "2026-09-21T10:30:21.1412299Z",
+  "status": "ACCEPTED",
+  "produces": "MI-NORMAL-001-ASSETS.independent asset set and discovery",
+  "accepted_product_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+  "product_tip_changed": false,
+  "asset_root": "development/test-tools/tests",
+  "created_asset_count": 13,
+  "preserved_existing_asset": "development/test-tools/tests/test_resolve_role.py",
+  "asset_identity": "Every accepted asset path and SHA-256 is recorded in ../NORMAL-001-ASSETS-EXEC/result.json.",
+  "fixture_contract": {
+    "control_suite": "development/test-tools/tests/test_fixture_controls.py",
+    "manifest": "development/test-tools/tests/fixtures/fixture_manifest.json",
+    "finite_child": "development/test-tools/tests/fixtures/control_child.py",
+    "independent_bases": [
+      "routine: only deliberate above-high clamp defect",
+      "middle: independently correct clamp; parse_numbers absent",
+      "heavy: independently correct clamp and parse_numbers; parse_and_clamp absent"
+    ],
+    "heavy_oracle": "parse_and_clamp('-2, 0, 5, 9', 0, 5) == [0, 0, 5, 5]; invalid bounds or token raises ValueError",
+    "cross_base_consumption": false
+  },
+  "native_execution": {
+    "lane_id": "normal-001-assets-exec",
+    "run_id": "5ec7231226504c05a59271057681ca2a",
+    "epoch_id": "79473686146a479ab1341dc8a11c678f",
+    "workflow_role": "test_author",
+    "provider": "codex",
+    "model": "glm-5.3:cloud",
+    "reasoning_effort": "xhigh",
+    "service_tier": "normal",
+    "launcher": "ollama",
+    "native_outcome": "PASS",
+    "result_hash": "71fc0d9d9bf41e12b5830d9a40e24a17cc769c5756ce57e3771b92f2664ebb47",
+    "result_hash_verified": true,
+    "root_review": "PASS",
+    "root_approval": "ACCEPTED"
+  },
+  "root_corrections": [
+    "Stopped excess discovery and directed implementation of the exact named assets.",
+    "Eliminated unclosed-Popen ResourceWarnings, added finite PID-state polling, lengthened owned-descendant linger to prove cleanup rather than natural expiry, and replaced mutable/stale native evidence hashes with stable verified records."
+  ],
+  "verification": {
+    "control_ready": "8 tests passed",
+    "resolver_suite": "7 tests passed",
+    "combined_top_level_discovery": "15 tests passed",
+    "resource_warning_policy": "ROOT rerun with ResourceWarning promoted to error passed",
+    "routine_prerequisites": "PASS; designated task fails only GAP-ROUTINE-ABOVE-HIGH",
+    "middle_prerequisites": "PASS; designated task fails only GAP-MIDDLE-PARSE-NUMBERS",
+    "heavy_prerequisites": "PASS; designated task fails only GAP-HEAVY-PARSE-AND-CLAMP",
+    "owned_descendant_cleanup": "Exact recorded PID tree terminated; absence read back",
+    "asset_hashes_verified": 13,
+    "stable_native_evidence_hashes_verified": 4,
+    "generated_bytecode_remaining": 0
+  },
+  "evidence": {
+    "test_author_report": {
+      "path": "../NORMAL-001-ASSETS-EXEC/result.json",
+      "sha256": "13b309641ae5e7a772ff5bfdfe7cafa14414a41a74a6b00c7bb641728006c8ed"
+    },
+    "native_result": {
+      "path": "../NORMAL-001-ASSETS-EXEC/native-result.json",
+      "sha256": "eb1c1f8b938dc03ee15aea4adc5b7073294289f5abb7628c364bf88c0c8edb2c"
+    },
+    "completion_review": {
+      "path": "../NORMAL-001-ASSETS-EXEC/completion-review.json",
+      "sha256": "6776a7aa2630ed5a85d43477f80cd70b9dab94c693d0535e30e8782ca12f222c"
+    },
+    "acceptance": {
+      "path": "../NORMAL-001-ASSETS-EXEC/orchestrator-acceptance.json",
+      "sha256": "e50ae65beacd5749e905bfe70e8196f1607c4a223232e0d3e6fd8f469dc020b4"
+    }
+  },
+  "cleanup": {
+    "lane_retired": true,
+    "provider_pid": 61008,
+    "provider_process_absent": true,
+    "monitor_pid": 45696,
+    "monitor_process_absent": true,
+    "runtime_state": "CLOSED",
+    "epoch_lifecycle": "closed",
+    "managed_overlay_removed": true,
+    "worktree_removed_without_force": true,
+    "branch_removed_without_force": true,
+    "product_main_clean": true,
+    "canonical_reference_clean": true
+  },
+  "requirement_credit": {
+    "REQ-001": "Independent pre-product asset construction only; no product behavior credit claimed.",
+    "REQ-027": "Owned finite child identities and exact cleanup fixture are now available; actual readiness consumption remains M08.",
+    "REQ-028": "Actual test_author binding is recorded; mapped native role evidence remains limited to launched roles.",
+    "REQ-029": "No benchmark or learned-selector work was executed.",
+    "CONTROL-READY": "Independent executable assets are accepted; actual ROOT control-boundary consumption remains M08."
+  },
+  "unresolved": [],
+  "next_module": "MI-NORMAL-001-CHECK"
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "memory-harness-admission-progress/v1",
+  "module_instance_id": "MI-NORMAL-001-ADMIT",
+  "recorded_at": "2026-09-21T09:23:52.5464197Z",
+  "status": "SATISFIED",
+  "produces": "MI-NORMAL-001-ADMIT.verified prerequisite",
+  "source": {
+    "canonical_path": "references/harness-single",
+    "canonical_commit": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+    "canonical_worktree_clean": true,
+    "deployed_path": "development/dogfood/harness",
+    "tracked_file_count": 256,
+    "local_config_exclusion": "harness-config.json",
+    "deployable_files_compared": 255,
+    "missing_files": [],
+    "byte_mismatches_excluding_local_config": [],
+    "extra_tracked_source_files": [],
+    "non_source_extras": "16 untracked __pycache__/*.pyc files; not credited as source"
+  },
+  "canonical_repair": {
+    "trigger": "Real Windows managed bootstrap was blocked by failed-checkout retry poisoning and collisions with valid tracked provider configuration and ROOT-installed hook payloads.",
+    "scope": [
+      "orchestrator_harness/bootstrap.py",
+      "orchestrator_harness/tests/test_v2_materialization.py"
+    ],
+    "commit": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+    "verification": [
+      "40 focused materialization/operator/lifecycle tests passed",
+      "269 ordinary top-level harness tests passed with 2 skipped",
+      "106 selected tests passed in the synchronized product copy",
+      "real native review lane completed, was accepted, retired, and cleaned"
+    ],
+    "review_evidence": [
+      "EXC-BUILDER-BUG-review.json",
+      "EXC-BUILDER-BUG-native-result.json",
+      "EXC-BUILDER-BUG-review-disposition.json"
+    ],
+    "scope_boundary": "Unencountered concurrency, tracked-materialized-binding, and rollback-process-launch edge cases remain deferred; do not expand harness-single unless one blocks this run."
+  },
+  "product_baseline": {
+    "path": "development/product/worktree_example",
+    "branch": "main",
+    "commit": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "clean": true,
+    "core_longpaths": true
+  },
+  "deployed_configuration": {
+    "root_workspace": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example",
+    "managed_coordination": "enabled",
+    "resource_count": 0,
+    "config_identity": "8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5"
+  },
+  "role_resolution": {
+    "role": "routine",
+    "actual_argv": [
+      "--provider",
+      "codex",
+      "--model",
+      "deepseek-v4.1-flash:cloud",
+      "--provider-option",
+      "reasoning_effort=high",
+      "--provider-option",
+      "service_tier=normal",
+      "--provider-option",
+      "launcher=ollama"
+    ],
+    "matched_expected": true,
+    "resolver_tests": "7 passed"
+  },
+  "native_readback": {
+    "lane_id": "normal-001-admit-exec",
+    "run_id": "6e88f977cb2145319da2793c9d03c703",
+    "epoch_id": "c1fc85e7500b402689848be335a4381c",
+    "provider": "codex",
+    "model": "deepseek-v4.1-flash:cloud",
+    "launcher": "ollama",
+    "serialized_capacity": 1,
+    "member_report": "../NORMAL-001-ADMIT-EXEC/result.json",
+    "native_result": "../NORMAL-001-ADMIT-EXEC/native-result.json",
+    "result_hash": "83485ae9496098675a268fd2d4ce2296d640a3c70a1225cbfd2623c807537ab4",
+    "result_hash_verified": true,
+    "member_status": "SATISFIED",
+    "native_outcome": "PASS",
+    "root_review": "PASS",
+    "root_approval": "ACCEPTED",
+    "completion_review": "../NORMAL-001-ADMIT-EXEC/completion-review.json",
+    "acceptance": "../NORMAL-001-ADMIT-EXEC/orchestrator-acceptance.json",
+    "scratch_roundtrip_and_cleanup": true
+  },
+  "cleanup": {
+    "lane_retired": true,
+    "provider_process_absent": true,
+    "controller_cleanup_proven": true,
+    "runtime_state": "CLOSED",
+    "worktree_removed": true,
+    "branch_removed": true,
+    "product_main_clean": true
+  },
+  "requirement_credit": {
+    "REQ-001": "Admission prerequisite only; no product behavior credit claimed.",
+    "REQ-027": "Native outer ownership and cleanup identities observed; full nested behavior remains for later modules.",
+    "REQ-028": "Requested, resolved, and actual routine binding matched without substitution.",
+    "REQ-029": "No benchmark or learned-selector work was executed."
+  },
+  "unresolved": [],
+  "next_module": "MI-NORMAL-001-BUILD"
+}

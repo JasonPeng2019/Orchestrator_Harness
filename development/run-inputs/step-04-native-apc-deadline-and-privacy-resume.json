@@ -1,0 +1,17 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-04-native-apc-deadline-and-privacy-correction",
+  "branch": "lane/step-04-slice-native-apc-child",
+  "base_commit": "ab83a700557580054860c5e87fcfa25c1d7d256b",
+  "task": "Resume the exact rejected STEP-04 APC lane from commit ab83a70. Preserve its valid binding preflight, intact-card scrubbing, failed-launch retirement, tests, and setup-installed .codex/hooks edits; do not stage the hook edits. Correct only three behavior defects confirmed in review: (1) a prepared APC lane must fail closed if its copied task card is missing or contradicts a durable scrubbed-environment requirement, so controller/provider never inherit memory-control credentials; preserve legacy/all-off behavior; (2) a timed-out native bootstrap/launch/cleanup call must not create a late unbounded effect after the APC absolute deadline, while ambiguous ownership remains visible and no duplicate launch occurs; (3) the effective APC cutoff passed by PreparationService (stage deadline minus execution reserve) must be the same deadline used by the native launcher for that attempt, including queue, launch, collection, validation, and cleanup. Add focused failing regressions before the smallest correction, then rerun the direct APC and affected harness selectors. Commit only the correction and write a truthful RESULT.json through the existing lane protocol. Do not implement later plan steps, a new scheduler/reviewer, or changes to references/harness-single. Product root: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/goal.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-04-apc-child-produces-reviewable-proposal.md; C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-02-apc-child-produces-a-reviewable-plan.md.",
+  "acceptance_criteria": [
+    "Missing or altered APC task-card state cannot downgrade the scrubbed controller/provider environment; ordinary legacy/all-off launch remains compatible.",
+    "One effective absolute APC deadline governs native effects through cleanup; timeout cannot produce a late unbounded launch, and uncertain ownership remains exact and non-retried.",
+    "Focused APC and affected harness tests pass on the final commit; the result reports actual checks and limitations without claiming parent-plan acceptance."
+  ],
+  "deliverables": [
+    "A narrow correction to the existing APC bridge/child and candidate-harness launch boundary, with direct regressions for the three rejected behaviors.",
+    "One same-lane correction commit after ab83a70 and a valid native RESULT.json for ROOT review."
+  ],
+  "reason_for_acceptance_and_deliverables": "The previous correction was rejected for three remaining deadline and credential-isolation defects despite passing focused tests. This same-lane assignment repairs only those behavior failures, preserving useful work and the existing harness lifecycle."
+}

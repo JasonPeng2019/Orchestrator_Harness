@@ -1,0 +1,195 @@
+{
+  "schema": "memory-harness-review-correction-result/v1",
+  "status": "COMPLETE",
+  "review_type": "TEST_ONLY_CORRECTION",
+  "module_instance_id": "MI-NORMAL-001-CHECK",
+  "original_finding_id": "CHECK-001",
+  "reviewed_at": "2026-09-21T11:57:44.5760853Z",
+  "reviewer_native_identity": {
+    "repository_root": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3",
+    "worktree": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/e84a79e25f31478ab4f0e386ca36426d/normal-001-check-review-001-closure",
+    "lane_id": "normal-001-check-review-001-closure",
+    "branch": "lane/normal-001-check-review-001-closure",
+    "head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "base_commit": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "run_id": "cd643deb65f04350b5d4abc6b4eecf37",
+    "workflow_role": "reviewer",
+    "actual_resolution": [
+      "--provider",
+      "codex",
+      "--model",
+      "gpt-5.6-terra",
+      "--provider-option",
+      "reasoning_effort=max",
+      "--provider-option",
+      "service_tier=normal"
+    ]
+  },
+  "frozen_inputs_inspected": {
+    "original_finding_source": {
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/result.json",
+      "sha256": "df7bbdcd5e63f1cae145620c276afda14dcd8e6dcf47d2b91b169e019316863b",
+      "inspection_scope": "CHECK-001 only"
+    },
+    "root_route": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/root-verdict.json",
+      "sha256": "c38723d6021551ea3c066a1d468ee6fa087cd8aae5f208f7b267549793a74b8a"
+    },
+    "accepted_correction_checkpoint": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/pid-identity-correction-progress.json",
+      "sha256": "a9875a29e53bf16f685cbaf685d0c8af411de25b717900548f27b78447a93f7b"
+    },
+    "accepted_correction_evidence": [
+      {
+        "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/result.json",
+        "sha256": "5c99288addceb2baa956abb0cdf10836fdbc1043ee97a1d0862849536500a64c",
+        "canonical_content_hash": "6d02ba2961d973d233d8b5ecf8b24638394ca75b491e0af270178b188dd723b7"
+      },
+      {
+        "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/native-result.json",
+        "sha256": "93bb8ab47e5b8103c1d33be4c10386465b7f92d4879ea63d0d4cdf8be9e45fab",
+        "canonical_content_hash": "370330b909de569b5acf843a7690f89d62ed1cd27009ad9c4d62185ccdd275ed"
+      },
+      {
+        "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/completion-review.json",
+        "sha256": "57921be679611b3178309a262f58e4e1c198285c418ac58a0d4b23d34b9310c5",
+        "canonical_content_hash": "bf4e395a54c9f1063c4a0315380bd0658e2151e150f8ad9660f4cda170865813"
+      },
+      {
+        "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/orchestrator-acceptance.json",
+        "sha256": "70d847b918671faad56660a8899a076065158b55c958731a3cc37ec7b490597a",
+        "canonical_content_hash": "e1dc9105e20d50c49dd84c366d4ebffb966c4364e0ed153a9596eaf6d4d6b506"
+      }
+    ],
+    "corrected_source_surface": [
+      {
+        "path": "development/test-tools/tests/test_fixture_controls.py",
+        "sha256": "026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840"
+      },
+      {
+        "path": "development/test-tools/tests/fixtures/control_child.py",
+        "sha256": "6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518"
+      }
+    ]
+  },
+  "evidence_integrity": {
+    "all_supplied_byte_hashes_matched": true,
+    "checkpoint_recorded_correction_evidence_hashes_matched_actual_files": true,
+    "canonical_content_hashes_recomputed": true,
+    "correction_report_native_join": "The correction report's recomputed content hash is the one cited by native-result.json; native-result.json's recomputed content hash is the checkpoint's native_execution.result_hash and is cited by completion-review.json and orchestrator-acceptance.json.",
+    "root_check_support": "root-verdict.json admits CHECK-001 as P08 strict test-only work, restricts correction to the two inspected files, requires the stated mismatch-then-exact owned-fixture regression, and retains the return route through the affected check/review path."
+  },
+  "oracle_analysis": {
+    "decision": "MET_EQUAL_OR_STRONGER",
+    "force_kill_inventory": [
+      {
+        "path": "development/test-tools/tests/test_fixture_controls.py:195-218",
+        "behavior": "The sole Windows PID force-kill is taskkill /PID <pid> /T /F at lines 208-213; the POSIX SIGKILL fallback is under the same guard at lines 214-218. No PID force-kill exists in control_child.py."
+      }
+    ],
+    "incarnation_guard": "Before either force-kill path, lines 200-206 re-read the current creation identity for the requested PID and return None unless a recorded identity exists and exactly equals that fresh identity. The identity includes both pid and creation_filetime (lines 73-142), so invalid, absent, inaccessible, exited, reused, or mismatching processes fail closed without taskkill.",
+    "recorded_identity_and_finalizers": "Directly spawned fixture processes are recorded immediately after Popen at lines 56-71. The timeout cleanup at lines 151-159 and every _cleanup_pids finalizer attempt at lines 220-225 pass the cached recorded identity into the guarded terminator; an absent cache entry is therefore a safe no-op. Owner-test finalizers store and consume the checkpoint descendant identity at lines 620-633 and 700-704, and at lines 735-741 and 773-777.",
+    "owner_checkpoint": "control_child.py:153-179 starts the owned linger descendant, captures process_creation_identity(descendant.pid) immediately, and writes descendant_pid plus descendant_identity to the owner checkpoint. The test verifies the descendant is live and its checkpoint identity equals a fresh read at test_fixture_controls.py:614-633; the exact-owned cleanup test separately requires a non-null checkpoint identity at lines 735-738.",
+    "exact_owned_tree_behavior": "On exact identity equality, test_fixture_controls.py:208-213 preserves taskkill /PID <pid> /T /F. The owned-descendant test checks successful cleanup, descendant absence, and parent absence at lines 740-757; it preserves the cleanup command in its readback at lines 758-771.",
+    "regression_strength": "test_control_child_pid_identity_mismatch_is_safe_no_op at test_fixture_controls.py:588-704 uses an owned live owner/linger fixture only. It deliberately changes the recorded creation identity (lines 634-635), proves no taskkill and continued liveness (lines 637-655), then uses the same live fixture's exact identity, proves a real successful taskkill and PID absence (lines 657-682). This deterministically distinguishes mismatch from match without targeting an unrelated process.",
+    "call_spy_behavior": "The subprocess.run spy uses wraps=subprocess.run at lines 637-639 and 657-659. It observes calls but does not replace execution: the exact-match path continues into the real subprocess.run taskkill at lines 208-213. Behavior is not simulated.",
+    "preserved_existing_oracle": "The corrected source retains finite five-second checkpoint and PID-state deadlines at lines 178-193 and 245-265; slow-success checkpoint preservation at lines 454-536; lost-handle checkpoint/process-absence assertions at lines 538-586; and exact-match cleanup, process-absence, and parent-absence assertions at lines 706-777. No affected cleanup assertion or finite deadline was weakened in the inspected corrected surface."
+  },
+  "scope_analysis": {
+    "decision": "MET_TEST_ONLY",
+    "authorized_source_only": "The two current source hashes exactly match the P08 checkpoint's after hashes. The checkpoint and correction report both list only development/test-tools/tests/test_fixture_controls.py and development/test-tools/tests/fixtures/control_child.py as changed source paths; no product, helper, harness, configuration, runner, or acceptance-semantic source path is listed.",
+    "product_and_harness_readback": {
+      "product_main": {
+        "path": "development/product/worktree_example",
+        "branch": "main",
+        "head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+        "staged_diff": [],
+        "unstaged_diff": [],
+        "untracked": []
+      },
+      "canonical_harness": {
+        "path": "references/harness-single",
+        "branch": "working/memory-v1",
+        "head": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+        "staged_diff": [],
+        "unstaged_diff": [],
+        "untracked": []
+      }
+    },
+    "review_lane_readback": {
+      "branch": "lane/normal-001-check-review-001-closure",
+      "head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "staged_diff": [],
+      "source_diff": [],
+      "non_source_differences": [
+        ".codex/hooks/orchestrator_harness_post_tool_use.py",
+        ".codex/hooks/orchestrator_harness_stop.py",
+        ".agent-workspace/",
+        ".codex/skills/lane-assignment/",
+        ".codex/skills/manager-notify/"
+      ],
+      "conclusion": "Only managed overlays were present before the required RESULT.json output; no lane source commit or source diff was found."
+    },
+    "p08_route": "The accepted checkpoint confines the next action to the affected routine check and independent review. The ROOT route preserves P08's return through MI-NORMAL-001-CHECK to MI-NORMAL-001-ACCEPT; this report neither changes nor decides that route."
+  },
+  "contract_coverage": [
+    {
+      "criterion": "Every PID-based force-kill checks recorded PID plus fresh exact creation identity immediately before kill and fails closed",
+      "status": "MET",
+      "evidence": [
+        "development/test-tools/tests/test_fixture_controls.py:73-142",
+        "development/test-tools/tests/test_fixture_controls.py:195-218"
+      ]
+    },
+    {
+      "criterion": "Owner checkpoint captures live descendant identity and finalizers consume it",
+      "status": "MET",
+      "evidence": [
+        "development/test-tools/tests/fixtures/control_child.py:153-179",
+        "development/test-tools/tests/test_fixture_controls.py:620-633",
+        "development/test-tools/tests/test_fixture_controls.py:700-704",
+        "development/test-tools/tests/test_fixture_controls.py:735-741",
+        "development/test-tools/tests/test_fixture_controls.py:773-777"
+      ]
+    },
+    {
+      "criterion": "Regression proves owned-live mismatch safe no-op and exact-match real owned-tree cleanup",
+      "status": "MET",
+      "evidence": [
+        "development/test-tools/tests/test_fixture_controls.py:588-704",
+        "development/evidence/STEP-001/NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/result.json"
+      ]
+    },
+    {
+      "criterion": "Test-only scope and equal-or-stronger cleanup oracle preserve P08 boundaries",
+      "status": "MET",
+      "evidence": [
+        "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/root-verdict.json",
+        "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/pid-identity-correction-progress.json",
+        "development/test-tools/tests/test_fixture_controls.py:178-193",
+        "development/test-tools/tests/test_fixture_controls.py:245-265",
+        "development/test-tools/tests/test_fixture_controls.py:454-777"
+      ]
+    }
+  ],
+  "closure_decision": "CLOSED",
+  "findings": [],
+  "explicit_nonclaims": [
+    "No tests, worker/provider launches, repairs, commits, or acceptance decisions were performed by this reviewer.",
+    "Accepted correction test outcomes, durations, process readbacks, and ResourceWarning observations are inspected evidence only; they were not re-executed here.",
+    "This review does not reopen M01-M04 facts outside CHECK-001, deferred harness edge cases, M08/M09 work, style preferences, portability beyond the declared Windows host contract, benchmarks, or learned-selector scope.",
+    "This review does not claim ROOT acceptance, product acceptance, or completion of the P08 return route."
+  ],
+  "protected_scope_confirmation": {
+    "source_or_product_changes_by_reviewer": [],
+    "harness_changes_by_reviewer": [],
+    "only_reviewer_writes": [
+      "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW-001-CLOSURE/result.json",
+      "worktree-root RESULT.json"
+    ],
+    "confirmation": "Readback found the review lane at the frozen base with no source diff beyond managed overlays, product main clean at a54ad14a8f59409ee1e88c2473e3617c123f20b8, and canonical harness clean at f6948fb2673661b6c2cfb69cf47b23a198b3f5f8."
+  },
+  "recommendation": "CLEAN",
+  "recommendation_scope": "Review advice only; ROOT acceptance is NOT_DECIDED.",
+  "root_acceptance": "NOT_DECIDED"
+}

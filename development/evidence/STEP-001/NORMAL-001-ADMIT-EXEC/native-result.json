@@ -1,0 +1,25 @@
+{
+  "completed_at": "2026-09-21T09:19:44.007924Z",
+  "content_hash": "83485ae9496098675a268fd2d4ce2296d640a3c70a1225cbfd2623c807537ab4",
+  "evidence": [
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/NORMAL-001-ADMIT-EXEC/result.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/c1fc85e7500b402689848be335a4381c/normal-001-admit-exec/.agent-workspace/task-card.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/c1fc85e7500b402689848be335a4381c/normal-001-admit-exec/.agent-workspace/invocation.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/c1fc85e7500b402689848be335a4381c/normal-001-admit-exec/.agent-workspace/controller.status.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/c1fc85e7500b402689848be335a4381c/normal-001-admit-exec/.agent-workspace/controller.events.jsonl",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/c1fc85e7500b402689848be335a4381c/normal-001-admit-exec/.agent-workspace/harness-hook-binding.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/c1fc85e7500b402689848be335a4381c/normal-001-admit-exec/.agent-workspace/overlay-receipt.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/monitor/MONITOR.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/RUNTIME_STATE.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/CURRENT_EPOCH.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/epochs/c1fc85e7500b402689848be335a4381c/epoch-state.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/epochs/c1fc85e7500b402689848be335a4381c/active-lanes.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/epochs/c1fc85e7500b402689848be335a4381c/lanes/normal-001-admit-exec/lane.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/manager/QUEUE.json"
+  ],
+  "lane_id": "normal-001-admit-exec",
+  "outcome": "PASS",
+  "run_id": "6e88f977cb2145319da2793c9d03c703",
+  "schema": "result/v1",
+  "summary": "M01-A5/M01-A6 admission readback satisfied: frozen source at f6948fb is clean with all 256 tracked files byte-matching the deployed builder except the permitted local harness-config.json; product baseline a54ad14 is clean on main; the runtime is OPEN on fresh active epoch c1fc85e7500b402689848be335a4381c with a healthy identity-matching monitor; resolve-role.py routine output exactly equals the expected argv at exit 0; exactly one serialized native lane is active and this provider session created, read back, and deleted a unique scratch file under the assigned evidence directory. Durable member report written; this is factual evidence, not ROOT acceptance."
+}

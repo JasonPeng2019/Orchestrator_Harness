@@ -1,0 +1,37 @@
+{
+  "card_id": "CARD-NORMAL-001-ASSETS-EXEC",
+  "completed_at": "2026-09-21T10:26:02.121844Z",
+  "content_hash": "71fc0d9d9bf41e12b5830d9a40e24a17cc769c5756ce57e3771b92f2664ebb47",
+  "deliverable_id": "DEL-001",
+  "evidence": [
+    {
+      "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/NORMAL-001-ASSETS-EXEC/result.json",
+      "sha256": "13b309641ae5e7a772ff5bfdfe7cafa14414a41a74a6b00c7bb641728006c8ed"
+    },
+    {
+      "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/79473686146a479ab1341dc8a11c678f/normal-001-assets-exec/.agent-workspace/invocation.json",
+      "sha256": "d9f4077575aa3f9c68ba271b5b4956f66207c4f22c8f28e068347b65f62841d8"
+    },
+    {
+      "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/79473686146a479ab1341dc8a11c678f/normal-001-assets-exec/.agent-workspace/task-card.json",
+      "sha256": "186e5bafacfce44f858b4d552654e8c619510df2c47f63062d07e0cd37b2b302"
+    },
+    {
+      "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/79473686146a479ab1341dc8a11c678f/normal-001-assets-exec/.agent-workspace/overlay-receipt.json",
+      "sha256": "65f618e3cea1dfd7c205e495b1b65937f95f8bc1f56bf895dbf43078608f2cdf"
+    }
+  ],
+  "gate_id": "GATE-001",
+  "invocation_id": "INVOCATION-NORMAL-001-ASSETS-EXEC",
+  "lane_id": "normal-001-assets-exec",
+  "loop_id": "LOOP-001",
+  "module_instance_id": "MI-NORMAL-001-ASSETS",
+  "outcome": "PASS",
+  "report_status": "REVIEWABLE",
+  "run_id": "5ec7231226504c05a59271057681ca2a",
+  "schema": "result/v1",
+  "stage_cohort_id": "COHORT-001",
+  "summary": "MI-NORMAL-001-ASSETS assets were authored and qualified. CONTROL-READY passed 8 tests, the resolver suite passed 7 tests, and combined discovery passed 15 tests with no ResourceWarning. Routine, middle, and heavy prerequisites all passed; each designated pre-task check failed only for its intended gap. Real subprocess controls proved terminal/refill/status/checkpoint/lost-handle behavior and exact owned PID-tree cleanup.",
+  "workflow_role": "test_author",
+  "worktree": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/79473686146a479ab1341dc8a11c678f/normal-001-assets-exec"
+}

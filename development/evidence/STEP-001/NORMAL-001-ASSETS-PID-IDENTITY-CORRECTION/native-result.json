@@ -1,0 +1,27 @@
+{
+  "schema": "result/v1",
+  "lane_id": "normal-001-assets-pid-identity-correction",
+  "run_id": "3021675fc3bf41afb300e7ef7b34edbb",
+  "outcome": "PASS",
+  "summary": "P08 CHECK-001 correction is REVIEWABLE: the focused mismatch regression failed before implementation, both affected test IDs passed after implementation, the complete control file passed 9 tests with ResourceWarning promoted to error, mismatching identity was a proven safe no-op, and exact-match owned cleanup succeeded with absence read back. Only the two authorized test files, the correction evidence report, and this result changed. Product main a54ad14a and canonical harness f6948fb remain clean; no commit was made.",
+  "evidence": [
+    {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\evidence\\STEP-001\\NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION\\result.json",
+      "sha256": "5c99288addceb2baa956abb0cdf10836fdbc1043ee97a1d0862849536500a64c",
+      "content_hash": "6d02ba2961d973d233d8b5ecf8b24638394ca75b491e0af270178b188dd723b7",
+      "schema": "memory-harness-assets-correction-result/v1"
+    },
+    {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\test_fixture_controls.py",
+      "before_sha256": "3851ed4bf4e208bf4ded0ffbf1e4fb28206cddaac5734e7f7246940f3731571a",
+      "after_sha256": "026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840"
+    },
+    {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\test-tools\\tests\\fixtures\\control_child.py",
+      "before_sha256": "e5fb9f90aa2173fc5f2507ce3d55dd3ec4c8b4e5141411295f65f8a33011a18a",
+      "after_sha256": "6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518"
+    }
+  ],
+  "completed_at": "2026-09-21T11:38:15.206051Z",
+  "content_hash": "370330b909de569b5acf843a7690f89d62ed1cd27009ad9c4d62185ccdd275ed"
+}

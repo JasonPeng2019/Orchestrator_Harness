@@ -1,0 +1,18 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-04-slice-local-adapter-relative-path-correction",
+  "task": "Continue the existing STEP-04 local-search-adapters lane from rejected partial commit f6996391d3b94e9392097e53b6b3ee8a246a087e. Preserve its valid local reviewed-evidence/template adapters, bounded worker-thread read, and tests. ROOT and an independent read-only reviewer reproduced one compatibility regression: MemoryStore('relative-state.sqlite3').initialize() works, but list_recent_reviewed_trajectories on that store raises StoreError because the new read-only seam calls self.path.as_uri() on a relative Path. The old method supported relative paths. Add one focused red-then-green test using a relative database path (and preferably a changed process cwd after initialization to prove the read connection still targets the opened database). Make the smallest correction in src/memory_harness/store.py: capture the actual absolute database identity when initialize opens it and use that identity for the read-only URI, without changing the public self.path meaning, shared connection thread affinity, receipt validation, or other store callers. Rerun the new focused adapter file and the directly affected reviewed-trajectory test; run only another selector if its consumed input changed. Commit one narrow correction beyond f699639 and write a truthful RESULT.json. Do not redesign the local adapters, broaden thread safety, change migrations/Atlas/EverOS/harness wiring/APC/STEP-05/06, or touch references/harness-single. Product root: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-04-prepare-and-dispatch-with-memory.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-01-bounded-preparation-selects-eligible-memory.md.",
+  "acceptance_criteria": [
+    "A relative MemoryStore path can be initialized and used for a reviewed-evidence read through the new read-only seam, including from a bounded worker thread; the read targets the same database opened at initialization.",
+    "The shared connection remains thread-affine, the new read connection remains read-only, and durable receipt validation and existing adapter behavior are unchanged.",
+    "A focused regression fails on f699639 and passes after the correction; the directly affected adapter and reviewed-trajectory tests pass."
+  ],
+  "deliverables": [
+    "One focused relative-path regression in the existing local-adapter test file or nearby store test.",
+    "One narrow correction commit beyond f6996391d3b94e9392097e53b6b3ee8a246a087e.",
+    "A valid RESULT.json with exact red and green commands and outcomes."
+  ],
+  "reason_for_acceptance_and_deliverables": "The candidate already meets its core adapter behavior, but the new read-only connection regressed a previously valid MemoryStore path form. This test and small path-identity correction preserve accepted functionality without reopening the service or expanding the harness.",
+  "branch": "lane/step-04-slice-local-search-adapters",
+  "base_commit": "f6996391d3b94e9392097e53b6b3ee8a246a087e"
+}

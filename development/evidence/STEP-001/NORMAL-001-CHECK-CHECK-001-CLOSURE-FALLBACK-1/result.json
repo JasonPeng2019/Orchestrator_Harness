@@ -1,0 +1,374 @@
+{
+  "schema": "memory-harness-check-correction-result/v1",
+  "status": "COMPLETE",
+  "finding_id": "CHECK-001",
+  "recommendation": "CHECKS_PASS",
+  "recommendation_scope": "Factual affected-check recommendation only; this member does not accept, repair, or dispatch.",
+  "recorded_at": "2026-09-21T11:54:12.9648059Z",
+  "identity": {
+    "module_instance_id": "MI-NORMAL-001-CHECK",
+    "card_id": "CARD-NORMAL-001-CHECK-CHECK-001-CLOSURE-FALLBACK-1",
+    "invocation_id": "INVOCATION-NORMAL-001-CHECK-CHECK-001-CLOSURE-FALLBACK-1",
+    "lane_id": "normal-001-check-check-001-closure-fallback-1",
+    "run_id": "f09b147d57a541a29336495df22a4fca",
+    "epoch_id": "e84a79e25f31478ab4f0e386ca36426d",
+    "deliverable_id": "DEL-001",
+    "stage_cohort_id": "COHORT-001",
+    "gate_id": "GATE-001",
+    "loop_id": "LOOP-001",
+    "workflow_role": "routine",
+    "provider": "codex",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "service_tier": "normal",
+    "worktree": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\product\\worktree_example\\.harness-runtime\\worktrees\\e84a79e25f31478ab4f0e386ca36426d\\normal-001-check-check-001-closure-fallback-1"
+  },
+  "fallback": {
+    "candidate": 1,
+    "preferred_failure_reference": {
+      "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK-001-CLOSURE-PREFERRED-FAILURE/failure.json",
+      "sha256": "eb3433357aa5f5d18fa44b9b5433f32b4eee670a1700aec6f3ab969699b5efb3",
+      "failure_class": "usage_cap_reached",
+      "task_result_produced": false
+    },
+    "requested_resolution": [
+      "--provider",
+      "codex",
+      "--model",
+      "gpt-5.6-luna",
+      "--provider-option",
+      "reasoning_effort=high",
+      "--provider-option",
+      "service_tier=normal"
+    ],
+    "resolved_invocation": {
+      "provider": "codex",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "high",
+      "service_tier": "normal",
+      "launcher": "controller invocation fallback resolution",
+      "substitution": false
+    },
+    "actual_binding": {
+      "provider": "codex",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "high",
+      "service_tier": "normal",
+      "substitution": false
+    }
+  },
+  "frozen_hashes": {
+    "product": {
+      "path": "development/product/worktree_example",
+      "expected_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "actual_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "status_porcelain": "## main",
+      "clean": true
+    },
+    "canonical_harness": {
+      "path": "references/harness-single",
+      "expected_tip": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "actual_tip": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "status_porcelain": "## working/memory-v1...origin/working/memory-v1 [ahead 1]",
+      "clean": true
+    },
+    "original_m04_pool": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/campaign-pool.json",
+      "expected_sha256": "a587e8d69318ffd37fad1d06d8ab7d7499105868b4ead615f8c33d44e28f7548",
+      "actual_sha256": "a587e8d69318ffd37fad1d06d8ab7d7499105868b4ead615f8c33d44e28f7548"
+    },
+    "root_route": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/root-verdict.json",
+      "expected_sha256": "c38723d6021551ea3c066a1d468ee6fa087cd8aae5f208f7b267549793a74b8a",
+      "actual_sha256": "c38723d6021551ea3c066a1d468ee6fa087cd8aae5f208f7b267549793a74b8a"
+    },
+    "accepted_correction_checkpoint": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/pid-identity-correction-progress.json",
+      "expected_sha256": "a9875a29e53bf16f685cbaf685d0c8af411de25b717900548f27b78447a93f7b",
+      "actual_sha256": "a9875a29e53bf16f685cbaf685d0c8af411de25b717900548f27b78447a93f7b"
+    },
+    "corrected_sources": [
+      {
+        "path": "development/test-tools/tests/test_fixture_controls.py",
+        "expected_sha256": "026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840",
+        "actual_sha256": "026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840"
+      },
+      {
+        "path": "development/test-tools/tests/fixtures/control_child.py",
+        "expected_sha256": "6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518",
+        "actual_sha256": "6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518"
+      }
+    ],
+    "accepted_correction_evidence": [
+      {
+        "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/result.json",
+        "expected_sha256": "5c99288addceb2baa956abb0cdf10836fdbc1043ee97a1d0862849536500a64c",
+        "actual_sha256": "5c99288addceb2baa956abb0cdf10836fdbc1043ee97a1d0862849536500a64c"
+      },
+      {
+        "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/native-result.json",
+        "expected_sha256": "93bb8ab47e5b8103c1d33be4c10386465b7f92d4879ea63d0d4cdf8be9e45fab",
+        "actual_sha256": "93bb8ab47e5b8103c1d33be4c10386465b7f92d4879ea63d0d4cdf8be9e45fab"
+      },
+      {
+        "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/completion-review.json",
+        "expected_sha256": "57921be679611b3178309a262f58e4e1c198285c418ac58a0d4b23d34b9310c5",
+        "actual_sha256": "57921be679611b3178309a262f58e4e1c198285c418ac58a0d4b23d34b9310c5"
+      },
+      {
+        "path": "development/evidence/STEP-001/NORMAL-001-ASSETS-PID-IDENTITY-CORRECTION/orchestrator-acceptance.json",
+        "expected_sha256": "70d847b918671faad56660a8899a076065158b55c958731a3cc37ec7b490597a",
+        "actual_sha256": "70d847b918671faad56660a8899a076065158b55c958731a3cc37ec7b490597a"
+      }
+    ],
+    "preferred_failure_sha256": "eb3433357aa5f5d18fa44b9b5433f32b4eee670a1700aec6f3ab969699b5efb3"
+  },
+  "correction_canonical_content_hashes": {
+    "result_json": {
+      "declared": "6d02ba2961d973d233d8b5ecf8b24638394ca75b491e0af270178b188dd723b7",
+      "recomputed": "6d02ba2961d973d233d8b5ecf8b24638394ca75b491e0af270178b188dd723b7",
+      "match": true
+    },
+    "native_result_json": {
+      "declared": "370330b909de569b5acf843a7690f89d62ed1cd27009ad9c4d62185ccdd275ed",
+      "recomputed": "370330b909de569b5acf843a7690f89d62ed1cd27009ad9c4d62185ccdd275ed",
+      "match": true
+    }
+  },
+  "correction_evidence_joins": {
+    "native_result_report_sha256_matches": true,
+    "native_result_report_content_hash_matches": true,
+    "completion_review_result_hash": "370330b909de569b5acf843a7690f89d62ed1cd27009ad9c4d62185ccdd275ed",
+    "completion_review_result_hash_matches_native": true,
+    "completion_review_outcome": "PASS",
+    "acceptance_result_hash": "370330b909de569b5acf843a7690f89d62ed1cd27009ad9c4d62185ccdd275ed",
+    "acceptance_review_ref": "bf4e395a54c9f1063c4a0315380bd0658e2151e150f8ad9660f4cda170865813",
+    "acceptance_result_hash_matches_native": true,
+    "acceptance_approval": "ACCEPTED",
+    "accepted_product_tip_matches": true,
+    "accepted_canonical_harness_tip_matches": true
+  },
+  "environment_controls": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "resource_warning_mode": "error::ResourceWarning",
+    "command_text_unchanged": true
+  },
+  "commands_declared_and_invoked": [
+    "python -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py -k test_control_child_pid_identity_mismatch_is_safe_no_op -k test_control_child_owned_descendant_cleanup",
+    "python -W error::ResourceWarning -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py"
+  ],
+  "checkpoints": [
+    {
+      "checkpoint_id": "CHECK-001-focused",
+      "unit": "affected selected tests",
+      "kind": "command",
+      "command": "python -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py -k test_control_child_pid_identity_mismatch_is_safe_no_op -k test_control_child_owned_descendant_cleanup",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3",
+      "expected": "Exit 0; 2 selected tests pass; mismatching identity is a safe no-op and exact owned cleanup succeeds.",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "tests_run": 2,
+      "result": "PASS",
+      "unittest_summary": "Ran 2 tests in 4.139s; OK",
+      "readbacks": [
+        {
+          "behavior": "owned_descendant_cleanup",
+          "cleanup_command": "taskkill /PID 68516 /T /F",
+          "cleanup_exit_code": 0,
+          "cleanup_output": "SUCCESS: The process with PID 3688 (child process of PID 68516) has been terminated.\nSUCCESS: The process with PID 68516 (child process of PID 64116) has been terminated.",
+          "descendant_absent_after_cleanup": true,
+          "descendant_identity": {
+            "creation_filetime": "windows-filetime:134344650858613118",
+            "pid": 68516
+          },
+          "descendant_pid": 68516,
+          "descendant_present_before_cleanup": true,
+          "owner_exit_code": 0,
+          "parent_absent_after_owner_exit": true,
+          "parent_pid": 64116
+        },
+        {
+          "behavior": "pid_identity_mismatch_safe_no_op",
+          "descendant_absent_after_exact_cleanup": true,
+          "descendant_pid": 23512,
+          "exact_cleanup_exit_code": 0,
+          "identity": {
+            "creation_filetime": "windows-filetime:134344650878367389",
+            "pid": 23512
+          },
+          "mismatch_cleanup_result": null,
+          "mismatched_identity": {
+            "creation_filetime": "mismatched-identity",
+            "pid": 23512
+          },
+          "owner_exit_code": 0,
+          "parent_absent_after_owner_exit": true,
+          "parent_pid": 36732,
+          "process_alive_after_mismatch": true,
+          "taskkill_issued_after_mismatch": false,
+          "taskkill_issued_for_exact_match": true
+        }
+      ],
+      "emitted_pids": [68516, 3688, 64116, 23512, 36732]
+    },
+    {
+      "checkpoint_id": "CHECK-001-strict-control-file",
+      "unit": "complete affected control file",
+      "kind": "command",
+      "command": "python -W error::ResourceWarning -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py",
+      "cwd": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3",
+      "expected": "Exit 0; all 9 control tests pass with ResourceWarning promoted to error.",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "tests_run": 9,
+      "result": "PASS",
+      "resource_warnings_observed": 0,
+      "unittest_summary": "Ran 9 tests in 8.893s; OK",
+      "readbacks": [
+        {
+          "behavior": "lost_handle_reconciliation",
+          "checkpoint_preserved_after_producer_exit": true,
+          "pid_from_child_checkpoint": 67068,
+          "process_absent_after_complete": true,
+          "status_after_reconciliation": "complete",
+          "status_before_reconciliation": "running"
+        },
+        {
+          "behavior": "owned_descendant_cleanup",
+          "cleanup_command": "taskkill /PID 64176 /T /F",
+          "cleanup_exit_code": 0,
+          "cleanup_output": "SUCCESS: The process with PID 34528 (child process of PID 64176) has been terminated.\nSUCCESS: The process with PID 64176 (child process of PID 61864) has been terminated.",
+          "descendant_absent_after_cleanup": true,
+          "descendant_identity": {
+            "creation_filetime": "windows-filetime:134344650970287179",
+            "pid": 64176
+          },
+          "descendant_pid": 64176,
+          "descendant_present_before_cleanup": true,
+          "owner_exit_code": 0,
+          "parent_absent_after_owner_exit": true,
+          "parent_pid": 61864
+        },
+        {
+          "behavior": "pid_identity_mismatch_safe_no_op",
+          "descendant_absent_after_exact_cleanup": true,
+          "descendant_pid": 37340,
+          "exact_cleanup_exit_code": 0,
+          "identity": {
+            "creation_filetime": "windows-filetime:134344650988155590",
+            "pid": 37340
+          },
+          "mismatch_cleanup_result": null,
+          "mismatched_identity": {
+            "creation_filetime": "mismatched-identity",
+            "pid": 37340
+          },
+          "owner_exit_code": 0,
+          "parent_absent_after_owner_exit": true,
+          "parent_pid": 45424,
+          "process_alive_after_mismatch": true,
+          "taskkill_issued_after_mismatch": false,
+          "taskkill_issued_for_exact_match": true
+        },
+        {
+          "behavior": "early_terminal_slow_success_ready_refill",
+          "checkpoint": {
+            "exit_code": 0,
+            "mode": "success",
+            "pid": 64288,
+            "status": "complete"
+          },
+          "checkpoint_preserved_after_producer_exit": true,
+          "complete_exit_statuses": [0, 2, 0],
+          "early_terminal_exit_code": 2,
+          "ready_refill_exit_code": 0,
+          "slow_success_exit_code": 0,
+          "slow_was_running_before_refill": true
+        },
+        {
+          "behavior": "heavy_base",
+          "designated_task_exit_code": 1,
+          "gap_id": "GAP-HEAVY-PARSE-AND-CLAMP",
+          "intended_failure_excerpt": "self.fail(f\\\"GAP-HEAVY-PARSE-AND-CLAMP: parse_and_clamp is not implemented: {error}\\\")",
+          "prerequisite_exit_code": 0
+        },
+        {
+          "behavior": "middle_base",
+          "designated_task_exit_code": 1,
+          "gap_id": "GAP-MIDDLE-PARSE-NUMBERS",
+          "intended_failure_excerpt": "self.fail(f\\\"GAP-MIDDLE-PARSE-NUMBERS: parse_numbers is not implemented: {error}\\\")",
+          "prerequisite_exit_code": 0
+        },
+        {
+          "behavior": "routine_base",
+          "designated_task_exit_code": 1,
+          "gap_id": "GAP-ROUTINE-ABOVE-HIGH",
+          "intended_failure_excerpt": "AssertionError: 12 != 10 : GAP-ROUTINE-ABOVE-HIGH: above-high input must return the high bound",
+          "prerequisite_exit_code": 0
+        }
+      ],
+      "emitted_pids": [67068, 64176, 34528, 61864, 37340, 45424, 64288]
+    }
+  ],
+  "expected_vs_actual": {
+    "affected_commands": "Both selected commands were expected to exit 0 and did exit 0.",
+    "source_hashes": "Both corrected source hashes matched.",
+    "correction_evidence_byte_hashes": "All four accepted correction evidence byte hashes matched.",
+    "correction_canonical_content_hashes": "Both correction canonical content hashes matched.",
+    "correction_checkpoint_hash": "The accepted correction checkpoint hash matched.",
+    "joins": "Correction report/native/review/acceptance joins matched.",
+    "product_and_canonical_tips": "Expected tips matched and both protected repositories were clean.",
+    "protected_config": "The deployed harness-config.json byte hash matched 254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14 and compute_config_identity matched 8d7c9206dfc9d1379127e964b5b3cfd4cca319bc3884503a33ddd22d8551d2a5.",
+    "fallback_binding": "Requested, resolved, and actual fallback binding matched with no substitution.",
+    "bytecode": "No corrected-file bytecode was present; one unrelated pre-existing test_resolve_role.pyc remained.",
+    "pid_absence": "The immediate exact-PID check after the two commands found all 12 emitted PIDs absent. A later read-only audit observed numeric PID 3688 reused by an unrelated Chrome process started at 2026-09-21T11:55:25.9920869Z; no test-owned process remained."
+  },
+  "post_collection_pid_audit": {
+    "immediate_after_commands": {
+      "all_12_emitted_pids_absent": true,
+      "pids": [68516, 3688, 64116, 23512, 36732, 67068, 64176, 34528, 61864, 37340, 45424, 64288]
+    },
+    "later_read_only_recheck": {
+      "numeric_pid_reused": 3688,
+      "process_name": "chrome",
+      "process_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "process_start_utc": "2026-09-21T11:55:25.9920869Z",
+      "interpretation": "PID reuse after the fixture process had exited; this is not a surviving test-owned process."
+    }
+  },
+  "affected_credit": [
+    "CHECK-001 corrected source identities",
+    "focused mismatch safe-no-op and exact owned-descendant cleanup readbacks",
+    "strict affected control-file 9-test PASS with ResourceWarning promoted to error",
+    "correction evidence byte-hash, canonical-hash, join, protected-scope, and PID-absence checks"
+  ],
+  "preserved_credit": [
+    "original M04 campaign pool, preserved byte-for-byte",
+    "M01 admission and native lifecycle evidence",
+    "M02 unchanged product-tip decision and resolver evidence",
+    "M03 task-base and manifest observations outside corrected cleanup identity fields",
+    "unaffected M04 observations and REQ-001, REQ-028, and REQ-029 facts",
+    "product main a54ad14a8f59409ee1e88c2473e3617c123f20b8 and canonical harness f6948fb2673661b6c2cfb69cf47b23a198b3f5f8"
+  ],
+  "protected_scope": {
+    "written_paths": [
+      "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK-001-CLOSURE-FALLBACK-1/result.json",
+      "development/product/worktree_example/.harness-runtime/worktrees/e84a79e25f31478ab4f0e386ca36426d/normal-001-check-check-001-closure-fallback-1/RESULT.json"
+    ],
+    "source_test_fixture_plan_checkpoint_prior_evidence_git_runtime_other_lane_result_modified": false,
+    "product_clean": true,
+    "canonical_harness_clean": true,
+    "product_or_harness_source_changed": false,
+    "commit_performed": false,
+    "resolver_rerun": false,
+    "task_bases_rerun_separately": false,
+    "broad_harness_product_or_provider_checks_run": false,
+    "benchmark_or_learner_execution": false,
+    "generated_corrected_bytecode_remaining": 0,
+    "lane_overlay_note": "Lane status contains only managed native overlay paths; no check-authored source change was made."
+  },
+  "unresolved": [
+    "No unresolved collection fact. Acceptance and subsequent dispatch remain outside this member's authority."
+  ],
+  "content_hash": "817baf0f52d71656a4ec6cde77b73e247e99c4afab02f56de67cc2fbe7af6ac8"
+}

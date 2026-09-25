@@ -1,0 +1,30 @@
+{
+  "schema": "result/v1",
+  "lane_id": "normal-001-integrate-exec",
+  "run_id": "37cee34a632846aa8c7ee616b14eb21a",
+  "outcome": "PASS",
+  "summary": "MI-NORMAL-001-INTEGRATE (M06-A1..A5, A7, A8; promotion A6 omitted) proved the exact accepted STEP-001 pre-integration coordinate: every declared input hash recomputes (M02 build-progress, M05 root-verdict c38723..., CHECK-001 closure c93d7f..., accept checkpoint 439ca1..., M04 pool 668e66.../checkpoint b5218b..., protected harness-config 254be5...); product main stays clean at a54ad14a8f59409ee1e88c2473e3617c123f20b8 (rollback base = sole accepted tip); the lane worktree is a same-tip join (0 commits ahead, merge-base a54ad14..., nothing staged, no stash) whose only local changes are byte-identical native managed overlays. Integration mode NO_OP_SAME_TIP with empty changed_paths/changed_input_map; accepted M03/M04 smoke/check credit reused because zero bytes changed and all declared check inputs are unchanged; no merge/commit/suite/benchmark/service was run; promotion OMITTED. Durable report at development/evidence/STEP-001/NORMAL-001-INTEGRATE-EXEC/result.json. Recommendation READY_FOR_ROOT; factual only, not acceptance.",
+  "evidence": [
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/NORMAL-001-INTEGRATE-EXEC/result.json",
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\product\\worktree_example\\.harness-runtime\\worktrees\\4f10e566b5ed4bbb8ee4d8df3cc4e4e4\\normal-001-integrate-exec\\.agent-workspace\\task-card.json",
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\product\\worktree_example\\.harness-runtime\\worktrees\\4f10e566b5ed4bbb8ee4d8df3cc4e4e4\\normal-001-integrate-exec\\.agent-workspace\\invocation.json",
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\product\\worktree_example\\.harness-runtime\\worktrees\\4f10e566b5ed4bbb8ee4d8df3cc4e4e4\\normal-001-integrate-exec\\.agent-workspace\\controller.status.json",
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\product\\worktree_example\\.harness-runtime\\worktrees\\4f10e566b5ed4bbb8ee4d8df3cc4e4e4\\normal-001-integrate-exec\\.agent-workspace\\controller.events.jsonl",
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\product\\worktree_example\\.harness-runtime\\worktrees\\4f10e566b5ed4bbb8ee4d8df3cc4e4e4\\normal-001-integrate-exec\\.agent-workspace\\harness-hook-binding.json",
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\product\\worktree_example\\.harness-runtime\\worktrees\\4f10e566b5ed4bbb8ee4d8df3cc4e4e4\\normal-001-integrate-exec\\.agent-workspace\\overlay-receipt.json",
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\product\\worktree_example\\.harness-runtime\\worktrees\\4f10e566b5ed4bbb8ee4d8df3cc4e4e4\\normal-001-integrate-exec\\.agent-workspace\\QUEUE.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/epochs/4f10e566b5ed4bbb8ee4d8df3cc4e4e4/lanes/normal-001-integrate-exec/lane.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/epochs/4f10e566b5ed4bbb8ee4d8df3cc4e4e4/epoch-state.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/epochs/4f10e566b5ed4bbb8ee4d8df3cc4e4e4/active-lanes.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/CURRENT_EPOCH.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/RUNTIME_STATE.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/MI-NORMAL-001-BUILD/build-progress.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/root-verdict.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/check-001-credit-closure.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/accept-closure-progress.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-001-closure-pool.json",
+    "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-001-closure-progress.json"
+  ],
+  "completed_at": "2026-09-21T12:35:45.946516Z",
+  "content_hash": "2f02643292e7e023a1bb6cf7df1014bbb0eddbbb33d2e907bb8fa2dc273455d1"
+}

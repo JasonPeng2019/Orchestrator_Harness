@@ -1,0 +1,56 @@
+{
+  "schema": "harness-repair-review-disposition/v1",
+  "review_id": "EXC-BUILDER-BUG-review",
+  "recorded_at": "2026-09-21T09:04:30.3255448Z",
+  "scope_rule": "Fix only harness bugs reproduced in or blocking this implementation run; do not expand frozen harness-single for unencountered edge cases.",
+  "native_run_evidence": {
+    "lane_id": "exc-builder-bug-review-001",
+    "run_id": "5a4063b2a1e64bd999049d31f889750d",
+    "result": "EXC-BUILDER-BUG-native-result.json",
+    "lifecycle": [
+      "bootstrap succeeded",
+      "provider launched and completed",
+      "completion review accepted the review task",
+      "lane retired",
+      "epoch closed",
+      "disposable worktree and branch removed cleanly"
+    ]
+  },
+  "findings": [
+    {
+      "id": "F-001",
+      "disposition": "deferred-out-of-scope",
+      "reason": "The concurrency interleaving was not encountered and is not required by this single-ROOT execution run. The reproduced failed checkout and retry-poisoning path is covered."
+    },
+    {
+      "id": "F-002",
+      "disposition": "resolved",
+      "reason": "Removed the repository-wide git worktree prune. Recovery now uses only the named worktree path and branch."
+    },
+    {
+      "id": "F-003",
+      "disposition": "deferred-out-of-scope",
+      "reason": "The implementation worktrees are created from a commit that does not contain a materialized ROOT binding; the real managed native bootstrap succeeded. Supporting a tracked materialized binding would broaden this run's required contract."
+    },
+    {
+      "id": "F-004",
+      "disposition": "deferred-out-of-scope",
+      "reason": "No Git process-launch failure occurred during rollback. Adding recovery for loss of the Git executable during recovery is not required to continue this run."
+    }
+  ],
+  "verification": [
+    {
+      "command": "python -B -m unittest -q orchestrator_harness.tests.test_v2_materialization orchestrator_harness.tests.test_operator_launch orchestrator_harness.tests.test_launch_lifecycle",
+      "result": "PASS: 40 tests"
+    },
+    {
+      "command": "python -B -m unittest <all top-level orchestrator_harness.tests.test*.py modules>",
+      "result": "PASS: 269 tests, 2 skipped"
+    },
+    {
+      "command": "python -B -m unittest discover -s orchestrator_harness/tests -p test*.py",
+      "result": "NONPASS: 314 tests; 7 failures and 1 error are isolated to v2_acceptance.test_live_matrix_contract because untracked .agent-workspace/live-matrix fixtures are absent"
+    }
+  ],
+  "decision": "Freeze the minimal reproduced-blocker repair and continue STEP-001."
+}

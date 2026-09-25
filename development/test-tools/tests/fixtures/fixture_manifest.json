@@ -1,0 +1,132 @@
+{
+  "schema": "memory-harness-fixture-manifest/v1",
+  "root": "development/test-tools/tests/fixtures",
+  "control_child": "control_child.py",
+  "control_child_modes": {
+    "terminal": {
+      "argv_template": ["python", "control_child.py", "terminal", "--exit-code", "<integer>"],
+      "expected_exit_code": "<integer>",
+      "stdout_json_keys": ["mode", "exit_code"]
+    },
+    "success": {
+      "argv_template": ["python", "control_child.py", "success", "--checkpoint", "<path>", "--delay", "<seconds>"],
+      "expected_exit_code": 0,
+      "checkpoint_json": {"exit_code": 0, "mode": "success", "status": "complete"}
+    },
+    "record": {
+      "argv_template": ["python", "control_child.py", "record", "--checkpoint", "<path>", "--delay", "<seconds>"],
+      "expected_exit_code": 0,
+      "initial_checkpoint_json": {"exit_code": null, "mode": "record", "status": "running"},
+      "final_checkpoint_json": {"exit_code": 0, "mode": "record", "status": "complete"}
+    },
+    "owner": {
+      "argv_template": ["python", "control_child.py", "owner", "--checkpoint", "<path>", "--linger-seconds", "<seconds>"],
+      "expected_exit_code": 0,
+      "record_json_keys": ["mode", "parent_pid", "descendant_pid", "status"],
+      "internal_linger_mode": "linger"
+    }
+  },
+  "qualification_commands": {
+    "control_ready": {
+      "command": "python -m unittest discover -s development/test-tools/tests -p test_fixture_controls.py",
+      "cwd": "repository_root",
+      "expected_exit_code": 0
+    },
+    "resolver_suite": {
+      "command": "python -m unittest discover -s development/test-tools/tests -p test_resolve_role.py",
+      "cwd": "repository_root",
+      "expected_exit_code": 0
+    },
+    "ordinary_combined_discovery": {
+      "command": "python -m unittest discover -s development/test-tools/tests -p test*.py",
+      "cwd": "repository_root",
+      "expected_exit_code": 0
+    }
+  },
+  "task_bases": {
+    "routine": {
+      "path": "task_bases/routine",
+      "required_files": ["clamp.py", "test_prerequisites.py", "test_task.py"],
+      "prerequisite_command": ["python", "test_prerequisites.py"],
+      "designated_task_command": ["python", "test_task.py"],
+      "expected_prerequisite_exit": 0,
+      "expected_designated_pre_task_exit": 1,
+      "gap_id": "GAP-ROUTINE-ABOVE-HIGH",
+      "gap_kind": "deliberate_defect",
+      "prerequisite_excludes": ["above_high"],
+      "self_contained": true,
+      "no_cross_base_imports": true,
+      "oracle": {
+        "clamp": {
+          "low_gt_high": {"arguments": [10, 20, 10], "raises": "ValueError"},
+          "below_low": {"arguments": [1, 5, 10], "expected": 5},
+          "interior": {"arguments": [7, 5, 10], "expected": 7},
+          "low_endpoint": {"arguments": [5, 5, 10], "expected": 5},
+          "high_endpoint": {"arguments": [10, 5, 10], "expected": 10},
+          "above_high": {"arguments": [12, 5, 10], "expected": 10, "actual_pre_task": 12}
+        }
+      }
+    },
+    "middle": {
+      "path": "task_bases/middle",
+      "required_files": ["clamp.py", "test_prerequisites.py", "test_task.py"],
+      "prerequisite_command": ["python", "test_prerequisites.py"],
+      "designated_task_command": ["python", "test_task.py"],
+      "expected_prerequisite_exit": 0,
+      "expected_designated_pre_task_exit": 1,
+      "gap_id": "GAP-MIDDLE-PARSE-NUMBERS",
+      "gap_kind": "missing_implementation",
+      "prerequisite_excludes": ["parse_numbers"],
+      "self_contained": true,
+      "no_cross_base_imports": true,
+      "oracle": {
+        "clamp": {
+          "low_gt_high": {"arguments": [10, 20, 10], "raises": "ValueError"},
+          "below_low": {"arguments": [1, 5, 10], "expected": 5},
+          "interior": {"arguments": [7, 5, 10], "expected": 7},
+          "low_endpoint": {"arguments": [5, 5, 10], "expected": 5},
+          "high_endpoint": {"arguments": [10, 5, 10], "expected": 10},
+          "above_high": {"arguments": [12, 5, 10], "expected": 10}
+        },
+        "parse_numbers": {
+          "accepts": {"input": " 12 , -3 , 4 ", "expected": [12, -3, 4]},
+          "rejects_empty": {"input": "", "raises": "ValueError"},
+          "rejects_noninteger": {"input": "12,x", "raises": "ValueError"}
+        }
+      }
+    },
+    "heavy": {
+      "path": "task_bases/heavy",
+      "required_files": ["clamp.py", "parse_numbers.py", "test_prerequisites.py", "test_task.py"],
+      "prerequisite_command": ["python", "test_prerequisites.py"],
+      "designated_task_command": ["python", "test_task.py"],
+      "expected_prerequisite_exit": 0,
+      "expected_designated_pre_task_exit": 1,
+      "gap_id": "GAP-HEAVY-PARSE-AND-CLAMP",
+      "gap_kind": "missing_implementation",
+      "prerequisite_excludes": ["parse_and_clamp"],
+      "self_contained": true,
+      "no_cross_base_imports": true,
+      "oracle": {
+        "clamp": {
+          "low_gt_high": {"arguments": [10, 20, 10], "raises": "ValueError"},
+          "below_low": {"arguments": [1, 5, 10], "expected": 5},
+          "interior": {"arguments": [7, 5, 10], "expected": 7},
+          "low_endpoint": {"arguments": [5, 5, 10], "expected": 5},
+          "high_endpoint": {"arguments": [10, 5, 10], "expected": 10},
+          "above_high": {"arguments": [12, 5, 10], "expected": 10}
+        },
+        "parse_numbers": {
+          "accepts": {"input": " 12 , -3 , 4 ", "expected": [12, -3, 4]},
+          "rejects_empty": {"input": "", "raises": "ValueError"},
+          "rejects_noninteger": {"input": "12,x", "raises": "ValueError"}
+        },
+        "parse_and_clamp": {
+          "valid": {"input": "-2, 0, 5, 9", "low": 0, "high": 5, "expected": [0, 0, 5, 5]},
+          "invalid_bounds": {"input": "1", "low": 5, "high": 0, "raises": "ValueError"},
+          "invalid_tokens": {"input": "1,x", "low": 0, "high": 5, "raises": "ValueError"}
+        }
+      }
+    }
+  }
+}

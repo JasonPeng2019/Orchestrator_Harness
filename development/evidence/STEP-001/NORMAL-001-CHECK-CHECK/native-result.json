@@ -1,0 +1,15 @@
+{
+  "completed_at": "2026-09-21T10:43:00.649638Z",
+  "content_hash": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b",
+  "evidence": [
+    {
+      "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\evidence\\STEP-001\\NORMAL-001-CHECK-CHECK\\result.json",
+      "sha256": "199c4bc1a0329a8289bdc576b08ee1fde8d7953c6e7152473a54183e0361fd8b"
+    }
+  ],
+  "lane_id": "normal-001-check-check",
+  "outcome": "PASS",
+  "run_id": "a211f3d79e4a44b3b9676615befbd4ae",
+  "schema": "result/v1",
+  "summary": "Deterministic STEP-001 check surface completed and factually reported (report status COMPLETE, recommendation CHECKS_PASS). Exact selected command ran 15 tests, exit 0, under PYTHONDONTWRITEBYTECODE=1 and PYTHONWARNINGS=error::ResourceWarning with unchanged command text. Manifest qualification commands passed (control 8, resolver 7, combined 15). Routine/middle/heavy prerequisites passed and each designated pre-task failed only for its intended gap id; task-base discovery isolation read back 0 tests/exit 5. All 13 M03 asset hashes, 4 stable evidence hashes, and the M03 native-result canonical content_hash recompute exactly; product a54ad14a and canonical f6948fb remain clean; deployed config identity matched; requested/resolved/actual routine binding matched with no substitution; no benchmark/learner execution; no commit or source diff beyond managed native overlays."
+}

@@ -1,0 +1,7 @@
+# Planning index
+
+The active product authority is the [remaining-work specification](memory-backed-harness/specification/SPEC.md) and its [four-lane execution plan](memory-backed-harness/PLAN.md). [LANE_GUIDE.md](memory-backed-harness/LANE_GUIDE.md) governs separate product worktrees, the nonblocking checkpoint, and final integration. The four [step folders](memory-backed-harness/steps/) contain standalone remaining STEP-05–15 assignments; [STEP-16–18](memory-backed-harness/verification/) are shared proof. The original STEP-05–15 files remain only for the [coverage audit](memory-backed-harness/COVERAGE_AUDIT.md), not execution.
+
+STEP-01 through [STEP-04](finished/memory-backed-harness/steps/STEP-04-apc-child-produces-reviewable-proposal.md) are complete, accepted product history under [finished/memory-backed-harness/steps](finished/memory-backed-harness/steps/). The first STEP-05 Level 0 slice is also accepted; the rest remains open and the run is paused. The prior active plan and specification are preserved under [archive/2026-09-24-pre-remaining-replan](archive/2026-09-24-pre-remaining-replan/) and have no execution authority. Accepted native lane records remain in the harness, not in another planning ledger.
+
+`SUBAGENT_ROLE_MODEL_MAPPING.json` is the single development launch mapping consumed by `development/test-tools/resolve-role.py`. [goal.md](../goal.md) is the run objective; [HANDOFF.md](../HANDOFF.md) has the current lane status and next action.

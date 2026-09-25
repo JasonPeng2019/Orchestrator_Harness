@@ -1,0 +1,131 @@
+{
+  "schema": "memory-harness-check-campaign-pool/v1",
+  "module_instance_id": "MI-NORMAL-001-CHECK",
+  "campaign_id": "NORMAL-001-CHECK",
+  "status": "COMPLETE",
+  "joined_at": "2026-09-21T10:55:45.4003116Z",
+  "join_count": 1,
+  "frozen_input": {
+    "product_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "canonical_harness_tip": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+    "assets_progress": {
+      "path": "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/assets-progress.json",
+      "sha256": "c07df57e1d45faadb8caef2cdf55b8d62dec1ecb28405a507011b8fca452198d"
+    },
+    "epoch_id": "b456e7d1497742cc8022dc6b22ccc529"
+  },
+  "parallel_launch_readback": {
+    "all_members_launched_before_first_wait": true,
+    "members": [
+      {
+        "lane_id": "normal-001-check-review",
+        "run_id": "ff3b8cef1da046d9adacc75c75ee55bb",
+        "provider_started_at": "2026-09-21T10:33:41.875957Z",
+        "role": "reviewer"
+      },
+      {
+        "lane_id": "normal-001-check-check",
+        "run_id": "a211f3d79e4a44b3b9676615befbd4ae",
+        "provider_started_at": "2026-09-21T10:33:49.532775Z",
+        "role": "routine"
+      }
+    ]
+  },
+  "complete_result_set": [
+    {
+      "member": "CHECK",
+      "status": "COMPLETE",
+      "recommendation": "CHECKS_PASS",
+      "native_outcome": "PASS",
+      "result_content_hash": "ee02d2a09629122bed6ccdb58100ca3985c6b68d2ea791eba979276a90d7a25b",
+      "unit_checkpoint_count": 39,
+      "selected_command": "python -m unittest discover -s development/test-tools/tests -p test_*.py",
+      "selected_command_exit_code": 0,
+      "selected_command_tests_run": 15,
+      "evidence": {
+        "report": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/result.json",
+          "sha256": "199c4bc1a0329a8289bdc576b08ee1fde8d7953c6e7152473a54183e0361fd8b"
+        },
+        "native_result": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/native-result.json",
+          "sha256": "42beb385215d8708b4c64117517ffcbce54cb3ef835ac1faa17ea41c75630ef1"
+        },
+        "completion_review": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/completion-review.json",
+          "sha256": "64956e8787e96e1b582a89a62d77bbff780d0989215d44d8a453a57c5cb34e7f"
+        },
+        "orchestrator_acceptance": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-CHECK/orchestrator-acceptance.json",
+          "sha256": "d9c89c331347459a10656b2031667801f9ab930b87c1fb8c0309f098b4b3901b"
+        }
+      }
+    },
+    {
+      "member": "REVIEW",
+      "status": "COMPLETE",
+      "recommendation": "FINDINGS",
+      "native_outcome": "PASS",
+      "result_content_hash": "0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691",
+      "finding_count": 1,
+      "evidence": {
+        "report": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/result.json",
+          "sha256": "df7bbdcd5e63f1cae145620c276afda14dcd8e6dcf47d2b91b169e019316863b"
+        },
+        "native_result": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/native-result.json",
+          "sha256": "5a150f30d46e7f52436eea197486c4843e2a405fc4f1f0a0cc193319761b1c24"
+        },
+        "completion_review": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/completion-review.json",
+          "sha256": "2d53ee528b991b979c4dd6934a1e0032d6d081d218a3443b10f53cfc785a9632"
+        },
+        "orchestrator_acceptance": {
+          "path": "development/evidence/STEP-001/NORMAL-001-CHECK-REVIEW/orchestrator-acceptance.json",
+          "sha256": "f2ee65cb208a0c72cc65900c7b670dd3c082444ffdd14fd03cba10295fed93c6"
+        }
+      }
+    }
+  ],
+  "joined_findings": [
+    {
+      "id": "CHECK-001",
+      "source_member": "REVIEW",
+      "severity": "HIGH",
+      "reported_classification": "strict_m03_test_only_defect",
+      "violated_requirement_or_invariant": "REQ-027 / CONTROL-READY exact-owned-descendant cleanup safety: a force-kill must remain scoped to the recorded fixture descendant, including cleanup retries/finalizers.",
+      "concrete_trigger": "The accepted fixture finalizer rechecks only a numeric PID before taskkill. After the intended descendant exits, PID reuse can make the finalizer target an unrelated process tree.",
+      "affected_credit": "MI-NORMAL-001-ASSETS verification.owned_descendant_cleanup",
+      "smallest_reported_owner": "M03 test assets only; no production helper or frozen-harness change.",
+      "root_source_readback": "The cited implementation uses _pid_exists(pid) followed by taskkill /PID pid /T /F and repeats descendant_pid in finally; no durable process identity is checked.",
+      "disposition": "UNDECIDED_M05"
+    }
+  ],
+  "disagreements": [
+    {
+      "subject": "strict owned-descendant cleanup proof",
+      "checker_position": "All selected executable controls and declared hashes pass; CHECKS_PASS.",
+      "reviewer_position": "Passing numeric-PID readback does not prove every cleanup kill remained scoped to the original process; FINDINGS.",
+      "preserved": true,
+      "decision_owner": "MI-NORMAL-001-ACCEPT"
+    }
+  ],
+  "credit_map": {
+    "reused_unchanged_pass": [
+      "REQ-001 pre-product boundary evidence",
+      "REQ-028 recorded role-resolution evidence",
+      "REQ-029 no benchmark or learned-selector work",
+      "all 13 M03 asset byte hashes and four stable M03 evidence hashes",
+      "15-test selected command execution"
+    ],
+    "challenged_pending_m05": [
+      "REQ-027 / CONTROL-READY exact-owned-descendant cleanup safety proof"
+    ],
+    "invalidated_in_m04": [],
+    "unrun_required_units": []
+  },
+  "repairs_performed": [],
+  "campaign_acceptance_decision": "NOT_DECIDED_IN_M04",
+  "next_module": "MI-NORMAL-001-ACCEPT"
+}

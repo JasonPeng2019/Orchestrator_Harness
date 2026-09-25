@@ -1,0 +1,17 @@
+{
+  "commit": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+  "content_hash": "040c3b1b0fad1fd5d25d5c14f42daba788913ac8c487f43fa419012a38d823ae",
+  "evidence": [
+    "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\evidence\\STEP-001\\NORMAL-001-CHECK-REVIEW\\result.json"
+  ],
+  "lane_id": "normal-001-check-review",
+  "result_hash": "0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691",
+  "result_id": "ff3b8cef1da046d9adacc75c75ee55bb",
+  "review_outcome": "PASS",
+  "review_summary": "M04 reviewer completed its read-only assignment and returned a valid evidence-linked report. ROOT recomputed native result hash 0d1c05e04ac6acb2eea88768291cf4ecf8fca3201dfb6491303e825c1d1e7691 and report SHA-256 df7bbdcd5e63f1cae145620c276afda14dcd8e6dcf47d2b91b169e019316863b. The member result is accepted as factual completion; its single HIGH CHECK-001 strict M03 test-only PID-reuse cleanup finding is preserved for M05 routing, not accepted or repaired in M04.",
+  "reviewed_at": "2026-09-21T10:54:22.642073Z",
+  "run_id": "ff3b8cef1da046d9adacc75c75ee55bb",
+  "schema": "completion-review/v1",
+  "task_card_hash": "2fa3891fca60d2ae2e35c098cc2d1ee21e62abed4e62812781b44b8630af4586",
+  "task_card_id": "CARD-NORMAL-001-CHECK-REVIEW"
+}

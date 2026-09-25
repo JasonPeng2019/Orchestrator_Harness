@@ -1,0 +1,379 @@
+{
+  "schema": "memory-harness-integration-result/v1",
+  "status": "INTEGRATED",
+  "authority_note": "Factual integration readback for MI-NORMAL-001-INTEGRATE (M06-A1..A5, A7, A8; M06-A6 promotion omitted). This is not ROOT acceptance and does not decide M08/M09/GATE-001; ROOT owns the next edge, promotion, and retirement.",
+  "module_instance_id": "MI-NORMAL-001-INTEGRATE",
+  "card_id": "CARD-NORMAL-001-INTEGRATE-EXEC",
+  "invocation_id": "INVOCATION-NORMAL-001-INTEGRATE-EXEC",
+  "lane_id": "normal-001-integrate-exec",
+  "run_id": "37cee34a632846aa8c7ee616b14eb21a",
+  "workflow_role": "writer",
+  "deliverable_id": "DEL-001",
+  "stage_cohort_id": "COHORT-001",
+  "gate_id": "GATE-001",
+  "loop_id": "LOOP-001",
+  "repository_root": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3",
+  "epoch": {
+    "epoch_id": "4f10e566b5ed4bbb8ee4d8df3cc4e4e4",
+    "queue_id": "757b079c44a44609ba333edd85cf6c12",
+    "ownership": "launcher",
+    "lane_mode": "managed",
+    "opened_at": "2026-09-21T12:28:13.499908Z",
+    "lifecycle_at_readback": "active"
+  },
+  "worktree": {
+    "path": "C:\\Users\\Jason\\Documents\\Jason\\Orchestrator-Harness-3\\development\\product\\worktree_example\\.harness-runtime\\worktrees\\4f10e566b5ed4bbb8ee4d8df3cc4e4e4\\normal-001-integrate-exec",
+    "branch": "lane/normal-001-integrate-exec",
+    "git_common_dir": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.git",
+    "destination": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example"
+  },
+  "declared_integration_order": {
+    "source": ".plans/memory-backed-harness-formal/steps/STEP-001.md (Ordered M-module composition, position 6 of the NORMAL route)",
+    "order": "MI-NORMAL-001-ADMIT -> MI-NORMAL-001-BUILD -> MI-NORMAL-001-ASSETS -> MI-NORMAL-001-CHECK -> MI-NORMAL-001-ACCEPT -> MI-NORMAL-001-INTEGRATE (-> MI-NORMAL-001-READY -> MI-NORMAL-001-REAL -> MI-NORMAL-001-GATE)",
+    "consumed_accepted_input": "MI-NORMAL-001-ACCEPT.typed output (ACCEPTED pre-integration ROOT verdict + CHECK-001 credit closure CLOSED + accept-closure checkpoint COMPLETE)",
+    "input_tips_considered": [
+      {
+        "name": "MI-NORMAL-001-BUILD reviewable product tip",
+        "tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+        "is_product_commit": false,
+        "basis": "build-progress.json: status ACCEPTED, tip_changed=false, commit_created=null, changed_paths=[], product_source_diff none, lane_commits_ahead_of_base 0"
+      },
+      {
+        "name": "M03 test assets and M04/M05 records",
+        "tip": null,
+        "is_product_commit": false,
+        "basis": "hash-addressed top-level evidence records under development/evidence/STEP-001/, not product Git tips; not copied into P"
+      }
+    ],
+    "join_operation": "none required (no second tip, no content to combine); no merge/cherry-pick/rebase/reset/commit was run; no byte of product source was touched"
+  },
+  "integration_mode": "NO_OP_SAME_TIP",
+  "integrated_coordinate": {
+    "destination_path": "development/product/worktree_example",
+    "destination_branch": "main",
+    "destination_head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "lane_branch": "lane/normal-001-integrate-exec",
+    "lane_head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "same_tip": true,
+    "commits_ahead_of_base": 0,
+    "merge_base": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "tip_meaning": "Sole accepted product tip; unchanged since M02; equals destination prejoin base and rollback base"
+  },
+  "destination_and_rollback_readbacks": {
+    "destination_prejoin_base": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "destination_branch": "main",
+    "destination_clean": true,
+    "rollback_base": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "rollback_base_note": "Recorded prejoin coordinate; the join adds zero bytes, so rollback is a no-op return to the same tip; no rollback material beyond this identity was required or created",
+    "sole_accepted_product_tip": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "canonical_harness": {
+      "branch": "working/memory-v1",
+      "head": "f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+      "clean": true
+    },
+    "product_worktree_list": [
+      {
+        "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example",
+        "head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+        "branch": "refs/heads/main"
+      },
+      {
+        "path": "C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example/.harness-runtime/worktrees/4f10e566b5ed4bbb8ee4d8df3cc4e4e4/normal-001-integrate-exec",
+        "head": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+        "branch": "refs/heads/lane/normal-001-integrate-exec"
+      }
+    ],
+    "lane_refs": {
+      "refs/heads/main": "a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "refs/heads/lane/normal-001-integrate-exec": "a54ad14a8f59409ee1e88c2473e3617c123f20b8"
+    },
+    "lane_worktree_status_pre_join": [
+      " M .codex/hooks/orchestrator_harness_post_tool_use.py",
+      " M .codex/hooks/orchestrator_harness_stop.py",
+      "?? .agent-workspace/",
+      "?? .codex/skills/lane-assignment/",
+      "?? .codex/skills/manager-notify/"
+    ],
+    "lane_worktree_status_post_join": [
+      " M .codex/hooks/orchestrator_harness_post_tool_use.py",
+      " M .codex/hooks/orchestrator_harness_stop.py",
+      "?? .agent-workspace/",
+      "?? .codex/skills/lane-assignment/",
+      "?? .codex/skills/manager-notify/"
+    ],
+    "staged_changes": "none (git diff --cached empty)",
+    "stash_entries": "none",
+    "interpretation": "Post-join state is byte-identical to pre-join state; the only deviations from the a54ad14 baseline are the native managed overlays (worker hook wrappers, worker skills, .agent-workspace lane skeleton/records); RESULT.json is this lane's required native result artifact and is added at completion"
+  },
+  "input_hash_validations": {
+    "all_expected_match": true,
+    "mismatch_count": 0,
+    "note": "Every declared/referenced hash recomputes exactly; no input, destination HEAD, or clean-state premise differed from the dispatch premise.",
+    "entries": [
+      {
+        "path": "development/evidence/STEP-001/MI-NORMAL-001-BUILD/build-progress.json",
+        "declared_sha256": null,
+        "observed_sha256": "ddbacee5af752b38cdaa82922586454e0f9c3c81a9847c2830a52ebd79bbdebf",
+        "match": null,
+        "note": "No declared hash; content read back: status ACCEPTED, accepted_tip a54ad14a8f59409ee1e88c2473e3617c123f20b8, tip_changed=false, no product/helper diff"
+      },
+      {
+        "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/root-verdict.json",
+        "declared_sha256": "c38723d6021551ea3c066a1d468ee6fa087cd8aae5f208f7b267549793a74b8a",
+        "observed_sha256": "c38723d6021551ea3c066a1d468ee6fa087cd8aae5f208f7b267549793a74b8a",
+        "match": true,
+        "note": "verdict ACCEPTED for the pre-integration boundary (status field P08_CORRECTION_OPEN superseded by the closure record below)"
+      },
+      {
+        "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/check-001-credit-closure.json",
+        "declared_sha256": "c93d7f8e613a4f82d3d8856eb5529ee0ad98b570e2846d79bc71f3a33a11f699",
+        "observed_sha256": "c93d7f8e613a4f82d3d8856eb5529ee0ad98b570e2846d79bc71f3a33a11f699",
+        "match": true,
+        "note": "status CLOSED; remaining_held_credit empty; releases MI-NORMAL-001-INTEGRATE only"
+      },
+      {
+        "path": "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/accept-closure-progress.json",
+        "declared_sha256": "439ca1a3e28b974dc0cb1f893d01f7125737e61e1026717f5e43a37afe86a64e",
+        "observed_sha256": "439ca1a3e28b974dc0cb1f893d01f7125737e61e1026717f5e43a37afe86a64e",
+        "match": true,
+        "note": "status COMPLETE; next_module MI-NORMAL-001-INTEGRATE; successor_hold RELEASED_FOR_MI-NORMAL-001-INTEGRATE_ONLY"
+      },
+      {
+        "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-001-closure-pool.json",
+        "declared_sha256": "668e662c850b8717c2ab7f3ad023634bdbf70cc43f5168aeae0960fb80ade733",
+        "observed_sha256": "668e662c850b8717c2ab7f3ad023634bdbf70cc43f5168aeae0960fb80ade733",
+        "match": true,
+        "note": "affected M04 pool consumed by M05"
+      },
+      {
+        "path": "development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-001-closure-progress.json",
+        "declared_sha256": "b5218b622d2dbd0226190827c515a5545cd44601ee0c0a29ad7a98cd606082ac",
+        "observed_sha256": "b5218b622d2dbd0226190827c515a5545cd44601ee0c0a29ad7a98cd606082ac",
+        "match": true,
+        "note": "affected M04 checkpoint consumed by M05"
+      },
+      {
+        "path": "development/dogfood/harness/harness-config.json",
+        "declared_sha256": "254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14",
+        "observed_sha256": "254be5115beb4aed894cf04274ef0a279a636adebdec8c57569ad17e1a337d14",
+        "match": true,
+        "note": "protected deployed builder config unchanged"
+      },
+      {
+        "path": "development/test-tools/tests/test_fixture_controls.py",
+        "declared_sha256": "026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840",
+        "observed_sha256": "026f592793c40e6ec1849f730103a55f7ae050e93f2441bb943a063e0cd76840",
+        "match": true,
+        "note": "closure-accepted corrected M03 test source (unchanged-input basis for credit reuse)"
+      },
+      {
+        "path": "development/test-tools/tests/fixtures/control_child.py",
+        "declared_sha256": "6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518",
+        "observed_sha256": "6ba49f54bc26e3b6dce97e930e2056830f63850f82e543d1c585f099f52b7518",
+        "match": true,
+        "note": "closure-accepted corrected M03 fixture source (unchanged-input basis for credit reuse)"
+      },
+      {
+        "path": "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/pid-identity-correction-progress.json",
+        "declared_sha256": "a9875a29e53bf16f685cbaf685d0c8af411de25b717900548f27b78447a93f7b",
+        "observed_sha256": "a9875a29e53bf16f685cbaf685d0c8af411de25b717900548f27b78447a93f7b",
+        "match": true,
+        "note": "accepted correction checkpoint consumed by CHECK-001 closure"
+      }
+    ]
+  },
+  "changed_paths": [],
+  "changed_input_map": {},
+  "combined_diff_status": {
+    "tracked_source_diff": "none",
+    "tracked_source_changes": [],
+    "changed_bytes_by_join": 0,
+    "status_porcelain_lines_pre_join": 5,
+    "status_porcelain_lines_post_join": 5,
+    "note": "Inspection of the combined diff/manifest (M06-A4) finds an empty changed-input map: the declared serial integration is a same-tip no-op; no accepted input was copied into product P and no commit was created for any evidence record"
+  },
+  "managed_overlay_identity": {
+    "basis": "SHA-256 byte comparison of every lane-local overlay file against the managed super-cache sources (.harness-runtime/super-cache/adapter-payloads/codex and .harness-runtime/super-cache/workspace)",
+    "results": "9/9 MATCH: 2 hook wrappers (.codex/hooks/orchestrator_harness_post_tool_use.py, orchestrator_harness_stop.py), 2 worker skills (.codex/skills/lane-assignment/SKILL.md, .codex/skills/manager-notify/SKILL.md), 5 workspace base files (.agent-workspace/hook-dispatch.py, lane-queue.py, manager-notify.py, result-stop-check.py, README.md)",
+    "conclusion": "All lane-local changes are native managed overlays staged by lane bootstrap (overlay-receipt.json: profile=managed, provider_payload=adapter-payloads/codex, base_cache_ref=super-cache/workspace); no tracked product source file differs from the accepted baseline; no accepted input conflict exists"
+  },
+  "reused_check_credit": {
+    "reused": [
+      "M03 corrected test-asset credit (test_fixture_controls.py, control_child.py) as accepted by CHECK-001 closure",
+      "M04 affected routine check CHECKS_PASS and independent review CLOSED/CLEAN/zero-findings as accepted by CHECK-001 closure",
+      "M03/M04 smoke/check credit referenced by the accepted M05 closure and checkpoint"
+    ],
+    "unchanged_input_rationale": "The join changes zero bytes and every declared check input recomputes to its accepted value: product tip a54ad14 (both main and lane), corrected M03 sources 026f5927.../6ba49f54..., affected M04 pool 668e662c... and checkpoint b5218b62..., correction checkpoint a9875a29..., protected harness-config 254be511.... Per M06-A4 ('reuse pre-join PASS credit when the join leaves a check declared inputs unchanged') and the member-card verification ('reuse unchanged smoke; no full suite or new product verdict'), no check is implicated by this join.",
+    "not_run": [
+      "full test suite",
+      "product tests",
+      "provider tests",
+      "live services",
+      "benchmarks",
+      "learned-selector work"
+    ]
+  },
+  "writer_binding": {
+    "requested": [
+      "--provider",
+      "codex",
+      "--model",
+      "deepseek-v4.1-flash:cloud",
+      "--provider-option",
+      "reasoning_effort=max",
+      "--provider-option",
+      "service_tier=normal",
+      "--provider-option",
+      "launcher=ollama"
+    ],
+    "resolved": {
+      "record": "invocation.json + task-card.json + lane.json",
+      "provider_id": "codex",
+      "model": "deepseek-v4.1-flash:cloud",
+      "launch_config": {
+        "launcher": "ollama",
+        "reasoning_effort": "max",
+        "service_tier": "normal"
+      }
+    },
+    "actual": {
+      "record": "controller.events.jsonl provider_started + live process readback",
+      "launch_command_observed": "ollama launch codex --model deepseek-v4.1-flash:cloud --yes -- exec ... -c model_reasoning_effort=\"max\" -c service_tier=\"normal\" ... --cd <lane worktree>",
+      "provider_process": {
+        "pid": 54004,
+        "name": "ollama",
+        "creation_time": "windows-filetime:134344673099268912",
+        "state_at_readback": "running",
+        "alive": true
+      },
+      "controller_process": {
+        "pid": 66208,
+        "name": "python",
+        "command": "python -m orchestrator_harness.controller normal-001-integrate-exec",
+        "creation_time": "windows-filetime:134344673097149952",
+        "alive": true
+      },
+      "provider_thread_id": "01a0c3f0-76f7-7b23-be42-ec1c5ffe90d9"
+    },
+    "match": "exact across requested/resolved/actual; no substitution"
+  },
+  "commands": [
+    {
+      "cmd": "PowerShell Get-FileHash -Algorithm SHA256 over the 7 declared inputs plus closure-accepted corrected sources and correction checkpoint",
+      "exit_code": 0,
+      "observed": "0 mismatches; all declared/referenced hashes recompute exactly (see input_hash_validations)"
+    },
+    {
+      "cmd": "git -C development/product/worktree_example rev-parse --abbrev-ref HEAD; git rev-parse HEAD; git status --porcelain=v1",
+      "exit_code": 0,
+      "observed": "main; a54ad14a8f59409ee1e88c2473e3617c123f20b8; clean (no porcelain lines)"
+    },
+    {
+      "cmd": "git -C references/harness-single rev-parse --abbrev-ref HEAD; git rev-parse HEAD; git status --porcelain=v1",
+      "exit_code": 0,
+      "observed": "working/memory-v1; f6948fb2673661b6c2cfb69cf47b23a198b3f5f8; clean (no porcelain lines)"
+    },
+    {
+      "cmd": "git -C development/product/worktree_example worktree list --porcelain",
+      "exit_code": 0,
+      "observed": "two worktrees: main @ a54ad14... and lane/normal-001-integrate-exec @ a54ad14... (same tip)"
+    },
+    {
+      "cmd": "git -C <lane worktree> rev-parse HEAD; rev-parse --abbrev-ref HEAD; rev-list --count a54ad14a8f59409ee1e88c2473e3617c123f20b8..HEAD; merge-base HEAD a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+      "exit_code": 0,
+      "observed": "a54ad14...; lane/normal-001-integrate-exec; ahead=0; merge-base=a54ad14... (exact same-tip ancestry)"
+    },
+    {
+      "cmd": "git -C <lane worktree> status --porcelain=v1; git diff --stat; git diff --cached --stat; git stash list",
+      "exit_code": 0,
+      "observed": "overlay-only changes (2 modified worker hook wrappers, 3 untracked overlay entries); diff --stat limited to the 2 hook wrapper files; cached empty; no stash entries"
+    },
+    {
+      "cmd": "SHA-256 byte comparison: lane overlays vs .harness-runtime/super-cache payload/workspace sources",
+      "exit_code": 0,
+      "observed": "9/9 MATCH (native managed overlays; no product source difference)"
+    },
+    {
+      "cmd": "read .agent-workspace/invocation.json, task-card.json, lane.json, controller.status.json, controller.events.jsonl, provider-transcript.jsonl (first record)",
+      "exit_code": 0,
+      "observed": "requested=resolved=actual writer binding codex/deepseek-v4.1-flash:cloud/effort=max/tier=normal/launcher=ollama; provider_started event matches; thread.started thread_id=01a0c3f0-76f7-7b23-be42-ec1c5ffe90d9"
+    },
+    {
+      "cmd": "read accepted M02/M04/M05 durable records (build-progress.json, root-verdict.json, check-001-credit-closure.json, accept-closure-progress.json, check-001-closure-pool.json, check-001-closure-progress.json)",
+      "exit_code": 0,
+      "observed": "ACCEPTED pre-integration verdict; CHECK-001 CLOSED with empty held credit; checkpoint COMPLETE, next module MI-NORMAL-001-INTEGRATE; M02 no product commit / no diff / tip unchanged"
+    },
+    {
+      "cmd": "post-join re-inspection: git -C <lane worktree> status --porcelain=v1; rev-parse HEAD; rev-list --count; git diff --cached --stat",
+      "exit_code": 0,
+      "observed": "identical to pre-join (same 5 overlay lines, HEAD=a54ad14..., ahead=0, cached empty); zero-byte join confirmed"
+    },
+    {
+      "cmd": "git merge / cherry-pick / rebase / reset / commit",
+      "exit_code": null,
+      "observed": "NOT RUN by design; no mutating Git operation was executed"
+    }
+  ],
+  "protected_scope_confirmation": {
+    "references_harness_single": "unchanged, clean at f6948fb2673661b6c2cfb69cf47b23a198b3f5f8",
+    "product_main": "unchanged, clean at a54ad14a8f59409ee1e88c2473e3617c123f20b8",
+    "development_dogfood_harness": "unchanged; harness-config.json SHA-256 recomputes to the protected value 254be511...",
+    "plans_tests_prior_evidence_shared_config_schema_benchmarks_learned_selector_credentials_services_runtime_records": "untouched (read-only inspection only)",
+    "commits_pushes_deploys": "none",
+    "promotion_scope": "OMITTED (M06-A6 not in the member-ordered subset; local development only)",
+    "writes_outside_authorized_paths": "none; only this durable report and the worktree-root RESULT.json were written"
+  },
+  "promotion": "OMITTED",
+  "rollback_and_acceptance_evidence_paths": [
+    "development/evidence/STEP-001/MI-NORMAL-001-BUILD/build-progress.json",
+    "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/root-verdict.json",
+    "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/check-001-credit-closure.json",
+    "development/evidence/STEP-001/MI-NORMAL-001-ACCEPT/accept-closure-progress.json",
+    "development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-001-closure-pool.json",
+    "development/evidence/STEP-001/MI-NORMAL-001-CHECK/check-001-closure-progress.json",
+    "development/evidence/STEP-001/MI-NORMAL-001-ASSETS/pid-identity-correction-progress.json",
+    "rollback base: a54ad14a8f59409ee1e88c2473e3617c123f20b8 (product main tip; no new bytes, rollback remains available at the same coordinate)"
+  ],
+  "m06_action_coverage": [
+    {
+      "action": "M06-A1",
+      "result": "all accepted inputs and the M05 verdict/closure revalidated by hash and status; 0 mismatches"
+    },
+    {
+      "action": "M06-A2",
+      "result": "destination cleanliness verified (product main clean); prejoin/rollback base recorded as a54ad14..."
+    },
+    {
+      "action": "M06-A3",
+      "result": "serial integration executed in the declared STEP-001 order; single accepted tip; no-op same-tip join; no conflict; no mutating Git command"
+    },
+    {
+      "action": "M06-A4",
+      "result": "combined diff/manifest inspected: empty changed-input map; no seam changed; accepted M03/M04 smoke/check credit reused with unchanged-input rationale"
+    },
+    {
+      "action": "M06-A5",
+      "result": "integrated coordinate a54ad14 published with post-join readbacks; recommendation READY_FOR_ROOT (factual only)"
+    },
+    {
+      "action": "M06-A6",
+      "result": "OMITTED by card (promotion not selected; no destination advance)"
+    },
+    {
+      "action": "M06-A7",
+      "result": "rollback base and consumed acceptance evidence paths preserved in this report; no temporary state retired by this writer"
+    },
+    {
+      "action": "M06-A8",
+      "result": "no retirement performed; this lane remains live until ROOT/controller action after result acceptance; terminal/clean state readable for retirement"
+    }
+  ],
+  "recommendation": "READY_FOR_ROOT",
+  "unresolved_facts": [
+    "This writer lane (and its worktree/branch) remains live at result time; lane/worktree retirement is ROOT's operation after acceptance of this factual result (M06-A8), not performed here.",
+    "Promotion is OMITTED by card; M08 READY, M09 REAL, and the MI-NORMAL-001-GATE final verdict remain unearned and undispatched by this module.",
+    "Lane-local worktree changes remain exactly the native managed overlays plus this lane's records and RESULT.json; they are runtime artifacts, not product source; product tracked source equals a54ad14.",
+    "No accepted input conflict exists; nothing was returned to ROOT for conflict/ownership hold."
+  ],
+  "recorded_at": "2026-09-21T12:35:45.946516Z"
+}

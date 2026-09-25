@@ -1,0 +1,16 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-04-slice-everos-trusted-skill-lookup-resume",
+  "task": "Resume the rejected, code-empty STEP-04 lane on accepted HEAD 74934cac0f7f4845ce1fffba7f777181c040ace8. Read the short .journal.md in this same worktree, then implement ONLY its step 4: one MemoryStore.read_generated_skill_candidates_for_scope(skill_id, scope) read-only lookup for later EverOS trust rejoin. Use the existing _open_read_only_connection and _read_only_skill_candidate pattern; require an exact normalized four-part scope and skill id, validate each stored candidate and its row content hash, isolate one corrupt row from intact matches, and close the caller-thread connection. Return durable candidates as discovery data, never approval or guidance. Add a few direct tests for exact scope, foreign/corrupt neighbor isolation, and invocation from a bounded worker thread; do not duplicate accepted Step-02 approval tests. Run the new tests and directly affected store tests only, commit one narrow result beyond 74934ca, and write a truthful RESULT.json. Do not implement the SearchStore, feature gate, procedure rejoin, APC, dispatch, STEP-05/06, or references/harness-single in this resumed attempt. The remaining journal steps will be a later serial slice. Product root: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-04-prepare-and-dispatch-with-memory.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-01-bounded-preparation-selects-eligible-memory.md.",
+  "acceptance_criteria": [
+    "An exact skill id and four-part scope returns only intact durable generated candidates through a caller-thread read-only connection; no write or authority promotion occurs.",
+    "A foreign or corrupted neighboring row is omitted without hiding an intact same-scope candidate, and direct tests pass."
+  ],
+  "deliverables": [
+    "One small MemoryStore read-only lookup and direct deterministic tests.",
+    "One narrow commit beyond 74934cac0f7f4845ce1fffba7f777181c040ace8 and a valid RESULT.json with actual checks."
+  ],
+  "reason_for_acceptance_and_deliverables": "The prior attempt spent its context on a full trust-join design and wrote no product code. This resumed attempt finishes only the thread-safe durable source lookup that the later EverOS SearchStore will consume; it leaves the rest of the journal design for a separate slice.",
+  "branch": "lane/step-04-slice-everos-trusted-skill-store",
+  "base_commit": "74934cac0f7f4845ce1fffba7f777181c040ace8"
+}

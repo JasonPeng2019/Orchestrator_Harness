@@ -1,0 +1,9 @@
+{
+  "shared_execution": {
+    "fields": {
+      "forbidden_actions_and_boundaries": "No edits to frozen reference/B source, outside development, unrelated user work, shared schema without ROOT ownership, secrets in prompts/logs, benchmark task/runner, learner implementation, new scheduler, unauthorized commits/push/deploy, broad process cleanup, scope/acceptance decisions by workers. Test_root cannot recursively launch another ROOT; APC cannot mutate parent code or accept plan.",
+      "thread_resume_and_terminal_rule": "P02 continuity and two outer report corrections; retained logical task, native IDs and earliest unresolved action, no accepted work replay. Finish every feasible selected unit, publish one complete terminal result; no self-dispatch. P04/P07 govern repair joins and checkpoint reuse.",
+      "cited_global_policy_ids_and_exception_ids": "P01, P02, P03, P04, P05, P06, P07, P08, P09, P10, P11, P12, P13, P14, P15; EXC-BUILDER-BUG only for its exact proven trigger"
+    }
+  }
+}

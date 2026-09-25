@@ -1,0 +1,18 @@
+{
+  "schema": "project-task-card/v1",
+  "card_id": "step-04-slice-everos-trusted-skill-store",
+  "task": "On accepted product commit 74934cac0f7f4845ce1fffba7f777181c040ace8, add only the STEP-04 EverOS approved-skill SearchStore boundary. Query through the accepted EverOSAdapter.search_skill_candidates. A raw hit becomes the existing procedure candidate kind only when its stable id, sanitized content, source case IDs, scope, and Step-02-bound stable metadata match an exact durable generated skill candidate/approval and an eligible current Step-03 trusted generated procedure for the intended recipient. Ignore query-dependent EverOS score for identity. Reuse the accepted local procedure trust/current/representation path rather than duplicating its issuer, recipient, predicate, revocation, source-receipt, and integrity policy. Raw EverOS presence and Step-02 approval alone never authorize delivery. The store performs no write, isolates a defective hit without suppressing an unrelated valid one, and records truthful remote-discovery provenance. generated_skill_use=false and restricted_local suppress the actual remote call; atlas_shared_retrieval alone does not enable it. Keep case search and local-procedure behavior intact. Add only focused tests for the new join and call gate, reusing accepted local trust tests instead of repeating their matrix. Run new and directly affected tests. Commit one narrow result beyond 74934ca and write a truthful RESULT.json. Do not add APC, final context/dispatch, new policy, STEP-05/06, or references/harness-single changes. Product root: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/development/product/worktree_example. Governing files outside the product worktree: C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/PLAN.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/steps/STEP-04-prepare-and-dispatch-with-memory.md, C:/Users/Jason/Documents/Jason/Orchestrator-Harness-3/.plans/memory-backed-harness/specification/behaviors/BEHAVIOR-01-bounded-preparation-selects-eligible-memory.md.",
+  "acceptance_criteria": [
+    "A same-scope remote skill hit produces only the existing procedure candidate when its stable source identity exactly matches durable Step-02 provenance and an eligible current Step-03 trusted designation for the recipient; raw discovery and Step-02 approval alone never deliver guidance.",
+    "A changed or foreign hit and a skill with no trusted current designation are omitted without hiding an unrelated eligible hit; the remote score is not stable identity or authority.",
+    "generated_skill_use=false and restricted_local make no EverOS skill task-path call; atlas_shared_retrieval alone cannot enable it, and the existing local and case stores keep their behavior.",
+    "The same logical revision discovered locally and remotely is deduplicated without a ranking bonus, and direct tests pass without repeating the accepted local trust matrix."
+  ],
+  "deliverables": [
+    "One narrowly scoped EverOS approved-skill SearchStore and the smallest necessary source gate or read-only durable lookup changes, with direct deterministic tests.",
+    "One narrow commit beyond 74934cac0f7f4845ce1fffba7f777181c040ace8 and a valid RESULT.json with actual checks."
+  ],
+  "reason_for_acceptance_and_deliverables": "The accepted EverOS skill query is discovery only. BEHAVIOR-01 needs its approved-skill search input to rejoin exact Step-02 and Step-03 trust before any procedure can enter bounded preparation; this assignment owns only that one observable delivery boundary.",
+  "branch": "lane/step-04-slice-everos-trusted-skill-store",
+  "base_commit": "74934cac0f7f4845ce1fffba7f777181c040ace8"
+}
