@@ -23,6 +23,13 @@ implementation freedom. Repository module layout, internal algorithms, schema
 field names, and test organization remain planning choices where the governing
 sources do not fix their meaning.
 
+The [normal-operation acceptance policy](../NORMAL_OPERATION_ACCEPTANCE.md)
+does not change these product outcomes. It governs whether an observed issue
+requires repair during this time-bounded run or is recorded in
+[KNOWN_ISSUES.md](../KNOWN_ISSUES.md) and deferred. It cannot waive privacy,
+authorization, exact-identity, truthful-status, durability/data-loss,
+external-side-effect, or exact-owned-cleanup invariants.
+
 ## Current behavior and required change
 
 The accepted candidate has exact task/plan/decision and operation contracts,
@@ -114,6 +121,14 @@ persisted-schema compatibility apply across the behaviors. Existing Stage-A
 databases and ordinary legacy task cards remain readable through an explicit
 supported read or migration path. Optional failures cannot overturn valid
 harness acceptance or weaken mandatory state and security.
+
+Acceptance uses the smallest representative evidence set that proves ideal
+supported operation, affected legacy/all-off preservation, credible regular
+recovery where central, and critical invariants touched by the change. A
+confirmed issue outside supported normal use and those invariants is documented
+without a repair loop when failure remains contained and honest. Missing
+required evidence leaves only its dependent claim open and is never treated as
+passing.
 
 For each newly wired service path, a disabled feature prevents corresponding
 work before launch or submission; already-submitted effects retain their

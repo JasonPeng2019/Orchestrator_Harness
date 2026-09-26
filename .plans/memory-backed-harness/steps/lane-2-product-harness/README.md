@@ -5,3 +5,5 @@ Lane 2 is the sole writer for `src/memory_harness/harness_bridge.py` and `harnes
 Checkpoint commit: finish the harness portions of STEP-06-2 through STEP-08-2 and STEP-12-2 against lane 1's published context, dispatch, and outcome interfaces. Prove the harness-side handoff, observed native invocation, review-link handling, and installed payload in focused tests with faithful domain fixtures where needed. The real joined domain-to-harness path is pending until ROOT combines pinned lane commits; a checkpoint pass is not a product acceptance claim.
 
 After pinning, continue STEP-11-2, STEP-13-2, and STEP-15-2 without waiting for checkpoint integration. Record any required domain-interface change for lane 1 rather than editing its files. See [LANE_GUIDE.md](../../LANE_GUIDE.md).
+
+Every worker and reviewer card must also name [NORMAL_OPERATION_ACCEPTANCE.md](../../NORMAL_OPERATION_ACCEPTANCE.md). Repair only reproduced normal-use, supported-recovery, compatibility, or critical-invariant defects; report other confirmed findings for the shared known-issues register without a correction loop.

@@ -5,3 +5,5 @@ Lane 3 is the sole writer for src/memory_harness/experience.py, everos_adapters.
 Checkpoint commit: provide independently testable local/remote adapter behavior and deterministic fault cases from STEP-09-3, STEP-10-3, and STEP-13-3. Do not claim outcome-linked effect completion before the shared outcome/operation records are combined. Pin the tested commit and continue. After the checkpoint, finish those same steps against the published lane 1 interface without waiting for checkpoint integration. Supply EverOS dependency and readiness facts for the lane 1 snapshot and lane 2 operator projection.
 
 See [LANE_GUIDE.md](../../LANE_GUIDE.md) for the nonblocking checkpoint and final merge.
+
+Every worker and reviewer card must also name [NORMAL_OPERATION_ACCEPTANCE.md](../../NORMAL_OPERATION_ACCEPTANCE.md). Repair only reproduced normal-use, supported-recovery, compatibility, or critical-invariant defects; report other confirmed findings for the shared known-issues register without a correction loop.

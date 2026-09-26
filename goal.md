@@ -8,33 +8,46 @@ accepted retrieval, trust, and template slices remain inputs, not assignments.
 The [remaining-work specification](.plans/memory-backed-harness/specification/SPEC.md)
 governs product behavior; the [four-lane execution plan](.plans/memory-backed-harness/PLAN.md)
 and its standalone lane steps plus shared STEP-16 through STEP-18 proof govern implementation. The
+[normal-operation acceptance policy](.plans/memory-backed-harness/NORMAL_OPERATION_ACCEPTANCE.md)
+governs review strictness, proportionate validation, and whether a discovered
+issue requires repair or documentation in
+[KNOWN_ISSUES.md](.plans/memory-backed-harness/KNOWN_ISSUES.md). The
 [archived predecessor](.plans/archive/2026-09-24-pre-remaining-replan/) has no
 execution authority. `HANDOFF.md` records current native state, not a second plan.
 
 ## Resume point
 
-The implementation run is paused for transfer to another machine. No native
-lane-ROOT or repository-harness worker may be treated as live on resume; start
-with read-only reconciliation and fresh role resolution.
+The implementation run was paused by the user on 2026-09-26. No native
+lane-ROOT or repository-harness worker remains live. Read-only scans show lanes
+1 and 2 with empty active-lane registries and no orphaned leases; lanes 3 and 4
+have no active epoch. On resume, reconcile first, resolve every role fresh, and
+use ChatGPT subscription authentication without adding an API key.
 
-The shared four-lane base is
-`cc5b4f2d03626b393581c231303f5d79a4627cf2`. STEP-04 remains accepted
-history at `a64ebfa9135960ad817752d447588feb5d782d80` and must not be reopened.
-Lane 1 has closed STEP-05-1 and accepted the STEP-06-1 identity plus
-freshness/procedure/compact slices through
-`a1d07123422459293edcc90299faa0b2a9a3f003`; its separate STEP-06-1
-privacy/credential-containment slice remains.
-Lane 2 has accepted STEP-06-2 through STEP-08-2, closed STEP-12-2, and accepted
-the bounded STEP-11-2 source-native receipt slice through
-`fa0c32689fec57d1dd0240dcc96e3cc6aacb7340`; its lane-1 usage join and native
-attribution proof remain pending. Its STEP-13-2 candidate
-`288632862280a88676712137c0ffba065a8e16df` is preserved but unaccepted; its
-fresh reviewer was stopped before producing a RESULT.
-Lane 3 is accepted through `2e3ae85dfbbb05aaec10acee9fc106cd86857d3f`
-and waits for its exact lane-1 joins. Lane 4 is accepted through
-`871f21bd1b228a0279d6270d4c2054afcfd862b3` and waits for lane-1 interfaces.
-`HANDOFF.md` holds the live run IDs and verification details. Product `main` at
-`e2bd6bd` has two pre-existing setup-installed hook edits; preserve them.
+The current authoritative accepted tips are lane 1
+`70366af368940958aaae2373eb8d21add208227d`, lane 2
+`3e0f7f18f937a33c1fa817ea81ead5f1d3753af6`, lane 3
+`953bf2ea30f0a56fd68514787cf1582957ba41ff`, and lane 4
+`871f21bd1b228a0279d6270d4c2054afcfd862b3`. Master integration
+`integration/checkpoint-20260925` is pinned at
+`9d9ca48cb7ce65e2b66b110ca5bf35601966582d`; it includes the accepted lane-1
+STEP-08 provider and lane-4 privacy consumer join and passed the focused joined
+checks recorded in `HANDOFF.md`.
+
+Two current unaccepted worktrees are deliberately preserved. Lane 1 STEP-09
+candidate `45e8e225089bd8d09ae689726a6fddfa5f742d9e` has a valid writer PASS
+RESULT and no review verdict; resume it with one fresh exact-tip policy review,
+not a new implementation. Lane 2 branch
+`lane2/ki007-supersession-consumer-01` contains a transfer-only checkpoint of
+the interrupted STEP-08/KI-007 consumer and has no RESULT or acceptance; resume
+it as incomplete work on the exact integrated base and rerun its required
+normal-path evidence before review. Lane 3 waits for lane 1's accepted STEP-09
+effect interface; lane 4 waits for the STEP-10/11/13 lane-1 interfaces.
+
+Only the current integration branch and those two active candidate branches are
+transfer refs. Retired reviewer, correction, harness-repair, and historical
+worktree branches are redundant and must not be recreated as transfer
+submodules. Product `main` at `e2bd6bd` and its pre-existing setup hook edits
+remain outside the lane bases and cleanup scope.
 
 ## Execution
 
@@ -67,8 +80,11 @@ Resolve development roles from the current
 `development/test-tools/resolve-role.py` before each launch; do not carry
 forward a prior run's binding or silently substitute. Product APC uses its separate explicit lower-capability
 `apc_adaptation_binding`, with no named default. All four outer dogfood harnesses
-are detached worktrees of `references/harness-single` at `5134f6c`; expand that
-source only for a reproduced run-blocking defect or explicit user instruction.
+derive from frozen `references/harness-single` at `5134f6c` plus the reviewed
+run-blocking controller/provider lifecycle repair `cfca0458`, propagated to the
+exact lane harness commits recorded in `HANDOFF.md`. Expand that source no
+further absent another reproduced implementation-blocking defect or explicit
+user instruction.
 
 Before declaring Atlas, MongoDB, or DeepInfra credentials unavailable, check
 ignored `.secrets/creds/`. Load only values needed by the authorized process;
@@ -83,14 +99,24 @@ step checks, scoped repair, and one pinned integrated candidate for final local,
 live Atlas, and native proof. A behavior defect blocks only its affected outcome and consumers;
 administrative imperfections cannot overturn passing behavior.
 
+Every new worker and reviewer card must name the normal-operation acceptance
+policy alongside its standalone STEP file. Reviewers request repair only for a
+reproduced normal-use, regular-recovery, compatibility, or critical-invariant
+defect. They report other confirmed issues for the lane-ROOT/Master-ROOT to add
+to `KNOWN_ISSUES.md`, then return `SHIP` when required behavior is otherwise
+met. A documented-only finding never launches a correction or re-review.
+
 ## Boundaries and completion
 
 Do not build another launcher, scheduler, reviewer, evidence ledger, or planning
 tier. Do not run a benchmark or implement the learned selector. Do not push,
 deploy, or publish outside an authorized synthetic Atlas namespace without a
-separate user request. Completion requires the integrated candidate to satisfy
-the remaining specification at its local, live-service, and native boundaries,
-preserve accepted work, and clean owned resources. Close with
+separate user request. Completion requires the integrated candidate to perform
+the remaining ideal normal product behavior at its local, live-service, and
+native boundaries, preserve the policy's critical invariants and accepted work,
+clean owned resources, and record every known deferred issue. It does not
+require repair of documented-only edge cases under the normal-operation
+acceptance policy. Close with
 `benchmark execution: deferred/not run` and
 `learned selector: deferred/not implemented`.
 

@@ -2,7 +2,7 @@
 
 ## Outcome
 
-A delegated product-test ROOT runs all-off and enhanced synthetic tasks through the actual pinned candidate product harness, which launches its own mapped workers, real APC child, review, and cleanup. This is the native-evidence part of [BEHAVIOR-09](../specification/behaviors/BEHAVIOR-09-pinned-candidate-proves-the-product-path.md).
+A delegated product-test ROOT runs one all-off and one enhanced synthetic task through the actual pinned candidate product harness, which launches its own mapped workers, real APC child, review, and cleanup. This is the native-evidence part of [BEHAVIOR-09](../specification/behaviors/BEHAVIOR-09-pinned-candidate-proves-the-product-path.md). The campaign proves the roles selected by those representative tasks; it does not exhaustively exercise every model tier.
 
 ## Scope and touchpoints
 
@@ -10,7 +10,7 @@ Use the outer `development/dogfood/harness` only to delegate product-test ROOT; 
 
 ## Implementation
 
-Preflight ordinary provider and explicit supported lower-capability APC bindings for the native brief, disjoint outer/inner worktrees and runtime roots, child capacity, declared fixture inputs, and exact owned cleanup. Drain, pause, exclude, or govern pre-existing jobs that could alter inputs; do not import undeclared outer memory/approvals/results. Product-test ROOT invokes the candidate harness for an ordinary all-off lifecycle without invoking APC, even if Atlas is unavailable. The enhanced task separately requires STEP-17's live-eligible Atlas fixture and verified network profile, then joins exact preparation, reviewed EverOS memory, ROOT plan acceptance, safe context, actual worker dispatch, terminal review, outcome/effect/usage reconciliation, restart/resume, and snapshot/isolation. Exercise mapped routine, selected middle, and heavy synthetic worker assignments and separate consequential review. At least one near match must launch a real candidate-harness APC child through the explicit binding; fallback and direct-fill cases may be proven locally. Record actual requested/resolved/native role, result, usage, review, and owned cleanup identities. A failure is diagnosed at its exact inner subtree; candidate source is not changed mid-wave.
+Preflight ordinary provider and explicit supported lower-capability APC bindings for the native brief, disjoint outer/inner worktrees and runtime roots, child capacity, declared fixture inputs, and exact owned cleanup. Drain, pause, exclude, or govern pre-existing jobs that could alter inputs; do not import undeclared outer memory/approvals/results. Product-test ROOT invokes the candidate harness for an ordinary all-off lifecycle without invoking APC, even if Atlas is unavailable. The enhanced task separately requires STEP-17's live-eligible Atlas fixture and verified network profile, then joins exact preparation, reviewed EverOS memory, ROOT plan acceptance, safe context, actual worker dispatch, terminal review, outcome/effect/usage reconciliation, restart/resume, and snapshot/isolation. Exercise and record the mapped roles actually selected by these two normal tasks, including separate consequential review; do not add synthetic tasks solely to cover routine, middle, and heavy tiers. At least one near match must launch a real candidate-harness APC child through the explicit binding; fallback and direct-fill cases may be proven locally. Record actual requested/resolved/native role, result, usage, review, and owned cleanup identities. A failure is diagnosed at its exact inner subtree; candidate source is not changed mid-wave.
 
 ## Dependencies and integration
 
@@ -18,7 +18,7 @@ Consumes one pinned locally checked candidate and declared APC binding for the n
 
 ## Requirement-fit validation
 
-All-off proves inherited lifecycle with zero optional memory/APC calls. Enhanced proof must observe actual candidate launch, APC proposal vs parent acceptance, dispatch, linked terminal state, source-native usage or explicit incompleteness, safe recovery, mapped role tiers, and exact cleanup. Unavailable binding/service leaves only its dependent claim unresolved, not passing.
+All-off proves inherited lifecycle with zero optional memory/APC calls. Enhanced proof must observe actual candidate launch, APC proposal vs parent acceptance, dispatch, linked terminal state, source-native usage or explicit incompleteness, safe recovery, the selected mapped roles, and exact cleanup. A normal-path or critical-invariant defect requires repair. A peripheral role-tier gap or contained non-normal edge is recorded in [KNOWN_ISSUES.md](../KNOWN_ISSUES.md) once both required lifecycles pass. Unavailable binding/service leaves only its dependent claim unresolved, not passing.
 
 ### Fast test suite
 

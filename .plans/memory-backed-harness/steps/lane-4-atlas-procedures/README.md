@@ -5,3 +5,5 @@ Lane 4 is the sole writer for src/memory_harness/atlas.py, atlas_adapters.py, pr
 Checkpoint commit: provide independently testable exact remote identity/readback, idempotency/fault handling, and task-path gate behavior from STEP-10-4 and STEP-13-4. Pin the tested commit and continue even if another lane is late. Final implementation finishes those steps against the published lane 1 contract. Supply Atlas dependency and readiness facts to snapshot/operator consumers. STEP-17 live proof waits for the merged STEP-16 candidate and stays under ROOT's fixture authority.
 
 See [LANE_GUIDE.md](../../LANE_GUIDE.md) for the nonblocking checkpoint and final merge.
+
+Every worker and reviewer card must also name [NORMAL_OPERATION_ACCEPTANCE.md](../../NORMAL_OPERATION_ACCEPTANCE.md). Repair only reproduced normal-use, supported-recovery, compatibility, or critical-invariant defects; report other confirmed findings for the shared known-issues register without a correction loop.

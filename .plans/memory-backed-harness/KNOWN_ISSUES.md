@@ -1,0 +1,21 @@
+# Known issues and deferred findings
+
+This register records every confirmed or still-material finding encountered
+during the accelerated remaining-work run. `repair-required` items block only
+their affected claim and consumers. `document-only` items do not trigger a
+correction loop under [NORMAL_OPERATION_ACCEPTANCE.md](NORMAL_OPERATION_ACCEPTANCE.md).
+`pending-classification` items need enough evidence to choose one of those
+dispositions.
+
+| ID | Area and evidence | Normal-use / invariant impact | Disposition | Owner and status |
+| --- | --- | --- | --- | --- |
+| KI-001 | Joined checkpoint at `013996b`: accepted enhanced bootstrap had no authoritative pre-bootstrap checkpoint field; full handoff had 10 errors and STEP-04 lifecycle had 3 errors at the explicit guard. | Breaks the normal accepted-plan handoff and blocks launch. | repair-required | Lane-1 provider accepted at `d4fad35` and integrated at `69ffa30`; lane-2 joined consumer candidate `9b3f864` passes its checkpoint cases but remains unaccepted behind KI-007. |
+| KI-002 | `memory_handoff.finalize_envelope()` is importable and listed in `__all__`, but still uses the superseded finalizer signature and direct invocation raises `TypeError` for four missing required arguments. Repository, documentation, and dynamic-call searches found no supported caller, entrypoint, or persisted reference; normal bootstrap/resume use `prepare_lane_memory`. | No supported normal/public caller is affected by current evidence; the joined product path does not call it. | document-only | Classified by fresh exact-tip review of `37e8fba`; no speculative cleanup or correction loop. Reclassify only if a supported caller is identified. |
+| KI-003 | A default-temporary-directory `ENOTEMPTY` cleanup race recurred after product assertions in the launch-boundary selection; the same focused checks do not reproduce it with `TMPDIR=/tmp`. | No credible product-path or critical-invariant impact reproduced; test/storage cleanup occurs after assertions. | document-only | Use local `/tmp` for verification and report recurrence; repair only if normal owned-resource cleanup is affected. |
+| KI-004 | Harness repair materialization tests passed 25 bodies with local `/tmp`, while default NFS temporary cleanup errored twice after the bodies. | Frozen-harness product behavior passed; failure is environment cleanup unless reproduced in normal harness ownership. | document-only | Work around with local temporary storage for verification. |
+| KI-005 | Ruff is unavailable in this environment. | Formatting/lint evidence unavailable; runtime/unit evidence remains available. | document-only | Report as an unavailable check; do not claim Ruff passed. |
+| KI-006 | Long-lived lane sessions returned 401 with a masked internal credential after ChatGPT token staleness. Fresh `auth_mode=chatgpt` ephemeral `codex exec` returned `AUTH_OK`. | Interrupted orchestration but did not change product bytes; clean fresh subscription sessions work. | document-only | Resume/relaunch with fresh ChatGPT-authenticated processes; never add an API-key fallback. |
+| KI-007 | Joined lane-2 candidate `9b3f864`: after prior native PASS and ROOT review REJECTED, supported correction/resume keeps the same accepted logical decision but creates fresh run-2; lane-1 `record_dispatch_intent` rejected the prior `delivered` operation. Draft `8610a8a` then durably separated rejected attempts but consumed their authorization at intent creation: exact pending/ambiguous replay returned success, and a proven run-2 `failed_pre_spawn` left run-3 permanently blocked. | Blocks normal product-harness model-result correction/resume and could permit duplicate spawn on replay. The authorization must have one active owner, transfer after proven no-spawn, and become permanently spent only on observed delivery. | repair-required | Churn audit confirmed the shared reservation-vs-delivery cause. Lane-1 provider accepted at `70366af` and integrated at `9d9ca48`; lane 2 is consuming the explicit rejected-attempt ID on that joined base. Open until the joined normal path passes review. |
+
+Add new rows monotonically. Do not delete a historical issue when it is fixed;
+change its status to the fixing commit and evidence so the run remains auditable.
