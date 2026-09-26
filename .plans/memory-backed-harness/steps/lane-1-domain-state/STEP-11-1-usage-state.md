@@ -1,5 +1,7 @@
 # STEP-11-1 — Store and aggregate native usage once
 
+> **Time-crunch MVP acceptance:** Execute this step with [NORMAL_OPERATION_ACCEPTANCE.md](../../NORMAL_OPERATION_ACCEPTANCE.md). Return work for repair only for a reproduced defect in desired normal supported behavior, credible regular recovery or compatibility, or a critical invariant. Record every other confirmed edge, theoretical, unsupported, or non-normal issue in [KNOWN_ISSUES.md](../../KNOWN_ISSUES.md) without a correction or re-review gate.
+
 This step is a derivative of [original STEP-11](../../source-steps/STEP-11-native-usage-remains-attributable.md).
 
 Owner: lane 1. This is the complete usage contract, store, and aggregation assignment.

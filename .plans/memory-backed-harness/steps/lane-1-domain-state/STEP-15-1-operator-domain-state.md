@@ -1,5 +1,7 @@
 # STEP-15-1 — Expose exact domain readiness and recovery
 
+> **Time-crunch MVP acceptance:** Execute this step with [NORMAL_OPERATION_ACCEPTANCE.md](../../NORMAL_OPERATION_ACCEPTANCE.md). Return work for repair only for a reproduced defect in desired normal supported behavior, credible regular recovery or compatibility, or a critical invariant. Record every other confirmed edge, theoretical, unsupported, or non-normal issue in [KNOWN_ISSUES.md](../../KNOWN_ISSUES.md) without a correction or re-review gate.
+
 This step is a derivative of [original STEP-15](../../source-steps/STEP-15-operator-controls-expose-truth.md).
 
 Owner: lane 1. This is the complete operator-facing domain-state assignment.

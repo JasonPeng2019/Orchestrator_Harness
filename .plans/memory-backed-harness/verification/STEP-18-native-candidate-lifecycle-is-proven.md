@@ -1,5 +1,7 @@
 # STEP-18 - Native candidate lifecycle is proven
 
+> **Time-crunch MVP acceptance:** Execute this step with [NORMAL_OPERATION_ACCEPTANCE.md](../NORMAL_OPERATION_ACCEPTANCE.md). Return work for repair only for a reproduced defect in desired normal supported behavior, credible regular recovery or compatibility, or a critical invariant. Record every other confirmed edge, theoretical, unsupported, or non-normal issue in [KNOWN_ISSUES.md](../KNOWN_ISSUES.md) without a correction or re-review gate.
+
 ## Outcome
 
 A delegated product-test ROOT runs one all-off and one enhanced synthetic task through the actual pinned candidate product harness, which launches its own mapped workers, real APC child, review, and cleanup. This is the native-evidence part of [BEHAVIOR-09](../specification/behaviors/BEHAVIOR-09-pinned-candidate-proves-the-product-path.md). The campaign proves the roles selected by those representative tasks; it does not exhaustively exercise every model tier.

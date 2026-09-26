@@ -111,12 +111,21 @@ met. A documented-only finding never launches a correction or re-review.
 Do not build another launcher, scheduler, reviewer, evidence ledger, or planning
 tier. Do not run a benchmark or implement the learned selector. Do not push,
 deploy, or publish outside an authorized synthetic Atlas namespace without a
-separate user request. Completion requires the integrated candidate to perform
-the remaining ideal normal product behavior at its local, live-service, and
-native boundaries, preserve the policy's critical invariants and accepted work,
-clean owned resources, and record every known deferred issue. It does not
-require repair of documented-only edge cases under the normal-operation
-acceptance policy. Close with
+separate user request. The first completion milestone is the minimal MVP: the
+integrated candidate performs the remaining ideal normal product behavior at its
+local, live-service, and native boundaries, preserves the policy's critical
+invariants and accepted work, cleans owned resources, and records every known
+deferred issue. Documented-only edge cases do not gate that MVP milestone under
+the normal-operation acceptance policy.
+
+After the MVP milestone passes STEP-16 through STEP-18, keep the run open for a
+post-MVP deferred-repair pass. Work through `KNOWN_ISSUES.md` monotonically and
+repair every actionable code issue that was deferred only because it was an
+edge, theoretical, unsupported, or non-product-use case. Give each repair one
+owner, focused evidence, and a fresh review; integrate it without reopening the
+MVP's accepted product meaning. Resolve non-code environment/access entries with
+concrete evidence rather than inventing a code change. The full active goal is
+complete only after this deferred-repair pass is exhausted. Close with
 `benchmark execution: deferred/not run` and
 `learned selector: deferred/not implemented`.
 

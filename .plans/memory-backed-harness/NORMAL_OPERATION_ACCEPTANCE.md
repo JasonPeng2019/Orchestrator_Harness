@@ -116,3 +116,15 @@ Use the remaining run time in this order:
 5. run the scoped STEP-17 live Atlas proof and STEP-18 all-off/enhanced native
    lifecycles; and
 6. spend remaining time only on repair-required findings.
+
+## Post-MVP deferred repair
+
+The rules above govern the shortest path to the minimal MVP. A documented-only
+finding never delays or invalidates that MVP proof. After STEP-16 through STEP-18
+pin and prove the MVP, the active run continues with the user's deferred-repair
+phase: Master-ROOT assigns every actionable code finding in `KNOWN_ISSUES.md` to
+its owning lane for one bounded correction, focused preservation evidence, and
+one fresh review. Update each row monotonically with its fixing pin and evidence.
+Resolve environment/access/tooling entries with direct evidence instead of
+inventing product changes. This later phase does not broaden product meaning or
+the frozen-harness exception.

@@ -1,5 +1,7 @@
 # STEP-13-4 — Enforce Atlas task-path network gates
 
+> **Time-crunch MVP acceptance:** Execute this step with [NORMAL_OPERATION_ACCEPTANCE.md](../../NORMAL_OPERATION_ACCEPTANCE.md). Return work for repair only for a reproduced defect in desired normal supported behavior, credible regular recovery or compatibility, or a critical invariant. Record every other confirmed edge, theoretical, unsupported, or non-normal issue in [KNOWN_ISSUES.md](../../KNOWN_ISSUES.md) without a correction or re-review gate.
+
 This step is a derivative of [original STEP-13](../../source-steps/STEP-13-network-modes-are-enforced.md).
 
 Owner: lane 4. This is the complete Atlas task-path gating assignment.
