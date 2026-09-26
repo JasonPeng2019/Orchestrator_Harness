@@ -1,7 +1,28 @@
 # Planning index
 
-The active product authority is the [remaining-work specification](memory-backed-harness/specification/SPEC.md) and its [four-lane execution plan](memory-backed-harness/PLAN.md). [LANE_GUIDE.md](memory-backed-harness/LANE_GUIDE.md) governs separate product worktrees, the nonblocking checkpoint, and final integration. The four [step folders](memory-backed-harness/steps/) contain standalone remaining STEP-05–15 assignments; [STEP-16–18](memory-backed-harness/verification/) are shared proof. The original STEP-05–15 files remain only for the [coverage audit](memory-backed-harness/COVERAGE_AUDIT.md), not execution.
+The active authority is the
+[coherent two-hour MVP plan](memory-backed-harness/PLAN.md) and its 15 bounded,
+dependency-ordered [implementation steps](memory-backed-harness/steps/):
 
-STEP-01 through [STEP-04](finished/memory-backed-harness/steps/STEP-04-apc-child-produces-reviewable-proposal.md) are complete, accepted product history under [finished/memory-backed-harness/steps](finished/memory-backed-harness/steps/). The first STEP-05 Level 0 slice is also accepted; the rest remains open and the run is paused. The prior active plan and specification are preserved under [archive/2026-09-24-pre-remaining-replan](archive/2026-09-24-pre-remaining-replan/) and have no execution authority. Accepted native lane records remain in the harness, not in another planning ledger.
+- Lane 3: STEP-01–02, authentic EverOS stored-skill lineage and trusted search;
+- Lane 4: STEP-03–05, product-compatible Atlas fixture, eligibility, and handoff;
+- Lane 1: STEP-06–07, joint preparation and safe final context;
+- Lane 2: STEP-08–11, all-off, enhanced worker handoff, outcome, and cleanup;
+- Master: STEP-12–15, integration, real Atlas, native proof, and final cleanup.
 
-`SUBAGENT_ROLE_MODEL_MAPPING.json` is the single development launch mapping consumed by `development/test-tools/resolve-role.py`. [goal.md](../goal.md) is the run objective; [HANDOFF.md](../HANDOFF.md) has the current lane status and next action.
+The [normal-operation acceptance policy](memory-backed-harness/NORMAL_OPERATION_ACCEPTANCE.md)
+is repeated concisely in every executable step: only genuine supported normal-
+behavior/used-recovery or critical-invariant defects repair-gate; other confirmed
+findings are documented in the active
+[known-issues register](memory-backed-harness/KNOWN_ISSUES.md) without correction
+or re-review.
+
+The superseded full plan, specification, steps, verification package, old goal,
+and old handoff are preserved under
+[archive/2026-09-26-pre-two-hour-mvp](archive/2026-09-26-pre-two-hour-mvp/)
+and have no execution authority for this cut. Earlier plan generations remain
+archived beside it.
+
+`SUBAGENT_ROLE_MODEL_MAPPING.json` remains the single development launch mapping.
+[goal.md](../goal.md) states the objective; [HANDOFF.md](../HANDOFF.md) records
+live execution state.

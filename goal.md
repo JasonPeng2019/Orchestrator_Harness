@@ -1,136 +1,85 @@
-# Goal: finish the fixed-strategy memory-backed harness
+# Goal: finish the coherent two-hour memory-backed harness MVP
 
-## Outcome and authority
+## Result
 
-Finish and verify only the unaccepted fixed-strategy behavior in
-`development/product/worktree_example`. Accepted STEP-01 through STEP-03 and the
-accepted retrieval, trust, and template slices remain inputs, not assignments.
-The [remaining-work specification](.plans/memory-backed-harness/specification/SPEC.md)
-governs product behavior; the [four-lane execution plan](.plans/memory-backed-harness/PLAN.md)
-and its standalone lane steps plus shared STEP-16 through STEP-18 proof govern implementation. The
-[normal-operation acceptance policy](.plans/memory-backed-harness/NORMAL_OPERATION_ACCEPTANCE.md)
-governs review strictness, proportionate validation, and whether a discovered
-issue requires repair or documentation in
-[KNOWN_ISSUES.md](.plans/memory-backed-harness/KNOWN_ISSUES.md). The
-[archived predecessor](.plans/archive/2026-09-24-pre-remaining-replan/) has no
-execution authority. `HANDOFF.md` records current native state, not a second plan.
+Complete on product candidate
+`2544045a4ddf38622948dd3da8a9e6051c92a802`. Real 512-dimensional Atlas
+Vector Search produced the eligible owned handoff; the actual priority-tier
+native Standard worker selected and materially used that Atlas procedure and a
+trusted EverOS stored skill; a separate review returned PASS/ACCEPTED; and one
+durable terminal outcome was recorded. The focused all-off path remains
+passing with zero optional calls. The exact inner runtimes, caller-owned EverOS
+roots, Git worktree registrations, Atlas collection, and handoff manifest were
+then read-checked absent. Non-gating findings and deferred breadth remain in
+`KNOWN_ISSUES.md`.
 
-## Resume point
+## Outcome
 
-The implementation run was paused by the user on 2026-09-26. No native
-lane-ROOT or repository-harness worker remains live. Read-only scans show lanes
-1 and 2 with empty active-lane registries and no orphaned leases; lanes 3 and 4
-have no active epoch. On resume, reconcile first, resolve every role fresh, and
-use ChatGPT subscription authentication without adding an API key.
+Finish one minimal but real end-to-end product lifecycle on the accepted joined
+base `4263abf970d34c2b96957857eb38787b25775c09`:
 
-The current authoritative accepted tips are lane 1
-`70366af368940958aaae2373eb8d21add208227d`, lane 2
-`3e0f7f18f937a33c1fa817ea81ead5f1d3753af6`, lane 3
-`953bf2ea30f0a56fd68514787cf1582957ba41ff`, and lane 4
-`871f21bd1b228a0279d6270d4c2054afcfd862b3`. Master integration
-`integration/checkpoint-20260925` is pinned at
-`9d9ca48cb7ce65e2b66b110ca5bf35601966582d`; it includes the accepted lane-1
-STEP-08 provider and lane-4 privacy consumer join and passed the focused joined
-checks recorded in `HANDOFF.md`.
+```text
+valid task -> Standard preparation/config capture
+  -> trusted EverOS stored skill + eligible real Atlas procedure
+  -> accepted plan and privacy-safe final context
+  -> actual product-harness worker and consequential review
+  -> durable terminal outcome -> exact cleanup
+```
 
-Two current unaccepted worktrees are deliberately preserved. Lane 1 STEP-09
-candidate `45e8e225089bd8d09ae689726a6fddfa5f742d9e` has a valid writer PASS
-RESULT and no review verdict; resume it with one fresh exact-tip policy review,
-not a new implementation. Lane 2 branch
-`lane2/ki007-supersession-consumer-01` contains a transfer-only checkpoint of
-the interrupted STEP-08/KI-007 consumer and has no RESULT or acceptance; resume
-it as incomplete work on the exact integrated base and rerun its required
-normal-path evidence before review. Lane 3 waits for lane 1's accepted STEP-09
-effect interface; lane 4 waits for the STEP-10/11/13 lane-1 interfaces.
+Atlas and EverOS must materially affect the actual product execution. Their
+exact trusted IDs/digests must reach the final context, and the plan or worker
+result must provide machine-checkable evidence that it used guidance unique to
+each source. Also prove one focused all-off lifecycle completes with zero
+optional EverOS, Atlas, or APC calls.
 
-Only the current integration branch and those two active candidate branches are
-transfer refs. Retired reviewer, correction, harness-repair, and historical
-worktree branches are redundant and must not be recreated as transfer
-submodules. Product `main` at `e2bd6bd` and its pre-existing setup hook edits
-remain outside the lane bases and cleanup scope.
+## Authority
+
+The active authority is `.plans/memory-backed-harness/PLAN.md`, its 15 bounded
+`STEP-*` files (Lane 3 STEP-01–02, Lane 4 STEP-03–05, Lane 1 STEP-06–07,
+Lane 2 STEP-08–11, and Master STEP-12–15), and
+`NORMAL_OPERATION_ACCEPTANCE.md`.
+`HANDOFF.md` records live state. The superseded full plan, old goal, old
+handoff, specification, step cards, and known-issue register are preserved at
+`.plans/archive/2026-09-26-pre-two-hour-mvp/` and have no execution authority
+for this cut.
+
+Accepted product capability remains intact. Do not delete or weaken existing
+EverOS reviewed experience/stored skills, Atlas procedures, strategies,
+profiles, recovery, snapshots, operators, usage, or setup behavior merely
+because most are outside this MVP gate.
 
 ## Execution
 
-Master-ROOT owns cross-lane scope, integration, live operations, and final
-acceptance. Follow the [lane guide](.plans/memory-backed-harness/LANE_GUIDE.md).
-MASTER-ROOT uses the Codex CLI's native subagent manager to launch and manage
-four top-level `gpt-6-sol`/`max` lane-ROOTs, one per plan lane. MASTER-ROOT does
-not use the repository harness itself. Each lane-ROOT exclusively uses its own
-isolated frozen `harness-single` process to launch and manage that lane's
-sub-subagents. Native lane-ROOT identity reuse never permits harness, runtime,
-worktree, or acceptance-state sharing. The four lane-ROOTs use separate
-product manager roots, runtime roots, active epochs, queues, lane identities,
-worker worktree namespaces, and harness configurations. They share only the
-frozen harness source revision and role mapping. Each lane pins its checkpoint
-and continues without waiting; Master-ROOT integrates all four pins when
-available, then merges lane tips in a separate integration worktree before
-shared proof. The four outer harness roots are
-`development/dogfood/lane-harnesses/lane-1` through `lane-4`, paired with
-`development/product/lane-roots/lane-1` through `lane-4`. The candidate product
-harness remains separate and is used only for product-owned APC and worker
-execution. Every new native task card names the absolute product root, plan, and
-assigned standalone lane STEP file because product worktrees do not contain
-top-level `.plans`.
-Keep each outer harness's existing nonempty `acceptance_criteria`, `deliverables`,
-and `reason_for_acceptance_and_deliverables` fields; they are the task contract,
-not another evidence layer.
+Master-ROOT alone integrates reviewed lane commits and owns credentialed live
+Atlas execution, the final native campaign, and cleanup. Four native lane-ROOTs
+each use their existing isolated frozen repaired `harness-single`, create a
+fresh epoch/lane from exact base `4263abf`, and launch a writer followed by one
+fresh exact-tip reviewer. Every card names the active acceptance policy.
 
-Resolve development roles from the current
-[role mapping](.plans/SUBAGENT_ROLE_MODEL_MAPPING.json) with
-`development/test-tools/resolve-role.py` before each launch; do not carry
-forward a prior run's binding or silently substitute. Product APC uses its separate explicit lower-capability
-`apc_adaptation_binding`, with no named default. All four outer dogfood harnesses
-derive from frozen `references/harness-single` at `5134f6c` plus the reviewed
-run-blocking controller/provider lifecycle repair `cfca0458`, propagated to the
-exact lane harness commits recorded in `HANDOFF.md`. Expand that source no
-further absent another reproduced implementation-blocking defect or explicit
-user instruction.
+The authorized STEP-14 time-crunch recovery preserves a completed STEP-13 and
+allows one controlled local restage only after proving the failed bootstrap
+created no lane/run/process/lease and rolled back its child branch/worktree. The
+failed inner directory remains evidence, the retry uses a distinct fresh EverOS
+owner, and the unchanged validated Atlas handoff is reused. This never permits a
+second or ambiguous worker launch.
 
-Before declaring Atlas, MongoDB, or DeepInfra credentials unavailable, check
-ignored `.secrets/creds/`. Load only values needed by the authorized process;
-for Atlas, use `MEMORY_HARNESS_ATLAS_URI`, an isolated
-`MEMORY_HARNESS_ATLAS_LIVE_DATABASE`, and explicit live-test opt-in. Map any
-DeepInfra key only to required EverOS service variables. Never copy values into
-cards, prompts, plans, logs, or committed configuration. Credential files alone
-do not prove service, index, namespace, network, or provider readiness.
+Only a reproduced supported-path, ordinary compatibility/recovery, or critical
+invariant defect repair-gates the run. Document other confirmed issues in the
+active `KNOWN_ISSUES.md` without correction/re-review. Missing evidence is open,
+not passing.
 
-Execute the new plan's dependency order within and across lanes with focused
-step checks, scoped repair, and one pinned integrated candidate for final local,
-live Atlas, and native proof. A behavior defect blocks only its affected outcome and consumers;
-administrative imperfections cannot overturn passing behavior.
+Do not import the stopped unverified STEP-15/STEP-17 work, push, benchmark,
+implement the learned selector, create another launcher/reviewer/scheduler,
+broaden the frozen outer harnesses, expose credentials, use production data, or
+perform broad cleanup.
 
-Every new worker and reviewer card must name the normal-operation acceptance
-policy alongside its standalone STEP file. Reviewers request repair only for a
-reproduced normal-use, regular-recovery, compatibility, or critical-invariant
-defect. They report other confirmed issues for the lane-ROOT/Master-ROOT to add
-to `KNOWN_ISSUES.md`, then return `SHIP` when required behavior is otherwise
-met. A documented-only finding never launches a correction or re-review.
+## Completion
 
-## Boundaries and completion
+This completion gate is satisfied: the pinned candidate passed the focused local gate, real
+Atlas eligibility/handoff, one enhanced actual candidate-harness lifecycle with
+both trusted inputs materially used, consequential review and durable outcome,
+the focused all-off zero-call check, and exact verified cleanup.
 
-Do not build another launcher, scheduler, reviewer, evidence ledger, or planning
-tier. Do not run a benchmark or implement the learned selector. Do not push,
-deploy, or publish outside an authorized synthetic Atlas namespace without a
-separate user request. The first completion milestone is the minimal MVP: the
-integrated candidate performs the remaining ideal normal product behavior at its
-local, live-service, and native boundaries, preserves the policy's critical
-invariants and accepted work, cleans owned resources, and records every known
-deferred issue. Documented-only edge cases do not gate that MVP milestone under
-the normal-operation acceptance policy.
-
-After the MVP milestone passes STEP-16 through STEP-18, keep the run open for a
-post-MVP deferred-repair pass. Work through `KNOWN_ISSUES.md` monotonically and
-repair every actionable code issue that was deferred only because it was an
-edge, theoretical, unsupported, or non-product-use case. Give each repair one
-owner, focused evidence, and a fresh review; integrate it without reopening the
-MVP's accepted product meaning. Resolve non-code environment/access entries with
-concrete evidence rather than inventing a code change. The full active goal is
-complete only after this deferred-repair pass is exhausted. Close with
-`benchmark execution: deferred/not run` and
-`learned selector: deferred/not implemented`.
-
-Every ROOT has a model-invocable `churn-watcher` skill. Invoke it whenever the
-same repair or acceptance target has taken three or more implementation,
-review, or correction tries. It validates the criticism chain, identifies the
-shared failure mechanism, rejects reviewer overreach, and requires one bounded
-root-cause correction plus preservation tests instead of serial symptom patches.
+Benchmark execution: deferred/not run. Learned selector: deferred/not
+implemented. Post-MVP deferred repairs are documented and not part of this
+two-hour completion goal.

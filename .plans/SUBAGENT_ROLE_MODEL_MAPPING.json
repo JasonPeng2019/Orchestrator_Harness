@@ -1,10 +1,28 @@
 {
   "schema_version": 1,
-  "notes": "Development allocation only, not deployment defaults. ROOT is the current assistant session and is never a worker launch target. Concrete role selections live only here. Provider IDs name the native harness adapter: codex for the Codex CLI (including Ollama-hosted models), claude-code for Claude. Ollama-backed roles explicitly set launch_config.launcher=ollama; the Codex adapter executes `ollama launch codex --model ... --yes --` and omits the duplicate forwarded Codex model flag. Do not implement a separate prefix resolver or change the selected backend. Omitted launcher means direct Codex. Serialize Ollama launches sharing its user profile/catalog directory. Direct Codex selections use the normal service tier. Resolve installed model support, wrapper behavior, authentication, capacity, and provider-home isolation only for the next required role and first affected launch; historical STEP-001 creates no current admission sweep or gate. Fallback for each configured role is ROOT-controlled across separate cleaned-up invocations: every new launch restarts at that role's preferred selection; only an evidenced OAuth error or usage-cap-reached error advances one candidate; all other failures remain on the current candidate under the plan's bounded recovery rules. Fallbacks apply only where explicitly configured for a role. The test_author chain is Claude Opus, then Codex Sol, with its recorded efforts. A prior fallback is never cached as the preferred selection for a later launch. No provider adapter chooses a fallback. APC A and B have identical preferred and fallback bindings; evidence must identify the binding actually used and cannot claim a preferred binding was exercised when a fallback ran. Planning reviewers are outside this execution mapping.",
+  "notes": "Development allocation only, not deployment defaults. MASTER-ROOT is the current assistant session and is never a harness launch target. `root` is the ROOT inside each independent lane harness; `sub_root` is an explicit alias for that same per-harness ROOT binding, not a different tier or topology. Concrete role selections live only here. Provider IDs name the native harness adapter: codex for the Codex CLI (including Ollama-hosted models), claude-code for Claude. Ollama-backed roles explicitly set launch_config.launcher=ollama; the Codex adapter executes `ollama launch codex --model ... --yes --` and omits the duplicate forwarded Codex model flag. Do not implement a separate prefix resolver or change the selected backend. Omitted launcher means direct Codex. Serialize Ollama launches sharing its user profile/catalog directory. Every Codex-backed role, including each harness ROOT/sub-ROOT, uses the priority service tier; non-Codex providers retain their provider-native launch options. Resolve installed model support, wrapper behavior, authentication, capacity, and provider-home isolation only for the next required role and first affected launch; historical STEP-001 creates no current admission sweep or gate. Fallback for each configured role is ROOT-controlled across separate cleaned-up invocations: every new launch restarts at that role's preferred selection; only an evidenced OAuth error or usage-cap-reached error advances one candidate; all other failures remain on the current candidate under the plan's bounded recovery rules. Fallbacks apply only where explicitly configured for a role. The test_author chain is Claude Opus, then Codex Sol, with its recorded efforts. A prior fallback is never cached as the preferred selection for a later launch. No provider adapter chooses a fallback. APC A and B have identical preferred and fallback bindings; evidence must identify the binding actually used and cannot claim a preferred binding was exercised when a fallback ran. Planning reviewers are outside this execution mapping.",
   "roles": {
-    "root": {
+    "master_root": {
       "runtime": "current_assistant_session",
       "launch": false
+    },
+    "root": {
+      "provider": "codex",
+      "cli": "codex",
+      "model": "gpt-6-sol",
+      "launch_config": {
+        "reasoning_effort": "high",
+        "service_tier": "priority"
+      }
+    },
+    "sub_root": {
+      "provider": "codex",
+      "cli": "codex",
+      "model": "gpt-6-sol",
+      "launch_config": {
+        "reasoning_effort": "high",
+        "service_tier": "priority"
+      }
     },
     "writer": {
       "provider": "codex",
@@ -12,7 +30,7 @@
       "model": "gpt-6-sol",
       "launch_config": {
         "reasoning_effort": "high",
-        "service_tier": "normal"
+        "service_tier": "priority"
       }
     },
     "routine": {
@@ -21,7 +39,7 @@
       "model": "deepseek-v4.1-flash:cloud",
       "launch_config": {
         "reasoning_effort": "high",
-        "service_tier": "normal",
+        "service_tier": "priority",
         "launcher": "ollama"
       },
       "fallback_policy": {
@@ -40,7 +58,7 @@
             "model": "gpt-6-luna",
             "launch_config": {
               "reasoning_effort": "high",
-              "service_tier": "normal"
+              "service_tier": "priority"
             }
           }
         ]
@@ -69,7 +87,7 @@
             "model": "gpt-6-sol",
             "launch_config": {
               "reasoning_effort": "high",
-              "service_tier": "normal"
+              "service_tier": "priority"
             }
           }
         ]
@@ -81,7 +99,7 @@
       "model": "gpt-6-sol",
       "launch_config": {
         "reasoning_effort": "xhigh",
-        "service_tier": "normal"
+        "service_tier": "priority"
       }
     },
     "test_root": {
@@ -90,7 +108,7 @@
       "model": "gpt-6-sol",
       "launch_config": {
         "reasoning_effort": "high",
-        "service_tier": "normal"
+        "service_tier": "priority"
       }
     },
     "test_routine": {
@@ -99,7 +117,7 @@
       "model": "deepseek-v4.1-flash:cloud",
       "launch_config": {
         "reasoning_effort": "high",
-        "service_tier": "normal",
+        "service_tier": "priority",
         "launcher": "ollama"
       },
       "fallback_policy": {
@@ -118,7 +136,7 @@
             "model": "gpt-5.6-luna",
             "launch_config": {
               "reasoning_effort": "high",
-              "service_tier": "normal"
+              "service_tier": "priority"
             }
           }
         ]
@@ -130,7 +148,7 @@
       "model": "gpt-6-luna",
       "launch_config": {
         "reasoning_effort": "max",
-        "service_tier": "normal"
+        "service_tier": "priority"
       }
     },
     "test_heavy": {
@@ -139,7 +157,7 @@
       "model": "gpt-6-sol",
       "launch_config": {
         "reasoning_effort": "high",
-        "service_tier": "normal"
+        "service_tier": "priority"
       }
     },
     "test_reviewer": {
@@ -148,7 +166,7 @@
       "model": "gpt-6-luna",
       "launch_config": {
         "reasoning_effort": "xhigh",
-        "service_tier": "normal"
+        "service_tier": "priority"
       },
       "fallback_policy": {
         "owner": "root",
@@ -166,7 +184,7 @@
             "model": "gpt-6-sol",
             "launch_config": {
               "reasoning_effort": "xhigh",
-              "service_tier": "normal"
+              "service_tier": "priority"
             }
           }
         ]
@@ -186,7 +204,7 @@
       "model": "deepseek-v4.1-flash:cloud",
       "launch_config": {
         "reasoning_effort": "max",
-        "service_tier": "normal",
+        "service_tier": "priority",
         "launcher": "ollama"
       },
       "fallback_policy": {
@@ -205,7 +223,7 @@
             "model": "gpt-6-sol",
             "launch_config": {
               "reasoning_effort": "medium",
-              "service_tier": "normal"
+              "service_tier": "priority"
             }
           }
         ]
@@ -217,7 +235,7 @@
       "model": "deepseek-v4.1-flash:cloud",
       "launch_config": {
         "reasoning_effort": "max",
-        "service_tier": "normal",
+        "service_tier": "priority",
         "launcher": "ollama"
       },
       "fallback_policy": {
@@ -236,7 +254,7 @@
             "model": "gpt-6-sol",
             "launch_config": {
               "reasoning_effort": "medium",
-              "service_tier": "normal"
+              "service_tier": "priority"
             }
           }
         ]
@@ -248,7 +266,7 @@
       "model": "gpt-6-sol",
       "launch_config": {
         "reasoning_effort": "high",
-        "service_tier": "normal"
+        "service_tier": "priority"
       }
     }
   }

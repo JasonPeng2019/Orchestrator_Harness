@@ -1,4 +1,5 @@
 model_auto_compact_token_limit = 272000
+service_tier = "priority"
 
 [features]
 hooks = true

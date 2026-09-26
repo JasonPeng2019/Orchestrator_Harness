@@ -1,74 +1,226 @@
-# Memory-backed harness: four-lane remaining-work plan
+# Coherent two-hour memory-backed harness MVP execution plan
 
-## Outcome and authority
+## Execution status
 
-Finish only the unaccepted fixed-strategy product behavior in the [remaining-work specification](specification/SPEC.md). The governing feature and binding implementation specifications retain their authority. Accepted STEP-01–04 and the first STEP-05 Level 0 slice are protected inputs. The current accepted product tip is cc5b4f2d03626b393581c231303f5d79a4627cf2; product main remains e2bd6bd with two pre-existing setup-installed hook edits. [HANDOFF.md](../../HANDOFF.md) carries the paused native run state. This planning revision does not resume worker execution.
+Complete on pinned candidate `2544045a4ddf38622948dd3da8a9e6051c92a802`.
+The real Atlas handoff passed, one actual priority-tier native Standard worker
+materially used both the trusted EverOS stored skill and eligible Atlas
+procedure, the consequential review returned PASS/ACCEPTED, the terminal
+outcome was durably recorded, and exact local plus Atlas cleanup was verified.
+The focused all-off zero-optional-call behavior remains passing. Deferred work
+listed below remains outside this MVP decision.
 
-The finish line is a product that drafts or reuses a plan through its real harness, dispatches only ROOT-accepted safe context, reconciles terminal outcomes, effects and usage, exposes truthful setup/network/snapshot/operator state, and proves one pinned candidate locally, with live Atlas, and in a nested native run. Do not implement a learned selector, run benchmarks, create a second launcher/reviewer/controller, or expand references/harness-single absent a reproduced run-blocking defect or new instruction.
+## Outcome and boundaries
 
-The [normal-operation acceptance policy](NORMAL_OPERATION_ACCEPTANCE.md) governs review strictness, proportionate validation, and repair-versus-document disposition for this run. Record every confirmed deferred finding in [KNOWN_ISSUES.md](KNOWN_ISSUES.md). Product meaning and critical invariants remain unchanged; the policy narrows how much non-normal hardening is required before acceptance.
+Deliver one supported Standard-strategy lifecycle in which a valid task is
+prepared with both a trusted EverOS generated stored skill and a real eligible
+Atlas procedure, the selected guidance reaches a ROOT-accepted privacy-safe
+final context, the actual product harness runs a worker and consequential
+reviewer, one terminal outcome is durable, and all exact owned resources are
+cleaned. The accepted plan or worker result must contain machine-checkable use
+of one distinct nonsecret marker carried only by each trusted source.
 
-## How to read the steps
+Also preserve one focused all-off lifecycle: the normal harness still completes
+while optional EverOS, Atlas, and APC calls remain zero. Atlas is therefore a
+core execution input, EverOS stored skills remain a core execution input, and
+the harness spine remains functional end to end.
 
-[LANE_GUIDE.md](LANE_GUIDE.md) is the operating procedure for four concurrent coding branches/worktrees, their sole-writer boundaries, pinned checkpoint commits, nonblocking checkpoint integration, final merge, and proof. The numbered files in the four [lane folders](steps/) are complete implementation assignments when read with the run-wide acceptance policy; every task card must name both its assigned step and that policy. A suffix identifies the writer (STEP-07-1 belongs to lane 1, STEP-07-2 to lane 2). A split behavior closes only when all of its lane slices work together on the merged candidate. The original STEP-05–15 files are retained solely for the [coverage audit](COVERAGE_AUDIT.md) and are not needed to execute this plan. Accepted [STEP-04](../finished/memory-backed-harness/steps/STEP-04-apc-child-produces-reviewable-proposal.md) is history. [STEP-16–18](verification/) are shared post-merge verification.
+The implementation base is the clean joined product commit
+`4263abf970d34c2b96957857eb38787b25775c09` on
+`integration/checkpoint-20260925`. The superseded full plan and specification
+are preserved at `../archive/2026-09-26-pre-two-hour-mvp/`; they retain
+historical rationale but do not add work to this cut. Existing accepted
+capability is preserved, not deleted.
 
-## Execution hierarchy
+This MVP does not finish operator commands, generalized readiness/recovery,
+snapshot qualification, the full EverOS service-gating matrix, extra
+strategies/routes/profiles, exhaustive recovery/usage, multiple worker tiers,
+packaging, broad discovery, benchmarks, the learned selector, or post-MVP
+repairs. Confirmed non-gating findings are recorded in `KNOWN_ISSUES.md` under
+`NORMAL_OPERATION_ACCEPTANCE.md` and do not start repair loops.
 
-Execution management has two orchestration tiers, separate from the product's own ROOT actor described by the specification:
+Master-ROOT may edit planning files, integrate reviewed product commits, load
+ignored credentials into the one authorized synthetic live process, run the
+isolated native campaign, and clean exact owned resources. Lane writers may
+edit only their declared product/test surfaces. No push, production data,
+broad deletion, credential disclosure, or frozen outer-harness expansion is
+authorized.
 
-- **Master-ROOT** is the current top-level Codex session. Master-ROOT launches exactly one lane-ROOT for each of the four plan lanes through Codex's native subagent launcher, not through the repository multi-agent harness. Master-ROOT assigns and monitors every lane-ROOT, coordinates published interfaces and dependencies, owns the checkpoint and final integration worktree, and makes cross-lane and final acceptance decisions.
-- **Lane-ROOTs** are four native Codex subagents, one per plan lane. Every lane-ROOT uses model `gpt-6-sol` with `reasoning_effort=max`. A lane-ROOT is the persistent manager for only its assigned lane: it slices that lane's work, operates its lane's repository harness, reviews and accepts its subordinate results, maintains the lane's authoritative tested tip, and reports pins, progress, and exact blockers to master-ROOT. It does not launch peer lane-ROOTs, manage another lane, or integrate cross-lane work.
-- **Lane subagents** are the workers, test authors, test runners, reviewers, and correction workers launched by a lane-ROOT through that lane's repository harness. Every lane-ROOT resolves these sub-subagent roles independently from the same [.plans/SUBAGENT_ROLE_MODEL_MAPPING.json](../SUBAGENT_ROLE_MODEL_MAPPING.json) at each launch. The mapping is not copied or redefined per lane, and it does not select or provide fallbacks for the four lane-ROOTs.
+## Current system and target design
 
-Harness v2 permits one persistent manager per active epoch. Therefore each lane-ROOT receives a unique harness root/configuration, runtime root, active epoch, manager queue, lane identities, and product worktree namespace. The four harnesses use identical frozen harness source bytes and the same role mapping, but never share an active epoch, runtime state, manager queue, or worktree. The repository harnesses manage only lane subagents; they never create, resume, replace, or supervise a lane-ROOT. The product's candidate harness remains a separate boundary and is exercised only where the product steps require it.
+At `4263abf`, `PreparationService.prepare` in
+`src/memory_harness/preparation.py` already resolves captured configuration,
+runs bounded `SearchStore` inputs, selects trusted candidates, and can finalize
+an accepted plan. `context.finalize_context` and `validate_final_context` bind
+the selected payload to the task, plan, decision, base, checkpoint, execution
+role, invocation target, and recipient. `MemoryRuntime.dispatch_finalized` and
+the product `harness/orchestrator_harness` bridge validate that exact envelope
+before native launch and can persist terminal evidence through
+`MemoryRuntime.record_terminal_outcome`.
 
-| Lane | Exclusive code ownership and assignment |
-| --- | --- |
-| [1 — domain and durable state](steps/lane-1-domain-state/README.md) | Preparation/APC/search timing, context/privacy/runtime, contracts, SQLite store, resolved configuration and narrow snapshot/domain services. STEP-05-1, 06-1, 07-1, 08-1, 09-1, 10-1, 11-1, 13-1, 14-1, 15-1. |
-| [2 — product harness and setup](steps/lane-2-product-harness/README.md) | Existing memory-harness native bridge/child adapters and product harness handoff, bootstrap/resume/launch/review, setup/installed payload and operator entrypoint. STEP-06-2, 07-2, 08-2, 11-2, 12-2, 13-2, 15-2. |
-| [3 — experience and EverOS](steps/lane-3-experience-everos/README.md) | Experience and EverOS adapters with focused tests. STEP-09-3, 10-3, 13-3. |
-| [4 — Atlas and procedures](steps/lane-4-atlas-procedures/README.md) | Atlas and procedure services/adapters with focused tests. STEP-10-4, 13-4. |
+The EverOS path is already present in
+`everos_adapters.make_everos_generated_skill_search_store`: a public EverOS
+skill hit must rejoin the exact durable generated-skill candidate and its
+current trusted procedure. The Atlas path is already present in
+`atlas_adapters.make_atlas_search_store` and
+`procedures.TrustedProcedureService.resolve_atlas`: discovery is followed by
+exact approval/current/recipient/predicate validation. The blocking verification
+gap is that `tests/live/atlas/test_live_trusted_procedures.py` currently builds a
+3-dimensional `live-deterministic-embedding/v1` fixture, while the product path
+uses `local-token-overlap/v1`, 512 dimensions, cosine distance, and sanitizer
+`v1`; the live test also revokes and drops its only fixture, leaving nothing for
+the native campaign.
 
-No two coding lanes edit the same product file. Lane 1 owns shared record shape and transaction changes; lane 2 owns native process and installed-payload changes. Lanes 3 and 4 consume the published identities and operation semantics, and supply source-specific snapshot/readiness facts to lanes 1 and 2. A change to an unlisted shared file gets one owner before editing. Each lane-ROOT reviews subordinate results only for its lane; master-ROOT alone reviews and combines lane commits in a separate product integration worktree. Source files, historical worktrees, accepted commits, and unrelated user changes remain intact.
+The target keeps those existing product seams. Lane 3 proves the authentic
+EverOS stored-skill lineage and search result. Lane 4 makes the disposable Atlas
+test product-compatible and capable of an explicit, exactly owned handoff. Lane
+1 proves both real candidate shapes survive one Standard preparation and safe
+finalization. Lane 2 proves the product harness's all-off, enhanced launch,
+review, outcome, and cleanup seams. Master integrates the four reviewed lane
+tips, runs the real Atlas handoff, then runs one enhanced native task against
+the same pin and cleans both resource scopes.
 
-## Accelerated review and validation
+## Shared decisions and contracts
 
-Workers and reviewers prove the smallest representative normal-operation path, affected legacy/all-off preservation, credible regular recovery when central, and critical invariants touched by the diff. A reviewer returns `REVISE` only for a reproduced repair-required finding under [NORMAL_OPERATION_ACCEPTANCE.md](NORMAL_OPERATION_ACCEPTANCE.md); documented-only findings are added to [KNOWN_ISSUES.md](KNOWN_ISSUES.md) and do not launch a correction or re-review. Missing evidence leaves only its dependent claim open. Passing normal behavior is never invalidated by style, unreachable code, unsupported malformed inputs, or theoretical/test-only edges unless evidence connects them to supported use or a critical invariant.
+- **Fixed route:** Standard strategy, `ordinary` route, and one existing
+  reliable template/accepted-plan path. No APC child is required for the
+  enhanced campaign; all-off must make zero APC calls.
+- **EverOS input:** one result from the accepted
+  `everos_generated_skill` SearchStore, backed by an actual public-surface skill
+  hit and exact durable candidate/procedure join. Required downstream fields are
+  source kind, logical/revision identity, payload/content digest, exact scope and
+  recipient provenance, and an `EVEROS_MVP_MARKER` value present only in its
+  sanitized guidance. STEP-01 owns one reusable verification helper that stages
+  this lineage into a caller-supplied temporary product store/EverOS root; it
+  returns existing product identities and paths, not a parallel evidence record.
+  STEP-02 uses it locally and STEP-14 uses it for a fresh inner campaign fixture.
+- **Atlas input:** one result from the accepted `atlas_trusted_procedure`
+  SearchStore, backed by real Atlas Vector Search plus exact post-read
+  eligibility. Its representation is `local-token-overlap/v1`, 512 dimensions,
+  cosine, sanitizer `v1`. Required downstream fields mirror the EverOS identity
+  contract and carry a distinct `ATLAS_MVP_MARKER` only in sanitized guidance.
+- **Material use:** selected IDs/digests and both markers appear in the durable
+  final context. The accepted plan or native worker result must reproduce the
+  two markers or perform their two distinct marker-directed actions. Merely
+  logging search success does not pass.
+- **Privacy:** credentials, raw approval evidence, control-plane data, and
+  unsanitized source records never enter the worker context, result, manifest,
+  or logs.
+- **Atlas handoff manifest:** nonsecret JSON containing database, collection,
+  index, partition/scope, publication/logical/revision IDs, receiver, query,
+  route/facts, representation identity, Atlas marker, and cleanup owner. It
+  contains no URI/key and is emitted only after all live eligibility assertions
+  pass. The existing product contracts remain the evidence source; this is not
+  a new product ledger.
+- **Ownership:** the live collection name contains a fresh UUID. Default,
+  assertion-failure, and abort behavior drops it. Explicit handoff mode retains
+  exactly one eligible fixture until Master completes or abandons STEP-14, after
+  which STEP-15 drops and read-checks that exact collection.
+- **Acceptance:** only a reproduced supported-path/ordinary-compatibility or
+  critical-invariant defect repair-gates. One fresh exact-tip reviewer examines
+  each lane's combined candidate after its last implementation step; it is not a
+  separate product step.
 
-## Coverage and dependencies
+## Step map and execution order
 
-| Behavior package | Executable lane slices | Required join |
+Exactly four implementation lanes run in parallel because the four existing
+lane-ROOTs have disjoint write ownership and the candidate/search/envelope
+contracts at `4263abf` are already stable. Each lane-ROOT sequences only its own
+steps through its existing frozen harness and returns one reviewed terminal
+commit. No implementation lane waits for another lane to finish. Master is not
+a fifth lane: it owns the serial join and live/shared-resource operations only
+after the four reviewed tips exist.
+
+### Lane 1 - coherent preparation and context
+
+| Step | Produces | Depends on |
 | --- | --- | --- |
-| STEP-05 | [05-1](steps/lane-1-domain-state/STEP-05-1-preparation-continuity.md) | One durable decision/budget, compatible old state; consumed by 06. |
-| STEP-06 | [06-1](steps/lane-1-domain-state/STEP-06-1-final-context.md), [06-2](steps/lane-2-product-harness/STEP-06-2-final-handoff.md) | Exact ROOT-accepted final context reaches the harness without launch claim. |
-| STEP-07 | [07-1](steps/lane-1-domain-state/STEP-07-1-dispatch-state.md), [07-2](steps/lane-2-product-harness/STEP-07-2-native-dispatch.md) | Durable intent joins one observed native invocation or visible ambiguity. |
-| STEP-08 | [08-1](steps/lane-1-domain-state/STEP-08-1-terminal-outcome.md), [08-2](steps/lane-2-product-harness/STEP-08-2-review-boundary.md) | Native review and acceptance fix one exact local outcome. |
-| STEP-09 | [09-1](steps/lane-1-domain-state/STEP-09-1-local-effect-state.md), [09-3](steps/lane-3-experience-everos/STEP-09-3-reviewed-experience-effects.md) | Fixed outcome yields recoverable local evidence and enabled experience/generation. |
-| STEP-10 | [10-1](steps/lane-1-domain-state/STEP-10-1-external-operation-state.md), [10-3](steps/lane-3-experience-everos/STEP-10-3-everos-external-effects.md), [10-4](steps/lane-4-atlas-procedures/STEP-10-4-atlas-procedure-effects.md) | Shared operation lifecycle meets exact source-specific remote reconciliation. |
-| STEP-11 | [11-1](steps/lane-1-domain-state/STEP-11-1-usage-state.md), [11-2](steps/lane-2-product-harness/STEP-11-2-native-receipts.md); adapter inputs come from 10-3/10-4 | Native receipts remain attributable once or explicitly incomplete. |
-| STEP-12 | [12-2](steps/lane-2-product-harness/STEP-12-2-workspace-composition.md) | Installed payload matches actual launch path. |
-| STEP-13 | [13-1](steps/lane-1-domain-state/STEP-13-1-network-resolution.md), [13-2](steps/lane-2-product-harness/STEP-13-2-launched-network-controls.md), [13-3](steps/lane-3-experience-everos/STEP-13-3-everos-service-gates.md), [13-4](steps/lane-4-atlas-procedures/STEP-13-4-atlas-network-gates.md) | Requested/effective claim matches installed payload and every task-path gate. |
-| STEP-14 | [14-1](steps/lane-1-domain-state/STEP-14-1-snapshot-service.md); dependency facts come from 10-3/10-4 | Restore preserves trust, usage, and pending state in isolation. |
-| STEP-15 | [15-1](steps/lane-1-domain-state/STEP-15-1-operator-domain-state.md), [15-2](steps/lane-2-product-harness/STEP-15-2-operator-entrypoint.md); readiness facts come from 10-3/10-4 | Thin commands project actual setup, network, pending, snapshot, and usage truth. |
+| [STEP-06](steps/lane-1-context/STEP-06-standard-preparation-selects-both-inputs.md) | One bounded Standard preparation selecting both stable candidate shapes | Accepted shared contracts at `4263abf` |
+| [STEP-07](steps/lane-1-context/STEP-07-final-context-binds-both-inputs-safely.md) | Durable worker-bound context with both IDs/digests/markers and no secrets | Lane 1 STEP-06 |
 
-The execution dependency remains preparation → accepted plan/context → observed harness invocation → fixed outcome → separately recoverable effects/usage. Setup can progress alongside the domain path. Atlas/EverOS adapter logic and fault tests can progress before the fixed outcome, but their outcome-linked claims wait for the real joined state. Snapshot and operator acceptance consume completed effects/usage/network facts. These dependencies do not require all lanes to stop together.
+### Lane 2 - product harness lifecycle
 
-## Asynchronous checkpoint and final merge
+| Step | Produces | Depends on |
+| --- | --- | --- |
+| [STEP-08](steps/lane-2-harness/STEP-08-all-off-harness-lifecycle-stays-inherited.md) | Focused product-harness all-off completion with zero optional calls | Accepted product-handoff contract at `4263abf` |
+| [STEP-09](steps/lane-2-harness/STEP-09-enhanced-handoff-preserves-worker-input.md) | Focused enhanced handoff/prompt/result seam preserving both memory inputs | Frozen final-context/envelope contract at `4263abf` |
+| [STEP-10](steps/lane-2-harness/STEP-10-consequential-review-fixes-one-durable-outcome.md) | Consequential review, durable outcome, and minimal attribution | Lane 2 STEP-09 |
+| [STEP-11](steps/lane-2-harness/STEP-11-inner-run-cleanup-is-exact.md) | Exact inner-run retirement without collateral cleanup | Lane 2 STEP-10 |
 
-At the asynchronous checkpoint, lane-ROOT 1 pins STEP-05-1 through STEP-08-1 and publishes the outcome/effect/usage interface; lane-ROOT 2 pins STEP-06-2 through STEP-08-2 and STEP-12-2; lane-ROOTs 3 and 4 pin independently tested adapter identity, readback, fault, and gate work without claiming full outcome linkage. A lane-ROOT reports its tested pin to master-ROOT and continues its later slices. If one pin is late, other lanes do not wait. When all four pins exist, master-ROOT combines those exact commits in a dedicated integration worktree and runs focused cross-lane checks. This attempt is required but never pauses coding lanes. A failed attempt returns only a repair-required defect to its owning lane-ROOT; a documented-only finding is registered and does not hold the checkpoint. The pinned commits remain fixed ancestors while lane branches advance; consumed interface changes require affected retesting and repinning. The checkpoint never substitutes for final acceptance.
+### Lane 3 - EverOS stored skills
 
-The final merge is required after all assigned STEP-05–15 lane-owned implementations finish and direct branch-local checks pass. Checks needing another lane's unmerged code are reported pending, not passed or used to hold the merge. Master-ROOT integrates the four lane-ROOT tips, runs those joined checks, resolves actual interface mismatches through their owners, and pins candidate bytes/configuration for [STEP-16 local/install checks](verification/STEP-16-pinned-candidate-passes-local-checks.md). [STEP-17](verification/STEP-17-live-atlas-eligibility-is-proven.md) observes real scoped Atlas Vector Search and eligibility on disposable data. [STEP-18](verification/STEP-18-native-candidate-lifecycle-is-proven.md) observes the candidate product harness launch its own mapped workers and real APC child through all-off and enhanced synthetic lifecycles. The all-off native task can proceed while Atlas is unavailable; enhanced consumes STEP-17's eligible fixture. Neither mock-only nor outer-harness-only execution proves native or live claims.
+| Step | Produces | Depends on |
+| --- | --- | --- |
+| [STEP-01](steps/lane-3-everos/STEP-01-everos-stored-skill-lineage-is-authentic.md) | Authentic stored-skill/candidate/procedure lineage and reusable fixture builder | Accepted EverOS/store contracts at `4263abf` |
+| [STEP-02](steps/lane-3-everos/STEP-02-everos-search-emits-one-trusted-input.md) | Trusted scoped EverOS SearchStore result and negatives | Lane 3 STEP-01 |
 
-Each coding slice runs its direct fast checks. STEP-16 runs the curated integrated normal-operation and critical-invariant gate; one broader suite may be used as best-effort diagnostics and every observed failure is classified. A narrow correction reruns its affected selectors and only invalidated integration checks. Documented-only failures do not hold acceptance. Missing live service or binding readiness holds its dependent claim, not unrelated local evidence. Release communication states benchmark execution: deferred/not run and learned selector: deferred/not implemented.
+### Lane 4 - Atlas procedure handoff
 
-## Post-MVP deferred-repair phase
+| Step | Produces | Depends on |
+| --- | --- | --- |
+| [STEP-03](steps/lane-4-atlas/STEP-03-atlas-fixture-uses-product-representation.md) | Product-compatible 512-dimensional live fixture | Accepted Atlas representation contract at `4263abf` |
+| [STEP-04](steps/lane-4-atlas/STEP-04-atlas-fixture-proves-eligibility.md) | Eligible, wrong-recipient, and revoked live cases | Lane 4 STEP-03 |
+| [STEP-05](steps/lane-4-atlas/STEP-05-atlas-handoff-is-owned-and-cleanable.md) | Explicit manifest/retention/default-cleanup seam | Lane 4 STEP-04 |
 
-STEP-16 through STEP-18 establish and pin the minimal MVP first. Documented-only findings do not become repair gates during that path. After the MVP pin and proofs exist, Master-ROOT keeps the run open and walks [KNOWN_ISSUES.md](KNOWN_ISSUES.md) monotonically. Each actionable deferred code issue returns to its owning lane as one bounded repair with focused preservation evidence and one fresh review, then Master integrates the reviewed pin and reruns only invalidated checks. Environment, access, or unavailable-tool entries require concrete resolution evidence or an honest non-code disposition; they do not justify speculative product changes. The deferred pass may harden recorded edge and non-product-use cases, but it does not authorize a learned selector, benchmarks, new product features, or non-blocking expansion of the frozen outer harness.
+### Master integration and live proof - not an implementation lane
 
-## Shared contracts and constraints
+| Step | Produces | Depends on |
+| --- | --- | --- |
+| [STEP-12](steps/integration/STEP-12-reviewed-lanes-form-one-local-candidate.md) | One integrated pin passing the focused local MVP gate | Lane 1 STEP-07, Lane 2 STEP-08–11, Lane 3 STEP-02, Lane 4 STEP-05, and four lane reviews |
+| [STEP-13](steps/integration/STEP-13-real-atlas-produces-the-owned-handoff.md) | Real Atlas evidence plus one retained eligible manifest | Master STEP-12 |
+| [STEP-14](steps/integration/STEP-14-native-enhanced-lifecycle-materially-uses-memory.md) | Actual candidate-harness worker/reviewer/outcome using both sources | Master STEP-12 and STEP-13 |
+| [STEP-15](steps/integration/STEP-15-owned-resources-are-clean-and-mvp-is-decided.md) | Verified exact cleanup and final requirement-fit decision | STEP-13/14 attempts that created ownership |
 
-Exact task, plan, decision, run, review, effect, and operation identities are authoritative. An invalid nonempty plan reference fails mandatory state; a pending candidate continues review unless the product ROOT explicitly replans. One captured configuration and absolute budget follow the objective through restart/correction. Only the product ROOT accepts a product plan; that product authority is distinct from master-ROOT and lane-ROOT execution management. The product harness owns APC and worker launch, review, cancellation, and cleanup; no provider API or outer dogfood harness substitutes for it. Product-managed workers/APC children receive no product control-plane credentials.
+All four lane heads launch together. STEP-12 reconciles any actual shared-contract
+repair and reruns only affected consumers; this possible integration repair is
+not a pre-emptive lane wait. STEP-13 and STEP-14 are serial because the native
+campaign consumes the retained real Atlas fixture. STEP-15 always runs after any
+live/native ownership was created, even when a dependent behavior remains open.
 
-Feature Spec Section 15 is the sole switch/dependency oracle. Off gates apply before newly wired calls and pending retries; in-flight effects stay transitioning until reconciled, drained, or isolated. Local terminal quality is immutable while effect and usage progress can evolve. External uncertainty requires exact reconciliation or source-backed idempotency before retry. Privacy and recipient checks precede query, prompt, publication, telemetry, and diagnostics. Existing Stage-A databases and legacy task cards remain compatible through explicit read/migration paths.
+## Integration and whole-product validation
 
-Each lane-ROOT's repository harness resolves lane-subagent role choices from .plans/SUBAGENT_ROLE_MODEL_MAPPING.json at native launch through development/test-tools/resolve-role.py; the same mapping applies independently to all four harnesses and does not create deployed product defaults. The four lane-ROOT bindings are fixed separately at `gpt-6-sol` with `reasoning_effort=max`. The product APC binding is separately explicit and lower-capability. Before live work, inspect ignored .secrets/creds/ without exposing values, then verify scoped service, index, permission, network, opt-in, provider, and cleanup readiness. Preserve references/harness-single at its accepted pin unless a reproduced run-blocking defect or new instruction authorizes a change.
+Master inspects each reviewed lane delta for ownership overlap, then integrates
+Lane 3, Lane 4, Lane 1, and Lane 2 commits onto the clean integration worktree.
+That order puts provider/fixture shapes before their joined consumers; a
+conflict-free cherry-pick is not evidence, so STEP-12 runs the step-local focused
+selectors on the actual joined bytes plus the existing exact final-context,
+memory-handoff, terminal-outcome, privacy, and all-off checks named in its file.
+No broad discovery, packaging, snapshot, operator, extra-strategy, or benchmark
+gate is part of this MVP.
+
+The local candidate cannot prove Atlas service behavior or native product-harness
+execution. STEP-13 alone proves real Vector Search and retained-fixture ownership.
+STEP-14 alone proves the actual candidate launches a worker and reviewer and
+persists the outcome. STEP-15 alone decides cleanup by readback. A failure holds
+only the claim and consumers that use its changed input; unrelated passing lane
+evidence is retained.
+
+For the authorized time-crunch recovery, STEP-14 may make one controlled local
+restaging attempt without repeating STEP-13 only after readback proves the failed
+bootstrap published no lane/run/PID/lease, its attempt-created child worktree and
+branch are absent, and the exact outer staging worktree is unregistered. Preserve
+the failed staging directory and intent as evidence, allocate a distinct retry
+directory and fresh EverOS owner, and keep the same validated Atlas manifest and
+collection. This is not authorization to replay a worker launch: any launch
+intent, registered lane, or ambiguous process stops the retry and goes directly
+to exact reconciliation/cleanup.
+
+## Risks, assumptions, and unresolved decisions
+
+- The live Atlas account/index permission or network may be unavailable. Preflight
+  before mutation; if unavailable, STEP-13 and STEP-14's Atlas-dependent claim
+  remain open while STEP-12 stays valid.
+- The current product may already satisfy Lane 1–3 and most Lane 2 behavior. In
+  that case those steps add only decisive focused coverage; product source is
+  changed only for a reproduced gate defect.
+- Lane 4's index creation is the only planned remote schema mutation and is
+  confined to one UUID-owned collection/index. Never broaden cleanup if the
+  manifest is missing; report the exact known owner and reconcile it.
+- If a lane changes a shared candidate or envelope shape despite the frozen
+  contract, stop only its direct consumers, assign the shared change to the
+  current owner, and rerun the invalidated focused selections after integration.
+- STEP-01/02's temporary local roots are never reused as native evidence.
+  STEP-14 stages a fresh isolated EverOS root through their reusable helper;
+  STEP-15 closes and removes that exact root after product processes release it.
+- No unresolved user decision prevents execution. Benchmark execution remains
+  deferred/not run; the learned selector remains deferred/not implemented.
