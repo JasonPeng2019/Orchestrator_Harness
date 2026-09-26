@@ -1,2 +1,6 @@
 # Local credentials and connection strings. Never commit these files.
 .secrets/
+
+# Local development snapshots and integration checkpoints
+/development/dogfood/harness-fixes/
+/development/product/integration/
