@@ -12,9 +12,12 @@ and exact owned-resource cleanup. Preserve the all-off zero-optional-call path.
 Complete. The pinned product candidate is
 `2544045a4ddf38622948dd3da8a9e6051c92a802` on
 `integration/checkpoint-20260925`, now published to its existing origin branch.
-The actual priority-tier native campaign passed and all exact campaign
-resources are absent. Product capability was preserved; Git history was not
-rewritten.
+The top-level repository now tracks that exact commit as the canonical
+`product` submodule at the short path `product/`. The short path plus the
+documented `core.longpaths` checkout option avoids Windows failures on deeply
+nested product files. The actual priority-tier native campaign passed and all
+exact campaign resources are absent. Product capability was preserved; Git
+history was not rewritten.
 
 ## Completed
 
@@ -32,9 +35,10 @@ rewritten.
 - The separate completion review returned PASS and Master acceptance is
   ACCEPTED. One terminal outcome was durably recorded as
   `23baa7c8d7b10d93511b66d157debfda0c7818687eccf0df4f184377b10da9e8`.
-- Preserved the five nonsecret terminal records under the ignored campaign
-  directory `step14-terminal-evidence/`; a URI/connection-string scan found
-  zero matches.
+- Preserved the five nonsecret terminal records locally under the ignored
+  campaign directory `step14-terminal-evidence/`; a URI/connection-string scan
+  found zero matches. These disposable run records are not required to obtain
+  or run the pinned product from a fresh clone.
 - Retired the native lane, closed the successful harness, unregistered all
   exact campaign worktrees, removed the successful and three failed staging
   roots, and verified the paths absent. Three stale monitors from failed
@@ -74,22 +78,24 @@ post-MVP repairs remain deliberately deferred in `KNOWN_ISSUES.md`.
 - The supported claim is the tested Standard route plus focused all-off path,
   not the deferred full product matrix.
 - Campaign evidence is ignored runtime evidence and has no credentials or Atlas
-  URI. The product branch and this active top-level memory checkpoint are
-  published only to their existing branches; archived/historical work is not
-  included.
+  URI. It is deliberately local-only; the remotely reproducible evidence is
+  this handoff, the active plan/known-issue record, and the pinned product
+  commit. Archived/historical work is not included.
 - Git history may be rewritten later without changing the working product, but
   that was not necessary for this run and was left untouched.
 
 ## Relevant files
 
 - `goal.md`
+- `README.md`
+- `.gitmodules`
 - `.plans/memory-backed-harness/PLAN.md`
 - `.plans/memory-backed-harness/KNOWN_ISSUES.md`
-- `development/product/integration/checkpoint-20260925/.agent-runtime/mvp-d220026aa7c048e5944f2496f2e188d4/campaign-identity.json`
-- `development/product/integration/checkpoint-20260925/.agent-runtime/mvp-d220026aa7c048e5944f2496f2e188d4/step14-terminal-evidence/`
+- `product/`
 
 ## Next action
 
 Use candidate `2544045a4ddf38622948dd3da8a9e6051c92a802` as the completed MVP baseline.
-Begin the highest-value deferred work when desired; do not rerun the completed
-live campaign.
+On a fresh clone, initialize `product` as documented in `README.md`. Begin the
+highest-value deferred work when desired; do not rerun the completed live
+campaign.
