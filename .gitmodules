@@ -8,3 +8,7 @@
 [submodule "BYO-Firmware-MCP"]
 	path = BYO-Firmware-MCP
 	url = https://github.com/JasonPeng2019/BYO-Firmware-MCP
+[submodule "product"]
+	path = product
+	url = https://github.com/JasonPeng2019/Harness-Memory-Base.git
+	branch = integration/checkpoint-20260925
